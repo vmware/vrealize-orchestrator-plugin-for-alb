@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dunes-script-module name="fetchNetworkSubnet" result-type="Array/Any" api-version="6.0.0" id="2824f3e4-44e3-457e-9382-34d3376a7b82" version="0.0.1" allowed-operations="vfe">
+  <param n="controller" t="string"><![CDATA[IP of the controller]]></param>
+  <param n="cloudName" t="string"><![CDATA[Add cloud name]]></param>
+  <param n="objectType" t="string"><![CDATA[Add object type]]></param>
+  <param n="field" t="string"><![CDATA[Add field name]]></param>
+  <script encoded="false"><![CDATA[try{
+	// Check the restHost is selected ot not.
+	if(controller == null){
+	  return null;
+	}
+	var vroClientArray = Server.findAllForType('Avi:AviVroClient','');
+	var aviPlugin = null;
+	var controllerIp = controller.substring(0, controller.indexOf("-"));
+	var clientTenant = controller.substring(controller.indexOf("-") + 1).toLowerCase();
+	for each(aviVroClient in vroClientArray){
+		if(aviVroClient != null){
+			vroController = aviVroClient.cred.controller;
+			controllerTenant = aviVroClient.cred.tenant;
+			if((vroController == controllerIp)&&(controllerTenant == clientTenant)){
+				aviPlugin = aviVroClient;
+	    	}
+  		}
+	}
+	if (aviPlugin != null){
+
+		var objectList = new Array();
+		var params = {};
+		if (cloudName != "" || cloudName != null){
+			params.name = cloudName;
+		}else {
+			params = null;
+		}
+        if (objectType == "networksubnetlist"){
+			var cloudData = getObjectData(aviPlugin, "cloud", params, clientTenant);
+		    var cloudInfo =cloudData[0];
+            System.log("Fetching cloud uuid..")
+            var cloudUuid = cloudInfo.uuid;
+
+			var objectData = getObjectData(aviPlugin, objectType + "/?cloud_uuid="+ cloudUuid, null, clientTenant);
+			if (objectData != null && (field == "" || field == null)){
+				var subnetList = new Array();
+				for each(index in objectData){
+					for each(sub in index.subnet){
+						// var subnetInfo = sub.uuid + " - " + sub.prefix.ip_addr.addr + "/" + sub.prefix.mask
+                        var subnetInfo = sub.uuid
+						subnetList.push(subnetInfo)
+					}
+				}
+				return subnetList
+			}else{
+                var subnetAddrList = new Array();
+				for each(index in objectData){
+                    if (index.uuid == field){
+                        for each(sub in index.subnet){
+                            var subnetAddr = sub.prefix.ip_addr.addr + "/" + sub.prefix.mask
+                            subnetAddrList.push(subnetAddr)
+                        }
+                    }
+				}
+				return subnetAddrList
+            }
+        }else if (objectType == "cloud" && field == "cloudZones"){
+            var cloudData = getObjectData(aviPlugin, objectType, params, clientTenant);
+            var object =cloudData[0];
+            var cloudZonesList = new Array();
+            var zones = new Array();
+            zones = object.aws_configuration.zones;
+            if (zones != null){
+                for each(index in zones){
+                    System.log("Zones are there...")
+                    cloudZonesList.push(index.availability_zone);
+                }
+            }
+            return cloudZonesList;
+        }
+        
+	}
+}catch(e){
+	// throw "Error when fetch AVI object --> "+ e
+    return null
+}
+
+function getObjectData(aviPlugin, objectType, params, tenantRef){
+	var result = aviPlugin.get(objectType, params, tenantRef);
+	var resultData = JSON.parse(result);
+	return resultData;
+}]]></script>
+</dunes-script-module>

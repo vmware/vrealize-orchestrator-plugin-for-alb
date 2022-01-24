@@ -3,11 +3,11 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item3" object-name="workflow:name=generic"
-	id="60f5dccd-ad72-462d-8597-397e8aef0f5e" version="3.0.2"
+	id="7e4121c0-0397-4c89-8d85-6878c033351d" version="4.0.0"
 	api-version="6.0.0" allowed-operations="vef" restartMode="1"
 	resumeFromFailedMode="0">
-	<display-name><![CDATA[Create Virtual Service With IPAM]]></display-name>
-	<position y="9.545454545454543" x="5.0"></position>
+	<display-name><![CDATA[Create VS with public cloud]]></display-name>
+	<position y="9.545454545454543" x="5.0" />
 	<input>
 		<param name="name" type="string">
 			<description><![CDATA[name]]></description>
@@ -54,52 +54,60 @@
 		<param name="app_domain_name" type="string">
 			<description><![CDATA[app_domain_name]]></description>
 		</param>
+		<param name="subnetNetworkId" type="string" />
+		<param name="availabilityZone" type="string" />
+		<param name="subnetAddrIP" type="string" />
+		<param name="staticIPAddr" type="string" />
+		<param name="autoAllocateIp" type="boolean" />
+		<param name="floatingIpAddr" type="string" />
+		<param name="autoAllocateOrStatic" type="string" />
 	</input>
 	<output>
 		<param name="virtualServiceObject" type="Avi:VirtualService">
 			<description><![CDATA[
-	]]></description>
+		]]></description>
 		</param>
 	</output>
 	<attrib name="HealthMonitorName" type="string" read-only="false">
 		<value encoded="n"><![CDATA[
-		]]></value>
+			]]></value>
 		<description><![CDATA[Set the healthmonitor name ]]></description>
 	</attrib>
 	<attrib name="poolName" type="string" read-only="false">
 		<value encoded="n"><![CDATA[
-		]]></value>
+			]]></value>
 		<description><![CDATA[Set the pool name]]></description>
 	</attrib>
 	<attrib name="hmData" type="string" read-only="false">
 		<value encoded="n"><![CDATA[
-		]]></value>
+			]]></value>
 	</attrib>
 	<attrib name="poolData" type="string" read-only="false">
 		<value encoded="n"><![CDATA[
-		]]></value>
+			]]></value>
 	</attrib>
 	<attrib name="vsVipData" type="string" read-only="false">
 		<value encoded="n"><![CDATA[
-		]]></value>
+			]]></value>
 	</attrib>
 	<attrib name="vsVipName" type="string" read-only="false">
 		<value encoded="n"><![CDATA[
-		]]></value>
+			]]></value>
 	</attrib>
 	<attrib name="aviVroClient" type="Avi:AviVroClient"
 		read-only="false">
-		<value encoded="n"><![CDATA[__NULL__]]></value>
+		<value encoded="n"><![CDATA[]]>
+		</value>
 	</attrib>
 	<attrib name="Tenant" type="string" read-only="false">
 		<value encoded="n"><![CDATA[
-		]]></value>
+			]]></value>
 		<description><![CDATA[Tenant]]></description>
 	</attrib>
 	<attrib name="virtualServiceData" type="string"
 		read-only="false">
 		<value encoded="n"><![CDATA[
-		]]></value>
+			]]></value>
 	</attrib>
 	<attrib name="serverType" type="string" read-only="false">
 		<value encoded="n"><![CDATA[V4]]></value>
@@ -111,76 +119,84 @@
 	<attrib name="existingVIP" type="string" read-only="false">
 		<value encoded="n"><![CDATA[true]]></value>
 	</attrib>
-	<attrib name="autoAllocateIp" type="boolean" read-only="false">
-		<value encoded="n"><![CDATA[true]]></value>
-	</attrib>
 	<attrib name="workflowRuntime" type="Avi:WorkflowRuntime"
 		read-only="false">
-		<value encoded="n"><![CDATA[__NULL__]]></value>
+		<value encoded="n"><![CDATA[]]>
+		</value>
 	</attrib>
 	<attrib name="createdObj" type="Any" read-only="false">
-		<value encoded="n"><![CDATA[__NULL__]]></value>
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<attrib name="vsVipEnabled" type="boolean" read-only="false">
+		<value encoded="n"><![CDATA[true]]></value>
 	</attrib>
 	<workflow-item name="item0" type="end" end-mode="0">
-		<position y="9.045454545454543" x="924.5"></position>
+		<in-binding />
+		<position y="10.0" x="820.0" />
 	</workflow-item>
 	<workflow-item name="item6" out-name="item1" type="task">
 		<display-name><![CDATA[AVIObjectName]]></display-name>
 		<script encoded="false"><![CDATA[HealthMonitorName = Name+"_HealthMonitor"
-vsVipName = Name+"_vsvip"
-poolName = Name+"_pool"
-Tenant=workflowRuntime.getAviVroClient().cred.tenant;
-System.log("HealthMonitorName : "+HealthMonitorName)
-
-
-]]></script>
+	vsVipName = Name+"_vsvip"
+	poolName = Name+"_pool"
+	Tenant=workflowRuntime.getAviVroClient().cred.tenant;
+	System.log("HealthMonitorName : "+HealthMonitorName)
+	
+	
+	]]></script>
 		<in-binding>
-			<bind name="Name" type="string" export-name="name"></bind>
-			<bind name="controller" type="string" export-name="controller"></bind>
-			<bind name="vsVipName" type="string" explicitly-not-bound="true"></bind>
+			<bind name="Name" type="string" export-name="name" />
+			<bind name="controller" type="string" export-name="controller" />
+			<bind name="vsVipName" type="string" />
 			<bind name="workflowRuntime" type="Avi:WorkflowRuntime"
 				export-name="workflowRuntime" />
 		</in-binding>
 		<out-binding>
 			<bind name="HealthMonitorName" type="string"
-				export-name="HealthMonitorName"></bind>
-			<bind name="poolName" type="string" export-name="poolName"></bind>
-			<bind name="vsVipName" type="string" export-name="vsVipName"></bind>
-			<bind name="Tenant" type="string" export-name="Tenant"></bind>
+				export-name="HealthMonitorName" />
+			<bind name="poolName" type="string" export-name="poolName" />
+			<bind name="vsVipName" type="string" export-name="vsVipName" />
+			<bind name="Tenant" type="string" export-name="Tenant" />
 		</out-binding>
-		<position y="100.86363636363636" x="124.5"></position>
+		<position y="100.86363636363636" x="124.5" />
 	</workflow-item>
 	<workflow-item name="item2" out-name="item0" type="task">
 		<display-name><![CDATA[createObject]]></display-name>
-		<script encoded="false"><![CDATA[virtualServiceObject = Server.findForType('Avi:VirtualService', System.getObjectId(virtualServiceObject));
-virtualServiceObject=createdObj[createdObj.length-1];	
-System.log("Object Created:-> "+virtualServiceObject.getName());
-]]></script>
+		<script encoded="false"><![CDATA[// virtualServiceObject = Server.findForType('Avi:VirtualService', System.getObjectId(virtualServiceObject));
+	// virtualServiceObject=createdObj[createdObj.length-1];	
+	// System.log("Object Created:-> "+virtualServiceObject.getName());
+	System.log("Workflow are executed and check __DUBUG__ : "+ autoAllocateOrStatic)
+	System.log("Workflow check __DUBUG__ : "+ autoAllocateTest)
+	System.log("Workflow are executed")]]></script>
 		<in-binding>
-			<bind name="controller" type="string" export-name="controller"></bind>
-			<bind name="hmData" type="string" export-name="hmData"></bind>
-			<bind name="poolData" type="string" export-name="poolData"></bind>
+			<bind name="controller" type="string" export-name="controller" />
+			<bind name="hmData" type="string" export-name="hmData" />
+			<bind name="poolData" type="string" export-name="poolData" />
 			<bind name="virtualServiceData" type="string"
-				export-name="virtualServiceData"></bind>
-			<bind name="vsVipData" type="string" export-name="vsVipData"></bind>
+				export-name="virtualServiceData" />
+			<bind name="vsVipData" type="string" export-name="vsVipData" />
 			<bind name="aviVroClient" type="Avi:AviVroClient"
-				export-name="aviVroClient"></bind>
+				export-name="aviVroClient" />
 			<bind name="vsVIP" type="boolean" export-name="vsVIP">
 				<description><![CDATA[Add Existing Shared VIP]]></description>
 			</bind>
-			<bind name="createdObj" type="Any" export-name="createdObj"></bind>
+			<bind name="createdObj" type="Any" export-name="createdObj" />
+			<bind name="autoAllocateOrStatic" type="string" />
+			<bind name="autoAllocateTest" type="string"
+				export-name="autoAllocateOrStatic" />
 		</in-binding>
 		<out-binding>
 			<bind name="virtualServiceObject" type="Avi:VirtualService"
-				export-name="virtualServiceObject"></bind>
+				export-name="virtualServiceObject" />
 		</out-binding>
-		<position y="19.045454545454543" x="704.5"></position>
+		<position y="100.0" x="780.0" />
 	</workflow-item>
 	<workflow-item name="item1" out-name="item4" type="task"
 		script-module="com.vmware.avi/createHealthMonitorObj">
 		<display-name><![CDATA[createHealthMonitorObj]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthMonitorType,hm_type,hm_name,hm_description,is_federated,monitor_port,time_out,send_interval,successful_check,failed_check,command_code,udp_request,dns_query_name,http_response_code,tcp_request,tcp_response,tcp_half_open,maintenance_code,workflowRuntime,https_response_code, Tenant) ;]]></script>
+	actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthMonitorType,hm_type,hm_name,hm_description,is_federated,monitor_port,time_out,send_interval,successful_check,failed_check,command_code,udp_request,dns_query_name,http_response_code,tcp_request,tcp_response,tcp_half_open,maintenance_code,workflowRuntime,https_response_code, Tenant) ;]]></script>
 		<in-binding>
 			<bind name="healthMonitorType" type="string"
 				export-name="health_monitor_type">
@@ -190,8 +206,7 @@ actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthM
 				export-name="HealthMonitorName">
 				<description><![CDATA[Health monitor name]]></description>
 			</bind>
-			<bind name="monitor_port" type="number"
-				explicitly-not-bound="true">
+			<bind name="monitor_port" type="number">
 				<description><![CDATA[Monitor port]]></description>
 			</bind>
 			<bind name="time_out" type="number" export-name="time_out">
@@ -209,46 +224,35 @@ actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthM
 				export-name="failed_check">
 				<description><![CDATA[Failed check]]></description>
 			</bind>
-			<bind name="tcp_response" type="string"
-				explicitly-not-bound="true"></bind>
-			<bind name="command_code" type="string"
-				explicitly-not-bound="true"></bind>
-			<bind name="hm_description" type="string"
-				explicitly-not-bound="true"></bind>
-			<bind name="tcp_request" type="string"
-				explicitly-not-bound="true"></bind>
-			<bind name="https_response_code" type="Array/string"
-				explicitly-not-bound="true"></bind>
-			<bind name="dns_query_name" type="string"
-				explicitly-not-bound="true"></bind>
-			<bind name="is_federated" type="boolean"
-				explicitly-not-bound="true"></bind>
-			<bind name="http_response_code" type="Array/string"
-				explicitly-not-bound="true"></bind>
-			<bind name="tcp_half_open" type="boolean"
-				explicitly-not-bound="true"></bind>
-			<bind name="maintenance_code" type="string"
-				explicitly-not-bound="true"></bind>
-			<bind name="udp_request" type="string"
-				explicitly-not-bound="true"></bind>
-			<bind name="hm_type" type="string" explicitly-not-bound="true"></bind>
+			<bind name="tcp_response" type="string" />
+			<bind name="command_code" type="string" />
+			<bind name="hm_description" type="string" />
+			<bind name="tcp_request" type="string" />
+			<bind name="https_response_code" type="Array/string" />
+			<bind name="dns_query_name" type="string" />
+			<bind name="is_federated" type="boolean" />
+			<bind name="http_response_code" type="Array/string" />
+			<bind name="tcp_half_open" type="boolean" />
+			<bind name="maintenance_code" type="string" />
+			<bind name="udp_request" type="string" />
+			<bind name="hm_type" type="string" />
 			<bind name="Tenant" type="string" export-name="Tenant">
 				<description><![CDATA[Tenant name]]></description>
 			</bind>
 			<bind name="workflowRuntime" type="Avi:WorkflowRuntime"
-				export-name="workflowRuntime"></bind>
+				export-name="workflowRuntime" />
 		</in-binding>
 		<out-binding>
 			<bind name="actionResult" type="Avi:WorkflowRuntime"
-				export-name="workflowRuntime"></bind>
+				export-name="workflowRuntime" />
 		</out-binding>
-		<position y="100.86363636363636" x="304.5"></position>
+		<position y="100.86363636363636" x="304.5" />
 	</workflow-item>
 	<workflow-item name="item3" out-name="item6" type="task"
 		script-module="com.vmware.avi/initVroWorkflow">
 		<display-name><![CDATA[initVroWorkflow]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-actionResult = System.getModule("com.vmware.avi").initVroWorkflow(controller) ;]]></script>
+	actionResult = System.getModule("com.vmware.avi").initVroWorkflow(controller) ;]]></script>
 		<in-binding>
 			<bind name="controller" type="string" export-name="controller">
 				<description><![CDATA[Controller IP]]></description>
@@ -256,15 +260,15 @@ actionResult = System.getModule("com.vmware.avi").initVroWorkflow(controller) ;]
 		</in-binding>
 		<out-binding>
 			<bind name="actionResult" type="Avi:WorkflowRuntime"
-				export-name="workflowRuntime"></bind>
+				export-name="workflowRuntime" />
 		</out-binding>
-		<position y="19.045454545454543" x="124.5"></position>
+		<position y="19.045454545454543" x="124.5" />
 	</workflow-item>
 	<workflow-item name="item4" out-name="item5" type="task"
 		script-module="com.vmware.avi/createVRAPoolObj">
 		<display-name><![CDATA[createVRAPoolObj]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-actionResult = System.getModule("com.vmware.avi").createVRAPoolObj(PoolServers,poolName,ServerCloud,Tenant,HealthMonitorName,workflowRuntime,instance_port,tier1_lr) ;]]></script>
+	actionResult = System.getModule("com.vmware.avi").createVRAPoolObj(PoolServers,poolName,ServerCloud,Tenant,HealthMonitorName,workflowRuntime,instance_port,tier1_lr) ;]]></script>
 		<in-binding>
 			<bind name="PoolServers" type="Array/string"
 				export-name="pool_servers">
@@ -285,65 +289,105 @@ actionResult = System.getModule("com.vmware.avi").createVRAPoolObj(PoolServers,p
 				<description><![CDATA[New healthmonitor name]]></description>
 			</bind>
 			<bind name="instance_port" type="number"
-				export-name="instance_port"></bind>
-			<bind name="tier1_lr" type="string" explicitly-not-bound="true"
-				export-name="NULL"></bind>
+				export-name="instance_port" />
+			<bind name="tier1_lr" type="string" export-name="NULL" />
 			<bind name="workflowRuntime" type="Avi:WorkflowRuntime"
-				export-name="workflowRuntime"></bind>
+				export-name="workflowRuntime" />
 		</in-binding>
 		<out-binding>
 			<bind name="actionResult" type="Avi:WorkflowRuntime"
-				export-name="workflowRuntime"></bind>
+				export-name="workflowRuntime" />
 		</out-binding>
-		<position y="19.045454545454543" x="304.5"></position>
+		<position y="19.045454545454543" x="304.5" />
 	</workflow-item>
 	<workflow-item name="item5" out-name="item7" type="task"
-		script-module="com.vmware.avi/createIPAMVsVIPObj">
+		script-module="com.vmware.avi/createIPAMVsVipObjUpdated">
 		<display-name><![CDATA[createIPAMVsVIPObj]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-actionResult = System.getModule("com.vmware.avi").createIPAMVsVIPObj(Tenant,name,IPAddress,eastWestPlacement,aviAllocatedFIp,autoAllocateIp,enabled,autoAllocateFloatingIp,aviAllocatedVip,serverType,workflowRuntime,network_management_name,app_domain_name,domain,cloud_name) ;]]></script>
+	actionResult = System.getModule("com.vmware.avi").createIPAMVsVIPObj(name,tenant,cloudName,eastWestPlacement,enabled,autoAllocateIp,aviAllocatedFIp,autoAllocateFloatingIp,aviAllocatedVip,serverType,network_management_name,app_domain_name,domain,subnetId,addressIP,availabilityZone,staticIPAddr,workflowRuntime,floatingIpAddr,autoAllocateOrStatic);
+	]]></script>
 		<in-binding>
-			<bind name="Tenant" type="string" export-name="Tenant">
-				<description><![CDATA[Tenant name]]></description>
-			</bind>
 			<bind name="name" type="string" export-name="vsVipName">
 				<description><![CDATA[Vs vip name]]></description>
 			</bind>
-			<bind name="IPAddress" type="string" explicitly-not-bound="true">
-				<description><![CDATA[Vs vip IP address]]></description>
+			<bind name="tenant" type="string" export-name="Tenant">
+				<description><![CDATA[Tenant name]]></description>
+			</bind>
+			<bind name="cloudName" type="string" export-name="server_cloud">
+				<description><![CDATA[Cloud name]]></description>
+			</bind>
+			<bind name="eastWestPlacement" type="boolean" export-name="">
+				<description><![CDATA[Add east west  placement]]></description>
+			</bind>
+			<bind name="enabled" type="boolean" export-name="vsVipEnabled">
+				<description><![CDATA[Enabled vsvip]]></description>
 			</bind>
 			<bind name="autoAllocateIp" type="boolean"
-				export-name="autoAllocateIp"></bind>
+				export-name="autoAllocateIp" />
+			<bind name="aviAllocatedFIp" type="string"
+				export-name="autoAllocateOrStatic">
+				<description><![CDATA[Auto allocate FIP]]></description>
+			</bind>
 			<bind name="autoAllocateFloatingIp" type="boolean"
-				explicitly-not-bound="true"></bind>
-			<bind name="aviAllocatedFIp" type="boolean"
-				explicitly-not-bound="true"></bind>
-			<bind name="enabled" type="boolean" explicitly-not-bound="true"></bind>
-			<bind name="eastWestPlacement" type="boolean"
-				explicitly-not-bound="true"></bind>
-			<bind name="aviAllocatedVip" type="boolean"
-				explicitly-not-bound="true"></bind>
+				export-name="">
+				<description><![CDATA[Auto allocate floating IP]]></description>
+			</bind>
+			<bind name="aviAllocatedVip" type="boolean" export-name="">
+				<description><![CDATA[Auto allocate VIP]]></description>
+			</bind>
+			<bind name="serverType" type="string" export-name="serverType">
+				<description><![CDATA[Server type]]></description>
+			</bind>
 			<bind name="network_management_name" type="string"
-				export-name="network_management_name"></bind>
-			<bind name="cloud_name" type="string" export-name="server_cloud"></bind>
-			<bind name="domain" type="string" export-name="domain"></bind>
-			<bind name="serverType" type="string" export-name="serverType"></bind>
+				export-name="network_management_name">
+				<description><![CDATA[Network management name]]></description>
+			</bind>
 			<bind name="app_domain_name" type="string"
-				export-name="app_domain_name"></bind>
+				export-name="app_domain_name">
+				<description><![CDATA[App domain name]]></description>
+			</bind>
+			<bind name="domain" type="string" export-name="domain">
+				<description><![CDATA[Domain]]></description>
+			</bind>
+			<bind name="subnetId" type="string"
+				export-name="subnetNetworkId">
+				<description><![CDATA[Vip address allocation network]]></description>
+			</bind>
+			<bind name="addressIP" type="string" export-name="subnetAddrIP">
+				<description><![CDATA[IPv4 subnet]]></description>
+			</bind>
+			<bind name="availabilityZone" type="string"
+				export-name="availabilityZone">
+				<description><![CDATA[Availability zone]]></description>
+			</bind>
+			<bind name="staticIPAddr" type="string"
+				export-name="staticIPAddr">
+				<description><![CDATA[Add static IP if present]]></description>
+			</bind>
 			<bind name="workflowRuntime" type="Avi:WorkflowRuntime"
-				export-name="workflowRuntime"></bind>
+				export-name="workflowRuntime">
+				<description><![CDATA[Object of the plugin]]></description>
+			</bind>
+			<bind name="floatingIpAddr" type="string"
+				export-name="floatingIpAddr">
+				<description><![CDATA[Add floating IP]]></description>
+			</bind>
+			<bind name="autoAllocateOrStatic" type="string"
+				export-name="autoAllocateOrStatic">
+				<description><![CDATA[Check auto allocate floating IP]]></description>
+			</bind>
 		</in-binding>
 		<out-binding>
 			<bind name="actionResult" type="Avi:WorkflowRuntime"
-				export-name="workflowRuntime"></bind>
+				export-name="workflowRuntime" />
 		</out-binding>
-		<position y="19.045454545454543" x="505.0"></position>
+		<position y="20.0" x="460.0" />
 	</workflow-item>
 	<workflow-item name="item7" out-name="item8" type="task"
 		script-module="com.vmware.avi/createVirtualServiceWithIPAMObj">
 		<display-name><![CDATA[createVirtualServiceWithIPAMObj]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-actionResult = System.getModule("com.vmware.avi").createVirtualServiceWithIPAMObj(Name,poolgroupName,ServerCloud,Tenant,ApplicationProfile,servicePort,SSLCertificate,SSLCert,CertName,CreateSSL,serviceEngine,poolOrPoolgroup,poolName,vsVIP,existingVIP,allowInvalidClientCert,closeClientConfigUpdate,description,enableAutogw,enableRhi,enableRhiSnat,ignPoolNetReach,removeListeningPortOnVsDown,scaleoutEcmp,clientIpAddr,includeURL,excludeURL,addClientLogFliter,enabledClientLog,clientStringRef,clientDuration,logAllClientHeaders,analyticsProfile,clientInsights,significantLogThrottle,udfLogThrottle,nonSignificantLogs,nslduration,nslThrottle,metricsRealtimeUpdate,metricsRealtimeUpdateDuration,maxCpsPerClient,trafficEnabled,useBridgeIpAsVip,useVipAsSnat,vsVipName,workflowRuntime,network_security_policy_name,http_policy_set_name) ;]]></script>
+	actionResult = System.getModule("com.vmware.avi").createVirtualServiceWithIPAMObj(Name,poolgroupName,ServerCloud,Tenant,ApplicationProfile,servicePort,SSLCertificate,SSLCert,CertName,CreateSSL,serviceEngine,poolOrPoolgroup,poolName,vsVIP,existingVIP,allowInvalidClientCert,closeClientConfigUpdate,description,enableAutogw,enableRhi,enableRhiSnat,ignPoolNetReach,removeListeningPortOnVsDown,scaleoutEcmp,clientIpAddr,includeURL,excludeURL,addClientLogFliter,enabledClientLog,clientStringRef,clientDuration,logAllClientHeaders,analyticsProfile,clientInsights,significantLogThrottle,udfLogThrottle,nonSignificantLogs,nslduration,nslThrottle,metricsRealtimeUpdate,metricsRealtimeUpdateDuration,maxCpsPerClient,trafficEnabled,useBridgeIpAsVip,useVipAsSnat,vsVipName,workflowRuntime,network_security_policy_name,http_policy_set_name) ;]]></script>
 		<in-binding>
 			<bind name="Name" type="string" export-name="name">
 				<description><![CDATA[Virtual service name]]></description>
@@ -369,98 +413,62 @@ actionResult = System.getModule("com.vmware.avi").createVirtualServiceWithIPAMOb
 			<bind name="vsVipName" type="string" export-name="vsVipName">
 				<description><![CDATA[Name of the vsvip]]></description>
 			</bind>
-			<bind name="CreateSSL" type="boolean"
-				explicitly-not-bound="true"></bind>
-			<bind name="clientStringRef" type="string"
-				explicitly-not-bound="true"></bind>
-			<bind name="logAllClientHeaders" type="boolean"
-				explicitly-not-bound="true"></bind>
-			<bind name="trafficEnabled" type="boolean"
-				explicitly-not-bound="true"></bind>
-			<bind name="nslThrottle" type="string"
-				explicitly-not-bound="true"></bind>
-			<bind name="poolgroupName" type="string"
-				explicitly-not-bound="true"></bind>
-			<bind name="metricsRealtimeUpdateDuration" type="number"
-				explicitly-not-bound="true"></bind>
-			<bind name="excludeURL" type="string"
-				explicitly-not-bound="true"></bind>
-			<bind name="SSLCertificate" type="string"
-				explicitly-not-bound="true"></bind>
-			<bind name="scaleoutEcmp" type="boolean"
-				explicitly-not-bound="true"></bind>
-			<bind name="vsVIP" type="boolean" export-name="vsVIP"></bind>
-			<bind name="description" type="string"
-				explicitly-not-bound="true"></bind>
-			<bind name="enableRhiSnat" type="boolean"
-				explicitly-not-bound="true"></bind>
-			<bind name="nslduration" type="string"
-				explicitly-not-bound="true"></bind>
-			<bind name="enableAutogw" type="boolean"
-				explicitly-not-bound="true"></bind>
-			<bind name="useBridgeIpAsVip" type="boolean"
-				explicitly-not-bound="true"></bind>
-			<bind name="nonSignificantLogs" type="boolean"
-				explicitly-not-bound="true"></bind>
-			<bind name="closeClientConfigUpdate" type="boolean"
-				explicitly-not-bound="true"></bind>
-			<bind name="clientIpAddr" type="string"
-				explicitly-not-bound="true"></bind>
-			<bind name="enabledClientLog" type="boolean"
-				explicitly-not-bound="true"></bind>
-			<bind name="SSLCert" type="boolean" explicitly-not-bound="true"></bind>
-			<bind name="metricsRealtimeUpdate" type="boolean"
-				explicitly-not-bound="true"></bind>
-			<bind name="clientInsights" type="string"
-				explicitly-not-bound="true"></bind>
-			<bind name="udfLogThrottle" type="number"
-				explicitly-not-bound="true"></bind>
-			<bind name="ignPoolNetReach" type="boolean"
-				explicitly-not-bound="true"></bind>
-			<bind name="serviceEngine" type="string"
-				explicitly-not-bound="true"></bind>
-			<bind name="addClientLogFliter" type="boolean"
-				explicitly-not-bound="true"></bind>
-			<bind name="CertName" type="string" explicitly-not-bound="true"></bind>
-			<bind name="significantLogThrottle" type="number"
-				explicitly-not-bound="true"></bind>
-			<bind name="includeURL" type="string"
-				explicitly-not-bound="true"></bind>
-			<bind name="existingVIP" type="string" export-name="existingVIP"></bind>
-			<bind name="enableRhi" type="boolean"
-				explicitly-not-bound="true"></bind>
-			<bind name="allowInvalidClientCert" type="boolean"
-				explicitly-not-bound="true"></bind>
-			<bind name="poolOrPoolgroup" type="boolean"
-				explicitly-not-bound="true"></bind>
-			<bind name="analyticsProfile" type="string"
-				explicitly-not-bound="true"></bind>
-			<bind name="clientDuration" type="number"
-				explicitly-not-bound="true"></bind>
-			<bind name="useVipAsSnat" type="boolean"
-				explicitly-not-bound="true"></bind>
-			<bind name="removeListeningPortOnVsDown" type="boolean"
-				explicitly-not-bound="true"></bind>
-			<bind name="maxCpsPerClient" type="number"
-				explicitly-not-bound="true"></bind>
-			<bind name="http_policy_set_name" type="string"
-				explicitly-not-bound="true"></bind>
-			<bind name="network_security_policy_name" type="string"
-				explicitly-not-bound="true"></bind>
+			<bind name="CreateSSL" type="boolean" />
+			<bind name="clientStringRef" type="string" />
+			<bind name="logAllClientHeaders" type="boolean" />
+			<bind name="trafficEnabled" type="boolean" />
+			<bind name="nslThrottle" type="string" />
+			<bind name="poolgroupName" type="string" />
+			<bind name="metricsRealtimeUpdateDuration" type="number" />
+			<bind name="excludeURL" type="string" />
+			<bind name="SSLCertificate" type="string" />
+			<bind name="scaleoutEcmp" type="boolean" />
+			<bind name="vsVIP" type="boolean" export-name="vsVIP" />
+			<bind name="description" type="string" />
+			<bind name="enableRhiSnat" type="boolean" />
+			<bind name="nslduration" type="string" />
+			<bind name="enableAutogw" type="boolean" />
+			<bind name="useBridgeIpAsVip" type="boolean" />
+			<bind name="nonSignificantLogs" type="boolean" />
+			<bind name="closeClientConfigUpdate" type="boolean" />
+			<bind name="clientIpAddr" type="string" />
+			<bind name="enabledClientLog" type="boolean" />
+			<bind name="SSLCert" type="boolean" />
+			<bind name="metricsRealtimeUpdate" type="boolean" />
+			<bind name="clientInsights" type="string" />
+			<bind name="udfLogThrottle" type="number" />
+			<bind name="ignPoolNetReach" type="boolean" />
+			<bind name="serviceEngine" type="string" />
+			<bind name="addClientLogFliter" type="boolean" />
+			<bind name="CertName" type="string" />
+			<bind name="significantLogThrottle" type="number" />
+			<bind name="includeURL" type="string" />
+			<bind name="existingVIP" type="string" export-name="existingVIP" />
+			<bind name="enableRhi" type="boolean" />
+			<bind name="allowInvalidClientCert" type="boolean" />
+			<bind name="poolOrPoolgroup" type="boolean" />
+			<bind name="analyticsProfile" type="string" />
+			<bind name="clientDuration" type="number" />
+			<bind name="useVipAsSnat" type="boolean" />
+			<bind name="removeListeningPortOnVsDown" type="boolean" />
+			<bind name="maxCpsPerClient" type="number" />
+			<bind name="http_policy_set_name" type="string" />
+			<bind name="network_security_policy_name" type="string" />
 			<bind name="workflowRuntime" type="Avi:WorkflowRuntime"
-				export-name="workflowRuntime"></bind>
+				export-name="workflowRuntime" />
 		</in-binding>
 		<out-binding>
 			<bind name="actionResult" type="Avi:WorkflowRuntime"
-				export-name="workflowRuntime"></bind>
+				export-name="workflowRuntime" />
 		</out-binding>
-		<position y="100.86363636363636" x="505.0"></position>
+		<position y="100.0" x="460.0" />
 	</workflow-item>
 	<workflow-item name="item8" out-name="item2" type="task"
 		script-module="com.vmware.avi/finishVroWorkflow">
 		<display-name><![CDATA[finishVroWorkflow]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-actionResult = System.getModule("com.vmware.avi").finishVroWorkflow(workflowRuntime) ;]]></script>
+	actionResult = System.getModule("com.vmware.avi").finishVroWorkflow(workflowRuntime);
+	]]></script>
 		<in-binding>
 			<bind name="workflowRuntime" type="Avi:WorkflowRuntime"
 				export-name="workflowRuntime">
@@ -468,9 +476,10 @@ actionResult = System.getModule("com.vmware.avi").finishVroWorkflow(workflowRunt
 			</bind>
 		</in-binding>
 		<out-binding>
-			<bind name="actionResult" type="Any" export-name="createdObj"></bind>
+			<bind name="actionResult" type="Any" export-name="createdObj" />
 		</out-binding>
-		<position y="100.86363636363636" x="705.0"></position>
+		<description><![CDATA[Add a note to the workflow schema.]]></description>
+		<position y="100.0" x="640.0" />
 	</workflow-item>
 	<presentation>
 		<p-step>
@@ -505,13 +514,58 @@ actionResult = System.getModule("com.vmware.avi").finishVroWorkflow(workflowRunt
 			</p-param>
 			<p-param name="network_management_name">
 				<desc><![CDATA[network_management_name]]></desc>
+				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[GetAction("com.vmware.avi","getCloudType").call( #controller , #server_cloud , "isVcenterCloud")]]></p-qual>
 			</p-param>
 			<p-param name="domain">
 				<desc><![CDATA[domain]]></desc>
+				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[GetAction("com.vmware.avi","getCloudType").call( #controller , #server_cloud , "isVcenterCloud")]]></p-qual>
 			</p-param>
 			<p-param name="app_domain_name">
 				<desc><![CDATA[app_domain_name]]></desc>
+				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[GetAction("com.vmware.avi","getCloudType").call( #controller , #server_cloud , "isVcenterCloud")]]></p-qual>
 				<p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.vmware.avi","getDNSProvider").call( #controller , #server_cloud )]]></p-qual>
+			</p-param>
+		</p-step>
+		<p-step>
+			<title><![CDATA[VIP]]></title>
+			<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[GetAction("com.vmware.avi","getCloudType").call( #controller , #server_cloud , "isAwsCloud")]]></p-qual>
+			<p-param name="availabilityZone">
+				<desc><![CDATA[availabilityZone]]></desc>
+				<p-qual kind="ognl" name="genericEnumeration"
+					type="Array/string"><![CDATA[GetAction("com.vmware.avi","fetchNetworkSubnet").call( #controller , #server_cloud, "cloud" , "cloudZones" )]]></p-qual>
+				<p-qual kind="static" name="mandatory" type="boolean"><![CDATA[true]]></p-qual>
+			</p-param>
+			<p-param name="autoAllocateIp">
+				<desc><![CDATA[autoAllocateIp]]></desc>
+				<p-qual kind="static" name="mandatory" type="boolean"><![CDATA[true]]></p-qual>
+			</p-param>
+			<p-param name="subnetNetworkId">
+				<desc><![CDATA[subnetNetworkId]]></desc>
+				<p-qual kind="ognl" name="genericEnumeration"
+					type="Array/string"><![CDATA[GetAction("com.vmware.avi","fetchNetworkSubnet").call( #controller , #server_cloud , "networksubnetlist", "" )]]></p-qual>
+				<p-qual kind="static" name="mandatory" type="boolean"><![CDATA[true]]></p-qual>
+			</p-param>
+			<p-param name="subnetAddrIP">
+				<desc><![CDATA[subnetAddrIP]]></desc>
+				<p-qual kind="ognl" name="genericEnumeration"
+					type="Array/string"><![CDATA[GetAction("com.vmware.avi","fetchNetworkSubnet").call(#controller , #server_cloud , "networksubnetlist", #subnetNetworkId )]]></p-qual>
+				<p-qual kind="static" name="mandatory" type="boolean"><![CDATA[true]]></p-qual>
+			</p-param>
+			<p-param name="staticIPAddr">
+				<desc><![CDATA[staticIPAddr]]></desc>
+				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#autoAllocateIp==false?true:false]]></p-qual>
+				<p-qual kind="static" name="mandatory" type="boolean"><![CDATA[true]]></p-qual>
+			</p-param>
+			<p-param name="autoAllocateOrStatic">
+				<desc><![CDATA[autoAllocateOrStatic]]></desc>
+				<p-qual kind="static" name="genericEnumeration"
+					type="Array/string"><![CDATA[#{#string#none#;#string#autoAllocateFIp#;#string#static#}#]]></p-qual>
+				<p-qual kind="static" name="mandatory" type="boolean"><![CDATA[true]]></p-qual>
+			</p-param>
+			<p-param name="floatingIpAddr">
+				<desc><![CDATA[floatingIpAddr]]></desc>
+				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#autoAllocateOrStatic=="static"]]></p-qual>
+				<p-qual kind="static" name="mandatory" type="boolean"><![CDATA[true]]></p-qual>
 			</p-param>
 		</p-step>
 		<p-step>

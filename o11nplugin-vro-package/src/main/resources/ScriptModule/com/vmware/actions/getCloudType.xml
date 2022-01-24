@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module name="getCloudType"
 	result-type="boolean" api-version="6.0.0"
-	id="87c11f52-a470-477b-a3f5-c362497c5dd5" version="0.0.3"
+	id="87c11f52-a470-477b-a3f5-c362497c6dd6" version="0.0.4"
 	allowed-operations="vfe">
 	<param n="controller" t="string"><![CDATA[
 	]]></param>
@@ -20,17 +20,20 @@ for each(vroClient in vroClientArray){
 	}	
 }
 try{	
-	if((aviVroClient!=null) && ((cloud_name != null)&&(cloud_name != '')))
-	{
-     var cloudObject = new AviCloud() ;
-	 cloudObject =aviVroClient.getObjectByName('cloud',cloud_name);
-	 cloudType=cloudObject.getVtype();
-	if(cloudType=='CLOUD_NSXT'){
-		return true;
-	}else{
-		return false;
+	if((aviVroClient!=null) && ((cloud_name != null)&&(cloud_name != ''))){
+		var cloudObject = new AviCloud() ;
+		cloudObject =aviVroClient.getObjectByName('cloud',cloud_name);
+		cloudType=cloudObject.getVtype();
+		if (field == "isNsxtCloud" && cloudType=="CLOUD_NSXT"){
+			return true;
+		}else if (field == "isAwsCloud" && cloudType=="CLOUD_AWS"){
+			return true
+		}else if (field == "isVcenterCloud" && cloudType=="CLOUD_VCENTER"){
+			return true
+		}else{
+			return false;
+		}
 	}
-}
 }catch(e){
 	System.log("Error occured while getting cloud detail: "+e)
 }]]></script>

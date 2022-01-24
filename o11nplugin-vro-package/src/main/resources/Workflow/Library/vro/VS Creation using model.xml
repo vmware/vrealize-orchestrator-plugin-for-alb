@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item5" object-name="workflow:name=generic"
-	id="151a8d5b-fb5b-44f9-9f6a-388bab1c147e" version="3.0.1"
+	id="151a8d5b-fb5b-44f9-9f6a-388bab1c148e" version="3.0.2"
 	api-version="6.0.0" allowed-operations="vef" editor-version="1.6"
 	restartMode="1" resumeFromFailedMode="0">
 	<display-name><![CDATA[Create VS]]></display-name>
@@ -853,7 +853,7 @@ actionResult = System.getModule("com.vmware.avi").finishVroWorkflow(workflowRunt
 			</p-param>
 			<p-param name="tier1_lr">
 				<desc><![CDATA[tier1_lr]]></desc>
-				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[GetAction("com.vmware.avi","getCloudType").call( #controller , #server_cloud )]]></p-qual>
+				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[GetAction("com.vmware.avi","getCloudType").call( #controller , #server_cloud, "isNsxtCloud" )]]></p-qual>
 			</p-param>
 		</p-step>
 		<p-step>

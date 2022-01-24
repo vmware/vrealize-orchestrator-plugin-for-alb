@@ -3,7 +3,7 @@
 <properties>
 <comment>Exported from [server]</comment>
 <entry key="categoryPath">com.vmware.avi</entry>
-<entry key="name">createIPAMVsVIPObj</entry>
+<entry key="name">fetchNetworkSubnet</entry>
 <entry key="type">ScriptModule</entry>
-<entry key="id">3dd8be10-050b-41d2-a523-1b77d659d9dd</entry>
+<entry key="id">2824f3e4-44e3-457e-9382-34d3376a7b82</entry>
 </properties>
