@@ -959,10 +959,12 @@ public class AviVroClient {
 			throw new Exception("\n" + exception.getMessage() + ":: Inside Rollback ::" + rollBackMsg + "\n");
 		} catch (AviApiException e) {
 			logger.error(e.getMessage());
+			e.initCause(exception);
 			throw new Exception(e.getMessage() + "::" + rollBackMsg);
 
 		} catch (Exception e) {
 			logger.error(e.getMessage());
+			e.initCause(exception);
 			throw new Exception(e.getMessage() + "::" + rollBackMsg);
 		}
 
