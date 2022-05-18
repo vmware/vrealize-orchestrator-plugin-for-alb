@@ -1,0 +1,77 @@
+name: Publish VRO Plugin
+# Controls when the action will run. 
+on:
+  release:
+    types: [created]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-18.04
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Maven Central Repository
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
+
+      - name: Get the version
+        id: get_vro_version
+        run: |
+          grep -r "release_version=" version.txt | awk -F= '{print $2}'
+          RELEASE_BRANCH=${{ steps.extract_branch.branch }}
+          if [[ "$RELEASE_BRANCH" == "eng" ]]; then
+            echo "VRO version ENG"
+            VRO_VERSION="$(grep -r "eng_version=" version.txt | awk -F= '{print $2}')".RELEASE
+          else
+            echo "VRO version Release"
+            VRO_VERSION="$(grep -r "release_version=" version.txt | awk -F= '{print $2}')".RELEASE
+          fi
+          echo "VRO version ${VRO_VERSION}"
+          echo "::set-output name=VRO_RELEASE_VERSION::${VRO_VERSION}"
+
+      - name: Publish VRO Plugin
+        run: |
+          echo "Publish VRO Version ${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}"
+          mvn versions:set -DnewVersion=${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}
+          mvn clean install -Dmaven.wagon.http.ssl.insecure:true -Dmaven.wagon.http.ssl.allowall:true -Dbuild.number=50 -DskipTests
+          cd o11nplugin-vro/target/
+          ls o11nplugin-vro/target/
+          cp o11nplugin-vro/target/o11nplugin-vro-${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}.dar .
+          cp o11nplugin-vro-core/target/o11nplugin-vro-core-${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}-javadoc.jar .
+
+      - name: update release
+        id: update_release
+        uses: tubone24/update_release@v1.0
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+
+      - name: Upload VRO Plugin Javadoc package
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.github_token }}
+        with:
+          upload_url: ${{ steps.update_release.outputs.upload_url }}
+          asset_path: o11nplugin-vro-core-${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}-javadoc.jar
+          asset_name: o11nplugin-vro-core-${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}-javadoc
+          asset_content_type: application/java-archive
+
+      - name: Upload VRO Plugin package
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.github_token }}
+        with:
+          upload_url: ${{ steps.update_release.outputs.upload_url }}
+          asset_path: o11nplugin-vro-${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}.dar
+          asset_name: o11nplugin-vro-${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}
+          asset_content_type: application/java-archive
+
