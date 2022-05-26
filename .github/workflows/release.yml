@@ -24,6 +24,31 @@ jobs:
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
         id: extract_branch
 
+      - name: Install VRO SDK API jar befour VRO plugin build
+        run: |
+          echo "Installing VRO sdk API jar..."
+          cd lib
+          mvn install:install-file -Dfile=o11n-sdkapi-7.6.0.jar
+          echo "VRO sdkapi jar installed"
+
+      - name: Install VRO util jar befour VRO plugin build
+        run: |
+          echo "Installing VRO util jar..."
+          cd lib
+          mvn install:install-file -Dfile=o11n-util-7.6.0.jar
+          echo "VRO util jar installed"
+
+      # - name: Create directory for VRO default libraries
+      #   run: |
+      #     echo "Create folder for VRO default libraries."
+      #     cd .m2/repository
+      #     mkdir -p com/vmware/o11n
+
+      # - name: Copy default configuration for VRO plugin.
+      #   run: |
+      #     echo "Copying default configuration for VRO plugin."
+      #     cp -r o11n-sdkapi o11n-util .m2/repository/com/vmware/o11n/
+
       - name: Get the version
         id: get_vro_version
         run: |
