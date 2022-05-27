@@ -28,21 +28,16 @@ jobs:
         run: |
           echo "Check maven version"
           mvn -version
-          ehco "Check Home path"
+          echo "Check Home path"
           pwd
-
-      # - name: Install VRO SDK API jar befour VRO plugin build
-      #   run: |
-      #     echo "Installing VRO sdk API jar..."
-      #     cd lib
-      #     sh ./install_jar.sh
-      #     echo "VRO sdkapi jar installed"
+          echo "Check Maven local repo location"
+          mvn help:effective-settings
 
       - name: Copy all external jars befour build VRO plugin.
         run: |
           echo "Installing VRO util jar..."
           cd lib
-          unzip external_jars.zip -d $HOME/.m2/repository/com/vmware
+          unzip external_jars.zip -d /home/runner/.m2/repository/com/vmware
           echo "VRO util jar installed"
 
       # - name: Create directory for VRO default libraries
