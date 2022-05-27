@@ -28,19 +28,21 @@ jobs:
         run: |
           echo "Check maven version"
           mvn -version
+          ehco "Check Home path"
+          pwd
 
-      - name: Install VRO SDK API jar befour VRO plugin build
-        run: |
-          echo "Installing VRO sdk API jar..."
-          cd lib
-          mvn install:install-file -Dfile=o11n-sdkapi-7.6.0.jar -DgroupId=com.vmware.o11n -DartifactId=o11n-sdkapi -Dversion=7.6.0 -Dpackaging=jar
-          echo "VRO sdkapi jar installed"
+      # - name: Install VRO SDK API jar befour VRO plugin build
+      #   run: |
+      #     echo "Installing VRO sdk API jar..."
+      #     cd lib
+      #     sh ./install_jar.sh
+      #     echo "VRO sdkapi jar installed"
 
-      - name: Install VRO util jar befour VRO plugin build
+      - name: Copy all external jars befour build VRO plugin.
         run: |
           echo "Installing VRO util jar..."
           cd lib
-          mvn install:install-file -Dfile=o11n-util-7.6.0.jar -DgroupId=com.vmware.o11n -DartifactId=o11n-util -Dversion=7.6.0 -Dpackaging=jar
+          unzip external_jars.zip -d $HOME/.m2/repository/com/vmware
           echo "VRO util jar installed"
 
       # - name: Create directory for VRO default libraries
