@@ -28,28 +28,19 @@ jobs:
         run: |
           echo "Check maven version"
           mvn -version
-          echo "Check Home path"
-          pwd
-          echo "Check Maven local repo location"
-          mvn help:effective-settings
 
-      - name: Copy all external jars befour build VRO plugin.
+      - name: Copy all external jars into maven local repository
         run: |
-          echo "Installing VRO util jar..."
+          echo "Coping all external Java jars into maven local repository"
           cd lib
-          unzip external_jars.zip -d /home/runner/.m2/repository/com/vmware
-          echo "VRO util jar installed"
+          unzip external_jars.zip -d $HOME/.m2/repository/com/vmware
+          echo "VRO external jars copied"
 
-      # - name: Create directory for VRO default libraries
-      #   run: |
-      #     echo "Create folder for VRO default libraries."
-      #     cd .m2/repository
-      #     mkdir -p com/vmware/o11n
-
-      # - name: Copy default configuration for VRO plugin.
-      #   run: |
-      #     echo "Copying default configuration for VRO plugin."
-      #     cp -r o11n-sdkapi o11n-util .m2/repository/com/vmware/o11n/
+      - name: Copy all external jars into maven local repository
+        run: |
+          echo "Check Maven external Jars installed."
+          cd $HOME/.m2/repository/com/vmware/
+          ls o11n/
 
       - name: Get the version
         id: get_vro_version
