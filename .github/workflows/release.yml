@@ -29,14 +29,16 @@ jobs:
           echo "Check maven version"
           mvn -version
 
-      - name: Copy all external jars into maven local repository
+      - name: Check and Create maven local repository directory.
         run: |
+          echo "Creating maven local repository directory"
+          mkdir -p $HOME/.m2/repository/com
           echo "Coping all external Java jars into maven local repository"
           cd lib
           unzip external_jars.zip -d $HOME/.m2/repository/com/vmware
           echo "VRO external jars copied"
 
-      - name: Copy all external jars into maven local repository
+      - name: Check Maven local artifacts are added.
         run: |
           echo "Check Maven external Jars installed."
           cd $HOME/.m2/repository/com/vmware/
@@ -62,7 +64,6 @@ jobs:
           echo "Build VRO Version ${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}"
           mvn versions:set -DnewVersion=${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}
           mvn clean install -Dmaven.wagon.http.ssl.insecure:true -Dmaven.wagon.http.ssl.allowall:true -Dbuild.number=50 -DskipTests
-          cd o11nplugin-vro/target/
           ls o11nplugin-vro/target/
           cp o11nplugin-vro/target/o11nplugin-vro-${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}.dar .
           cp o11nplugin-vro-core/target/o11nplugin-vro-core-${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}-javadoc.jar .
