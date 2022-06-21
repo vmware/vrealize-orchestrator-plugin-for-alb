@@ -29,11 +29,6 @@ jobs:
           echo "Check maven version"
           mvn -version
 
-      - name: Check Maven local artifacts.
-        run: |
-          echo "Check Maven external Jars installed."
-          ls $HOME/.m2/repository/
-
       - name: Create Symlinks for external jars directory
         run: |
           echo "Create symlinks for external jars to build VRO plugin."
