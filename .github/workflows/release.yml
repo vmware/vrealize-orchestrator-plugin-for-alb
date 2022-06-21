@@ -29,20 +29,28 @@ jobs:
           echo "Check maven version"
           mvn -version
 
-      - name: Check and Create maven local repository directory.
-        run: |
-          echo "Creating maven local repository directory"
-          mkdir -p $HOME/.m2/repository/com
-          echo "Coping all external Java jars into maven local repository"
-          cd lib
-          unzip external_jars.zip -d $HOME/.m2/repository/com/vmware
-          echo "VRO external jars copied"
-
-      - name: Check Maven local artifacts are added.
+      - name: Check Maven local artifacts.
         run: |
           echo "Check Maven external Jars installed."
-          cd $HOME/.m2/repository/com/vmware/
-          ls o11n/
+          ls $HOME/.m2/repository/
+
+      - name: Create Symlinks for external jars directory
+        run: |
+          echo "Create symlinks for external jars to build VRO plugin."
+          ln -s $HOME/lib/ $HOME/o11nplugin-vro/
+          echo "Created symlinks to build the core module."
+          ln -s $HOME/lib/ $HOME/o11nplugin-vro-core/
+          echo "Created symlinks to build the package module."
+          ln -s $HOME/lib/ $HOME/o11nplugin-vro-package/
+
+      - name: Verify whether the symlink has been created.
+        run: |
+          echo "Verify whether the symlink has been created."
+          ls -l o11nplugin-vro/
+          echo "Verify whether the symlink has been created for core module."
+          ls -l o11nplugin-vro-core/
+          echo "Verify whether the symlink has been created for package module."
+          ls -l o11nplugin-vro-package/
 
       - name: Get the version
         id: get_vro_version

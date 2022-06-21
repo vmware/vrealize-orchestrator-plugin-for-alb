@@ -30,6 +30,8 @@
 			<groupId>com.vmware.o11n</groupId>
 			<artifactId>o11n-spring-tools</artifactId>
 			<version>${vco.version}</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/lib/com/vmware/o11n/o11n-spring-tools/7.6.0/o11n-spring-tools-7.6.0.jar</systemPath>
 		</dependency>
 	</dependencies>
 
