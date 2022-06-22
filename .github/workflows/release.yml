@@ -32,20 +32,20 @@ jobs:
       - name: Create Symlinks for external jars directory
         run: |
           echo "Create symlinks for external jars to build VRO plugin."
-          ln -s $HOME/lib/ $HOME/o11nplugin-vro/
+          ln -s $GITHUB_WORKSPACE/lib/ $GITHUB_WORKSPACE/o11nplugin-vro/
           echo "Created symlinks to build the core module."
-          ln -s $HOME/lib/ $HOME/o11nplugin-vro-core/
+          ln -s $GITHUB_WORKSPACE/lib/ $GITHUB_WORKSPACE/o11nplugin-vro-core/
           echo "Created symlinks to build the package module."
-          ln -s $HOME/lib/ $HOME/o11nplugin-vro-package/
+          ln -s $GITHUB_WORKSPACE/lib/ $GITHUB_WORKSPACE/o11nplugin-vro-package/
 
       - name: Verify whether the symlink has been created.
         run: |
           echo "Verify whether the symlink has been created."
-          ls -l o11nplugin-vro/
+          ls -l $GITHUB_WORKSPACE/o11nplugin-vro/
           echo "Verify whether the symlink has been created for core module."
-          ls -l o11nplugin-vro-core/
+          ls -l $GITHUB_WORKSPACE/o11nplugin-vro-core/
           echo "Verify whether the symlink has been created for package module."
-          ls -l o11nplugin-vro-package/
+          ls -l $GITHUB_WORKSPACE/o11nplugin-vro-package/
 
       - name: Get the version
         id: get_vro_version
