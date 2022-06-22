@@ -97,5 +97,5 @@ jobs:
           upload_url: ${{ steps.update_release.outputs.upload_url }}
           asset_path: o11nplugin-vro-${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}.dar
           asset_name: o11nplugin-vro-${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}
-          asset_content_type: application/java-archive
+          asset_content_type: application/*
 
