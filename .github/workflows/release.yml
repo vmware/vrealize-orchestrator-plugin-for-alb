@@ -66,7 +66,7 @@ jobs:
         run: |
           echo "Build VRO Version ${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}"
           mvn versions:set -DnewVersion=${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}
-          mvn clean install -Dmaven.wagon.http.ssl.insecure:true -Dmaven.wagon.http.ssl.allowall:true -Dbuild.number=50 -DskipTests
+          mvn clean install -Dmaven.wagon.http.ssl.insecure:true -Dmaven.wagon.http.ssl.allowall:true -Dbuild.number=50 -DskipTests -Dmaven.javadoc.skip=true
           ls o11nplugin-vro/target/
           cp o11nplugin-vro/target/o11nplugin-vro-${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}.dar .
           cp o11nplugin-vro-core/target/o11nplugin-vro-core-${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}-javadoc.jar .
