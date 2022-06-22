@@ -70,34 +70,32 @@ jobs:
           ls o11nplugin-vro/target/
           cp o11nplugin-vro/target/o11nplugin-vro-${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}.dar .
           cp o11nplugin-vro-core/target/o11nplugin-vro-core-${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}-javadoc.jar .
+          echo "Verify all generated files are copied."
+          ls
 
-      - name: Check all files are created
-        shell: bash
-        run: ls
+      - name: update release
+        id: update_release
+        uses: tubone24/update_release@v1.0
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
 
-      # - name: update release
-      #   id: update_release
-      #   uses: tubone24/update_release@v1.0
-      #   env:
-      #     GITHUB_TOKEN: ${{ github.token }}
+      - name: Upload VRO Plugin Javadoc package
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.github_token }}
+        with:
+          upload_url: ${{ steps.update_release.outputs.upload_url }}
+          asset_path: o11nplugin-vro-core-${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}-javadoc.jar
+          asset_name: o11nplugin-vro-core-${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}-javadoc
+          asset_content_type: application/java-archive
 
-      # - name: Upload VRO Plugin Javadoc package
-      #   uses: actions/upload-release-asset@v1
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.github_token }}
-      #   with:
-      #     upload_url: ${{ steps.update_release.outputs.upload_url }}
-      #     asset_path: o11nplugin-vro-core-${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}-javadoc.jar
-      #     asset_name: o11nplugin-vro-core-${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}-javadoc
-      #     asset_content_type: application/java-archive
-
-      # - name: Upload VRO Plugin package
-      #   uses: actions/upload-release-asset@v1
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.github_token }}
-      #   with:
-      #     upload_url: ${{ steps.update_release.outputs.upload_url }}
-      #     asset_path: o11nplugin-vro-${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}.dar
-      #     asset_name: o11nplugin-vro-${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}
-      #     asset_content_type: application/java-archive
+      - name: Upload VRO Plugin package
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.github_token }}
+        with:
+          upload_url: ${{ steps.update_release.outputs.upload_url }}
+          asset_path: o11nplugin-vro-${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}.dar
+          asset_name: o11nplugin-vro-${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}
+          asset_content_type: application/java-archive
 
