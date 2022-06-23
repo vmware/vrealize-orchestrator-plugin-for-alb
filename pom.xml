@@ -18,7 +18,7 @@
 		<repository>
 			<id>added-by-archetype</id>
 			<name>This repo was added by the archetype. There are better way to handle it</name>
-			<url>https://10.102.67.234:8281/vco-repo</url>
+			<url>file://${project.basedir}/lib</url>
 		</repository>
 	</repositories>
 
@@ -26,7 +26,7 @@
 		<pluginRepository>
 			<id>added-by-archetype</id>
 			<name>This repo was added by the archetype. There are better way to handle it</name>
-			<url>https://10.102.67.234:8281/vco-repo</url>
+			<url>file://${project.basedir}/lib</url>
 		</pluginRepository>
 	</pluginRepositories>
 
@@ -49,21 +49,33 @@
 				<groupId>com.vmware.o11n</groupId>
 				<artifactId>o11n-provided-deps</artifactId>
 				<version>${vco.version}</version>
-				<scope>provided</scope>
+				<scope>system</scope>
 				<type>pom</type>
+				<systemPath>${project.basedir}/lib/com/vmware/o11n/o11n-provided-deps/7.6.0/o11n-provided-deps-7.6.0.pom</systemPath>
 			</dependency>
 
 			<dependency>
 				<groupId>com.vmware.o11n</groupId>
 				<artifactId>o11n-spring-tools</artifactId>
 				<version>${vco.version}</version>
+				<scope>system</scope>
+				<systemPath>${project.basedir}/lib/com/vmware/o11n/o11n-spring-tools/7.6.0/o11n-spring-tools-7.6.0.jar</systemPath>
 			</dependency>
 
 			<dependency>
 				<groupId>com.vmware.o11n</groupId>
 				<artifactId>o11n-sdkapi</artifactId>
 				<version>${vco.version}</version>
-				<scope>provided</scope>
+				<scope>system</scope>
+				<systemPath>${project.basedir}/lib/com/vmware/o11n/o11n-sdkapi/7.6.0/o11n-sdkapi-7.6.0.jar</systemPath>
+			</dependency>
+
+			<dependency>
+				<groupId>com.vmware.o11n</groupId>
+				<artifactId>o11n-plugin-tools</artifactId>
+				<version>${vco.version}</version>
+				<scope>system</scope>
+				<systemPath>${project.basedir}/lib/com/vmware/o11n/o11n-plugin-tools/7.6.0/o11n-plugin-tools-7.6.0.jar</systemPath>
 			</dependency>
 
 		</dependencies>

@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Jun 23 05:54:12 UTC 2022
+https\://repo.maven.apache.org/maven2/.lastUpdated=1655963652901
+https\://10.102.67.234\:8281/vco-repo/.error=Could not transfer artifact org.apache.maven.plugins\:maven-antrun-plugin\:jar\:1.3 from/to added-by-archetype (https\://10.102.67.234\:8281/vco-repo)\: PKIX path building failed\: sun.security.provider.certpath.SunCertPathBuilderException\: unable to find valid certification path to requested target
+@default-added-by-archetype-https\://10.102.67.234\:8281/vco-repo/.lastUpdated=1655963651570

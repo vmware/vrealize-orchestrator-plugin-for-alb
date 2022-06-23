@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.vmware.o11n.tool</groupId>
+    <artifactId>tools</artifactId>
+    <packaging>pom</packaging>
+    <parent>
+        <groupId>com.vmware.o11n</groupId>
+        <artifactId>platform</artifactId>
+        <version>7.6.0</version>
+    </parent>
+    <properties/>
+    <modules>
+        <module>o11ntool-api-doc-generation</module>
+        <module>o11n-package-tools</module>
+        <module>o11n-diff-tools</module>
+        <module>maven-o11n-dar-plugin</module>
+        <module>maven-o11n-plugin</module>
+    </modules>
+</project>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+   <artifactId>sdk</artifactId>
+   <packaging>pom</packaging>
+   <parent>
+      <groupId>com.vmware.o11n</groupId>
+      <artifactId>platform</artifactId>
+      <version>7.6.0</version>
+   </parent>
+   <modules>
+      <module>o11n-repo</module>
+      <module>o11n-provided-deps</module>
+      <module>modeldriven</module>
+      <module>o11n-plugin-archetype-simple</module>
+      <module>o11n-plugin-archetype-inventory</module>
+      <module>o11n-client-archetype-rest</module>
+      <module>o11n-plugin-archetype-modeldriven</module>
+      <module>o11n-package-archetype</module>
+      <module>o11n-vso-generator</module>
+      <module>o11n-plugin-tools</module>
+      <module>o11n-archetype-inventory-annotation</module>
+      <module>o11n-spring-tools</module>
+      <module>o11n-archetype-spring</module>
+   </modules>
+   <dependencies>
+      <dependency>
+         <groupId>com.vmware.o11n</groupId>
+         <artifactId>o11n-sdkapi</artifactId>
+         <version>${project.version}</version>
+      </dependency>
+   </dependencies>
+   <profiles>
+      <profile>
+         <!-- Activated by default from the gobuild scripts -->
+         <id>gobuild</id>
+         <build>
+            <plugins>
+               <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-javadoc-plugin</artifactId>
+                  <configuration>
+                     <includeDependencySources>true</includeDependencySources>
+                     <dependencySourceIncludes>
+                        <dependencySourceInclude>com.vmware.o11n:o11n-sdkapi</dependencySourceInclude>
+                        <dependencySourceInclude>com.vmware.o11n:o11n-plugin-tools</dependencySourceInclude>
+                        <dependencySourceInclude>com.vmware.o11n:o11n-spring-tools</dependencySourceInclude>
+                     </dependencySourceIncludes>
+                     <doctitle>vRealize Orchestrator ${project.version} plugin SDK.</doctitle>
+                     <bottom><![CDATA[ Copyright &#169 1998 - {currentYear} VMware, Inc. All rights reserved. This product is protected by copyright and intellectual property laws in the United States and other countries as well as by international treaties. VMware products are covered by one or more patents listed at <a href="http://www.vmware.com/go/patents">http://www.vmware.com/go/patents</a>.<br/>VMware is a registered trademark or trademark of VMware, Inc. in the United States and/or other jurisdictions. All other marks and names mentioned herein may be trademarks of their respective companies.<br/><br/>VMware products may contain individual open source software components, each of which has its own copyright and applicable license conditions. Please visit <a href="http://www.vmware.com/info?id=984">http://www.vmware.com/info?id=984</a> for more information.]]>
+                     </bottom>
+                  </configuration>
+                  <executions>
+                     <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                           <goal>jar</goal>
+                        </goals>
+                     </execution>
+                     <execution>
+                        <id>aggregate-jar</id>
+                        <goals>
+                           <goal>aggregate-jar</goal>
+                        </goals>
+                     </execution>
+                  </executions>
+               </plugin>
+            </plugins>
+         </build>
+      </profile>
+   </profiles>
+</project>
