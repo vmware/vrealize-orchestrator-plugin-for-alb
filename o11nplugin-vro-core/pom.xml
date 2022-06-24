@@ -3,26 +3,34 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-	<modelVersion>4.0.0</modelVersion>
-	<artifactId>o11nplugin-vro-core</artifactId>
-	<packaging>jar</packaging>
-
 	<parent>
 		<artifactId>vro</artifactId>
 		<groupId>com.vmware.avi</groupId>
 		<version>21.1.3.RELEASE</version>
 	</parent>
 
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>o11nplugin-vro-core</artifactId>
+	<packaging>jar</packaging>
+
 	<dependencies>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.5.1</version>
+		</dependency>
+
 		<dependency>
 		  <groupId>com.vmware.avi.sdk</groupId>
 		  <artifactId>avisdk</artifactId>
 		  <version>21.1.3.RELEASE</version>
 		</dependency>
+
 		<dependency>
 			<groupId>com.vmware.o11n</groupId>
 			<artifactId>o11n-provided-deps</artifactId>
-			<scope>provided</scope>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/lib/com/vmware/o11n/o11n-provided-deps/7.6.0/o11n-provided-deps-7.6.0.pom</systemPath>
 			<type>pom</type>
 			<exclusions>
 				<exclusion>
@@ -38,12 +46,23 @@
 
 		<dependency>
 			<groupId>com.vmware.o11n</groupId>
+			<artifactId>o11n-plugin-tools</artifactId>
+			<version>${vco.version}</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/lib/com/vmware/o11n/o11n-plugin-tools/7.6.0/o11n-plugin-tools-7.6.0.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.vmware.o11n</groupId>
 			<artifactId>o11n-sdkapi</artifactId>
-			<scope>provided</scope>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/lib/com/vmware/o11n/o11n-sdkapi/7.6.0/o11n-sdkapi-7.6.0.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>com.vmware.o11n</groupId>
 			<artifactId>o11n-spring-tools</artifactId>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/lib/com/vmware/o11n/o11n-spring-tools/7.6.0/o11n-spring-tools-7.6.0.jar</systemPath>
 			<exclusions>
 				<exclusion>
 					<groupId>org.springframework</groupId>
@@ -135,6 +154,9 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
+				<configuration>
+					<doclint>none</doclint>
+				</configuration>
 				<executions>
 					<execution>
 						<id>attach-javadocs</id>

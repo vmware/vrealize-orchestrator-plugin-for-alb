@@ -1,0 +1,6 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Thu May 26 06:35:53 UTC 2022
+https\://repo.maven.apache.org/maven2/.lastUpdated=1653540432834
+@default-added-by-archetype-https\://10.102.67.234\:8281/vco-repo/.lastUpdated=1653546953759
+https\://10.102.67.234\:8281/vco-repo/.error=Could not transfer artifact com.vmware.o11n\:o11n-sdkapi\:pom\:7.6.0 from/to added-by-archetype (https\://10.102.67.234\:8281/vco-repo)\: sun.security.validator.ValidatorException\: PKIX path building failed\: sun.security.provider.certpath.SunCertPathBuilderException\: unable to find valid certification path to requested target
+https\://repo.maven.apache.org/maven2/.error=

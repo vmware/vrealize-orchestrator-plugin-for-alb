@@ -9,7 +9,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -23,6 +23,29 @@ jobs:
         shell: bash
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
         id: extract_branch
+
+      - name: Check Maven version
+        run: |
+          echo "Check maven version"
+          mvn -version
+
+      - name: Create Symlinks for external jars directory
+        run: |
+          echo "Create symlinks for external jars to build VRO plugin."
+          ln -s $GITHUB_WORKSPACE/lib/ $GITHUB_WORKSPACE/o11nplugin-vro/
+          echo "Created symlinks to build the core module."
+          ln -s $GITHUB_WORKSPACE/lib/ $GITHUB_WORKSPACE/o11nplugin-vro-core/
+          echo "Created symlinks to build the package module."
+          ln -s $GITHUB_WORKSPACE/lib/ $GITHUB_WORKSPACE/o11nplugin-vro-package/
+
+      - name: Verify whether the symlink has been created.
+        run: |
+          echo "Verify whether the symlink has been created."
+          ls -l $GITHUB_WORKSPACE/o11nplugin-vro/
+          echo "Verify whether the symlink has been created for core module."
+          ls -l $GITHUB_WORKSPACE/o11nplugin-vro-core/
+          echo "Verify whether the symlink has been created for package module."
+          ls -l $GITHUB_WORKSPACE/o11nplugin-vro-package/
 
       - name: Get the version
         id: get_vro_version
@@ -39,15 +62,16 @@ jobs:
           echo "VRO version ${VRO_VERSION}"
           echo "::set-output name=VRO_RELEASE_VERSION::${VRO_VERSION}"
 
-      - name: Publish VRO Plugin
+      - name: Build VRO Plugin
         run: |
-          echo "Publish VRO Version ${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}"
+          echo "Build VRO Version ${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}"
           mvn versions:set -DnewVersion=${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}
           mvn clean install -Dmaven.wagon.http.ssl.insecure:true -Dmaven.wagon.http.ssl.allowall:true -Dbuild.number=50 -DskipTests
-          cd o11nplugin-vro/target/
           ls o11nplugin-vro/target/
           cp o11nplugin-vro/target/o11nplugin-vro-${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}.dar .
           cp o11nplugin-vro-core/target/o11nplugin-vro-core-${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}-javadoc.jar .
+          echo "Verify all generated files are copied."
+          ls
 
       - name: update release
         id: update_release
@@ -62,7 +86,7 @@ jobs:
         with:
           upload_url: ${{ steps.update_release.outputs.upload_url }}
           asset_path: o11nplugin-vro-core-${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}-javadoc.jar
-          asset_name: o11nplugin-vro-core-${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}-javadoc
+          asset_name: o11nplugin-vro-core-${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}-javadoc.jar
           asset_content_type: application/java-archive
 
       - name: Upload VRO Plugin package
@@ -72,6 +96,6 @@ jobs:
         with:
           upload_url: ${{ steps.update_release.outputs.upload_url }}
           asset_path: o11nplugin-vro-${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}.dar
-          asset_name: o11nplugin-vro-${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}
-          asset_content_type: application/java-archive
+          asset_name: o11nplugin-vro-${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}.dar
+          asset_content_type: application/octet-stream
 
