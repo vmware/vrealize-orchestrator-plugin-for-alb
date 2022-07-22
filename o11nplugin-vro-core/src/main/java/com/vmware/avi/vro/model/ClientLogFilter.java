@@ -58,7 +58,7 @@ public class ClientLogFilter extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property all_headers of obj type clientlogfilter field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return allHeaders
    */
@@ -69,7 +69,7 @@ public class ClientLogFilter extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property all_headers of obj type clientlogfilter field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param allHeaders set the allHeaders.
    */
@@ -80,7 +80,7 @@ public class ClientLogFilter extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property client_ip of obj type clientlogfilter field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientIp
    */
@@ -91,7 +91,7 @@ public class ClientLogFilter extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property client_ip of obj type clientlogfilter field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientIp set the clientIp.
    */
@@ -102,8 +102,9 @@ public class ClientLogFilter extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Special values are 0 - 'infinite'.
+   * Special values are 0 - infinite.
    * Unit is min.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @return duration
    */
@@ -114,8 +115,9 @@ public class ClientLogFilter extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Special values are 0 - 'infinite'.
+   * Special values are 0 - infinite.
    * Unit is min.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @param duration set the duration.
    */
@@ -126,7 +128,7 @@ public class ClientLogFilter extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property enabled of obj type clientlogfilter field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enabled
    */
@@ -137,7 +139,7 @@ public class ClientLogFilter extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property enabled of obj type clientlogfilter field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param enabled set the enabled.
    */
@@ -148,7 +150,7 @@ public class ClientLogFilter extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property index of obj type clientlogfilter field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return index
    */
@@ -159,7 +161,7 @@ public class ClientLogFilter extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property index of obj type clientlogfilter field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param index set the index.
    */
@@ -170,7 +172,7 @@ public class ClientLogFilter extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Name of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -181,7 +183,7 @@ public class ClientLogFilter extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Name of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -192,7 +194,7 @@ public class ClientLogFilter extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property uri of obj type clientlogfilter field type str  type ref.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uri
    */
@@ -203,7 +205,7 @@ public class ClientLogFilter extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property uri of obj type clientlogfilter field type str  type ref.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uri set the uri.
    */

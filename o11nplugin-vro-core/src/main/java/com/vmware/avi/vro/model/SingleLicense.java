@@ -135,6 +135,7 @@ public class SingleLicense extends AviRestResource {
    * Features supported by the add-on license.
    * Enum options - LICENSE_UNKNOWN_ADDON, LICENSE_LEGACY_ADDON.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return addons
    */
@@ -148,6 +149,7 @@ public class SingleLicense extends AviRestResource {
    * Features supported by the add-on license.
    * Enum options - LICENSE_UNKNOWN_ADDON, LICENSE_LEGACY_ADDON.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return addons
    */
@@ -161,6 +163,7 @@ public class SingleLicense extends AviRestResource {
    * Features supported by the add-on license.
    * Enum options - LICENSE_UNKNOWN_ADDON, LICENSE_LEGACY_ADDON.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return addons
    */
@@ -178,6 +181,7 @@ public class SingleLicense extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total number of service engine burst cores for core based licenses.
    * Field introduced in 17.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return burstCores
    */
@@ -190,6 +194,7 @@ public class SingleLicense extends AviRestResource {
    * This is the setter method to the attribute.
    * Total number of service engine burst cores for core based licenses.
    * Field introduced in 17.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param burstCores set the burstCores.
    */
@@ -202,6 +207,7 @@ public class SingleLicense extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total licensing capacity available for all the resoures available in a single license.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @return capacity
    */
@@ -214,6 +220,7 @@ public class SingleLicense extends AviRestResource {
    * This is the setter method to the attribute.
    * Total licensing capacity available for all the resoures available in a single license.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @param capacity set the capacity.
    */
@@ -226,6 +233,7 @@ public class SingleLicense extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of concurrent vmware horizon users.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return ccu
    */
@@ -238,6 +246,7 @@ public class SingleLicense extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of concurrent vmware horizon users.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param ccu set the ccu.
    */
@@ -249,6 +258,7 @@ public class SingleLicense extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Number of service engine cores in non-container clouds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cores
    */
@@ -260,6 +270,7 @@ public class SingleLicense extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Number of service engine cores in non-container clouds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cores set the cores.
    */
@@ -272,6 +283,7 @@ public class SingleLicense extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total number of cpu cores.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @return cpuCores
    */
@@ -284,6 +296,7 @@ public class SingleLicense extends AviRestResource {
    * This is the setter method to the attribute.
    * Total number of cpu cores.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @param cpuCores set the cpuCores.
    */
@@ -294,7 +307,7 @@ public class SingleLicense extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property created_on of obj type singlelicense field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return createdOn
    */
@@ -305,7 +318,7 @@ public class SingleLicense extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property created_on of obj type singlelicense field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param createdOn set the createdOn.
    */
@@ -316,7 +329,7 @@ public class SingleLicense extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property customer_name of obj type singlelicense field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return customerName
    */
@@ -327,7 +340,7 @@ public class SingleLicense extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property customer_name of obj type singlelicense field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param customerName set the customerName.
    */
@@ -338,7 +351,7 @@ public class SingleLicense extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property enforced_params of obj type singlelicense field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return enforcedParams
    */
@@ -349,7 +362,7 @@ public class SingleLicense extends AviRestResource {
 
   /**
    * This is the setter method. this will set the enforcedParams
-   * Placeholder for description of property enforced_params of obj type singlelicense field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return enforcedParams
    */
@@ -360,7 +373,7 @@ public class SingleLicense extends AviRestResource {
 
   /**
    * This is the setter method this will set the enforcedParams
-   * Placeholder for description of property enforced_params of obj type singlelicense field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return enforcedParams
    */
@@ -378,6 +391,7 @@ public class SingleLicense extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Flag to track license expiry.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return expired
    */
@@ -390,6 +404,7 @@ public class SingleLicense extends AviRestResource {
    * This is the setter method to the attribute.
    * Flag to track license expiry.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param expired set the expired.
    */
@@ -400,7 +415,7 @@ public class SingleLicense extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property last_update of obj type singlelicense field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lastUpdate
    */
@@ -411,7 +426,7 @@ public class SingleLicense extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property last_update of obj type singlelicense field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lastUpdate set the lastUpdate.
    */
@@ -422,7 +437,7 @@ public class SingleLicense extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property license_id of obj type singlelicense field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return licenseId
    */
@@ -433,7 +448,7 @@ public class SingleLicense extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property license_id of obj type singlelicense field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param licenseId set the licenseId.
    */
@@ -444,7 +459,7 @@ public class SingleLicense extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property license_name of obj type singlelicense field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return licenseName
    */
@@ -455,7 +470,7 @@ public class SingleLicense extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property license_name of obj type singlelicense field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param licenseName set the licenseName.
    */
@@ -466,7 +481,7 @@ public class SingleLicense extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property license_string of obj type singlelicense field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return licenseString
    */
@@ -477,7 +492,7 @@ public class SingleLicense extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property license_string of obj type singlelicense field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param licenseString set the licenseString.
    */
@@ -488,7 +503,7 @@ public class SingleLicense extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property license_tier of obj type singlelicense field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return licenseTier
    */
@@ -499,7 +514,7 @@ public class SingleLicense extends AviRestResource {
 
   /**
    * This is the setter method. this will set the licenseTier
-   * Placeholder for description of property license_tier of obj type singlelicense field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return licenseTier
    */
@@ -510,7 +525,7 @@ public class SingleLicense extends AviRestResource {
 
   /**
    * This is the setter method this will set the licenseTier
-   * Placeholder for description of property license_tier of obj type singlelicense field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return licenseTier
    */
@@ -526,7 +541,7 @@ public class SingleLicense extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property license_type of obj type singlelicense field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return licenseType
    */
@@ -537,7 +552,7 @@ public class SingleLicense extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property license_type of obj type singlelicense field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param licenseType set the licenseType.
    */
@@ -549,6 +564,7 @@ public class SingleLicense extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Number of service engines hosts in container clouds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxSes
    */
@@ -560,6 +576,7 @@ public class SingleLicense extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Number of service engines hosts in container clouds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxSes set the maxSes.
    */
@@ -572,6 +589,7 @@ public class SingleLicense extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Service engine bandwidth limits for bandwidth based licenses.
    * Field introduced in 17.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seBandwidthLimits
    */
@@ -584,6 +602,7 @@ public class SingleLicense extends AviRestResource {
    * This is the setter method. this will set the seBandwidthLimits
    * Service engine bandwidth limits for bandwidth based licenses.
    * Field introduced in 17.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seBandwidthLimits
    */
@@ -596,6 +615,7 @@ public class SingleLicense extends AviRestResource {
    * This is the setter method this will set the seBandwidthLimits
    * Service engine bandwidth limits for bandwidth based licenses.
    * Field introduced in 17.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seBandwidthLimits
    */
@@ -613,6 +633,7 @@ public class SingleLicense extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Serial key (hyphen separated 25 char wide alphanumeric key ex  aa123-23bas-383as-383ud-fhsfg).
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serialKey
    */
@@ -625,6 +646,7 @@ public class SingleLicense extends AviRestResource {
    * This is the setter method to the attribute.
    * Serial key (hyphen separated 25 char wide alphanumeric key ex  aa123-23bas-383as-383ud-fhsfg).
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serialKey set the serialKey.
    */
@@ -637,6 +659,7 @@ public class SingleLicense extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total number of service cores equivalent to all the resoures available in the single license.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @return serviceCores
    */
@@ -649,6 +672,7 @@ public class SingleLicense extends AviRestResource {
    * This is the setter method to the attribute.
    * Total number of service cores equivalent to all the resoures available in the single license.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @param serviceCores set the serviceCores.
    */
@@ -660,6 +684,7 @@ public class SingleLicense extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Number of physical cpu sockets across service engines in no access and linux server clouds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sockets
    */
@@ -671,6 +696,7 @@ public class SingleLicense extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Number of physical cpu sockets across service engines in no access and linux server clouds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sockets set the sockets.
    */
@@ -681,7 +707,7 @@ public class SingleLicense extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property start_on of obj type singlelicense field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return startOn
    */
@@ -692,7 +718,7 @@ public class SingleLicense extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property start_on of obj type singlelicense field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param startOn set the startOn.
    */
@@ -706,6 +732,7 @@ public class SingleLicense extends AviRestResource {
    * Specifies the licensed tier.
    * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, ENTERPRISE_WITH_CLOUD_SERVICES.
    * Field introduced in 17.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tierType
    */
@@ -719,6 +746,7 @@ public class SingleLicense extends AviRestResource {
    * Specifies the licensed tier.
    * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, ENTERPRISE_WITH_CLOUD_SERVICES.
    * Field introduced in 17.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tierType set the tierType.
    */
@@ -732,6 +760,7 @@ public class SingleLicense extends AviRestResource {
    * Units in which resources will be licensed.
    * Enum options - UNNOWN_UNIT, SERVICE_UNIT, LEGACY_ADDON_UNIT.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "SERVICE_UNIT".
    * @return unit
    */
@@ -745,6 +774,7 @@ public class SingleLicense extends AviRestResource {
    * Units in which resources will be licensed.
    * Enum options - UNNOWN_UNIT, SERVICE_UNIT, LEGACY_ADDON_UNIT.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "SERVICE_UNIT".
    * @param unit set the unit.
    */
@@ -755,7 +785,7 @@ public class SingleLicense extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property valid_until of obj type singlelicense field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return validUntil
    */
@@ -766,7 +796,7 @@ public class SingleLicense extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property valid_until of obj type singlelicense field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param validUntil set the validUntil.
    */
@@ -777,7 +807,7 @@ public class SingleLicense extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property version of obj type singlelicense field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return version
    */
@@ -788,7 +818,7 @@ public class SingleLicense extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property version of obj type singlelicense field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param version set the version.
    */

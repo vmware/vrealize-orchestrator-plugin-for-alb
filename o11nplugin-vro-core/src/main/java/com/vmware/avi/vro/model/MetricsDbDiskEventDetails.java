@@ -40,7 +40,7 @@ public class MetricsDbDiskEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property metrics_deleted_tables of obj type metricsdbdiskeventdetails field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricsDeletedTables
    */
@@ -51,7 +51,7 @@ public class MetricsDbDiskEventDetails extends AviRestResource {
 
   /**
    * This is the setter method. this will set the metricsDeletedTables
-   * Placeholder for description of property metrics_deleted_tables of obj type metricsdbdiskeventdetails field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricsDeletedTables
    */
@@ -62,7 +62,7 @@ public class MetricsDbDiskEventDetails extends AviRestResource {
 
   /**
    * This is the setter method this will set the metricsDeletedTables
-   * Placeholder for description of property metrics_deleted_tables of obj type metricsdbdiskeventdetails field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricsDeletedTables
    */
@@ -78,7 +78,7 @@ public class MetricsDbDiskEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property metrics_free_sz of obj type metricsdbdiskeventdetails field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricsFreeSz
    */
@@ -89,7 +89,7 @@ public class MetricsDbDiskEventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property metrics_free_sz of obj type metricsdbdiskeventdetails field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricsFreeSz set the metricsFreeSz.
    */
@@ -100,7 +100,7 @@ public class MetricsDbDiskEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property metrics_quota of obj type metricsdbdiskeventdetails field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricsQuota
    */
@@ -111,7 +111,7 @@ public class MetricsDbDiskEventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property metrics_quota of obj type metricsdbdiskeventdetails field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricsQuota set the metricsQuota.
    */

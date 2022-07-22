@@ -35,6 +35,7 @@ public class PoolAnalyticsPolicy extends AviRestResource {
    * Enable real time metrics for server and pool metrics eg.
    * L4_server.xxx, l7_server.xxx.
    * Field introduced in 18.1.5, 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enableRealtimeMetrics
    */
@@ -48,6 +49,7 @@ public class PoolAnalyticsPolicy extends AviRestResource {
    * Enable real time metrics for server and pool metrics eg.
    * L4_server.xxx, l7_server.xxx.
    * Field introduced in 18.1.5, 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param enableRealtimeMetrics set the enableRealtimeMetrics.
    */

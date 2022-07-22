@@ -44,10 +44,6 @@ public class ServerAutoScalePolicy extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer intelligentScaleoutMargin = 20;
 
-    @JsonProperty("labels")
-    @JsonInclude(Include.NON_NULL)
-    private List<KeyValue> labels;
-
     @JsonProperty("markers")
     @JsonInclude(Include.NON_NULL)
     private List<RoleFilterMatchLabel> markers = null;
@@ -115,6 +111,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
    * Delay in minutes after which a down server will be removed from pool.
    * Value 0 disables this functionality.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return delayForServerGarbageCollection
    */
@@ -128,6 +125,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
    * Delay in minutes after which a down server will be removed from pool.
    * Value 0 disables this functionality.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param delayForServerGarbageCollection set the delayForServerGarbageCollection.
    */
@@ -138,7 +136,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * User defined description for the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
@@ -149,7 +147,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * User defined description for the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
@@ -161,6 +159,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Use avi intelligent autoscale algorithm where autoscale is performed by comparing load on the pool against estimated capacity of all the servers.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return intelligentAutoscale
    */
@@ -172,6 +171,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Use avi intelligent autoscale algorithm where autoscale is performed by comparing load on the pool against estimated capacity of all the servers.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param intelligentAutoscale set the intelligentAutoscale.
    */
@@ -185,6 +185,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
    * Maximum extra capacity as percentage of load used by the intelligent scheme.
    * Scale-in is triggered when available capacity is more than this margin.
    * Allowed values are 1-99.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 40.
    * @return intelligentScaleinMargin
    */
@@ -198,6 +199,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
    * Maximum extra capacity as percentage of load used by the intelligent scheme.
    * Scale-in is triggered when available capacity is more than this margin.
    * Allowed values are 1-99.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 40.
    * @param intelligentScaleinMargin set the intelligentScaleinMargin.
    */
@@ -211,6 +213,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
    * Minimum extra capacity as percentage of load used by the intelligent scheme.
    * Scale-out is triggered when available capacity is less than this margin.
    * Allowed values are 1-99.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20.
    * @return intelligentScaleoutMargin
    */
@@ -224,6 +227,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
    * Minimum extra capacity as percentage of load used by the intelligent scheme.
    * Scale-out is triggered when available capacity is less than this margin.
    * Allowed values are 1-99.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20.
    * @param intelligentScaleoutMargin set the intelligentScaleoutMargin.
    */
@@ -234,56 +238,10 @@ public class ServerAutoScalePolicy extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Key value pairs for granular object access control.
-   * Also allows for classification and tagging of similar objects.
-   * Field deprecated in 20.1.5.
-   * Field introduced in 20.1.3.
-   * Maximum of 4 items allowed.
-   * @return labels
-   */
-  @VsoMethod
-  public List<KeyValue> getLabels() {
-    return labels;
-  }
-
-  /**
-   * This is the setter method. this will set the labels
-   * Key value pairs for granular object access control.
-   * Also allows for classification and tagging of similar objects.
-   * Field deprecated in 20.1.5.
-   * Field introduced in 20.1.3.
-   * Maximum of 4 items allowed.
-   * @return labels
-   */
-  @VsoMethod
-  public void setLabels(List<KeyValue>  labels) {
-    this.labels = labels;
-  }
-
-  /**
-   * This is the setter method this will set the labels
-   * Key value pairs for granular object access control.
-   * Also allows for classification and tagging of similar objects.
-   * Field deprecated in 20.1.5.
-   * Field introduced in 20.1.3.
-   * Maximum of 4 items allowed.
-   * @return labels
-   */
-  @VsoMethod
-  public ServerAutoScalePolicy addLabelsItem(KeyValue labelsItem) {
-    if (this.labels == null) {
-      this.labels = new ArrayList<KeyValue>();
-    }
-    this.labels.add(labelsItem);
-    return this;
-  }
-
-
-  /**
-   * This is the getter method this will return the attribute value.
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -296,7 +254,8 @@ public class ServerAutoScalePolicy extends AviRestResource {
    * This is the setter method. this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -309,7 +268,8 @@ public class ServerAutoScalePolicy extends AviRestResource {
    * This is the setter method this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -327,6 +287,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of servers to scale-in simultaneously.
    * The actual number of servers to scale-in is chosen such that target number of servers is always more than or equal to the min_size.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @return maxScaleinAdjustmentStep
    */
@@ -339,6 +300,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of servers to scale-in simultaneously.
    * The actual number of servers to scale-in is chosen such that target number of servers is always more than or equal to the min_size.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @param maxScaleinAdjustmentStep set the maxScaleinAdjustmentStep.
    */
@@ -351,6 +313,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of servers to scale-out simultaneously.
    * The actual number of servers to scale-out is chosen such that target number of servers is always less than or equal to the max_size.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @return maxScaleoutAdjustmentStep
    */
@@ -363,6 +326,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of servers to scale-out simultaneously.
    * The actual number of servers to scale-out is chosen such that target number of servers is always less than or equal to the max_size.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @param maxScaleoutAdjustmentStep set the maxScaleoutAdjustmentStep.
    */
@@ -375,6 +339,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of servers after scale-out.
    * Allowed values are 0-400.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxSize
    */
@@ -387,6 +352,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of servers after scale-out.
    * Allowed values are 0-400.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxSize set the maxSize.
    */
@@ -399,6 +365,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * No scale-in happens once number of operationally up servers reach min_servers.
    * Allowed values are 0-400.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return minSize
    */
@@ -411,6 +378,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * No scale-in happens once number of operationally up servers reach min_servers.
    * Allowed values are 0-400.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param minSize set the minSize.
    */
@@ -421,7 +389,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Name of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -432,7 +400,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Name of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -445,6 +413,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Trigger scale-in when alerts due to any of these alert configurations are raised.
    * It is a reference to an object of type alertconfig.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scaleinAlertconfigRefs
    */
@@ -457,6 +426,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
    * This is the setter method. this will set the scaleinAlertconfigRefs
    * Trigger scale-in when alerts due to any of these alert configurations are raised.
    * It is a reference to an object of type alertconfig.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scaleinAlertconfigRefs
    */
@@ -469,6 +439,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
    * This is the setter method this will set the scaleinAlertconfigRefs
    * Trigger scale-in when alerts due to any of these alert configurations are raised.
    * It is a reference to an object of type alertconfig.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scaleinAlertconfigRefs
    */
@@ -486,6 +457,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Cooldown period during which no new scale-in is triggered to allow previous scale-in to successfully complete.
    * Unit is sec.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @return scaleinCooldown
    */
@@ -498,6 +470,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * Cooldown period during which no new scale-in is triggered to allow previous scale-in to successfully complete.
    * Unit is sec.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @param scaleinCooldown set the scaleinCooldown.
    */
@@ -510,6 +483,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Trigger scale-out when alerts due to any of these alert configurations are raised.
    * It is a reference to an object of type alertconfig.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scaleoutAlertconfigRefs
    */
@@ -522,6 +496,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
    * This is the setter method. this will set the scaleoutAlertconfigRefs
    * Trigger scale-out when alerts due to any of these alert configurations are raised.
    * It is a reference to an object of type alertconfig.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scaleoutAlertconfigRefs
    */
@@ -534,6 +509,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
    * This is the setter method this will set the scaleoutAlertconfigRefs
    * Trigger scale-out when alerts due to any of these alert configurations are raised.
    * It is a reference to an object of type alertconfig.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scaleoutAlertconfigRefs
    */
@@ -551,6 +527,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Cooldown period during which no new scale-out is triggered to allow previous scale-out to successfully complete.
    * Unit is sec.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @return scaleoutCooldown
    */
@@ -563,6 +540,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * Cooldown period during which no new scale-out is triggered to allow previous scale-out to successfully complete.
    * Unit is sec.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @param scaleoutCooldown set the scaleoutCooldown.
    */
@@ -577,6 +555,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
    * During scheduled intervals, metrics based autoscale is not enabled and number of servers will be solely derived from schedulescale policy.
    * Field introduced in 21.1.1.
    * Maximum of 1 items allowed.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scheduledScalings
    */
@@ -591,6 +570,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
    * During scheduled intervals, metrics based autoscale is not enabled and number of servers will be solely derived from schedulescale policy.
    * Field introduced in 21.1.1.
    * Maximum of 1 items allowed.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scheduledScalings
    */
@@ -605,6 +585,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
    * During scheduled intervals, metrics based autoscale is not enabled and number of servers will be solely derived from schedulescale policy.
    * Field introduced in 21.1.1.
    * Maximum of 1 items allowed.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scheduledScalings
    */
@@ -621,6 +602,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -632,6 +614,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
@@ -662,6 +645,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Use predicted load rather than current load.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return usePredictedLoad
    */
@@ -673,6 +657,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Use predicted load rather than current load.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param usePredictedLoad set the usePredictedLoad.
    */
@@ -683,7 +668,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Unique object identifier of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -694,7 +679,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Unique object identifier of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
@@ -731,7 +716,6 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.scaleoutAlertconfigRefs, objServerAutoScalePolicy.scaleoutAlertconfigRefs)&&
   Objects.equals(this.scaleinAlertconfigRefs, objServerAutoScalePolicy.scaleinAlertconfigRefs)&&
   Objects.equals(this.usePredictedLoad, objServerAutoScalePolicy.usePredictedLoad)&&
-  Objects.equals(this.labels, objServerAutoScalePolicy.labels)&&
   Objects.equals(this.delayForServerGarbageCollection, objServerAutoScalePolicy.delayForServerGarbageCollection)&&
   Objects.equals(this.markers, objServerAutoScalePolicy.markers)&&
   Objects.equals(this.scheduledScalings, objServerAutoScalePolicy.scheduledScalings)&&
@@ -748,7 +732,6 @@ public String toString() {
         sb.append("    intelligentAutoscale: ").append(toIndentedString(intelligentAutoscale)).append("\n");
         sb.append("    intelligentScaleinMargin: ").append(toIndentedString(intelligentScaleinMargin)).append("\n");
         sb.append("    intelligentScaleoutMargin: ").append(toIndentedString(intelligentScaleoutMargin)).append("\n");
-        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
         sb.append("    maxScaleinAdjustmentStep: ").append(toIndentedString(maxScaleinAdjustmentStep)).append("\n");
         sb.append("    maxScaleoutAdjustmentStep: ").append(toIndentedString(maxScaleoutAdjustmentStep)).append("\n");

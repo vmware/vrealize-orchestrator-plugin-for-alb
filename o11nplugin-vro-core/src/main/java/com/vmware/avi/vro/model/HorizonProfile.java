@@ -38,6 +38,7 @@ public class HorizonProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Horizon blast port of the uag server.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 8443.
    * @return blastPort
    */
@@ -50,6 +51,7 @@ public class HorizonProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Horizon blast port of the uag server.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 8443.
    * @param blastPort set the blastPort.
    */
@@ -62,6 +64,7 @@ public class HorizonProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Horizon pcoip port of the uag server.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4172.
    * @return pcoipPort
    */
@@ -74,6 +77,7 @@ public class HorizonProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Horizon pcoip port of the uag server.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4172.
    * @param pcoipPort set the pcoipPort.
    */

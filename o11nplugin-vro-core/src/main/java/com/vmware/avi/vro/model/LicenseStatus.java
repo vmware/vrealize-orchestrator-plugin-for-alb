@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.SaasLicensingStatus;
+import com.vmware.avi.vro.model.LicenseServiceUpdate;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -29,6 +30,10 @@ public class LicenseStatus extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private SaasLicensingStatus saasStatus = null;
 
+    @JsonProperty("service_update")
+    @JsonInclude(Include.NON_NULL)
+    private LicenseServiceUpdate serviceUpdate = null;
+
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
     private String url = "url";
@@ -43,6 +48,7 @@ public class LicenseStatus extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Saas licensing status.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return saasStatus
    */
@@ -55,12 +61,39 @@ public class LicenseStatus extends AviRestResource {
    * This is the setter method to the attribute.
    * Saas licensing status.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param saasStatus set the saasStatus.
    */
   @VsoMethod
   public void setSaasStatus(SaasLicensingStatus saasStatus) {
     this.saasStatus = saasStatus;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Pulse license service update.
+   * Field introduced in 21.1.4.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return serviceUpdate
+   */
+  @VsoMethod
+  public LicenseServiceUpdate getServiceUpdate() {
+    return serviceUpdate;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Pulse license service update.
+   * Field introduced in 21.1.4.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param serviceUpdate set the serviceUpdate.
+   */
+  @VsoMethod
+  public void setServiceUpdate(LicenseServiceUpdate serviceUpdate) {
+    this.serviceUpdate = serviceUpdate;
   }
 /**
    * This is the getter method this will return the attribute value.
@@ -86,6 +119,7 @@ public class LicenseStatus extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -98,6 +132,7 @@ public class LicenseStatus extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
@@ -121,7 +156,8 @@ public boolean equals(java.lang.Object o) {
   }
   LicenseStatus objLicenseStatus = (LicenseStatus) o;
   return   Objects.equals(this.uuid, objLicenseStatus.uuid)&&
-  Objects.equals(this.saasStatus, objLicenseStatus.saasStatus);
+  Objects.equals(this.saasStatus, objLicenseStatus.saasStatus)&&
+  Objects.equals(this.serviceUpdate, objLicenseStatus.serviceUpdate);
 }
 
 @Override
@@ -129,6 +165,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class LicenseStatus {\n");
       sb.append("    saasStatus: ").append(toIndentedString(saasStatus)).append("\n");
+        sb.append("    serviceUpdate: ").append(toIndentedString(serviceUpdate)).append("\n");
             sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
       sb.append("}");
   return sb.toString();
