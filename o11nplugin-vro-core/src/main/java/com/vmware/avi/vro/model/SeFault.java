@@ -50,6 +50,7 @@ public class SeFault extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Optional 64 bit unsigned integer that can be used within the enabled fault.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return arg
    */
@@ -62,6 +63,7 @@ public class SeFault extends AviRestResource {
    * This is the setter method to the attribute.
    * Optional 64 bit unsigned integer that can be used within the enabled fault.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param arg set the arg.
    */
@@ -74,6 +76,7 @@ public class SeFault extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The name of the target fault.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return faultName
    */
@@ -86,6 +89,7 @@ public class SeFault extends AviRestResource {
    * This is the setter method to the attribute.
    * The name of the target fault.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param faultName set the faultName.
    */
@@ -98,6 +102,7 @@ public class SeFault extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The name of the function that contains the target fault.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return functionName
    */
@@ -110,6 +115,7 @@ public class SeFault extends AviRestResource {
    * This is the setter method to the attribute.
    * The name of the function that contains the target fault.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param functionName set the functionName.
    */
@@ -123,6 +129,7 @@ public class SeFault extends AviRestResource {
    * Number of times the fault should be executed.
    * Allowed values are 1-4294967295.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @return numExecutions
    */
@@ -136,6 +143,7 @@ public class SeFault extends AviRestResource {
    * Number of times the fault should be executed.
    * Allowed values are 1-4294967295.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @param numExecutions set the numExecutions.
    */
@@ -148,6 +156,7 @@ public class SeFault extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of times the fault should be skipped before executing.
    * Field introduced in 18.2.9.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return numSkips
    */
@@ -160,6 +169,7 @@ public class SeFault extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of times the fault should be skipped before executing.
    * Field introduced in 18.2.9.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param numSkips set the numSkips.
    */

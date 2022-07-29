@@ -40,6 +40,7 @@ public class SamlSettings extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Configure remote identity provider settings.
    * Field introduced in 17.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return idp
    */
@@ -52,6 +53,7 @@ public class SamlSettings extends AviRestResource {
    * This is the setter method to the attribute.
    * Configure remote identity provider settings.
    * Field introduced in 17.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param idp set the idp.
    */
@@ -64,6 +66,7 @@ public class SamlSettings extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Configure service provider settings for the controller.
    * Field introduced in 17.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sp
    */
@@ -76,6 +79,7 @@ public class SamlSettings extends AviRestResource {
    * This is the setter method to the attribute.
    * Configure service provider settings for the controller.
    * Field introduced in 17.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sp set the sp.
    */

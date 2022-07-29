@@ -34,6 +34,7 @@ public class DebugVirtualServiceObjSync extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Triggers initial sync on all the ses of this vs.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return triggerInitialSync
    */
@@ -46,6 +47,7 @@ public class DebugVirtualServiceObjSync extends AviRestResource {
    * This is the setter method to the attribute.
    * Triggers initial sync on all the ses of this vs.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param triggerInitialSync set the triggerInitialSync.
    */

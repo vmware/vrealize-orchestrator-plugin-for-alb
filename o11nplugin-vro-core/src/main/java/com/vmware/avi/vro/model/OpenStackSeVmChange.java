@@ -36,7 +36,7 @@ public class OpenStackSeVmChange extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property error_string of obj type openstacksevmchange field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorString
    */
@@ -47,7 +47,7 @@ public class OpenStackSeVmChange extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property error_string of obj type openstacksevmchange field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param errorString set the errorString.
    */
@@ -58,7 +58,7 @@ public class OpenStackSeVmChange extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Unique object identifier of se_vm.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seVmUuid
    */
@@ -69,7 +69,7 @@ public class OpenStackSeVmChange extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Unique object identifier of se_vm.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seVmUuid set the seVmUuid.
    */

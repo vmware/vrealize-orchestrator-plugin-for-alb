@@ -32,7 +32,7 @@ public class ContainerCloudBatchSetup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property ccs of obj type containercloudbatchsetup field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccs
    */
@@ -43,7 +43,7 @@ public class ContainerCloudBatchSetup extends AviRestResource {
 
   /**
    * This is the setter method. this will set the ccs
-   * Placeholder for description of property ccs of obj type containercloudbatchsetup field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccs
    */
@@ -54,7 +54,7 @@ public class ContainerCloudBatchSetup extends AviRestResource {
 
   /**
    * This is the setter method this will set the ccs
-   * Placeholder for description of property ccs of obj type containercloudbatchsetup field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccs
    */

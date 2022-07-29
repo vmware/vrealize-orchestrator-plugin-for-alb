@@ -43,6 +43,7 @@ public class PGDeploymentRuleResult extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Metric value that is used as the pass fail.
    * If it is not provided then it will simply compare it with current pool vs new pool.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricValue
    */
@@ -55,6 +56,7 @@ public class PGDeploymentRuleResult extends AviRestResource {
    * This is the setter method to the attribute.
    * Metric value that is used as the pass fail.
    * If it is not provided then it will simply compare it with current pool vs new pool.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricValue set the metricValue.
    */
@@ -66,6 +68,7 @@ public class PGDeploymentRuleResult extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Whether rule passed or failed.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return result
    */
@@ -77,6 +80,7 @@ public class PGDeploymentRuleResult extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Whether rule passed or failed.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param result set the result.
    */
@@ -88,6 +92,7 @@ public class PGDeploymentRuleResult extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rule used for evaluation.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rule
    */
@@ -99,6 +104,7 @@ public class PGDeploymentRuleResult extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rule used for evaluation.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rule set the rule.
    */

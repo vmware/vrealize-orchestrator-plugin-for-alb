@@ -102,6 +102,7 @@ public class EventLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - EVENT_CONTEXT_SYSTEM, EVENT_CONTEXT_CONFIG, EVENT_CONTEXT_APP, EVENT_CONTEXT_ALL.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return context
    */
@@ -113,6 +114,7 @@ public class EventLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - EVENT_CONTEXT_SYSTEM, EVENT_CONTEXT_CONFIG, EVENT_CONTEXT_APP, EVENT_CONTEXT_ALL.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param context set the context.
    */
@@ -124,6 +126,7 @@ public class EventLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Summary of event details.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return detailsSummary
    */
@@ -135,6 +138,7 @@ public class EventLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Summary of event details.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param detailsSummary set the detailsSummary.
    */
@@ -146,6 +150,7 @@ public class EventLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Event description for each event  in the table view.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return eventDescription
    */
@@ -157,6 +162,7 @@ public class EventLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Event description for each event  in the table view.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param eventDescription set the eventDescription.
    */
@@ -167,7 +173,7 @@ public class EventLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property event_details of obj type eventlog field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return eventDetails
    */
@@ -178,7 +184,7 @@ public class EventLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property event_details of obj type eventlog field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param eventDetails set the eventDetails.
    */
@@ -192,6 +198,7 @@ public class EventLog extends AviRestResource {
    * Enum options - VINFRA_DISC_DC, VINFRA_DISC_HOST, VINFRA_DISC_CLUSTER, VINFRA_DISC_VM, VINFRA_DISC_NW, MGMT_NW_NAME_CHANGED,
    * DISCOVERY_DATACENTER_DEL, VM_ADDED, VM_REMOVED, VINFRA_DISC_COMPLETE, VCENTER_ADDRESS_ERROR, SE_GROUP_CLUSTER_DEL, SE_GROUP_MGMT_NW_DEL,
    * MGMT_NW_DEL, VCENTER_BAD_CREDENTIALS, ESX_HOST_UNREACHABLE, SERVER_DELETED, SE_GROUP_HOST_DEL, VINFRA_DISC_FAILURE, ESX_HOST_POWERED_DOWN...
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return eventId
    */
@@ -205,6 +212,7 @@ public class EventLog extends AviRestResource {
    * Enum options - VINFRA_DISC_DC, VINFRA_DISC_HOST, VINFRA_DISC_CLUSTER, VINFRA_DISC_VM, VINFRA_DISC_NW, MGMT_NW_NAME_CHANGED,
    * DISCOVERY_DATACENTER_DEL, VM_ADDED, VM_REMOVED, VINFRA_DISC_COMPLETE, VCENTER_ADDRESS_ERROR, SE_GROUP_CLUSTER_DEL, SE_GROUP_MGMT_NW_DEL,
    * MGMT_NW_DEL, VCENTER_BAD_CREDENTIALS, ESX_HOST_UNREACHABLE, SERVER_DELETED, SE_GROUP_HOST_DEL, VINFRA_DISC_FAILURE, ESX_HOST_POWERED_DOWN...
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param eventId set the eventId.
    */
@@ -216,6 +224,7 @@ public class EventLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Pages in which event should come up.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return eventPages
    */
@@ -227,6 +236,7 @@ public class EventLog extends AviRestResource {
   /**
    * This is the setter method. this will set the eventPages
    * Pages in which event should come up.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return eventPages
    */
@@ -238,6 +248,7 @@ public class EventLog extends AviRestResource {
   /**
    * This is the setter method this will set the eventPages
    * Pages in which event should come up.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return eventPages
    */
@@ -253,7 +264,7 @@ public class EventLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property ignore_event_details_display of obj type eventlog field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return ignoreEventDetailsDisplay
    */
@@ -264,7 +275,7 @@ public class EventLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property ignore_event_details_display of obj type eventlog field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param ignoreEventDetailsDisplay set the ignoreEventDetailsDisplay.
    */
@@ -276,6 +287,7 @@ public class EventLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - EVENT_INTERNAL, EVENT_EXTERNAL.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "EVENT_INTERNAL".
    * @return internal
    */
@@ -287,6 +299,7 @@ public class EventLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - EVENT_INTERNAL, EVENT_EXTERNAL.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "EVENT_INTERNAL".
    * @param internal set the internal.
    */
@@ -297,7 +310,7 @@ public class EventLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property is_security_event of obj type eventlog field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return isSecurityEvent
    */
@@ -308,7 +321,7 @@ public class EventLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property is_security_event of obj type eventlog field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param isSecurityEvent set the isSecurityEvent.
    */
@@ -321,6 +334,7 @@ public class EventLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enum options - UNKNOWN, VSMGR, SEMGR, RESMGR, VIMGR, METRICSMGR, CONFIG, SE_GENERAL, SE_FLOWTABLE, SE_HM, SE_POOL_PERSISTENCE, SE_POOL, VSERVER,
    * CLOUD_CONNECTOR, CLUSTERMGR, HSMGR, NW_MGR, LICENSE_MGR, RES_MONITOR, STATEDBCACHE...
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return module
    */
@@ -333,6 +347,7 @@ public class EventLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Enum options - UNKNOWN, VSMGR, SEMGR, RESMGR, VIMGR, METRICSMGR, CONFIG, SE_GENERAL, SE_FLOWTABLE, SE_HM, SE_POOL_PERSISTENCE, SE_POOL, VSERVER,
    * CLOUD_CONNECTOR, CLUSTERMGR, HSMGR, NW_MGR, LICENSE_MGR, RES_MONITOR, STATEDBCACHE...
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param module set the module.
    */
@@ -343,7 +358,7 @@ public class EventLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property obj_name of obj type eventlog field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return objName
    */
@@ -354,7 +369,7 @@ public class EventLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property obj_name of obj type eventlog field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param objName set the objName.
    */
@@ -368,6 +383,7 @@ public class EventLog extends AviRestResource {
    * Enum options - VIRTUALSERVICE, POOL, HEALTHMONITOR, NETWORKPROFILE, APPLICATIONPROFILE, HTTPPOLICYSET, DNSPOLICY, SECURITYPOLICY, IPADDRGROUP,
    * STRINGGROUP, SSLPROFILE, SSLKEYANDCERTIFICATE, NETWORKSECURITYPOLICY, APPLICATIONPERSISTENCEPROFILE, ANALYTICSPROFILE, VSDATASCRIPTSET, TENANT,
    * PKIPROFILE, AUTHPROFILE, CLOUD...
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return objType
    */
@@ -381,6 +397,7 @@ public class EventLog extends AviRestResource {
    * Enum options - VIRTUALSERVICE, POOL, HEALTHMONITOR, NETWORKPROFILE, APPLICATIONPROFILE, HTTPPOLICYSET, DNSPOLICY, SECURITYPOLICY, IPADDRGROUP,
    * STRINGGROUP, SSLPROFILE, SSLKEYANDCERTIFICATE, NETWORKSECURITYPOLICY, APPLICATIONPERSISTENCEPROFILE, ANALYTICSPROFILE, VSDATASCRIPTSET, TENANT,
    * PKIPROFILE, AUTHPROFILE, CLOUD...
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param objType set the objType.
    */
@@ -391,7 +408,7 @@ public class EventLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Unique object identifier of obj.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return objUuid
    */
@@ -402,7 +419,7 @@ public class EventLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Unique object identifier of obj.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param objUuid set the objUuid.
    */
@@ -418,6 +435,7 @@ public class EventLog extends AviRestResource {
    * Enum options - SYSERR_SUCCESS, SYSERR_FAILURE, SYSERR_OUT_OF_MEMORY, SYSERR_NO_ENT, SYSERR_INVAL, SYSERR_ACCESS, SYSERR_FAULT, SYSERR_IO,
    * SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN,
    * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_BAD_REQUEST...
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reasonCode
    */
@@ -433,6 +451,7 @@ public class EventLog extends AviRestResource {
    * Enum options - SYSERR_SUCCESS, SYSERR_FAILURE, SYSERR_OUT_OF_MEMORY, SYSERR_NO_ENT, SYSERR_INVAL, SYSERR_ACCESS, SYSERR_FAULT, SYSERR_IO,
    * SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN,
    * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_BAD_REQUEST...
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reasonCode set the reasonCode.
    */
@@ -444,6 +463,7 @@ public class EventLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Related objects corresponding to the events.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return relatedUuids
    */
@@ -455,6 +475,7 @@ public class EventLog extends AviRestResource {
   /**
    * This is the setter method. this will set the relatedUuids
    * Related objects corresponding to the events.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return relatedUuids
    */
@@ -466,6 +487,7 @@ public class EventLog extends AviRestResource {
   /**
    * This is the setter method this will set the relatedUuids
    * Related objects corresponding to the events.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return relatedUuids
    */
@@ -481,7 +503,7 @@ public class EventLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property report_timestamp of obj type eventlog field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reportTimestamp
    */
@@ -492,7 +514,7 @@ public class EventLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property report_timestamp of obj type eventlog field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reportTimestamp set the reportTimestamp.
    */
@@ -503,7 +525,7 @@ public class EventLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property tenant of obj type eventlog field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenant
    */
@@ -514,7 +536,7 @@ public class EventLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property tenant of obj type eventlog field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenant set the tenant.
    */
@@ -526,6 +548,7 @@ public class EventLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantName
    */
@@ -537,6 +560,7 @@ public class EventLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantName set the tenantName.
    */

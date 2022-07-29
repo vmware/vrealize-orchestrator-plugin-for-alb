@@ -7,7 +7,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.IcapNSXDefenderLog;
 import com.vmware.avi.vro.model.IcapOPSWATLog;
-import com.vmware.avi.vro.model.IpAddr;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -95,33 +94,13 @@ public class IcapRequestLog extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String poolUuid = null;
 
-    @JsonProperty("reason")
-    @JsonInclude(Include.NON_NULL)
-    private String reason;
-
-    @JsonProperty("server_ip")
-    @JsonInclude(Include.NON_NULL)
-    private IpAddr serverIp;
-
     @JsonProperty("source_port")
     @JsonInclude(Include.NON_NULL)
     private Integer sourcePort = null;
 
-    @JsonProperty("threat_description")
-    @JsonInclude(Include.NON_NULL)
-    private String threatDescription;
-
-    @JsonProperty("threat_id")
-    @JsonInclude(Include.NON_NULL)
-    private String threatId;
-
     @JsonProperty("vendor")
     @JsonInclude(Include.NON_NULL)
     private String vendor = null;
-
-    @JsonProperty("violations")
-    @JsonInclude(Include.NON_NULL)
-    private List<IcapViolation> violations;
 
 
 
@@ -130,6 +109,7 @@ public class IcapRequestLog extends AviRestResource {
    * Denotes whether the content was processed by icap server and an action was taken.
    * Enum options - ICAP_DISABLED, ICAP_PASSED, ICAP_MODIFIED, ICAP_BLOCKED, ICAP_FAILED.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return action
    */
@@ -143,6 +123,7 @@ public class IcapRequestLog extends AviRestResource {
    * Denotes whether the content was processed by icap server and an action was taken.
    * Enum options - ICAP_DISABLED, ICAP_PASSED, ICAP_MODIFIED, ICAP_BLOCKED, ICAP_FAILED.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param action set the action.
    */
@@ -155,6 +136,7 @@ public class IcapRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Complete request body from client was sent to the icap server.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return completeBodySent
    */
@@ -167,6 +149,7 @@ public class IcapRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Complete request body from client was sent to the icap server.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param completeBodySent set the completeBodySent.
    */
@@ -182,6 +165,7 @@ public class IcapRequestLog extends AviRestResource {
    * HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE,
    * HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpMethod
    */
@@ -197,6 +181,7 @@ public class IcapRequestLog extends AviRestResource {
    * HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE,
    * HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param httpMethod set the httpMethod.
    */
@@ -210,6 +195,7 @@ public class IcapRequestLog extends AviRestResource {
    * The http response code received from the icap server.
    * Http response code is only available if content is blocked.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpResponseCode
    */
@@ -223,6 +209,7 @@ public class IcapRequestLog extends AviRestResource {
    * The http response code received from the icap server.
    * Http response code is only available if content is blocked.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param httpResponseCode set the httpResponseCode.
    */
@@ -235,6 +222,7 @@ public class IcapRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The absolute icap uri of the request.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return icapAbsoluteUri
    */
@@ -247,6 +235,7 @@ public class IcapRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * The absolute icap uri of the request.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param icapAbsoluteUri set the icapAbsoluteUri.
    */
@@ -259,6 +248,7 @@ public class IcapRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Icap response headers received from icap server.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return icapHeadersReceivedFromServer
    */
@@ -271,6 +261,7 @@ public class IcapRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Icap response headers received from icap server.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param icapHeadersReceivedFromServer set the icapHeadersReceivedFromServer.
    */
@@ -283,6 +274,7 @@ public class IcapRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Icap request headers sent to icap server.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return icapHeadersSentToServer
    */
@@ -295,6 +287,7 @@ public class IcapRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Icap request headers sent to icap server.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param icapHeadersSentToServer set the icapHeadersSentToServer.
    */
@@ -308,6 +301,7 @@ public class IcapRequestLog extends AviRestResource {
    * The icap method of the request.
    * Enum options - ICAP_METHOD_REQMOD, ICAP_METHOD_RESPMOD.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return icapMethod
    */
@@ -321,6 +315,7 @@ public class IcapRequestLog extends AviRestResource {
    * The icap method of the request.
    * Enum options - ICAP_METHOD_REQMOD, ICAP_METHOD_RESPMOD.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param icapMethod set the icapMethod.
    */
@@ -333,6 +328,7 @@ public class IcapRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The response code received from the icap server.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return icapResponseCode
    */
@@ -345,6 +341,7 @@ public class IcapRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * The response code received from the icap server.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param icapResponseCode set the icapResponseCode.
    */
@@ -357,6 +354,7 @@ public class IcapRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Icap server ip for this connection.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return icapServerIp
    */
@@ -369,6 +367,7 @@ public class IcapRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Icap server ip for this connection.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param icapServerIp set the icapServerIp.
    */
@@ -381,6 +380,7 @@ public class IcapRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Icap server port for this connection.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return icapServerPort
    */
@@ -393,6 +393,7 @@ public class IcapRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Icap server port for this connection.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param icapServerPort set the icapServerPort.
    */
@@ -407,6 +408,7 @@ public class IcapRequestLog extends AviRestResource {
    * This is the time taken from 1st byte of icap request sent to last byte of icap response received.
    * Field introduced in 20.1.1.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return latency
    */
@@ -421,6 +423,7 @@ public class IcapRequestLog extends AviRestResource {
    * This is the time taken from 1st byte of icap request sent to last byte of icap response received.
    * Field introduced in 20.1.1.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param latency set the latency.
    */
@@ -433,6 +436,7 @@ public class IcapRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Content-length of the modified content from icap server.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return modifiedContentLength
    */
@@ -445,6 +449,7 @@ public class IcapRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Content-length of the modified content from icap server.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param modifiedContentLength set the modifiedContentLength.
    */
@@ -457,6 +462,7 @@ public class IcapRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Icap log specific to nsx defender.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nsxDefenderLog
    */
@@ -469,6 +475,7 @@ public class IcapRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Icap log specific to nsx defender.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nsxDefenderLog set the nsxDefenderLog.
    */
@@ -481,6 +488,7 @@ public class IcapRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Icap log specific to opswat.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return opswatLog
    */
@@ -493,6 +501,7 @@ public class IcapRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Icap log specific to opswat.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param opswatLog set the opswatLog.
    */
@@ -505,6 +514,7 @@ public class IcapRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The name of the pool that was used for the request.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolName
    */
@@ -517,6 +527,7 @@ public class IcapRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * The name of the pool that was used for the request.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolName set the poolName.
    */
@@ -529,6 +540,7 @@ public class IcapRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The uuid of the pool that was used for the request.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolUuid
    */
@@ -541,6 +553,7 @@ public class IcapRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * The uuid of the pool that was used for the request.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolUuid set the poolUuid.
    */
@@ -551,58 +564,9 @@ public class IcapRequestLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Blocking reason for the content.
-   * It is available only if content was scanned by icap server and some violations were found.
-   * Field deprecated in 21.1.1.
-   * Field introduced in 20.1.1.
-   * @return reason
-   */
-  @VsoMethod
-  public String getReason() {
-    return reason;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Blocking reason for the content.
-   * It is available only if content was scanned by icap server and some violations were found.
-   * Field deprecated in 21.1.1.
-   * Field introduced in 20.1.1.
-   * @param reason set the reason.
-   */
-  @VsoMethod
-  public void setReason(String  reason) {
-    this.reason = reason;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Icap server ip for this connection.
-   * Field deprecated in 20.1.3.
-   * Field introduced in 20.1.1.
-   * @return serverIp
-   */
-  @VsoMethod
-  public IpAddr getServerIp() {
-    return serverIp;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Icap server ip for this connection.
-   * Field deprecated in 20.1.3.
-   * Field introduced in 20.1.1.
-   * @param serverIp set the serverIp.
-   */
-  @VsoMethod
-  public void setServerIp(IpAddr serverIp) {
-    this.serverIp = serverIp;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Source port for this connection.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sourcePort
    */
@@ -615,6 +579,7 @@ public class IcapRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Source port for this connection.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sourcePort set the sourcePort.
    */
@@ -625,61 +590,10 @@ public class IcapRequestLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Detailed description of the threat found in the content.
-   * Available only if request was scanned by icap server and some violations were found.
-   * Field deprecated in 20.1.3.
-   * Field introduced in 20.1.1.
-   * @return threatDescription
-   */
-  @VsoMethod
-  public String getThreatDescription() {
-    return threatDescription;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Detailed description of the threat found in the content.
-   * Available only if request was scanned by icap server and some violations were found.
-   * Field deprecated in 20.1.3.
-   * Field introduced in 20.1.1.
-   * @param threatDescription set the threatDescription.
-   */
-  @VsoMethod
-  public void setThreatDescription(String  threatDescription) {
-    this.threatDescription = threatDescription;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Short description of the threat found in the content.
-   * Available only if content was scanned by icap server and some violations were found.
-   * Field deprecated in 21.1.1.
-   * Field introduced in 20.1.1.
-   * @return threatId
-   */
-  @VsoMethod
-  public String getThreatId() {
-    return threatId;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Short description of the threat found in the content.
-   * Available only if content was scanned by icap server and some violations were found.
-   * Field deprecated in 21.1.1.
-   * Field introduced in 20.1.1.
-   * @param threatId set the threatId.
-   */
-  @VsoMethod
-  public void setThreatId(String  threatId) {
-    this.threatId = threatId;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Selected icap vendor for the request.
    * Enum options - ICAP_VENDOR_GENERIC, ICAP_VENDOR_OPSWAT, ICAP_VENDOR_LASTLINE.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vendor
    */
@@ -693,6 +607,7 @@ public class IcapRequestLog extends AviRestResource {
    * Selected icap vendor for the request.
    * Enum options - ICAP_VENDOR_GENERIC, ICAP_VENDOR_OPSWAT, ICAP_VENDOR_LASTLINE.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vendor set the vendor.
    */
@@ -700,50 +615,6 @@ public class IcapRequestLog extends AviRestResource {
   public void setVendor(String  vendor) {
     this.vendor = vendor;
   }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Threat found in the content.
-   * Available only if content was scanned by icap server and some violations were found.
-   * Field deprecated in 21.1.1.
-   * Field introduced in 20.1.3.
-   * @return violations
-   */
-  @VsoMethod
-  public List<IcapViolation> getViolations() {
-    return violations;
-  }
-
-  /**
-   * This is the setter method. this will set the violations
-   * Threat found in the content.
-   * Available only if content was scanned by icap server and some violations were found.
-   * Field deprecated in 21.1.1.
-   * Field introduced in 20.1.3.
-   * @return violations
-   */
-  @VsoMethod
-  public void setViolations(List<IcapViolation>  violations) {
-    this.violations = violations;
-  }
-
-  /**
-   * This is the setter method this will set the violations
-   * Threat found in the content.
-   * Available only if content was scanned by icap server and some violations were found.
-   * Field deprecated in 21.1.1.
-   * Field introduced in 20.1.3.
-   * @return violations
-   */
-  @VsoMethod
-  public IcapRequestLog addViolationsItem(IcapViolation violationsItem) {
-    if (this.violations == null) {
-      this.violations = new ArrayList<IcapViolation>();
-    }
-    this.violations.add(violationsItem);
-    return this;
-  }
-
 
 
 
@@ -765,16 +636,11 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.modifiedContentLength, objIcapRequestLog.modifiedContentLength)&&
   Objects.equals(this.poolName, objIcapRequestLog.poolName)&&
   Objects.equals(this.poolUuid, objIcapRequestLog.poolUuid)&&
-  Objects.equals(this.serverIp, objIcapRequestLog.serverIp)&&
   Objects.equals(this.sourcePort, objIcapRequestLog.sourcePort)&&
   Objects.equals(this.latency, objIcapRequestLog.latency)&&
   Objects.equals(this.icapHeadersSentToServer, objIcapRequestLog.icapHeadersSentToServer)&&
   Objects.equals(this.icapHeadersReceivedFromServer, objIcapRequestLog.icapHeadersReceivedFromServer)&&
   Objects.equals(this.action, objIcapRequestLog.action)&&
-  Objects.equals(this.reason, objIcapRequestLog.reason)&&
-  Objects.equals(this.threatId, objIcapRequestLog.threatId)&&
-  Objects.equals(this.threatDescription, objIcapRequestLog.threatDescription)&&
-  Objects.equals(this.violations, objIcapRequestLog.violations)&&
   Objects.equals(this.icapServerPort, objIcapRequestLog.icapServerPort)&&
   Objects.equals(this.icapServerIp, objIcapRequestLog.icapServerIp)&&
   Objects.equals(this.vendor, objIcapRequestLog.vendor)&&
@@ -803,13 +669,8 @@ public String toString() {
         sb.append("    opswatLog: ").append(toIndentedString(opswatLog)).append("\n");
         sb.append("    poolName: ").append(toIndentedString(poolName)).append("\n");
         sb.append("    poolUuid: ").append(toIndentedString(poolUuid)).append("\n");
-        sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
-        sb.append("    serverIp: ").append(toIndentedString(serverIp)).append("\n");
         sb.append("    sourcePort: ").append(toIndentedString(sourcePort)).append("\n");
-        sb.append("    threatDescription: ").append(toIndentedString(threatDescription)).append("\n");
-        sb.append("    threatId: ").append(toIndentedString(threatId)).append("\n");
         sb.append("    vendor: ").append(toIndentedString(vendor)).append("\n");
-        sb.append("    violations: ").append(toIndentedString(violations)).append("\n");
       sb.append("}");
   return sb.toString();
 }

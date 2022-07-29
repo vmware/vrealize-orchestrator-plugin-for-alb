@@ -34,6 +34,7 @@ public class AttackMitigationAction extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Deny the attack packets further processing and drop them.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return deny
    */
@@ -46,6 +47,7 @@ public class AttackMitigationAction extends AviRestResource {
    * This is the setter method to the attribute.
    * Deny the attack packets further processing and drop them.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param deny set the deny.
    */

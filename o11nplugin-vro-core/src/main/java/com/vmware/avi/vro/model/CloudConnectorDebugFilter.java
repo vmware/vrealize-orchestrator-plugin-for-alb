@@ -41,6 +41,7 @@ public class CloudConnectorDebugFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Filter debugs for an app.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return appId
    */
@@ -52,6 +53,7 @@ public class CloudConnectorDebugFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Filter debugs for an app.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param appId set the appId.
    */
@@ -63,6 +65,7 @@ public class CloudConnectorDebugFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Disable se reboot via cloud connector on hb miss.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return disableSeReboot
    */
@@ -74,6 +77,7 @@ public class CloudConnectorDebugFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Disable se reboot via cloud connector on hb miss.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param disableSeReboot set the disableSeReboot.
    */
@@ -85,6 +89,7 @@ public class CloudConnectorDebugFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Filter debugs for a se.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seId
    */
@@ -96,6 +101,7 @@ public class CloudConnectorDebugFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Filter debugs for a se.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seId set the seId.
    */

@@ -45,6 +45,7 @@ public class ServiceMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Destination port of the packet.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return destinationPort
    */
@@ -57,6 +58,7 @@ public class ServiceMatch extends AviRestResource {
    * This is the setter method to the attribute.
    * Destination port of the packet.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param destinationPort set the destinationPort.
    */
@@ -70,6 +72,7 @@ public class ServiceMatch extends AviRestResource {
    * Protocol to match.
    * Supported protocols are tcp, udp and icmp.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return protocol
    */
@@ -83,6 +86,7 @@ public class ServiceMatch extends AviRestResource {
    * Protocol to match.
    * Supported protocols are tcp, udp and icmp.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param protocol set the protocol.
    */
@@ -95,6 +99,7 @@ public class ServiceMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Source port of the packet.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sourcePort
    */
@@ -107,6 +112,7 @@ public class ServiceMatch extends AviRestResource {
    * This is the setter method to the attribute.
    * Source port of the packet.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sourcePort set the sourcePort.
    */
