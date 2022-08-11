@@ -70,6 +70,10 @@ public class DebugServiceEngine extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean enableKdump = false;
 
+    @JsonProperty("enable_rpc_timing_profiler")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableRpcTimingProfiler = false;
+
     @JsonProperty("fault")
     @JsonInclude(Include.NON_NULL)
     private DebugSeFault fault = null;
@@ -404,6 +408,32 @@ public class DebugServiceEngine extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Enable profiling time for certain rpc calls.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return enableRpcTimingProfiler
+   */
+  @VsoMethod
+  public Boolean getEnableRpcTimingProfiler() {
+    return enableRpcTimingProfiler;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable profiling time for certain rpc calls.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param enableRpcTimingProfiler set the enableRpcTimingProfiler.
+   */
+  @VsoMethod
+  public void setEnableRpcTimingProfiler(Boolean  enableRpcTimingProfiler) {
+    this.enableRpcTimingProfiler = enableRpcTimingProfiler;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Params for se fault injection.
    * Field introduced in 18.1.2.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
@@ -674,6 +704,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.benchmarkOption, objDebugServiceEngine.benchmarkOption)&&
   Objects.equals(this.benchmarkRssHash, objDebugServiceEngine.benchmarkRssHash)&&
   Objects.equals(this.traceMemory, objDebugServiceEngine.traceMemory)&&
+  Objects.equals(this.enableRpcTimingProfiler, objDebugServiceEngine.enableRpcTimingProfiler)&&
   Objects.equals(this.tenantRef, objDebugServiceEngine.tenantRef);
 }
 
@@ -691,6 +722,7 @@ public String toString() {
         sb.append("    cpuShares: ").append(toIndentedString(cpuShares)).append("\n");
         sb.append("    debugIp: ").append(toIndentedString(debugIp)).append("\n");
         sb.append("    enableKdump: ").append(toIndentedString(enableKdump)).append("\n");
+        sb.append("    enableRpcTimingProfiler: ").append(toIndentedString(enableRpcTimingProfiler)).append("\n");
         sb.append("    fault: ").append(toIndentedString(fault)).append("\n");
         sb.append("    flags: ").append(toIndentedString(flags)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");

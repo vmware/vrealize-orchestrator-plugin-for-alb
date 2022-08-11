@@ -163,6 +163,10 @@ public class Pool extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String ipaddrgroupRef = null;
 
+    @JsonProperty("lb_algo_rr_per_se")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean lbAlgoRrPerSe = false;
+
     @JsonProperty("lb_algorithm")
     @JsonInclude(Include.NON_NULL)
     private String lbAlgorithm = "LB_ALGORITHM_LEAST_CONNECTIONS";
@@ -1293,6 +1297,32 @@ public class Pool extends AviRestResource {
   @VsoMethod
   public void setIpaddrgroupRef(String  ipaddrgroupRef) {
     this.ipaddrgroupRef = ipaddrgroupRef;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Do round robin load load balancing at se level instead of the default per core load balancing.
+   * Field introduced in 21.1.5, 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return lbAlgoRrPerSe
+   */
+  @VsoMethod
+  public Boolean getLbAlgoRrPerSe() {
+    return lbAlgoRrPerSe;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Do round robin load load balancing at se level instead of the default per core load balancing.
+   * Field introduced in 21.1.5, 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param lbAlgoRrPerSe set the lbAlgoRrPerSe.
+   */
+  @VsoMethod
+  public void setLbAlgoRrPerSe(Boolean  lbAlgoRrPerSe) {
+    this.lbAlgoRrPerSe = lbAlgoRrPerSe;
   }
 
   /**
@@ -2472,7 +2502,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.serverDisableType, objPool.serverDisableType)&&
   Objects.equals(this.useServiceSslMode, objPool.useServiceSslMode)&&
   Objects.equals(this.horizonProfile, objPool.horizonProfile)&&
-  Objects.equals(this.poolType, objPool.poolType);
+  Objects.equals(this.poolType, objPool.poolType)&&
+  Objects.equals(this.lbAlgoRrPerSe, objPool.lbAlgoRrPerSe);
 }
 
 @Override
@@ -2512,6 +2543,7 @@ public String toString() {
         sb.append("    ignoreServerPort: ").append(toIndentedString(ignoreServerPort)).append("\n");
         sb.append("    inlineHealthMonitor: ").append(toIndentedString(inlineHealthMonitor)).append("\n");
         sb.append("    ipaddrgroupRef: ").append(toIndentedString(ipaddrgroupRef)).append("\n");
+        sb.append("    lbAlgoRrPerSe: ").append(toIndentedString(lbAlgoRrPerSe)).append("\n");
         sb.append("    lbAlgorithm: ").append(toIndentedString(lbAlgorithm)).append("\n");
         sb.append("    lbAlgorithmConsistentHashHdr: ").append(toIndentedString(lbAlgorithmConsistentHashHdr)).append("\n");
         sb.append("    lbAlgorithmCoreNonaffinity: ").append(toIndentedString(lbAlgorithmCoreNonaffinity)).append("\n");
