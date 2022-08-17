@@ -64,6 +64,14 @@ public class OpenStackConfiguration extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private List<Property> customSeImageProperties = null;
 
+    @JsonProperty("enable_os_object_caching")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableOsObjectCaching = false;
+
+    @JsonProperty("enable_tagging")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableTagging = false;
+
     @JsonProperty("external_networks")
     @JsonInclude(Include.NON_NULL)
     private Boolean externalNetworks = false;
@@ -163,6 +171,10 @@ public class OpenStackConfiguration extends AviRestResource {
     @JsonProperty("username")
     @JsonInclude(Include.NON_NULL)
     private String username = null;
+
+    @JsonProperty("vip_port_in_admin_tenant")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean vipPortInAdminTenant = false;
 
 
 
@@ -445,6 +457,64 @@ public class OpenStackConfiguration extends AviRestResource {
     return this;
   }
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * When enabled, frequently used objects like networks, subnets, routers etc.
+   * Are cached to improve performance and reduce load on openstack controllers.
+   * Suitable for openstack environments where neutron resources are not frequently created, updated, or deleted.the cache is refreshed when cloud gc
+   * api is issued.
+   * Field introduced in 21.1.5, 22.1.2.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return enableOsObjectCaching
+   */
+  @VsoMethod
+  public Boolean getEnableOsObjectCaching() {
+    return enableOsObjectCaching;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * When enabled, frequently used objects like networks, subnets, routers etc.
+   * Are cached to improve performance and reduce load on openstack controllers.
+   * Suitable for openstack environments where neutron resources are not frequently created, updated, or deleted.the cache is refreshed when cloud gc
+   * api is issued.
+   * Field introduced in 21.1.5, 22.1.2.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param enableOsObjectCaching set the enableOsObjectCaching.
+   */
+  @VsoMethod
+  public void setEnableOsObjectCaching(Boolean  enableOsObjectCaching) {
+    this.enableOsObjectCaching = enableOsObjectCaching;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * When set to true, openstack resources created by avi are tagged with avi cloud uuid.
+   * Field introduced in 21.1.5, 22.1.2.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return enableTagging
+   */
+  @VsoMethod
+  public Boolean getEnableTagging() {
+    return enableTagging;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * When set to true, openstack resources created by avi are tagged with avi cloud uuid.
+   * Field introduced in 21.1.5, 22.1.2.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param enableTagging set the enableTagging.
+   */
+  @VsoMethod
+  public void setEnableTagging(Boolean  enableTagging) {
+    this.enableTagging = enableTagging;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -1144,6 +1214,34 @@ public class OpenStackConfiguration extends AviRestResource {
     this.username = username;
   }
 
+  /**
+   * This is the getter method this will return the attribute value.
+   * When set to true, vip ports are created in openstack tenant configured as admin_tenant in cloud.
+   * Otherwise, default behavior is to create vip ports in user tenant.
+   * Field introduced in 21.1.5, 22.1.2.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return vipPortInAdminTenant
+   */
+  @VsoMethod
+  public Boolean getVipPortInAdminTenant() {
+    return vipPortInAdminTenant;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * When set to true, vip ports are created in openstack tenant configured as admin_tenant in cloud.
+   * Otherwise, default behavior is to create vip ports in user tenant.
+   * Field introduced in 21.1.5, 22.1.2.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param vipPortInAdminTenant set the vipPortInAdminTenant.
+   */
+  @VsoMethod
+  public void setVipPortInAdminTenant(Boolean  vipPortInAdminTenant) {
+    this.vipPortInAdminTenant = vipPortInAdminTenant;
+  }
+
 
 
 @Override
@@ -1189,7 +1287,10 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.nameOwner, objOpenStackConfiguration.nameOwner)&&
   Objects.equals(this.providerVipNetworks, objOpenStackConfiguration.providerVipNetworks)&&
   Objects.equals(this.contrailDisablePolicy, objOpenStackConfiguration.contrailDisablePolicy)&&
-  Objects.equals(this.customSeImageProperties, objOpenStackConfiguration.customSeImageProperties);
+  Objects.equals(this.customSeImageProperties, objOpenStackConfiguration.customSeImageProperties)&&
+  Objects.equals(this.enableOsObjectCaching, objOpenStackConfiguration.enableOsObjectCaching)&&
+  Objects.equals(this.enableTagging, objOpenStackConfiguration.enableTagging)&&
+  Objects.equals(this.vipPortInAdminTenant, objOpenStackConfiguration.vipPortInAdminTenant);
 }
 
 @Override
@@ -1206,6 +1307,8 @@ public String toString() {
         sb.append("    contrailEndpoint: ").append(toIndentedString(contrailEndpoint)).append("\n");
         sb.append("    contrailPlugin: ").append(toIndentedString(contrailPlugin)).append("\n");
         sb.append("    customSeImageProperties: ").append(toIndentedString(customSeImageProperties)).append("\n");
+        sb.append("    enableOsObjectCaching: ").append(toIndentedString(enableOsObjectCaching)).append("\n");
+        sb.append("    enableTagging: ").append(toIndentedString(enableTagging)).append("\n");
         sb.append("    externalNetworks: ").append(toIndentedString(externalNetworks)).append("\n");
         sb.append("    freeFloatingips: ").append(toIndentedString(freeFloatingips)).append("\n");
         sb.append("    hypervisor: ").append(toIndentedString(hypervisor)).append("\n");
@@ -1231,6 +1334,7 @@ public String toString() {
         sb.append("    useInternalEndpoints: ").append(toIndentedString(useInternalEndpoints)).append("\n");
         sb.append("    useKeystoneAuth: ").append(toIndentedString(useKeystoneAuth)).append("\n");
         sb.append("    username: ").append(toIndentedString(username)).append("\n");
+        sb.append("    vipPortInAdminTenant: ").append(toIndentedString(vipPortInAdminTenant)).append("\n");
       sb.append("}");
   return sb.toString();
 }
