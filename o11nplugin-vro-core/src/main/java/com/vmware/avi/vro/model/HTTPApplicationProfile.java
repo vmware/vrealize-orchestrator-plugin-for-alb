@@ -245,6 +245,10 @@ public class HTTPApplicationProfile extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean xffEnabled = true;
 
+    @JsonProperty("xff_update")
+    @JsonInclude(Include.NON_NULL)
+    private String xffUpdate = "REPLACE_XFF_HEADERS";
+
 
 
   /**
@@ -1775,6 +1779,34 @@ public class HTTPApplicationProfile extends AviRestResource {
     this.xffEnabled = xffEnabled;
   }
 
+  /**
+   * This is the getter method this will return the attribute value.
+   * Configure how incoming x-forwarded-for headers from the client are handled.
+   * Enum options - REPLACE_XFF_HEADERS, APPEND_TO_THE_XFF_HEADER, ADD_NEW_XFF_HEADER.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "REPLACE_XFF_HEADERS".
+   * @return xffUpdate
+   */
+  @VsoMethod
+  public String getXffUpdate() {
+    return xffUpdate;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Configure how incoming x-forwarded-for headers from the client are handled.
+   * Enum options - REPLACE_XFF_HEADERS, APPEND_TO_THE_XFF_HEADER, ADD_NEW_XFF_HEADER.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "REPLACE_XFF_HEADERS".
+   * @param xffUpdate set the xffUpdate.
+   */
+  @VsoMethod
+  public void setXffUpdate(String  xffUpdate) {
+    this.xffUpdate = xffUpdate;
+  }
+
 
 
 @Override
@@ -1789,6 +1821,7 @@ public boolean equals(java.lang.Object o) {
   return   Objects.equals(this.connectionMultiplexingEnabled, objHTTPApplicationProfile.connectionMultiplexingEnabled)&&
   Objects.equals(this.xffEnabled, objHTTPApplicationProfile.xffEnabled)&&
   Objects.equals(this.xffAlternateName, objHTTPApplicationProfile.xffAlternateName)&&
+  Objects.equals(this.xffUpdate, objHTTPApplicationProfile.xffUpdate)&&
   Objects.equals(this.hstsEnabled, objHTTPApplicationProfile.hstsEnabled)&&
   Objects.equals(this.hstsMaxAge, objHTTPApplicationProfile.hstsMaxAge)&&
   Objects.equals(this.hstsSubdomainsEnabled, objHTTPApplicationProfile.hstsSubdomainsEnabled)&&
@@ -1900,6 +1933,7 @@ public String toString() {
         sb.append("    xForwardedProtoEnabled: ").append(toIndentedString(xForwardedProtoEnabled)).append("\n");
         sb.append("    xffAlternateName: ").append(toIndentedString(xffAlternateName)).append("\n");
         sb.append("    xffEnabled: ").append(toIndentedString(xffEnabled)).append("\n");
+        sb.append("    xffUpdate: ").append(toIndentedString(xffUpdate)).append("\n");
       sb.append("}");
   return sb.toString();
 }

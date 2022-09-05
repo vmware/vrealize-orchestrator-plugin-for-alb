@@ -614,6 +614,14 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer nsHelperDeqIntervalMsec = 20;
 
+    @JsonProperty("ntp_sync_fail_event")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean ntpSyncFailEvent = false;
+
+    @JsonProperty("ntp_sync_status_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer ntpSyncStatusInterval = 0;
+
     @JsonProperty("num_dispatcher_cores")
     @JsonInclude(Include.NON_NULL)
     private Integer numDispatcherCores = 0;
@@ -5302,6 +5310,72 @@ public class ServiceEngineGroup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Toggle se ntp synchronization failure events generation.
+   * Disabled by default.
+   * Field introduced in 22.1.2.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return ntpSyncFailEvent
+   */
+  @VsoMethod
+  public Boolean getNtpSyncFailEvent() {
+    return ntpSyncFailEvent;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Toggle se ntp synchronization failure events generation.
+   * Disabled by default.
+   * Field introduced in 22.1.2.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param ntpSyncFailEvent set the ntpSyncFailEvent.
+   */
+  @VsoMethod
+  public void setNtpSyncFailEvent(Boolean  ntpSyncFailEvent) {
+    this.ntpSyncFailEvent = ntpSyncFailEvent;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Configures the interval at which se synchronization status with ntp server(s) is verified.
+   * A value of zero disables se ntp synchronization status validation.
+   * Allowed values are 120-900.
+   * Special values are 0- disable.
+   * Field introduced in 22.1.2.
+   * Unit is sec.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @return ntpSyncStatusInterval
+   */
+  @VsoMethod
+  public Integer getNtpSyncStatusInterval() {
+    return ntpSyncStatusInterval;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Configures the interval at which se synchronization status with ntp server(s) is verified.
+   * A value of zero disables se ntp synchronization status validation.
+   * Allowed values are 120-900.
+   * Special values are 0- disable.
+   * Field introduced in 22.1.2.
+   * Unit is sec.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @param ntpSyncStatusInterval set the ntpSyncStatusInterval.
+   */
+  @VsoMethod
+  public void setNtpSyncStatusInterval(Integer  ntpSyncStatusInterval) {
+    this.ntpSyncStatusInterval = ntpSyncStatusInterval;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Number of dispatcher cores (0,1,2,4,8 or 16).
    * If set to 0, then number of dispatcher cores is deduced automatically.requires se reboot.
    * Allowed values are 0,1,2,4,8,16.
@@ -9356,7 +9430,9 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.vcenterParkingVnicPg, objServiceEngineGroup.vcenterParkingVnicPg)&&
   Objects.equals(this.dpdkGroTimeoutInterval, objServiceEngineGroup.dpdkGroTimeoutInterval)&&
   Objects.equals(this.seTimeTrackerProps, objServiceEngineGroup.seTimeTrackerProps)&&
-  Objects.equals(this.grpcChannelConnectTimeout, objServiceEngineGroup.grpcChannelConnectTimeout);
+  Objects.equals(this.grpcChannelConnectTimeout, objServiceEngineGroup.grpcChannelConnectTimeout)&&
+  Objects.equals(this.ntpSyncFailEvent, objServiceEngineGroup.ntpSyncFailEvent)&&
+  Objects.equals(this.ntpSyncStatusInterval, objServiceEngineGroup.ntpSyncStatusInterval);
 }
 
 @Override
@@ -9507,6 +9583,8 @@ public String toString() {
         sb.append("    ngxFreeConnectionStack: ").append(toIndentedString(ngxFreeConnectionStack)).append("\n");
         sb.append("    nonSignificantLogThrottle: ").append(toIndentedString(nonSignificantLogThrottle)).append("\n");
         sb.append("    nsHelperDeqIntervalMsec: ").append(toIndentedString(nsHelperDeqIntervalMsec)).append("\n");
+        sb.append("    ntpSyncFailEvent: ").append(toIndentedString(ntpSyncFailEvent)).append("\n");
+        sb.append("    ntpSyncStatusInterval: ").append(toIndentedString(ntpSyncStatusInterval)).append("\n");
         sb.append("    numDispatcherCores: ").append(toIndentedString(numDispatcherCores)).append("\n");
         sb.append("    numDispatcherQueues: ").append(toIndentedString(numDispatcherQueues)).append("\n");
         sb.append("    numFlowCoresSumChangesToIgnore: ").append(toIndentedString(numFlowCoresSumChangesToIgnore)).append("\n");
