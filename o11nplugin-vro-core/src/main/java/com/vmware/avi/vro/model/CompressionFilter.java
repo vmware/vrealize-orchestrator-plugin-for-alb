@@ -69,6 +69,7 @@ public class CompressionFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type stringgroup.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return devicesRef
    */
@@ -80,6 +81,7 @@ public class CompressionFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type stringgroup.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param devicesRef set the devicesRef.
    */
@@ -90,7 +92,7 @@ public class CompressionFilter extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property index of obj type compressionfilter field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return index
    */
@@ -101,7 +103,7 @@ public class CompressionFilter extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property index of obj type compressionfilter field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param index set the index.
    */
@@ -112,7 +114,7 @@ public class CompressionFilter extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property ip_addr_prefixes of obj type compressionfilter field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAddrPrefixes
    */
@@ -123,7 +125,7 @@ public class CompressionFilter extends AviRestResource {
 
   /**
    * This is the setter method. this will set the ipAddrPrefixes
-   * Placeholder for description of property ip_addr_prefixes of obj type compressionfilter field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAddrPrefixes
    */
@@ -134,7 +136,7 @@ public class CompressionFilter extends AviRestResource {
 
   /**
    * This is the setter method this will set the ipAddrPrefixes
-   * Placeholder for description of property ip_addr_prefixes of obj type compressionfilter field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAddrPrefixes
    */
@@ -150,7 +152,7 @@ public class CompressionFilter extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property ip_addr_ranges of obj type compressionfilter field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAddrRanges
    */
@@ -161,7 +163,7 @@ public class CompressionFilter extends AviRestResource {
 
   /**
    * This is the setter method. this will set the ipAddrRanges
-   * Placeholder for description of property ip_addr_ranges of obj type compressionfilter field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAddrRanges
    */
@@ -172,7 +174,7 @@ public class CompressionFilter extends AviRestResource {
 
   /**
    * This is the setter method this will set the ipAddrRanges
-   * Placeholder for description of property ip_addr_ranges of obj type compressionfilter field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAddrRanges
    */
@@ -188,7 +190,7 @@ public class CompressionFilter extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property ip_addrs of obj type compressionfilter field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAddrs
    */
@@ -199,7 +201,7 @@ public class CompressionFilter extends AviRestResource {
 
   /**
    * This is the setter method. this will set the ipAddrs
-   * Placeholder for description of property ip_addrs of obj type compressionfilter field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAddrs
    */
@@ -210,7 +212,7 @@ public class CompressionFilter extends AviRestResource {
 
   /**
    * This is the setter method this will set the ipAddrs
-   * Placeholder for description of property ip_addrs of obj type compressionfilter field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAddrs
    */
@@ -227,6 +229,7 @@ public class CompressionFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type ipaddrgroup.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAddrsRef
    */
@@ -238,6 +241,7 @@ public class CompressionFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type ipaddrgroup.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipAddrsRef set the ipAddrsRef.
    */
@@ -249,6 +253,7 @@ public class CompressionFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - AGGRESSIVE_COMPRESSION, NORMAL_COMPRESSION, NO_COMPRESSION.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "NORMAL_COMPRESSION".
    * @return level
    */
@@ -260,6 +265,7 @@ public class CompressionFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - AGGRESSIVE_COMPRESSION, NORMAL_COMPRESSION, NO_COMPRESSION.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "NORMAL_COMPRESSION".
    * @param level set the level.
    */
@@ -272,6 +278,7 @@ public class CompressionFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Whether to apply filter when group criteria is matched or not.
    * Enum options - IS_IN, IS_NOT_IN.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "IS_IN".
    * @return match
    */
@@ -284,6 +291,7 @@ public class CompressionFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Whether to apply filter when group criteria is matched or not.
    * Enum options - IS_IN, IS_NOT_IN.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "IS_IN".
    * @param match set the match.
    */
@@ -294,7 +302,7 @@ public class CompressionFilter extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Name of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -305,7 +313,7 @@ public class CompressionFilter extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Name of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -316,7 +324,7 @@ public class CompressionFilter extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property user_agent of obj type compressionfilter field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return userAgent
    */
@@ -327,7 +335,7 @@ public class CompressionFilter extends AviRestResource {
 
   /**
    * This is the setter method. this will set the userAgent
-   * Placeholder for description of property user_agent of obj type compressionfilter field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return userAgent
    */
@@ -338,7 +346,7 @@ public class CompressionFilter extends AviRestResource {
 
   /**
    * This is the setter method this will set the userAgent
-   * Placeholder for description of property user_agent of obj type compressionfilter field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return userAgent
    */

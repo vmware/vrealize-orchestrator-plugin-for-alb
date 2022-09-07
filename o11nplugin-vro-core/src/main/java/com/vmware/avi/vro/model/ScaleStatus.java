@@ -80,6 +80,7 @@ public class ScaleStatus extends AviRestResource {
    * Enum options - OTHER, CREATE, READ, UPDATE, DELETE, SCALE_OUT, SCALE_IN, SE_REMOVED, SE_DISCONNECT, SE_RECONNECT, WARM_RESTART, COLD_RESTART,
    * UPDATE_LOGMGR_MAP, MIGRATE_SCALEOUT, MIGRATE_SCALEIN, INITIAL_PLACEMENT, ROTATE_KEYS, GLB_MGR_UPDATE, UPDATE_DNS_RECORDS, SCALEOUT_ADMINUP...
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return action
    */
@@ -93,6 +94,7 @@ public class ScaleStatus extends AviRestResource {
    * Enum options - OTHER, CREATE, READ, UPDATE, DELETE, SCALE_OUT, SCALE_IN, SE_REMOVED, SE_DISCONNECT, SE_RECONNECT, WARM_RESTART, COLD_RESTART,
    * UPDATE_LOGMGR_MAP, MIGRATE_SCALEOUT, MIGRATE_SCALEIN, INITIAL_PLACEMENT, ROTATE_KEYS, GLB_MGR_UPDATE, UPDATE_DNS_RECORDS, SCALEOUT_ADMINUP...
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param action set the action.
    */
@@ -104,6 +106,7 @@ public class ScaleStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return actionSuccess
    */
@@ -115,6 +118,7 @@ public class ScaleStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param actionSuccess set the actionSuccess.
    */
@@ -125,7 +129,7 @@ public class ScaleStatus extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property end_time_str of obj type scalestatus field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return endTimeStr
    */
@@ -136,7 +140,7 @@ public class ScaleStatus extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property end_time_str of obj type scalestatus field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param endTimeStr set the endTimeStr.
    */
@@ -147,7 +151,7 @@ public class ScaleStatus extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property num_se_assigned of obj type scalestatus field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numSeAssigned
    */
@@ -158,7 +162,7 @@ public class ScaleStatus extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property num_se_assigned of obj type scalestatus field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numSeAssigned set the numSeAssigned.
    */
@@ -169,7 +173,7 @@ public class ScaleStatus extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property num_se_requested of obj type scalestatus field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numSeRequested
    */
@@ -180,7 +184,7 @@ public class ScaleStatus extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property num_se_requested of obj type scalestatus field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numSeRequested set the numSeRequested.
    */
@@ -191,7 +195,7 @@ public class ScaleStatus extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property reason of obj type scalestatus field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
@@ -202,7 +206,7 @@ public class ScaleStatus extends AviRestResource {
 
   /**
    * This is the setter method. this will set the reason
-   * Placeholder for description of property reason of obj type scalestatus field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
@@ -213,7 +217,7 @@ public class ScaleStatus extends AviRestResource {
 
   /**
    * This is the setter method this will set the reason
-   * Placeholder for description of property reason of obj type scalestatus field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
@@ -229,7 +233,7 @@ public class ScaleStatus extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property reason_code of obj type scalestatus field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reasonCode
    */
@@ -240,7 +244,7 @@ public class ScaleStatus extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property reason_code of obj type scalestatus field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reasonCode set the reasonCode.
    */
@@ -251,7 +255,7 @@ public class ScaleStatus extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property reason_code_string of obj type scalestatus field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reasonCodeString
    */
@@ -262,7 +266,7 @@ public class ScaleStatus extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property reason_code_string of obj type scalestatus field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reasonCodeString set the reasonCodeString.
    */
@@ -273,7 +277,7 @@ public class ScaleStatus extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property scale_se of obj type scalestatus field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scaleSe
    */
@@ -284,7 +288,7 @@ public class ScaleStatus extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property scale_se of obj type scalestatus field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param scaleSe set the scaleSe.
    */
@@ -295,7 +299,7 @@ public class ScaleStatus extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property start_time_str of obj type scalestatus field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return startTimeStr
    */
@@ -306,7 +310,7 @@ public class ScaleStatus extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property start_time_str of obj type scalestatus field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param startTimeStr set the startTimeStr.
    */
@@ -322,6 +326,7 @@ public class ScaleStatus extends AviRestResource {
    * SCALEOUT_AWAITING_SE_READY, SCALEOUT_WAIT_FOR_SE_READY, SCALEOUT_SUCCESS, SCALEOUT_ERROR, SCALEOUT_ROLLBACK, SCALEOUT_ERROR_DISABLED,
    * SCALEIN_AWAITING_SE_READY, SCALEIN_AWAITING_SE_PRE_RELEASE, SCALEIN_AWAITING_PRIMARY_SWITCHOVER, SCALEIN_AWAITING_SE_PROGRAMMING,
    * SCALEIN_AWAITING_CLOUD_DETACH, SCALEIN_WAIT_FOR_SE_READY...
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return state
    */
@@ -337,6 +342,7 @@ public class ScaleStatus extends AviRestResource {
    * SCALEOUT_AWAITING_SE_READY, SCALEOUT_WAIT_FOR_SE_READY, SCALEOUT_SUCCESS, SCALEOUT_ERROR, SCALEOUT_ROLLBACK, SCALEOUT_ERROR_DISABLED,
    * SCALEIN_AWAITING_SE_READY, SCALEIN_AWAITING_SE_PRE_RELEASE, SCALEIN_AWAITING_PRIMARY_SWITCHOVER, SCALEIN_AWAITING_SE_PROGRAMMING,
    * SCALEIN_AWAITING_CLOUD_DETACH, SCALEIN_WAIT_FOR_SE_READY...
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param state set the state.
    */
@@ -347,7 +353,7 @@ public class ScaleStatus extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property vip_placement_resolution_info of obj type scalestatus field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipPlacementResolutionInfo
    */
@@ -358,7 +364,7 @@ public class ScaleStatus extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property vip_placement_resolution_info of obj type scalestatus field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vipPlacementResolutionInfo set the vipPlacementResolutionInfo.
    */

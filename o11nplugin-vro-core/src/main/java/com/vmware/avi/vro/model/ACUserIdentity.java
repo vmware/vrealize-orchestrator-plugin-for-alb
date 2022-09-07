@@ -39,6 +39,7 @@ public class ACUserIdentity extends AviRestResource {
    * User identity type for audit event (e.g.
    * Username, organization, component).
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
@@ -52,6 +53,7 @@ public class ACUserIdentity extends AviRestResource {
    * User identity type for audit event (e.g.
    * Username, organization, component).
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */
@@ -65,6 +67,7 @@ public class ACUserIdentity extends AviRestResource {
    * User identity value for audit event (e.g.
    * Somecompany, jane doe, secure-shell).
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return value
    */
@@ -78,6 +81,7 @@ public class ACUserIdentity extends AviRestResource {
    * User identity value for audit event (e.g.
    * Somecompany, jane doe, secure-shell).
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param value set the value.
    */

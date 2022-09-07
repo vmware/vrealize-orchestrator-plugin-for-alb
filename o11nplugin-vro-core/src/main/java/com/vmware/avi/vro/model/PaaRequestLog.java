@@ -66,6 +66,7 @@ public class PaaRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Response headers received from pingaccess server.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return headersReceivedFromServer
    */
@@ -78,6 +79,7 @@ public class PaaRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Response headers received from pingaccess server.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param headersReceivedFromServer set the headersReceivedFromServer.
    */
@@ -90,6 +92,7 @@ public class PaaRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Request headers sent to pingaccess server.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return headersSentToServer
    */
@@ -102,6 +105,7 @@ public class PaaRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Request headers sent to pingaccess server.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param headersSentToServer set the headersSentToServer.
    */
@@ -114,6 +118,7 @@ public class PaaRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The http version of the request.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpVersion
    */
@@ -126,6 +131,7 @@ public class PaaRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * The http version of the request.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param httpVersion set the httpVersion.
    */
@@ -138,6 +144,7 @@ public class PaaRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The http method of the request.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return method
    */
@@ -150,6 +157,7 @@ public class PaaRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * The http method of the request.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param method set the method.
    */
@@ -162,6 +170,7 @@ public class PaaRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The name of the pool that was used for the request.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolName
    */
@@ -174,6 +183,7 @@ public class PaaRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * The name of the pool that was used for the request.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolName set the poolName.
    */
@@ -186,6 +196,7 @@ public class PaaRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The response code received from the pingaccess server.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return responseCode
    */
@@ -198,6 +209,7 @@ public class PaaRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * The response code received from the pingaccess server.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param responseCode set the responseCode.
    */
@@ -210,6 +222,7 @@ public class PaaRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The ip of the server that was sent the request.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverIp
    */
@@ -222,6 +235,7 @@ public class PaaRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * The ip of the server that was sent the request.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverIp set the serverIp.
    */
@@ -234,6 +248,7 @@ public class PaaRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of servers tried during server reselect before the response is sent back.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return serversTried
    */
@@ -246,6 +261,7 @@ public class PaaRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of servers tried during server reselect before the response is sent back.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param serversTried set the serversTried.
    */
@@ -258,6 +274,7 @@ public class PaaRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The uri of the request.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uriPath
    */
@@ -270,6 +287,7 @@ public class PaaRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * The uri of the request.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uriPath set the uriPath.
    */

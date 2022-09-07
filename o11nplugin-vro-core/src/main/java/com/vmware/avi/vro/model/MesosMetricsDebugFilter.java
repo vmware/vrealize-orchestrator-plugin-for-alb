@@ -44,7 +44,7 @@ public class MesosMetricsDebugFilter extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property mesos_master of obj type mesosmetricsdebugfilter field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mesosMaster
    */
@@ -55,7 +55,7 @@ public class MesosMetricsDebugFilter extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property mesos_master of obj type mesosmetricsdebugfilter field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mesosMaster set the mesosMaster.
    */
@@ -66,7 +66,7 @@ public class MesosMetricsDebugFilter extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property mesos_slave of obj type mesosmetricsdebugfilter field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mesosSlave
    */
@@ -77,7 +77,7 @@ public class MesosMetricsDebugFilter extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property mesos_slave of obj type mesosmetricsdebugfilter field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mesosSlave set the mesosSlave.
    */
@@ -90,6 +90,7 @@ public class MesosMetricsDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY,
    * TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricEntity
    */
@@ -102,6 +103,7 @@ public class MesosMetricsDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY,
    * TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricEntity set the metricEntity.
    */
@@ -112,7 +114,7 @@ public class MesosMetricsDebugFilter extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property metrics_collection_frq of obj type mesosmetricsdebugfilter field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return metricsCollectionFrq
    */
@@ -123,7 +125,7 @@ public class MesosMetricsDebugFilter extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property metrics_collection_frq of obj type mesosmetricsdebugfilter field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @param metricsCollectionFrq set the metricsCollectionFrq.
    */

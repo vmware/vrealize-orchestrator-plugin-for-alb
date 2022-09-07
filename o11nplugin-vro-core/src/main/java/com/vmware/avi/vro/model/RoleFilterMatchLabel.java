@@ -38,6 +38,7 @@ public class RoleFilterMatchLabel extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Key for filter match.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return key
    */
@@ -50,6 +51,7 @@ public class RoleFilterMatchLabel extends AviRestResource {
    * This is the setter method to the attribute.
    * Key for filter match.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param key set the key.
    */
@@ -65,6 +67,7 @@ public class RoleFilterMatchLabel extends AviRestResource {
    * Example  key = value1 or key = value2.
    * Behavior for match is key = * if this field is empty.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return values
    */
@@ -80,6 +83,7 @@ public class RoleFilterMatchLabel extends AviRestResource {
    * Example  key = value1 or key = value2.
    * Behavior for match is key = * if this field is empty.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return values
    */
@@ -95,6 +99,7 @@ public class RoleFilterMatchLabel extends AviRestResource {
    * Example  key = value1 or key = value2.
    * Behavior for match is key = * if this field is empty.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return values
    */

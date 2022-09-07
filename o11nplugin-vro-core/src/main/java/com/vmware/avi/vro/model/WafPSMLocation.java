@@ -51,6 +51,7 @@ public class WafPSMLocation extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Free-text comment about this location.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
@@ -63,6 +64,7 @@ public class WafPSMLocation extends AviRestResource {
    * This is the setter method to the attribute.
    * Free-text comment about this location.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
@@ -75,6 +77,7 @@ public class WafPSMLocation extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Location index, this is used to determine the order of the locations.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return index
    */
@@ -87,6 +90,7 @@ public class WafPSMLocation extends AviRestResource {
    * This is the setter method to the attribute.
    * Location index, this is used to determine the order of the locations.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param index set the index.
    */
@@ -99,6 +103,7 @@ public class WafPSMLocation extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Apply these rules only if the request is matching this description.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return match
    */
@@ -111,6 +116,7 @@ public class WafPSMLocation extends AviRestResource {
    * This is the setter method to the attribute.
    * Apply these rules only if the request is matching this description.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param match set the match.
    */
@@ -123,6 +129,7 @@ public class WafPSMLocation extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * User defined name for this location, it must be unique in the group.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -135,6 +142,7 @@ public class WafPSMLocation extends AviRestResource {
    * This is the setter method to the attribute.
    * User defined name for this location, it must be unique in the group.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -147,6 +155,7 @@ public class WafPSMLocation extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * A list of rules which should be applied on this location.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */
@@ -159,6 +168,7 @@ public class WafPSMLocation extends AviRestResource {
    * This is the setter method. this will set the rules
    * A list of rules which should be applied on this location.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */
@@ -171,6 +181,7 @@ public class WafPSMLocation extends AviRestResource {
    * This is the setter method this will set the rules
    * A list of rules which should be applied on this location.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */

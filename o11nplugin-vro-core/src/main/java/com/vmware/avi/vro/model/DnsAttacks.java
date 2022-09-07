@@ -38,6 +38,7 @@ public class DnsAttacks extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Mode of dealing with the attacks - perform detection only, or detect and mitigate the attacks.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attacks
    */
@@ -50,6 +51,7 @@ public class DnsAttacks extends AviRestResource {
    * This is the setter method. this will set the attacks
    * Mode of dealing with the attacks - perform detection only, or detect and mitigate the attacks.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attacks
    */
@@ -62,6 +64,7 @@ public class DnsAttacks extends AviRestResource {
    * This is the setter method this will set the attacks
    * Mode of dealing with the attacks - perform detection only, or detect and mitigate the attacks.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attacks
    */
@@ -80,6 +83,7 @@ public class DnsAttacks extends AviRestResource {
    * Mode of dealing with the attacks - perform detection only, or detect and mitigate the attacks.
    * Enum options - DETECTION, MITIGATION.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return operMode
    */
@@ -93,6 +97,7 @@ public class DnsAttacks extends AviRestResource {
    * Mode of dealing with the attacks - perform detection only, or detect and mitigate the attacks.
    * Enum options - DETECTION, MITIGATION.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param operMode set the operMode.
    */

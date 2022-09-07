@@ -46,6 +46,7 @@ public class AttachIpStatusEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Reason if attach ip failed.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
@@ -58,6 +59,7 @@ public class AttachIpStatusEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Reason if attach ip failed.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
@@ -70,6 +72,7 @@ public class AttachIpStatusEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the service engine.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seName
    */
@@ -82,6 +85,7 @@ public class AttachIpStatusEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the service engine.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seName set the seName.
    */
@@ -94,6 +98,7 @@ public class AttachIpStatusEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Vip id.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipId
    */
@@ -106,6 +111,7 @@ public class AttachIpStatusEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Vip id.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vipId set the vipId.
    */
@@ -118,6 +124,7 @@ public class AttachIpStatusEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the virtual service.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsName
    */
@@ -130,6 +137,7 @@ public class AttachIpStatusEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the virtual service.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsName set the vsName.
    */
