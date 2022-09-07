@@ -568,6 +568,7 @@ public class Constants {
     public static final String FINDER_VRO_L4RULEMATCHTARGET = "L4RuleMatchTarget";
     public static final String FINDER_VRO_L4RULEPORTMATCH = "L4RulePortMatch";
     public static final String FINDER_VRO_L4RULEPROTOCOLMATCH = "L4RuleProtocolMatch";
+    public static final String FINDER_VRO_L4SSLAPPLICATIONPROFILE = "L4SSLApplicationProfile";
     public static final String FINDER_VRO_L7LIMITS = "L7limits";
     public static final String FINDER_VRO_LDAPVSCONFIG = "LDAPVSConfig";
     public static final String FINDER_VRO_LABELGROUP = "LabelGroup";
@@ -1044,6 +1045,7 @@ public class Constants {
     public static final String FINDER_VRO_VCENTERDATASTORE = "VcenterDatastore";
     public static final String FINDER_VRO_VCENTERHOSTS = "VcenterHosts";
     public static final String FINDER_VRO_VCENTERIMAGEDETAILS = "VcenterImageDetails";
+    public static final String FINDER_VRO_VCENTERQUARANTINEDHOSTPARAMS = "VcenterQuarantinedHostParams";
     public static final String FINDER_VRO_VERSIONINFO = "VersionInfo";
     public static final String FINDER_VRO_VINFRACNTLRHOSTUNREACHABLELIST = "VinfraCntlrHostUnreachableList";
     public static final String FINDER_VRO_VINFRADISCSUMMARYDETAILS = "VinfraDiscSummaryDetails";
