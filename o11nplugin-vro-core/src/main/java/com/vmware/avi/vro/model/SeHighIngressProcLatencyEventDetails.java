@@ -26,11 +26,7 @@ import org.springframework.stereotype.Service;
 public class SeHighIngressProcLatencyEventDetails extends AviRestResource {
     @JsonProperty("dispatcher_core")
     @JsonInclude(Include.NON_NULL)
-    private Integer dispatcherCore = null;
-
-    @JsonProperty("dispatcher_latency_ingress")
-    @JsonInclude(Include.NON_NULL)
-    private Integer dispatcherLatencyIngress = null;
+    private List<Integer> dispatcherCore = null;
 
     @JsonProperty("event_count")
     @JsonInclude(Include.NON_NULL)
@@ -40,9 +36,13 @@ public class SeHighIngressProcLatencyEventDetails extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer flowCore = null;
 
-    @JsonProperty("proxy_latency_ingress")
+    @JsonProperty("max_disp_to_proxy_queing_delay")
     @JsonInclude(Include.NON_NULL)
-    private Integer proxyLatencyIngress = null;
+    private Integer maxDispToProxyQueingDelay = null;
+
+    @JsonProperty("max_dispatcher_proc_time")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxDispatcherProcTime = null;
 
     @JsonProperty("se_name")
     @JsonInclude(Include.NON_NULL)
@@ -65,52 +65,48 @@ public class SeHighIngressProcLatencyEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dispatcher core which received the packet.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dispatcherCore
    */
   @VsoMethod
-  public Integer getDispatcherCore() {
+  public List<Integer> getDispatcherCore() {
     return dispatcherCore;
   }
 
   /**
-   * This is the setter method to the attribute.
+   * This is the setter method. this will set the dispatcherCore
    * Dispatcher core which received the packet.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param dispatcherCore set the dispatcherCore.
+   * @return dispatcherCore
    */
   @VsoMethod
-  public void setDispatcherCore(Integer  dispatcherCore) {
+  public void setDispatcherCore(List<Integer>  dispatcherCore) {
     this.dispatcherCore = dispatcherCore;
   }
 
   /**
-   * This is the getter method this will return the attribute value.
-   * Dispatcher processing latency.
-   * Unit is milliseconds.
+   * This is the setter method this will set the dispatcherCore
+   * Dispatcher core which received the packet.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return dispatcherLatencyIngress
+   * @return dispatcherCore
    */
   @VsoMethod
-  public Integer getDispatcherLatencyIngress() {
-    return dispatcherLatencyIngress;
+  public SeHighIngressProcLatencyEventDetails addDispatcherCoreItem(Integer dispatcherCoreItem) {
+    if (this.dispatcherCore == null) {
+      this.dispatcherCore = new ArrayList<Integer>();
+    }
+    this.dispatcherCore.add(dispatcherCoreItem);
+    return this;
   }
 
-  /**
-   * This is the setter method to the attribute.
-   * Dispatcher processing latency.
-   * Unit is milliseconds.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param dispatcherLatencyIngress set the dispatcherLatencyIngress.
-   */
-  @VsoMethod
-  public void setDispatcherLatencyIngress(Integer  dispatcherLatencyIngress) {
-    this.dispatcherLatencyIngress = dispatcherLatencyIngress;
-  }
 
   /**
    * This is the getter method this will return the attribute value.
    * Number of events in a 30 second interval.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return eventCount
    */
@@ -122,6 +118,7 @@ public class SeHighIngressProcLatencyEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Number of events in a 30 second interval.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param eventCount set the eventCount.
    */
@@ -133,6 +130,7 @@ public class SeHighIngressProcLatencyEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Proxy core which processed the packet.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return flowCore
    */
@@ -144,6 +142,7 @@ public class SeHighIngressProcLatencyEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Proxy core which processed the packet.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param flowCore set the flowCore.
    */
@@ -156,30 +155,59 @@ public class SeHighIngressProcLatencyEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Proxy dequeue latency.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return proxyLatencyIngress
+   * @return maxDispToProxyQueingDelay
    */
   @VsoMethod
-  public Integer getProxyLatencyIngress() {
-    return proxyLatencyIngress;
+  public Integer getMaxDispToProxyQueingDelay() {
+    return maxDispToProxyQueingDelay;
   }
 
   /**
    * This is the setter method to the attribute.
    * Proxy dequeue latency.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param proxyLatencyIngress set the proxyLatencyIngress.
+   * @param maxDispToProxyQueingDelay set the maxDispToProxyQueingDelay.
    */
   @VsoMethod
-  public void setProxyLatencyIngress(Integer  proxyLatencyIngress) {
-    this.proxyLatencyIngress = proxyLatencyIngress;
+  public void setMaxDispToProxyQueingDelay(Integer  maxDispToProxyQueingDelay) {
+    this.maxDispToProxyQueingDelay = maxDispToProxyQueingDelay;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Dispatcher processing latency.
+   * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return maxDispatcherProcTime
+   */
+  @VsoMethod
+  public Integer getMaxDispatcherProcTime() {
+    return maxDispatcherProcTime;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Dispatcher processing latency.
+   * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param maxDispatcherProcTime set the maxDispatcherProcTime.
+   */
+  @VsoMethod
+  public void setMaxDispatcherProcTime(Integer  maxDispatcherProcTime) {
+    this.maxDispatcherProcTime = maxDispatcherProcTime;
   }
 
   /**
    * This is the getter method this will return the attribute value.
    * Se name.
    * It is a reference to an object of type serviceengine.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seName
    */
@@ -192,6 +220,7 @@ public class SeHighIngressProcLatencyEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Se name.
    * It is a reference to an object of type serviceengine.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seName set the seName.
    */
@@ -204,6 +233,7 @@ public class SeHighIngressProcLatencyEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Se uuid.
    * It is a reference to an object of type serviceengine.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seRef
    */
@@ -216,6 +246,7 @@ public class SeHighIngressProcLatencyEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Se uuid.
    * It is a reference to an object of type serviceengine.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seRef set the seRef.
    */
@@ -226,8 +257,9 @@ public class SeHighIngressProcLatencyEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Vs name.
+   * Deprecated in 22.1.1.
    * It is a reference to an object of type virtualservice.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsName
    */
@@ -238,8 +270,9 @@ public class SeHighIngressProcLatencyEventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Vs name.
+   * Deprecated in 22.1.1.
    * It is a reference to an object of type virtualservice.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsName set the vsName.
    */
@@ -250,8 +283,9 @@ public class SeHighIngressProcLatencyEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Vs uuid.
+   * Deprecated in 22.1.1.
    * It is a reference to an object of type virtualservice.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsRef
    */
@@ -262,8 +296,9 @@ public class SeHighIngressProcLatencyEventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Vs uuid.
+   * Deprecated in 22.1.1.
    * It is a reference to an object of type virtualservice.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsRef set the vsRef.
    */
@@ -287,8 +322,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.seRef, objSeHighIngressProcLatencyEventDetails.seRef)&&
   Objects.equals(this.vsName, objSeHighIngressProcLatencyEventDetails.vsName)&&
   Objects.equals(this.vsRef, objSeHighIngressProcLatencyEventDetails.vsRef)&&
-  Objects.equals(this.dispatcherLatencyIngress, objSeHighIngressProcLatencyEventDetails.dispatcherLatencyIngress)&&
-  Objects.equals(this.proxyLatencyIngress, objSeHighIngressProcLatencyEventDetails.proxyLatencyIngress)&&
+  Objects.equals(this.maxDispatcherProcTime, objSeHighIngressProcLatencyEventDetails.maxDispatcherProcTime)&&
+  Objects.equals(this.maxDispToProxyQueingDelay, objSeHighIngressProcLatencyEventDetails.maxDispToProxyQueingDelay)&&
   Objects.equals(this.dispatcherCore, objSeHighIngressProcLatencyEventDetails.dispatcherCore)&&
   Objects.equals(this.flowCore, objSeHighIngressProcLatencyEventDetails.flowCore)&&
   Objects.equals(this.eventCount, objSeHighIngressProcLatencyEventDetails.eventCount);
@@ -299,10 +334,10 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class SeHighIngressProcLatencyEventDetails {\n");
       sb.append("    dispatcherCore: ").append(toIndentedString(dispatcherCore)).append("\n");
-        sb.append("    dispatcherLatencyIngress: ").append(toIndentedString(dispatcherLatencyIngress)).append("\n");
         sb.append("    eventCount: ").append(toIndentedString(eventCount)).append("\n");
         sb.append("    flowCore: ").append(toIndentedString(flowCore)).append("\n");
-        sb.append("    proxyLatencyIngress: ").append(toIndentedString(proxyLatencyIngress)).append("\n");
+        sb.append("    maxDispToProxyQueingDelay: ").append(toIndentedString(maxDispToProxyQueingDelay)).append("\n");
+        sb.append("    maxDispatcherProcTime: ").append(toIndentedString(maxDispatcherProcTime)).append("\n");
         sb.append("    seName: ").append(toIndentedString(seName)).append("\n");
         sb.append("    seRef: ").append(toIndentedString(seRef)).append("\n");
         sb.append("    vsName: ").append(toIndentedString(vsName)).append("\n");

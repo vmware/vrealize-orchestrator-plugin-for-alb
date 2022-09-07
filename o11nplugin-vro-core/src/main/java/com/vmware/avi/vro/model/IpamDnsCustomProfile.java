@@ -40,16 +40,13 @@ public class IpamDnsCustomProfile extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private List<String> usableDomains = null;
 
-    @JsonProperty("usable_subnets")
-    @JsonInclude(Include.NON_NULL)
-    private List<IpAddrPrefix> usableSubnets;
-
 
 
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type customipamdnsprofile.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return customIpamDnsProfileRef
    */
@@ -62,6 +59,7 @@ public class IpamDnsCustomProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * It is a reference to an object of type customipamdnsprofile.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param customIpamDnsProfileRef set the customIpamDnsProfileRef.
    */
@@ -74,6 +72,7 @@ public class IpamDnsCustomProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Custom parameters that will passed to the ipam/dns provider including but not limited to provider credentials and api version.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dynamicParams
    */
@@ -86,6 +85,7 @@ public class IpamDnsCustomProfile extends AviRestResource {
    * This is the setter method. this will set the dynamicParams
    * Custom parameters that will passed to the ipam/dns provider including but not limited to provider credentials and api version.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dynamicParams
    */
@@ -98,6 +98,7 @@ public class IpamDnsCustomProfile extends AviRestResource {
    * This is the setter method this will set the dynamicParams
    * Custom parameters that will passed to the ipam/dns provider including but not limited to provider credentials and api version.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dynamicParams
    */
@@ -115,6 +116,7 @@ public class IpamDnsCustomProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Networks or subnets to use for custom ipam ip allocation.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableAllocSubnets
    */
@@ -127,6 +129,7 @@ public class IpamDnsCustomProfile extends AviRestResource {
    * This is the setter method. this will set the usableAllocSubnets
    * Networks or subnets to use for custom ipam ip allocation.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableAllocSubnets
    */
@@ -139,6 +142,7 @@ public class IpamDnsCustomProfile extends AviRestResource {
    * This is the setter method this will set the usableAllocSubnets
    * Networks or subnets to use for custom ipam ip allocation.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableAllocSubnets
    */
@@ -156,6 +160,7 @@ public class IpamDnsCustomProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Usable domains.
    * Field introduced in 17.2.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableDomains
    */
@@ -168,6 +173,7 @@ public class IpamDnsCustomProfile extends AviRestResource {
    * This is the setter method. this will set the usableDomains
    * Usable domains.
    * Field introduced in 17.2.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableDomains
    */
@@ -180,6 +186,7 @@ public class IpamDnsCustomProfile extends AviRestResource {
    * This is the setter method this will set the usableDomains
    * Usable domains.
    * Field introduced in 17.2.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableDomains
    */
@@ -189,44 +196,6 @@ public class IpamDnsCustomProfile extends AviRestResource {
       this.usableDomains = new ArrayList<String>();
     }
     this.usableDomains.add(usableDomainsItem);
-    return this;
-  }
-
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Usable subnets.
-   * Field deprecated in 21.1.1.
-   * @return usableSubnets
-   */
-  @VsoMethod
-  public List<IpAddrPrefix> getUsableSubnets() {
-    return usableSubnets;
-  }
-
-  /**
-   * This is the setter method. this will set the usableSubnets
-   * Usable subnets.
-   * Field deprecated in 21.1.1.
-   * @return usableSubnets
-   */
-  @VsoMethod
-  public void setUsableSubnets(List<IpAddrPrefix>  usableSubnets) {
-    this.usableSubnets = usableSubnets;
-  }
-
-  /**
-   * This is the setter method this will set the usableSubnets
-   * Usable subnets.
-   * Field deprecated in 21.1.1.
-   * @return usableSubnets
-   */
-  @VsoMethod
-  public IpamDnsCustomProfile addUsableSubnetsItem(IpAddrPrefix usableSubnetsItem) {
-    if (this.usableSubnets == null) {
-      this.usableSubnets = new ArrayList<IpAddrPrefix>();
-    }
-    this.usableSubnets.add(usableSubnetsItem);
     return this;
   }
 
@@ -244,7 +213,6 @@ public boolean equals(java.lang.Object o) {
   IpamDnsCustomProfile objIpamDnsCustomProfile = (IpamDnsCustomProfile) o;
   return   Objects.equals(this.customIpamDnsProfileRef, objIpamDnsCustomProfile.customIpamDnsProfileRef)&&
   Objects.equals(this.dynamicParams, objIpamDnsCustomProfile.dynamicParams)&&
-  Objects.equals(this.usableSubnets, objIpamDnsCustomProfile.usableSubnets)&&
   Objects.equals(this.usableDomains, objIpamDnsCustomProfile.usableDomains)&&
   Objects.equals(this.usableAllocSubnets, objIpamDnsCustomProfile.usableAllocSubnets);
 }
@@ -257,7 +225,6 @@ public String toString() {
         sb.append("    dynamicParams: ").append(toIndentedString(dynamicParams)).append("\n");
         sb.append("    usableAllocSubnets: ").append(toIndentedString(usableAllocSubnets)).append("\n");
         sb.append("    usableDomains: ").append(toIndentedString(usableDomains)).append("\n");
-        sb.append("    usableSubnets: ").append(toIndentedString(usableSubnets)).append("\n");
       sb.append("}");
   return sb.toString();
 }

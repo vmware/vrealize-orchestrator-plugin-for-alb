@@ -47,6 +47,7 @@ public class AttackMetaData extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Dns amplification attack record.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return amplification
    */
@@ -59,6 +60,7 @@ public class AttackMetaData extends AviRestResource {
    * This is the setter method to the attribute.
    * Dns amplification attack record.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param amplification set the amplification.
    */
@@ -69,7 +71,7 @@ public class AttackMetaData extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property ip of obj type attackmetadata field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip
    */
@@ -80,7 +82,7 @@ public class AttackMetaData extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property ip of obj type attackmetadata field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip set the ip.
    */
@@ -91,7 +93,7 @@ public class AttackMetaData extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property max_resp_time of obj type attackmetadata field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxRespTime
    */
@@ -102,7 +104,7 @@ public class AttackMetaData extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property max_resp_time of obj type attackmetadata field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxRespTime set the maxRespTime.
    */
@@ -112,7 +114,7 @@ public class AttackMetaData extends AviRestResource {
   }
 /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property url of obj type attackmetadata field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return url
    */
@@ -123,7 +125,7 @@ public class AttackMetaData extends AviRestResource {
 
   /**
    * This is the setter method. this will set the url
-   * Placeholder for description of property url of obj type attackmetadata field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return url
    */

@@ -60,7 +60,7 @@ public class SeResources extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property cores_per_socket of obj type seresources field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return coresPerSocket
    */
@@ -71,7 +71,7 @@ public class SeResources extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property cores_per_socket of obj type seresources field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param coresPerSocket set the coresPerSocket.
    */
@@ -82,7 +82,7 @@ public class SeResources extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property disk of obj type seresources field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return disk
    */
@@ -93,7 +93,7 @@ public class SeResources extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property disk of obj type seresources field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param disk set the disk.
    */
@@ -104,7 +104,7 @@ public class SeResources extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property hyper_threading of obj type seresources field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hyperThreading
    */
@@ -115,7 +115,7 @@ public class SeResources extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property hyper_threading of obj type seresources field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hyperThreading set the hyperThreading.
    */
@@ -128,6 +128,7 @@ public class SeResources extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Indicates that the se is running on a virtual machine.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hypervisorMode
    */
@@ -140,6 +141,7 @@ public class SeResources extends AviRestResource {
    * This is the setter method to the attribute.
    * Indicates that the se is running on a virtual machine.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hypervisorMode set the hypervisorMode.
    */
@@ -150,7 +152,7 @@ public class SeResources extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property memory of obj type seresources field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return memory
    */
@@ -161,7 +163,7 @@ public class SeResources extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property memory of obj type seresources field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param memory set the memory.
    */
@@ -174,6 +176,7 @@ public class SeResources extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Indicates the number of active datapath processes.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numDatapathProcesses
    */
@@ -186,6 +189,7 @@ public class SeResources extends AviRestResource {
    * This is the setter method to the attribute.
    * Indicates the number of active datapath processes.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numDatapathProcesses set the numDatapathProcesses.
    */
@@ -196,7 +200,7 @@ public class SeResources extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property num_vcpus of obj type seresources field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numVcpus
    */
@@ -207,7 +211,7 @@ public class SeResources extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property num_vcpus of obj type seresources field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numVcpus set the numVcpus.
    */
@@ -218,7 +222,7 @@ public class SeResources extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property sockets of obj type seresources field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sockets
    */
@@ -229,7 +233,7 @@ public class SeResources extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property sockets of obj type seresources field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sockets set the sockets.
    */

@@ -38,6 +38,7 @@ public class AwsEncryption extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Aws kms arn id of the master key for encryption.
    * Field introduced in 17.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return masterKey
    */
@@ -50,6 +51,7 @@ public class AwsEncryption extends AviRestResource {
    * This is the setter method to the attribute.
    * Aws kms arn id of the master key for encryption.
    * Field introduced in 17.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param masterKey set the masterKey.
    */
@@ -63,6 +65,7 @@ public class AwsEncryption extends AviRestResource {
    * Aws encryption mode.
    * Enum options - AWS_ENCRYPTION_MODE_NONE, AWS_ENCRYPTION_MODE_SSE_KMS.
    * Field introduced in 17.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "AWS_ENCRYPTION_MODE_NONE".
    * @return mode
    */
@@ -76,6 +79,7 @@ public class AwsEncryption extends AviRestResource {
    * Aws encryption mode.
    * Enum options - AWS_ENCRYPTION_MODE_NONE, AWS_ENCRYPTION_MODE_SSE_KMS.
    * Field introduced in 17.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "AWS_ENCRYPTION_MODE_NONE".
    * @param mode set the mode.
    */

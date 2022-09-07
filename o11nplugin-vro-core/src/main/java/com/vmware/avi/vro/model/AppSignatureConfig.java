@@ -36,8 +36,9 @@ public class AppSignatureConfig extends AviRestResource {
    * Allowed values are 60-10080.
    * Field introduced in 20.1.4.
    * Unit is min.
-   * Allowed in basic edition, essentials edition, enterprise edition.
-   * Special default for basic edition is 1440, essentials edition is 1440, enterprise is 1440.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
+   * Special default for essentials edition is 1440, basic edition is 1440, enterprise is 1440.
    * @return appSignatureSyncInterval
    */
   @VsoMethod
@@ -51,8 +52,9 @@ public class AppSignatureConfig extends AviRestResource {
    * Allowed values are 60-10080.
    * Field introduced in 20.1.4.
    * Unit is min.
-   * Allowed in basic edition, essentials edition, enterprise edition.
-   * Special default for basic edition is 1440, essentials edition is 1440, enterprise is 1440.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
+   * Special default for essentials edition is 1440, basic edition is 1440, enterprise is 1440.
    * @param appSignatureSyncInterval set the appSignatureSyncInterval.
    */
   @VsoMethod

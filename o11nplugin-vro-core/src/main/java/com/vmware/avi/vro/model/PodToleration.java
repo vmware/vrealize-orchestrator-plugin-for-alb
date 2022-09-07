@@ -51,6 +51,7 @@ public class PodToleration extends AviRestResource {
    * Effect to match.
    * Enum options - NO_SCHEDULE, PREFER_NO_SCHEDULE, NO_EXECUTE.
    * Field introduced in 17.2.14, 18.1.5, 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return effect
    */
@@ -64,6 +65,7 @@ public class PodToleration extends AviRestResource {
    * Effect to match.
    * Enum options - NO_SCHEDULE, PREFER_NO_SCHEDULE, NO_EXECUTE.
    * Field introduced in 17.2.14, 18.1.5, 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param effect set the effect.
    */
@@ -76,6 +78,7 @@ public class PodToleration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Key to match.
    * Field introduced in 17.2.14, 18.1.5, 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return key
    */
@@ -88,6 +91,7 @@ public class PodToleration extends AviRestResource {
    * This is the setter method to the attribute.
    * Key to match.
    * Field introduced in 17.2.14, 18.1.5, 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param key set the key.
    */
@@ -101,6 +105,7 @@ public class PodToleration extends AviRestResource {
    * Operator to match.
    * Enum options - EQUAL, EXISTS.
    * Field introduced in 17.2.14, 18.1.5, 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "EQUAL".
    * @return operator
    */
@@ -114,6 +119,7 @@ public class PodToleration extends AviRestResource {
    * Operator to match.
    * Enum options - EQUAL, EXISTS.
    * Field introduced in 17.2.14, 18.1.5, 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "EQUAL".
    * @param operator set the operator.
    */
@@ -127,6 +133,7 @@ public class PodToleration extends AviRestResource {
    * Pods that tolerate the taint with a specified toleration_seconds remain bound for the specified amount of time.
    * Field introduced in 17.2.14, 18.1.5, 18.2.1.
    * Unit is seconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tolerationSeconds
    */
@@ -140,6 +147,7 @@ public class PodToleration extends AviRestResource {
    * Pods that tolerate the taint with a specified toleration_seconds remain bound for the specified amount of time.
    * Field introduced in 17.2.14, 18.1.5, 18.2.1.
    * Unit is seconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tolerationSeconds set the tolerationSeconds.
    */
@@ -152,6 +160,7 @@ public class PodToleration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Value to match.
    * Field introduced in 17.2.14, 18.1.5, 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return value
    */
@@ -164,6 +173,7 @@ public class PodToleration extends AviRestResource {
    * This is the setter method to the attribute.
    * Value to match.
    * Field introduced in 17.2.14, 18.1.5, 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param value set the value.
    */

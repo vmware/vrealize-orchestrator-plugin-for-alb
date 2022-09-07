@@ -51,6 +51,7 @@ public class ClusterCloudDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Azure info to configure cluster_vip on the controller.
    * Field introduced in 17.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return azureInfo
    */
@@ -63,6 +64,7 @@ public class ClusterCloudDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Azure info to configure cluster_vip on the controller.
    * Field introduced in 17.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param azureInfo set the azureInfo.
    */
@@ -74,6 +76,7 @@ public class ClusterCloudDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -85,6 +88,7 @@ public class ClusterCloudDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -97,6 +101,7 @@ public class ClusterCloudDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
    * Field introduced in 17.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -109,6 +114,7 @@ public class ClusterCloudDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
    * Field introduced in 17.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
@@ -139,6 +145,7 @@ public class ClusterCloudDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -150,6 +157,7 @@ public class ClusterCloudDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */

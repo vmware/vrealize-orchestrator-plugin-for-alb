@@ -47,6 +47,7 @@ public class VipAutoscalePolicy extends AviRestResource {
    * The amount of time, in seconds, when a vip is withdrawn before a scaling activity starts.
    * Field introduced in 17.2.12, 18.1.2.
    * Unit is seconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return dnsCooldown
    */
@@ -60,6 +61,7 @@ public class VipAutoscalePolicy extends AviRestResource {
    * The amount of time, in seconds, when a vip is withdrawn before a scaling activity starts.
    * Field introduced in 17.2.12, 18.1.2.
    * Unit is seconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @param dnsCooldown set the dnsCooldown.
    */
@@ -72,6 +74,7 @@ public class VipAutoscalePolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The maximum size of the group.
    * Field introduced in 17.2.12, 18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @return maxSize
    */
@@ -84,6 +87,7 @@ public class VipAutoscalePolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * The maximum size of the group.
    * Field introduced in 17.2.12, 18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @param maxSize set the maxSize.
    */
@@ -96,6 +100,7 @@ public class VipAutoscalePolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The minimum size of the group.
    * Field introduced in 17.2.12, 18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @return minSize
    */
@@ -108,6 +113,7 @@ public class VipAutoscalePolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * The minimum size of the group.
    * Field introduced in 17.2.12, 18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @param minSize set the minSize.
    */
@@ -120,6 +126,7 @@ public class VipAutoscalePolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * When set, scaling is suspended.
    * Field introduced in 17.2.12, 18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return suspend
    */
@@ -132,6 +139,7 @@ public class VipAutoscalePolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * When set, scaling is suspended.
    * Field introduced in 17.2.12, 18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param suspend set the suspend.
    */

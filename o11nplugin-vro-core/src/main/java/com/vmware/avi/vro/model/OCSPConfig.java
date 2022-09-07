@@ -56,6 +56,7 @@ public class OCSPConfig extends AviRestResource {
    * Allowed values are 60-86400.
    * Field introduced in 20.1.1.
    * Unit is sec.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3600.
    * @return failedOcspJobsRetryInterval
    */
@@ -70,6 +71,7 @@ public class OCSPConfig extends AviRestResource {
    * Allowed values are 60-86400.
    * Field introduced in 20.1.1.
    * Unit is sec.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3600.
    * @param failedOcspJobsRetryInterval set the failedOcspJobsRetryInterval.
    */
@@ -82,6 +84,7 @@ public class OCSPConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of times the failed ocsp jobs can be scheduled.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return maxTries
    */
@@ -94,6 +97,7 @@ public class OCSPConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of times the failed ocsp jobs can be scheduled.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param maxTries set the maxTries.
    */
@@ -108,6 +112,7 @@ public class OCSPConfig extends AviRestResource {
    * Allowed values are 60-31536000.
    * Field introduced in 20.1.1.
    * Unit is sec.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 86400.
    * @return ocspReqInterval
    */
@@ -122,6 +127,7 @@ public class OCSPConfig extends AviRestResource {
    * Allowed values are 60-31536000.
    * Field introduced in 20.1.1.
    * Unit is sec.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 86400.
    * @param ocspReqInterval set the ocspReqInterval.
    */
@@ -135,6 +141,7 @@ public class OCSPConfig extends AviRestResource {
    * Time in seconds that the system waits for a reply from the ocsp responder before dropping the connection.
    * Field introduced in 20.1.1.
    * Unit is sec.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ocspRespTimeout
    */
@@ -148,6 +155,7 @@ public class OCSPConfig extends AviRestResource {
    * Time in seconds that the system waits for a reply from the ocsp responder before dropping the connection.
    * Field introduced in 20.1.1.
    * Unit is sec.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ocspRespTimeout set the ocspRespTimeout.
    */
@@ -160,6 +168,7 @@ public class OCSPConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of responder urls configured by user to do failover/override the aia extension contained in the ocsp responder's ssl/tls certificate.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return responderUrlLists
    */
@@ -172,6 +181,7 @@ public class OCSPConfig extends AviRestResource {
    * This is the setter method. this will set the responderUrlLists
    * List of responder urls configured by user to do failover/override the aia extension contained in the ocsp responder's ssl/tls certificate.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return responderUrlLists
    */
@@ -184,6 +194,7 @@ public class OCSPConfig extends AviRestResource {
    * This is the setter method this will set the responderUrlLists
    * List of responder urls configured by user to do failover/override the aia extension contained in the ocsp responder's ssl/tls certificate.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return responderUrlLists
    */
@@ -202,6 +213,7 @@ public class OCSPConfig extends AviRestResource {
    * Describes the type of action to take with the responder urls.
    * Enum options - OCSP_RESPONDER_URL_FAILOVER, OCSP_RESPONDER_URL_OVERRIDE.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "OCSP_RESPONDER_URL_FAILOVER".
    * @return urlAction
    */
@@ -215,6 +227,7 @@ public class OCSPConfig extends AviRestResource {
    * Describes the type of action to take with the responder urls.
    * Enum options - OCSP_RESPONDER_URL_FAILOVER, OCSP_RESPONDER_URL_OVERRIDE.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "OCSP_RESPONDER_URL_FAILOVER".
    * @param urlAction set the urlAction.
    */

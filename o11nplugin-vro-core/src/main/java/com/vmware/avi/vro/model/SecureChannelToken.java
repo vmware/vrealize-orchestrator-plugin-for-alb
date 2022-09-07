@@ -40,10 +40,6 @@ public class SecureChannelToken extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String name = null;
 
-    @JsonProperty("node_uuid")
-    @JsonInclude(Include.NON_NULL)
-    private String nodeUuid;
-
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
     private String url = "url";
@@ -57,6 +53,7 @@ public class SecureChannelToken extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Expiry time for auth_token.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return expiryTime
    */
@@ -68,6 +65,7 @@ public class SecureChannelToken extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Expiry time for auth_token.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param expiryTime set the expiryTime.
    */
@@ -80,6 +78,7 @@ public class SecureChannelToken extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Whether this auth_token is used by some node(se/controller).
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return inUse
    */
@@ -92,6 +91,7 @@ public class SecureChannelToken extends AviRestResource {
    * This is the setter method to the attribute.
    * Whether this auth_token is used by some node(se/controller).
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param inUse set the inUse.
    */
@@ -103,6 +103,7 @@ public class SecureChannelToken extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Metadata associated with auth_token.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metadata
    */
@@ -114,6 +115,7 @@ public class SecureChannelToken extends AviRestResource {
   /**
    * This is the setter method. this will set the metadata
    * Metadata associated with auth_token.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metadata
    */
@@ -125,6 +127,7 @@ public class SecureChannelToken extends AviRestResource {
   /**
    * This is the setter method this will set the metadata
    * Metadata associated with auth_token.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metadata
    */
@@ -141,6 +144,7 @@ public class SecureChannelToken extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Auth_token used for se/controller authorization.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -152,34 +156,13 @@ public class SecureChannelToken extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Auth_token used for se/controller authorization.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
   public void setName(String  name) {
     this.name = name;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Deprecated  uuid of se or controller who is using this auth_token.
-   * Field deprecated in 21.1.1.
-   * @return nodeUuid
-   */
-  @VsoMethod
-  public String getNodeUuid() {
-    return nodeUuid;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Deprecated  uuid of se or controller who is using this auth_token.
-   * Field deprecated in 21.1.1.
-   * @param nodeUuid set the nodeUuid.
-   */
-  @VsoMethod
-  public void setNodeUuid(String  nodeUuid) {
-    this.nodeUuid = nodeUuid;
   }
 /**
    * This is the getter method this will return the attribute value.
@@ -204,6 +187,7 @@ public class SecureChannelToken extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Auth_token used for se/controller authorization.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -215,6 +199,7 @@ public class SecureChannelToken extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Auth_token used for se/controller authorization.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
@@ -240,7 +225,6 @@ public boolean equals(java.lang.Object o) {
   return   Objects.equals(this.uuid, objSecureChannelToken.uuid)&&
   Objects.equals(this.name, objSecureChannelToken.name)&&
   Objects.equals(this.expiryTime, objSecureChannelToken.expiryTime)&&
-  Objects.equals(this.nodeUuid, objSecureChannelToken.nodeUuid)&&
   Objects.equals(this.metadata, objSecureChannelToken.metadata)&&
   Objects.equals(this.inUse, objSecureChannelToken.inUse);
 }
@@ -253,7 +237,6 @@ public String toString() {
         sb.append("    inUse: ").append(toIndentedString(inUse)).append("\n");
         sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    nodeUuid: ").append(toIndentedString(nodeUuid)).append("\n");
             sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
       sb.append("}");
   return sb.toString();

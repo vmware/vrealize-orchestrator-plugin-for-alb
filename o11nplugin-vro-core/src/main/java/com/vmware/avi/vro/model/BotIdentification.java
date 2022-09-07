@@ -43,6 +43,7 @@ public class BotIdentification extends AviRestResource {
    * The bot client class of this identification.
    * Enum options - UNDETERMINED_CLIENT, HUMAN_CLIENT, BOT_CLIENT.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return classStr
    */
@@ -56,6 +57,7 @@ public class BotIdentification extends AviRestResource {
    * The bot client class of this identification.
    * Enum options - UNDETERMINED_CLIENT, HUMAN_CLIENT, BOT_CLIENT.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param classStr set the classStr.
    */
@@ -68,6 +70,7 @@ public class BotIdentification extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * A free-form string to identify the client.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return identifier
    */
@@ -80,6 +83,7 @@ public class BotIdentification extends AviRestResource {
    * This is the setter method to the attribute.
    * A free-form string to identify the client.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param identifier set the identifier.
    */
@@ -92,8 +96,9 @@ public class BotIdentification extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The bot client type of this identification.
    * Enum options - UNDETERMINED_CLIENT_TYPE, WEB_BROWSER, IN_APP_BROWSER, SEARCH_ENGINE, IMPERSONATOR, SPAM_SOURCE, WEB_ATTACKS, BOTNET, SCANNER,
-   * DENIAL_OF_SERVICE, CLOUD_SOURCE, SECURITY_SCANNER, SITE_MONITOR, GENERIC_APPLICATION.
+   * DENIAL_OF_SERVICE, CLOUD_SOURCE, SECURITY_SCANNER, SITE_MONITOR, GENERIC_APPLICATION, SUSPICIOUS_APPLICATION.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
@@ -106,8 +111,9 @@ public class BotIdentification extends AviRestResource {
    * This is the setter method to the attribute.
    * The bot client type of this identification.
    * Enum options - UNDETERMINED_CLIENT_TYPE, WEB_BROWSER, IN_APP_BROWSER, SEARCH_ENGINE, IMPERSONATOR, SPAM_SOURCE, WEB_ATTACKS, BOTNET, SCANNER,
-   * DENIAL_OF_SERVICE, CLOUD_SOURCE, SECURITY_SCANNER, SITE_MONITOR, GENERIC_APPLICATION.
+   * DENIAL_OF_SERVICE, CLOUD_SOURCE, SECURITY_SCANNER, SITE_MONITOR, GENERIC_APPLICATION, SUSPICIOUS_APPLICATION.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */

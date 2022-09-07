@@ -42,6 +42,7 @@ public class HealthMonitorRadius extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Radius monitor will query radius server with this password.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return password
    */
@@ -54,6 +55,7 @@ public class HealthMonitorRadius extends AviRestResource {
    * This is the setter method to the attribute.
    * Radius monitor will query radius server with this password.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param password set the password.
    */
@@ -66,6 +68,7 @@ public class HealthMonitorRadius extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Radius monitor will query radius server with this shared secret.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sharedSecret
    */
@@ -78,6 +81,7 @@ public class HealthMonitorRadius extends AviRestResource {
    * This is the setter method to the attribute.
    * Radius monitor will query radius server with this shared secret.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sharedSecret set the sharedSecret.
    */
@@ -90,6 +94,7 @@ public class HealthMonitorRadius extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Radius monitor will query radius server with this username.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return username
    */
@@ -102,6 +107,7 @@ public class HealthMonitorRadius extends AviRestResource {
    * This is the setter method to the attribute.
    * Radius monitor will query radius server with this username.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param username set the username.
    */

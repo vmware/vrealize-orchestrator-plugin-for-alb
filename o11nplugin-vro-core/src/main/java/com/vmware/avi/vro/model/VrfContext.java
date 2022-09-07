@@ -60,10 +60,6 @@ public class VrfContext extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private InternalGatewayMonitor internalGatewayMonitor = null;
 
-    @JsonProperty("labels")
-    @JsonInclude(Include.NON_NULL)
-    private List<KeyValue> labels;
-
     @JsonProperty("lldp_enable")
     @JsonInclude(Include.NON_NULL)
     private Boolean lldpEnable = true;
@@ -102,7 +98,8 @@ public class VrfContext extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Key/value vrfcontext attributes.
    * Field introduced in 20.1.2.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attrs
    */
@@ -115,7 +112,8 @@ public class VrfContext extends AviRestResource {
    * This is the setter method. this will set the attrs
    * Key/value vrfcontext attributes.
    * Field introduced in 20.1.2.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attrs
    */
@@ -128,7 +126,8 @@ public class VrfContext extends AviRestResource {
    * This is the setter method this will set the attrs
    * Key/value vrfcontext attributes.
    * Field introduced in 20.1.2.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attrs
    */
@@ -146,7 +145,7 @@ public class VrfContext extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Bfd configuration profile.
    * Field introduced in 20.1.1.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return bfdProfile
    */
@@ -159,7 +158,7 @@ public class VrfContext extends AviRestResource {
    * This is the setter method to the attribute.
    * Bfd configuration profile.
    * Field introduced in 20.1.1.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param bfdProfile set the bfdProfile.
    */
@@ -171,6 +170,7 @@ public class VrfContext extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Bgp local and peer info.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return bgpProfile
    */
@@ -182,6 +182,7 @@ public class VrfContext extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Bgp local and peer info.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param bgpProfile set the bgpProfile.
    */
@@ -193,6 +194,7 @@ public class VrfContext extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type cloud.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudRef
    */
@@ -204,6 +206,7 @@ public class VrfContext extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type cloud.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudRef set the cloudRef.
    */
@@ -216,6 +219,7 @@ public class VrfContext extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Configure debug flags for vrf.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return debugvrfcontext
    */
@@ -228,6 +232,7 @@ public class VrfContext extends AviRestResource {
    * This is the setter method to the attribute.
    * Configure debug flags for vrf.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param debugvrfcontext set the debugvrfcontext.
    */
@@ -238,7 +243,7 @@ public class VrfContext extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * User defined description for the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
@@ -249,7 +254,7 @@ public class VrfContext extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * User defined description for the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
@@ -261,6 +266,7 @@ public class VrfContext extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configure ping based heartbeat check for gateway in service engines of vrf.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gatewayMon
    */
@@ -272,6 +278,7 @@ public class VrfContext extends AviRestResource {
   /**
    * This is the setter method. this will set the gatewayMon
    * Configure ping based heartbeat check for gateway in service engines of vrf.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gatewayMon
    */
@@ -283,6 +290,7 @@ public class VrfContext extends AviRestResource {
   /**
    * This is the setter method this will set the gatewayMon
    * Configure ping based heartbeat check for gateway in service engines of vrf.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gatewayMon
    */
@@ -300,6 +308,7 @@ public class VrfContext extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Configure ping based heartbeat check for all default gateways in service engines of vrf.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return internalGatewayMonitor
    */
@@ -312,6 +321,7 @@ public class VrfContext extends AviRestResource {
    * This is the setter method to the attribute.
    * Configure ping based heartbeat check for all default gateways in service engines of vrf.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param internalGatewayMonitor set the internalGatewayMonitor.
    */
@@ -322,50 +332,10 @@ public class VrfContext extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Key/value labels which can be used for object access policy permission scoping.
-   * Field deprecated in 20.1.5.
-   * Field introduced in 18.2.7, 20.1.1.
-   * @return labels
-   */
-  @VsoMethod
-  public List<KeyValue> getLabels() {
-    return labels;
-  }
-
-  /**
-   * This is the setter method. this will set the labels
-   * Key/value labels which can be used for object access policy permission scoping.
-   * Field deprecated in 20.1.5.
-   * Field introduced in 18.2.7, 20.1.1.
-   * @return labels
-   */
-  @VsoMethod
-  public void setLabels(List<KeyValue>  labels) {
-    this.labels = labels;
-  }
-
-  /**
-   * This is the setter method this will set the labels
-   * Key/value labels which can be used for object access policy permission scoping.
-   * Field deprecated in 20.1.5.
-   * Field introduced in 18.2.7, 20.1.1.
-   * @return labels
-   */
-  @VsoMethod
-  public VrfContext addLabelsItem(KeyValue labelsItem) {
-    if (this.labels == null) {
-      this.labels = new ArrayList<KeyValue>();
-    }
-    this.labels.add(labelsItem);
-    return this;
-  }
-
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Enable lldp.
    * Field introduced in 18.2.10, 20.1.1.
-   * Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- true), basic edition(allowed values- true), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return lldpEnable
    */
@@ -378,7 +348,8 @@ public class VrfContext extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable lldp.
    * Field introduced in 18.2.10, 20.1.1.
-   * Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- true), basic edition(allowed values- true), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param lldpEnable set the lldpEnable.
    */
@@ -391,7 +362,8 @@ public class VrfContext extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -404,7 +376,8 @@ public class VrfContext extends AviRestResource {
    * This is the setter method. this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -417,7 +390,8 @@ public class VrfContext extends AviRestResource {
    * This is the setter method this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -433,7 +407,7 @@ public class VrfContext extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Name of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -444,7 +418,7 @@ public class VrfContext extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Name of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -455,7 +429,7 @@ public class VrfContext extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property static_routes of obj type vrfcontext field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return staticRoutes
    */
@@ -466,7 +440,7 @@ public class VrfContext extends AviRestResource {
 
   /**
    * This is the setter method. this will set the staticRoutes
-   * Placeholder for description of property static_routes of obj type vrfcontext field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return staticRoutes
    */
@@ -477,7 +451,7 @@ public class VrfContext extends AviRestResource {
 
   /**
    * This is the setter method this will set the staticRoutes
-   * Placeholder for description of property static_routes of obj type vrfcontext field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return staticRoutes
    */
@@ -493,7 +467,7 @@ public class VrfContext extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property system_default of obj type vrfcontext field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return systemDefault
    */
@@ -504,7 +478,7 @@ public class VrfContext extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property system_default of obj type vrfcontext field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param systemDefault set the systemDefault.
    */
@@ -516,6 +490,7 @@ public class VrfContext extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -527,6 +502,7 @@ public class VrfContext extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
@@ -556,7 +532,7 @@ public class VrfContext extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Unique object identifier of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -567,7 +543,7 @@ public class VrfContext extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Unique object identifier of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
@@ -598,7 +574,6 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.gatewayMon, objVrfContext.gatewayMon)&&
   Objects.equals(this.internalGatewayMonitor, objVrfContext.internalGatewayMonitor)&&
   Objects.equals(this.debugvrfcontext, objVrfContext.debugvrfcontext)&&
-  Objects.equals(this.labels, objVrfContext.labels)&&
   Objects.equals(this.bfdProfile, objVrfContext.bfdProfile)&&
   Objects.equals(this.lldpEnable, objVrfContext.lldpEnable)&&
   Objects.equals(this.attrs, objVrfContext.attrs)&&
@@ -620,7 +595,6 @@ public String toString() {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    gatewayMon: ").append(toIndentedString(gatewayMon)).append("\n");
         sb.append("    internalGatewayMonitor: ").append(toIndentedString(internalGatewayMonitor)).append("\n");
-        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    lldpEnable: ").append(toIndentedString(lldpEnable)).append("\n");
         sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");

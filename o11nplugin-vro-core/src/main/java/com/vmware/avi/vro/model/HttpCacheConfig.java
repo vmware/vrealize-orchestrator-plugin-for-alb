@@ -61,14 +61,6 @@ public class HttpCacheConfig extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer maxObjectSize = 4194304;
 
-    @JsonProperty("mime_types_black_group_refs")
-    @JsonInclude(Include.NON_NULL)
-    private List<String> mimeTypesBlackGroupRefs;
-
-    @JsonProperty("mime_types_black_list")
-    @JsonInclude(Include.NON_NULL)
-    private List<String> mimeTypesBlackList;
-
     @JsonProperty("mime_types_block_group_refs")
     @JsonInclude(Include.NON_NULL)
     private List<String> mimeTypesBlockGroupRefs = null;
@@ -106,6 +98,7 @@ public class HttpCacheConfig extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Add an age header to content served from cache, which indicates to the client the number of seconds the object has been in the cache.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return ageHeader
    */
@@ -117,6 +110,7 @@ public class HttpCacheConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Add an age header to content served from cache, which indicates to the client the number of seconds the object has been in the cache.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param ageHeader set the ageHeader.
    */
@@ -128,6 +122,7 @@ public class HttpCacheConfig extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enable/disable caching objects without cache-control headers.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return aggressive
    */
@@ -139,6 +134,7 @@ public class HttpCacheConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enable/disable caching objects without cache-control headers.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param aggressive set the aggressive.
    */
@@ -151,6 +147,7 @@ public class HttpCacheConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * If a date header was not added by the server, add a date header to the object served from cache.
    * This indicates to the client when the object was originally sent by the server to the cache.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return dateHeader
    */
@@ -163,6 +160,7 @@ public class HttpCacheConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * If a date header was not added by the server, add a date header to the object served from cache.
    * This indicates to the client when the object was originally sent by the server to the cache.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param dateHeader set the dateHeader.
    */
@@ -175,6 +173,7 @@ public class HttpCacheConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Default expiration time of cache objects received from the server without a cache-control expiration header.
    * This value may be overwritten by the heuristic expire setting.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 600.
    * @return defaultExpire
    */
@@ -187,6 +186,7 @@ public class HttpCacheConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Default expiration time of cache objects received from the server without a cache-control expiration header.
    * This value may be overwritten by the heuristic expire setting.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 600.
    * @param defaultExpire set the defaultExpire.
    */
@@ -199,6 +199,7 @@ public class HttpCacheConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable/disable http object caching.when enabling caching for the first time, se group app_cache_percent must be set to allocate shared memory
    * required for caching (a service engine restart is needed after setting/resetting the se group value).
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enabled
    */
@@ -211,6 +212,7 @@ public class HttpCacheConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable/disable http object caching.when enabling caching for the first time, se group app_cache_percent must be set to allocate shared memory
    * required for caching (a service engine restart is needed after setting/resetting the se group value).
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param enabled set the enabled.
    */
@@ -224,6 +226,7 @@ public class HttpCacheConfig extends AviRestResource {
    * If a response object from the server does not include the cache-control header, but does include a last-modified header, the system will use this
    * time to calculate the cache-control expiration.
    * If unable to solicit an last-modified header, then the system will fall back to the cache expire time value.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return heuristicExpire
    */
@@ -237,6 +240,7 @@ public class HttpCacheConfig extends AviRestResource {
    * If a response object from the server does not include the cache-control header, but does include a last-modified header, the system will use this
    * time to calculate the cache-control expiration.
    * If unable to solicit an last-modified header, then the system will fall back to the cache expire time value.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param heuristicExpire set the heuristicExpire.
    */
@@ -249,6 +253,7 @@ public class HttpCacheConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ignore client's cache control headers when fetching or storing from and to the cache.
    * Field introduced in 18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return ignoreRequestCacheControl
    */
@@ -261,6 +266,7 @@ public class HttpCacheConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Ignore client's cache control headers when fetching or storing from and to the cache.
    * Field introduced in 18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param ignoreRequestCacheControl set the ignoreRequestCacheControl.
    */
@@ -273,6 +279,7 @@ public class HttpCacheConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Max size, in bytes, of the cache.
    * The default, zero, indicates auto configuration.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return maxCacheSize
    */
@@ -285,6 +292,7 @@ public class HttpCacheConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Max size, in bytes, of the cache.
    * The default, zero, indicates auto configuration.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param maxCacheSize set the maxCacheSize.
    */
@@ -296,6 +304,7 @@ public class HttpCacheConfig extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Maximum size of an object to store in the cache.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4194304.
    * @return maxObjectSize
    */
@@ -307,6 +316,7 @@ public class HttpCacheConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Maximum size of an object to store in the cache.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4194304.
    * @param maxObjectSize set the maxObjectSize.
    */
@@ -317,88 +327,10 @@ public class HttpCacheConfig extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Blacklist string group of non-cacheable mime types.
-   * It is a reference to an object of type stringgroup.
-   * Field deprecated in 20.1.3.
-   * @return mimeTypesBlackGroupRefs
-   */
-  @VsoMethod
-  public List<String> getMimeTypesBlackGroupRefs() {
-    return mimeTypesBlackGroupRefs;
-  }
-
-  /**
-   * This is the setter method. this will set the mimeTypesBlackGroupRefs
-   * Blacklist string group of non-cacheable mime types.
-   * It is a reference to an object of type stringgroup.
-   * Field deprecated in 20.1.3.
-   * @return mimeTypesBlackGroupRefs
-   */
-  @VsoMethod
-  public void setMimeTypesBlackGroupRefs(List<String>  mimeTypesBlackGroupRefs) {
-    this.mimeTypesBlackGroupRefs = mimeTypesBlackGroupRefs;
-  }
-
-  /**
-   * This is the setter method this will set the mimeTypesBlackGroupRefs
-   * Blacklist string group of non-cacheable mime types.
-   * It is a reference to an object of type stringgroup.
-   * Field deprecated in 20.1.3.
-   * @return mimeTypesBlackGroupRefs
-   */
-  @VsoMethod
-  public HttpCacheConfig addMimeTypesBlackGroupRefsItem(String mimeTypesBlackGroupRefsItem) {
-    if (this.mimeTypesBlackGroupRefs == null) {
-      this.mimeTypesBlackGroupRefs = new ArrayList<String>();
-    }
-    this.mimeTypesBlackGroupRefs.add(mimeTypesBlackGroupRefsItem);
-    return this;
-  }
-
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Blacklist of non-cacheable mime types.
-   * Field deprecated in 20.1.3.
-   * @return mimeTypesBlackList
-   */
-  @VsoMethod
-  public List<String> getMimeTypesBlackList() {
-    return mimeTypesBlackList;
-  }
-
-  /**
-   * This is the setter method. this will set the mimeTypesBlackList
-   * Blacklist of non-cacheable mime types.
-   * Field deprecated in 20.1.3.
-   * @return mimeTypesBlackList
-   */
-  @VsoMethod
-  public void setMimeTypesBlackList(List<String>  mimeTypesBlackList) {
-    this.mimeTypesBlackList = mimeTypesBlackList;
-  }
-
-  /**
-   * This is the setter method this will set the mimeTypesBlackList
-   * Blacklist of non-cacheable mime types.
-   * Field deprecated in 20.1.3.
-   * @return mimeTypesBlackList
-   */
-  @VsoMethod
-  public HttpCacheConfig addMimeTypesBlackListItem(String mimeTypesBlackListItem) {
-    if (this.mimeTypesBlackList == null) {
-      this.mimeTypesBlackList = new ArrayList<String>();
-    }
-    this.mimeTypesBlackList.add(mimeTypesBlackListItem);
-    return this;
-  }
-
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Blocklist string group of non-cacheable mime types.
    * It is a reference to an object of type stringgroup.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mimeTypesBlockGroupRefs
    */
@@ -412,6 +344,7 @@ public class HttpCacheConfig extends AviRestResource {
    * Blocklist string group of non-cacheable mime types.
    * It is a reference to an object of type stringgroup.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mimeTypesBlockGroupRefs
    */
@@ -425,6 +358,7 @@ public class HttpCacheConfig extends AviRestResource {
    * Blocklist string group of non-cacheable mime types.
    * It is a reference to an object of type stringgroup.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mimeTypesBlockGroupRefs
    */
@@ -442,6 +376,7 @@ public class HttpCacheConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Blocklist of non-cacheable mime types.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mimeTypesBlockLists
    */
@@ -454,6 +389,7 @@ public class HttpCacheConfig extends AviRestResource {
    * This is the setter method. this will set the mimeTypesBlockLists
    * Blocklist of non-cacheable mime types.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mimeTypesBlockLists
    */
@@ -466,6 +402,7 @@ public class HttpCacheConfig extends AviRestResource {
    * This is the setter method this will set the mimeTypesBlockLists
    * Blocklist of non-cacheable mime types.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mimeTypesBlockLists
    */
@@ -484,6 +421,7 @@ public class HttpCacheConfig extends AviRestResource {
    * Allowlist string group of cacheable mime types.
    * If both cacheable mime types string list and string group are empty, this defaults to *\/*.
    * It is a reference to an object of type stringgroup.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mimeTypesGroupRefs
    */
@@ -497,6 +435,7 @@ public class HttpCacheConfig extends AviRestResource {
    * Allowlist string group of cacheable mime types.
    * If both cacheable mime types string list and string group are empty, this defaults to *\/*.
    * It is a reference to an object of type stringgroup.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mimeTypesGroupRefs
    */
@@ -510,6 +449,7 @@ public class HttpCacheConfig extends AviRestResource {
    * Allowlist string group of cacheable mime types.
    * If both cacheable mime types string list and string group are empty, this defaults to *\/*.
    * It is a reference to an object of type stringgroup.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mimeTypesGroupRefs
    */
@@ -527,6 +467,7 @@ public class HttpCacheConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Allowlist of cacheable mime types.
    * If both cacheable mime types string list and string group are empty, this defaults to *\/*.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mimeTypesList
    */
@@ -539,6 +480,7 @@ public class HttpCacheConfig extends AviRestResource {
    * This is the setter method. this will set the mimeTypesList
    * Allowlist of cacheable mime types.
    * If both cacheable mime types string list and string group are empty, this defaults to *\/*.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mimeTypesList
    */
@@ -551,6 +493,7 @@ public class HttpCacheConfig extends AviRestResource {
    * This is the setter method this will set the mimeTypesList
    * Allowlist of cacheable mime types.
    * If both cacheable mime types string list and string group are empty, this defaults to *\/*.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mimeTypesList
    */
@@ -567,6 +510,7 @@ public class HttpCacheConfig extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Minimum size of an object to store in the cache.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @return minObjectSize
    */
@@ -578,6 +522,7 @@ public class HttpCacheConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Minimum size of an object to store in the cache.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @param minObjectSize set the minObjectSize.
    */
@@ -591,6 +536,7 @@ public class HttpCacheConfig extends AviRestResource {
    * Allow caching of objects whose uri included a query argument.
    * When disabled, these objects are not cached.
    * When enabled, the request must match the uri query to be considered a hit.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return queryCacheable
    */
@@ -604,6 +550,7 @@ public class HttpCacheConfig extends AviRestResource {
    * Allow caching of objects whose uri included a query argument.
    * When disabled, these objects are not cached.
    * When enabled, the request must match the uri query to be considered a hit.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param queryCacheable set the queryCacheable.
    */
@@ -616,6 +563,7 @@ public class HttpCacheConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Non-cacheable uri configuration with match criteria.
    * Field introduced in 18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uriNonCacheable
    */
@@ -628,6 +576,7 @@ public class HttpCacheConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Non-cacheable uri configuration with match criteria.
    * Field introduced in 18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uriNonCacheable set the uriNonCacheable.
    */
@@ -639,6 +588,7 @@ public class HttpCacheConfig extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Add an x-cache header to content served from cache, which indicates to the client that the object was served from an intermediate cache.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return xcacheHeader
    */
@@ -650,6 +600,7 @@ public class HttpCacheConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Add an x-cache header to content served from cache, which indicates to the client that the object was served from an intermediate cache.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param xcacheHeader set the xcacheHeader.
    */
@@ -682,8 +633,6 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.mimeTypesList, objHttpCacheConfig.mimeTypesList)&&
   Objects.equals(this.mimeTypesGroupRefs, objHttpCacheConfig.mimeTypesGroupRefs)&&
   Objects.equals(this.aggressive, objHttpCacheConfig.aggressive)&&
-  Objects.equals(this.mimeTypesBlackList, objHttpCacheConfig.mimeTypesBlackList)&&
-  Objects.equals(this.mimeTypesBlackGroupRefs, objHttpCacheConfig.mimeTypesBlackGroupRefs)&&
   Objects.equals(this.uriNonCacheable, objHttpCacheConfig.uriNonCacheable)&&
   Objects.equals(this.ignoreRequestCacheControl, objHttpCacheConfig.ignoreRequestCacheControl)&&
   Objects.equals(this.mimeTypesBlockLists, objHttpCacheConfig.mimeTypesBlockLists)&&
@@ -703,8 +652,6 @@ public String toString() {
         sb.append("    ignoreRequestCacheControl: ").append(toIndentedString(ignoreRequestCacheControl)).append("\n");
         sb.append("    maxCacheSize: ").append(toIndentedString(maxCacheSize)).append("\n");
         sb.append("    maxObjectSize: ").append(toIndentedString(maxObjectSize)).append("\n");
-        sb.append("    mimeTypesBlackGroupRefs: ").append(toIndentedString(mimeTypesBlackGroupRefs)).append("\n");
-        sb.append("    mimeTypesBlackList: ").append(toIndentedString(mimeTypesBlackList)).append("\n");
         sb.append("    mimeTypesBlockGroupRefs: ").append(toIndentedString(mimeTypesBlockGroupRefs)).append("\n");
         sb.append("    mimeTypesBlockLists: ").append(toIndentedString(mimeTypesBlockLists)).append("\n");
         sb.append("    mimeTypesGroupRefs: ").append(toIndentedString(mimeTypesGroupRefs)).append("\n");

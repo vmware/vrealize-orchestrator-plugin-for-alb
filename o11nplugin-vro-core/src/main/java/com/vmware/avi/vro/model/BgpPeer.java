@@ -109,6 +109,7 @@ public class BgpPeer extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Advertise snat ip to this peer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return advertiseSnatIp
    */
@@ -120,6 +121,7 @@ public class BgpPeer extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Advertise snat ip to this peer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param advertiseSnatIp set the advertiseSnatIp.
    */
@@ -131,6 +133,7 @@ public class BgpPeer extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Advertise vip to this peer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return advertiseVip
    */
@@ -142,6 +145,7 @@ public class BgpPeer extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Advertise vip to this peer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param advertiseVip set the advertiseVip.
    */
@@ -154,6 +158,7 @@ public class BgpPeer extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Advertisement interval for this peer.
    * Allowed values are 1-60.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @return advertisementInterval
    */
@@ -166,6 +171,7 @@ public class BgpPeer extends AviRestResource {
    * This is the setter method to the attribute.
    * Advertisement interval for this peer.
    * Allowed values are 1-60.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @param advertisementInterval set the advertisementInterval.
    */
@@ -178,6 +184,7 @@ public class BgpPeer extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable bi-directional forward detection.
    * Only async mode supported.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return bfd
    */
@@ -190,6 +197,7 @@ public class BgpPeer extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable bi-directional forward detection.
    * Only async mode supported.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param bfd set the bfd.
    */
@@ -202,6 +210,7 @@ public class BgpPeer extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Connect timer for this peer.
    * Allowed values are 1-120.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return connectTimer
    */
@@ -214,6 +223,7 @@ public class BgpPeer extends AviRestResource {
    * This is the setter method to the attribute.
    * Connect timer for this peer.
    * Allowed values are 1-120.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param connectTimer set the connectTimer.
    */
@@ -227,6 +237,7 @@ public class BgpPeer extends AviRestResource {
    * Ttl for multihop ebgp peer.
    * Allowed values are 0-255.
    * Field introduced in 17.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return ebgpMultihop
    */
@@ -240,6 +251,7 @@ public class BgpPeer extends AviRestResource {
    * Ttl for multihop ebgp peer.
    * Allowed values are 0-255.
    * Field introduced in 17.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param ebgpMultihop set the ebgpMultihop.
    */
@@ -252,6 +264,7 @@ public class BgpPeer extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Hold time for this peer.
    * Allowed values are 3-7200.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return holdTime
    */
@@ -264,6 +277,7 @@ public class BgpPeer extends AviRestResource {
    * This is the setter method to the attribute.
    * Hold time for this peer.
    * Allowed values are 3-7200.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param holdTime set the holdTime.
    */
@@ -276,6 +290,7 @@ public class BgpPeer extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Override the profile level local_as with the peer level remote_as.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ibgpLocalAsOverride
    */
@@ -288,6 +303,7 @@ public class BgpPeer extends AviRestResource {
    * This is the setter method to the attribute.
    * Override the profile level local_as with the peer level remote_as.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ibgpLocalAsOverride set the ibgpLocalAsOverride.
    */
@@ -300,6 +316,7 @@ public class BgpPeer extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Keepalive interval for this peer.
    * Allowed values are 0-3600.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return keepaliveInterval
    */
@@ -312,6 +329,7 @@ public class BgpPeer extends AviRestResource {
    * This is the setter method to the attribute.
    * Keepalive interval for this peer.
    * Allowed values are 0-3600.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param keepaliveInterval set the keepaliveInterval.
    */
@@ -324,6 +342,7 @@ public class BgpPeer extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Label used to enable learning and/or advertisement of routes to this peer.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return label
    */
@@ -336,6 +355,7 @@ public class BgpPeer extends AviRestResource {
    * This is the setter method to the attribute.
    * Label used to enable learning and/or advertisement of routes to this peer.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param label set the label.
    */
@@ -350,6 +370,7 @@ public class BgpPeer extends AviRestResource {
    * If specified, this will override the local as configured at the vrf level.
    * Allowed values are 1-4294967295.
    * Field introduced in 17.1.6,17.2.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return localAs
    */
@@ -364,6 +385,7 @@ public class BgpPeer extends AviRestResource {
    * If specified, this will override the local as configured at the vrf level.
    * Allowed values are 1-4294967295.
    * Field introduced in 17.1.6,17.2.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param localAs set the localAs.
    */
@@ -375,6 +397,7 @@ public class BgpPeer extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Peer autonomous system md5 digest secret key.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return md5Secret
    */
@@ -386,6 +409,7 @@ public class BgpPeer extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Peer autonomous system md5 digest secret key.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param md5Secret set the md5Secret.
    */
@@ -398,6 +422,7 @@ public class BgpPeer extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Network providing reachability for peer.
    * It is a reference to an object of type network.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkRef
    */
@@ -410,6 +435,7 @@ public class BgpPeer extends AviRestResource {
    * This is the setter method to the attribute.
    * Network providing reachability for peer.
    * It is a reference to an object of type network.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param networkRef set the networkRef.
    */
@@ -421,6 +447,7 @@ public class BgpPeer extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ip address of the bgp peer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return peerIp
    */
@@ -432,6 +459,7 @@ public class BgpPeer extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ip address of the bgp peer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param peerIp set the peerIp.
    */
@@ -444,6 +472,7 @@ public class BgpPeer extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ipv6 address of the bgp peer.
    * Field introduced in 18.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return peerIp6
    */
@@ -456,6 +485,7 @@ public class BgpPeer extends AviRestResource {
    * This is the setter method to the attribute.
    * Ipv6 address of the bgp peer.
    * Field introduced in 18.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param peerIp6 set the peerIp6.
    */
@@ -468,6 +498,7 @@ public class BgpPeer extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Peer autonomous system id.
    * Allowed values are 1-4294967295.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return remoteAs
    */
@@ -480,6 +511,7 @@ public class BgpPeer extends AviRestResource {
    * This is the setter method to the attribute.
    * Peer autonomous system id.
    * Allowed values are 1-4294967295.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param remoteAs set the remoteAs.
    */
@@ -492,6 +524,7 @@ public class BgpPeer extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Shutdown the bgp peer.
    * Field introduced in 17.2.4.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return shutdown
    */
@@ -504,6 +537,7 @@ public class BgpPeer extends AviRestResource {
    * This is the setter method to the attribute.
    * Shutdown the bgp peer.
    * Field introduced in 17.2.4.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param shutdown set the shutdown.
    */
@@ -515,6 +549,7 @@ public class BgpPeer extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Subnet providing reachability for peer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnet
    */
@@ -526,6 +561,7 @@ public class BgpPeer extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Subnet providing reachability for peer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnet set the subnet.
    */
@@ -538,6 +574,7 @@ public class BgpPeer extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ipv6 subnet providing reachability for peer.
    * Field introduced in 18.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnet6
    */
@@ -550,6 +587,7 @@ public class BgpPeer extends AviRestResource {
    * This is the setter method to the attribute.
    * Ipv6 subnet providing reachability for peer.
    * Field introduced in 18.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnet6 set the subnet6.
    */

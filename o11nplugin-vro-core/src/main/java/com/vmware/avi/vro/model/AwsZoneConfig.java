@@ -41,6 +41,7 @@ public class AwsZoneConfig extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Availability zone.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return availabilityZone
    */
@@ -52,6 +53,7 @@ public class AwsZoneConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Availability zone.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param availabilityZone set the availabilityZone.
    */
@@ -63,6 +65,7 @@ public class AwsZoneConfig extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name or cidr of the network in the availability zone that will be used as management network.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mgmtNetworkName
    */
@@ -74,6 +77,7 @@ public class AwsZoneConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name or cidr of the network in the availability zone that will be used as management network.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mgmtNetworkName set the mgmtNetworkName.
    */
@@ -85,6 +89,7 @@ public class AwsZoneConfig extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the network in the availability zone that will be used as management network.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mgmtNetworkUuid
    */
@@ -96,6 +101,7 @@ public class AwsZoneConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the network in the availability zone that will be used as management network.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mgmtNetworkUuid set the mgmtNetworkUuid.
    */

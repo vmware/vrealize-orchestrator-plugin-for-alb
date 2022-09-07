@@ -36,7 +36,7 @@ public class BMSetup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property cc_id of obj type bmsetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccId
    */
@@ -47,7 +47,7 @@ public class BMSetup extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property cc_id of obj type bmsetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccId set the ccId.
    */
@@ -58,7 +58,7 @@ public class BMSetup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property error_string of obj type bmsetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorString
    */
@@ -69,7 +69,7 @@ public class BMSetup extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property error_string of obj type bmsetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param errorString set the errorString.
    */

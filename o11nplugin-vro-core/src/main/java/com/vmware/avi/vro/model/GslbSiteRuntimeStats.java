@@ -229,6 +229,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numFileCrTxed
    */
@@ -240,6 +241,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numFileCrTxed set the numFileCrTxed.
    */
@@ -251,6 +253,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numFileDelTxed
    */
@@ -262,6 +265,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numFileDelTxed set the numFileDelTxed.
    */
@@ -273,6 +277,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGapCrRxed
    */
@@ -284,6 +289,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGapCrRxed set the numGapCrRxed.
    */
@@ -295,6 +301,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGapCrTxed
    */
@@ -306,6 +313,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGapCrTxed set the numGapCrTxed.
    */
@@ -317,6 +325,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGapDelRxed
    */
@@ -328,6 +337,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGapDelRxed set the numGapDelRxed.
    */
@@ -339,6 +349,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGapDelTxed
    */
@@ -350,6 +361,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGapDelTxed set the numGapDelTxed.
    */
@@ -361,6 +373,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGapUpdRxed
    */
@@ -372,6 +385,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGapUpdRxed set the numGapUpdRxed.
    */
@@ -383,6 +397,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGapUpdTxed
    */
@@ -394,6 +409,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGapUpdTxed set the numGapUpdTxed.
    */
@@ -405,6 +421,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGeoCrRxed
    */
@@ -416,6 +433,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGeoCrRxed set the numGeoCrRxed.
    */
@@ -427,6 +445,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGeoCrTxed
    */
@@ -438,6 +457,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGeoCrTxed set the numGeoCrTxed.
    */
@@ -449,6 +469,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGeoDelRxed
    */
@@ -460,6 +481,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGeoDelRxed set the numGeoDelRxed.
    */
@@ -471,6 +493,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGeoDelTxed
    */
@@ -482,6 +505,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGeoDelTxed set the numGeoDelTxed.
    */
@@ -493,6 +517,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGeoUpdRxed
    */
@@ -504,6 +529,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGeoUpdRxed set the numGeoUpdRxed.
    */
@@ -515,6 +541,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGeoUpdTxed
    */
@@ -526,6 +553,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGeoUpdTxed set the numGeoUpdTxed.
    */
@@ -536,7 +564,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property num_ghm_cr_rxed of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGhmCrRxed
    */
@@ -547,7 +575,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property num_ghm_cr_rxed of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGhmCrRxed set the numGhmCrRxed.
    */
@@ -558,7 +586,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property num_ghm_cr_txed of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGhmCrTxed
    */
@@ -569,7 +597,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property num_ghm_cr_txed of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGhmCrTxed set the numGhmCrTxed.
    */
@@ -580,7 +608,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property num_ghm_del_rxed of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGhmDelRxed
    */
@@ -591,7 +619,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property num_ghm_del_rxed of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGhmDelRxed set the numGhmDelRxed.
    */
@@ -602,7 +630,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property num_ghm_del_txed of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGhmDelTxed
    */
@@ -613,7 +641,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property num_ghm_del_txed of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGhmDelTxed set the numGhmDelTxed.
    */
@@ -624,7 +652,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property num_ghm_upd_rxed of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGhmUpdRxed
    */
@@ -635,7 +663,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property num_ghm_upd_rxed of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGhmUpdRxed set the numGhmUpdRxed.
    */
@@ -646,7 +674,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property num_ghm_upd_txed of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGhmUpdTxed
    */
@@ -657,7 +685,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property num_ghm_upd_txed of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGhmUpdTxed set the numGhmUpdTxed.
    */
@@ -669,6 +697,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 20.1.5.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGjwtCrRxed
    */
@@ -680,6 +709,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 20.1.5.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGjwtCrRxed set the numGjwtCrRxed.
    */
@@ -691,6 +721,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 20.1.5.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGjwtCrTxed
    */
@@ -702,6 +733,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 20.1.5.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGjwtCrTxed set the numGjwtCrTxed.
    */
@@ -713,6 +745,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 20.1.5.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGjwtDelRxed
    */
@@ -724,6 +757,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 20.1.5.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGjwtDelRxed set the numGjwtDelRxed.
    */
@@ -735,6 +769,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 20.1.5.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGjwtDelTxed
    */
@@ -746,6 +781,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 20.1.5.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGjwtDelTxed set the numGjwtDelTxed.
    */
@@ -757,6 +793,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 20.1.5.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGjwtUpdRxed
    */
@@ -768,6 +805,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 20.1.5.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGjwtUpdRxed set the numGjwtUpdRxed.
    */
@@ -779,6 +817,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 20.1.5.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGjwtUpdTxed
    */
@@ -790,6 +829,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 20.1.5.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGjwtUpdTxed set the numGjwtUpdTxed.
    */
@@ -800,7 +840,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property num_glb_cr_rxed of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGlbCrRxed
    */
@@ -811,7 +851,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property num_glb_cr_rxed of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGlbCrRxed set the numGlbCrRxed.
    */
@@ -822,7 +862,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property num_glb_cr_txed of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGlbCrTxed
    */
@@ -833,7 +873,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property num_glb_cr_txed of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGlbCrTxed set the numGlbCrTxed.
    */
@@ -844,7 +884,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property num_glb_del_rxed of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGlbDelRxed
    */
@@ -855,7 +895,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property num_glb_del_rxed of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGlbDelRxed set the numGlbDelRxed.
    */
@@ -866,7 +906,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property num_glb_del_txed of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGlbDelTxed
    */
@@ -877,7 +917,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property num_glb_del_txed of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGlbDelTxed set the numGlbDelTxed.
    */
@@ -888,7 +928,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property num_glb_upd_rxed of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGlbUpdRxed
    */
@@ -899,7 +939,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property num_glb_upd_rxed of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGlbUpdRxed set the numGlbUpdRxed.
    */
@@ -910,7 +950,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property num_glb_upd_txed of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGlbUpdTxed
    */
@@ -921,7 +961,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property num_glb_upd_txed of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGlbUpdTxed set the numGlbUpdTxed.
    */
@@ -933,6 +973,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGpkiCrRxed
    */
@@ -944,6 +985,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGpkiCrRxed set the numGpkiCrRxed.
    */
@@ -955,6 +997,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGpkiCrTxed
    */
@@ -966,6 +1009,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGpkiCrTxed set the numGpkiCrTxed.
    */
@@ -977,6 +1021,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGpkiDelRxed
    */
@@ -988,6 +1033,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGpkiDelRxed set the numGpkiDelRxed.
    */
@@ -999,6 +1045,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGpkiDelTxed
    */
@@ -1010,6 +1057,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGpkiDelTxed set the numGpkiDelTxed.
    */
@@ -1021,6 +1069,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGpkiUpdRxed
    */
@@ -1032,6 +1081,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGpkiUpdRxed set the numGpkiUpdRxed.
    */
@@ -1043,6 +1093,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGpkiUpdTxed
    */
@@ -1054,6 +1105,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGpkiUpdTxed set the numGpkiUpdTxed.
    */
@@ -1064,7 +1116,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property num_gs_cr_rxed of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGsCrRxed
    */
@@ -1075,7 +1127,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property num_gs_cr_rxed of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGsCrRxed set the numGsCrRxed.
    */
@@ -1086,7 +1138,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property num_gs_cr_txed of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGsCrTxed
    */
@@ -1097,7 +1149,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property num_gs_cr_txed of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGsCrTxed set the numGsCrTxed.
    */
@@ -1108,7 +1160,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property num_gs_del_rxed of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGsDelRxed
    */
@@ -1119,7 +1171,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property num_gs_del_rxed of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGsDelRxed set the numGsDelRxed.
    */
@@ -1130,7 +1182,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property num_gs_del_txed of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGsDelTxed
    */
@@ -1141,7 +1193,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property num_gs_del_txed of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGsDelTxed set the numGsDelTxed.
    */
@@ -1152,7 +1204,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property num_gs_upd_rxed of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGsUpdRxed
    */
@@ -1163,7 +1215,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property num_gs_upd_rxed of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGsUpdRxed set the numGsUpdRxed.
    */
@@ -1174,7 +1226,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property num_gs_upd_txed of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGsUpdTxed
    */
@@ -1185,7 +1237,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property num_gs_upd_txed of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGsUpdTxed set the numGsUpdTxed.
    */
@@ -1196,7 +1248,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property num_health_msgs_rxed of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numHealthMsgsRxed
    */
@@ -1207,7 +1259,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property num_health_msgs_rxed of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numHealthMsgsRxed set the numHealthMsgsRxed.
    */
@@ -1218,7 +1270,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property num_health_msgs_txed of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numHealthMsgsTxed
    */
@@ -1229,7 +1281,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property num_health_msgs_txed of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numHealthMsgsTxed set the numHealthMsgsTxed.
    */
@@ -1240,7 +1292,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property num_of_bad_responses of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numOfBadResponses
    */
@@ -1251,7 +1303,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property num_of_bad_responses of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numOfBadResponses set the numOfBadResponses.
    */
@@ -1262,7 +1314,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property num_of_events_generated of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numOfEventsGenerated
    */
@@ -1273,7 +1325,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property num_of_events_generated of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numOfEventsGenerated set the numOfEventsGenerated.
    */
@@ -1284,7 +1336,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property num_of_skip_outstanding_requests of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numOfSkipOutstandingRequests
    */
@@ -1295,7 +1347,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property num_of_skip_outstanding_requests of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numOfSkipOutstandingRequests set the numOfSkipOutstandingRequests.
    */
@@ -1306,7 +1358,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property num_of_timeouts of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numOfTimeouts
    */
@@ -1317,7 +1369,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property num_of_timeouts of obj type gslbsiteruntimestats field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numOfTimeouts set the numOfTimeouts.
    */

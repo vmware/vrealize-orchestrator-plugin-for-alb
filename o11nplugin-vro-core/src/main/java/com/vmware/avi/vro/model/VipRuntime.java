@@ -125,10 +125,6 @@ public class VipRuntime extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private List<SeList> seList = null;
 
-    @JsonProperty("servers_configured")
-    @JsonInclude(Include.NON_NULL)
-    private Boolean serversConfigured;
-
     @JsonProperty("supp_runtime_status")
     @JsonInclude(Include.NON_NULL)
     private OperationalStatus suppRuntimeStatus = null;
@@ -153,7 +149,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property ev of obj type vipruntime field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ev
    */
@@ -164,7 +160,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the setter method. this will set the ev
-   * Placeholder for description of property ev of obj type vipruntime field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ev
    */
@@ -175,7 +171,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the setter method this will set the ev
-   * Placeholder for description of property ev of obj type vipruntime field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ev
    */
@@ -191,7 +187,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property ev_status of obj type vipruntime field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return evStatus
    */
@@ -202,7 +198,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property ev_status of obj type vipruntime field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param evStatus set the evStatus.
    */
@@ -213,7 +209,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property first_se_assigned_time of obj type vipruntime field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return firstSeAssignedTime
    */
@@ -224,7 +220,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property first_se_assigned_time of obj type vipruntime field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param firstSeAssignedTime set the firstSeAssignedTime.
    */
@@ -235,7 +231,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property first_time_placement of obj type vipruntime field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return firstTimePlacement
    */
@@ -246,7 +242,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property first_time_placement of obj type vipruntime field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param firstTimePlacement set the firstTimePlacement.
    */
@@ -257,7 +253,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property fsm_state_id of obj type vipruntime field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "0".
    * @return fsmStateId
    */
@@ -268,7 +264,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property fsm_state_id of obj type vipruntime field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "0".
    * @param fsmStateId set the fsmStateId.
    */
@@ -279,7 +275,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property fsm_state_name of obj type vipruntime field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "VipFsmMap::Inactive".
    * @return fsmStateName
    */
@@ -290,7 +286,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property fsm_state_name of obj type vipruntime field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "VipFsmMap::Inactive".
    * @param fsmStateName set the fsmStateName.
    */
@@ -301,7 +297,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property last_changed_time of obj type vipruntime field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lastChangedTime
    */
@@ -312,7 +308,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property last_changed_time of obj type vipruntime field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lastChangedTime set the lastChangedTime.
    */
@@ -323,7 +319,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property last_scale_status of obj type vipruntime field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lastScaleStatus
    */
@@ -334,7 +330,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property last_scale_status of obj type vipruntime field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lastScaleStatus set the lastScaleStatus.
    */
@@ -345,7 +341,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property marked_for_delete of obj type vipruntime field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return markedForDelete
    */
@@ -356,7 +352,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property marked_for_delete of obj type vipruntime field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param markedForDelete set the markedForDelete.
    */
@@ -368,6 +364,7 @@ public class VipRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - METRICS_MGR_PORT_0, METRICS_MGR_PORT_1, METRICS_MGR_PORT_2, METRICS_MGR_PORT_3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricsMgrPort
    */
@@ -379,6 +376,7 @@ public class VipRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - METRICS_MGR_PORT_0, METRICS_MGR_PORT_1, METRICS_MGR_PORT_2, METRICS_MGR_PORT_3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricsMgrPort set the metricsMgrPort.
    */
@@ -389,7 +387,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property migrate_in_progress of obj type vipruntime field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return migrateInProgress
    */
@@ -400,7 +398,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property migrate_in_progress of obj type vipruntime field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param migrateInProgress set the migrateInProgress.
    */
@@ -411,7 +409,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property migrate_request of obj type vipruntime field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return migrateRequest
    */
@@ -422,7 +420,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property migrate_request of obj type vipruntime field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param migrateRequest set the migrateRequest.
    */
@@ -433,7 +431,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property migrate_scalein_pending of obj type vipruntime field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return migrateScaleinPending
    */
@@ -444,7 +442,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property migrate_scalein_pending of obj type vipruntime field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param migrateScaleinPending set the migrateScaleinPending.
    */
@@ -455,7 +453,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property migrate_scaleout_pending of obj type vipruntime field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return migrateScaleoutPending
    */
@@ -466,7 +464,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property migrate_scaleout_pending of obj type vipruntime field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param migrateScaleoutPending set the migrateScaleoutPending.
    */
@@ -477,7 +475,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property num_additional_se of obj type vipruntime field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return numAdditionalSe
    */
@@ -488,7 +486,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property num_additional_se of obj type vipruntime field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param numAdditionalSe set the numAdditionalSe.
    */
@@ -500,6 +498,7 @@ public class VipRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - METRICS_MGR_PORT_0, METRICS_MGR_PORT_1, METRICS_MGR_PORT_2, METRICS_MGR_PORT_3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return prevMetricsMgrPort
    */
@@ -511,6 +510,7 @@ public class VipRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - METRICS_MGR_PORT_0, METRICS_MGR_PORT_1, METRICS_MGR_PORT_2, METRICS_MGR_PORT_3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param prevMetricsMgrPort set the prevMetricsMgrPort.
    */
@@ -521,7 +521,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property progress_percent of obj type vipruntime field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return progressPercent
    */
@@ -532,7 +532,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property progress_percent of obj type vipruntime field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param progressPercent set the progressPercent.
    */
@@ -543,7 +543,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property requested_resource of obj type vipruntime field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return requestedResource
    */
@@ -554,7 +554,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property requested_resource of obj type vipruntime field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param requestedResource set the requestedResource.
    */
@@ -565,7 +565,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property scale_status of obj type vipruntime field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scaleStatus
    */
@@ -576,7 +576,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property scale_status of obj type vipruntime field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param scaleStatus set the scaleStatus.
    */
@@ -587,7 +587,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property scalein_in_progress of obj type vipruntime field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return scaleinInProgress
    */
@@ -598,7 +598,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property scalein_in_progress of obj type vipruntime field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param scaleinInProgress set the scaleinInProgress.
    */
@@ -609,7 +609,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property scalein_request of obj type vipruntime field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scaleinRequest
    */
@@ -620,7 +620,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property scalein_request of obj type vipruntime field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param scaleinRequest set the scaleinRequest.
    */
@@ -631,7 +631,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property scaleout_in_progress of obj type vipruntime field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return scaleoutInProgress
    */
@@ -642,7 +642,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property scaleout_in_progress of obj type vipruntime field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param scaleoutInProgress set the scaleoutInProgress.
    */
@@ -653,7 +653,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property se_list of obj type vipruntime field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seList
    */
@@ -664,7 +664,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the setter method. this will set the seList
-   * Placeholder for description of property se_list of obj type vipruntime field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seList
    */
@@ -675,7 +675,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the setter method this will set the seList
-   * Placeholder for description of property se_list of obj type vipruntime field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seList
    */
@@ -691,27 +691,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Field deprecated in 18.2.5.
-   * @return serversConfigured
-   */
-  @VsoMethod
-  public Boolean getServersConfigured() {
-    return serversConfigured;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Field deprecated in 18.2.5.
-   * @param serversConfigured set the serversConfigured.
-   */
-  @VsoMethod
-  public void setServersConfigured(Boolean  serversConfigured) {
-    this.serversConfigured = serversConfigured;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Placeholder for description of property supp_runtime_status of obj type vipruntime field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return suppRuntimeStatus
    */
@@ -722,7 +702,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property supp_runtime_status of obj type vipruntime field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param suppRuntimeStatus set the suppRuntimeStatus.
    */
@@ -733,7 +713,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property user_scaleout_pending of obj type vipruntime field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return userScaleoutPending
    */
@@ -744,7 +724,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property user_scaleout_pending of obj type vipruntime field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param userScaleoutPending set the userScaleoutPending.
    */
@@ -755,7 +735,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property vip_id of obj type vipruntime field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipId
    */
@@ -766,7 +746,7 @@ public class VipRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property vip_id of obj type vipruntime field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vipId set the vipId.
    */
@@ -779,6 +759,7 @@ public class VipRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Vip finished resyncing with resource manager.
    * Field introduced in 18.1.4, 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return warmstartResyncDone
    */
@@ -791,6 +772,7 @@ public class VipRuntime extends AviRestResource {
    * This is the setter method to the attribute.
    * Vip finished resyncing with resource manager.
    * Field introduced in 18.1.4, 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param warmstartResyncDone set the warmstartResyncDone.
    */
@@ -803,6 +785,7 @@ public class VipRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Rpc sent to resource manager for warmstart resync.
    * Field introduced in 18.1.4, 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return warmstartResyncSent
    */
@@ -815,6 +798,7 @@ public class VipRuntime extends AviRestResource {
    * This is the setter method to the attribute.
    * Rpc sent to resource manager for warmstart resync.
    * Field introduced in 18.1.4, 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param warmstartResyncSent set the warmstartResyncSent.
    */
@@ -837,7 +821,6 @@ public boolean equals(java.lang.Object o) {
   return   Objects.equals(this.vipId, objVipRuntime.vipId)&&
   Objects.equals(this.fsmStateName, objVipRuntime.fsmStateName)&&
   Objects.equals(this.fsmStateId, objVipRuntime.fsmStateId)&&
-  Objects.equals(this.serversConfigured, objVipRuntime.serversConfigured)&&
   Objects.equals(this.lastChangedTime, objVipRuntime.lastChangedTime)&&
   Objects.equals(this.markedForDelete, objVipRuntime.markedForDelete)&&
   Objects.equals(this.progressPercent, objVipRuntime.progressPercent)&&
@@ -892,7 +875,6 @@ public String toString() {
         sb.append("    scaleinRequest: ").append(toIndentedString(scaleinRequest)).append("\n");
         sb.append("    scaleoutInProgress: ").append(toIndentedString(scaleoutInProgress)).append("\n");
         sb.append("    seList: ").append(toIndentedString(seList)).append("\n");
-        sb.append("    serversConfigured: ").append(toIndentedString(serversConfigured)).append("\n");
         sb.append("    suppRuntimeStatus: ").append(toIndentedString(suppRuntimeStatus)).append("\n");
         sb.append("    userScaleoutPending: ").append(toIndentedString(userScaleoutPending)).append("\n");
         sb.append("    vipId: ").append(toIndentedString(vipId)).append("\n");

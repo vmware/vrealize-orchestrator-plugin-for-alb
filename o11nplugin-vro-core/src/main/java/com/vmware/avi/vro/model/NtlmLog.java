@@ -38,6 +38,7 @@ public class NtlmLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Set to true, if request is detected to be ntlm.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ntlmDetected
    */
@@ -50,6 +51,7 @@ public class NtlmLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Set to true, if request is detected to be ntlm.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ntlmDetected set the ntlmDetected.
    */
@@ -63,6 +65,7 @@ public class NtlmLog extends AviRestResource {
    * Set the ntlm status.
    * Enum options - NTLM_AUTHENTICATION_SUCCESS, NTLM_UNAUTHORIZED, NTLM_NEGOTIATION, NTLM_AUTHENTICATION_FAILURE, NTLM_AUTHENTICATED_REQUESTS.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ntlmStatus
    */
@@ -76,6 +79,7 @@ public class NtlmLog extends AviRestResource {
    * Set the ntlm status.
    * Enum options - NTLM_AUTHENTICATION_SUCCESS, NTLM_UNAUTHORIZED, NTLM_NEGOTIATION, NTLM_AUTHENTICATION_FAILURE, NTLM_AUTHENTICATED_REQUESTS.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ntlmStatus set the ntlmStatus.
    */
