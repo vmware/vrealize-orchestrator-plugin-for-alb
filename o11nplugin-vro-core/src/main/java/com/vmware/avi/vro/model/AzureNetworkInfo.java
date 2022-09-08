@@ -43,6 +43,7 @@ public class AzureNetworkInfo extends AviRestResource {
    * Id of the azure subnet used as management network for the service engines.
    * If set, service engines will have a dedicated management nic, otherwise, they operate in inband mode.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return managementNetworkId
    */
@@ -56,6 +57,7 @@ public class AzureNetworkInfo extends AviRestResource {
    * Id of the azure subnet used as management network for the service engines.
    * If set, service engines will have a dedicated management nic, otherwise, they operate in inband mode.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param managementNetworkId set the managementNetworkId.
    */
@@ -68,6 +70,7 @@ public class AzureNetworkInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Id of the azure subnet where avi controller will create the service engines.
    * Field introduced in 17.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seNetworkId
    */
@@ -80,6 +83,7 @@ public class AzureNetworkInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Id of the azure subnet where avi controller will create the service engines.
    * Field introduced in 17.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seNetworkId set the seNetworkId.
    */
@@ -92,6 +96,7 @@ public class AzureNetworkInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Virtual network where virtual ips will belong.
    * Field introduced in 17.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return virtualNetworkId
    */
@@ -104,6 +109,7 @@ public class AzureNetworkInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Virtual network where virtual ips will belong.
    * Field introduced in 17.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param virtualNetworkId set the virtualNetworkId.
    */

@@ -42,6 +42,7 @@ public class CCScaleSetNotifDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Cloud id.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccId
    */
@@ -54,6 +55,7 @@ public class CCScaleSetNotifDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Cloud id.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccId set the ccId.
    */
@@ -66,6 +68,7 @@ public class CCScaleSetNotifDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Detailed reason for the scale set notification.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
@@ -78,6 +81,7 @@ public class CCScaleSetNotifDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Detailed reason for the scale set notification.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
@@ -90,6 +94,7 @@ public class CCScaleSetNotifDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Names of scale sets for which polling failed.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scalesetNames
    */
@@ -102,6 +107,7 @@ public class CCScaleSetNotifDetails extends AviRestResource {
    * This is the setter method. this will set the scalesetNames
    * Names of scale sets for which polling failed.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scalesetNames
    */
@@ -114,6 +120,7 @@ public class CCScaleSetNotifDetails extends AviRestResource {
    * This is the setter method this will set the scalesetNames
    * Names of scale sets for which polling failed.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scalesetNames
    */

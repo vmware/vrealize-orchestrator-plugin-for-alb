@@ -78,6 +78,7 @@ public class SecureChannelMapping extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Auth_token used for se authorization.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authToken
    */
@@ -90,6 +91,7 @@ public class SecureChannelMapping extends AviRestResource {
    * This is the setter method to the attribute.
    * Auth_token used for se authorization.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param authToken set the authToken.
    */
@@ -101,6 +103,7 @@ public class SecureChannelMapping extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ip of se.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip
    */
@@ -112,6 +115,7 @@ public class SecureChannelMapping extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ip of se.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip set the ip.
    */
@@ -123,6 +127,7 @@ public class SecureChannelMapping extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Whether this entry used for controller.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return isController
    */
@@ -134,6 +139,7 @@ public class SecureChannelMapping extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Whether this entry used for controller.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param isController set the isController.
    */
@@ -145,6 +151,7 @@ public class SecureChannelMapping extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Local ip on controller side reserved for se.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return localIp
    */
@@ -156,6 +163,7 @@ public class SecureChannelMapping extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Local ip on controller side reserved for se.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param localIp set the localIp.
    */
@@ -167,6 +175,7 @@ public class SecureChannelMapping extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Whether this entry is marked for delete (first step of deletion).
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return markedForDelete
    */
@@ -178,6 +187,7 @@ public class SecureChannelMapping extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Whether this entry is marked for delete (first step of deletion).
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param markedForDelete set the markedForDelete.
    */
@@ -190,6 +200,7 @@ public class SecureChannelMapping extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Metadata associated with auth_token.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metadata
    */
@@ -202,6 +213,7 @@ public class SecureChannelMapping extends AviRestResource {
    * This is the setter method. this will set the metadata
    * Metadata associated with auth_token.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metadata
    */
@@ -214,6 +226,7 @@ public class SecureChannelMapping extends AviRestResource {
    * This is the setter method this will set the metadata
    * Metadata associated with auth_token.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metadata
    */
@@ -230,6 +243,7 @@ public class SecureChannelMapping extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of se.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -241,6 +255,7 @@ public class SecureChannelMapping extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of se.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -252,6 +267,7 @@ public class SecureChannelMapping extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Public key of se.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pubKey
    */
@@ -263,6 +279,7 @@ public class SecureChannelMapping extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Public key of se.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pubKey set the pubKey.
    */
@@ -274,6 +291,7 @@ public class SecureChannelMapping extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Public key pem of se.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pubKeyPem
    */
@@ -285,6 +303,7 @@ public class SecureChannelMapping extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Public key pem of se.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pubKeyPem set the pubKeyPem.
    */
@@ -298,6 +317,7 @@ public class SecureChannelMapping extends AviRestResource {
    * Authorization status of current secure channel.
    * Enum options - SECURE_CHANNEL_NONE, SECURE_CHANNEL_CONNECTED, SECURE_CHANNEL_AUTH_SSH_SUCCESS, SECURE_CHANNEL_AUTH_SSH_FAILED,
    * SECURE_CHANNEL_AUTH_TOKEN_SUCCESS, SECURE_CHANNEL_AUTH_TOKEN_FAILED, SECURE_CHANNEL_AUTH_ERRORS, SECURE_CHANNEL_AUTH_IGNORED.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "SECURE_CHANNEL_NONE".
    * @return status
    */
@@ -311,6 +331,7 @@ public class SecureChannelMapping extends AviRestResource {
    * Authorization status of current secure channel.
    * Enum options - SECURE_CHANNEL_NONE, SECURE_CHANNEL_CONNECTED, SECURE_CHANNEL_AUTH_SSH_SUCCESS, SECURE_CHANNEL_AUTH_SSH_FAILED,
    * SECURE_CHANNEL_AUTH_TOKEN_SUCCESS, SECURE_CHANNEL_AUTH_TOKEN_FAILED, SECURE_CHANNEL_AUTH_ERRORS, SECURE_CHANNEL_AUTH_IGNORED.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "SECURE_CHANNEL_NONE".
    * @param status set the status.
    */
@@ -341,6 +362,7 @@ public class SecureChannelMapping extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of se.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -352,6 +374,7 @@ public class SecureChannelMapping extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of se.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */

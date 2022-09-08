@@ -46,6 +46,7 @@ public class IPAddrLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of ip address groups for match criteria.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAddressGroupPerMatchCriteria
    */
@@ -58,6 +59,7 @@ public class IPAddrLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of ip address groups for match criteria.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipAddressGroupPerMatchCriteria set the ipAddressGroupPerMatchCriteria.
    */
@@ -70,6 +72,7 @@ public class IPAddrLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of ip address prefixes for match criteria.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAddressPrefixPerMatchCriteria
    */
@@ -82,6 +85,7 @@ public class IPAddrLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of ip address prefixes for match criteria.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipAddressPrefixPerMatchCriteria set the ipAddressPrefixPerMatchCriteria.
    */
@@ -94,6 +98,7 @@ public class IPAddrLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of ip address ranges for match criteria.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAddressRangePerMatchCriteria
    */
@@ -106,6 +111,7 @@ public class IPAddrLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of ip address ranges for match criteria.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipAddressRangePerMatchCriteria set the ipAddressRangePerMatchCriteria.
    */
@@ -118,6 +124,7 @@ public class IPAddrLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of ip addresses for match criteria.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAddressesPerMatchCriteria
    */
@@ -130,6 +137,7 @@ public class IPAddrLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of ip addresses for match criteria.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipAddressesPerMatchCriteria set the ipAddressesPerMatchCriteria.
    */

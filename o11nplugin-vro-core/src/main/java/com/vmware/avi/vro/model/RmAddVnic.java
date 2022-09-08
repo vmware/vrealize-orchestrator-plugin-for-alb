@@ -46,6 +46,7 @@ public class RmAddVnic extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Mac_addr associated with the network.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return macAddr
    */
@@ -58,6 +59,7 @@ public class RmAddVnic extends AviRestResource {
    * This is the setter method to the attribute.
    * Mac_addr associated with the network.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param macAddr set the macAddr.
    */
@@ -68,7 +70,7 @@ public class RmAddVnic extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property network_name of obj type rmaddvnic field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkName
    */
@@ -79,7 +81,7 @@ public class RmAddVnic extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property network_name of obj type rmaddvnic field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param networkName set the networkName.
    */
@@ -90,7 +92,7 @@ public class RmAddVnic extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Unique object identifier of network.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkUuid
    */
@@ -101,7 +103,7 @@ public class RmAddVnic extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Unique object identifier of network.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param networkUuid set the networkUuid.
    */
@@ -112,7 +114,7 @@ public class RmAddVnic extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property subnet of obj type rmaddvnic field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnet
    */
@@ -123,7 +125,7 @@ public class RmAddVnic extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property subnet of obj type rmaddvnic field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnet set the subnet.
    */

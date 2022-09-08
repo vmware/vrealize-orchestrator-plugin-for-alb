@@ -48,6 +48,7 @@ public class RateLimiter extends AviRestResource {
    * If this is less than count, it will have no effect.
    * Allowed values are 0-1000000000.
    * Field introduced in 18.2.9.
+   * Allowed in enterprise edition with any value, basic edition(allowed values- 0), essentials, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return burstSz
    */
@@ -62,6 +63,7 @@ public class RateLimiter extends AviRestResource {
    * If this is less than count, it will have no effect.
    * Allowed values are 0-1000000000.
    * Field introduced in 18.2.9.
+   * Allowed in enterprise edition with any value, basic edition(allowed values- 0), essentials, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param burstSz set the burstSz.
    */
@@ -75,6 +77,7 @@ public class RateLimiter extends AviRestResource {
    * Maximum number of connections, requests or packets permitted each period.
    * Allowed values are 1-1000000000.
    * Field introduced in 18.2.9.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000000000.
    * @return count
    */
@@ -88,6 +91,7 @@ public class RateLimiter extends AviRestResource {
    * Maximum number of connections, requests or packets permitted each period.
    * Allowed values are 1-1000000000.
    * Field introduced in 18.2.9.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000000000.
    * @param count set the count.
    */
@@ -101,6 +105,7 @@ public class RateLimiter extends AviRestResource {
    * Identifier for rate limit.
    * Constructed according to context.
    * Field introduced in 18.2.9.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -114,6 +119,7 @@ public class RateLimiter extends AviRestResource {
    * Identifier for rate limit.
    * Constructed according to context.
    * Field introduced in 18.2.9.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -128,6 +134,7 @@ public class RateLimiter extends AviRestResource {
    * Allowed values are 1-1000000000.
    * Field introduced in 18.2.9.
    * Unit is sec.
+   * Allowed in enterprise edition with any value, basic edition(allowed values- 1), essentials, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @return period
    */
@@ -142,6 +149,7 @@ public class RateLimiter extends AviRestResource {
    * Allowed values are 1-1000000000.
    * Field introduced in 18.2.9.
    * Unit is sec.
+   * Allowed in enterprise edition with any value, basic edition(allowed values- 1), essentials, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @param period set the period.
    */

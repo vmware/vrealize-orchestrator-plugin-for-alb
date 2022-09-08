@@ -47,6 +47,7 @@ public class InternalGatewayMonitor extends AviRestResource {
    * Disable the gateway monitor for default gateway.
    * They are monitored by default.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return disableGatewayMonitor
    */
@@ -60,6 +61,7 @@ public class InternalGatewayMonitor extends AviRestResource {
    * Disable the gateway monitor for default gateway.
    * They are monitored by default.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param disableGatewayMonitor set the disableGatewayMonitor.
    */
@@ -73,6 +75,7 @@ public class InternalGatewayMonitor extends AviRestResource {
    * The number of consecutive failed gateway health checks before a gateway is marked down.
    * Allowed values are 3-50.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return gatewayMonitorFailureThreshold
    */
@@ -86,6 +89,7 @@ public class InternalGatewayMonitor extends AviRestResource {
    * The number of consecutive failed gateway health checks before a gateway is marked down.
    * Allowed values are 3-50.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param gatewayMonitorFailureThreshold set the gatewayMonitorFailureThreshold.
    */
@@ -101,6 +105,7 @@ public class InternalGatewayMonitor extends AviRestResource {
    * Allowed values are 100-60000.
    * Field introduced in 17.1.1.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @return gatewayMonitorInterval
    */
@@ -116,6 +121,7 @@ public class InternalGatewayMonitor extends AviRestResource {
    * Allowed values are 100-60000.
    * Field introduced in 17.1.1.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @param gatewayMonitorInterval set the gatewayMonitorInterval.
    */
@@ -129,6 +135,7 @@ public class InternalGatewayMonitor extends AviRestResource {
    * The number of consecutive successful gateway health checks before a gateway that was marked down by the gateway monitor is marked up.
    * Allowed values are 3-50.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 15.
    * @return gatewayMonitorSuccessThreshold
    */
@@ -142,6 +149,7 @@ public class InternalGatewayMonitor extends AviRestResource {
    * The number of consecutive successful gateway health checks before a gateway that was marked down by the gateway monitor is marked up.
    * Allowed values are 3-50.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 15.
    * @param gatewayMonitorSuccessThreshold set the gatewayMonitorSuccessThreshold.
    */

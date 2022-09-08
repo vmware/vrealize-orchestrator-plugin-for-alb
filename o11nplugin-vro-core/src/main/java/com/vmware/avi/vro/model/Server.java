@@ -38,17 +38,9 @@ public class Server extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String description = null;
 
-    @JsonProperty("discovered_network_ref")
-    @JsonInclude(Include.NON_NULL)
-    private List<String> discoveredNetworkRef;
-
     @JsonProperty("discovered_networks")
     @JsonInclude(Include.NON_NULL)
     private List<DiscoveredNetwork> discoveredNetworks = null;
-
-    @JsonProperty("discovered_subnet")
-    @JsonInclude(Include.NON_NULL)
-    private List<IpAddrPrefix> discoveredSubnet;
 
     @JsonProperty("enabled")
     @JsonInclude(Include.NON_NULL)
@@ -124,7 +116,7 @@ public class Server extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of autoscaling group this server belongs to.
    * Field introduced in 17.1.2.
-   * Allowed in essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return autoscalingGroupName
    */
@@ -137,7 +129,7 @@ public class Server extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of autoscaling group this server belongs to.
    * Field introduced in 17.1.2.
-   * Allowed in essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param autoscalingGroupName set the autoscalingGroupName.
    */
@@ -149,6 +141,7 @@ public class Server extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Availability-zone of the server vm.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return availabilityZone
    */
@@ -160,6 +153,7 @@ public class Server extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Availability-zone of the server vm.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param availabilityZone set the availabilityZone.
    */
@@ -171,6 +165,7 @@ public class Server extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * A description of the server.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
@@ -182,6 +177,7 @@ public class Server extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * A description of the server.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
@@ -192,52 +188,9 @@ public class Server extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * (internal-use) discovered network for this server.
-   * This field is deprecated.
-   * It is a reference to an object of type network.
-   * Field deprecated in 17.1.1.
-   * @return discoveredNetworkRef
-   */
-  @VsoMethod
-  public List<String> getDiscoveredNetworkRef() {
-    return discoveredNetworkRef;
-  }
-
-  /**
-   * This is the setter method. this will set the discoveredNetworkRef
-   * (internal-use) discovered network for this server.
-   * This field is deprecated.
-   * It is a reference to an object of type network.
-   * Field deprecated in 17.1.1.
-   * @return discoveredNetworkRef
-   */
-  @VsoMethod
-  public void setDiscoveredNetworkRef(List<String>  discoveredNetworkRef) {
-    this.discoveredNetworkRef = discoveredNetworkRef;
-  }
-
-  /**
-   * This is the setter method this will set the discoveredNetworkRef
-   * (internal-use) discovered network for this server.
-   * This field is deprecated.
-   * It is a reference to an object of type network.
-   * Field deprecated in 17.1.1.
-   * @return discoveredNetworkRef
-   */
-  @VsoMethod
-  public Server addDiscoveredNetworkRefItem(String discoveredNetworkRefItem) {
-    if (this.discoveredNetworkRef == null) {
-      this.discoveredNetworkRef = new ArrayList<String>();
-    }
-    this.discoveredNetworkRef.add(discoveredNetworkRefItem);
-    return this;
-  }
-
-
-  /**
-   * This is the getter method this will return the attribute value.
    * (internal-use) discovered networks providing reachability for server ip.
    * This field is used internally by avi, not editable by the user.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return discoveredNetworks
    */
@@ -250,6 +203,7 @@ public class Server extends AviRestResource {
    * This is the setter method. this will set the discoveredNetworks
    * (internal-use) discovered networks providing reachability for server ip.
    * This field is used internally by avi, not editable by the user.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return discoveredNetworks
    */
@@ -262,6 +216,7 @@ public class Server extends AviRestResource {
    * This is the setter method this will set the discoveredNetworks
    * (internal-use) discovered networks providing reachability for server ip.
    * This field is used internally by avi, not editable by the user.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return discoveredNetworks
    */
@@ -277,48 +232,8 @@ public class Server extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * (internal-use) discovered subnet for this server.
-   * This field is deprecated.
-   * Field deprecated in 17.1.1.
-   * @return discoveredSubnet
-   */
-  @VsoMethod
-  public List<IpAddrPrefix> getDiscoveredSubnet() {
-    return discoveredSubnet;
-  }
-
-  /**
-   * This is the setter method. this will set the discoveredSubnet
-   * (internal-use) discovered subnet for this server.
-   * This field is deprecated.
-   * Field deprecated in 17.1.1.
-   * @return discoveredSubnet
-   */
-  @VsoMethod
-  public void setDiscoveredSubnet(List<IpAddrPrefix>  discoveredSubnet) {
-    this.discoveredSubnet = discoveredSubnet;
-  }
-
-  /**
-   * This is the setter method this will set the discoveredSubnet
-   * (internal-use) discovered subnet for this server.
-   * This field is deprecated.
-   * Field deprecated in 17.1.1.
-   * @return discoveredSubnet
-   */
-  @VsoMethod
-  public Server addDiscoveredSubnetItem(IpAddrPrefix discoveredSubnetItem) {
-    if (this.discoveredSubnet == null) {
-      this.discoveredSubnet = new ArrayList<IpAddrPrefix>();
-    }
-    this.discoveredSubnet.add(discoveredSubnetItem);
-    return this;
-  }
-
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Enable, disable or graceful disable determine if new or existing connections to the server are allowed.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enabled
    */
@@ -330,6 +245,7 @@ public class Server extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enable, disable or graceful disable determine if new or existing connections to the server are allowed.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enabled set the enabled.
    */
@@ -341,6 +257,7 @@ public class Server extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uid of server in external orchestration systems.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return externalOrchestrationId
    */
@@ -352,6 +269,7 @@ public class Server extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uid of server in external orchestration systems.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param externalOrchestrationId set the externalOrchestrationId.
    */
@@ -363,6 +281,7 @@ public class Server extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid identifying vm in openstack and other external compute.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return externalUuid
    */
@@ -374,6 +293,7 @@ public class Server extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid identifying vm in openstack and other external compute.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param externalUuid set the externalUuid.
    */
@@ -386,6 +306,7 @@ public class Server extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Dns resolvable name of the server.
    * May be used in place of the ip address.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostname
    */
@@ -398,6 +319,7 @@ public class Server extends AviRestResource {
    * This is the setter method to the attribute.
    * Dns resolvable name of the server.
    * May be used in place of the ip address.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hostname set the hostname.
    */
@@ -410,6 +332,7 @@ public class Server extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ip address of the server.
    * Required if there is no resolvable host name.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip
    */
@@ -422,6 +345,7 @@ public class Server extends AviRestResource {
    * This is the setter method to the attribute.
    * Ip address of the server.
    * Required if there is no resolvable host name.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip set the ip.
    */
@@ -433,6 +357,7 @@ public class Server extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * If statically learned.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return isStatic
    */
@@ -444,6 +369,7 @@ public class Server extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * If statically learned.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param isStatic set the isStatic.
    */
@@ -456,7 +382,7 @@ public class Server extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * (internal-use) geographic location of the server.currently only for internal usage.
    * Field introduced in 17.1.1.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return location
    */
@@ -469,7 +395,7 @@ public class Server extends AviRestResource {
    * This is the setter method to the attribute.
    * (internal-use) geographic location of the server.currently only for internal usage.
    * Field introduced in 17.1.1.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param location set the location.
    */
@@ -481,6 +407,7 @@ public class Server extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Mac address of server.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return macAddress
    */
@@ -492,6 +419,7 @@ public class Server extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Mac address of server.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param macAddress set the macAddress.
    */
@@ -504,6 +432,7 @@ public class Server extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * (internal-use) this field is used internally by avi, not editable by the user.
    * It is a reference to an object of type vimgrnwruntime.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nwRef
    */
@@ -516,6 +445,7 @@ public class Server extends AviRestResource {
    * This is the setter method to the attribute.
    * (internal-use) this field is used internally by avi, not editable by the user.
    * It is a reference to an object of type vimgrnwruntime.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nwRef set the nwRef.
    */
@@ -529,7 +459,8 @@ public class Server extends AviRestResource {
    * Optionally specify the servers port number.
    * This will override the pool's default server port attribute.
    * Allowed values are 1-65535.
-   * Special values are 0- 'use backend port in pool'.
+   * Special values are 0- use backend port in pool.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return port
    */
@@ -543,7 +474,8 @@ public class Server extends AviRestResource {
    * Optionally specify the servers port number.
    * This will override the pool's default server port attribute.
    * Allowed values are 1-65535.
-   * Special values are 0- 'use backend port in pool'.
+   * Special values are 0- use backend port in pool.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param port set the port.
    */
@@ -555,6 +487,7 @@ public class Server extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Header value for custom header persistence.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return prstHdrVal
    */
@@ -566,6 +499,7 @@ public class Server extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Header value for custom header persistence.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param prstHdrVal set the prstHdrVal.
    */
@@ -578,6 +512,7 @@ public class Server extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ratio of selecting eligible servers in the pool.
    * Allowed values are 1-20.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @return ratio
    */
@@ -590,6 +525,7 @@ public class Server extends AviRestResource {
    * This is the setter method to the attribute.
    * Ratio of selecting eligible servers in the pool.
    * Allowed values are 1-20.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @param ratio set the ratio.
    */
@@ -601,7 +537,8 @@ public class Server extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Auto resolve server's ip using dns name.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return resolveServerByDns
    */
@@ -613,7 +550,8 @@ public class Server extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Auto resolve server's ip using dns name.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param resolveServerByDns set the resolveServerByDns.
    */
@@ -625,6 +563,7 @@ public class Server extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rewrite incoming host header to server name.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return rewriteHostHeader
    */
@@ -636,6 +575,7 @@ public class Server extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rewrite incoming host header to server name.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param rewriteHostHeader set the rewriteHostHeader.
    */
@@ -647,6 +587,7 @@ public class Server extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Hostname of the node where the server vm or container resides.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverNode
    */
@@ -658,6 +599,7 @@ public class Server extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Hostname of the node where the server vm or container resides.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverNode set the serverNode.
    */
@@ -670,6 +612,7 @@ public class Server extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Verify server belongs to a discovered network or reachable via a discovered network.
    * Verify reachable network isn't the openstack management network.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return verifyNetwork
    */
@@ -682,6 +625,7 @@ public class Server extends AviRestResource {
    * This is the setter method to the attribute.
    * Verify server belongs to a discovered network or reachable via a discovered network.
    * Verify reachable network isn't the openstack management network.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param verifyNetwork set the verifyNetwork.
    */
@@ -694,6 +638,7 @@ public class Server extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * (internal-use) this field is used internally by avi, not editable by the user.
    * It is a reference to an object of type vimgrvmruntime.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vmRef
    */
@@ -706,6 +651,7 @@ public class Server extends AviRestResource {
    * This is the setter method to the attribute.
    * (internal-use) this field is used internally by avi, not editable by the user.
    * It is a reference to an object of type vimgrvmruntime.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vmRef set the vmRef.
    */
@@ -732,9 +678,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.ratio, objServer.ratio)&&
   Objects.equals(this.vmRef, objServer.vmRef)&&
   Objects.equals(this.nwRef, objServer.nwRef)&&
-  Objects.equals(this.discoveredNetworkRef, objServer.discoveredNetworkRef)&&
   Objects.equals(this.externalUuid, objServer.externalUuid)&&
-  Objects.equals(this.discoveredSubnet, objServer.discoveredSubnet)&&
   Objects.equals(this.verifyNetwork, objServer.verifyNetwork)&&
   Objects.equals(this.discoveredNetworks, objServer.discoveredNetworks)&&
   Objects.equals(this.resolveServerByDns, objServer.resolveServerByDns)&&
@@ -757,9 +701,7 @@ public String toString() {
       sb.append("    autoscalingGroupName: ").append(toIndentedString(autoscalingGroupName)).append("\n");
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    discoveredNetworkRef: ").append(toIndentedString(discoveredNetworkRef)).append("\n");
         sb.append("    discoveredNetworks: ").append(toIndentedString(discoveredNetworks)).append("\n");
-        sb.append("    discoveredSubnet: ").append(toIndentedString(discoveredSubnet)).append("\n");
         sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
         sb.append("    externalOrchestrationId: ").append(toIndentedString(externalOrchestrationId)).append("\n");
         sb.append("    externalUuid: ").append(toIndentedString(externalUuid)).append("\n");

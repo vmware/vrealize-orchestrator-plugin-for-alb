@@ -28,10 +28,6 @@ public class DnsServiceDomain extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String domainName = null;
 
-    @JsonProperty("num_dns_ip")
-    @JsonInclude(Include.NON_NULL)
-    private Integer numDnsIp;
-
     @JsonProperty("pass_through")
     @JsonInclude(Include.NON_NULL)
     private Boolean passThrough = true;
@@ -45,6 +41,7 @@ public class DnsServiceDomain extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Service domain string used for fqdn.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return domainName
    */
@@ -56,6 +53,7 @@ public class DnsServiceDomain extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Service domain string used for fqdn.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param domainName set the domainName.
    */
@@ -66,31 +64,8 @@ public class DnsServiceDomain extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * [deprecated] useless fieldplease refer to dnsserviceapplicationprofile's num_dns_ip for default valueplease refer to vsvip's dns_info
-   * num_records_in_response for user config valuespecifies the number of a recordsreturned by avi dns service.
-   * Field deprecated in 20.1.5.
-   * @return numDnsIp
-   */
-  @VsoMethod
-  public Integer getNumDnsIp() {
-    return numDnsIp;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * [deprecated] useless fieldplease refer to dnsserviceapplicationprofile's num_dns_ip for default valueplease refer to vsvip's dns_info
-   * num_records_in_response for user config valuespecifies the number of a recordsreturned by avi dns service.
-   * Field deprecated in 20.1.5.
-   * @param numDnsIp set the numDnsIp.
-   */
-  @VsoMethod
-  public void setNumDnsIp(Integer  numDnsIp) {
-    this.numDnsIp = numDnsIp;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Third-party authoritative domain requests are delegated todns virtualservice's pool of nameservers.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return passThrough
    */
@@ -102,6 +77,7 @@ public class DnsServiceDomain extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Third-party authoritative domain requests are delegated todns virtualservice's pool of nameservers.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param passThrough set the passThrough.
    */
@@ -115,6 +91,7 @@ public class DnsServiceDomain extends AviRestResource {
    * Ttl value for dns records.
    * Allowed values are 1-604800.
    * Unit is sec.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return recordTtl
    */
@@ -128,6 +105,7 @@ public class DnsServiceDomain extends AviRestResource {
    * Ttl value for dns records.
    * Allowed values are 1-604800.
    * Unit is sec.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param recordTtl set the recordTtl.
    */
@@ -149,7 +127,6 @@ public boolean equals(java.lang.Object o) {
   DnsServiceDomain objDnsServiceDomain = (DnsServiceDomain) o;
   return   Objects.equals(this.domainName, objDnsServiceDomain.domainName)&&
   Objects.equals(this.recordTtl, objDnsServiceDomain.recordTtl)&&
-  Objects.equals(this.numDnsIp, objDnsServiceDomain.numDnsIp)&&
   Objects.equals(this.passThrough, objDnsServiceDomain.passThrough);
 }
 
@@ -158,7 +135,6 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class DnsServiceDomain {\n");
       sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
-        sb.append("    numDnsIp: ").append(toIndentedString(numDnsIp)).append("\n");
         sb.append("    passThrough: ").append(toIndentedString(passThrough)).append("\n");
         sb.append("    recordTtl: ").append(toIndentedString(recordTtl)).append("\n");
       sb.append("}");

@@ -32,10 +32,6 @@ public class ErrorPageBody extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String format = "ERROR_PAGE_FORMAT_HTML";
 
-    @JsonProperty("labels")
-    @JsonInclude(Include.NON_NULL)
-    private List<KeyValue> labels;
-
     @JsonProperty("markers")
     @JsonInclude(Include.NON_NULL)
     private List<RoleFilterMatchLabel> markers = null;
@@ -62,6 +58,7 @@ public class ErrorPageBody extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Error page body sent to client when match.
    * Field introduced in 17.2.4.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorPageBody
    */
@@ -74,6 +71,7 @@ public class ErrorPageBody extends AviRestResource {
    * This is the setter method to the attribute.
    * Error page body sent to client when match.
    * Field introduced in 17.2.4.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param errorPageBody set the errorPageBody.
    */
@@ -87,6 +85,7 @@ public class ErrorPageBody extends AviRestResource {
    * Format of an error page body html or json.
    * Enum options - ERROR_PAGE_FORMAT_HTML, ERROR_PAGE_FORMAT_JSON.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "ERROR_PAGE_FORMAT_HTML".
    * @return format
    */
@@ -100,6 +99,7 @@ public class ErrorPageBody extends AviRestResource {
    * Format of an error page body html or json.
    * Enum options - ERROR_PAGE_FORMAT_HTML, ERROR_PAGE_FORMAT_JSON.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "ERROR_PAGE_FORMAT_HTML".
    * @param format set the format.
    */
@@ -110,56 +110,10 @@ public class ErrorPageBody extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Key value pairs for granular object access control.
-   * Also allows for classification and tagging of similar objects.
-   * Field deprecated in 20.1.5.
-   * Field introduced in 20.1.2.
-   * Maximum of 4 items allowed.
-   * @return labels
-   */
-  @VsoMethod
-  public List<KeyValue> getLabels() {
-    return labels;
-  }
-
-  /**
-   * This is the setter method. this will set the labels
-   * Key value pairs for granular object access control.
-   * Also allows for classification and tagging of similar objects.
-   * Field deprecated in 20.1.5.
-   * Field introduced in 20.1.2.
-   * Maximum of 4 items allowed.
-   * @return labels
-   */
-  @VsoMethod
-  public void setLabels(List<KeyValue>  labels) {
-    this.labels = labels;
-  }
-
-  /**
-   * This is the setter method this will set the labels
-   * Key value pairs for granular object access control.
-   * Also allows for classification and tagging of similar objects.
-   * Field deprecated in 20.1.5.
-   * Field introduced in 20.1.2.
-   * Maximum of 4 items allowed.
-   * @return labels
-   */
-  @VsoMethod
-  public ErrorPageBody addLabelsItem(KeyValue labelsItem) {
-    if (this.labels == null) {
-      this.labels = new ArrayList<KeyValue>();
-    }
-    this.labels.add(labelsItem);
-    return this;
-  }
-
-
-  /**
-   * This is the getter method this will return the attribute value.
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -172,7 +126,8 @@ public class ErrorPageBody extends AviRestResource {
    * This is the setter method. this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -185,7 +140,8 @@ public class ErrorPageBody extends AviRestResource {
    * This is the setter method this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -202,6 +158,7 @@ public class ErrorPageBody extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.4.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -213,6 +170,7 @@ public class ErrorPageBody extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.4.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -225,6 +183,7 @@ public class ErrorPageBody extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
    * Field introduced in 17.2.4.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -237,6 +196,7 @@ public class ErrorPageBody extends AviRestResource {
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
    * Field introduced in 17.2.4.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
@@ -267,6 +227,7 @@ public class ErrorPageBody extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.4.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -278,6 +239,7 @@ public class ErrorPageBody extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.4.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
@@ -305,7 +267,6 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.tenantRef, objErrorPageBody.tenantRef)&&
   Objects.equals(this.errorPageBody, objErrorPageBody.errorPageBody)&&
   Objects.equals(this.format, objErrorPageBody.format)&&
-  Objects.equals(this.labels, objErrorPageBody.labels)&&
   Objects.equals(this.markers, objErrorPageBody.markers);
 }
 
@@ -315,7 +276,6 @@ public String toString() {
   sb.append("class ErrorPageBody {\n");
       sb.append("    errorPageBody: ").append(toIndentedString(errorPageBody)).append("\n");
         sb.append("    format: ").append(toIndentedString(format)).append("\n");
-        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");

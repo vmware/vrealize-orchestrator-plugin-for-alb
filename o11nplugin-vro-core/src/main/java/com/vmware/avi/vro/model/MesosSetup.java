@@ -76,7 +76,7 @@ public class MesosSetup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property cc_id of obj type mesossetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccId
    */
@@ -87,7 +87,7 @@ public class MesosSetup extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property cc_id of obj type mesossetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccId set the ccId.
    */
@@ -98,7 +98,7 @@ public class MesosSetup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property failed_hosts of obj type mesossetup field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return failedHosts
    */
@@ -109,7 +109,7 @@ public class MesosSetup extends AviRestResource {
 
   /**
    * This is the setter method. this will set the failedHosts
-   * Placeholder for description of property failed_hosts of obj type mesossetup field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return failedHosts
    */
@@ -120,7 +120,7 @@ public class MesosSetup extends AviRestResource {
 
   /**
    * This is the setter method this will set the failedHosts
-   * Placeholder for description of property failed_hosts of obj type mesossetup field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return failedHosts
    */
@@ -136,7 +136,7 @@ public class MesosSetup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property fleet_endpoint of obj type mesossetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fleetEndpoint
    */
@@ -147,7 +147,7 @@ public class MesosSetup extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property fleet_endpoint of obj type mesossetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fleetEndpoint set the fleetEndpoint.
    */
@@ -158,7 +158,7 @@ public class MesosSetup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property hosts of obj type mesossetup field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hosts
    */
@@ -169,7 +169,7 @@ public class MesosSetup extends AviRestResource {
 
   /**
    * This is the setter method. this will set the hosts
-   * Placeholder for description of property hosts of obj type mesossetup field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hosts
    */
@@ -180,7 +180,7 @@ public class MesosSetup extends AviRestResource {
 
   /**
    * This is the setter method this will set the hosts
-   * Placeholder for description of property hosts of obj type mesossetup field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hosts
    */
@@ -196,7 +196,7 @@ public class MesosSetup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property mesos_access of obj type mesossetup field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mesosAccess
    */
@@ -207,7 +207,7 @@ public class MesosSetup extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property mesos_access of obj type mesossetup field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mesosAccess set the mesosAccess.
    */
@@ -218,7 +218,7 @@ public class MesosSetup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property mesos_url of obj type mesossetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mesosUrl
    */
@@ -229,7 +229,7 @@ public class MesosSetup extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property mesos_url of obj type mesossetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mesosUrl set the mesosUrl.
    */
@@ -240,7 +240,7 @@ public class MesosSetup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property missing_hosts of obj type mesossetup field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return missingHosts
    */
@@ -251,7 +251,7 @@ public class MesosSetup extends AviRestResource {
 
   /**
    * This is the setter method. this will set the missingHosts
-   * Placeholder for description of property missing_hosts of obj type mesossetup field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return missingHosts
    */
@@ -262,7 +262,7 @@ public class MesosSetup extends AviRestResource {
 
   /**
    * This is the setter method this will set the missingHosts
-   * Placeholder for description of property missing_hosts of obj type mesossetup field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return missingHosts
    */
@@ -278,7 +278,7 @@ public class MesosSetup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property new_hosts of obj type mesossetup field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return newHosts
    */
@@ -289,7 +289,7 @@ public class MesosSetup extends AviRestResource {
 
   /**
    * This is the setter method. this will set the newHosts
-   * Placeholder for description of property new_hosts of obj type mesossetup field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return newHosts
    */
@@ -300,7 +300,7 @@ public class MesosSetup extends AviRestResource {
 
   /**
    * This is the setter method this will set the newHosts
-   * Placeholder for description of property new_hosts of obj type mesossetup field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return newHosts
    */
@@ -316,7 +316,7 @@ public class MesosSetup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property reason of obj type mesossetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
@@ -327,7 +327,7 @@ public class MesosSetup extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property reason of obj type mesossetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
@@ -338,7 +338,7 @@ public class MesosSetup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property se_deploy_method_access of obj type mesossetup field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seDeployMethodAccess
    */
@@ -349,7 +349,7 @@ public class MesosSetup extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property se_deploy_method_access of obj type mesossetup field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seDeployMethodAccess set the seDeployMethodAccess.
    */
@@ -360,7 +360,7 @@ public class MesosSetup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property se_name of obj type mesossetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seName
    */
@@ -371,7 +371,7 @@ public class MesosSetup extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property se_name of obj type mesossetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seName set the seName.
    */
@@ -382,7 +382,7 @@ public class MesosSetup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property version of obj type mesossetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return version
    */
@@ -393,7 +393,7 @@ public class MesosSetup extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property version of obj type mesossetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param version set the version.
    */

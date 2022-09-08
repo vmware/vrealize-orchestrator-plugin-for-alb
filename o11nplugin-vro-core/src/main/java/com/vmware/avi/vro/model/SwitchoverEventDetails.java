@@ -56,7 +56,7 @@ public class SwitchoverEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property from_se_name of obj type switchovereventdetails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fromSeName
    */
@@ -67,7 +67,7 @@ public class SwitchoverEventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property from_se_name of obj type switchovereventdetails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fromSeName set the fromSeName.
    */
@@ -78,7 +78,7 @@ public class SwitchoverEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property ip of obj type switchovereventdetails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip
    */
@@ -89,7 +89,7 @@ public class SwitchoverEventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property ip of obj type switchovereventdetails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip set the ip.
    */
@@ -100,7 +100,7 @@ public class SwitchoverEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property ip6 of obj type switchovereventdetails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip6
    */
@@ -111,7 +111,7 @@ public class SwitchoverEventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property ip6 of obj type switchovereventdetails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip6 set the ip6.
    */
@@ -124,6 +124,7 @@ public class SwitchoverEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Reason for switchover.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
@@ -136,6 +137,7 @@ public class SwitchoverEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Reason for switchover.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
@@ -146,7 +148,7 @@ public class SwitchoverEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property to_se_name of obj type switchovereventdetails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return toSeName
    */
@@ -157,7 +159,7 @@ public class SwitchoverEventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property to_se_name of obj type switchovereventdetails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param toSeName set the toSeName.
    */
@@ -168,7 +170,7 @@ public class SwitchoverEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property vs_name of obj type switchovereventdetails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsName
    */
@@ -179,7 +181,7 @@ public class SwitchoverEventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property vs_name of obj type switchovereventdetails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsName set the vsName.
    */
@@ -190,7 +192,7 @@ public class SwitchoverEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Unique object identifier of vs.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUuid
    */
@@ -201,7 +203,7 @@ public class SwitchoverEventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Unique object identifier of vs.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsUuid set the vsUuid.
    */

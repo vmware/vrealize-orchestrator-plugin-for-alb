@@ -49,6 +49,7 @@ public class GeoLocation extends AviRestResource {
    * The range is from -90.0 (south) to +90.0 (north).
    * Allowed values are -90.0-+90.0.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return latitude
    */
@@ -64,6 +65,7 @@ public class GeoLocation extends AviRestResource {
    * The range is from -90.0 (south) to +90.0 (north).
    * Allowed values are -90.0-+90.0.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param latitude set the latitude.
    */
@@ -79,6 +81,7 @@ public class GeoLocation extends AviRestResource {
    * The range is from -180.0 (west) to +180.0 (east).
    * Allowed values are -180.0-+180.0.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return longitude
    */
@@ -94,6 +97,7 @@ public class GeoLocation extends AviRestResource {
    * The range is from -180.0 (west) to +180.0 (east).
    * Allowed values are -180.0-+180.0.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param longitude set the longitude.
    */
@@ -106,6 +110,7 @@ public class GeoLocation extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Location name in the format country/state/city.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -118,6 +123,7 @@ public class GeoLocation extends AviRestResource {
    * This is the setter method to the attribute.
    * Location name in the format country/state/city.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -130,6 +136,7 @@ public class GeoLocation extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Location tag string - example  useast.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tag
    */
@@ -142,6 +149,7 @@ public class GeoLocation extends AviRestResource {
    * This is the setter method to the attribute.
    * Location tag string - example  useast.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tag set the tag.
    */

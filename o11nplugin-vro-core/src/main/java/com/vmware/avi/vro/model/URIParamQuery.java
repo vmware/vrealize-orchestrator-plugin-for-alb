@@ -37,6 +37,7 @@ public class URIParamQuery extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Concatenate a string to the query of the incoming request uri and then use it in the request uri going to the backend server.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return addString
    */
@@ -48,6 +49,7 @@ public class URIParamQuery extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Concatenate a string to the query of the incoming request uri and then use it in the request uri going to the backend server.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param addString set the addString.
    */
@@ -59,6 +61,7 @@ public class URIParamQuery extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Use or drop the query of the incoming request uri in the request uri to the backend server.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return keepQuery
    */
@@ -70,6 +73,7 @@ public class URIParamQuery extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Use or drop the query of the incoming request uri in the request uri to the backend server.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param keepQuery set the keepQuery.
    */

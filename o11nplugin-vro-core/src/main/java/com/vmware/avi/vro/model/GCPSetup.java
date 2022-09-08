@@ -82,7 +82,7 @@ public class GCPSetup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property cc_id of obj type gcpsetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccId
    */
@@ -93,7 +93,7 @@ public class GCPSetup extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property cc_id of obj type gcpsetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccId set the ccId.
    */
@@ -104,7 +104,7 @@ public class GCPSetup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property hostname of obj type gcpsetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostname
    */
@@ -115,7 +115,7 @@ public class GCPSetup extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property hostname of obj type gcpsetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hostname set the hostname.
    */
@@ -126,7 +126,7 @@ public class GCPSetup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property network of obj type gcpsetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return network
    */
@@ -137,7 +137,7 @@ public class GCPSetup extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property network of obj type gcpsetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param network set the network.
    */
@@ -148,7 +148,7 @@ public class GCPSetup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property nhop_inst of obj type gcpsetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nhopInst
    */
@@ -159,7 +159,7 @@ public class GCPSetup extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property nhop_inst of obj type gcpsetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nhopInst set the nhopInst.
    */
@@ -170,7 +170,7 @@ public class GCPSetup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property nhop_ip of obj type gcpsetup field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nhopIp
    */
@@ -181,7 +181,7 @@ public class GCPSetup extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property nhop_ip of obj type gcpsetup field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nhopIp set the nhopIp.
    */
@@ -192,7 +192,7 @@ public class GCPSetup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property project of obj type gcpsetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return project
    */
@@ -203,7 +203,7 @@ public class GCPSetup extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property project of obj type gcpsetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param project set the project.
    */
@@ -214,7 +214,7 @@ public class GCPSetup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property reason of obj type gcpsetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
@@ -225,7 +225,7 @@ public class GCPSetup extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property reason of obj type gcpsetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
@@ -236,7 +236,7 @@ public class GCPSetup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property route_name of obj type gcpsetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return routeName
    */
@@ -247,7 +247,7 @@ public class GCPSetup extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property route_name of obj type gcpsetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param routeName set the routeName.
    */
@@ -258,7 +258,7 @@ public class GCPSetup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property subnet of obj type gcpsetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnet
    */
@@ -269,7 +269,7 @@ public class GCPSetup extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property subnet of obj type gcpsetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnet set the subnet.
    */
@@ -280,7 +280,7 @@ public class GCPSetup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property vip of obj type gcpsetup field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vip
    */
@@ -291,7 +291,7 @@ public class GCPSetup extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property vip of obj type gcpsetup field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vip set the vip.
    */
@@ -302,7 +302,7 @@ public class GCPSetup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property vs_name of obj type gcpsetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsName
    */
@@ -313,7 +313,7 @@ public class GCPSetup extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property vs_name of obj type gcpsetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsName set the vsName.
    */
@@ -324,7 +324,7 @@ public class GCPSetup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Unique object identifier of vs.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUuid
    */
@@ -335,7 +335,7 @@ public class GCPSetup extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Unique object identifier of vs.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsUuid set the vsUuid.
    */
@@ -346,7 +346,7 @@ public class GCPSetup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property zone of obj type gcpsetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return zone
    */
@@ -357,7 +357,7 @@ public class GCPSetup extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property zone of obj type gcpsetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param zone set the zone.
    */

@@ -28,6 +28,10 @@ public class AppLearningParams extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean enablePerUriLearning = true;
 
+    @JsonProperty("learn_from_authenticated_clients_only")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean learnFromAuthenticatedClientsOnly = false;
+
     @JsonProperty("max_params")
     @JsonInclude(Include.NON_NULL)
     private Integer maxParams = 100;
@@ -44,6 +48,10 @@ public class AppLearningParams extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer samplingPercent = 1;
 
+    @JsonProperty("trusted_ipgroup_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String trustedIpgroupRef = null;
+
     @JsonProperty("update_interval")
     @JsonInclude(Include.NON_NULL)
     private Integer updateInterval = 30;
@@ -54,6 +62,7 @@ public class AppLearningParams extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Learn the params per uri path.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enablePerUriLearning
    */
@@ -66,6 +75,7 @@ public class AppLearningParams extends AviRestResource {
    * This is the setter method to the attribute.
    * Learn the params per uri path.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enablePerUriLearning set the enablePerUriLearning.
    */
@@ -76,9 +86,38 @@ public class AppLearningParams extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * If true, learning will only be performed on requests from clients who have passed the authentication process configured in the virtual service's
+   * auth profile.
+   * Field introduced in 22.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return learnFromAuthenticatedClientsOnly
+   */
+  @VsoMethod
+  public Boolean getLearnFromAuthenticatedClientsOnly() {
+    return learnFromAuthenticatedClientsOnly;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * If true, learning will only be performed on requests from clients who have passed the authentication process configured in the virtual service's
+   * auth profile.
+   * Field introduced in 22.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param learnFromAuthenticatedClientsOnly set the learnFromAuthenticatedClientsOnly.
+   */
+  @VsoMethod
+  public void setLearnFromAuthenticatedClientsOnly(Boolean  learnFromAuthenticatedClientsOnly) {
+    this.learnFromAuthenticatedClientsOnly = learnFromAuthenticatedClientsOnly;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Maximum number of params programmed for an application.
    * Allowed values are 10-1000.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @return maxParams
    */
@@ -92,6 +131,7 @@ public class AppLearningParams extends AviRestResource {
    * Maximum number of params programmed for an application.
    * Allowed values are 10-1000.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @param maxParams set the maxParams.
    */
@@ -105,6 +145,7 @@ public class AppLearningParams extends AviRestResource {
    * Maximum number of uri paths programmed for an application.
    * Allowed values are 10-10000.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 500.
    * @return maxUris
    */
@@ -118,6 +159,7 @@ public class AppLearningParams extends AviRestResource {
    * Maximum number of uri paths programmed for an application.
    * Allowed values are 10-10000.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 500.
    * @param maxUris set the maxUris.
    */
@@ -130,6 +172,7 @@ public class AppLearningParams extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Minimum number of occurances required for a param to qualify for learning.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
    * @return minHitsToLearn
    */
@@ -142,6 +185,7 @@ public class AppLearningParams extends AviRestResource {
    * This is the setter method to the attribute.
    * Minimum number of occurances required for a param to qualify for learning.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
    * @param minHitsToLearn set the minHitsToLearn.
    */
@@ -156,6 +200,7 @@ public class AppLearningParams extends AviRestResource {
    * Allowed values are 1-100.
    * Field introduced in 18.2.3.
    * Unit is percent.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @return samplingPercent
    */
@@ -170,6 +215,7 @@ public class AppLearningParams extends AviRestResource {
    * Allowed values are 1-100.
    * Field introduced in 18.2.3.
    * Unit is percent.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @param samplingPercent set the samplingPercent.
    */
@@ -180,10 +226,39 @@ public class AppLearningParams extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * If configured, learning will only be performed on requests from client ips within the configured ip address group.
+   * It is a reference to an object of type ipaddrgroup.
+   * Field introduced in 22.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return trustedIpgroupRef
+   */
+  @VsoMethod
+  public String getTrustedIpgroupRef() {
+    return trustedIpgroupRef;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * If configured, learning will only be performed on requests from client ips within the configured ip address group.
+   * It is a reference to an object of type ipaddrgroup.
+   * Field introduced in 22.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param trustedIpgroupRef set the trustedIpgroupRef.
+   */
+  @VsoMethod
+  public void setTrustedIpgroupRef(String  trustedIpgroupRef) {
+    this.trustedIpgroupRef = trustedIpgroupRef;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Frequency with which se publishes application learning data to controller.
    * Allowed values are 1-60.
    * Field introduced in 18.2.3.
    * Unit is min.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @return updateInterval
    */
@@ -198,6 +273,7 @@ public class AppLearningParams extends AviRestResource {
    * Allowed values are 1-60.
    * Field introduced in 18.2.3.
    * Unit is min.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @param updateInterval set the updateInterval.
    */
@@ -222,7 +298,9 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.maxUris, objAppLearningParams.maxUris)&&
   Objects.equals(this.maxParams, objAppLearningParams.maxParams)&&
   Objects.equals(this.enablePerUriLearning, objAppLearningParams.enablePerUriLearning)&&
-  Objects.equals(this.minHitsToLearn, objAppLearningParams.minHitsToLearn);
+  Objects.equals(this.minHitsToLearn, objAppLearningParams.minHitsToLearn)&&
+  Objects.equals(this.learnFromAuthenticatedClientsOnly, objAppLearningParams.learnFromAuthenticatedClientsOnly)&&
+  Objects.equals(this.trustedIpgroupRef, objAppLearningParams.trustedIpgroupRef);
 }
 
 @Override
@@ -230,10 +308,12 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class AppLearningParams {\n");
       sb.append("    enablePerUriLearning: ").append(toIndentedString(enablePerUriLearning)).append("\n");
+        sb.append("    learnFromAuthenticatedClientsOnly: ").append(toIndentedString(learnFromAuthenticatedClientsOnly)).append("\n");
         sb.append("    maxParams: ").append(toIndentedString(maxParams)).append("\n");
         sb.append("    maxUris: ").append(toIndentedString(maxUris)).append("\n");
         sb.append("    minHitsToLearn: ").append(toIndentedString(minHitsToLearn)).append("\n");
         sb.append("    samplingPercent: ").append(toIndentedString(samplingPercent)).append("\n");
+        sb.append("    trustedIpgroupRef: ").append(toIndentedString(trustedIpgroupRef)).append("\n");
         sb.append("    updateInterval: ").append(toIndentedString(updateInterval)).append("\n");
       sb.append("}");
   return sb.toString();

@@ -38,8 +38,9 @@ public class SaasLicensingInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum service units limit for controller.
    * Allowed values are 0-1000.
-   * Special values are 0 - 'infinite'.
+   * Special values are 0 - infinite.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @return maxServiceUnits
    */
@@ -52,8 +53,9 @@ public class SaasLicensingInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum service units limit for controller.
    * Allowed values are 0-1000.
-   * Special values are 0 - 'infinite'.
+   * Special values are 0 - infinite.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @param maxServiceUnits set the maxServiceUnits.
    */
@@ -67,6 +69,7 @@ public class SaasLicensingInfo extends AviRestResource {
    * Minimum service units that always remain reserved on controller.
    * Allowed values are 0-1000.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @return reserveServiceUnits
    */
@@ -80,6 +83,7 @@ public class SaasLicensingInfo extends AviRestResource {
    * Minimum service units that always remain reserved on controller.
    * Allowed values are 0-1000.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @param reserveServiceUnits set the reserveServiceUnits.
    */

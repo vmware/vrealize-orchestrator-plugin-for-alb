@@ -39,6 +39,7 @@ public class VipAutoscaleGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.12, 18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return configuration
    */
@@ -50,6 +51,7 @@ public class VipAutoscaleGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.12, 18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param configuration set the configuration.
    */
@@ -61,6 +63,7 @@ public class VipAutoscaleGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.12, 18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return policy
    */
@@ -72,6 +75,7 @@ public class VipAutoscaleGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.12, 18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param policy set the policy.
    */

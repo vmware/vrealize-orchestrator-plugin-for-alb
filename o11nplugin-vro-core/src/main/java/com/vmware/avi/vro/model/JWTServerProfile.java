@@ -67,6 +67,7 @@ public class JWTServerProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Jwt auth configuration for profile_type controller_internal_auth.
    * Field introduced in 20.1.6.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerInternalAuth
    */
@@ -79,6 +80,7 @@ public class JWTServerProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Jwt auth configuration for profile_type controller_internal_auth.
    * Field introduced in 20.1.6.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param controllerInternalAuth set the controllerInternalAuth.
    */
@@ -93,6 +95,7 @@ public class JWTServerProfile extends AviRestResource {
    * If the field is set to false, then the object is visible within the controller-cluster.
    * If the field is set to true, then the object is replicated across the federation.
    * Field introduced in 20.1.6.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return isFederated
    */
@@ -107,6 +110,7 @@ public class JWTServerProfile extends AviRestResource {
    * If the field is set to false, then the object is visible within the controller-cluster.
    * If the field is set to true, then the object is replicated across the federation.
    * Field introduced in 20.1.6.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param isFederated set the isFederated.
    */
@@ -119,6 +123,7 @@ public class JWTServerProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uniquely identifiable name of the token issuer, only allowed with profile_type client_auth.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return issuer
    */
@@ -131,6 +136,7 @@ public class JWTServerProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Uniquely identifiable name of the token issuer, only allowed with profile_type client_auth.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param issuer set the issuer.
    */
@@ -143,6 +149,7 @@ public class JWTServerProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Jwks key set used for validating the jwt, only allowed with profile_type client_auth.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return jwksKeys
    */
@@ -155,6 +162,7 @@ public class JWTServerProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Jwks key set used for validating the jwt, only allowed with profile_type client_auth.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param jwksKeys set the jwksKeys.
    */
@@ -168,6 +176,7 @@ public class JWTServerProfile extends AviRestResource {
    * Type of jwt server profile which defines the usage type.
    * Enum options - CLIENT_AUTH, CONTROLLER_INTERNAL_AUTH.
    * Field introduced in 20.1.6.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "CLIENT_AUTH".
    * @return jwtProfileType
    */
@@ -181,6 +190,7 @@ public class JWTServerProfile extends AviRestResource {
    * Type of jwt server profile which defines the usage type.
    * Enum options - CLIENT_AUTH, CONTROLLER_INTERNAL_AUTH.
    * Field introduced in 20.1.6.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "CLIENT_AUTH".
    * @param jwtProfileType set the jwtProfileType.
    */
@@ -193,6 +203,7 @@ public class JWTServerProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the jwt profile.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -205,6 +216,7 @@ public class JWTServerProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the jwt profile.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -218,6 +230,7 @@ public class JWTServerProfile extends AviRestResource {
    * Uuid of the tenant.
    * It is a reference to an object of type tenant.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -231,6 +244,7 @@ public class JWTServerProfile extends AviRestResource {
    * Uuid of the tenant.
    * It is a reference to an object of type tenant.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
@@ -262,6 +276,7 @@ public class JWTServerProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the jwtprofile.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -274,6 +289,7 @@ public class JWTServerProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the jwtprofile.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */

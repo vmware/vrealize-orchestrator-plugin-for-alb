@@ -37,6 +37,7 @@ public class SSLIgnoredDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of ssl certificate.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -48,6 +49,7 @@ public class SSLIgnoredDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of ssl certificate.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -59,6 +61,7 @@ public class SSLIgnoredDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Reason for ignoring certificate.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
@@ -70,6 +73,7 @@ public class SSLIgnoredDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Reason for ignoring certificate.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */

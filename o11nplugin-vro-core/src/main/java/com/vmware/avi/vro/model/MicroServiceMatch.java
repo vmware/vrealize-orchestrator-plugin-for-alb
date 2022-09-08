@@ -38,6 +38,7 @@ public class MicroServiceMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of micro service group(s).
    * It is a reference to an object of type microservicegroup.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return groupRef
    */
@@ -50,6 +51,7 @@ public class MicroServiceMatch extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of micro service group(s).
    * It is a reference to an object of type microservicegroup.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param groupRef set the groupRef.
    */
@@ -62,6 +64,7 @@ public class MicroServiceMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Criterion to use for micro service matching the http request.
    * Enum options - IS_IN, IS_NOT_IN.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchCriteria
    */
@@ -74,6 +77,7 @@ public class MicroServiceMatch extends AviRestResource {
    * This is the setter method to the attribute.
    * Criterion to use for micro service matching the http request.
    * Enum options - IS_IN, IS_NOT_IN.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchCriteria set the matchCriteria.
    */
