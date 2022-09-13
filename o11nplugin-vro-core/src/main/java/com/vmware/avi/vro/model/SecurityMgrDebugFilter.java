@@ -38,6 +38,7 @@ public class SecurityMgrDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Dynamically adapt configuration parameters for application learning feature.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enableAdaptiveConfig
    */
@@ -50,6 +51,7 @@ public class SecurityMgrDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Dynamically adapt configuration parameters for application learning feature.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enableAdaptiveConfig set the enableAdaptiveConfig.
    */
@@ -63,6 +65,7 @@ public class SecurityMgrDebugFilter extends AviRestResource {
    * Uuid of the entity.
    * It is a reference to an object of type virtualservice.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return entityRef
    */
@@ -76,6 +79,7 @@ public class SecurityMgrDebugFilter extends AviRestResource {
    * Uuid of the entity.
    * It is a reference to an object of type virtualservice.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param entityRef set the entityRef.
    */

@@ -40,7 +40,7 @@ public class DebugIpAddr extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property addrs of obj type debugipaddr field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return addrs
    */
@@ -51,7 +51,7 @@ public class DebugIpAddr extends AviRestResource {
 
   /**
    * This is the setter method. this will set the addrs
-   * Placeholder for description of property addrs of obj type debugipaddr field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return addrs
    */
@@ -62,7 +62,7 @@ public class DebugIpAddr extends AviRestResource {
 
   /**
    * This is the setter method this will set the addrs
-   * Placeholder for description of property addrs of obj type debugipaddr field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return addrs
    */
@@ -78,7 +78,7 @@ public class DebugIpAddr extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property prefixes of obj type debugipaddr field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return prefixes
    */
@@ -89,7 +89,7 @@ public class DebugIpAddr extends AviRestResource {
 
   /**
    * This is the setter method. this will set the prefixes
-   * Placeholder for description of property prefixes of obj type debugipaddr field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return prefixes
    */
@@ -100,7 +100,7 @@ public class DebugIpAddr extends AviRestResource {
 
   /**
    * This is the setter method this will set the prefixes
-   * Placeholder for description of property prefixes of obj type debugipaddr field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return prefixes
    */
@@ -116,7 +116,7 @@ public class DebugIpAddr extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property ranges of obj type debugipaddr field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ranges
    */
@@ -127,7 +127,7 @@ public class DebugIpAddr extends AviRestResource {
 
   /**
    * This is the setter method. this will set the ranges
-   * Placeholder for description of property ranges of obj type debugipaddr field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ranges
    */
@@ -138,7 +138,7 @@ public class DebugIpAddr extends AviRestResource {
 
   /**
    * This is the setter method this will set the ranges
-   * Placeholder for description of property ranges of obj type debugipaddr field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ranges
    */

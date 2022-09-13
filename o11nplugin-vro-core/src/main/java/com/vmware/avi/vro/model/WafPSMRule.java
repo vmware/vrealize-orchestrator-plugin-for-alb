@@ -82,6 +82,7 @@ public class WafPSMRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Free-text comment about this rule.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
@@ -94,6 +95,7 @@ public class WafPSMRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Free-text comment about this rule.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
@@ -106,6 +108,7 @@ public class WafPSMRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable or disable this rule.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enable
    */
@@ -118,6 +121,7 @@ public class WafPSMRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable or disable this rule.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enable set the enable.
    */
@@ -130,6 +134,7 @@ public class WafPSMRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Rule index, this is used to determine the order of the rules.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return index
    */
@@ -142,6 +147,7 @@ public class WafPSMRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Rule index, this is used to determine the order of the rules.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param index set the index.
    */
@@ -155,6 +161,7 @@ public class WafPSMRule extends AviRestResource {
    * The field match_value_pattern regular expression is case sensitive.
    * Enum options - SENSITIVE, INSENSITIVE.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "INSENSITIVE".
    * @return matchCase
    */
@@ -168,6 +175,7 @@ public class WafPSMRule extends AviRestResource {
    * The field match_value_pattern regular expression is case sensitive.
    * Enum options - SENSITIVE, INSENSITIVE.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "INSENSITIVE".
    * @param matchCase set the matchCase.
    */
@@ -180,6 +188,7 @@ public class WafPSMRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The match elements, for example args id or args|!args password.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchElements
    */
@@ -192,6 +201,7 @@ public class WafPSMRule extends AviRestResource {
    * This is the setter method. this will set the matchElements
    * The match elements, for example args id or args|!args password.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchElements
    */
@@ -204,6 +214,7 @@ public class WafPSMRule extends AviRestResource {
    * This is the setter method this will set the matchElements
    * The match elements, for example args id or args|!args password.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchElements
    */
@@ -222,6 +233,7 @@ public class WafPSMRule extends AviRestResource {
    * The maximum allowed length of the match_value.
    * If this is not set, the length will not be checked.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchValueMaxLength
    */
@@ -235,6 +247,7 @@ public class WafPSMRule extends AviRestResource {
    * The maximum allowed length of the match_value.
    * If this is not set, the length will not be checked.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchValueMaxLength set the matchValueMaxLength.
    */
@@ -247,6 +260,7 @@ public class WafPSMRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * A regular expression which describes the expected value.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchValuePattern
    */
@@ -259,6 +273,7 @@ public class WafPSMRule extends AviRestResource {
    * This is the setter method to the attribute.
    * A regular expression which describes the expected value.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchValuePattern set the matchValuePattern.
    */
@@ -271,6 +286,7 @@ public class WafPSMRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * If match_value_string_group_uuid and match_value_string_group_key are set, the referenced regular expression is used as match_value_pattern.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchValueStringGroupKey
    */
@@ -283,6 +299,7 @@ public class WafPSMRule extends AviRestResource {
    * This is the setter method to the attribute.
    * If match_value_string_group_uuid and match_value_string_group_key are set, the referenced regular expression is used as match_value_pattern.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchValueStringGroupKey set the matchValueStringGroupKey.
    */
@@ -296,6 +313,7 @@ public class WafPSMRule extends AviRestResource {
    * The uuid of a string group containing key used in match_value_string_group_key.
    * It is a reference to an object of type stringgroup.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchValueStringGroupRef
    */
@@ -309,6 +327,7 @@ public class WafPSMRule extends AviRestResource {
    * The uuid of a string group containing key used in match_value_string_group_key.
    * It is a reference to an object of type stringgroup.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchValueStringGroupRef set the matchValueStringGroupRef.
    */
@@ -325,6 +344,7 @@ public class WafPSMRule extends AviRestResource {
    * This only takes effect if the policy allows delegation.
    * Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mode
    */
@@ -341,6 +361,7 @@ public class WafPSMRule extends AviRestResource {
    * This only takes effect if the policy allows delegation.
    * Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mode set the mode.
    */
@@ -353,6 +374,7 @@ public class WafPSMRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the rule.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -365,6 +387,7 @@ public class WafPSMRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the rule.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -379,6 +402,7 @@ public class WafPSMRule extends AviRestResource {
    * This is used to select rules based on the paranoia-level.
    * Enum options - WAF_PARANOIA_LEVEL_LOW, WAF_PARANOIA_LEVEL_MEDIUM, WAF_PARANOIA_LEVEL_HIGH, WAF_PARANOIA_LEVEL_EXTREME.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "WAF_PARANOIA_LEVEL_LOW".
    * @return paranoiaLevel
    */
@@ -393,6 +417,7 @@ public class WafPSMRule extends AviRestResource {
    * This is used to select rules based on the paranoia-level.
    * Enum options - WAF_PARANOIA_LEVEL_LOW, WAF_PARANOIA_LEVEL_MEDIUM, WAF_PARANOIA_LEVEL_HIGH, WAF_PARANOIA_LEVEL_EXTREME.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "WAF_PARANOIA_LEVEL_LOW".
    * @param paranoiaLevel set the paranoiaLevel.
    */
@@ -406,6 +431,7 @@ public class WafPSMRule extends AviRestResource {
    * Id field which is used for log and metric generation.
    * This id must be unique for all rules in this group.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ruleId
    */
@@ -419,6 +445,7 @@ public class WafPSMRule extends AviRestResource {
    * Id field which is used for log and metric generation.
    * This id must be unique for all rules in this group.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ruleId set the ruleId.
    */

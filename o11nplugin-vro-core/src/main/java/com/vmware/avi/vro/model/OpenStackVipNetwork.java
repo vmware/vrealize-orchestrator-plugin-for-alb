@@ -38,6 +38,7 @@ public class OpenStackVipNetwork extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Neutron network uuid.
    * Field introduced in 18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return osNetworkUuid
    */
@@ -50,6 +51,7 @@ public class OpenStackVipNetwork extends AviRestResource {
    * This is the setter method to the attribute.
    * Neutron network uuid.
    * Field introduced in 18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param osNetworkUuid set the osNetworkUuid.
    */
@@ -63,6 +65,7 @@ public class OpenStackVipNetwork extends AviRestResource {
    * Uuids of openstack tenants that should be allowed to use the specified neutron network for vips.
    * Use '*' to make this network available to all tenants.
    * Field introduced in 18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return osTenantUuids
    */
@@ -76,6 +79,7 @@ public class OpenStackVipNetwork extends AviRestResource {
    * Uuids of openstack tenants that should be allowed to use the specified neutron network for vips.
    * Use '*' to make this network available to all tenants.
    * Field introduced in 18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return osTenantUuids
    */
@@ -89,6 +93,7 @@ public class OpenStackVipNetwork extends AviRestResource {
    * Uuids of openstack tenants that should be allowed to use the specified neutron network for vips.
    * Use '*' to make this network available to all tenants.
    * Field introduced in 18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return osTenantUuids
    */

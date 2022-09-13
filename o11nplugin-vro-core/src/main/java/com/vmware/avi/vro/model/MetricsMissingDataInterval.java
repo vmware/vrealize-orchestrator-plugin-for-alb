@@ -36,7 +36,7 @@ public class MetricsMissingDataInterval extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property end of obj type metricsmissingdatainterval field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return end
    */
@@ -47,7 +47,7 @@ public class MetricsMissingDataInterval extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property end of obj type metricsmissingdatainterval field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param end set the end.
    */
@@ -58,7 +58,7 @@ public class MetricsMissingDataInterval extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property start of obj type metricsmissingdatainterval field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return start
    */
@@ -69,7 +69,7 @@ public class MetricsMissingDataInterval extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property start of obj type metricsmissingdatainterval field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param start set the start.
    */

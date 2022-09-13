@@ -62,6 +62,7 @@ public class DebugSeFault extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Set of faults to enable/disable.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return faults
    */
@@ -74,6 +75,7 @@ public class DebugSeFault extends AviRestResource {
    * This is the setter method. this will set the faults
    * Set of faults to enable/disable.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return faults
    */
@@ -86,6 +88,7 @@ public class DebugSeFault extends AviRestResource {
    * This is the setter method this will set the faults
    * Set of faults to enable/disable.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return faults
    */
@@ -103,6 +106,7 @@ public class DebugSeFault extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Fail se malloc type at this frequency.
    * Field introduced in 18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return seMallocFailFrequency
    */
@@ -115,6 +119,7 @@ public class DebugSeFault extends AviRestResource {
    * This is the setter method to the attribute.
    * Fail se malloc type at this frequency.
    * Field introduced in 18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param seMallocFailFrequency set the seMallocFailFrequency.
    */
@@ -127,6 +132,7 @@ public class DebugSeFault extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Fail this se malloc type.
    * Field introduced in 18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return seMallocFailType
    */
@@ -139,6 +145,7 @@ public class DebugSeFault extends AviRestResource {
    * This is the setter method to the attribute.
    * Fail this se malloc type.
    * Field introduced in 18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param seMallocFailType set the seMallocFailType.
    */
@@ -151,6 +158,7 @@ public class DebugSeFault extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Toggle assert on mbuf cluster sanity check fail.
    * Field introduced in 17.2.13,18.1.3,18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return seMbufClSanity
    */
@@ -163,6 +171,7 @@ public class DebugSeFault extends AviRestResource {
    * This is the setter method to the attribute.
    * Toggle assert on mbuf cluster sanity check fail.
    * Field introduced in 17.2.13,18.1.3,18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param seMbufClSanity set the seMbufClSanity.
    */
@@ -175,6 +184,7 @@ public class DebugSeFault extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Fail se shm malloc type at this frequency.
    * Field introduced in 18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return seShmMallocFailFrequency
    */
@@ -187,6 +197,7 @@ public class DebugSeFault extends AviRestResource {
    * This is the setter method to the attribute.
    * Fail se shm malloc type at this frequency.
    * Field introduced in 18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param seShmMallocFailFrequency set the seShmMallocFailFrequency.
    */
@@ -199,6 +210,7 @@ public class DebugSeFault extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Fail this se shm malloc type.
    * Field introduced in 18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return seShmMallocFailType
    */
@@ -211,6 +223,7 @@ public class DebugSeFault extends AviRestResource {
    * This is the setter method to the attribute.
    * Fail this se shm malloc type.
    * Field introduced in 18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param seShmMallocFailType set the seShmMallocFailType.
    */
@@ -223,6 +236,7 @@ public class DebugSeFault extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Fail se waf allocation at this frequency.
    * Field introduced in 18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return seWafAllocFailFrequency
    */
@@ -235,6 +249,7 @@ public class DebugSeFault extends AviRestResource {
    * This is the setter method to the attribute.
    * Fail se waf allocation at this frequency.
    * Field introduced in 18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param seWafAllocFailFrequency set the seWafAllocFailFrequency.
    */
@@ -247,6 +262,7 @@ public class DebugSeFault extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Fail se waf learning allocation at this frequency.
    * Field introduced in 18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return seWafLearningAllocFailFrequency
    */
@@ -259,6 +275,7 @@ public class DebugSeFault extends AviRestResource {
    * This is the setter method to the attribute.
    * Fail se waf learning allocation at this frequency.
    * Field introduced in 18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param seWafLearningAllocFailFrequency set the seWafLearningAllocFailFrequency.
    */

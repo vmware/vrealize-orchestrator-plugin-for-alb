@@ -39,6 +39,7 @@ public class VHMatch extends AviRestResource {
    * Host/domain name match configuration.
    * Must be configured along with at least one path match criteria.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return host
    */
@@ -52,6 +53,7 @@ public class VHMatch extends AviRestResource {
    * Host/domain name match configuration.
    * Must be configured along with at least one path match criteria.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param host set the host.
    */
@@ -66,6 +68,7 @@ public class VHMatch extends AviRestResource {
    * Must be configured along with host match criteria.
    * Field introduced in 20.1.3.
    * Minimum of 1 items required.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return path
    */
@@ -80,6 +83,7 @@ public class VHMatch extends AviRestResource {
    * Must be configured along with host match criteria.
    * Field introduced in 20.1.3.
    * Minimum of 1 items required.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return path
    */
@@ -94,6 +98,7 @@ public class VHMatch extends AviRestResource {
    * Must be configured along with host match criteria.
    * Field introduced in 20.1.3.
    * Minimum of 1 items required.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return path
    */

@@ -54,6 +54,7 @@ public class DnsEdnsOption extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Address family.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return addrFamily
    */
@@ -66,6 +67,7 @@ public class DnsEdnsOption extends AviRestResource {
    * This is the setter method to the attribute.
    * Address family.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param addrFamily set the addrFamily.
    */
@@ -81,6 +83,7 @@ public class DnsEdnsOption extends AviRestResource {
    * EDNS_OPTION_CODE_CLIENT_SUBNET, EDNS_OPTION_CODE_EXPIRE, EDNS_OPTION_CODE_COOKIE, EDNS_OPTION_CODE_TCP_KEEPALIVE, EDNS_OPTION_CODE_PADDING,
    * EDNS_OPTION_CODE_CHAIN.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return code
    */
@@ -96,6 +99,7 @@ public class DnsEdnsOption extends AviRestResource {
    * EDNS_OPTION_CODE_CLIENT_SUBNET, EDNS_OPTION_CODE_EXPIRE, EDNS_OPTION_CODE_COOKIE, EDNS_OPTION_CODE_TCP_KEEPALIVE, EDNS_OPTION_CODE_PADDING,
    * EDNS_OPTION_CODE_CHAIN.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param code set the code.
    */
@@ -108,6 +112,7 @@ public class DnsEdnsOption extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Scope prefix length of address.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scopePrefixLen
    */
@@ -120,6 +125,7 @@ public class DnsEdnsOption extends AviRestResource {
    * This is the setter method to the attribute.
    * Scope prefix length of address.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param scopePrefixLen set the scopePrefixLen.
    */
@@ -132,6 +138,7 @@ public class DnsEdnsOption extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Source prefix length of address.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sourcePrefixLen
    */
@@ -144,6 +151,7 @@ public class DnsEdnsOption extends AviRestResource {
    * This is the setter method to the attribute.
    * Source prefix length of address.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sourcePrefixLen set the sourcePrefixLen.
    */
@@ -156,6 +164,7 @@ public class DnsEdnsOption extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ipv4 address of the client subnet.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnetIp
    */
@@ -168,6 +177,7 @@ public class DnsEdnsOption extends AviRestResource {
    * This is the setter method to the attribute.
    * Ipv4 address of the client subnet.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnetIp set the subnetIp.
    */
@@ -180,6 +190,7 @@ public class DnsEdnsOption extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ipv6 address of the client subnet.
    * Field introduced in 18.2.12, 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnetIp6
    */
@@ -192,6 +203,7 @@ public class DnsEdnsOption extends AviRestResource {
    * This is the setter method to the attribute.
    * Ipv6 address of the client subnet.
    * Field introduced in 18.2.12, 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnetIp6 set the subnetIp6.
    */

@@ -52,6 +52,7 @@ public class AuthorizationRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Authorization action when rule is matched.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return action
    */
@@ -64,6 +65,7 @@ public class AuthorizationRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Authorization action when rule is matched.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param action set the action.
    */
@@ -76,6 +78,7 @@ public class AuthorizationRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable or disable the rule.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enable
    */
@@ -88,6 +91,7 @@ public class AuthorizationRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable or disable the rule.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enable set the enable.
    */
@@ -100,6 +104,7 @@ public class AuthorizationRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Index of the authorization policy rule.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return index
    */
@@ -112,6 +117,7 @@ public class AuthorizationRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Index of the authorization policy rule.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param index set the index.
    */
@@ -124,7 +130,7 @@ public class AuthorizationRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Authorization match criteria for the rule.
    * Field introduced in 18.2.5.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return match
    */
@@ -137,7 +143,7 @@ public class AuthorizationRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Authorization match criteria for the rule.
    * Field introduced in 18.2.5.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param match set the match.
    */
@@ -150,6 +156,7 @@ public class AuthorizationRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the rule.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -162,6 +169,7 @@ public class AuthorizationRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the rule.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */

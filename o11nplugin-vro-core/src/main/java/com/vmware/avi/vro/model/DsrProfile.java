@@ -37,8 +37,9 @@ public class DsrProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Encapsulation type to use when dsr is l3.
-   * Enum options - ENCAP_IPINIP.
+   * Enum options - ENCAP_IPINIP, ENCAP_GRE.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "ENCAP_IPINIP".
    * @return dsrEncapType
    */
@@ -50,8 +51,9 @@ public class DsrProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Encapsulation type to use when dsr is l3.
-   * Enum options - ENCAP_IPINIP.
+   * Enum options - ENCAP_IPINIP, ENCAP_GRE.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "ENCAP_IPINIP".
    * @param dsrEncapType set the dsrEncapType.
    */
@@ -65,6 +67,7 @@ public class DsrProfile extends AviRestResource {
    * Dsr type l2/l3.
    * Enum options - DSR_TYPE_L2, DSR_TYPE_L3.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "DSR_TYPE_L3".
    * @return dsrType
    */
@@ -78,6 +81,7 @@ public class DsrProfile extends AviRestResource {
    * Dsr type l2/l3.
    * Enum options - DSR_TYPE_L2, DSR_TYPE_L3.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "DSR_TYPE_L3".
    * @param dsrType set the dsrType.
    */

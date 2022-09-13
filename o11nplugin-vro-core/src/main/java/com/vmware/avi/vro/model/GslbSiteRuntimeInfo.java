@@ -97,6 +97,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The leader-ip/vip/fqdn of the site-cluster.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clusterLeader
    */
@@ -108,6 +109,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The leader-ip/vip/fqdn of the site-cluster.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clusterLeader set the clusterLeader.
    */
@@ -118,7 +120,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Unique object identifier of cluster.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clusterUuid
    */
@@ -129,7 +131,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Unique object identifier of cluster.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clusterUuid set the clusterUuid.
    */
@@ -141,6 +143,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Operational dns state at the site.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsInfo
    */
@@ -152,6 +155,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Operational dns state at the site.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dnsInfo set the dnsInfo.
    */
@@ -162,7 +166,8 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Enable/disable state retrieved from the cfg .
+   * Enable/disable state retrieved from the cfg.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return enabled
    */
@@ -173,7 +178,8 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Enable/disable state retrieved from the cfg .
+   * Enable/disable state retrieved from the cfg.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param enabled set the enabled.
    */
@@ -185,6 +191,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Event-cache used for event throttling.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return eventCache
    */
@@ -196,6 +203,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Event-cache used for event throttling.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param eventCache set the eventCache.
    */
@@ -207,6 +215,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Health-status monitoring enable or disable.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hsState
    */
@@ -218,6 +227,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Health-status monitoring enable or disable.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hsState set the hsState.
    */
@@ -228,7 +238,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property last_changed_time of obj type gslbsiteruntimeinfo field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lastChangedTime
    */
@@ -239,7 +249,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property last_changed_time of obj type gslbsiteruntimeinfo field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lastChangedTime set the lastChangedTime.
    */
@@ -250,7 +260,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Name of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -261,7 +271,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Name of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -273,6 +283,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Number of retry attempts to reach the remote site.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return numOfRetries
    */
@@ -284,6 +295,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Number of retry attempts to reach the remote site.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param numOfRetries set the numOfRetries.
    */
@@ -294,7 +306,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property oper_status of obj type gslbsiteruntimeinfo field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return operStatus
    */
@@ -305,7 +317,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property oper_status of obj type gslbsiteruntimeinfo field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param operStatus set the operStatus.
    */
@@ -318,6 +330,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Site role  leader or follower.
    * Enum options - GSLB_LEADER, GSLB_MEMBER, GSLB_NOT_A_MEMBER.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_NOT_A_MEMBER".
    * @return role
    */
@@ -330,6 +343,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Site role  leader or follower.
    * Enum options - GSLB_LEADER, GSLB_MEMBER, GSLB_NOT_A_MEMBER.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_NOT_A_MEMBER".
    * @param role set the role.
    */
@@ -341,6 +355,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Current outstanding request-response token of the message to this site.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rrtoken
    */
@@ -352,6 +367,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the setter method. this will set the rrtoken
    * Current outstanding request-response token of the message to this site.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rrtoken
    */
@@ -363,6 +379,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the setter method this will set the rrtoken
    * Current outstanding request-response token of the message to this site.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rrtoken
    */
@@ -381,6 +398,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
    * Indicates if it is avi site or third-party.
    * Enum options - GSLB_AVI_SITE, GSLB_THIRD_PARTY_SITE.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return siteType
    */
@@ -394,6 +412,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
    * Indicates if it is avi site or third-party.
    * Enum options - GSLB_AVI_SITE, GSLB_THIRD_PARTY_SITE.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param siteType set the siteType.
    */
@@ -406,6 +425,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enum options - SITE_STATE_NULL, SITE_STATE_JOIN_IN_PROGRESS, SITE_STATE_LEAVE_IN_PROGRESS, SITE_STATE_INIT, SITE_STATE_UNREACHABLE,
    * SITE_STATE_MMODE, SITE_STATE_DISABLE_IN_PROGRESS, SITE_STATE_DISABLED.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "SITE_STATE_NULL".
    * @return state
    */
@@ -418,6 +438,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Enum options - SITE_STATE_NULL, SITE_STATE_JOIN_IN_PROGRESS, SITE_STATE_LEAVE_IN_PROGRESS, SITE_STATE_INIT, SITE_STATE_UNREACHABLE,
    * SITE_STATE_MMODE, SITE_STATE_DISABLE_IN_PROGRESS, SITE_STATE_DISABLED.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "SITE_STATE_NULL".
    * @param state set the state.
    */
@@ -429,6 +450,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * State - reason.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stateReason
    */
@@ -440,6 +462,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * State - reason.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param stateReason set the stateReason.
    */
@@ -451,6 +474,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Current software version of the site.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "Not-Initialized".
    * @return swVersion
    */
@@ -462,6 +486,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Current software version of the site.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "Not-Initialized".
    * @param swVersion set the swVersion.
    */

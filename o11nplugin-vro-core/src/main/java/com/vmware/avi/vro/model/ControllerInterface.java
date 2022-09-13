@@ -61,6 +61,7 @@ public class ControllerInterface extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Default gateway of the mgmt interface.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gateway
    */
@@ -73,6 +74,7 @@ public class ControllerInterface extends AviRestResource {
    * This is the setter method to the attribute.
    * Default gateway of the mgmt interface.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gateway set the gateway.
    */
@@ -85,6 +87,7 @@ public class ControllerInterface extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Interface name.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ifName
    */
@@ -97,6 +100,7 @@ public class ControllerInterface extends AviRestResource {
    * This is the setter method to the attribute.
    * Interface name.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ifName set the ifName.
    */
@@ -109,6 +113,7 @@ public class ControllerInterface extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ip address of the interface.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip
    */
@@ -121,6 +126,7 @@ public class ControllerInterface extends AviRestResource {
    * This is the setter method to the attribute.
    * Ip address of the interface.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip set the ip.
    */
@@ -134,6 +140,7 @@ public class ControllerInterface extends AviRestResource {
    * Interface label like mgmt, secure channel or hsm.
    * Enum options - MGMT, SE_SECURE_CHANNEL, HSM.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
@@ -147,6 +154,7 @@ public class ControllerInterface extends AviRestResource {
    * Interface label like mgmt, secure channel or hsm.
    * Enum options - MGMT, SE_SECURE_CHANNEL, HSM.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
@@ -160,6 +168,7 @@ public class ControllerInterface extends AviRestResource {
    * Interface label like mgmt, secure channel or hsm.
    * Enum options - MGMT, SE_SECURE_CHANNEL, HSM.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
@@ -177,6 +186,7 @@ public class ControllerInterface extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Mac address of interface.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return macAddress
    */
@@ -189,6 +199,7 @@ public class ControllerInterface extends AviRestResource {
    * This is the setter method to the attribute.
    * Mac address of interface.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param macAddress set the macAddress.
    */
@@ -202,6 +213,7 @@ public class ControllerInterface extends AviRestResource {
    * Ip address mode dhcp/static.
    * Enum options - DHCP, STATIC, VIP, DOCKER_HOST.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mode
    */
@@ -215,6 +227,7 @@ public class ControllerInterface extends AviRestResource {
    * Ip address mode dhcp/static.
    * Enum options - DHCP, STATIC, VIP, DOCKER_HOST.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mode set the mode.
    */
@@ -227,6 +240,7 @@ public class ControllerInterface extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Public ip of interface.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return publicIpOrName
    */
@@ -239,6 +253,7 @@ public class ControllerInterface extends AviRestResource {
    * This is the setter method to the attribute.
    * Public ip of interface.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param publicIpOrName set the publicIpOrName.
    */

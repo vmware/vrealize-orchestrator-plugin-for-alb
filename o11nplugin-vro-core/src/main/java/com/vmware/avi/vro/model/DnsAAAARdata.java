@@ -35,6 +35,7 @@ public class DnsAAAARdata extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ipv6 address for fqdn.
    * Field introduced in 18.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip6Address
    */
@@ -47,6 +48,7 @@ public class DnsAAAARdata extends AviRestResource {
    * This is the setter method to the attribute.
    * Ipv6 address for fqdn.
    * Field introduced in 18.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip6Address set the ip6Address.
    */

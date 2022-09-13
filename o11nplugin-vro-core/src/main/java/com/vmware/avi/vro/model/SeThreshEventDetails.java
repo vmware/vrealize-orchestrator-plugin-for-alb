@@ -36,7 +36,7 @@ public class SeThreshEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property curr_value of obj type sethresheventdetails field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return currValue
    */
@@ -47,7 +47,7 @@ public class SeThreshEventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property curr_value of obj type sethresheventdetails field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param currValue set the currValue.
    */
@@ -58,7 +58,7 @@ public class SeThreshEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property thresh of obj type sethresheventdetails field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return thresh
    */
@@ -69,7 +69,7 @@ public class SeThreshEventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property thresh of obj type sethresheventdetails field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param thresh set the thresh.
    */

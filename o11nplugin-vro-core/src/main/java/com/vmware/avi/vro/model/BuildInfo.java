@@ -62,6 +62,7 @@ public class BuildInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Build number for easy identification.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return buildNo
    */
@@ -74,6 +75,7 @@ public class BuildInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Build number for easy identification.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param buildNo set the buildNo.
    */
@@ -86,6 +88,7 @@ public class BuildInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Date when the package created.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return date
    */
@@ -98,6 +101,7 @@ public class BuildInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Date when the package created.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param date set the date.
    */
@@ -110,6 +114,7 @@ public class BuildInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Min version of the image.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return minVersion
    */
@@ -122,6 +127,7 @@ public class BuildInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Min version of the image.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param minVersion set the minVersion.
    */
@@ -134,6 +140,7 @@ public class BuildInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Patch version of the image.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return patchVersion
    */
@@ -146,6 +153,7 @@ public class BuildInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Patch version of the image.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param patchVersion set the patchVersion.
    */
@@ -158,6 +166,7 @@ public class BuildInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Product type.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return product
    */
@@ -170,6 +179,7 @@ public class BuildInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Product type.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param product set the product.
    */
@@ -182,6 +192,7 @@ public class BuildInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Product name.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return productName
    */
@@ -194,6 +205,7 @@ public class BuildInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Product name.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param productName set the productName.
    */
@@ -206,6 +218,7 @@ public class BuildInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tag related to the package.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tag
    */
@@ -218,6 +231,7 @@ public class BuildInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Tag related to the package.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tag set the tag.
    */
@@ -230,6 +244,7 @@ public class BuildInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Major version of the image.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return version
    */
@@ -242,6 +257,7 @@ public class BuildInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Major version of the image.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param version set the version.
    */

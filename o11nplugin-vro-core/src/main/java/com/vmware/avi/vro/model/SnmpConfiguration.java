@@ -54,6 +54,7 @@ public class SnmpConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Community string for snmp v2c.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return community
    */
@@ -65,6 +66,7 @@ public class SnmpConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Community string for snmp v2c.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param community set the community.
    */
@@ -77,6 +79,7 @@ public class SnmpConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Support for 4096 bytes trap payload.
    * Field introduced in 17.2.13,18.1.4,18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return largeTrapPayload
    */
@@ -89,6 +92,7 @@ public class SnmpConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Support for 4096 bytes trap payload.
    * Field introduced in 17.2.13,18.1.4,18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param largeTrapPayload set the largeTrapPayload.
    */
@@ -101,6 +105,7 @@ public class SnmpConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Snmp version 3 configuration.
    * Field introduced in 17.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return snmpV3Config
    */
@@ -113,6 +118,7 @@ public class SnmpConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Snmp version 3 configuration.
    * Field introduced in 17.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param snmpV3Config set the snmpV3Config.
    */
@@ -124,6 +130,7 @@ public class SnmpConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Sets the syscontact in system mib.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "support@avinetworks.com".
    * @return sysContact
    */
@@ -135,6 +142,7 @@ public class SnmpConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Sets the syscontact in system mib.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "support@avinetworks.com".
    * @param sysContact set the sysContact.
    */
@@ -146,6 +154,7 @@ public class SnmpConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Sets the syslocation in system mib.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sysLocation
    */
@@ -157,6 +166,7 @@ public class SnmpConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Sets the syslocation in system mib.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sysLocation set the sysLocation.
    */
@@ -171,6 +181,7 @@ public class SnmpConfiguration extends AviRestResource {
    * V2 or v3.
    * Enum options - SNMP_VER2, SNMP_VER3.
    * Field introduced in 17.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "SNMP_VER2".
    * @return version
    */
@@ -185,6 +196,7 @@ public class SnmpConfiguration extends AviRestResource {
    * V2 or v3.
    * Enum options - SNMP_VER2, SNMP_VER3.
    * Field introduced in 17.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "SNMP_VER2".
    * @param version set the version.
    */

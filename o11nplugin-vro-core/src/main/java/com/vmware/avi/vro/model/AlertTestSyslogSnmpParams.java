@@ -37,6 +37,7 @@ public class AlertTestSyslogSnmpParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The contents of the syslog message/snmp trap contents.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return text
    */
@@ -48,6 +49,7 @@ public class AlertTestSyslogSnmpParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The contents of the syslog message/snmp trap contents.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param text set the text.
    */
@@ -58,7 +60,7 @@ public class AlertTestSyslogSnmpParams extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Unique object identifier of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -69,7 +71,7 @@ public class AlertTestSyslogSnmpParams extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Unique object identifier of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */

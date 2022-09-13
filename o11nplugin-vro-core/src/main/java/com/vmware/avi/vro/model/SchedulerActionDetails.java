@@ -48,7 +48,7 @@ public class SchedulerActionDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property backup_uri of obj type scheduleractiondetails field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return backupUri
    */
@@ -59,7 +59,7 @@ public class SchedulerActionDetails extends AviRestResource {
 
   /**
    * This is the setter method. this will set the backupUri
-   * Placeholder for description of property backup_uri of obj type scheduleractiondetails field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return backupUri
    */
@@ -70,7 +70,7 @@ public class SchedulerActionDetails extends AviRestResource {
 
   /**
    * This is the setter method this will set the backupUri
-   * Placeholder for description of property backup_uri of obj type scheduleractiondetails field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return backupUri
    */
@@ -86,7 +86,7 @@ public class SchedulerActionDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property control_script_output of obj type scheduleractiondetails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controlScriptOutput
    */
@@ -97,7 +97,7 @@ public class SchedulerActionDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property control_script_output of obj type scheduleractiondetails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param controlScriptOutput set the controlScriptOutput.
    */
@@ -108,7 +108,7 @@ public class SchedulerActionDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property execution_datestamp of obj type scheduleractiondetails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return executionDatestamp
    */
@@ -119,7 +119,7 @@ public class SchedulerActionDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property execution_datestamp of obj type scheduleractiondetails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param executionDatestamp set the executionDatestamp.
    */
@@ -130,7 +130,7 @@ public class SchedulerActionDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Unique object identifier of scheduler.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return schedulerUuid
    */
@@ -141,7 +141,7 @@ public class SchedulerActionDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Unique object identifier of scheduler.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param schedulerUuid set the schedulerUuid.
    */
@@ -152,7 +152,7 @@ public class SchedulerActionDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property status of obj type scheduleractiondetails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return status
    */
@@ -163,7 +163,7 @@ public class SchedulerActionDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property status of obj type scheduleractiondetails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param status set the status.
    */
