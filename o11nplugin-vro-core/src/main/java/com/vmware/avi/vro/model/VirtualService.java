@@ -364,7 +364,7 @@ public class VirtualService extends AviRestResource {
 
     @JsonProperty("vh_type")
     @JsonInclude(Include.NON_NULL)
-    private String vhType;
+    private String vhType = "VS_TYPE_VH_SNI";
 
     @JsonProperty("vip")
     @JsonInclude(Include.NON_NULL)
@@ -2901,8 +2901,9 @@ public class VirtualService extends AviRestResource {
    * Specify if the virtual hosting vs is of type sni or enhanced.
    * Enum options - VS_TYPE_VH_SNI, VS_TYPE_VH_ENHANCED.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, basic edition(allowed values- vs_type_vh_enhanced), enterprise with cloud services edition.
-   * Special default for basic edition is vs_type_vh_enhanced, enterprise is vs_type_vh_sni.
+   * Allowed in enterprise edition with any value, basic edition(allowed values- vs_type_vh_sni,vs_type_vh_enhanced), enterprise with cloud services
+   * edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "VS_TYPE_VH_SNI".
    * @return vhType
    */
   @VsoMethod
@@ -2915,8 +2916,9 @@ public class VirtualService extends AviRestResource {
    * Specify if the virtual hosting vs is of type sni or enhanced.
    * Enum options - VS_TYPE_VH_SNI, VS_TYPE_VH_ENHANCED.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, basic edition(allowed values- vs_type_vh_enhanced), enterprise with cloud services edition.
-   * Special default for basic edition is vs_type_vh_enhanced, enterprise is vs_type_vh_sni.
+   * Allowed in enterprise edition with any value, basic edition(allowed values- vs_type_vh_sni,vs_type_vh_enhanced), enterprise with cloud services
+   * edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "VS_TYPE_VH_SNI".
    * @param vhType set the vhType.
    */
   @VsoMethod

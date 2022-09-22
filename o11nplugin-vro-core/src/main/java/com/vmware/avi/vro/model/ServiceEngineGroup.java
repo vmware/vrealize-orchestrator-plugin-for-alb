@@ -184,7 +184,7 @@ public class ServiceEngineGroup extends AviRestResource {
 
     @JsonProperty("dedicated_dispatcher_core")
     @JsonInclude(Include.NON_NULL)
-    private Boolean dedicatedDispatcherCore = false;
+    private Boolean dedicatedDispatcherCore = null;
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
@@ -2241,7 +2241,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * Dedicate the core that handles packet receive/transmit from the network to just the dispatching function.
    * Don't use it for tcp/ip and ssl functions.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dedicatedDispatcherCore
    */
   @VsoMethod
@@ -2254,7 +2254,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * Dedicate the core that handles packet receive/transmit from the network to just the dispatching function.
    * Don't use it for tcp/ip and ssl functions.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dedicatedDispatcherCore set the dedicatedDispatcherCore.
    */
   @VsoMethod
