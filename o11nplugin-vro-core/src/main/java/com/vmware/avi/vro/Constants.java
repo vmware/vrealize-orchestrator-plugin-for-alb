@@ -1121,6 +1121,7 @@ public class Constants {
     public static final String FINDER_VRO_WAFPOLICYALLOWLISTRULE = "WafPolicyAllowlistRule";
     public static final String FINDER_VRO_WAFPOLICYCRSUPDATE = "WafPolicyCRSUpdate";
     public static final String FINDER_VRO_WAFPOLICYPSMGROUP = "WafPolicyPSMGroup";
+    public static final String FINDER_VRO_WAFPOLICYREQUIREDDATAFILE = "WafPolicyRequiredDataFile";
     public static final String FINDER_VRO_WAFPOSITIVESECURITYMODEL = "WafPositiveSecurityModel";
     public static final String FINDER_VRO_WAFPROFILE = "WafProfile";
     public static final String FINDER_VRO_WAFRULE = "WafRule";
