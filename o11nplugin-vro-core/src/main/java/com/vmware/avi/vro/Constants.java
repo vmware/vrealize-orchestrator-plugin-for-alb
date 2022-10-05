@@ -484,6 +484,7 @@ public class Constants {
     public static final String FINDER_VRO_HEALTHMONITORRADIUS = "HealthMonitorRadius";
     public static final String FINDER_VRO_HEALTHMONITORSIP = "HealthMonitorSIP";
     public static final String FINDER_VRO_HEALTHMONITORSSLATTRIBUTES = "HealthMonitorSSLAttributes";
+    public static final String FINDER_VRO_HEALTHMONITORSCTP = "HealthMonitorSctp";
     public static final String FINDER_VRO_HEALTHMONITORSMTP = "HealthMonitorSmtp";
     public static final String FINDER_VRO_HEALTHMONITORTCP = "HealthMonitorTcp";
     public static final String FINDER_VRO_HEALTHMONITORUDP = "HealthMonitorUdp";
@@ -805,6 +806,8 @@ public class Constants {
     public static final String FINDER_VRO_SAMLSPCONFIG = "SAMLSPConfig";
     public static final String FINDER_VRO_SCPOOLSERVERSTATEINFO = "SCPoolServerStateInfo";
     public static final String FINDER_VRO_SCSERVERSTATEINFO = "SCServerStateInfo";
+    public static final String FINDER_VRO_SCTPFASTPATHPROFILE = "SCTPFastPathProfile";
+    public static final String FINDER_VRO_SCTPPROXYPROFILE = "SCTPProxyProfile";
     public static final String FINDER_VRO_SCVSSTATEINFO = "SCVsStateInfo";
     public static final String FINDER_VRO_SEBANDWIDTHLIMIT = "SEBandwidthLimit";
     public static final String FINDER_VRO_SEFAULTINJECTEXHAUSTPARAM = "SEFaultInjectExhaustParam";

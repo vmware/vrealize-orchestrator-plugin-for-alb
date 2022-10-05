@@ -36,9 +36,17 @@ public class OAuthVSConfig extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private List<HttpCookiePersistenceKey> key = null;
 
+    @JsonProperty("logout_uri")
+    @JsonInclude(Include.NON_NULL)
+    private String logoutUri = null;
+
     @JsonProperty("oauth_settings")
     @JsonInclude(Include.NON_NULL)
     private List<OAuthSettings> oauthSettings = null;
+
+    @JsonProperty("post_logout_redirect_uri")
+    @JsonInclude(Include.NON_NULL)
+    private String postLogoutRedirectUri = null;
 
     @JsonProperty("redirect_uri")
     @JsonInclude(Include.NON_NULL)
@@ -148,6 +156,32 @@ public class OAuthVSConfig extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Uri which triggers oauth logout.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return logoutUri
+   */
+  @VsoMethod
+  public String getLogoutUri() {
+    return logoutUri;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Uri which triggers oauth logout.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param logoutUri set the logoutUri.
+   */
+  @VsoMethod
+  public void setLogoutUri(String  logoutUri) {
+    this.logoutUri = logoutUri;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Application and idp settings for oauth/oidc.
    * Field introduced in 21.1.3.
    * Maximum of 1 items allowed.
@@ -195,6 +229,32 @@ public class OAuthVSConfig extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Uri to which idp will redirect to after the logout.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return postLogoutRedirectUri
+   */
+  @VsoMethod
+  public String getPostLogoutRedirectUri() {
+    return postLogoutRedirectUri;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Uri to which idp will redirect to after the logout.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param postLogoutRedirectUri set the postLogoutRedirectUri.
+   */
+  @VsoMethod
+  public void setPostLogoutRedirectUri(String  postLogoutRedirectUri) {
+    this.postLogoutRedirectUri = postLogoutRedirectUri;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Redirect uri specified in the request to authorization server.
    * Field introduced in 21.1.3.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
@@ -234,7 +294,9 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.cookieName, objOAuthVSConfig.cookieName)&&
   Objects.equals(this.cookieTimeout, objOAuthVSConfig.cookieTimeout)&&
   Objects.equals(this.oauthSettings, objOAuthVSConfig.oauthSettings)&&
-  Objects.equals(this.key, objOAuthVSConfig.key);
+  Objects.equals(this.key, objOAuthVSConfig.key)&&
+  Objects.equals(this.logoutUri, objOAuthVSConfig.logoutUri)&&
+  Objects.equals(this.postLogoutRedirectUri, objOAuthVSConfig.postLogoutRedirectUri);
 }
 
 @Override
@@ -244,7 +306,9 @@ public String toString() {
       sb.append("    cookieName: ").append(toIndentedString(cookieName)).append("\n");
         sb.append("    cookieTimeout: ").append(toIndentedString(cookieTimeout)).append("\n");
         sb.append("    key: ").append(toIndentedString(key)).append("\n");
+        sb.append("    logoutUri: ").append(toIndentedString(logoutUri)).append("\n");
         sb.append("    oauthSettings: ").append(toIndentedString(oauthSettings)).append("\n");
+        sb.append("    postLogoutRedirectUri: ").append(toIndentedString(postLogoutRedirectUri)).append("\n");
         sb.append("    redirectUri: ").append(toIndentedString(redirectUri)).append("\n");
       sb.append("}");
   return sb.toString();
