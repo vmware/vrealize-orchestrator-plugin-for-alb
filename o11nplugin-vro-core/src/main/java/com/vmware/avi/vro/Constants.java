@@ -639,6 +639,7 @@ public class Constants {
     public static final String FINDER_VRO_MICROSERVICECONTAINER = "MicroServiceContainer";
     public static final String FINDER_VRO_MICROSERVICEGROUP = "MicroServiceGroup";
     public static final String FINDER_VRO_MICROSERVICEMATCH = "MicroServiceMatch";
+    public static final String FINDER_VRO_MUSTCHECKSINFO = "MustChecksInfo";
     public static final String FINDER_VRO_NTPAUTHENTICATIONKEY = "NTPAuthenticationKey";
     public static final String FINDER_VRO_NTPCONFIGURATION = "NTPConfiguration";
     public static final String FINDER_VRO_NTPSERVER = "NTPServer";
@@ -1019,6 +1020,7 @@ public class Constants {
     public static final String FINDER_VRO_UPGRADEOPSPARAM = "UpgradeOpsParam";
     public static final String FINDER_VRO_UPGRADEOPSSTATE = "UpgradeOpsState";
     public static final String FINDER_VRO_UPGRADEPARAMS = "UpgradeParams";
+    public static final String FINDER_VRO_UPGRADEREADINESSCHECKOBJ = "UpgradeReadinessCheckObj";
     public static final String FINDER_VRO_UPGRADESEGROUPPARAMS = "UpgradeSeGroupParams";
     public static final String FINDER_VRO_UPGRADESTATUSINFO = "UpgradeStatusInfo";
     public static final String FINDER_VRO_UPGRADESTATUSSUMMARY = "UpgradeStatusSummary";
