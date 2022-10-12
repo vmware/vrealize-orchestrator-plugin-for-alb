@@ -197,13 +197,10 @@ public class VroPluginFactory extends AbstractSpringPluginFactory {
 
 	private void reloadAviEndpoints() {
 		logger.info("__INIT__:: Inside reload endpoints to the map");
+		aviVroClientMap.clear();
 		List<AviConnectionInfo> infos = configurationService.getAll();
-		if (infos.isEmpty()) {
-			aviVroClientMap.clear();
-		} else {
-			for (AviConnectionInfo info: infos) {
-				getAviVroClient(info);
-			}
+		for (AviConnectionInfo info: infos) {
+			getAviVroClient(info);
 		}
 		logger.info("__DONE__:: Reload endpoint execution done.");
 	}
