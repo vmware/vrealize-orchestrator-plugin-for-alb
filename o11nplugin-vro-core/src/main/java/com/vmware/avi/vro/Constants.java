@@ -10,6 +10,7 @@ public class Constants {
     public static final String FINDER_VRO_WORKFLOW_RUNTIME = "WorkflowRuntime";
     public static final String FINDER_VRO_AVI_RUNTIME_INFO = "AviRunTimeInfo";
     public static final String FINDER_VRO_CLIENT = "AviVroClient";
+    public static final String FINDER_VRO_CLIENT_INFO = "AviConnectionInfo";
     public static final String FINDER_VRO_PLUGIN_NAME = "Avi";
     public static final String FINDER_VRO_PLUGIN = "Vro";
     public static final String FINDER_VRO_AVIRESTRESOURCE = "AviRestResource";
@@ -1033,6 +1034,7 @@ public class Constants {
     public static final String FINDER_VRO_VCENTERCREDENTIALS = "VCenterCredentials";
     public static final String FINDER_VRO_VCENTERSERVER = "VCenterServer";
     public static final String FINDER_VRO_VHMATCH = "VHMatch";
+    public static final String FINDER_VRO_VHMATCHRULE = "VHMatchRule";
     public static final String FINDER_VRO_VIDCINFO = "VIDCInfo";
     public static final String FINDER_VRO_VIMGRCLUSTERRUNTIME = "VIMgrClusterRuntime";
     public static final String FINDER_VRO_VIMGRGUESTNICRUNTIME = "VIMgrGuestNicRuntime";
