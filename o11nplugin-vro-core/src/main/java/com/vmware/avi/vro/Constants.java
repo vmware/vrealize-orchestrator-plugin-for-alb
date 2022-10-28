@@ -964,6 +964,7 @@ public class Constants {
     public static final String FINDER_VRO_SNMPTRAPSERVER = "SnmpTrapServer";
     public static final String FINDER_VRO_SNMPV3CONFIGURATION = "SnmpV3Configuration";
     public static final String FINDER_VRO_SNMPV3USERPARAMS = "SnmpV3UserParams";
+    public static final String FINDER_VRO_SPGSLBSERVICEINFO = "SpGslbServiceInfo";
     public static final String FINDER_VRO_STATECACHEMGRDEBUGFILTER = "StateCacheMgrDebugFilter";
     public static final String FINDER_VRO_STATEDIFFEVENT = "StatediffEvent";
     public static final String FINDER_VRO_STATEDIFFOPERATION = "StatediffOperation";
