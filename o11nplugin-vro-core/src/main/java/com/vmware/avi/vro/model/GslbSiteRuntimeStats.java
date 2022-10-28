@@ -200,6 +200,30 @@ public class GslbSiteRuntimeStats extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer numGsUpdTxed = null;
 
+    @JsonProperty("num_gssl_cert_cr_rxed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGsslCertCrRxed = null;
+
+    @JsonProperty("num_gssl_cert_del_rxed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGsslCertDelRxed = null;
+
+    @JsonProperty("num_gssl_cert_upd_rxed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGsslCertUpdRxed = null;
+
+    @JsonProperty("num_gssl_cr_rxed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGsslCrRxed = null;
+
+    @JsonProperty("num_gssl_del_rxed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGsslDelRxed = null;
+
+    @JsonProperty("num_gssl_upd_rxed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGsslUpdRxed = null;
+
     @JsonProperty("num_health_msgs_rxed")
     @JsonInclude(Include.NON_NULL)
     private Integer numHealthMsgsRxed = null;
@@ -1248,6 +1272,162 @@ public class GslbSiteRuntimeStats extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Used for federated ssl key and cert stats for create.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return numGsslCertCrRxed
+   */
+  @VsoMethod
+  public Integer getNumGsslCertCrRxed() {
+    return numGsslCertCrRxed;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Used for federated ssl key and cert stats for create.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param numGsslCertCrRxed set the numGsslCertCrRxed.
+   */
+  @VsoMethod
+  public void setNumGsslCertCrRxed(Integer  numGsslCertCrRxed) {
+    this.numGsslCertCrRxed = numGsslCertCrRxed;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Used for federated ssl key and cert stats for delete.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return numGsslCertDelRxed
+   */
+  @VsoMethod
+  public Integer getNumGsslCertDelRxed() {
+    return numGsslCertDelRxed;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Used for federated ssl key and cert stats for delete.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param numGsslCertDelRxed set the numGsslCertDelRxed.
+   */
+  @VsoMethod
+  public void setNumGsslCertDelRxed(Integer  numGsslCertDelRxed) {
+    this.numGsslCertDelRxed = numGsslCertDelRxed;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Used for federated ssl key and cert stats for update.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return numGsslCertUpdRxed
+   */
+  @VsoMethod
+  public Integer getNumGsslCertUpdRxed() {
+    return numGsslCertUpdRxed;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Used for federated ssl key and cert stats for update.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param numGsslCertUpdRxed set the numGsslCertUpdRxed.
+   */
+  @VsoMethod
+  public void setNumGsslCertUpdRxed(Integer  numGsslCertUpdRxed) {
+    this.numGsslCertUpdRxed = numGsslCertUpdRxed;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Used for federated ssl profile stats for create.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return numGsslCrRxed
+   */
+  @VsoMethod
+  public Integer getNumGsslCrRxed() {
+    return numGsslCrRxed;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Used for federated ssl profile stats for create.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param numGsslCrRxed set the numGsslCrRxed.
+   */
+  @VsoMethod
+  public void setNumGsslCrRxed(Integer  numGsslCrRxed) {
+    this.numGsslCrRxed = numGsslCrRxed;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Used for federated ssl profile stats for delete.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return numGsslDelRxed
+   */
+  @VsoMethod
+  public Integer getNumGsslDelRxed() {
+    return numGsslDelRxed;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Used for federated ssl profile stats for delete.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param numGsslDelRxed set the numGsslDelRxed.
+   */
+  @VsoMethod
+  public void setNumGsslDelRxed(Integer  numGsslDelRxed) {
+    this.numGsslDelRxed = numGsslDelRxed;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Used for federated ssl profile stats for update.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return numGsslUpdRxed
+   */
+  @VsoMethod
+  public Integer getNumGsslUpdRxed() {
+    return numGsslUpdRxed;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Used for federated ssl profile stats for update.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param numGsslUpdRxed set the numGsslUpdRxed.
+   */
+  @VsoMethod
+  public void setNumGsslUpdRxed(Integer  numGsslUpdRxed) {
+    this.numGsslUpdRxed = numGsslUpdRxed;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numHealthMsgsRxed
@@ -1438,7 +1618,13 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.numGjwtDelTxed, objGslbSiteRuntimeStats.numGjwtDelTxed)&&
   Objects.equals(this.numGjwtDelRxed, objGslbSiteRuntimeStats.numGjwtDelRxed)&&
   Objects.equals(this.numGjwtUpdTxed, objGslbSiteRuntimeStats.numGjwtUpdTxed)&&
-  Objects.equals(this.numGjwtUpdRxed, objGslbSiteRuntimeStats.numGjwtUpdRxed);
+  Objects.equals(this.numGjwtUpdRxed, objGslbSiteRuntimeStats.numGjwtUpdRxed)&&
+  Objects.equals(this.numGsslCrRxed, objGslbSiteRuntimeStats.numGsslCrRxed)&&
+  Objects.equals(this.numGsslDelRxed, objGslbSiteRuntimeStats.numGsslDelRxed)&&
+  Objects.equals(this.numGsslUpdRxed, objGslbSiteRuntimeStats.numGsslUpdRxed)&&
+  Objects.equals(this.numGsslCertCrRxed, objGslbSiteRuntimeStats.numGsslCertCrRxed)&&
+  Objects.equals(this.numGsslCertDelRxed, objGslbSiteRuntimeStats.numGsslCertDelRxed)&&
+  Objects.equals(this.numGsslCertUpdRxed, objGslbSiteRuntimeStats.numGsslCertUpdRxed);
 }
 
 @Override
@@ -1489,6 +1675,12 @@ public String toString() {
         sb.append("    numGsDelTxed: ").append(toIndentedString(numGsDelTxed)).append("\n");
         sb.append("    numGsUpdRxed: ").append(toIndentedString(numGsUpdRxed)).append("\n");
         sb.append("    numGsUpdTxed: ").append(toIndentedString(numGsUpdTxed)).append("\n");
+        sb.append("    numGsslCertCrRxed: ").append(toIndentedString(numGsslCertCrRxed)).append("\n");
+        sb.append("    numGsslCertDelRxed: ").append(toIndentedString(numGsslCertDelRxed)).append("\n");
+        sb.append("    numGsslCertUpdRxed: ").append(toIndentedString(numGsslCertUpdRxed)).append("\n");
+        sb.append("    numGsslCrRxed: ").append(toIndentedString(numGsslCrRxed)).append("\n");
+        sb.append("    numGsslDelRxed: ").append(toIndentedString(numGsslDelRxed)).append("\n");
+        sb.append("    numGsslUpdRxed: ").append(toIndentedString(numGsslUpdRxed)).append("\n");
         sb.append("    numHealthMsgsRxed: ").append(toIndentedString(numHealthMsgsRxed)).append("\n");
         sb.append("    numHealthMsgsTxed: ").append(toIndentedString(numHealthMsgsTxed)).append("\n");
         sb.append("    numOfBadResponses: ").append(toIndentedString(numOfBadResponses)).append("\n");

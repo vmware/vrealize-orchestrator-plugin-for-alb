@@ -6,6 +6,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.IpAddr;
+import com.vmware.avi.vro.model.IpAddr;
+import com.vmware.avi.vro.model.IpAddrPrefix;
 import com.vmware.avi.vro.model.IpAddrPrefix;
 import com.vmware.avi.vro.model.IpAddr;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
@@ -31,6 +33,10 @@ public class ControllerInterface extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private IpAddr gateway = null;
 
+    @JsonProperty("gateway6")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr gateway6 = null;
+
     @JsonProperty("if_name")
     @JsonInclude(Include.NON_NULL)
     private String ifName = null;
@@ -38,6 +44,10 @@ public class ControllerInterface extends AviRestResource {
     @JsonProperty("ip")
     @JsonInclude(Include.NON_NULL)
     private IpAddrPrefix ip = null;
+
+    @JsonProperty("ip6")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrPrefix ip6 = null;
 
     @JsonProperty("labels")
     @JsonInclude(Include.NON_NULL)
@@ -51,6 +61,10 @@ public class ControllerInterface extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String mode = null;
 
+    @JsonProperty("mode6")
+    @JsonInclude(Include.NON_NULL)
+    private String mode6 = null;
+
     @JsonProperty("public_ip_or_name")
     @JsonInclude(Include.NON_NULL)
     private IpAddr publicIpOrName = null;
@@ -59,7 +73,7 @@ public class ControllerInterface extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Default gateway of the mgmt interface.
+   * Ipv4 default gateway of the interface.
    * Field introduced in 21.1.3.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -72,7 +86,7 @@ public class ControllerInterface extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Default gateway of the mgmt interface.
+   * Ipv4 default gateway of the interface.
    * Field introduced in 21.1.3.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -81,6 +95,32 @@ public class ControllerInterface extends AviRestResource {
   @VsoMethod
   public void setGateway(IpAddr gateway) {
     this.gateway = gateway;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Ipv6 default gateway of the interface.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return gateway6
+   */
+  @VsoMethod
+  public IpAddr getGateway6() {
+    return gateway6;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Ipv6 default gateway of the interface.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param gateway6 set the gateway6.
+   */
+  @VsoMethod
+  public void setGateway6(IpAddr gateway6) {
+    this.gateway6 = gateway6;
   }
 
   /**
@@ -111,7 +151,7 @@ public class ControllerInterface extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Ip address of the interface.
+   * Ipv4 address of the interface.
    * Field introduced in 21.1.3.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -124,7 +164,7 @@ public class ControllerInterface extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Ip address of the interface.
+   * Ipv4 address of the interface.
    * Field introduced in 21.1.3.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -133,6 +173,32 @@ public class ControllerInterface extends AviRestResource {
   @VsoMethod
   public void setIp(IpAddrPrefix ip) {
     this.ip = ip;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Ipv6 address of the interface.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return ip6
+   */
+  @VsoMethod
+  public IpAddrPrefix getIp6() {
+    return ip6;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Ipv6 address of the interface.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param ip6 set the ip6.
+   */
+  @VsoMethod
+  public void setIp6(IpAddrPrefix ip6) {
+    this.ip6 = ip6;
   }
 
   /**
@@ -210,7 +276,7 @@ public class ControllerInterface extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Ip address mode dhcp/static.
+   * Ipv4 address mode dhcp/static.
    * Enum options - DHCP, STATIC, VIP, DOCKER_HOST.
    * Field introduced in 21.1.3.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
@@ -224,7 +290,7 @@ public class ControllerInterface extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Ip address mode dhcp/static.
+   * Ipv4 address mode dhcp/static.
    * Enum options - DHCP, STATIC, VIP, DOCKER_HOST.
    * Field introduced in 21.1.3.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
@@ -234,6 +300,34 @@ public class ControllerInterface extends AviRestResource {
   @VsoMethod
   public void setMode(String  mode) {
     this.mode = mode;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Ipv6 address mode dhcp/static.
+   * Enum options - DHCP, STATIC, VIP, DOCKER_HOST.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return mode6
+   */
+  @VsoMethod
+  public String getMode6() {
+    return mode6;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Ipv6 address mode dhcp/static.
+   * Enum options - DHCP, STATIC, VIP, DOCKER_HOST.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param mode6 set the mode6.
+   */
+  @VsoMethod
+  public void setMode6(String  mode6) {
+    this.mode6 = mode6;
   }
 
   /**
@@ -279,7 +373,10 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.ip, objControllerInterface.ip)&&
   Objects.equals(this.gateway, objControllerInterface.gateway)&&
   Objects.equals(this.labels, objControllerInterface.labels)&&
-  Objects.equals(this.publicIpOrName, objControllerInterface.publicIpOrName);
+  Objects.equals(this.publicIpOrName, objControllerInterface.publicIpOrName)&&
+  Objects.equals(this.mode6, objControllerInterface.mode6)&&
+  Objects.equals(this.ip6, objControllerInterface.ip6)&&
+  Objects.equals(this.gateway6, objControllerInterface.gateway6);
 }
 
 @Override
@@ -287,11 +384,14 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class ControllerInterface {\n");
       sb.append("    gateway: ").append(toIndentedString(gateway)).append("\n");
+        sb.append("    gateway6: ").append(toIndentedString(gateway6)).append("\n");
         sb.append("    ifName: ").append(toIndentedString(ifName)).append("\n");
         sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
+        sb.append("    ip6: ").append(toIndentedString(ip6)).append("\n");
         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    macAddress: ").append(toIndentedString(macAddress)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+        sb.append("    mode6: ").append(toIndentedString(mode6)).append("\n");
         sb.append("    publicIpOrName: ").append(toIndentedString(publicIpOrName)).append("\n");
       sb.append("}");
   return sb.toString();

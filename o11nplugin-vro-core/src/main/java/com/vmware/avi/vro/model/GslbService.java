@@ -85,6 +85,10 @@ public class GslbService extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer numDnsIp = null;
 
+    @JsonProperty("pki_profile_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String pkiProfileRef = null;
+
     @JsonProperty("pool_algorithm")
     @JsonInclude(Include.NON_NULL)
     private String poolAlgorithm = "GSLB_SERVICE_ALGORITHM_PRIORITY";
@@ -610,6 +614,34 @@ public class GslbService extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Pki profile associated with the gslb service.
+   * It is a reference to an object of type pkiprofile.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return pkiProfileRef
+   */
+  @VsoMethod
+  public String getPkiProfileRef() {
+    return pkiProfileRef;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Pki profile associated with the gslb service.
+   * It is a reference to an object of type pkiprofile.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param pkiProfileRef set the pkiProfileRef.
+   */
+  @VsoMethod
+  public void setPkiProfileRef(String  pkiProfileRef) {
+    this.pkiProfileRef = pkiProfileRef;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * The load balancing algorithm will pick a gslb pool within the gslb service list of available pools.
    * Enum options - GSLB_SERVICE_ALGORITHM_PRIORITY, GSLB_SERVICE_ALGORITHM_GEO.
    * Field introduced in 17.2.3.
@@ -901,6 +933,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.poolAlgorithm, objGslbService.poolAlgorithm)&&
   Objects.equals(this.minMembers, objGslbService.minMembers)&&
   Objects.equals(this.resolveCname, objGslbService.resolveCname)&&
+  Objects.equals(this.pkiProfileRef, objGslbService.pkiProfileRef)&&
   Objects.equals(this.markers, objGslbService.markers)&&
   Objects.equals(this.isFederated, objGslbService.isFederated)&&
   Objects.equals(this.createdBy, objGslbService.createdBy)&&
@@ -928,6 +961,7 @@ public String toString() {
         sb.append("    minMembers: ").append(toIndentedString(minMembers)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    numDnsIp: ").append(toIndentedString(numDnsIp)).append("\n");
+        sb.append("    pkiProfileRef: ").append(toIndentedString(pkiProfileRef)).append("\n");
         sb.append("    poolAlgorithm: ").append(toIndentedString(poolAlgorithm)).append("\n");
         sb.append("    resolveCname: ").append(toIndentedString(resolveCname)).append("\n");
         sb.append("    sitePersistenceEnabled: ").append(toIndentedString(sitePersistenceEnabled)).append("\n");

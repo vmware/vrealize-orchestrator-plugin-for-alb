@@ -10,6 +10,7 @@ public class Constants {
     public static final String FINDER_VRO_WORKFLOW_RUNTIME = "WorkflowRuntime";
     public static final String FINDER_VRO_AVI_RUNTIME_INFO = "AviRunTimeInfo";
     public static final String FINDER_VRO_CLIENT = "AviVroClient";
+    public static final String FINDER_VRO_CLIENT_INFO = "AviConnectionInfo";
     public static final String FINDER_VRO_PLUGIN_NAME = "Avi";
     public static final String FINDER_VRO_PLUGIN = "Vro";
     public static final String FINDER_VRO_AVIRESTRESOURCE = "AviRestResource";
@@ -484,6 +485,7 @@ public class Constants {
     public static final String FINDER_VRO_HEALTHMONITORRADIUS = "HealthMonitorRadius";
     public static final String FINDER_VRO_HEALTHMONITORSIP = "HealthMonitorSIP";
     public static final String FINDER_VRO_HEALTHMONITORSSLATTRIBUTES = "HealthMonitorSSLAttributes";
+    public static final String FINDER_VRO_HEALTHMONITORSCTP = "HealthMonitorSctp";
     public static final String FINDER_VRO_HEALTHMONITORSMTP = "HealthMonitorSmtp";
     public static final String FINDER_VRO_HEALTHMONITORTCP = "HealthMonitorTcp";
     public static final String FINDER_VRO_HEALTHMONITORUDP = "HealthMonitorUdp";
@@ -638,6 +640,7 @@ public class Constants {
     public static final String FINDER_VRO_MICROSERVICECONTAINER = "MicroServiceContainer";
     public static final String FINDER_VRO_MICROSERVICEGROUP = "MicroServiceGroup";
     public static final String FINDER_VRO_MICROSERVICEMATCH = "MicroServiceMatch";
+    public static final String FINDER_VRO_MUSTCHECKSINFO = "MustChecksInfo";
     public static final String FINDER_VRO_NTPAUTHENTICATIONKEY = "NTPAuthenticationKey";
     public static final String FINDER_VRO_NTPCONFIGURATION = "NTPConfiguration";
     public static final String FINDER_VRO_NTPSERVER = "NTPServer";
@@ -805,6 +808,8 @@ public class Constants {
     public static final String FINDER_VRO_SAMLSPCONFIG = "SAMLSPConfig";
     public static final String FINDER_VRO_SCPOOLSERVERSTATEINFO = "SCPoolServerStateInfo";
     public static final String FINDER_VRO_SCSERVERSTATEINFO = "SCServerStateInfo";
+    public static final String FINDER_VRO_SCTPFASTPATHPROFILE = "SCTPFastPathProfile";
+    public static final String FINDER_VRO_SCTPPROXYPROFILE = "SCTPProxyProfile";
     public static final String FINDER_VRO_SCVSSTATEINFO = "SCVsStateInfo";
     public static final String FINDER_VRO_SEBANDWIDTHLIMIT = "SEBandwidthLimit";
     public static final String FINDER_VRO_SEFAULTINJECTEXHAUSTPARAM = "SEFaultInjectExhaustParam";
@@ -959,6 +964,7 @@ public class Constants {
     public static final String FINDER_VRO_SNMPTRAPSERVER = "SnmpTrapServer";
     public static final String FINDER_VRO_SNMPV3CONFIGURATION = "SnmpV3Configuration";
     public static final String FINDER_VRO_SNMPV3USERPARAMS = "SnmpV3UserParams";
+    public static final String FINDER_VRO_SPGSLBSERVICEINFO = "SpGslbServiceInfo";
     public static final String FINDER_VRO_STATECACHEMGRDEBUGFILTER = "StateCacheMgrDebugFilter";
     public static final String FINDER_VRO_STATEDIFFEVENT = "StatediffEvent";
     public static final String FINDER_VRO_STATEDIFFOPERATION = "StatediffOperation";
@@ -1016,6 +1022,7 @@ public class Constants {
     public static final String FINDER_VRO_UPGRADEOPSPARAM = "UpgradeOpsParam";
     public static final String FINDER_VRO_UPGRADEOPSSTATE = "UpgradeOpsState";
     public static final String FINDER_VRO_UPGRADEPARAMS = "UpgradeParams";
+    public static final String FINDER_VRO_UPGRADEREADINESSCHECKOBJ = "UpgradeReadinessCheckObj";
     public static final String FINDER_VRO_UPGRADESEGROUPPARAMS = "UpgradeSeGroupParams";
     public static final String FINDER_VRO_UPGRADESTATUSINFO = "UpgradeStatusInfo";
     public static final String FINDER_VRO_UPGRADESTATUSSUMMARY = "UpgradeStatusSummary";
@@ -1028,6 +1035,7 @@ public class Constants {
     public static final String FINDER_VRO_VCENTERCREDENTIALS = "VCenterCredentials";
     public static final String FINDER_VRO_VCENTERSERVER = "VCenterServer";
     public static final String FINDER_VRO_VHMATCH = "VHMatch";
+    public static final String FINDER_VRO_VHMATCHRULE = "VHMatchRule";
     public static final String FINDER_VRO_VIDCINFO = "VIDCInfo";
     public static final String FINDER_VRO_VIMGRCLUSTERRUNTIME = "VIMgrClusterRuntime";
     public static final String FINDER_VRO_VIMGRGUESTNICRUNTIME = "VIMgrGuestNicRuntime";
