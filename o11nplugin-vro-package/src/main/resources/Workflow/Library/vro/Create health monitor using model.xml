@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item1" object-name="workflow:name=generic"
-	id="f2d558ce-2e04-426e-aeb1-1e330593aba2" version="3.0.2"
+	id="f2d558ce-2e04-426e-aeb1-1e330593aba3" version="3.0.2"
 	api-version="6.0.0" allowed-operations="vef" restartMode="1"
 	resumeFromFailedMode="0">
 	<display-name><![CDATA[Create Health Monitor]]></display-name>
@@ -53,8 +53,7 @@
 		script-module="com.vmware.avi/initVroWorkflow">
 		<display-name><![CDATA[initVroWorkflow]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-actionResult = System.getModule("com.vmware.avi").initVroWorkflow(controller)
-Tenant=workflowRuntime.getAviVroClient().cred.tenant; ;]]></script>
+actionResult = System.getModule("com.vmware.avi").initVroWorkflow(controller);]]></script>
 		<in-binding>
 			<bind name="controller" type="string" export-name="controller">
 				<description><![CDATA[Controller IP]]></description>
