@@ -10,7 +10,6 @@ public class Constants {
     public static final String FINDER_VRO_WORKFLOW_RUNTIME = "WorkflowRuntime";
     public static final String FINDER_VRO_AVI_RUNTIME_INFO = "AviRunTimeInfo";
     public static final String FINDER_VRO_CLIENT = "AviVroClient";
-    public static final String FINDER_VRO_CLIENT_INFO = "AviConnectionInfo";
     public static final String FINDER_VRO_PLUGIN_NAME = "Avi";
     public static final String FINDER_VRO_PLUGIN = "Vro";
     public static final String FINDER_VRO_AVIRESTRESOURCE = "AviRestResource";
