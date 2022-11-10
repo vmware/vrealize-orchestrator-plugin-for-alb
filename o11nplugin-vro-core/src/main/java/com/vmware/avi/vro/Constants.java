@@ -1054,6 +1054,7 @@ public class Constants {
     public static final String FINDER_VRO_VCENTERHOSTS = "VcenterHosts";
     public static final String FINDER_VRO_VCENTERIMAGEDETAILS = "VcenterImageDetails";
     public static final String FINDER_VRO_VCENTERQUARANTINEDHOSTPARAMS = "VcenterQuarantinedHostParams";
+    public static final String FINDER_VRO_VCENTERTAGEVENTDETAILS = "VcenterTagEventDetails";
     public static final String FINDER_VRO_VERSIONINFO = "VersionInfo";
     public static final String FINDER_VRO_VINFRACNTLRHOSTUNREACHABLELIST = "VinfraCntlrHostUnreachableList";
     public static final String FINDER_VRO_VINFRADISCSUMMARYDETAILS = "VinfraDiscSummaryDetails";

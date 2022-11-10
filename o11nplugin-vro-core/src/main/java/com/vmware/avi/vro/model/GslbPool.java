@@ -48,6 +48,10 @@ public class GslbPool extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String fallbackAlgorithm = null;
 
+    @JsonProperty("manual_resume")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean manualResume = false;
+
     @JsonProperty("members")
     @JsonInclude(Include.NON_NULL)
     private List<GslbPoolMember> members = null;
@@ -234,6 +238,34 @@ public class GslbPool extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Manually resume traffic to a pool member once it goes down.
+   * If enabled a pool member once goes down is kept in admin down state unless admin re enables it.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return manualResume
+   */
+  @VsoMethod
+  public Boolean getManualResume() {
+    return manualResume;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Manually resume traffic to a pool member once it goes down.
+   * If enabled a pool member once goes down is kept in admin down state unless admin re enables it.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param manualResume set the manualResume.
+   */
+  @VsoMethod
+  public void setManualResume(Boolean  manualResume) {
+    this.manualResume = manualResume;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Select list of vips belonging to this gslb service.
    * Minimum of 1 items required.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
@@ -378,6 +410,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.fallbackAlgorithm, objGslbPool.fallbackAlgorithm)&&
   Objects.equals(this.consistentHashMask6, objGslbPool.consistentHashMask6)&&
   Objects.equals(this.minHealthMonitorsUp, objGslbPool.minHealthMonitorsUp)&&
+  Objects.equals(this.manualResume, objGslbPool.manualResume)&&
   Objects.equals(this.description, objGslbPool.description);
 }
 
@@ -391,6 +424,7 @@ public String toString() {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
         sb.append("    fallbackAlgorithm: ").append(toIndentedString(fallbackAlgorithm)).append("\n");
+        sb.append("    manualResume: ").append(toIndentedString(manualResume)).append("\n");
         sb.append("    members: ").append(toIndentedString(members)).append("\n");
         sb.append("    minHealthMonitorsUp: ").append(toIndentedString(minHealthMonitorsUp)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");

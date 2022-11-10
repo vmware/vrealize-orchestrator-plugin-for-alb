@@ -56,6 +56,10 @@ public class VIMgrNWRuntime extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private List<VIMgrIPSubnetRuntime> ipSubnet = null;
 
+    @JsonProperty("logical_switch_id")
+    @JsonInclude(Include.NON_NULL)
+    private String logicalSwitchId = null;
+
     @JsonProperty("managed_object_id")
     @JsonInclude(Include.NON_NULL)
     private String managedObjectId = null;
@@ -326,6 +330,32 @@ public class VIMgrNWRuntime extends AviRestResource {
     return this;
   }
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Uuid of nsx-t segment spanning multiple vds with vcenter cloud.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return logicalSwitchId
+   */
+  @VsoMethod
+  public String getLogicalSwitchId() {
+    return logicalSwitchId;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Uuid of nsx-t segment spanning multiple vds with vcenter cloud.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param logicalSwitchId set the logicalSwitchId.
+   */
+  @VsoMethod
+  public void setLogicalSwitchId(String  logicalSwitchId) {
+    this.logicalSwitchId = logicalSwitchId;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -707,6 +737,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.hostRefs, objVIMgrNWRuntime.hostRefs)&&
   Objects.equals(this.availabilityZone, objVIMgrNWRuntime.availabilityZone)&&
   Objects.equals(this.vrfContextRef, objVIMgrNWRuntime.vrfContextRef)&&
+  Objects.equals(this.logicalSwitchId, objVIMgrNWRuntime.logicalSwitchId)&&
   Objects.equals(this.tenantName, objVIMgrNWRuntime.tenantName)&&
   Objects.equals(this.tenantRef, objVIMgrNWRuntime.tenantRef)&&
   Objects.equals(this.cloudRef, objVIMgrNWRuntime.cloudRef);
@@ -724,6 +755,7 @@ public String toString() {
         sb.append("    hostRefs: ").append(toIndentedString(hostRefs)).append("\n");
         sb.append("    interestedNw: ").append(toIndentedString(interestedNw)).append("\n");
         sb.append("    ipSubnet: ").append(toIndentedString(ipSubnet)).append("\n");
+        sb.append("    logicalSwitchId: ").append(toIndentedString(logicalSwitchId)).append("\n");
         sb.append("    managedObjectId: ").append(toIndentedString(managedObjectId)).append("\n");
         sb.append("    MgmtNW: ").append(toIndentedString(MgmtNW)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
