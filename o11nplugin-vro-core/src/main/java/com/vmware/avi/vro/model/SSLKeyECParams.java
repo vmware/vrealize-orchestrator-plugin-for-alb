@@ -33,6 +33,7 @@ public class SSLKeyECParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - SSL_KEY_EC_CURVE_SECP256R1, SSL_KEY_EC_CURVE_SECP384R1, SSL_KEY_EC_CURVE_SECP521R1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "SSL_KEY_EC_CURVE_SECP256R1".
    * @return curve
    */
@@ -44,6 +45,7 @@ public class SSLKeyECParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - SSL_KEY_EC_CURVE_SECP256R1, SSL_KEY_EC_CURVE_SECP384R1, SSL_KEY_EC_CURVE_SECP521R1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "SSL_KEY_EC_CURVE_SECP256R1".
    * @param curve set the curve.
    */

@@ -58,6 +58,7 @@ public class VirtualServiceResource extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This field is not being used.
    * Field deprecated in 18.1.5, 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return isExclusive
    */
   @VsoMethod
@@ -69,6 +70,7 @@ public class VirtualServiceResource extends AviRestResource {
    * This is the setter method to the attribute.
    * This field is not being used.
    * Field deprecated in 18.1.5, 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param isExclusive set the isExclusive.
    */
   @VsoMethod
@@ -78,7 +80,7 @@ public class VirtualServiceResource extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property memory of obj type virtualserviceresource field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return memory
    */
@@ -89,7 +91,7 @@ public class VirtualServiceResource extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property memory of obj type virtualserviceresource field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param memory set the memory.
    */
@@ -100,7 +102,7 @@ public class VirtualServiceResource extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property num_se of obj type virtualserviceresource field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numSe
    */
@@ -111,7 +113,7 @@ public class VirtualServiceResource extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property num_se of obj type virtualserviceresource field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numSe set the numSe.
    */
@@ -122,7 +124,7 @@ public class VirtualServiceResource extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property num_standby_se of obj type virtualserviceresource field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numStandbySe
    */
@@ -133,7 +135,7 @@ public class VirtualServiceResource extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property num_standby_se of obj type virtualserviceresource field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numStandbySe set the numStandbySe.
    */
@@ -144,7 +146,7 @@ public class VirtualServiceResource extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property num_vcpus of obj type virtualserviceresource field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numVcpus
    */
@@ -155,7 +157,7 @@ public class VirtualServiceResource extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property num_vcpus of obj type virtualserviceresource field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numVcpus set the numVcpus.
    */
@@ -169,6 +171,7 @@ public class VirtualServiceResource extends AviRestResource {
    * Indicates if the primary se is being scaled in.
    * This state is now derived from the virtual service runtime.
    * Field deprecated in 18.1.5, 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return scaleinPrimary
    */
   @VsoMethod
@@ -181,6 +184,7 @@ public class VirtualServiceResource extends AviRestResource {
    * Indicates if the primary se is being scaled in.
    * This state is now derived from the virtual service runtime.
    * Field deprecated in 18.1.5, 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param scaleinPrimary set the scaleinPrimary.
    */
   @VsoMethod
@@ -193,6 +197,7 @@ public class VirtualServiceResource extends AviRestResource {
    * Indicates which se is being scaled in.
    * This information is now derived from the virtual service runtime.
    * Field deprecated in 18.1.5, 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return scaleinSeUuid
    */
   @VsoMethod
@@ -205,6 +210,7 @@ public class VirtualServiceResource extends AviRestResource {
    * Indicates which se is being scaled in.
    * This information is now derived from the virtual service runtime.
    * Field deprecated in 18.1.5, 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param scaleinSeUuid set the scaleinSeUuid.
    */
   @VsoMethod

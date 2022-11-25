@@ -55,6 +55,7 @@ public class SubnetRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Moved to staticiprangeruntime.
    * Field deprecated in 20.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return freeIpCount
    */
   @VsoMethod
@@ -66,6 +67,7 @@ public class SubnetRuntime extends AviRestResource {
    * This is the setter method to the attribute.
    * Moved to staticiprangeruntime.
    * Field deprecated in 20.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param freeIpCount set the freeIpCount.
    */
   @VsoMethod
@@ -77,6 +79,7 @@ public class SubnetRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Use allocated_ips in staticiprangeruntime.
    * Field deprecated in 20.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return ipAlloced
    */
   @VsoMethod
@@ -88,6 +91,7 @@ public class SubnetRuntime extends AviRestResource {
    * This is the setter method. this will set the ipAlloced
    * Use allocated_ips in staticiprangeruntime.
    * Field deprecated in 20.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return ipAlloced
    */
   @VsoMethod
@@ -99,6 +103,7 @@ public class SubnetRuntime extends AviRestResource {
    * This is the setter method this will set the ipAlloced
    * Use allocated_ips in staticiprangeruntime.
    * Field deprecated in 20.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return ipAlloced
    */
   @VsoMethod
@@ -115,6 +120,7 @@ public class SubnetRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Static ip range runtime.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipRangeRuntimes
    */
@@ -127,6 +133,7 @@ public class SubnetRuntime extends AviRestResource {
    * This is the setter method. this will set the ipRangeRuntimes
    * Static ip range runtime.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipRangeRuntimes
    */
@@ -139,6 +146,7 @@ public class SubnetRuntime extends AviRestResource {
    * This is the setter method this will set the ipRangeRuntimes
    * Static ip range runtime.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipRangeRuntimes
    */
@@ -154,7 +162,7 @@ public class SubnetRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property prefix of obj type subnetruntime field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return prefix
    */
@@ -165,7 +173,7 @@ public class SubnetRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property prefix of obj type subnetruntime field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param prefix set the prefix.
    */
@@ -178,6 +186,7 @@ public class SubnetRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Moved to staticiprangeruntime.
    * Field deprecated in 20.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return totalIpCount
    */
   @VsoMethod
@@ -189,6 +198,7 @@ public class SubnetRuntime extends AviRestResource {
    * This is the setter method to the attribute.
    * Moved to staticiprangeruntime.
    * Field deprecated in 20.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param totalIpCount set the totalIpCount.
    */
   @VsoMethod
@@ -200,6 +210,7 @@ public class SubnetRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Can be derived from total - free in staticiprangeruntime.
    * Field deprecated in 20.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return usedIpCount
    */
   @VsoMethod
@@ -211,6 +222,7 @@ public class SubnetRuntime extends AviRestResource {
    * This is the setter method to the attribute.
    * Can be derived from total - free in staticiprangeruntime.
    * Field deprecated in 20.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param usedIpCount set the usedIpCount.
    */
   @VsoMethod

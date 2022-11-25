@@ -66,6 +66,7 @@ public class TrafficCloneProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
    * Maximum of 10 items allowed.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloneServers
    */
@@ -78,6 +79,7 @@ public class TrafficCloneProfile extends AviRestResource {
    * This is the setter method. this will set the cloneServers
    * Field introduced in 17.1.1.
    * Maximum of 10 items allowed.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloneServers
    */
@@ -90,6 +92,7 @@ public class TrafficCloneProfile extends AviRestResource {
    * This is the setter method this will set the cloneServers
    * Field introduced in 17.1.1.
    * Maximum of 10 items allowed.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloneServers
    */
@@ -107,6 +110,7 @@ public class TrafficCloneProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type cloud.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudRef
    */
@@ -119,6 +123,7 @@ public class TrafficCloneProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * It is a reference to an object of type cloud.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudRef set the cloudRef.
    */
@@ -134,6 +139,7 @@ public class TrafficCloneProfile extends AviRestResource {
    * Field deprecated in 20.1.5.
    * Field introduced in 20.1.2.
    * Maximum of 4 items allowed.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * @return labels
    */
   @VsoMethod
@@ -148,6 +154,7 @@ public class TrafficCloneProfile extends AviRestResource {
    * Field deprecated in 20.1.5.
    * Field introduced in 20.1.2.
    * Maximum of 4 items allowed.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * @return labels
    */
   @VsoMethod
@@ -162,6 +169,7 @@ public class TrafficCloneProfile extends AviRestResource {
    * Field deprecated in 20.1.5.
    * Field introduced in 20.1.2.
    * Maximum of 4 items allowed.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * @return labels
    */
   @VsoMethod
@@ -178,7 +186,8 @@ public class TrafficCloneProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -191,7 +200,8 @@ public class TrafficCloneProfile extends AviRestResource {
    * This is the setter method. this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -204,7 +214,8 @@ public class TrafficCloneProfile extends AviRestResource {
    * This is the setter method this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -222,6 +233,7 @@ public class TrafficCloneProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name for the traffic clone profile.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -234,6 +246,7 @@ public class TrafficCloneProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Name for the traffic clone profile.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -246,6 +259,7 @@ public class TrafficCloneProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Specifies if client ip needs to be preserved to clone destination.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return preserveClientIp
    */
@@ -258,6 +272,7 @@ public class TrafficCloneProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Specifies if client ip needs to be preserved to clone destination.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param preserveClientIp set the preserveClientIp.
    */
@@ -270,6 +285,7 @@ public class TrafficCloneProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -282,6 +298,7 @@ public class TrafficCloneProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
@@ -313,6 +330,7 @@ public class TrafficCloneProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the traffic clone profile.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -325,6 +343,7 @@ public class TrafficCloneProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the traffic clone profile.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */

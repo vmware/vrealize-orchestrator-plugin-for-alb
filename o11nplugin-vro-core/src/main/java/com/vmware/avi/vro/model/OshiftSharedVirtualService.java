@@ -35,6 +35,7 @@ public class OshiftSharedVirtualService extends AviRestResource {
    * Name of shared virtualservice.
    * Virtualservice will be created automatically by cloud connector.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return virtualserviceName
    */
@@ -48,6 +49,7 @@ public class OshiftSharedVirtualService extends AviRestResource {
    * Name of shared virtualservice.
    * Virtualservice will be created automatically by cloud connector.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param virtualserviceName set the virtualserviceName.
    */

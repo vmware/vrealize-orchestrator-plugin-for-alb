@@ -70,6 +70,7 @@ public class WafCRS extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * A short description of this ruleset.
    * Field introduced in 18.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
@@ -82,6 +83,7 @@ public class WafCRS extends AviRestResource {
    * This is the setter method to the attribute.
    * A short description of this ruleset.
    * Field introduced in 18.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
@@ -95,6 +97,7 @@ public class WafCRS extends AviRestResource {
    * Waf rules are sorted in groups based on their characterization.
    * Field introduced in 18.1.1.
    * Maximum of 64 items allowed.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return groups
    */
@@ -108,6 +111,7 @@ public class WafCRS extends AviRestResource {
    * Waf rules are sorted in groups based on their characterization.
    * Field introduced in 18.1.1.
    * Maximum of 64 items allowed.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return groups
    */
@@ -121,6 +125,7 @@ public class WafCRS extends AviRestResource {
    * Waf rules are sorted in groups based on their characterization.
    * Field introduced in 18.1.1.
    * Maximum of 64 items allowed.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return groups
    */
@@ -138,6 +143,7 @@ public class WafCRS extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Integrity protection value.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return integrity
    */
@@ -150,6 +156,7 @@ public class WafCRS extends AviRestResource {
    * This is the setter method to the attribute.
    * Integrity protection value.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param integrity set the integrity.
    */
@@ -162,7 +169,8 @@ public class WafCRS extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.6.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -175,7 +183,8 @@ public class WafCRS extends AviRestResource {
    * This is the setter method. this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.6.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -188,7 +197,8 @@ public class WafCRS extends AviRestResource {
    * This is the setter method this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.6.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -206,6 +216,7 @@ public class WafCRS extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The name of this ruleset object.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -218,6 +229,7 @@ public class WafCRS extends AviRestResource {
    * This is the setter method to the attribute.
    * The name of this ruleset object.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -230,6 +242,7 @@ public class WafCRS extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The release date of this version in rfc 3339 / iso 8601 format.
    * Field introduced in 18.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return releaseDate
    */
@@ -242,6 +255,7 @@ public class WafCRS extends AviRestResource {
    * This is the setter method to the attribute.
    * The release date of this version in rfc 3339 / iso 8601 format.
    * Field introduced in 18.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param releaseDate set the releaseDate.
    */
@@ -255,6 +269,7 @@ public class WafCRS extends AviRestResource {
    * Tenant that this object belongs to.
    * It is a reference to an object of type tenant.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -268,6 +283,7 @@ public class WafCRS extends AviRestResource {
    * Tenant that this object belongs to.
    * It is a reference to an object of type tenant.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
@@ -298,6 +314,7 @@ public class WafCRS extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -309,6 +326,7 @@ public class WafCRS extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
@@ -321,6 +339,7 @@ public class WafCRS extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The version of this ruleset object.
    * Field introduced in 18.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return version
    */
@@ -333,6 +352,7 @@ public class WafCRS extends AviRestResource {
    * This is the setter method to the attribute.
    * The version of this ruleset object.
    * Field introduced in 18.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param version set the version.
    */

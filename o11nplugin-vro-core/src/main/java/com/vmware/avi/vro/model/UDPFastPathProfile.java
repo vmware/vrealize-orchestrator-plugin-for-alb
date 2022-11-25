@@ -47,7 +47,7 @@ public class UDPFastPathProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Dsr profile information.
    * Field introduced in 18.2.3.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dsrProfile
    */
@@ -60,7 +60,7 @@ public class UDPFastPathProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Dsr profile information.
    * Field introduced in 18.2.3.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dsrProfile set the dsrProfile.
    */
@@ -73,7 +73,8 @@ public class UDPFastPathProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * When enabled, every udp packet is considered a new transaction and may be load balanced to a different server.
    * When disabled, packets from the same client source ip and port are sent to the same server.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return perPktLoadbalance
    */
@@ -86,7 +87,8 @@ public class UDPFastPathProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * When enabled, every udp packet is considered a new transaction and may be load balanced to a different server.
    * When disabled, packets from the same client source ip and port are sent to the same server.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param perPktLoadbalance set the perPktLoadbalance.
    */
@@ -100,6 +102,7 @@ public class UDPFastPathProfile extends AviRestResource {
    * The amount of time (in sec) for which a flow needs to be idle before it is deleted.
    * Allowed values are 2-3600.
    * Unit is sec.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return sessionIdleTimeout
    */
@@ -113,6 +116,7 @@ public class UDPFastPathProfile extends AviRestResource {
    * The amount of time (in sec) for which a flow needs to be idle before it is deleted.
    * Allowed values are 2-3600.
    * Unit is sec.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param sessionIdleTimeout set the sessionIdleTimeout.
    */
@@ -124,6 +128,7 @@ public class UDPFastPathProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * When disabled, source nat will not be performed for all client udp packets.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return snat
    */
@@ -135,6 +140,7 @@ public class UDPFastPathProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * When disabled, source nat will not be performed for all client udp packets.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param snat set the snat.
    */

@@ -40,6 +40,7 @@ public class DnsRateLimiter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Action to perform upon rate limiting.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return action
    */
@@ -52,6 +53,7 @@ public class DnsRateLimiter extends AviRestResource {
    * This is the setter method to the attribute.
    * Action to perform upon rate limiting.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param action set the action.
    */
@@ -64,6 +66,7 @@ public class DnsRateLimiter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Rate limiting object.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rateLimiterObject
    */
@@ -76,6 +79,7 @@ public class DnsRateLimiter extends AviRestResource {
    * This is the setter method to the attribute.
    * Rate limiting object.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rateLimiterObject set the rateLimiterObject.
    */

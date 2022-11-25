@@ -53,6 +53,7 @@ public class ApicVSPlacementReq extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return graph
    */
   @VsoMethod
@@ -63,6 +64,7 @@ public class ApicVSPlacementReq extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param graph set the graph.
    */
   @VsoMethod
@@ -73,6 +75,7 @@ public class ApicVSPlacementReq extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return lifs
    */
   @VsoMethod
@@ -83,6 +86,7 @@ public class ApicVSPlacementReq extends AviRestResource {
   /**
    * This is the setter method. this will set the lifs
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return lifs
    */
   @VsoMethod
@@ -93,6 +97,7 @@ public class ApicVSPlacementReq extends AviRestResource {
   /**
    * This is the setter method this will set the lifs
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return lifs
    */
   @VsoMethod
@@ -108,6 +113,7 @@ public class ApicVSPlacementReq extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return networkRel
    */
   @VsoMethod
@@ -118,6 +124,7 @@ public class ApicVSPlacementReq extends AviRestResource {
   /**
    * This is the setter method. this will set the networkRel
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return networkRel
    */
   @VsoMethod
@@ -128,6 +135,7 @@ public class ApicVSPlacementReq extends AviRestResource {
   /**
    * This is the setter method this will set the networkRel
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return networkRel
    */
   @VsoMethod
@@ -143,6 +151,7 @@ public class ApicVSPlacementReq extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return tenantName
    */
   @VsoMethod
@@ -153,6 +162,7 @@ public class ApicVSPlacementReq extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param tenantName set the tenantName.
    */
   @VsoMethod
@@ -163,6 +173,7 @@ public class ApicVSPlacementReq extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return vdev
    */
   @VsoMethod
@@ -173,6 +184,7 @@ public class ApicVSPlacementReq extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param vdev set the vdev.
    */
   @VsoMethod
@@ -183,6 +195,7 @@ public class ApicVSPlacementReq extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return vgrp
    */
   @VsoMethod
@@ -193,6 +206,7 @@ public class ApicVSPlacementReq extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param vgrp set the vgrp.
    */
   @VsoMethod

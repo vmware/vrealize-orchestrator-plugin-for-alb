@@ -469,6 +469,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Allow admin user ssh access to se.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return adminSshEnabled
    */
@@ -481,6 +482,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Allow admin user ssh access to se.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param adminSshEnabled set the adminSshEnabled.
    */
@@ -491,7 +493,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property app_headers of obj type seruntimeproperties field type str  type array.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return appHeaders
    */
@@ -502,7 +504,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the setter method. this will set the appHeaders
-   * Placeholder for description of property app_headers of obj type seruntimeproperties field type str  type array.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return appHeaders
    */
@@ -513,7 +515,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the setter method this will set the appHeaders
-   * Placeholder for description of property app_headers of obj type seruntimeproperties field type str  type array.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return appHeaders
    */
@@ -531,6 +533,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Deprecated in 21.1.3.
    * Use config in serviceenginegroup instead.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return baremetalDispatcherHandlesFlows
    */
@@ -543,6 +546,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Deprecated in 21.1.3.
    * Use config in serviceenginegroup instead.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param baremetalDispatcherHandlesFlows set the baremetalDispatcherHandlesFlows.
    */
@@ -554,7 +558,8 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate limit on maximum adf lossy log to pushper second.
-   * Allowed in basic(allowed values- 1000) edition, essentials(allowed values- 1000) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 1000), basic edition(allowed values- 1000), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @return connectionsLossyLogRateLimiterThreshold
    */
@@ -566,7 +571,8 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate limit on maximum adf lossy log to pushper second.
-   * Allowed in basic(allowed values- 1000) edition, essentials(allowed values- 1000) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 1000), basic edition(allowed values- 1000), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @param connectionsLossyLogRateLimiterThreshold set the connectionsLossyLogRateLimiterThreshold.
    */
@@ -578,7 +584,8 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate limit on maximum adf udf or nf log to pushper second.
-   * Allowed in basic(allowed values- 1000) edition, essentials(allowed values- 1000) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 1000), basic edition(allowed values- 1000), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @return connectionsUdfnfLogRateLimiterThreshold
    */
@@ -590,7 +597,8 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate limit on maximum adf udf or nf log to pushper second.
-   * Allowed in basic(allowed values- 1000) edition, essentials(allowed values- 1000) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 1000), basic edition(allowed values- 1000), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @param connectionsUdfnfLogRateLimiterThreshold set the connectionsUdfnfLogRateLimiterThreshold.
    */
@@ -604,6 +612,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Disable flow probes for scaled out vs'es.
    * (this field has been moved to se_group properties 20.1.3 onwards.).
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return disableFlowProbes
    */
@@ -617,6 +626,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Disable flow probes for scaled out vs'es.
    * (this field has been moved to se_group properties 20.1.3 onwards.).
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param disableFlowProbes set the disableFlowProbes.
    */
@@ -630,6 +640,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Deprecated.
    * Field deprecated in 17.2.5.
    * Field introduced in 17.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return disableGro
    */
   @VsoMethod
@@ -642,6 +653,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Deprecated.
    * Field deprecated in 17.2.5.
    * Field introduced in 17.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param disableGro set the disableGro.
    */
   @VsoMethod
@@ -654,6 +666,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Deprecated.
    * Field deprecated in 17.2.5.
    * Field introduced in 17.2.4.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return disableTso
    */
   @VsoMethod
@@ -666,6 +679,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Deprecated.
    * Field deprecated in 17.2.5.
    * Field introduced in 17.2.4.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param disableTso set the disableTso.
    */
   @VsoMethod
@@ -675,7 +689,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property dos_profile of obj type seruntimeproperties field type str  type ref.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dosProfile
    */
@@ -686,7 +700,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property dos_profile of obj type seruntimeproperties field type str  type ref.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dosProfile set the dosProfile.
    */
@@ -699,6 +713,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Timeout for downstream to become writable.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3600000.
    * @return downstreamSendTimeout
    */
@@ -711,6 +726,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Timeout for downstream to become writable.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3600000.
    * @param downstreamSendTimeout set the downstreamSendTimeout.
    */
@@ -724,7 +740,8 @@ public class SeRuntimeProperties extends AviRestResource {
    * Frequency of se - se hb messages when aggressive failure mode detection is enabled.
    * (this field has been moved to se_group properties 20.1.3 onwards).
    * Unit is milliseconds.
-   * Allowed in basic(allowed values- 100) edition, essentials(allowed values- 100) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 100), basic edition(allowed values- 100), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @return dpAggressiveHbFrequency
    */
@@ -738,7 +755,8 @@ public class SeRuntimeProperties extends AviRestResource {
    * Frequency of se - se hb messages when aggressive failure mode detection is enabled.
    * (this field has been moved to se_group properties 20.1.3 onwards).
    * Unit is milliseconds.
-   * Allowed in basic(allowed values- 100) edition, essentials(allowed values- 100) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 100), basic edition(allowed values- 100), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @param dpAggressiveHbFrequency set the dpAggressiveHbFrequency.
    */
@@ -751,7 +769,8 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Consecutive hb failures after which failure is reported to controller,when aggressive failure mode detection is enabled.
    * (this field has been moved to se_group properties 20.1.3 onwards).
-   * Allowed in basic(allowed values- 10) edition, essentials(allowed values- 10) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 10), basic edition(allowed values- 10), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return dpAggressiveHbTimeoutCount
    */
@@ -764,7 +783,8 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Consecutive hb failures after which failure is reported to controller,when aggressive failure mode detection is enabled.
    * (this field has been moved to se_group properties 20.1.3 onwards).
-   * Allowed in basic(allowed values- 10) edition, essentials(allowed values- 10) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 10), basic edition(allowed values- 10), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param dpAggressiveHbTimeoutCount set the dpAggressiveHbTimeoutCount.
    */
@@ -778,6 +798,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Frequency of se - se hb messages when aggressive failure mode detection is not enabled.
    * (this field has been moved to se_group properties 20.1.3 onwards).
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @return dpHbFrequency
    */
@@ -791,6 +812,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Frequency of se - se hb messages when aggressive failure mode detection is not enabled.
    * (this field has been moved to se_group properties 20.1.3 onwards).
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @param dpHbFrequency set the dpHbFrequency.
    */
@@ -803,6 +825,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Consecutive hb failures after which failure is reported to controller, when aggressive failure mode detection is not enabled.
    * (this field has been moved to se_group properties 20.1.3 onwards).
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return dpHbTimeoutCount
    */
@@ -815,6 +838,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Consecutive hb failures after which failure is reported to controller, when aggressive failure mode detection is not enabled.
    * (this field has been moved to se_group properties 20.1.3 onwards).
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param dpHbTimeoutCount set the dpHbTimeoutCount.
    */
@@ -827,6 +851,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Frequency of arp requests sent by se for each vip to detect duplicate ip when it loses conectivity to controller.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return dupipFrequency
    */
@@ -839,6 +864,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Frequency of arp requests sent by se for each vip to detect duplicate ip when it loses conectivity to controller.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param dupipFrequency set the dupipFrequency.
    */
@@ -850,6 +876,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Number of arp responses received for the vip after which se decides that the vip has been moved and disables the vip.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @return dupipTimeoutCount
    */
@@ -861,6 +888,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Number of arp responses received for the vip after which se decides that the vip has been moved and disables the vip.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @param dupipTimeoutCount set the dupipTimeoutCount.
    */
@@ -873,6 +901,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable hsm luna engine logs.
    * Field introduced in 16.4.8, 17.1.11, 17.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enableHsmLog
    */
@@ -885,6 +914,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable hsm luna engine logs.
    * Field introduced in 16.4.8, 17.1.11, 17.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param enableHsmLog set the enableHsmLog.
    */
@@ -896,6 +926,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enable proxy arp from host interface for front end  proxies.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return feproxyVipsEnableProxyArp
    */
@@ -907,6 +938,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enable proxy arp from host interface for front end  proxies.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param feproxyVipsEnableProxyArp set the feproxyVipsEnableProxyArp.
    */
@@ -920,6 +952,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * How often to push the flow table ipc messages in the main loop.
    * The value is the number of times through the loop before pushing the batch.
    * I.e, a value of 1 means every time through the loop.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @return flowTableBatchPushFrequency
    */
@@ -933,6 +966,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * How often to push the flow table ipc messages in the main loop.
    * The value is the number of times through the loop before pushing the batch.
    * I.e, a value of 1 means every time through the loop.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @param flowTableBatchPushFrequency set the flowTableBatchPushFrequency.
    */
@@ -945,6 +979,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Deprecated.
    * Field deprecated in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return flowTableMaxEntriesDeprecated
    */
   @VsoMethod
@@ -956,6 +991,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Deprecated.
    * Field deprecated in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param flowTableMaxEntriesDeprecated set the flowTableMaxEntriesDeprecated.
    */
   @VsoMethod
@@ -967,6 +1003,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Deprecated.
    * Field deprecated in 17.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return flowTableNewSynMaxEntries
    */
   @VsoMethod
@@ -978,6 +1015,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Deprecated.
    * Field deprecated in 17.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param flowTableNewSynMaxEntries set the flowTableNewSynMaxEntries.
    */
   @VsoMethod
@@ -990,6 +1028,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Overrides the mtu value received via dhcp or some other means.
    * Use this when the infrastructure advertises an mtu that is not supported by all devices in the network.
    * For example, in aws or when an overlay is used.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return globalMtu
    */
@@ -1003,6 +1042,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Overrides the mtu value received via dhcp or some other means.
    * Use this when the infrastructure advertises an mtu that is not supported by all devices in the network.
    * For example, in aws or when an overlay is used.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param globalMtu set the globalMtu.
    */
@@ -1014,7 +1054,8 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enable javascript console logs on the client browser when collecting client insights.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return httpRumConsoleLog
    */
@@ -1026,7 +1067,8 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enable javascript console logs on the client browser when collecting client insights.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param httpRumConsoleLog set the httpRumConsoleLog.
    */
@@ -1038,7 +1080,8 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Minimum response size content length to sample for client insights.
-   * Allowed in basic(allowed values- 64) edition, essentials(allowed values- 64) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 64), basic edition(allowed values- 64), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 64.
    * @return httpRumMinContentLength
    */
@@ -1050,7 +1093,8 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Minimum response size content length to sample for client insights.
-   * Allowed in basic(allowed values- 64) edition, essentials(allowed values- 64) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 64), basic edition(allowed values- 64), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 64.
    * @param httpRumMinContentLength set the httpRumMinContentLength.
    */
@@ -1066,6 +1110,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * I.e, a value of 1 means the batch is pushed every time the loop runs.
    * Field deprecated in 18.1.3.
    * Field introduced in 17.2.8.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return lbBatchPushFrequency
    */
   @VsoMethod
@@ -1080,6 +1125,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * I.e, a value of 1 means the batch is pushed every time the loop runs.
    * Field deprecated in 18.1.3.
    * Field introduced in 17.2.8.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param lbBatchPushFrequency set the lbBatchPushFrequency.
    */
   @VsoMethod
@@ -1092,6 +1138,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Deprecated.
    * Field deprecated in 17.1.1.
    * Unit is sec.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return lbFailMaxTime
    */
   @VsoMethod
@@ -1104,6 +1151,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Deprecated.
    * Field deprecated in 17.1.1.
    * Unit is sec.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param lbFailMaxTime set the lbFailMaxTime.
    */
   @VsoMethod
@@ -1114,6 +1162,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Number of requests to dispatch from the request queue at a regular interval.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4.
    * @return lbactionNumRequestsToDispatch
    */
@@ -1125,6 +1174,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Number of requests to dispatch from the request queue at a regular interval.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4.
    * @param lbactionNumRequestsToDispatch set the lbactionNumRequestsToDispatch.
    */
@@ -1136,6 +1186,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Maximum retries per request in the request queue.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 22.
    * @return lbactionRqPerRequestMaxRetries
    */
@@ -1147,6 +1198,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Maximum retries per request in the request queue.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 22.
    * @param lbactionRqPerRequestMaxRetries set the lbactionRqPerRequestMaxRetries.
    */
@@ -1159,6 +1211,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Deprecated in 21.1.1.
    * Flag to indicate if log files are compressed upon full on the service engine.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return logAgentCompressLogs
    */
@@ -1171,6 +1224,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Deprecated in 21.1.1.
    * Flag to indicate if log files are compressed upon full on the service engine.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param logAgentCompressLogs set the logAgentCompressLogs.
    */
@@ -1183,6 +1237,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * [deprecated]log-agent test property used to simulate slow tcp connections.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return logAgentConnSendBufferSize
    */
   @VsoMethod
@@ -1194,6 +1249,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * [deprecated]log-agent test property used to simulate slow tcp connections.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param logAgentConnSendBufferSize set the logAgentConnSendBufferSize.
    */
   @VsoMethod
@@ -1205,6 +1261,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * [deprecated]maximum size of data sent by log-agent to controller over the tcp connection.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return logAgentExportMsgBufferSize
    */
   @VsoMethod
@@ -1216,6 +1273,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * [deprecated]maximum size of data sent by log-agent to controller over the tcp connection.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param logAgentExportMsgBufferSize set the logAgentExportMsgBufferSize.
    */
   @VsoMethod
@@ -1227,6 +1285,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * [deprecated]time log-agent waits before sending data to the controller.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return logAgentExportWaitTime
    */
   @VsoMethod
@@ -1238,6 +1297,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * [deprecated]time log-agent waits before sending data to the controller.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param logAgentExportWaitTime set the logAgentExportWaitTime.
    */
   @VsoMethod
@@ -1249,6 +1309,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Deprecated in 21.1.1.
    * Maximum application log file size before rollover.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4.
    * @return logAgentFileSzAppl
    */
@@ -1261,6 +1322,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Deprecated in 21.1.1.
    * Maximum application log file size before rollover.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4.
    * @param logAgentFileSzAppl set the logAgentFileSzAppl.
    */
@@ -1273,6 +1335,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Deprecated in 21.1.1.
    * Maximum connection log file size before rollover.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4.
    * @return logAgentFileSzConn
    */
@@ -1285,6 +1348,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Deprecated in 21.1.1.
    * Maximum connection log file size before rollover.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4.
    * @param logAgentFileSzConn set the logAgentFileSzConn.
    */
@@ -1297,6 +1361,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Deprecated in 21.1.1.
    * Maximum debug log file size before rollover.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4.
    * @return logAgentFileSzDebug
    */
@@ -1309,6 +1374,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Deprecated in 21.1.1.
    * Maximum debug log file size before rollover.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4.
    * @param logAgentFileSzDebug set the logAgentFileSzDebug.
    */
@@ -1321,6 +1387,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Deprecated in 21.1.1.
    * Maximum event log file size before rollover.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4.
    * @return logAgentFileSzEvent
    */
@@ -1333,6 +1400,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Deprecated in 21.1.1.
    * Maximum event log file size before rollover.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4.
    * @param logAgentFileSzEvent set the logAgentFileSzEvent.
    */
@@ -1346,6 +1414,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Deprecated in 21.1.1.
    * Minimum storage allocated for logs irrespective of memory and cores.
    * Unit is mb.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
    * @return logAgentLogStorageMinSz
    */
@@ -1359,6 +1428,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Deprecated in 21.1.1.
    * Minimum storage allocated for logs irrespective of memory and cores.
    * Unit is mb.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
    * @param logAgentLogStorageMinSz set the logAgentLogStorageMinSz.
    */
@@ -1371,6 +1441,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * [deprecated] maximum number of virtual service log files maintained for significant logs on the service engine.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return logAgentMaxActiveAdfFilesPerVs
    */
   @VsoMethod
@@ -1382,6 +1453,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * [deprecated] maximum number of virtual service log files maintained for significant logs on the service engine.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param logAgentMaxActiveAdfFilesPerVs set the logAgentMaxActiveAdfFilesPerVs.
    */
   @VsoMethod
@@ -1393,6 +1465,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Deprecated in 21.1.1.
    * Maximum concurrent rsync requests initiated from log-agent to the controller.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
    * @return logAgentMaxConcurrentRsync
    */
@@ -1405,6 +1478,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Deprecated in 21.1.1.
    * Maximum concurrent rsync requests initiated from log-agent to the controller.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
    * @param logAgentMaxConcurrentRsync set the logAgentMaxConcurrentRsync.
    */
@@ -1417,6 +1491,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * [deprecated] maximum size of serialized log message on the service engine.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return logAgentMaxLogmessageProtoSz
    */
   @VsoMethod
@@ -1428,6 +1503,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * [deprecated] maximum size of serialized log message on the service engine.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param logAgentMaxLogmessageProtoSz set the logAgentMaxLogmessageProtoSz.
    */
   @VsoMethod
@@ -1439,6 +1515,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Deprecated in 21.1.1.
    * Excess percentage threshold of disk size to trigger cleanup of logs on the service engine.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 110.
    * @return logAgentMaxStorageExcessPercent
    */
@@ -1451,6 +1528,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Deprecated in 21.1.1.
    * Excess percentage threshold of disk size to trigger cleanup of logs on the service engine.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 110.
    * @param logAgentMaxStorageExcessPercent set the logAgentMaxStorageExcessPercent.
    */
@@ -1463,6 +1541,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Deprecated in 21.1.1.
    * Maximum storage on the disk not allocated for logs on the service engine.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20.0f.
    * @return logAgentMaxStorageIgnorePercent
    */
@@ -1475,6 +1554,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Deprecated in 21.1.1.
    * Maximum storage on the disk not allocated for logs on the service engine.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20.0f.
    * @param logAgentMaxStorageIgnorePercent set the logAgentMaxStorageIgnorePercent.
    */
@@ -1487,6 +1567,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Deprecated in 21.1.1.
    * Minimum storage allocated to any given virtualservice on the service engine.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return logAgentMinStoragePerVs
    */
@@ -1499,6 +1580,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Deprecated in 21.1.1.
    * Minimum storage allocated to any given virtualservice on the service engine.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param logAgentMinStoragePerVs set the logAgentMinStoragePerVs.
    */
@@ -1511,6 +1593,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * [deprecated]time interval log-agent pauses between logs obtained from the dataplane.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return logAgentPauseInterval
    */
   @VsoMethod
@@ -1522,6 +1605,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * [deprecated]time interval log-agent pauses between logs obtained from the dataplane.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param logAgentPauseInterval set the logAgentPauseInterval.
    */
   @VsoMethod
@@ -1534,6 +1618,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Deprecated in 21.1.1.
    * Internal timer to stall log-agent and prevent it from hogging cpu cycles on the service engine.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return logAgentSleepInterval
    */
@@ -1547,6 +1632,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Deprecated in 21.1.1.
    * Internal timer to stall log-agent and prevent it from hogging cpu cycles on the service engine.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param logAgentSleepInterval set the logAgentSleepInterval.
    */
@@ -1560,6 +1646,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Deprecated in 21.1.1.
    * Timeout to purge unknown virtual service logs from the service engine.
    * Unit is sec.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1800.
    * @return logAgentUnknownVsTimer
    */
@@ -1573,6 +1660,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Deprecated in 21.1.1.
    * Timeout to purge unknown virtual service logs from the service engine.
    * Unit is sec.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1800.
    * @param logAgentUnknownVsTimer set the logAgentUnknownVsTimer.
    */
@@ -1585,6 +1673,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Deprecated in 21.1.1.
    * Maximum number of file names in a log message.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 64.
    * @return logMessageMaxFileListSize
    */
@@ -1597,6 +1686,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Deprecated in 21.1.1.
    * Maximum number of file names in a log message.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 64.
    * @param logMessageMaxFileListSize set the logMessageMaxFileListSize.
    */
@@ -1610,6 +1700,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Deprecated.
    * Field deprecated in 17.1.1.
    * Unit is mbps.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return maxThroughput
    */
   @VsoMethod
@@ -1622,6 +1713,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Deprecated.
    * Field deprecated in 17.1.1.
    * Unit is mbps.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param maxThroughput set the maxThroughput.
    */
   @VsoMethod
@@ -1634,6 +1726,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Deprecated in 21.1.1.
    * Use enabled under caching in application profile.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return mcacheEnabled
    */
   @VsoMethod
@@ -1646,6 +1739,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Deprecated in 21.1.1.
    * Use enabled under caching in application profile.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param mcacheEnabled set the mcacheEnabled.
    */
   @VsoMethod
@@ -1657,6 +1751,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enables mcache_fetch.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return mcacheFetchEnabled
    */
   @VsoMethod
@@ -1668,6 +1763,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Enables mcache_fetch.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param mcacheFetchEnabled set the mcacheFetchEnabled.
    */
   @VsoMethod
@@ -1679,6 +1775,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Use se group's app_cache_percent to set cache memory usage limit on se.
    * Field deprecated in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return mcacheMaxCacheSize
    */
   @VsoMethod
@@ -1690,6 +1787,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Use se group's app_cache_percent to set cache memory usage limit on se.
    * Field deprecated in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param mcacheMaxCacheSize set the mcacheMaxCacheSize.
    */
   @VsoMethod
@@ -1701,6 +1799,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enables mcache_store.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return mcacheStoreInEnabled
    */
   @VsoMethod
@@ -1712,6 +1811,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Enables mcache_store.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param mcacheStoreInEnabled set the mcacheStoreInEnabled.
    */
   @VsoMethod
@@ -1724,6 +1824,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Deprecated in 21.1.1.
    * Use max_object_size under caching in application profile.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return mcacheStoreInMaxSize
    */
   @VsoMethod
@@ -1736,6 +1837,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Deprecated in 21.1.1.
    * Use max_object_size under caching in application profile.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param mcacheStoreInMaxSize set the mcacheStoreInMaxSize.
    */
   @VsoMethod
@@ -1748,6 +1850,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Deprecated in 21.1.1.
    * Use min_object_size under caching in application profile.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return mcacheStoreInMinSize
    */
   @VsoMethod
@@ -1760,6 +1863,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Deprecated in 21.1.1.
    * Use min_object_size under caching in application profile.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param mcacheStoreInMinSize set the mcacheStoreInMinSize.
    */
   @VsoMethod
@@ -1771,6 +1875,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enables mcache_store_out.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return mcacheStoreOutEnabled
    */
   @VsoMethod
@@ -1782,6 +1887,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Enables mcache_store_out.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param mcacheStoreOutEnabled set the mcacheStoreOutEnabled.
    */
   @VsoMethod
@@ -1793,6 +1899,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Use se group's app_cache_percent to set cache memory usage limit on se.
    * Field deprecated in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return mcacheStoreSeMaxSize
    */
   @VsoMethod
@@ -1804,6 +1911,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Use se group's app_cache_percent to set cache memory usage limit on se.
    * Field deprecated in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param mcacheStoreSeMaxSize set the mcacheStoreSeMaxSize.
    */
   @VsoMethod
@@ -1813,7 +1921,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property ngx_free_connection_stack of obj type seruntimeproperties field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return ngxFreeConnectionStack
    */
@@ -1824,7 +1932,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property ngx_free_connection_stack of obj type seruntimeproperties field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param ngxFreeConnectionStack set the ngxFreeConnectionStack.
    */
@@ -1837,6 +1945,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Deprecated.
    * Field deprecated in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return persistenceEntriesLowWatermark
    */
   @VsoMethod
@@ -1848,6 +1957,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Deprecated.
    * Field deprecated in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param persistenceEntriesLowWatermark set the persistenceEntriesLowWatermark.
    */
   @VsoMethod
@@ -1859,6 +1969,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum memory in bytes allocated for persistence entries.
    * Allowed values are 0-33554432.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return persistenceMemMax
    */
@@ -1871,6 +1982,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum memory in bytes allocated for persistence entries.
    * Allowed values are 0-33554432.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param persistenceMemMax set the persistenceMemMax.
    */
@@ -1883,6 +1995,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable punting of udp packets from primary to other service engines.
    * This applies to virtual services with per-packet loadbalancing enabled.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return scaleoutUdpPerPkt
    */
@@ -1895,6 +2008,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable punting of udp packets from primary to other service engines.
    * This applies to virtual services with per-packet loadbalancing enabled.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param scaleoutUdpPerPkt set the scaleoutUdpPerPkt.
    */
@@ -1907,6 +2021,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ldap basicauth default bind timeout enforced on connections to ldap server.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5000.
    * @return seAuthLdapBindTimeout
    */
@@ -1919,6 +2034,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Ldap basicauth default bind timeout enforced on connections to ldap server.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5000.
    * @param seAuthLdapBindTimeout set the seAuthLdapBindTimeout.
    */
@@ -1931,6 +2047,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Size of ldap basicauth credentials cache used on the dataplane.
    * Unit is bytes.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100000.
    * @return seAuthLdapCacheSize
    */
@@ -1943,6 +2060,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Size of ldap basicauth credentials cache used on the dataplane.
    * Unit is bytes.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100000.
    * @param seAuthLdapCacheSize set the seAuthLdapCacheSize.
    */
@@ -1955,6 +2073,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ldap basicauth default connection timeout enforced on connections to ldap server.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
    * @return seAuthLdapConnectTimeout
    */
@@ -1967,6 +2086,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Ldap basicauth default connection timeout enforced on connections to ldap server.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
    * @param seAuthLdapConnectTimeout set the seAuthLdapConnectTimeout.
    */
@@ -1978,6 +2098,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Number of concurrent connections to ldap server by a single basic auth ldap process.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @return seAuthLdapConnsPerServer
    */
@@ -1989,6 +2110,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Number of concurrent connections to ldap server by a single basic auth ldap process.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @param seAuthLdapConnsPerServer set the seAuthLdapConnsPerServer.
    */
@@ -2001,6 +2123,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ldap basicauth default reconnect timeout enforced on connections to ldap server.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
    * @return seAuthLdapReconnectTimeout
    */
@@ -2013,6 +2136,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Ldap basicauth default reconnect timeout enforced on connections to ldap server.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
    * @param seAuthLdapReconnectTimeout set the seAuthLdapReconnectTimeout.
    */
@@ -2025,6 +2149,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ldap basicauth default login or group search request timeout enforced on connections to ldap server.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
    * @return seAuthLdapRequestTimeout
    */
@@ -2037,6 +2162,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Ldap basicauth default login or group search request timeout enforced on connections to ldap server.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
    * @param seAuthLdapRequestTimeout set the seAuthLdapRequestTimeout.
    */
@@ -2048,6 +2174,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ldap basicauth uses multiple ldap servers in the event of a failover only.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return seAuthLdapServersFailoverOnly
    */
@@ -2059,6 +2186,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ldap basicauth uses multiple ldap servers in the event of a failover only.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param seAuthLdapServersFailoverOnly set the seAuthLdapServersFailoverOnly.
    */
@@ -2069,7 +2197,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property se_dp_compression of obj type seruntimeproperties field type str  type ref.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seDpCompression
    */
@@ -2080,7 +2208,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property se_dp_compression of obj type seruntimeproperties field type str  type ref.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seDpCompression set the seDpCompression.
    */
@@ -2094,6 +2222,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Deprecated - this field has been moved to se_group properties 20.1.3 onwards.
    * Internal only.
    * Used to simulate se - se hb failure.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return seDpHmDrops
    */
@@ -2107,6 +2236,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Deprecated - this field has been moved to se_group properties 20.1.3 onwards.
    * Internal only.
    * Used to simulate se - se hb failure.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param seDpHmDrops set the seDpHmDrops.
    */
@@ -2119,6 +2249,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Deprecated in 21.1.3.
    * Use config in serviceenginegroup instead.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return seDpIfStatePollInterval
    */
@@ -2131,6 +2262,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Deprecated in 21.1.3.
    * Use config in serviceenginegroup instead.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param seDpIfStatePollInterval set the seDpIfStatePollInterval.
    */
@@ -2143,6 +2275,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Deprecated in 21.1.1.
    * Internal buffer full indicator on the service engine beyond which the unfiltered logs are abandoned.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 70.
    * @return seDpLogNfEnqueuePercent
    */
@@ -2155,6 +2288,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Deprecated in 21.1.1.
    * Internal buffer full indicator on the service engine beyond which the unfiltered logs are abandoned.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 70.
    * @param seDpLogNfEnqueuePercent set the seDpLogNfEnqueuePercent.
    */
@@ -2167,6 +2301,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Deprecated in 21.1.1.
    * Internal buffer full indicator on the service engine beyond which the user filtered logs are abandoned.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 90.
    * @return seDpLogUdfEnqueuePercent
    */
@@ -2179,6 +2314,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Deprecated in 21.1.1.
    * Internal buffer full indicator on the service engine beyond which the user filtered logs are abandoned.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 90.
    * @param seDpLogUdfEnqueuePercent set the seDpLogUdfEnqueuePercent.
    */
@@ -2192,6 +2328,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Deprecated.
    * Field deprecated in 18.2.5.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return seDpVnicQueueStallEventSleep
    */
   @VsoMethod
@@ -2204,6 +2341,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Deprecated.
    * Field deprecated in 18.2.5.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param seDpVnicQueueStallEventSleep set the seDpVnicQueueStallEventSleep.
    */
   @VsoMethod
@@ -2216,6 +2354,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Deprecated.
    * Field deprecated in 18.2.5.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return seDpVnicQueueStallThreshold
    */
   @VsoMethod
@@ -2228,6 +2367,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Deprecated.
    * Field deprecated in 18.2.5.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param seDpVnicQueueStallThreshold set the seDpVnicQueueStallThreshold.
    */
   @VsoMethod
@@ -2240,6 +2380,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Deprecated.
    * Field deprecated in 18.2.5.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return seDpVnicQueueStallTimeout
    */
   @VsoMethod
@@ -2252,6 +2393,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Deprecated.
    * Field deprecated in 18.2.5.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param seDpVnicQueueStallTimeout set the seDpVnicQueueStallTimeout.
    */
   @VsoMethod
@@ -2264,6 +2406,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Deprecated.
    * Field deprecated in 18.2.5.
    * Field introduced in 17.1.14, 17.2.5, 18.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return seDpVnicRestartOnQueueStallCount
    */
   @VsoMethod
@@ -2276,6 +2419,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Deprecated.
    * Field deprecated in 18.2.5.
    * Field introduced in 17.1.14, 17.2.5, 18.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param seDpVnicRestartOnQueueStallCount set the seDpVnicRestartOnQueueStallCount.
    */
   @VsoMethod
@@ -2288,6 +2432,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Deprecated.
    * Field deprecated in 18.2.5.
    * Field introduced in 17.1.14, 17.2.5, 18.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return seDpVnicStallSeRestartWindow
    */
   @VsoMethod
@@ -2300,6 +2445,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Deprecated.
    * Field deprecated in 18.2.5.
    * Field introduced in 17.1.14, 17.2.5, 18.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param seDpVnicStallSeRestartWindow set the seDpVnicStallSeRestartWindow.
    */
   @VsoMethod
@@ -2312,6 +2458,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Deprecated in 21.1.3.
    * Use config in serviceenginegroup instead.
    * Field introduced in 18.1.3, 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return seDumpCoreOnAssert
    */
@@ -2325,6 +2472,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Deprecated in 21.1.3.
    * Use config in serviceenginegroup instead.
    * Field introduced in 18.1.3, 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param seDumpCoreOnAssert set the seDumpCoreOnAssert.
    */
@@ -2336,6 +2484,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Accept/ignore interface routes (i.e, no next hop ip address).
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return seHandleInterfaceRoutes
    */
@@ -2347,6 +2496,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Accept/ignore interface routes (i.e, no next hop ip address).
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param seHandleInterfaceRoutes set the seHandleInterfaceRoutes.
    */
@@ -2359,6 +2509,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Internal use only.
    * Allowed values are 0-7.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3.
    * @return seHbPersistFudgeBits
    */
@@ -2371,6 +2522,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Internal use only.
    * Allowed values are 0-7.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3.
    * @param seHbPersistFudgeBits set the seHbPersistFudgeBits.
    */
@@ -2382,6 +2534,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Number of packets with wrong mac after which se attempts to disable promiscious mode.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @return seMacErrorThresholdToDisablePromiscious
    */
@@ -2393,6 +2546,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Number of packets with wrong mac after which se attempts to disable promiscious mode.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @param seMacErrorThresholdToDisablePromiscious set the seMacErrorThresholdToDisablePromiscious.
    */
@@ -2405,6 +2559,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Deprecated.
    * Field deprecated in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return seMallocThresh
    */
   @VsoMethod
@@ -2416,6 +2571,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Deprecated.
    * Field deprecated in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param seMallocThresh set the seMallocThresh.
    */
   @VsoMethod
@@ -2427,6 +2583,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Internal use only.
    * Enables poisoning of freed memory blocks.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return seMemoryPoison
    */
@@ -2439,6 +2596,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Internal use only.
    * Enables poisoning of freed memory blocks.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param seMemoryPoison set the seMemoryPoison.
    */
@@ -2452,7 +2610,8 @@ public class SeRuntimeProperties extends AviRestResource {
    * Internal use only.
    * Frequency (ms) of metrics updates from se to controller.
    * Unit is milliseconds.
-   * Allowed in basic(allowed values- 60000) edition, essentials(allowed values- 60000) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 60000), basic edition(allowed values- 60000), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60000.
    * @return seMetricsInterval
    */
@@ -2466,7 +2625,8 @@ public class SeRuntimeProperties extends AviRestResource {
    * Internal use only.
    * Frequency (ms) of metrics updates from se to controller.
    * Unit is milliseconds.
-   * Allowed in basic(allowed values- 60000) edition, essentials(allowed values- 60000) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 60000), basic edition(allowed values- 60000), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60000.
    * @param seMetricsInterval set the seMetricsInterval.
    */
@@ -2479,8 +2639,9 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Internal use only.
    * Enable or disable real time metrics irrespective of virtualservice or se group configuration.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-   * Special default for basic edition is false, essentials edition is false, enterprise is true.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+   * cloud services edition.
+   * Special default for essentials edition is false, basic edition is false, enterprise is true.
    * @return seMetricsRtEnabled
    */
   @VsoMethod
@@ -2492,8 +2653,9 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Internal use only.
    * Enable or disable real time metrics irrespective of virtualservice or se group configuration.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-   * Special default for basic edition is false, essentials edition is false, enterprise is true.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+   * cloud services edition.
+   * Special default for essentials edition is false, basic edition is false, enterprise is true.
    * @param seMetricsRtEnabled set the seMetricsRtEnabled.
    */
   @VsoMethod
@@ -2506,6 +2668,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Internal use only.
    * Frequency (ms) of realtime metrics updates from se to controller.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @return seMetricsRtInterval
    */
@@ -2519,6 +2682,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Internal use only.
    * Frequency (ms) of realtime metrics updates from se to controller.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @param seMetricsRtInterval set the seMetricsRtInterval.
    */
@@ -2531,6 +2695,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Deprecated in 21.1.3.
    * Use config in serviceenginegroup instead.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return sePacketBufferMax
    */
@@ -2543,6 +2708,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Deprecated in 21.1.3.
    * Use config in serviceenginegroup instead.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param sePacketBufferMax set the sePacketBufferMax.
    */
@@ -2555,6 +2721,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Internal use only.
    * If enabled, randomly packets are dropped.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return seRandomTcpDrops
    */
@@ -2567,6 +2734,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Internal use only.
    * If enabled, randomly packets are dropped.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param seRandomTcpDrops set the seRandomTcpDrops.
    */
@@ -2578,6 +2746,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Se rate limiters.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seRateLimiters
    */
@@ -2589,6 +2758,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Se rate limiters.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seRateLimiters set the seRateLimiters.
    */
@@ -2601,6 +2771,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ip ranges on which there may be virtual services (for configuring iptables/routes).
    * Maximum of 128 items allowed.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceIpSubnets
    */
@@ -2613,6 +2784,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method. this will set the serviceIpSubnets
    * Ip ranges on which there may be virtual services (for configuring iptables/routes).
    * Maximum of 128 items allowed.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceIpSubnets
    */
@@ -2625,6 +2797,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method this will set the serviceIpSubnets
    * Ip ranges on which there may be virtual services (for configuring iptables/routes).
    * Maximum of 128 items allowed.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceIpSubnets
    */
@@ -2642,6 +2815,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Port ranges on which there may be virtual services (for configuring iptables).
    * Applicable in container ecosystems like mesos.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return servicePortRanges
    */
@@ -2654,6 +2828,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method. this will set the servicePortRanges
    * Port ranges on which there may be virtual services (for configuring iptables).
    * Applicable in container ecosystems like mesos.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return servicePortRanges
    */
@@ -2666,6 +2841,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method this will set the servicePortRanges
    * Port ranges on which there may be virtual services (for configuring iptables).
    * Applicable in container ecosystems like mesos.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return servicePortRanges
    */
@@ -2682,6 +2858,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Make service ports accessible on all host interfaces in addition to east-west vip and/or bridge ip.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return servicesAccessibleAllInterfaces
    */
@@ -2693,6 +2870,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Make service ports accessible on all host interfaces in addition to east-west vip and/or bridge ip.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param servicesAccessibleAllInterfaces set the servicesAccessibleAllInterfaces.
    */
@@ -2704,6 +2882,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return spdyFwdProxyParseEnable
    */
   @VsoMethod
@@ -2714,6 +2893,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param spdyFwdProxyParseEnable set the spdyFwdProxyParseEnable.
    */
   @VsoMethod
@@ -2727,6 +2907,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * After this limit is reached, syn cookies are used.
    * This is per core of the serviceengine.
    * Field deprecated in 17.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return tcpSynCacheMax
    */
   @VsoMethod
@@ -2740,6 +2921,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * After this limit is reached, syn cookies are used.
    * This is per core of the serviceengine.
    * Field deprecated in 17.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param tcpSynCacheMax set the tcpSynCacheMax.
    */
   @VsoMethod
@@ -2750,6 +2932,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Default value for max number of retransmissions for a syn packet.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4.
    * @return tcpSyncacheMaxRetransmitDefault
    */
@@ -2761,6 +2944,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Default value for max number of retransmissions for a syn packet.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4.
    * @param tcpSyncacheMaxRetransmitDefault set the tcpSyncacheMaxRetransmitDefault.
    */
@@ -2773,6 +2957,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Timeout for backend connection.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3600000.
    * @return upstreamConnectTimeout
    */
@@ -2785,6 +2970,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Timeout for backend connection.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3600000.
    * @param upstreamConnectTimeout set the upstreamConnectTimeout.
    */
@@ -2796,6 +2982,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * L7 upstream connection pool cache threshold in percentage.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as -1.
    * @return upstreamConnpoolCacheThresh
    */
@@ -2807,6 +2994,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * L7 upstream connection pool cache threshold in percentage.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as -1.
    * @param upstreamConnpoolCacheThresh set the upstreamConnpoolCacheThresh.
    */
@@ -2818,6 +3006,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Idle timeout value for a connection in the upstream connection pool, when the current cache size is above the threshold.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as -1.
    * @return upstreamConnpoolConnIdleThreshTmo
    */
@@ -2829,6 +3018,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Idle timeout value for a connection in the upstream connection pool, when the current cache size is above the threshold.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as -1.
    * @param upstreamConnpoolConnIdleThreshTmo set the upstreamConnpoolConnIdleThreshTmo.
    */
@@ -2841,6 +3031,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Deprecated.
    * Field deprecated in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return upstreamConnpoolConnIdleTmo
    */
   @VsoMethod
@@ -2852,6 +3043,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Deprecated.
    * Field deprecated in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param upstreamConnpoolConnIdleTmo set the upstreamConnpoolConnIdleTmo.
    */
   @VsoMethod
@@ -2863,6 +3055,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Deprecated.
    * Field deprecated in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return upstreamConnpoolConnLifeTmo
    */
   @VsoMethod
@@ -2874,6 +3067,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Deprecated.
    * Field deprecated in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param upstreamConnpoolConnLifeTmo set the upstreamConnpoolConnLifeTmo.
    */
   @VsoMethod
@@ -2885,6 +3079,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Deprecated.
    * Field deprecated in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return upstreamConnpoolConnMaxReuse
    */
   @VsoMethod
@@ -2896,6 +3091,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Deprecated.
    * Field deprecated in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param upstreamConnpoolConnMaxReuse set the upstreamConnpoolConnMaxReuse.
    */
   @VsoMethod
@@ -2906,6 +3102,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * L7 upstream connection pool max cache size per core.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as -1.
    * @return upstreamConnpoolCoreMaxCache
    */
@@ -2917,6 +3114,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * L7 upstream connection pool max cache size per core.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as -1.
    * @param upstreamConnpoolCoreMaxCache set the upstreamConnpoolCoreMaxCache.
    */
@@ -2928,6 +3126,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enable upstream connection pool.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return upstreamConnpoolEnable
    */
@@ -2939,6 +3138,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enable upstream connection pool.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param upstreamConnpoolEnable set the upstreamConnpoolEnable.
    */
@@ -2951,6 +3151,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Deprecated.
    * Field deprecated in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return upstreamConnpoolServerMaxCache
    */
   @VsoMethod
@@ -2962,6 +3163,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Deprecated.
    * Field deprecated in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param upstreamConnpoolServerMaxCache set the upstreamConnpoolServerMaxCache.
    */
   @VsoMethod
@@ -2973,6 +3175,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Deprecated in 21.1.1, set in application profile.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return upstreamConnpoolStrategy
    */
   @VsoMethod
@@ -2984,6 +3187,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Deprecated in 21.1.1, set in application profile.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param upstreamConnpoolStrategy set the upstreamConnpoolStrategy.
    */
   @VsoMethod
@@ -2993,7 +3197,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property upstream_keepalive of obj type seruntimeproperties field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return upstreamKeepalive
    */
@@ -3004,7 +3208,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property upstream_keepalive of obj type seruntimeproperties field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param upstreamKeepalive set the upstreamKeepalive.
    */
@@ -3017,6 +3221,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Timeout for data to be received from backend.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3600000.
    * @return upstreamReadTimeout
    */
@@ -3029,6 +3234,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Timeout for data to be received from backend.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3600000.
    * @param upstreamReadTimeout set the upstreamReadTimeout.
    */
@@ -3041,7 +3247,8 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Timeout for upstream to become writable.
    * Unit is milliseconds.
-   * Allowed in basic(allowed values- 3600000) edition, essentials(allowed values- 3600000) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 3600000), basic edition(allowed values- 3600000), enterprise
+   * with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3600000.
    * @return upstreamSendTimeout
    */
@@ -3054,7 +3261,8 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Timeout for upstream to become writable.
    * Unit is milliseconds.
-   * Allowed in basic(allowed values- 3600000) edition, essentials(allowed values- 3600000) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 3600000), basic edition(allowed values- 3600000), enterprise
+   * with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3600000.
    * @param upstreamSendTimeout set the upstreamSendTimeout.
    */
@@ -3068,6 +3276,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Defines in seconds how long before an unused user-defined-metric is garbage collected.
    * Field introduced in 17.1.5.
    * Unit is sec.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return userDefinedMetricAge
    */
@@ -3081,6 +3290,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Defines in seconds how long before an unused user-defined-metric is garbage collected.
    * Field introduced in 17.1.5.
    * Unit is sec.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @param userDefinedMetricAge set the userDefinedMetricAge.
    */

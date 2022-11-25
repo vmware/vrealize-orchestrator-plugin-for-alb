@@ -65,6 +65,7 @@ public class SeHighIngressProcLatencyEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dispatcher core which received the packet.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dispatcherCore
    */
@@ -76,6 +77,7 @@ public class SeHighIngressProcLatencyEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dispatcher core which received the packet.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dispatcherCore set the dispatcherCore.
    */
@@ -88,6 +90,7 @@ public class SeHighIngressProcLatencyEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Dispatcher processing latency.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dispatcherLatencyIngress
    */
@@ -100,6 +103,7 @@ public class SeHighIngressProcLatencyEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Dispatcher processing latency.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dispatcherLatencyIngress set the dispatcherLatencyIngress.
    */
@@ -111,6 +115,7 @@ public class SeHighIngressProcLatencyEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Number of events in a 30 second interval.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return eventCount
    */
@@ -122,6 +127,7 @@ public class SeHighIngressProcLatencyEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Number of events in a 30 second interval.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param eventCount set the eventCount.
    */
@@ -133,6 +139,7 @@ public class SeHighIngressProcLatencyEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Proxy core which processed the packet.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return flowCore
    */
@@ -144,6 +151,7 @@ public class SeHighIngressProcLatencyEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Proxy core which processed the packet.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param flowCore set the flowCore.
    */
@@ -156,6 +164,7 @@ public class SeHighIngressProcLatencyEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Proxy dequeue latency.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return proxyLatencyIngress
    */
@@ -168,6 +177,7 @@ public class SeHighIngressProcLatencyEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Proxy dequeue latency.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param proxyLatencyIngress set the proxyLatencyIngress.
    */
@@ -180,6 +190,7 @@ public class SeHighIngressProcLatencyEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Se name.
    * It is a reference to an object of type serviceengine.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seName
    */
@@ -192,6 +203,7 @@ public class SeHighIngressProcLatencyEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Se name.
    * It is a reference to an object of type serviceengine.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seName set the seName.
    */
@@ -204,6 +216,7 @@ public class SeHighIngressProcLatencyEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Se uuid.
    * It is a reference to an object of type serviceengine.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seRef
    */
@@ -216,6 +229,7 @@ public class SeHighIngressProcLatencyEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Se uuid.
    * It is a reference to an object of type serviceengine.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seRef set the seRef.
    */
@@ -228,6 +242,7 @@ public class SeHighIngressProcLatencyEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Vs name.
    * It is a reference to an object of type virtualservice.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsName
    */
@@ -240,6 +255,7 @@ public class SeHighIngressProcLatencyEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Vs name.
    * It is a reference to an object of type virtualservice.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsName set the vsName.
    */
@@ -252,6 +268,7 @@ public class SeHighIngressProcLatencyEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Vs uuid.
    * It is a reference to an object of type virtualservice.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsRef
    */
@@ -264,6 +281,7 @@ public class SeHighIngressProcLatencyEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Vs uuid.
    * It is a reference to an object of type virtualservice.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsRef set the vsRef.
    */

@@ -45,6 +45,7 @@ public class SeHbRecoveredEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Heartbeat request/response received.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @return hbType
    */
@@ -56,6 +57,7 @@ public class SeHbRecoveredEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Heartbeat request/response received.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @param hbType set the hbType.
    */
@@ -69,6 +71,7 @@ public class SeHbRecoveredEventDetails extends AviRestResource {
    * Uuid of the remote se with which dataplane heartbeat recovered.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return remoteSeRef
    */
@@ -82,6 +85,7 @@ public class SeHbRecoveredEventDetails extends AviRestResource {
    * Uuid of the remote se with which dataplane heartbeat recovered.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param remoteSeRef set the remoteSeRef.
    */
@@ -95,6 +99,7 @@ public class SeHbRecoveredEventDetails extends AviRestResource {
    * Uuid of the se reporting this event.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reportingSeRef
    */
@@ -108,6 +113,7 @@ public class SeHbRecoveredEventDetails extends AviRestResource {
    * Uuid of the se reporting this event.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reportingSeRef set the reportingSeRef.
    */
@@ -120,6 +126,7 @@ public class SeHbRecoveredEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of a vs which is placed on reporting-se and remote-se.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUuid
    */
@@ -132,6 +139,7 @@ public class SeHbRecoveredEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of a vs which is placed on reporting-se and remote-se.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsUuid set the vsUuid.
    */

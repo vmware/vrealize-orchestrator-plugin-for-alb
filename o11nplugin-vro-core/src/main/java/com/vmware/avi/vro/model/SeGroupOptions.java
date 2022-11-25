@@ -39,6 +39,7 @@ public class SeGroupOptions extends AviRestResource {
    * The error recovery action configured for a se group.
    * Enum options - ROLLBACK_UPGRADE_OPS_ON_ERROR, SUSPEND_UPGRADE_OPS_ON_ERROR, CONTINUE_UPGRADE_OPS_ON_ERROR.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "SUSPEND_UPGRADE_OPS_ON_ERROR".
    * @return actionOnError
    */
@@ -52,6 +53,7 @@ public class SeGroupOptions extends AviRestResource {
    * The error recovery action configured for a se group.
    * Enum options - ROLLBACK_UPGRADE_OPS_ON_ERROR, SUSPEND_UPGRADE_OPS_ON_ERROR, CONTINUE_UPGRADE_OPS_ON_ERROR.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "SUSPEND_UPGRADE_OPS_ON_ERROR".
    * @param actionOnError set the actionOnError.
    */
@@ -64,6 +66,7 @@ public class SeGroupOptions extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Disable non-disruptive mechanism.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return disruptive
    */
@@ -76,6 +79,7 @@ public class SeGroupOptions extends AviRestResource {
    * This is the setter method to the attribute.
    * Disable non-disruptive mechanism.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param disruptive set the disruptive.
    */

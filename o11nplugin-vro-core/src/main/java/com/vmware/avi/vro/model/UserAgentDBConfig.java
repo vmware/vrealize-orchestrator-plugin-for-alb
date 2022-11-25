@@ -35,7 +35,8 @@ public class UserAgentDBConfig extends AviRestResource {
    * Batch query limit.
    * Allowed values are 1-500.
    * Field introduced in 21.1.1.
-   * Allowed in basic(allowed values- 500) edition, essentials(allowed values- 500) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 500), basic edition(allowed values- 500), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 500.
    * @return allowedBatchSize
    */
@@ -49,7 +50,8 @@ public class UserAgentDBConfig extends AviRestResource {
    * Batch query limit.
    * Allowed values are 1-500.
    * Field introduced in 21.1.1.
-   * Allowed in basic(allowed values- 500) edition, essentials(allowed values- 500) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 500), basic edition(allowed values- 500), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 500.
    * @param allowedBatchSize set the allowedBatchSize.
    */

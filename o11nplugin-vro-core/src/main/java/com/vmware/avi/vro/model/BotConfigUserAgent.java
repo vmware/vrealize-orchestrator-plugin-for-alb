@@ -34,6 +34,7 @@ public class BotConfigUserAgent extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Whether user agent-based bot detection is enabled.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enabled
    */
@@ -46,6 +47,7 @@ public class BotConfigUserAgent extends AviRestResource {
    * This is the setter method to the attribute.
    * Whether user agent-based bot detection is enabled.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enabled set the enabled.
    */

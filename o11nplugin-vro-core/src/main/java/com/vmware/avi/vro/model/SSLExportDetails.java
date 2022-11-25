@@ -33,6 +33,7 @@ public class SSLExportDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Request user.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return user
    */
@@ -44,6 +45,7 @@ public class SSLExportDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Request user.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param user set the user.
    */

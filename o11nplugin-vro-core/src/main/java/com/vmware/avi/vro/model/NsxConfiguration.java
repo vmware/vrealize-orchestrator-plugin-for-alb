@@ -52,6 +52,7 @@ public class NsxConfiguration extends AviRestResource {
    * It should be unique across all the avi controller clusters.
    * Field deprecated in 21.1.1.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return aviNsxPrefix
    */
   @VsoMethod
@@ -65,6 +66,7 @@ public class NsxConfiguration extends AviRestResource {
    * It should be unique across all the avi controller clusters.
    * Field deprecated in 21.1.1.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param aviNsxPrefix set the aviNsxPrefix.
    */
   @VsoMethod
@@ -77,6 +79,7 @@ public class NsxConfiguration extends AviRestResource {
    * The hostname or ip address of the nsx mgr.
    * Field deprecated in 21.1.1.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return nsxManagerName
    */
   @VsoMethod
@@ -89,6 +92,7 @@ public class NsxConfiguration extends AviRestResource {
    * The hostname or ip address of the nsx mgr.
    * Field deprecated in 21.1.1.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param nsxManagerName set the nsxManagerName.
    */
   @VsoMethod
@@ -101,6 +105,7 @@ public class NsxConfiguration extends AviRestResource {
    * The password avi vantage will use when authenticating with nsx mgr.
    * Field deprecated in 21.1.1.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return nsxManagerPassword
    */
   @VsoMethod
@@ -113,6 +118,7 @@ public class NsxConfiguration extends AviRestResource {
    * The password avi vantage will use when authenticating with nsx mgr.
    * Field deprecated in 21.1.1.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param nsxManagerPassword set the nsxManagerPassword.
    */
   @VsoMethod
@@ -125,6 +131,7 @@ public class NsxConfiguration extends AviRestResource {
    * The username avi vantage will use when authenticating with nsx mgr.
    * Field deprecated in 21.1.1.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return nsxManagerUsername
    */
   @VsoMethod
@@ -137,6 +144,7 @@ public class NsxConfiguration extends AviRestResource {
    * The username avi vantage will use when authenticating with nsx mgr.
    * Field deprecated in 21.1.1.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param nsxManagerUsername set the nsxManagerUsername.
    */
   @VsoMethod
@@ -150,6 +158,7 @@ public class NsxConfiguration extends AviRestResource {
    * Field deprecated in 21.1.1.
    * Field introduced in 17.1.1.
    * Unit is seconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return nsxPollTime
    */
   @VsoMethod
@@ -163,6 +172,7 @@ public class NsxConfiguration extends AviRestResource {
    * Field deprecated in 21.1.1.
    * Field introduced in 17.1.1.
    * Unit is seconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param nsxPollTime set the nsxPollTime.
    */
   @VsoMethod

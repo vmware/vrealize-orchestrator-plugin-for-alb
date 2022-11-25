@@ -99,7 +99,7 @@ public class DebugVirtualService extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property capture of obj type debugvirtualservice field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return capture
    */
@@ -110,7 +110,7 @@ public class DebugVirtualService extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property capture of obj type debugvirtualservice field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param capture set the capture.
    */
@@ -124,6 +124,7 @@ public class DebugVirtualService extends AviRestResource {
    * Per packet capture filters for debug virtual service.
    * Applies to both frontend and backend packets.
    * Field introduced in 18.2.7.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return captureFilters
    */
@@ -137,6 +138,7 @@ public class DebugVirtualService extends AviRestResource {
    * Per packet capture filters for debug virtual service.
    * Applies to both frontend and backend packets.
    * Field introduced in 18.2.7.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param captureFilters set the captureFilters.
    */
@@ -147,7 +149,7 @@ public class DebugVirtualService extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property capture_params of obj type debugvirtualservice field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return captureParams
    */
@@ -158,7 +160,7 @@ public class DebugVirtualService extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property capture_params of obj type debugvirtualservice field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param captureParams set the captureParams.
    */
@@ -170,6 +172,7 @@ public class DebugVirtualService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type cloud.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudRef
    */
@@ -181,6 +184,7 @@ public class DebugVirtualService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type cloud.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudRef set the cloudRef.
    */
@@ -193,6 +197,7 @@ public class DebugVirtualService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This option controls the capture of health monitor flows.
    * Enum options - DEBUG_VS_HM_NONE, DEBUG_VS_HM_ONLY, DEBUG_VS_HM_INCLUDE.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "DEBUG_VS_HM_NONE".
    * @return debugHm
    */
@@ -205,6 +210,7 @@ public class DebugVirtualService extends AviRestResource {
    * This is the setter method to the attribute.
    * This option controls the capture of health monitor flows.
    * Enum options - DEBUG_VS_HM_NONE, DEBUG_VS_HM_ONLY, DEBUG_VS_HM_INCLUDE.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "DEBUG_VS_HM_NONE".
    * @param debugHm set the debugHm.
    */
@@ -216,6 +222,7 @@ public class DebugVirtualService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Filters all packets of a complete transaction (client and server side), based on client ip.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return debugIp
    */
@@ -227,6 +234,7 @@ public class DebugVirtualService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Filters all packets of a complete transaction (client and server side), based on client ip.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param debugIp set the debugIp.
    */
@@ -239,6 +247,7 @@ public class DebugVirtualService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Dns debug options.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsOptions
    */
@@ -251,6 +260,7 @@ public class DebugVirtualService extends AviRestResource {
    * This is the setter method to the attribute.
    * Dns debug options.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dnsOptions set the dnsOptions.
    */
@@ -261,7 +271,7 @@ public class DebugVirtualService extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property flags of obj type debugvirtualservice field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return flags
    */
@@ -272,7 +282,7 @@ public class DebugVirtualService extends AviRestResource {
 
   /**
    * This is the setter method. this will set the flags
-   * Placeholder for description of property flags of obj type debugvirtualservice field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return flags
    */
@@ -283,7 +293,7 @@ public class DebugVirtualService extends AviRestResource {
 
   /**
    * This is the setter method this will set the flags
-   * Placeholder for description of property flags of obj type debugvirtualservice field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return flags
    */
@@ -302,6 +312,7 @@ public class DebugVirtualService extends AviRestResource {
    * Filters for latency audit.
    * Supported only for ingress.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return latencyAuditFilters
    */
@@ -315,6 +326,7 @@ public class DebugVirtualService extends AviRestResource {
    * Filters for latency audit.
    * Supported only for ingress.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param latencyAuditFilters set the latencyAuditFilters.
    */
@@ -325,7 +337,7 @@ public class DebugVirtualService extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Name of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -336,7 +348,7 @@ public class DebugVirtualService extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Name of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -349,6 +361,7 @@ public class DebugVirtualService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Object sync debug options.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return objsync
    */
@@ -361,6 +374,7 @@ public class DebugVirtualService extends AviRestResource {
    * This is the setter method to the attribute.
    * Object sync debug options.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param objsync set the objsync.
    */
@@ -374,6 +388,7 @@ public class DebugVirtualService extends AviRestResource {
    * This option re-synchronizes flows between active-standby service engines for all the virtual services placed on them.
    * It should be used with caution because as it can cause a flood between active-standby.
    * Field introduced in 18.1.3,18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return resyncFlows
    */
@@ -387,6 +402,7 @@ public class DebugVirtualService extends AviRestResource {
    * This option re-synchronizes flows between active-standby service engines for all the virtual services placed on them.
    * It should be used with caution because as it can cause a flood between active-standby.
    * Field introduced in 18.1.3,18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param resyncFlows set the resyncFlows.
    */
@@ -397,7 +413,7 @@ public class DebugVirtualService extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property se_params of obj type debugvirtualservice field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seParams
    */
@@ -408,7 +424,7 @@ public class DebugVirtualService extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property se_params of obj type debugvirtualservice field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seParams set the seParams.
    */
@@ -420,6 +436,7 @@ public class DebugVirtualService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -431,6 +448,7 @@ public class DebugVirtualService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
@@ -460,7 +478,7 @@ public class DebugVirtualService extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Unique object identifier of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -471,7 +489,7 @@ public class DebugVirtualService extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Unique object identifier of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */

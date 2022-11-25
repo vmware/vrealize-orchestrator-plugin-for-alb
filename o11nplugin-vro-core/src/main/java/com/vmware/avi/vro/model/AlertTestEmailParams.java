@@ -41,6 +41,7 @@ public class AlertTestEmailParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The subject line of the originating email from  avi controller.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subject
    */
@@ -52,6 +53,7 @@ public class AlertTestEmailParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The subject line of the originating email from  avi controller.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subject set the subject.
    */
@@ -63,6 +65,7 @@ public class AlertTestEmailParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The email context.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return text
    */
@@ -74,6 +77,7 @@ public class AlertTestEmailParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The email context.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param text set the text.
    */
@@ -84,7 +88,7 @@ public class AlertTestEmailParams extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Unique object identifier of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -95,7 +99,7 @@ public class AlertTestEmailParams extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Unique object identifier of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */

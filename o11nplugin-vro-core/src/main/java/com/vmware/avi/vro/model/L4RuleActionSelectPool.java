@@ -43,8 +43,8 @@ public class L4RuleActionSelectPool extends AviRestResource {
    * Indicates action to take on rule match.
    * Enum options - L4_RULE_ACTION_SELECT_POOL, L4_RULE_ACTION_SELECT_POOLGROUP.
    * Field introduced in 17.2.7.
-   * Allowed in basic(allowed values- l4_rule_action_select_pool) edition, essentials(allowed values- l4_rule_action_select_pool) edition, enterprise
-   * edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- l4_rule_action_select_pool), basic edition(allowed values-
+   * l4_rule_action_select_pool), enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return actionType
    */
@@ -58,8 +58,8 @@ public class L4RuleActionSelectPool extends AviRestResource {
    * Indicates action to take on rule match.
    * Enum options - L4_RULE_ACTION_SELECT_POOL, L4_RULE_ACTION_SELECT_POOLGROUP.
    * Field introduced in 17.2.7.
-   * Allowed in basic(allowed values- l4_rule_action_select_pool) edition, essentials(allowed values- l4_rule_action_select_pool) edition, enterprise
-   * edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- l4_rule_action_select_pool), basic edition(allowed values-
+   * l4_rule_action_select_pool), enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param actionType set the actionType.
    */
@@ -73,7 +73,7 @@ public class L4RuleActionSelectPool extends AviRestResource {
    * Id of the pool group to serve the request.
    * It is a reference to an object of type poolgroup.
    * Field introduced in 17.2.7.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolGroupRef
    */
@@ -87,7 +87,7 @@ public class L4RuleActionSelectPool extends AviRestResource {
    * Id of the pool group to serve the request.
    * It is a reference to an object of type poolgroup.
    * Field introduced in 17.2.7.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolGroupRef set the poolGroupRef.
    */
@@ -101,6 +101,7 @@ public class L4RuleActionSelectPool extends AviRestResource {
    * Id of the pool of servers to serve the request.
    * It is a reference to an object of type pool.
    * Field introduced in 17.2.7.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolRef
    */
@@ -114,6 +115,7 @@ public class L4RuleActionSelectPool extends AviRestResource {
    * Id of the pool of servers to serve the request.
    * It is a reference to an object of type pool.
    * Field introduced in 17.2.7.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolRef set the poolRef.
    */

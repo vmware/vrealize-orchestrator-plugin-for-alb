@@ -52,6 +52,7 @@ public class WafLearning extends AviRestResource {
    * Allowed values are 3-255.
    * Field deprecated in 18.2.3.
    * Field introduced in 18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return argSummarizationThreshold
    */
   @VsoMethod
@@ -65,6 +66,7 @@ public class WafLearning extends AviRestResource {
    * Allowed values are 3-255.
    * Field deprecated in 18.2.3.
    * Field introduced in 18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param argSummarizationThreshold set the argSummarizationThreshold.
    */
   @VsoMethod
@@ -79,6 +81,7 @@ public class WafLearning extends AviRestResource {
    * Field deprecated in 18.2.3.
    * Field introduced in 18.1.2.
    * Unit is percent.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return confidence
    */
   @VsoMethod
@@ -93,6 +96,7 @@ public class WafLearning extends AviRestResource {
    * Field deprecated in 18.2.3.
    * Field introduced in 18.1.2.
    * Unit is percent.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param confidence set the confidence.
    */
   @VsoMethod
@@ -105,6 +109,7 @@ public class WafLearning extends AviRestResource {
    * Enable learning for waf policy.
    * Field deprecated in 18.2.3.
    * Field introduced in 18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return enable
    */
   @VsoMethod
@@ -117,6 +122,7 @@ public class WafLearning extends AviRestResource {
    * Enable learning for waf policy.
    * Field deprecated in 18.2.3.
    * Field introduced in 18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param enable set the enable.
    */
   @VsoMethod
@@ -130,6 +136,7 @@ public class WafLearning extends AviRestResource {
    * Allowed values are 3-255.
    * Field deprecated in 18.2.3.
    * Field introduced in 18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return pathSummarizationThreshold
    */
   @VsoMethod
@@ -143,6 +150,7 @@ public class WafLearning extends AviRestResource {
    * Allowed values are 3-255.
    * Field deprecated in 18.2.3.
    * Field introduced in 18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param pathSummarizationThreshold set the pathSummarizationThreshold.
    */
   @VsoMethod
@@ -157,6 +165,7 @@ public class WafLearning extends AviRestResource {
    * Field deprecated in 18.2.3.
    * Field introduced in 18.1.2.
    * Unit is percent.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return samplingPercent
    */
   @VsoMethod
@@ -171,6 +180,7 @@ public class WafLearning extends AviRestResource {
    * Field deprecated in 18.2.3.
    * Field introduced in 18.1.2.
    * Unit is percent.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param samplingPercent set the samplingPercent.
    */
   @VsoMethod

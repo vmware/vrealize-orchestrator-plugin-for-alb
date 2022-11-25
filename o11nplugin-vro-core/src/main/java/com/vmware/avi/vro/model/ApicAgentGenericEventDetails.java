@@ -73,6 +73,7 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return contractGraphs
    */
   @VsoMethod
@@ -83,6 +84,7 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
   /**
    * This is the setter method. this will set the contractGraphs
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return contractGraphs
    */
   @VsoMethod
@@ -93,6 +95,7 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
   /**
    * This is the setter method this will set the contractGraphs
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return contractGraphs
    */
   @VsoMethod
@@ -108,6 +111,7 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return lifCifAttachment
    */
   @VsoMethod
@@ -118,6 +122,7 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
   /**
    * This is the setter method. this will set the lifCifAttachment
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return lifCifAttachment
    */
   @VsoMethod
@@ -128,6 +133,7 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
   /**
    * This is the setter method this will set the lifCifAttachment
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return lifCifAttachment
    */
   @VsoMethod
@@ -143,6 +149,7 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return lifs
    */
   @VsoMethod
@@ -153,6 +160,7 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
   /**
    * This is the setter method. this will set the lifs
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return lifs
    */
   @VsoMethod
@@ -163,6 +171,7 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
   /**
    * This is the setter method this will set the lifs
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return lifs
    */
   @VsoMethod
@@ -178,6 +187,7 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return networks
    */
   @VsoMethod
@@ -188,6 +198,7 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
   /**
    * This is the setter method. this will set the networks
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return networks
    */
   @VsoMethod
@@ -198,6 +209,7 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
   /**
    * This is the setter method this will set the networks
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return networks
    */
   @VsoMethod
@@ -213,6 +225,7 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return seUuid
    */
   @VsoMethod
@@ -223,6 +236,7 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param seUuid set the seUuid.
    */
   @VsoMethod
@@ -233,6 +247,7 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return serviceEngineVnics
    */
   @VsoMethod
@@ -243,6 +258,7 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
   /**
    * This is the setter method. this will set the serviceEngineVnics
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return serviceEngineVnics
    */
   @VsoMethod
@@ -253,6 +269,7 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
   /**
    * This is the setter method this will set the serviceEngineVnics
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return serviceEngineVnics
    */
   @VsoMethod
@@ -268,6 +285,7 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return tenantName
    */
   @VsoMethod
@@ -278,6 +296,7 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param tenantName set the tenantName.
    */
   @VsoMethod
@@ -288,6 +307,7 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return tenantUuid
    */
   @VsoMethod
@@ -298,6 +318,7 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param tenantUuid set the tenantUuid.
    */
   @VsoMethod
@@ -308,6 +329,7 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return vnicNetworkAttachment
    */
   @VsoMethod
@@ -318,6 +340,7 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
   /**
    * This is the setter method. this will set the vnicNetworkAttachment
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return vnicNetworkAttachment
    */
   @VsoMethod
@@ -328,6 +351,7 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
   /**
    * This is the setter method this will set the vnicNetworkAttachment
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return vnicNetworkAttachment
    */
   @VsoMethod
@@ -343,6 +367,7 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return vsName
    */
   @VsoMethod
@@ -353,6 +378,7 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param vsName set the vsName.
    */
   @VsoMethod
@@ -363,6 +389,7 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return vsUuid
    */
   @VsoMethod
@@ -373,6 +400,7 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param vsUuid set the vsUuid.
    */
   @VsoMethod

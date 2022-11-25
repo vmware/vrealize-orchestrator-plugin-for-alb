@@ -12,44 +12,48 @@ import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
 
 /**
- * The VIMgrInterestedEntity is a POJO class extends AviRestResource that used for creating
- * VIMgrInterestedEntity.
+ * The SingleOptionalStringField is a POJO class extends AviRestResource that used for creating
+ * SingleOptionalStringField.
  *
  * @version 1.0
  * @since 
  *
  */
-@VsoObject(create = false, name = "VIMgrInterestedEntity")
-@VsoFinder(name = Constants.FINDER_VRO_VIMGRINTERESTEDENTITY)
+@VsoObject(create = false, name = "SingleOptionalStringField")
+@VsoFinder(name = Constants.FINDER_VRO_SINGLEOPTIONALSTRINGFIELD)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class VIMgrInterestedEntity extends AviRestResource {
-    @JsonProperty("interested_uuid")
+public class SingleOptionalStringField extends AviRestResource {
+    @JsonProperty("test_string")
     @JsonInclude(Include.NON_NULL)
-    private String interestedUuid = null;
+    private String testString = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
-   * Unique object identifier of interested.
+   * Optional string field.
+   * Field introduced in 21.1.5.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return interestedUuid
+   * @return testString
    */
   @VsoMethod
-  public String getInterestedUuid() {
-    return interestedUuid;
+  public String getTestString() {
+    return testString;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Unique object identifier of interested.
+   * Optional string field.
+   * Field introduced in 21.1.5.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param interestedUuid set the interestedUuid.
+   * @param testString set the testString.
    */
   @VsoMethod
-  public void setInterestedUuid(String  interestedUuid) {
-    this.interestedUuid = interestedUuid;
+  public void setTestString(String  testString) {
+    this.testString = testString;
   }
 
 
@@ -62,15 +66,15 @@ public boolean equals(java.lang.Object o) {
   if (o == null || getClass() != o.getClass()) {
     return false;
   }
-  VIMgrInterestedEntity objVIMgrInterestedEntity = (VIMgrInterestedEntity) o;
-  return   Objects.equals(this.interestedUuid, objVIMgrInterestedEntity.interestedUuid);
+  SingleOptionalStringField objSingleOptionalStringField = (SingleOptionalStringField) o;
+  return   Objects.equals(this.testString, objSingleOptionalStringField.testString);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
-  sb.append("class VIMgrInterestedEntity {\n");
-      sb.append("    interestedUuid: ").append(toIndentedString(interestedUuid)).append("\n");
+  sb.append("class SingleOptionalStringField {\n");
+      sb.append("    testString: ").append(toIndentedString(testString)).append("\n");
       sb.append("}");
   return sb.toString();
 }

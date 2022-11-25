@@ -45,6 +45,7 @@ public class ApicAgentVsNetworkError extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return poolName
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class ApicAgentVsNetworkError extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param poolName set the poolName.
    */
   @VsoMethod
@@ -65,6 +67,7 @@ public class ApicAgentVsNetworkError extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return poolNetwork
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class ApicAgentVsNetworkError extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param poolNetwork set the poolNetwork.
    */
   @VsoMethod
@@ -85,6 +89,7 @@ public class ApicAgentVsNetworkError extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return vsName
    */
   @VsoMethod
@@ -95,6 +100,7 @@ public class ApicAgentVsNetworkError extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param vsName set the vsName.
    */
   @VsoMethod
@@ -105,6 +111,7 @@ public class ApicAgentVsNetworkError extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return vsNetwork
    */
   @VsoMethod
@@ -115,6 +122,7 @@ public class ApicAgentVsNetworkError extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param vsNetwork set the vsNetwork.
    */
   @VsoMethod

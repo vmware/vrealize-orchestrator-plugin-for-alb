@@ -49,6 +49,7 @@ public class Cif extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return adapter
    */
   @VsoMethod
@@ -59,6 +60,7 @@ public class Cif extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param adapter set the adapter.
    */
   @VsoMethod
@@ -69,6 +71,7 @@ public class Cif extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return cif
    */
   @VsoMethod
@@ -79,6 +82,7 @@ public class Cif extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param cif set the cif.
    */
   @VsoMethod
@@ -89,6 +93,7 @@ public class Cif extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return macAddress
    */
   @VsoMethod
@@ -99,6 +104,7 @@ public class Cif extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param macAddress set the macAddress.
    */
   @VsoMethod
@@ -109,6 +115,7 @@ public class Cif extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return resources
    */
   @VsoMethod
@@ -119,6 +126,7 @@ public class Cif extends AviRestResource {
   /**
    * This is the setter method. this will set the resources
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return resources
    */
   @VsoMethod
@@ -129,6 +137,7 @@ public class Cif extends AviRestResource {
   /**
    * This is the setter method this will set the resources
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return resources
    */
   @VsoMethod
@@ -144,6 +153,7 @@ public class Cif extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return seUuid
    */
   @VsoMethod
@@ -154,6 +164,7 @@ public class Cif extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param seUuid set the seUuid.
    */
   @VsoMethod

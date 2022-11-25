@@ -12,44 +12,48 @@ import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
 
 /**
- * The VcenterCloudStatusReq is a POJO class extends AviRestResource that used for creating
- * VcenterCloudStatusReq.
+ * The SingleOptionalFieldMessage is a POJO class extends AviRestResource that used for creating
+ * SingleOptionalFieldMessage.
  *
  * @version 1.0
  * @since 
  *
  */
-@VsoObject(create = false, name = "VcenterCloudStatusReq")
-@VsoFinder(name = Constants.FINDER_VRO_VCENTERCLOUDSTATUSREQ)
+@VsoObject(create = false, name = "SingleOptionalFieldMessage")
+@VsoFinder(name = Constants.FINDER_VRO_SINGLEOPTIONALFIELDMESSAGE)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class VcenterCloudStatusReq extends AviRestResource {
-    @JsonProperty("cloud_uuid")
+public class SingleOptionalFieldMessage extends AviRestResource {
+    @JsonProperty("optional_string")
     @JsonInclude(Include.NON_NULL)
-    private String cloudUuid = null;
+    private String optionalString = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
-   * Unique object identifier of cloud.
+   * Optional string field for nested f_mandatory test cases-level3.
+   * Field introduced in 21.1.5.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return cloudUuid
+   * @return optionalString
    */
   @VsoMethod
-  public String getCloudUuid() {
-    return cloudUuid;
+  public String getOptionalString() {
+    return optionalString;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Unique object identifier of cloud.
+   * Optional string field for nested f_mandatory test cases-level3.
+   * Field introduced in 21.1.5.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param cloudUuid set the cloudUuid.
+   * @param optionalString set the optionalString.
    */
   @VsoMethod
-  public void setCloudUuid(String  cloudUuid) {
-    this.cloudUuid = cloudUuid;
+  public void setOptionalString(String  optionalString) {
+    this.optionalString = optionalString;
   }
 
 
@@ -62,15 +66,15 @@ public boolean equals(java.lang.Object o) {
   if (o == null || getClass() != o.getClass()) {
     return false;
   }
-  VcenterCloudStatusReq objVcenterCloudStatusReq = (VcenterCloudStatusReq) o;
-  return   Objects.equals(this.cloudUuid, objVcenterCloudStatusReq.cloudUuid);
+  SingleOptionalFieldMessage objSingleOptionalFieldMessage = (SingleOptionalFieldMessage) o;
+  return   Objects.equals(this.optionalString, objSingleOptionalFieldMessage.optionalString);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
-  sb.append("class VcenterCloudStatusReq {\n");
-      sb.append("    cloudUuid: ").append(toIndentedString(cloudUuid)).append("\n");
+  sb.append("class SingleOptionalFieldMessage {\n");
+      sb.append("    optionalString: ").append(toIndentedString(optionalString)).append("\n");
       sb.append("}");
   return sb.toString();
 }

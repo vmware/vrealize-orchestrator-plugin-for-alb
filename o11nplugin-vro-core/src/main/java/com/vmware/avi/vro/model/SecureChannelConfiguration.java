@@ -40,6 +40,7 @@ public class SecureChannelConfiguration extends AviRestResource {
    * Forced updating has been disallowed.
    * Field deprecated in 18.2.8.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return bypassSecureChannelMustChecks
    */
   @VsoMethod
@@ -53,6 +54,7 @@ public class SecureChannelConfiguration extends AviRestResource {
    * Forced updating has been disallowed.
    * Field deprecated in 18.2.8.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param bypassSecureChannelMustChecks set the bypassSecureChannelMustChecks.
    */
   @VsoMethod
@@ -67,6 +69,7 @@ public class SecureChannelConfiguration extends AviRestResource {
    * It is a reference to an object of type sslkeyandcertificate.
    * Field introduced in 18.1.4, 18.2.1.
    * Maximum of 1 items allowed.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslkeyandcertificateRefs
    */
@@ -82,6 +85,7 @@ public class SecureChannelConfiguration extends AviRestResource {
    * It is a reference to an object of type sslkeyandcertificate.
    * Field introduced in 18.1.4, 18.2.1.
    * Maximum of 1 items allowed.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslkeyandcertificateRefs
    */
@@ -97,6 +101,7 @@ public class SecureChannelConfiguration extends AviRestResource {
    * It is a reference to an object of type sslkeyandcertificate.
    * Field introduced in 18.1.4, 18.2.1.
    * Maximum of 1 items allowed.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslkeyandcertificateRefs
    */

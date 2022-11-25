@@ -65,6 +65,7 @@ public class PersistenceFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Persistence cookie.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return persistenceCookie
    */
@@ -76,6 +77,7 @@ public class PersistenceFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Persistence cookie.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param persistenceCookie set the persistenceCookie.
    */
@@ -86,7 +88,7 @@ public class PersistenceFilter extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property persistence_end_ip of obj type persistencefilter field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return persistenceEndIp
    */
@@ -97,7 +99,7 @@ public class PersistenceFilter extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property persistence_end_ip of obj type persistencefilter field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param persistenceEndIp set the persistenceEndIp.
    */
@@ -108,7 +110,7 @@ public class PersistenceFilter extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property persistence_ip of obj type persistencefilter field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return persistenceIp
    */
@@ -119,7 +121,7 @@ public class PersistenceFilter extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property persistence_ip of obj type persistencefilter field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param persistenceIp set the persistenceIp.
    */
@@ -130,7 +132,7 @@ public class PersistenceFilter extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property persistence_mask of obj type persistencefilter field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return persistenceMask
    */
@@ -141,7 +143,7 @@ public class PersistenceFilter extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property persistence_mask of obj type persistencefilter field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param persistenceMask set the persistenceMask.
    */
@@ -152,7 +154,7 @@ public class PersistenceFilter extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property server_end_ip of obj type persistencefilter field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverEndIp
    */
@@ -163,7 +165,7 @@ public class PersistenceFilter extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property server_end_ip of obj type persistencefilter field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverEndIp set the serverEndIp.
    */
@@ -174,7 +176,7 @@ public class PersistenceFilter extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property server_ip of obj type persistencefilter field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverIp
    */
@@ -185,7 +187,7 @@ public class PersistenceFilter extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property server_ip of obj type persistencefilter field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverIp set the serverIp.
    */
@@ -196,7 +198,7 @@ public class PersistenceFilter extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property server_mask of obj type persistencefilter field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverMask
    */
@@ -207,7 +209,7 @@ public class PersistenceFilter extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property server_mask of obj type persistencefilter field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverMask set the serverMask.
    */
@@ -218,7 +220,7 @@ public class PersistenceFilter extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property server_port of obj type persistencefilter field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverPort
    */
@@ -229,7 +231,7 @@ public class PersistenceFilter extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property server_port of obj type persistencefilter field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverPort set the serverPort.
    */

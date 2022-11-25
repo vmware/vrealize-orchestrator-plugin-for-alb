@@ -44,7 +44,7 @@ public class LicenseTierSwitchDetiails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property destination_tier of obj type licensetierswitchdetiails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return destinationTier
    */
@@ -55,7 +55,7 @@ public class LicenseTierSwitchDetiails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property destination_tier of obj type licensetierswitchdetiails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param destinationTier set the destinationTier.
    */
@@ -66,7 +66,7 @@ public class LicenseTierSwitchDetiails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property reason of obj type licensetierswitchdetiails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
@@ -77,7 +77,7 @@ public class LicenseTierSwitchDetiails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property reason of obj type licensetierswitchdetiails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
@@ -88,7 +88,7 @@ public class LicenseTierSwitchDetiails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property source_tier of obj type licensetierswitchdetiails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sourceTier
    */
@@ -99,7 +99,7 @@ public class LicenseTierSwitchDetiails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property source_tier of obj type licensetierswitchdetiails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sourceTier set the sourceTier.
    */
@@ -110,7 +110,7 @@ public class LicenseTierSwitchDetiails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property status of obj type licensetierswitchdetiails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return status
    */
@@ -121,7 +121,7 @@ public class LicenseTierSwitchDetiails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property status of obj type licensetierswitchdetiails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param status set the status.
    */

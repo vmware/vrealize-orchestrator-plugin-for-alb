@@ -12,44 +12,48 @@ import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
 
 /**
- * The RediscoverVcenterParam is a POJO class extends AviRestResource that used for creating
- * RediscoverVcenterParam.
+ * The VcenterQuarantinedHostParams is a POJO class extends AviRestResource that used for creating
+ * VcenterQuarantinedHostParams.
  *
  * @version 1.0
  * @since 
  *
  */
-@VsoObject(create = false, name = "RediscoverVcenterParam")
-@VsoFinder(name = Constants.FINDER_VRO_REDISCOVERVCENTERPARAM)
+@VsoObject(create = false, name = "VcenterQuarantinedHostParams")
+@VsoFinder(name = Constants.FINDER_VRO_VCENTERQUARANTINEDHOSTPARAMS)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class RediscoverVcenterParam extends AviRestResource {
-    @JsonProperty("cloud")
+public class VcenterQuarantinedHostParams extends AviRestResource {
+    @JsonProperty("cloud_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String cloud = null;
+    private String cloudUuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property cloud of obj type rediscovervcenterparam field type str  type string.
+   * Vcenter cloud id.
+   * Field introduced in 21.1.6.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return cloud
+   * @return cloudUuid
    */
   @VsoMethod
-  public String getCloud() {
-    return cloud;
+  public String getCloudUuid() {
+    return cloudUuid;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property cloud of obj type rediscovervcenterparam field type str  type string.
+   * Vcenter cloud id.
+   * Field introduced in 21.1.6.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param cloud set the cloud.
+   * @param cloudUuid set the cloudUuid.
    */
   @VsoMethod
-  public void setCloud(String  cloud) {
-    this.cloud = cloud;
+  public void setCloudUuid(String  cloudUuid) {
+    this.cloudUuid = cloudUuid;
   }
 
 
@@ -62,15 +66,15 @@ public boolean equals(java.lang.Object o) {
   if (o == null || getClass() != o.getClass()) {
     return false;
   }
-  RediscoverVcenterParam objRediscoverVcenterParam = (RediscoverVcenterParam) o;
-  return   Objects.equals(this.cloud, objRediscoverVcenterParam.cloud);
+  VcenterQuarantinedHostParams objVcenterQuarantinedHostParams = (VcenterQuarantinedHostParams) o;
+  return   Objects.equals(this.cloudUuid, objVcenterQuarantinedHostParams.cloudUuid);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
-  sb.append("class RediscoverVcenterParam {\n");
-      sb.append("    cloud: ").append(toIndentedString(cloud)).append("\n");
+  sb.append("class VcenterQuarantinedHostParams {\n");
+      sb.append("    cloudUuid: ").append(toIndentedString(cloudUuid)).append("\n");
       sb.append("}");
   return sb.toString();
 }

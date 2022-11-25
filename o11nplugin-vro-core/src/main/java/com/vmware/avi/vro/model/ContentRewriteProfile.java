@@ -56,6 +56,7 @@ public class ContentRewriteProfile extends AviRestResource {
    * This should be configured when request_rewrite_enabled is set to true.
    * This is currently not supported.
    * Field deprecated in 21.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return reqMatchReplacePair
    */
   @VsoMethod
@@ -69,6 +70,7 @@ public class ContentRewriteProfile extends AviRestResource {
    * This should be configured when request_rewrite_enabled is set to true.
    * This is currently not supported.
    * Field deprecated in 21.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return reqMatchReplacePair
    */
   @VsoMethod
@@ -82,6 +84,7 @@ public class ContentRewriteProfile extends AviRestResource {
    * This should be configured when request_rewrite_enabled is set to true.
    * This is currently not supported.
    * Field deprecated in 21.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return reqMatchReplacePair
    */
   @VsoMethod
@@ -99,6 +102,7 @@ public class ContentRewriteProfile extends AviRestResource {
    * Enable rewrite on request body.
    * This is not currently supported.
    * Field deprecated in 21.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return requestRewriteEnabled
    */
   @VsoMethod
@@ -111,6 +115,7 @@ public class ContentRewriteProfile extends AviRestResource {
    * Enable rewrite on request body.
    * This is not currently supported.
    * Field deprecated in 21.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param requestRewriteEnabled set the requestRewriteEnabled.
    */
   @VsoMethod
@@ -122,6 +127,7 @@ public class ContentRewriteProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable rewrite on response body.
    * Field deprecated in 21.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return responseRewriteEnabled
    */
   @VsoMethod
@@ -133,6 +139,7 @@ public class ContentRewriteProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable rewrite on response body.
    * Field deprecated in 21.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param responseRewriteEnabled set the responseRewriteEnabled.
    */
   @VsoMethod
@@ -145,6 +152,7 @@ public class ContentRewriteProfile extends AviRestResource {
    * Rewrite only content types listed in this string group.
    * Content types not present in this list are not rewritten.
    * It is a reference to an object of type stringgroup.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rewritableContentRef
    */
@@ -158,6 +166,7 @@ public class ContentRewriteProfile extends AviRestResource {
    * Rewrite only content types listed in this string group.
    * Content types not present in this list are not rewritten.
    * It is a reference to an object of type stringgroup.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rewritableContentRef set the rewritableContentRef.
    */
@@ -171,6 +180,7 @@ public class ContentRewriteProfile extends AviRestResource {
    * Strings to be matched and replaced with on the response body.
    * This should be configured when response_rewrite_enabled is set to true.
    * Field deprecated in 21.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return rspMatchReplacePair
    */
   @VsoMethod
@@ -183,6 +193,7 @@ public class ContentRewriteProfile extends AviRestResource {
    * Strings to be matched and replaced with on the response body.
    * This should be configured when response_rewrite_enabled is set to true.
    * Field deprecated in 21.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return rspMatchReplacePair
    */
   @VsoMethod
@@ -195,6 +206,7 @@ public class ContentRewriteProfile extends AviRestResource {
    * Strings to be matched and replaced with on the response body.
    * This should be configured when response_rewrite_enabled is set to true.
    * Field deprecated in 21.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return rspMatchReplacePair
    */
   @VsoMethod
@@ -212,6 +224,7 @@ public class ContentRewriteProfile extends AviRestResource {
    * Content rewrite rules to be enabled on theresponse body.
    * Field introduced in 21.1.3.
    * Maximum of 1 items allowed.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rspRewriteRules
    */
@@ -225,6 +238,7 @@ public class ContentRewriteProfile extends AviRestResource {
    * Content rewrite rules to be enabled on theresponse body.
    * Field introduced in 21.1.3.
    * Maximum of 1 items allowed.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rspRewriteRules
    */
@@ -238,6 +252,7 @@ public class ContentRewriteProfile extends AviRestResource {
    * Content rewrite rules to be enabled on theresponse body.
    * Field introduced in 21.1.3.
    * Maximum of 1 items allowed.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rspRewriteRules
    */

@@ -54,6 +54,7 @@ public class BgpRoutingOptions extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Advertise self as default router to the bgp peer.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return advertiseDefaultRoute
    */
@@ -66,6 +67,7 @@ public class BgpRoutingOptions extends AviRestResource {
    * This is the setter method to the attribute.
    * Advertise self as default router to the bgp peer.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param advertiseDefaultRoute set the advertiseDefaultRoute.
    */
@@ -78,6 +80,7 @@ public class BgpRoutingOptions extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Advertise the learned routes to the bgp peer.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return advertiseLearnedRoutes
    */
@@ -90,6 +93,7 @@ public class BgpRoutingOptions extends AviRestResource {
    * This is the setter method to the attribute.
    * Advertise the learned routes to the bgp peer.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param advertiseLearnedRoutes set the advertiseLearnedRoutes.
    */
@@ -102,6 +106,7 @@ public class BgpRoutingOptions extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Features are applied to peers matching this label.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return label
    */
@@ -114,6 +119,7 @@ public class BgpRoutingOptions extends AviRestResource {
    * This is the setter method to the attribute.
    * Features are applied to peers matching this label.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param label set the label.
    */
@@ -126,6 +132,7 @@ public class BgpRoutingOptions extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Learn only default route from the bgp peer.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return learnOnlyDefaultRoute
    */
@@ -138,6 +145,7 @@ public class BgpRoutingOptions extends AviRestResource {
    * This is the setter method to the attribute.
    * Learn only default route from the bgp peer.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param learnOnlyDefaultRoute set the learnOnlyDefaultRoute.
    */
@@ -150,6 +158,7 @@ public class BgpRoutingOptions extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Learn routes from the bgp peer.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return learnRoutes
    */
@@ -162,6 +171,7 @@ public class BgpRoutingOptions extends AviRestResource {
    * This is the setter method to the attribute.
    * Learn routes from the bgp peer.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param learnRoutes set the learnRoutes.
    */
@@ -175,6 +185,7 @@ public class BgpRoutingOptions extends AviRestResource {
    * Maximum number of routes that can be learned from a bgp peer.
    * Allowed values are 50-250.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 50.
    * @return maxLearnLimit
    */
@@ -188,6 +199,7 @@ public class BgpRoutingOptions extends AviRestResource {
    * Maximum number of routes that can be learned from a bgp peer.
    * Allowed values are 50-250.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 50.
    * @param maxLearnLimit set the maxLearnLimit.
    */

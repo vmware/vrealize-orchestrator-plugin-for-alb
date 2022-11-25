@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.OrgServiceUnits;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -12,70 +13,78 @@ import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
 
 /**
- * The VIGuestvNicIPAddr is a POJO class extends AviRestResource that used for creating
- * VIGuestvNicIPAddr.
+ * The LicenseServiceUpdate is a POJO class extends AviRestResource that used for creating
+ * LicenseServiceUpdate.
  *
  * @version 1.0
  * @since 
  *
  */
-@VsoObject(create = false, name = "VIGuestvNicIPAddr")
-@VsoFinder(name = Constants.FINDER_VRO_VIGUESTVNICIPADDR)
+@VsoObject(create = false, name = "LicenseServiceUpdate")
+@VsoFinder(name = Constants.FINDER_VRO_LICENSESERVICEUPDATE)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class VIGuestvNicIPAddr extends AviRestResource {
-    @JsonProperty("ip_addr")
+public class LicenseServiceUpdate extends AviRestResource {
+    @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String ipAddr = null;
+    private String name = null;
 
-    @JsonProperty("mask")
+    @JsonProperty("service_units")
     @JsonInclude(Include.NON_NULL)
-    private Integer mask = null;
+    private OrgServiceUnits serviceUnits = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property ip_addr of obj type viguestvnicipaddr field type str  type string.
+   * Name.
+   * Field introduced in 21.1.4.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return ipAddr
+   * @return name
    */
   @VsoMethod
-  public String getIpAddr() {
-    return ipAddr;
+  public String getName() {
+    return name;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property ip_addr of obj type viguestvnicipaddr field type str  type string.
+   * Name.
+   * Field introduced in 21.1.4.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param ipAddr set the ipAddr.
+   * @param name set the name.
    */
   @VsoMethod
-  public void setIpAddr(String  ipAddr) {
-    this.ipAddr = ipAddr;
+  public void setName(String  name) {
+    this.name = name;
   }
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property mask of obj type viguestvnicipaddr field type str  type integer.
+   * Organization id.
+   * Field introduced in 21.1.4.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return mask
+   * @return serviceUnits
    */
   @VsoMethod
-  public Integer getMask() {
-    return mask;
+  public OrgServiceUnits getServiceUnits() {
+    return serviceUnits;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property mask of obj type viguestvnicipaddr field type str  type integer.
+   * Organization id.
+   * Field introduced in 21.1.4.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param mask set the mask.
+   * @param serviceUnits set the serviceUnits.
    */
   @VsoMethod
-  public void setMask(Integer  mask) {
-    this.mask = mask;
+  public void setServiceUnits(OrgServiceUnits serviceUnits) {
+    this.serviceUnits = serviceUnits;
   }
 
 
@@ -88,17 +97,17 @@ public boolean equals(java.lang.Object o) {
   if (o == null || getClass() != o.getClass()) {
     return false;
   }
-  VIGuestvNicIPAddr objVIGuestvNicIPAddr = (VIGuestvNicIPAddr) o;
-  return   Objects.equals(this.ipAddr, objVIGuestvNicIPAddr.ipAddr)&&
-  Objects.equals(this.mask, objVIGuestvNicIPAddr.mask);
+  LicenseServiceUpdate objLicenseServiceUpdate = (LicenseServiceUpdate) o;
+  return   Objects.equals(this.name, objLicenseServiceUpdate.name)&&
+  Objects.equals(this.serviceUnits, objLicenseServiceUpdate.serviceUnits);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
-  sb.append("class VIGuestvNicIPAddr {\n");
-      sb.append("    ipAddr: ").append(toIndentedString(ipAddr)).append("\n");
-        sb.append("    mask: ").append(toIndentedString(mask)).append("\n");
+  sb.append("class LicenseServiceUpdate {\n");
+      sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    serviceUnits: ").append(toIndentedString(serviceUnits)).append("\n");
       sb.append("}");
   return sb.toString();
 }

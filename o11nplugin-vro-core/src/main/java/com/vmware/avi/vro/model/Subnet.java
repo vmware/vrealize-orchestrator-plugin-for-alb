@@ -46,6 +46,7 @@ public class Subnet extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Specify an ip subnet prefix for this network.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return prefix
    */
@@ -57,6 +58,7 @@ public class Subnet extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Specify an ip subnet prefix for this network.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param prefix set the prefix.
    */
@@ -69,6 +71,7 @@ public class Subnet extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Static ip ranges for this subnet.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return staticIpRanges
    */
@@ -81,6 +84,7 @@ public class Subnet extends AviRestResource {
    * This is the setter method. this will set the staticIpRanges
    * Static ip ranges for this subnet.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return staticIpRanges
    */
@@ -93,6 +97,7 @@ public class Subnet extends AviRestResource {
    * This is the setter method this will set the staticIpRanges
    * Static ip ranges for this subnet.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return staticIpRanges
    */
@@ -110,6 +115,7 @@ public class Subnet extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Use static_ip_ranges.
    * Field deprecated in 20.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return staticIps
    */
   @VsoMethod
@@ -121,6 +127,7 @@ public class Subnet extends AviRestResource {
    * This is the setter method. this will set the staticIps
    * Use static_ip_ranges.
    * Field deprecated in 20.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return staticIps
    */
   @VsoMethod
@@ -132,6 +139,7 @@ public class Subnet extends AviRestResource {
    * This is the setter method this will set the staticIps
    * Use static_ip_ranges.
    * Field deprecated in 20.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return staticIps
    */
   @VsoMethod
@@ -148,6 +156,7 @@ public class Subnet extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Use static_ip_ranges.
    * Field deprecated in 20.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return staticRanges
    */
   @VsoMethod
@@ -159,6 +168,7 @@ public class Subnet extends AviRestResource {
    * This is the setter method. this will set the staticRanges
    * Use static_ip_ranges.
    * Field deprecated in 20.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return staticRanges
    */
   @VsoMethod
@@ -170,6 +180,7 @@ public class Subnet extends AviRestResource {
    * This is the setter method this will set the staticRanges
    * Use static_ip_ranges.
    * Field deprecated in 20.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return staticRanges
    */
   @VsoMethod
