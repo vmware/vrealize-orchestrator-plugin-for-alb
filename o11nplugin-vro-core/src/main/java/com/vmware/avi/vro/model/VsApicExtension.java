@@ -45,6 +45,7 @@ public class VsApicExtension extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return seUuid
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class VsApicExtension extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param seUuid set the seUuid.
    */
   @VsoMethod
@@ -65,6 +67,7 @@ public class VsApicExtension extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return txnUuid
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class VsApicExtension extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param txnUuid set the txnUuid.
    */
   @VsoMethod
@@ -85,6 +89,7 @@ public class VsApicExtension extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return uuid
    */
   @VsoMethod
@@ -95,6 +100,7 @@ public class VsApicExtension extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -105,6 +111,7 @@ public class VsApicExtension extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return vnic
    */
   @VsoMethod
@@ -115,6 +122,7 @@ public class VsApicExtension extends AviRestResource {
   /**
    * This is the setter method. this will set the vnic
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return vnic
    */
   @VsoMethod
@@ -125,6 +133,7 @@ public class VsApicExtension extends AviRestResource {
   /**
    * This is the setter method this will set the vnic
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return vnic
    */
   @VsoMethod

@@ -52,6 +52,7 @@ public class DnsRateProfile extends AviRestResource {
    * Action to perform upon rate limiting.
    * Field deprecated in 20.1.1.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return action
    */
   @VsoMethod
@@ -64,6 +65,7 @@ public class DnsRateProfile extends AviRestResource {
    * Action to perform upon rate limiting.
    * Field deprecated in 20.1.1.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param action set the action.
    */
   @VsoMethod
@@ -76,6 +78,7 @@ public class DnsRateProfile extends AviRestResource {
    * Maximum number of connections or requests or packets to be rate limited instantaneously.
    * Field deprecated in 20.1.1.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return burstSize
    */
   @VsoMethod
@@ -88,6 +91,7 @@ public class DnsRateProfile extends AviRestResource {
    * Maximum number of connections or requests or packets to be rate limited instantaneously.
    * Field deprecated in 20.1.1.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param burstSize set the burstSize.
    */
   @VsoMethod
@@ -100,9 +104,10 @@ public class DnsRateProfile extends AviRestResource {
    * Maximum number of connections or requests or packets per second.
    * It is deprecated because of adoption of new shared rate limiter protobuf.
    * Allowed values are 1-4294967295.
-   * Special values are 0- 'unlimited'.
+   * Special values are 0- unlimited.
    * Field deprecated in 20.1.1.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return count
    */
   @VsoMethod
@@ -115,9 +120,10 @@ public class DnsRateProfile extends AviRestResource {
    * Maximum number of connections or requests or packets per second.
    * It is deprecated because of adoption of new shared rate limiter protobuf.
    * Allowed values are 1-4294967295.
-   * Special values are 0- 'unlimited'.
+   * Special values are 0- unlimited.
    * Field deprecated in 20.1.1.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param count set the count.
    */
   @VsoMethod
@@ -130,6 +136,7 @@ public class DnsRateProfile extends AviRestResource {
    * Enable fine granularity.
    * Field deprecated in 20.1.1.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return fineGrain
    */
   @VsoMethod
@@ -142,6 +149,7 @@ public class DnsRateProfile extends AviRestResource {
    * Enable fine granularity.
    * Field deprecated in 20.1.1.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param fineGrain set the fineGrain.
    */
   @VsoMethod
@@ -156,6 +164,7 @@ public class DnsRateProfile extends AviRestResource {
    * Field deprecated in 20.1.1.
    * Field introduced in 18.2.5.
    * Unit is sec.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return period
    */
   @VsoMethod
@@ -170,6 +179,7 @@ public class DnsRateProfile extends AviRestResource {
    * Field deprecated in 20.1.1.
    * Field introduced in 18.2.5.
    * Unit is sec.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param period set the period.
    */
   @VsoMethod

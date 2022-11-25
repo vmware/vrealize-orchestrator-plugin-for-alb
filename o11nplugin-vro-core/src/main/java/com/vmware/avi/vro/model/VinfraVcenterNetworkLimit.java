@@ -40,7 +40,7 @@ public class VinfraVcenterNetworkLimit extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property additional_reason of obj type vinfravcenternetworklimit field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return additionalReason
    */
@@ -51,7 +51,7 @@ public class VinfraVcenterNetworkLimit extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property additional_reason of obj type vinfravcenternetworklimit field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param additionalReason set the additionalReason.
    */
@@ -62,7 +62,7 @@ public class VinfraVcenterNetworkLimit extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property current of obj type vinfravcenternetworklimit field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return current
    */
@@ -73,7 +73,7 @@ public class VinfraVcenterNetworkLimit extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property current of obj type vinfravcenternetworklimit field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param current set the current.
    */
@@ -84,7 +84,7 @@ public class VinfraVcenterNetworkLimit extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property limit of obj type vinfravcenternetworklimit field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return limit
    */
@@ -95,7 +95,7 @@ public class VinfraVcenterNetworkLimit extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property limit of obj type vinfravcenternetworklimit field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param limit set the limit.
    */

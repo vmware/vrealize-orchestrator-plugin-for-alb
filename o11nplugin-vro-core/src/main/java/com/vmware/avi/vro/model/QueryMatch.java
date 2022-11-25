@@ -46,6 +46,7 @@ public class QueryMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Case sensitivity to use for the match.
    * Enum options - SENSITIVE, INSENSITIVE.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "INSENSITIVE".
    * @return matchCase
    */
@@ -58,6 +59,7 @@ public class QueryMatch extends AviRestResource {
    * This is the setter method to the attribute.
    * Case sensitivity to use for the match.
    * Enum options - SENSITIVE, INSENSITIVE.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "INSENSITIVE".
    * @param matchCase set the matchCase.
    */
@@ -70,6 +72,7 @@ public class QueryMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Criterion to use for matching the query in http request uri.
    * Enum options - QUERY_MATCH_CONTAINS.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchCriteria
    */
@@ -82,6 +85,7 @@ public class QueryMatch extends AviRestResource {
    * This is the setter method to the attribute.
    * Criterion to use for matching the query in http request uri.
    * Enum options - QUERY_MATCH_CONTAINS.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchCriteria set the matchCriteria.
    */
@@ -93,6 +97,7 @@ public class QueryMatch extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * String value(s).
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchStr
    */
@@ -104,6 +109,7 @@ public class QueryMatch extends AviRestResource {
   /**
    * This is the setter method. this will set the matchStr
    * String value(s).
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchStr
    */
@@ -115,6 +121,7 @@ public class QueryMatch extends AviRestResource {
   /**
    * This is the setter method this will set the matchStr
    * String value(s).
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchStr
    */
@@ -132,6 +139,7 @@ public class QueryMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the string group(s).
    * It is a reference to an object of type stringgroup.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stringGroupRefs
    */
@@ -144,6 +152,7 @@ public class QueryMatch extends AviRestResource {
    * This is the setter method. this will set the stringGroupRefs
    * Uuid of the string group(s).
    * It is a reference to an object of type stringgroup.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stringGroupRefs
    */
@@ -156,6 +165,7 @@ public class QueryMatch extends AviRestResource {
    * This is the setter method this will set the stringGroupRefs
    * Uuid of the string group(s).
    * It is a reference to an object of type stringgroup.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stringGroupRefs
    */

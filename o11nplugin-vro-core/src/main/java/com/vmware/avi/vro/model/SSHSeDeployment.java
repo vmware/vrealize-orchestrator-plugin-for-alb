@@ -47,6 +47,7 @@ public class SSHSeDeployment extends AviRestResource {
    * Host os distribution e.g.
    * Coreos, ubuntu, redhat.
    * Field deprecated in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return hostOs
    */
   @VsoMethod
@@ -59,6 +60,7 @@ public class SSHSeDeployment extends AviRestResource {
    * Host os distribution e.g.
    * Coreos, ubuntu, redhat.
    * Field deprecated in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param hostOs set the hostOs.
    */
   @VsoMethod
@@ -70,6 +72,7 @@ public class SSHSeDeployment extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Password for ssh and/or sudo.
    * Field deprecated in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return password
    */
   @VsoMethod
@@ -81,6 +84,7 @@ public class SSHSeDeployment extends AviRestResource {
    * This is the setter method to the attribute.
    * Password for ssh and/or sudo.
    * Field deprecated in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param password set the password.
    */
   @VsoMethod
@@ -92,6 +96,7 @@ public class SSHSeDeployment extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Username for ssh access to hosts.
    * Field deprecated in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return sshUser
    */
   @VsoMethod
@@ -103,6 +108,7 @@ public class SSHSeDeployment extends AviRestResource {
    * This is the setter method to the attribute.
    * Username for ssh access to hosts.
    * Field deprecated in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param sshUser set the sshUser.
    */
   @VsoMethod
@@ -114,6 +120,7 @@ public class SSHSeDeployment extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Username for sudo.
    * Field deprecated in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return sudoUser
    */
   @VsoMethod
@@ -125,6 +132,7 @@ public class SSHSeDeployment extends AviRestResource {
    * This is the setter method to the attribute.
    * Username for sudo.
    * Field deprecated in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param sudoUser set the sudoUser.
    */
   @VsoMethod

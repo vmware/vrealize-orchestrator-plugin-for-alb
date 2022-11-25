@@ -53,6 +53,7 @@ public class HardwareSecurityModule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Aws cloudhsm specific configuration.
    * Field introduced in 17.2.7.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudhsm
    */
@@ -65,6 +66,7 @@ public class HardwareSecurityModule extends AviRestResource {
    * This is the setter method to the attribute.
    * Aws cloudhsm specific configuration.
    * Field introduced in 17.2.7.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudhsm set the cloudhsm.
    */
@@ -76,6 +78,7 @@ public class HardwareSecurityModule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Thales nethsm specific configuration.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nethsm
    */
@@ -87,6 +90,7 @@ public class HardwareSecurityModule extends AviRestResource {
   /**
    * This is the setter method. this will set the nethsm
    * Thales nethsm specific configuration.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nethsm
    */
@@ -98,6 +102,7 @@ public class HardwareSecurityModule extends AviRestResource {
   /**
    * This is the setter method this will set the nethsm
    * Thales nethsm specific configuration.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nethsm
    */
@@ -114,6 +119,7 @@ public class HardwareSecurityModule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Thales remote file server (rfs), used for the nethsms, configuration.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rfs
    */
@@ -125,6 +131,7 @@ public class HardwareSecurityModule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Thales remote file server (rfs), used for the nethsms, configuration.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rfs set the rfs.
    */
@@ -136,6 +143,7 @@ public class HardwareSecurityModule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Safenet/gemalto luna/gem specific configuration.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sluna
    */
@@ -147,6 +155,7 @@ public class HardwareSecurityModule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Safenet/gemalto luna/gem specific configuration.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sluna set the sluna.
    */
@@ -159,6 +168,7 @@ public class HardwareSecurityModule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Hsm type to use.
    * Enum options - HSM_TYPE_THALES_NETHSM, HSM_TYPE_SAFENET_LUNA, HSM_TYPE_AWS_CLOUDHSM.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "HSM_TYPE_SAFENET_LUNA".
    * @return type
    */
@@ -171,6 +181,7 @@ public class HardwareSecurityModule extends AviRestResource {
    * This is the setter method to the attribute.
    * Hsm type to use.
    * Enum options - HSM_TYPE_THALES_NETHSM, HSM_TYPE_SAFENET_LUNA, HSM_TYPE_AWS_CLOUDHSM.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "HSM_TYPE_SAFENET_LUNA".
    * @param type set the type.
    */

@@ -45,6 +45,7 @@ public class Lif extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return cifs
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class Lif extends AviRestResource {
   /**
    * This is the setter method. this will set the cifs
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return cifs
    */
   @VsoMethod
@@ -65,6 +67,7 @@ public class Lif extends AviRestResource {
   /**
    * This is the setter method this will set the cifs
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return cifs
    */
   @VsoMethod
@@ -80,6 +83,7 @@ public class Lif extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return lif
    */
   @VsoMethod
@@ -90,6 +94,7 @@ public class Lif extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param lif set the lif.
    */
   @VsoMethod
@@ -100,6 +105,7 @@ public class Lif extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return lifLabel
    */
   @VsoMethod
@@ -110,6 +116,7 @@ public class Lif extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param lifLabel set the lifLabel.
    */
   @VsoMethod
@@ -120,6 +127,7 @@ public class Lif extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return subnet
    */
   @VsoMethod
@@ -130,6 +138,7 @@ public class Lif extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field deprecated in 21.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param subnet set the subnet.
    */
   @VsoMethod

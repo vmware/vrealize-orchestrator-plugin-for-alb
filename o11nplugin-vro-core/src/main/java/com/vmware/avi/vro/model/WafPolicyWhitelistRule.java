@@ -63,6 +63,7 @@ public class WafPolicyWhitelistRule extends AviRestResource {
    * Field introduced in 18.2.3.
    * Minimum of 1 items required.
    * Maximum of 1 items allowed.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return actions
    */
   @VsoMethod
@@ -78,6 +79,7 @@ public class WafPolicyWhitelistRule extends AviRestResource {
    * Field introduced in 18.2.3.
    * Minimum of 1 items required.
    * Maximum of 1 items allowed.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return actions
    */
   @VsoMethod
@@ -93,6 +95,7 @@ public class WafPolicyWhitelistRule extends AviRestResource {
    * Field introduced in 18.2.3.
    * Minimum of 1 items required.
    * Maximum of 1 items allowed.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return actions
    */
   @VsoMethod
@@ -110,6 +113,7 @@ public class WafPolicyWhitelistRule extends AviRestResource {
    * Description of this rule.
    * Field deprecated in 20.1.3.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return description
    */
   @VsoMethod
@@ -122,6 +126,7 @@ public class WafPolicyWhitelistRule extends AviRestResource {
    * Description of this rule.
    * Field deprecated in 20.1.3.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param description set the description.
    */
   @VsoMethod
@@ -134,6 +139,7 @@ public class WafPolicyWhitelistRule extends AviRestResource {
    * Enable or disable the rule.
    * Field deprecated in 20.1.3.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return enable
    */
   @VsoMethod
@@ -146,6 +152,7 @@ public class WafPolicyWhitelistRule extends AviRestResource {
    * Enable or disable the rule.
    * Field deprecated in 20.1.3.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param enable set the enable.
    */
   @VsoMethod
@@ -158,6 +165,7 @@ public class WafPolicyWhitelistRule extends AviRestResource {
    * Rules are executed in order of this index field.
    * Field deprecated in 20.1.3.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return index
    */
   @VsoMethod
@@ -170,6 +178,7 @@ public class WafPolicyWhitelistRule extends AviRestResource {
    * Rules are executed in order of this index field.
    * Field deprecated in 20.1.3.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param index set the index.
    */
   @VsoMethod
@@ -182,6 +191,7 @@ public class WafPolicyWhitelistRule extends AviRestResource {
    * Match criteria describing requests to which this rule should be applied.
    * Field deprecated in 20.1.3.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return match
    */
   @VsoMethod
@@ -194,6 +204,7 @@ public class WafPolicyWhitelistRule extends AviRestResource {
    * Match criteria describing requests to which this rule should be applied.
    * Field deprecated in 20.1.3.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param match set the match.
    */
   @VsoMethod
@@ -206,6 +217,7 @@ public class WafPolicyWhitelistRule extends AviRestResource {
    * A name describing the rule in a short form.
    * Field deprecated in 20.1.3.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return name
    */
   @VsoMethod
@@ -218,6 +230,7 @@ public class WafPolicyWhitelistRule extends AviRestResource {
    * A name describing the rule in a short form.
    * Field deprecated in 20.1.3.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param name set the name.
    */
   @VsoMethod
@@ -232,6 +245,7 @@ public class WafPolicyWhitelistRule extends AviRestResource {
    * Field deprecated in 20.1.3.
    * Field introduced in 20.1.1.
    * Unit is percent.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return samplingPercent
    */
   @VsoMethod
@@ -246,6 +260,7 @@ public class WafPolicyWhitelistRule extends AviRestResource {
    * Field deprecated in 20.1.3.
    * Field introduced in 20.1.1.
    * Unit is percent.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param samplingPercent set the samplingPercent.
    */
   @VsoMethod

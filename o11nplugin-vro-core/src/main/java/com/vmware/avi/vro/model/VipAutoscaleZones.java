@@ -42,6 +42,8 @@ public class VipAutoscaleZones extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Availability zone associated with the subnet.
    * Field introduced in 17.2.12, 18.1.2.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * @return availabilityZone
    */
   @VsoMethod
@@ -53,6 +55,8 @@ public class VipAutoscaleZones extends AviRestResource {
    * This is the setter method to the attribute.
    * Availability zone associated with the subnet.
    * Field introduced in 17.2.12, 18.1.2.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * @param availabilityZone set the availabilityZone.
    */
   @VsoMethod
@@ -64,6 +68,8 @@ public class VipAutoscaleZones extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Determines if the subnet is capable of hosting publicly accessible ip.
    * Field introduced in 17.2.12, 18.1.2.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * @return fipCapable
    */
   @VsoMethod
@@ -75,6 +81,8 @@ public class VipAutoscaleZones extends AviRestResource {
    * This is the setter method to the attribute.
    * Determines if the subnet is capable of hosting publicly accessible ip.
    * Field introduced in 17.2.12, 18.1.2.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * @param fipCapable set the fipCapable.
    */
   @VsoMethod
@@ -86,6 +94,7 @@ public class VipAutoscaleZones extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the subnet for new ip address allocation.
    * Field introduced in 17.2.12, 18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnetUuid
    */
@@ -98,6 +107,7 @@ public class VipAutoscaleZones extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the subnet for new ip address allocation.
    * Field introduced in 17.2.12, 18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnetUuid set the subnetUuid.
    */

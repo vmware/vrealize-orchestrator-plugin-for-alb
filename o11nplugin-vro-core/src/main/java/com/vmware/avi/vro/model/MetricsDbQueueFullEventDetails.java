@@ -57,7 +57,7 @@ public class MetricsDbQueueFullEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property high of obj type metricsdbqueuefulleventdetails field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return high
    */
@@ -68,7 +68,7 @@ public class MetricsDbQueueFullEventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property high of obj type metricsdbqueuefulleventdetails field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param high set the high.
    */
@@ -79,7 +79,7 @@ public class MetricsDbQueueFullEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property instanceport of obj type metricsdbqueuefulleventdetails field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return instanceport
    */
@@ -90,7 +90,7 @@ public class MetricsDbQueueFullEventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property instanceport of obj type metricsdbqueuefulleventdetails field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param instanceport set the instanceport.
    */
@@ -101,7 +101,7 @@ public class MetricsDbQueueFullEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property low of obj type metricsdbqueuefulleventdetails field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return low
    */
@@ -112,7 +112,7 @@ public class MetricsDbQueueFullEventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property low of obj type metricsdbqueuefulleventdetails field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param low set the low.
    */
@@ -123,7 +123,7 @@ public class MetricsDbQueueFullEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property nodeid of obj type metricsdbqueuefulleventdetails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nodeid
    */
@@ -134,7 +134,7 @@ public class MetricsDbQueueFullEventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property nodeid of obj type metricsdbqueuefulleventdetails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nodeid set the nodeid.
    */
@@ -145,7 +145,7 @@ public class MetricsDbQueueFullEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property period of obj type metricsdbqueuefulleventdetails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return period
    */
@@ -156,7 +156,7 @@ public class MetricsDbQueueFullEventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property period of obj type metricsdbqueuefulleventdetails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param period set the period.
    */
@@ -167,7 +167,7 @@ public class MetricsDbQueueFullEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property runtime of obj type metricsdbqueuefulleventdetails field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return runtime
    */
@@ -178,7 +178,7 @@ public class MetricsDbQueueFullEventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property runtime of obj type metricsdbqueuefulleventdetails field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param runtime set the runtime.
    */
@@ -189,7 +189,7 @@ public class MetricsDbQueueFullEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property watermark of obj type metricsdbqueuefulleventdetails field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return watermark
    */
@@ -200,7 +200,7 @@ public class MetricsDbQueueFullEventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property watermark of obj type metricsdbqueuefulleventdetails field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param watermark set the watermark.
    */

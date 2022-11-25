@@ -53,6 +53,7 @@ public class AlertSyslogConfig extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * User defined description for alert syslog config.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
@@ -64,6 +65,7 @@ public class AlertSyslogConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * User defined description for alert syslog config.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
@@ -75,6 +77,7 @@ public class AlertSyslogConfig extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * A user-friendly name of the syslog notification.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -86,6 +89,7 @@ public class AlertSyslogConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * A user-friendly name of the syslog notification.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -97,6 +101,7 @@ public class AlertSyslogConfig extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The list of syslog servers.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return syslogServers
    */
@@ -108,6 +113,7 @@ public class AlertSyslogConfig extends AviRestResource {
   /**
    * This is the setter method. this will set the syslogServers
    * The list of syslog servers.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return syslogServers
    */
@@ -119,6 +125,7 @@ public class AlertSyslogConfig extends AviRestResource {
   /**
    * This is the setter method this will set the syslogServers
    * The list of syslog servers.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return syslogServers
    */
@@ -135,6 +142,7 @@ public class AlertSyslogConfig extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -146,6 +154,7 @@ public class AlertSyslogConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
@@ -175,7 +184,7 @@ public class AlertSyslogConfig extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Unique object identifier of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -186,7 +195,7 @@ public class AlertSyslogConfig extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Unique object identifier of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */

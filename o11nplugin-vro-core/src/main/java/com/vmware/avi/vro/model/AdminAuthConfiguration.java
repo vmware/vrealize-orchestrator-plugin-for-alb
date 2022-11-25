@@ -46,6 +46,7 @@ public class AdminAuthConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Allow any user created locally to login with local credentials.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return allowLocalUserLogin
    */
@@ -58,6 +59,7 @@ public class AdminAuthConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Allow any user created locally to login with local credentials.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param allowLocalUserLogin set the allowLocalUserLogin.
    */
@@ -71,6 +73,7 @@ public class AdminAuthConfiguration extends AviRestResource {
    * Secondary authentication mechanisms to be used.
    * Field introduced in 20.1.6.
    * Maximum of 1 items allowed.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return alternateAuthConfigurations
    */
@@ -84,6 +87,7 @@ public class AdminAuthConfiguration extends AviRestResource {
    * Secondary authentication mechanisms to be used.
    * Field introduced in 20.1.6.
    * Maximum of 1 items allowed.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return alternateAuthConfigurations
    */
@@ -97,6 +101,7 @@ public class AdminAuthConfiguration extends AviRestResource {
    * Secondary authentication mechanisms to be used.
    * Field introduced in 20.1.6.
    * Maximum of 1 items allowed.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return alternateAuthConfigurations
    */
@@ -113,6 +118,7 @@ public class AdminAuthConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type authprofile.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authProfileRef
    */
@@ -124,6 +130,7 @@ public class AdminAuthConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type authprofile.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param authProfileRef set the authProfileRef.
    */
@@ -135,6 +142,7 @@ public class AdminAuthConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rules list for tenant or role mapping.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mappingRules
    */
@@ -146,6 +154,7 @@ public class AdminAuthConfiguration extends AviRestResource {
   /**
    * This is the setter method. this will set the mappingRules
    * Rules list for tenant or role mapping.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mappingRules
    */
@@ -157,6 +166,7 @@ public class AdminAuthConfiguration extends AviRestResource {
   /**
    * This is the setter method this will set the mappingRules
    * Rules list for tenant or role mapping.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mappingRules
    */

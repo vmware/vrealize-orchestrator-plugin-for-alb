@@ -50,6 +50,7 @@ public class OAuthVSConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Http cookie name for authorized session.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cookieName
    */
@@ -62,6 +63,7 @@ public class OAuthVSConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Http cookie name for authorized session.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cookieName set the cookieName.
    */
@@ -76,6 +78,7 @@ public class OAuthVSConfig extends AviRestResource {
    * Allowed values are 1-1440.
    * Field introduced in 21.1.3.
    * Unit is min.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return cookieTimeout
    */
@@ -90,6 +93,7 @@ public class OAuthVSConfig extends AviRestResource {
    * Allowed values are 1-1440.
    * Field introduced in 21.1.3.
    * Unit is min.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @param cookieTimeout set the cookieTimeout.
    */
@@ -102,6 +106,7 @@ public class OAuthVSConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Key to generate the cookie.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return key
    */
@@ -114,6 +119,7 @@ public class OAuthVSConfig extends AviRestResource {
    * This is the setter method. this will set the key
    * Key to generate the cookie.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return key
    */
@@ -126,6 +132,7 @@ public class OAuthVSConfig extends AviRestResource {
    * This is the setter method this will set the key
    * Key to generate the cookie.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return key
    */
@@ -144,6 +151,7 @@ public class OAuthVSConfig extends AviRestResource {
    * Application and idp settings for oauth/oidc.
    * Field introduced in 21.1.3.
    * Maximum of 1 items allowed.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return oauthSettings
    */
@@ -157,6 +165,7 @@ public class OAuthVSConfig extends AviRestResource {
    * Application and idp settings for oauth/oidc.
    * Field introduced in 21.1.3.
    * Maximum of 1 items allowed.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return oauthSettings
    */
@@ -170,6 +179,7 @@ public class OAuthVSConfig extends AviRestResource {
    * Application and idp settings for oauth/oidc.
    * Field introduced in 21.1.3.
    * Maximum of 1 items allowed.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return oauthSettings
    */
@@ -187,6 +197,7 @@ public class OAuthVSConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Redirect uri specified in the request to authorization server.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return redirectUri
    */
@@ -199,6 +210,7 @@ public class OAuthVSConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Redirect uri specified in the request to authorization server.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param redirectUri set the redirectUri.
    */

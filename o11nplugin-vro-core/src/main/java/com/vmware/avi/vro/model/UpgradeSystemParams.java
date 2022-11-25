@@ -52,6 +52,7 @@ public class UpgradeSystemParams extends AviRestResource {
    * Image uuid for identifying the controller patch image.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerPatchRef
    */
@@ -65,6 +66,7 @@ public class UpgradeSystemParams extends AviRestResource {
    * Image uuid for identifying the controller patch image.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param controllerPatchRef set the controllerPatchRef.
    */
@@ -78,6 +80,7 @@ public class UpgradeSystemParams extends AviRestResource {
    * Image uuid for identifying base image.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return imageRef
    */
@@ -91,6 +94,7 @@ public class UpgradeSystemParams extends AviRestResource {
    * Image uuid for identifying base image.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param imageRef set the imageRef.
    */
@@ -103,6 +107,7 @@ public class UpgradeSystemParams extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Se group options for the upgrade operations.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGroupOptions
    */
@@ -115,6 +120,7 @@ public class UpgradeSystemParams extends AviRestResource {
    * This is the setter method to the attribute.
    * Se group options for the upgrade operations.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seGroupOptions set the seGroupOptions.
    */
@@ -128,6 +134,7 @@ public class UpgradeSystemParams extends AviRestResource {
    * Image uuid for identifying the se patch image.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sePatchRef
    */
@@ -141,6 +148,7 @@ public class UpgradeSystemParams extends AviRestResource {
    * Image uuid for identifying the se patch image.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sePatchRef set the sePatchRef.
    */
@@ -153,6 +161,7 @@ public class UpgradeSystemParams extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This is flag when set as true skips few optional must checks.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return skipWarnings
    */
@@ -165,6 +174,7 @@ public class UpgradeSystemParams extends AviRestResource {
    * This is the setter method to the attribute.
    * This is flag when set as true skips few optional must checks.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param skipWarnings set the skipWarnings.
    */

@@ -54,7 +54,7 @@ public class SeVipInterfaceList extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property is_portchannel of obj type sevipinterfacelist field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return isPortchannel
    */
@@ -65,7 +65,7 @@ public class SeVipInterfaceList extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property is_portchannel of obj type sevipinterfacelist field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param isPortchannel set the isPortchannel.
    */
@@ -78,6 +78,7 @@ public class SeVipInterfaceList extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of placement_networks reachable from this interface.
    * Field introduced in 20.1.5.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networks
    */
@@ -90,6 +91,7 @@ public class SeVipInterfaceList extends AviRestResource {
    * This is the setter method. this will set the networks
    * List of placement_networks reachable from this interface.
    * Field introduced in 20.1.5.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networks
    */
@@ -102,6 +104,7 @@ public class SeVipInterfaceList extends AviRestResource {
    * This is the setter method this will set the networks
    * List of placement_networks reachable from this interface.
    * Field introduced in 20.1.5.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networks
    */
@@ -117,7 +120,7 @@ public class SeVipInterfaceList extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property vip_intf_ip of obj type sevipinterfacelist field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipIntfIp
    */
@@ -128,7 +131,7 @@ public class SeVipInterfaceList extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property vip_intf_ip of obj type sevipinterfacelist field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vipIntfIp set the vipIntfIp.
    */
@@ -139,7 +142,7 @@ public class SeVipInterfaceList extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property vip_intf_ip6 of obj type sevipinterfacelist field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipIntfIp6
    */
@@ -150,7 +153,7 @@ public class SeVipInterfaceList extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property vip_intf_ip6 of obj type sevipinterfacelist field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vipIntfIp6 set the vipIntfIp6.
    */
@@ -161,7 +164,7 @@ public class SeVipInterfaceList extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property vip_intf_mac of obj type sevipinterfacelist field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipIntfMac
    */
@@ -172,7 +175,7 @@ public class SeVipInterfaceList extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property vip_intf_mac of obj type sevipinterfacelist field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vipIntfMac set the vipIntfMac.
    */
@@ -183,7 +186,7 @@ public class SeVipInterfaceList extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property vlan_id of obj type sevipinterfacelist field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return vlanId
    */
@@ -194,7 +197,7 @@ public class SeVipInterfaceList extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property vlan_id of obj type sevipinterfacelist field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param vlanId set the vlanId.
    */

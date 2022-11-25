@@ -88,7 +88,7 @@ public class ConnErrorInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property num_syn_retransmit of obj type connerrorinfo field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numSynRetransmit
    */
@@ -99,7 +99,7 @@ public class ConnErrorInfo extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property num_syn_retransmit of obj type connerrorinfo field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numSynRetransmit set the numSynRetransmit.
    */
@@ -110,7 +110,7 @@ public class ConnErrorInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property num_window_shrink of obj type connerrorinfo field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numWindowShrink
    */
@@ -121,7 +121,7 @@ public class ConnErrorInfo extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property num_window_shrink of obj type connerrorinfo field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numWindowShrink set the numWindowShrink.
    */
@@ -132,7 +132,7 @@ public class ConnErrorInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property out_of_orders of obj type connerrorinfo field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return outOfOrders
    */
@@ -143,7 +143,7 @@ public class ConnErrorInfo extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property out_of_orders of obj type connerrorinfo field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param outOfOrders set the outOfOrders.
    */
@@ -154,7 +154,7 @@ public class ConnErrorInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property retransmits of obj type connerrorinfo field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return retransmits
    */
@@ -165,7 +165,7 @@ public class ConnErrorInfo extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property retransmits of obj type connerrorinfo field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param retransmits set the retransmits.
    */
@@ -176,7 +176,7 @@ public class ConnErrorInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property rx_pkts of obj type connerrorinfo field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rxPkts
    */
@@ -187,7 +187,7 @@ public class ConnErrorInfo extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property rx_pkts of obj type connerrorinfo field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rxPkts set the rxPkts.
    */
@@ -198,7 +198,7 @@ public class ConnErrorInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property server_num_window_shrink of obj type connerrorinfo field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverNumWindowShrink
    */
@@ -209,7 +209,7 @@ public class ConnErrorInfo extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property server_num_window_shrink of obj type connerrorinfo field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverNumWindowShrink set the serverNumWindowShrink.
    */
@@ -220,7 +220,7 @@ public class ConnErrorInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property server_out_of_orders of obj type connerrorinfo field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverOutOfOrders
    */
@@ -231,7 +231,7 @@ public class ConnErrorInfo extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property server_out_of_orders of obj type connerrorinfo field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverOutOfOrders set the serverOutOfOrders.
    */
@@ -242,7 +242,7 @@ public class ConnErrorInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property server_retransmits of obj type connerrorinfo field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverRetransmits
    */
@@ -253,7 +253,7 @@ public class ConnErrorInfo extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property server_retransmits of obj type connerrorinfo field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverRetransmits set the serverRetransmits.
    */
@@ -264,7 +264,7 @@ public class ConnErrorInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property server_rx_pkts of obj type connerrorinfo field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverRxPkts
    */
@@ -275,7 +275,7 @@ public class ConnErrorInfo extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property server_rx_pkts of obj type connerrorinfo field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverRxPkts set the serverRxPkts.
    */
@@ -286,7 +286,7 @@ public class ConnErrorInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property server_timeouts of obj type connerrorinfo field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverTimeouts
    */
@@ -297,7 +297,7 @@ public class ConnErrorInfo extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property server_timeouts of obj type connerrorinfo field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverTimeouts set the serverTimeouts.
    */
@@ -308,7 +308,7 @@ public class ConnErrorInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property server_tx_pkts of obj type connerrorinfo field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverTxPkts
    */
@@ -319,7 +319,7 @@ public class ConnErrorInfo extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property server_tx_pkts of obj type connerrorinfo field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverTxPkts set the serverTxPkts.
    */
@@ -330,7 +330,7 @@ public class ConnErrorInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property server_zero_window_size_events of obj type connerrorinfo field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverZeroWindowSizeEvents
    */
@@ -341,7 +341,7 @@ public class ConnErrorInfo extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property server_zero_window_size_events of obj type connerrorinfo field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverZeroWindowSizeEvents set the serverZeroWindowSizeEvents.
    */
@@ -352,7 +352,7 @@ public class ConnErrorInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property timeouts of obj type connerrorinfo field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return timeouts
    */
@@ -363,7 +363,7 @@ public class ConnErrorInfo extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property timeouts of obj type connerrorinfo field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param timeouts set the timeouts.
    */
@@ -374,7 +374,7 @@ public class ConnErrorInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property tx_pkts of obj type connerrorinfo field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return txPkts
    */
@@ -385,7 +385,7 @@ public class ConnErrorInfo extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property tx_pkts of obj type connerrorinfo field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param txPkts set the txPkts.
    */
@@ -396,7 +396,7 @@ public class ConnErrorInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property zero_window_size_events of obj type connerrorinfo field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return zeroWindowSizeEvents
    */
@@ -407,7 +407,7 @@ public class ConnErrorInfo extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property zero_window_size_events of obj type connerrorinfo field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param zeroWindowSizeEvents set the zeroWindowSizeEvents.
    */

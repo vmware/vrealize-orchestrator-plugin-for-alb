@@ -78,6 +78,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Free-text comment about this group.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
@@ -90,6 +91,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * This is the setter method to the attribute.
    * Free-text comment about this group.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
@@ -102,6 +104,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable or disable this waf rule group.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enable
    */
@@ -114,6 +117,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable or disable this waf rule group.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enable set the enable.
    */
@@ -128,6 +132,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * Allowed actions are waf_action_no_op and waf_action_allow_parameter.
    * Enum options - WAF_ACTION_NO_OP, WAF_ACTION_BLOCK, WAF_ACTION_ALLOW_PARAMETER.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "WAF_ACTION_ALLOW_PARAMETER".
    * @return hitAction
    */
@@ -142,6 +147,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * Allowed actions are waf_action_no_op and waf_action_allow_parameter.
    * Enum options - WAF_ACTION_NO_OP, WAF_ACTION_BLOCK, WAF_ACTION_ALLOW_PARAMETER.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "WAF_ACTION_ALLOW_PARAMETER".
    * @param hitAction set the hitAction.
    */
@@ -154,6 +160,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This field indicates that this group is used for learning.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return isLearningGroup
    */
@@ -166,6 +173,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * This is the setter method to the attribute.
    * This field indicates that this group is used for learning.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param isLearningGroup set the isLearningGroup.
    */
@@ -181,6 +189,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * Field deprecated in 20.1.5.
    * Field introduced in 20.1.2.
    * Maximum of 4 items allowed.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * @return labels
    */
   @VsoMethod
@@ -195,6 +204,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * Field deprecated in 20.1.5.
    * Field introduced in 20.1.2.
    * Maximum of 4 items allowed.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * @return labels
    */
   @VsoMethod
@@ -209,6 +219,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * Field deprecated in 20.1.5.
    * Field introduced in 20.1.2.
    * Maximum of 4 items allowed.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * @return labels
    */
   @VsoMethod
@@ -226,6 +237,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * Positive security model locations.
    * These are used to partition the application name space.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return locations
    */
@@ -239,6 +251,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * Positive security model locations.
    * These are used to partition the application name space.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return locations
    */
@@ -252,6 +265,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * Positive security model locations.
    * These are used to partition the application name space.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return locations
    */
@@ -269,7 +283,8 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -282,7 +297,8 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * This is the setter method. this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -295,7 +311,8 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * This is the setter method this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -315,6 +332,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * Allowed actions are waf_action_no_op and waf_action_block.
    * Enum options - WAF_ACTION_NO_OP, WAF_ACTION_BLOCK, WAF_ACTION_ALLOW_PARAMETER.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "WAF_ACTION_NO_OP".
    * @return missAction
    */
@@ -329,6 +347,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * Allowed actions are waf_action_no_op and waf_action_block.
    * Enum options - WAF_ACTION_NO_OP, WAF_ACTION_BLOCK, WAF_ACTION_ALLOW_PARAMETER.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "WAF_ACTION_NO_OP".
    * @param missAction set the missAction.
    */
@@ -341,6 +360,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * User defined name of the group.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -353,6 +373,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * This is the setter method to the attribute.
    * User defined name of the group.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -366,6 +387,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * Tenant that this object belongs to.
    * It is a reference to an object of type tenant.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -379,6 +401,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * Tenant that this object belongs to.
    * It is a reference to an object of type tenant.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
@@ -410,6 +433,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of this object.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -422,6 +446,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of this object.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */

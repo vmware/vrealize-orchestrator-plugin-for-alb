@@ -46,6 +46,7 @@ public class ParamInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of hits for a param.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return paramHits
    */
@@ -58,6 +59,7 @@ public class ParamInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of hits for a param.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param paramHits set the paramHits.
    */
@@ -70,6 +72,7 @@ public class ParamInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Param name.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return paramKey
    */
@@ -82,6 +85,7 @@ public class ParamInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Param name.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param paramKey set the paramKey.
    */
@@ -94,6 +98,7 @@ public class ParamInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Various param size and its respective hit count.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return paramSizeClasses
    */
@@ -106,6 +111,7 @@ public class ParamInfo extends AviRestResource {
    * This is the setter method. this will set the paramSizeClasses
    * Various param size and its respective hit count.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return paramSizeClasses
    */
@@ -118,6 +124,7 @@ public class ParamInfo extends AviRestResource {
    * This is the setter method this will set the paramSizeClasses
    * Various param size and its respective hit count.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return paramSizeClasses
    */
@@ -135,6 +142,7 @@ public class ParamInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Various param type and its respective hit count.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return paramTypeClasses
    */
@@ -147,6 +155,7 @@ public class ParamInfo extends AviRestResource {
    * This is the setter method. this will set the paramTypeClasses
    * Various param type and its respective hit count.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return paramTypeClasses
    */
@@ -159,6 +168,7 @@ public class ParamInfo extends AviRestResource {
    * This is the setter method this will set the paramTypeClasses
    * Various param type and its respective hit count.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return paramTypeClasses
    */

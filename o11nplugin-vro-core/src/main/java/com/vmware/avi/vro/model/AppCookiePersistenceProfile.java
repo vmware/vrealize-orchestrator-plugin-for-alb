@@ -41,6 +41,7 @@ public class AppCookiePersistenceProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Key to use for cookie encryption.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return encryptionKey
    */
@@ -52,6 +53,7 @@ public class AppCookiePersistenceProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Key to use for cookie encryption.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param encryptionKey set the encryptionKey.
    */
@@ -63,6 +65,7 @@ public class AppCookiePersistenceProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Header or cookie name for application cookie persistence.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return prstHdrName
    */
@@ -74,6 +77,7 @@ public class AppCookiePersistenceProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Header or cookie name for application cookie persistence.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param prstHdrName set the prstHdrName.
    */
@@ -87,6 +91,7 @@ public class AppCookiePersistenceProfile extends AviRestResource {
    * The length of time after a client's connections have closed before expiring the client's persistence to a server.
    * Allowed values are 1-720.
    * Unit is min.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20.
    * @return timeout
    */
@@ -100,6 +105,7 @@ public class AppCookiePersistenceProfile extends AviRestResource {
    * The length of time after a client's connections have closed before expiring the client's persistence to a server.
    * Allowed values are 1-720.
    * Unit is min.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20.
    * @param timeout set the timeout.
    */

@@ -50,6 +50,7 @@ public class GslbDnsSeInfo extends AviRestResource {
    * This field describes the fd download status to the se.
    * Field deprecated in 18.2.3.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return fdDownload
    */
   @VsoMethod
@@ -62,6 +63,7 @@ public class GslbDnsSeInfo extends AviRestResource {
    * This field describes the fd download status to the se.
    * Field deprecated in 18.2.3.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param fdDownload set the fdDownload.
    */
   @VsoMethod
@@ -74,6 +76,7 @@ public class GslbDnsSeInfo extends AviRestResource {
    * Geo files queue for sequencing files to se.
    * Field deprecated in 18.2.3.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return fdInfo
    */
   @VsoMethod
@@ -86,6 +89,7 @@ public class GslbDnsSeInfo extends AviRestResource {
    * Geo files queue for sequencing files to se.
    * Field deprecated in 18.2.3.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param fdInfo set the fdInfo.
    */
   @VsoMethod
@@ -98,6 +102,7 @@ public class GslbDnsSeInfo extends AviRestResource {
    * Service engine's fabric ip used to push geo files.
    * Field deprecated in 18.2.3.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return ip
    */
   @VsoMethod
@@ -110,6 +115,7 @@ public class GslbDnsSeInfo extends AviRestResource {
    * Service engine's fabric ip used to push geo files.
    * Field deprecated in 18.2.3.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param ip set the ip.
    */
   @VsoMethod
@@ -122,6 +128,7 @@ public class GslbDnsSeInfo extends AviRestResource {
    * Uuid of the service engine.
    * Field deprecated in 18.2.3.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return uuid
    */
   @VsoMethod
@@ -134,6 +141,7 @@ public class GslbDnsSeInfo extends AviRestResource {
    * Uuid of the service engine.
    * Field deprecated in 18.2.3.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param uuid set the uuid.
    */
   @VsoMethod

@@ -401,7 +401,8 @@ public class AnalyticsProfile extends AviRestResource {
    * Greater than this number and the client's request is considered frustrated.
    * Allowed values are 1-30000.
    * Unit is milliseconds.
-   * Allowed in basic(allowed values- 500) edition, essentials(allowed values- 500) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 500), basic edition(allowed values- 500), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 500.
    * @return apdexResponseThreshold
    */
@@ -417,7 +418,8 @@ public class AnalyticsProfile extends AviRestResource {
    * Greater than this number and the client's request is considered frustrated.
    * Allowed values are 1-30000.
    * Unit is milliseconds.
-   * Allowed in basic(allowed values- 500) edition, essentials(allowed values- 500) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 500), basic edition(allowed values- 500), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 500.
    * @param apdexResponseThreshold set the apdexResponseThreshold.
    */
@@ -431,7 +433,8 @@ public class AnalyticsProfile extends AviRestResource {
    * Client tolerated response latency factor.
    * Client must receive a response within this factor times the satisfactory threshold (apdex_response_threshold) to be considered tolerated.
    * Allowed values are 1-1000.
-   * Allowed in basic(allowed values- 4) edition, essentials(allowed values- 4) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 4), basic edition(allowed values- 4), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4.0f.
    * @return apdexResponseToleratedFactor
    */
@@ -445,7 +448,8 @@ public class AnalyticsProfile extends AviRestResource {
    * Client tolerated response latency factor.
    * Client must receive a response within this factor times the satisfactory threshold (apdex_response_threshold) to be considered tolerated.
    * Allowed values are 1-1000.
-   * Allowed in basic(allowed values- 4) edition, essentials(allowed values- 4) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 4), basic edition(allowed values- 4), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4.0f.
    * @param apdexResponseToleratedFactor set the apdexResponseToleratedFactor.
    */
@@ -459,7 +463,8 @@ public class AnalyticsProfile extends AviRestResource {
    * Satisfactory client to avi round trip time(rtt).
    * Allowed values are 1-2000.
    * Unit is milliseconds.
-   * Allowed in basic(allowed values- 250) edition, essentials(allowed values- 250) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 250), basic edition(allowed values- 250), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 250.
    * @return apdexRttThreshold
    */
@@ -473,7 +478,8 @@ public class AnalyticsProfile extends AviRestResource {
    * Satisfactory client to avi round trip time(rtt).
    * Allowed values are 1-2000.
    * Unit is milliseconds.
-   * Allowed in basic(allowed values- 250) edition, essentials(allowed values- 250) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 250), basic edition(allowed values- 250), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 250.
    * @param apdexRttThreshold set the apdexRttThreshold.
    */
@@ -487,7 +493,8 @@ public class AnalyticsProfile extends AviRestResource {
    * Tolerated client to avi round trip time(rtt) factor.
    * It is a multiple of apdex_rtt_tolerated_factor.
    * Allowed values are 1-1000.
-   * Allowed in basic(allowed values- 4) edition, essentials(allowed values- 4) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 4), basic edition(allowed values- 4), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4.0f.
    * @return apdexRttToleratedFactor
    */
@@ -501,7 +508,8 @@ public class AnalyticsProfile extends AviRestResource {
    * Tolerated client to avi round trip time(rtt) factor.
    * It is a multiple of apdex_rtt_tolerated_factor.
    * Allowed values are 1-1000.
-   * Allowed in basic(allowed values- 4) edition, essentials(allowed values- 4) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 4), basic edition(allowed values- 4), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4.0f.
    * @param apdexRttToleratedFactor set the apdexRttToleratedFactor.
    */
@@ -518,7 +526,8 @@ public class AnalyticsProfile extends AviRestResource {
    * A pageload includes the time for dns lookup, download of all http objects, and page render time.
    * Allowed values are 1-30000.
    * Unit is milliseconds.
-   * Allowed in basic(allowed values- 5000) edition, essentials(allowed values- 5000) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 5000), basic edition(allowed values- 5000), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5000.
    * @return apdexRumThreshold
    */
@@ -535,7 +544,8 @@ public class AnalyticsProfile extends AviRestResource {
    * A pageload includes the time for dns lookup, download of all http objects, and page render time.
    * Allowed values are 1-30000.
    * Unit is milliseconds.
-   * Allowed in basic(allowed values- 5000) edition, essentials(allowed values- 5000) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 5000), basic edition(allowed values- 5000), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5000.
    * @param apdexRumThreshold set the apdexRumThreshold.
    */
@@ -548,7 +558,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Virtual service threshold factor for tolerated page load time (plt) as multiple of apdex_rum_threshold.
    * Allowed values are 1-1000.
-   * Allowed in basic(allowed values- 4) edition, essentials(allowed values- 4) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 4), basic edition(allowed values- 4), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4.0f.
    * @return apdexRumToleratedFactor
    */
@@ -561,7 +572,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Virtual service threshold factor for tolerated page load time (plt) as multiple of apdex_rum_threshold.
    * Allowed values are 1-1000.
-   * Allowed in basic(allowed values- 4) edition, essentials(allowed values- 4) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 4), basic edition(allowed values- 4), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4.0f.
    * @param apdexRumToleratedFactor set the apdexRumToleratedFactor.
    */
@@ -577,7 +589,8 @@ public class AnalyticsProfile extends AviRestResource {
    * Greater than this number and the server response is considered frustrated.
    * Allowed values are 1-30000.
    * Unit is milliseconds.
-   * Allowed in basic(allowed values- 400) edition, essentials(allowed values- 400) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 400), basic edition(allowed values- 400), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 400.
    * @return apdexServerResponseThreshold
    */
@@ -593,7 +606,8 @@ public class AnalyticsProfile extends AviRestResource {
    * Greater than this number and the server response is considered frustrated.
    * Allowed values are 1-30000.
    * Unit is milliseconds.
-   * Allowed in basic(allowed values- 400) edition, essentials(allowed values- 400) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 400), basic edition(allowed values- 400), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 400.
    * @param apdexServerResponseThreshold set the apdexServerResponseThreshold.
    */
@@ -607,7 +621,8 @@ public class AnalyticsProfile extends AviRestResource {
    * Server tolerated response latency factor.
    * Servermust response within this factor times the satisfactory threshold (apdex_server_response_threshold) to be considered tolerated.
    * Allowed values are 1-1000.
-   * Allowed in basic(allowed values- 4) edition, essentials(allowed values- 4) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 4), basic edition(allowed values- 4), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4.0f.
    * @return apdexServerResponseToleratedFactor
    */
@@ -621,7 +636,8 @@ public class AnalyticsProfile extends AviRestResource {
    * Server tolerated response latency factor.
    * Servermust response within this factor times the satisfactory threshold (apdex_server_response_threshold) to be considered tolerated.
    * Allowed values are 1-1000.
-   * Allowed in basic(allowed values- 4) edition, essentials(allowed values- 4) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 4), basic edition(allowed values- 4), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4.0f.
    * @param apdexServerResponseToleratedFactor set the apdexServerResponseToleratedFactor.
    */
@@ -635,7 +651,8 @@ public class AnalyticsProfile extends AviRestResource {
    * Satisfactory client to avi round trip time(rtt).
    * Allowed values are 1-2000.
    * Unit is milliseconds.
-   * Allowed in basic(allowed values- 125) edition, essentials(allowed values- 125) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 125), basic edition(allowed values- 125), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 125.
    * @return apdexServerRttThreshold
    */
@@ -649,7 +666,8 @@ public class AnalyticsProfile extends AviRestResource {
    * Satisfactory client to avi round trip time(rtt).
    * Allowed values are 1-2000.
    * Unit is milliseconds.
-   * Allowed in basic(allowed values- 125) edition, essentials(allowed values- 125) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 125), basic edition(allowed values- 125), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 125.
    * @param apdexServerRttThreshold set the apdexServerRttThreshold.
    */
@@ -663,7 +681,8 @@ public class AnalyticsProfile extends AviRestResource {
    * Tolerated client to avi round trip time(rtt) factor.
    * It is a multiple of apdex_rtt_tolerated_factor.
    * Allowed values are 1-1000.
-   * Allowed in basic(allowed values- 4) edition, essentials(allowed values- 4) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 4), basic edition(allowed values- 4), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4.0f.
    * @return apdexServerRttToleratedFactor
    */
@@ -677,7 +696,8 @@ public class AnalyticsProfile extends AviRestResource {
    * Tolerated client to avi round trip time(rtt) factor.
    * It is a multiple of apdex_rtt_tolerated_factor.
    * Allowed values are 1-1000.
-   * Allowed in basic(allowed values- 4) edition, essentials(allowed values- 4) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 4), basic edition(allowed values- 4), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4.0f.
    * @param apdexServerRttToleratedFactor set the apdexServerRttToleratedFactor.
    */
@@ -689,6 +709,7 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configure which logs are sent to the avi controller from ses and how they are processed.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientLogConfig
    */
@@ -700,6 +721,7 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Configure which logs are sent to the avi controller from ses and how they are processed.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientLogConfig set the clientLogConfig.
    */
@@ -712,7 +734,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Configure to stream logs to an external server.
    * Field introduced in 17.1.1.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientLogStreamingConfig
    */
@@ -725,7 +747,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Configure to stream logs to an external server.
    * Field introduced in 17.1.1.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientLogStreamingConfig set the clientLogStreamingConfig.
    */
@@ -739,7 +761,8 @@ public class AnalyticsProfile extends AviRestResource {
    * A connection between client and avi is considered lossy when more than this percentage of out of order packets are received.
    * Allowed values are 1-100.
    * Unit is percent.
-   * Allowed in basic(allowed values- 50) edition, essentials(allowed values- 50) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 50), basic edition(allowed values- 50), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 50.
    * @return connLossyOooThreshold
    */
@@ -753,7 +776,8 @@ public class AnalyticsProfile extends AviRestResource {
    * A connection between client and avi is considered lossy when more than this percentage of out of order packets are received.
    * Allowed values are 1-100.
    * Unit is percent.
-   * Allowed in basic(allowed values- 50) edition, essentials(allowed values- 50) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 50), basic edition(allowed values- 50), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 50.
    * @param connLossyOooThreshold set the connLossyOooThreshold.
    */
@@ -767,7 +791,8 @@ public class AnalyticsProfile extends AviRestResource {
    * A connection between client and avi is considered lossy when more than this percentage of packets are retransmitted due to timeout.
    * Allowed values are 1-100.
    * Unit is percent.
-   * Allowed in basic(allowed values- 20) edition, essentials(allowed values- 20) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 20), basic edition(allowed values- 20), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20.
    * @return connLossyTimeoRexmtThreshold
    */
@@ -781,7 +806,8 @@ public class AnalyticsProfile extends AviRestResource {
    * A connection between client and avi is considered lossy when more than this percentage of packets are retransmitted due to timeout.
    * Allowed values are 1-100.
    * Unit is percent.
-   * Allowed in basic(allowed values- 20) edition, essentials(allowed values- 20) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 20), basic edition(allowed values- 20), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20.
    * @param connLossyTimeoRexmtThreshold set the connLossyTimeoRexmtThreshold.
    */
@@ -795,7 +821,8 @@ public class AnalyticsProfile extends AviRestResource {
    * A connection between client and avi is considered lossy when more than this percentage of packets are retransmitted.
    * Allowed values are 1-100.
    * Unit is percent.
-   * Allowed in basic(allowed values- 50) edition, essentials(allowed values- 50) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 50), basic edition(allowed values- 50), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 50.
    * @return connLossyTotalRexmtThreshold
    */
@@ -809,7 +836,8 @@ public class AnalyticsProfile extends AviRestResource {
    * A connection between client and avi is considered lossy when more than this percentage of packets are retransmitted.
    * Allowed values are 1-100.
    * Unit is percent.
-   * Allowed in basic(allowed values- 50) edition, essentials(allowed values- 50) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 50), basic edition(allowed values- 50), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 50.
    * @param connLossyTotalRexmtThreshold set the connLossyTotalRexmtThreshold.
    */
@@ -823,7 +851,8 @@ public class AnalyticsProfile extends AviRestResource {
    * A client connection is considered lossy when percentage of times a packet could not be trasmitted due to tcp zero window is above this threshold.
    * Allowed values are 0-100.
    * Unit is percent.
-   * Allowed in basic(allowed values- 2) edition, essentials(allowed values- 2) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 2), basic edition(allowed values- 2), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2.
    * @return connLossyZeroWinSizeEventThreshold
    */
@@ -837,7 +866,8 @@ public class AnalyticsProfile extends AviRestResource {
    * A client connection is considered lossy when percentage of times a packet could not be trasmitted due to tcp zero window is above this threshold.
    * Allowed values are 0-100.
    * Unit is percent.
-   * Allowed in basic(allowed values- 2) edition, essentials(allowed values- 2) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 2), basic edition(allowed values- 2), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2.
    * @param connLossyZeroWinSizeEventThreshold set the connLossyZeroWinSizeEventThreshold.
    */
@@ -851,7 +881,8 @@ public class AnalyticsProfile extends AviRestResource {
    * A connection between avi and server is considered lossy when more than this percentage of out of order packets are received.
    * Allowed values are 1-100.
    * Unit is percent.
-   * Allowed in basic(allowed values- 50) edition, essentials(allowed values- 50) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 50), basic edition(allowed values- 50), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 50.
    * @return connServerLossyOooThreshold
    */
@@ -865,7 +896,8 @@ public class AnalyticsProfile extends AviRestResource {
    * A connection between avi and server is considered lossy when more than this percentage of out of order packets are received.
    * Allowed values are 1-100.
    * Unit is percent.
-   * Allowed in basic(allowed values- 50) edition, essentials(allowed values- 50) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 50), basic edition(allowed values- 50), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 50.
    * @param connServerLossyOooThreshold set the connServerLossyOooThreshold.
    */
@@ -879,7 +911,8 @@ public class AnalyticsProfile extends AviRestResource {
    * A connection between avi and server is considered lossy when more than this percentage of packets are retransmitted due to timeout.
    * Allowed values are 1-100.
    * Unit is percent.
-   * Allowed in basic(allowed values- 20) edition, essentials(allowed values- 20) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 20), basic edition(allowed values- 20), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20.
    * @return connServerLossyTimeoRexmtThreshold
    */
@@ -893,7 +926,8 @@ public class AnalyticsProfile extends AviRestResource {
    * A connection between avi and server is considered lossy when more than this percentage of packets are retransmitted due to timeout.
    * Allowed values are 1-100.
    * Unit is percent.
-   * Allowed in basic(allowed values- 20) edition, essentials(allowed values- 20) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 20), basic edition(allowed values- 20), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20.
    * @param connServerLossyTimeoRexmtThreshold set the connServerLossyTimeoRexmtThreshold.
    */
@@ -907,7 +941,8 @@ public class AnalyticsProfile extends AviRestResource {
    * A connection between avi and server is considered lossy when more than this percentage of packets are retransmitted.
    * Allowed values are 1-100.
    * Unit is percent.
-   * Allowed in basic(allowed values- 50) edition, essentials(allowed values- 50) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 50), basic edition(allowed values- 50), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 50.
    * @return connServerLossyTotalRexmtThreshold
    */
@@ -921,7 +956,8 @@ public class AnalyticsProfile extends AviRestResource {
    * A connection between avi and server is considered lossy when more than this percentage of packets are retransmitted.
    * Allowed values are 1-100.
    * Unit is percent.
-   * Allowed in basic(allowed values- 50) edition, essentials(allowed values- 50) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 50), basic edition(allowed values- 50), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 50.
    * @param connServerLossyTotalRexmtThreshold set the connServerLossyTotalRexmtThreshold.
    */
@@ -935,7 +971,8 @@ public class AnalyticsProfile extends AviRestResource {
    * A server connection is considered lossy when percentage of times a packet could not be trasmitted due to tcp zero window is above this threshold.
    * Allowed values are 0-100.
    * Unit is percent.
-   * Allowed in basic(allowed values- 2) edition, essentials(allowed values- 2) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 2), basic edition(allowed values- 2), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2.
    * @return connServerLossyZeroWinSizeEventThreshold
    */
@@ -949,7 +986,8 @@ public class AnalyticsProfile extends AviRestResource {
    * A server connection is considered lossy when percentage of times a packet could not be trasmitted due to tcp zero window is above this threshold.
    * Allowed values are 0-100.
    * Unit is percent.
-   * Allowed in basic(allowed values- 2) edition, essentials(allowed values- 2) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 2), basic edition(allowed values- 2), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2.
    * @param connServerLossyZeroWinSizeEventThreshold set the connServerLossyZeroWinSizeEventThreshold.
    */
@@ -960,7 +998,7 @@ public class AnalyticsProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * User defined description for the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
@@ -971,7 +1009,7 @@ public class AnalyticsProfile extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * User defined description for the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
@@ -986,6 +1024,7 @@ public class AnalyticsProfile extends AviRestResource {
    * In case, vs is idle for a period of time as specified by ondemand_metrics_idle_timeout then metrics processing is suspended for that vs.
    * Field deprecated in 20.1.3.
    * Field introduced in 18.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return disableOndemandMetrics
    */
   @VsoMethod
@@ -999,6 +1038,7 @@ public class AnalyticsProfile extends AviRestResource {
    * In case, vs is idle for a period of time as specified by ondemand_metrics_idle_timeout then metrics processing is suspended for that vs.
    * Field deprecated in 20.1.3.
    * Field introduced in 18.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param disableOndemandMetrics set the disableOndemandMetrics.
    */
   @VsoMethod
@@ -1010,6 +1050,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Disable node (service engine) level analytics forvs metrics.
    * Field deprecated in 20.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return disableSeAnalytics
    */
   @VsoMethod
@@ -1021,6 +1062,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Disable node (service engine) level analytics forvs metrics.
    * Field deprecated in 20.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param disableSeAnalytics set the disableSeAnalytics.
    */
   @VsoMethod
@@ -1034,6 +1076,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This may be desired in container environment when there are large number of ephemeral servers.
    * Additionally, no healthscore of servers is computed when server analytics is disabled.
    * Field deprecated in 20.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return disableServerAnalytics
    */
   @VsoMethod
@@ -1047,6 +1090,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This may be desired in container environment when there are large number of ephemeral servers.
    * Additionally, no healthscore of servers is computed when server analytics is disabled.
    * Field deprecated in 20.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param disableServerAnalytics set the disableServerAnalytics.
    */
   @VsoMethod
@@ -1060,6 +1104,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This flag disables metrics and healthscore for virtualservice.
    * Field deprecated in 20.1.3.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return disableVsAnalytics
    */
   @VsoMethod
@@ -1073,6 +1118,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This flag disables metrics and healthscore for virtualservice.
    * Field deprecated in 20.1.3.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param disableVsAnalytics set the disableVsAnalytics.
    */
   @VsoMethod
@@ -1084,6 +1130,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable adaptive configuration for optimizing resource usage.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enableAdaptiveConfig
    */
@@ -1096,6 +1143,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable adaptive configuration for optimizing resource usage.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enableAdaptiveConfig set the enableAdaptiveConfig.
    */
@@ -1110,8 +1158,9 @@ public class AnalyticsProfile extends AviRestResource {
    * If set to false, anomaly computation (and associated rules/events) for vs, pool and server metrics will be deactivated.
    * However, setting it to false reduces cpu and memory requirements for analytics subsystem.
    * Field introduced in 17.2.13, 18.1.5, 18.2.1.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-   * Special default for basic edition is false, essentials edition is false, enterprise is true.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+   * cloud services edition.
+   * Special default for essentials edition is false, basic edition is false, enterprise is true.
    * @return enableAdvancedAnalytics
    */
   @VsoMethod
@@ -1125,8 +1174,9 @@ public class AnalyticsProfile extends AviRestResource {
    * If set to false, anomaly computation (and associated rules/events) for vs, pool and server metrics will be deactivated.
    * However, setting it to false reduces cpu and memory requirements for analytics subsystem.
    * Field introduced in 17.2.13, 18.1.5, 18.2.1.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-   * Special default for basic edition is false, essentials edition is false, enterprise is true.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+   * cloud services edition.
+   * Special default for essentials edition is false, basic edition is false, enterprise is true.
    * @param enableAdvancedAnalytics set the enableAdvancedAnalytics.
    */
   @VsoMethod
@@ -1139,6 +1189,7 @@ public class AnalyticsProfile extends AviRestResource {
    * Virtual service (vs) metrics are processed only when there is live data traffic on the vs.
    * In case, vs is idle for a period of time as specified by ondemand_metrics_idle_timeout then metrics processing is suspended for that vs.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enableOndemandMetrics
    */
@@ -1152,6 +1203,7 @@ public class AnalyticsProfile extends AviRestResource {
    * Virtual service (vs) metrics are processed only when there is live data traffic on the vs.
    * In case, vs is idle for a period of time as specified by ondemand_metrics_idle_timeout then metrics processing is suspended for that vs.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enableOndemandMetrics set the enableOndemandMetrics.
    */
@@ -1164,6 +1216,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable node (service engine) level analytics forvs metrics.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enableSeAnalytics
    */
@@ -1176,6 +1229,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable node (service engine) level analytics forvs metrics.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enableSeAnalytics set the enableSeAnalytics.
    */
@@ -1190,6 +1244,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This may be desired in container environment when there are large number of ephemeral servers.
    * Additionally, no healthscore of servers is computed when server analytics is enabled.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enableServerAnalytics
    */
@@ -1204,6 +1259,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This may be desired in container environment when there are large number of ephemeral servers.
    * Additionally, no healthscore of servers is computed when server analytics is enabled.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enableServerAnalytics set the enableServerAnalytics.
    */
@@ -1217,6 +1273,7 @@ public class AnalyticsProfile extends AviRestResource {
    * Enable virtualservice (frontend) analytics.
    * This flag enables metrics and healthscore for virtualservice.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enableVsAnalytics
    */
@@ -1230,6 +1287,7 @@ public class AnalyticsProfile extends AviRestResource {
    * Enable virtualservice (frontend) analytics.
    * This flag enables metrics and healthscore for virtualservice.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enableVsAnalytics set the enableVsAnalytics.
    */
@@ -1241,7 +1299,8 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Exclude client closed connection before an http request could be completed from being classified as an error.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return excludeClientCloseBeforeRequestAsError
    */
@@ -1253,7 +1312,8 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Exclude client closed connection before an http request could be completed from being classified as an error.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param excludeClientCloseBeforeRequestAsError set the excludeClientCloseBeforeRequestAsError.
    */
@@ -1266,7 +1326,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Exclude dns policy drops from the list of errors.
    * Field introduced in 17.2.2.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return excludeDnsPolicyDropAsSignificant
    */
@@ -1279,7 +1340,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Exclude dns policy drops from the list of errors.
    * Field introduced in 17.2.2.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param excludeDnsPolicyDropAsSignificant set the excludeDnsPolicyDropAsSignificant.
    */
@@ -1291,7 +1353,8 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Exclude queries to gslb services that are operationally down from the list of errors.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return excludeGsDownAsError
    */
@@ -1303,7 +1366,8 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Exclude queries to gslb services that are operationally down from the list of errors.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param excludeGsDownAsError set the excludeGsDownAsError.
    */
@@ -1316,6 +1380,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of http status codes to be excluded from being classified as an error.
    * Error connections or responses impacts health score, are included as significant logs, and may be classified as part of a dos attack.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return excludeHttpErrorCodes
    */
@@ -1328,6 +1393,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method. this will set the excludeHttpErrorCodes
    * List of http status codes to be excluded from being classified as an error.
    * Error connections or responses impacts health score, are included as significant logs, and may be classified as part of a dos attack.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return excludeHttpErrorCodes
    */
@@ -1340,6 +1406,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method this will set the excludeHttpErrorCodes
    * List of http status codes to be excluded from being classified as an error.
    * Error connections or responses impacts health score, are included as significant logs, and may be classified as part of a dos attack.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return excludeHttpErrorCodes
    */
@@ -1356,7 +1423,8 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Exclude dns queries to domains outside the domains configured in the dns application profile from the list of errors.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return excludeInvalidDnsDomainAsError
    */
@@ -1368,7 +1436,8 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Exclude dns queries to domains outside the domains configured in the dns application profile from the list of errors.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param excludeInvalidDnsDomainAsError set the excludeInvalidDnsDomainAsError.
    */
@@ -1380,7 +1449,8 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Exclude invalid dns queries from the list of errors.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return excludeInvalidDnsQueryAsError
    */
@@ -1392,7 +1462,8 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Exclude invalid dns queries from the list of errors.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param excludeInvalidDnsQueryAsError set the excludeInvalidDnsQueryAsError.
    */
@@ -1405,7 +1476,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Exclude the issuer-revoked ocsp responses from the list of errors.
    * Field introduced in 20.1.1.
-   * Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- true), basic edition(allowed values- true), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return excludeIssuerRevokedOcspResponsesAsError
    */
@@ -1418,7 +1490,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Exclude the issuer-revoked ocsp responses from the list of errors.
    * Field introduced in 20.1.1.
-   * Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- true), basic edition(allowed values- true), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param excludeIssuerRevokedOcspResponsesAsError set the excludeIssuerRevokedOcspResponsesAsError.
    */
@@ -1430,7 +1503,8 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Exclude queries to domains that did not have configured services/records from the list of errors.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return excludeNoDnsRecordAsError
    */
@@ -1442,7 +1516,8 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Exclude queries to domains that did not have configured services/records from the list of errors.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param excludeNoDnsRecordAsError set the excludeNoDnsRecordAsError.
    */
@@ -1454,7 +1529,8 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Exclude queries to gslb services that have no available members from the list of errors.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return excludeNoValidGsMemberAsError
    */
@@ -1466,7 +1542,8 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Exclude queries to gslb services that have no available members from the list of errors.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param excludeNoValidGsMemberAsError set the excludeNoValidGsMemberAsError.
    */
@@ -1478,7 +1555,8 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Exclude persistence server changed while load balancing' from the list of errors.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return excludePersistenceChangeAsError
    */
@@ -1490,7 +1568,8 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Exclude persistence server changed while load balancing' from the list of errors.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param excludePersistenceChangeAsError set the excludePersistenceChangeAsError.
    */
@@ -1503,7 +1582,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Exclude the revoked ocsp certificate status responses from the list of errors.
    * Field introduced in 20.1.1.
-   * Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- true), basic edition(allowed values- true), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return excludeRevokedOcspResponsesAsError
    */
@@ -1516,7 +1596,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Exclude the revoked ocsp certificate status responses from the list of errors.
    * Field introduced in 20.1.1.
-   * Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- true), basic edition(allowed values- true), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param excludeRevokedOcspResponsesAsError set the excludeRevokedOcspResponsesAsError.
    */
@@ -1528,7 +1609,8 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Exclude server dns error response from the list of errors.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return excludeServerDnsErrorAsError
    */
@@ -1540,7 +1622,8 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Exclude server dns error response from the list of errors.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param excludeServerDnsErrorAsError set the excludeServerDnsErrorAsError.
    */
@@ -1553,7 +1636,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Exclude server tcp reset from errors.
    * It is common for applications like ms exchange.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return excludeServerTcpResetAsError
    */
@@ -1566,7 +1650,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Exclude server tcp reset from errors.
    * It is common for applications like ms exchange.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param excludeServerTcpResetAsError set the excludeServerTcpResetAsError.
    */
@@ -1579,7 +1664,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of sip status codes to be excluded from being classified as an error.
    * Field introduced in 17.2.13, 18.1.5, 18.2.1.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return excludeSipErrorCodes
    */
@@ -1592,7 +1677,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method. this will set the excludeSipErrorCodes
    * List of sip status codes to be excluded from being classified as an error.
    * Field introduced in 17.2.13, 18.1.5, 18.2.1.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return excludeSipErrorCodes
    */
@@ -1605,7 +1690,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method this will set the excludeSipErrorCodes
    * List of sip status codes to be excluded from being classified as an error.
    * Field introduced in 17.2.13, 18.1.5, 18.2.1.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return excludeSipErrorCodes
    */
@@ -1623,7 +1708,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Exclude the stale ocsp certificate status responses from the list of errors.
    * Field introduced in 20.1.1.
-   * Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- true), basic edition(allowed values- true), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return excludeStaleOcspResponsesAsError
    */
@@ -1636,7 +1722,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Exclude the stale ocsp certificate status responses from the list of errors.
    * Field introduced in 20.1.1.
-   * Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- true), basic edition(allowed values- true), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param excludeStaleOcspResponsesAsError set the excludeStaleOcspResponsesAsError.
    */
@@ -1648,7 +1735,8 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Exclude 'server unanswered syns' from the list of errors.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return excludeSynRetransmitAsError
    */
@@ -1660,7 +1748,8 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Exclude 'server unanswered syns' from the list of errors.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param excludeSynRetransmitAsError set the excludeSynRetransmitAsError.
    */
@@ -1672,7 +1761,8 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Exclude tcp resets by client from the list of potential errors.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return excludeTcpResetAsError
    */
@@ -1684,7 +1774,8 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Exclude tcp resets by client from the list of potential errors.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param excludeTcpResetAsError set the excludeTcpResetAsError.
    */
@@ -1697,7 +1788,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Exclude the unavailable ocsp responses from the list of errors.
    * Field introduced in 20.1.1.
-   * Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- true), basic edition(allowed values- true), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return excludeUnavailableOcspResponsesAsError
    */
@@ -1710,7 +1802,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Exclude the unavailable ocsp responses from the list of errors.
    * Field introduced in 20.1.1.
-   * Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- true), basic edition(allowed values- true), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param excludeUnavailableOcspResponsesAsError set the excludeUnavailableOcspResponsesAsError.
    */
@@ -1722,7 +1815,8 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Exclude unsupported dns queries from the list of errors.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return excludeUnsupportedDnsQueryAsError
    */
@@ -1734,7 +1828,8 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Exclude unsupported dns queries from the list of errors.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param excludeUnsupportedDnsQueryAsError set the excludeUnsupportedDnsQueryAsError.
    */
@@ -1747,10 +1842,11 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Skips health score computation of pool servers when number of servers in a pool is more than this setting.
    * Allowed values are 0-5000.
-   * Special values are 0- 'server health score is deactivated'.
+   * Special values are 0- server health score is deactivated.
    * Field introduced in 17.2.13, 18.1.4.
-   * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
-   * Special default for basic edition is 0, essentials edition is 0, enterprise is 20.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 0), basic edition(allowed values- 0), enterprise with cloud
+   * services edition.
+   * Special default for essentials edition is 0, basic edition is 0, enterprise is 20.
    * @return healthscoreMaxServerLimit
    */
   @VsoMethod
@@ -1762,10 +1858,11 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Skips health score computation of pool servers when number of servers in a pool is more than this setting.
    * Allowed values are 0-5000.
-   * Special values are 0- 'server health score is deactivated'.
+   * Special values are 0- server health score is deactivated.
    * Field introduced in 17.2.13, 18.1.4.
-   * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
-   * Special default for basic edition is 0, essentials edition is 0, enterprise is 20.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 0), basic edition(allowed values- 0), enterprise with cloud
+   * services edition.
+   * Special default for essentials edition is 0, basic edition is 0, enterprise is 20.
    * @param healthscoreMaxServerLimit set the healthscoreMaxServerLimit.
    */
   @VsoMethod
@@ -1776,7 +1873,8 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Time window (in secs) within which only unique health change events should occur.
-   * Allowed in basic(allowed values- 1209600) edition, essentials(allowed values- 1209600) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 1209600), basic edition(allowed values- 1209600), enterprise
+   * with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1209600.
    * @return hsEventThrottleWindow
    */
@@ -1788,7 +1886,8 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Time window (in secs) within which only unique health change events should occur.
-   * Allowed in basic(allowed values- 1209600) edition, essentials(allowed values- 1209600) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 1209600), basic edition(allowed values- 1209600), enterprise
+   * with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1209600.
    * @param hsEventThrottleWindow set the hsEventThrottleWindow.
    */
@@ -1801,7 +1900,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum penalty that may be deducted from health score for anomalies.
    * Allowed values are 0-100.
-   * Allowed in basic(allowed values- 10) edition, essentials(allowed values- 10) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 10), basic edition(allowed values- 10), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return hsMaxAnomalyPenalty
    */
@@ -1814,7 +1914,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum penalty that may be deducted from health score for anomalies.
    * Allowed values are 0-100.
-   * Allowed in basic(allowed values- 10) edition, essentials(allowed values- 10) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 10), basic edition(allowed values- 10), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param hsMaxAnomalyPenalty set the hsMaxAnomalyPenalty.
    */
@@ -1827,7 +1928,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum penalty that may be deducted from health score for high resource utilization.
    * Allowed values are 0-100.
-   * Allowed in basic(allowed values- 25) edition, essentials(allowed values- 25) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 25), basic edition(allowed values- 25), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 25.
    * @return hsMaxResourcesPenalty
    */
@@ -1840,7 +1942,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum penalty that may be deducted from health score for high resource utilization.
    * Allowed values are 0-100.
-   * Allowed in basic(allowed values- 25) edition, essentials(allowed values- 25) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 25), basic edition(allowed values- 25), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 25.
    * @param hsMaxResourcesPenalty set the hsMaxResourcesPenalty.
    */
@@ -1853,7 +1956,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum penalty that may be deducted from health score based on security assessment.
    * Allowed values are 0-100.
-   * Allowed in basic(allowed values- 100) edition, essentials(allowed values- 100) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 100), basic edition(allowed values- 100), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @return hsMaxSecurityPenalty
    */
@@ -1866,7 +1970,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum penalty that may be deducted from health score based on security assessment.
    * Allowed values are 0-100.
-   * Allowed in basic(allowed values- 100) edition, essentials(allowed values- 100) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 100), basic edition(allowed values- 100), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @param hsMaxSecurityPenalty set the hsMaxSecurityPenalty.
    */
@@ -1878,7 +1983,8 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos connection rate below which the dos security assessment will not kick in.
-   * Allowed in basic(allowed values- 1000) edition, essentials(allowed values- 1000) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 1000), basic edition(allowed values- 1000), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @return hsMinDosRate
    */
@@ -1890,7 +1996,8 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos connection rate below which the dos security assessment will not kick in.
-   * Allowed in basic(allowed values- 1000) edition, essentials(allowed values- 1000) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 1000), basic edition(allowed values- 1000), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @param hsMinDosRate set the hsMinDosRate.
    */
@@ -1904,7 +2011,8 @@ public class AnalyticsProfile extends AviRestResource {
    * Adds free performance score credits to health score.
    * It can be used for compensating health score for known slow applications.
    * Allowed values are 0-100.
-   * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 0), basic edition(allowed values- 0), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return hsPerformanceBoost
    */
@@ -1918,7 +2026,8 @@ public class AnalyticsProfile extends AviRestResource {
    * Adds free performance score credits to health score.
    * It can be used for compensating health score for known slow applications.
    * Allowed values are 0-100.
-   * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 0), basic edition(allowed values- 0), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param hsPerformanceBoost set the hsPerformanceBoost.
    */
@@ -1930,7 +2039,8 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Threshold number of connections in 5min, below which apdexr, apdexc, rum_apdex, and other network quality metrics are not computed.
-   * Allowed in basic(allowed values- 10) edition, essentials(allowed values- 10) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 10), basic edition(allowed values- 10), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.0f.
    * @return hsPscoreTrafficThresholdL4Client
    */
@@ -1942,7 +2052,8 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Threshold number of connections in 5min, below which apdexr, apdexc, rum_apdex, and other network quality metrics are not computed.
-   * Allowed in basic(allowed values- 10) edition, essentials(allowed values- 10) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 10), basic edition(allowed values- 10), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.0f.
    * @param hsPscoreTrafficThresholdL4Client set the hsPscoreTrafficThresholdL4Client.
    */
@@ -1954,7 +2065,8 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Threshold number of connections in 5min, below which apdexr, apdexc, rum_apdex, and other network quality metrics are not computed.
-   * Allowed in basic(allowed values- 10) edition, essentials(allowed values- 10) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 10), basic edition(allowed values- 10), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.0f.
    * @return hsPscoreTrafficThresholdL4Server
    */
@@ -1966,7 +2078,8 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Threshold number of connections in 5min, below which apdexr, apdexc, rum_apdex, and other network quality metrics are not computed.
-   * Allowed in basic(allowed values- 10) edition, essentials(allowed values- 10) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 10), basic edition(allowed values- 10), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.0f.
    * @param hsPscoreTrafficThresholdL4Server set the hsPscoreTrafficThresholdL4Server.
    */
@@ -1979,7 +2092,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Score assigned when the certificate has expired.
    * Allowed values are 0-5.
-   * Allowed in basic(allowed values- 0.0) edition, essentials(allowed values- 0.0) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 0.0), basic edition(allowed values- 0.0), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @return hsSecurityCertscoreExpired
    */
@@ -1992,7 +2106,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Score assigned when the certificate has expired.
    * Allowed values are 0-5.
-   * Allowed in basic(allowed values- 0.0) edition, essentials(allowed values- 0.0) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 0.0), basic edition(allowed values- 0.0), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @param hsSecurityCertscoreExpired set the hsSecurityCertscoreExpired.
    */
@@ -2005,7 +2120,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Score assigned when the certificate expires in more than 30 days.
    * Allowed values are 0-5.
-   * Allowed in basic(allowed values- 5.0) edition, essentials(allowed values- 5.0) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 5.0), basic edition(allowed values- 5.0), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.0f.
    * @return hsSecurityCertscoreGt30D
    */
@@ -2018,7 +2134,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Score assigned when the certificate expires in more than 30 days.
    * Allowed values are 0-5.
-   * Allowed in basic(allowed values- 5.0) edition, essentials(allowed values- 5.0) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 5.0), basic edition(allowed values- 5.0), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.0f.
    * @param hsSecurityCertscoreGt30D set the hsSecurityCertscoreGt30D.
    */
@@ -2031,7 +2148,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Score assigned when the certificate expires in less than or equal to 7 days.
    * Allowed values are 0-5.
-   * Allowed in basic(allowed values- 2.0) edition, essentials(allowed values- 2.0) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 2.0), basic edition(allowed values- 2.0), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2.0f.
    * @return hsSecurityCertscoreLe07D
    */
@@ -2044,7 +2162,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Score assigned when the certificate expires in less than or equal to 7 days.
    * Allowed values are 0-5.
-   * Allowed in basic(allowed values- 2.0) edition, essentials(allowed values- 2.0) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 2.0), basic edition(allowed values- 2.0), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2.0f.
    * @param hsSecurityCertscoreLe07D set the hsSecurityCertscoreLe07D.
    */
@@ -2057,7 +2176,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Score assigned when the certificate expires in less than or equal to 30 days.
    * Allowed values are 0-5.
-   * Allowed in basic(allowed values- 4.0) edition, essentials(allowed values- 4.0) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 4.0), basic edition(allowed values- 4.0), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4.0f.
    * @return hsSecurityCertscoreLe30D
    */
@@ -2070,7 +2190,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Score assigned when the certificate expires in less than or equal to 30 days.
    * Allowed values are 0-5.
-   * Allowed in basic(allowed values- 4.0) edition, essentials(allowed values- 4.0) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 4.0), basic edition(allowed values- 4.0), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4.0f.
    * @param hsSecurityCertscoreLe30D set the hsSecurityCertscoreLe30D.
    */
@@ -2083,7 +2204,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Penalty for allowing certificates with invalid chain.
    * Allowed values are 0-5.
-   * Allowed in basic(allowed values- 1.0) edition, essentials(allowed values- 1.0) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 1.0), basic edition(allowed values- 1.0), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.0f.
    * @return hsSecurityChainInvalidityPenalty
    */
@@ -2096,7 +2218,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Penalty for allowing certificates with invalid chain.
    * Allowed values are 0-5.
-   * Allowed in basic(allowed values- 1.0) edition, essentials(allowed values- 1.0) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 1.0), basic edition(allowed values- 1.0), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.0f.
    * @param hsSecurityChainInvalidityPenalty set the hsSecurityChainInvalidityPenalty.
    */
@@ -2109,7 +2232,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Score assigned when the minimum cipher strength is 0 bits.
    * Allowed values are 0-5.
-   * Allowed in basic(allowed values- 0.0) edition, essentials(allowed values- 0.0) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 0.0), basic edition(allowed values- 0.0), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @return hsSecurityCipherscoreEq000B
    */
@@ -2122,7 +2246,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Score assigned when the minimum cipher strength is 0 bits.
    * Allowed values are 0-5.
-   * Allowed in basic(allowed values- 0.0) edition, essentials(allowed values- 0.0) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 0.0), basic edition(allowed values- 0.0), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @param hsSecurityCipherscoreEq000B set the hsSecurityCipherscoreEq000B.
    */
@@ -2135,7 +2260,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Score assigned when the minimum cipher strength is greater than equal to 128 bits.
    * Allowed values are 0-5.
-   * Allowed in basic(allowed values- 5.0) edition, essentials(allowed values- 5.0) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 5.0), basic edition(allowed values- 5.0), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.0f.
    * @return hsSecurityCipherscoreGe128B
    */
@@ -2148,7 +2274,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Score assigned when the minimum cipher strength is greater than equal to 128 bits.
    * Allowed values are 0-5.
-   * Allowed in basic(allowed values- 5.0) edition, essentials(allowed values- 5.0) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 5.0), basic edition(allowed values- 5.0), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.0f.
    * @param hsSecurityCipherscoreGe128B set the hsSecurityCipherscoreGe128B.
    */
@@ -2161,7 +2288,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Score assigned when the minimum cipher strength is less than 128 bits.
    * Allowed values are 0-5.
-   * Allowed in basic(allowed values- 3.5) edition, essentials(allowed values- 3.5) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 3.5), basic edition(allowed values- 3.5), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3.5f.
    * @return hsSecurityCipherscoreLt128B
    */
@@ -2174,7 +2302,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Score assigned when the minimum cipher strength is less than 128 bits.
    * Allowed values are 0-5.
-   * Allowed in basic(allowed values- 3.5) edition, essentials(allowed values- 3.5) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 3.5), basic edition(allowed values- 3.5), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3.5f.
    * @param hsSecurityCipherscoreLt128B set the hsSecurityCipherscoreLt128B.
    */
@@ -2187,7 +2316,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Score assigned when no algorithm is used for encryption.
    * Allowed values are 0-5.
-   * Allowed in basic(allowed values- 0.0) edition, essentials(allowed values- 0.0) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 0.0), basic edition(allowed values- 0.0), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @return hsSecurityEncalgoScoreNone
    */
@@ -2200,7 +2330,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Score assigned when no algorithm is used for encryption.
    * Allowed values are 0-5.
-   * Allowed in basic(allowed values- 0.0) edition, essentials(allowed values- 0.0) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 0.0), basic edition(allowed values- 0.0), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @param hsSecurityEncalgoScoreNone set the hsSecurityEncalgoScoreNone.
    */
@@ -2213,7 +2344,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Score assigned when rc4 algorithm is used for encryption.
    * Allowed values are 0-5.
-   * Allowed in basic(allowed values- 2.5) edition, essentials(allowed values- 2.5) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 2.5), basic edition(allowed values- 2.5), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2.5f.
    * @return hsSecurityEncalgoScoreRc4
    */
@@ -2226,7 +2358,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Score assigned when rc4 algorithm is used for encryption.
    * Allowed values are 0-5.
-   * Allowed in basic(allowed values- 2.5) edition, essentials(allowed values- 2.5) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 2.5), basic edition(allowed values- 2.5), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2.5f.
    * @param hsSecurityEncalgoScoreRc4 set the hsSecurityEncalgoScoreRc4.
    */
@@ -2239,7 +2372,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Penalty for not enabling hsts.
    * Allowed values are 0-5.
-   * Allowed in basic(allowed values- 1.0) edition, essentials(allowed values- 1.0) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 1.0), basic edition(allowed values- 1.0), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.0f.
    * @return hsSecurityHstsPenalty
    */
@@ -2252,7 +2386,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Penalty for not enabling hsts.
    * Allowed values are 0-5.
-   * Allowed in basic(allowed values- 1.0) edition, essentials(allowed values- 1.0) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 1.0), basic edition(allowed values- 1.0), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.0f.
    * @param hsSecurityHstsPenalty set the hsSecurityHstsPenalty.
    */
@@ -2265,7 +2400,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Penalty for allowing non-pfs handshakes.
    * Allowed values are 0-5.
-   * Allowed in basic(allowed values- 1.0) edition, essentials(allowed values- 1.0) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 1.0), basic edition(allowed values- 1.0), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.0f.
    * @return hsSecurityNonpfsPenalty
    */
@@ -2278,7 +2414,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Penalty for allowing non-pfs handshakes.
    * Allowed values are 0-5.
-   * Allowed in basic(allowed values- 1.0) edition, essentials(allowed values- 1.0) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 1.0), basic edition(allowed values- 1.0), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.0f.
    * @param hsSecurityNonpfsPenalty set the hsSecurityNonpfsPenalty.
    */
@@ -2292,7 +2429,8 @@ public class AnalyticsProfile extends AviRestResource {
    * Score assigned when ocsp certificate status is set to revoked or issuer revoked.
    * Allowed values are 0.0-5.0.
    * Field introduced in 20.1.1.
-   * Allowed in basic(allowed values- 0.0) edition, essentials(allowed values- 0.0) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 0.0), basic edition(allowed values- 0.0), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @return hsSecurityOcspRevokedScore
    */
@@ -2306,7 +2444,8 @@ public class AnalyticsProfile extends AviRestResource {
    * Score assigned when ocsp certificate status is set to revoked or issuer revoked.
    * Allowed values are 0.0-5.0.
    * Field introduced in 20.1.1.
-   * Allowed in basic(allowed values- 0.0) edition, essentials(allowed values- 0.0) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 0.0), basic edition(allowed values- 0.0), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @param hsSecurityOcspRevokedScore set the hsSecurityOcspRevokedScore.
    */
@@ -2319,7 +2458,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Deprecated.
    * Allowed values are 0-5.
-   * Allowed in basic(allowed values- 1.0) edition, essentials(allowed values- 1.0) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 1.0), basic edition(allowed values- 1.0), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.0f.
    * @return hsSecuritySelfsignedcertPenalty
    */
@@ -2332,7 +2472,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Deprecated.
    * Allowed values are 0-5.
-   * Allowed in basic(allowed values- 1.0) edition, essentials(allowed values- 1.0) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 1.0), basic edition(allowed values- 1.0), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.0f.
    * @param hsSecuritySelfsignedcertPenalty set the hsSecuritySelfsignedcertPenalty.
    */
@@ -2345,7 +2486,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Score assigned when supporting ssl3.0 encryption protocol.
    * Allowed values are 0-5.
-   * Allowed in basic(allowed values- 3.5) edition, essentials(allowed values- 3.5) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 3.5), basic edition(allowed values- 3.5), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3.5f.
    * @return hsSecuritySsl30Score
    */
@@ -2358,7 +2500,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Score assigned when supporting ssl3.0 encryption protocol.
    * Allowed values are 0-5.
-   * Allowed in basic(allowed values- 3.5) edition, essentials(allowed values- 3.5) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 3.5), basic edition(allowed values- 3.5), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3.5f.
    * @param hsSecuritySsl30Score set the hsSecuritySsl30Score.
    */
@@ -2371,7 +2514,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Score assigned when supporting tls1.0 encryption protocol.
    * Allowed values are 0-5.
-   * Allowed in basic(allowed values- 5.0) edition, essentials(allowed values- 5.0) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 5.0), basic edition(allowed values- 5.0), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.0f.
    * @return hsSecurityTls10Score
    */
@@ -2384,7 +2528,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Score assigned when supporting tls1.0 encryption protocol.
    * Allowed values are 0-5.
-   * Allowed in basic(allowed values- 5.0) edition, essentials(allowed values- 5.0) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 5.0), basic edition(allowed values- 5.0), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.0f.
    * @param hsSecurityTls10Score set the hsSecurityTls10Score.
    */
@@ -2397,7 +2542,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Score assigned when supporting tls1.1 encryption protocol.
    * Allowed values are 0-5.
-   * Allowed in basic(allowed values- 5.0) edition, essentials(allowed values- 5.0) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 5.0), basic edition(allowed values- 5.0), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.0f.
    * @return hsSecurityTls11Score
    */
@@ -2410,7 +2556,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Score assigned when supporting tls1.1 encryption protocol.
    * Allowed values are 0-5.
-   * Allowed in basic(allowed values- 5.0) edition, essentials(allowed values- 5.0) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 5.0), basic edition(allowed values- 5.0), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.0f.
    * @param hsSecurityTls11Score set the hsSecurityTls11Score.
    */
@@ -2423,7 +2570,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Score assigned when supporting tls1.2 encryption protocol.
    * Allowed values are 0-5.
-   * Allowed in basic(allowed values- 5.0) edition, essentials(allowed values- 5.0) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 5.0), basic edition(allowed values- 5.0), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.0f.
    * @return hsSecurityTls12Score
    */
@@ -2436,7 +2584,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Score assigned when supporting tls1.2 encryption protocol.
    * Allowed values are 0-5.
-   * Allowed in basic(allowed values- 5.0) edition, essentials(allowed values- 5.0) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 5.0), basic edition(allowed values- 5.0), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.0f.
    * @param hsSecurityTls12Score set the hsSecurityTls12Score.
    */
@@ -2450,7 +2599,8 @@ public class AnalyticsProfile extends AviRestResource {
    * Score assigned when supporting tls1.3 encryption protocol.
    * Allowed values are 0-5.
    * Field introduced in 18.2.6.
-   * Allowed in basic(allowed values- 5.0) edition, essentials(allowed values- 5.0) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 5.0), basic edition(allowed values- 5.0), enterprise with cloud
+   * services edition.
    * @return hsSecurityTls13Score
    */
   @VsoMethod
@@ -2463,7 +2613,8 @@ public class AnalyticsProfile extends AviRestResource {
    * Score assigned when supporting tls1.3 encryption protocol.
    * Allowed values are 0-5.
    * Field introduced in 18.2.6.
-   * Allowed in basic(allowed values- 5.0) edition, essentials(allowed values- 5.0) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 5.0), basic edition(allowed values- 5.0), enterprise with cloud
+   * services edition.
    * @param hsSecurityTls13Score set the hsSecurityTls13Score.
    */
   @VsoMethod
@@ -2475,7 +2626,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Penalty for allowing weak signature algorithm(s).
    * Allowed values are 0-5.
-   * Allowed in basic(allowed values- 1.0) edition, essentials(allowed values- 1.0) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 1.0), basic edition(allowed values- 1.0), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.0f.
    * @return hsSecurityWeakSignatureAlgoPenalty
    */
@@ -2488,7 +2640,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Penalty for allowing weak signature algorithm(s).
    * Allowed values are 0-5.
-   * Allowed in basic(allowed values- 1.0) edition, essentials(allowed values- 1.0) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 1.0), basic edition(allowed values- 1.0), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.0f.
    * @param hsSecurityWeakSignatureAlgoPenalty set the hsSecurityWeakSignatureAlgoPenalty.
    */
@@ -2504,6 +2657,7 @@ public class AnalyticsProfile extends AviRestResource {
    * Field deprecated in 20.1.5.
    * Field introduced in 20.1.2.
    * Maximum of 4 items allowed.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * @return labels
    */
   @VsoMethod
@@ -2518,6 +2672,7 @@ public class AnalyticsProfile extends AviRestResource {
    * Field deprecated in 20.1.5.
    * Field introduced in 20.1.2.
    * Maximum of 4 items allowed.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * @return labels
    */
   @VsoMethod
@@ -2532,6 +2687,7 @@ public class AnalyticsProfile extends AviRestResource {
    * Field deprecated in 20.1.5.
    * Field introduced in 20.1.2.
    * Maximum of 4 items allowed.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * @return labels
    */
   @VsoMethod
@@ -2548,6 +2704,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Influence the audit of ingress latency and connection establishement time.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return latencyAuditProps
    */
@@ -2560,6 +2717,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Influence the audit of ingress latency and connection establishement time.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param latencyAuditProps set the latencyAuditProps.
    */
@@ -2572,7 +2730,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -2585,7 +2744,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method. this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -2598,7 +2758,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -2615,6 +2776,7 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The name of the analytics profile.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -2626,6 +2788,7 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The name of the analytics profile.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -2640,6 +2803,7 @@ public class AnalyticsProfile extends AviRestResource {
    * It is applicable only when enable_ondemand_metrics is set to false.
    * Field introduced in 18.1.1.
    * Unit is seconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1800.
    * @return ondemandMetricsIdleTimeout
    */
@@ -2654,6 +2818,7 @@ public class AnalyticsProfile extends AviRestResource {
    * It is applicable only when enable_ondemand_metrics is set to false.
    * Field introduced in 18.1.1.
    * Unit is seconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1800.
    * @param ondemandMetricsIdleTimeout set the ondemandMetricsIdleTimeout.
    */
@@ -2665,6 +2830,7 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * List of http status code ranges to be excluded from being classified as an error.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ranges
    */
@@ -2676,6 +2842,7 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the setter method. this will set the ranges
    * List of http status code ranges to be excluded from being classified as an error.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ranges
    */
@@ -2687,6 +2854,7 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the setter method this will set the ranges
    * List of http status code ranges to be excluded from being classified as an error.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ranges
    */
@@ -2704,6 +2872,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Block of http response codes to be excluded from being classified as an error.
    * Enum options - AP_HTTP_RSP_4XX, AP_HTTP_RSP_5XX.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return respCodeBlock
    */
@@ -2716,6 +2885,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method. this will set the respCodeBlock
    * Block of http response codes to be excluded from being classified as an error.
    * Enum options - AP_HTTP_RSP_4XX, AP_HTTP_RSP_5XX.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return respCodeBlock
    */
@@ -2728,6 +2898,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method this will set the respCodeBlock
    * Block of http response codes to be excluded from being classified as an error.
    * Enum options - AP_HTTP_RSP_4XX, AP_HTTP_RSP_5XX.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return respCodeBlock
    */
@@ -2745,7 +2916,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Rules applied to the http application log for filtering sensitive information.
    * Field introduced in 17.2.10, 18.1.2.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sensitiveLogProfile
    */
@@ -2758,7 +2929,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Rules applied to the http application log for filtering sensitive information.
    * Field introduced in 17.2.10, 18.1.2.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sensitiveLogProfile set the sensitiveLogProfile.
    */
@@ -2773,7 +2944,8 @@ public class AnalyticsProfile extends AviRestResource {
    * By default, this value is 20.
    * Allowed values are 1-1000.
    * Field introduced in 17.2.13, 18.1.5, 18.2.1.
-   * Allowed in basic(allowed values- 20) edition, essentials(allowed values- 20) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 20), basic edition(allowed values- 20), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20.
    * @return sipLogDepth
    */
@@ -2788,7 +2960,8 @@ public class AnalyticsProfile extends AviRestResource {
    * By default, this value is 20.
    * Allowed values are 1-1000.
    * Field introduced in 17.2.13, 18.1.5, 18.2.1.
-   * Allowed in basic(allowed values- 20) edition, essentials(allowed values- 20) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- 20), basic edition(allowed values- 20), enterprise with cloud
+   * services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20.
    * @param sipLogDepth set the sipLogDepth.
    */
@@ -2800,6 +2973,7 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -2811,6 +2985,7 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
@@ -2841,6 +3016,7 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the analytics profile.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -2852,6 +3028,7 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the analytics profile.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */

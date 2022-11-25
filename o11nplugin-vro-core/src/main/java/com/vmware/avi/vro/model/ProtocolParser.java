@@ -62,6 +62,7 @@ public class ProtocolParser extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Description of the protocol parser.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
@@ -74,6 +75,7 @@ public class ProtocolParser extends AviRestResource {
    * This is the setter method to the attribute.
    * Description of the protocol parser.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
@@ -89,6 +91,7 @@ public class ProtocolParser extends AviRestResource {
    * Field deprecated in 20.1.5.
    * Field introduced in 20.1.2.
    * Maximum of 4 items allowed.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * @return labels
    */
   @VsoMethod
@@ -103,6 +106,7 @@ public class ProtocolParser extends AviRestResource {
    * Field deprecated in 20.1.5.
    * Field introduced in 20.1.2.
    * Maximum of 4 items allowed.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * @return labels
    */
   @VsoMethod
@@ -117,6 +121,7 @@ public class ProtocolParser extends AviRestResource {
    * Field deprecated in 20.1.5.
    * Field introduced in 20.1.2.
    * Maximum of 4 items allowed.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * @return labels
    */
   @VsoMethod
@@ -133,7 +138,8 @@ public class ProtocolParser extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -146,7 +152,8 @@ public class ProtocolParser extends AviRestResource {
    * This is the setter method. this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -159,7 +166,8 @@ public class ProtocolParser extends AviRestResource {
    * This is the setter method this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -177,6 +185,7 @@ public class ProtocolParser extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the protocol parser.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -189,6 +198,7 @@ public class ProtocolParser extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the protocol parser.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -201,6 +211,7 @@ public class ProtocolParser extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Command script provided inline.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return parserCode
    */
@@ -213,6 +224,7 @@ public class ProtocolParser extends AviRestResource {
    * This is the setter method to the attribute.
    * Command script provided inline.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param parserCode set the parserCode.
    */
@@ -226,6 +238,7 @@ public class ProtocolParser extends AviRestResource {
    * Tenant uuid of the protocol parser.
    * It is a reference to an object of type tenant.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -239,6 +252,7 @@ public class ProtocolParser extends AviRestResource {
    * Tenant uuid of the protocol parser.
    * It is a reference to an object of type tenant.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
@@ -270,6 +284,7 @@ public class ProtocolParser extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the protocol parser.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -282,6 +297,7 @@ public class ProtocolParser extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the protocol parser.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */

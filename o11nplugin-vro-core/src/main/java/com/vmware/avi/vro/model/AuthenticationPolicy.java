@@ -68,6 +68,7 @@ public class AuthenticationPolicy extends AviRestResource {
    * It is a reference to an object of type authprofile.
    * Field deprecated in 18.2.3.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return authProfileRef
    */
   @VsoMethod
@@ -81,6 +82,7 @@ public class AuthenticationPolicy extends AviRestResource {
    * It is a reference to an object of type authprofile.
    * Field deprecated in 18.2.3.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param authProfileRef set the authProfileRef.
    */
   @VsoMethod
@@ -92,6 +94,7 @@ public class AuthenticationPolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Add rules to apply auth profile to specific targets.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authnRules
    */
@@ -104,6 +107,7 @@ public class AuthenticationPolicy extends AviRestResource {
    * This is the setter method. this will set the authnRules
    * Add rules to apply auth profile to specific targets.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authnRules
    */
@@ -116,6 +120,7 @@ public class AuthenticationPolicy extends AviRestResource {
    * This is the setter method this will set the authnRules
    * Add rules to apply auth profile to specific targets.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authnRules
    */
@@ -134,6 +139,7 @@ public class AuthenticationPolicy extends AviRestResource {
    * Http cookie name for authenticated session.
    * Field deprecated in 18.2.3.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return cookieName
    */
   @VsoMethod
@@ -146,6 +152,7 @@ public class AuthenticationPolicy extends AviRestResource {
    * Http cookie name for authenticated session.
    * Field deprecated in 18.2.3.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param cookieName set the cookieName.
    */
   @VsoMethod
@@ -160,6 +167,7 @@ public class AuthenticationPolicy extends AviRestResource {
    * Field deprecated in 18.2.3.
    * Field introduced in 18.2.1.
    * Unit is min.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return cookieTimeout
    */
   @VsoMethod
@@ -174,6 +182,7 @@ public class AuthenticationPolicy extends AviRestResource {
    * Field deprecated in 18.2.3.
    * Field introduced in 18.2.1.
    * Unit is min.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param cookieTimeout set the cookieTimeout.
    */
   @VsoMethod
@@ -186,6 +195,7 @@ public class AuthenticationPolicy extends AviRestResource {
    * Auth profile to use for validating users.
    * It is a reference to an object of type authprofile.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return defaultAuthProfileRef
    */
@@ -199,6 +209,7 @@ public class AuthenticationPolicy extends AviRestResource {
    * Auth profile to use for validating users.
    * It is a reference to an object of type authprofile.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param defaultAuthProfileRef set the defaultAuthProfileRef.
    */
@@ -213,6 +224,7 @@ public class AuthenticationPolicy extends AviRestResource {
    * Entity id on the idp should match this.
    * Field deprecated in 18.2.3.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return entityId
    */
   @VsoMethod
@@ -226,6 +238,7 @@ public class AuthenticationPolicy extends AviRestResource {
    * Entity id on the idp should match this.
    * Field deprecated in 18.2.3.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param entityId set the entityId.
    */
   @VsoMethod
@@ -238,6 +251,7 @@ public class AuthenticationPolicy extends AviRestResource {
    * Key to generate the cookie.
    * Field deprecated in 18.2.3.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return key
    */
   @VsoMethod
@@ -250,6 +264,7 @@ public class AuthenticationPolicy extends AviRestResource {
    * Key to generate the cookie.
    * Field deprecated in 18.2.3.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return key
    */
   @VsoMethod
@@ -262,6 +277,7 @@ public class AuthenticationPolicy extends AviRestResource {
    * Key to generate the cookie.
    * Field deprecated in 18.2.3.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return key
    */
   @VsoMethod
@@ -279,6 +295,7 @@ public class AuthenticationPolicy extends AviRestResource {
    * Single signon url to be programmed on the idp.
    * Field deprecated in 18.2.3.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return singleSignonUrl
    */
   @VsoMethod
@@ -291,6 +308,7 @@ public class AuthenticationPolicy extends AviRestResource {
    * Single signon url to be programmed on the idp.
    * Field deprecated in 18.2.3.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param singleSignonUrl set the singleSignonUrl.
    */
   @VsoMethod
@@ -303,6 +321,8 @@ public class AuthenticationPolicy extends AviRestResource {
    * Saml sp metadata.
    * Field deprecated in 18.2.3.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * @return spMetadata
    */
   @VsoMethod
@@ -315,6 +335,8 @@ public class AuthenticationPolicy extends AviRestResource {
    * Saml sp metadata.
    * Field deprecated in 18.2.3.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * @param spMetadata set the spMetadata.
    */
   @VsoMethod

@@ -39,6 +39,7 @@ public class MatchReplacePair extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * String to be matched.
    * Field deprecated in 21.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return matchString
    */
   @VsoMethod
@@ -50,6 +51,7 @@ public class MatchReplacePair extends AviRestResource {
    * This is the setter method to the attribute.
    * String to be matched.
    * Field deprecated in 21.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param matchString set the matchString.
    */
   @VsoMethod
@@ -61,6 +63,7 @@ public class MatchReplacePair extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Replacement string.
    * Field deprecated in 21.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @return replacementString
    */
   @VsoMethod
@@ -72,6 +75,7 @@ public class MatchReplacePair extends AviRestResource {
    * This is the setter method to the attribute.
    * Replacement string.
    * Field deprecated in 21.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * @param replacementString set the replacementString.
    */
   @VsoMethod

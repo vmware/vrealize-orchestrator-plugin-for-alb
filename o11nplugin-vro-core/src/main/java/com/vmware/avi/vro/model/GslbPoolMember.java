@@ -81,6 +81,7 @@ public class GslbPoolMember extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The cloud uuid of the site.
    * Field introduced in 17.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudUuid
    */
@@ -93,6 +94,7 @@ public class GslbPoolMember extends AviRestResource {
    * This is the setter method to the attribute.
    * The cloud uuid of the site.
    * Field introduced in 17.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudUuid set the cloudUuid.
    */
@@ -104,6 +106,7 @@ public class GslbPoolMember extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The cluster uuid of the site.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clusterUuid
    */
@@ -115,6 +118,7 @@ public class GslbPoolMember extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The cluster uuid of the site.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clusterUuid set the clusterUuid.
    */
@@ -127,6 +131,7 @@ public class GslbPoolMember extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * User provided information that records member details such as application owner name, contact, etc.
    * Field introduced in 17.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
@@ -139,6 +144,7 @@ public class GslbPoolMember extends AviRestResource {
    * This is the setter method to the attribute.
    * User provided information that records member details such as application owner name, contact, etc.
    * Field introduced in 17.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
@@ -150,6 +156,7 @@ public class GslbPoolMember extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enable or disable member to decide if this address should be provided in dns responses.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enabled
    */
@@ -161,6 +168,7 @@ public class GslbPoolMember extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enable or disable member to decide if this address should be provided in dns responses.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enabled set the enabled.
    */
@@ -175,6 +183,7 @@ public class GslbPoolMember extends AviRestResource {
    * The fqdn is resolved to an ip address by the controller.
    * Dns service shall health monitor the resolved ip address while it will return the fqdn(cname) in the dns response.if the user has configured an
    * ip address (in addition to the fqdn), then the ip address will get overwritten whenever periodic fqdn refresh is done by the controller.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fqdn
    */
@@ -189,6 +198,7 @@ public class GslbPoolMember extends AviRestResource {
    * The fqdn is resolved to an ip address by the controller.
    * Dns service shall health monitor the resolved ip address while it will return the fqdn(cname) in the dns response.if the user has configured an
    * ip address (in addition to the fqdn), then the ip address will get overwritten whenever periodic fqdn refresh is done by the controller.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fqdn set the fqdn.
    */
@@ -202,6 +212,7 @@ public class GslbPoolMember extends AviRestResource {
    * Hostname to be used as host header for http health monitors and as tls server name for https health monitors.(by default, the fqdn of the gslb
    * pool member or gslb service is used.) note  this field is not used as http host header when exact_http_request is set in the health monitor.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostname
    */
@@ -215,6 +226,7 @@ public class GslbPoolMember extends AviRestResource {
    * Hostname to be used as host header for http health monitors and as tls server name for https health monitors.(by default, the fqdn of the gslb
    * pool member or gslb service is used.) note  this field is not used as http host header when exact_http_request is set in the health monitor.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hostname set the hostname.
    */
@@ -232,6 +244,7 @@ public class GslbPoolMember extends AviRestResource {
    * User may configure the ip address without the cluster uuid or the virtual service uuid.
    * In this option, some advanced site related features cannot be enabled.
    * If the user has configured a fqdn for the pool member, then it takes precedence and will overwrite the configured ip address.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip
    */
@@ -249,6 +262,7 @@ public class GslbPoolMember extends AviRestResource {
    * User may configure the ip address without the cluster uuid or the virtual service uuid.
    * In this option, some advanced site related features cannot be enabled.
    * If the user has configured a fqdn for the pool member, then it takes precedence and will overwrite the configured ip address.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip set the ip.
    */
@@ -261,6 +275,7 @@ public class GslbPoolMember extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Geographic location of the pool member.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return location
    */
@@ -273,6 +288,7 @@ public class GslbPoolMember extends AviRestResource {
    * This is the setter method to the attribute.
    * Geographic location of the pool member.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param location set the location.
    */
@@ -290,6 +306,7 @@ public class GslbPoolMember extends AviRestResource {
    * Client dns requests coming in from within the intranet should have the private ip served in the a record, and requests from outside this should
    * be served the public ip address.
    * Field introduced in 17.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return publicIp
    */
@@ -307,6 +324,7 @@ public class GslbPoolMember extends AviRestResource {
    * Client dns requests coming in from within the intranet should have the private ip served in the a record, and requests from outside this should
    * be served the public ip address.
    * Field introduced in 17.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param publicIp set the publicIp.
    */
@@ -321,6 +339,7 @@ public class GslbPoolMember extends AviRestResource {
    * Reduces the percentage the lb algorithm would pick the server in relation to its peers.
    * Range is 1-20.
    * Allowed values are 1-20.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @return ratio
    */
@@ -335,6 +354,7 @@ public class GslbPoolMember extends AviRestResource {
    * Reduces the percentage the lb algorithm would pick the server in relation to its peers.
    * Range is 1-20.
    * Allowed values are 1-20.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @param ratio set the ratio.
    */
@@ -347,6 +367,7 @@ public class GslbPoolMember extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This field indicates if the fqdn should be resolved to a v6 or a v4 address family.
    * Field introduced in 18.2.8, 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return resolveFqdnToV6
    */
@@ -359,6 +380,7 @@ public class GslbPoolMember extends AviRestResource {
    * This is the setter method to the attribute.
    * This field indicates if the fqdn should be resolved to a v6 or a v4 address family.
    * Field introduced in 18.2.8, 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param resolveFqdnToV6 set the resolveFqdnToV6.
    */
@@ -372,6 +394,7 @@ public class GslbPoolMember extends AviRestResource {
    * Select local virtual service in the specified controller cluster belonging to this gslb service.
    * The virtual service may have multiple ip addresses and fqdns.
    * User will have to choose ip address or fqdn and configure it in the respective field.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUuid
    */
@@ -385,6 +408,7 @@ public class GslbPoolMember extends AviRestResource {
    * Select local virtual service in the specified controller cluster belonging to this gslb service.
    * The virtual service may have multiple ip addresses and fqdns.
    * User will have to choose ip address or fqdn and configure it in the respective field.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsUuid set the vsUuid.
    */

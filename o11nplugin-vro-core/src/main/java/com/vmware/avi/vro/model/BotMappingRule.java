@@ -68,6 +68,7 @@ public class BotMappingRule extends AviRestResource {
    * How to match the botclientclass.
    * Field deprecated in 21.1.3.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * @return classMatcher
    */
   @VsoMethod
@@ -80,6 +81,7 @@ public class BotMappingRule extends AviRestResource {
    * How to match the botclientclass.
    * Field deprecated in 21.1.3.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * @param classMatcher set the classMatcher.
    */
   @VsoMethod
@@ -91,6 +93,7 @@ public class BotMappingRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The assigned classification for this client.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return classification
    */
@@ -103,6 +106,7 @@ public class BotMappingRule extends AviRestResource {
    * This is the setter method to the attribute.
    * The assigned classification for this client.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param classification set the classification.
    */
@@ -117,6 +121,7 @@ public class BotMappingRule extends AviRestResource {
    * Enum options - BOT_DECIDER_CONSOLIDATION, BOT_DECIDER_USER_AGENT, BOT_DECIDER_IP_REPUTATION, BOT_DECIDER_IP_NETWORK_LOCATION.
    * Field deprecated in 21.1.3.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * @return componentMatcher
    */
   @VsoMethod
@@ -130,6 +135,7 @@ public class BotMappingRule extends AviRestResource {
    * Enum options - BOT_DECIDER_CONSOLIDATION, BOT_DECIDER_USER_AGENT, BOT_DECIDER_IP_REPUTATION, BOT_DECIDER_IP_NETWORK_LOCATION.
    * Field deprecated in 21.1.3.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * @param componentMatcher set the componentMatcher.
    */
   @VsoMethod
@@ -142,6 +148,7 @@ public class BotMappingRule extends AviRestResource {
    * The list of bot identifier names and how they're matched.
    * Field deprecated in 21.1.3.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * @return identifierMatcher
    */
   @VsoMethod
@@ -154,6 +161,7 @@ public class BotMappingRule extends AviRestResource {
    * The list of bot identifier names and how they're matched.
    * Field deprecated in 21.1.3.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * @param identifierMatcher set the identifierMatcher.
    */
   @VsoMethod
@@ -165,6 +173,7 @@ public class BotMappingRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Rules are processed in order of this index field.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return index
    */
@@ -177,6 +186,7 @@ public class BotMappingRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Rules are processed in order of this index field.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param index set the index.
    */
@@ -189,6 +199,7 @@ public class BotMappingRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * How to match the request  all the specified properties must be fulfilled.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return match
    */
@@ -201,6 +212,7 @@ public class BotMappingRule extends AviRestResource {
    * This is the setter method to the attribute.
    * How to match the request  all the specified properties must be fulfilled.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param match set the match.
    */
@@ -213,6 +225,7 @@ public class BotMappingRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * A name describing the rule in a short form.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -225,6 +238,7 @@ public class BotMappingRule extends AviRestResource {
    * This is the setter method to the attribute.
    * A name describing the rule in a short form.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -238,6 +252,7 @@ public class BotMappingRule extends AviRestResource {
    * How to match the botclienttype.
    * Field deprecated in 21.1.3.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * @return typeMatcher
    */
   @VsoMethod
@@ -250,6 +265,7 @@ public class BotMappingRule extends AviRestResource {
    * How to match the botclienttype.
    * Field deprecated in 21.1.3.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * @param typeMatcher set the typeMatcher.
    */
   @VsoMethod

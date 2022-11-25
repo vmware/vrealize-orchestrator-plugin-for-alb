@@ -47,6 +47,7 @@ public class GCPEncryptionKeys extends AviRestResource {
    * Cmek resource id to encrypt google cloud storage bucket.
    * This bucket is used to upload service engine raw image.
    * Field introduced in 18.2.10, 20.1.2.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gcsBucketKmsKeyId
    */
@@ -60,6 +61,7 @@ public class GCPEncryptionKeys extends AviRestResource {
    * Cmek resource id to encrypt google cloud storage bucket.
    * This bucket is used to upload service engine raw image.
    * Field introduced in 18.2.10, 20.1.2.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gcsBucketKmsKeyId set the gcsBucketKmsKeyId.
    */
@@ -73,6 +75,7 @@ public class GCPEncryptionKeys extends AviRestResource {
    * Cmek resource id to encrypt service engine raw image.
    * The raw image is a google cloud storage object.
    * Field introduced in 18.2.10, 20.1.2.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gcsObjectsKmsKeyId
    */
@@ -86,6 +89,7 @@ public class GCPEncryptionKeys extends AviRestResource {
    * Cmek resource id to encrypt service engine raw image.
    * The raw image is a google cloud storage object.
    * Field introduced in 18.2.10, 20.1.2.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gcsObjectsKmsKeyId set the gcsObjectsKmsKeyId.
    */
@@ -98,6 +102,7 @@ public class GCPEncryptionKeys extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Cmek resource id to encrypt service engine disks.
    * Field introduced in 18.2.10, 20.1.2.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seDiskKmsKeyId
    */
@@ -110,6 +115,7 @@ public class GCPEncryptionKeys extends AviRestResource {
    * This is the setter method to the attribute.
    * Cmek resource id to encrypt service engine disks.
    * Field introduced in 18.2.10, 20.1.2.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seDiskKmsKeyId set the seDiskKmsKeyId.
    */
@@ -122,6 +128,7 @@ public class GCPEncryptionKeys extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Cmek resource id to encrypt service engine gce image.
    * Field introduced in 18.2.10, 20.1.2.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seImageKmsKeyId
    */
@@ -134,6 +141,7 @@ public class GCPEncryptionKeys extends AviRestResource {
    * This is the setter method to the attribute.
    * Cmek resource id to encrypt service engine gce image.
    * Field introduced in 18.2.10, 20.1.2.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seImageKmsKeyId set the seImageKmsKeyId.
    */
