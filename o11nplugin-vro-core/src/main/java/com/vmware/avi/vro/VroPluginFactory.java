@@ -1,10 +1,13 @@
 package com.vmware.avi.vro;
 
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import javax.net.ssl.SSLContext;
 
 import org.reflections.Reflections;
 import org.reflections.scanners.ResourcesScanner;
@@ -154,6 +157,12 @@ public class VroPluginFactory extends AbstractSpringPluginFactory {
 	private AviVroClient getAviVroClient(AviConnectionInfo connectionInfo){
 		try {
 			logger.debug("__INIT__:: Inside getAviVroClient: ");
+			SSLContext context = null;
+			try {
+				context = getSslService().newSslContext("TLS");
+			} catch (NoSuchAlgorithmException e) {
+				e.printStackTrace();
+			}
 			AviCredentials aviCredentials = new AviCredentials();
 			String addedController = connectionInfo.getController() + "-" + connectionInfo.getTenant();
 			aviCredentials.setController(connectionInfo.getController());
@@ -162,6 +171,7 @@ public class VroPluginFactory extends AbstractSpringPluginFactory {
 			aviCredentials.setToken(connectionInfo.getToken());
 			aviCredentials.setTenant(connectionInfo.getTenant());
 			aviCredentials.setVersion(connectionInfo.getVersion());
+			aviCredentials.setSslContext(context);
 
 			AviVroClient aviVroClient = new AviVroClient();
 			aviVroClient.setCred(aviCredentials);
