@@ -1,6 +1,7 @@
 package com.vmware.avi.vro;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -29,9 +30,13 @@ import com.vmware.avi.sdk.AviCredentials;
 import com.vmware.avi.sdk.AviRestUtils;
 import com.vmware.avi.vro.model.AviRestResource;
 import com.vmware.o11n.plugin.sdk.annotation.VsoConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
+import ch.dunes.vso.sdk.IServiceRegistry;
+import ch.dunes.vso.sdk.ssl.ISslService;
+import javax.net.ssl.SSLContext;
 
 /***
  * This class acts as a service in Plugin. It performs the actions from the
@@ -49,6 +54,9 @@ public class AviVroClient {
 	public String getObjectID() {
 		return cred.getController() + "-" + cred.getTenant();
 	}
+
+	@Autowired
+	private IServiceRegistry serviceRegistry;
 
 	@VsoConstructor
 	public AviVroClient() {
@@ -90,10 +98,21 @@ public class AviVroClient {
 		return AVI_API;
 	}
 
+	public ISslService getSslService() {
+		return (ISslService) serviceRegistry.getService(IServiceRegistry.SSL_SERVICE);
+	}
+
 	public RestTemplate getRestTemplate() {
 		if (restTemplate == null) {
+			SSLContext context = null;
+			try {
+				context = getSslService().newSslContext("TLS");
+			} catch (NoSuchAlgorithmException e) {
+				e.printStackTrace();
+			}
 			synchronized (AviRestUtils.class) {
 				if (restTemplate == null) {
+					cred.setSslContext(context);
 					restTemplate = AviRestUtils.getRestTemplate(cred);
 				}
 			}
