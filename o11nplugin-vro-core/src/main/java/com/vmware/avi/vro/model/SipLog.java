@@ -53,7 +53,7 @@ public class SipLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Server connection protocol type.
-   * Enum options - PROTOCOL_ICMP, PROTOCOL_TCP, PROTOCOL_UDP.
+   * Enum options - PROTOCOL_ICMP, PROTOCOL_TCP, PROTOCOL_UDP, PROTOCOL_SCTP.
    * Field introduced in 17.2.12, 18.1.3, 18.2.1.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -67,7 +67,7 @@ public class SipLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Server connection protocol type.
-   * Enum options - PROTOCOL_ICMP, PROTOCOL_TCP, PROTOCOL_UDP.
+   * Enum options - PROTOCOL_ICMP, PROTOCOL_TCP, PROTOCOL_UDP, PROTOCOL_SCTP.
    * Field introduced in 17.2.12, 18.1.3, 18.2.1.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.

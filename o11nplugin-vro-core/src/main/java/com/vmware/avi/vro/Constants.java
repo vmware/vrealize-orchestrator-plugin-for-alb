@@ -1008,6 +1008,7 @@ public class Constants {
     public static final String FINDER_VRO_TIMESTAMP = "TimeStamp";
     public static final String FINDER_VRO_TIMETRACKERPROPERTIES = "TimeTrackerProperties";
     public static final String FINDER_VRO_TLSCLIENTINFO = "TlsClientInfo";
+    public static final String FINDER_VRO_TLSFINGERPRINTMATCH = "TlsFingerprintMatch";
     public static final String FINDER_VRO_TRAFFICCLONEPROFILE = "TrafficCloneProfile";
     public static final String FINDER_VRO_TRUECLIENTIPCONFIG = "TrueClientIPConfig";
     public static final String FINDER_VRO_UDPFASTPATHPROFILE = "UDPFastPathProfile";

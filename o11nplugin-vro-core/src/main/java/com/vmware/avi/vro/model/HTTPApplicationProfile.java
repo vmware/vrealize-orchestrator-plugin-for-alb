@@ -1117,7 +1117,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * Field introduced in 22.1.1.
    * Allowed in enterprise edition with any value, essentials edition(allowed values- 0), basic edition(allowed values- 0), enterprise with cloud
    * services edition.
-   * Special default for essentials edition is 0, basic edition is 0, enterprise is 64.
+   * Special default for essentials edition is 0, basic edition is 0, enterprise is 256.
    * @return maxHeaderCount
    */
   @VsoMethod
@@ -1133,7 +1133,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * Field introduced in 22.1.1.
    * Allowed in enterprise edition with any value, essentials edition(allowed values- 0), basic edition(allowed values- 0), enterprise with cloud
    * services edition.
-   * Special default for essentials edition is 0, basic edition is 0, enterprise is 64.
+   * Special default for essentials edition is 0, basic edition is 0, enterprise is 256.
    * @param maxHeaderCount set the maxHeaderCount.
    */
   @VsoMethod

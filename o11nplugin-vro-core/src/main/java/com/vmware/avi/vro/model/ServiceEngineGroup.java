@@ -686,6 +686,10 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean rebootOnPanic = true;
 
+    @JsonProperty("replay_vrf_routes_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer replayVrfRoutesInterval = 1000;
+
     @JsonProperty("resync_time_interval")
     @JsonInclude(Include.NON_NULL)
     private Integer resyncTimeInterval = 65536;
@@ -820,7 +824,7 @@ public class ServiceEngineGroup extends AviRestResource {
 
     @JsonProperty("se_lro")
     @JsonInclude(Include.NON_NULL)
-    private Boolean seLro = true;
+    private Boolean seLro = null;
 
     @JsonProperty("se_mp_ring_retry_count")
     @JsonInclude(Include.NON_NULL)
@@ -1009,6 +1013,10 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
     private String url = "url";
+
+    @JsonProperty("use_dp_util_for_scaleout")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useDpUtilForScaleout = false;
 
     @JsonProperty("use_hyperthreaded_cores")
     @JsonInclude(Include.NON_NULL)
@@ -5834,6 +5842,38 @@ public class ServiceEngineGroup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Routes in vrf are replayed at the specified interval.
+   * This should be increased if there are large number of routes.
+   * Allowed values are 0-3000.
+   * Field introduced in 22.1.3.
+   * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
+   * @return replayVrfRoutesInterval
+   */
+  @VsoMethod
+  public Integer getReplayVrfRoutesInterval() {
+    return replayVrfRoutesInterval;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Routes in vrf are replayed at the specified interval.
+   * This should be increased if there are large number of routes.
+   * Allowed values are 0-3000.
+   * Field introduced in 22.1.3.
+   * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
+   * @param replayVrfRoutesInterval set the replayVrfRoutesInterval.
+   */
+  @VsoMethod
+  public void setReplayVrfRoutesInterval(Integer  replayVrfRoutesInterval) {
+    this.replayVrfRoutesInterval = replayVrfRoutesInterval;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Time interval to re-sync se's time with wall clock time.
    * Allowed values are 8-600000.
    * Field introduced in 20.1.1.
@@ -6784,11 +6824,10 @@ public class ServiceEngineGroup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Enable or disable large receive optimization for vnics.
-   * Requires se reboot.
+   * Enable or disable large receive optimization for vnics.supported on vmxnet3.requires se reboot.
    * Field introduced in 18.2.5.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seLro
    */
   @VsoMethod
@@ -6798,11 +6837,10 @@ public class ServiceEngineGroup extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Enable or disable large receive optimization for vnics.
-   * Requires se reboot.
+   * Enable or disable large receive optimization for vnics.supported on vmxnet3.requires se reboot.
    * Field introduced in 18.2.5.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seLro set the seLro.
    */
   @VsoMethod
@@ -8201,6 +8239,34 @@ public class ServiceEngineGroup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * If enabled, the datapath cpu utilization is consulted by the auto scale-out logic.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return useDpUtilForScaleout
+   */
+  @VsoMethod
+  public Boolean getUseDpUtilForScaleout() {
+    return useDpUtilForScaleout;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * If enabled, the datapath cpu utilization is consulted by the auto scale-out logic.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param useDpUtilForScaleout set the useDpUtilForScaleout.
+   */
+  @VsoMethod
+  public void setUseDpUtilForScaleout(Boolean  useDpUtilForScaleout) {
+    this.useDpUtilForScaleout = useDpUtilForScaleout;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Enables the use of hyper-threaded cores on se.
    * Requires se reboot.
    * Field introduced in 20.1.1.
@@ -9432,7 +9498,9 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.seTimeTrackerProps, objServiceEngineGroup.seTimeTrackerProps)&&
   Objects.equals(this.grpcChannelConnectTimeout, objServiceEngineGroup.grpcChannelConnectTimeout)&&
   Objects.equals(this.ntpSyncFailEvent, objServiceEngineGroup.ntpSyncFailEvent)&&
-  Objects.equals(this.ntpSyncStatusInterval, objServiceEngineGroup.ntpSyncStatusInterval);
+  Objects.equals(this.ntpSyncStatusInterval, objServiceEngineGroup.ntpSyncStatusInterval)&&
+  Objects.equals(this.useDpUtilForScaleout, objServiceEngineGroup.useDpUtilForScaleout)&&
+  Objects.equals(this.replayVrfRoutesInterval, objServiceEngineGroup.replayVrfRoutesInterval);
 }
 
 @Override
@@ -9601,6 +9669,7 @@ public String toString() {
         sb.append("    placementMode: ").append(toIndentedString(placementMode)).append("\n");
         sb.append("    realtimeSeMetrics: ").append(toIndentedString(realtimeSeMetrics)).append("\n");
         sb.append("    rebootOnPanic: ").append(toIndentedString(rebootOnPanic)).append("\n");
+        sb.append("    replayVrfRoutesInterval: ").append(toIndentedString(replayVrfRoutesInterval)).append("\n");
         sb.append("    resyncTimeInterval: ").append(toIndentedString(resyncTimeInterval)).append("\n");
         sb.append("    sdbFlushInterval: ").append(toIndentedString(sdbFlushInterval)).append("\n");
         sb.append("    sdbPipelineSize: ").append(toIndentedString(sdbPipelineSize)).append("\n");
@@ -9681,7 +9750,8 @@ public String toString() {
         sb.append("    upstreamConnpoolEnable: ").append(toIndentedString(upstreamConnpoolEnable)).append("\n");
         sb.append("    upstreamReadTimeout: ").append(toIndentedString(upstreamReadTimeout)).append("\n");
         sb.append("    upstreamSendTimeout: ").append(toIndentedString(upstreamSendTimeout)).append("\n");
-            sb.append("    useHyperthreadedCores: ").append(toIndentedString(useHyperthreadedCores)).append("\n");
+            sb.append("    useDpUtilForScaleout: ").append(toIndentedString(useDpUtilForScaleout)).append("\n");
+        sb.append("    useHyperthreadedCores: ").append(toIndentedString(useHyperthreadedCores)).append("\n");
         sb.append("    useLegacyNetlink: ").append(toIndentedString(useLegacyNetlink)).append("\n");
         sb.append("    useObjsync: ").append(toIndentedString(useObjsync)).append("\n");
         sb.append("    useStandardAlb: ").append(toIndentedString(useStandardAlb)).append("\n");

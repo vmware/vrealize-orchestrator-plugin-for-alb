@@ -15,6 +15,7 @@ import com.vmware.avi.vro.model.PathMatch;
 import com.vmware.avi.vro.model.ProtocolMatch;
 import com.vmware.avi.vro.model.QueryMatch;
 import com.vmware.avi.vro.model.IpAddrMatch;
+import com.vmware.avi.vro.model.TlsFingerprintMatch;
 import com.vmware.avi.vro.model.HTTPVersionMatch;
 import com.vmware.avi.vro.model.PortMatch;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
@@ -83,6 +84,10 @@ public class MatchTarget extends AviRestResource {
     @JsonProperty("source_ip")
     @JsonInclude(Include.NON_NULL)
     private IpAddrMatch sourceIp = null;
+
+    @JsonProperty("tls_fingerprint_match")
+    @JsonInclude(Include.NON_NULL)
+    private TlsFingerprintMatch tlsFingerprintMatch = null;
 
     @JsonProperty("version")
     @JsonInclude(Include.NON_NULL)
@@ -433,6 +438,32 @@ public class MatchTarget extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Configure the tls fingerprint.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return tlsFingerprintMatch
+   */
+  @VsoMethod
+  public TlsFingerprintMatch getTlsFingerprintMatch() {
+    return tlsFingerprintMatch;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Configure the tls fingerprint.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param tlsFingerprintMatch set the tlsFingerprintMatch.
+   */
+  @VsoMethod
+  public void setTlsFingerprintMatch(TlsFingerprintMatch tlsFingerprintMatch) {
+    this.tlsFingerprintMatch = tlsFingerprintMatch;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Configure versions of the http protocol.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -503,7 +534,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.ipReputationType, objMatchTarget.ipReputationType)&&
   Objects.equals(this.geoMatches, objMatchTarget.geoMatches)&&
   Objects.equals(this.botDetectionResult, objMatchTarget.botDetectionResult)&&
-  Objects.equals(this.sourceIp, objMatchTarget.sourceIp);
+  Objects.equals(this.sourceIp, objMatchTarget.sourceIp)&&
+  Objects.equals(this.tlsFingerprintMatch, objMatchTarget.tlsFingerprintMatch);
 }
 
 @Override
@@ -522,6 +554,7 @@ public String toString() {
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("    query: ").append(toIndentedString(query)).append("\n");
         sb.append("    sourceIp: ").append(toIndentedString(sourceIp)).append("\n");
+        sb.append("    tlsFingerprintMatch: ").append(toIndentedString(tlsFingerprintMatch)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    vsPort: ").append(toIndentedString(vsPort)).append("\n");
       sb.append("}");

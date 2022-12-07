@@ -541,6 +541,10 @@ public class ApplicationLog extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer vcpuId = null;
 
+    @JsonProperty("vh_match_rule")
+    @JsonInclude(Include.NON_NULL)
+    private String vhMatchRule = null;
+
     @JsonProperty("virtualservice")
     @JsonInclude(Include.NON_NULL)
     private String virtualservice = null;
@@ -3633,6 +3637,32 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Evh rule matching the request.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return vhMatchRule
+   */
+  @VsoMethod
+  public String getVhMatchRule() {
+    return vhMatchRule;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Evh rule matching the request.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param vhMatchRule set the vhMatchRule.
+   */
+  @VsoMethod
+  public void setVhMatchRule(String  vhMatchRule) {
+    this.vhMatchRule = vhMatchRule;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return virtualservice
@@ -3892,7 +3922,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.authStatus, objApplicationLog.authStatus)&&
   Objects.equals(this.clientFingerprints, objApplicationLog.clientFingerprints)&&
   Objects.equals(this.serverPushInitiated, objApplicationLog.serverPushInitiated)&&
-  Objects.equals(this.serverPushedRequest, objApplicationLog.serverPushedRequest);
+  Objects.equals(this.serverPushedRequest, objApplicationLog.serverPushedRequest)&&
+  Objects.equals(this.vhMatchRule, objApplicationLog.vhMatchRule);
 }
 
 @Override
@@ -4025,6 +4056,7 @@ public String toString() {
         sb.append("    userAgent: ").append(toIndentedString(userAgent)).append("\n");
         sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
         sb.append("    vcpuId: ").append(toIndentedString(vcpuId)).append("\n");
+        sb.append("    vhMatchRule: ").append(toIndentedString(vhMatchRule)).append("\n");
         sb.append("    virtualservice: ").append(toIndentedString(virtualservice)).append("\n");
         sb.append("    vsIp: ").append(toIndentedString(vsIp)).append("\n");
         sb.append("    vsIp6: ").append(toIndentedString(vsIp6)).append("\n");
