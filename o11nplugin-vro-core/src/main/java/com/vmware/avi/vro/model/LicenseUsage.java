@@ -46,6 +46,7 @@ public class LicenseUsage extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total license cores available for consumption.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @return available
    */
@@ -58,6 +59,7 @@ public class LicenseUsage extends AviRestResource {
    * This is the setter method to the attribute.
    * Total license cores available for consumption.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @param available set the available.
    */
@@ -70,6 +72,7 @@ public class LicenseUsage extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total license cores consumed.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @return consumed
    */
@@ -82,6 +85,7 @@ public class LicenseUsage extends AviRestResource {
    * This is the setter method to the attribute.
    * Total license cores consumed.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @param consumed set the consumed.
    */
@@ -94,6 +98,7 @@ public class LicenseUsage extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total license cores reserved or escrowed.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @return escrow
    */
@@ -106,6 +111,7 @@ public class LicenseUsage extends AviRestResource {
    * This is the setter method to the attribute.
    * Total license cores reserved or escrowed.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @param escrow set the escrow.
    */
@@ -118,6 +124,7 @@ public class LicenseUsage extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total license cores remaining for consumption.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @return remaining
    */
@@ -130,6 +137,7 @@ public class LicenseUsage extends AviRestResource {
    * This is the setter method to the attribute.
    * Total license cores remaining for consumption.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @param remaining set the remaining.
    */

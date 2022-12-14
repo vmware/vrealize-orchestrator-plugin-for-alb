@@ -30,6 +30,10 @@ public class OAuthResourceServer extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String accessType = "ACCESS_TOKEN_TYPE_JWT";
 
+    @JsonProperty("introspection_data_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer introspectionDataTimeout = 0;
+
     @JsonProperty("jwt_params")
     @JsonInclude(Include.NON_NULL)
     private JWTValidationParams jwtParams = null;
@@ -45,6 +49,7 @@ public class OAuthResourceServer extends AviRestResource {
    * Access token type.
    * Enum options - ACCESS_TOKEN_TYPE_JWT, ACCESS_TOKEN_TYPE_OPAQUE.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "ACCESS_TOKEN_TYPE_JWT".
    * @return accessType
    */
@@ -58,6 +63,7 @@ public class OAuthResourceServer extends AviRestResource {
    * Access token type.
    * Enum options - ACCESS_TOKEN_TYPE_JWT, ACCESS_TOKEN_TYPE_OPAQUE.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "ACCESS_TOKEN_TYPE_JWT".
    * @param accessType set the accessType.
    */
@@ -68,8 +74,41 @@ public class OAuthResourceServer extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Lifetime of the cached introspection data.
+   * Allowed values are 0-1440.
+   * Special values are 0- no caching of introspection data.
+   * Field introduced in 22.1.3.
+   * Unit is min.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @return introspectionDataTimeout
+   */
+  @VsoMethod
+  public Integer getIntrospectionDataTimeout() {
+    return introspectionDataTimeout;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Lifetime of the cached introspection data.
+   * Allowed values are 0-1440.
+   * Special values are 0- no caching of introspection data.
+   * Field introduced in 22.1.3.
+   * Unit is min.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @param introspectionDataTimeout set the introspectionDataTimeout.
+   */
+  @VsoMethod
+  public void setIntrospectionDataTimeout(Integer  introspectionDataTimeout) {
+    this.introspectionDataTimeout = introspectionDataTimeout;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Validation parameters to be used when access token type is jwt.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return jwtParams
    */
@@ -82,6 +121,7 @@ public class OAuthResourceServer extends AviRestResource {
    * This is the setter method to the attribute.
    * Validation parameters to be used when access token type is jwt.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param jwtParams set the jwtParams.
    */
@@ -94,6 +134,7 @@ public class OAuthResourceServer extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Validation parameters to be used when access token type is opaque.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return opaqueTokenParams
    */
@@ -106,6 +147,7 @@ public class OAuthResourceServer extends AviRestResource {
    * This is the setter method to the attribute.
    * Validation parameters to be used when access token type is opaque.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param opaqueTokenParams set the opaqueTokenParams.
    */
@@ -127,7 +169,8 @@ public boolean equals(java.lang.Object o) {
   OAuthResourceServer objOAuthResourceServer = (OAuthResourceServer) o;
   return   Objects.equals(this.accessType, objOAuthResourceServer.accessType)&&
   Objects.equals(this.opaqueTokenParams, objOAuthResourceServer.opaqueTokenParams)&&
-  Objects.equals(this.jwtParams, objOAuthResourceServer.jwtParams);
+  Objects.equals(this.jwtParams, objOAuthResourceServer.jwtParams)&&
+  Objects.equals(this.introspectionDataTimeout, objOAuthResourceServer.introspectionDataTimeout);
 }
 
 @Override
@@ -135,6 +178,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class OAuthResourceServer {\n");
       sb.append("    accessType: ").append(toIndentedString(accessType)).append("\n");
+        sb.append("    introspectionDataTimeout: ").append(toIndentedString(introspectionDataTimeout)).append("\n");
         sb.append("    jwtParams: ").append(toIndentedString(jwtParams)).append("\n");
         sb.append("    opaqueTokenParams: ").append(toIndentedString(opaqueTokenParams)).append("\n");
       sb.append("}");

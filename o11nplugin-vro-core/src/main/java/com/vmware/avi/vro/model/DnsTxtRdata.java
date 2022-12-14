@@ -34,6 +34,7 @@ public class DnsTxtRdata extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Text data associated with the fqdn.
    * Field introduced in 18.2.9, 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return textStr
    */
@@ -46,6 +47,7 @@ public class DnsTxtRdata extends AviRestResource {
    * This is the setter method to the attribute.
    * Text data associated with the fqdn.
    * Field introduced in 18.2.9, 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param textStr set the textStr.
    */

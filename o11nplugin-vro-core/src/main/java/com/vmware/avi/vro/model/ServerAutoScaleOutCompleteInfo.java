@@ -52,7 +52,7 @@ public class ServerAutoScaleOutCompleteInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Unique object identifier of launch_config.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return launchConfigUuid
    */
@@ -63,7 +63,7 @@ public class ServerAutoScaleOutCompleteInfo extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Unique object identifier of launch_config.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param launchConfigUuid set the launchConfigUuid.
    */
@@ -74,7 +74,7 @@ public class ServerAutoScaleOutCompleteInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property nscaleout of obj type serverautoscaleoutcompleteinfo field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nscaleout
    */
@@ -85,7 +85,7 @@ public class ServerAutoScaleOutCompleteInfo extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property nscaleout of obj type serverautoscaleoutcompleteinfo field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nscaleout set the nscaleout.
    */
@@ -98,6 +98,7 @@ public class ServerAutoScaleOutCompleteInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the pool.
    * It is a reference to an object of type pool.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolRef
    */
@@ -110,6 +111,7 @@ public class ServerAutoScaleOutCompleteInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the pool.
    * It is a reference to an object of type pool.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolRef set the poolRef.
    */
@@ -120,7 +122,7 @@ public class ServerAutoScaleOutCompleteInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property reason of obj type serverautoscaleoutcompleteinfo field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
@@ -131,7 +133,7 @@ public class ServerAutoScaleOutCompleteInfo extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property reason of obj type serverautoscaleoutcompleteinfo field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
@@ -145,6 +147,7 @@ public class ServerAutoScaleOutCompleteInfo extends AviRestResource {
    * Enum options - SYSERR_SUCCESS, SYSERR_FAILURE, SYSERR_OUT_OF_MEMORY, SYSERR_NO_ENT, SYSERR_INVAL, SYSERR_ACCESS, SYSERR_FAULT, SYSERR_IO,
    * SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN,
    * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_BAD_REQUEST...
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "SYSERR_SUCCESS".
    * @return reasonCode
    */
@@ -158,6 +161,7 @@ public class ServerAutoScaleOutCompleteInfo extends AviRestResource {
    * Enum options - SYSERR_SUCCESS, SYSERR_FAILURE, SYSERR_OUT_OF_MEMORY, SYSERR_NO_ENT, SYSERR_INVAL, SYSERR_ACCESS, SYSERR_FAULT, SYSERR_IO,
    * SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN,
    * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_BAD_REQUEST...
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "SYSERR_SUCCESS".
    * @param reasonCode set the reasonCode.
    */
@@ -168,7 +172,7 @@ public class ServerAutoScaleOutCompleteInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property scaled_out_servers of obj type serverautoscaleoutcompleteinfo field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scaledOutServers
    */
@@ -179,7 +183,7 @@ public class ServerAutoScaleOutCompleteInfo extends AviRestResource {
 
   /**
    * This is the setter method. this will set the scaledOutServers
-   * Placeholder for description of property scaled_out_servers of obj type serverautoscaleoutcompleteinfo field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scaledOutServers
    */
@@ -190,7 +194,7 @@ public class ServerAutoScaleOutCompleteInfo extends AviRestResource {
 
   /**
    * This is the setter method this will set the scaledOutServers
-   * Placeholder for description of property scaled_out_servers of obj type serverautoscaleoutcompleteinfo field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scaledOutServers
    */

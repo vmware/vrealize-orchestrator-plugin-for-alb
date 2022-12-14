@@ -24,10 +24,6 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SecureChannelConfiguration extends AviRestResource {
-    @JsonProperty("bypass_secure_channel_must_checks")
-    @JsonInclude(Include.NON_NULL)
-    private Boolean bypassSecureChannelMustChecks;
-
     @JsonProperty("sslkeyandcertificate_refs")
     @JsonInclude(Include.NON_NULL)
     private List<String> sslkeyandcertificateRefs = null;
@@ -36,37 +32,12 @@ public class SecureChannelConfiguration extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Boolean which allowed force update of secure channel certificate.
-   * Forced updating has been disallowed.
-   * Field deprecated in 18.2.8.
-   * Field introduced in 18.2.5.
-   * @return bypassSecureChannelMustChecks
-   */
-  @VsoMethod
-  public Boolean getBypassSecureChannelMustChecks() {
-    return bypassSecureChannelMustChecks;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Boolean which allowed force update of secure channel certificate.
-   * Forced updating has been disallowed.
-   * Field deprecated in 18.2.8.
-   * Field introduced in 18.2.5.
-   * @param bypassSecureChannelMustChecks set the bypassSecureChannelMustChecks.
-   */
-  @VsoMethod
-  public void setBypassSecureChannelMustChecks(Boolean  bypassSecureChannelMustChecks) {
-    this.bypassSecureChannelMustChecks = bypassSecureChannelMustChecks;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Certificate for secure channel.
    * Leave list empty to use system default certs.
    * It is a reference to an object of type sslkeyandcertificate.
    * Field introduced in 18.1.4, 18.2.1.
    * Maximum of 1 items allowed.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslkeyandcertificateRefs
    */
@@ -82,6 +53,7 @@ public class SecureChannelConfiguration extends AviRestResource {
    * It is a reference to an object of type sslkeyandcertificate.
    * Field introduced in 18.1.4, 18.2.1.
    * Maximum of 1 items allowed.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslkeyandcertificateRefs
    */
@@ -97,6 +69,7 @@ public class SecureChannelConfiguration extends AviRestResource {
    * It is a reference to an object of type sslkeyandcertificate.
    * Field introduced in 18.1.4, 18.2.1.
    * Maximum of 1 items allowed.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslkeyandcertificateRefs
    */
@@ -121,16 +94,14 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   SecureChannelConfiguration objSecureChannelConfiguration = (SecureChannelConfiguration) o;
-  return   Objects.equals(this.sslkeyandcertificateRefs, objSecureChannelConfiguration.sslkeyandcertificateRefs)&&
-  Objects.equals(this.bypassSecureChannelMustChecks, objSecureChannelConfiguration.bypassSecureChannelMustChecks);
+  return   Objects.equals(this.sslkeyandcertificateRefs, objSecureChannelConfiguration.sslkeyandcertificateRefs);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class SecureChannelConfiguration {\n");
-      sb.append("    bypassSecureChannelMustChecks: ").append(toIndentedString(bypassSecureChannelMustChecks)).append("\n");
-        sb.append("    sslkeyandcertificateRefs: ").append(toIndentedString(sslkeyandcertificateRefs)).append("\n");
+      sb.append("    sslkeyandcertificateRefs: ").append(toIndentedString(sslkeyandcertificateRefs)).append("\n");
       sb.append("}");
   return sb.toString();
 }

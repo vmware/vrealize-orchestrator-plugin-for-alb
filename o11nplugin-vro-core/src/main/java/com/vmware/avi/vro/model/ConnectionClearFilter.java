@@ -37,6 +37,7 @@ public class ConnectionClearFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ip address in dotted decimal notation.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAddr
    */
@@ -48,6 +49,7 @@ public class ConnectionClearFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ip address in dotted decimal notation.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipAddr set the ipAddr.
    */
@@ -59,6 +61,7 @@ public class ConnectionClearFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Port number.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return port
    */
@@ -70,6 +73,7 @@ public class ConnectionClearFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Port number.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param port set the port.
    */

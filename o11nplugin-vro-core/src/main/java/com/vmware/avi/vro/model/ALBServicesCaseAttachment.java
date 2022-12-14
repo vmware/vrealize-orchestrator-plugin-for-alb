@@ -41,6 +41,7 @@ public class ALBServicesCaseAttachment extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attachmentName
    */
@@ -52,6 +53,7 @@ public class ALBServicesCaseAttachment extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param attachmentName set the attachmentName.
    */
@@ -63,6 +65,7 @@ public class ALBServicesCaseAttachment extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attachmentSize
    */
@@ -74,6 +77,7 @@ public class ALBServicesCaseAttachment extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param attachmentSize set the attachmentSize.
    */
@@ -85,6 +89,7 @@ public class ALBServicesCaseAttachment extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attachmentUrl
    */
@@ -96,6 +101,7 @@ public class ALBServicesCaseAttachment extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param attachmentUrl set the attachmentUrl.
    */

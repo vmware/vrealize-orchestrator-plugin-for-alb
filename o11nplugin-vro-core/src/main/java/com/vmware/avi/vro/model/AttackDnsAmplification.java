@@ -41,6 +41,7 @@ public class AttackDnsAmplification extends AviRestResource {
    * DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR,
    * DNS_RECORD_ANY.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return recordType
    */
@@ -56,6 +57,7 @@ public class AttackDnsAmplification extends AviRestResource {
    * DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR,
    * DNS_RECORD_ANY.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param recordType set the recordType.
    */
@@ -68,6 +70,7 @@ public class AttackDnsAmplification extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The source port for the dns query.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return srcPort
    */
@@ -80,6 +83,7 @@ public class AttackDnsAmplification extends AviRestResource {
    * This is the setter method to the attribute.
    * The source port for the dns query.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param srcPort set the srcPort.
    */

@@ -34,6 +34,7 @@ public class GCPCredentials extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Google cloud platform service account keyfile data in json format.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceAccountKeyfileData
    */
@@ -46,6 +47,7 @@ public class GCPCredentials extends AviRestResource {
    * This is the setter method to the attribute.
    * Google cloud platform service account keyfile data in json format.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serviceAccountKeyfileData set the serviceAccountKeyfileData.
    */

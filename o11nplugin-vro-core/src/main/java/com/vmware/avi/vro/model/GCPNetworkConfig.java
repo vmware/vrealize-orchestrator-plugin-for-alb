@@ -50,6 +50,7 @@ public class GCPNetworkConfig extends AviRestResource {
    * Config mode for google cloud network configuration.
    * Enum options - INBAND_MANAGEMENT, ONE_ARM_MODE, TWO_ARM_MODE.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return config
    */
@@ -63,6 +64,7 @@ public class GCPNetworkConfig extends AviRestResource {
    * Config mode for google cloud network configuration.
    * Enum options - INBAND_MANAGEMENT, ONE_ARM_MODE, TWO_ARM_MODE.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param config set the config.
    */
@@ -76,6 +78,7 @@ public class GCPNetworkConfig extends AviRestResource {
    * Configure inband management as google cloud network configuration.
    * In this configuration the data network and management network for service engines will be same.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return inband
    */
@@ -89,6 +92,7 @@ public class GCPNetworkConfig extends AviRestResource {
    * Configure inband management as google cloud network configuration.
    * In this configuration the data network and management network for service engines will be same.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param inband set the inband.
    */
@@ -102,6 +106,7 @@ public class GCPNetworkConfig extends AviRestResource {
    * Configure one arm mode as google cloud network configuration.
    * In this configuration the data network and the management network for the service engines will be separated.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return oneArm
    */
@@ -115,6 +120,7 @@ public class GCPNetworkConfig extends AviRestResource {
    * Configure one arm mode as google cloud network configuration.
    * In this configuration the data network and the management network for the service engines will be separated.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param oneArm set the oneArm.
    */
@@ -128,6 +134,7 @@ public class GCPNetworkConfig extends AviRestResource {
    * Configure two arm mode as google cloud network configuration.
    * In this configuration the frontend data network, backend data network and the management network for the service engines will be separated.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return twoArm
    */
@@ -141,6 +148,7 @@ public class GCPNetworkConfig extends AviRestResource {
    * Configure two arm mode as google cloud network configuration.
    * In this configuration the frontend data network, backend data network and the management network for the service engines will be separated.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param twoArm set the twoArm.
    */

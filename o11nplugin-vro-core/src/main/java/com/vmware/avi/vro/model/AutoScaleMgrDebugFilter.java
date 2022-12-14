@@ -43,6 +43,7 @@ public class AutoScaleMgrDebugFilter extends AviRestResource {
    * Enable aws autoscale integration.
    * This is an alpha feature.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enableAwsAutoscaleIntegration
    */
@@ -56,6 +57,7 @@ public class AutoScaleMgrDebugFilter extends AviRestResource {
    * Enable aws autoscale integration.
    * This is an alpha feature.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param enableAwsAutoscaleIntegration set the enableAwsAutoscaleIntegration.
    */
@@ -67,6 +69,7 @@ public class AutoScaleMgrDebugFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Period of running intelligent autoscale check.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return intelligentAutoscalePeriod
    */
@@ -78,6 +81,7 @@ public class AutoScaleMgrDebugFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Period of running intelligent autoscale check.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param intelligentAutoscalePeriod set the intelligentAutoscalePeriod.
    */
@@ -90,6 +94,7 @@ public class AutoScaleMgrDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the pool.
    * It is a reference to an object of type pool.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolRef
    */
@@ -102,6 +107,7 @@ public class AutoScaleMgrDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the pool.
    * It is a reference to an object of type pool.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolRef set the poolRef.
    */

@@ -42,6 +42,7 @@ public class ClusterNodeShutdownEvent extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ip address of the controller vm.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip
    */
@@ -53,6 +54,7 @@ public class ClusterNodeShutdownEvent extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ip address of the controller vm.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip set the ip.
    */
@@ -64,6 +66,7 @@ public class ClusterNodeShutdownEvent extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of controller node.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nodeName
    */
@@ -75,6 +78,7 @@ public class ClusterNodeShutdownEvent extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of controller node.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nodeName set the nodeName.
    */
@@ -86,6 +90,7 @@ public class ClusterNodeShutdownEvent extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Reason for controller node shutdown.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
@@ -97,6 +102,7 @@ public class ClusterNodeShutdownEvent extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Reason for controller node shutdown.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */

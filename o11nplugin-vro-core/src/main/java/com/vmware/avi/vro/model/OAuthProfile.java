@@ -28,6 +28,10 @@ public class OAuthProfile extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String authorizationEndpoint = null;
 
+    @JsonProperty("end_session_endpoint")
+    @JsonInclude(Include.NON_NULL)
+    private String endSessionEndpoint = null;
+
     @JsonProperty("introspection_endpoint")
     @JsonInclude(Include.NON_NULL)
     private String introspectionEndpoint = null;
@@ -38,7 +42,7 @@ public class OAuthProfile extends AviRestResource {
 
     @JsonProperty("jwks_timeout")
     @JsonInclude(Include.NON_NULL)
-    private Integer jwksTimeout = null;
+    private Integer jwksTimeout = 0;
 
     @JsonProperty("jwks_uri")
     @JsonInclude(Include.NON_NULL)
@@ -66,6 +70,7 @@ public class OAuthProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Url of authorization server.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authorizationEndpoint
    */
@@ -78,6 +83,7 @@ public class OAuthProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Url of authorization server.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param authorizationEndpoint set the authorizationEndpoint.
    */
@@ -88,8 +94,35 @@ public class OAuthProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Logout uri of idp server.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return endSessionEndpoint
+   */
+  @VsoMethod
+  public String getEndSessionEndpoint() {
+    return endSessionEndpoint;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Logout uri of idp server.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param endSessionEndpoint set the endSessionEndpoint.
+   */
+  @VsoMethod
+  public void setEndSessionEndpoint(String  endSessionEndpoint) {
+    this.endSessionEndpoint = endSessionEndpoint;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Url of token introspection server.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return introspectionEndpoint
    */
@@ -102,6 +135,7 @@ public class OAuthProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Url of token introspection server.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param introspectionEndpoint set the introspectionEndpoint.
    */
@@ -114,6 +148,7 @@ public class OAuthProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uniquely identifiable name of the token issuer.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return issuer
    */
@@ -126,6 +161,7 @@ public class OAuthProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Uniquely identifiable name of the token issuer.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param issuer set the issuer.
    */
@@ -137,8 +173,11 @@ public class OAuthProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Lifetime of the cached jwks keys.
+   * Allowed values are 0-1440.
    * Field introduced in 21.1.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Unit is min.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return jwksTimeout
    */
   @VsoMethod
@@ -149,8 +188,11 @@ public class OAuthProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Lifetime of the cached jwks keys.
+   * Allowed values are 0-1440.
    * Field introduced in 21.1.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Unit is min.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param jwksTimeout set the jwksTimeout.
    */
   @VsoMethod
@@ -162,6 +204,7 @@ public class OAuthProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Jwks url of the endpoint that hosts the public keys that can be used to verify any jwt issued by the authorization server.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return jwksUri
    */
@@ -174,6 +217,7 @@ public class OAuthProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Jwks url of the endpoint that hosts the public keys that can be used to verify any jwt issued by the authorization server.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param jwksUri set the jwksUri.
    */
@@ -186,6 +230,7 @@ public class OAuthProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Buffering size for the responses from the oauth enpoints.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 102400.
    * @return oauthRespBufferSz
    */
@@ -198,6 +243,7 @@ public class OAuthProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Buffering size for the responses from the oauth enpoints.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 102400.
    * @param oauthRespBufferSz set the oauthRespBufferSz.
    */
@@ -211,6 +257,7 @@ public class OAuthProfile extends AviRestResource {
    * Pool object to interface with authorization server endpoints.
    * It is a reference to an object of type pool.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolRef
    */
@@ -224,6 +271,7 @@ public class OAuthProfile extends AviRestResource {
    * Pool object to interface with authorization server endpoints.
    * It is a reference to an object of type pool.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolRef set the poolRef.
    */
@@ -236,6 +284,7 @@ public class OAuthProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Url of token exchange server.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tokenEndpoint
    */
@@ -248,6 +297,7 @@ public class OAuthProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Url of token exchange server.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tokenEndpoint set the tokenEndpoint.
    */
@@ -260,6 +310,7 @@ public class OAuthProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Url of the userinfo endpoint.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return userinfoEndpoint
    */
@@ -272,6 +323,7 @@ public class OAuthProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Url of the userinfo endpoint.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param userinfoEndpoint set the userinfoEndpoint.
    */
@@ -299,7 +351,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.issuer, objOAuthProfile.issuer)&&
   Objects.equals(this.poolRef, objOAuthProfile.poolRef)&&
   Objects.equals(this.oauthRespBufferSz, objOAuthProfile.oauthRespBufferSz)&&
-  Objects.equals(this.userinfoEndpoint, objOAuthProfile.userinfoEndpoint);
+  Objects.equals(this.userinfoEndpoint, objOAuthProfile.userinfoEndpoint)&&
+  Objects.equals(this.endSessionEndpoint, objOAuthProfile.endSessionEndpoint);
 }
 
 @Override
@@ -307,6 +360,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class OAuthProfile {\n");
       sb.append("    authorizationEndpoint: ").append(toIndentedString(authorizationEndpoint)).append("\n");
+        sb.append("    endSessionEndpoint: ").append(toIndentedString(endSessionEndpoint)).append("\n");
         sb.append("    introspectionEndpoint: ").append(toIndentedString(introspectionEndpoint)).append("\n");
         sb.append("    issuer: ").append(toIndentedString(issuer)).append("\n");
         sb.append("    jwksTimeout: ").append(toIndentedString(jwksTimeout)).append("\n");

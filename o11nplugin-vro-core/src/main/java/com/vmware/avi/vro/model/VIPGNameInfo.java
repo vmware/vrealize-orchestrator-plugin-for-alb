@@ -48,7 +48,7 @@ public class VIPGNameInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property managed_object_id of obj type vipgnameinfo field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return managedObjectId
    */
@@ -59,7 +59,7 @@ public class VIPGNameInfo extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property managed_object_id of obj type vipgnameinfo field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param managedObjectId set the managedObjectId.
    */
@@ -70,7 +70,7 @@ public class VIPGNameInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Name of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -81,7 +81,7 @@ public class VIPGNameInfo extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Name of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -93,6 +93,7 @@ public class VIPGNameInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -104,6 +105,7 @@ public class VIPGNameInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
@@ -133,7 +135,7 @@ public class VIPGNameInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Unique object identifier of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -144,7 +146,7 @@ public class VIPGNameInfo extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Unique object identifier of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */

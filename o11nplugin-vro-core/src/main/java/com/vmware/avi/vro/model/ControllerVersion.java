@@ -46,6 +46,7 @@ public class ControllerVersion extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Fips mode for controller.
    * Field introduced in 20.1.5.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fipsMode
    */
@@ -58,6 +59,7 @@ public class ControllerVersion extends AviRestResource {
    * This is the setter method to the attribute.
    * Fips mode for controller.
    * Field introduced in 20.1.5.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fipsMode set the fipsMode.
    */
@@ -68,7 +70,7 @@ public class ControllerVersion extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Name of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -79,7 +81,7 @@ public class ControllerVersion extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Name of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -92,6 +94,7 @@ public class ControllerVersion extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Patch level for controller.
    * Field introduced in 17.2.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return patch
    */
@@ -104,6 +107,7 @@ public class ControllerVersion extends AviRestResource {
    * This is the setter method to the attribute.
    * Patch level for controller.
    * Field introduced in 17.2.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param patch set the patch.
    */
@@ -114,7 +118,7 @@ public class ControllerVersion extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property version of obj type controllerversion field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return version
    */
@@ -125,7 +129,7 @@ public class ControllerVersion extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property version of obj type controllerversion field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param version set the version.
    */

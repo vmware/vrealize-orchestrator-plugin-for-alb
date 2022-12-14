@@ -38,6 +38,7 @@ public class ProtocolMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Criterion to use for protocol matching the http request.
    * Enum options - IS_IN, IS_NOT_IN.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchCriteria
    */
@@ -50,6 +51,7 @@ public class ProtocolMatch extends AviRestResource {
    * This is the setter method to the attribute.
    * Criterion to use for protocol matching the http request.
    * Enum options - IS_IN, IS_NOT_IN.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchCriteria set the matchCriteria.
    */
@@ -62,6 +64,7 @@ public class ProtocolMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Http or https protocol.
    * Enum options - HTTP, HTTPS.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return protocols
    */
@@ -74,6 +77,7 @@ public class ProtocolMatch extends AviRestResource {
    * This is the setter method to the attribute.
    * Http or https protocol.
    * Enum options - HTTP, HTTPS.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param protocols set the protocols.
    */

@@ -44,6 +44,10 @@ public class EmailConfiguration extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String fromEmail = "admin@avicontroller.net";
 
+    @JsonProperty("from_name")
+    @JsonInclude(Include.NON_NULL)
+    private String fromName = null;
+
     @JsonProperty("mail_server_name")
     @JsonInclude(Include.NON_NULL)
     private String mailServerName = "localhost";
@@ -61,6 +65,7 @@ public class EmailConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Password for mail server.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authPassword
    */
@@ -72,6 +77,7 @@ public class EmailConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Password for mail server.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param authPassword set the authPassword.
    */
@@ -83,6 +89,7 @@ public class EmailConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Username for mail server.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authUsername
    */
@@ -94,6 +101,7 @@ public class EmailConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Username for mail server.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param authUsername set the authUsername.
    */
@@ -106,6 +114,7 @@ public class EmailConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * When set, disables tls on the connection to the mail server.
    * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return disableTls
    */
@@ -118,6 +127,7 @@ public class EmailConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * When set, disables tls on the connection to the mail server.
    * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param disableTls set the disableTls.
    */
@@ -133,6 +143,7 @@ public class EmailConfiguration extends AviRestResource {
    * AFRICA_BANJUL, AFRICA_BISSAU, AFRICA_BLANTYRE, AFRICA_BRAZZAVILLE, AFRICA_BUJUMBURA, AFRICA_CAIRO, AFRICA_CASABLANCA, AFRICA_CEUTA,
    * AFRICA_CONAKRY, AFRICA_DAKAR, AFRICA_DAR_ES_SALAAM...
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return emailTimezone
    */
@@ -148,6 +159,7 @@ public class EmailConfiguration extends AviRestResource {
    * AFRICA_BANJUL, AFRICA_BISSAU, AFRICA_BLANTYRE, AFRICA_BRAZZAVILLE, AFRICA_BUJUMBURA, AFRICA_CAIRO, AFRICA_CASABLANCA, AFRICA_CEUTA,
    * AFRICA_CONAKRY, AFRICA_DAKAR, AFRICA_DAR_ES_SALAAM...
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param emailTimezone set the emailTimezone.
    */
@@ -159,6 +171,7 @@ public class EmailConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Email address in from field.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "admin@avicontroller.net".
    * @return fromEmail
    */
@@ -170,6 +183,7 @@ public class EmailConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Email address in from field.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "admin@avicontroller.net".
    * @param fromEmail set the fromEmail.
    */
@@ -180,7 +194,34 @@ public class EmailConfiguration extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Friendly name in from field.
+   * Field introduced in 21.1.4.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return fromName
+   */
+  @VsoMethod
+  public String getFromName() {
+    return fromName;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Friendly name in from field.
+   * Field introduced in 21.1.4.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param fromName set the fromName.
+   */
+  @VsoMethod
+  public void setFromName(String  fromName) {
+    this.fromName = fromName;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Mail server host.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "localhost".
    * @return mailServerName
    */
@@ -192,6 +233,7 @@ public class EmailConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Mail server host.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "localhost".
    * @param mailServerName set the mailServerName.
    */
@@ -203,6 +245,7 @@ public class EmailConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Mail server port.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 25.
    * @return mailServerPort
    */
@@ -214,6 +257,7 @@ public class EmailConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Mail server port.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 25.
    * @param mailServerPort set the mailServerPort.
    */
@@ -226,6 +270,7 @@ public class EmailConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Type of smtp mail service.
    * Enum options - SMTP_NONE, SMTP_LOCAL_HOST, SMTP_SERVER, SMTP_ANONYMOUS_SERVER.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "SMTP_LOCAL_HOST".
    * @return smtpType
    */
@@ -238,6 +283,7 @@ public class EmailConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Type of smtp mail service.
    * Enum options - SMTP_NONE, SMTP_LOCAL_HOST, SMTP_SERVER, SMTP_ANONYMOUS_SERVER.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "SMTP_LOCAL_HOST".
    * @param smtpType set the smtpType.
    */
@@ -264,7 +310,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.authUsername, objEmailConfiguration.authUsername)&&
   Objects.equals(this.authPassword, objEmailConfiguration.authPassword)&&
   Objects.equals(this.disableTls, objEmailConfiguration.disableTls)&&
-  Objects.equals(this.emailTimezone, objEmailConfiguration.emailTimezone);
+  Objects.equals(this.emailTimezone, objEmailConfiguration.emailTimezone)&&
+  Objects.equals(this.fromName, objEmailConfiguration.fromName);
 }
 
 @Override
@@ -276,6 +323,7 @@ public String toString() {
         sb.append("    disableTls: ").append(toIndentedString(disableTls)).append("\n");
         sb.append("    emailTimezone: ").append(toIndentedString(emailTimezone)).append("\n");
         sb.append("    fromEmail: ").append(toIndentedString(fromEmail)).append("\n");
+        sb.append("    fromName: ").append(toIndentedString(fromName)).append("\n");
         sb.append("    mailServerName: ").append(toIndentedString(mailServerName)).append("\n");
         sb.append("    mailServerPort: ").append(toIndentedString(mailServerPort)).append("\n");
         sb.append("    smtpType: ").append(toIndentedString(smtpType)).append("\n");

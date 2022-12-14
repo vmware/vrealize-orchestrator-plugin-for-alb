@@ -28,11 +28,15 @@ public class VcenterDatastore extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String datastoreName = null;
 
+    @JsonProperty("managed_object_id")
+    @JsonInclude(Include.NON_NULL)
+    private String managedObjectId = null;
+
 
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property datastore_name of obj type vcenterdatastore field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return datastoreName
    */
@@ -43,13 +47,39 @@ public class VcenterDatastore extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property datastore_name of obj type vcenterdatastore field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param datastoreName set the datastoreName.
    */
   @VsoMethod
   public void setDatastoreName(String  datastoreName) {
     this.datastoreName = datastoreName;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Will be used by default, if not set fallback to datastore_name.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return managedObjectId
+   */
+  @VsoMethod
+  public String getManagedObjectId() {
+    return managedObjectId;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Will be used by default, if not set fallback to datastore_name.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param managedObjectId set the managedObjectId.
+   */
+  @VsoMethod
+  public void setManagedObjectId(String  managedObjectId) {
+    this.managedObjectId = managedObjectId;
   }
 
 
@@ -63,7 +93,8 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   VcenterDatastore objVcenterDatastore = (VcenterDatastore) o;
-  return   Objects.equals(this.datastoreName, objVcenterDatastore.datastoreName);
+  return   Objects.equals(this.datastoreName, objVcenterDatastore.datastoreName)&&
+  Objects.equals(this.managedObjectId, objVcenterDatastore.managedObjectId);
 }
 
 @Override
@@ -71,6 +102,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class VcenterDatastore {\n");
       sb.append("    datastoreName: ").append(toIndentedString(datastoreName)).append("\n");
+        sb.append("    managedObjectId: ").append(toIndentedString(managedObjectId)).append("\n");
       sb.append("}");
   return sb.toString();
 }

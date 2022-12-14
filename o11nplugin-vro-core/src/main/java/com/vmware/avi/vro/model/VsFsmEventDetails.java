@@ -41,7 +41,7 @@ public class VsFsmEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property vip_id of obj type vsfsmeventdetails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipId
    */
@@ -52,7 +52,7 @@ public class VsFsmEventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property vip_id of obj type vsfsmeventdetails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vipId set the vipId.
    */
@@ -63,7 +63,7 @@ public class VsFsmEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property vs_rt of obj type vsfsmeventdetails field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsRt
    */
@@ -74,7 +74,7 @@ public class VsFsmEventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property vs_rt of obj type vsfsmeventdetails field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsRt set the vsRt.
    */
@@ -85,7 +85,7 @@ public class VsFsmEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Unique object identifier of vs.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUuid
    */
@@ -96,7 +96,7 @@ public class VsFsmEventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Unique object identifier of vs.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsUuid set the vsUuid.
    */
