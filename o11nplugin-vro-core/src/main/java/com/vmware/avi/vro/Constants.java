@@ -559,8 +559,10 @@ public class Constants {
     public static final String FINDER_VRO_KEYVALUETUPLE = "KeyValueTuple";
     public static final String FINDER_VRO_KNIPORTRANGE = "KniPortRange";
     public static final String FINDER_VRO_L1FMANDATORYTESTCASE = "L1FMandatoryTestCase";
+    public static final String FINDER_VRO_L1FSENSITIVETESTCASE = "L1FSensitiveTestCase";
     public static final String FINDER_VRO_L1STRINGLENGTHTESTCASE = "L1StringLengthTestCase";
     public static final String FINDER_VRO_L2FMANDATORYTESTCASE = "L2FMandatoryTestCase";
+    public static final String FINDER_VRO_L2FSENSITIVETESTCASE = "L2FSensitiveTestCase";
     public static final String FINDER_VRO_L2STRINGLENGTHTESTCASE = "L2StringLengthTestCase";
     public static final String FINDER_VRO_L4CONNECTIONPOLICY = "L4ConnectionPolicy";
     public static final String FINDER_VRO_L4POLICIES = "L4Policies";
@@ -956,6 +958,7 @@ public class Constants {
     public static final String FINDER_VRO_SIDEBANDPROFILE = "SidebandProfile";
     public static final String FINDER_VRO_SINGLELICENSE = "SingleLicense";
     public static final String FINDER_VRO_SINGLEOPTIONALFIELDMESSAGE = "SingleOptionalFieldMessage";
+    public static final String FINDER_VRO_SINGLEOPTIONALSENSITIVEFIELDMESSAGE = "SingleOptionalSensitiveFieldMessage";
     public static final String FINDER_VRO_SINGLEOPTIONALSTRINGFIELD = "SingleOptionalStringField";
     public static final String FINDER_VRO_SIPLOG = "SipLog";
     public static final String FINDER_VRO_SIPMESSAGE = "SipMessage";

@@ -28,18 +28,6 @@ public class AdminAuthConfiguration extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean allowLocalUserLogin = true;
 
-    @JsonProperty("alternate_auth_configurations")
-    @JsonInclude(Include.NON_NULL)
-    private List<AlternateAuthConfiguration> alternateAuthConfigurations;
-
-    @JsonProperty("auth_profile_ref")
-    @JsonInclude(Include.NON_NULL)
-    private String authProfileRef;
-
-    @JsonProperty("mapping_rules")
-    @JsonInclude(Include.NON_NULL)
-    private List<AuthMappingRule> mappingRules;
-
     @JsonProperty("remote_auth_configurations")
     @JsonInclude(Include.NON_NULL)
     private List<RemoteAuthConfiguration> remoteAuthConfigurations = null;
@@ -71,118 +59,6 @@ public class AdminAuthConfiguration extends AviRestResource {
   public void setAllowLocalUserLogin(Boolean  allowLocalUserLogin) {
     this.allowLocalUserLogin = allowLocalUserLogin;
   }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Secondary authentication mechanisms to be used.
-   * Field deprecated in 22.1.1.
-   * Field introduced in 20.1.6.
-   * Maximum of 1 items allowed.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-   * @return alternateAuthConfigurations
-   */
-  @VsoMethod
-  public List<AlternateAuthConfiguration> getAlternateAuthConfigurations() {
-    return alternateAuthConfigurations;
-  }
-
-  /**
-   * This is the setter method. this will set the alternateAuthConfigurations
-   * Secondary authentication mechanisms to be used.
-   * Field deprecated in 22.1.1.
-   * Field introduced in 20.1.6.
-   * Maximum of 1 items allowed.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-   * @return alternateAuthConfigurations
-   */
-  @VsoMethod
-  public void setAlternateAuthConfigurations(List<AlternateAuthConfiguration>  alternateAuthConfigurations) {
-    this.alternateAuthConfigurations = alternateAuthConfigurations;
-  }
-
-  /**
-   * This is the setter method this will set the alternateAuthConfigurations
-   * Secondary authentication mechanisms to be used.
-   * Field deprecated in 22.1.1.
-   * Field introduced in 20.1.6.
-   * Maximum of 1 items allowed.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-   * @return alternateAuthConfigurations
-   */
-  @VsoMethod
-  public AdminAuthConfiguration addAlternateAuthConfigurationsItem(AlternateAuthConfiguration alternateAuthConfigurationsItem) {
-    if (this.alternateAuthConfigurations == null) {
-      this.alternateAuthConfigurations = new ArrayList<AlternateAuthConfiguration>();
-    }
-    this.alternateAuthConfigurations.add(alternateAuthConfigurationsItem);
-    return this;
-  }
-
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * It is a reference to an object of type authprofile.
-   * Field deprecated in 22.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-   * @return authProfileRef
-   */
-  @VsoMethod
-  public String getAuthProfileRef() {
-    return authProfileRef;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * It is a reference to an object of type authprofile.
-   * Field deprecated in 22.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-   * @param authProfileRef set the authProfileRef.
-   */
-  @VsoMethod
-  public void setAuthProfileRef(String  authProfileRef) {
-    this.authProfileRef = authProfileRef;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Rules list for tenant or role mapping.
-   * Field deprecated in 22.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-   * @return mappingRules
-   */
-  @VsoMethod
-  public List<AuthMappingRule> getMappingRules() {
-    return mappingRules;
-  }
-
-  /**
-   * This is the setter method. this will set the mappingRules
-   * Rules list for tenant or role mapping.
-   * Field deprecated in 22.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-   * @return mappingRules
-   */
-  @VsoMethod
-  public void setMappingRules(List<AuthMappingRule>  mappingRules) {
-    this.mappingRules = mappingRules;
-  }
-
-  /**
-   * This is the setter method this will set the mappingRules
-   * Rules list for tenant or role mapping.
-   * Field deprecated in 22.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-   * @return mappingRules
-   */
-  @VsoMethod
-  public AdminAuthConfiguration addMappingRulesItem(AuthMappingRule mappingRulesItem) {
-    if (this.mappingRules == null) {
-      this.mappingRules = new ArrayList<AuthMappingRule>();
-    }
-    this.mappingRules.add(mappingRulesItem);
-    return this;
-  }
-
 
   /**
    * This is the getter method this will return the attribute value.
@@ -245,10 +121,7 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   AdminAuthConfiguration objAdminAuthConfiguration = (AdminAuthConfiguration) o;
-  return   Objects.equals(this.authProfileRef, objAdminAuthConfiguration.authProfileRef)&&
-  Objects.equals(this.mappingRules, objAdminAuthConfiguration.mappingRules)&&
-  Objects.equals(this.allowLocalUserLogin, objAdminAuthConfiguration.allowLocalUserLogin)&&
-  Objects.equals(this.alternateAuthConfigurations, objAdminAuthConfiguration.alternateAuthConfigurations)&&
+  return   Objects.equals(this.allowLocalUserLogin, objAdminAuthConfiguration.allowLocalUserLogin)&&
   Objects.equals(this.remoteAuthConfigurations, objAdminAuthConfiguration.remoteAuthConfigurations);
 }
 
@@ -257,9 +130,6 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class AdminAuthConfiguration {\n");
       sb.append("    allowLocalUserLogin: ").append(toIndentedString(allowLocalUserLogin)).append("\n");
-        sb.append("    alternateAuthConfigurations: ").append(toIndentedString(alternateAuthConfigurations)).append("\n");
-        sb.append("    authProfileRef: ").append(toIndentedString(authProfileRef)).append("\n");
-        sb.append("    mappingRules: ").append(toIndentedString(mappingRules)).append("\n");
         sb.append("    remoteAuthConfigurations: ").append(toIndentedString(remoteAuthConfigurations)).append("\n");
       sb.append("}");
   return sb.toString();
