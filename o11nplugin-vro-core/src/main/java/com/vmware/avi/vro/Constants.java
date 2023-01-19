@@ -676,6 +676,8 @@ public class Constants {
     public static final String FINDER_VRO_NSXTSISERVICEDETAILS = "NsxtSIServiceDetails";
     public static final String FINDER_VRO_NSXTSEGMENTRUNTIME = "NsxtSegmentRuntime";
     public static final String FINDER_VRO_NSXTSETUP = "NsxtSetup";
+    public static final String FINDER_VRO_NSXTT1SEG = "NsxtT1Seg";
+    public static final String FINDER_VRO_NSXTT1SEGDETAILS = "NsxtT1SegDetails";
     public static final String FINDER_VRO_NSXTTIER1SEGMENTAUTOMATICMODE = "NsxtTier1SegmentAutomaticMode";
     public static final String FINDER_VRO_NSXTTIER1SEGMENTCONFIG = "NsxtTier1SegmentConfig";
     public static final String FINDER_VRO_NSXTTIER1SEGMENTMANUALMODE = "NsxtTier1SegmentManualMode";
@@ -1003,6 +1005,7 @@ public class Constants {
     public static final String FINDER_VRO_TENANT = "Tenant";
     public static final String FINDER_VRO_TENANTCONFIGURATION = "TenantConfiguration";
     public static final String FINDER_VRO_TENANTLABEL = "TenantLabel";
+    public static final String FINDER_VRO_TENANTSYSTEMCONFIGURATION = "TenantSystemConfiguration";
     public static final String FINDER_VRO_TENCENTCREDENTIALS = "TencentCredentials";
     public static final String FINDER_VRO_TENCENTSETUP = "TencentSetup";
     public static final String FINDER_VRO_TENCENTZONENETWORK = "TencentZoneNetwork";

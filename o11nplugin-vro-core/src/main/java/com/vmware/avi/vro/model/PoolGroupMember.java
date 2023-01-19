@@ -96,8 +96,9 @@ public class PoolGroupMember extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * All pools with same label are treated similarly in a pool group.
-   * A pool with a higher priority is selected, as long as the pool is eligible or an explicit policy chooses a different pool.
+   * All pools with same priority are treated similarly in a pool group.
+   * The higher the number, the higher the priority.a pool with a higher priority is selected, as long as the pool is eligible or an explicit policy
+   * chooses a different pool.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return priorityLabel
@@ -109,8 +110,9 @@ public class PoolGroupMember extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * All pools with same label are treated similarly in a pool group.
-   * A pool with a higher priority is selected, as long as the pool is eligible or an explicit policy chooses a different pool.
+   * All pools with same priority are treated similarly in a pool group.
+   * The higher the number, the higher the priority.a pool with a higher priority is selected, as long as the pool is eligible or an explicit policy
+   * chooses a different pool.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param priorityLabel set the priorityLabel.

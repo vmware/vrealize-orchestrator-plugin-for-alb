@@ -48,6 +48,10 @@ public class AzureConfiguration extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String resourceGroup = null;
 
+    @JsonProperty("se_storage_account")
+    @JsonInclude(Include.NON_NULL)
+    private String seStorageAccount = null;
+
     @JsonProperty("subscription_id")
     @JsonInclude(Include.NON_NULL)
     private String subscriptionId = null;
@@ -274,6 +278,36 @@ public class AzureConfiguration extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Storage account to be used for uploading se vhd images to azure.
+   * Must include the resource group name.
+   * Format '<resource-group> <storage-account-name>'.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return seStorageAccount
+   */
+  @VsoMethod
+  public String getSeStorageAccount() {
+    return seStorageAccount;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Storage account to be used for uploading se vhd images to azure.
+   * Must include the resource group name.
+   * Format '<resource-group> <storage-account-name>'.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param seStorageAccount set the seStorageAccount.
+   */
+  @VsoMethod
+  public void setSeStorageAccount(String  seStorageAccount) {
+    this.seStorageAccount = seStorageAccount;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Subscription id for the azure subscription.
    * Field introduced in 17.2.1.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
@@ -427,7 +461,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.useManagedDisks, objAzureConfiguration.useManagedDisks)&&
   Objects.equals(this.availabilityZones, objAzureConfiguration.availabilityZones)&&
   Objects.equals(this.useStandardAlb, objAzureConfiguration.useStandardAlb)&&
-  Objects.equals(this.desId, objAzureConfiguration.desId);
+  Objects.equals(this.desId, objAzureConfiguration.desId)&&
+  Objects.equals(this.seStorageAccount, objAzureConfiguration.seStorageAccount);
 }
 
 @Override
@@ -440,6 +475,7 @@ public String toString() {
         sb.append("    location: ").append(toIndentedString(location)).append("\n");
         sb.append("    networkInfo: ").append(toIndentedString(networkInfo)).append("\n");
         sb.append("    resourceGroup: ").append(toIndentedString(resourceGroup)).append("\n");
+        sb.append("    seStorageAccount: ").append(toIndentedString(seStorageAccount)).append("\n");
         sb.append("    subscriptionId: ").append(toIndentedString(subscriptionId)).append("\n");
         sb.append("    useAzureDns: ").append(toIndentedString(useAzureDns)).append("\n");
         sb.append("    useEnhancedHa: ").append(toIndentedString(useEnhancedHa)).append("\n");

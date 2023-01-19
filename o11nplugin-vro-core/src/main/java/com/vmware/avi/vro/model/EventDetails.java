@@ -116,6 +116,7 @@ import com.vmware.avi.vro.model.NsxtSetup;
 import com.vmware.avi.vro.model.NsxtSIPolicyDetails;
 import com.vmware.avi.vro.model.NsxtSIRuleDetails;
 import com.vmware.avi.vro.model.NsxtSIServiceDetails;
+import com.vmware.avi.vro.model.NsxtT1SegDetails;
 import com.vmware.avi.vro.model.NetworkSubnetClash;
 import com.vmware.avi.vro.model.SummarizedInfo;
 import com.vmware.avi.vro.model.OCISetup;
@@ -683,6 +684,10 @@ public class EventDetails extends AviRestResource {
     @JsonProperty("nsxt_service_details")
     @JsonInclude(Include.NON_NULL)
     private NsxtSIServiceDetails nsxtServiceDetails = null;
+
+    @JsonProperty("nsxt_t1_seg_details")
+    @JsonInclude(Include.NON_NULL)
+    private NsxtT1SegDetails nsxtT1SegDetails = null;
 
     @JsonProperty("nw_subnet_clash_details")
     @JsonInclude(Include.NON_NULL)
@@ -3622,6 +3627,32 @@ public class EventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Nsx-t tier1(s) segment(s) event details.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return nsxtT1SegDetails
+   */
+  @VsoMethod
+  public NsxtT1SegDetails getNsxtT1SegDetails() {
+    return nsxtT1SegDetails;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Nsx-t tier1(s) segment(s) event details.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param nsxtT1SegDetails set the nsxtT1SegDetails.
+   */
+  @VsoMethod
+  public void setNsxtT1SegDetails(NsxtT1SegDetails nsxtT1SegDetails) {
+    this.nsxtT1SegDetails = nsxtT1SegDetails;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nwSubnetClashDetails
@@ -6201,6 +6232,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.nsxtPolicyDetails, objEventDetails.nsxtPolicyDetails)&&
   Objects.equals(this.nsxtRuleDetails, objEventDetails.nsxtRuleDetails)&&
   Objects.equals(this.vcenterImgDetails, objEventDetails.vcenterImgDetails)&&
+  Objects.equals(this.nsxtT1SegDetails, objEventDetails.nsxtT1SegDetails)&&
   Objects.equals(this.psmProgramDetails, objEventDetails.psmProgramDetails)&&
   Objects.equals(this.secMgrDataEvent, objEventDetails.secMgrDataEvent)&&
   Objects.equals(this.falsePositiveDetails, objEventDetails.falsePositiveDetails)&&
@@ -6338,6 +6370,7 @@ public String toString() {
         sb.append("    nsxtPolicyDetails: ").append(toIndentedString(nsxtPolicyDetails)).append("\n");
         sb.append("    nsxtRuleDetails: ").append(toIndentedString(nsxtRuleDetails)).append("\n");
         sb.append("    nsxtServiceDetails: ").append(toIndentedString(nsxtServiceDetails)).append("\n");
+        sb.append("    nsxtT1SegDetails: ").append(toIndentedString(nsxtT1SegDetails)).append("\n");
         sb.append("    nwSubnetClashDetails: ").append(toIndentedString(nwSubnetClashDetails)).append("\n");
         sb.append("    nwSummarizedDetails: ").append(toIndentedString(nwSummarizedDetails)).append("\n");
         sb.append("    ociInfo: ").append(toIndentedString(ociInfo)).append("\n");
