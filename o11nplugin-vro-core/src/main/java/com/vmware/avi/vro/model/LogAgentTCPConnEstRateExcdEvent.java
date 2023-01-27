@@ -5,8 +5,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.vmware.avi.vro.model.LogAgentTCPConnEstRateExcdEvent;
-import com.vmware.avi.vro.model.LogAgentTCPClientEventDetail;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -14,142 +12,130 @@ import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
 
 /**
- * The LogAgentEventDetail is a POJO class extends AviRestResource that used for creating
- * LogAgentEventDetail.
+ * The LogAgentTCPConnEstRateExcdEvent is a POJO class extends AviRestResource that used for creating
+ * LogAgentTCPConnEstRateExcdEvent.
  *
  * @version 1.0
  * @since 
  *
  */
-@VsoObject(create = false, name = "LogAgentEventDetail")
-@VsoFinder(name = Constants.FINDER_VRO_LOGAGENTEVENTDETAIL)
+@VsoObject(create = false, name = "LogAgentTCPConnEstRateExcdEvent")
+@VsoFinder(name = Constants.FINDER_VRO_LOGAGENTTCPCONNESTRATEEXCDEVENT)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class LogAgentEventDetail extends AviRestResource {
-    @JsonProperty("protocol")
+public class LogAgentTCPConnEstRateExcdEvent extends AviRestResource {
+    @JsonProperty("error_code")
     @JsonInclude(Include.NON_NULL)
-    private String protocol = null;
+    private String errorCode = null;
 
-    @JsonProperty("rapid_connection")
+    @JsonProperty("error_reason")
     @JsonInclude(Include.NON_NULL)
-    private LogAgentTCPConnEstRateExcdEvent rapidConnection = null;
+    private String errorReason = null;
 
-    @JsonProperty("tcp_detail")
+    @JsonProperty("host")
     @JsonInclude(Include.NON_NULL)
-    private LogAgentTCPClientEventDetail tcpDetail = null;
+    private String host = null;
 
-    @JsonProperty("type")
+    @JsonProperty("port")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String port = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
-   * Protocol used for communication to the external entity.
-   * Enum options - TCP_CONN.
-   * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return protocol
-   */
-  @VsoMethod
-  public String getProtocol() {
-    return protocol;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Protocol used for communication to the external entity.
-   * Enum options - TCP_CONN.
-   * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param protocol set the protocol.
-   */
-  @VsoMethod
-  public void setProtocol(String  protocol) {
-    this.protocol = protocol;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Event for tcp connection restablishment rate exceeds configured threshold.
    * Field introduced in 23.1.1.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return rapidConnection
+   * @return errorCode
    */
   @VsoMethod
-  public LogAgentTCPConnEstRateExcdEvent getRapidConnection() {
-    return rapidConnection;
+  public String getErrorCode() {
+    return errorCode;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Event for tcp connection restablishment rate exceeds configured threshold.
    * Field introduced in 23.1.1.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param rapidConnection set the rapidConnection.
+   * @param errorCode set the errorCode.
    */
   @VsoMethod
-  public void setRapidConnection(LogAgentTCPConnEstRateExcdEvent rapidConnection) {
-    this.rapidConnection = rapidConnection;
+  public void setErrorCode(String  errorCode) {
+    this.errorCode = errorCode;
   }
 
   /**
    * This is the getter method this will return the attribute value.
-   * Event details for tcp connection event.
-   * Field introduced in 20.1.3.
+   * Field introduced in 23.1.1.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return tcpDetail
+   * @return errorReason
    */
   @VsoMethod
-  public LogAgentTCPClientEventDetail getTcpDetail() {
-    return tcpDetail;
+  public String getErrorReason() {
+    return errorReason;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Event details for tcp connection event.
-   * Field introduced in 20.1.3.
+   * Field introduced in 23.1.1.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param tcpDetail set the tcpDetail.
+   * @param errorReason set the errorReason.
    */
   @VsoMethod
-  public void setTcpDetail(LogAgentTCPClientEventDetail tcpDetail) {
-    this.tcpDetail = tcpDetail;
+  public void setErrorReason(String  errorReason) {
+    this.errorReason = errorReason;
   }
 
   /**
    * This is the getter method this will return the attribute value.
-   * Type of log agent event.
-   * Enum options - LOG_AGENT_CONNECTION_ERROR.
-   * Field introduced in 20.1.3.
+   * Field introduced in 23.1.1.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return type
+   * @return host
    */
   @VsoMethod
-  public String getType() {
-    return type;
+  public String getHost() {
+    return host;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Type of log agent event.
-   * Enum options - LOG_AGENT_CONNECTION_ERROR.
-   * Field introduced in 20.1.3.
+   * Field introduced in 23.1.1.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param type set the type.
+   * @param host set the host.
    */
   @VsoMethod
-  public void setType(String  type) {
-    this.type = type;
+  public void setHost(String  host) {
+    this.host = host;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Field introduced in 23.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return port
+   */
+  @VsoMethod
+  public String getPort() {
+    return port;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 23.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param port set the port.
+   */
+  @VsoMethod
+  public void setPort(String  port) {
+    this.port = port;
   }
 
 
@@ -162,21 +148,21 @@ public boolean equals(java.lang.Object o) {
   if (o == null || getClass() != o.getClass()) {
     return false;
   }
-  LogAgentEventDetail objLogAgentEventDetail = (LogAgentEventDetail) o;
-  return   Objects.equals(this.type, objLogAgentEventDetail.type)&&
-  Objects.equals(this.protocol, objLogAgentEventDetail.protocol)&&
-  Objects.equals(this.tcpDetail, objLogAgentEventDetail.tcpDetail)&&
-  Objects.equals(this.rapidConnection, objLogAgentEventDetail.rapidConnection);
+  LogAgentTCPConnEstRateExcdEvent objLogAgentTCPConnEstRateExcdEvent = (LogAgentTCPConnEstRateExcdEvent) o;
+  return   Objects.equals(this.host, objLogAgentTCPConnEstRateExcdEvent.host)&&
+  Objects.equals(this.port, objLogAgentTCPConnEstRateExcdEvent.port)&&
+  Objects.equals(this.errorCode, objLogAgentTCPConnEstRateExcdEvent.errorCode)&&
+  Objects.equals(this.errorReason, objLogAgentTCPConnEstRateExcdEvent.errorReason);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
-  sb.append("class LogAgentEventDetail {\n");
-      sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
-        sb.append("    rapidConnection: ").append(toIndentedString(rapidConnection)).append("\n");
-        sb.append("    tcpDetail: ").append(toIndentedString(tcpDetail)).append("\n");
-        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+  sb.append("class LogAgentTCPConnEstRateExcdEvent {\n");
+      sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
+        sb.append("    errorReason: ").append(toIndentedString(errorReason)).append("\n");
+        sb.append("    host: ").append(toIndentedString(host)).append("\n");
+        sb.append("    port: ").append(toIndentedString(port)).append("\n");
       sb.append("}");
   return sb.toString();
 }
