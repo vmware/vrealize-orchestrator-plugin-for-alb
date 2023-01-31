@@ -243,7 +243,7 @@ public class TCPProxyProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The duration for keepalive probes or session idle timeout.
-   * Max value is 3600 seconds, min is 5.
+   * Max value is 14400 seconds, min is 5.
    * Set to 0 to allow infinite idle time.
    * Allowed values are 5-14400.
    * Special values are 0 - infinite.
@@ -260,7 +260,7 @@ public class TCPProxyProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The duration for keepalive probes or session idle timeout.
-   * Max value is 3600 seconds, min is 5.
+   * Max value is 14400 seconds, min is 5.
    * Set to 0 to allow infinite idle time.
    * Allowed values are 5-14400.
    * Special values are 0 - infinite.
