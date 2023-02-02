@@ -38,6 +38,7 @@ public class Matches extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Matches in signature rule.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchElement
    */
@@ -50,6 +51,7 @@ public class Matches extends AviRestResource {
    * This is the setter method to the attribute.
    * Matches in signature rule.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchElement set the matchElement.
    */
@@ -62,6 +64,7 @@ public class Matches extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Match value in signature rule.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchValue
    */
@@ -74,6 +77,7 @@ public class Matches extends AviRestResource {
    * This is the setter method to the attribute.
    * Match value in signature rule.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchValue set the matchValue.
    */

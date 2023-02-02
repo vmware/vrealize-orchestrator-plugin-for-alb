@@ -44,6 +44,7 @@ public class WebApplicationSignatureServiceStatus extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * If the last attempted update failed, this is a more detailed error message.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return error
    */
@@ -56,6 +57,7 @@ public class WebApplicationSignatureServiceStatus extends AviRestResource {
    * This is the setter method to the attribute.
    * If the last attempted update failed, this is a more detailed error message.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param error set the error.
    */
@@ -70,6 +72,7 @@ public class WebApplicationSignatureServiceStatus extends AviRestResource {
    * It will be not update, if an error occurs during an update attempt.
    * In this case, the error will be set.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lastSuccessfulUpdateCheck
    */
@@ -84,6 +87,7 @@ public class WebApplicationSignatureServiceStatus extends AviRestResource {
    * It will be not update, if an error occurs during an update attempt.
    * In this case, the error will be set.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lastSuccessfulUpdateCheck set the lastSuccessfulUpdateCheck.
    */
@@ -97,6 +101,7 @@ public class WebApplicationSignatureServiceStatus extends AviRestResource {
    * A timestamp field.
    * It is used by the application signature sync service to keep track of the current version.
    * Field introduced in 21.1.1, 20.1.5.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return upstreamSyncTimestamp
    */
@@ -110,6 +115,7 @@ public class WebApplicationSignatureServiceStatus extends AviRestResource {
    * A timestamp field.
    * It is used by the application signature sync service to keep track of the current version.
    * Field introduced in 21.1.1, 20.1.5.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param upstreamSyncTimestamp set the upstreamSyncTimestamp.
    */

@@ -38,6 +38,10 @@ public class HTTPHdrAction extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private HTTPHdrData hdr = null;
 
+    @JsonProperty("hdr_index")
+    @JsonInclude(Include.NON_NULL)
+    private Integer hdrIndex = null;
+
 
 
   /**
@@ -47,8 +51,8 @@ public class HTTPHdrAction extends AviRestResource {
    * and a new header with the new value is added.
    * Remove  all the headers of the given name are removed.
    * Enum options - HTTP_ADD_HDR, HTTP_REMOVE_HDR, HTTP_REPLACE_HDR.
-   * Allowed in basic(allowed values- http_remove_hdr,http_replace_hdr) edition, essentials(allowed values- http_remove_hdr,http_replace_hdr) edition,
-   * enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- http_remove_hdr,http_replace_hdr), basic edition(allowed values-
+   * http_remove_hdr,http_replace_hdr), enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return action
    */
@@ -64,8 +68,8 @@ public class HTTPHdrAction extends AviRestResource {
    * and a new header with the new value is added.
    * Remove  all the headers of the given name are removed.
    * Enum options - HTTP_ADD_HDR, HTTP_REMOVE_HDR, HTTP_REPLACE_HDR.
-   * Allowed in basic(allowed values- http_remove_hdr,http_replace_hdr) edition, essentials(allowed values- http_remove_hdr,http_replace_hdr) edition,
-   * enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- http_remove_hdr,http_replace_hdr), basic edition(allowed values-
+   * http_remove_hdr,http_replace_hdr), enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param action set the action.
    */
@@ -77,6 +81,7 @@ public class HTTPHdrAction extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Cookie information.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cookie
    */
@@ -88,6 +93,7 @@ public class HTTPHdrAction extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Cookie information.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cookie set the cookie.
    */
@@ -99,6 +105,7 @@ public class HTTPHdrAction extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Http header information.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hdr
    */
@@ -110,12 +117,41 @@ public class HTTPHdrAction extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Http header information.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hdr set the hdr.
    */
   @VsoMethod
   public void setHdr(HTTPHdrData hdr) {
     this.hdr = hdr;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Index to identify the header actions.
+   * Field introduced in 22.1.1.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return hdrIndex
+   */
+  @VsoMethod
+  public Integer getHdrIndex() {
+    return hdrIndex;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Index to identify the header actions.
+   * Field introduced in 22.1.1.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param hdrIndex set the hdrIndex.
+   */
+  @VsoMethod
+  public void setHdrIndex(Integer  hdrIndex) {
+    this.hdrIndex = hdrIndex;
   }
 
 
@@ -131,7 +167,8 @@ public boolean equals(java.lang.Object o) {
   HTTPHdrAction objHTTPHdrAction = (HTTPHdrAction) o;
   return   Objects.equals(this.action, objHTTPHdrAction.action)&&
   Objects.equals(this.hdr, objHTTPHdrAction.hdr)&&
-  Objects.equals(this.cookie, objHTTPHdrAction.cookie);
+  Objects.equals(this.cookie, objHTTPHdrAction.cookie)&&
+  Objects.equals(this.hdrIndex, objHTTPHdrAction.hdrIndex);
 }
 
 @Override
@@ -141,6 +178,7 @@ public String toString() {
       sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("    cookie: ").append(toIndentedString(cookie)).append("\n");
         sb.append("    hdr: ").append(toIndentedString(hdr)).append("\n");
+        sb.append("    hdrIndex: ").append(toIndentedString(hdrIndex)).append("\n");
       sb.append("}");
   return sb.toString();
 }

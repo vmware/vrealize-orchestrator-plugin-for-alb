@@ -28,17 +28,17 @@ public class VHMatch extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String host = null;
 
-    @JsonProperty("path")
+    @JsonProperty("rules")
     @JsonInclude(Include.NON_NULL)
-    private List<PathMatch> path = null;
+    private List<VHMatchRule> rules = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Host/domain name match configuration.
-   * Must be configured along with at least one path match criteria.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return host
    */
@@ -50,8 +50,8 @@ public class VHMatch extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Host/domain name match configuration.
-   * Must be configured along with at least one path match criteria.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param host set the host.
    */
@@ -62,47 +62,50 @@ public class VHMatch extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Resource/uri path match configuration.
-   * Must be configured along with host match criteria.
-   * Field introduced in 20.1.3.
+   * Add rules for selecting the virtual service.
+   * At least one rule must be configured.
+   * Field introduced in 22.1.3.
    * Minimum of 1 items required.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return path
+   * @return rules
    */
   @VsoMethod
-  public List<PathMatch> getPath() {
-    return path;
+  public List<VHMatchRule> getRules() {
+    return rules;
   }
 
   /**
-   * This is the setter method. this will set the path
-   * Resource/uri path match configuration.
-   * Must be configured along with host match criteria.
-   * Field introduced in 20.1.3.
+   * This is the setter method. this will set the rules
+   * Add rules for selecting the virtual service.
+   * At least one rule must be configured.
+   * Field introduced in 22.1.3.
    * Minimum of 1 items required.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return path
+   * @return rules
    */
   @VsoMethod
-  public void setPath(List<PathMatch>  path) {
-    this.path = path;
+  public void setRules(List<VHMatchRule>  rules) {
+    this.rules = rules;
   }
 
   /**
-   * This is the setter method this will set the path
-   * Resource/uri path match configuration.
-   * Must be configured along with host match criteria.
-   * Field introduced in 20.1.3.
+   * This is the setter method this will set the rules
+   * Add rules for selecting the virtual service.
+   * At least one rule must be configured.
+   * Field introduced in 22.1.3.
    * Minimum of 1 items required.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return path
+   * @return rules
    */
   @VsoMethod
-  public VHMatch addPathItem(PathMatch pathItem) {
-    if (this.path == null) {
-      this.path = new ArrayList<PathMatch>();
+  public VHMatch addRulesItem(VHMatchRule rulesItem) {
+    if (this.rules == null) {
+      this.rules = new ArrayList<VHMatchRule>();
     }
-    this.path.add(pathItem);
+    this.rules.add(rulesItem);
     return this;
   }
 
@@ -119,7 +122,7 @@ public boolean equals(java.lang.Object o) {
   }
   VHMatch objVHMatch = (VHMatch) o;
   return   Objects.equals(this.host, objVHMatch.host)&&
-  Objects.equals(this.path, objVHMatch.path);
+  Objects.equals(this.rules, objVHMatch.rules);
 }
 
 @Override
@@ -127,7 +130,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class VHMatch {\n");
       sb.append("    host: ").append(toIndentedString(host)).append("\n");
-        sb.append("    path: ").append(toIndentedString(path)).append("\n");
+        sb.append("    rules: ").append(toIndentedString(rules)).append("\n");
       sb.append("}");
   return sb.toString();
 }

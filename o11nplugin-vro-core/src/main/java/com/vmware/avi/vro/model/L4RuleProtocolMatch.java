@@ -39,6 +39,7 @@ public class L4RuleProtocolMatch extends AviRestResource {
    * Criterion to use for transport protocol matching.
    * Enum options - IS_IN, IS_NOT_IN.
    * Field introduced in 17.2.7.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchCriteria
    */
@@ -52,6 +53,7 @@ public class L4RuleProtocolMatch extends AviRestResource {
    * Criterion to use for transport protocol matching.
    * Enum options - IS_IN, IS_NOT_IN.
    * Field introduced in 17.2.7.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchCriteria set the matchCriteria.
    */
@@ -63,8 +65,9 @@ public class L4RuleProtocolMatch extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Transport protocol to match.
-   * Enum options - PROTOCOL_ICMP, PROTOCOL_TCP, PROTOCOL_UDP.
+   * Enum options - PROTOCOL_ICMP, PROTOCOL_TCP, PROTOCOL_UDP, PROTOCOL_SCTP.
    * Field introduced in 17.2.7.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return protocol
    */
@@ -76,8 +79,9 @@ public class L4RuleProtocolMatch extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Transport protocol to match.
-   * Enum options - PROTOCOL_ICMP, PROTOCOL_TCP, PROTOCOL_UDP.
+   * Enum options - PROTOCOL_ICMP, PROTOCOL_TCP, PROTOCOL_UDP, PROTOCOL_SCTP.
    * Field introduced in 17.2.7.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param protocol set the protocol.
    */

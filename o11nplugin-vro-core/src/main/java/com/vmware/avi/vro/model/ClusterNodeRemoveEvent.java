@@ -42,6 +42,7 @@ public class ClusterNodeRemoveEvent extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ip address of the controller vm.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip
    */
@@ -53,6 +54,7 @@ public class ClusterNodeRemoveEvent extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ip address of the controller vm.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip set the ip.
    */
@@ -64,6 +66,7 @@ public class ClusterNodeRemoveEvent extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of controller node.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nodeName
    */
@@ -75,6 +78,7 @@ public class ClusterNodeRemoveEvent extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of controller node.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nodeName set the nodeName.
    */
@@ -87,6 +91,7 @@ public class ClusterNodeRemoveEvent extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Role of the node when it left the controller cluster.
    * Enum options - CLUSTER_LEADER, CLUSTER_FOLLOWER.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return role
    */
@@ -99,6 +104,7 @@ public class ClusterNodeRemoveEvent extends AviRestResource {
    * This is the setter method to the attribute.
    * Role of the node when it left the controller cluster.
    * Enum options - CLUSTER_LEADER, CLUSTER_FOLLOWER.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param role set the role.
    */

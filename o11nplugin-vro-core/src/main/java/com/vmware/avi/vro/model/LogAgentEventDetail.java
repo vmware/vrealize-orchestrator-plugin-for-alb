@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.LogAgentTCPConnEstRateExcdEvent;
 import com.vmware.avi.vro.model.LogAgentTCPClientEventDetail;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
@@ -29,6 +30,10 @@ public class LogAgentEventDetail extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String protocol = null;
 
+    @JsonProperty("rapid_connection")
+    @JsonInclude(Include.NON_NULL)
+    private LogAgentTCPConnEstRateExcdEvent rapidConnection = null;
+
     @JsonProperty("tcp_detail")
     @JsonInclude(Include.NON_NULL)
     private LogAgentTCPClientEventDetail tcpDetail = null;
@@ -44,6 +49,7 @@ public class LogAgentEventDetail extends AviRestResource {
    * Protocol used for communication to the external entity.
    * Enum options - TCP_CONN.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return protocol
    */
@@ -57,6 +63,7 @@ public class LogAgentEventDetail extends AviRestResource {
    * Protocol used for communication to the external entity.
    * Enum options - TCP_CONN.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param protocol set the protocol.
    */
@@ -67,8 +74,35 @@ public class LogAgentEventDetail extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Event for tcp connection restablishment rate exceeds configured threshold.
+   * Field introduced in 23.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return rapidConnection
+   */
+  @VsoMethod
+  public LogAgentTCPConnEstRateExcdEvent getRapidConnection() {
+    return rapidConnection;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Event for tcp connection restablishment rate exceeds configured threshold.
+   * Field introduced in 23.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param rapidConnection set the rapidConnection.
+   */
+  @VsoMethod
+  public void setRapidConnection(LogAgentTCPConnEstRateExcdEvent rapidConnection) {
+    this.rapidConnection = rapidConnection;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Event details for tcp connection event.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tcpDetail
    */
@@ -81,6 +115,7 @@ public class LogAgentEventDetail extends AviRestResource {
    * This is the setter method to the attribute.
    * Event details for tcp connection event.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tcpDetail set the tcpDetail.
    */
@@ -94,6 +129,7 @@ public class LogAgentEventDetail extends AviRestResource {
    * Type of log agent event.
    * Enum options - LOG_AGENT_CONNECTION_ERROR.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
@@ -107,6 +143,7 @@ public class LogAgentEventDetail extends AviRestResource {
    * Type of log agent event.
    * Enum options - LOG_AGENT_CONNECTION_ERROR.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */
@@ -128,7 +165,8 @@ public boolean equals(java.lang.Object o) {
   LogAgentEventDetail objLogAgentEventDetail = (LogAgentEventDetail) o;
   return   Objects.equals(this.type, objLogAgentEventDetail.type)&&
   Objects.equals(this.protocol, objLogAgentEventDetail.protocol)&&
-  Objects.equals(this.tcpDetail, objLogAgentEventDetail.tcpDetail);
+  Objects.equals(this.tcpDetail, objLogAgentEventDetail.tcpDetail)&&
+  Objects.equals(this.rapidConnection, objLogAgentEventDetail.rapidConnection);
 }
 
 @Override
@@ -136,6 +174,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class LogAgentEventDetail {\n");
       sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
+        sb.append("    rapidConnection: ").append(toIndentedString(rapidConnection)).append("\n");
         sb.append("    tcpDetail: ").append(toIndentedString(tcpDetail)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
       sb.append("}");

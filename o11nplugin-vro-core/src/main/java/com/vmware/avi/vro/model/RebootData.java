@@ -38,6 +38,7 @@ public class RebootData extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Patch version for which reboot flag need to be computed.
    * Field introduced in 18.2.8, 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return patchVersion
    */
@@ -50,6 +51,7 @@ public class RebootData extends AviRestResource {
    * This is the setter method to the attribute.
    * Patch version for which reboot flag need to be computed.
    * Field introduced in 18.2.8, 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param patchVersion set the patchVersion.
    */
@@ -62,6 +64,7 @@ public class RebootData extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This variable tells whether reboot has to be performed.
    * Field introduced in 18.2.8, 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reboot
    */
@@ -74,6 +77,7 @@ public class RebootData extends AviRestResource {
    * This is the setter method to the attribute.
    * This variable tells whether reboot has to be performed.
    * Field introduced in 18.2.8, 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reboot set the reboot.
    */

@@ -38,6 +38,7 @@ public class FalsePositiveDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * False positive result details.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return falsePositiveResults
    */
@@ -50,6 +51,7 @@ public class FalsePositiveDetails extends AviRestResource {
    * This is the setter method. this will set the falsePositiveResults
    * False positive result details.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return falsePositiveResults
    */
@@ -62,6 +64,7 @@ public class FalsePositiveDetails extends AviRestResource {
    * This is the setter method this will set the falsePositiveResults
    * False positive result details.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return falsePositiveResults
    */
@@ -79,6 +82,7 @@ public class FalsePositiveDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Vs id for this false positive details.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUuid
    */
@@ -91,6 +95,7 @@ public class FalsePositiveDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Vs id for this false positive details.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsUuid set the vsUuid.
    */

@@ -41,6 +41,7 @@ public class AlertMgrDebugFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Filter debugs for entity uuid.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return alertObjid
    */
@@ -52,6 +53,7 @@ public class AlertMgrDebugFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Filter debugs for entity uuid.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param alertObjid set the alertObjid.
    */
@@ -63,6 +65,7 @@ public class AlertMgrDebugFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Filter debugs for an alert id.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return alertUuid
    */
@@ -74,6 +77,7 @@ public class AlertMgrDebugFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Filter debugs for an alert id.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param alertUuid set the alertUuid.
    */
@@ -85,6 +89,7 @@ public class AlertMgrDebugFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Filter debugs for an alert config.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cfgUuid
    */
@@ -96,6 +101,7 @@ public class AlertMgrDebugFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Filter debugs for an alert config.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cfgUuid set the cfgUuid.
    */

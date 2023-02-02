@@ -33,6 +33,7 @@ public class ClusterConfigFailedEvent extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Failure reason.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
@@ -44,6 +45,7 @@ public class ClusterConfigFailedEvent extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Failure reason.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */

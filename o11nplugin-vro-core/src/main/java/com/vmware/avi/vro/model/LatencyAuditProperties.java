@@ -44,9 +44,10 @@ public class LatencyAuditProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Audit tcp connection establishment time.
+   * Deprecated in 22.1.1.
    * Enum options - LATENCY_AUDIT_OFF, LATENCY_AUDIT_ON, LATENCY_AUDIT_ON_WITH_SIG.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return connEstAuditMode
    */
@@ -57,9 +58,10 @@ public class LatencyAuditProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Audit tcp connection establishment time.
+   * Deprecated in 22.1.1.
    * Enum options - LATENCY_AUDIT_OFF, LATENCY_AUDIT_ON, LATENCY_AUDIT_ON_WITH_SIG.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param connEstAuditMode set the connEstAuditMode.
    */
@@ -70,9 +72,10 @@ public class LatencyAuditProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Maximum threshold for connection establishment time.
+   * Deprecated in 22.1.1.
    * Field introduced in 21.1.1.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return connEstThreshold
    */
@@ -83,9 +86,10 @@ public class LatencyAuditProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Maximum threshold for connection establishment time.
+   * Deprecated in 22.1.1.
    * Field introduced in 21.1.1.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param connEstThreshold set the connEstThreshold.
    */
@@ -96,9 +100,10 @@ public class LatencyAuditProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Audit dispatcher to proxy latency.
+   * Deprecated in 22.1.1.
    * Enum options - LATENCY_AUDIT_OFF, LATENCY_AUDIT_ON, LATENCY_AUDIT_ON_WITH_SIG.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return latencyAuditMode
    */
@@ -109,9 +114,10 @@ public class LatencyAuditProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Audit dispatcher to proxy latency.
+   * Deprecated in 22.1.1.
    * Enum options - LATENCY_AUDIT_OFF, LATENCY_AUDIT_ON, LATENCY_AUDIT_ON_WITH_SIG.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param latencyAuditMode set the latencyAuditMode.
    */
@@ -122,9 +128,10 @@ public class LatencyAuditProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Maximum latency threshold between dispatcher and proxy.
+   * Deprecated in 22.1.1.
    * Field introduced in 21.1.1.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return latencyThreshold
    */
@@ -135,9 +142,10 @@ public class LatencyAuditProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Maximum latency threshold between dispatcher and proxy.
+   * Deprecated in 22.1.1.
    * Field introduced in 21.1.1.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param latencyThreshold set the latencyThreshold.
    */

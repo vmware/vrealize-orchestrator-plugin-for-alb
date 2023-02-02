@@ -148,7 +148,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property adapter of obj type vnic field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return adapter
    */
@@ -159,7 +159,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property adapter of obj type vnic field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param adapter set the adapter.
    */
@@ -171,6 +171,7 @@ public class vNIC extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.7.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return aggregatorChgd
    */
@@ -182,6 +183,7 @@ public class vNIC extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.7.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param aggregatorChgd set the aggregatorChgd.
    */
@@ -192,7 +194,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property can_se_dp_takeover of obj type vnic field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return canSeDpTakeover
    */
@@ -203,7 +205,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property can_se_dp_takeover of obj type vnic field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param canSeDpTakeover set the canSeDpTakeover.
    */
@@ -214,7 +216,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property connected of obj type vnic field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return connected
    */
@@ -225,7 +227,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property connected of obj type vnic field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param connected set the connected.
    */
@@ -236,7 +238,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property del_pending of obj type vnic field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return delPending
    */
@@ -247,7 +249,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property del_pending of obj type vnic field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param delPending set the delPending.
    */
@@ -261,6 +263,7 @@ public class vNIC extends AviRestResource {
    * Delete this vnic.
    * Please confirm dp_deletion_done before removing the vnic from the cloud.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return deleteVnic
    */
@@ -274,6 +277,7 @@ public class vNIC extends AviRestResource {
    * Delete this vnic.
    * Please confirm dp_deletion_done before removing the vnic from the cloud.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param deleteVnic set the deleteVnic.
    */
@@ -284,7 +288,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property dhcp_enabled of obj type vnic field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return dhcpEnabled
    */
@@ -295,7 +299,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property dhcp_enabled of obj type vnic field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param dhcpEnabled set the dhcpEnabled.
    */
@@ -308,6 +312,7 @@ public class vNIC extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The vnic has been cleaned up in the datapath.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return dpDeletionDone
    */
@@ -320,6 +325,7 @@ public class vNIC extends AviRestResource {
    * This is the setter method to the attribute.
    * The vnic has been cleaned up in the datapath.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param dpDeletionDone set the dpDeletionDone.
    */
@@ -330,7 +336,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property enabled of obj type vnic field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enabled
    */
@@ -341,7 +347,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property enabled of obj type vnic field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enabled set the enabled.
    */
@@ -352,7 +358,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property if_name of obj type vnic field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ifName
    */
@@ -363,7 +369,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property if_name of obj type vnic field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ifName set the ifName.
    */
@@ -376,6 +382,7 @@ public class vNIC extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable ipv6 auto configuration.
    * Field introduced in 18.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return ip6AutocfgEnabled
    */
@@ -388,6 +395,7 @@ public class vNIC extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable ipv6 auto configuration.
    * Field introduced in 18.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param ip6AutocfgEnabled set the ip6AutocfgEnabled.
    */
@@ -398,7 +406,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property is_asm of obj type vnic field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return isAsm
    */
@@ -409,7 +417,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property is_asm of obj type vnic field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param isAsm set the isAsm.
    */
@@ -420,7 +428,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property is_avi_internal_network of obj type vnic field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return isAviInternalNetwork
    */
@@ -431,7 +439,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property is_avi_internal_network of obj type vnic field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param isAviInternalNetwork set the isAviInternalNetwork.
    */
@@ -442,7 +450,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property is_hsm of obj type vnic field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return isHsm
    */
@@ -453,7 +461,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property is_hsm of obj type vnic field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param isHsm set the isHsm.
    */
@@ -464,7 +472,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property is_mgmt of obj type vnic field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return isMgmt
    */
@@ -475,7 +483,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property is_mgmt of obj type vnic field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param isMgmt set the isMgmt.
    */
@@ -486,7 +494,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property is_portchannel of obj type vnic field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return isPortchannel
    */
@@ -497,7 +505,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property is_portchannel of obj type vnic field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param isPortchannel set the isPortchannel.
    */
@@ -510,6 +518,7 @@ public class vNIC extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The link is operationally up.
    * Field introduced in 18.2.8, 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return linkUp
    */
@@ -522,6 +531,7 @@ public class vNIC extends AviRestResource {
    * This is the setter method to the attribute.
    * The link is operationally up.
    * Field introduced in 18.2.8, 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param linkUp set the linkUp.
    */
@@ -532,7 +542,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property linux_name of obj type vnic field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return linuxName
    */
@@ -543,7 +553,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property linux_name of obj type vnic field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param linuxName set the linuxName.
    */
@@ -554,7 +564,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property mac_address of obj type vnic field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return macAddress
    */
@@ -565,7 +575,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property mac_address of obj type vnic field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param macAddress set the macAddress.
    */
@@ -576,7 +586,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property members of obj type vnic field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return members
    */
@@ -587,7 +597,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the setter method. this will set the members
-   * Placeholder for description of property members of obj type vnic field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return members
    */
@@ -598,7 +608,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the setter method this will set the members
-   * Placeholder for description of property members of obj type vnic field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return members
    */
@@ -614,7 +624,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property mtu of obj type vnic field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1500.
    * @return mtu
    */
@@ -625,7 +635,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property mtu of obj type vnic field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1500.
    * @param mtu set the mtu.
    */
@@ -636,7 +646,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property network_name of obj type vnic field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkName
    */
@@ -647,7 +657,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property network_name of obj type vnic field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param networkName set the networkName.
    */
@@ -659,6 +669,7 @@ public class vNIC extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type network.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkRef
    */
@@ -670,6 +681,7 @@ public class vNIC extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type network.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param networkRef set the networkRef.
    */
@@ -680,7 +692,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property pci_id of obj type vnic field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pciId
    */
@@ -691,7 +703,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property pci_id of obj type vnic field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pciId set the pciId.
    */
@@ -702,7 +714,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Unique object identifier of port.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return portUuid
    */
@@ -713,7 +725,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Unique object identifier of port.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param portUuid set the portUuid.
    */
@@ -724,7 +736,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property vlan_id of obj type vnic field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return vlanId
    */
@@ -735,7 +747,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property vlan_id of obj type vnic field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param vlanId set the vlanId.
    */
@@ -746,7 +758,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property vlan_interfaces of obj type vnic field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vlanInterfaces
    */
@@ -757,7 +769,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the setter method. this will set the vlanInterfaces
-   * Placeholder for description of property vlan_interfaces of obj type vnic field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vlanInterfaces
    */
@@ -768,7 +780,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the setter method this will set the vlanInterfaces
-   * Placeholder for description of property vlan_interfaces of obj type vnic field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vlanInterfaces
    */
@@ -784,7 +796,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property vnic_networks of obj type vnic field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vnicNetworks
    */
@@ -795,7 +807,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the setter method. this will set the vnicNetworks
-   * Placeholder for description of property vnic_networks of obj type vnic field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vnicNetworks
    */
@@ -806,7 +818,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the setter method this will set the vnicNetworks
-   * Placeholder for description of property vnic_networks of obj type vnic field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vnicNetworks
    */
@@ -822,7 +834,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property vrf_id of obj type vnic field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return vrfId
    */
@@ -833,7 +845,7 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property vrf_id of obj type vnic field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param vrfId set the vrfId.
    */
@@ -845,6 +857,7 @@ public class vNIC extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type vrfcontext.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vrfRef
    */
@@ -856,6 +869,7 @@ public class vNIC extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type vrfcontext.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vrfRef set the vrfRef.
    */

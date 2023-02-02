@@ -85,6 +85,7 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Gslb geodb files published for a site.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fdInfo
    */
@@ -97,6 +98,7 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
    * This is the setter method to the attribute.
    * Gslb geodb files published for a site.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fdInfo set the fdInfo.
    */
@@ -109,6 +111,7 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Gslb application persistence info published for a site.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gapInfo
    */
@@ -121,6 +124,7 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
    * This is the setter method to the attribute.
    * Gslb application persistence info published for a site.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gapInfo set the gapInfo.
    */
@@ -133,6 +137,7 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Gslb geodb info published for a site.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return geoInfo
    */
@@ -145,6 +150,7 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
    * This is the setter method to the attribute.
    * Gslb geodb info published for a site.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param geoInfo set the geoInfo.
    */
@@ -156,6 +162,7 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ghm info published for a site.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ghmInfo
    */
@@ -167,6 +174,7 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ghm info published for a site.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ghmInfo set the ghmInfo.
    */
@@ -179,6 +187,7 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Gslb jwtprofile info published for a site.
    * Field introduced in 20.1.5.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gjwtInfo
    */
@@ -191,6 +200,7 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
    * This is the setter method to the attribute.
    * Gslb jwtprofile info published for a site.
    * Field introduced in 20.1.5.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gjwtInfo set the gjwtInfo.
    */
@@ -202,6 +212,7 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Gslb info published for a site.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return glbInfo
    */
@@ -213,6 +224,7 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Gslb info published for a site.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param glbInfo set the glbInfo.
    */
@@ -225,6 +237,7 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Gslb pki info published for a site.
    * Field introduced in 17.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gpkiInfo
    */
@@ -237,6 +250,7 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
    * This is the setter method to the attribute.
    * Gslb pki info published for a site.
    * Field introduced in 17.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gpkiInfo set the gpkiInfo.
    */
@@ -248,6 +262,7 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Gs info published for a site.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gsInfo
    */
@@ -259,6 +274,7 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Gs info published for a site.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gsInfo set the gsInfo.
    */
@@ -270,6 +286,7 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Maintenance mode info published for a site.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mmInfo
    */
@@ -281,6 +298,7 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Maintenance mode info published for a site.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mmInfo set the mmInfo.
    */
@@ -293,6 +311,7 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The replication queue for all object-types for a site.
    * Field introduced in 17.2.7.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return replQueue
    */
@@ -305,6 +324,7 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
    * This is the setter method to the attribute.
    * The replication queue for all object-types for a site.
    * Field introduced in 17.2.7.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param replQueue set the replQueue.
    */
@@ -315,7 +335,8 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Configuration sync-info of the site .
+   * Configuration sync-info of the site.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return syncInfo
    */
@@ -326,7 +347,8 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Configuration sync-info of the site .
+   * Configuration sync-info of the site.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param syncInfo set the syncInfo.
    */

@@ -83,6 +83,7 @@ public class RateLimiterProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate limit all connections made from any single client ip address to the virtual service.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientIpConnectionsRateLimit
    */
@@ -94,6 +95,7 @@ public class RateLimiterProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate limit all connections made from any single client ip address to the virtual service.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientIpConnectionsRateLimit set the clientIpConnectionsRateLimit.
    */
@@ -110,6 +112,7 @@ public class RateLimiterProfile extends AviRestResource {
    * Count and time period are specified through the rateprofile.
    * Requests are deemed failed based on client or server side error status codes, consistent with how avi logs and metrics subsystems mark failed
    * requests.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientIpFailedRequestsRateLimit
    */
@@ -126,6 +129,7 @@ public class RateLimiterProfile extends AviRestResource {
    * Count and time period are specified through the rateprofile.
    * Requests are deemed failed based on client or server side error status codes, consistent with how avi logs and metrics subsystems mark failed
    * requests.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientIpFailedRequestsRateLimit set the clientIpFailedRequestsRateLimit.
    */
@@ -137,6 +141,7 @@ public class RateLimiterProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate limit all http requests from any single client ip address to all urls of the virtual service.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientIpRequestsRateLimit
    */
@@ -148,6 +153,7 @@ public class RateLimiterProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate limit all http requests from any single client ip address to all urls of the virtual service.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientIpRequestsRateLimit set the clientIpRequestsRateLimit.
    */
@@ -167,6 +173,7 @@ public class RateLimiterProfile extends AviRestResource {
    * unknown clients group.
    * The avi scan detection system automatically tunes itself so that the good, bad, and unknown client ips group membership changes dynamically with
    * the changes in traffic patterns through the adc.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientIpScannersRequestsRateLimit
    */
@@ -186,6 +193,7 @@ public class RateLimiterProfile extends AviRestResource {
    * unknown clients group.
    * The avi scan detection system automatically tunes itself so that the good, bad, and unknown client ips group membership changes dynamically with
    * the changes in traffic patterns through the adc.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientIpScannersRequestsRateLimit set the clientIpScannersRequestsRateLimit.
    */
@@ -202,6 +210,7 @@ public class RateLimiterProfile extends AviRestResource {
    * Count and time period are specified through the rateprofile.
    * Requests are deemed failed based on client or server side error status codes, consistent with how avi logs and metrics subsystems mark failed
    * requests.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientIpToUriFailedRequestsRateLimit
    */
@@ -218,6 +227,7 @@ public class RateLimiterProfile extends AviRestResource {
    * Count and time period are specified through the rateprofile.
    * Requests are deemed failed based on client or server side error status codes, consistent with how avi logs and metrics subsystems mark failed
    * requests.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientIpToUriFailedRequestsRateLimit set the clientIpToUriFailedRequestsRateLimit.
    */
@@ -229,6 +239,7 @@ public class RateLimiterProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate limit all http requests from any single client ip address to any single url.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientIpToUriRequestsRateLimit
    */
@@ -240,6 +251,7 @@ public class RateLimiterProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate limit all http requests from any single client ip address to any single url.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientIpToUriRequestsRateLimit set the clientIpToUriRequestsRateLimit.
    */
@@ -252,6 +264,7 @@ public class RateLimiterProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Rate limit all http requests that map to any custom string.
    * Field introduced in 17.2.13,18.1.3,18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return customRequestsRateLimit
    */
@@ -264,6 +277,7 @@ public class RateLimiterProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Rate limit all http requests that map to any custom string.
    * Field introduced in 17.2.13,18.1.3,18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param customRequestsRateLimit set the customRequestsRateLimit.
    */
@@ -276,6 +290,7 @@ public class RateLimiterProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Rate limit all http requests from all client ip addresses that contain any single http header value.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpHeaderRateLimits
    */
@@ -288,6 +303,7 @@ public class RateLimiterProfile extends AviRestResource {
    * This is the setter method. this will set the httpHeaderRateLimits
    * Rate limit all http requests from all client ip addresses that contain any single http header value.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpHeaderRateLimits
    */
@@ -300,6 +316,7 @@ public class RateLimiterProfile extends AviRestResource {
    * This is the setter method this will set the httpHeaderRateLimits
    * Rate limit all http requests from all client ip addresses that contain any single http header value.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpHeaderRateLimits
    */
@@ -320,6 +337,7 @@ public class RateLimiterProfile extends AviRestResource {
    * Count and time period are specified through the rateprofile.
    * Requests are deemed failed based on client or server side error status codes, consistent with how avi logs and metrics subsystems mark failed
    * requests.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uriFailedRequestsRateLimit
    */
@@ -335,6 +353,7 @@ public class RateLimiterProfile extends AviRestResource {
    * Count and time period are specified through the rateprofile.
    * Requests are deemed failed based on client or server side error status codes, consistent with how avi logs and metrics subsystems mark failed
    * requests.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uriFailedRequestsRateLimit set the uriFailedRequestsRateLimit.
    */
@@ -346,6 +365,7 @@ public class RateLimiterProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate limit all http requests from all client ip addresses to any single url.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uriRequestsRateLimit
    */
@@ -357,6 +377,7 @@ public class RateLimiterProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate limit all http requests from all client ip addresses to any single url.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uriRequestsRateLimit set the uriRequestsRateLimit.
    */
@@ -375,6 +396,7 @@ public class RateLimiterProfile extends AviRestResource {
    * unknown uris group.
    * The avi scan detection system automatically tunes itself so that the good, bad, and unknown uris group membership changes dynamically with the
    * changes in traffic patterns through the adc.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uriScannersRequestsRateLimit
    */
@@ -393,6 +415,7 @@ public class RateLimiterProfile extends AviRestResource {
    * unknown uris group.
    * The avi scan detection system automatically tunes itself so that the good, bad, and unknown uris group membership changes dynamically with the
    * changes in traffic patterns through the adc.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uriScannersRequestsRateLimit set the uriScannersRequestsRateLimit.
    */

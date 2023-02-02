@@ -28,6 +28,10 @@ public class WafContentTypeMapping extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String contentType = null;
 
+    @JsonProperty("match_op")
+    @JsonInclude(Include.NON_NULL)
+    private String matchOp = "EQUALS";
+
     @JsonProperty("request_body_parser")
     @JsonInclude(Include.NON_NULL)
     private String requestBodyParser = null;
@@ -39,6 +43,7 @@ public class WafContentTypeMapping extends AviRestResource {
    * Request content-type.
    * When it is equal to request content-type header value, the specified request_body_parser is used.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return contentType
    */
@@ -52,6 +57,7 @@ public class WafContentTypeMapping extends AviRestResource {
    * Request content-type.
    * When it is equal to request content-type header value, the specified request_body_parser is used.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param contentType set the contentType.
    */
@@ -62,10 +68,45 @@ public class WafContentTypeMapping extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * String operation to use for matching the content_type.
+   * Only equals and regex_match are supported string operations here.
+   * All equals matches are checked before regex_match matches.
+   * Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH,
+   * REGEX_DOES_NOT_MATCH.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "EQUALS".
+   * @return matchOp
+   */
+  @VsoMethod
+  public String getMatchOp() {
+    return matchOp;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * String operation to use for matching the content_type.
+   * Only equals and regex_match are supported string operations here.
+   * All equals matches are checked before regex_match matches.
+   * Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH,
+   * REGEX_DOES_NOT_MATCH.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "EQUALS".
+   * @param matchOp set the matchOp.
+   */
+  @VsoMethod
+  public void setMatchOp(String  matchOp) {
+    this.matchOp = matchOp;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Request body parser.
    * Enum options - WAF_REQUEST_PARSER_URLENCODED, WAF_REQUEST_PARSER_MULTIPART, WAF_REQUEST_PARSER_JSON, WAF_REQUEST_PARSER_XML,
    * WAF_REQUEST_PARSER_HANDLE_AS_STRING, WAF_REQUEST_PARSER_DO_NOT_PARSE.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return requestBodyParser
    */
@@ -80,6 +121,7 @@ public class WafContentTypeMapping extends AviRestResource {
    * Enum options - WAF_REQUEST_PARSER_URLENCODED, WAF_REQUEST_PARSER_MULTIPART, WAF_REQUEST_PARSER_JSON, WAF_REQUEST_PARSER_XML,
    * WAF_REQUEST_PARSER_HANDLE_AS_STRING, WAF_REQUEST_PARSER_DO_NOT_PARSE.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param requestBodyParser set the requestBodyParser.
    */
@@ -100,7 +142,8 @@ public boolean equals(java.lang.Object o) {
   }
   WafContentTypeMapping objWafContentTypeMapping = (WafContentTypeMapping) o;
   return   Objects.equals(this.contentType, objWafContentTypeMapping.contentType)&&
-  Objects.equals(this.requestBodyParser, objWafContentTypeMapping.requestBodyParser);
+  Objects.equals(this.requestBodyParser, objWafContentTypeMapping.requestBodyParser)&&
+  Objects.equals(this.matchOp, objWafContentTypeMapping.matchOp);
 }
 
 @Override
@@ -108,6 +151,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class WafContentTypeMapping {\n");
       sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
+        sb.append("    matchOp: ").append(toIndentedString(matchOp)).append("\n");
         sb.append("    requestBodyParser: ").append(toIndentedString(requestBodyParser)).append("\n");
       sb.append("}");
   return sb.toString();

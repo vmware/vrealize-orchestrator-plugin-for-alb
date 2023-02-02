@@ -39,6 +39,7 @@ public class AuthAttributeMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Attribute name whose values will be looked up in the access lists.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attributeName
    */
@@ -51,6 +52,7 @@ public class AuthAttributeMatch extends AviRestResource {
    * This is the setter method to the attribute.
    * Attribute name whose values will be looked up in the access lists.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param attributeName set the attributeName.
    */
@@ -63,7 +65,7 @@ public class AuthAttributeMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Attribute values used to determine access when authentication applies.
    * Field introduced in 18.2.5.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attributeValueList
    */
@@ -76,7 +78,7 @@ public class AuthAttributeMatch extends AviRestResource {
    * This is the setter method to the attribute.
    * Attribute values used to determine access when authentication applies.
    * Field introduced in 18.2.5.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param attributeValueList set the attributeValueList.
    */

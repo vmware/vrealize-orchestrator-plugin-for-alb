@@ -28,17 +28,9 @@ public class AdminAuthConfiguration extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean allowLocalUserLogin = true;
 
-    @JsonProperty("alternate_auth_configurations")
+    @JsonProperty("remote_auth_configurations")
     @JsonInclude(Include.NON_NULL)
-    private List<AlternateAuthConfiguration> alternateAuthConfigurations = null;
-
-    @JsonProperty("auth_profile_ref")
-    @JsonInclude(Include.NON_NULL)
-    private String authProfileRef = null;
-
-    @JsonProperty("mapping_rules")
-    @JsonInclude(Include.NON_NULL)
-    private List<AuthMappingRule> mappingRules = null;
+    private List<RemoteAuthConfiguration> remoteAuthConfigurations = null;
 
 
 
@@ -46,6 +38,7 @@ public class AdminAuthConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Allow any user created locally to login with local credentials.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return allowLocalUserLogin
    */
@@ -58,6 +51,7 @@ public class AdminAuthConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Allow any user created locally to login with local credentials.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param allowLocalUserLogin set the allowLocalUserLogin.
    */
@@ -68,104 +62,50 @@ public class AdminAuthConfiguration extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Secondary authentication mechanisms to be used.
-   * Field introduced in 20.1.6.
-   * Maximum of 1 items allowed.
+   * Remote auth configurations.
+   * Field introduced in 22.1.1.
+   * Minimum of 1 items required.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return alternateAuthConfigurations
+   * @return remoteAuthConfigurations
    */
   @VsoMethod
-  public List<AlternateAuthConfiguration> getAlternateAuthConfigurations() {
-    return alternateAuthConfigurations;
+  public List<RemoteAuthConfiguration> getRemoteAuthConfigurations() {
+    return remoteAuthConfigurations;
   }
 
   /**
-   * This is the setter method. this will set the alternateAuthConfigurations
-   * Secondary authentication mechanisms to be used.
-   * Field introduced in 20.1.6.
-   * Maximum of 1 items allowed.
+   * This is the setter method. this will set the remoteAuthConfigurations
+   * Remote auth configurations.
+   * Field introduced in 22.1.1.
+   * Minimum of 1 items required.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return alternateAuthConfigurations
+   * @return remoteAuthConfigurations
    */
   @VsoMethod
-  public void setAlternateAuthConfigurations(List<AlternateAuthConfiguration>  alternateAuthConfigurations) {
-    this.alternateAuthConfigurations = alternateAuthConfigurations;
+  public void setRemoteAuthConfigurations(List<RemoteAuthConfiguration>  remoteAuthConfigurations) {
+    this.remoteAuthConfigurations = remoteAuthConfigurations;
   }
 
   /**
-   * This is the setter method this will set the alternateAuthConfigurations
-   * Secondary authentication mechanisms to be used.
-   * Field introduced in 20.1.6.
-   * Maximum of 1 items allowed.
+   * This is the setter method this will set the remoteAuthConfigurations
+   * Remote auth configurations.
+   * Field introduced in 22.1.1.
+   * Minimum of 1 items required.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return alternateAuthConfigurations
+   * @return remoteAuthConfigurations
    */
   @VsoMethod
-  public AdminAuthConfiguration addAlternateAuthConfigurationsItem(AlternateAuthConfiguration alternateAuthConfigurationsItem) {
-    if (this.alternateAuthConfigurations == null) {
-      this.alternateAuthConfigurations = new ArrayList<AlternateAuthConfiguration>();
+  public AdminAuthConfiguration addRemoteAuthConfigurationsItem(RemoteAuthConfiguration remoteAuthConfigurationsItem) {
+    if (this.remoteAuthConfigurations == null) {
+      this.remoteAuthConfigurations = new ArrayList<RemoteAuthConfiguration>();
     }
-    this.alternateAuthConfigurations.add(alternateAuthConfigurationsItem);
-    return this;
-  }
-
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * It is a reference to an object of type authprofile.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return authProfileRef
-   */
-  @VsoMethod
-  public String getAuthProfileRef() {
-    return authProfileRef;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * It is a reference to an object of type authprofile.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param authProfileRef set the authProfileRef.
-   */
-  @VsoMethod
-  public void setAuthProfileRef(String  authProfileRef) {
-    this.authProfileRef = authProfileRef;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Rules list for tenant or role mapping.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return mappingRules
-   */
-  @VsoMethod
-  public List<AuthMappingRule> getMappingRules() {
-    return mappingRules;
-  }
-
-  /**
-   * This is the setter method. this will set the mappingRules
-   * Rules list for tenant or role mapping.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return mappingRules
-   */
-  @VsoMethod
-  public void setMappingRules(List<AuthMappingRule>  mappingRules) {
-    this.mappingRules = mappingRules;
-  }
-
-  /**
-   * This is the setter method this will set the mappingRules
-   * Rules list for tenant or role mapping.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return mappingRules
-   */
-  @VsoMethod
-  public AdminAuthConfiguration addMappingRulesItem(AuthMappingRule mappingRulesItem) {
-    if (this.mappingRules == null) {
-      this.mappingRules = new ArrayList<AuthMappingRule>();
-    }
-    this.mappingRules.add(mappingRulesItem);
+    this.remoteAuthConfigurations.add(remoteAuthConfigurationsItem);
     return this;
   }
 
@@ -181,10 +121,8 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   AdminAuthConfiguration objAdminAuthConfiguration = (AdminAuthConfiguration) o;
-  return   Objects.equals(this.authProfileRef, objAdminAuthConfiguration.authProfileRef)&&
-  Objects.equals(this.mappingRules, objAdminAuthConfiguration.mappingRules)&&
-  Objects.equals(this.allowLocalUserLogin, objAdminAuthConfiguration.allowLocalUserLogin)&&
-  Objects.equals(this.alternateAuthConfigurations, objAdminAuthConfiguration.alternateAuthConfigurations);
+  return   Objects.equals(this.allowLocalUserLogin, objAdminAuthConfiguration.allowLocalUserLogin)&&
+  Objects.equals(this.remoteAuthConfigurations, objAdminAuthConfiguration.remoteAuthConfigurations);
 }
 
 @Override
@@ -192,9 +130,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class AdminAuthConfiguration {\n");
       sb.append("    allowLocalUserLogin: ").append(toIndentedString(allowLocalUserLogin)).append("\n");
-        sb.append("    alternateAuthConfigurations: ").append(toIndentedString(alternateAuthConfigurations)).append("\n");
-        sb.append("    authProfileRef: ").append(toIndentedString(authProfileRef)).append("\n");
-        sb.append("    mappingRules: ").append(toIndentedString(mappingRules)).append("\n");
+        sb.append("    remoteAuthConfigurations: ").append(toIndentedString(remoteAuthConfigurations)).append("\n");
       sb.append("}");
   return sb.toString();
 }

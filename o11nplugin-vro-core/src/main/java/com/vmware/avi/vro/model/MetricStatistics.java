@@ -65,6 +65,7 @@ public class MetricStatistics extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Value of the last sample.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lastSample
    */
@@ -76,6 +77,7 @@ public class MetricStatistics extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Value of the last sample.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lastSample set the lastSample.
    */
@@ -87,6 +89,7 @@ public class MetricStatistics extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Maximum value in time series requested.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return max
    */
@@ -98,6 +101,7 @@ public class MetricStatistics extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Maximum value in time series requested.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param max set the max.
    */
@@ -109,6 +113,7 @@ public class MetricStatistics extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Timestamp of the minimum value.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxTs
    */
@@ -120,6 +125,7 @@ public class MetricStatistics extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Timestamp of the minimum value.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxTs set the maxTs.
    */
@@ -131,6 +137,7 @@ public class MetricStatistics extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Arithmetic mean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mean
    */
@@ -142,6 +149,7 @@ public class MetricStatistics extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Arithmetic mean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mean set the mean.
    */
@@ -153,6 +161,7 @@ public class MetricStatistics extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Minimum value in time series requested.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return min
    */
@@ -164,6 +173,7 @@ public class MetricStatistics extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Minimum value in time series requested.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param min set the min.
    */
@@ -175,6 +185,7 @@ public class MetricStatistics extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Timestamp of the minimum value.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return minTs
    */
@@ -186,6 +197,7 @@ public class MetricStatistics extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Timestamp of the minimum value.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param minTs set the minTs.
    */
@@ -198,6 +210,7 @@ public class MetricStatistics extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of actual data samples.
    * It excludes fake data.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numSamples
    */
@@ -210,6 +223,7 @@ public class MetricStatistics extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of actual data samples.
    * It excludes fake data.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numSamples set the numSamples.
    */
@@ -221,6 +235,7 @@ public class MetricStatistics extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Summation of all values.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sum
    */
@@ -232,6 +247,7 @@ public class MetricStatistics extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Summation of all values.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sum set the sum.
    */
@@ -244,6 +260,7 @@ public class MetricStatistics extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Slope of the data points across the time series requested.
    * Trend = (last_value - avg)/avg.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return trend
    */
@@ -256,6 +273,7 @@ public class MetricStatistics extends AviRestResource {
    * This is the setter method to the attribute.
    * Slope of the data points across the time series requested.
    * Trend = (last_value - avg)/avg.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param trend set the trend.
    */

@@ -106,6 +106,7 @@ public class DSRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the datascript where this request was called.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dsName
    */
@@ -118,6 +119,7 @@ public class DSRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the datascript where this request was called.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dsName set the dsName.
    */
@@ -135,6 +137,7 @@ public class DSRequestLog extends AviRestResource {
    * VS_DATASCRIPT_EVT_CLIENT_SSL_PRE_CONNECT, VS_DATASCRIPT_EVT_CLIENT_SSL_CLIENT_HELLO, VS_DATASCRIPT_EVT_DNS_REQ, VS_DATASCRIPT_EVT_DNS_RESP,
    * VS_DATASCRIPT_EVT_L4_REQUEST, VS_DATASCRIPT_EVT_L4_RESPONSE, VS_DATASCRIPT_EVT_MAX.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return event
    */
@@ -152,6 +155,7 @@ public class DSRequestLog extends AviRestResource {
    * VS_DATASCRIPT_EVT_CLIENT_SSL_PRE_CONNECT, VS_DATASCRIPT_EVT_CLIENT_SSL_CLIENT_HELLO, VS_DATASCRIPT_EVT_DNS_REQ, VS_DATASCRIPT_EVT_DNS_RESP,
    * VS_DATASCRIPT_EVT_L4_REQUEST, VS_DATASCRIPT_EVT_L4_RESPONSE, VS_DATASCRIPT_EVT_MAX.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param event set the event.
    */
@@ -164,6 +168,7 @@ public class DSRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Response headers received from the server.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return headersReceivedFromServer
    */
@@ -176,6 +181,7 @@ public class DSRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Response headers received from the server.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param headersReceivedFromServer set the headersReceivedFromServer.
    */
@@ -188,6 +194,7 @@ public class DSRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Request headers sent to the server.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return headersSentToServer
    */
@@ -200,6 +207,7 @@ public class DSRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Request headers sent to the server.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param headersSentToServer set the headersSentToServer.
    */
@@ -212,6 +220,7 @@ public class DSRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The http response code received from the external server.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpResponseCode
    */
@@ -224,6 +233,7 @@ public class DSRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * The http response code received from the external server.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param httpResponseCode set the httpResponseCode.
    */
@@ -236,6 +246,7 @@ public class DSRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The http version of the out-of-band request.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpVersion
    */
@@ -248,6 +259,7 @@ public class DSRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * The http version of the out-of-band request.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param httpVersion set the httpVersion.
    */
@@ -260,6 +272,7 @@ public class DSRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The http method of the out-of-band request.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return method
    */
@@ -272,6 +285,7 @@ public class DSRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * The http method of the out-of-band request.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param method set the method.
    */
@@ -284,6 +298,7 @@ public class DSRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The name of the pool that was used for the request.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolName
    */
@@ -296,6 +311,7 @@ public class DSRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * The name of the pool that was used for the request.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolName set the poolName.
    */
@@ -308,6 +324,7 @@ public class DSRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The uuid of the pool that was used for the request.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolUuid
    */
@@ -320,6 +337,7 @@ public class DSRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * The uuid of the pool that was used for the request.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolUuid set the poolUuid.
    */
@@ -333,6 +351,7 @@ public class DSRequestLog extends AviRestResource {
    * Length of the request sent in bytes.
    * Field introduced in 20.1.3.
    * Unit is bytes.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return requestLength
    */
@@ -346,6 +365,7 @@ public class DSRequestLog extends AviRestResource {
    * Length of the request sent in bytes.
    * Field introduced in 20.1.3.
    * Unit is bytes.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param requestLength set the requestLength.
    */
@@ -359,6 +379,7 @@ public class DSRequestLog extends AviRestResource {
    * Length of the response received in bytes.
    * Field introduced in 20.1.3.
    * Unit is bytes.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return responseLength
    */
@@ -372,6 +393,7 @@ public class DSRequestLog extends AviRestResource {
    * Length of the response received in bytes.
    * Field introduced in 20.1.3.
    * Unit is bytes.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param responseLength set the responseLength.
    */
@@ -384,6 +406,7 @@ public class DSRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The ip of the server that was used for the request.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverIp
    */
@@ -396,6 +419,7 @@ public class DSRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * The ip of the server that was used for the request.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverIp set the serverIp.
    */
@@ -408,6 +432,7 @@ public class DSRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The name of the server that was used for the request.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverName
    */
@@ -420,6 +445,7 @@ public class DSRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * The name of the server that was used for the request.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverName set the serverName.
    */
@@ -432,6 +458,7 @@ public class DSRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The port of the server that was used for the request.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverPort
    */
@@ -444,6 +471,7 @@ public class DSRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * The port of the server that was used for the request.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverPort set the serverPort.
    */
@@ -456,6 +484,7 @@ public class DSRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of servers tried during server reselect before the response is sent back.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return serversTried
    */
@@ -468,6 +497,7 @@ public class DSRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of servers tried during server reselect before the response is sent back.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param serversTried set the serversTried.
    */
@@ -480,6 +510,7 @@ public class DSRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The source port for this request.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sourcePort
    */
@@ -492,6 +523,7 @@ public class DSRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * The source port for this request.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sourcePort set the sourcePort.
    */
@@ -506,6 +538,7 @@ public class DSRequestLog extends AviRestResource {
    * This is the time taken from the 1st byte of the request sent to the last byte of the response received.
    * Field introduced in 20.1.3.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return totalTime
    */
@@ -520,6 +553,7 @@ public class DSRequestLog extends AviRestResource {
    * This is the time taken from the 1st byte of the request sent to the last byte of the response received.
    * Field introduced in 20.1.3.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param totalTime set the totalTime.
    */
@@ -532,6 +566,7 @@ public class DSRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The uri path of the out-of-band request.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uriPath
    */
@@ -544,6 +579,7 @@ public class DSRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * The uri path of the out-of-band request.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uriPath set the uriPath.
    */
@@ -556,6 +592,7 @@ public class DSRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The uri query of the out-of-band request.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uriQuery
    */
@@ -568,6 +605,7 @@ public class DSRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * The uri query of the out-of-band request.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uriQuery set the uriQuery.
    */

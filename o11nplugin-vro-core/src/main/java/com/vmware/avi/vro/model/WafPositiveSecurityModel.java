@@ -36,6 +36,7 @@ public class WafPositiveSecurityModel extends AviRestResource {
    * The order of the groups matters, one group may mark parts of the request as valid, so that subsequent groups will not check these parts.
    * It is a reference to an object of type wafpolicypsmgroup.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return groupRefs
    */
@@ -50,6 +51,7 @@ public class WafPositiveSecurityModel extends AviRestResource {
    * The order of the groups matters, one group may mark parts of the request as valid, so that subsequent groups will not check these parts.
    * It is a reference to an object of type wafpolicypsmgroup.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return groupRefs
    */
@@ -64,6 +66,7 @@ public class WafPositiveSecurityModel extends AviRestResource {
    * The order of the groups matters, one group may mark parts of the request as valid, so that subsequent groups will not check these parts.
    * It is a reference to an object of type wafpolicypsmgroup.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return groupRefs
    */
