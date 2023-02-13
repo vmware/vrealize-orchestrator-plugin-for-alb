@@ -38,6 +38,7 @@ public class HTTPPolicies extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the virtual service http policy collection.
    * It is a reference to an object of type httppolicyset.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpPolicySetRef
    */
@@ -50,6 +51,7 @@ public class HTTPPolicies extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the virtual service http policy collection.
    * It is a reference to an object of type httppolicyset.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param httpPolicySetRef set the httpPolicySetRef.
    */
@@ -61,6 +63,7 @@ public class HTTPPolicies extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Index of the virtual service http policy collection.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return index
    */
@@ -72,6 +75,7 @@ public class HTTPPolicies extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Index of the virtual service http policy collection.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param index set the index.
    */

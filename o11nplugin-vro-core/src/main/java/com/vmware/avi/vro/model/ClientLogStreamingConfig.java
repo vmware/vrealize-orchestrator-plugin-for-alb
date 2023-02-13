@@ -42,6 +42,10 @@ public class ClientLogStreamingConfig extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String logTypesToSend = "LOGS_ALL";
 
+    @JsonProperty("marker_keys")
+    @JsonInclude(Include.NON_NULL)
+    private List<RoleFilterMatchLabel> markerKeys = null;
+
     @JsonProperty("max_logs_per_second")
     @JsonInclude(Include.NON_NULL)
     private Integer maxLogsPerSecond = 100;
@@ -60,9 +64,11 @@ public class ClientLogStreamingConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ip address or hostnames (fqdns) of destination servers.
    * If an fqdn is provided, this should be resolvable on avi service engines.
-   * Multiple servers are supported by furnishing a comma-separated list of ip addresses or host names, for example, 11.11.11.11,23.12.12.4.
-   * Optionally, a separate port can be specified for each external server in the list, for example, 11.11.11.11 234,12.12.12.12 343.
+   * Multiple servers are supported by furnishing a comma-separated list of ip addresses or host names, for example, 11.11.11.11,23.12.12.4,2001 123
+   * 1.
+   * Optionally, a separate port can be specified for each external server in the list, for example,11.11.11.11 234,12.12.12.12 343,[2001 123  1] 234.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return externalServer
    */
@@ -75,9 +81,11 @@ public class ClientLogStreamingConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Ip address or hostnames (fqdns) of destination servers.
    * If an fqdn is provided, this should be resolvable on avi service engines.
-   * Multiple servers are supported by furnishing a comma-separated list of ip addresses or host names, for example, 11.11.11.11,23.12.12.4.
-   * Optionally, a separate port can be specified for each external server in the list, for example, 11.11.11.11 234,12.12.12.12 343.
+   * Multiple servers are supported by furnishing a comma-separated list of ip addresses or host names, for example, 11.11.11.11,23.12.12.4,2001 123
+   * 1.
+   * Optionally, a separate port can be specified for each external server in the list, for example,11.11.11.11 234,12.12.12.12 343,[2001 123  1] 234.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param externalServer set the externalServer.
    */
@@ -92,6 +100,7 @@ public class ClientLogStreamingConfig extends AviRestResource {
    * If multiple external servers have been specified, the single port number specified here will apply to all those servers for which an explicit
    * port number has not been specified in the external server list.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 514.
    * @return externalServerPort
    */
@@ -106,6 +115,7 @@ public class ClientLogStreamingConfig extends AviRestResource {
    * If multiple external servers have been specified, the single port number specified here will apply to all those servers for which an explicit
    * port number has not been specified in the external server list.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 514.
    * @param externalServerPort set the externalServerPort.
    */
@@ -119,6 +129,7 @@ public class ClientLogStreamingConfig extends AviRestResource {
    * Configuration to specify the format of streamed logs.
    * By default, each log is encoded in json format.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return formatConfig
    */
@@ -132,6 +143,7 @@ public class ClientLogStreamingConfig extends AviRestResource {
    * Configuration to specify the format of streamed logs.
    * By default, each log is encoded in json format.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param formatConfig set the formatConfig.
    */
@@ -146,6 +158,7 @@ public class ClientLogStreamingConfig extends AviRestResource {
    * Default is logs_all, i.e., send all logs.
    * Enum options - LOGS_SIGNIFICANT_ONLY, LOGS_UDF_ONLY, LOGS_UDF_SIGNIFICANT, LOGS_ALL.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "LOGS_ALL".
    * @return logTypesToSend
    */
@@ -160,6 +173,7 @@ public class ClientLogStreamingConfig extends AviRestResource {
    * Default is logs_all, i.e., send all logs.
    * Enum options - LOGS_SIGNIFICANT_ONLY, LOGS_UDF_ONLY, LOGS_UDF_SIGNIFICANT, LOGS_ALL.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "LOGS_ALL".
    * @param logTypesToSend set the logTypesToSend.
    */
@@ -170,10 +184,61 @@ public class ClientLogStreamingConfig extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * One or more keys which should exist in virtualservice rbac markers.
+   * Key along with values will be streamed out in log.
+   * If key is not found in rbac markers, it will not be streamed.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return markerKeys
+   */
+  @VsoMethod
+  public List<RoleFilterMatchLabel> getMarkerKeys() {
+    return markerKeys;
+  }
+
+  /**
+   * This is the setter method. this will set the markerKeys
+   * One or more keys which should exist in virtualservice rbac markers.
+   * Key along with values will be streamed out in log.
+   * If key is not found in rbac markers, it will not be streamed.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return markerKeys
+   */
+  @VsoMethod
+  public void setMarkerKeys(List<RoleFilterMatchLabel>  markerKeys) {
+    this.markerKeys = markerKeys;
+  }
+
+  /**
+   * This is the setter method this will set the markerKeys
+   * One or more keys which should exist in virtualservice rbac markers.
+   * Key along with values will be streamed out in log.
+   * If key is not found in rbac markers, it will not be streamed.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return markerKeys
+   */
+  @VsoMethod
+  public ClientLogStreamingConfig addMarkerKeysItem(RoleFilterMatchLabel markerKeysItem) {
+    if (this.markerKeys == null) {
+      this.markerKeys = new ArrayList<RoleFilterMatchLabel>();
+    }
+    this.markerKeys.add(markerKeysItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Maximum number of logs per second streamed to the remote server.
    * By default, 100 logs per second are streamed.
    * Set this to zero(0) to not enforce any limit.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @return maxLogsPerSecond
    */
@@ -188,6 +253,7 @@ public class ClientLogStreamingConfig extends AviRestResource {
    * By default, 100 logs per second are streamed.
    * Set this to zero(0) to not enforce any limit.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @param maxLogsPerSecond set the maxLogsPerSecond.
    */
@@ -202,6 +268,7 @@ public class ClientLogStreamingConfig extends AviRestResource {
    * Enum options - LOG_STREAMING_PROTOCOL_UDP, LOG_STREAMING_PROTOCOL_SYSLOG_OVER_UDP, LOG_STREAMING_PROTOCOL_TCP,
    * LOG_STREAMING_PROTOCOL_SYSLOG_OVER_TCP, LOG_STREAMING_PROTOCOL_RAW_OVER_UDP, LOG_STREAMING_PROTOCOL_TLS, LOG_STREAMING_PROTOCOL_SYSLOG_OVER_TLS.
    * Field introduced in 18.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "LOG_STREAMING_PROTOCOL_UDP".
    * @return protocol
    */
@@ -216,6 +283,7 @@ public class ClientLogStreamingConfig extends AviRestResource {
    * Enum options - LOG_STREAMING_PROTOCOL_UDP, LOG_STREAMING_PROTOCOL_SYSLOG_OVER_UDP, LOG_STREAMING_PROTOCOL_TCP,
    * LOG_STREAMING_PROTOCOL_SYSLOG_OVER_TCP, LOG_STREAMING_PROTOCOL_RAW_OVER_UDP, LOG_STREAMING_PROTOCOL_TLS, LOG_STREAMING_PROTOCOL_SYSLOG_OVER_TLS.
    * Field introduced in 18.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "LOG_STREAMING_PROTOCOL_UDP".
    * @param protocol set the protocol.
    */
@@ -228,6 +296,7 @@ public class ClientLogStreamingConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Syslog configuration if a syslog-based protocol is specified for streaming.
    * Field introduced in 18.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return syslogConfig
    */
@@ -240,6 +309,7 @@ public class ClientLogStreamingConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Syslog configuration if a syslog-based protocol is specified for streaming.
    * Field introduced in 18.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param syslogConfig set the syslogConfig.
    */
@@ -265,7 +335,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.logTypesToSend, objClientLogStreamingConfig.logTypesToSend)&&
   Objects.equals(this.maxLogsPerSecond, objClientLogStreamingConfig.maxLogsPerSecond)&&
   Objects.equals(this.syslogConfig, objClientLogStreamingConfig.syslogConfig)&&
-  Objects.equals(this.formatConfig, objClientLogStreamingConfig.formatConfig);
+  Objects.equals(this.formatConfig, objClientLogStreamingConfig.formatConfig)&&
+  Objects.equals(this.markerKeys, objClientLogStreamingConfig.markerKeys);
 }
 
 @Override
@@ -276,6 +347,7 @@ public String toString() {
         sb.append("    externalServerPort: ").append(toIndentedString(externalServerPort)).append("\n");
         sb.append("    formatConfig: ").append(toIndentedString(formatConfig)).append("\n");
         sb.append("    logTypesToSend: ").append(toIndentedString(logTypesToSend)).append("\n");
+        sb.append("    markerKeys: ").append(toIndentedString(markerKeys)).append("\n");
         sb.append("    maxLogsPerSecond: ").append(toIndentedString(maxLogsPerSecond)).append("\n");
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("    syslogConfig: ").append(toIndentedString(syslogConfig)).append("\n");

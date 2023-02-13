@@ -40,6 +40,10 @@ public class L7limits extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer numMatchesPerRule = null;
 
+    @JsonProperty("num_rules_per_evh_host")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numRulesPerEvhHost = null;
+
     @JsonProperty("num_rules_per_http_policy")
     @JsonInclude(Include.NON_NULL)
     private Integer numRulesPerHttpPolicy = null;
@@ -78,6 +82,7 @@ public class L7limits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of httppolicies attached to a vs.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpPoliciesPerVs
    */
@@ -90,6 +95,7 @@ public class L7limits extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of httppolicies attached to a vs.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param httpPoliciesPerVs set the httpPoliciesPerVs.
    */
@@ -102,6 +108,7 @@ public class L7limits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of compression filters.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numCompressionFilters
    */
@@ -114,6 +121,7 @@ public class L7limits extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of compression filters.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numCompressionFilters set the numCompressionFilters.
    */
@@ -126,6 +134,7 @@ public class L7limits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of custom strings per match/action.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numCustomStr
    */
@@ -138,6 +147,7 @@ public class L7limits extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of custom strings per match/action.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numCustomStr set the numCustomStr.
    */
@@ -150,6 +160,7 @@ public class L7limits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of matches per rule.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numMatchesPerRule
    */
@@ -162,6 +173,7 @@ public class L7limits extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of matches per rule.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numMatchesPerRule set the numMatchesPerRule.
    */
@@ -172,8 +184,35 @@ public class L7limits extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Number of rules per evh host.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return numRulesPerEvhHost
+   */
+  @VsoMethod
+  public Integer getNumRulesPerEvhHost() {
+    return numRulesPerEvhHost;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Number of rules per evh host.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param numRulesPerEvhHost set the numRulesPerEvhHost.
+   */
+  @VsoMethod
+  public void setNumRulesPerEvhHost(Integer  numRulesPerEvhHost) {
+    this.numRulesPerEvhHost = numRulesPerEvhHost;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Number of rules per httprequest/httpresponse/httpsecurity policy.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numRulesPerHttpPolicy
    */
@@ -186,6 +225,7 @@ public class L7limits extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of rules per httprequest/httpresponse/httpsecurity policy.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numRulesPerHttpPolicy set the numRulesPerHttpPolicy.
    */
@@ -198,6 +238,7 @@ public class L7limits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of stringgroups/ipgroups per match.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numStrgroupsPerMatch
    */
@@ -210,6 +251,7 @@ public class L7limits extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of stringgroups/ipgroups per match.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numStrgroupsPerMatch set the numStrgroupsPerMatch.
    */
@@ -222,6 +264,7 @@ public class L7limits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of implicit strings for cacheable mime types.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return strCacheMime
    */
@@ -234,6 +277,7 @@ public class L7limits extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of implicit strings for cacheable mime types.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param strCacheMime set the strCacheMime.
    */
@@ -246,6 +290,7 @@ public class L7limits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of string groups for cacheable mime types.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return strGroupsCacheMime
    */
@@ -258,6 +303,7 @@ public class L7limits extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of string groups for cacheable mime types.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param strGroupsCacheMime set the strGroupsCacheMime.
    */
@@ -270,6 +316,7 @@ public class L7limits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of string groups for non cacheable mime types.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return strGroupsNoCacheMime
    */
@@ -282,6 +329,7 @@ public class L7limits extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of string groups for non cacheable mime types.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param strGroupsNoCacheMime set the strGroupsNoCacheMime.
    */
@@ -294,6 +342,7 @@ public class L7limits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of string groups for non cacheable uri.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return strGroupsNoCacheUri
    */
@@ -306,6 +355,7 @@ public class L7limits extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of string groups for non cacheable uri.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param strGroupsNoCacheUri set the strGroupsNoCacheUri.
    */
@@ -318,6 +368,7 @@ public class L7limits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of implicit strings for non cacheable mime types.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return strNoCacheMime
    */
@@ -330,6 +381,7 @@ public class L7limits extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of implicit strings for non cacheable mime types.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param strNoCacheMime set the strNoCacheMime.
    */
@@ -342,6 +394,7 @@ public class L7limits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of implicit strings for non cacheable uri.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return strNoCacheUri
    */
@@ -354,6 +407,7 @@ public class L7limits extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of implicit strings for non cacheable uri.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param strNoCacheUri set the strNoCacheUri.
    */
@@ -384,7 +438,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.numRulesPerHttpPolicy, objL7limits.numRulesPerHttpPolicy)&&
   Objects.equals(this.numMatchesPerRule, objL7limits.numMatchesPerRule)&&
   Objects.equals(this.numStrgroupsPerMatch, objL7limits.numStrgroupsPerMatch)&&
-  Objects.equals(this.numCustomStr, objL7limits.numCustomStr);
+  Objects.equals(this.numCustomStr, objL7limits.numCustomStr)&&
+  Objects.equals(this.numRulesPerEvhHost, objL7limits.numRulesPerEvhHost);
 }
 
 @Override
@@ -395,6 +450,7 @@ public String toString() {
         sb.append("    numCompressionFilters: ").append(toIndentedString(numCompressionFilters)).append("\n");
         sb.append("    numCustomStr: ").append(toIndentedString(numCustomStr)).append("\n");
         sb.append("    numMatchesPerRule: ").append(toIndentedString(numMatchesPerRule)).append("\n");
+        sb.append("    numRulesPerEvhHost: ").append(toIndentedString(numRulesPerEvhHost)).append("\n");
         sb.append("    numRulesPerHttpPolicy: ").append(toIndentedString(numRulesPerHttpPolicy)).append("\n");
         sb.append("    numStrgroupsPerMatch: ").append(toIndentedString(numStrgroupsPerMatch)).append("\n");
         sb.append("    strCacheMime: ").append(toIndentedString(strCacheMime)).append("\n");

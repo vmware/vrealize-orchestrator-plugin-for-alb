@@ -52,7 +52,7 @@ public class OCISetup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property cc_id of obj type ocisetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccId
    */
@@ -63,7 +63,7 @@ public class OCISetup extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property cc_id of obj type ocisetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccId set the ccId.
    */
@@ -74,7 +74,7 @@ public class OCISetup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property compartment_id of obj type ocisetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return compartmentId
    */
@@ -85,7 +85,7 @@ public class OCISetup extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property compartment_id of obj type ocisetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param compartmentId set the compartmentId.
    */
@@ -96,7 +96,7 @@ public class OCISetup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property reason of obj type ocisetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
@@ -107,7 +107,7 @@ public class OCISetup extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property reason of obj type ocisetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
@@ -118,7 +118,7 @@ public class OCISetup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property status of obj type ocisetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return status
    */
@@ -129,7 +129,7 @@ public class OCISetup extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property status of obj type ocisetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param status set the status.
    */
@@ -140,7 +140,7 @@ public class OCISetup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property tenancy of obj type ocisetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenancy
    */
@@ -151,7 +151,7 @@ public class OCISetup extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property tenancy of obj type ocisetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenancy set the tenancy.
    */
@@ -162,7 +162,7 @@ public class OCISetup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property vcn_id of obj type ocisetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcnId
    */
@@ -173,7 +173,7 @@ public class OCISetup extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property vcn_id of obj type ocisetup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcnId set the vcnId.
    */

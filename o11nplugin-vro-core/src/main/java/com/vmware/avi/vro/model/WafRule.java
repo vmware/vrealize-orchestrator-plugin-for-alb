@@ -32,10 +32,6 @@ public class WafRule extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private List<WafExcludeListEntry> excludeList = null;
 
-    @JsonProperty("force_detection")
-    @JsonInclude(Include.NON_NULL)
-    private Boolean forceDetection;
-
     @JsonProperty("index")
     @JsonInclude(Include.NON_NULL)
     private Integer index = null;
@@ -51,6 +47,10 @@ public class WafRule extends AviRestResource {
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
     private String name = null;
+
+    @JsonProperty("paranoia_level")
+    @JsonInclude(Include.NON_NULL)
+    private String paranoiaLevel = null;
 
     @JsonProperty("phase")
     @JsonInclude(Include.NON_NULL)
@@ -74,6 +74,7 @@ public class WafRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable or disable waf rule group.
    * Field introduced in 17.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enable
    */
@@ -86,6 +87,7 @@ public class WafRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable or disable waf rule group.
    * Field introduced in 17.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enable set the enable.
    */
@@ -101,6 +103,7 @@ public class WafRule extends AviRestResource {
    * If there are multiple excludelist entries, it will be 'logical or' of them.
    * Field introduced in 17.2.3.
    * Maximum of 64 items allowed.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return excludeList
    */
@@ -116,6 +119,7 @@ public class WafRule extends AviRestResource {
    * If there are multiple excludelist entries, it will be 'logical or' of them.
    * Field introduced in 17.2.3.
    * Maximum of 64 items allowed.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return excludeList
    */
@@ -131,6 +135,7 @@ public class WafRule extends AviRestResource {
    * If there are multiple excludelist entries, it will be 'logical or' of them.
    * Field introduced in 17.2.3.
    * Maximum of 64 items allowed.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return excludeList
    */
@@ -146,33 +151,8 @@ public class WafRule extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * When set to 'true', this rule will not cause 'deny' or 'redirect' actions to run, even if waf policy is set to enforcement mode.
-   * The behavior would be as if this rule operated in detection mode regardless of waf policy setting.
-   * Field deprecated in 18.1.5.
-   * Field introduced in 18.1.4.
-   * @return forceDetection
-   */
-  @VsoMethod
-  public Boolean getForceDetection() {
-    return forceDetection;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * When set to 'true', this rule will not cause 'deny' or 'redirect' actions to run, even if waf policy is set to enforcement mode.
-   * The behavior would be as if this rule operated in detection mode regardless of waf policy setting.
-   * Field deprecated in 18.1.5.
-   * Field introduced in 18.1.4.
-   * @param forceDetection set the forceDetection.
-   */
-  @VsoMethod
-  public void setForceDetection(Boolean  forceDetection) {
-    this.forceDetection = forceDetection;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return index
    */
@@ -184,6 +164,7 @@ public class WafRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param index set the index.
    */
@@ -196,6 +177,7 @@ public class WafRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The rule field is sensitive and will not be displayed.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return isSensitive
    */
@@ -208,6 +190,7 @@ public class WafRule extends AviRestResource {
    * This is the setter method to the attribute.
    * The rule field is sensitive and will not be displayed.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param isSensitive set the isSensitive.
    */
@@ -224,6 +207,7 @@ public class WafRule extends AviRestResource {
    * This only takes effect if the policy allows delegation.
    * Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT.
    * Field introduced in 18.1.5, 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mode
    */
@@ -240,6 +224,7 @@ public class WafRule extends AviRestResource {
    * This only takes effect if the policy allows delegation.
    * Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT.
    * Field introduced in 18.1.5, 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mode set the mode.
    */
@@ -252,6 +237,7 @@ public class WafRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * User-friendly optional name for a rule.
    * Field introduced in 17.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -264,6 +250,7 @@ public class WafRule extends AviRestResource {
    * This is the setter method to the attribute.
    * User-friendly optional name for a rule.
    * Field introduced in 17.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -274,10 +261,44 @@ public class WafRule extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Waf rule paranoia level.
+   * This field is informative, like rule_id and tags, it is generated by the system from the rule text.
+   * This field is filled for crs rules.
+   * Enum options - WAF_PARANOIA_LEVEL_LOW, WAF_PARANOIA_LEVEL_MEDIUM, WAF_PARANOIA_LEVEL_HIGH, WAF_PARANOIA_LEVEL_EXTREME.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return paranoiaLevel
+   */
+  @VsoMethod
+  public String getParanoiaLevel() {
+    return paranoiaLevel;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Waf rule paranoia level.
+   * This field is informative, like rule_id and tags, it is generated by the system from the rule text.
+   * This field is filled for crs rules.
+   * Enum options - WAF_PARANOIA_LEVEL_LOW, WAF_PARANOIA_LEVEL_MEDIUM, WAF_PARANOIA_LEVEL_HIGH, WAF_PARANOIA_LEVEL_EXTREME.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param paranoiaLevel set the paranoiaLevel.
+   */
+  @VsoMethod
+  public void setParanoiaLevel(String  paranoiaLevel) {
+    this.paranoiaLevel = paranoiaLevel;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * The execution phase where this rule will be executed.
    * Enum options - WAF_PHASE_CONNECTION, WAF_PHASE_REQUEST_HEADER, WAF_PHASE_REQUEST_BODY, WAF_PHASE_RESPONSE_HEADER, WAF_PHASE_RESPONSE_BODY,
    * WAF_PHASE_LOGGING.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * @return phase
    */
   @VsoMethod
@@ -291,6 +312,8 @@ public class WafRule extends AviRestResource {
    * Enum options - WAF_PHASE_CONNECTION, WAF_PHASE_REQUEST_HEADER, WAF_PHASE_REQUEST_BODY, WAF_PHASE_RESPONSE_HEADER, WAF_PHASE_RESPONSE_BODY,
    * WAF_PHASE_LOGGING.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * @param phase set the phase.
    */
   @VsoMethod
@@ -302,6 +325,7 @@ public class WafRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Rule as per modsec language.
    * Field introduced in 17.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rule
    */
@@ -314,6 +338,7 @@ public class WafRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Rule as per modsec language.
    * Field introduced in 17.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rule set the rule.
    */
@@ -329,6 +354,7 @@ public class WafRule extends AviRestResource {
    * It is extracted from the id action in a modsec rule.
    * Rules within a single waf policy are required to have unique rule_ids.
    * Field introduced in 17.2.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ruleId
    */
@@ -344,6 +370,7 @@ public class WafRule extends AviRestResource {
    * It is extracted from the id action in a modsec rule.
    * Rules within a single waf policy are required to have unique rule_ids.
    * Field introduced in 17.2.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ruleId set the ruleId.
    */
@@ -357,6 +384,7 @@ public class WafRule extends AviRestResource {
    * Tags for waf rule as per modsec language.
    * They are extracted from the tag action in a modsec rule.
    * Field introduced in 18.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tags
    */
@@ -370,6 +398,7 @@ public class WafRule extends AviRestResource {
    * Tags for waf rule as per modsec language.
    * They are extracted from the tag action in a modsec rule.
    * Field introduced in 18.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tags
    */
@@ -383,6 +412,7 @@ public class WafRule extends AviRestResource {
    * Tags for waf rule as per modsec language.
    * They are extracted from the tag action in a modsec rule.
    * Field introduced in 18.1.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tags
    */
@@ -414,10 +444,10 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.rule, objWafRule.rule)&&
   Objects.equals(this.excludeList, objWafRule.excludeList)&&
   Objects.equals(this.tags, objWafRule.tags)&&
-  Objects.equals(this.forceDetection, objWafRule.forceDetection)&&
   Objects.equals(this.mode, objWafRule.mode)&&
   Objects.equals(this.isSensitive, objWafRule.isSensitive)&&
-  Objects.equals(this.phase, objWafRule.phase);
+  Objects.equals(this.phase, objWafRule.phase)&&
+  Objects.equals(this.paranoiaLevel, objWafRule.paranoiaLevel);
 }
 
 @Override
@@ -426,11 +456,11 @@ public String toString() {
   sb.append("class WafRule {\n");
       sb.append("    enable: ").append(toIndentedString(enable)).append("\n");
         sb.append("    excludeList: ").append(toIndentedString(excludeList)).append("\n");
-        sb.append("    forceDetection: ").append(toIndentedString(forceDetection)).append("\n");
         sb.append("    index: ").append(toIndentedString(index)).append("\n");
         sb.append("    isSensitive: ").append(toIndentedString(isSensitive)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    paranoiaLevel: ").append(toIndentedString(paranoiaLevel)).append("\n");
         sb.append("    phase: ").append(toIndentedString(phase)).append("\n");
         sb.append("    rule: ").append(toIndentedString(rule)).append("\n");
         sb.append("    ruleId: ").append(toIndentedString(ruleId)).append("\n");

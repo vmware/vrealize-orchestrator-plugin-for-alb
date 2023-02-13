@@ -48,6 +48,7 @@ public class JwtLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Authentication policy rule match.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authnRuleMatch
    */
@@ -60,6 +61,7 @@ public class JwtLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Authentication policy rule match.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param authnRuleMatch set the authnRuleMatch.
    */
@@ -72,6 +74,7 @@ public class JwtLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Authorization policy rule match.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authzRuleMatch
    */
@@ -84,6 +87,7 @@ public class JwtLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Authorization policy rule match.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param authzRuleMatch set the authzRuleMatch.
    */
@@ -96,6 +100,7 @@ public class JwtLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Set to true, if jwt validation is successful.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return isJwtVerified
    */
@@ -108,6 +113,7 @@ public class JwtLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Set to true, if jwt validation is successful.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param isJwtVerified set the isJwtVerified.
    */
@@ -120,6 +126,7 @@ public class JwtLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Jwt token payload.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tokenPayload
    */
@@ -132,6 +139,7 @@ public class JwtLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Jwt token payload.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tokenPayload set the tokenPayload.
    */

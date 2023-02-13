@@ -36,7 +36,7 @@ public class DebugSeCpuShares extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property cpu of obj type debugsecpushares field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cpu
    */
@@ -47,7 +47,7 @@ public class DebugSeCpuShares extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property cpu of obj type debugsecpushares field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cpu set the cpu.
    */
@@ -58,7 +58,7 @@ public class DebugSeCpuShares extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property shares of obj type debugsecpushares field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return shares
    */
@@ -69,7 +69,7 @@ public class DebugSeCpuShares extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property shares of obj type debugsecpushares field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param shares set the shares.
    */

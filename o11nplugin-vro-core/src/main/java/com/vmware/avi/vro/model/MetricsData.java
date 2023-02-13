@@ -116,7 +116,7 @@ public class MetricsData extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property application_response_time of obj type metricsdata field type str  type float.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return applicationResponseTime
    */
@@ -127,7 +127,7 @@ public class MetricsData extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property application_response_time of obj type metricsdata field type str  type float.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param applicationResponseTime set the applicationResponseTime.
    */
@@ -138,7 +138,7 @@ public class MetricsData extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property blocking_time of obj type metricsdata field type str  type float.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return blockingTime
    */
@@ -149,7 +149,7 @@ public class MetricsData extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property blocking_time of obj type metricsdata field type str  type float.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param blockingTime set the blockingTime.
    */
@@ -160,7 +160,7 @@ public class MetricsData extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property browser_rendering_time of obj type metricsdata field type str  type float.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return browserRenderingTime
    */
@@ -171,7 +171,7 @@ public class MetricsData extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property browser_rendering_time of obj type metricsdata field type str  type float.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param browserRenderingTime set the browserRenderingTime.
    */
@@ -182,7 +182,7 @@ public class MetricsData extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property client_rtt of obj type metricsdata field type str  type float.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientRtt
    */
@@ -193,7 +193,7 @@ public class MetricsData extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property client_rtt of obj type metricsdata field type str  type float.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientRtt set the clientRtt.
    */
@@ -204,7 +204,7 @@ public class MetricsData extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property connection_time of obj type metricsdata field type str  type float.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return connectionTime
    */
@@ -215,7 +215,7 @@ public class MetricsData extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property connection_time of obj type metricsdata field type str  type float.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param connectionTime set the connectionTime.
    */
@@ -226,7 +226,7 @@ public class MetricsData extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property dns_lookup_time of obj type metricsdata field type str  type float.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsLookupTime
    */
@@ -237,7 +237,7 @@ public class MetricsData extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property dns_lookup_time of obj type metricsdata field type str  type float.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dnsLookupTime set the dnsLookupTime.
    */
@@ -248,7 +248,7 @@ public class MetricsData extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property dom_content_load_time of obj type metricsdata field type str  type float.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return domContentLoadTime
    */
@@ -259,7 +259,7 @@ public class MetricsData extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property dom_content_load_time of obj type metricsdata field type str  type float.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param domContentLoadTime set the domContentLoadTime.
    */
@@ -270,7 +270,7 @@ public class MetricsData extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property is_null of obj type metricsdata field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return isNull
    */
@@ -281,7 +281,7 @@ public class MetricsData extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property is_null of obj type metricsdata field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param isNull set the isNull.
    */
@@ -292,7 +292,7 @@ public class MetricsData extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property num_samples of obj type metricsdata field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numSamples
    */
@@ -303,7 +303,7 @@ public class MetricsData extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property num_samples of obj type metricsdata field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numSamples set the numSamples.
    */
@@ -314,7 +314,7 @@ public class MetricsData extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property page_download_time of obj type metricsdata field type str  type float.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pageDownloadTime
    */
@@ -325,7 +325,7 @@ public class MetricsData extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property page_download_time of obj type metricsdata field type str  type float.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pageDownloadTime set the pageDownloadTime.
    */
@@ -336,7 +336,7 @@ public class MetricsData extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property page_load_time of obj type metricsdata field type str  type float.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pageLoadTime
    */
@@ -347,7 +347,7 @@ public class MetricsData extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property page_load_time of obj type metricsdata field type str  type float.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pageLoadTime set the pageLoadTime.
    */
@@ -358,7 +358,7 @@ public class MetricsData extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property prediction_interval_high of obj type metricsdata field type str  type float.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return predictionIntervalHigh
    */
@@ -369,7 +369,7 @@ public class MetricsData extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property prediction_interval_high of obj type metricsdata field type str  type float.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param predictionIntervalHigh set the predictionIntervalHigh.
    */
@@ -380,7 +380,7 @@ public class MetricsData extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property prediction_interval_low of obj type metricsdata field type str  type float.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return predictionIntervalLow
    */
@@ -391,7 +391,7 @@ public class MetricsData extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property prediction_interval_low of obj type metricsdata field type str  type float.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param predictionIntervalLow set the predictionIntervalLow.
    */
@@ -402,7 +402,7 @@ public class MetricsData extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property redirection_time of obj type metricsdata field type str  type float.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return redirectionTime
    */
@@ -413,7 +413,7 @@ public class MetricsData extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property redirection_time of obj type metricsdata field type str  type float.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param redirectionTime set the redirectionTime.
    */
@@ -424,7 +424,7 @@ public class MetricsData extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property rum_client_data_transfer_time of obj type metricsdata field type str  type float.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rumClientDataTransferTime
    */
@@ -435,7 +435,7 @@ public class MetricsData extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property rum_client_data_transfer_time of obj type metricsdata field type str  type float.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rumClientDataTransferTime set the rumClientDataTransferTime.
    */
@@ -446,7 +446,7 @@ public class MetricsData extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property server_rtt of obj type metricsdata field type str  type float.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverRtt
    */
@@ -457,7 +457,7 @@ public class MetricsData extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property server_rtt of obj type metricsdata field type str  type float.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverRtt set the serverRtt.
    */
@@ -468,7 +468,7 @@ public class MetricsData extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property service_time of obj type metricsdata field type str  type float.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceTime
    */
@@ -479,7 +479,7 @@ public class MetricsData extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property service_time of obj type metricsdata field type str  type float.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serviceTime set the serviceTime.
    */
@@ -490,7 +490,7 @@ public class MetricsData extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property timestamp of obj type metricsdata field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return timestamp
    */
@@ -501,7 +501,7 @@ public class MetricsData extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property timestamp of obj type metricsdata field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param timestamp set the timestamp.
    */
@@ -512,7 +512,7 @@ public class MetricsData extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property value of obj type metricsdata field type str  type float.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return value
    */
@@ -523,7 +523,7 @@ public class MetricsData extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property value of obj type metricsdata field type str  type float.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param value set the value.
    */
@@ -535,6 +535,7 @@ public class MetricsData extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return valueStr
    */
@@ -546,6 +547,7 @@ public class MetricsData extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param valueStr set the valueStr.
    */
@@ -557,6 +559,7 @@ public class MetricsData extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return valueStrDesc
    */
@@ -568,6 +571,7 @@ public class MetricsData extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param valueStrDesc set the valueStrDesc.
    */
@@ -578,7 +582,7 @@ public class MetricsData extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property waiting_time of obj type metricsdata field type str  type float.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return waitingTime
    */
@@ -589,7 +593,7 @@ public class MetricsData extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property waiting_time of obj type metricsdata field type str  type float.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param waitingTime set the waitingTime.
    */

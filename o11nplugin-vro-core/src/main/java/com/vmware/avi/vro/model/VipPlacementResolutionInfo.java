@@ -41,7 +41,7 @@ public class VipPlacementResolutionInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property ip of obj type vipplacementresolutioninfo field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip
    */
@@ -52,7 +52,7 @@ public class VipPlacementResolutionInfo extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property ip of obj type vipplacementresolutioninfo field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip set the ip.
    */
@@ -63,7 +63,7 @@ public class VipPlacementResolutionInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property networks of obj type vipplacementresolutioninfo field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networks
    */
@@ -74,7 +74,7 @@ public class VipPlacementResolutionInfo extends AviRestResource {
 
   /**
    * This is the setter method. this will set the networks
-   * Placeholder for description of property networks of obj type vipplacementresolutioninfo field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networks
    */
@@ -85,7 +85,7 @@ public class VipPlacementResolutionInfo extends AviRestResource {
 
   /**
    * This is the setter method this will set the networks
-   * Placeholder for description of property networks of obj type vipplacementresolutioninfo field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networks
    */
@@ -101,7 +101,7 @@ public class VipPlacementResolutionInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Unique object identifier of pool.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolUuid
    */
@@ -112,7 +112,7 @@ public class VipPlacementResolutionInfo extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Unique object identifier of pool.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolUuid set the poolUuid.
    */

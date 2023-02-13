@@ -53,7 +53,7 @@ public class MetricLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property end_timestamp of obj type metriclog field type str  type float.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return endTimestamp
    */
@@ -64,7 +64,7 @@ public class MetricLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property end_timestamp of obj type metriclog field type str  type float.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param endTimestamp set the endTimestamp.
    */
@@ -75,7 +75,7 @@ public class MetricLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property metric_id of obj type metriclog field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricId
    */
@@ -86,7 +86,7 @@ public class MetricLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property metric_id of obj type metriclog field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricId set the metricId.
    */
@@ -97,7 +97,7 @@ public class MetricLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property report_timestamp of obj type metriclog field type str  type float.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reportTimestamp
    */
@@ -108,7 +108,7 @@ public class MetricLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property report_timestamp of obj type metriclog field type str  type float.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reportTimestamp set the reportTimestamp.
    */
@@ -119,7 +119,7 @@ public class MetricLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property step of obj type metriclog field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return step
    */
@@ -130,7 +130,7 @@ public class MetricLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property step of obj type metriclog field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param step set the step.
    */
@@ -141,7 +141,7 @@ public class MetricLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property time_series of obj type metriclog field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return timeSeries
    */
@@ -152,7 +152,7 @@ public class MetricLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property time_series of obj type metriclog field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param timeSeries set the timeSeries.
    */
@@ -163,7 +163,7 @@ public class MetricLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property value of obj type metriclog field type str  type float.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return value
    */
@@ -174,7 +174,7 @@ public class MetricLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property value of obj type metriclog field type str  type float.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param value set the value.
    */

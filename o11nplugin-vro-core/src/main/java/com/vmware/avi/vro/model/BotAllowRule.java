@@ -48,6 +48,7 @@ public class BotAllowRule extends AviRestResource {
    * The action to take.
    * Enum options - BOT_ACTION_BYPASS, BOT_ACTION_CONTINUE.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return action
    */
@@ -61,6 +62,7 @@ public class BotAllowRule extends AviRestResource {
    * The action to take.
    * Enum options - BOT_ACTION_BYPASS, BOT_ACTION_CONTINUE.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param action set the action.
    */
@@ -73,6 +75,7 @@ public class BotAllowRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The condition to match.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return condition
    */
@@ -85,6 +88,7 @@ public class BotAllowRule extends AviRestResource {
    * This is the setter method to the attribute.
    * The condition to match.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param condition set the condition.
    */
@@ -97,6 +101,7 @@ public class BotAllowRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Rules are processed in order of this index field.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return index
    */
@@ -109,6 +114,7 @@ public class BotAllowRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Rules are processed in order of this index field.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param index set the index.
    */
@@ -121,6 +127,7 @@ public class BotAllowRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * A name describing the rule in a short form.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -133,6 +140,7 @@ public class BotAllowRule extends AviRestResource {
    * This is the setter method to the attribute.
    * A name describing the rule in a short form.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */

@@ -70,6 +70,7 @@ public class SecureKeyExchangeDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Controller managememt ip for secure key exchange between controller and se.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ctlrMgmtIp
    */
@@ -82,6 +83,7 @@ public class SecureKeyExchangeDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Controller managememt ip for secure key exchange between controller and se.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ctlrMgmtIp set the ctlrMgmtIp.
    */
@@ -94,6 +96,7 @@ public class SecureKeyExchangeDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Controller public ip for secure key exchange between controller and se.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ctlrPublicIp
    */
@@ -106,6 +109,7 @@ public class SecureKeyExchangeDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Controller public ip for secure key exchange between controller and se.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ctlrPublicIp set the ctlrPublicIp.
    */
@@ -118,6 +122,7 @@ public class SecureKeyExchangeDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Error message if secure key exchange failed.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return error
    */
@@ -130,6 +135,7 @@ public class SecureKeyExchangeDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Error message if secure key exchange failed.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param error set the error.
    */
@@ -142,6 +148,7 @@ public class SecureKeyExchangeDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Follower ip for secure key exchange between controller and controller.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return followerIp
    */
@@ -154,6 +161,7 @@ public class SecureKeyExchangeDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Follower ip for secure key exchange between controller and controller.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param followerIp set the followerIp.
    */
@@ -166,6 +174,7 @@ public class SecureKeyExchangeDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Leader ip for secure key exchange between controller and controller.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return leaderIp
    */
@@ -178,6 +187,7 @@ public class SecureKeyExchangeDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Leader ip for secure key exchange between controller and controller.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param leaderIp set the leaderIp.
    */
@@ -190,6 +200,7 @@ public class SecureKeyExchangeDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of se/controller who initiates the secure key exchange.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -202,6 +213,7 @@ public class SecureKeyExchangeDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of se/controller who initiates the secure key exchange.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -214,6 +226,7 @@ public class SecureKeyExchangeDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Se ip for secure key exchange between controller and se.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seIp
    */
@@ -226,6 +239,7 @@ public class SecureKeyExchangeDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Se ip for secure key exchange between controller and se.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seIp set the seIp.
    */
@@ -238,6 +252,7 @@ public class SecureKeyExchangeDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ip address of the client.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sourceIp
    */
@@ -250,6 +265,7 @@ public class SecureKeyExchangeDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Ip address of the client.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sourceIp set the sourceIp.
    */
@@ -265,6 +281,7 @@ public class SecureKeyExchangeDetails extends AviRestResource {
    * SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN,
    * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_BAD_REQUEST...
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return status
    */
@@ -280,6 +297,7 @@ public class SecureKeyExchangeDetails extends AviRestResource {
    * SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN,
    * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_BAD_REQUEST...
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param status set the status.
    */
@@ -292,6 +310,7 @@ public class SecureKeyExchangeDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of se/controller who initiates the secure key exchange.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -304,6 +323,7 @@ public class SecureKeyExchangeDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of se/controller who initiates the secure key exchange.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */

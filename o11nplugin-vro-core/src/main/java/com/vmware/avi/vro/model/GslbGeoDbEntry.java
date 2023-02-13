@@ -39,6 +39,7 @@ public class GslbGeoDbEntry extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This field describes the geodb file.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return file
    */
@@ -51,6 +52,7 @@ public class GslbGeoDbEntry extends AviRestResource {
    * This is the setter method to the attribute.
    * This field describes the geodb file.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param file set the file.
    */
@@ -66,6 +68,7 @@ public class GslbGeoDbEntry extends AviRestResource {
    * Higher the value, then greater is the priority.
    * Allowed values are 1-100.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return priority
    */
@@ -81,6 +84,7 @@ public class GslbGeoDbEntry extends AviRestResource {
    * Higher the value, then greater is the priority.
    * Allowed values are 1-100.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param priority set the priority.
    */

@@ -50,6 +50,7 @@ public class GslbDnsGsStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lastChangedTime
    */
@@ -61,6 +62,7 @@ public class GslbDnsGsStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lastChangedTime set the lastChangedTime.
    */
@@ -74,6 +76,7 @@ public class GslbDnsGsStatus extends AviRestResource {
    * Counter to track the number of partial updates sent.
    * Once it reaches the partial updates threshold, a full update is sent.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numPartialUpdates
    */
@@ -87,6 +90,7 @@ public class GslbDnsGsStatus extends AviRestResource {
    * Counter to track the number of partial updates sent.
    * Once it reaches the partial updates threshold, a full update is sent.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numPartialUpdates set the numPartialUpdates.
    */
@@ -99,6 +103,7 @@ public class GslbDnsGsStatus extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Threshold after which a full gs status is sent.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return partialUpdateThreshold
    */
@@ -111,6 +116,7 @@ public class GslbDnsGsStatus extends AviRestResource {
    * This is the setter method to the attribute.
    * Threshold after which a full gs status is sent.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param partialUpdateThreshold set the partialUpdateThreshold.
    */
@@ -124,6 +130,7 @@ public class GslbDnsGsStatus extends AviRestResource {
    * State variable to trigger full or partial update.
    * Enum options - GSLB_FULL_UPDATE_PENDING, GSLB_PARTIAL_UPDATE_PENDING.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return state
    */
@@ -137,6 +144,7 @@ public class GslbDnsGsStatus extends AviRestResource {
    * State variable to trigger full or partial update.
    * Enum options - GSLB_FULL_UPDATE_PENDING, GSLB_PARTIAL_UPDATE_PENDING.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param state set the state.
    */
@@ -150,6 +158,7 @@ public class GslbDnsGsStatus extends AviRestResource {
    * Describes the type (partial/full) of the last gs status sent to dns-vs(es).
    * Enum options - GSLB_NO_UPDATE, GSLB_FULL_UPDATE, GSLB_PARTIAL_UPDATE.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
@@ -163,6 +172,7 @@ public class GslbDnsGsStatus extends AviRestResource {
    * Describes the type (partial/full) of the last gs status sent to dns-vs(es).
    * Enum options - GSLB_NO_UPDATE, GSLB_FULL_UPDATE, GSLB_PARTIAL_UPDATE.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */

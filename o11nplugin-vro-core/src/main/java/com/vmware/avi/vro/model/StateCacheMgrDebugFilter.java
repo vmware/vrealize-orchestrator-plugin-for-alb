@@ -38,6 +38,7 @@ public class StateCacheMgrDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Pool uuid.
    * It is a reference to an object of type pool.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolRef
    */
@@ -50,6 +51,7 @@ public class StateCacheMgrDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Pool uuid.
    * It is a reference to an object of type pool.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolRef set the poolRef.
    */
@@ -62,6 +64,7 @@ public class StateCacheMgrDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Virtualservice uuid.
    * It is a reference to an object of type virtualservice.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsRef
    */
@@ -74,6 +77,7 @@ public class StateCacheMgrDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Virtualservice uuid.
    * It is a reference to an object of type virtualservice.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsRef set the vsRef.
    */

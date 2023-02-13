@@ -46,6 +46,7 @@ public class TencentSetup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tencent cloud id.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccId
    */
@@ -58,6 +59,7 @@ public class TencentSetup extends AviRestResource {
    * This is the setter method to the attribute.
    * Tencent cloud id.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccId set the ccId.
    */
@@ -70,6 +72,7 @@ public class TencentSetup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tencent error message.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorString
    */
@@ -82,6 +85,7 @@ public class TencentSetup extends AviRestResource {
    * This is the setter method to the attribute.
    * Tencent error message.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param errorString set the errorString.
    */
@@ -94,6 +98,7 @@ public class TencentSetup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tencent region id.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return region
    */
@@ -106,6 +111,7 @@ public class TencentSetup extends AviRestResource {
    * This is the setter method to the attribute.
    * Tencent region id.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param region set the region.
    */
@@ -118,6 +124,7 @@ public class TencentSetup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tencent vpc id.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vpcId
    */
@@ -130,6 +137,7 @@ public class TencentSetup extends AviRestResource {
    * This is the setter method to the attribute.
    * Tencent vpc id.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vpcId set the vpcId.
    */

@@ -39,6 +39,7 @@ public class DnsRuleActionPoolSwitching extends AviRestResource {
    * Reference of the pool group to serve the passthrough dns query which cannot be served locally.
    * It is a reference to an object of type poolgroup.
    * Field introduced in 18.1.3, 17.2.12.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolGroupRef
    */
@@ -52,6 +53,7 @@ public class DnsRuleActionPoolSwitching extends AviRestResource {
    * Reference of the pool group to serve the passthrough dns query which cannot be served locally.
    * It is a reference to an object of type poolgroup.
    * Field introduced in 18.1.3, 17.2.12.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolGroupRef set the poolGroupRef.
    */
@@ -65,6 +67,7 @@ public class DnsRuleActionPoolSwitching extends AviRestResource {
    * Reference of the pool to serve the passthrough dns query which cannot be served locally.
    * It is a reference to an object of type pool.
    * Field introduced in 18.1.3, 17.2.12.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolRef
    */
@@ -78,6 +81,7 @@ public class DnsRuleActionPoolSwitching extends AviRestResource {
    * Reference of the pool to serve the passthrough dns query which cannot be served locally.
    * It is a reference to an object of type pool.
    * Field introduced in 18.1.3, 17.2.12.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolRef set the poolRef.
    */

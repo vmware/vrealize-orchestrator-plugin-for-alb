@@ -60,7 +60,7 @@ public class MetricsDbRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property db_num_client_queries of obj type metricsdbruntime field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dbNumClientQueries
    */
@@ -71,7 +71,7 @@ public class MetricsDbRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property db_num_client_queries of obj type metricsdbruntime field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dbNumClientQueries set the dbNumClientQueries.
    */
@@ -82,7 +82,7 @@ public class MetricsDbRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property db_num_client_resp of obj type metricsdbruntime field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dbNumClientResp
    */
@@ -93,7 +93,7 @@ public class MetricsDbRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property db_num_client_resp of obj type metricsdbruntime field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dbNumClientResp set the dbNumClientResp.
    */
@@ -104,7 +104,7 @@ public class MetricsDbRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property db_num_db_queries of obj type metricsdbruntime field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dbNumDbQueries
    */
@@ -115,7 +115,7 @@ public class MetricsDbRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property db_num_db_queries of obj type metricsdbruntime field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dbNumDbQueries set the dbNumDbQueries.
    */
@@ -126,7 +126,7 @@ public class MetricsDbRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property db_num_db_resp of obj type metricsdbruntime field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dbNumDbResp
    */
@@ -137,7 +137,7 @@ public class MetricsDbRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property db_num_db_resp of obj type metricsdbruntime field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dbNumDbResp set the dbNumDbResp.
    */
@@ -148,7 +148,7 @@ public class MetricsDbRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property db_num_oom of obj type metricsdbruntime field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dbNumOom
    */
@@ -159,7 +159,7 @@ public class MetricsDbRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property db_num_oom of obj type metricsdbruntime field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dbNumOom set the dbNumOom.
    */
@@ -170,7 +170,7 @@ public class MetricsDbRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property db_queue_size of obj type metricsdbruntime field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dbQueueSize
    */
@@ -181,7 +181,7 @@ public class MetricsDbRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property db_queue_size of obj type metricsdbruntime field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dbQueueSize set the dbQueueSize.
    */
@@ -192,7 +192,7 @@ public class MetricsDbRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property db_rum_queries of obj type metricsdbruntime field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dbRumQueries
    */
@@ -203,7 +203,7 @@ public class MetricsDbRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property db_rum_queries of obj type metricsdbruntime field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dbRumQueries set the dbRumQueries.
    */
@@ -214,7 +214,7 @@ public class MetricsDbRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property db_rum_rows of obj type metricsdbruntime field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dbRumRows
    */
@@ -225,7 +225,7 @@ public class MetricsDbRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property db_rum_rows of obj type metricsdbruntime field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dbRumRows set the dbRumRows.
    */

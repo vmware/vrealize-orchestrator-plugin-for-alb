@@ -40,7 +40,7 @@ public class MemberInterface extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property active of obj type memberinterface field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return active
    */
@@ -51,7 +51,7 @@ public class MemberInterface extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property active of obj type memberinterface field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param active set the active.
    */
@@ -62,7 +62,7 @@ public class MemberInterface extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property if_name of obj type memberinterface field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ifName
    */
@@ -73,7 +73,7 @@ public class MemberInterface extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property if_name of obj type memberinterface field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ifName set the ifName.
    */
@@ -85,6 +85,7 @@ public class MemberInterface extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return macAddress
    */
@@ -96,6 +97,7 @@ public class MemberInterface extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param macAddress set the macAddress.
    */
