@@ -58,6 +58,7 @@ public class Role extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Allow access to unlabelled objects.
    * Field introduced in 20.1.5.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return allowUnlabelledAccess
    */
@@ -70,6 +71,7 @@ public class Role extends AviRestResource {
    * This is the setter method to the attribute.
    * Allow access to unlabelled objects.
    * Field introduced in 20.1.5.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param allowUnlabelledAccess set the allowUnlabelledAccess.
    */
@@ -85,6 +87,7 @@ public class Role extends AviRestResource {
    * If empty, all objects according to the privileges will be accessible to the user.
    * Field introduced in 20.1.3.
    * Maximum of 4 items allowed.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return filters
    */
@@ -100,6 +103,7 @@ public class Role extends AviRestResource {
    * If empty, all objects according to the privileges will be accessible to the user.
    * Field introduced in 20.1.3.
    * Maximum of 4 items allowed.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return filters
    */
@@ -115,6 +119,7 @@ public class Role extends AviRestResource {
    * If empty, all objects according to the privileges will be accessible to the user.
    * Field introduced in 20.1.3.
    * Maximum of 4 items allowed.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return filters
    */
@@ -130,7 +135,7 @@ public class Role extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Name of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -141,7 +146,7 @@ public class Role extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Name of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -152,7 +157,7 @@ public class Role extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property privileges of obj type role field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return privileges
    */
@@ -163,7 +168,7 @@ public class Role extends AviRestResource {
 
   /**
    * This is the setter method. this will set the privileges
-   * Placeholder for description of property privileges of obj type role field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return privileges
    */
@@ -174,7 +179,7 @@ public class Role extends AviRestResource {
 
   /**
    * This is the setter method this will set the privileges
-   * Placeholder for description of property privileges of obj type role field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return privileges
    */
@@ -191,6 +196,7 @@ public class Role extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -202,6 +208,7 @@ public class Role extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
@@ -231,7 +238,7 @@ public class Role extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Unique object identifier of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -242,7 +249,7 @@ public class Role extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Unique object identifier of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */

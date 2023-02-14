@@ -41,6 +41,7 @@ public class SeVsPktBufHighEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Current packet buffer usage of the vs.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return currentValue
    */
@@ -52,6 +53,7 @@ public class SeVsPktBufHighEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Current packet buffer usage of the vs.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param currentValue set the currentValue.
    */
@@ -63,6 +65,7 @@ public class SeVsPktBufHighEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Buffer usage threshold value.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return threshold
    */
@@ -74,6 +77,7 @@ public class SeVsPktBufHighEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Buffer usage threshold value.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param threshold set the threshold.
    */
@@ -86,6 +90,7 @@ public class SeVsPktBufHighEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Virtual service name.
    * It is a reference to an object of type virtualservice.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return virtualService
    */
@@ -98,6 +103,7 @@ public class SeVsPktBufHighEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Virtual service name.
    * It is a reference to an object of type virtualservice.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param virtualService set the virtualService.
    */

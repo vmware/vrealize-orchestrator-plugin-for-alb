@@ -42,6 +42,7 @@ public class GCPInBandManagement extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Service engine network name.
    * Field introduced in 18.2.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vpcNetworkName
    */
@@ -54,6 +55,7 @@ public class GCPInBandManagement extends AviRestResource {
    * This is the setter method to the attribute.
    * Service engine network name.
    * Field introduced in 18.2.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vpcNetworkName set the vpcNetworkName.
    */
@@ -67,6 +69,7 @@ public class GCPInBandManagement extends AviRestResource {
    * Project id of the service engine network.
    * By default, service engine project id will be used.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vpcProjectId
    */
@@ -80,6 +83,7 @@ public class GCPInBandManagement extends AviRestResource {
    * Project id of the service engine network.
    * By default, service engine project id will be used.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vpcProjectId set the vpcProjectId.
    */
@@ -92,6 +96,7 @@ public class GCPInBandManagement extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Service engine network subnet name.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vpcSubnetName
    */
@@ -104,6 +109,7 @@ public class GCPInBandManagement extends AviRestResource {
    * This is the setter method to the attribute.
    * Service engine network subnet name.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vpcSubnetName set the vpcSubnetName.
    */

@@ -36,7 +36,7 @@ public class SummarizedSubnetInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property cidr_prefix of obj type summarizedsubnetinfo field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cidrPrefix
    */
@@ -47,7 +47,7 @@ public class SummarizedSubnetInfo extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property cidr_prefix of obj type summarizedsubnetinfo field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cidrPrefix set the cidrPrefix.
    */
@@ -58,7 +58,7 @@ public class SummarizedSubnetInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property network of obj type summarizedsubnetinfo field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return network
    */
@@ -69,7 +69,7 @@ public class SummarizedSubnetInfo extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property network of obj type summarizedsubnetinfo field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param network set the network.
    */

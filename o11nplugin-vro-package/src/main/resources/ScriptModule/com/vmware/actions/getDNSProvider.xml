@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module name="getDNSProvider"
 	result-type="string" api-version="6.0.0"
-	id="0cfa03eb-cf20-45a3-800b-a6de833fff88" version="0.0.1"
+	id="0cfa03eb-cf20-45a3-800b-a6de833fff89" version="0.0.1"
 	allowed-operations="vfe">
 	<param n="controller" t="string"><![CDATA[Controller IP]]></param>
 	<param n="cloud" t="string"><![CDATA[Name of Cloud]]></param>
@@ -9,7 +9,7 @@
 	var vroClientArray=Server.findAllForType('Avi:AviVroClient','');
 	var aviVroClientObj= null;
 	var controllerIp = controller.substring(0, controller.indexOf("-"));
-	var clientTenant = controller.substring(controller.indexOf("-") + 1).toLowerCase();
+	var clientTenant = controller.substring(controller.lastIndexOf("-") + 1).toLowerCase();
 	for each(aviVroClient in vroClientArray){
 		if(aviVroClient !=null){
 			vroController = aviVroClient.cred.controller;

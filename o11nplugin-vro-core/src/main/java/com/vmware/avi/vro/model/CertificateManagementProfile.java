@@ -40,10 +40,6 @@ public class CertificateManagementProfile extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private List<CustomParams> scriptParams = null;
 
-    @JsonProperty("script_path")
-    @JsonInclude(Include.NON_NULL)
-    private String scriptPath;
-
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
     private String tenantRef = null;
@@ -62,7 +58,8 @@ public class CertificateManagementProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.6.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -75,7 +72,8 @@ public class CertificateManagementProfile extends AviRestResource {
    * This is the setter method. this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.6.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -88,7 +86,8 @@ public class CertificateManagementProfile extends AviRestResource {
    * This is the setter method this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.6.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -105,6 +104,7 @@ public class CertificateManagementProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the pki profile.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -116,6 +116,7 @@ public class CertificateManagementProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the pki profile.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -129,6 +130,7 @@ public class CertificateManagementProfile extends AviRestResource {
    * Alert script config object for certificate management profile.
    * It is a reference to an object of type alertscriptconfig.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return runScriptRef
    */
@@ -142,6 +144,7 @@ public class CertificateManagementProfile extends AviRestResource {
    * Alert script config object for certificate management profile.
    * It is a reference to an object of type alertscriptconfig.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param runScriptRef set the runScriptRef.
    */
@@ -152,7 +155,7 @@ public class CertificateManagementProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property script_params of obj type certificatemanagementprofile field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scriptParams
    */
@@ -163,7 +166,7 @@ public class CertificateManagementProfile extends AviRestResource {
 
   /**
    * This is the setter method. this will set the scriptParams
-   * Placeholder for description of property script_params of obj type certificatemanagementprofile field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scriptParams
    */
@@ -174,7 +177,7 @@ public class CertificateManagementProfile extends AviRestResource {
 
   /**
    * This is the setter method this will set the scriptParams
-   * Placeholder for description of property script_params of obj type certificatemanagementprofile field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scriptParams
    */
@@ -190,27 +193,8 @@ public class CertificateManagementProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Field deprecated in 20.1.3.
-   * @return scriptPath
-   */
-  @VsoMethod
-  public String getScriptPath() {
-    return scriptPath;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Field deprecated in 20.1.3.
-   * @param scriptPath set the scriptPath.
-   */
-  @VsoMethod
-  public void setScriptPath(String  scriptPath) {
-    this.scriptPath = scriptPath;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -222,6 +206,7 @@ public class CertificateManagementProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
@@ -251,7 +236,7 @@ public class CertificateManagementProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Unique object identifier of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -262,7 +247,7 @@ public class CertificateManagementProfile extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Unique object identifier of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
@@ -288,7 +273,6 @@ public boolean equals(java.lang.Object o) {
   return   Objects.equals(this.uuid, objCertificateManagementProfile.uuid)&&
   Objects.equals(this.name, objCertificateManagementProfile.name)&&
   Objects.equals(this.scriptParams, objCertificateManagementProfile.scriptParams)&&
-  Objects.equals(this.scriptPath, objCertificateManagementProfile.scriptPath)&&
   Objects.equals(this.runScriptRef, objCertificateManagementProfile.runScriptRef)&&
   Objects.equals(this.markers, objCertificateManagementProfile.markers)&&
   Objects.equals(this.tenantRef, objCertificateManagementProfile.tenantRef);
@@ -302,7 +286,6 @@ public String toString() {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    runScriptRef: ").append(toIndentedString(runScriptRef)).append("\n");
         sb.append("    scriptParams: ").append(toIndentedString(scriptParams)).append("\n");
-        sb.append("    scriptPath: ").append(toIndentedString(scriptPath)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
             sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
       sb.append("}");

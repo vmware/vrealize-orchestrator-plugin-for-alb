@@ -42,6 +42,7 @@ public class PaaLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Pingaccess agent cache was used for authentication.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cacheHit
    */
@@ -54,6 +55,7 @@ public class PaaLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Pingaccess agent cache was used for authentication.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cacheHit set the cacheHit.
    */
@@ -66,6 +68,7 @@ public class PaaLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The pingaccess server required the client request body for authentication.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientRequestBodySent
    */
@@ -78,6 +81,7 @@ public class PaaLog extends AviRestResource {
    * This is the setter method to the attribute.
    * The pingaccess server required the client request body for authentication.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientRequestBodySent set the clientRequestBodySent.
    */
@@ -90,6 +94,7 @@ public class PaaLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Logs for each request sent to pa server to completeauthentication for the initial request.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return requestLogs
    */
@@ -102,6 +107,7 @@ public class PaaLog extends AviRestResource {
    * This is the setter method. this will set the requestLogs
    * Logs for each request sent to pa server to completeauthentication for the initial request.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return requestLogs
    */
@@ -114,6 +120,7 @@ public class PaaLog extends AviRestResource {
    * This is the setter method this will set the requestLogs
    * Logs for each request sent to pa server to completeauthentication for the initial request.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return requestLogs
    */

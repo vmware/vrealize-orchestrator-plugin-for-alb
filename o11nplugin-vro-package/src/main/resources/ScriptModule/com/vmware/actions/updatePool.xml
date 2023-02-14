@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module name="updatePool"
 	result-type="void" api-version="6.0.0"
-	id="0164e6e8-7b7a-403f-8f8c-d9cdf8dbef7d" version="0.0.3"
+	id="0164e6e8-7b7a-403f-8f8c-d9cdf8dbef8d" version="0.0.3"
 	allowed-operations="vfe">
 	<param n="controller" t="string"><![CDATA[]]>
 	</param>
@@ -17,7 +17,7 @@
 	var vroClientArray=Server.findAllForType('Avi:AviVroClient','');
 	var aviVroClientObj= null;
 	var controllerIp = controller.substring(0, controller.indexOf("-"));
-	var clientTenant = controller.substring(controller.indexOf("-") + 1).toLowerCase();
+	var clientTenant = controller.substring(controller.lastIndexOf("-") + 1).toLowerCase();
 	for each(avivroClient in vroClientArray){
 		if(avivroClient !=null){
 			vroController = aviVroClient.cred.controller;

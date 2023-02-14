@@ -46,6 +46,7 @@ public class CRSDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the crs release.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -58,6 +59,7 @@ public class CRSDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the crs release.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -70,6 +72,7 @@ public class CRSDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Crs release date.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return releaseDate
    */
@@ -82,6 +85,7 @@ public class CRSDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Crs release date.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param releaseDate set the releaseDate.
    */
@@ -93,6 +97,7 @@ public class CRSDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Download link of the crs release.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return url
    */
@@ -105,6 +110,7 @@ public class CRSDetails extends AviRestResource {
    * This is the setter method. this will set the url
    * Download link of the crs release.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return url
    */
@@ -117,6 +123,7 @@ public class CRSDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Version of the crs release.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return version
    */
@@ -129,6 +136,7 @@ public class CRSDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Version of the crs release.
    * Field introduced in 18.2.6.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param version set the version.
    */

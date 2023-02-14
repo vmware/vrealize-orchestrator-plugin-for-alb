@@ -44,6 +44,7 @@ public class OAuthSettings extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Application-specific oauth config.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return appSettings
    */
@@ -56,6 +57,7 @@ public class OAuthSettings extends AviRestResource {
    * This is the setter method to the attribute.
    * Application-specific oauth config.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param appSettings set the appSettings.
    */
@@ -69,6 +71,7 @@ public class OAuthSettings extends AviRestResource {
    * Auth profile to use for validating users.
    * It is a reference to an object of type authprofile.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authProfileRef
    */
@@ -82,6 +85,7 @@ public class OAuthSettings extends AviRestResource {
    * Auth profile to use for validating users.
    * It is a reference to an object of type authprofile.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param authProfileRef set the authProfileRef.
    */
@@ -94,6 +98,7 @@ public class OAuthSettings extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Resource server oauth config.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return resourceServer
    */
@@ -106,6 +111,7 @@ public class OAuthSettings extends AviRestResource {
    * This is the setter method to the attribute.
    * Resource server oauth config.
    * Field introduced in 21.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param resourceServer set the resourceServer.
    */

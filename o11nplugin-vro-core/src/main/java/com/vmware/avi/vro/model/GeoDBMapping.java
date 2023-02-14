@@ -42,6 +42,7 @@ public class GeoDBMapping extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Description of the mapping.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
@@ -54,6 +55,7 @@ public class GeoDBMapping extends AviRestResource {
    * This is the setter method to the attribute.
    * Description of the mapping.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
@@ -66,6 +68,7 @@ public class GeoDBMapping extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The set of mapping elements.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return elements
    */
@@ -78,6 +81,7 @@ public class GeoDBMapping extends AviRestResource {
    * This is the setter method. this will set the elements
    * The set of mapping elements.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return elements
    */
@@ -90,6 +94,7 @@ public class GeoDBMapping extends AviRestResource {
    * This is the setter method this will set the elements
    * The set of mapping elements.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return elements
    */
@@ -107,6 +112,7 @@ public class GeoDBMapping extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The unique name of the user mapping.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -119,6 +125,7 @@ public class GeoDBMapping extends AviRestResource {
    * This is the setter method to the attribute.
    * The unique name of the user mapping.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */

@@ -51,6 +51,7 @@ public class GatewayMonitor extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ip address of next hop gateway to be monitored.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gatewayIp
    */
@@ -62,6 +63,7 @@ public class GatewayMonitor extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ip address of next hop gateway to be monitored.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gatewayIp set the gatewayIp.
    */
@@ -74,6 +76,7 @@ public class GatewayMonitor extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The number of consecutive failed gateway health checks before a gateway is marked down.
    * Allowed values are 3-50.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return gatewayMonitorFailThreshold
    */
@@ -86,6 +89,7 @@ public class GatewayMonitor extends AviRestResource {
    * This is the setter method to the attribute.
    * The number of consecutive failed gateway health checks before a gateway is marked down.
    * Allowed values are 3-50.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param gatewayMonitorFailThreshold set the gatewayMonitorFailThreshold.
    */
@@ -100,6 +104,7 @@ public class GatewayMonitor extends AviRestResource {
    * If a value is not specified, requests are sent every second.
    * Allowed values are 100-60000.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @return gatewayMonitorInterval
    */
@@ -114,6 +119,7 @@ public class GatewayMonitor extends AviRestResource {
    * If a value is not specified, requests are sent every second.
    * Allowed values are 100-60000.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @param gatewayMonitorInterval set the gatewayMonitorInterval.
    */
@@ -126,6 +132,7 @@ public class GatewayMonitor extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The number of consecutive successful gateway health checks before a gateway that was marked down by the gateway monitor is marked up.
    * Allowed values are 3-50.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 15.
    * @return gatewayMonitorSuccessThreshold
    */
@@ -138,6 +145,7 @@ public class GatewayMonitor extends AviRestResource {
    * This is the setter method to the attribute.
    * The number of consecutive successful gateway health checks before a gateway that was marked down by the gateway monitor is marked up.
    * Allowed values are 3-50.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 15.
    * @param gatewayMonitorSuccessThreshold set the gatewayMonitorSuccessThreshold.
    */
@@ -150,6 +158,7 @@ public class GatewayMonitor extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Subnet providing reachability for multi-hop gateway.
    * Field introduced in 18.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnet
    */
@@ -162,6 +171,7 @@ public class GatewayMonitor extends AviRestResource {
    * This is the setter method to the attribute.
    * Subnet providing reachability for multi-hop gateway.
    * Field introduced in 18.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnet set the subnet.
    */

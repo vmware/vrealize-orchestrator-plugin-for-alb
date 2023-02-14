@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module name="fetchObjectLists"
 	result-type="Any" api-version="6.0.0"
-	id="c8fdba15-adb3-4335-9a34-ec8e3825607c" version="0.0.5"
+	id="c8fdba15-adb3-4335-9a34-ec8e3825608c" version="0.0.5"
 	allowed-operations="vfe">
 	<param n="controller" t="string"><![CDATA[IP of the controller]]></param>
 	<param n="objectName" t="string"><![CDATA[Add object name]]></param>
@@ -15,7 +15,7 @@
 	var vroClientArray = Server.findAllForType('Avi:AviVroClient','');
 	var aviPlugin = null;
 	var controllerIp = controller.substring(0, controller.indexOf("-"));
-	var clientTenant = controller.substring(controller.indexOf("-") + 1).toLowerCase();
+	var clientTenant = controller.substring(controller.lastIndexOf("-") + 1).toLowerCase();
 	for each(aviVroClient in vroClientArray){
 		if(aviVroClient != null){
 			vroController = aviVroClient.cred.controller;

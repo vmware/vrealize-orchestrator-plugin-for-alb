@@ -49,7 +49,7 @@ public class VsAwaitingSeEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property awaitingse_timeout of obj type vsawaitingseeventdetails field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return awaitingseTimeout
    */
@@ -60,7 +60,7 @@ public class VsAwaitingSeEventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property awaitingse_timeout of obj type vsawaitingseeventdetails field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param awaitingseTimeout set the awaitingseTimeout.
    */
@@ -71,7 +71,7 @@ public class VsAwaitingSeEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property ip of obj type vsawaitingseeventdetails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip
    */
@@ -82,7 +82,7 @@ public class VsAwaitingSeEventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property ip of obj type vsawaitingseeventdetails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip set the ip.
    */
@@ -93,7 +93,7 @@ public class VsAwaitingSeEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property se_assigned of obj type vsawaitingseeventdetails field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seAssigned
    */
@@ -104,7 +104,7 @@ public class VsAwaitingSeEventDetails extends AviRestResource {
 
   /**
    * This is the setter method. this will set the seAssigned
-   * Placeholder for description of property se_assigned of obj type vsawaitingseeventdetails field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seAssigned
    */
@@ -115,7 +115,7 @@ public class VsAwaitingSeEventDetails extends AviRestResource {
 
   /**
    * This is the setter method this will set the seAssigned
-   * Placeholder for description of property se_assigned of obj type vsawaitingseeventdetails field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seAssigned
    */
@@ -131,7 +131,7 @@ public class VsAwaitingSeEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property se_requested of obj type vsawaitingseeventdetails field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seRequested
    */
@@ -142,7 +142,7 @@ public class VsAwaitingSeEventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property se_requested of obj type vsawaitingseeventdetails field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seRequested set the seRequested.
    */
@@ -153,7 +153,7 @@ public class VsAwaitingSeEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Unique object identifier of vs.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUuid
    */
@@ -164,7 +164,7 @@ public class VsAwaitingSeEventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Unique object identifier of vs.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsUuid set the vsUuid.
    */

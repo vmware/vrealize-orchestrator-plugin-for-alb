@@ -45,6 +45,7 @@ public class LdapUserBindSettings extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ldap user dn pattern is used to bind ldap user after replacing the user token with real username.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnTemplate
    */
@@ -56,6 +57,7 @@ public class LdapUserBindSettings extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ldap user dn pattern is used to bind ldap user after replacing the user token with real username.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dnTemplate set the dnTemplate.
    */
@@ -67,6 +69,7 @@ public class LdapUserBindSettings extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ldap token is replaced with real user name in the user dn pattern.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "<user>".
    * @return token
    */
@@ -78,6 +81,7 @@ public class LdapUserBindSettings extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ldap token is replaced with real user name in the user dn pattern.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "<user>".
    * @param token set the token.
    */
@@ -89,6 +93,7 @@ public class LdapUserBindSettings extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ldap user attributes to fetch on a successful user bind.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return userAttributes
    */
@@ -100,6 +105,7 @@ public class LdapUserBindSettings extends AviRestResource {
   /**
    * This is the setter method. this will set the userAttributes
    * Ldap user attributes to fetch on a successful user bind.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return userAttributes
    */
@@ -111,6 +117,7 @@ public class LdapUserBindSettings extends AviRestResource {
   /**
    * This is the setter method this will set the userAttributes
    * Ldap user attributes to fetch on a successful user bind.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return userAttributes
    */
@@ -127,6 +134,7 @@ public class LdapUserBindSettings extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ldap user id attribute is the login attribute that uniquely identifies a single user record.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return userIdAttribute
    */
@@ -138,6 +146,7 @@ public class LdapUserBindSettings extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ldap user id attribute is the login attribute that uniquely identifies a single user record.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param userIdAttribute set the userIdAttribute.
    */

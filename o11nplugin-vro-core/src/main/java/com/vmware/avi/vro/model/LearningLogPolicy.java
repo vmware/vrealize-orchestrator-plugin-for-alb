@@ -42,6 +42,7 @@ public class LearningLogPolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Determine whether app learning logging is enabled.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enabled
    */
@@ -54,6 +55,7 @@ public class LearningLogPolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * Determine whether app learning logging is enabled.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param enabled set the enabled.
    */
@@ -66,6 +68,7 @@ public class LearningLogPolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Host name where learning logs will be sent to.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return host
    */
@@ -78,6 +81,7 @@ public class LearningLogPolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * Host name where learning logs will be sent to.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param host set the host.
    */
@@ -90,6 +94,7 @@ public class LearningLogPolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Port number for the service listening for learning logs.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return port
    */
@@ -102,6 +107,7 @@ public class LearningLogPolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * Port number for the service listening for learning logs.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param port set the port.
    */
