@@ -36,7 +36,7 @@ public class vCenterConfiguration extends AviRestResource {
 
     @JsonProperty("deactivate_vm_discovery")
     @JsonInclude(Include.NON_NULL)
-    private Boolean deactivateVmDiscovery = false;
+    private Boolean deactivateVmDiscovery;
 
     @JsonProperty("is_nsx_environment")
     @JsonInclude(Include.NON_NULL)
@@ -129,9 +129,9 @@ public class vCenterConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * If true, vm's on the vcenter will not be discovered.set it to true if there are more than 10000 vms in the datacenter.
+   * Field deprecated in 30.1.1.
    * Field introduced in 20.1.5.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return deactivateVmDiscovery
    */
   @VsoMethod
@@ -142,9 +142,9 @@ public class vCenterConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * If true, vm's on the vcenter will not be discovered.set it to true if there are more than 10000 vms in the datacenter.
+   * Field deprecated in 30.1.1.
    * Field introduced in 20.1.5.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param deactivateVmDiscovery set the deactivateVmDiscovery.
    */
   @VsoMethod
