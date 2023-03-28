@@ -175,7 +175,6 @@ public class VroPluginFactory extends AbstractSpringPluginFactory {
 
 			AviVroClient aviVroClient = new AviVroClient();
 			aviVroClient.setCred(aviCredentials);
-			aviVroClient.get("tenant", null, connectionInfo.getTenant());
 			aviVroClientMap.put(addedController, aviVroClient);
 			return aviVroClient;
 		} catch (Exception e) {
@@ -231,7 +230,7 @@ public class VroPluginFactory extends AbstractSpringPluginFactory {
 		if (Constants.FINDER_VRO_VIRTUALSERVICE.equals(relationName)) {
 			try {
 				String parentId = parent.getId();
-				String tenant = parentId.substring(parentId.indexOf("-") + 1).toLowerCase();
+				String tenant = parentId.substring(parentId.lastIndexOf("-") + 1).toLowerCase();
 				AviVroClient client = aviVroClientMap.get(parentId);
 				if (client != null) {
 					aviRestResources = client.getObject("virtualservice", null, tenant);
