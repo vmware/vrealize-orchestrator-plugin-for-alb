@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module name="getCloudType"
 	result-type="boolean" api-version="6.0.0"
-	id="87c11f52-a470-477b-a3f5-c362497c6dd6" version="0.0.4"
+	id="87c11f52-a470-477b-a3f5-c362498c7dd6" version="0.0.4"
 	allowed-operations="vfe">
 	<param n="controller" t="string"><![CDATA[
 	]]></param>
@@ -10,8 +10,8 @@
 	<script encoded="false"><![CDATA[vroClientArray=Server.findAllForType('Avi:AviVroClient','');
 for each(vroClient in vroClientArray){
 		if(vroClient !=null){
-			controllerIp = controller.substring(0, controller.indexOf("-"));
-			clientTenant = controller.substring(controller.indexOf("-") + 1).toLowerCase();
+			controllerIp = controller.substring(0, controller.lastIndexOf("-"));
+			clientTenant = controller.substring(controller.lastIndexOf("-") + 1).toLowerCase();
 			vroController = vroClient.cred.controller;
 			controllerTenant = vroClient.cred.tenant;
 			if((vroController == controllerIp)&&(controllerTenant == clientTenant)){
