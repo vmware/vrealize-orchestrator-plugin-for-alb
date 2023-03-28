@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item3" object-name="workflow:name=generic"
-	id="ddcd902e-762c-4095-8adb-2b1d16282f02" version="3.0.2"
+	id="ddcd902e-762c-4095-8adb-2b1d16283f03" version="3.0.2"
 	api-version="6.0.0" allowed-operations="vef" restartMode="1"
 	resumeFromFailedMode="0">
 	<display-name><![CDATA[Reconfigure Virtual Service]]></display-name>
@@ -111,29 +111,45 @@
 	<attrib name="createdObj" type="Any" read-only="false">
 		<value encoded="n"><![CDATA[__NULL__]]></value>
 	</attrib>
+     	<attrib name="is_healthmonitor" type="boolean" read-only="false">
+        <value encoded="n"><![CDATA[false]]></value>
+    </attrib>
 	<workflow-item name="item0" type="end" end-mode="0">
 		<position y="9.045454545454543" x="884.5"></position>
 	</workflow-item>
-	<workflow-item name="item6" out-name="item1" type="task">
+	<workflow-item name="item6" out-name="item10" type="task">
 		<display-name><![CDATA[AVIObjectName]]></display-name>
-		<script encoded="false"><![CDATA[HealthMonitorName = Name+"_HealthMonitor"
-vsVipName = Name+"_vsvip"
-poolName = Name+"_pool"
+		<script encoded="false"><![CDATA[
 Tenant="admin"
-System.log("HealthMonitorName : "+HealthMonitorName)
-
-
+actionResult = System.getModule("com.vmware.avi").getVirtualServiceDetailsString(vs_object , "healthmonitor" , "is_healthmonitor" );
+System.log("HealthMonitorName actionResult: "+actionResult);
+if (actionResult){
+    is_healthmonitor = true;
+    HealthMonitorName = Name+"_HealthMonitor"
+    System.log("HealthMonitorName : "+HealthMonitorName);
+}
+existingPoolName = System.getModule("com.vmware.avi").getVirtualServiceDetailsString(vs_object , "pool" , "poolName" );
+if (existingPoolName != null){
+    poolName = existingPoolName
+    System.log("Pool Name: "+poolName)
+}
+vsvipName = System.getModule("com.vmware.avi").getVirtualServiceDetailsString(vs_object , "vsvip" , "vsvipName" );
+if (vsvipName != null){
+    vsVipName = vsvipName
+    System.log("VsVip Name: "+vsVipName)
+}
 ]]></script>
 		<in-binding>
 			<bind name="Name" type="string" export-name="name"></bind>
-			<bind name="vsVipName" type="string" explicitly-not-bound="true"></bind>
+			<bind name="vsVipName" type="string"/>
+            <bind name="vs_object" type="Avi:VirtualService" export-name="vs_object"/>
 		</in-binding>
 		<out-binding>
-			<bind name="HealthMonitorName" type="string"
-				export-name="HealthMonitorName"></bind>
+			<bind name="HealthMonitorName" type="string" export-name="HealthMonitorName"></bind>
 			<bind name="poolName" type="string" export-name="poolName"></bind>
 			<bind name="vsVipName" type="string" export-name="vsVipName"></bind>
 			<bind name="Tenant" type="string" export-name="Tenant"></bind>
+			<bind name="is_healthmonitor" type="boolean" export-name="is_healthmonitor"></bind>
 		</out-binding>
 		<position y="100.86363636363636" x="124.5"></position>
 	</workflow-item>
@@ -217,14 +233,14 @@ actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthM
 			<bind name="Tenant" type="string" export-name="Tenant">
 				<description><![CDATA[Tenant name]]></description>
 			</bind>
-			<bind name="workflowRuntime" type="Avi:WorkflowRuntime"
-				export-name="workflowRuntime"></bind>
+			<bind name="workflowRuntime" type="Avi:WorkflowRuntime" 
+			        export-name="workflowRuntime"></bind>
 		</in-binding>
 		<out-binding>
-			<bind name="actionResult" type="Avi:WorkflowRuntime"
-				export-name="workflowRuntime"></bind>
+			<bind name="actionResult" type="Avi:WorkflowRuntime" 
+			        export-name="workflowRuntime"></bind>
 		</out-binding>
-		<position y="100.86363636363636" x="304.5"></position>
+		<position y="20.0" x="280.0"/>
 	</workflow-item>
 	<workflow-item name="item3" out-name="item6" type="task"
 		script-module="com.vmware.avi/initVroWorkflow">
@@ -276,7 +292,7 @@ actionResult = System.getModule("com.vmware.avi").createVRAPoolObj(PoolServers,p
 			<bind name="actionResult" type="Avi:WorkflowRuntime"
 				export-name="workflowRuntime"></bind>
 		</out-binding>
-		<position y="19.045454545454543" x="304.5"></position>
+		<position y="20.0" x="460.0"/>
 	</workflow-item>
 	<workflow-item name="item5" out-name="item7" type="task"
 		script-module="com.vmware.avi/createVsVIPObj">
@@ -314,7 +330,7 @@ actionResult = System.getModule("com.vmware.avi").createVsVIPObj(Tenant,name,IPA
 			<bind name="actionResult" type="Avi:WorkflowRuntime"
 				export-name="workflowRuntime"></bind>
 		</out-binding>
-		<position y="19.045454545454543" x="505.0"></position>
+		<position y="100.0" x="460.0"/>
 	</workflow-item>
 	<workflow-item name="item7" out-name="item8" type="task"
 		script-module="com.vmware.avi/createVirtualServiceObj">
@@ -430,7 +446,7 @@ actionResult = System.getModule("com.vmware.avi").createVirtualServiceObj(Name,p
 			<bind name="actionResult" type="Avi:WorkflowRuntime"
 				export-name="workflowRuntime"></bind>
 		</out-binding>
-		<position y="100.86363636363636" x="505.0"></position>
+		<position y="20.0" x="660.0"/>
 	</workflow-item>
 	<workflow-item name="item8" out-name="item2" type="task"
 		script-module="com.vmware.avi/finishVroWorkflow">
@@ -446,7 +462,23 @@ actionResult = System.getModule("com.vmware.avi").finishVroWorkflow(workflowRunt
 		<out-binding>
 			<bind name="actionResult" type="Any" export-name="createdObj"></bind>
 		</out-binding>
-		<position y="100.86363636363636" x="685.0"></position>
+		<position y="100.0" x="660.0"/>
+	</workflow-item>
+	<workflow-item name="item10" out-name="item1" type="condition" alt-out-name="item4" comparator="0">
+		<display-name><![CDATA[Decision]]></display-name>
+		<script encoded="false">
+			<![CDATA[// Generated by the system, cannot be edited
+return (is_healthmonitor === true);]]>
+		</script>
+		<in-binding>
+			<bind name="is_healthmonitor" type="boolean" export-name="is_healthmonitor" />
+		</in-binding>
+		<out-binding />
+		<condition name="is_healthmonitor" type="boolean" comparator="0" label="null" />
+		<description>
+			<![CDATA[Custom decision based on a custom script.]]>
+		</description>
+		<position y="90.0" x="280.0"/>
 	</workflow-item>
 	<presentation>
 		<p-step>
@@ -504,6 +536,7 @@ actionResult = System.getModule("com.vmware.avi").finishVroWorkflow(workflowRunt
 		</p-step>
 		<p-step>
 			<title><![CDATA[Healthmonitor details]]></title>
+			<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#is_healthmonitor==true]]></p-qual>
 			<p-param name="health_monitor_type">
 				<desc><![CDATA[health_monitor_type]]></desc>
 				<p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.vmware.avi","getVirtualServiceDetailsString").call( #vs_object , "healthmonitor" , "health_monitor_type" )]]></p-qual>
