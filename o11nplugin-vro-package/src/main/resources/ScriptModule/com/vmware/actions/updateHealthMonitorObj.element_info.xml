@@ -3,7 +3,7 @@
 <properties>
 <comment>Exported from [server]</comment>
 <entry key="categoryPath">com.vmware.avi</entry>
-<entry key="name">getVirtualServiceDetailsString</entry>
+<entry key="name">updateHealthMonitorObj</entry>
 <entry key="type">ScriptModule</entry>
-<entry key="id">77c882f0-e694-43f4-b388-dc3cc134a83a</entry>
+<entry key="id">"923babe5-8cf5-4205-b5c2-b55ab69c9b6c"</entry>
 </properties>
