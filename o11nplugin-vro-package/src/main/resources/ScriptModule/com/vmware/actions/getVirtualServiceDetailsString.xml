@@ -1,13 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module
 	name="getVirtualServiceDetailsString" result-type="Any"
-	api-version="6.0.0" id="77c882f0-e694-43f4-b388-dc3cc134a82a"
+	api-version="6.0.0" id="77c882f0-e694-43f4-b388-dc3cc134a83a"
 	version="0.0.3" allowed-operations="vfe">
 	<param n="vsObject" t="Avi:VirtualService"><![CDATA[
 	]]></param>
 	<param n="object" t="string"><![CDATA[
 	]]></param>
 	<param n="field" t="string"><![CDATA[
+	]]></param>
+	<param n="hmName" t="string"><![CDATA[
 	]]></param>
 	<script encoded="false"><![CDATA[if(vsObject!=null){
     var url=vsObject.getUrl();
@@ -94,14 +96,8 @@
 	                }
                 }else {
                     if(poolref!=null){
-	                    var poolUUID = poolref.substring(poolref.indexOf('pool-'),poolref.indexOf('#'));
-	                    var poolObject = new AviPool() ;
-	                    poolObject =aviVroClient.getObjectByUUID('pool',poolUUID);
-	                    var hmArray=poolObject.getHealthMonitorRefs();
-	                    var HealthMonitor_ref=hmArray[0];
-	                    var hmUuid =HealthMonitor_ref.substring(HealthMonitor_ref.indexOf("/healthmonitor-")+1, HealthMonitor_ref.indexOf("#"));
 	                    var hmObject = new AviHealthMonitor();
-	                    hmObject=aviVroClient.getObjectByUUID('healthmonitor',hmUuid);
+	                    hmObject=aviVroClient.getObjectByName('healthmonitor',hmName);
 	                    if(field=="health_monitor_type"){
 	                        var healthMonitorType=hmObject.getType();
 	                        if(healthMonitorType=="HEALTH_MONITOR_PING"){
