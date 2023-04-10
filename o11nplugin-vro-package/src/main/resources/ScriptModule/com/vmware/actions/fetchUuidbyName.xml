@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dunes-script-module name="fetchUuidbyName"
+	result-type="string" api-version="6.0.0"
+	id="aab1273f-30f0-4cef-ad2b-da6832d71040" version="1.0.1"
+	allowed-operations="vfe">
+	<param n="controller" t="string"><![CDATA[IP of the controller]]></param>
+	<param n="objectType" t="string"><![CDATA[Add object type ]]></param>
+	<param n="objectName" t="string"><![CDATA[Add object type ]]></param>
+	<script encoded="false"><![CDATA[/************************************************************
+* This action fetch AVI object UUID by Name                 *
+* and return object name.                                   *
+*************************************************************/
+
+try{
+    if(controller == null){
+        return null;
+    }
+    var vroClientArray = Server.findAllForType('Avi:AviVroClient','');
+    var aviPlugin = null;
+    var controllerIp = controller.substring(0, controller.lastIndexOf("-"));
+    var clientTenant = controller.substring(controller.lastIndexOf("-") + 1).toLowerCase();
+    for each(aviVroClient in vroClientArray){
+        if(aviVroClient != null){
+            vroController = aviVroClient.cred.controller;
+            controllerTenant = aviVroClient.cred.tenant;
+            if((vroController == controllerIp)&&(controllerTenant == clientTenant)){
+                System.log("Found client with the given IP");
+                aviPlugin = aviVroClient;
+            }
+        }
+    }
+    if (aviPlugin != null){
+        if(objectType=="healthmonitor" && (objectName != "" || objectName != null)){
+            var healthMonitorObj = AviHealthMonitor();
+            healthMonitorObj = aviPlugin.getObjectByName('healthmonitor', objectName, clientTenant);
+            return healthMonitorObj.getUuid();
+        }else if(objectType=="pool" && (objectName != "" || objectName != null)){
+            var poolObj = AviPool();
+            poolObj = aviPlugin.getObjectByName('pool', objectName, clientTenant);
+            return poolObj.getUuid();
+        }else if(objectType=="poolgroup" && (objectName != "" || objectName != null)){
+            var poolGroupObj = AviPoolGroup();
+            poolGroupObj = aviPlugin.getObjectByName('poolgroup', objectName, clientTenant);
+            return poolGroupObj.getUuid();
+        }else if(objectType=="vsvip" && (objectName != "" || objectName != null)){
+            var vsvipObj = AviVsVip();
+            vsvipObj = aviPlugin.getObjectByName('vsvip', objectName, clientTenant);
+            return vsvipObj.getUuid();
+        }else if(objectType=="virtualservice" && (objectName != "" || objectName != null)){
+            var virtualserviceObj = AviVirtualService();
+            virtualserviceObj = aviPlugin.getObjectByName('virtualservice', objectName, clientTenant);
+            return virtualserviceObj.getUuid();
+        }else {
+        }
+    }
+}catch(e){
+	System.log("Object name is not found.");
+    return null;
+}
+]]></script>
+</dunes-script-module>

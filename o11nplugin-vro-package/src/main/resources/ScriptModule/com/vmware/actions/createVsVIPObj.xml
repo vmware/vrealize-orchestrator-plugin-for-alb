@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dunes-script-module name="createVsVIPObj"
 	result-type="Avi:WorkflowRuntime" api-version="6.0.0"
-	id="057cde0a-8232-4869-9094-1073d17c0587" version="3.0.1"
+	id="057cde0a-8232-4869-9094-1073d17c0587" version="3.0.3"
 	allowed-operations="vfe">
 	<param n="Tenant" t="string"><![CDATA[Tenant name]]></param>
 	<param n="name" t="string"><![CDATA[Vs vip name]]></param>
@@ -13,10 +13,9 @@
 	<param n="autoAllocateFloatingIp" t="boolean"><![CDATA[Auto allocate floating IP]]></param>
 	<param n="aviAllocatedVip" t="boolean"><![CDATA[Allocate VIP]]></param>
 	<param n="workflowRuntime" t="Avi:WorkflowRuntime"><![CDATA[Object of the plugin]]></param>
-	<param n="tier1" t="string"><![CDATA[
-	]]></param>
-	<param n="ServerCloud" t="string"><![CDATA[
-	]]></param>
+	<param n="tier1" t="string"><![CDATA[]]></param>
+	<param n="ServerCloud" t="string"><![CDATA[]]></param>
+	<param n="vsvip_uuid" t="string"><![CDATA[Uuid of vsvip object]]></param>
 	<script encoded="false"><![CDATA[/************************************************************
 * This action initializes VS_VIP properties objects         *
 * and puts user input into the VS_VIP object        		*
@@ -25,6 +24,9 @@
 try{
 	if(workflowRuntime.getAviVroClient() !=null){
 			vsVipObject = new AviVsVip() ;
+			if (vsvip_uuid){
+				vsVipObject.setUuid(vsvip_uuid);
+			}
 			// Set Configuration for create VsVip
 			vsVipObject.setTenantRef("/api/tenant?name="+Tenant);
 			if (eastWestPlacement){
