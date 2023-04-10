@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item3" object-name="workflow:name=generic"
-	id="09dae1fe-7075-4d9b-8922-6b9185f495a3" version="3.0.3"
+	id="09dae1fe-7075-4d9b-8922-6b9185f495a3" version="3.0.4"
 	api-version="6.0.0" allowed-operations="vef" restartMode="1"
 	resumeFromFailedMode="0">
 	<display-name><![CDATA[Create Virtual Service Cloud Agnostic LB1]]></display-name>
@@ -57,6 +57,18 @@
 		<param name="time_out" type="number">
 			<description><![CDATA[time_out]]></description>
 		</param>
+		<param name="health_monitor_uuid" type="string">
+            <description><![CDATA[Health Monitor Uuid]]></description>
+        </param>
+        <param name="pool_uuid" type="string">
+            <description><![CDATA[Pool Uuid]]></description>
+        </param>
+        <param name="vsvip_uuid" type="string">
+            <description><![CDATA[VsVip Uuid]]></description>
+        </param>
+        <param name="virtual_service_uuid" type="string">
+            <description><![CDATA[Virtual Service Uuid]]></description>
+        </param>
 	</input>
 	<output>
 		<param name="virtualServiceObject" type="Avi:VirtualService">
@@ -170,7 +182,7 @@ System.log("Object Created:-> "+virtualServiceObject.getName());
 		script-module="com.vmware.avi/createHealthMonitorObj">
 		<display-name><![CDATA[createHealthMonitorObj]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthMonitorType,hm_type,hm_name,hm_description,is_federated,monitor_port,time_out,send_interval,successful_check,failed_check,command_code,udp_request,dns_query_name,http_response_code,tcp_request,tcp_response,tcp_half_open,maintenance_code,workflowRuntime,https_response_code, Tenant) ;]]></script>
+actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthMonitorType,hm_type,hm_name,hm_description,is_federated,monitor_port,time_out,send_interval,successful_check,failed_check,command_code,udp_request,dns_query_name,http_response_code,tcp_request,tcp_response,tcp_half_open,maintenance_code,workflowRuntime,https_response_code, Tenant, health_monitor_uuid) ;]]></script>
 		<in-binding>
 			<bind name="healthMonitorType" type="string"
 				export-name="health_monitor_type">
@@ -224,6 +236,10 @@ actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthM
 			</bind>
 			<bind name="workflowRuntime" type="Avi:WorkflowRuntime"
 				export-name="workflowRuntime"></bind>
+			<bind name="health_monitor_uuid" type="string"
+                export-name="health_monitor_uuid">
+                <description><![CDATA[Uuid of health monitor object]]></description>
+            </bind>
 		</in-binding>
 		<out-binding>
 			<bind name="actionResult" type="Avi:WorkflowRuntime"
@@ -251,7 +267,7 @@ actionResult = System.getModule("com.vmware.avi").initVroWorkflow(controller) ;]
 		script-module="com.vmware.avi/createVRAPoolObj">
 		<display-name><![CDATA[createVRAPoolObj]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-actionResult = System.getModule("com.vmware.avi").createVRAPoolObj(PoolServers,poolName,ServerCloud,Tenant,HealthMonitorName,workflowRuntime,instance_port,tier1_lr) ;]]></script>
+actionResult = System.getModule("com.vmware.avi").createVRAPoolObj(PoolServers,poolName,ServerCloud,Tenant,HealthMonitorName,workflowRuntime,instance_port,tier1_lr, pool_uuid) ;]]></script>
 		<in-binding>
 			<bind name="PoolServers" type="Array/string"
 				export-name="pool_servers">
@@ -276,6 +292,10 @@ actionResult = System.getModule("com.vmware.avi").createVRAPoolObj(PoolServers,p
 			<bind name="tier1_lr" type="string" explicitly-not-bound="true"></bind>
 			<bind name="workflowRuntime" type="Avi:WorkflowRuntime"
 				export-name="workflowRuntime"></bind>
+			<bind name="pool_uuid" type="string"
+                export-name="pool_uuid">
+                <description><![CDATA[Uuid of pool object]]></description>
+            </bind>
 		</in-binding>
 		<out-binding>
 			<bind name="actionResult" type="Avi:WorkflowRuntime"
@@ -287,7 +307,7 @@ actionResult = System.getModule("com.vmware.avi").createVRAPoolObj(PoolServers,p
 		script-module="com.vmware.avi/createVsVIPObj">
 		<display-name><![CDATA[createVsVIPObj]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-actionResult = System.getModule("com.vmware.avi").createVsVIPObj(Tenant,name,IPAddress,eastWestPlacement,aviAllocatedFIp,autoAllocateIp,enabled,autoAllocateFloatingIp,aviAllocatedVip,workflowRuntime,tier1,ServerCloud) ;]]></script>
+actionResult = System.getModule("com.vmware.avi").createVsVIPObj(Tenant,name,IPAddress,eastWestPlacement,aviAllocatedFIp,autoAllocateIp,enabled,autoAllocateFloatingIp,aviAllocatedVip,workflowRuntime,tier1,ServerCloud, vsvip_uuid) ;]]></script>
 		<in-binding>
 			<bind name="Tenant" type="string" export-name="Tenant">
 				<description><![CDATA[Tenant name]]></description>
@@ -314,6 +334,10 @@ actionResult = System.getModule("com.vmware.avi").createVsVIPObj(Tenant,name,IPA
 				export-name="server_cloud"></bind>
 			<bind name="workflowRuntime" type="Avi:WorkflowRuntime"
 				export-name="workflowRuntime"></bind>
+			<bind name="vsvip_uuid" type="string"
+                export-name="vsvip_uuid">
+                <description><![CDATA[Uuid of vsvip object]]></description>
+            </bind>
 		</in-binding>
 		<out-binding>
 			<bind name="actionResult" type="Avi:WorkflowRuntime"
@@ -325,7 +349,7 @@ actionResult = System.getModule("com.vmware.avi").createVsVIPObj(Tenant,name,IPA
 		script-module="com.vmware.avi/createVirtualServiceObj">
 		<display-name><![CDATA[createVirtualServiceObj]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-actionResult = System.getModule("com.vmware.avi").createVirtualServiceObj(Name,poolgroupName,ServerCloud,Tenant,ApplicationProfile,servicePort,SSLCertificate,SSLCert,CertName,CreateSSL,serviceEngine,poolOrPoolgroup,poolName,vsVIP,existingVIP,allowInvalidClientCert,closeClientConfigUpdate,description,enableAutogw,enableRhi,enableRhiSnat,ignPoolNetReach,removeListeningPortOnVsDown,scaleoutEcmp,clientIpAddr,includeURL,excludeURL,addClientLogFliter,enabledClientLog,clientStringRef,clientDuration,logAllClientHeaders,analyticsProfile,clientInsights,significantLogThrottle,udfLogThrottle,nonSignificantLogs,nslduration,nslThrottle,metricsRealtimeUpdate,metricsRealtimeUpdateDuration,maxCpsPerClient,trafficEnabled,useBridgeIpAsVip,useVipAsSnat,vsVipName,workflowRuntime,network_profile) ;]]></script>
+actionResult = System.getModule("com.vmware.avi").createVirtualServiceObj(Name,poolgroupName,ServerCloud,Tenant,ApplicationProfile,servicePort,SSLCertificate,SSLCert,CertName,CreateSSL,serviceEngine,poolOrPoolgroup,poolName,vsVIP,existingVIP,allowInvalidClientCert,closeClientConfigUpdate,description,enableAutogw,enableRhi,enableRhiSnat,ignPoolNetReach,removeListeningPortOnVsDown,scaleoutEcmp,clientIpAddr,includeURL,excludeURL,addClientLogFliter,enabledClientLog,clientStringRef,clientDuration,logAllClientHeaders,analyticsProfile,clientInsights,significantLogThrottle,udfLogThrottle,nonSignificantLogs,nslduration,nslThrottle,metricsRealtimeUpdate,metricsRealtimeUpdateDuration,maxCpsPerClient,trafficEnabled,useBridgeIpAsVip,useVipAsSnat,vsVipName,workflowRuntime,network_profile, virtual_service_uuid) ;]]></script>
 		<in-binding>
 			<bind name="Name" type="string" export-name="name">
 				<description><![CDATA[Virtual service name]]></description>
@@ -430,6 +454,10 @@ actionResult = System.getModule("com.vmware.avi").createVirtualServiceObj(Name,p
 				explicitly-not-bound="true"></bind>
 			<bind name="workflowRuntime" type="Avi:WorkflowRuntime"
 				export-name="workflowRuntime"></bind>
+			<bind name="virtual_service_uuid" type="string"
+                export-name="virtual_service_uuid">
+                <description><![CDATA[Uuid of virtual service object]]></description>
+            </bind>
 		</in-binding>
 		<out-binding>
 			<bind name="actionResult" type="Avi:WorkflowRuntime"
@@ -488,6 +516,16 @@ actionResult = System.getModule("com.vmware.avi").finishVroWorkflow(workflowRunt
 				<desc><![CDATA[VIP]]></desc>
 				<p-qual kind="static" name="mandatory" type="boolean"><![CDATA[true]]></p-qual>
 			</p-param>
+			<p-param name="virtual_service_uuid">
+			    <desc><![CDATA[Virtual Service Uuid]]></desc>
+			    <p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.vmware.avi","fetchUuidbyName").call( #controller , "virtualservice" , #name )]]></p-qual>
+			    <p-qual kind="ognl" name="notVisible" type="boolean"><![CDATA[true]]></p-qual>
+			</p-param>
+			<p-param name="vsvip_uuid">
+			    <desc><![CDATA[VsVip Uuid]]></desc>
+			    <p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.vmware.avi","fetchUuidbyName").call( #controller , "vsvip" , #vsVipName )]]></p-qual>
+			    <p-qual kind="ognl" name="notVisible" type="boolean"><![CDATA[true]]></p-qual>
+			</p-param>
 		</p-step>
 		<p-step>
 			<title><![CDATA[Pool details]]></title>
@@ -498,6 +536,11 @@ actionResult = System.getModule("com.vmware.avi").finishVroWorkflow(workflowRunt
 			<p-param name="instance_port">
 				<desc><![CDATA[instance_port]]></desc>
 				<p-qual kind="static" name="mandatory" type="boolean"><![CDATA[true]]></p-qual>
+			</p-param>
+			<p-param name="pool_uuid">
+			    <desc><![CDATA[Pool Uuid]]></desc>
+			    <p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.vmware.avi","fetchUuidbyName").call( #controller , "pool" , #poolName )]]></p-qual>
+			    <p-qual kind="ognl" name="notVisible" type="boolean"><![CDATA[true]]></p-qual>
 			</p-param>
 		</p-step>
 		<p-step>
@@ -534,6 +577,11 @@ actionResult = System.getModule("com.vmware.avi").finishVroWorkflow(workflowRunt
 			</p-param>
 			<p-param name="time_out">
 				<desc><![CDATA[time_out]]></desc>
+			</p-param>
+			<p-param name="health_monitor_uuid">
+			    <desc><![CDATA[health_monitor_uuid]]></desc>
+			    <p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.vmware.avi","fetchUuidbyName").call( #controller , "healthmonitor" , #HealthMonitorName )]]></p-qual>
+			    <p-qual kind="ognl" name="notVisible" type="boolean"><![CDATA[true]]></p-qual>
 			</p-param>
 		</p-step>
 	</presentation>
