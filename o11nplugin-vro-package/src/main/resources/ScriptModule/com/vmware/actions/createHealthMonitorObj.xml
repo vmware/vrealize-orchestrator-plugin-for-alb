@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module name="createHealthMonitorObj"
 	result-type="Avi:WorkflowRuntime" api-version="6.0.0"
-	id="912babe5-8cf5-4104-b5c2-b55ab69c9b5c" version="0.0.3"
+	id="912babe5-8cf5-4104-b5c2-b55ab69c9b5c" version="0.0.5"
 	allowed-operations="vfe">
 	<param n="healthMonitorType" t="string"><![CDATA[Health monitor type]]></param>
 	<param n="hm_type" t="string"><![CDATA[Health monitor type]]></param>
@@ -24,10 +24,14 @@
 	<param n="workflowRuntime" t="Avi:WorkflowRuntime"><![CDATA[Avi vro client]]></param>
 	<param n="Tenant" t="string"><![CDATA[Tenant name]]></param>
 	<param n="https_response_code" t="Array/string"><![CDATA[https response code]]></param>
+	<param n="health_monitor_uuid" t="Array/string"><![CDATA[Uuid of health monitor]]></param>
 	<script encoded="false"><![CDATA[try{
 	if(workflowRuntime.getAviVroClient() !=null){
 		Tenant = workflowRuntime.getAviVroClient().cred.tenant;
-		healthMonitorObj = new AviHealthMonitor() ;
+		healthMonitorObj = new AviHealthMonitor();
+		if (health_monitor_uuid){
+			healthMonitorObj.setUuid(health_monitor_uuid);
+		}
 		healthMonitorObj.setTenantRef("/api/tenant?name="+Tenant);
 		healthMonitorObj.setName(hm_name);
 		healthMonitorObj.setDescription(hm_description)
