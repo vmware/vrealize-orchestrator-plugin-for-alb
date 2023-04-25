@@ -134,6 +134,10 @@ public class VirtualService extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean enableRhiSnat = null;
 
+    @JsonProperty("enable_session")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableSession = false;
+
     @JsonProperty("enabled")
     @JsonInclude(Include.NON_NULL)
     private Boolean enabled = true;
@@ -1122,6 +1126,34 @@ public class VirtualService extends AviRestResource {
   @VsoMethod
   public void setEnableRhiSnat(Boolean  enableRhiSnat) {
     this.enableRhiSnat = enableRhiSnat;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Enable http sessions for this virtual service.
+   * If enabled, a session cookie will be added to http responses and persistent key-value store will be activated.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return enableSession
+   */
+  @VsoMethod
+  public Boolean getEnableSession() {
+    return enableSession;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable http sessions for this virtual service.
+   * If enabled, a session cookie will be added to http responses and persistent key-value store will be activated.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param enableSession set the enableSession.
+   */
+  @VsoMethod
+  public void setEnableSession(Boolean  enableSession) {
+    this.enableSession = enableSession;
   }
 
   /**
@@ -3229,7 +3261,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.vhType, objVirtualService.vhType)&&
   Objects.equals(this.botPolicyRef, objVirtualService.botPolicyRef)&&
   Objects.equals(this.ldapVsConfig, objVirtualService.ldapVsConfig)&&
-  Objects.equals(this.oauthVsConfig, objVirtualService.oauthVsConfig);
+  Objects.equals(this.oauthVsConfig, objVirtualService.oauthVsConfig)&&
+  Objects.equals(this.enableSession, objVirtualService.enableSession);
 }
 
 @Override
@@ -3261,6 +3294,7 @@ public String toString() {
         sb.append("    enableAutogw: ").append(toIndentedString(enableAutogw)).append("\n");
         sb.append("    enableRhi: ").append(toIndentedString(enableRhi)).append("\n");
         sb.append("    enableRhiSnat: ").append(toIndentedString(enableRhiSnat)).append("\n");
+        sb.append("    enableSession: ").append(toIndentedString(enableSession)).append("\n");
         sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
         sb.append("    errorPageProfileRef: ").append(toIndentedString(errorPageProfileRef)).append("\n");
         sb.append("    flowDist: ").append(toIndentedString(flowDist)).append("\n");

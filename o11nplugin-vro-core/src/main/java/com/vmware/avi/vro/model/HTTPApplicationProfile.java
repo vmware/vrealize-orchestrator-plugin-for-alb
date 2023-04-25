@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.HttpCacheConfig;
 import com.vmware.avi.vro.model.CompressionProfile;
 import com.vmware.avi.vro.model.HTTP2ApplicationProfile;
+import com.vmware.avi.vro.model.HTTPSessionConfig;
 import com.vmware.avi.vro.model.SSLClientCertificateAction;
 import com.vmware.avi.vro.model.TrueClientIPConfig;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
@@ -208,6 +209,10 @@ public class HTTPApplicationProfile extends AviRestResource {
     @JsonProperty("server_side_redirect_to_https")
     @JsonInclude(Include.NON_NULL)
     private Boolean serverSideRedirectToHttps = false;
+
+    @JsonProperty("session_config")
+    @JsonInclude(Include.NON_NULL)
+    private HTTPSessionConfig sessionConfig = null;
 
     @JsonProperty("ssl_client_certificate_action")
     @JsonInclude(Include.NON_NULL)
@@ -1541,6 +1546,32 @@ public class HTTPApplicationProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Http session configuration.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return sessionConfig
+   */
+  @VsoMethod
+  public HTTPSessionConfig getSessionConfig() {
+    return sessionConfig;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Http session configuration.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param sessionConfig set the sessionConfig.
+   */
+  @VsoMethod
+  public void setSessionConfig(HTTPSessionConfig sessionConfig) {
+    this.sessionConfig = sessionConfig;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Set of match/action rules that govern what happens when the client certificate request is enabled.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -1872,7 +1903,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.trueClientIp, objHTTPApplicationProfile.trueClientIp)&&
   Objects.equals(this.passThroughXAccelHeaders, objHTTPApplicationProfile.passThroughXAccelHeaders)&&
   Objects.equals(this.collectClientTlsFingerprint, objHTTPApplicationProfile.collectClientTlsFingerprint)&&
-  Objects.equals(this.maxHeaderCount, objHTTPApplicationProfile.maxHeaderCount);
+  Objects.equals(this.maxHeaderCount, objHTTPApplicationProfile.maxHeaderCount)&&
+  Objects.equals(this.sessionConfig, objHTTPApplicationProfile.sessionConfig);
 }
 
 @Override
@@ -1924,6 +1956,7 @@ public String toString() {
         sb.append("    respondWith100Continue: ").append(toIndentedString(respondWith100Continue)).append("\n");
         sb.append("    secureCookieEnabled: ").append(toIndentedString(secureCookieEnabled)).append("\n");
         sb.append("    serverSideRedirectToHttps: ").append(toIndentedString(serverSideRedirectToHttps)).append("\n");
+        sb.append("    sessionConfig: ").append(toIndentedString(sessionConfig)).append("\n");
         sb.append("    sslClientCertificateAction: ").append(toIndentedString(sslClientCertificateAction)).append("\n");
         sb.append("    sslClientCertificateMode: ").append(toIndentedString(sslClientCertificateMode)).append("\n");
         sb.append("    trueClientIp: ").append(toIndentedString(trueClientIp)).append("\n");
