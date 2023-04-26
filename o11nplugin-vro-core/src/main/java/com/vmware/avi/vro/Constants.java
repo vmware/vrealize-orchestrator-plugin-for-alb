@@ -464,6 +464,7 @@ public class Constants {
     public static final String FINDER_VRO_HTTPSECURITYPOLICY = "HTTPSecurityPolicy";
     public static final String FINDER_VRO_HTTPSECURITYRULE = "HTTPSecurityRule";
     public static final String FINDER_VRO_HTTPSERVERRESELECT = "HTTPServerReselect";
+    public static final String FINDER_VRO_HTTPSESSIONCONFIG = "HTTPSessionConfig";
     public static final String FINDER_VRO_HTTPSTATUSMATCH = "HTTPStatusMatch";
     public static final String FINDER_VRO_HTTPSTATUSRANGE = "HTTPStatusRange";
     public static final String FINDER_VRO_HTTPSWITCHINGACTION = "HTTPSwitchingAction";

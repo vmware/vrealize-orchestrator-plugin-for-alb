@@ -104,7 +104,7 @@ public class ALBServicesJob extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * The time at which the albservicesjob is ended.
+   * Time at which the albservicesjob ended.
    * Field introduced in 21.1.3.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -117,7 +117,7 @@ public class ALBServicesJob extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * The time at which the albservicesjob is ended.
+   * Time at which the albservicesjob ended.
    * Field introduced in 21.1.3.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -200,7 +200,7 @@ public class ALBServicesJob extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * A unique identifier for this job entry on the pulse portal.
+   * A unique identifier for this job entry on the pulse cloud services.
    * Field introduced in 21.1.3.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -213,7 +213,7 @@ public class ALBServicesJob extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * A unique identifier for this job entry on the pulse portal.
+   * A unique identifier for this job entry on the pulse cloud services.
    * Field introduced in 21.1.3.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -226,7 +226,7 @@ public class ALBServicesJob extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Status of sync to pulse(result uploads/state updates).
+   * Status of sync to pulse cloud services(result uploads/state updates).
    * Field introduced in 22.1.1.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -239,7 +239,7 @@ public class ALBServicesJob extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Status of sync to pulse(result uploads/state updates).
+   * Status of sync to pulse cloud services(result uploads/state updates).
    * Field introduced in 22.1.1.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -278,7 +278,7 @@ public class ALBServicesJob extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * The time at which the albservicesjob is started.
+   * Time at which the albservicesjob started.
    * Field introduced in 21.1.3.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -291,7 +291,7 @@ public class ALBServicesJob extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * The time at which the albservicesjob is started.
+   * Time at which the albservicesjob started.
    * Field introduced in 21.1.3.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
