@@ -288,7 +288,7 @@ public class OAuthProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Oauth app settings for controller authentication.
-   * Field introduced in 23.1.1.
+   * Field introduced in 30.1.1.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return oauthControllerSettings
@@ -301,7 +301,7 @@ public class OAuthProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Oauth app settings for controller authentication.
-   * Field introduced in 23.1.1.
+   * Field introduced in 30.1.1.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param oauthControllerSettings set the oauthControllerSettings.
@@ -315,7 +315,7 @@ public class OAuthProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Type of oauth profile which defines the usage type.
    * Enum options - CLIENT_OAUTH, CONTROLLER_OAUTH.
-   * Field introduced in 23.1.1.
+   * Field introduced in 30.1.1.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "CLIENT_OAUTH".
    * @return oauthProfileType
@@ -329,7 +329,7 @@ public class OAuthProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Type of oauth profile which defines the usage type.
    * Enum options - CLIENT_OAUTH, CONTROLLER_OAUTH.
-   * Field introduced in 23.1.1.
+   * Field introduced in 30.1.1.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "CLIENT_OAUTH".
    * @param oauthProfileType set the oauthProfileType.
@@ -343,7 +343,7 @@ public class OAuthProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Type of oauth provider when using controller oauth as oauth profile type.
    * Enum options - OAUTH_CSP.
-   * Field introduced in 23.1.1.
+   * Field introduced in 30.1.1.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return oauthProvider
@@ -357,7 +357,7 @@ public class OAuthProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Type of oauth provider when using controller oauth as oauth profile type.
    * Enum options - OAUTH_CSP.
-   * Field introduced in 23.1.1.
+   * Field introduced in 30.1.1.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param oauthProvider set the oauthProvider.
@@ -396,7 +396,7 @@ public class OAuthProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Organization id for oauth.
-   * Field introduced in 23.1.1.
+   * Field introduced in 30.1.1.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return orgId
@@ -409,7 +409,7 @@ public class OAuthProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Organization id for oauth.
-   * Field introduced in 23.1.1.
+   * Field introduced in 30.1.1.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param orgId set the orgId.
@@ -450,7 +450,7 @@ public class OAuthProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Redirect uri specified in the request to authorization server.
-   * Field introduced in 23.1.1.
+   * Field introduced in 30.1.1.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return redirectUri
@@ -463,7 +463,7 @@ public class OAuthProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Redirect uri specified in the request to authorization server.
-   * Field introduced in 23.1.1.
+   * Field introduced in 30.1.1.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param redirectUri set the redirectUri.
