@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module name="fetchObjectLists"
 	result-type="Any" api-version="6.0.0"
-	id="c8fdba15-adb3-4335-9a34-ec8e3825708c" version="0.0.5"
+	id="c8fdba15-adb3-4335-9a34-ec8e3825709c" version="0.0.6"
 	allowed-operations="vfe">
 	<param n="controller" t="string"><![CDATA[IP of the controller]]></param>
 	<param n="objectName" t="string"><![CDATA[Add object name]]></param>
@@ -110,8 +110,21 @@
 				}
 				System.log("Port : "+Port)
 				return Port;
+			}else if(field == "healthmonitor"){
+				var poolUrl = object.pool_ref;
+				var path = poolUrl.split("/");
+				var response = aviPlugin.getObjectDataByUUID(path[path.length-2],path[path.length-1]);
+				var objectData = JSON.parse(response);
+				var hmUrls = objectData.health_monitor_refs;
+				var healthmonitorList= new Array();
+				for each(index in hmUrls){
+					var hmPath = index.split("/");
+					var hmResponse = aviPlugin.getObjectDataByUUID(hmPath[hmPath.length-2],hmPath[hmPath.length-1]);
+					var hmObjectData = JSON.parse(hmResponse);
+					healthmonitorList.push(hmObjectData.name)
+				}
+				return healthmonitorList;
 			}
-			
 		}
 		else{
 			System.log("Object "+objectName+" not present on the controller") 
