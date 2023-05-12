@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module name="createVRAPoolObj"
 	result-type="Avi:WorkflowRuntime" api-version="6.0.0"
-	id="0cfaebed-a678-43d2-9992-1bdde8e45ecc" version="3.0.1"
+	id="0cfaebed-a678-43d2-9992-1bdde8e56ecc" version="3.0.2"
 	allowed-operations="vfe">
 	<param n="PoolServers" t="Array/string"><![CDATA[Pool servers list ]]></param>
 	<param n="poolName" t="string"><![CDATA[Pool name]]></param>
@@ -10,8 +10,8 @@
 	<param n="HealthMonitorName" t="string"><![CDATA[New healthmonitor name]]></param>
 	<param n="workflowRuntime" t="Avi:WorkflowRuntime"><![CDATA[Object of the plugin]]></param>
 	<param n="instance_port" t="number"><![CDATA[ 	]]></param>
-	<param n="tier1_lr" t="string"><![CDATA[
-	]]></param>
+	<param n="tier1_lr" t="string"><![CDATA[]]></param>
+	<param n="pool_uuid" t="string"><![CDATA[Uuid of pool object]]></param>
 	<script encoded="false"><![CDATA[/**************************************************
 * This script initializes pool properties objects *
 * and creats pool object. 						  *
@@ -20,8 +20,14 @@
 try{
 	if(workflowRuntime.getAviVroClient() !=null){
 		poolObject = new AviPool();
-		var HMref ="/api/healthmonitor?name="+HealthMonitorName;
-		poolObject.addHealthMonitorRefsItem(HMref);
+		if (pool_uuid){
+			poolObject.setUuid(pool_uuid);
+		}
+		if (HealthMonitorName == null){
+		}else if (null != HealthMonitorName || HealthMonitorName != "") {
+			var HMref ="/api/healthmonitor?name="+HealthMonitorName;
+			poolObject.addHealthMonitorRefsItem(HMref);
+		}
 		var algorithm="LB_ALGORITHM_LEAST_CONNECTIONS"
 		poolObject.setLbAlgorithm(algorithm);
 		var failActiontype="Close Connection";
@@ -69,7 +75,7 @@ try{
 		if(ServerCloud=="" || ServerCloud==null){
 			ServerCloud="Default-Cloud";
 		}
-		if(tier1_lr!==null && tier1_lr!=""){
+		if(tier1_lr){
 			poolObject.setTier1Lr(tier1_lr);
 		}
 		poolObject.setCloudRef("/api/cloud?name="+ServerCloud);

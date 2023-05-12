@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module name="createVRAPoolGroup"
 	result-type="Avi:WorkflowRuntime" api-version="6.0.0"
-	id="3d491515-9cdf-437c-ae83-88142172c715" version="3.0.1"
+	id="3d491515-9cdf-437c-ae83-88142172c715" version="3.0.3"
 	allowed-operations="vfe">
 	<param n="workflowRuntime" t="Avi:WorkflowRuntime"><![CDATA[
 	]]></param>
@@ -17,6 +17,7 @@
 	<param n="instancePort" t="number"><![CDATA[
 	]]></param>
 	<param n="HealthMonitorName" t="string"><![CDATA[HealthMonitorName]]></param>
+	<param n="pool_group_uuid" t="string"><![CDATA[Uuid of PoolGroup]]></param>
 	<script encoded="false"><![CDATA[try{
 	if(workflowRuntime.getAviVroClient() !=null){
 		firstPoolName=poolGroupName+"_Pool1";
@@ -79,6 +80,9 @@
 		secondPoolGroupMemberObject = new AviPoolGroupMember();		
 		secondPoolGroupMemberObject.setPoolRef("/api/pool?name="+seconPoolName);
 		var poolGroupObject = new AviPoolGroup() ;
+		if (pool_group_uuid){
+			poolGroupObject.setUuid(pool_group_uuid);
+		}
 		poolGroupObject.setCloudRef("/api/cloud?name="+ServerCloud);
 		poolGroupObject.setTenantRef("/api/tenant?name="+Tenant)
 		poolGroupObject.setName(poolGroupName);

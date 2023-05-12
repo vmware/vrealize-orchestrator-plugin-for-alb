@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module
-	name="getVirtualServiceDetailsString" result-type="string"
-	api-version="6.0.0" id="77c882f0-e694-43f4-b388-dc3cc134a72a"
+	name="getVirtualServiceDetailsString" result-type="Any"
+	api-version="6.0.0" id="77c882f0-e694-43f4-b388-dc3cc134a83a"
 	version="0.0.3" allowed-operations="vfe">
 	<param n="vsObject" t="Avi:VirtualService"><![CDATA[
 	]]></param>
@@ -9,16 +9,18 @@
 	]]></param>
 	<param n="field" t="string"><![CDATA[
 	]]></param>
+	<param n="hmName" t="string"><![CDATA[
+	]]></param>
 	<script encoded="false"><![CDATA[if(vsObject!=null){
     var url=vsObject.getUrl();
     var controller=url.substring(url.indexOf("//")+2, url.indexOf("/api"));
     var aviVroClient=null;
     vroClientArray=Server.findAllForType('Avi:AviVroClient','');
     for each(vroClient in vroClientArray){
-            if(vroClient !=null){
+        if(vroClient !=null){
             vroController=vroClient.cred.controller;
             if(vroController==controller){
-            aviVroClient=vroClient;
+                aviVroClient=vroClient;
             }
         }	
     }
@@ -38,7 +40,11 @@
                     }
                     return apptype;
                 }else if(field == "controller"){
-                    return (url.substring(url.indexOf("//")+2, url.indexOf("/api")));
+                    var tenantRef =vsObject.getTenantRef();
+                    System.log(tenantRef);
+                    var tenantName=(tenantRef.substring((tenantRef.indexOf("#"))+1));
+                    var ctrlUrl = url.substring(url.indexOf("//")+2, url.indexOf("/api"));
+                    return ctrlUrl + "-" + tenantName;
                 }else if(field == "cloud"){
                     var cloudRef =vsObject.getCloudRef();
                     System.log(cloudRef);
@@ -51,7 +57,12 @@
                 }
             }else if(object=="vsvip"){
                 var vsVipref=vsObject.getVsvipRef();
-                if(vsVipref!=null){
+                if(field=="vsvipName"){
+                    var vsVipUUID = vsVipref.substring(vsVipref.indexOf('vsvip-'),vsVipref.indexOf('#'));
+                    var myAviVsVip = new AviVsVip() ;
+                    myAviVsVip=aviVroClient.getObjectByUUID('vsvip',vsVipUUID);
+                    return myAviVsVip.getName();
+                }else {
                     var vsVipUUID = vsVipref.substring(vsVipref.indexOf('vsvip-'),vsVipref.indexOf('#'));
                     var myAviVsVip = new AviVsVip() ;
                     myAviVsVip=aviVroClient.getObjectByUUID('vsvip',vsVipUUID);
@@ -60,60 +71,73 @@
                     var ipAddress=iPaddressObject.getAddr();
                     return ipAddress;
                 }
-            }else if(object=="healthmonitor"){
+            }else if (object=="pool" && field=="poolName"){
                 var poolref=vsObject.getPoolRef();	
                 if(poolref!=null){
                     var poolUUID = poolref.substring(poolref.indexOf('pool-'),poolref.indexOf('#'));
                     var poolObject = new AviPool() ;
                     poolObject =aviVroClient.getObjectByUUID('pool',poolUUID);
-                    var hmArray=poolObject.getHealthMonitorRefs();
-                    var HealthMonitor_ref=hmArray[0];
-                    var hmUuid =HealthMonitor_ref.substring(HealthMonitor_ref.indexOf("/healthmonitor-")+1, HealthMonitor_ref.indexOf("#"));
-                    var hmObject = new AviHealthMonitor();
-                    hmObject=aviVroClient.getObjectByUUID('healthmonitor',hmUuid);
-                    if(field=="health_monitor_type"){
-                        var healthMonitorType=hmObject.getType();
-                        if(healthMonitorType=="HEALTH_MONITOR_PING"){
-                            healthMonitorType="ping";
-                        }else if(healthMonitorType=="HEALTH_MONITOR_TCP"){
-						    healthMonitorType="TCP";
-					    }else if(healthMonitorType=="HEALTH_MONITOR_DNS"){
-						    healthMonitorType="DNS";
-					    }else if(healthMonitorType=="HEALTH_MONITOR_EXTERNAL"){
-					    	healthMonitorType="External";
-					    }else if(healthMonitorType=="HEALTH_MONITOR_HTTPS"){
-					    	healthMonitorType="HTTPS";
-					    }else if(healthMonitorType=="HEALTH_MONITOR_HTTP"){
-					    	healthMonitorType="HTTP";
-					    }else if(healthMonitorType=="HEALTH_MONITOR_UDP"){
-					    	healthMonitorType="UDP";
-					    }else{
-					    }
-                        return healthMonitorType;
-                    }else  if(field=="request"){
-                        var healthMonitorType=hmObject.getType();
-                        if(healthMonitorType=="HEALTH_MONITOR_UDP"){
-                           var healthMonitorUDP=hmObject.getUdpMonitor();
-                           return healthMonitorUDP.getUdpRequest();
-                        }else{
-                            var healthMonitorDNS=hmObject.getDnsMonitor();
-                           return healthMonitorDNS.getQueryName();
-                        }
-                    }else  if(field=="command"){                    
-                        var healthMonitorExternal=hmObject.getExternalMonitor()
-                        return healthMonitorExternal.getCommandCode();
-                        
-                    }else{
-
-                    }
-
-                    
+                    var pool_name=poolObject.getName();
+                    return pool_name;
                 }
-            
+            }else if(object=="healthmonitor") {
+                var poolref=vsObject.getPoolRef();
+                if(field=="is_healthmonitor"){
+                    if(poolref!=null){
+	                    var poolUUID = poolref.substring(poolref.indexOf('pool-'),poolref.indexOf('#'));
+	                    var poolObject = new AviPool() ;
+	                    poolObject =aviVroClient.getObjectByUUID('pool',poolUUID);
+	                    var hmArray=poolObject.getHealthMonitorRefs();
+	                    if(hmArray != null){
+	                        return true;
+	                    }else{
+	                        return false;
+	                    }
+	                }
+                }else {
+                    if(poolref!=null){
+	                    var hmObject = new AviHealthMonitor();
+	                    hmObject=aviVroClient.getObjectByName('healthmonitor',hmName);
+	                    if(field=="health_monitor_type"){
+	                        var healthMonitorType=hmObject.getType();
+	                        if(healthMonitorType=="HEALTH_MONITOR_PING"){
+	                            healthMonitorType="ping";
+	                        }else if(healthMonitorType=="HEALTH_MONITOR_TCP"){
+							    healthMonitorType="TCP";
+						    }else if(healthMonitorType=="HEALTH_MONITOR_DNS"){
+							    healthMonitorType="DNS";
+                            }else if(healthMonitorType=="HEALTH_MONITOR_EXTERNAL"){
+                                healthMonitorType="External";
+						    }else if(healthMonitorType=="HEALTH_MONITOR_HTTPS"){
+                                healthMonitorType="HTTPS";
+						    }else if(healthMonitorType=="HEALTH_MONITOR_HTTP"){
+                                healthMonitorType="HTTP";
+						    }else if(healthMonitorType=="HEALTH_MONITOR_UDP"){
+                                healthMonitorType="UDP";
+						    }else{
+						    }
+	                        return healthMonitorType;
+	                    }else  if(field=="request"){
+	                        var healthMonitorType=hmObject.getType();
+	                        if(healthMonitorType=="HEALTH_MONITOR_UDP"){
+	                           var healthMonitorUDP=hmObject.getUdpMonitor();
+	                           return healthMonitorUDP.getUdpRequest();
+	                        }else{
+	                            var healthMonitorDNS=hmObject.getDnsMonitor();
+	                           return healthMonitorDNS.getQueryName();
+	                        }
+	                    }else  if(field=="command"){
+                            var healthMonitorExternal=hmObject.getExternalMonitor()
+	                        return healthMonitorExternal.getCommandCode();
+
+	                    }else{
+	                    }
+	                }
+                }
             }
         }
     }catch(e){
-        System.log("Error occured while getting object detail: "+e)
+        System.log("Error occured while getting object detailes from getVirtualServiceDetailsString: "+e)
 }
 }			
 	
