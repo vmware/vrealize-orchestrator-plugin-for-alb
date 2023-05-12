@@ -102,6 +102,10 @@ public class VirtualService extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String createdBy = null;
 
+    @JsonProperty("csrf_policy_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String csrfPolicyRef = null;
+
     @JsonProperty("delay_fairness")
     @JsonInclude(Include.NON_NULL)
     private Boolean delayFairness = false;
@@ -885,6 +889,34 @@ public class VirtualService extends AviRestResource {
   @VsoMethod
   public void setCreatedBy(String  createdBy) {
     this.createdBy = createdBy;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Csrf protection policy for the virtual service.
+   * It is a reference to an object of type csrfpolicy.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return csrfPolicyRef
+   */
+  @VsoMethod
+  public String getCsrfPolicyRef() {
+    return csrfPolicyRef;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Csrf protection policy for the virtual service.
+   * It is a reference to an object of type csrfpolicy.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param csrfPolicyRef set the csrfPolicyRef.
+   */
+  @VsoMethod
+  public void setCsrfPolicyRef(String  csrfPolicyRef) {
+    this.csrfPolicyRef = csrfPolicyRef;
   }
 
   /**
@@ -3262,7 +3294,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.botPolicyRef, objVirtualService.botPolicyRef)&&
   Objects.equals(this.ldapVsConfig, objVirtualService.ldapVsConfig)&&
   Objects.equals(this.oauthVsConfig, objVirtualService.oauthVsConfig)&&
-  Objects.equals(this.enableSession, objVirtualService.enableSession);
+  Objects.equals(this.enableSession, objVirtualService.enableSession)&&
+  Objects.equals(this.csrfPolicyRef, objVirtualService.csrfPolicyRef);
 }
 
 @Override
@@ -3286,6 +3319,7 @@ public String toString() {
         sb.append("    connectionsRateLimit: ").append(toIndentedString(connectionsRateLimit)).append("\n");
         sb.append("    contentRewrite: ").append(toIndentedString(contentRewrite)).append("\n");
         sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
+        sb.append("    csrfPolicyRef: ").append(toIndentedString(csrfPolicyRef)).append("\n");
         sb.append("    delayFairness: ").append(toIndentedString(delayFairness)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    dnsInfo: ").append(toIndentedString(dnsInfo)).append("\n");
