@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dunes-script-module name="createVirtualServiceObj"
 	result-type="Avi:WorkflowRuntime" api-version="6.0.0"
-	id="d84d0b9a-93f0-4339-8db7-db20f3c43124" version="1.1.6"
+	id="d84d0b9a-93f0-4339-8db7-db20f3c43124" version="1.1.8"
 	allowed-operations="vfe">
 	<param n="Name" t="string"><![CDATA[Virtual service name]]></param>
 	<param n="poolgroupName" t="string"><![CDATA[Poolgroup name]]></param>
@@ -50,8 +50,8 @@
 	<param n="useVipAsSnat" t="boolean"><![CDATA[Use the Virtual IP as the SNAT IP for health monitoring]]></param>
 	<param n="vsVipName" t="string"><![CDATA[Name of the vsvip]]></param>
 	<param n="workflowRuntime" t="Avi:WorkflowRuntime"><![CDATA[Object of the plugin]]></param>
-	<param n="network_profile" t="string"><![CDATA[]]>
-	</param>
+	<param n="network_profile" t="string"><![CDATA[]]></param>
+	<param n="virtual_service_uuid" t="string"><![CDATA[Uuid of virtual service object]]></param>
 	<script encoded="false"><![CDATA[/*************************************************************
 * This script initializes Virtual service properties objects *
 * and puts user input into the Virtual service object        *
@@ -187,6 +187,9 @@ try {
 				
 //		virtualServiceObject = Server.findForType('Avi:VirtualService', System.getObjectId(virtualServiceObject));
 		virtualServiceObject = new AviVirtualService();
+		if (virtual_service_uuid){
+			virtualServiceObject.setUuid(virtual_service_uuid);
+		}
 		if (allowInvalidClientCert){
 			virtualServiceObject.setAllowInvalidClientCert(allowInvalidClientCert);
 		}

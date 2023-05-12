@@ -3,7 +3,7 @@
 <properties>
 <comment>Exported from [server]</comment>
 <entry key="categoryPath">com.vmware.avi</entry>
-<entry key="name">createHealthMonitorObj</entry>
+<entry key="name">fetchUuidbyName</entry>
 <entry key="type">ScriptModule</entry>
-<entry key="id">"912babe5-8cf5-4104-b5c2-b55ab69c9b5c"</entry>
+<entry key="id">aab1273f-30f0-4cef-ad2b-da6832d71040</entry>
 </properties>
