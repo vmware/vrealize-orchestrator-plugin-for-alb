@@ -58,9 +58,13 @@ public class ALBServicesConfig extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String mode = "MYVMWARE";
 
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
+
     @JsonProperty("operations_config")
     @JsonInclude(Include.NON_NULL)
-    private OperationsConfig operationsConfig = null;
+    private OperationsConfig operationsConfig;
 
     @JsonProperty("polling_interval")
     @JsonInclude(Include.NON_NULL)
@@ -77,6 +81,10 @@ public class ALBServicesConfig extends AviRestResource {
     @JsonProperty("split_proxy_configuration")
     @JsonInclude(Include.NON_NULL)
     private ProxyConfiguration splitProxyConfiguration = null;
+
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -268,11 +276,37 @@ public class ALBServicesConfig extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Name of the albservicesconfig object.
+   * Field introduced in 30.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return name
+   */
+  @VsoMethod
+  public String getName() {
+    return name;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Name of the albservicesconfig object.
+   * Field introduced in 30.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param name set the name.
+   */
+  @VsoMethod
+  public void setName(String  name) {
+    this.name = name;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Operations configuration.
+   * Field deprecated in 30.1.1.
    * Field introduced in 22.1.3.
    * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
    * edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return operationsConfig
    */
   @VsoMethod
@@ -283,10 +317,10 @@ public class ALBServicesConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Operations configuration.
+   * Field deprecated in 30.1.1.
    * Field introduced in 22.1.3.
    * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
    * edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param operationsConfig set the operationsConfig.
    */
   @VsoMethod
@@ -400,6 +434,34 @@ public class ALBServicesConfig extends AviRestResource {
   @VsoMethod
   public void setSplitProxyConfiguration(ProxyConfiguration splitProxyConfiguration) {
     this.splitProxyConfiguration = splitProxyConfiguration;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Tenant uuid associated with the object.
+   * It is a reference to an object of type tenant.
+   * Field introduced in 30.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return tenantRef
+   */
+  @VsoMethod
+  public String getTenantRef() {
+    return tenantRef;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Tenant uuid associated with the object.
+   * It is a reference to an object of type tenant.
+   * Field introduced in 30.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param tenantRef set the tenantRef.
+   */
+  @VsoMethod
+  public void setTenantRef(String  tenantRef) {
+    this.tenantRef = tenantRef;
   }
 /**
    * This is the getter method this will return the attribute value.
@@ -555,7 +617,7 @@ public class ALBServicesConfig extends AviRestResource {
 
 
   public String getObjectID() {
-    return "ALBServicesConfig" + "(" + uuid + ")";
+    return name + "(" + uuid  + ")";
   }
 
 @Override
@@ -582,7 +644,9 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.wafConfig, objALBServicesConfig.wafConfig)&&
   Objects.equals(this.caseConfig, objALBServicesConfig.caseConfig)&&
   Objects.equals(this.saasLicensingConfig, objALBServicesConfig.saasLicensingConfig)&&
-  Objects.equals(this.operationsConfig, objALBServicesConfig.operationsConfig);
+  Objects.equals(this.operationsConfig, objALBServicesConfig.operationsConfig)&&
+  Objects.equals(this.tenantRef, objALBServicesConfig.tenantRef)&&
+  Objects.equals(this.name, objALBServicesConfig.name);
 }
 
 @Override
@@ -595,11 +659,13 @@ public String toString() {
         sb.append("    featureOptInStatus: ").append(toIndentedString(featureOptInStatus)).append("\n");
         sb.append("    ipReputationConfig: ").append(toIndentedString(ipReputationConfig)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    operationsConfig: ").append(toIndentedString(operationsConfig)).append("\n");
         sb.append("    pollingInterval: ").append(toIndentedString(pollingInterval)).append("\n");
         sb.append("    portalUrl: ").append(toIndentedString(portalUrl)).append("\n");
         sb.append("    saasLicensingConfig: ").append(toIndentedString(saasLicensingConfig)).append("\n");
         sb.append("    splitProxyConfiguration: ").append(toIndentedString(splitProxyConfiguration)).append("\n");
+        sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
             sb.append("    useSplitProxy: ").append(toIndentedString(useSplitProxy)).append("\n");
         sb.append("    useTls: ").append(toIndentedString(useTls)).append("\n");
         sb.append("    userAgentDbConfig: ").append(toIndentedString(userAgentDbConfig)).append("\n");
