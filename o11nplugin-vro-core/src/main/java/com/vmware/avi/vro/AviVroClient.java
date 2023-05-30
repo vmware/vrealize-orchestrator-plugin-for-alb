@@ -408,7 +408,7 @@ public class AviVroClient {
 		logger.debug("File Upload Uri : " + fileUploadUri);
 		AviApi session = getSession();
 		if (uri != null && filePath != null && fileUploadUri != null) {
-			session.fileUpload(uri, filePath, fileUploadUri);
+			session.fileUpload(uri, filePath);
 		}
 	}	
 
