@@ -1,4 +1,4 @@
-## aria-automation-orchestrator-plugin-for-alb
+## vrealize-orchestrator-plugin-for-alb
 Avi VMware Aria Automation Orchestrator​ Plugin
 
 - This project contains AVI vRO Plugin.
@@ -8,7 +8,7 @@ Avi VMware Aria Automation Orchestrator​ Plugin
 * Note: All vRO workflows and actions in the AVI plugin are examples of how to create an actions and workflows. Based on these examples, users should create their own actions and workflows.
 
 ## Clone the repo to your local
-> https://github.com/avinetworks/avi-vrealize-orchestrator-plugin.git
+> https://github.com/vmware/vrealize-orchestrator-plugin-for-alb.git
 
 
 ## Installing plugin to VMware Aria Automation Orchestrator​
