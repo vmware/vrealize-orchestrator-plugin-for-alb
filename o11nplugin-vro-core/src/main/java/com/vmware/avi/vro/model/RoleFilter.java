@@ -47,6 +47,7 @@ public class RoleFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable this filter.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enabled
    */
@@ -59,6 +60,7 @@ public class RoleFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable this filter.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enabled set the enabled.
    */
@@ -71,6 +73,7 @@ public class RoleFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Label key to match against objects for values.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchLabel
    */
@@ -83,6 +86,7 @@ public class RoleFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Label key to match against objects for values.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchLabel set the matchLabel.
    */
@@ -96,6 +100,7 @@ public class RoleFilter extends AviRestResource {
    * Label match operation criteria.
    * Enum options - ROLE_FILTER_EQUALS, ROLE_FILTER_DOES_NOT_EQUAL, ROLE_FILTER_GLOB_MATCH, ROLE_FILTER_GLOB_DOES_NOT_MATCH.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "ROLE_FILTER_EQUALS".
    * @return matchOperation
    */
@@ -109,6 +114,7 @@ public class RoleFilter extends AviRestResource {
    * Label match operation criteria.
    * Enum options - ROLE_FILTER_EQUALS, ROLE_FILTER_DOES_NOT_EQUAL, ROLE_FILTER_GLOB_MATCH, ROLE_FILTER_GLOB_DOES_NOT_MATCH.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "ROLE_FILTER_EQUALS".
    * @param matchOperation set the matchOperation.
    */
@@ -121,6 +127,7 @@ public class RoleFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name for the filter.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -133,6 +140,7 @@ public class RoleFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Name for the filter.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */

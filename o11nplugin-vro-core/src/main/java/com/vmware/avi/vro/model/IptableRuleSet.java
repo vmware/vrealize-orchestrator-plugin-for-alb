@@ -40,7 +40,7 @@ public class IptableRuleSet extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property chain of obj type iptableruleset field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return chain
    */
@@ -51,7 +51,7 @@ public class IptableRuleSet extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property chain of obj type iptableruleset field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param chain set the chain.
    */
@@ -62,7 +62,7 @@ public class IptableRuleSet extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property rules of obj type iptableruleset field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */
@@ -73,7 +73,7 @@ public class IptableRuleSet extends AviRestResource {
 
   /**
    * This is the setter method. this will set the rules
-   * Placeholder for description of property rules of obj type iptableruleset field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */
@@ -84,7 +84,7 @@ public class IptableRuleSet extends AviRestResource {
 
   /**
    * This is the setter method this will set the rules
-   * Placeholder for description of property rules of obj type iptableruleset field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */
@@ -100,7 +100,7 @@ public class IptableRuleSet extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property table of obj type iptableruleset field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return table
    */
@@ -111,7 +111,7 @@ public class IptableRuleSet extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property table of obj type iptableruleset field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param table set the table.
    */

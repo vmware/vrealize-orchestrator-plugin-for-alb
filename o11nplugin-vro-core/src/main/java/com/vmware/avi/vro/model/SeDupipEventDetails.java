@@ -45,6 +45,7 @@ public class SeDupipEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Mac address.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return localMac
    */
@@ -56,6 +57,7 @@ public class SeDupipEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Mac address.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param localMac set the localMac.
    */
@@ -67,6 +69,7 @@ public class SeDupipEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Mac address.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return remoteMac
    */
@@ -78,6 +81,7 @@ public class SeDupipEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Mac address.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param remoteMac set the remoteMac.
    */
@@ -89,6 +93,7 @@ public class SeDupipEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Vnic ip.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vnicIp
    */
@@ -100,6 +105,7 @@ public class SeDupipEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Vnic ip.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vnicIp set the vnicIp.
    */
@@ -111,6 +117,7 @@ public class SeDupipEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Vnic name.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vnicName
    */
@@ -122,6 +129,7 @@ public class SeDupipEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Vnic name.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vnicName set the vnicName.
    */

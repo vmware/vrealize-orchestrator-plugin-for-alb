@@ -45,7 +45,7 @@ public class LinuxServerHost extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property host_attr of obj type linuxserverhost field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostAttr
    */
@@ -56,7 +56,7 @@ public class LinuxServerHost extends AviRestResource {
 
   /**
    * This is the setter method. this will set the hostAttr
-   * Placeholder for description of property host_attr of obj type linuxserverhost field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostAttr
    */
@@ -67,7 +67,7 @@ public class LinuxServerHost extends AviRestResource {
 
   /**
    * This is the setter method this will set the hostAttr
-   * Placeholder for description of property host_attr of obj type linuxserverhost field type str  type array.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostAttr
    */
@@ -83,7 +83,7 @@ public class LinuxServerHost extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property host_ip of obj type linuxserverhost field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostIp
    */
@@ -94,7 +94,7 @@ public class LinuxServerHost extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property host_ip of obj type linuxserverhost field type str  type ref.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hostIp set the hostIp.
    */
@@ -107,6 +107,7 @@ public class LinuxServerHost extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Node's availability zone.
    * Serviceengines belonging to the availability zone will be rebooted during a manual dr failover.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nodeAvailabilityZone
    */
@@ -119,6 +120,7 @@ public class LinuxServerHost extends AviRestResource {
    * This is the setter method to the attribute.
    * Node's availability zone.
    * Serviceengines belonging to the availability zone will be rebooted during a manual dr failover.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nodeAvailabilityZone set the nodeAvailabilityZone.
    */
@@ -133,6 +135,7 @@ public class LinuxServerHost extends AviRestResource {
    * If none, then 'default-group' segroup is associated with the se.
    * It is a reference to an object of type serviceenginegroup.
    * Field introduced in 17.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGroupRef
    */
@@ -147,6 +150,7 @@ public class LinuxServerHost extends AviRestResource {
    * If none, then 'default-group' segroup is associated with the se.
    * It is a reference to an object of type serviceenginegroup.
    * Field introduced in 17.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seGroupRef set the seGroupRef.
    */

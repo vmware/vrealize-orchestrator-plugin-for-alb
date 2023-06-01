@@ -53,6 +53,7 @@ public class HSMSafenetLuna extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Group number of generated ha group.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return haGroupNum
    */
@@ -64,6 +65,7 @@ public class HSMSafenetLuna extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Group number of generated ha group.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param haGroupNum set the haGroupNum.
    */
@@ -75,6 +77,7 @@ public class HSMSafenetLuna extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Set to indicate ha across more than one servers.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return isHa
    */
@@ -86,6 +89,7 @@ public class HSMSafenetLuna extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Set to indicate ha across more than one servers.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param isHa set the isHa.
    */
@@ -97,6 +101,7 @@ public class HSMSafenetLuna extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Node specific information.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nodeInfo
    */
@@ -108,6 +113,7 @@ public class HSMSafenetLuna extends AviRestResource {
   /**
    * This is the setter method. this will set the nodeInfo
    * Node specific information.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nodeInfo
    */
@@ -119,6 +125,7 @@ public class HSMSafenetLuna extends AviRestResource {
   /**
    * This is the setter method this will set the nodeInfo
    * Node specific information.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nodeInfo
    */
@@ -135,6 +142,7 @@ public class HSMSafenetLuna extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Safenet/gemalto hsm servers used for crypto operations.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return server
    */
@@ -146,6 +154,7 @@ public class HSMSafenetLuna extends AviRestResource {
   /**
    * This is the setter method. this will set the server
    * Safenet/gemalto hsm servers used for crypto operations.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return server
    */
@@ -157,6 +166,7 @@ public class HSMSafenetLuna extends AviRestResource {
   /**
    * This is the setter method this will set the server
    * Safenet/gemalto hsm servers used for crypto operations.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return server
    */
@@ -173,6 +183,7 @@ public class HSMSafenetLuna extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Generated file - server.pem.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverPem
    */
@@ -184,6 +195,7 @@ public class HSMSafenetLuna extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Generated file - server.pem.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverPem set the serverPem.
    */
@@ -195,6 +207,7 @@ public class HSMSafenetLuna extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * If enabled, dedicated network is used to communicate with hsm,else, the management network is used.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return useDedicatedNetwork
    */
@@ -206,6 +219,7 @@ public class HSMSafenetLuna extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * If enabled, dedicated network is used to communicate with hsm,else, the management network is used.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param useDedicatedNetwork set the useDedicatedNetwork.
    */

@@ -45,6 +45,7 @@ public class SeHmEventShmDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average health monitor response time from server in milli-seconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return averageResponseTime
    */
@@ -56,6 +57,7 @@ public class SeHmEventShmDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average health monitor response time from server in milli-seconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param averageResponseTime set the averageResponseTime.
    */
@@ -68,6 +70,7 @@ public class SeHmEventShmDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Health monitor name.
    * It is a reference to an object of type healthmonitor.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return healthMonitor
    */
@@ -80,6 +83,7 @@ public class SeHmEventShmDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Health monitor name.
    * It is a reference to an object of type healthmonitor.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param healthMonitor set the healthMonitor.
    */
@@ -90,7 +94,7 @@ public class SeHmEventShmDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property resp_string of obj type sehmeventshmdetails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return respString
    */
@@ -101,7 +105,7 @@ public class SeHmEventShmDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property resp_string of obj type sehmeventshmdetails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param respString set the respString.
    */
@@ -114,6 +118,7 @@ public class SeHmEventShmDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Response code from server.
    * Field introduced in 17.2.4.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return responseCode
    */
@@ -126,6 +131,7 @@ public class SeHmEventShmDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Response code from server.
    * Field introduced in 17.2.4.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param responseCode set the responseCode.
    */

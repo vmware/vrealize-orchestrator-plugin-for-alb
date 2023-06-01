@@ -50,6 +50,7 @@ public class LicenseInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Last updated time.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lastUpdated
    */
@@ -62,6 +63,7 @@ public class LicenseInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Last updated time.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lastUpdated set the lastUpdated.
    */
@@ -74,6 +76,7 @@ public class LicenseInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Quantity of service cores.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceCores
    */
@@ -86,6 +89,7 @@ public class LicenseInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Quantity of service cores.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serviceCores set the serviceCores.
    */
@@ -98,6 +102,7 @@ public class LicenseInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Specifies the license tier.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantUuid
    */
@@ -110,6 +115,7 @@ public class LicenseInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Specifies the license tier.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantUuid set the tenantUuid.
    */
@@ -123,6 +129,7 @@ public class LicenseInfo extends AviRestResource {
    * Specifies the license tier.
    * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, ENTERPRISE_WITH_CLOUD_SERVICES.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tier
    */
@@ -136,6 +143,7 @@ public class LicenseInfo extends AviRestResource {
    * Specifies the license tier.
    * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, ENTERPRISE_WITH_CLOUD_SERVICES.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tier set the tier.
    */
@@ -148,6 +156,7 @@ public class LicenseInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Identifier(license_id, se_uuid, cookie).
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -160,6 +169,7 @@ public class LicenseInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Identifier(license_id, se_uuid, cookie).
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */

@@ -42,7 +42,8 @@ public class VSDataScript extends AviRestResource {
    * VS_DATASCRIPT_EVT_HTTP_POST_AUTH, VS_DATASCRIPT_EVT_TCP_CLIENT_ACCEPT, VS_DATASCRIPT_EVT_SSL_HANDSHAKE_DONE,
    * VS_DATASCRIPT_EVT_CLIENT_SSL_PRE_CONNECT, VS_DATASCRIPT_EVT_CLIENT_SSL_CLIENT_HELLO, VS_DATASCRIPT_EVT_DNS_REQ, VS_DATASCRIPT_EVT_DNS_RESP,
    * VS_DATASCRIPT_EVT_L4_REQUEST, VS_DATASCRIPT_EVT_L4_RESPONSE, VS_DATASCRIPT_EVT_MAX.
-   * Allowed in basic(allowed values- vs_datascript_evt_http_req) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, basic edition(allowed values- vs_datascript_evt_http_req,vs_datascript_evt_http_resp), essentials,
+   * enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return evt
    */
@@ -59,7 +60,8 @@ public class VSDataScript extends AviRestResource {
    * VS_DATASCRIPT_EVT_HTTP_POST_AUTH, VS_DATASCRIPT_EVT_TCP_CLIENT_ACCEPT, VS_DATASCRIPT_EVT_SSL_HANDSHAKE_DONE,
    * VS_DATASCRIPT_EVT_CLIENT_SSL_PRE_CONNECT, VS_DATASCRIPT_EVT_CLIENT_SSL_CLIENT_HELLO, VS_DATASCRIPT_EVT_DNS_REQ, VS_DATASCRIPT_EVT_DNS_RESP,
    * VS_DATASCRIPT_EVT_L4_REQUEST, VS_DATASCRIPT_EVT_L4_RESPONSE, VS_DATASCRIPT_EVT_MAX.
-   * Allowed in basic(allowed values- vs_datascript_evt_http_req) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, basic edition(allowed values- vs_datascript_evt_http_req,vs_datascript_evt_http_resp), essentials,
+   * enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param evt set the evt.
    */
@@ -71,6 +73,7 @@ public class VSDataScript extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Datascript to execute when the event triggers.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return script
    */
@@ -82,6 +85,7 @@ public class VSDataScript extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Datascript to execute when the event triggers.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param script set the script.
    */

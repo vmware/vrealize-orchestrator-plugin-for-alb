@@ -32,6 +32,10 @@ public class OverallInfo extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String freePercent = null;
 
+    @JsonProperty("mount_path")
+    @JsonInclude(Include.NON_NULL)
+    private String mountPath = null;
+
     @JsonProperty("path")
     @JsonInclude(Include.NON_NULL)
     private String path = null;
@@ -48,7 +52,7 @@ public class OverallInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property available of obj type overallinfo field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return available
    */
@@ -59,7 +63,7 @@ public class OverallInfo extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property available of obj type overallinfo field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param available set the available.
    */
@@ -70,7 +74,7 @@ public class OverallInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property free_percent of obj type overallinfo field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return freePercent
    */
@@ -81,7 +85,7 @@ public class OverallInfo extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property free_percent of obj type overallinfo field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param freePercent set the freePercent.
    */
@@ -92,7 +96,33 @@ public class OverallInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property path of obj type overallinfo field type str  type string.
+   * Mount path for the disk filesystem.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return mountPath
+   */
+  @VsoMethod
+  public String getMountPath() {
+    return mountPath;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Mount path for the disk filesystem.
+   * Field introduced in 22.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param mountPath set the mountPath.
+   */
+  @VsoMethod
+  public void setMountPath(String  mountPath) {
+    this.mountPath = mountPath;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return path
    */
@@ -103,7 +133,7 @@ public class OverallInfo extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property path of obj type overallinfo field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param path set the path.
    */
@@ -114,7 +144,7 @@ public class OverallInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property size of obj type overallinfo field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return size
    */
@@ -125,7 +155,7 @@ public class OverallInfo extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property size of obj type overallinfo field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param size set the size.
    */
@@ -136,7 +166,7 @@ public class OverallInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property used of obj type overallinfo field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return used
    */
@@ -147,7 +177,7 @@ public class OverallInfo extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property used of obj type overallinfo field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param used set the used.
    */
@@ -171,7 +201,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.size, objOverallInfo.size)&&
   Objects.equals(this.used, objOverallInfo.used)&&
   Objects.equals(this.available, objOverallInfo.available)&&
-  Objects.equals(this.freePercent, objOverallInfo.freePercent);
+  Objects.equals(this.freePercent, objOverallInfo.freePercent)&&
+  Objects.equals(this.mountPath, objOverallInfo.mountPath);
 }
 
 @Override
@@ -180,6 +211,7 @@ public String toString() {
   sb.append("class OverallInfo {\n");
       sb.append("    available: ").append(toIndentedString(available)).append("\n");
         sb.append("    freePercent: ").append(toIndentedString(freePercent)).append("\n");
+        sb.append("    mountPath: ").append(toIndentedString(mountPath)).append("\n");
         sb.append("    path: ").append(toIndentedString(path)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    used: ").append(toIndentedString(used)).append("\n");

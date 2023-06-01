@@ -36,7 +36,7 @@ public class EventCache extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property dns_state of obj type eventcache field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsState
    */
@@ -47,7 +47,7 @@ public class EventCache extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property dns_state of obj type eventcache field type str  type boolean.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dnsState set the dnsState.
    */
@@ -59,6 +59,7 @@ public class EventCache extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Cache the exception strings in the system.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return exceptions
    */
@@ -70,6 +71,7 @@ public class EventCache extends AviRestResource {
   /**
    * This is the setter method. this will set the exceptions
    * Cache the exception strings in the system.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return exceptions
    */
@@ -81,6 +83,7 @@ public class EventCache extends AviRestResource {
   /**
    * This is the setter method this will set the exceptions
    * Cache the exception strings in the system.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return exceptions
    */

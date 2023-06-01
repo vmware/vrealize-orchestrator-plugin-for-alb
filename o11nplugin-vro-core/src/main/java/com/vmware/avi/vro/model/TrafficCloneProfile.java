@@ -32,10 +32,6 @@ public class TrafficCloneProfile extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String cloudRef = null;
 
-    @JsonProperty("labels")
-    @JsonInclude(Include.NON_NULL)
-    private List<KeyValue> labels;
-
     @JsonProperty("markers")
     @JsonInclude(Include.NON_NULL)
     private List<RoleFilterMatchLabel> markers = null;
@@ -66,6 +62,7 @@ public class TrafficCloneProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
    * Maximum of 10 items allowed.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloneServers
    */
@@ -78,6 +75,7 @@ public class TrafficCloneProfile extends AviRestResource {
    * This is the setter method. this will set the cloneServers
    * Field introduced in 17.1.1.
    * Maximum of 10 items allowed.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloneServers
    */
@@ -90,6 +88,7 @@ public class TrafficCloneProfile extends AviRestResource {
    * This is the setter method this will set the cloneServers
    * Field introduced in 17.1.1.
    * Maximum of 10 items allowed.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloneServers
    */
@@ -107,6 +106,7 @@ public class TrafficCloneProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type cloud.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudRef
    */
@@ -119,6 +119,7 @@ public class TrafficCloneProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * It is a reference to an object of type cloud.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudRef set the cloudRef.
    */
@@ -129,56 +130,10 @@ public class TrafficCloneProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Key value pairs for granular object access control.
-   * Also allows for classification and tagging of similar objects.
-   * Field deprecated in 20.1.5.
-   * Field introduced in 20.1.2.
-   * Maximum of 4 items allowed.
-   * @return labels
-   */
-  @VsoMethod
-  public List<KeyValue> getLabels() {
-    return labels;
-  }
-
-  /**
-   * This is the setter method. this will set the labels
-   * Key value pairs for granular object access control.
-   * Also allows for classification and tagging of similar objects.
-   * Field deprecated in 20.1.5.
-   * Field introduced in 20.1.2.
-   * Maximum of 4 items allowed.
-   * @return labels
-   */
-  @VsoMethod
-  public void setLabels(List<KeyValue>  labels) {
-    this.labels = labels;
-  }
-
-  /**
-   * This is the setter method this will set the labels
-   * Key value pairs for granular object access control.
-   * Also allows for classification and tagging of similar objects.
-   * Field deprecated in 20.1.5.
-   * Field introduced in 20.1.2.
-   * Maximum of 4 items allowed.
-   * @return labels
-   */
-  @VsoMethod
-  public TrafficCloneProfile addLabelsItem(KeyValue labelsItem) {
-    if (this.labels == null) {
-      this.labels = new ArrayList<KeyValue>();
-    }
-    this.labels.add(labelsItem);
-    return this;
-  }
-
-
-  /**
-   * This is the getter method this will return the attribute value.
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -191,7 +146,8 @@ public class TrafficCloneProfile extends AviRestResource {
    * This is the setter method. this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -204,7 +160,8 @@ public class TrafficCloneProfile extends AviRestResource {
    * This is the setter method this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -222,6 +179,7 @@ public class TrafficCloneProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name for the traffic clone profile.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -234,6 +192,7 @@ public class TrafficCloneProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Name for the traffic clone profile.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -246,6 +205,7 @@ public class TrafficCloneProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Specifies if client ip needs to be preserved to clone destination.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return preserveClientIp
    */
@@ -258,6 +218,7 @@ public class TrafficCloneProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Specifies if client ip needs to be preserved to clone destination.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param preserveClientIp set the preserveClientIp.
    */
@@ -270,6 +231,7 @@ public class TrafficCloneProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -282,6 +244,7 @@ public class TrafficCloneProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
@@ -313,6 +276,7 @@ public class TrafficCloneProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the traffic clone profile.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -325,6 +289,7 @@ public class TrafficCloneProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the traffic clone profile.
    * Field introduced in 17.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
@@ -351,7 +316,6 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.name, objTrafficCloneProfile.name)&&
   Objects.equals(this.cloneServers, objTrafficCloneProfile.cloneServers)&&
   Objects.equals(this.preserveClientIp, objTrafficCloneProfile.preserveClientIp)&&
-  Objects.equals(this.labels, objTrafficCloneProfile.labels)&&
   Objects.equals(this.markers, objTrafficCloneProfile.markers)&&
   Objects.equals(this.tenantRef, objTrafficCloneProfile.tenantRef)&&
   Objects.equals(this.cloudRef, objTrafficCloneProfile.cloudRef);
@@ -363,7 +327,6 @@ public String toString() {
   sb.append("class TrafficCloneProfile {\n");
       sb.append("    cloneServers: ").append(toIndentedString(cloneServers)).append("\n");
         sb.append("    cloudRef: ").append(toIndentedString(cloudRef)).append("\n");
-        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    preserveClientIp: ").append(toIndentedString(preserveClientIp)).append("\n");

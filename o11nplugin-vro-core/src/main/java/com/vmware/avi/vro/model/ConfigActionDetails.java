@@ -61,6 +61,7 @@ public class ConfigActionDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the action.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return actionName
    */
@@ -72,6 +73,7 @@ public class ConfigActionDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the action.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param actionName set the actionName.
    */
@@ -83,6 +85,7 @@ public class ConfigActionDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Error message if request failed.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorMessage
    */
@@ -94,6 +97,7 @@ public class ConfigActionDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Error message if request failed.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param errorMessage set the errorMessage.
    */
@@ -105,6 +109,7 @@ public class ConfigActionDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Parameter data.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return parameterData
    */
@@ -116,6 +121,7 @@ public class ConfigActionDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Parameter data.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param parameterData set the parameterData.
    */
@@ -127,6 +133,7 @@ public class ConfigActionDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Api path.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return path
    */
@@ -138,6 +145,7 @@ public class ConfigActionDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Api path.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param path set the path.
    */
@@ -149,6 +157,7 @@ public class ConfigActionDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the resource.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return resourceName
    */
@@ -160,6 +169,7 @@ public class ConfigActionDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the resource.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param resourceName set the resourceName.
    */
@@ -171,6 +181,7 @@ public class ConfigActionDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Config type of the resource.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return resourceType
    */
@@ -182,6 +193,7 @@ public class ConfigActionDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Config type of the resource.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param resourceType set the resourceType.
    */
@@ -193,6 +205,7 @@ public class ConfigActionDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Status.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return status
    */
@@ -204,6 +217,7 @@ public class ConfigActionDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Status.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param status set the status.
    */
@@ -215,6 +229,7 @@ public class ConfigActionDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Request user.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return user
    */
@@ -226,6 +241,7 @@ public class ConfigActionDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Request user.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param user set the user.
    */

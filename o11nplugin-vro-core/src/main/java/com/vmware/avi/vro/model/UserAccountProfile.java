@@ -32,6 +32,10 @@ public class UserAccountProfile extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer credentialsTimeoutThreshold = 180;
 
+    @JsonProperty("login_failure_count_expiry_window")
+    @JsonInclude(Include.NON_NULL)
+    private Integer loginFailureCountExpiryWindow = 0;
+
     @JsonProperty("max_concurrent_sessions")
     @JsonInclude(Include.NON_NULL)
     private Integer maxConcurrentSessions = 0;
@@ -63,6 +67,7 @@ public class UserAccountProfile extends AviRestResource {
    * Lock timeout period (in minutes).
    * Default is 30 minutes.
    * Unit is min.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @return accountLockTimeout
    */
@@ -76,6 +81,7 @@ public class UserAccountProfile extends AviRestResource {
    * Lock timeout period (in minutes).
    * Default is 30 minutes.
    * Unit is min.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @param accountLockTimeout set the accountLockTimeout.
    */
@@ -89,6 +95,7 @@ public class UserAccountProfile extends AviRestResource {
    * The time period after which credentials expire.
    * Default is 180 days.
    * Unit is days.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 180.
    * @return credentialsTimeoutThreshold
    */
@@ -102,6 +109,7 @@ public class UserAccountProfile extends AviRestResource {
    * The time period after which credentials expire.
    * Default is 180 days.
    * Unit is days.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 180.
    * @param credentialsTimeoutThreshold set the credentialsTimeoutThreshold.
    */
@@ -112,8 +120,39 @@ public class UserAccountProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * The configurable time window beyond which we need to pop all the login failure timestamps from the login_failure_timestamps.
+   * Special values are 0 - do not reset login_failure_counts on the basis of time.
+   * Field introduced in 22.1.1.
+   * Unit is min.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @return loginFailureCountExpiryWindow
+   */
+  @VsoMethod
+  public Integer getLoginFailureCountExpiryWindow() {
+    return loginFailureCountExpiryWindow;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * The configurable time window beyond which we need to pop all the login failure timestamps from the login_failure_timestamps.
+   * Special values are 0 - do not reset login_failure_counts on the basis of time.
+   * Field introduced in 22.1.1.
+   * Unit is min.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @param loginFailureCountExpiryWindow set the loginFailureCountExpiryWindow.
+   */
+  @VsoMethod
+  public void setLoginFailureCountExpiryWindow(Integer  loginFailureCountExpiryWindow) {
+    this.loginFailureCountExpiryWindow = loginFailureCountExpiryWindow;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Maximum number of concurrent sessions allowed.
    * There are unlimited sessions by default.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return maxConcurrentSessions
    */
@@ -126,6 +165,7 @@ public class UserAccountProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of concurrent sessions allowed.
    * There are unlimited sessions by default.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param maxConcurrentSessions set the maxConcurrentSessions.
    */
@@ -139,7 +179,8 @@ public class UserAccountProfile extends AviRestResource {
    * Number of login attempts before lockout.
    * Default is 3 attempts.
    * Allowed values are 3-20.
-   * Special values are 0 - 'unlimited login attempts allowed.'.
+   * Special values are 0- unlimited login attempts allowed.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3.
    * @return maxLoginFailureCount
    */
@@ -153,7 +194,8 @@ public class UserAccountProfile extends AviRestResource {
    * Number of login attempts before lockout.
    * Default is 3 attempts.
    * Allowed values are 3-20.
-   * Special values are 0 - 'unlimited login attempts allowed.'.
+   * Special values are 0- unlimited login attempts allowed.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3.
    * @param maxLoginFailureCount set the maxLoginFailureCount.
    */
@@ -166,6 +208,7 @@ public class UserAccountProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of passwords to be maintained in the password history.
    * Default is 4 passwords.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4.
    * @return maxPasswordHistoryCount
    */
@@ -178,6 +221,7 @@ public class UserAccountProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of passwords to be maintained in the password history.
    * Default is 4 passwords.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4.
    * @param maxPasswordHistoryCount set the maxPasswordHistoryCount.
    */
@@ -188,7 +232,7 @@ public class UserAccountProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Name of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -199,7 +243,7 @@ public class UserAccountProfile extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Name of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -229,7 +273,7 @@ public class UserAccountProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Unique object identifier of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -240,7 +284,7 @@ public class UserAccountProfile extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Unique object identifier of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
@@ -269,7 +313,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.maxLoginFailureCount, objUserAccountProfile.maxLoginFailureCount)&&
   Objects.equals(this.accountLockTimeout, objUserAccountProfile.accountLockTimeout)&&
   Objects.equals(this.maxConcurrentSessions, objUserAccountProfile.maxConcurrentSessions)&&
-  Objects.equals(this.credentialsTimeoutThreshold, objUserAccountProfile.credentialsTimeoutThreshold);
+  Objects.equals(this.credentialsTimeoutThreshold, objUserAccountProfile.credentialsTimeoutThreshold)&&
+  Objects.equals(this.loginFailureCountExpiryWindow, objUserAccountProfile.loginFailureCountExpiryWindow);
 }
 
 @Override
@@ -278,6 +323,7 @@ public String toString() {
   sb.append("class UserAccountProfile {\n");
       sb.append("    accountLockTimeout: ").append(toIndentedString(accountLockTimeout)).append("\n");
         sb.append("    credentialsTimeoutThreshold: ").append(toIndentedString(credentialsTimeoutThreshold)).append("\n");
+        sb.append("    loginFailureCountExpiryWindow: ").append(toIndentedString(loginFailureCountExpiryWindow)).append("\n");
         sb.append("    maxConcurrentSessions: ").append(toIndentedString(maxConcurrentSessions)).append("\n");
         sb.append("    maxLoginFailureCount: ").append(toIndentedString(maxLoginFailureCount)).append("\n");
         sb.append("    maxPasswordHistoryCount: ").append(toIndentedString(maxPasswordHistoryCount)).append("\n");
