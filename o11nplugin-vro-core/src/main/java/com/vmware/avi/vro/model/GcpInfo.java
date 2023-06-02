@@ -28,6 +28,10 @@ public class GcpInfo extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String hostname = null;
 
+    @JsonProperty("machine_type")
+    @JsonInclude(Include.NON_NULL)
+    private String machineType = null;
+
     @JsonProperty("network")
     @JsonInclude(Include.NON_NULL)
     private String network = null;
@@ -49,6 +53,7 @@ public class GcpInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Hostname of this se.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostname
    */
@@ -60,6 +65,7 @@ public class GcpInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Hostname of this se.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hostname set the hostname.
    */
@@ -70,7 +76,34 @@ public class GcpInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Instance type of this se.
+   * Field introduced in 22.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return machineType
+   */
+  @VsoMethod
+  public String getMachineType() {
+    return machineType;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Instance type of this se.
+   * Field introduced in 22.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param machineType set the machineType.
+   */
+  @VsoMethod
+  public void setMachineType(String  machineType) {
+    this.machineType = machineType;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Network this se is assigned.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return network
    */
@@ -82,6 +115,7 @@ public class GcpInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Network this se is assigned.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param network set the network.
    */
@@ -93,6 +127,7 @@ public class GcpInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Project this se belongs to.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return project
    */
@@ -104,6 +139,7 @@ public class GcpInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Project this se belongs to.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param project set the project.
    */
@@ -115,6 +151,7 @@ public class GcpInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Subnet assigned to this se.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnet
    */
@@ -126,6 +163,7 @@ public class GcpInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Subnet assigned to this se.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnet set the subnet.
    */
@@ -137,6 +175,7 @@ public class GcpInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Zone this se is part of.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return zone
    */
@@ -148,6 +187,7 @@ public class GcpInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Zone this se is part of.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param zone set the zone.
    */
@@ -171,7 +211,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.zone, objGcpInfo.zone)&&
   Objects.equals(this.network, objGcpInfo.network)&&
   Objects.equals(this.subnet, objGcpInfo.subnet)&&
-  Objects.equals(this.hostname, objGcpInfo.hostname);
+  Objects.equals(this.hostname, objGcpInfo.hostname)&&
+  Objects.equals(this.machineType, objGcpInfo.machineType);
 }
 
 @Override
@@ -179,6 +220,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class GcpInfo {\n");
       sb.append("    hostname: ").append(toIndentedString(hostname)).append("\n");
+        sb.append("    machineType: ").append(toIndentedString(machineType)).append("\n");
         sb.append("    network: ").append(toIndentedString(network)).append("\n");
         sb.append("    project: ").append(toIndentedString(project)).append("\n");
         sb.append("    subnet: ").append(toIndentedString(subnet)).append("\n");

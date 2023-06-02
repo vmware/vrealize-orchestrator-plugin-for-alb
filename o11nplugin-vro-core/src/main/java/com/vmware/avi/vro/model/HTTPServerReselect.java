@@ -50,7 +50,8 @@ public class HTTPServerReselect extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enable http request reselect when server responds with specific response codes.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enabled
    */
@@ -62,7 +63,8 @@ public class HTTPServerReselect extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enable http request reselect when server responds with specific response codes.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+   * cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param enabled set the enabled.
    */
@@ -74,6 +76,7 @@ public class HTTPServerReselect extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Number of times to retry an http request when server responds with configured status codes.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4.
    * @return numRetries
    */
@@ -85,6 +88,7 @@ public class HTTPServerReselect extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Number of times to retry an http request when server responds with configured status codes.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4.
    * @param numRetries set the numRetries.
    */
@@ -96,6 +100,7 @@ public class HTTPServerReselect extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Allow retry of non-idempotent http requests.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return retryNonidempotent
    */
@@ -107,6 +112,7 @@ public class HTTPServerReselect extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Allow retry of non-idempotent http requests.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param retryNonidempotent set the retryNonidempotent.
    */
@@ -122,6 +128,7 @@ public class HTTPServerReselect extends AviRestResource {
    * Allowed values are 0-3600000.
    * Field introduced in 18.1.5,18.2.1.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return retryTimeout
    */
@@ -137,6 +144,7 @@ public class HTTPServerReselect extends AviRestResource {
    * Allowed values are 0-3600000.
    * Field introduced in 18.1.5,18.2.1.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param retryTimeout set the retryTimeout.
    */
@@ -148,6 +156,7 @@ public class HTTPServerReselect extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Server response codes which will trigger an http request retry.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return svrRespCode
    */
@@ -159,6 +168,7 @@ public class HTTPServerReselect extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Server response codes which will trigger an http request retry.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param svrRespCode set the svrRespCode.
    */

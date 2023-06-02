@@ -42,6 +42,7 @@ public class OshiftDockerRegistryMetaData extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Namespace for the serviceengine image to be hosted in openshift integrated registry.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "default".
    * @return registryNamespace
    */
@@ -53,6 +54,7 @@ public class OshiftDockerRegistryMetaData extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Namespace for the serviceengine image to be hosted in openshift integrated registry.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "default".
    * @param registryNamespace set the registryNamespace.
    */
@@ -64,6 +66,7 @@ public class OshiftDockerRegistryMetaData extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the integrated registry service in openshift.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "docker-registry".
    * @return registryService
    */
@@ -75,6 +78,7 @@ public class OshiftDockerRegistryMetaData extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the integrated registry service in openshift.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "docker-registry".
    * @param registryService set the registryService.
    */
@@ -91,6 +95,7 @@ public class OshiftDockerRegistryMetaData extends AviRestResource {
    * can be used for this vip and ip pool can start from 172.50.0.3 onwards.
    * Use this static vip in '--insecure-registry <this-vip> 5000' docker config if using an insecure registry or add this to the list of ips/hostnames
    * when generating certificates if using a secure tls registry.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return registryVip
    */
@@ -107,6 +112,7 @@ public class OshiftDockerRegistryMetaData extends AviRestResource {
    * can be used for this vip and ip pool can start from 172.50.0.3 onwards.
    * Use this static vip in '--insecure-registry <this-vip> 5000' docker config if using an insecure registry or add this to the list of ips/hostnames
    * when generating certificates if using a secure tls registry.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param registryVip set the registryVip.
    */

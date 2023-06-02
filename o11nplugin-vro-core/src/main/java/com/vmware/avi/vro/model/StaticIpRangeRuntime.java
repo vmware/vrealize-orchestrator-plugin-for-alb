@@ -46,6 +46,7 @@ public class StaticIpRangeRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Allocated ips.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return allocatedIps
    */
@@ -58,6 +59,7 @@ public class StaticIpRangeRuntime extends AviRestResource {
    * This is the setter method. this will set the allocatedIps
    * Allocated ips.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return allocatedIps
    */
@@ -70,6 +72,7 @@ public class StaticIpRangeRuntime extends AviRestResource {
    * This is the setter method this will set the allocatedIps
    * Allocated ips.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return allocatedIps
    */
@@ -87,6 +90,7 @@ public class StaticIpRangeRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Free ip count.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return freeIpCount
    */
@@ -99,6 +103,7 @@ public class StaticIpRangeRuntime extends AviRestResource {
    * This is the setter method to the attribute.
    * Free ip count.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param freeIpCount set the freeIpCount.
    */
@@ -111,6 +116,7 @@ public class StaticIpRangeRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total ip count.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return totalIpCount
    */
@@ -123,6 +129,7 @@ public class StaticIpRangeRuntime extends AviRestResource {
    * This is the setter method to the attribute.
    * Total ip count.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param totalIpCount set the totalIpCount.
    */
@@ -136,6 +143,7 @@ public class StaticIpRangeRuntime extends AviRestResource {
    * Object type (vip only, service engine only, or both) which is using this ip group.
    * Enum options - STATIC_IPS_FOR_SE, STATIC_IPS_FOR_VIP, STATIC_IPS_FOR_VIP_AND_SE.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "STATIC_IPS_FOR_VIP_AND_SE".
    * @return type
    */
@@ -149,6 +157,7 @@ public class StaticIpRangeRuntime extends AviRestResource {
    * Object type (vip only, service engine only, or both) which is using this ip group.
    * Enum options - STATIC_IPS_FOR_SE, STATIC_IPS_FOR_VIP, STATIC_IPS_FOR_VIP_AND_SE.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "STATIC_IPS_FOR_VIP_AND_SE".
    * @param type set the type.
    */

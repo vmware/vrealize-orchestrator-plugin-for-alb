@@ -44,6 +44,7 @@ public class BfdProfile extends AviRestResource {
    * Allowed values are 500-4000000.
    * Field introduced in 20.1.1.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @return minrx
    */
@@ -58,6 +59,7 @@ public class BfdProfile extends AviRestResource {
    * Allowed values are 500-4000000.
    * Field introduced in 20.1.1.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @param minrx set the minrx.
    */
@@ -72,6 +74,7 @@ public class BfdProfile extends AviRestResource {
    * Allowed values are 500-4000000.
    * Field introduced in 20.1.1.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @return mintx
    */
@@ -86,6 +89,7 @@ public class BfdProfile extends AviRestResource {
    * Allowed values are 500-4000000.
    * Field introduced in 20.1.1.
    * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @param mintx set the mintx.
    */
@@ -99,6 +103,7 @@ public class BfdProfile extends AviRestResource {
    * Default detection multiplier used in bfd.
    * Allowed values are 3-255.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3.
    * @return multi
    */
@@ -112,6 +117,7 @@ public class BfdProfile extends AviRestResource {
    * Default detection multiplier used in bfd.
    * Allowed values are 3-255.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3.
    * @param multi set the multi.
    */

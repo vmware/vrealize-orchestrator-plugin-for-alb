@@ -39,6 +39,7 @@ public class ClientLogStreamingFormat extends AviRestResource {
    * Format for the streamed logs.
    * Enum options - LOG_STREAMING_FORMAT_JSON_FULL, LOG_STREAMING_FORMAT_JSON_SELECTED.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return format
    */
@@ -52,6 +53,7 @@ public class ClientLogStreamingFormat extends AviRestResource {
    * Format for the streamed logs.
    * Enum options - LOG_STREAMING_FORMAT_JSON_FULL, LOG_STREAMING_FORMAT_JSON_SELECTED.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param format set the format.
    */
@@ -65,6 +67,7 @@ public class ClientLogStreamingFormat extends AviRestResource {
    * List of log fields to be streamed, when selective fields (log_streaming_format_json_selected) option is chosen.
    * Only top-level fields in application or connection logs are supported.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return includedFields
    */
@@ -78,6 +81,7 @@ public class ClientLogStreamingFormat extends AviRestResource {
    * List of log fields to be streamed, when selective fields (log_streaming_format_json_selected) option is chosen.
    * Only top-level fields in application or connection logs are supported.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return includedFields
    */
@@ -91,6 +95,7 @@ public class ClientLogStreamingFormat extends AviRestResource {
    * List of log fields to be streamed, when selective fields (log_streaming_format_json_selected) option is chosen.
    * Only top-level fields in application or connection logs are supported.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return includedFields
    */

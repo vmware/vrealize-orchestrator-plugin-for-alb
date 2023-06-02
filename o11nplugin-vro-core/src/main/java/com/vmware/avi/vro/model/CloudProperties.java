@@ -54,6 +54,7 @@ public class CloudProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Cloudconnector properties.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccProps
    */
@@ -65,6 +66,7 @@ public class CloudProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Cloudconnector properties.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccProps set the ccProps.
    */
@@ -78,6 +80,7 @@ public class CloudProperties extends AviRestResource {
    * Cloud types supported by cloudconnector.
    * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
    * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccVtypes
    */
@@ -91,6 +94,7 @@ public class CloudProperties extends AviRestResource {
    * Cloud types supported by cloudconnector.
    * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
    * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccVtypes
    */
@@ -104,6 +108,7 @@ public class CloudProperties extends AviRestResource {
    * Cloud types supported by cloudconnector.
    * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
    * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccVtypes
    */
@@ -120,6 +125,7 @@ public class CloudProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Hypervisor properties.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hypProps
    */
@@ -131,6 +137,7 @@ public class CloudProperties extends AviRestResource {
   /**
    * This is the setter method. this will set the hypProps
    * Hypervisor properties.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hypProps
    */
@@ -142,6 +149,7 @@ public class CloudProperties extends AviRestResource {
   /**
    * This is the setter method this will set the hypProps
    * Hypervisor properties.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hypProps
    */
@@ -158,6 +166,7 @@ public class CloudProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Properties specific to a cloud type.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return info
    */
@@ -169,6 +178,7 @@ public class CloudProperties extends AviRestResource {
   /**
    * This is the setter method. this will set the info
    * Properties specific to a cloud type.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return info
    */
@@ -180,6 +190,7 @@ public class CloudProperties extends AviRestResource {
   /**
    * This is the setter method this will set the info
    * Properties specific to a cloud type.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return info
    */
@@ -214,7 +225,7 @@ public class CloudProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Unique object identifier of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -225,7 +236,7 @@ public class CloudProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Unique object identifier of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */

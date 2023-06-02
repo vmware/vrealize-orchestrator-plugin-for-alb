@@ -34,10 +34,6 @@ public class SSOPolicy extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private AuthorizationPolicy authorizationPolicy = null;
 
-    @JsonProperty("labels")
-    @JsonInclude(Include.NON_NULL)
-    private List<KeyValue> labels;
-
     @JsonProperty("markers")
     @JsonInclude(Include.NON_NULL)
     private List<RoleFilterMatchLabel> markers = null;
@@ -68,6 +64,7 @@ public class SSOPolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Authentication policy settings.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authenticationPolicy
    */
@@ -80,6 +77,7 @@ public class SSOPolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * Authentication policy settings.
    * Field introduced in 18.2.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param authenticationPolicy set the authenticationPolicy.
    */
@@ -92,6 +90,7 @@ public class SSOPolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Authorization policy settings.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authorizationPolicy
    */
@@ -104,6 +103,7 @@ public class SSOPolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * Authorization policy settings.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param authorizationPolicy set the authorizationPolicy.
    */
@@ -114,56 +114,10 @@ public class SSOPolicy extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Key value pairs for granular object access control.
-   * Also allows for classification and tagging of similar objects.
-   * Field deprecated in 20.1.5.
-   * Field introduced in 20.1.2.
-   * Maximum of 4 items allowed.
-   * @return labels
-   */
-  @VsoMethod
-  public List<KeyValue> getLabels() {
-    return labels;
-  }
-
-  /**
-   * This is the setter method. this will set the labels
-   * Key value pairs for granular object access control.
-   * Also allows for classification and tagging of similar objects.
-   * Field deprecated in 20.1.5.
-   * Field introduced in 20.1.2.
-   * Maximum of 4 items allowed.
-   * @return labels
-   */
-  @VsoMethod
-  public void setLabels(List<KeyValue>  labels) {
-    this.labels = labels;
-  }
-
-  /**
-   * This is the setter method this will set the labels
-   * Key value pairs for granular object access control.
-   * Also allows for classification and tagging of similar objects.
-   * Field deprecated in 20.1.5.
-   * Field introduced in 20.1.2.
-   * Maximum of 4 items allowed.
-   * @return labels
-   */
-  @VsoMethod
-  public SSOPolicy addLabelsItem(KeyValue labelsItem) {
-    if (this.labels == null) {
-      this.labels = new ArrayList<KeyValue>();
-    }
-    this.labels.add(labelsItem);
-    return this;
-  }
-
-
-  /**
-   * This is the getter method this will return the attribute value.
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -176,7 +130,8 @@ public class SSOPolicy extends AviRestResource {
    * This is the setter method. this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -189,7 +144,8 @@ public class SSOPolicy extends AviRestResource {
    * This is the setter method this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -207,6 +163,7 @@ public class SSOPolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the sso policy.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -219,6 +176,7 @@ public class SSOPolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the sso policy.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -232,6 +190,7 @@ public class SSOPolicy extends AviRestResource {
    * Uuid of the tenant.
    * It is a reference to an object of type tenant.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -245,6 +204,7 @@ public class SSOPolicy extends AviRestResource {
    * Uuid of the tenant.
    * It is a reference to an object of type tenant.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
@@ -258,6 +218,7 @@ public class SSOPolicy extends AviRestResource {
    * Sso policy type.
    * Enum options - SSO_TYPE_SAML, SSO_TYPE_PINGACCESS, SSO_TYPE_JWT, SSO_TYPE_LDAP, SSO_TYPE_OAUTH.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "SSO_TYPE_SAML".
    * @return type
    */
@@ -271,6 +232,7 @@ public class SSOPolicy extends AviRestResource {
    * Sso policy type.
    * Enum options - SSO_TYPE_SAML, SSO_TYPE_PINGACCESS, SSO_TYPE_JWT, SSO_TYPE_LDAP, SSO_TYPE_OAUTH.
    * Field introduced in 18.2.5.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "SSO_TYPE_SAML".
    * @param type set the type.
    */
@@ -302,6 +264,7 @@ public class SSOPolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the sso policy.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -314,6 +277,7 @@ public class SSOPolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the sso policy.
    * Field introduced in 18.2.3.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
@@ -341,7 +305,6 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.authenticationPolicy, objSSOPolicy.authenticationPolicy)&&
   Objects.equals(this.authorizationPolicy, objSSOPolicy.authorizationPolicy)&&
   Objects.equals(this.type, objSSOPolicy.type)&&
-  Objects.equals(this.labels, objSSOPolicy.labels)&&
   Objects.equals(this.markers, objSSOPolicy.markers)&&
   Objects.equals(this.tenantRef, objSSOPolicy.tenantRef);
 }
@@ -352,7 +315,6 @@ public String toString() {
   sb.append("class SSOPolicy {\n");
       sb.append("    authenticationPolicy: ").append(toIndentedString(authenticationPolicy)).append("\n");
         sb.append("    authorizationPolicy: ").append(toIndentedString(authorizationPolicy)).append("\n");
-        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");

@@ -52,7 +52,7 @@ public class CloudTenantCleanup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property id of obj type cloudtenantcleanup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return id
    */
@@ -63,7 +63,7 @@ public class CloudTenantCleanup extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property id of obj type cloudtenantcleanup field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param id set the id.
    */
@@ -74,7 +74,7 @@ public class CloudTenantCleanup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Name of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -85,7 +85,7 @@ public class CloudTenantCleanup extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Name of the object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -96,7 +96,7 @@ public class CloudTenantCleanup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property num_ports of obj type cloudtenantcleanup field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numPorts
    */
@@ -107,7 +107,7 @@ public class CloudTenantCleanup extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property num_ports of obj type cloudtenantcleanup field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numPorts set the numPorts.
    */
@@ -118,7 +118,7 @@ public class CloudTenantCleanup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property num_se of obj type cloudtenantcleanup field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numSe
    */
@@ -129,7 +129,7 @@ public class CloudTenantCleanup extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property num_se of obj type cloudtenantcleanup field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numSe set the numSe.
    */
@@ -140,7 +140,7 @@ public class CloudTenantCleanup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property num_secgrp of obj type cloudtenantcleanup field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numSecgrp
    */
@@ -151,7 +151,7 @@ public class CloudTenantCleanup extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property num_secgrp of obj type cloudtenantcleanup field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numSecgrp set the numSecgrp.
    */
@@ -162,7 +162,7 @@ public class CloudTenantCleanup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property num_svrgrp of obj type cloudtenantcleanup field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numSvrgrp
    */
@@ -173,7 +173,7 @@ public class CloudTenantCleanup extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property num_svrgrp of obj type cloudtenantcleanup field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numSvrgrp set the numSvrgrp.
    */

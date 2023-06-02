@@ -56,7 +56,7 @@ public class OpenStackLbProvAuditCheck extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property cc_id of obj type openstacklbprovauditcheck field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccId
    */
@@ -67,7 +67,7 @@ public class OpenStackLbProvAuditCheck extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property cc_id of obj type openstacklbprovauditcheck field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccId set the ccId.
    */
@@ -78,7 +78,7 @@ public class OpenStackLbProvAuditCheck extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property detail of obj type openstacklbprovauditcheck field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return detail
    */
@@ -89,7 +89,7 @@ public class OpenStackLbProvAuditCheck extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property detail of obj type openstacklbprovauditcheck field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param detail set the detail.
    */
@@ -100,7 +100,7 @@ public class OpenStackLbProvAuditCheck extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property elapsed of obj type openstacklbprovauditcheck field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return elapsed
    */
@@ -111,7 +111,7 @@ public class OpenStackLbProvAuditCheck extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property elapsed of obj type openstacklbprovauditcheck field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param elapsed set the elapsed.
    */
@@ -122,7 +122,7 @@ public class OpenStackLbProvAuditCheck extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property id of obj type openstacklbprovauditcheck field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return id
    */
@@ -133,7 +133,7 @@ public class OpenStackLbProvAuditCheck extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property id of obj type openstacklbprovauditcheck field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param id set the id.
    */
@@ -144,7 +144,7 @@ public class OpenStackLbProvAuditCheck extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property result of obj type openstacklbprovauditcheck field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return result
    */
@@ -155,7 +155,7 @@ public class OpenStackLbProvAuditCheck extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property result of obj type openstacklbprovauditcheck field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param result set the result.
    */
@@ -166,7 +166,7 @@ public class OpenStackLbProvAuditCheck extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property tenant of obj type openstacklbprovauditcheck field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenant
    */
@@ -177,7 +177,7 @@ public class OpenStackLbProvAuditCheck extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property tenant of obj type openstacklbprovauditcheck field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenant set the tenant.
    */
@@ -188,7 +188,7 @@ public class OpenStackLbProvAuditCheck extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property user of obj type openstacklbprovauditcheck field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return user
    */
@@ -199,7 +199,7 @@ public class OpenStackLbProvAuditCheck extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property user of obj type openstacklbprovauditcheck field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param user set the user.
    */

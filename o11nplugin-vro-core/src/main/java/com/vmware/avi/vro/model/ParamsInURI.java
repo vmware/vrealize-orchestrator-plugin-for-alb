@@ -34,6 +34,7 @@ public class ParamsInURI extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Params info in hitted signature rule which has args match element.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return paramInfo
    */
@@ -46,6 +47,7 @@ public class ParamsInURI extends AviRestResource {
    * This is the setter method. this will set the paramInfo
    * Params info in hitted signature rule which has args match element.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return paramInfo
    */
@@ -58,6 +60,7 @@ public class ParamsInURI extends AviRestResource {
    * This is the setter method this will set the paramInfo
    * Params info in hitted signature rule which has args match element.
    * Field introduced in 21.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return paramInfo
    */

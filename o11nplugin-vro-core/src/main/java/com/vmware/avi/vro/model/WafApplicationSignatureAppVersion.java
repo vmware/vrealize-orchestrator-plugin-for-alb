@@ -42,6 +42,8 @@ public class WafApplicationSignatureAppVersion extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of an application in the rule set.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * @return application
    */
   @VsoMethod
@@ -53,6 +55,8 @@ public class WafApplicationSignatureAppVersion extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of an application in the rule set.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * @param application set the application.
    */
   @VsoMethod
@@ -64,6 +68,8 @@ public class WafApplicationSignatureAppVersion extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The last version of the rule set when the rules corresponding to the application changed.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * @return lastChangedRulesetVersion
    */
   @VsoMethod
@@ -75,6 +81,8 @@ public class WafApplicationSignatureAppVersion extends AviRestResource {
    * This is the setter method to the attribute.
    * The last version of the rule set when the rules corresponding to the application changed.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * @param lastChangedRulesetVersion set the lastChangedRulesetVersion.
    */
   @VsoMethod
@@ -86,6 +94,8 @@ public class WafApplicationSignatureAppVersion extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The number of rules available for this application.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * @return numberOfRules
    */
   @VsoMethod
@@ -97,6 +107,8 @@ public class WafApplicationSignatureAppVersion extends AviRestResource {
    * This is the setter method to the attribute.
    * The number of rules available for this application.
    * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * @param numberOfRules set the numberOfRules.
    */
   @VsoMethod

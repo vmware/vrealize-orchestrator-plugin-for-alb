@@ -42,6 +42,7 @@ public class AWSASGDelete extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of autoscale groups deleted from aws.
    * Field introduced in 17.2.10,18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return asgs
    */
@@ -54,6 +55,7 @@ public class AWSASGDelete extends AviRestResource {
    * This is the setter method. this will set the asgs
    * List of autoscale groups deleted from aws.
    * Field introduced in 17.2.10,18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return asgs
    */
@@ -66,6 +68,7 @@ public class AWSASGDelete extends AviRestResource {
    * This is the setter method this will set the asgs
    * List of autoscale groups deleted from aws.
    * Field introduced in 17.2.10,18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return asgs
    */
@@ -83,6 +86,7 @@ public class AWSASGDelete extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the cloud.
    * Field introduced in 17.2.10,18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccId
    */
@@ -95,6 +99,7 @@ public class AWSASGDelete extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the cloud.
    * Field introduced in 17.2.10,18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccId set the ccId.
    */
@@ -107,6 +112,7 @@ public class AWSASGDelete extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the pool.
    * Field introduced in 17.2.10,18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolUuid
    */
@@ -119,6 +125,7 @@ public class AWSASGDelete extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the pool.
    * Field introduced in 17.2.10,18.1.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolUuid set the poolUuid.
    */

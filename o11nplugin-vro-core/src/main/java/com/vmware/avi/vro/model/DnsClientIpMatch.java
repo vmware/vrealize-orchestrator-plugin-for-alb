@@ -39,6 +39,7 @@ public class DnsClientIpMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ip addresses to match against client ip.
    * Field introduced in 17.1.6,17.2.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientIp
    */
@@ -51,6 +52,7 @@ public class DnsClientIpMatch extends AviRestResource {
    * This is the setter method to the attribute.
    * Ip addresses to match against client ip.
    * Field introduced in 17.1.6,17.2.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientIp set the clientIp.
    */
@@ -64,6 +66,7 @@ public class DnsClientIpMatch extends AviRestResource {
    * Use the ip address from the edns client subnet option, if available, as the source ip address of the client.
    * It should be noted that the edns subnet ip may not be a /32 ip address.
    * Field introduced in 17.1.6,17.2.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return useEdnsClientSubnetIp
    */
@@ -77,6 +80,7 @@ public class DnsClientIpMatch extends AviRestResource {
    * Use the ip address from the edns client subnet option, if available, as the source ip address of the client.
    * It should be noted that the edns subnet ip may not be a /32 ip address.
    * Field introduced in 17.1.6,17.2.2.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param useEdnsClientSubnetIp set the useEdnsClientSubnetIp.
    */

@@ -37,10 +37,6 @@ public class IPReputationDB extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private List<String> incrementalFileRefs = null;
 
-    @JsonProperty("labels")
-    @JsonInclude(Include.NON_NULL)
-    private List<KeyValue> labels;
-
     @JsonProperty("markers")
     @JsonInclude(Include.NON_NULL)
     private List<RoleFilterMatchLabel> markers = null;
@@ -81,6 +77,7 @@ public class IPReputationDB extends AviRestResource {
    * It is a reference to an object of type fileobject.
    * Field introduced in 20.1.1.
    * Maximum of 1 items allowed.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return baseFileRefs
    */
@@ -95,6 +92,7 @@ public class IPReputationDB extends AviRestResource {
    * It is a reference to an object of type fileobject.
    * Field introduced in 20.1.1.
    * Maximum of 1 items allowed.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return baseFileRefs
    */
@@ -109,6 +107,7 @@ public class IPReputationDB extends AviRestResource {
    * It is a reference to an object of type fileobject.
    * Field introduced in 20.1.1.
    * Maximum of 1 items allowed.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return baseFileRefs
    */
@@ -126,6 +125,7 @@ public class IPReputationDB extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Description.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
@@ -138,6 +138,7 @@ public class IPReputationDB extends AviRestResource {
    * This is the setter method to the attribute.
    * Description.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
@@ -151,6 +152,7 @@ public class IPReputationDB extends AviRestResource {
    * Ip reputation db incremental update files.
    * It is a reference to an object of type fileobject.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return incrementalFileRefs
    */
@@ -164,6 +166,7 @@ public class IPReputationDB extends AviRestResource {
    * Ip reputation db incremental update files.
    * It is a reference to an object of type fileobject.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return incrementalFileRefs
    */
@@ -177,6 +180,7 @@ public class IPReputationDB extends AviRestResource {
    * Ip reputation db incremental update files.
    * It is a reference to an object of type fileobject.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return incrementalFileRefs
    */
@@ -192,56 +196,10 @@ public class IPReputationDB extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Key value pairs for granular object access control.
-   * Also allows for classification and tagging of similar objects.
-   * Field deprecated in 20.1.5.
-   * Field introduced in 20.1.2.
-   * Maximum of 4 items allowed.
-   * @return labels
-   */
-  @VsoMethod
-  public List<KeyValue> getLabels() {
-    return labels;
-  }
-
-  /**
-   * This is the setter method. this will set the labels
-   * Key value pairs for granular object access control.
-   * Also allows for classification and tagging of similar objects.
-   * Field deprecated in 20.1.5.
-   * Field introduced in 20.1.2.
-   * Maximum of 4 items allowed.
-   * @return labels
-   */
-  @VsoMethod
-  public void setLabels(List<KeyValue>  labels) {
-    this.labels = labels;
-  }
-
-  /**
-   * This is the setter method this will set the labels
-   * Key value pairs for granular object access control.
-   * Also allows for classification and tagging of similar objects.
-   * Field deprecated in 20.1.5.
-   * Field introduced in 20.1.2.
-   * Maximum of 4 items allowed.
-   * @return labels
-   */
-  @VsoMethod
-  public IPReputationDB addLabelsItem(KeyValue labelsItem) {
-    if (this.labels == null) {
-      this.labels = new ArrayList<KeyValue>();
-    }
-    this.labels.add(labelsItem);
-    return this;
-  }
-
-
-  /**
-   * This is the getter method this will return the attribute value.
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -254,7 +212,8 @@ public class IPReputationDB extends AviRestResource {
    * This is the setter method. this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -267,7 +226,8 @@ public class IPReputationDB extends AviRestResource {
    * This is the setter method this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -285,6 +245,7 @@ public class IPReputationDB extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ip reputation db name.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -297,6 +258,7 @@ public class IPReputationDB extends AviRestResource {
    * This is the setter method to the attribute.
    * Ip reputation db name.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -309,6 +271,7 @@ public class IPReputationDB extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * If this object is managed by the ip reputation service, this field contain the status of this syncronization.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceStatus
    */
@@ -321,6 +284,7 @@ public class IPReputationDB extends AviRestResource {
    * This is the setter method to the attribute.
    * If this object is managed by the ip reputation service, this field contain the status of this syncronization.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serviceStatus set the serviceStatus.
    */
@@ -334,6 +298,7 @@ public class IPReputationDB extends AviRestResource {
    * Tenant that this object belongs to.
    * It is a reference to an object of type tenant.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -347,6 +312,7 @@ public class IPReputationDB extends AviRestResource {
    * Tenant that this object belongs to.
    * It is a reference to an object of type tenant.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
@@ -378,6 +344,7 @@ public class IPReputationDB extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of this object.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -390,6 +357,7 @@ public class IPReputationDB extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of this object.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
@@ -403,6 +371,7 @@ public class IPReputationDB extends AviRestResource {
    * Organization providing ip reputation data.
    * Enum options - IP_REPUTATION_VENDOR_WEBROOT.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vendor
    */
@@ -416,6 +385,7 @@ public class IPReputationDB extends AviRestResource {
    * Organization providing ip reputation data.
    * Enum options - IP_REPUTATION_VENDOR_WEBROOT.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vendor set the vendor.
    */
@@ -429,6 +399,7 @@ public class IPReputationDB extends AviRestResource {
    * A version number for this database object.
    * This is informal for the consumer of this api only, a tool which manages this object can store version information here.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return version
    */
@@ -442,6 +413,7 @@ public class IPReputationDB extends AviRestResource {
    * A version number for this database object.
    * This is informal for the consumer of this api only, a tool which manages this object can store version information here.
    * Field introduced in 20.1.1.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param version set the version.
    */
@@ -473,7 +445,6 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.vendor, objIPReputationDB.vendor)&&
   Objects.equals(this.version, objIPReputationDB.version)&&
   Objects.equals(this.serviceStatus, objIPReputationDB.serviceStatus)&&
-  Objects.equals(this.labels, objIPReputationDB.labels)&&
   Objects.equals(this.markers, objIPReputationDB.markers);
 }
 
@@ -484,7 +455,6 @@ public String toString() {
       sb.append("    baseFileRefs: ").append(toIndentedString(baseFileRefs)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    incrementalFileRefs: ").append(toIndentedString(incrementalFileRefs)).append("\n");
-        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    serviceStatus: ").append(toIndentedString(serviceStatus)).append("\n");

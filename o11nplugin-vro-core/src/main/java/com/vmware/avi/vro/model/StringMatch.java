@@ -43,9 +43,10 @@ public class StringMatch extends AviRestResource {
    * Criterion to use for string matching the http request.
    * Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH,
    * REGEX_DOES_NOT_MATCH.
-   * Allowed in basic(allowed values- begins_with,does_not_begin_with,contains,does_not_contain,ends_with,does_not_end_with,equals,does_not_equal)
-   * edition, essentials(allowed values- begins_with,does_not_begin_with,contains,does_not_contain,ends_with,does_not_end_with,equals,does_not_equal)
-   * edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values-
+   * begins_with,does_not_begin_with,contains,does_not_contain,ends_with,does_not_end_with,equals,does_not_equal), basic edition(allowed values-
+   * begins_with,does_not_begin_with,contains,does_not_contain,ends_with,does_not_end_with,equals,does_not_equal), enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchCriteria
    */
@@ -59,9 +60,10 @@ public class StringMatch extends AviRestResource {
    * Criterion to use for string matching the http request.
    * Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH,
    * REGEX_DOES_NOT_MATCH.
-   * Allowed in basic(allowed values- begins_with,does_not_begin_with,contains,does_not_contain,ends_with,does_not_end_with,equals,does_not_equal)
-   * edition, essentials(allowed values- begins_with,does_not_begin_with,contains,does_not_contain,ends_with,does_not_end_with,equals,does_not_equal)
-   * edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values-
+   * begins_with,does_not_begin_with,contains,does_not_contain,ends_with,does_not_end_with,equals,does_not_equal), basic edition(allowed values-
+   * begins_with,does_not_begin_with,contains,does_not_contain,ends_with,does_not_end_with,equals,does_not_equal), enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchCriteria set the matchCriteria.
    */
@@ -73,6 +75,7 @@ public class StringMatch extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * String value(s).
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchStr
    */
@@ -84,6 +87,7 @@ public class StringMatch extends AviRestResource {
   /**
    * This is the setter method. this will set the matchStr
    * String value(s).
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchStr
    */
@@ -95,6 +99,7 @@ public class StringMatch extends AviRestResource {
   /**
    * This is the setter method this will set the matchStr
    * String value(s).
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchStr
    */
@@ -112,6 +117,7 @@ public class StringMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the string group(s).
    * It is a reference to an object of type stringgroup.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stringGroupRefs
    */
@@ -124,6 +130,7 @@ public class StringMatch extends AviRestResource {
    * This is the setter method. this will set the stringGroupRefs
    * Uuid of the string group(s).
    * It is a reference to an object of type stringgroup.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stringGroupRefs
    */
@@ -136,6 +143,7 @@ public class StringMatch extends AviRestResource {
    * This is the setter method this will set the stringGroupRefs
    * Uuid of the string group(s).
    * It is a reference to an object of type stringgroup.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stringGroupRefs
    */

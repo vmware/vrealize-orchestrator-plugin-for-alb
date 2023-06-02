@@ -51,6 +51,7 @@ public class ErrorPage extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable or disable the error page.
    * Field introduced in 17.2.4.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enable
    */
@@ -63,6 +64,7 @@ public class ErrorPage extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable or disable the error page.
    * Field introduced in 17.2.4.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enable set the enable.
    */
@@ -76,6 +78,7 @@ public class ErrorPage extends AviRestResource {
    * Custom error page body used to sent to the client.
    * It is a reference to an object of type errorpagebody.
    * Field introduced in 17.2.4.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorPageBodyRef
    */
@@ -89,6 +92,7 @@ public class ErrorPage extends AviRestResource {
    * Custom error page body used to sent to the client.
    * It is a reference to an object of type errorpagebody.
    * Field introduced in 17.2.4.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param errorPageBodyRef set the errorPageBodyRef.
    */
@@ -101,6 +105,7 @@ public class ErrorPage extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Redirect sent to client when match.
    * Field introduced in 17.2.4.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorRedirect
    */
@@ -113,6 +118,7 @@ public class ErrorPage extends AviRestResource {
    * This is the setter method to the attribute.
    * Redirect sent to client when match.
    * Field introduced in 17.2.4.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param errorRedirect set the errorRedirect.
    */
@@ -125,6 +131,7 @@ public class ErrorPage extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Index of the error page.
    * Field introduced in 17.2.4.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return index
    */
@@ -137,6 +144,7 @@ public class ErrorPage extends AviRestResource {
    * This is the setter method to the attribute.
    * Index of the error page.
    * Field introduced in 17.2.4.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param index set the index.
    */
@@ -149,7 +157,7 @@ public class ErrorPage extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Add match criteria for http status codes to the error page.
    * Field introduced in 17.2.4.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return match
    */
@@ -162,7 +170,7 @@ public class ErrorPage extends AviRestResource {
    * This is the setter method to the attribute.
    * Add match criteria for http status codes to the error page.
    * Field introduced in 17.2.4.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param match set the match.
    */

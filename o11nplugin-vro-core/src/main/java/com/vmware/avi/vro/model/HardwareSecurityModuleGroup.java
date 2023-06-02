@@ -29,10 +29,6 @@ public class HardwareSecurityModuleGroup extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private HardwareSecurityModule hsm = null;
 
-    @JsonProperty("labels")
-    @JsonInclude(Include.NON_NULL)
-    private List<KeyValue> labels;
-
     @JsonProperty("markers")
     @JsonInclude(Include.NON_NULL)
     private List<RoleFilterMatchLabel> markers = null;
@@ -58,6 +54,7 @@ public class HardwareSecurityModuleGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Hardware security module configuration.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hsm
    */
@@ -69,6 +66,7 @@ public class HardwareSecurityModuleGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Hardware security module configuration.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hsm set the hsm.
    */
@@ -79,56 +77,10 @@ public class HardwareSecurityModuleGroup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Key value pairs for granular object access control.
-   * Also allows for classification and tagging of similar objects.
-   * Field deprecated in 20.1.5.
-   * Field introduced in 20.1.2.
-   * Maximum of 4 items allowed.
-   * @return labels
-   */
-  @VsoMethod
-  public List<KeyValue> getLabels() {
-    return labels;
-  }
-
-  /**
-   * This is the setter method. this will set the labels
-   * Key value pairs for granular object access control.
-   * Also allows for classification and tagging of similar objects.
-   * Field deprecated in 20.1.5.
-   * Field introduced in 20.1.2.
-   * Maximum of 4 items allowed.
-   * @return labels
-   */
-  @VsoMethod
-  public void setLabels(List<KeyValue>  labels) {
-    this.labels = labels;
-  }
-
-  /**
-   * This is the setter method this will set the labels
-   * Key value pairs for granular object access control.
-   * Also allows for classification and tagging of similar objects.
-   * Field deprecated in 20.1.5.
-   * Field introduced in 20.1.2.
-   * Maximum of 4 items allowed.
-   * @return labels
-   */
-  @VsoMethod
-  public HardwareSecurityModuleGroup addLabelsItem(KeyValue labelsItem) {
-    if (this.labels == null) {
-      this.labels = new ArrayList<KeyValue>();
-    }
-    this.labels.add(labelsItem);
-    return this;
-  }
-
-
-  /**
-   * This is the getter method this will return the attribute value.
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -141,7 +93,8 @@ public class HardwareSecurityModuleGroup extends AviRestResource {
    * This is the setter method. this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -154,7 +107,8 @@ public class HardwareSecurityModuleGroup extends AviRestResource {
    * This is the setter method this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -171,6 +125,7 @@ public class HardwareSecurityModuleGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the hsm group configuration object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -182,6 +137,7 @@ public class HardwareSecurityModuleGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the hsm group configuration object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -193,6 +149,7 @@ public class HardwareSecurityModuleGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -204,6 +161,7 @@ public class HardwareSecurityModuleGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
@@ -234,6 +192,7 @@ public class HardwareSecurityModuleGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the hsm group configuration object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -245,6 +204,7 @@ public class HardwareSecurityModuleGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the hsm group configuration object.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
@@ -270,7 +230,6 @@ public boolean equals(java.lang.Object o) {
   return   Objects.equals(this.uuid, objHardwareSecurityModuleGroup.uuid)&&
   Objects.equals(this.name, objHardwareSecurityModuleGroup.name)&&
   Objects.equals(this.hsm, objHardwareSecurityModuleGroup.hsm)&&
-  Objects.equals(this.labels, objHardwareSecurityModuleGroup.labels)&&
   Objects.equals(this.markers, objHardwareSecurityModuleGroup.markers)&&
   Objects.equals(this.tenantRef, objHardwareSecurityModuleGroup.tenantRef);
 }
@@ -280,7 +239,6 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class HardwareSecurityModuleGroup {\n");
       sb.append("    hsm: ").append(toIndentedString(hsm)).append("\n");
-        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");

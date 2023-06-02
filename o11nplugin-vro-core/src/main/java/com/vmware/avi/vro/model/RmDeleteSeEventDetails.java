@@ -72,7 +72,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property cloud_name of obj type rmdeleteseeventdetails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudName
    */
@@ -83,7 +83,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property cloud_name of obj type rmdeleteseeventdetails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudName set the cloudName.
    */
@@ -94,7 +94,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Unique object identifier of cloud.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudUuid
    */
@@ -105,7 +105,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Unique object identifier of cloud.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudUuid set the cloudUuid.
    */
@@ -116,7 +116,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property host_name of obj type rmdeleteseeventdetails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostName
    */
@@ -127,7 +127,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property host_name of obj type rmdeleteseeventdetails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hostName set the hostName.
    */
@@ -138,7 +138,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Unique object identifier of host.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostUuid
    */
@@ -149,7 +149,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Unique object identifier of host.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hostUuid set the hostUuid.
    */
@@ -160,7 +160,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property reason of obj type rmdeleteseeventdetails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
@@ -171,7 +171,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property reason of obj type rmdeleteseeventdetails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
@@ -182,7 +182,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property se_cookie of obj type rmdeleteseeventdetails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seCookie
    */
@@ -193,7 +193,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property se_cookie of obj type rmdeleteseeventdetails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seCookie set the seCookie.
    */
@@ -204,7 +204,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property se_grp_name of obj type rmdeleteseeventdetails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGrpName
    */
@@ -215,7 +215,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property se_grp_name of obj type rmdeleteseeventdetails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seGrpName set the seGrpName.
    */
@@ -226,7 +226,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Unique object identifier of se_grp.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGrpUuid
    */
@@ -237,7 +237,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Unique object identifier of se_grp.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seGrpUuid set the seGrpUuid.
    */
@@ -248,7 +248,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property se_name of obj type rmdeleteseeventdetails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seName
    */
@@ -259,7 +259,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property se_name of obj type rmdeleteseeventdetails field type str  type string.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seName set the seName.
    */
@@ -270,7 +270,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Unique object identifier of se.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUuid
    */
@@ -281,7 +281,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Unique object identifier of se.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seUuid set the seUuid.
    */
@@ -292,7 +292,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property status_code of obj type rmdeleteseeventdetails field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return statusCode
    */
@@ -303,7 +303,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property status_code of obj type rmdeleteseeventdetails field type str  type integer.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param statusCode set the statusCode.
    */
