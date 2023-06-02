@@ -1,4 +1,4 @@
-## aria-automation-orchestrator-plugin-for-alb
+## vrealize-orchestrator-plugin-for-alb
 Avi VMware Aria Automation Orchestrator​ Plugin
 
 - This project contains AVI vRO Plugin.
