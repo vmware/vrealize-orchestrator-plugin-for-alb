@@ -1,4 +1,4 @@
-## Integrating vRealize Orchestrator with VRA
+## Integrating VMware Aria Automation Orchestrator with VRA
    This document will cover how to integrate Avi VRO Plugin in VRA to configure custom resource. This custom resource then can be used in VRA Blueprint as Load Balancer and configure Avi Controller using VRA Blueprints. 
 There are example workflows in the AVI VRO Plugin explicitly to configure VRA custom resource under Library --> Avi --> VRA. With the help of these workflows you will be able to configure Custom resource for Avi LB equivalent to cloud agnostic LB and Custom resource for Avi LB equivalent to NSX-T LB.         
      
@@ -21,7 +21,7 @@ There are example workflows in the AVI VRO Plugin explicitly to configure VRA cu
      Click on ADD INTEGRATION.
    ![alt text](./images/new_integration.png)
     
-     Select vRealize Orchestratoe from the options.
+     Select Aria Automation Orchestrator from the options.
    ![alt text](./images/select_vro.png)
    
      Provide the details of the Vro instance and click on ADD button.

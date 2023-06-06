@@ -9,7 +9,7 @@ import com.vmware.o11n.plugin.sdk.module.ModuleBuilder;
  */
 public final class VroModuleBuilder extends ModuleBuilder {
 
-	private static final String DESCRIPTION = "vro plug-in for vRealize Orchestrator";
+	private static final String DESCRIPTION = "VMware Aria Automation Orchestrator Plug-in for Avi.";
 
 	private static final String DATASOURCE = "main-datasource";
 
