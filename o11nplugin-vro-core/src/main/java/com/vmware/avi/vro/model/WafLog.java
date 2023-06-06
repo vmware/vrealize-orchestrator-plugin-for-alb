@@ -66,6 +66,10 @@ public class WafLog extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer latencyResponseHeaderPhase = null;
 
+    @JsonProperty("learning_status")
+    @JsonInclude(Include.NON_NULL)
+    private String learningStatus = "NOT_ACTIVE";
+
     @JsonProperty("memory_allocated")
     @JsonInclude(Include.NON_NULL)
     private Integer memoryAllocated = null;
@@ -406,6 +410,38 @@ public class WafLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Indicate if this request is used for learning.
+   * If it is not used, this field contains the reason for this decision.
+   * Enum options - NOT_ACTIVE, LEARNED, NOTHING_TO_LEARN, SERVER_ERROR, FLAGGED_BY_WAF, SKIPPED_BY_SAMPLING, CLIENT_IS_NOT_AUTHENTICATED,
+   * CLIENT_IS_NOT_TRUSTED, CLIENT_IS_A_BOT, ERROR.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "NOT_ACTIVE".
+   * @return learningStatus
+   */
+  @VsoMethod
+  public String getLearningStatus() {
+    return learningStatus;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Indicate if this request is used for learning.
+   * If it is not used, this field contains the reason for this decision.
+   * Enum options - NOT_ACTIVE, LEARNED, NOTHING_TO_LEARN, SERVER_ERROR, FLAGGED_BY_WAF, SKIPPED_BY_SAMPLING, CLIENT_IS_NOT_AUTHENTICATED,
+   * CLIENT_IS_NOT_TRUSTED, CLIENT_IS_A_BOT, ERROR.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "NOT_ACTIVE".
+   * @param learningStatus set the learningStatus.
+   */
+  @VsoMethod
+  public void setLearningStatus(String  learningStatus) {
+    this.learningStatus = learningStatus;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * The total memory (in bytes) consumed by waf to process this request.
    * Field introduced in 22.1.1.
    * Unit is bytes.
@@ -733,7 +769,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.applicationRulesProcessed, objWafLog.applicationRulesProcessed)&&
   Objects.equals(this.memoryAllocated, objWafLog.memoryAllocated)&&
   Objects.equals(this.omittedSignatureStats, objWafLog.omittedSignatureStats)&&
-  Objects.equals(this.omittedAppRuleStats, objWafLog.omittedAppRuleStats);
+  Objects.equals(this.omittedAppRuleStats, objWafLog.omittedAppRuleStats)&&
+  Objects.equals(this.learningStatus, objWafLog.learningStatus);
 }
 
 @Override
@@ -750,6 +787,7 @@ public String toString() {
         sb.append("    latencyRequestHeaderPhase: ").append(toIndentedString(latencyRequestHeaderPhase)).append("\n");
         sb.append("    latencyResponseBodyPhase: ").append(toIndentedString(latencyResponseBodyPhase)).append("\n");
         sb.append("    latencyResponseHeaderPhase: ").append(toIndentedString(latencyResponseHeaderPhase)).append("\n");
+        sb.append("    learningStatus: ").append(toIndentedString(learningStatus)).append("\n");
         sb.append("    memoryAllocated: ").append(toIndentedString(memoryAllocated)).append("\n");
         sb.append("    omittedAppRuleStats: ").append(toIndentedString(omittedAppRuleStats)).append("\n");
         sb.append("    omittedSignatureStats: ").append(toIndentedString(omittedSignatureStats)).append("\n");

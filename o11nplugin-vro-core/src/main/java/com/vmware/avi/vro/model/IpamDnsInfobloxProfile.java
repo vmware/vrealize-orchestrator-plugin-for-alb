@@ -27,7 +27,7 @@ import org.springframework.stereotype.Service;
 public class IpamDnsInfobloxProfile extends AviRestResource {
     @JsonProperty("dns_view")
     @JsonInclude(Include.NON_NULL)
-    private String dnsView = "default";
+    private String dnsView = null;
 
     @JsonProperty("extensible_attributes")
     @JsonInclude(Include.NON_NULL)
@@ -39,7 +39,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
 
     @JsonProperty("network_view")
     @JsonInclude(Include.NON_NULL)
-    private String networkView = "default";
+    private String networkView = null;
 
     @JsonProperty("password")
     @JsonInclude(Include.NON_NULL)
@@ -65,9 +65,9 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Dns view.
+   * Dns view used for infoblox host record creation, if this field is not configured by the user, then its value will be set to 'default'.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as "default".
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsView
    */
   @VsoMethod
@@ -77,9 +77,9 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Dns view.
+   * Dns view used for infoblox host record creation, if this field is not configured by the user, then its value will be set to 'default'.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as "default".
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dnsView set the dnsView.
    */
   @VsoMethod
@@ -157,9 +157,9 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Network view.
+   * Network view used for infoblox host record creation, if this field is not configured by the user, then its value will be set to 'default'.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as "default".
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkView
    */
   @VsoMethod
@@ -169,9 +169,9 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Network view.
+   * Network view used for infoblox host record creation, if this field is not configured by the user, then its value will be set to 'default'.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as "default".
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param networkView set the networkView.
    */
   @VsoMethod

@@ -48,7 +48,7 @@ public class LdapAuthSettings extends AviRestResource {
 
     @JsonProperty("security_mode")
     @JsonInclude(Include.NON_NULL)
-    private String securityMode = null;
+    private String securityMode = "AUTH_LDAP_SECURE_USE_LDAPS";
 
     @JsonProperty("server")
     @JsonInclude(Include.NON_NULL)
@@ -191,7 +191,7 @@ public class LdapAuthSettings extends AviRestResource {
    * Ldap connection security mode.
    * Enum options - AUTH_LDAP_SECURE_NONE, AUTH_LDAP_SECURE_USE_LDAPS.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "AUTH_LDAP_SECURE_USE_LDAPS".
    * @return securityMode
    */
   @VsoMethod
@@ -204,7 +204,7 @@ public class LdapAuthSettings extends AviRestResource {
    * Ldap connection security mode.
    * Enum options - AUTH_LDAP_SECURE_NONE, AUTH_LDAP_SECURE_USE_LDAPS.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "AUTH_LDAP_SECURE_USE_LDAPS".
    * @param securityMode set the securityMode.
    */
   @VsoMethod

@@ -25,6 +25,10 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ALBServicesCase extends AviRestResource {
+    @JsonProperty("additional_emails")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> additionalEmails = null;
+
     @JsonProperty("asset_id")
     @JsonInclude(Include.NON_NULL)
     private String assetId = null;
@@ -117,6 +121,10 @@ public class ALBServicesCase extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String subject = null;
 
+    @JsonProperty("tenant_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantUuid = null;
+
     @JsonProperty("time")
     @JsonInclude(Include.NON_NULL)
     private String time = null;
@@ -129,6 +137,50 @@ public class ALBServicesCase extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String version = null;
 
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Additional emails to get notified when the case gets created.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return additionalEmails
+   */
+  @VsoMethod
+  public List<String> getAdditionalEmails() {
+    return additionalEmails;
+  }
+
+  /**
+   * This is the setter method. this will set the additionalEmails
+   * Additional emails to get notified when the case gets created.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return additionalEmails
+   */
+  @VsoMethod
+  public void setAdditionalEmails(List<String>  additionalEmails) {
+    this.additionalEmails = additionalEmails;
+  }
+
+  /**
+   * This is the setter method this will set the additionalEmails
+   * Additional emails to get notified when the case gets created.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return additionalEmails
+   */
+  @VsoMethod
+  public ALBServicesCase addAdditionalEmailsItem(String additionalEmailsItem) {
+    if (this.additionalEmails == null) {
+      this.additionalEmails = new ArrayList<String>();
+    }
+    this.additionalEmails.add(additionalEmailsItem);
+    return this;
+  }
 
 
   /**
@@ -718,6 +770,32 @@ public class ALBServicesCase extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Tenant information.
+   * Field introduced in 30.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return tenantUuid
+   */
+  @VsoMethod
+  public String getTenantUuid() {
+    return tenantUuid;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Tenant information.
+   * Field introduced in 30.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param tenantUuid set the tenantUuid.
+   */
+  @VsoMethod
+  public void setTenantUuid(String  tenantUuid) {
+    this.tenantUuid = tenantUuid;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Field introduced in 18.2.6.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -824,14 +902,17 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.frCurrentSolution, objALBServicesCase.frCurrentSolution)&&
   Objects.equals(this.frBusinessJustification, objALBServicesCase.frBusinessJustification)&&
   Objects.equals(this.frTiming, objALBServicesCase.frTiming)&&
-  Objects.equals(this.mode, objALBServicesCase.mode);
+  Objects.equals(this.mode, objALBServicesCase.mode)&&
+  Objects.equals(this.tenantUuid, objALBServicesCase.tenantUuid)&&
+  Objects.equals(this.additionalEmails, objALBServicesCase.additionalEmails);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class ALBServicesCase {\n");
-      sb.append("    assetId: ").append(toIndentedString(assetId)).append("\n");
+      sb.append("    additionalEmails: ").append(toIndentedString(additionalEmails)).append("\n");
+        sb.append("    assetId: ").append(toIndentedString(assetId)).append("\n");
         sb.append("    caseAttachments: ").append(toIndentedString(caseAttachments)).append("\n");
         sb.append("    caseCreatedBy: ").append(toIndentedString(caseCreatedBy)).append("\n");
         sb.append("    caseNumber: ").append(toIndentedString(caseNumber)).append("\n");
@@ -854,6 +935,7 @@ public String toString() {
         sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    subject: ").append(toIndentedString(subject)).append("\n");
+        sb.append("    tenantUuid: ").append(toIndentedString(tenantUuid)).append("\n");
         sb.append("    time: ").append(toIndentedString(time)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");

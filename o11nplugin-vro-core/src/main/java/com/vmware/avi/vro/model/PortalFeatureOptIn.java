@@ -36,6 +36,10 @@ public class PortalFeatureOptIn extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean enablePulseCaseManagement;
 
+    @JsonProperty("enable_pulse_inventory")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enablePulseInventory;
+
     @JsonProperty("enable_pulse_waf_management")
     @JsonInclude(Include.NON_NULL)
     private Boolean enablePulseWafManagement;
@@ -104,7 +108,7 @@ public class PortalFeatureOptIn extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Enable pulse case management.
+   * Enable pulse cloud services case management.
    * Field introduced in 21.1.1.
    * Allowed in enterprise edition only with addon license, essentials edition(allowed values- false), basic edition(allowed values- false),
    * enterprise with cloud services edition.
@@ -118,7 +122,7 @@ public class PortalFeatureOptIn extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Enable pulse case management.
+   * Enable pulse cloud services case management.
    * Field introduced in 21.1.1.
    * Allowed in enterprise edition only with addon license, essentials edition(allowed values- false), basic edition(allowed values- false),
    * enterprise with cloud services edition.
@@ -128,6 +132,34 @@ public class PortalFeatureOptIn extends AviRestResource {
   @VsoMethod
   public void setEnablePulseCaseManagement(Boolean  enablePulseCaseManagement) {
     this.enablePulseCaseManagement = enablePulseCaseManagement;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Enable pulse cloud services inventory.
+   * Field introduced in 30.1.1.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+   * cloud services edition.
+   * Special default for essentials edition is false, basic edition is false, enterprise is false.
+   * @return enablePulseInventory
+   */
+  @VsoMethod
+  public Boolean getEnablePulseInventory() {
+    return enablePulseInventory;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable pulse cloud services inventory.
+   * Field introduced in 30.1.1.
+   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+   * cloud services edition.
+   * Special default for essentials edition is false, basic edition is false, enterprise is false.
+   * @param enablePulseInventory set the enablePulseInventory.
+   */
+  @VsoMethod
+  public void setEnablePulseInventory(Boolean  enablePulseInventory) {
+    this.enablePulseInventory = enablePulseInventory;
   }
 
   /**
@@ -201,7 +233,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.enableAppsignatureSync, objPortalFeatureOptIn.enableAppsignatureSync)&&
   Objects.equals(this.enableUserAgentDbSync, objPortalFeatureOptIn.enableUserAgentDbSync)&&
   Objects.equals(this.enablePulseWafManagement, objPortalFeatureOptIn.enablePulseWafManagement)&&
-  Objects.equals(this.enablePulseCaseManagement, objPortalFeatureOptIn.enablePulseCaseManagement);
+  Objects.equals(this.enablePulseCaseManagement, objPortalFeatureOptIn.enablePulseCaseManagement)&&
+  Objects.equals(this.enablePulseInventory, objPortalFeatureOptIn.enablePulseInventory);
 }
 
 @Override
@@ -211,6 +244,7 @@ public String toString() {
       sb.append("    enableAppsignatureSync: ").append(toIndentedString(enableAppsignatureSync)).append("\n");
         sb.append("    enableIpReputation: ").append(toIndentedString(enableIpReputation)).append("\n");
         sb.append("    enablePulseCaseManagement: ").append(toIndentedString(enablePulseCaseManagement)).append("\n");
+        sb.append("    enablePulseInventory: ").append(toIndentedString(enablePulseInventory)).append("\n");
         sb.append("    enablePulseWafManagement: ").append(toIndentedString(enablePulseWafManagement)).append("\n");
         sb.append("    enableUserAgentDbSync: ").append(toIndentedString(enableUserAgentDbSync)).append("\n");
       sb.append("}");

@@ -92,6 +92,10 @@ public class ControllerLicense extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String startOn = null;
 
+    @JsonProperty("tenant_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantUuid = null;
+
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
     private String url = "url";
@@ -618,6 +622,32 @@ public class ControllerLicense extends AviRestResource {
   public void setStartOn(String  startOn) {
     this.startOn = startOn;
   }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Tenant uuid.
+   * Field introduced in 30.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return tenantUuid
+   */
+  @VsoMethod
+  public String getTenantUuid() {
+    return tenantUuid;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Tenant uuid.
+   * Field introduced in 30.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param tenantUuid set the tenantUuid.
+   */
+  @VsoMethod
+  public void setTenantUuid(String  tenantUuid) {
+    this.tenantUuid = tenantUuid;
+  }
 /**
    * This is the getter method this will return the attribute value.
    * Avi controller URL of the object.
@@ -714,7 +744,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.licenseId, objControllerLicense.licenseId)&&
   Objects.equals(this.disableEnforcement, objControllerLicense.disableEnforcement)&&
   Objects.equals(this.serviceCores, objControllerLicense.serviceCores)&&
-  Objects.equals(this.initialized, objControllerLicense.initialized);
+  Objects.equals(this.initialized, objControllerLicense.initialized)&&
+  Objects.equals(this.tenantUuid, objControllerLicense.tenantUuid);
 }
 
 @Override
@@ -738,6 +769,7 @@ public String toString() {
         sb.append("    serviceCores: ").append(toIndentedString(serviceCores)).append("\n");
         sb.append("    sockets: ").append(toIndentedString(sockets)).append("\n");
         sb.append("    startOn: ").append(toIndentedString(startOn)).append("\n");
+        sb.append("    tenantUuid: ").append(toIndentedString(tenantUuid)).append("\n");
             sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
         sb.append("    validUntil: ").append(toIndentedString(validUntil)).append("\n");
       sb.append("}");

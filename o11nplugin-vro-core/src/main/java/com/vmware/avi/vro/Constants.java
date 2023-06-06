@@ -150,6 +150,8 @@ public class Constants {
     public static final String FINDER_VRO_CRSDEPLOYMENTSUCCESS = "CRSDeploymentSuccess";
     public static final String FINDER_VRO_CRSDETAILS = "CRSDetails";
     public static final String FINDER_VRO_CRSUPDATEDETAILS = "CRSUpdateDetails";
+    public static final String FINDER_VRO_CSRFPOLICY = "CSRFPolicy";
+    public static final String FINDER_VRO_CSRFRULE = "CSRFRule";
     public static final String FINDER_VRO_CAPTUREFILESIZE = "CaptureFileSize";
     public static final String FINDER_VRO_CAPTUREFILTERS = "CaptureFilters";
     public static final String FINDER_VRO_CAPTUREIPC = "CaptureIPC";
@@ -464,6 +466,7 @@ public class Constants {
     public static final String FINDER_VRO_HTTPSECURITYPOLICY = "HTTPSecurityPolicy";
     public static final String FINDER_VRO_HTTPSECURITYRULE = "HTTPSecurityRule";
     public static final String FINDER_VRO_HTTPSERVERRESELECT = "HTTPServerReselect";
+    public static final String FINDER_VRO_HTTPSESSIONCONFIG = "HTTPSessionConfig";
     public static final String FINDER_VRO_HTTPSTATUSMATCH = "HTTPStatusMatch";
     public static final String FINDER_VRO_HTTPSTATUSRANGE = "HTTPStatusRange";
     public static final String FINDER_VRO_HTTPSWITCHINGACTION = "HTTPSwitchingAction";
