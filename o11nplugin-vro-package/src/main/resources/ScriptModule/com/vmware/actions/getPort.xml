@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module name="getPort"
 	result-type="number" api-version="6.0.0"
-	id="12989189-7a07-4df9-a5fd-4cebaae1b74f" version="0.0.4"
+	id="12989189-7a07-4df9-a5fd-4cebaae1b86f" version="0.0.4"
 	allowed-operations="vfe">
 	<param n="controller" t="string"><![CDATA[
 	]]></param>
@@ -16,8 +16,8 @@
 	}
 	var vroClientArray = Server.findAllForType('Avi:AviVroClient','');
 	var aviPlugin = null;
-	var controllerIp = controller.substring(0, controller.indexOf("-"));
-	var clientTenant = controller.substring(controller.indexOf("-") + 1).toLowerCase();
+	var controllerIp = controller.substring(0, controller.lastIndexOf("-"));
+	var clientTenant = controller.substring(controller.lastIndexOf("-") + 1).toLowerCase();
 	for each(aviVroClient in vroClientArray){
             if(aviVroClient !=null){
 				vroController = aviVroClient.cred.controller;

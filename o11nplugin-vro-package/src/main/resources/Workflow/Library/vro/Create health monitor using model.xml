@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item1" object-name="workflow:name=generic"
-	id="f2d558ce-2e04-426e-aeb1-1e330593aba2" version="3.0.2"
+	id="f2d558ce-2e04-426e-aeb1-1e330593aba3" version="3.0.3"
 	api-version="6.0.0" allowed-operations="vef" restartMode="1"
 	resumeFromFailedMode="0">
 	<display-name><![CDATA[Create Health Monitor]]></display-name>
@@ -36,6 +36,9 @@
 		<param name="health_monitor_name" type="string">
 			<description><![CDATA[health_monitor_name]]></description>
 		</param>
+		<param name="health_monitor_uuid" type="string">
+            <description><![CDATA[Health Monitor Uuid]]></description>
+        </param>
 	</input>
 	<attrib name="Tenant" type="string" read-only="false">
 		<value encoded="n"><![CDATA[
@@ -53,8 +56,7 @@
 		script-module="com.vmware.avi/initVroWorkflow">
 		<display-name><![CDATA[initVroWorkflow]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-actionResult = System.getModule("com.vmware.avi").initVroWorkflow(controller)
-Tenant=workflowRuntime.getAviVroClient().cred.tenant; ;]]></script>
+actionResult = System.getModule("com.vmware.avi").initVroWorkflow(controller);]]></script>
 		<in-binding>
 			<bind name="controller" type="string" export-name="controller">
 				<description><![CDATA[Controller IP]]></description>
@@ -113,6 +115,10 @@ actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthM
 			</bind>
 			<bind name="workflowRuntime" type="Avi:WorkflowRuntime"
 				export-name="workflowRuntime"></bind>
+			<bind name="health_monitor_uuid" type="string"
+                export-name="health_monitor_uuid">
+                <description><![CDATA[Uuid of health monitor object]]></description>
+            </bind>
 		</in-binding>
 		<out-binding>
 			<bind name="actionResult" type="Avi:WorkflowRuntime"
@@ -177,6 +183,11 @@ System.log("Health monitor created successfully")]]></script>
 				<p-qual kind="static" name="genericEnumeration"
 					type="Array/Array/string"><![CDATA[#{#string#1XX#;#string#2XX#;#string#3XX#;#string#4XX#;#string#5XX#;#string#ANY#}#]]></p-qual>
 			</p-param>
+			<p-param name="health_monitor_uuid">
+                <desc><![CDATA[health_monitor_uuid]]></desc>
+                <p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.vmware.avi","fetchUuidbyName").call( #controller , "healthmonitor" , #health_monitor_name )]]></p-qual>
+                <p-qual kind="ognl" name="notVisible" type="boolean"><![CDATA[true]]></p-qual>
+            </p-param>
 		</p-step>
 	</presentation>
 </workflow>

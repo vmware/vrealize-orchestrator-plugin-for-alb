@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module
 	name="getExistingObjectsWithController" result-type="Array/string"
-	api-version="6.0.0" id="42556c6b-8b94-45fd-b1fd-feed20a096ca"
+	api-version="6.0.0" id="42556c6b-8b94-45fd-b1fd-feed30a097ca"
 	version="0.0.3" allowed-operations="vfe">
 	<param n="controller" t="string"><![CDATA[
 	]]></param>
@@ -12,8 +12,8 @@
 try{
 	var vroClientArray=Server.findAllForType('Avi:AviVroClient','');
 	var aviVroClientObj= null;
-	var controllerIp = controller.substring(0, controller.indexOf("-"));
-    var clientTenant = controller.substring(controller.indexOf("-") + 1).toLowerCase();
+	var controllerIp = controller.substring(0, controller.lastIndexOf("-"));
+    var clientTenant = controller.substring(controller.lastIndexOf("-") + 1).toLowerCase();
 	for each(aviVroClient in vroClientArray){
 		if(aviVroClient !=null){
 			vroController = aviVroClient.cred.controller;

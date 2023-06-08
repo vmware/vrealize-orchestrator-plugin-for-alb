@@ -497,7 +497,7 @@ public class AviVroTest {
 			try {
 				testingVRO.executeWorkflow();
 			} catch (Exception e) {
-				e.printStackTrace();
+				// e.printStackTrace();
 			}
 
 			// After rollback we should get original send_interval value of hm which is 20

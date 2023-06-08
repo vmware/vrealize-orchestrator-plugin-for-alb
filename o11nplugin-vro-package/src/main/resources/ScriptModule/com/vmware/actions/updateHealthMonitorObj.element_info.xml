@@ -3,7 +3,7 @@
 <properties>
 <comment>Exported from [server]</comment>
 <entry key="categoryPath">com.vmware.avi</entry>
-<entry key="name">updatePool</entry>
+<entry key="name">updateHealthMonitorObj</entry>
 <entry key="type">ScriptModule</entry>
-<entry key="id">0164e6e8-7b7a-403f-8f8c-d9cdf8dbef9d</entry>
+<entry key="id">"923babe5-8cf5-4205-b5c2-b55ab69c9b6c"</entry>
 </properties>

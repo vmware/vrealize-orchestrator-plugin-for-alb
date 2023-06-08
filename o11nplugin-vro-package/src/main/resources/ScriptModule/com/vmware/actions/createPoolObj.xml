@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dunes-script-module name="createPoolObj"
 	result-type="Avi:WorkflowRuntime" api-version="6.0.0"
-	id="d74b12d8-5662-4da9-b7fa-29c99d84a74e" version="3.0.1"
+	id="d74b12d8-5662-4da9-b7fa-29c99d84a74e" version="3.0.3"
 	allowed-operations="vfe">
 	<param n="PoolServers" t="Array/string"><![CDATA[Pool servers list ]]></param>
 	<param n="enablePool" t="boolean"><![CDATA[Pool status]]></param>
@@ -51,6 +51,7 @@
 	]]></param>
 	<param n="tier1_lr" t="string"><![CDATA[
 	]]></param>
+	<param n="pool_uuid" t="string"><![CDATA[Uuid of pool]]></param>
 	<script encoded="false"><![CDATA[/**************************************************
 * This script initializes pool properties objects *
 * and creats pool object. 						  *
@@ -60,6 +61,9 @@ try{
 	if(workflowRuntime.getAviVroClient() !=null){
 		// Check if selected healthmonitor or create new
 		poolObject = new AviPool();
+		if(pool_uuid){
+			poolObject.setUuid(pool_uuid);
+		}
 		if (CreateHealthMonitor == false){
 			var HM_refs = new Array();
 			if(healthMonitor!=null){
