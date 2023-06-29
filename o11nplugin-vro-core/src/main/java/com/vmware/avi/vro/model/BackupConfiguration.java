@@ -68,6 +68,10 @@ public class BackupConfiguration extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String remoteHostname = null;
 
+    @JsonProperty("s3_bucket_folder")
+    @JsonInclude(Include.NON_NULL)
+    private String s3BucketFolder = null;
+
     @JsonProperty("save_local")
     @JsonInclude(Include.NON_NULL)
     private Boolean saveLocal = null;
@@ -380,6 +384,32 @@ public class BackupConfiguration extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * The folder name in s3 bucket where backup will be stored.
+   * Field introduced in 30.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return s3BucketFolder
+   */
+  @VsoMethod
+  public String getS3BucketFolder() {
+    return s3BucketFolder;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * The folder name in s3 bucket where backup will be stored.
+   * Field introduced in 30.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param s3BucketFolder set the s3BucketFolder.
+   */
+  @VsoMethod
+  public void setS3BucketFolder(String  s3BucketFolder) {
+    this.s3BucketFolder = s3BucketFolder;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Local backup.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -573,6 +603,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.awsBucketId, objBackupConfiguration.awsBucketId)&&
   Objects.equals(this.remoteFileTransferProtocol, objBackupConfiguration.remoteFileTransferProtocol)&&
   Objects.equals(this.awsBucketRegion, objBackupConfiguration.awsBucketRegion)&&
+  Objects.equals(this.s3BucketFolder, objBackupConfiguration.s3BucketFolder)&&
   Objects.equals(this.tenantRef, objBackupConfiguration.tenantRef);
 }
 
@@ -591,6 +622,7 @@ public String toString() {
         sb.append("    remoteDirectory: ").append(toIndentedString(remoteDirectory)).append("\n");
         sb.append("    remoteFileTransferProtocol: ").append(toIndentedString(remoteFileTransferProtocol)).append("\n");
         sb.append("    remoteHostname: ").append(toIndentedString(remoteHostname)).append("\n");
+        sb.append("    s3BucketFolder: ").append(toIndentedString(s3BucketFolder)).append("\n");
         sb.append("    saveLocal: ").append(toIndentedString(saveLocal)).append("\n");
         sb.append("    sshUserRef: ").append(toIndentedString(sshUserRef)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");

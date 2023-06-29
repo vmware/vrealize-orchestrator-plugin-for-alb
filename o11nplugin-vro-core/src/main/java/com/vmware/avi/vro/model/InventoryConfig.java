@@ -26,16 +26,16 @@ import org.springframework.stereotype.Service;
 public class InventoryConfig extends AviRestResource {
     @JsonProperty("enable")
     @JsonInclude(Include.NON_NULL)
-    private Boolean enable = true;
+    private Boolean enable = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allow inventory stats to be regularly sent to pulse portal.
+   * Allow inventory stats to be regularly sent to pulse cloud services.
    * Field introduced in 22.1.3.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return enable
    */
   @VsoMethod
@@ -45,10 +45,10 @@ public class InventoryConfig extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allow inventory stats to be regularly sent to pulse portal.
+   * Allow inventory stats to be regularly sent to pulse cloud services.
    * Field introduced in 22.1.3.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param enable set the enable.
    */
   @VsoMethod

@@ -32,6 +32,10 @@ public class CentralLicenseRefreshDetails extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Float serviceUnits = null;
 
+    @JsonProperty("tenant_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantUuid = null;
+
 
 
   /**
@@ -86,6 +90,32 @@ public class CentralLicenseRefreshDetails extends AviRestResource {
     this.serviceUnits = serviceUnits;
   }
 
+  /**
+   * This is the getter method this will return the attribute value.
+   * Tenant uuid.
+   * Field introduced in 30.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return tenantUuid
+   */
+  @VsoMethod
+  public String getTenantUuid() {
+    return tenantUuid;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Tenant uuid.
+   * Field introduced in 30.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param tenantUuid set the tenantUuid.
+   */
+  @VsoMethod
+  public void setTenantUuid(String  tenantUuid) {
+    this.tenantUuid = tenantUuid;
+  }
+
 
 
 @Override
@@ -98,7 +128,8 @@ public boolean equals(java.lang.Object o) {
   }
   CentralLicenseRefreshDetails objCentralLicenseRefreshDetails = (CentralLicenseRefreshDetails) o;
   return   Objects.equals(this.message, objCentralLicenseRefreshDetails.message)&&
-  Objects.equals(this.serviceUnits, objCentralLicenseRefreshDetails.serviceUnits);
+  Objects.equals(this.serviceUnits, objCentralLicenseRefreshDetails.serviceUnits)&&
+  Objects.equals(this.tenantUuid, objCentralLicenseRefreshDetails.tenantUuid);
 }
 
 @Override
@@ -107,6 +138,7 @@ public String toString() {
   sb.append("class CentralLicenseRefreshDetails {\n");
       sb.append("    message: ").append(toIndentedString(message)).append("\n");
         sb.append("    serviceUnits: ").append(toIndentedString(serviceUnits)).append("\n");
+        sb.append("    tenantUuid: ").append(toIndentedString(tenantUuid)).append("\n");
       sb.append("}");
   return sb.toString();
 }

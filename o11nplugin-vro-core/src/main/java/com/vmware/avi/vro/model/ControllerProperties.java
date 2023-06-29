@@ -100,7 +100,7 @@ public class ControllerProperties extends AviRestResource {
 
     @JsonProperty("controller_resource_info_collection_period")
     @JsonInclude(Include.NON_NULL)
-    private Integer controllerResourceInfoCollectionPeriod = 30;
+    private Integer controllerResourceInfoCollectionPeriod = 525600;
 
     @JsonProperty("crashed_se_reboot")
     @JsonInclude(Include.NON_NULL)
@@ -177,6 +177,10 @@ public class ControllerProperties extends AviRestResource {
     @JsonProperty("gslb_purge_sleep_time_ms")
     @JsonInclude(Include.NON_NULL)
     private Integer gslbPurgeSleepTimeMs = 50;
+
+    @JsonProperty("ignore_vrf_in_networksubnetlist")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean ignoreVrfInNetworksubnetlist = false;
 
     @JsonProperty("max_dead_se_in_grp")
     @JsonInclude(Include.NON_NULL)
@@ -293,6 +297,10 @@ public class ControllerProperties extends AviRestResource {
     @JsonProperty("secure_channel_se_token_timeout")
     @JsonInclude(Include.NON_NULL)
     private Integer secureChannelSeTokenTimeout = 60;
+
+    @JsonProperty("seupgrade_copy_buffer_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seupgradeCopyBufferSize = 512;
 
     @JsonProperty("seupgrade_copy_pool_size")
     @JsonInclude(Include.NON_NULL)
@@ -900,7 +908,7 @@ public class ControllerProperties extends AviRestResource {
    * Field introduced in 20.1.3.
    * Unit is min.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 30.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 525600.
    * @return controllerResourceInfoCollectionPeriod
    */
   @VsoMethod
@@ -914,7 +922,7 @@ public class ControllerProperties extends AviRestResource {
    * Field introduced in 20.1.3.
    * Unit is min.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 30.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 525600.
    * @param controllerResourceInfoCollectionPeriod set the controllerResourceInfoCollectionPeriod.
    */
   @VsoMethod
@@ -1440,6 +1448,32 @@ public class ControllerProperties extends AviRestResource {
   @VsoMethod
   public void setGslbPurgeSleepTimeMs(Integer  gslbPurgeSleepTimeMs) {
     this.gslbPurgeSleepTimeMs = gslbPurgeSleepTimeMs;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Ignore the vrf_context filter for /networksubnetlist api.
+   * Field introduced in 30.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return ignoreVrfInNetworksubnetlist
+   */
+  @VsoMethod
+  public Boolean getIgnoreVrfInNetworksubnetlist() {
+    return ignoreVrfInNetworksubnetlist;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Ignore the vrf_context filter for /networksubnetlist api.
+   * Field introduced in 30.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param ignoreVrfInNetworksubnetlist set the ignoreVrfInNetworksubnetlist.
+   */
+  @VsoMethod
+  public void setIgnoreVrfInNetworksubnetlist(Boolean  ignoreVrfInNetworksubnetlist) {
+    this.ignoreVrfInNetworksubnetlist = ignoreVrfInNetworksubnetlist;
   }
 
   /**
@@ -2218,6 +2252,34 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * This parameter defines the buffer size during se image downloads in a segroup.
+   * It is used to pace the se downloads so that controller network/cpu bandwidth is a bounded operation.
+   * Field introduced in 22.1.4.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 512.
+   * @return seupgradeCopyBufferSize
+   */
+  @VsoMethod
+  public Integer getSeupgradeCopyBufferSize() {
+    return seupgradeCopyBufferSize;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * This parameter defines the buffer size during se image downloads in a segroup.
+   * It is used to pace the se downloads so that controller network/cpu bandwidth is a bounded operation.
+   * Field introduced in 22.1.4.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 512.
+   * @param seupgradeCopyBufferSize set the seupgradeCopyBufferSize.
+   */
+  @VsoMethod
+  public void setSeupgradeCopyBufferSize(Integer  seupgradeCopyBufferSize) {
+    this.seupgradeCopyBufferSize = seupgradeCopyBufferSize;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * This parameter defines the number of simultaneous se image downloads in a segroup.
    * It is used to pace the se downloads so that controller network/cpu bandwidth is a bounded operation.
    * A value of 0 will disable the pacing scheme and all the se(s) in the segroup will attempt to download the image.
@@ -2248,7 +2310,9 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Pool size used for all fabric commands during se upgrade.
+   * The pool size is used to control the number of concurrent segroup upgrades.
+   * This field value takes affect upon controller warm reboot.
+   * Allowed values are 2-20.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20.
    * @return seupgradeFabricPoolSize
@@ -2260,7 +2324,9 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Pool size used for all fabric commands during se upgrade.
+   * The pool size is used to control the number of concurrent segroup upgrades.
+   * This field value takes affect upon controller warm reboot.
+   * Allowed values are 2-20.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20.
    * @param seupgradeFabricPoolSize set the seupgradeFabricPoolSize.
@@ -3138,7 +3204,9 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.falsePositiveLearningConfig, objControllerProperties.falsePositiveLearningConfig)&&
   Objects.equals(this.gslbPurgeBatchSize, objControllerProperties.gslbPurgeBatchSize)&&
   Objects.equals(this.gslbPurgeSleepTimeMs, objControllerProperties.gslbPurgeSleepTimeMs)&&
-  Objects.equals(this.postgresVacuumPeriod, objControllerProperties.postgresVacuumPeriod);
+  Objects.equals(this.postgresVacuumPeriod, objControllerProperties.postgresVacuumPeriod)&&
+  Objects.equals(this.ignoreVrfInNetworksubnetlist, objControllerProperties.ignoreVrfInNetworksubnetlist)&&
+  Objects.equals(this.seupgradeCopyBufferSize, objControllerProperties.seupgradeCopyBufferSize);
 }
 
 @Override
@@ -3183,6 +3251,7 @@ public String toString() {
         sb.append("    fileObjectCleanupPeriod: ").append(toIndentedString(fileObjectCleanupPeriod)).append("\n");
         sb.append("    gslbPurgeBatchSize: ").append(toIndentedString(gslbPurgeBatchSize)).append("\n");
         sb.append("    gslbPurgeSleepTimeMs: ").append(toIndentedString(gslbPurgeSleepTimeMs)).append("\n");
+        sb.append("    ignoreVrfInNetworksubnetlist: ").append(toIndentedString(ignoreVrfInNetworksubnetlist)).append("\n");
         sb.append("    maxDeadSeInGrp: ").append(toIndentedString(maxDeadSeInGrp)).append("\n");
         sb.append("    maxPcapPerTenant: ").append(toIndentedString(maxPcapPerTenant)).append("\n");
         sb.append("    maxSeSpawnIntervalDelay: ").append(toIndentedString(maxSeSpawnIntervalDelay)).append("\n");
@@ -3212,6 +3281,7 @@ public String toString() {
         sb.append("    secureChannelCleanupTimeout: ").append(toIndentedString(secureChannelCleanupTimeout)).append("\n");
         sb.append("    secureChannelControllerTokenTimeout: ").append(toIndentedString(secureChannelControllerTokenTimeout)).append("\n");
         sb.append("    secureChannelSeTokenTimeout: ").append(toIndentedString(secureChannelSeTokenTimeout)).append("\n");
+        sb.append("    seupgradeCopyBufferSize: ").append(toIndentedString(seupgradeCopyBufferSize)).append("\n");
         sb.append("    seupgradeCopyPoolSize: ").append(toIndentedString(seupgradeCopyPoolSize)).append("\n");
         sb.append("    seupgradeFabricPoolSize: ").append(toIndentedString(seupgradeFabricPoolSize)).append("\n");
         sb.append("    seupgradeSegroupMinDeadTimeout: ").append(toIndentedString(seupgradeSegroupMinDeadTimeout)).append("\n");

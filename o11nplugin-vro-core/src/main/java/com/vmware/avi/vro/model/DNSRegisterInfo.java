@@ -7,6 +7,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.IpAddr;
 import com.vmware.avi.vro.model.IpAddr;
+import com.vmware.avi.vro.model.IpAddr;
+import com.vmware.avi.vro.model.IpAddr;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -38,6 +40,10 @@ public class DNSRegisterInfo extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private IpAddr fip = null;
 
+    @JsonProperty("fip6")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr fip6 = null;
+
     @JsonProperty("total_records")
     @JsonInclude(Include.NON_NULL)
     private Integer totalRecords = null;
@@ -45,6 +51,10 @@ public class DNSRegisterInfo extends AviRestResource {
     @JsonProperty("vip")
     @JsonInclude(Include.NON_NULL)
     private IpAddr vip = null;
+
+    @JsonProperty("vip6")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr vip6 = null;
 
     @JsonProperty("vip_id")
     @JsonInclude(Include.NON_NULL)
@@ -146,6 +156,28 @@ public class DNSRegisterInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return fip6
+   */
+  @VsoMethod
+  public IpAddr getFip6() {
+    return fip6;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param fip6 set the fip6.
+   */
+  @VsoMethod
+  public void setFip6(IpAddr fip6) {
+    this.fip6 = fip6;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return totalRecords
    */
   @VsoMethod
@@ -184,6 +216,28 @@ public class DNSRegisterInfo extends AviRestResource {
   @VsoMethod
   public void setVip(IpAddr vip) {
     this.vip = vip;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return vip6
+   */
+  @VsoMethod
+  public IpAddr getVip6() {
+    return vip6;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param vip6 set the vip6.
+   */
+  @VsoMethod
+  public void setVip6(IpAddr vip6) {
+    this.vip6 = vip6;
   }
 
   /**
@@ -302,7 +356,9 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.dnsInfo, objDNSRegisterInfo.dnsInfo)&&
   Objects.equals(this.vsNames, objDNSRegisterInfo.vsNames)&&
   Objects.equals(this.error, objDNSRegisterInfo.error)&&
-  Objects.equals(this.totalRecords, objDNSRegisterInfo.totalRecords);
+  Objects.equals(this.totalRecords, objDNSRegisterInfo.totalRecords)&&
+  Objects.equals(this.vip6, objDNSRegisterInfo.vip6)&&
+  Objects.equals(this.fip6, objDNSRegisterInfo.fip6);
 }
 
 @Override
@@ -312,8 +368,10 @@ public String toString() {
       sb.append("    dnsInfo: ").append(toIndentedString(dnsInfo)).append("\n");
         sb.append("    error: ").append(toIndentedString(error)).append("\n");
         sb.append("    fip: ").append(toIndentedString(fip)).append("\n");
+        sb.append("    fip6: ").append(toIndentedString(fip6)).append("\n");
         sb.append("    totalRecords: ").append(toIndentedString(totalRecords)).append("\n");
         sb.append("    vip: ").append(toIndentedString(vip)).append("\n");
+        sb.append("    vip6: ").append(toIndentedString(vip6)).append("\n");
         sb.append("    vipId: ").append(toIndentedString(vipId)).append("\n");
         sb.append("    vsNames: ").append(toIndentedString(vsNames)).append("\n");
         sb.append("    vsUuids: ").append(toIndentedString(vsUuids)).append("\n");

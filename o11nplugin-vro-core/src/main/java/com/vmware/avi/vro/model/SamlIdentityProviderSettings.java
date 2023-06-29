@@ -28,6 +28,10 @@ public class SamlIdentityProviderSettings extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String metadata = null;
 
+    @JsonProperty("metadata_url")
+    @JsonInclude(Include.NON_NULL)
+    private String metadataUrl = null;
+
 
 
   /**
@@ -56,6 +60,32 @@ public class SamlIdentityProviderSettings extends AviRestResource {
     this.metadata = metadata;
   }
 
+  /**
+   * This is the getter method this will return the attribute value.
+   * Saml idp federation metadata url.
+   * Field introduced in 30.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return metadataUrl
+   */
+  @VsoMethod
+  public String getMetadataUrl() {
+    return metadataUrl;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Saml idp federation metadata url.
+   * Field introduced in 30.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param metadataUrl set the metadataUrl.
+   */
+  @VsoMethod
+  public void setMetadataUrl(String  metadataUrl) {
+    this.metadataUrl = metadataUrl;
+  }
+
 
 
 @Override
@@ -67,7 +97,8 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   SamlIdentityProviderSettings objSamlIdentityProviderSettings = (SamlIdentityProviderSettings) o;
-  return   Objects.equals(this.metadata, objSamlIdentityProviderSettings.metadata);
+  return   Objects.equals(this.metadata, objSamlIdentityProviderSettings.metadata)&&
+  Objects.equals(this.metadataUrl, objSamlIdentityProviderSettings.metadataUrl);
 }
 
 @Override
@@ -75,6 +106,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class SamlIdentityProviderSettings {\n");
       sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+        sb.append("    metadataUrl: ").append(toIndentedString(metadataUrl)).append("\n");
       sb.append("}");
   return sb.toString();
 }
