@@ -100,7 +100,7 @@ public class ControllerProperties extends AviRestResource {
 
     @JsonProperty("controller_resource_info_collection_period")
     @JsonInclude(Include.NON_NULL)
-    private Integer controllerResourceInfoCollectionPeriod = 30;
+    private Integer controllerResourceInfoCollectionPeriod = 525600;
 
     @JsonProperty("crashed_se_reboot")
     @JsonInclude(Include.NON_NULL)
@@ -300,7 +300,7 @@ public class ControllerProperties extends AviRestResource {
 
     @JsonProperty("seupgrade_copy_buffer_size")
     @JsonInclude(Include.NON_NULL)
-    private Integer seupgradeCopyBufferSize = 128;
+    private Integer seupgradeCopyBufferSize = 512;
 
     @JsonProperty("seupgrade_copy_pool_size")
     @JsonInclude(Include.NON_NULL)
@@ -385,6 +385,10 @@ public class ControllerProperties extends AviRestResource {
     @JsonProperty("vs_se_bootup_fail")
     @JsonInclude(Include.NON_NULL)
     private Integer vsSeBootupFail = 480;
+
+    @JsonProperty("vs_se_bootup_fail_patch")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vsSeBootupFailPatch = 600;
 
     @JsonProperty("vs_se_create_fail")
     @JsonInclude(Include.NON_NULL)
@@ -908,7 +912,7 @@ public class ControllerProperties extends AviRestResource {
    * Field introduced in 20.1.3.
    * Unit is min.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 30.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 525600.
    * @return controllerResourceInfoCollectionPeriod
    */
   @VsoMethod
@@ -922,7 +926,7 @@ public class ControllerProperties extends AviRestResource {
    * Field introduced in 20.1.3.
    * Unit is min.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 30.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 525600.
    * @param controllerResourceInfoCollectionPeriod set the controllerResourceInfoCollectionPeriod.
    */
   @VsoMethod
@@ -2254,9 +2258,9 @@ public class ControllerProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This parameter defines the buffer size during se image downloads in a segroup.
    * It is used to pace the se downloads so that controller network/cpu bandwidth is a bounded operation.
-   * Field introduced in 22.1.4, 30.1.1.
+   * Field introduced in 22.1.4.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 128.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 512.
    * @return seupgradeCopyBufferSize
    */
   @VsoMethod
@@ -2268,9 +2272,9 @@ public class ControllerProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * This parameter defines the buffer size during se image downloads in a segroup.
    * It is used to pace the se downloads so that controller network/cpu bandwidth is a bounded operation.
-   * Field introduced in 22.1.4, 30.1.1.
+   * Field introduced in 22.1.4.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 128.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 512.
    * @param seupgradeCopyBufferSize set the seupgradeCopyBufferSize.
    */
   @VsoMethod
@@ -2857,6 +2861,34 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Wait for longer for patch ses to boot up.
+   * Field introduced in 30.2.1.
+   * Unit is sec.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 600.
+   * @return vsSeBootupFailPatch
+   */
+  @VsoMethod
+  public Integer getVsSeBootupFailPatch() {
+    return vsSeBootupFailPatch;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Wait for longer for patch ses to boot up.
+   * Field introduced in 30.2.1.
+   * Unit is sec.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 600.
+   * @param vsSeBootupFailPatch set the vsSeBootupFailPatch.
+   */
+  @VsoMethod
+  public void setVsSeBootupFailPatch(Integer  vsSeBootupFailPatch) {
+    this.vsSeBootupFailPatch = vsSeBootupFailPatch;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Unit is sec.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1500.
@@ -3206,7 +3238,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.gslbPurgeSleepTimeMs, objControllerProperties.gslbPurgeSleepTimeMs)&&
   Objects.equals(this.postgresVacuumPeriod, objControllerProperties.postgresVacuumPeriod)&&
   Objects.equals(this.ignoreVrfInNetworksubnetlist, objControllerProperties.ignoreVrfInNetworksubnetlist)&&
-  Objects.equals(this.seupgradeCopyBufferSize, objControllerProperties.seupgradeCopyBufferSize);
+  Objects.equals(this.seupgradeCopyBufferSize, objControllerProperties.seupgradeCopyBufferSize)&&
+  Objects.equals(this.vsSeBootupFailPatch, objControllerProperties.vsSeBootupFailPatch);
 }
 
 @Override
@@ -3302,6 +3335,7 @@ public String toString() {
         sb.append("    vsScaleoutReadyCheckInterval: ").append(toIndentedString(vsScaleoutReadyCheckInterval)).append("\n");
         sb.append("    vsSeAttachIpFail: ").append(toIndentedString(vsSeAttachIpFail)).append("\n");
         sb.append("    vsSeBootupFail: ").append(toIndentedString(vsSeBootupFail)).append("\n");
+        sb.append("    vsSeBootupFailPatch: ").append(toIndentedString(vsSeBootupFailPatch)).append("\n");
         sb.append("    vsSeCreateFail: ").append(toIndentedString(vsSeCreateFail)).append("\n");
         sb.append("    vsSePingFail: ").append(toIndentedString(vsSePingFail)).append("\n");
         sb.append("    vsSeVnicFail: ").append(toIndentedString(vsSeVnicFail)).append("\n");
