@@ -36,6 +36,10 @@ public class ControllerPortalAuth extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String jwtToken = null;
 
+    @JsonProperty("tenant")
+    @JsonInclude(Include.NON_NULL)
+    private String tenant = null;
+
 
 
   /**
@@ -66,7 +70,7 @@ public class ControllerPortalAuth extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Salesforce instance url.
+   * Cloud services instance url.
    * Field introduced in 18.2.6.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -79,7 +83,7 @@ public class ControllerPortalAuth extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Salesforce instance url.
+   * Cloud services instance url.
    * Field introduced in 18.2.6.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -116,6 +120,32 @@ public class ControllerPortalAuth extends AviRestResource {
     this.jwtToken = jwtToken;
   }
 
+  /**
+   * This is the getter method this will return the attribute value.
+   * Tenant information for which cloud services authentication information is persisted.
+   * Field introduced in 30.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return tenant
+   */
+  @VsoMethod
+  public String getTenant() {
+    return tenant;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Tenant information for which cloud services authentication information is persisted.
+   * Field introduced in 30.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param tenant set the tenant.
+   */
+  @VsoMethod
+  public void setTenant(String  tenant) {
+    this.tenant = tenant;
+  }
+
 
 
 @Override
@@ -129,7 +159,8 @@ public boolean equals(java.lang.Object o) {
   ControllerPortalAuth objControllerPortalAuth = (ControllerPortalAuth) o;
   return   Objects.equals(this.accessToken, objControllerPortalAuth.accessToken)&&
   Objects.equals(this.jwtToken, objControllerPortalAuth.jwtToken)&&
-  Objects.equals(this.instanceUrl, objControllerPortalAuth.instanceUrl);
+  Objects.equals(this.instanceUrl, objControllerPortalAuth.instanceUrl)&&
+  Objects.equals(this.tenant, objControllerPortalAuth.tenant);
 }
 
 @Override
@@ -139,6 +170,7 @@ public String toString() {
       sb.append("    accessToken: ").append(toIndentedString(accessToken)).append("\n");
         sb.append("    instanceUrl: ").append(toIndentedString(instanceUrl)).append("\n");
         sb.append("    jwtToken: ").append(toIndentedString(jwtToken)).append("\n");
+        sb.append("    tenant: ").append(toIndentedString(tenant)).append("\n");
       sb.append("}");
   return sb.toString();
 }

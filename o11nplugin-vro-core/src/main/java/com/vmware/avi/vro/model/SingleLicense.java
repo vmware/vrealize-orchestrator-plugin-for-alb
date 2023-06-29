@@ -112,6 +112,10 @@ public class SingleLicense extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String startOn = null;
 
+    @JsonProperty("tenant_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantUuid = null;
+
     @JsonProperty("tier_type")
     @JsonInclude(Include.NON_NULL)
     private String tierType = null;
@@ -729,6 +733,32 @@ public class SingleLicense extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Tenant uuid.
+   * Field introduced in 30.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return tenantUuid
+   */
+  @VsoMethod
+  public String getTenantUuid() {
+    return tenantUuid;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Tenant uuid.
+   * Field introduced in 30.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param tenantUuid set the tenantUuid.
+   */
+  @VsoMethod
+  public void setTenantUuid(String  tenantUuid) {
+    this.tenantUuid = tenantUuid;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Specifies the licensed tier.
    * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, ENTERPRISE_WITH_CLOUD_SERVICES.
    * Field introduced in 17.2.5.
@@ -863,7 +893,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.ccu, objSingleLicense.ccu)&&
   Objects.equals(this.addons, objSingleLicense.addons)&&
   Objects.equals(this.capacity, objSingleLicense.capacity)&&
-  Objects.equals(this.unit, objSingleLicense.unit);
+  Objects.equals(this.unit, objSingleLicense.unit)&&
+  Objects.equals(this.tenantUuid, objSingleLicense.tenantUuid);
 }
 
 @Override
@@ -892,6 +923,7 @@ public String toString() {
         sb.append("    serviceCores: ").append(toIndentedString(serviceCores)).append("\n");
         sb.append("    sockets: ").append(toIndentedString(sockets)).append("\n");
         sb.append("    startOn: ").append(toIndentedString(startOn)).append("\n");
+        sb.append("    tenantUuid: ").append(toIndentedString(tenantUuid)).append("\n");
         sb.append("    tierType: ").append(toIndentedString(tierType)).append("\n");
         sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
         sb.append("    validUntil: ").append(toIndentedString(validUntil)).append("\n");

@@ -40,6 +40,10 @@ public class AlertSyslogServer extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String sslKeyAndCertificateRef = null;
 
+    @JsonProperty("strict_cert_verify")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean strictCertVerify = false;
+
     @JsonProperty("syslog_server")
     @JsonInclude(Include.NON_NULL)
     private String syslogServer = null;
@@ -170,6 +174,32 @@ public class AlertSyslogServer extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Strict verificiation of certificate given by the server.
+   * Field introduced in 30.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return strictCertVerify
+   */
+  @VsoMethod
+  public Boolean getStrictCertVerify() {
+    return strictCertVerify;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Strict verificiation of certificate given by the server.
+   * Field introduced in 30.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param strictCertVerify set the strictCertVerify.
+   */
+  @VsoMethod
+  public void setStrictCertVerify(Boolean  strictCertVerify) {
+    this.strictCertVerify = strictCertVerify;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * The destination syslog server ip address or hostname.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -284,7 +314,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.tlsEnable, objAlertSyslogServer.tlsEnable)&&
   Objects.equals(this.sslKeyAndCertificateRef, objAlertSyslogServer.sslKeyAndCertificateRef)&&
   Objects.equals(this.pkiprofileRef, objAlertSyslogServer.pkiprofileRef)&&
-  Objects.equals(this.anonAuth, objAlertSyslogServer.anonAuth);
+  Objects.equals(this.anonAuth, objAlertSyslogServer.anonAuth)&&
+  Objects.equals(this.strictCertVerify, objAlertSyslogServer.strictCertVerify);
 }
 
 @Override
@@ -295,6 +326,7 @@ public String toString() {
         sb.append("    format: ").append(toIndentedString(format)).append("\n");
         sb.append("    pkiprofileRef: ").append(toIndentedString(pkiprofileRef)).append("\n");
         sb.append("    sslKeyAndCertificateRef: ").append(toIndentedString(sslKeyAndCertificateRef)).append("\n");
+        sb.append("    strictCertVerify: ").append(toIndentedString(strictCertVerify)).append("\n");
         sb.append("    syslogServer: ").append(toIndentedString(syslogServer)).append("\n");
         sb.append("    syslogServerPort: ").append(toIndentedString(syslogServerPort)).append("\n");
         sb.append("    tlsEnable: ").append(toIndentedString(tlsEnable)).append("\n");

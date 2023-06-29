@@ -34,6 +34,10 @@ public class LicenseStatus extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private LicenseServiceUpdate serviceUpdate = null;
 
+    @JsonProperty("tenant_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantUuid = null;
+
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
     private String url = "url";
@@ -94,6 +98,32 @@ public class LicenseStatus extends AviRestResource {
   @VsoMethod
   public void setServiceUpdate(LicenseServiceUpdate serviceUpdate) {
     this.serviceUpdate = serviceUpdate;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Tenant uuid.
+   * Field introduced in 30.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return tenantUuid
+   */
+  @VsoMethod
+  public String getTenantUuid() {
+    return tenantUuid;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Tenant uuid.
+   * Field introduced in 30.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param tenantUuid set the tenantUuid.
+   */
+  @VsoMethod
+  public void setTenantUuid(String  tenantUuid) {
+    this.tenantUuid = tenantUuid;
   }
 /**
    * This is the getter method this will return the attribute value.
@@ -157,7 +187,8 @@ public boolean equals(java.lang.Object o) {
   LicenseStatus objLicenseStatus = (LicenseStatus) o;
   return   Objects.equals(this.uuid, objLicenseStatus.uuid)&&
   Objects.equals(this.saasStatus, objLicenseStatus.saasStatus)&&
-  Objects.equals(this.serviceUpdate, objLicenseStatus.serviceUpdate);
+  Objects.equals(this.serviceUpdate, objLicenseStatus.serviceUpdate)&&
+  Objects.equals(this.tenantUuid, objLicenseStatus.tenantUuid);
 }
 
 @Override
@@ -166,6 +197,7 @@ public String toString() {
   sb.append("class LicenseStatus {\n");
       sb.append("    saasStatus: ").append(toIndentedString(saasStatus)).append("\n");
         sb.append("    serviceUpdate: ").append(toIndentedString(serviceUpdate)).append("\n");
+        sb.append("    tenantUuid: ").append(toIndentedString(tenantUuid)).append("\n");
             sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
       sb.append("}");
   return sb.toString();
