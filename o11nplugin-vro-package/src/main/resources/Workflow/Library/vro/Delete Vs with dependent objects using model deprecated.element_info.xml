@@ -3,7 +3,7 @@
 <properties>
 	<comment>Exported from [server]</comment>
 	<entry key="categoryPath">Library.Avi</entry>
-	<entry key="name">Create VS with public cloud</entry>
+	<entry key="name">Delete Vs with dependent objects(Deprecated)</entry>
 	<entry key="type">Workflow</entry>
-	<entry key="id">7e4121c0-0397-4c89-8d85-6878c033351d</entry>
+	<entry key="id">250e8578-2c8a-408f-9515-0f8cbeef726e</entry>
 </properties>
