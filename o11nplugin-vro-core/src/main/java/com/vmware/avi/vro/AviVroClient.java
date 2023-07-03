@@ -414,20 +414,18 @@ public class AviVroClient {
 	 * 
 	 * This method upload the file into the controller.
 	 * 
-	 * @param uri           is the api which upload a file
-	 * @param filePath      is file which we want to upload
-	 * @param fileUploadUri is uri where we have to upload file
+	 * @param uri           is the URL for file upload e.g fileservice or image
+	 * @param filePath      is the file path which needs to be uploaded from local
 	 * @throws Exception
 	 */
 	@VsoMethod
-	public void fileUpload(String uri, String filePath, String fileUploadUri) throws Exception {
+	public void fileUpload(String uri, String filePath) throws Exception {
 		logger.debug("Executing fileUpload.");
 		logger.debug("uri : " + uri);
 		logger.debug("File Path : " + filePath);
-		logger.debug("File Upload Uri : " + fileUploadUri);
 		AviApi session = getSession();
-		if (uri != null && filePath != null && fileUploadUri != null) {
-			session.fileUpload(uri, filePath, fileUploadUri);
+		if (uri != null && filePath != null) {
+			session.fileUpload(uri, filePath);
 		}
 	}	
 

@@ -29,14 +29,14 @@ jobs:
           echo "Check maven version"
           mvn -version
 
-      - name: Create Symlinks for external jars directory
-        run: |
-          echo "Create symlinks for external jars to build VRO plugin."
-          ln -s $GITHUB_WORKSPACE/lib/ $GITHUB_WORKSPACE/o11nplugin-vro/
-          echo "Created symlinks to build the core module."
-          ln -s $GITHUB_WORKSPACE/lib/ $GITHUB_WORKSPACE/o11nplugin-vro-core/
-          echo "Created symlinks to build the package module."
-          ln -s $GITHUB_WORKSPACE/lib/ $GITHUB_WORKSPACE/o11nplugin-vro-package/
+      # - name: Create Symlinks for external jars directory
+      #   run: |
+      #     echo "Create symlinks for external jars to build VRO plugin."
+      #     ln -s $GITHUB_WORKSPACE/lib/ $GITHUB_WORKSPACE/o11nplugin-vro/
+      #     echo "Created symlinks to build the core module."
+      #     ln -s $GITHUB_WORKSPACE/lib/ $GITHUB_WORKSPACE/o11nplugin-vro-core/
+      #     echo "Created symlinks to build the package module."
+      #     ln -s $GITHUB_WORKSPACE/lib/ $GITHUB_WORKSPACE/o11nplugin-vro-package/
 
       - name: Verify whether the symlink has been created.
         run: |
@@ -66,6 +66,7 @@ jobs:
         run: |
           echo "Build VRO Version ${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}"
           mvn versions:set -DnewVersion=${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}
+          export _JAVA_OPTIONS="--add-exports=java.base/sun.security.x509=ALL-UNNAMED"
           mvn clean install -Dmaven.wagon.http.ssl.insecure:true -Dmaven.wagon.http.ssl.allowall:true -Dbuild.number=50 -DskipTests
           ls o11nplugin-vro/target/
           cp o11nplugin-vro/target/o11nplugin-vro-${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}.dar .
