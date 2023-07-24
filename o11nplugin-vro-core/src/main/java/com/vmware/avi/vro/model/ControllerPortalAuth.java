@@ -28,6 +28,10 @@ public class ControllerPortalAuth extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String accessToken = null;
 
+    @JsonProperty("grant_type")
+    @JsonInclude(Include.NON_NULL)
+    private String grantType = "REFRESH_TOKEN";
+
     @JsonProperty("instance_url")
     @JsonInclude(Include.NON_NULL)
     private String instanceUrl = null;
@@ -66,6 +70,34 @@ public class ControllerPortalAuth extends AviRestResource {
   @VsoMethod
   public void setAccessToken(String  accessToken) {
     this.accessToken = accessToken;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Grant type of the jwt token.
+   * Enum options - REFRESH_TOKEN, CLIENT_CREDENTIALS.
+   * Field introduced in 30.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "REFRESH_TOKEN".
+   * @return grantType
+   */
+  @VsoMethod
+  public String getGrantType() {
+    return grantType;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Grant type of the jwt token.
+   * Enum options - REFRESH_TOKEN, CLIENT_CREDENTIALS.
+   * Field introduced in 30.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "REFRESH_TOKEN".
+   * @param grantType set the grantType.
+   */
+  @VsoMethod
+  public void setGrantType(String  grantType) {
+    this.grantType = grantType;
   }
 
   /**
@@ -160,7 +192,8 @@ public boolean equals(java.lang.Object o) {
   return   Objects.equals(this.accessToken, objControllerPortalAuth.accessToken)&&
   Objects.equals(this.jwtToken, objControllerPortalAuth.jwtToken)&&
   Objects.equals(this.instanceUrl, objControllerPortalAuth.instanceUrl)&&
-  Objects.equals(this.tenant, objControllerPortalAuth.tenant);
+  Objects.equals(this.tenant, objControllerPortalAuth.tenant)&&
+  Objects.equals(this.grantType, objControllerPortalAuth.grantType);
 }
 
 @Override
@@ -168,6 +201,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class ControllerPortalAuth {\n");
       sb.append("    accessToken: ").append(toIndentedString(accessToken)).append("\n");
+        sb.append("    grantType: ").append(toIndentedString(grantType)).append("\n");
         sb.append("    instanceUrl: ").append(toIndentedString(instanceUrl)).append("\n");
         sb.append("    jwtToken: ").append(toIndentedString(jwtToken)).append("\n");
         sb.append("    tenant: ").append(toIndentedString(tenant)).append("\n");
