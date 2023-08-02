@@ -26,6 +26,10 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GslbServiceDownResponse extends AviRestResource {
+    @JsonProperty("fallback_cname")
+    @JsonInclude(Include.NON_NULL)
+    private String fallbackCname = null;
+
     @JsonProperty("fallback_ip")
     @JsonInclude(Include.NON_NULL)
     private IpAddr fallbackIp = null;
@@ -39,6 +43,32 @@ public class GslbServiceDownResponse extends AviRestResource {
     private String type = "GSLB_SERVICE_DOWN_RESPONSE_NONE";
 
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Fallback cname to use in response to the client query when the gslb service is down.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return fallbackCname
+   */
+  @VsoMethod
+  public String getFallbackCname() {
+    return fallbackCname;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Fallback cname to use in response to the client query when the gslb service is down.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param fallbackCname set the fallbackCname.
+   */
+  @VsoMethod
+  public void setFallbackCname(String  fallbackCname) {
+    this.fallbackCname = fallbackCname;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -94,7 +124,7 @@ public class GslbServiceDownResponse extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Response from dns service towards the client when the gslb service is down.
    * Enum options - GSLB_SERVICE_DOWN_RESPONSE_NONE, GSLB_SERVICE_DOWN_RESPONSE_ALL_RECORDS, GSLB_SERVICE_DOWN_RESPONSE_FALLBACK_IP,
-   * GSLB_SERVICE_DOWN_RESPONSE_EMPTY.
+   * GSLB_SERVICE_DOWN_RESPONSE_EMPTY, GSLB_SERVICE_DOWN_RESPONSE_CNAME.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_SERVICE_DOWN_RESPONSE_NONE".
    * @return type
@@ -108,7 +138,7 @@ public class GslbServiceDownResponse extends AviRestResource {
    * This is the setter method to the attribute.
    * Response from dns service towards the client when the gslb service is down.
    * Enum options - GSLB_SERVICE_DOWN_RESPONSE_NONE, GSLB_SERVICE_DOWN_RESPONSE_ALL_RECORDS, GSLB_SERVICE_DOWN_RESPONSE_FALLBACK_IP,
-   * GSLB_SERVICE_DOWN_RESPONSE_EMPTY.
+   * GSLB_SERVICE_DOWN_RESPONSE_EMPTY, GSLB_SERVICE_DOWN_RESPONSE_CNAME.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_SERVICE_DOWN_RESPONSE_NONE".
    * @param type set the type.
@@ -131,14 +161,16 @@ public boolean equals(java.lang.Object o) {
   GslbServiceDownResponse objGslbServiceDownResponse = (GslbServiceDownResponse) o;
   return   Objects.equals(this.type, objGslbServiceDownResponse.type)&&
   Objects.equals(this.fallbackIp, objGslbServiceDownResponse.fallbackIp)&&
-  Objects.equals(this.fallbackIp6, objGslbServiceDownResponse.fallbackIp6);
+  Objects.equals(this.fallbackIp6, objGslbServiceDownResponse.fallbackIp6)&&
+  Objects.equals(this.fallbackCname, objGslbServiceDownResponse.fallbackCname);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class GslbServiceDownResponse {\n");
-      sb.append("    fallbackIp: ").append(toIndentedString(fallbackIp)).append("\n");
+      sb.append("    fallbackCname: ").append(toIndentedString(fallbackCname)).append("\n");
+        sb.append("    fallbackIp: ").append(toIndentedString(fallbackIp)).append("\n");
         sb.append("    fallbackIp6: ").append(toIndentedString(fallbackIp6)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
       sb.append("}");
