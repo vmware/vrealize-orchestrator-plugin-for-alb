@@ -951,11 +951,14 @@ public class Constants {
     public static final String FINDER_VRO_SERVERSCALEINPARAMS = "ServerScaleInParams";
     public static final String FINDER_VRO_SERVERSCALEOUTPARAMS = "ServerScaleOutParams";
     public static final String FINDER_VRO_SERVICE = "Service";
+    public static final String FINDER_VRO_SERVICEAUTHCONFIGURATION = "ServiceAuthConfiguration";
+    public static final String FINDER_VRO_SERVICEAUTHPROFILE = "ServiceAuthProfile";
     public static final String FINDER_VRO_SERVICEENGINE = "ServiceEngine";
     public static final String FINDER_VRO_SERVICEENGINECLOUDLIMITS = "ServiceEngineCloudLimits";
     public static final String FINDER_VRO_SERVICEENGINEGROUP = "ServiceEngineGroup";
     public static final String FINDER_VRO_SERVICEENGINELIMITS = "ServiceEngineLimits";
     public static final String FINDER_VRO_SERVICEMATCH = "ServiceMatch";
+    public static final String FINDER_VRO_SERVICEOAUTH = "ServiceOAuth";
     public static final String FINDER_VRO_SERVICEPOOLSELECTOR = "ServicePoolSelector";
     public static final String FINDER_VRO_SERVICEENGINEFAULTS = "ServiceengineFaults";
     public static final String FINDER_VRO_SIDEBANDPROFILE = "SidebandProfile";
