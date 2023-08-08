@@ -326,6 +326,10 @@ public class ControllerProperties extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer skopeoRetryLimit = 3;
 
+    @JsonProperty("soft_min_mem_per_se_limit")
+    @JsonInclude(Include.NON_NULL)
+    private Integer softMinMemPerSeLimit = 1900;
+
     @JsonProperty("ssl_certificate_expiry_warning_days")
     @JsonInclude(Include.NON_NULL)
     private List<Integer> sslCertificateExpiryWarningDays = null;
@@ -2452,6 +2456,34 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Soft limit on the minimum se memory that an se needs to have on se register.
+   * Field introduced in 30.1.1.
+   * Unit is mb.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1900.
+   * @return softMinMemPerSeLimit
+   */
+  @VsoMethod
+  public Integer getSoftMinMemPerSeLimit() {
+    return softMinMemPerSeLimit;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Soft limit on the minimum se memory that an se needs to have on se register.
+   * Field introduced in 30.1.1.
+   * Unit is mb.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1900.
+   * @param softMinMemPerSeLimit set the softMinMemPerSeLimit.
+   */
+  @VsoMethod
+  public void setSoftMinMemPerSeLimit(Integer  softMinMemPerSeLimit) {
+    this.softMinMemPerSeLimit = softMinMemPerSeLimit;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Number of days for ssl certificate expiry warning.
    * Unit is days.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
@@ -3270,7 +3302,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.ignoreVrfInNetworksubnetlist, objControllerProperties.ignoreVrfInNetworksubnetlist)&&
   Objects.equals(this.seupgradeCopyBufferSize, objControllerProperties.seupgradeCopyBufferSize)&&
   Objects.equals(this.skopeoRetryLimit, objControllerProperties.skopeoRetryLimit)&&
-  Objects.equals(this.skopeoRetryInterval, objControllerProperties.skopeoRetryInterval);
+  Objects.equals(this.skopeoRetryInterval, objControllerProperties.skopeoRetryInterval)&&
+  Objects.equals(this.softMinMemPerSeLimit, objControllerProperties.softMinMemPerSeLimit);
 }
 
 @Override
@@ -3352,6 +3385,7 @@ public String toString() {
         sb.append("    sharedSslCertificates: ").append(toIndentedString(sharedSslCertificates)).append("\n");
         sb.append("    skopeoRetryInterval: ").append(toIndentedString(skopeoRetryInterval)).append("\n");
         sb.append("    skopeoRetryLimit: ").append(toIndentedString(skopeoRetryLimit)).append("\n");
+        sb.append("    softMinMemPerSeLimit: ").append(toIndentedString(softMinMemPerSeLimit)).append("\n");
         sb.append("    sslCertificateExpiryWarningDays: ").append(toIndentedString(sslCertificateExpiryWarningDays)).append("\n");
         sb.append("    unresponsiveSeReboot: ").append(toIndentedString(unresponsiveSeReboot)).append("\n");
         sb.append("    updateDnsEntryRetryLimit: ").append(toIndentedString(updateDnsEntryRetryLimit)).append("\n");
