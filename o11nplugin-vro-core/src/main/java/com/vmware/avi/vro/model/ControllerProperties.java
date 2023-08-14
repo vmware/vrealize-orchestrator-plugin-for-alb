@@ -170,6 +170,10 @@ public class ControllerProperties extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer fileObjectCleanupPeriod = 1440;
 
+    @JsonProperty("file_reference_mappings")
+    @JsonInclude(Include.NON_NULL)
+    private List<FileReferenceMapping> fileReferenceMappings = null;
+
     @JsonProperty("gslb_purge_batch_size")
     @JsonInclude(Include.NON_NULL)
     private Integer gslbPurgeBatchSize = 1000;
@@ -1406,6 +1410,50 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * List of mapping for file reference and their absolute path.
+   * Field introduced in 30.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return fileReferenceMappings
+   */
+  @VsoMethod
+  public List<FileReferenceMapping> getFileReferenceMappings() {
+    return fileReferenceMappings;
+  }
+
+  /**
+   * This is the setter method. this will set the fileReferenceMappings
+   * List of mapping for file reference and their absolute path.
+   * Field introduced in 30.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return fileReferenceMappings
+   */
+  @VsoMethod
+  public void setFileReferenceMappings(List<FileReferenceMapping>  fileReferenceMappings) {
+    this.fileReferenceMappings = fileReferenceMappings;
+  }
+
+  /**
+   * This is the setter method this will set the fileReferenceMappings
+   * List of mapping for file reference and their absolute path.
+   * Field introduced in 30.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return fileReferenceMappings
+   */
+  @VsoMethod
+  public ControllerProperties addFileReferenceMappingsItem(FileReferenceMapping fileReferenceMappingsItem) {
+    if (this.fileReferenceMappings == null) {
+      this.fileReferenceMappings = new ArrayList<FileReferenceMapping>();
+    }
+    this.fileReferenceMappings.add(fileReferenceMappingsItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Batch size for the vs_mgr to perform datastrorecleanup during a gslb purge.
    * Allowed values are 50-1200.
    * Field introduced in 22.1.3.
@@ -1465,7 +1513,7 @@ public class ControllerProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ignore the vrf_context filter for /networksubnetlist api.
-   * Field introduced in 30.1.1.
+   * Field introduced in 22.1.4.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return ignoreVrfInNetworksubnetlist
@@ -1478,7 +1526,7 @@ public class ControllerProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ignore the vrf_context filter for /networksubnetlist api.
-   * Field introduced in 30.1.1.
+   * Field introduced in 22.1.4.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param ignoreVrfInNetworksubnetlist set the ignoreVrfInNetworksubnetlist.
@@ -3303,7 +3351,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.seupgradeCopyBufferSize, objControllerProperties.seupgradeCopyBufferSize)&&
   Objects.equals(this.skopeoRetryLimit, objControllerProperties.skopeoRetryLimit)&&
   Objects.equals(this.skopeoRetryInterval, objControllerProperties.skopeoRetryInterval)&&
-  Objects.equals(this.softMinMemPerSeLimit, objControllerProperties.softMinMemPerSeLimit);
+  Objects.equals(this.softMinMemPerSeLimit, objControllerProperties.softMinMemPerSeLimit)&&
+  Objects.equals(this.fileReferenceMappings, objControllerProperties.fileReferenceMappings);
 }
 
 @Override
@@ -3346,6 +3395,7 @@ public String toString() {
         sb.append("    fatalErrorLeaseTime: ").append(toIndentedString(fatalErrorLeaseTime)).append("\n");
         sb.append("    federatedDatastoreCleanupDuration: ").append(toIndentedString(federatedDatastoreCleanupDuration)).append("\n");
         sb.append("    fileObjectCleanupPeriod: ").append(toIndentedString(fileObjectCleanupPeriod)).append("\n");
+        sb.append("    fileReferenceMappings: ").append(toIndentedString(fileReferenceMappings)).append("\n");
         sb.append("    gslbPurgeBatchSize: ").append(toIndentedString(gslbPurgeBatchSize)).append("\n");
         sb.append("    gslbPurgeSleepTimeMs: ").append(toIndentedString(gslbPurgeSleepTimeMs)).append("\n");
         sb.append("    ignoreVrfInNetworksubnetlist: ").append(toIndentedString(ignoreVrfInNetworksubnetlist)).append("\n");
