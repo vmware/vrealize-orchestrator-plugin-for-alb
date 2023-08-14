@@ -9,6 +9,7 @@ import com.vmware.avi.vro.model.IpAddr;
 import com.vmware.avi.vro.model.IpAddr;
 import com.vmware.avi.vro.model.IpAddr;
 import com.vmware.avi.vro.model.IpAddr;
+import com.vmware.avi.vro.model.IpAddr;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -115,6 +116,10 @@ public class SeList extends AviRestResource {
     @JsonProperty("snat_ip")
     @JsonInclude(Include.NON_NULL)
     private IpAddr snatIp = null;
+
+    @JsonProperty("snat_ip6_address")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr snatIp6Address = null;
 
     @JsonProperty("vcpus")
     @JsonInclude(Include.NON_NULL)
@@ -708,6 +713,32 @@ public class SeList extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Ipv6 address for se snat.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return snatIp6Address
+   */
+  @VsoMethod
+  public IpAddr getSnatIp6Address() {
+    return snatIp6Address;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Ipv6 address for se snat.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param snatIp6Address set the snatIp6Address.
+   */
+  @VsoMethod
+  public void setSnatIp6Address(IpAddr snatIp6Address) {
+    this.snatIp6Address = snatIp6Address;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2.
    * @return vcpus
@@ -956,7 +987,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.detachIpInProgress, objSeList.detachIpInProgress)&&
   Objects.equals(this.activeOnCloud, objSeList.activeOnCloud)&&
   Objects.equals(this.cloudProgrammingDone, objSeList.cloudProgrammingDone)&&
-  Objects.equals(this.cloudProgrammingStatus, objSeList.cloudProgrammingStatus);
+  Objects.equals(this.cloudProgrammingStatus, objSeList.cloudProgrammingStatus)&&
+  Objects.equals(this.snatIp6Address, objSeList.snatIp6Address);
 }
 
 @Override
@@ -985,6 +1017,7 @@ public String toString() {
         sb.append("    seRef: ").append(toIndentedString(seRef)).append("\n");
         sb.append("    secIdx: ").append(toIndentedString(secIdx)).append("\n");
         sb.append("    snatIp: ").append(toIndentedString(snatIp)).append("\n");
+        sb.append("    snatIp6Address: ").append(toIndentedString(snatIp6Address)).append("\n");
         sb.append("    vcpus: ").append(toIndentedString(vcpus)).append("\n");
         sb.append("    vip6SubnetMask: ").append(toIndentedString(vip6SubnetMask)).append("\n");
         sb.append("    vipIntfIp: ").append(toIndentedString(vipIntfIp)).append("\n");

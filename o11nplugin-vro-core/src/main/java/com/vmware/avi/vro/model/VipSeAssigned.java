@@ -9,6 +9,7 @@ import com.vmware.avi.vro.model.IpAddr;
 import com.vmware.avi.vro.model.IpAddr;
 import com.vmware.avi.vro.model.OperationalStatus;
 import com.vmware.avi.vro.model.IpAddr;
+import com.vmware.avi.vro.model.IpAddr;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -91,6 +92,10 @@ public class VipSeAssigned extends AviRestResource {
     @JsonProperty("snat_ip")
     @JsonInclude(Include.NON_NULL)
     private IpAddr snatIp = null;
+
+    @JsonProperty("snat_ip6_address")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr snatIp6Address = null;
 
     @JsonProperty("standby")
     @JsonInclude(Include.NON_NULL)
@@ -486,6 +491,32 @@ public class VipSeAssigned extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Ipv6 address for se snat.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return snatIp6Address
+   */
+  @VsoMethod
+  public IpAddr getSnatIp6Address() {
+    return snatIp6Address;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Ipv6 address for se snat.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param snatIp6Address set the snatIp6Address.
+   */
+  @VsoMethod
+  public void setSnatIp6Address(IpAddr snatIp6Address) {
+    this.snatIp6Address = snatIp6Address;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return standby
@@ -533,6 +564,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.activeOnSe, objVipSeAssigned.activeOnSe)&&
   Objects.equals(this.scaleoutInProgress, objVipSeAssigned.scaleoutInProgress)&&
   Objects.equals(this.seReadyInProgress, objVipSeAssigned.seReadyInProgress)&&
+  Objects.equals(this.snatIp6Address, objVipSeAssigned.snatIp6Address)&&
   Objects.equals(this.ref, objVipSeAssigned.ref);
 }
 
@@ -556,6 +588,7 @@ public String toString() {
         sb.append("    scaleoutInProgress: ").append(toIndentedString(scaleoutInProgress)).append("\n");
         sb.append("    seReadyInProgress: ").append(toIndentedString(seReadyInProgress)).append("\n");
         sb.append("    snatIp: ").append(toIndentedString(snatIp)).append("\n");
+        sb.append("    snatIp6Address: ").append(toIndentedString(snatIp6Address)).append("\n");
         sb.append("    standby: ").append(toIndentedString(standby)).append("\n");
       sb.append("}");
   return sb.toString();
