@@ -45,7 +45,7 @@ public class VcenterImageDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Cloud id.
-   * Field introduced in 22.1.1.
+   * Field introduced in 21.1.6.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccId
@@ -58,7 +58,7 @@ public class VcenterImageDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Cloud id.
-   * Field introduced in 22.1.1.
+   * Field introduced in 21.1.6.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccId set the ccId.
@@ -71,7 +71,7 @@ public class VcenterImageDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Error message.
-   * Field introduced in 22.1.1.
+   * Field introduced in 21.1.6.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorString
@@ -84,7 +84,7 @@ public class VcenterImageDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Error message.
-   * Field introduced in 22.1.1.
+   * Field introduced in 21.1.6.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param errorString set the errorString.
@@ -97,7 +97,7 @@ public class VcenterImageDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Image version.
-   * Field introduced in 22.1.1.
+   * Field introduced in 21.1.6.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return imageVersion
@@ -110,7 +110,7 @@ public class VcenterImageDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Image version.
-   * Field introduced in 22.1.1.
+   * Field introduced in 21.1.6.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param imageVersion set the imageVersion.
@@ -123,7 +123,7 @@ public class VcenterImageDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Vcenter url.
-   * Field introduced in 22.1.1.
+   * Field introduced in 21.1.6.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcUrl
@@ -136,7 +136,7 @@ public class VcenterImageDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Vcenter url.
-   * Field introduced in 22.1.1.
+   * Field introduced in 21.1.6.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcUrl set the vcUrl.

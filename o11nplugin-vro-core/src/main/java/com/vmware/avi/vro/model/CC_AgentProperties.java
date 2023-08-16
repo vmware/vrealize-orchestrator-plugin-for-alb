@@ -204,7 +204,7 @@ public class CC_AgentProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Vcenter host reachability check interval.
    * Allowed values are 60-3600.
-   * Field introduced in 22.1.3.
+   * Field introduced in 21.1.6, 22.1.3.
    * Unit is sec.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
@@ -219,7 +219,7 @@ public class CC_AgentProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Vcenter host reachability check interval.
    * Allowed values are 60-3600.
-   * Field introduced in 22.1.3.
+   * Field introduced in 21.1.6, 22.1.3.
    * Unit is sec.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
@@ -234,7 +234,7 @@ public class CC_AgentProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Batch size of vcenter inventory updates.
    * Allowed values are 1-500.
-   * Field introduced in 22.1.3.
+   * Field introduced in 21.1.6, 22.1.3.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @return vcenterInventoryMaxObjectUpdates
@@ -248,7 +248,7 @@ public class CC_AgentProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Batch size of vcenter inventory updates.
    * Allowed values are 1-500.
-   * Field introduced in 22.1.3.
+   * Field introduced in 21.1.6, 22.1.3.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @param vcenterInventoryMaxObjectUpdates set the vcenterInventoryMaxObjectUpdates.
@@ -262,7 +262,7 @@ public class CC_AgentProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Max datastore processing go routines for vcenter datastore updates.
    * Allowed values are 1-40.
-   * Field introduced in 22.1.3.
+   * Field introduced in 21.1.6, 22.1.3.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20.
    * @return vcenterMaxDatastoreGoRoutines
@@ -276,7 +276,7 @@ public class CC_AgentProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Max datastore processing go routines for vcenter datastore updates.
    * Allowed values are 1-40.
-   * Field introduced in 22.1.3.
+   * Field introduced in 21.1.6, 22.1.3.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20.
    * @param vcenterMaxDatastoreGoRoutines set the vcenterMaxDatastoreGoRoutines.
@@ -290,7 +290,7 @@ public class CC_AgentProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Reconcile interval for vcenter inventory.
    * Allowed values are 60-3600.
-   * Field introduced in 22.1.3.
+   * Field introduced in 21.1.6, 22.1.3.
    * Unit is sec.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3600.
@@ -305,7 +305,7 @@ public class CC_AgentProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Reconcile interval for vcenter inventory.
    * Allowed values are 60-3600.
-   * Field introduced in 22.1.3.
+   * Field introduced in 21.1.6, 22.1.3.
    * Unit is sec.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3600.
