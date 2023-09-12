@@ -49,6 +49,14 @@ public class RoutingService extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private List<IpAddr> floatingIntfIp = null;
 
+    @JsonProperty("floating_intf_ip6_addresses")
+    @JsonInclude(Include.NON_NULL)
+    private List<IpAddr> floatingIntfIp6Addresses = null;
+
+    @JsonProperty("floating_intf_ip6_se_2_addresses")
+    @JsonInclude(Include.NON_NULL)
+    private List<IpAddr> floatingIntfIp6Se2Addresses = null;
+
     @JsonProperty("floating_intf_ip_se_2")
     @JsonInclude(Include.NON_NULL)
     private List<IpAddr> floatingIntfIpSe2 = null;
@@ -250,6 +258,109 @@ public class RoutingService extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Ipv6 floating interface ips for the routingservice.
+   * Field introduced in 22.1.5, 30.2.1.
+   * Maximum of 32 items allowed.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return floatingIntfIp6Addresses
+   */
+  @VsoMethod
+  public List<IpAddr> getFloatingIntfIp6Addresses() {
+    return floatingIntfIp6Addresses;
+  }
+
+  /**
+   * This is the setter method. this will set the floatingIntfIp6Addresses
+   * Ipv6 floating interface ips for the routingservice.
+   * Field introduced in 22.1.5, 30.2.1.
+   * Maximum of 32 items allowed.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return floatingIntfIp6Addresses
+   */
+  @VsoMethod
+  public void setFloatingIntfIp6Addresses(List<IpAddr>  floatingIntfIp6Addresses) {
+    this.floatingIntfIp6Addresses = floatingIntfIp6Addresses;
+  }
+
+  /**
+   * This is the setter method this will set the floatingIntfIp6Addresses
+   * Ipv6 floating interface ips for the routingservice.
+   * Field introduced in 22.1.5, 30.2.1.
+   * Maximum of 32 items allowed.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return floatingIntfIp6Addresses
+   */
+  @VsoMethod
+  public RoutingService addFloatingIntfIp6AddressesItem(IpAddr floatingIntfIp6AddressesItem) {
+    if (this.floatingIntfIp6Addresses == null) {
+      this.floatingIntfIp6Addresses = new ArrayList<IpAddr>();
+    }
+    this.floatingIntfIp6Addresses.add(floatingIntfIp6AddressesItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * If serviceenginegroup is configured for legacy 1+1 active standby ha mode, ipv6 floating ip's will be advertised only by the active se in the
+   * pair.
+   * Virtual services in this group must be disabled/enabled for any changes to the ipv6 floating ip's to take effect.
+   * Only active se hosting vs tagged with active standby se 2 tag will advertise this floating ip when manual load distribution is enabled.
+   * Field introduced in 22.1.5, 30.2.1.
+   * Maximum of 32 items allowed.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return floatingIntfIp6Se2Addresses
+   */
+  @VsoMethod
+  public List<IpAddr> getFloatingIntfIp6Se2Addresses() {
+    return floatingIntfIp6Se2Addresses;
+  }
+
+  /**
+   * This is the setter method. this will set the floatingIntfIp6Se2Addresses
+   * If serviceenginegroup is configured for legacy 1+1 active standby ha mode, ipv6 floating ip's will be advertised only by the active se in the
+   * pair.
+   * Virtual services in this group must be disabled/enabled for any changes to the ipv6 floating ip's to take effect.
+   * Only active se hosting vs tagged with active standby se 2 tag will advertise this floating ip when manual load distribution is enabled.
+   * Field introduced in 22.1.5, 30.2.1.
+   * Maximum of 32 items allowed.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return floatingIntfIp6Se2Addresses
+   */
+  @VsoMethod
+  public void setFloatingIntfIp6Se2Addresses(List<IpAddr>  floatingIntfIp6Se2Addresses) {
+    this.floatingIntfIp6Se2Addresses = floatingIntfIp6Se2Addresses;
+  }
+
+  /**
+   * This is the setter method this will set the floatingIntfIp6Se2Addresses
+   * If serviceenginegroup is configured for legacy 1+1 active standby ha mode, ipv6 floating ip's will be advertised only by the active se in the
+   * pair.
+   * Virtual services in this group must be disabled/enabled for any changes to the ipv6 floating ip's to take effect.
+   * Only active se hosting vs tagged with active standby se 2 tag will advertise this floating ip when manual load distribution is enabled.
+   * Field introduced in 22.1.5, 30.2.1.
+   * Maximum of 32 items allowed.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return floatingIntfIp6Se2Addresses
+   */
+  @VsoMethod
+  public RoutingService addFloatingIntfIp6Se2AddressesItem(IpAddr floatingIntfIp6Se2AddressesItem) {
+    if (this.floatingIntfIp6Se2Addresses == null) {
+      this.floatingIntfIp6Se2Addresses = new ArrayList<IpAddr>();
+    }
+    this.floatingIntfIp6Se2Addresses.add(floatingIntfIp6Se2AddressesItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
    * If serviceenginegroup is configured for legacy 1+1 active standby ha mode, floating ip's will be advertised only by the active se in the pair.
    * Virtual services in this group must be disabled/enabled for any changes to the floating ip's to take effect.
    * Only active se hosting vs tagged with active standby se 2 tag will advertise this floating ip when manual load distribution is enabled.
@@ -432,7 +543,9 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.natPolicyRef, objRoutingService.natPolicyRef)&&
   Objects.equals(this.flowtableProfile, objRoutingService.flowtableProfile)&&
   Objects.equals(this.gracefulRestart, objRoutingService.gracefulRestart)&&
-  Objects.equals(this.enableAutoGateway, objRoutingService.enableAutoGateway);
+  Objects.equals(this.enableAutoGateway, objRoutingService.enableAutoGateway)&&
+  Objects.equals(this.floatingIntfIp6Addresses, objRoutingService.floatingIntfIp6Addresses)&&
+  Objects.equals(this.floatingIntfIp6Se2Addresses, objRoutingService.floatingIntfIp6Se2Addresses);
 }
 
 @Override
@@ -445,6 +558,8 @@ public String toString() {
         sb.append("    enableVipOnAllInterfaces: ").append(toIndentedString(enableVipOnAllInterfaces)).append("\n");
         sb.append("    enableVmac: ").append(toIndentedString(enableVmac)).append("\n");
         sb.append("    floatingIntfIp: ").append(toIndentedString(floatingIntfIp)).append("\n");
+        sb.append("    floatingIntfIp6Addresses: ").append(toIndentedString(floatingIntfIp6Addresses)).append("\n");
+        sb.append("    floatingIntfIp6Se2Addresses: ").append(toIndentedString(floatingIntfIp6Se2Addresses)).append("\n");
         sb.append("    floatingIntfIpSe2: ").append(toIndentedString(floatingIntfIpSe2)).append("\n");
         sb.append("    flowtableProfile: ").append(toIndentedString(flowtableProfile)).append("\n");
         sb.append("    gracefulRestart: ").append(toIndentedString(gracefulRestart)).append("\n");

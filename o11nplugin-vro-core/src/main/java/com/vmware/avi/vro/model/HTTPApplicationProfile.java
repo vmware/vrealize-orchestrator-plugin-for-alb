@@ -58,6 +58,10 @@ public class HTTPApplicationProfile extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer clientMaxRequestSize = 48;
 
+    @JsonProperty("close_server_side_connection_on_error")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean closeServerSideConnectionOnError = false;
+
     @JsonProperty("collect_client_tls_fingerprint")
     @JsonInclude(Include.NON_NULL)
     private Boolean collectClientTlsFingerprint = false;
@@ -456,6 +460,32 @@ public class HTTPApplicationProfile extends AviRestResource {
   @VsoMethod
   public void setClientMaxRequestSize(Integer  clientMaxRequestSize) {
     this.clientMaxRequestSize = clientMaxRequestSize;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Close server-side connection when an error response is received.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return closeServerSideConnectionOnError
+   */
+  @VsoMethod
+  public Boolean getCloseServerSideConnectionOnError() {
+    return closeServerSideConnectionOnError;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Close server-side connection when an error response is received.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param closeServerSideConnectionOnError set the closeServerSideConnectionOnError.
+   */
+  @VsoMethod
+  public void setCloseServerSideConnectionOnError(Boolean  closeServerSideConnectionOnError) {
+    this.closeServerSideConnectionOnError = closeServerSideConnectionOnError;
   }
 
   /**
@@ -1904,7 +1934,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.passThroughXAccelHeaders, objHTTPApplicationProfile.passThroughXAccelHeaders)&&
   Objects.equals(this.collectClientTlsFingerprint, objHTTPApplicationProfile.collectClientTlsFingerprint)&&
   Objects.equals(this.maxHeaderCount, objHTTPApplicationProfile.maxHeaderCount)&&
-  Objects.equals(this.sessionConfig, objHTTPApplicationProfile.sessionConfig);
+  Objects.equals(this.sessionConfig, objHTTPApplicationProfile.sessionConfig)&&
+  Objects.equals(this.closeServerSideConnectionOnError, objHTTPApplicationProfile.closeServerSideConnectionOnError);
 }
 
 @Override
@@ -1918,6 +1949,7 @@ public String toString() {
         sb.append("    clientMaxBodySize: ").append(toIndentedString(clientMaxBodySize)).append("\n");
         sb.append("    clientMaxHeaderSize: ").append(toIndentedString(clientMaxHeaderSize)).append("\n");
         sb.append("    clientMaxRequestSize: ").append(toIndentedString(clientMaxRequestSize)).append("\n");
+        sb.append("    closeServerSideConnectionOnError: ").append(toIndentedString(closeServerSideConnectionOnError)).append("\n");
         sb.append("    collectClientTlsFingerprint: ").append(toIndentedString(collectClientTlsFingerprint)).append("\n");
         sb.append("    compressionProfile: ").append(toIndentedString(compressionProfile)).append("\n");
         sb.append("    connectionMultiplexingEnabled: ").append(toIndentedString(connectionMultiplexingEnabled)).append("\n");
