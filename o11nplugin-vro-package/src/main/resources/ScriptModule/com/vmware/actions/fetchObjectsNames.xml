@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module name="fetchObjectsNames"
 	result-type="Array/string" api-version="6.0.0"
-	id="aab1273f-20f0-4cef-ad2b-da6832d71030" version="1.0.1"
+	id="aab1273f-20f0-4cef-ad2b-da6832d71030" version="1.0.2"
 	allowed-operations="vfe">
 	<param n="controller" t="string"><![CDATA[IP of the controller]]></param>
 	<param n="objectType" t="string"><![CDATA[Add object type ]]></param>
@@ -32,7 +32,7 @@ try{
 	if (aviPlugin != null){
 		if(cloudName == "" || cloudName == null){
 			var objectList = new Array();
-			var response = aviPlugin.get(objectType,null, clientTenant);
+			var response = aviPlugin.getAllData(objectType,null, clientTenant);
 			var objectData = JSON.parse(response);
 		
 			for each(index in objectData){
@@ -46,7 +46,7 @@ try{
 			cloudUuid = objectData.uuid;
 			cloudRef.cloud_uuid = cloudUuid;
 			var objectList = new Array();
-			var response = aviPlugin.get(objectType,cloudRef, clientTenant);
+			var response = aviPlugin.getAllData(objectType,cloudRef, clientTenant);
 			var objectData = JSON.parse(response);
 		
 			for each(index in objectData){

@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module name="fetchObjectLists"
 	result-type="Any" api-version="6.0.0"
-	id="c8fdba15-adb3-4335-9a34-ec8e3825709c" version="0.0.6"
+	id="c8fdba15-adb3-4335-9a34-ec8e3825709c" version="0.0.7"
 	allowed-operations="vfe">
 	<param n="controller" t="string"><![CDATA[IP of the controller]]></param>
 	<param n="objectName" t="string"><![CDATA[Add object name]]></param>
@@ -35,7 +35,7 @@
 		}
 		var response = aviPlugin.get(objectType,params, clientTenant);
 		var objectData = JSON.parse(response);
-		var object =objectData[0];
+		var object = objectData.results[0];
 		if(object!=null){
 			if (field == "existingMembers"){
 				//var poolObject=objectData[0];
