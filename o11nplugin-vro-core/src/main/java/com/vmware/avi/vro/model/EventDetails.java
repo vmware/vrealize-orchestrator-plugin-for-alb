@@ -201,6 +201,7 @@ import com.vmware.avi.vro.model.RmUnbindVsSeEventDetails;
 import com.vmware.avi.vro.model.UpgradeOpsEntry;
 import com.vmware.avi.vro.model.UpgradeStatusInfo;
 import com.vmware.avi.vro.model.VCASetup;
+import com.vmware.avi.vro.model.VcenterCloudDeleteDetails;
 import com.vmware.avi.vro.model.VcenterClusterDetails;
 import com.vmware.avi.vro.model.VinfraVcenterConnectivityStatus;
 import com.vmware.avi.vro.model.VinfraVcenterBadCredentials;
@@ -1024,6 +1025,10 @@ public class EventDetails extends AviRestResource {
     @JsonProperty("vca_infra_details")
     @JsonInclude(Include.NON_NULL)
     private VCASetup vcaInfraDetails = null;
+
+    @JsonProperty("vcenter_cloud_delete_details")
+    @JsonInclude(Include.NON_NULL)
+    private VcenterCloudDeleteDetails vcenterCloudDeleteDetails = null;
 
     @JsonProperty("vcenter_cluster_details")
     @JsonInclude(Include.NON_NULL)
@@ -5545,6 +5550,32 @@ public class EventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Details of objects still referred to cloud.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return vcenterCloudDeleteDetails
+   */
+  @VsoMethod
+  public VcenterCloudDeleteDetails getVcenterCloudDeleteDetails() {
+    return vcenterCloudDeleteDetails;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Details of objects still referred to cloud.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param vcenterCloudDeleteDetails set the vcenterCloudDeleteDetails.
+   */
+  @VsoMethod
+  public void setVcenterCloudDeleteDetails(VcenterCloudDeleteDetails vcenterCloudDeleteDetails) {
+    this.vcenterCloudDeleteDetails = vcenterCloudDeleteDetails;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Vcenter cluster event.
    * Field introduced in 20.1.7, 21.1.3.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
@@ -6047,6 +6078,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.vcenterConnectivityStatus, objEventDetails.vcenterConnectivityStatus)&&
   Objects.equals(this.vcenterNetworkLimit, objEventDetails.vcenterNetworkLimit)&&
   Objects.equals(this.vcenterTagEventDetails, objEventDetails.vcenterTagEventDetails)&&
+  Objects.equals(this.vcenterCloudDeleteDetails, objEventDetails.vcenterCloudDeleteDetails)&&
   Objects.equals(this.seDetails, objEventDetails.seDetails)&&
   Objects.equals(this.spawnSeDetails, objEventDetails.spawnSeDetails)&&
   Objects.equals(this.modifyNetworksDetails, objEventDetails.modifyNetworksDetails)&&
@@ -6455,6 +6487,7 @@ public String toString() {
         sb.append("    upgradeEntry: ").append(toIndentedString(upgradeEntry)).append("\n");
         sb.append("    upgradeStatusInfo: ").append(toIndentedString(upgradeStatusInfo)).append("\n");
         sb.append("    vcaInfraDetails: ").append(toIndentedString(vcaInfraDetails)).append("\n");
+        sb.append("    vcenterCloudDeleteDetails: ").append(toIndentedString(vcenterCloudDeleteDetails)).append("\n");
         sb.append("    vcenterClusterDetails: ").append(toIndentedString(vcenterClusterDetails)).append("\n");
         sb.append("    vcenterConnectivityStatus: ").append(toIndentedString(vcenterConnectivityStatus)).append("\n");
         sb.append("    vcenterDetails: ").append(toIndentedString(vcenterDetails)).append("\n");
