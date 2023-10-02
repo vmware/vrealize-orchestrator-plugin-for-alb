@@ -259,7 +259,7 @@ public class RoutingService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ipv6 floating interface ips for the routingservice.
-   * Field introduced in 22.1.5, 30.2.1.
+   * Field introduced in 30.2.1.
    * Maximum of 32 items allowed.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -273,7 +273,7 @@ public class RoutingService extends AviRestResource {
   /**
    * This is the setter method. this will set the floatingIntfIp6Addresses
    * Ipv6 floating interface ips for the routingservice.
-   * Field introduced in 22.1.5, 30.2.1.
+   * Field introduced in 30.2.1.
    * Maximum of 32 items allowed.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -287,7 +287,7 @@ public class RoutingService extends AviRestResource {
   /**
    * This is the setter method this will set the floatingIntfIp6Addresses
    * Ipv6 floating interface ips for the routingservice.
-   * Field introduced in 22.1.5, 30.2.1.
+   * Field introduced in 30.2.1.
    * Maximum of 32 items allowed.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -309,7 +309,7 @@ public class RoutingService extends AviRestResource {
    * pair.
    * Virtual services in this group must be disabled/enabled for any changes to the ipv6 floating ip's to take effect.
    * Only active se hosting vs tagged with active standby se 2 tag will advertise this floating ip when manual load distribution is enabled.
-   * Field introduced in 22.1.5, 30.2.1.
+   * Field introduced in 30.2.1.
    * Maximum of 32 items allowed.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -326,7 +326,7 @@ public class RoutingService extends AviRestResource {
    * pair.
    * Virtual services in this group must be disabled/enabled for any changes to the ipv6 floating ip's to take effect.
    * Only active se hosting vs tagged with active standby se 2 tag will advertise this floating ip when manual load distribution is enabled.
-   * Field introduced in 22.1.5, 30.2.1.
+   * Field introduced in 30.2.1.
    * Maximum of 32 items allowed.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -343,7 +343,7 @@ public class RoutingService extends AviRestResource {
    * pair.
    * Virtual services in this group must be disabled/enabled for any changes to the ipv6 floating ip's to take effect.
    * Only active se hosting vs tagged with active standby se 2 tag will advertise this floating ip when manual load distribution is enabled.
-   * Field introduced in 22.1.5, 30.2.1.
+   * Field introduced in 30.2.1.
    * Maximum of 32 items allowed.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
