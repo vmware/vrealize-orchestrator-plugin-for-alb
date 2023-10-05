@@ -1065,6 +1065,7 @@ public class Constants {
     public static final String FINDER_VRO_VSDATASCRIPT = "VSDataScript";
     public static final String FINDER_VRO_VSDATASCRIPTSET = "VSDataScriptSet";
     public static final String FINDER_VRO_VSDATASCRIPTS = "VSDataScripts";
+    public static final String FINDER_VRO_VCENTERCLOUDDELETEDETAILS = "VcenterCloudDeleteDetails";
     public static final String FINDER_VRO_VCENTERCLUSTERDETAILS = "VcenterClusterDetails";
     public static final String FINDER_VRO_VCENTERCLUSTERS = "VcenterClusters";
     public static final String FINDER_VRO_VCENTERDATASTORE = "VcenterDatastore";
