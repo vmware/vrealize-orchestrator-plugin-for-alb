@@ -28,10 +28,14 @@
 	<script encoded="false"><![CDATA[try{
 	if(workflowRuntime.getAviVroClient() !=null){
 		Tenant = workflowRuntime.getAviVroClient().cred.tenant;
+		healthMonitorObj = new AviHealthMonitor();
+		if (health_monitor_uuid){
+			healthMonitorObj.setUuid(health_monitor_uuid);
 		}
 		healthMonitorObj.setTenantRef("/api/tenant?name="+Tenant);
 		healthMonitorObj.setName(hm_name);
 		healthMonitorObj.setDescription(hm_description)
+		if (is_federated){
 			healthMonitorObj.setIsFederated(is_federated);
 		}
 		if (monitor_port){

@@ -2,7 +2,7 @@
 <dunes-script-module
 	name="remoteAuthenticationConfiguration" result-type="string"
 	api-version="6.0.0" id="66601741-2ca3-430c-a113-adab600fb325"
-	version="0.0.0" allowed-operations="vfe">
+	version="0.0.1" allowed-operations="vfe">
 	<description><![CDATA[This Action is used to configure the remote authentication of the Avi Cluster. It is able to configure SAML and LDAP authentication.]]></description>
 	<param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[]]>
 	</param>
@@ -216,7 +216,7 @@ function tenanturl(str) {
 
     //System.log("str "+str)
 
-    var tenantObject = aviVroClient.get("tenant")
+    var tenantObject = aviVroClient.getAllData("tenant")
 
     tenantObject = JSON.parse(tenantObject)
 
