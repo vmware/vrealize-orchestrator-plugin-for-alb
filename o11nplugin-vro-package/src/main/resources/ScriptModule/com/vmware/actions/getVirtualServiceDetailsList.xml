@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module
 	name="getVirtualServiceDetailsList" result-type="Array/string"
-	api-version="6.0.0" id="766762db-2c4d-444d-b6c6-d45920611bae"
+	api-version="6.0.0" id="766762db-2c4d-444d-b6c6-d45920622bae"
 	version="0.0.3" allowed-operations="vfe">
 	<param n="vsObject" t="Avi:VirtualService"><![CDATA[
 	]]></param>
@@ -42,39 +42,57 @@ try{
 				}
             }   
         }else if(object=="healthmonitor"){
-			var poolref=vsObject.getPoolRef();	
-			if(poolref!=null){
-				var poolUUID = poolref.substring(poolref.indexOf('pool-'),poolref.indexOf('#'));
+			var poolref=vsObject.getPoolRef();
+            if (field=="healthmonitorList"){
+                var poolUUID = poolref.substring(poolref.indexOf('pool-'),poolref.indexOf('#'));
 				var poolObject = new AviPool() ;
 				var tenant = aviVroClient.cred.tenant
 				poolObject =aviVroClient.getObjectByUUID('pool',poolUUID, tenant);
-				
                 var reference = poolObject.getHealthMonitorRefs();
-                var hmName;
+                var hmReferenceList = [];
                 for (index=0; index<=reference.length-1; index++){
-                    hmName = reference[index];
+                    hmRef = reference[index];
+                    var hmUUID = hmRef.substring(hmRef.indexOf('healthmonitor-'),hmRef.indexOf('#'));
+                    var healthmonitorObj = new AviHealthMonitor();
+                    var tenant = aviVroClient.cred.tenant;
+                    healthmonitorObj =aviVroClient.getObjectByUUID('healthmonitor',hmUUID, tenant);
+                    hmReferenceList.push(healthmonitorObj.getName());
                 }
-                var path = hmName.split("/")
-                var splitUUID =(path[path.length-1]).split('#');
-                var uuid=(splitUUID[splitUUID.length-2]);
-                var myAviHealthMonitor = new AviHealthMonitor();
-                var tenant = aviVroClient.cred.tenant
-                var myAviHealthMonitor = aviVroClient.getObjectByUUID(path[path.length-2],uuid,tenant);
-                var myAviHealthMonitorHttp= new AviHealthMonitorHttp()
-                myAviHealthMonitorHttp=myAviHealthMonitor.getHttpMonitor();
-                if(myAviHealthMonitorHttp==null){
-                    myAviHealthMonitorHttp=myAviHealthMonitor.getHttpsMonitor();
+                return hmReferenceList;
+            }else {
+                if(poolref!=null){
+                    var poolUUID = poolref.substring(poolref.indexOf('pool-'),poolref.indexOf('#'));
+                    var poolObject = new AviPool() ;
+                    var tenant = aviVroClient.cred.tenant
+                    poolObject =aviVroClient.getObjectByUUID('pool',poolUUID, tenant);
+                    
+                    var reference = poolObject.getHealthMonitorRefs();
+                    var hmName;
+                    for (index=0; index<=reference.length-1; index++){
+                        hmName = reference[index];
+                    }
+                    var path = hmName.split("/")
+                    var splitUUID =(path[path.length-1]).split('#');
+                    var uuid=(splitUUID[splitUUID.length-2]);
+                    var myAviHealthMonitor = new AviHealthMonitor();
+                    var tenant = aviVroClient.cred.tenant
+                    var myAviHealthMonitor = aviVroClient.getObjectByUUID(path[path.length-2],uuid,tenant);
+                    var myAviHealthMonitorHttp= new AviHealthMonitorHttp()
+                    myAviHealthMonitorHttp=myAviHealthMonitor.getHttpMonitor();
+                    if(myAviHealthMonitorHttp==null){
+                        myAviHealthMonitorHttp=myAviHealthMonitor.getHttpsMonitor();
+                    }
+                    if(field == "response_code"){
+                        var responses = myAviHealthMonitorHttp.getHttpResponseCode();
+                        var responseList= new Array();
+                        for each(index in responses){
+                            index =index.replace("HTTP_", "");
+                            responseList.push(index)
+                        }
+                        System.log(responseList)
+                        return responseList;
+                    }
                 }
-                if(field == "response_code"){
-					var responses = myAviHealthMonitorHttp.getHttpResponseCode();
-					var responseList= new Array();
-					for each(index in responses){
-                        index =index.replace("HTTP_", "");
-                        responseList.push(index)
-					}
-                    System.log(responseList)
-					return responseList;
-				}
             }   
         }else{
 

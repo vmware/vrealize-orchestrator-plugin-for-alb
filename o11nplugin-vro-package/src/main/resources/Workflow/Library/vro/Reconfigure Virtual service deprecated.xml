@@ -3,10 +3,10 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item3" object-name="workflow:name=generic"
-	id="ddcd902e-762c-4095-8adb-2b1d16283f04" version="3.0.2"
+	id="ddcd902e-762c-4095-8adb-2b1d16282f01" version="3.0.2"
 	api-version="6.0.0" allowed-operations="vef" restartMode="1"
 	resumeFromFailedMode="0">
-	<display-name><![CDATA[Reconfigure Virtual Service]]></display-name>
+	<display-name><![CDATA[Reconfigure Virtual Service(Deprecated)]]></display-name>
 	<position y="9.545454545454543" x="5.0"></position>
 	<input>
 		<param name="name" type="string">

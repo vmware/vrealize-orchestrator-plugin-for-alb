@@ -2,7 +2,7 @@
 <dunes-script-module
 	name="getExistingObjectsWithController" result-type="Array/string"
 	api-version="6.0.0" id="42556c6b-8b94-45fd-b1fd-feed30a097ca"
-	version="0.0.3" allowed-operations="vfe">
+	version="0.0.4" allowed-operations="vfe">
 	<param n="controller" t="string"><![CDATA[
 	]]></param>
 	<param n="objectType" t="string"><![CDATA[
@@ -30,7 +30,7 @@ try{
 	}
 
 	var objectList = new Array();
-	var response = aviVroClientObj.get(objectType, null, clientTenant);
+	var response = aviVroClientObj.getAllData(objectType, null, clientTenant);
 	var objectData = JSON.parse(response);
 	for each(index in objectData){
 		objectList.push(index.name);
