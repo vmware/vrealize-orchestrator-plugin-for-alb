@@ -32,6 +32,10 @@ public class DnsServiceApplicationProfile extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String adminEmail = "hostmaster";
 
+    @JsonProperty("client_dns_tcp_request_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer clientDnsTcpRequestTimeout = 10000;
+
     @JsonProperty("close_tcp_connection_post_response")
     @JsonInclude(Include.NON_NULL)
     private Boolean closeTcpConnectionPostResponse = false;
@@ -134,6 +138,38 @@ public class DnsServiceApplicationProfile extends AviRestResource {
   @VsoMethod
   public void setAdminEmail(String  adminEmail) {
     this.adminEmail = adminEmail;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * The maximum time allowed for a client to transmit an entire dns request over tcp.
+   * This helps mitigate various forms of slowloris attacks.
+   * Allowed values are 10-100000000.
+   * Field introduced in 22.1.5, 30.1.2, 30.2.1.
+   * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
+   * @return clientDnsTcpRequestTimeout
+   */
+  @VsoMethod
+  public Integer getClientDnsTcpRequestTimeout() {
+    return clientDnsTcpRequestTimeout;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * The maximum time allowed for a client to transmit an entire dns request over tcp.
+   * This helps mitigate various forms of slowloris attacks.
+   * Allowed values are 10-100000000.
+   * Field introduced in 22.1.5, 30.1.2, 30.2.1.
+   * Unit is milliseconds.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
+   * @param clientDnsTcpRequestTimeout set the clientDnsTcpRequestTimeout.
+   */
+  @VsoMethod
+  public void setClientDnsTcpRequestTimeout(Integer  clientDnsTcpRequestTimeout) {
+    this.clientDnsTcpRequestTimeout = clientDnsTcpRequestTimeout;
   }
 
   /**
@@ -554,7 +590,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.nameServer, objDnsServiceApplicationProfile.nameServer)&&
   Objects.equals(this.adminEmail, objDnsServiceApplicationProfile.adminEmail)&&
   Objects.equals(this.dnsZones, objDnsServiceApplicationProfile.dnsZones)&&
-  Objects.equals(this.closeTcpConnectionPostResponse, objDnsServiceApplicationProfile.closeTcpConnectionPostResponse);
+  Objects.equals(this.closeTcpConnectionPostResponse, objDnsServiceApplicationProfile.closeTcpConnectionPostResponse)&&
+  Objects.equals(this.clientDnsTcpRequestTimeout, objDnsServiceApplicationProfile.clientDnsTcpRequestTimeout);
 }
 
 @Override
@@ -563,6 +600,7 @@ public String toString() {
   sb.append("class DnsServiceApplicationProfile {\n");
       sb.append("    aaaaEmptyResponse: ").append(toIndentedString(aaaaEmptyResponse)).append("\n");
         sb.append("    adminEmail: ").append(toIndentedString(adminEmail)).append("\n");
+        sb.append("    clientDnsTcpRequestTimeout: ").append(toIndentedString(clientDnsTcpRequestTimeout)).append("\n");
         sb.append("    closeTcpConnectionPostResponse: ").append(toIndentedString(closeTcpConnectionPostResponse)).append("\n");
         sb.append("    dnsOverTcpEnabled: ").append(toIndentedString(dnsOverTcpEnabled)).append("\n");
         sb.append("    dnsZones: ").append(toIndentedString(dnsZones)).append("\n");
