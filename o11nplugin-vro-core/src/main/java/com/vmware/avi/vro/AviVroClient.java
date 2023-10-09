@@ -414,20 +414,18 @@ public class AviVroClient {
 	 * 
 	 * This method upload the file into the controller.
 	 * 
-	 * @param uri           is the api which upload a file
-	 * @param filePath      is file which we want to upload
-	 * @param fileUploadUri is uri where we have to upload file
+	 * @param uri           is the URL for file upload e.g fileservice or image
+	 * @param filePath      is the file path which needs to be uploaded from local
 	 * @throws Exception
 	 */
 	@VsoMethod
-	public void fileUpload(String uri, String filePath, String fileUploadUri) throws Exception {
+	public void fileUpload(String uri, String filePath) throws Exception {
 		logger.debug("Executing fileUpload.");
 		logger.debug("uri : " + uri);
 		logger.debug("File Path : " + filePath);
-		logger.debug("File Upload Uri : " + fileUploadUri);
 		AviApi session = getSession();
-		if (uri != null && filePath != null && fileUploadUri != null) {
-			session.fileUpload(uri, filePath, fileUploadUri);
+		if (uri != null && filePath != null) {
+			session.fileUpload(uri, filePath);
 		}
 	}	
 
@@ -720,13 +718,47 @@ public class AviVroClient {
 	 * @throws Exception
 	 */
 	@VsoMethod
-	public JSONArray get(String objectType, Map<String, String> params, String tenant) throws Exception {
+	public JSONObject get(String objectType, Map<String, String> params, String tenant) throws Exception {
 		AviApi session = getSession();
 		if ((null != objectType) && (!objectType.isEmpty())) {
 			HashMap<String, String> userHeader = this.getTenantHeader(tenant);
 			JSONObject data = session.get(objectType, params, userHeader);
 			logger.info("Existing data of " + objectType + " : " + data);
-			return (JSONArray) data.get("results");
+			return data;
+		} else {
+			logger.debug("ObjectType is empty");
+			throw new AviApiException("Please provide objectType");
+		}
+	}
+
+	/***
+	 * Method for getting object data.
+	 *
+	 * @param objectType is the type of object.
+	 * @param params     is a map containing the key and values.
+	 * @param tenant     name of the Tenant
+	 * @return the JSONArray of the response.
+	 * @throws Exception
+	 */
+	@VsoMethod
+	public JSONArray getAllData(String objectType, Map<String, String> params, String tenant) throws Exception {
+		AviApi session = getSession();
+		if ((null != objectType) && (!objectType.isEmpty())) {
+			HashMap<String, String> userHeader = this.getTenantHeader(tenant);
+			JSONObject data = session.get(objectType, params, userHeader);
+			logger.info("Existing data of " + objectType + " : " + data);
+			JSONArray results = new JSONArray();
+			JSONArray response = (JSONArray) data.get("results");
+			for (int i = 0; i < response.length(); i++) {
+				results.put(response.getJSONObject(i));
+			}
+			if (data.has("next")) {
+				String pageNo = data.getString("next").split("=")[1];
+				Map<String, String> pageParams = new HashMap<>();
+				pageParams.put("page", pageNo);
+				results.putAll(this.getAllData(objectType, pageParams, tenant));
+			}
+			return results;
 		} else {
 			logger.debug("ObjectType is empty");
 			throw new AviApiException("Please provide objectType");
@@ -846,7 +878,7 @@ public class AviVroClient {
 	@VsoMethod
 	public List<AviRestResource> getObject(String objectType, Map<String, String> params, String tenant)
 			throws Exception {
-		JSONArray array = this.get(objectType, params, tenant);
+		JSONArray array = this.getAllData(objectType, params, tenant);
 		List<AviRestResource> objectList = new ArrayList<AviRestResource>();
 		// ObjectMapper mapper = new ObjectMapper();
 		mapper.setSerializationInclusion(Include.NON_NULL);
