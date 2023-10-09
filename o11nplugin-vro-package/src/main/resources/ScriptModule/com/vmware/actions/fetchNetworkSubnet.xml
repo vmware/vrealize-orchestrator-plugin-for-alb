@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<dunes-script-module name="fetchNetworkSubnet" result-type="Array/Any" api-version="6.0.0" id="2824f3e4-44e3-457e-9382-34d3376a7b94" version="0.0.1" allowed-operations="vfe">
+<dunes-script-module name="fetchNetworkSubnet" result-type="Array/Any" api-version="6.0.0" id="2824f3e4-44e3-457e-9382-34d3376a7b94" version="0.0.2" allowed-operations="vfe">
   <param n="controller" t="string"><![CDATA[IP of the controller]]></param>
   <param n="cloudName" t="string"><![CDATA[Add cloud name]]></param>
   <param n="objectType" t="string"><![CDATA[Add object type]]></param>
@@ -82,7 +82,7 @@
 }
 
 function getObjectData(aviPlugin, objectType, params, tenantRef){
-	var result = aviPlugin.get(objectType, params, tenantRef);
+	var result = aviPlugin.getAllData(objectType, params, tenantRef);
 	var resultData = JSON.parse(result);
 	return resultData;
 }]]></script>

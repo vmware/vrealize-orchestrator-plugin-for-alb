@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module name="updatePool"
 	result-type="void" api-version="6.0.0"
-	id="0164e6e8-7b7a-403f-8f8c-d9cdf8dbef9d" version="0.0.3"
+	id="0164e6e8-7b7a-403f-8f8c-d9cdf8dbef9d" version="0.0.4"
 	allowed-operations="vfe">
 	<param n="controller" t="string"><![CDATA[]]>
 	</param>
@@ -31,7 +31,7 @@
 	param.name=poolname;	
 	var response = aviVroClientObj.get("pool",param, clientTenant);
 	response = JSON.parse(response);
-	var jsonData=response[0];
+	var jsonData = response.results[0];
 	jsonData.servers=[];
 	var updatedServers=[];
 	

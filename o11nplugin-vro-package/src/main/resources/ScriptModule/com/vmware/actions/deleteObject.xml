@@ -70,7 +70,7 @@ function getUUIDOfObject(aviVroClientObj,objectType,name){
 	param.name=name;
 	var resultArray=aviVroClientObj.get(objectType,param);
 	resultArray=JSON.parse(resultArray);
-	var jsonObj=resultArray[0];
+	var jsonObj=resultArray.results[0];
 	var msg =objectType+" "+name+" Deleted successfully.";
 	msgArray.push(msg);
 	return jsonObj;
