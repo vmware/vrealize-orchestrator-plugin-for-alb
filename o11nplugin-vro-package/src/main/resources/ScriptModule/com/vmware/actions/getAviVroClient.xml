@@ -1,15 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module name="getAviVroClient"
 	result-type="Avi:AviVroClient" api-version="6.0.0"
-	id="038aa112-fb3e-463f-8a4b-82c0a9e7fafb" version="4.0.1"
+	id="038aa112-fb3e-463f-8a4b-82c0a9e8fafb" version="4.0.1"
 	allowed-operations="vfe">
 	<param n="controller" t="string"><![CDATA[Controller IP]]></param>
 	<script encoded="false"><![CDATA[var vroClientArray=Server.findAllForType('Avi:AviVroClient','');
 //System.log("controller :"+controller);
 for each(aviVroClient in vroClientArray){
 		if(aviVroClient !=null){
-			controllerIp = controller.substring(0, controller.indexOf("-"));
-			clientTenant = controller.substring(controller.indexOf("-") + 1).toLowerCase();
+			controllerIp = controller.substring(0, controller.lastIndexOf("-"));
+			clientTenant = controller.substring(controller.lastIndexOf("-") + 1).toLowerCase();
 			vroController = aviVroClient.cred.controller;
 			controllerTenant = aviVroClient.cred.tenant;
 			if((vroController == controllerIp)&&(controllerTenant == clientTenant)){

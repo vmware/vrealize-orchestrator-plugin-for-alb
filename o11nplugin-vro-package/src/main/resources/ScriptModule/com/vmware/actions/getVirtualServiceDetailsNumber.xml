@@ -1,13 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module
 	name="getVirtualServiceDetailsNumber" result-type="number"
-	api-version="6.0.0" id="08cc75f3-bd2a-4cd9-89f9-7cfa3165d413"
+	api-version="6.0.0" id="08cc75f3-bd2a-4cd9-89f9-7cfa3165d424"
 	version="0.0.3" allowed-operations="vfe">
 	<param n="vsObject" t="Avi:VirtualService"><![CDATA[
 	]]></param>
 	<param n="object" t="string"><![CDATA[
 	]]></param>
 	<param n="field" t="string"><![CDATA[
+	]]></param>
+	<param n="hmName" t="string"><![CDATA[
 	]]></param>
 	<script encoded="false"><![CDATA[if(vsObject!=null){
     var url=vsObject.getUrl();
@@ -45,6 +47,21 @@ try{
 				}
 				return port
 	
+			}
+		} else if(object=="healthmonitor"){
+			var hmObject = new AviHealthMonitor();
+			var tenant = aviVroClient.cred.tenant;
+			hmObject=aviVroClient.getObjectByName('healthmonitor',hmName, tenant);
+			if(field=="monitor_port"){
+				return monitor_port=hmObject.getMonitorPort();
+			}else if(field=="time_out"){
+				return hmObject.getReceiveTimeout();
+			}else if(field=="send_interval"){
+				return hmObject.getSendInterval();
+			}else if(field=="successful_check"){
+				return hmObject.getSuccessfulChecks();
+			}else{
+				return hmObject.getFailedChecks();
 			}
 		}else{
 			var poolref=vsObject.getPoolRef();	
