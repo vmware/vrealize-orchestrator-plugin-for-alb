@@ -426,7 +426,8 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Session configuration data.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sessionConfig
    */
@@ -439,7 +440,8 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Session configuration data.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sessionConfig set the sessionConfig.
    */
@@ -478,7 +480,8 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tenant based configuration data.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantConfig
    */
@@ -491,7 +494,8 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Tenant based configuration data.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantConfig set the tenantConfig.
    */
