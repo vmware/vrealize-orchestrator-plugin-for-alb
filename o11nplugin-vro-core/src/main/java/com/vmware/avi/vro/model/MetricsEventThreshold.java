@@ -73,7 +73,7 @@ public class MetricsEventThreshold extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * This value is used to reset the event state machine.
-   * Allowed values are 0-100.
+   * Allowed values are 1-100.
    * Field introduced in 20.1.3.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -87,7 +87,7 @@ public class MetricsEventThreshold extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * This value is used to reset the event state machine.
-   * Allowed values are 0-100.
+   * Allowed values are 1-100.
    * Field introduced in 20.1.3.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -102,7 +102,7 @@ public class MetricsEventThreshold extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Threshold value for which event in raised.
    * There can be multiple thresholds defined.health score degrades when the the target is higher than this threshold.
-   * Allowed values are 0-100.
+   * Allowed values are 1-100.
    * Field introduced in 20.1.3.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -117,7 +117,7 @@ public class MetricsEventThreshold extends AviRestResource {
    * This is the setter method. this will set the watermarkThresholds
    * Threshold value for which event in raised.
    * There can be multiple thresholds defined.health score degrades when the the target is higher than this threshold.
-   * Allowed values are 0-100.
+   * Allowed values are 1-100.
    * Field introduced in 20.1.3.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -132,7 +132,7 @@ public class MetricsEventThreshold extends AviRestResource {
    * This is the setter method this will set the watermarkThresholds
    * Threshold value for which event in raised.
    * There can be multiple thresholds defined.health score degrades when the the target is higher than this threshold.
-   * Allowed values are 0-100.
+   * Allowed values are 1-100.
    * Field introduced in 20.1.3.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
