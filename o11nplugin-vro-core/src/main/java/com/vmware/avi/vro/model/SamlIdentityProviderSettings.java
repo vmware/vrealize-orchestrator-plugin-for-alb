@@ -24,6 +24,10 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SamlIdentityProviderSettings extends AviRestResource {
+    @JsonProperty("meta_data_download_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer metaDataDownloadInterval = 60;
+
     @JsonProperty("metadata")
     @JsonInclude(Include.NON_NULL)
     private String metadata = null;
@@ -32,7 +36,41 @@ public class SamlIdentityProviderSettings extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String metadataUrl = null;
 
+    @JsonProperty("periodic_download")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean periodicDownload = false;
 
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * The interval to query and download saml idp metadata using the metadata url.
+   * Allowed values are 0-10080.
+   * Field introduced in 30.2.1.
+   * Unit is min.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 60.
+   * @return metaDataDownloadInterval
+   */
+  @VsoMethod
+  public Integer getMetaDataDownloadInterval() {
+    return metaDataDownloadInterval;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * The interval to query and download saml idp metadata using the metadata url.
+   * Allowed values are 0-10080.
+   * Field introduced in 30.2.1.
+   * Unit is min.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 60.
+   * @param metaDataDownloadInterval set the metaDataDownloadInterval.
+   */
+  @VsoMethod
+  public void setMetaDataDownloadInterval(Integer  metaDataDownloadInterval) {
+    this.metaDataDownloadInterval = metaDataDownloadInterval;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -86,6 +124,32 @@ public class SamlIdentityProviderSettings extends AviRestResource {
     this.metadataUrl = metadataUrl;
   }
 
+  /**
+   * This is the getter method this will return the attribute value.
+   * Enable periodic metadata download.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return periodicDownload
+   */
+  @VsoMethod
+  public Boolean getPeriodicDownload() {
+    return periodicDownload;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable periodic metadata download.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param periodicDownload set the periodicDownload.
+   */
+  @VsoMethod
+  public void setPeriodicDownload(Boolean  periodicDownload) {
+    this.periodicDownload = periodicDownload;
+  }
+
 
 
 @Override
@@ -98,15 +162,19 @@ public boolean equals(java.lang.Object o) {
   }
   SamlIdentityProviderSettings objSamlIdentityProviderSettings = (SamlIdentityProviderSettings) o;
   return   Objects.equals(this.metadata, objSamlIdentityProviderSettings.metadata)&&
-  Objects.equals(this.metadataUrl, objSamlIdentityProviderSettings.metadataUrl);
+  Objects.equals(this.metadataUrl, objSamlIdentityProviderSettings.metadataUrl)&&
+  Objects.equals(this.metaDataDownloadInterval, objSamlIdentityProviderSettings.metaDataDownloadInterval)&&
+  Objects.equals(this.periodicDownload, objSamlIdentityProviderSettings.periodicDownload);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class SamlIdentityProviderSettings {\n");
-      sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+      sb.append("    metaDataDownloadInterval: ").append(toIndentedString(metaDataDownloadInterval)).append("\n");
+        sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
         sb.append("    metadataUrl: ").append(toIndentedString(metadataUrl)).append("\n");
+        sb.append("    periodicDownload: ").append(toIndentedString(periodicDownload)).append("\n");
       sb.append("}");
   return sb.toString();
 }
