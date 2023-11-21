@@ -856,6 +856,7 @@ public class Constants {
     public static final String FINDER_VRO_SAMLAUTHZRULEMATCH = "SamlAuthzRuleMatch";
     public static final String FINDER_VRO_SAMLIDENTITYPROVIDERSETTINGS = "SamlIdentityProviderSettings";
     public static final String FINDER_VRO_SAMLLOG = "SamlLog";
+    public static final String FINDER_VRO_SAMLMETADATAUPDATEFAILEDDETAILS = "SamlMetadataUpdateFailedDetails";
     public static final String FINDER_VRO_SAMLSERVICEPROVIDERNODE = "SamlServiceProviderNode";
     public static final String FINDER_VRO_SAMLSERVICEPROVIDERSETTINGS = "SamlServiceProviderSettings";
     public static final String FINDER_VRO_SAMLSETTINGS = "SamlSettings";

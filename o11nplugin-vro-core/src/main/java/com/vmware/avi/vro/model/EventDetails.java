@@ -138,6 +138,7 @@ import com.vmware.avi.vro.model.RebalanceMigrateEventDetails;
 import com.vmware.avi.vro.model.RebalanceScaleinEventDetails;
 import com.vmware.avi.vro.model.RebalanceScaleoutEventDetails;
 import com.vmware.avi.vro.model.RmRebootSeEventDetails;
+import com.vmware.avi.vro.model.SamlMetadataUpdateFailedDetails;
 import com.vmware.avi.vro.model.SchedulerActionDetails;
 import com.vmware.avi.vro.model.SeBgpPeerDownDetails;
 import com.vmware.avi.vro.model.SeBgpPeerStateChangeDetails;
@@ -773,6 +774,10 @@ public class EventDetails extends AviRestResource {
     @JsonProperty("reboot_se_details")
     @JsonInclude(Include.NON_NULL)
     private RmRebootSeEventDetails rebootSeDetails = null;
+
+    @JsonProperty("saml_metadata_failed_events")
+    @JsonInclude(Include.NON_NULL)
+    private SamlMetadataUpdateFailedDetails samlMetadataFailedEvents = null;
 
     @JsonProperty("scheduler_action_info")
     @JsonInclude(Include.NON_NULL)
@@ -4126,6 +4131,28 @@ public class EventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return samlMetadataFailedEvents
+   */
+  @VsoMethod
+  public SamlMetadataUpdateFailedDetails getSamlMetadataFailedEvents() {
+    return samlMetadataFailedEvents;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param samlMetadataFailedEvents set the samlMetadataFailedEvents.
+   */
+  @VsoMethod
+  public void setSamlMetadataFailedEvents(SamlMetadataUpdateFailedDetails samlMetadataFailedEvents) {
+    this.samlMetadataFailedEvents = samlMetadataFailedEvents;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return schedulerActionInfo
    */
   @VsoMethod
@@ -6167,6 +6194,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.sslRenewFailedDetails, objEventDetails.sslRenewFailedDetails)&&
   Objects.equals(this.sslIgnoredDetails, objEventDetails.sslIgnoredDetails)&&
   Objects.equals(this.sslRevokedDetails, objEventDetails.sslRevokedDetails)&&
+  Objects.equals(this.samlMetadataFailedEvents, objEventDetails.samlMetadataFailedEvents)&&
   Objects.equals(this.clusterNodeAddDetails, objEventDetails.clusterNodeAddDetails)&&
   Objects.equals(this.clusterNodeRemoveDetails, objEventDetails.clusterNodeRemoveDetails)&&
   Objects.equals(this.clusterServiceFailedDetails, objEventDetails.clusterServiceFailedDetails)&&
@@ -6424,6 +6452,7 @@ public String toString() {
         sb.append("    rebalanceScaleinDetails: ").append(toIndentedString(rebalanceScaleinDetails)).append("\n");
         sb.append("    rebalanceScaleoutDetails: ").append(toIndentedString(rebalanceScaleoutDetails)).append("\n");
         sb.append("    rebootSeDetails: ").append(toIndentedString(rebootSeDetails)).append("\n");
+        sb.append("    samlMetadataFailedEvents: ").append(toIndentedString(samlMetadataFailedEvents)).append("\n");
         sb.append("    schedulerActionInfo: ").append(toIndentedString(schedulerActionInfo)).append("\n");
         sb.append("    seBgpPeerDownDetails: ").append(toIndentedString(seBgpPeerDownDetails)).append("\n");
         sb.append("    seBgpPeerStateChangeDetails: ").append(toIndentedString(seBgpPeerStateChangeDetails)).append("\n");
