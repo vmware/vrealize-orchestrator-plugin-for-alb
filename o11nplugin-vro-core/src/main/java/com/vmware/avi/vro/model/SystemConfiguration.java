@@ -108,6 +108,14 @@ public class SystemConfiguration extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private ProxyConfiguration proxyConfiguration = null;
 
+    @JsonProperty("rekey_time_limit")
+    @JsonInclude(Include.NON_NULL)
+    private String rekeyTimeLimit = "none";
+
+    @JsonProperty("rekey_volume_limit")
+    @JsonInclude(Include.NON_NULL)
+    private String rekeyVolumeLimit = "default";
+
     @JsonProperty("secure_channel_configuration")
     @JsonInclude(Include.NON_NULL)
     private SecureChannelConfiguration secureChannelConfiguration = null;
@@ -604,6 +612,58 @@ public class SystemConfiguration extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Users can specify and update the time limit of rekeylimit in sshd_config.if nothing is specified, the default setting will be none.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "none".
+   * @return rekeyTimeLimit
+   */
+  @VsoMethod
+  public String getRekeyTimeLimit() {
+    return rekeyTimeLimit;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Users can specify and update the time limit of rekeylimit in sshd_config.if nothing is specified, the default setting will be none.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "none".
+   * @param rekeyTimeLimit set the rekeyTimeLimit.
+   */
+  @VsoMethod
+  public void setRekeyTimeLimit(String  rekeyTimeLimit) {
+    this.rekeyTimeLimit = rekeyTimeLimit;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Users can specify and update the size/volume limit of rekeylimit in sshd_config.if nothing is specified, the default setting will be default.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "default".
+   * @return rekeyVolumeLimit
+   */
+  @VsoMethod
+  public String getRekeyVolumeLimit() {
+    return rekeyVolumeLimit;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Users can specify and update the size/volume limit of rekeylimit in sshd_config.if nothing is specified, the default setting will be default.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "default".
+   * @param rekeyVolumeLimit set the rekeyVolumeLimit.
+   */
+  @VsoMethod
+  public void setRekeyVolumeLimit(String  rekeyVolumeLimit) {
+    this.rekeyVolumeLimit = rekeyVolumeLimit;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Configure secure channel properties.
    * Field introduced in 18.1.4, 18.2.1.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
@@ -842,7 +902,9 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.commonCriteriaMode, objSystemConfiguration.commonCriteriaMode)&&
   Objects.equals(this.controllerAnalyticsPolicy, objSystemConfiguration.controllerAnalyticsPolicy)&&
   Objects.equals(this.hostKeyAlgorithmExclude, objSystemConfiguration.hostKeyAlgorithmExclude)&&
-  Objects.equals(this.kexAlgorithmExclude, objSystemConfiguration.kexAlgorithmExclude);
+  Objects.equals(this.kexAlgorithmExclude, objSystemConfiguration.kexAlgorithmExclude)&&
+  Objects.equals(this.rekeyVolumeLimit, objSystemConfiguration.rekeyVolumeLimit)&&
+  Objects.equals(this.rekeyTimeLimit, objSystemConfiguration.rekeyTimeLimit);
 }
 
 @Override
@@ -867,6 +929,8 @@ public String toString() {
         sb.append("    ntpConfiguration: ").append(toIndentedString(ntpConfiguration)).append("\n");
         sb.append("    portalConfiguration: ").append(toIndentedString(portalConfiguration)).append("\n");
         sb.append("    proxyConfiguration: ").append(toIndentedString(proxyConfiguration)).append("\n");
+        sb.append("    rekeyTimeLimit: ").append(toIndentedString(rekeyTimeLimit)).append("\n");
+        sb.append("    rekeyVolumeLimit: ").append(toIndentedString(rekeyVolumeLimit)).append("\n");
         sb.append("    secureChannelConfiguration: ").append(toIndentedString(secureChannelConfiguration)).append("\n");
         sb.append("    snmpConfiguration: ").append(toIndentedString(snmpConfiguration)).append("\n");
         sb.append("    sshCiphers: ").append(toIndentedString(sshCiphers)).append("\n");

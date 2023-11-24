@@ -28,6 +28,10 @@ public class FalsePositiveDetails extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private List<FalsePositiveResult> falsePositiveResults = null;
 
+    @JsonProperty("vs_name")
+    @JsonInclude(Include.NON_NULL)
+    private String vsName = null;
+
     @JsonProperty("vs_uuid")
     @JsonInclude(Include.NON_NULL)
     private String vsUuid = null;
@@ -80,7 +84,33 @@ public class FalsePositiveDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Vs id for this false positive details.
+   * Virtualservice name for which false positive is being generated.
+   * Field introduced in 30.1.2.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return vsName
+   */
+  @VsoMethod
+  public String getVsName() {
+    return vsName;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Virtualservice name for which false positive is being generated.
+   * Field introduced in 30.1.2.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param vsName set the vsName.
+   */
+  @VsoMethod
+  public void setVsName(String  vsName) {
+    this.vsName = vsName;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Virtualservice uuid for which false positive is being generated.
    * Field introduced in 21.1.1.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -93,7 +123,7 @@ public class FalsePositiveDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Vs id for this false positive details.
+   * Virtualservice uuid for which false positive is being generated.
    * Field introduced in 21.1.1.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -116,7 +146,8 @@ public boolean equals(java.lang.Object o) {
   }
   FalsePositiveDetails objFalsePositiveDetails = (FalsePositiveDetails) o;
   return   Objects.equals(this.vsUuid, objFalsePositiveDetails.vsUuid)&&
-  Objects.equals(this.falsePositiveResults, objFalsePositiveDetails.falsePositiveResults);
+  Objects.equals(this.falsePositiveResults, objFalsePositiveDetails.falsePositiveResults)&&
+  Objects.equals(this.vsName, objFalsePositiveDetails.vsName);
 }
 
 @Override
@@ -124,6 +155,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class FalsePositiveDetails {\n");
       sb.append("    falsePositiveResults: ").append(toIndentedString(falsePositiveResults)).append("\n");
+        sb.append("    vsName: ").append(toIndentedString(vsName)).append("\n");
         sb.append("    vsUuid: ").append(toIndentedString(vsUuid)).append("\n");
       sb.append("}");
   return sb.toString();
