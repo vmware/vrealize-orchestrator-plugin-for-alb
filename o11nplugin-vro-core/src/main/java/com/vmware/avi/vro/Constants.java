@@ -727,6 +727,7 @@ public class Constants {
     public static final String FINDER_VRO_PGDEPLOYMENTRULE = "PGDeploymentRule";
     public static final String FINDER_VRO_PGDEPLOYMENTRULERESULT = "PGDeploymentRuleResult";
     public static final String FINDER_VRO_PKIPROFILE = "PKIProfile";
+    public static final String FINDER_VRO_PKIPROFILEDETAILS = "PKIProfileDetails";
     public static final String FINDER_VRO_PAALOG = "PaaLog";
     public static final String FINDER_VRO_PAAREQUESTLOG = "PaaRequestLog";
     public static final String FINDER_VRO_PACKAGEDETAILS = "PackageDetails";

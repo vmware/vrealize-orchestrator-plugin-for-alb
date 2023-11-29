@@ -128,6 +128,7 @@ import com.vmware.avi.vro.model.OpenStackLbPluginOp;
 import com.vmware.avi.vro.model.OpenStackSeVmChange;
 import com.vmware.avi.vro.model.OpenStackSyncServices;
 import com.vmware.avi.vro.model.OpenStackVnicChange;
+import com.vmware.avi.vro.model.PKIProfileDetails;
 import com.vmware.avi.vro.model.PoolDeploymentFailureInfo;
 import com.vmware.avi.vro.model.PoolDeploymentSuccessInfo;
 import com.vmware.avi.vro.model.PoolDeploymentUpdateInfo;
@@ -734,6 +735,10 @@ public class EventDetails extends AviRestResource {
     @JsonProperty("os_vnic_details")
     @JsonInclude(Include.NON_NULL)
     private OpenStackVnicChange osVnicDetails = null;
+
+    @JsonProperty("pkiprofile_details")
+    @JsonInclude(Include.NON_NULL)
+    private PKIProfileDetails pkiprofileDetails = null;
 
     @JsonProperty("pool_deployment_failure_info")
     @JsonInclude(Include.NON_NULL)
@@ -3907,6 +3912,32 @@ public class EventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Pkiprofile event.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return pkiprofileDetails
+   */
+  @VsoMethod
+  public PKIProfileDetails getPkiprofileDetails() {
+    return pkiprofileDetails;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Pkiprofile event.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param pkiprofileDetails set the pkiprofileDetails.
+   */
+  @VsoMethod
+  public void setPkiprofileDetails(PKIProfileDetails pkiprofileDetails) {
+    this.pkiprofileDetails = pkiprofileDetails;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolDeploymentFailureInfo
@@ -6312,7 +6343,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.databaseEventInfo, objEventDetails.databaseEventInfo)&&
   Objects.equals(this.dnsQueryError, objEventDetails.dnsQueryError)&&
   Objects.equals(this.connectionEvent, objEventDetails.connectionEvent)&&
-  Objects.equals(this.adaptreplEvent, objEventDetails.adaptreplEvent);
+  Objects.equals(this.adaptreplEvent, objEventDetails.adaptreplEvent)&&
+  Objects.equals(this.pkiprofileDetails, objEventDetails.pkiprofileDetails);
 }
 
 @Override
@@ -6442,6 +6474,7 @@ public String toString() {
         sb.append("    osSeVmDetails: ").append(toIndentedString(osSeVmDetails)).append("\n");
         sb.append("    osSyncServicesDetails: ").append(toIndentedString(osSyncServicesDetails)).append("\n");
         sb.append("    osVnicDetails: ").append(toIndentedString(osVnicDetails)).append("\n");
+        sb.append("    pkiprofileDetails: ").append(toIndentedString(pkiprofileDetails)).append("\n");
         sb.append("    poolDeploymentFailureInfo: ").append(toIndentedString(poolDeploymentFailureInfo)).append("\n");
         sb.append("    poolDeploymentSuccessInfo: ").append(toIndentedString(poolDeploymentSuccessInfo)).append("\n");
         sb.append("    poolDeploymentUpdateInfo: ").append(toIndentedString(poolDeploymentUpdateInfo)).append("\n");
