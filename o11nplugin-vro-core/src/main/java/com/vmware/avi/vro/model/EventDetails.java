@@ -164,6 +164,7 @@ import com.vmware.avi.vro.model.SeIpfailureEventDetails;
 import com.vmware.avi.vro.model.SeLicensedBandwdithExceededEventDetails;
 import com.vmware.avi.vro.model.SeMemoryLimitEventDetails;
 import com.vmware.avi.vro.model.SeNtpSynchronizationFailed;
+import com.vmware.avi.vro.model.SeObjsyncPeerDownDetails;
 import com.vmware.avi.vro.model.SePersistenceEventDetails;
 import com.vmware.avi.vro.model.SePoolLbEventDetails;
 import com.vmware.avi.vro.model.SeReconcileDetails;
@@ -879,6 +880,10 @@ public class EventDetails extends AviRestResource {
     @JsonProperty("se_ntp_synchronization_failed")
     @JsonInclude(Include.NON_NULL)
     private SeNtpSynchronizationFailed seNtpSynchronizationFailed = null;
+
+    @JsonProperty("se_objsync_peer_down_details")
+    @JsonInclude(Include.NON_NULL)
+    private SeObjsyncPeerDownDetails seObjsyncPeerDownDetails = null;
 
     @JsonProperty("se_persistence_details")
     @JsonInclude(Include.NON_NULL)
@@ -4732,6 +4737,30 @@ public class EventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return seObjsyncPeerDownDetails
+   */
+  @VsoMethod
+  public SeObjsyncPeerDownDetails getSeObjsyncPeerDownDetails() {
+    return seObjsyncPeerDownDetails;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param seObjsyncPeerDownDetails set the seObjsyncPeerDownDetails.
+   */
+  @VsoMethod
+  public void setSeObjsyncPeerDownDetails(SeObjsyncPeerDownDetails seObjsyncPeerDownDetails) {
+    this.seObjsyncPeerDownDetails = seObjsyncPeerDownDetails;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sePersistenceDetails
@@ -6201,6 +6230,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.seVsDelFlowsDisrupted, objEventDetails.seVsDelFlowsDisrupted)&&
   Objects.equals(this.seNtpSynchronizationFailed, objEventDetails.seNtpSynchronizationFailed)&&
   Objects.equals(this.seHighEgressProcLatencyEventDetails, objEventDetails.seHighEgressProcLatencyEventDetails)&&
+  Objects.equals(this.seObjsyncPeerDownDetails, objEventDetails.seObjsyncPeerDownDetails)&&
   Objects.equals(this.seHmPoolDetails, objEventDetails.seHmPoolDetails)&&
   Objects.equals(this.seHmVsDetails, objEventDetails.seHmVsDetails)&&
   Objects.equals(this.sePersistenceDetails, objEventDetails.sePersistenceDetails)&&
@@ -6510,6 +6540,7 @@ public String toString() {
         sb.append("    seLicensedBandwdithExceededEventDetails: ").append(toIndentedString(seLicensedBandwdithExceededEventDetails)).append("\n");
         sb.append("    seMemoryLimitEventDetails: ").append(toIndentedString(seMemoryLimitEventDetails)).append("\n");
         sb.append("    seNtpSynchronizationFailed: ").append(toIndentedString(seNtpSynchronizationFailed)).append("\n");
+        sb.append("    seObjsyncPeerDownDetails: ").append(toIndentedString(seObjsyncPeerDownDetails)).append("\n");
         sb.append("    sePersistenceDetails: ").append(toIndentedString(sePersistenceDetails)).append("\n");
         sb.append("    sePoolLbDetails: ").append(toIndentedString(sePoolLbDetails)).append("\n");
         sb.append("    seReconcileDetails: ").append(toIndentedString(seReconcileDetails)).append("\n");

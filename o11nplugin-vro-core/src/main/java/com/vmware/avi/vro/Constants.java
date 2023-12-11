@@ -132,6 +132,7 @@ public class Constants {
     public static final String FINDER_VRO_BOTIDENTIFICATION = "BotIdentification";
     public static final String FINDER_VRO_BOTMANAGEMENTLOG = "BotManagementLog";
     public static final String FINDER_VRO_BOTMAPPING = "BotMapping";
+    public static final String FINDER_VRO_BOTMAPPINGDECISION = "BotMappingDecision";
     public static final String FINDER_VRO_BOTMAPPINGRULE = "BotMappingRule";
     public static final String FINDER_VRO_BOTMAPPINGRULEMATCHTARGET = "BotMappingRuleMatchTarget";
     public static final String FINDER_VRO_BOTTYPEMATCHER = "BotTypeMatcher";
@@ -903,6 +904,7 @@ public class Constants {
     public static final String FINDER_VRO_SEMGREVENTDETAILS = "SeMgrEventDetails";
     public static final String FINDER_VRO_SEMIGRATEEVENTDETAILS = "SeMigrateEventDetails";
     public static final String FINDER_VRO_SENTPSYNCHRONIZATIONFAILED = "SeNtpSynchronizationFailed";
+    public static final String FINDER_VRO_SEOBJSYNCPEERDOWNDETAILS = "SeObjsyncPeerDownDetails";
     public static final String FINDER_VRO_SEPERSISTENCEEVENTDETAILS = "SePersistenceEventDetails";
     public static final String FINDER_VRO_SEPOOLLBEVENTDETAILS = "SePoolLbEventDetails";
     public static final String FINDER_VRO_SEPROPERTIES = "SeProperties";
