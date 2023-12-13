@@ -72,7 +72,6 @@ public class WafRuleOverrides extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Replace the exclude list for this rule.
    * Field introduced in 20.1.6.
-   * Maximum of 64 items allowed.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return excludeList
@@ -86,7 +85,6 @@ public class WafRuleOverrides extends AviRestResource {
    * This is the setter method. this will set the excludeList
    * Replace the exclude list for this rule.
    * Field introduced in 20.1.6.
-   * Maximum of 64 items allowed.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return excludeList
@@ -100,7 +98,6 @@ public class WafRuleOverrides extends AviRestResource {
    * This is the setter method this will set the excludeList
    * Replace the exclude list for this rule.
    * Field introduced in 20.1.6.
-   * Maximum of 64 items allowed.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return excludeList
