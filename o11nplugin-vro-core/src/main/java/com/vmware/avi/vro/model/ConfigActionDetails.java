@@ -28,6 +28,10 @@ public class ConfigActionDetails extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String actionName = null;
 
+    @JsonProperty("client_ip")
+    @JsonInclude(Include.NON_NULL)
+    private String clientIp = null;
+
     @JsonProperty("error_message")
     @JsonInclude(Include.NON_NULL)
     private String errorMessage = null;
@@ -56,6 +60,10 @@ public class ConfigActionDetails extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String user = null;
 
+    @JsonProperty("user_agent")
+    @JsonInclude(Include.NON_NULL)
+    private String userAgent = null;
+
 
 
   /**
@@ -80,6 +88,28 @@ public class ConfigActionDetails extends AviRestResource {
   @VsoMethod
   public void setActionName(String  actionName) {
     this.actionName = actionName;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return clientIp
+   */
+  @VsoMethod
+  public String getClientIp() {
+    return clientIp;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param clientIp set the clientIp.
+   */
+  @VsoMethod
+  public void setClientIp(String  clientIp) {
+    this.clientIp = clientIp;
   }
 
   /**
@@ -250,6 +280,28 @@ public class ConfigActionDetails extends AviRestResource {
     this.user = user;
   }
 
+  /**
+   * This is the getter method this will return the attribute value.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return userAgent
+   */
+  @VsoMethod
+  public String getUserAgent() {
+    return userAgent;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param userAgent set the userAgent.
+   */
+  @VsoMethod
+  public void setUserAgent(String  userAgent) {
+    this.userAgent = userAgent;
+  }
+
 
 
 @Override
@@ -268,7 +320,9 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.resourceName, objConfigActionDetails.resourceName)&&
   Objects.equals(this.actionName, objConfigActionDetails.actionName)&&
   Objects.equals(this.parameterData, objConfigActionDetails.parameterData)&&
-  Objects.equals(this.errorMessage, objConfigActionDetails.errorMessage);
+  Objects.equals(this.errorMessage, objConfigActionDetails.errorMessage)&&
+  Objects.equals(this.userAgent, objConfigActionDetails.userAgent)&&
+  Objects.equals(this.clientIp, objConfigActionDetails.clientIp);
 }
 
 @Override
@@ -276,6 +330,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class ConfigActionDetails {\n");
       sb.append("    actionName: ").append(toIndentedString(actionName)).append("\n");
+        sb.append("    clientIp: ").append(toIndentedString(clientIp)).append("\n");
         sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
         sb.append("    parameterData: ").append(toIndentedString(parameterData)).append("\n");
         sb.append("    path: ").append(toIndentedString(path)).append("\n");
@@ -283,6 +338,7 @@ public String toString() {
         sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    user: ").append(toIndentedString(user)).append("\n");
+        sb.append("    userAgent: ").append(toIndentedString(userAgent)).append("\n");
       sb.append("}");
   return sb.toString();
 }
