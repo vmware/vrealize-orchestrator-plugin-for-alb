@@ -28,6 +28,10 @@ public class DebugIpAddr extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private List<IpAddr> addrs = null;
 
+    @JsonProperty("match_operation")
+    @JsonInclude(Include.NON_NULL)
+    private String matchOperation = "IS_IN";
+
     @JsonProperty("prefixes")
     @JsonInclude(Include.NON_NULL)
     private List<IpAddrPrefix> prefixes = null;
@@ -75,6 +79,34 @@ public class DebugIpAddr extends AviRestResource {
     return this;
   }
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Match criteria.
+   * Enum options - IS_IN, IS_NOT_IN.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "IS_IN".
+   * @return matchOperation
+   */
+  @VsoMethod
+  public String getMatchOperation() {
+    return matchOperation;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Match criteria.
+   * Enum options - IS_IN, IS_NOT_IN.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "IS_IN".
+   * @param matchOperation set the matchOperation.
+   */
+  @VsoMethod
+  public void setMatchOperation(String  matchOperation) {
+    this.matchOperation = matchOperation;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -165,7 +197,8 @@ public boolean equals(java.lang.Object o) {
   DebugIpAddr objDebugIpAddr = (DebugIpAddr) o;
   return   Objects.equals(this.addrs, objDebugIpAddr.addrs)&&
   Objects.equals(this.ranges, objDebugIpAddr.ranges)&&
-  Objects.equals(this.prefixes, objDebugIpAddr.prefixes);
+  Objects.equals(this.prefixes, objDebugIpAddr.prefixes)&&
+  Objects.equals(this.matchOperation, objDebugIpAddr.matchOperation);
 }
 
 @Override
@@ -173,6 +206,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class DebugIpAddr {\n");
       sb.append("    addrs: ").append(toIndentedString(addrs)).append("\n");
+        sb.append("    matchOperation: ").append(toIndentedString(matchOperation)).append("\n");
         sb.append("    prefixes: ").append(toIndentedString(prefixes)).append("\n");
         sb.append("    ranges: ").append(toIndentedString(ranges)).append("\n");
       sb.append("}");
