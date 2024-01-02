@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.CaptureFilters;
 import com.vmware.avi.vro.model.DebugVirtualServiceCapture;
+import com.vmware.avi.vro.model.CapturePacketFilter;
 import com.vmware.avi.vro.model.DebugIpAddr;
 import com.vmware.avi.vro.model.DebugSeFault;
 import com.vmware.avi.vro.model.DebugSeAgent;
@@ -57,6 +58,10 @@ public class DebugServiceEngine extends AviRestResource {
     @JsonProperty("capture_params")
     @JsonInclude(Include.NON_NULL)
     private DebugVirtualServiceCapture captureParams = null;
+
+    @JsonProperty("capture_pkt_filter")
+    @JsonInclude(Include.NON_NULL)
+    private CapturePacketFilter capturePktFilter = null;
 
     @JsonProperty("cpu_shares")
     @JsonInclude(Include.NON_NULL)
@@ -308,6 +313,34 @@ public class DebugServiceEngine extends AviRestResource {
   @VsoMethod
   public void setCaptureParams(DebugVirtualServiceCapture captureParams) {
     this.captureParams = captureParams;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Per packet capture filters for debug service engine.
+   * Not applicable for dos pcap capture.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return capturePktFilter
+   */
+  @VsoMethod
+  public CapturePacketFilter getCapturePktFilter() {
+    return capturePktFilter;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Per packet capture filters for debug service engine.
+   * Not applicable for dos pcap capture.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param capturePktFilter set the capturePktFilter.
+   */
+  @VsoMethod
+  public void setCapturePktFilter(CapturePacketFilter capturePktFilter) {
+    this.capturePktFilter = capturePktFilter;
   }
 
   /**
@@ -705,6 +738,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.benchmarkRssHash, objDebugServiceEngine.benchmarkRssHash)&&
   Objects.equals(this.traceMemory, objDebugServiceEngine.traceMemory)&&
   Objects.equals(this.enableRpcTimingProfiler, objDebugServiceEngine.enableRpcTimingProfiler)&&
+  Objects.equals(this.capturePktFilter, objDebugServiceEngine.capturePktFilter)&&
   Objects.equals(this.tenantRef, objDebugServiceEngine.tenantRef);
 }
 
@@ -719,6 +753,7 @@ public String toString() {
         sb.append("    capture: ").append(toIndentedString(capture)).append("\n");
         sb.append("    captureFilters: ").append(toIndentedString(captureFilters)).append("\n");
         sb.append("    captureParams: ").append(toIndentedString(captureParams)).append("\n");
+        sb.append("    capturePktFilter: ").append(toIndentedString(capturePktFilter)).append("\n");
         sb.append("    cpuShares: ").append(toIndentedString(cpuShares)).append("\n");
         sb.append("    debugIp: ").append(toIndentedString(debugIp)).append("\n");
         sb.append("    enableKdump: ").append(toIndentedString(enableKdump)).append("\n");

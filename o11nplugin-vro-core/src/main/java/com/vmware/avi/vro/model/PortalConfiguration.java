@@ -68,6 +68,10 @@ public class PortalConfiguration extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean passwordStrengthCheck = false;
 
+    @JsonProperty("pkiprofile_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String pkiprofileRef = null;
+
     @JsonProperty("redirect_to_https")
     @JsonInclude(Include.NON_NULL)
     private Boolean redirectToHttps = true;
@@ -360,6 +364,34 @@ public class PortalConfiguration extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Reference to pkiprofile config used for crl validation.
+   * It is a reference to an object of type pkiprofile.
+   * Field introduced in 30.1.2.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return pkiprofileRef
+   */
+  @VsoMethod
+  public String getPkiprofileRef() {
+    return pkiprofileRef;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Reference to pkiprofile config used for crl validation.
+   * It is a reference to an object of type pkiprofile.
+   * Field introduced in 30.1.2.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param pkiprofileRef set the pkiprofileRef.
+   */
+  @VsoMethod
+  public void setPkiprofileRef(String  pkiprofileRef) {
+    this.pkiprofileRef = pkiprofileRef;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return redirectToHttps
@@ -506,7 +538,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.disableRemoteCliShell, objPortalConfiguration.disableRemoteCliShell)&&
   Objects.equals(this.disableSwagger, objPortalConfiguration.disableSwagger)&&
   Objects.equals(this.apiForceTimeout, objPortalConfiguration.apiForceTimeout)&&
-  Objects.equals(this.minimumPasswordLength, objPortalConfiguration.minimumPasswordLength);
+  Objects.equals(this.minimumPasswordLength, objPortalConfiguration.minimumPasswordLength)&&
+  Objects.equals(this.pkiprofileRef, objPortalConfiguration.pkiprofileRef);
 }
 
 @Override
@@ -524,6 +557,7 @@ public String toString() {
         sb.append("    httpsPort: ").append(toIndentedString(httpsPort)).append("\n");
         sb.append("    minimumPasswordLength: ").append(toIndentedString(minimumPasswordLength)).append("\n");
         sb.append("    passwordStrengthCheck: ").append(toIndentedString(passwordStrengthCheck)).append("\n");
+        sb.append("    pkiprofileRef: ").append(toIndentedString(pkiprofileRef)).append("\n");
         sb.append("    redirectToHttps: ").append(toIndentedString(redirectToHttps)).append("\n");
         sb.append("    sslkeyandcertificateRefs: ").append(toIndentedString(sslkeyandcertificateRefs)).append("\n");
         sb.append("    sslprofileRef: ").append(toIndentedString(sslprofileRef)).append("\n");

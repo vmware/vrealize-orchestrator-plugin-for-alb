@@ -21,6 +21,8 @@ public class Constants {
     public static final String FINDER_VRO_ALBSERVICESCASE = "ALBServicesCase";
     public static final String FINDER_VRO_ALBSERVICESCASEATTACHMENT = "ALBServicesCaseAttachment";
     public static final String FINDER_VRO_ALBSERVICESCONFIG = "ALBServicesConfig";
+    public static final String FINDER_VRO_ALBSERVICESFILEDOWNLOAD = "ALBServicesFileDownload";
+    public static final String FINDER_VRO_ALBSERVICESFILEDOWNLOADMETADATA = "ALBServicesFileDownloadMetadata";
     public static final String FINDER_VRO_ALBSERVICESFILEUPLOAD = "ALBServicesFileUpload";
     public static final String FINDER_VRO_ALBSERVICESJOB = "ALBServicesJob";
     public static final String FINDER_VRO_ALBSERVICESJOBPARAM = "ALBServicesJobParam";
@@ -132,6 +134,7 @@ public class Constants {
     public static final String FINDER_VRO_BOTIDENTIFICATION = "BotIdentification";
     public static final String FINDER_VRO_BOTMANAGEMENTLOG = "BotManagementLog";
     public static final String FINDER_VRO_BOTMAPPING = "BotMapping";
+    public static final String FINDER_VRO_BOTMAPPINGDECISION = "BotMappingDecision";
     public static final String FINDER_VRO_BOTMAPPINGRULE = "BotMappingRule";
     public static final String FINDER_VRO_BOTMAPPINGRULEMATCHTARGET = "BotMappingRuleMatchTarget";
     public static final String FINDER_VRO_BOTTYPEMATCHER = "BotTypeMatcher";
@@ -155,6 +158,10 @@ public class Constants {
     public static final String FINDER_VRO_CAPTUREFILESIZE = "CaptureFileSize";
     public static final String FINDER_VRO_CAPTUREFILTERS = "CaptureFilters";
     public static final String FINDER_VRO_CAPTUREIPC = "CaptureIPC";
+    public static final String FINDER_VRO_CAPTUREPACKETFILTER = "CapturePacketFilter";
+    public static final String FINDER_VRO_CAPTURETCP = "CaptureTCP";
+    public static final String FINDER_VRO_CAPTURETCPFILTER = "CaptureTCPFilter";
+    public static final String FINDER_VRO_CAPTURETCPFLAGS = "CaptureTCPFlags";
     public static final String FINDER_VRO_CASECONFIG = "CaseConfig";
     public static final String FINDER_VRO_CDPLLDPINFO = "CdpLldpInfo";
     public static final String FINDER_VRO_CENTRALLICENSEREFRESHDETAILS = "CentralLicenseRefreshDetails";
@@ -289,6 +296,7 @@ public class Constants {
     public static final String FINDER_VRO_DEBUGVRF = "DebugVrf";
     public static final String FINDER_VRO_DEBUGVRFCONTEXT = "DebugVrfContext";
     public static final String FINDER_VRO_DEBUGVSDATAPLANE = "DebugVsDataplane";
+    public static final String FINDER_VRO_DESTINATIONPORTADDR = "DestinationPortAddr";
     public static final String FINDER_VRO_DETACHIPSTATUSEVENTDETAILS = "DetachIpStatusEventDetails";
     public static final String FINDER_VRO_DISABLESEMIGRATEEVENTDETAILS = "DisableSeMigrateEventDetails";
     public static final String FINDER_VRO_DISCOVEREDNETWORK = "DiscoveredNetwork";
@@ -870,6 +878,7 @@ public class Constants {
     public static final String FINDER_VRO_SEBGPPEERSTATECHANGEDETAILS = "SeBgpPeerStateChangeDetails";
     public static final String FINDER_VRO_SEBOOTUPCOMPRESSIONPROPERTIES = "SeBootupCompressionProperties";
     public static final String FINDER_VRO_SEBOOTUPPROPERTIES = "SeBootupProperties";
+    public static final String FINDER_VRO_SEDEBUGMODEEVENTDETAIL = "SeDebugModeEventDetail";
     public static final String FINDER_VRO_SEDISCONTINUOUSTIMECHANGEEVENTDETAILS = "SeDiscontinuousTimeChangeEventDetails";
     public static final String FINDER_VRO_SEDUPIPEVENTDETAILS = "SeDupipEventDetails";
     public static final String FINDER_VRO_SEFAULT = "SeFault";
@@ -903,6 +912,7 @@ public class Constants {
     public static final String FINDER_VRO_SEMGREVENTDETAILS = "SeMgrEventDetails";
     public static final String FINDER_VRO_SEMIGRATEEVENTDETAILS = "SeMigrateEventDetails";
     public static final String FINDER_VRO_SENTPSYNCHRONIZATIONFAILED = "SeNtpSynchronizationFailed";
+    public static final String FINDER_VRO_SEOBJSYNCPEERDOWNDETAILS = "SeObjsyncPeerDownDetails";
     public static final String FINDER_VRO_SEPERSISTENCEEVENTDETAILS = "SePersistenceEventDetails";
     public static final String FINDER_VRO_SEPOOLLBEVENTDETAILS = "SePoolLbEventDetails";
     public static final String FINDER_VRO_SEPROPERTIES = "SeProperties";
@@ -982,6 +992,7 @@ public class Constants {
     public static final String FINDER_VRO_SNMPTRAPSERVER = "SnmpTrapServer";
     public static final String FINDER_VRO_SNMPV3CONFIGURATION = "SnmpV3Configuration";
     public static final String FINDER_VRO_SNMPV3USERPARAMS = "SnmpV3UserParams";
+    public static final String FINDER_VRO_SOURCEPORTADDR = "SourcePortAddr";
     public static final String FINDER_VRO_SPGSLBSERVICEINFO = "SpGslbServiceInfo";
     public static final String FINDER_VRO_STATECACHEMGRDEBUGFILTER = "StateCacheMgrDebugFilter";
     public static final String FINDER_VRO_STATEDIFFEVENT = "StatediffEvent";

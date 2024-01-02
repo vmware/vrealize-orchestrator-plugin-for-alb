@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.AdaptReplEventInfo;
 import com.vmware.avi.vro.model.RmAddNetworksEventDetails;
 import com.vmware.avi.vro.model.ALBServicesCase;
+import com.vmware.avi.vro.model.ALBServicesFileDownload;
 import com.vmware.avi.vro.model.ALBServicesFileUpload;
 import com.vmware.avi.vro.model.ALBServicesStatusDetails;
 import com.vmware.avi.vro.model.AllSeUpgradeEventDetails;
@@ -143,6 +144,7 @@ import com.vmware.avi.vro.model.SamlMetadataUpdateFailedDetails;
 import com.vmware.avi.vro.model.SchedulerActionDetails;
 import com.vmware.avi.vro.model.SeBgpPeerDownDetails;
 import com.vmware.avi.vro.model.SeBgpPeerStateChangeDetails;
+import com.vmware.avi.vro.model.SeDebugModeEventDetail;
 import com.vmware.avi.vro.model.SeMgrEventDetails;
 import com.vmware.avi.vro.model.SeDiscontinuousTimeChangeEventDetails;
 import com.vmware.avi.vro.model.SeDupipEventDetails;
@@ -164,6 +166,7 @@ import com.vmware.avi.vro.model.SeIpfailureEventDetails;
 import com.vmware.avi.vro.model.SeLicensedBandwdithExceededEventDetails;
 import com.vmware.avi.vro.model.SeMemoryLimitEventDetails;
 import com.vmware.avi.vro.model.SeNtpSynchronizationFailed;
+import com.vmware.avi.vro.model.SeObjsyncPeerDownDetails;
 import com.vmware.avi.vro.model.SePersistenceEventDetails;
 import com.vmware.avi.vro.model.SePoolLbEventDetails;
 import com.vmware.avi.vro.model.SeReconcileDetails;
@@ -255,6 +258,10 @@ public class EventDetails extends AviRestResource {
     @JsonProperty("albservices_case_details")
     @JsonInclude(Include.NON_NULL)
     private ALBServicesCase albservicesCaseDetails = null;
+
+    @JsonProperty("albservices_file_download_details")
+    @JsonInclude(Include.NON_NULL)
+    private ALBServicesFileDownload albservicesFileDownloadDetails = null;
 
     @JsonProperty("albservices_file_upload_details")
     @JsonInclude(Include.NON_NULL)
@@ -796,6 +803,10 @@ public class EventDetails extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private SeBgpPeerStateChangeDetails seBgpPeerStateChangeDetails = null;
 
+    @JsonProperty("se_debug_mode_event_detail")
+    @JsonInclude(Include.NON_NULL)
+    private SeDebugModeEventDetail seDebugModeEventDetail = null;
+
     @JsonProperty("se_details")
     @JsonInclude(Include.NON_NULL)
     private SeMgrEventDetails seDetails = null;
@@ -879,6 +890,10 @@ public class EventDetails extends AviRestResource {
     @JsonProperty("se_ntp_synchronization_failed")
     @JsonInclude(Include.NON_NULL)
     private SeNtpSynchronizationFailed seNtpSynchronizationFailed = null;
+
+    @JsonProperty("se_objsync_peer_down_details")
+    @JsonInclude(Include.NON_NULL)
+    private SeObjsyncPeerDownDetails seObjsyncPeerDownDetails = null;
 
     @JsonProperty("se_persistence_details")
     @JsonInclude(Include.NON_NULL)
@@ -1196,6 +1211,32 @@ public class EventDetails extends AviRestResource {
   @VsoMethod
   public void setAlbservicesCaseDetails(ALBServicesCase albservicesCaseDetails) {
     this.albservicesCaseDetails = albservicesCaseDetails;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Albservices file download event details.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return albservicesFileDownloadDetails
+   */
+  @VsoMethod
+  public ALBServicesFileDownload getAlbservicesFileDownloadDetails() {
+    return albservicesFileDownloadDetails;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Albservices file download event details.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param albservicesFileDownloadDetails set the albservicesFileDownloadDetails.
+   */
+  @VsoMethod
+  public void setAlbservicesFileDownloadDetails(ALBServicesFileDownload albservicesFileDownloadDetails) {
+    this.albservicesFileDownloadDetails = albservicesFileDownloadDetails;
   }
 
   /**
@@ -4250,6 +4291,30 @@ public class EventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Field introduced in 22.1.6.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return seDebugModeEventDetail
+   */
+  @VsoMethod
+  public SeDebugModeEventDetail getSeDebugModeEventDetail() {
+    return seDebugModeEventDetail;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 22.1.6.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param seDebugModeEventDetail set the seDebugModeEventDetail.
+   */
+  @VsoMethod
+  public void setSeDebugModeEventDetail(SeDebugModeEventDetail seDebugModeEventDetail) {
+    this.seDebugModeEventDetail = seDebugModeEventDetail;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seDetails
@@ -4728,6 +4793,30 @@ public class EventDetails extends AviRestResource {
   @VsoMethod
   public void setSeNtpSynchronizationFailed(SeNtpSynchronizationFailed seNtpSynchronizationFailed) {
     this.seNtpSynchronizationFailed = seNtpSynchronizationFailed;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return seObjsyncPeerDownDetails
+   */
+  @VsoMethod
+  public SeObjsyncPeerDownDetails getSeObjsyncPeerDownDetails() {
+    return seObjsyncPeerDownDetails;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param seObjsyncPeerDownDetails set the seObjsyncPeerDownDetails.
+   */
+  @VsoMethod
+  public void setSeObjsyncPeerDownDetails(SeObjsyncPeerDownDetails seObjsyncPeerDownDetails) {
+    this.seObjsyncPeerDownDetails = seObjsyncPeerDownDetails;
   }
 
   /**
@@ -6201,6 +6290,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.seVsDelFlowsDisrupted, objEventDetails.seVsDelFlowsDisrupted)&&
   Objects.equals(this.seNtpSynchronizationFailed, objEventDetails.seNtpSynchronizationFailed)&&
   Objects.equals(this.seHighEgressProcLatencyEventDetails, objEventDetails.seHighEgressProcLatencyEventDetails)&&
+  Objects.equals(this.seDebugModeEventDetail, objEventDetails.seDebugModeEventDetail)&&
+  Objects.equals(this.seObjsyncPeerDownDetails, objEventDetails.seObjsyncPeerDownDetails)&&
   Objects.equals(this.seHmPoolDetails, objEventDetails.seHmPoolDetails)&&
   Objects.equals(this.seHmVsDetails, objEventDetails.seHmVsDetails)&&
   Objects.equals(this.sePersistenceDetails, objEventDetails.sePersistenceDetails)&&
@@ -6315,6 +6406,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.crsUpdateDetails, objEventDetails.crsUpdateDetails)&&
   Objects.equals(this.ipThreatDbEventData, objEventDetails.ipThreatDbEventData)&&
   Objects.equals(this.appSignatureEventData, objEventDetails.appSignatureEventData)&&
+  Objects.equals(this.albservicesFileDownloadDetails, objEventDetails.albservicesFileDownloadDetails)&&
   Objects.equals(this.nsxtInfo, objEventDetails.nsxtInfo)&&
   Objects.equals(this.nsxtImgDetails, objEventDetails.nsxtImgDetails)&&
   Objects.equals(this.vcenterClusterDetails, objEventDetails.vcenterClusterDetails)&&
@@ -6354,6 +6446,7 @@ public String toString() {
       sb.append("    adaptreplEvent: ").append(toIndentedString(adaptreplEvent)).append("\n");
         sb.append("    addNetworksDetails: ").append(toIndentedString(addNetworksDetails)).append("\n");
         sb.append("    albservicesCaseDetails: ").append(toIndentedString(albservicesCaseDetails)).append("\n");
+        sb.append("    albservicesFileDownloadDetails: ").append(toIndentedString(albservicesFileDownloadDetails)).append("\n");
         sb.append("    albservicesFileUploadDetails: ").append(toIndentedString(albservicesFileUploadDetails)).append("\n");
         sb.append("    albservicesStatusDetails: ").append(toIndentedString(albservicesStatusDetails)).append("\n");
         sb.append("    allSeupgradeEventDetails: ").append(toIndentedString(allSeupgradeEventDetails)).append("\n");
@@ -6489,6 +6582,7 @@ public String toString() {
         sb.append("    schedulerActionInfo: ").append(toIndentedString(schedulerActionInfo)).append("\n");
         sb.append("    seBgpPeerDownDetails: ").append(toIndentedString(seBgpPeerDownDetails)).append("\n");
         sb.append("    seBgpPeerStateChangeDetails: ").append(toIndentedString(seBgpPeerStateChangeDetails)).append("\n");
+        sb.append("    seDebugModeEventDetail: ").append(toIndentedString(seDebugModeEventDetail)).append("\n");
         sb.append("    seDetails: ").append(toIndentedString(seDetails)).append("\n");
         sb.append("    seDiscontinuousTimeChangeEventDetails: ").append(toIndentedString(seDiscontinuousTimeChangeEventDetails)).append("\n");
         sb.append("    seDupipEventDetails: ").append(toIndentedString(seDupipEventDetails)).append("\n");
@@ -6510,6 +6604,7 @@ public String toString() {
         sb.append("    seLicensedBandwdithExceededEventDetails: ").append(toIndentedString(seLicensedBandwdithExceededEventDetails)).append("\n");
         sb.append("    seMemoryLimitEventDetails: ").append(toIndentedString(seMemoryLimitEventDetails)).append("\n");
         sb.append("    seNtpSynchronizationFailed: ").append(toIndentedString(seNtpSynchronizationFailed)).append("\n");
+        sb.append("    seObjsyncPeerDownDetails: ").append(toIndentedString(seObjsyncPeerDownDetails)).append("\n");
         sb.append("    sePersistenceDetails: ").append(toIndentedString(sePersistenceDetails)).append("\n");
         sb.append("    sePoolLbDetails: ").append(toIndentedString(sePoolLbDetails)).append("\n");
         sb.append("    seReconcileDetails: ").append(toIndentedString(seReconcileDetails)).append("\n");

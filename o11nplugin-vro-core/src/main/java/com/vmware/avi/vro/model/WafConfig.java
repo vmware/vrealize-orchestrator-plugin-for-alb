@@ -329,7 +329,6 @@ public class WafConfig extends AviRestResource {
    * The order of entries matters.
    * If the request's content-type matches an entry, its request body parser will run and no other parser will be invoked.
    * Field introduced in 21.1.3.
-   * Maximum of 256 items allowed.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return contentTypeMappings
@@ -347,7 +346,6 @@ public class WafConfig extends AviRestResource {
    * The order of entries matters.
    * If the request's content-type matches an entry, its request body parser will run and no other parser will be invoked.
    * Field introduced in 21.1.3.
-   * Maximum of 256 items allowed.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return contentTypeMappings
@@ -365,7 +363,6 @@ public class WafConfig extends AviRestResource {
    * The order of entries matters.
    * If the request's content-type matches an entry, its request body parser will run and no other parser will be invoked.
    * Field introduced in 21.1.3.
-   * Maximum of 256 items allowed.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return contentTypeMappings
