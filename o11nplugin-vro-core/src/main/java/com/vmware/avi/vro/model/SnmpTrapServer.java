@@ -74,7 +74,7 @@ public class SnmpTrapServer extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Ip address of the snmp trap destination.
+   * Ip(v4/v6) address or fqdn of the snmp trap destination.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAddr
@@ -86,7 +86,7 @@ public class SnmpTrapServer extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Ip address of the snmp trap destination.
+   * Ip(v4/v6) address or fqdn of the snmp trap destination.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipAddr set the ipAddr.
