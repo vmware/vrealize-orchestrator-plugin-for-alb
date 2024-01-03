@@ -220,7 +220,7 @@ public class EmailConfiguration extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Mail server host.
+   * Mail server fqdn or ip(v4/v6) address.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "localhost".
    * @return mailServerName
@@ -232,7 +232,7 @@ public class EmailConfiguration extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Mail server host.
+   * Mail server fqdn or ip(v4/v6) address.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "localhost".
    * @param mailServerName set the mailServerName.
