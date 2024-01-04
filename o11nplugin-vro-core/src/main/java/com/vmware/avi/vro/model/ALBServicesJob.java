@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.TimeStamp;
 import com.vmware.avi.vro.model.TimeStamp;
+import com.vmware.avi.vro.model.TimeStamp;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -61,6 +62,10 @@ public class ALBServicesJob extends AviRestResource {
     @JsonProperty("status")
     @JsonInclude(Include.NON_NULL)
     private String status = "PENDING";
+
+    @JsonProperty("status_update_time")
+    @JsonInclude(Include.NON_NULL)
+    private TimeStamp statusUpdateTime = null;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
@@ -332,6 +337,32 @@ public class ALBServicesJob extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Time at which the status of albservicesjob updated.
+   * Field introduced in 22.1.6.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return statusUpdateTime
+   */
+  @VsoMethod
+  public TimeStamp getStatusUpdateTime() {
+    return statusUpdateTime;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Time at which the status of albservicesjob updated.
+   * Field introduced in 22.1.6.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param statusUpdateTime set the statusUpdateTime.
+   */
+  @VsoMethod
+  public void setStatusUpdateTime(TimeStamp statusUpdateTime) {
+    this.statusUpdateTime = statusUpdateTime;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * The unique identifier of the tenant to which this albservicesjob belongs.
    * It is a reference to an object of type tenant.
    * Field introduced in 21.1.3.
@@ -427,7 +458,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.endTime, objALBServicesJob.endTime)&&
   Objects.equals(this.pulseSyncStatus, objALBServicesJob.pulseSyncStatus)&&
   Objects.equals(this.result, objALBServicesJob.result)&&
-  Objects.equals(this.params, objALBServicesJob.params);
+  Objects.equals(this.params, objALBServicesJob.params)&&
+  Objects.equals(this.statusUpdateTime, objALBServicesJob.statusUpdateTime);
 }
 
 @Override
@@ -443,6 +475,7 @@ public String toString() {
         sb.append("    result: ").append(toIndentedString(result)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    statusUpdateTime: ").append(toIndentedString(statusUpdateTime)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
             sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
       sb.append("}");
