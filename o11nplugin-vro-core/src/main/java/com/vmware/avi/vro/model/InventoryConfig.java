@@ -28,6 +28,10 @@ public class InventoryConfig extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean enable = true;
 
+    @JsonProperty("enable_search_info")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableSearchInfo = false;
+
 
 
   /**
@@ -58,6 +62,34 @@ public class InventoryConfig extends AviRestResource {
     this.enable = enable;
   }
 
+  /**
+   * This is the getter method this will return the attribute value.
+   * Names, ip's of vs, pool(poolgroup) servers would be searchable on cloud console.
+   * Field introduced in 22.1.6.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return enableSearchInfo
+   */
+  @VsoMethod
+  public Boolean getEnableSearchInfo() {
+    return enableSearchInfo;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Names, ip's of vs, pool(poolgroup) servers would be searchable on cloud console.
+   * Field introduced in 22.1.6.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param enableSearchInfo set the enableSearchInfo.
+   */
+  @VsoMethod
+  public void setEnableSearchInfo(Boolean  enableSearchInfo) {
+    this.enableSearchInfo = enableSearchInfo;
+  }
+
 
 
 @Override
@@ -69,7 +101,8 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   InventoryConfig objInventoryConfig = (InventoryConfig) o;
-  return   Objects.equals(this.enable, objInventoryConfig.enable);
+  return   Objects.equals(this.enable, objInventoryConfig.enable)&&
+  Objects.equals(this.enableSearchInfo, objInventoryConfig.enableSearchInfo);
 }
 
 @Override
@@ -77,6 +110,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class InventoryConfig {\n");
       sb.append("    enable: ").append(toIndentedString(enable)).append("\n");
+        sb.append("    enableSearchInfo: ").append(toIndentedString(enableSearchInfo)).append("\n");
       sb.append("}");
   return sb.toString();
 }

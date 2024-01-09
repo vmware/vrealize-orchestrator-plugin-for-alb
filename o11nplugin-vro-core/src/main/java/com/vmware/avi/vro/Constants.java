@@ -862,6 +862,7 @@ public class Constants {
     public static final String FINDER_VRO_SEBGPPEERSTATECHANGEDETAILS = "SeBgpPeerStateChangeDetails";
     public static final String FINDER_VRO_SEBOOTUPCOMPRESSIONPROPERTIES = "SeBootupCompressionProperties";
     public static final String FINDER_VRO_SEBOOTUPPROPERTIES = "SeBootupProperties";
+    public static final String FINDER_VRO_SEDEBUGMODEEVENTDETAIL = "SeDebugModeEventDetail";
     public static final String FINDER_VRO_SEDISCONTINUOUSTIMECHANGEEVENTDETAILS = "SeDiscontinuousTimeChangeEventDetails";
     public static final String FINDER_VRO_SEDUPIPEVENTDETAILS = "SeDupipEventDetails";
     public static final String FINDER_VRO_SEFAULT = "SeFault";

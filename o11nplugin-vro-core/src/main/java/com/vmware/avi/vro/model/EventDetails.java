@@ -141,6 +141,7 @@ import com.vmware.avi.vro.model.RmRebootSeEventDetails;
 import com.vmware.avi.vro.model.SchedulerActionDetails;
 import com.vmware.avi.vro.model.SeBgpPeerDownDetails;
 import com.vmware.avi.vro.model.SeBgpPeerStateChangeDetails;
+import com.vmware.avi.vro.model.SeDebugModeEventDetail;
 import com.vmware.avi.vro.model.SeMgrEventDetails;
 import com.vmware.avi.vro.model.SeDiscontinuousTimeChangeEventDetails;
 import com.vmware.avi.vro.model.SeDupipEventDetails;
@@ -784,6 +785,10 @@ public class EventDetails extends AviRestResource {
     @JsonProperty("se_bgp_peer_state_change_details")
     @JsonInclude(Include.NON_NULL)
     private SeBgpPeerStateChangeDetails seBgpPeerStateChangeDetails = null;
+
+    @JsonProperty("se_debug_mode_event_detail")
+    @JsonInclude(Include.NON_NULL)
+    private SeDebugModeEventDetail seDebugModeEventDetail = null;
 
     @JsonProperty("se_details")
     @JsonInclude(Include.NON_NULL)
@@ -4187,6 +4192,30 @@ public class EventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Field introduced in 22.1.6.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return seDebugModeEventDetail
+   */
+  @VsoMethod
+  public SeDebugModeEventDetail getSeDebugModeEventDetail() {
+    return seDebugModeEventDetail;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 22.1.6.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param seDebugModeEventDetail set the seDebugModeEventDetail.
+   */
+  @VsoMethod
+  public void setSeDebugModeEventDetail(SeDebugModeEventDetail seDebugModeEventDetail) {
+    this.seDebugModeEventDetail = seDebugModeEventDetail;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seDetails
@@ -6111,6 +6140,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.seVsDelFlowsDisrupted, objEventDetails.seVsDelFlowsDisrupted)&&
   Objects.equals(this.seNtpSynchronizationFailed, objEventDetails.seNtpSynchronizationFailed)&&
   Objects.equals(this.seHighEgressProcLatencyEventDetails, objEventDetails.seHighEgressProcLatencyEventDetails)&&
+  Objects.equals(this.seDebugModeEventDetail, objEventDetails.seDebugModeEventDetail)&&
   Objects.equals(this.seHmPoolDetails, objEventDetails.seHmPoolDetails)&&
   Objects.equals(this.seHmVsDetails, objEventDetails.seHmVsDetails)&&
   Objects.equals(this.sePersistenceDetails, objEventDetails.sePersistenceDetails)&&
@@ -6395,6 +6425,7 @@ public String toString() {
         sb.append("    schedulerActionInfo: ").append(toIndentedString(schedulerActionInfo)).append("\n");
         sb.append("    seBgpPeerDownDetails: ").append(toIndentedString(seBgpPeerDownDetails)).append("\n");
         sb.append("    seBgpPeerStateChangeDetails: ").append(toIndentedString(seBgpPeerStateChangeDetails)).append("\n");
+        sb.append("    seDebugModeEventDetail: ").append(toIndentedString(seDebugModeEventDetail)).append("\n");
         sb.append("    seDetails: ").append(toIndentedString(seDetails)).append("\n");
         sb.append("    seDiscontinuousTimeChangeEventDetails: ").append(toIndentedString(seDiscontinuousTimeChangeEventDetails)).append("\n");
         sb.append("    seDupipEventDetails: ").append(toIndentedString(seDupipEventDetails)).append("\n");
