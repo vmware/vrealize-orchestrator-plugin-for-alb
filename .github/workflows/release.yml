@@ -60,7 +60,7 @@ jobs:
             VRO_VERSION="$(grep -r "release_version=" version.txt | awk -F= '{print $2}')".RELEASE
           fi
           echo "VRO version ${VRO_VERSION}"
-          echo "::set-output name=VRO_RELEASE_VERSION::${VRO_VERSION}"
+          echo "VRO_RELEASE_VERSION=${VRO_VERSION}" >> $GITHUB_OUTPUT
 
       - name: Build VRO Plugin
         run: |
