@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.BotAllowList;
+import com.vmware.avi.vro.model.BotConfigClientBehavior;
 import com.vmware.avi.vro.model.BotConfigIPLocation;
 import com.vmware.avi.vro.model.BotConfigIPReputation;
 import com.vmware.avi.vro.model.BotConfigUserAgent;
@@ -31,6 +32,10 @@ public class BotDetectionPolicy extends AviRestResource {
     @JsonProperty("allow_list")
     @JsonInclude(Include.NON_NULL)
     private BotAllowList allowList = null;
+
+    @JsonProperty("client_behavior_detector")
+    @JsonInclude(Include.NON_NULL)
+    private BotConfigClientBehavior clientBehaviorDetector = null;
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
@@ -106,6 +111,32 @@ public class BotDetectionPolicy extends AviRestResource {
   @VsoMethod
   public void setAllowList(BotAllowList allowList) {
     this.allowList = allowList;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * The client behavior configuration used in this policy.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return clientBehaviorDetector
+   */
+  @VsoMethod
+  public BotConfigClientBehavior getClientBehaviorDetector() {
+    return clientBehaviorDetector;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * The client behavior configuration used in this policy.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param clientBehaviorDetector set the clientBehaviorDetector.
+   */
+  @VsoMethod
+  public void setClientBehaviorDetector(BotConfigClientBehavior clientBehaviorDetector) {
+    this.clientBehaviorDetector = clientBehaviorDetector;
   }
 
   /**
@@ -453,6 +484,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.ipReputationDetector, objBotDetectionPolicy.ipReputationDetector)&&
   Objects.equals(this.ipLocationDetector, objBotDetectionPolicy.ipLocationDetector)&&
   Objects.equals(this.userAgentDetector, objBotDetectionPolicy.userAgentDetector)&&
+  Objects.equals(this.clientBehaviorDetector, objBotDetectionPolicy.clientBehaviorDetector)&&
   Objects.equals(this.userConsolidatorRef, objBotDetectionPolicy.userConsolidatorRef)&&
   Objects.equals(this.systemConsolidatorRef, objBotDetectionPolicy.systemConsolidatorRef)&&
   Objects.equals(this.userBotMappingRef, objBotDetectionPolicy.userBotMappingRef)&&
@@ -464,6 +496,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class BotDetectionPolicy {\n");
       sb.append("    allowList: ").append(toIndentedString(allowList)).append("\n");
+        sb.append("    clientBehaviorDetector: ").append(toIndentedString(clientBehaviorDetector)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    ipLocationDetector: ").append(toIndentedString(ipLocationDetector)).append("\n");
         sb.append("    ipReputationDetector: ").append(toIndentedString(ipReputationDetector)).append("\n");
