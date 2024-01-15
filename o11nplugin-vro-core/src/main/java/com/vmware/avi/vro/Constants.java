@@ -123,6 +123,7 @@ public class Constants {
     public static final String FINDER_VRO_BOTALLOWRULE = "BotAllowRule";
     public static final String FINDER_VRO_BOTCLASSMATCHER = "BotClassMatcher";
     public static final String FINDER_VRO_BOTCLASSIFICATION = "BotClassification";
+    public static final String FINDER_VRO_BOTCONFIGCLIENTBEHAVIOR = "BotConfigClientBehavior";
     public static final String FINDER_VRO_BOTCONFIGCONSOLIDATOR = "BotConfigConsolidator";
     public static final String FINDER_VRO_BOTCONFIGIPLOCATION = "BotConfigIPLocation";
     public static final String FINDER_VRO_BOTCONFIGIPREPUTATION = "BotConfigIPReputation";
