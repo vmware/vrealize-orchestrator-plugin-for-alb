@@ -78,6 +78,10 @@ public class ServiceEngine extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String name = "VM name unknown";
 
+    @JsonProperty("nsxt_no_hotplug")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean nsxtNoHotplug = null;
+
     @JsonProperty("resources")
     @JsonInclude(Include.NON_NULL)
     private SeResources resources = null;
@@ -416,6 +420,32 @@ public class ServiceEngine extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * If set to true, controller does not hotplugg the vnics.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return nsxtNoHotplug
+   */
+  @VsoMethod
+  public Boolean getNsxtNoHotplug() {
+    return nsxtNoHotplug;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * If set to true, controller does not hotplugg the vnics.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param nsxtNoHotplug set the nsxtNoHotplug.
+   */
+  @VsoMethod
+  public void setNsxtNoHotplug(Boolean  nsxtNoHotplug) {
+    this.nsxtNoHotplug = nsxtNoHotplug;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return resources
@@ -555,7 +585,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.hypervisor, objServiceEngine.hypervisor)&&
   Objects.equals(this.availabilityZone, objServiceEngine.availabilityZone)&&
   Objects.equals(this.enableState, objServiceEngine.enableState)&&
-  Objects.equals(this.containerType, objServiceEngine.containerType);
+  Objects.equals(this.containerType, objServiceEngine.containerType)&&
+  Objects.equals(this.nsxtNoHotplug, objServiceEngine.nsxtNoHotplug);
 }
 
 @Override
@@ -575,6 +606,7 @@ public String toString() {
         sb.append("    hypervisor: ").append(toIndentedString(hypervisor)).append("\n");
         sb.append("    mgmtVnic: ").append(toIndentedString(mgmtVnic)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    nsxtNoHotplug: ").append(toIndentedString(nsxtNoHotplug)).append("\n");
         sb.append("    resources: ").append(toIndentedString(resources)).append("\n");
         sb.append("    seGroupRef: ").append(toIndentedString(seGroupRef)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
