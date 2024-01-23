@@ -76,7 +76,7 @@ public class ApplicationProfile extends AviRestResource {
 
     @JsonProperty("preserve_client_port")
     @JsonInclude(Include.NON_NULL)
-    private Boolean preserveClientPort = false;
+    private Boolean preserveClientPort = null;
 
     @JsonProperty("preserve_dest_ip_port")
     @JsonInclude(Include.NON_NULL)
@@ -412,7 +412,7 @@ public class ApplicationProfile extends AviRestResource {
    * Specifies if we need to preserve client port while preserving client ip for backend connections.
    * Field introduced in 17.2.7.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return preserveClientPort
    */
   @VsoMethod
@@ -425,7 +425,7 @@ public class ApplicationProfile extends AviRestResource {
    * Specifies if we need to preserve client port while preserving client ip for backend connections.
    * Field introduced in 17.2.7.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param preserveClientPort set the preserveClientPort.
    */
   @VsoMethod
