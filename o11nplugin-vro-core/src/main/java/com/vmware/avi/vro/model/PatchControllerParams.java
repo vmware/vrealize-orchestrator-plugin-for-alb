@@ -28,6 +28,10 @@ public class PatchControllerParams extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String controllerPatchRef = null;
 
+    @JsonProperty("prechecks_only")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean prechecksOnly = false;
+
     @JsonProperty("skip_warnings")
     @JsonInclude(Include.NON_NULL)
     private Boolean skipWarnings = false;
@@ -60,6 +64,32 @@ public class PatchControllerParams extends AviRestResource {
   @VsoMethod
   public void setControllerPatchRef(String  controllerPatchRef) {
     this.controllerPatchRef = controllerPatchRef;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * This flag is set to run the pre-checks without the subsequent upgrade operations.
+   * Field introduced in 22.1.6.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return prechecksOnly
+   */
+  @VsoMethod
+  public Boolean getPrechecksOnly() {
+    return prechecksOnly;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * This flag is set to run the pre-checks without the subsequent upgrade operations.
+   * Field introduced in 22.1.6.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param prechecksOnly set the prechecksOnly.
+   */
+  @VsoMethod
+  public void setPrechecksOnly(Boolean  prechecksOnly) {
+    this.prechecksOnly = prechecksOnly;
   }
 
   /**
@@ -100,7 +130,8 @@ public boolean equals(java.lang.Object o) {
   }
   PatchControllerParams objPatchControllerParams = (PatchControllerParams) o;
   return   Objects.equals(this.controllerPatchRef, objPatchControllerParams.controllerPatchRef)&&
-  Objects.equals(this.skipWarnings, objPatchControllerParams.skipWarnings);
+  Objects.equals(this.skipWarnings, objPatchControllerParams.skipWarnings)&&
+  Objects.equals(this.prechecksOnly, objPatchControllerParams.prechecksOnly);
 }
 
 @Override
@@ -108,6 +139,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class PatchControllerParams {\n");
       sb.append("    controllerPatchRef: ").append(toIndentedString(controllerPatchRef)).append("\n");
+        sb.append("    prechecksOnly: ").append(toIndentedString(prechecksOnly)).append("\n");
         sb.append("    skipWarnings: ").append(toIndentedString(skipWarnings)).append("\n");
       sb.append("}");
   return sb.toString();
