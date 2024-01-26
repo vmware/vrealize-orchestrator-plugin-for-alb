@@ -44,6 +44,10 @@ public class PortalFeatureOptIn extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean enablePulseWafManagement;
 
+    @JsonProperty("enable_search_info")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableSearchInfo = false;
+
     @JsonProperty("enable_user_agent_db_sync")
     @JsonInclude(Include.NON_NULL)
     private Boolean enableUserAgentDbSync = false;
@@ -192,6 +196,34 @@ public class PortalFeatureOptIn extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Names, ip's of vs, pool(poolgroup) servers would be searchable on cloud console.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return enableSearchInfo
+   */
+  @VsoMethod
+  public Boolean getEnableSearchInfo() {
+    return enableSearchInfo;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Names, ip's of vs, pool(poolgroup) servers would be searchable on cloud console.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param enableSearchInfo set the enableSearchInfo.
+   */
+  @VsoMethod
+  public void setEnableSearchInfo(Boolean  enableSearchInfo) {
+    this.enableSearchInfo = enableSearchInfo;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Enable to receive bot management updates.
    * Field introduced in 21.1.1.
    * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
@@ -234,7 +266,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.enableUserAgentDbSync, objPortalFeatureOptIn.enableUserAgentDbSync)&&
   Objects.equals(this.enablePulseWafManagement, objPortalFeatureOptIn.enablePulseWafManagement)&&
   Objects.equals(this.enablePulseCaseManagement, objPortalFeatureOptIn.enablePulseCaseManagement)&&
-  Objects.equals(this.enablePulseInventory, objPortalFeatureOptIn.enablePulseInventory);
+  Objects.equals(this.enablePulseInventory, objPortalFeatureOptIn.enablePulseInventory)&&
+  Objects.equals(this.enableSearchInfo, objPortalFeatureOptIn.enableSearchInfo);
 }
 
 @Override
@@ -246,6 +279,7 @@ public String toString() {
         sb.append("    enablePulseCaseManagement: ").append(toIndentedString(enablePulseCaseManagement)).append("\n");
         sb.append("    enablePulseInventory: ").append(toIndentedString(enablePulseInventory)).append("\n");
         sb.append("    enablePulseWafManagement: ").append(toIndentedString(enablePulseWafManagement)).append("\n");
+        sb.append("    enableSearchInfo: ").append(toIndentedString(enableSearchInfo)).append("\n");
         sb.append("    enableUserAgentDbSync: ").append(toIndentedString(enableUserAgentDbSync)).append("\n");
       sb.append("}");
   return sb.toString();
