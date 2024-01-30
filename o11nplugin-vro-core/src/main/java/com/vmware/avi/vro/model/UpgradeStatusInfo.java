@@ -185,6 +185,10 @@ public class UpgradeStatusInfo extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean system = null;
 
+    @JsonProperty("system_report_refs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> systemReportRefs = null;
+
     @JsonProperty("tasks_completed")
     @JsonInclude(Include.NON_NULL)
     private Integer tasksCompleted = null;
@@ -1357,6 +1361,53 @@ public class UpgradeStatusInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Tracks the list of reports created for node.
+   * It is a reference to an object of type systemreport.
+   * Field introduced in 22.1.6.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return systemReportRefs
+   */
+  @VsoMethod
+  public List<String> getSystemReportRefs() {
+    return systemReportRefs;
+  }
+
+  /**
+   * This is the setter method. this will set the systemReportRefs
+   * Tracks the list of reports created for node.
+   * It is a reference to an object of type systemreport.
+   * Field introduced in 22.1.6.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return systemReportRefs
+   */
+  @VsoMethod
+  public void setSystemReportRefs(List<String>  systemReportRefs) {
+    this.systemReportRefs = systemReportRefs;
+  }
+
+  /**
+   * This is the setter method this will set the systemReportRefs
+   * Tracks the list of reports created for node.
+   * It is a reference to an object of type systemreport.
+   * Field introduced in 22.1.6.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return systemReportRefs
+   */
+  @VsoMethod
+  public UpgradeStatusInfo addSystemReportRefsItem(String systemReportRefsItem) {
+    if (this.systemReportRefs == null) {
+      this.systemReportRefs = new ArrayList<String>();
+    }
+    this.systemReportRefs.add(systemReportRefsItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Completed set of tasks in the upgrade operation.
    * Field introduced in 18.2.6.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
@@ -1660,6 +1711,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.afterRebootTaskName, objUpgradeStatusInfo.afterRebootTaskName)&&
   Objects.equals(this.afterRebootRollbackFnc, objUpgradeStatusInfo.afterRebootRollbackFnc)&&
   Objects.equals(this.upgradeReadiness, objUpgradeStatusInfo.upgradeReadiness)&&
+  Objects.equals(this.systemReportRefs, objUpgradeStatusInfo.systemReportRefs)&&
   Objects.equals(this.tenantRef, objUpgradeStatusInfo.tenantRef)&&
   Objects.equals(this.objCloudRef, objUpgradeStatusInfo.objCloudRef)&&
   Objects.equals(this.seUpgradeEvents, objUpgradeStatusInfo.seUpgradeEvents)&&
@@ -1712,6 +1764,7 @@ public String toString() {
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    statediffRef: ").append(toIndentedString(statediffRef)).append("\n");
         sb.append("    system: ").append(toIndentedString(system)).append("\n");
+        sb.append("    systemReportRefs: ").append(toIndentedString(systemReportRefs)).append("\n");
         sb.append("    tasksCompleted: ").append(toIndentedString(tasksCompleted)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
         sb.append("    totalTasks: ").append(toIndentedString(totalTasks)).append("\n");

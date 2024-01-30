@@ -330,6 +330,10 @@ public class ControllerProperties extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private List<Integer> sslCertificateExpiryWarningDays = null;
 
+    @JsonProperty("system_report_limit")
+    @JsonInclude(Include.NON_NULL)
+    private Integer systemReportLimit = 10;
+
     @JsonProperty("unresponsive_se_reboot")
     @JsonInclude(Include.NON_NULL)
     private Integer unresponsiveSeReboot = 300;
@@ -2502,6 +2506,40 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Number of systemreports retained in the system.
+   * Once the number of system reports exceed this threshold, the oldest systemreport will be removed and the latest one retained.
+   * I.e.
+   * The systemreport will be rotated and the reports don't exceed the threshold.
+   * Allowed values are 5-50.
+   * Field introduced in 22.1.6.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 10.
+   * @return systemReportLimit
+   */
+  @VsoMethod
+  public Integer getSystemReportLimit() {
+    return systemReportLimit;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Number of systemreports retained in the system.
+   * Once the number of system reports exceed this threshold, the oldest systemreport will be removed and the latest one retained.
+   * I.e.
+   * The systemreport will be rotated and the reports don't exceed the threshold.
+   * Allowed values are 5-50.
+   * Field introduced in 22.1.6.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 10.
+   * @param systemReportLimit set the systemReportLimit.
+   */
+  @VsoMethod
+  public void setSystemReportLimit(Integer  systemReportLimit) {
+    this.systemReportLimit = systemReportLimit;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Unit is sec.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
@@ -3276,7 +3314,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.ignoreVrfInNetworksubnetlist, objControllerProperties.ignoreVrfInNetworksubnetlist)&&
   Objects.equals(this.seupgradeCopyBufferSize, objControllerProperties.seupgradeCopyBufferSize)&&
   Objects.equals(this.cloudReconcileInterval, objControllerProperties.cloudReconcileInterval)&&
-  Objects.equals(this.cloudDiscoveryInterval, objControllerProperties.cloudDiscoveryInterval);
+  Objects.equals(this.cloudDiscoveryInterval, objControllerProperties.cloudDiscoveryInterval)&&
+  Objects.equals(this.systemReportLimit, objControllerProperties.systemReportLimit);
 }
 
 @Override
@@ -3359,6 +3398,7 @@ public String toString() {
         sb.append("    seupgradeSegroupMinDeadTimeout: ").append(toIndentedString(seupgradeSegroupMinDeadTimeout)).append("\n");
         sb.append("    sharedSslCertificates: ").append(toIndentedString(sharedSslCertificates)).append("\n");
         sb.append("    sslCertificateExpiryWarningDays: ").append(toIndentedString(sslCertificateExpiryWarningDays)).append("\n");
+        sb.append("    systemReportLimit: ").append(toIndentedString(systemReportLimit)).append("\n");
         sb.append("    unresponsiveSeReboot: ").append(toIndentedString(unresponsiveSeReboot)).append("\n");
         sb.append("    updateDnsEntryRetryLimit: ").append(toIndentedString(updateDnsEntryRetryLimit)).append("\n");
         sb.append("    updateDnsEntryTimeout: ").append(toIndentedString(updateDnsEntryTimeout)).append("\n");
