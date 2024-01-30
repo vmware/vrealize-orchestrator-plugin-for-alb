@@ -333,7 +333,7 @@ public class UpgradeReadinessCheckObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Upgrade operations along with type requested such as upgradesystem upgradecontroller etc.
    * Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME, EVAL_UPGRADE, EVAL_PATCH, EVAL_ROLLBACK, EVAL_ROLLBACKPATCH,
-   * EVAL_SEGROUP_RESUME.
+   * EVAL_SEGROUP_RESUME, EVAL_RESTORE, RESTORE.
    * Field introduced in 22.1.3.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -348,7 +348,7 @@ public class UpgradeReadinessCheckObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Upgrade operations along with type requested such as upgradesystem upgradecontroller etc.
    * Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME, EVAL_UPGRADE, EVAL_PATCH, EVAL_ROLLBACK, EVAL_ROLLBACKPATCH,
-   * EVAL_SEGROUP_RESUME.
+   * EVAL_SEGROUP_RESUME, EVAL_RESTORE, RESTORE.
    * Field introduced in 22.1.3.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.

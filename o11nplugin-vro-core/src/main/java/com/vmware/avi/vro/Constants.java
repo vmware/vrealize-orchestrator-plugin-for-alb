@@ -218,6 +218,7 @@ public class Constants {
     public static final String FINDER_VRO_CLUSTERSERVICECRITICALFAILUREEVENT = "ClusterServiceCriticalFailureEvent";
     public static final String FINDER_VRO_CLUSTERSERVICEFAILEDEVENT = "ClusterServiceFailedEvent";
     public static final String FINDER_VRO_CLUSTERSERVICERESTOREDEVENT = "ClusterServiceRestoredEvent";
+    public static final String FINDER_VRO_CLUSTIFYCHECKEVENT = "ClustifyCheckEvent";
     public static final String FINDER_VRO_COMPRESSIONFILTER = "CompressionFilter";
     public static final String FINDER_VRO_COMPRESSIONPROFILE = "CompressionProfile";
     public static final String FINDER_VRO_CONFIGACTIONDETAILS = "ConfigActionDetails";
@@ -800,6 +801,7 @@ public class Constants {
     public static final String FINDER_VRO_REPLACESTRINGVAR = "ReplaceStringVar";
     public static final String FINDER_VRO_REPLICATIONPOLICY = "ReplicationPolicy";
     public static final String FINDER_VRO_RESPONSEMATCHTARGET = "ResponseMatchTarget";
+    public static final String FINDER_VRO_RESTOREPARAMS = "RestoreParams";
     public static final String FINDER_VRO_RESUMESEGROUPPARAMS = "ResumeSeGroupParams";
     public static final String FINDER_VRO_RETRYPLACEMENTPARAMS = "RetryPlacementParams";
     public static final String FINDER_VRO_RMADDNETWORKSEVENTDETAILS = "RmAddNetworksEventDetails";
