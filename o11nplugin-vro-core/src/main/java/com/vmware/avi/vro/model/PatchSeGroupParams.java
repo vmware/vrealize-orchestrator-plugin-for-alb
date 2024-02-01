@@ -25,6 +25,10 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class PatchSeGroupParams extends AviRestResource {
+    @JsonProperty("prechecks_only")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean prechecksOnly = false;
+
     @JsonProperty("se_group_options")
     @JsonInclude(Include.NON_NULL)
     private SeGroupOptions seGroupOptions = null;
@@ -42,6 +46,32 @@ public class PatchSeGroupParams extends AviRestResource {
     private Boolean skipWarnings = false;
 
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * This flag is set to run the pre-checks without the subsequent upgrade operations.
+   * Field introduced in 22.1.6, 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return prechecksOnly
+   */
+  @VsoMethod
+  public Boolean getPrechecksOnly() {
+    return prechecksOnly;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * This flag is set to run the pre-checks without the subsequent upgrade operations.
+   * Field introduced in 22.1.6, 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param prechecksOnly set the prechecksOnly.
+   */
+  @VsoMethod
+  public void setPrechecksOnly(Boolean  prechecksOnly) {
+    this.prechecksOnly = prechecksOnly;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -187,14 +217,16 @@ public boolean equals(java.lang.Object o) {
   return   Objects.equals(this.sePatchRef, objPatchSeGroupParams.sePatchRef)&&
   Objects.equals(this.seGroupOptions, objPatchSeGroupParams.seGroupOptions)&&
   Objects.equals(this.seGroupRefs, objPatchSeGroupParams.seGroupRefs)&&
-  Objects.equals(this.skipWarnings, objPatchSeGroupParams.skipWarnings);
+  Objects.equals(this.skipWarnings, objPatchSeGroupParams.skipWarnings)&&
+  Objects.equals(this.prechecksOnly, objPatchSeGroupParams.prechecksOnly);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class PatchSeGroupParams {\n");
-      sb.append("    seGroupOptions: ").append(toIndentedString(seGroupOptions)).append("\n");
+      sb.append("    prechecksOnly: ").append(toIndentedString(prechecksOnly)).append("\n");
+        sb.append("    seGroupOptions: ").append(toIndentedString(seGroupOptions)).append("\n");
         sb.append("    seGroupRefs: ").append(toIndentedString(seGroupRefs)).append("\n");
         sb.append("    sePatchRef: ").append(toIndentedString(sePatchRef)).append("\n");
         sb.append("    skipWarnings: ").append(toIndentedString(skipWarnings)).append("\n");

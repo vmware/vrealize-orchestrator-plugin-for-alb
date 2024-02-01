@@ -32,6 +32,10 @@ public class RestoreParams extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String passphrase = null;
 
+    @JsonProperty("prechecks_only")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean prechecksOnly = false;
+
     @JsonProperty("skip_warnings")
     @JsonInclude(Include.NON_NULL)
     private Boolean skipWarnings = false;
@@ -92,6 +96,32 @@ public class RestoreParams extends AviRestResource {
   @VsoMethod
   public void setPassphrase(String  passphrase) {
     this.passphrase = passphrase;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * This flag is set to run the pre-checks without the subsequent upgrade operations.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return prechecksOnly
+   */
+  @VsoMethod
+  public Boolean getPrechecksOnly() {
+    return prechecksOnly;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * This flag is set to run the pre-checks without the subsequent upgrade operations.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param prechecksOnly set the prechecksOnly.
+   */
+  @VsoMethod
+  public void setPrechecksOnly(Boolean  prechecksOnly) {
+    this.prechecksOnly = prechecksOnly;
   }
 
   /**
@@ -162,7 +192,8 @@ public boolean equals(java.lang.Object o) {
   return   Objects.equals(this.file, objRestoreParams.file)&&
   Objects.equals(this.type, objRestoreParams.type)&&
   Objects.equals(this.skipWarnings, objRestoreParams.skipWarnings)&&
-  Objects.equals(this.passphrase, objRestoreParams.passphrase);
+  Objects.equals(this.passphrase, objRestoreParams.passphrase)&&
+  Objects.equals(this.prechecksOnly, objRestoreParams.prechecksOnly);
 }
 
 @Override
@@ -171,6 +202,7 @@ public String toString() {
   sb.append("class RestoreParams {\n");
       sb.append("    file: ").append(toIndentedString(file)).append("\n");
         sb.append("    passphrase: ").append(toIndentedString(passphrase)).append("\n");
+        sb.append("    prechecksOnly: ").append(toIndentedString(prechecksOnly)).append("\n");
         sb.append("    skipWarnings: ").append(toIndentedString(skipWarnings)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
       sb.append("}");

@@ -800,6 +800,10 @@ public class Constants {
     public static final String FINDER_VRO_REMOTEAUTHCONFIGURATION = "RemoteAuthConfiguration";
     public static final String FINDER_VRO_REPLACESTRINGVAR = "ReplaceStringVar";
     public static final String FINDER_VRO_REPLICATIONPOLICY = "ReplicationPolicy";
+    public static final String FINDER_VRO_REPORTDETAIL = "ReportDetail";
+    public static final String FINDER_VRO_REPORTEVENT = "ReportEvent";
+    public static final String FINDER_VRO_REPORTOPSSTATE = "ReportOpsState";
+    public static final String FINDER_VRO_REPORTSUMMARY = "ReportSummary";
     public static final String FINDER_VRO_RESPONSEMATCHTARGET = "ResponseMatchTarget";
     public static final String FINDER_VRO_RESTOREPARAMS = "RestoreParams";
     public static final String FINDER_VRO_RESUMESEGROUPPARAMS = "ResumeSeGroupParams";
@@ -1021,6 +1025,7 @@ public class Constants {
     public static final String FINDER_VRO_SYSTESTEMAILPARAMS = "SysTestEmailParams";
     public static final String FINDER_VRO_SYSTEMCONFIGURATION = "SystemConfiguration";
     public static final String FINDER_VRO_SYSTEMLIMITS = "SystemLimits";
+    public static final String FINDER_VRO_SYSTEMREPORT = "SystemReport";
     public static final String FINDER_VRO_TCPAPPLICATIONPROFILE = "TCPApplicationProfile";
     public static final String FINDER_VRO_TCPFASTPATHPROFILE = "TCPFastPathProfile";
     public static final String FINDER_VRO_TCPPROXYPROFILE = "TCPProxyProfile";
