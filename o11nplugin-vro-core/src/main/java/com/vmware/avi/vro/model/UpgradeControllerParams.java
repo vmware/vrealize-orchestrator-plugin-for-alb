@@ -32,6 +32,10 @@ public class UpgradeControllerParams extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String imageRef = null;
 
+    @JsonProperty("prechecks_only")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean prechecksOnly = false;
+
     @JsonProperty("skip_warnings")
     @JsonInclude(Include.NON_NULL)
     private Boolean skipWarnings = false;
@@ -96,6 +100,32 @@ public class UpgradeControllerParams extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * This flag is set to run the pre-checks without the subsequent upgrade operations.
+   * Field introduced in 22.1.6, 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return prechecksOnly
+   */
+  @VsoMethod
+  public Boolean getPrechecksOnly() {
+    return prechecksOnly;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * This flag is set to run the pre-checks without the subsequent upgrade operations.
+   * Field introduced in 22.1.6, 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param prechecksOnly set the prechecksOnly.
+   */
+  @VsoMethod
+  public void setPrechecksOnly(Boolean  prechecksOnly) {
+    this.prechecksOnly = prechecksOnly;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * This is flag when set as true skips few optional must checks.
    * Field introduced in 18.2.6.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
@@ -133,7 +163,8 @@ public boolean equals(java.lang.Object o) {
   UpgradeControllerParams objUpgradeControllerParams = (UpgradeControllerParams) o;
   return   Objects.equals(this.imageRef, objUpgradeControllerParams.imageRef)&&
   Objects.equals(this.controllerPatchRef, objUpgradeControllerParams.controllerPatchRef)&&
-  Objects.equals(this.skipWarnings, objUpgradeControllerParams.skipWarnings);
+  Objects.equals(this.skipWarnings, objUpgradeControllerParams.skipWarnings)&&
+  Objects.equals(this.prechecksOnly, objUpgradeControllerParams.prechecksOnly);
 }
 
 @Override
@@ -142,6 +173,7 @@ public String toString() {
   sb.append("class UpgradeControllerParams {\n");
       sb.append("    controllerPatchRef: ").append(toIndentedString(controllerPatchRef)).append("\n");
         sb.append("    imageRef: ").append(toIndentedString(imageRef)).append("\n");
+        sb.append("    prechecksOnly: ").append(toIndentedString(prechecksOnly)).append("\n");
         sb.append("    skipWarnings: ").append(toIndentedString(skipWarnings)).append("\n");
       sb.append("}");
   return sb.toString();
