@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class StaticIpRangeRuntime extends AviRestResource {
     @JsonProperty("allocated_ips")
     @JsonInclude(Include.NON_NULL)
-    private List<StaticIpAllocInfo> allocatedIps = null;
+    private List<StaticIpAllocInfo> allocatedIps;
 
     @JsonProperty("free_ip_count")
     @JsonInclude(Include.NON_NULL)
-    private Integer freeIpCount = null;
+    private Integer freeIpCount;
 
     @JsonProperty("total_ip_count")
     @JsonInclude(Include.NON_NULL)
-    private Integer totalIpCount = null;
+    private Integer totalIpCount;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)

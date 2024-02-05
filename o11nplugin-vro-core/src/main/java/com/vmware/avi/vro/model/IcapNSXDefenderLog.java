@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class IcapNSXDefenderLog extends AviRestResource {
     @JsonProperty("score")
     @JsonInclude(Include.NON_NULL)
-    private Integer score = null;
+    private Integer score;
 
     @JsonProperty("status_url")
     @JsonInclude(Include.NON_NULL)
-    private String statusUrl = null;
+    private String statusUrl;
 
     @JsonProperty("task_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String taskUuid = null;
+    private String taskUuid;
 
 
 

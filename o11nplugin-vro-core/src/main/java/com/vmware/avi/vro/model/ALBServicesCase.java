@@ -27,115 +27,115 @@ import org.springframework.stereotype.Service;
 public class ALBServicesCase extends AviRestResource {
     @JsonProperty("additional_emails")
     @JsonInclude(Include.NON_NULL)
-    private List<String> additionalEmails = null;
+    private List<String> additionalEmails;
 
     @JsonProperty("asset_id")
     @JsonInclude(Include.NON_NULL)
-    private String assetId = null;
+    private String assetId;
 
     @JsonProperty("case_attachments")
     @JsonInclude(Include.NON_NULL)
-    private List<ALBServicesCaseAttachment> caseAttachments = null;
+    private List<ALBServicesCaseAttachment> caseAttachments;
 
     @JsonProperty("case_created_by")
     @JsonInclude(Include.NON_NULL)
-    private String caseCreatedBy = null;
+    private String caseCreatedBy;
 
     @JsonProperty("case_number")
     @JsonInclude(Include.NON_NULL)
-    private String caseNumber = null;
+    private String caseNumber;
 
     @JsonProperty("case_status")
     @JsonInclude(Include.NON_NULL)
-    private String caseStatus = null;
+    private String caseStatus;
 
     @JsonProperty("contact_info")
     @JsonInclude(Include.NON_NULL)
-    private ALBServicesUser contactInfo = null;
+    private ALBServicesUser contactInfo;
 
     @JsonProperty("created_date")
     @JsonInclude(Include.NON_NULL)
-    private String createdDate = null;
+    private String createdDate;
 
     @JsonProperty("custom_tag")
     @JsonInclude(Include.NON_NULL)
-    private String customTag = null;
+    private String customTag;
 
     @JsonProperty("deployment_environment")
     @JsonInclude(Include.NON_NULL)
-    private String deploymentEnvironment = null;
+    private String deploymentEnvironment;
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("email")
     @JsonInclude(Include.NON_NULL)
-    private String email = null;
+    private String email;
 
     @JsonProperty("environment")
     @JsonInclude(Include.NON_NULL)
-    private String environment = null;
+    private String environment;
 
     @JsonProperty("fr_business_justification")
     @JsonInclude(Include.NON_NULL)
-    private String frBusinessJustification = null;
+    private String frBusinessJustification;
 
     @JsonProperty("fr_current_solution")
     @JsonInclude(Include.NON_NULL)
-    private String frCurrentSolution = null;
+    private String frCurrentSolution;
 
     @JsonProperty("fr_timing")
     @JsonInclude(Include.NON_NULL)
-    private String frTiming = null;
+    private String frTiming;
 
     @JsonProperty("fr_use_cases")
     @JsonInclude(Include.NON_NULL)
-    private String frUseCases = null;
+    private String frUseCases;
 
     @JsonProperty("id")
     @JsonInclude(Include.NON_NULL)
-    private String id = null;
+    private String id;
 
     @JsonProperty("last_modified_date")
     @JsonInclude(Include.NON_NULL)
-    private String lastModifiedDate = null;
+    private String lastModifiedDate;
 
     @JsonProperty("mode")
     @JsonInclude(Include.NON_NULL)
-    private String mode = null;
+    private String mode;
 
     @JsonProperty("patch_version")
     @JsonInclude(Include.NON_NULL)
-    private String patchVersion = null;
+    private String patchVersion;
 
     @JsonProperty("severity")
     @JsonInclude(Include.NON_NULL)
-    private String severity = null;
+    private String severity;
 
     @JsonProperty("status")
     @JsonInclude(Include.NON_NULL)
-    private String status = null;
+    private String status;
 
     @JsonProperty("subject")
     @JsonInclude(Include.NON_NULL)
-    private String subject = null;
+    private String subject;
 
     @JsonProperty("tenant_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String tenantUuid = null;
+    private String tenantUuid;
 
     @JsonProperty("time")
     @JsonInclude(Include.NON_NULL)
-    private String time = null;
+    private String time;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
     @JsonProperty("version")
     @JsonInclude(Include.NON_NULL)
-    private String version = null;
+    private String version;
 
 
 

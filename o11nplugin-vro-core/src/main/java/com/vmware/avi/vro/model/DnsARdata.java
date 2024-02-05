@@ -27,7 +27,7 @@ import org.springframework.stereotype.Service;
 public class DnsARdata extends AviRestResource {
     @JsonProperty("ip_address")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr ipAddress = null;
+    private IpAddr ipAddress;
 
 
 

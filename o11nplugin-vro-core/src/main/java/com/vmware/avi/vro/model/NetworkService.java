@@ -27,31 +27,31 @@ import org.springframework.stereotype.Service;
 public class NetworkService extends AviRestResource {
     @JsonProperty("cloud_ref")
     @JsonInclude(Include.NON_NULL)
-    private String cloudRef = null;
+    private String cloudRef;
 
     @JsonProperty("markers")
     @JsonInclude(Include.NON_NULL)
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("routing_service")
     @JsonInclude(Include.NON_NULL)
-    private RoutingService routingService = null;
+    private RoutingService routingService;
 
     @JsonProperty("se_group_ref")
     @JsonInclude(Include.NON_NULL)
-    private String seGroupRef = null;
+    private String seGroupRef;
 
     @JsonProperty("service_type")
     @JsonInclude(Include.NON_NULL)
-    private String serviceType = null;
+    private String serviceType;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -59,11 +59,11 @@ public class NetworkService extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("vrf_ref")
     @JsonInclude(Include.NON_NULL)
-    private String vrfRef = null;
+    private String vrfRef;
 
 
 

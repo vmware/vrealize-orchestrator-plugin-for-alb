@@ -26,39 +26,39 @@ import org.springframework.stereotype.Service;
 public class VipSymmetryDetails extends AviRestResource {
     @JsonProperty("max_num_se_assigned")
     @JsonInclude(Include.NON_NULL)
-    private Integer maxNumSeAssigned = null;
+    private Integer maxNumSeAssigned;
 
     @JsonProperty("max_num_se_requested")
     @JsonInclude(Include.NON_NULL)
-    private Integer maxNumSeRequested = null;
+    private Integer maxNumSeRequested;
 
     @JsonProperty("min_num_se_assigned")
     @JsonInclude(Include.NON_NULL)
-    private Integer minNumSeAssigned = null;
+    private Integer minNumSeAssigned;
 
     @JsonProperty("min_num_se_requested")
     @JsonInclude(Include.NON_NULL)
-    private Integer minNumSeRequested = null;
+    private Integer minNumSeRequested;
 
     @JsonProperty("num_vs")
     @JsonInclude(Include.NON_NULL)
-    private Integer numVs = null;
+    private Integer numVs;
 
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("vip_id")
     @JsonInclude(Include.NON_NULL)
-    private String vipId = null;
+    private String vipId;
 
     @JsonProperty("vsvip_name")
     @JsonInclude(Include.NON_NULL)
-    private String vsvipName = null;
+    private String vsvipName;
 
     @JsonProperty("vsvip_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String vsvipUuid = null;
+    private String vsvipUuid;
 
 
 

@@ -30,19 +30,19 @@ public class HSMAwsCloudHsm extends AviRestResource {
 
     @JsonProperty("cluster_cert")
     @JsonInclude(Include.NON_NULL)
-    private String clusterCert = null;
+    private String clusterCert;
 
     @JsonProperty("crypto_user_name")
     @JsonInclude(Include.NON_NULL)
-    private String cryptoUserName = null;
+    private String cryptoUserName;
 
     @JsonProperty("crypto_user_password")
     @JsonInclude(Include.NON_NULL)
-    private String cryptoUserPassword = null;
+    private String cryptoUserPassword;
 
     @JsonProperty("hsm_ip")
     @JsonInclude(Include.NON_NULL)
-    private List<String> hsmIp = null;
+    private List<String> hsmIp;
 
     @JsonProperty("mgmt_config")
     @JsonInclude(Include.NON_NULL)

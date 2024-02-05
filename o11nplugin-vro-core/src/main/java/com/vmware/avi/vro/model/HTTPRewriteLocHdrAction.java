@@ -28,7 +28,7 @@ import org.springframework.stereotype.Service;
 public class HTTPRewriteLocHdrAction extends AviRestResource {
     @JsonProperty("host")
     @JsonInclude(Include.NON_NULL)
-    private URIParam host = null;
+    private URIParam host;
 
     @JsonProperty("keep_query")
     @JsonInclude(Include.NON_NULL)
@@ -36,15 +36,15 @@ public class HTTPRewriteLocHdrAction extends AviRestResource {
 
     @JsonProperty("path")
     @JsonInclude(Include.NON_NULL)
-    private URIParam path = null;
+    private URIParam path;
 
     @JsonProperty("port")
     @JsonInclude(Include.NON_NULL)
-    private Integer port = null;
+    private Integer port;
 
     @JsonProperty("protocol")
     @JsonInclude(Include.NON_NULL)
-    private String protocol = null;
+    private String protocol;
 
 
 

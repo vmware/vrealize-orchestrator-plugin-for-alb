@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class DnsRuleActionGsGroupSelection extends AviRestResource {
     @JsonProperty("group_name")
     @JsonInclude(Include.NON_NULL)
-    private String groupName = null;
+    private String groupName;
 
 
 

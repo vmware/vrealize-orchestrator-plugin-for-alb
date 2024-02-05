@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class MetricsApiSrvDebugFilter extends AviRestResource {
     @JsonProperty("entity_ref")
     @JsonInclude(Include.NON_NULL)
-    private String entityRef = null;
+    private String entityRef;
 
 
 

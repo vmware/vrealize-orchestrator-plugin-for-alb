@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class StateCacheMgrDebugFilter extends AviRestResource {
     @JsonProperty("pool_ref")
     @JsonInclude(Include.NON_NULL)
-    private String poolRef = null;
+    private String poolRef;
 
     @JsonProperty("vs_ref")
     @JsonInclude(Include.NON_NULL)
-    private String vsRef = null;
+    private String vsRef;
 
 
 

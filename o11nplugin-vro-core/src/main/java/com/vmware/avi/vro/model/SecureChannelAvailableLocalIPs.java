@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class SecureChannelAvailableLocalIPs extends AviRestResource {
     @JsonProperty("end")
     @JsonInclude(Include.NON_NULL)
-    private Integer end = null;
+    private Integer end;
 
     @JsonProperty("free_ips")
     @JsonInclude(Include.NON_NULL)
-    private List<Integer> freeIps = null;
+    private List<Integer> freeIps;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("start")
     @JsonInclude(Include.NON_NULL)
-    private Integer start = null;
+    private Integer start;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -46,7 +46,7 @@ public class SecureChannelAvailableLocalIPs extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

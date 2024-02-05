@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class CRSUpdateDetails extends AviRestResource {
     @JsonProperty("crs_info")
     @JsonInclude(Include.NON_NULL)
-    private List<CRSDetails> crsInfo = null;
+    private List<CRSDetails> crsInfo;
 
 
 

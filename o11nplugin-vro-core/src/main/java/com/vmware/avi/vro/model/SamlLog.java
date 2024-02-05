@@ -28,31 +28,31 @@ import org.springframework.stereotype.Service;
 public class SamlLog extends AviRestResource {
     @JsonProperty("is_saml_authentication_used")
     @JsonInclude(Include.NON_NULL)
-    private Boolean isSamlAuthenticationUsed = null;
+    private Boolean isSamlAuthenticationUsed;
 
     @JsonProperty("saml_attribute_lists")
     @JsonInclude(Include.NON_NULL)
-    private List<SamlAttribute> samlAttributeLists = null;
+    private List<SamlAttribute> samlAttributeLists;
 
     @JsonProperty("saml_auth_status")
     @JsonInclude(Include.NON_NULL)
-    private String samlAuthStatus = null;
+    private String samlAuthStatus;
 
     @JsonProperty("saml_authn_rule_match")
     @JsonInclude(Include.NON_NULL)
-    private SamlAuthnRuleMatch samlAuthnRuleMatch = null;
+    private SamlAuthnRuleMatch samlAuthnRuleMatch;
 
     @JsonProperty("saml_authz_rule_match")
     @JsonInclude(Include.NON_NULL)
-    private SamlAuthzRuleMatch samlAuthzRuleMatch = null;
+    private SamlAuthzRuleMatch samlAuthzRuleMatch;
 
     @JsonProperty("saml_session_cookie_expired")
     @JsonInclude(Include.NON_NULL)
-    private Boolean samlSessionCookieExpired = null;
+    private Boolean samlSessionCookieExpired;
 
     @JsonProperty("userid")
     @JsonInclude(Include.NON_NULL)
-    private String userid = null;
+    private String userid;
 
 
 

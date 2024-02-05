@@ -28,11 +28,11 @@ import org.springframework.stereotype.Service;
 public class Cluster extends AviRestResource {
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("nodes")
     @JsonInclude(Include.NON_NULL)
-    private List<ClusterNode> nodes = null;
+    private List<ClusterNode> nodes;
 
     @JsonProperty("rejoin_nodes_automatically")
     @JsonInclude(Include.NON_NULL)
@@ -40,7 +40,7 @@ public class Cluster extends AviRestResource {
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -48,15 +48,15 @@ public class Cluster extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("virtual_ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr virtualIp = null;
+    private IpAddr virtualIp;
 
     @JsonProperty("virtual_ip6")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr virtualIp6 = null;
+    private IpAddr virtualIp6;
 
 
 

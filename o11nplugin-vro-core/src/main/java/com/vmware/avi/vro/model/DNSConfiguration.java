@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class DNSConfiguration extends AviRestResource {
     @JsonProperty("search_domain")
     @JsonInclude(Include.NON_NULL)
-    private String searchDomain = null;
+    private String searchDomain;
 
     @JsonProperty("server_list")
     @JsonInclude(Include.NON_NULL)
-    private List<IpAddr> serverList = null;
+    private List<IpAddr> serverList;
 
 
 

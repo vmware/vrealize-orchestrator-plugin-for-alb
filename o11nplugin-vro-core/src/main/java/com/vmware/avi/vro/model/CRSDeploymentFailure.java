@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class CRSDeploymentFailure extends AviRestResource {
     @JsonProperty("crs_info")
     @JsonInclude(Include.NON_NULL)
-    private List<CRSDetails> crsInfo = null;
+    private List<CRSDetails> crsInfo;
 
     @JsonProperty("message")
     @JsonInclude(Include.NON_NULL)
-    private String message = null;
+    private String message;
 
 
 

@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class OshiftSharedVirtualService extends AviRestResource {
     @JsonProperty("virtualservice_name")
     @JsonInclude(Include.NON_NULL)
-    private String virtualserviceName = null;
+    private String virtualserviceName;
 
 
 

@@ -26,27 +26,27 @@ import org.springframework.stereotype.Service;
 public class HSMgrDebugFilter extends AviRestResource {
     @JsonProperty("entity")
     @JsonInclude(Include.NON_NULL)
-    private String entity = null;
+    private String entity;
 
     @JsonProperty("metric_entity")
     @JsonInclude(Include.NON_NULL)
-    private String metricEntity = null;
+    private String metricEntity;
 
     @JsonProperty("period")
     @JsonInclude(Include.NON_NULL)
-    private Integer period = null;
+    private Integer period;
 
     @JsonProperty("pool")
     @JsonInclude(Include.NON_NULL)
-    private String pool = null;
+    private String pool;
 
     @JsonProperty("server")
     @JsonInclude(Include.NON_NULL)
-    private String server = null;
+    private String server;
 
     @JsonProperty("skip_hs_db_writes")
     @JsonInclude(Include.NON_NULL)
-    private Boolean skipHsDbWrites = null;
+    private Boolean skipHsDbWrites;
 
 
 

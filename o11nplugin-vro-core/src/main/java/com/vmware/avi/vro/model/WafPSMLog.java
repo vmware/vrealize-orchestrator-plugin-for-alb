@@ -26,31 +26,31 @@ import org.springframework.stereotype.Service;
 public class WafPSMLog extends AviRestResource {
     @JsonProperty("actions")
     @JsonInclude(Include.NON_NULL)
-    private List<String> actions = null;
+    private List<String> actions;
 
     @JsonProperty("group_name")
     @JsonInclude(Include.NON_NULL)
-    private String groupName = null;
+    private String groupName;
 
     @JsonProperty("group_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String groupUuid = null;
+    private String groupUuid;
 
     @JsonProperty("location")
     @JsonInclude(Include.NON_NULL)
-    private String location = null;
+    private String location;
 
     @JsonProperty("matches")
     @JsonInclude(Include.NON_NULL)
-    private List<WafRuleMatchData> matches = null;
+    private List<WafRuleMatchData> matches;
 
     @JsonProperty("rule_id")
     @JsonInclude(Include.NON_NULL)
-    private String ruleId = null;
+    private String ruleId;
 
     @JsonProperty("rule_name")
     @JsonInclude(Include.NON_NULL)
-    private String ruleName = null;
+    private String ruleName;
 
 
 

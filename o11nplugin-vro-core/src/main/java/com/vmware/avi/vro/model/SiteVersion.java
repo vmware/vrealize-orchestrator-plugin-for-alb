@@ -26,39 +26,39 @@ import org.springframework.stereotype.Service;
 public class SiteVersion extends AviRestResource {
     @JsonProperty("datetime")
     @JsonInclude(Include.NON_NULL)
-    private String datetime = null;
+    private String datetime;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("prev_target_version")
     @JsonInclude(Include.NON_NULL)
-    private Integer prevTargetVersion = null;
+    private Integer prevTargetVersion;
 
     @JsonProperty("replication_state")
     @JsonInclude(Include.NON_NULL)
-    private String replicationState = null;
+    private String replicationState;
 
     @JsonProperty("site_id")
     @JsonInclude(Include.NON_NULL)
-    private String siteId = null;
+    private String siteId;
 
     @JsonProperty("target_timeline")
     @JsonInclude(Include.NON_NULL)
-    private String targetTimeline = null;
+    private String targetTimeline;
 
     @JsonProperty("target_version")
     @JsonInclude(Include.NON_NULL)
-    private Integer targetVersion = null;
+    private Integer targetVersion;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("timeline")
     @JsonInclude(Include.NON_NULL)
-    private String timeline = null;
+    private String timeline;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -66,15 +66,15 @@ public class SiteVersion extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("version")
     @JsonInclude(Include.NON_NULL)
-    private Integer version = null;
+    private Integer version;
 
     @JsonProperty("version_type")
     @JsonInclude(Include.NON_NULL)
-    private String versionType = null;
+    private String versionType;
 
 
 

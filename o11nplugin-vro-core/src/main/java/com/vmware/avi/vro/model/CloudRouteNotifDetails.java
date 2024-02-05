@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class CloudRouteNotifDetails extends AviRestResource {
     @JsonProperty("cc_id")
     @JsonInclude(Include.NON_NULL)
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("route_table")
     @JsonInclude(Include.NON_NULL)
-    private String routeTable = null;
+    private String routeTable;
 
     @JsonProperty("routes")
     @JsonInclude(Include.NON_NULL)
-    private List<String> routes = null;
+    private List<String> routes;
 
 
 

@@ -34,7 +34,7 @@ public class SAMLSPConfig extends AviRestResource {
 
     @JsonProperty("cookie_name")
     @JsonInclude(Include.NON_NULL)
-    private String cookieName = null;
+    private String cookieName;
 
     @JsonProperty("cookie_timeout")
     @JsonInclude(Include.NON_NULL)
@@ -42,19 +42,19 @@ public class SAMLSPConfig extends AviRestResource {
 
     @JsonProperty("entity_id")
     @JsonInclude(Include.NON_NULL)
-    private String entityId = null;
+    private String entityId;
 
     @JsonProperty("key")
     @JsonInclude(Include.NON_NULL)
-    private List<HttpCookiePersistenceKey> key = null;
+    private List<HttpCookiePersistenceKey> key;
 
     @JsonProperty("signing_ssl_key_and_certificate_ref")
     @JsonInclude(Include.NON_NULL)
-    private String signingSslKeyAndCertificateRef = null;
+    private String signingSslKeyAndCertificateRef;
 
     @JsonProperty("single_signon_url")
     @JsonInclude(Include.NON_NULL)
-    private String singleSignonUrl = null;
+    private String singleSignonUrl;
 
     @JsonProperty("sp_metadata")
     @JsonInclude(Include.NON_NULL)
@@ -62,7 +62,7 @@ public class SAMLSPConfig extends AviRestResource {
 
     @JsonProperty("use_idp_session_timeout")
     @JsonInclude(Include.NON_NULL)
-    private Boolean useIdpSessionTimeout = null;
+    private Boolean useIdpSessionTimeout;
 
 
 

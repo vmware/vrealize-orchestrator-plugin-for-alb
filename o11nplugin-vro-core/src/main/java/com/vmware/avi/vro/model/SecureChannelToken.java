@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class SecureChannelToken extends AviRestResource {
     @JsonProperty("expiry_time")
     @JsonInclude(Include.NON_NULL)
-    private Float expiryTime = null;
+    private Float expiryTime;
 
     @JsonProperty("in_use")
     @JsonInclude(Include.NON_NULL)
@@ -34,11 +34,11 @@ public class SecureChannelToken extends AviRestResource {
 
     @JsonProperty("metadata")
     @JsonInclude(Include.NON_NULL)
-    private List<SecureChannelMetadata> metadata = null;
+    private List<SecureChannelMetadata> metadata;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -46,7 +46,7 @@ public class SecureChannelToken extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

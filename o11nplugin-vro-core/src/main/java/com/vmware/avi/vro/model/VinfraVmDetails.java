@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class VinfraVmDetails extends AviRestResource {
     @JsonProperty("datacenter")
     @JsonInclude(Include.NON_NULL)
-    private String datacenter = null;
+    private String datacenter;
 
     @JsonProperty("host")
     @JsonInclude(Include.NON_NULL)
-    private String host = null;
+    private String host;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
 
 

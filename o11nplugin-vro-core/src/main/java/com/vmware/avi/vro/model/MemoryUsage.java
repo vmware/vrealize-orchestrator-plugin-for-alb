@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class MemoryUsage extends AviRestResource {
     @JsonProperty("free")
     @JsonInclude(Include.NON_NULL)
-    private Integer free = null;
+    private Integer free;
 
     @JsonProperty("total")
     @JsonInclude(Include.NON_NULL)
-    private Integer total = null;
+    private Integer total;
 
 
 

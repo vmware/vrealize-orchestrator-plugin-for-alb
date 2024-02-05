@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class MetricsDbDiskEventDetails extends AviRestResource {
     @JsonProperty("metrics_deleted_tables")
     @JsonInclude(Include.NON_NULL)
-    private List<String> metricsDeletedTables = null;
+    private List<String> metricsDeletedTables;
 
     @JsonProperty("metrics_free_sz")
     @JsonInclude(Include.NON_NULL)
-    private Integer metricsFreeSz = null;
+    private Integer metricsFreeSz;
 
     @JsonProperty("metrics_quota")
     @JsonInclude(Include.NON_NULL)
-    private Integer metricsQuota = null;
+    private Integer metricsQuota;
 
 
 

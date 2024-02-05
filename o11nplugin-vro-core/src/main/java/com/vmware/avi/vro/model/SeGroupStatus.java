@@ -26,179 +26,179 @@ import org.springframework.stereotype.Service;
 public class SeGroupStatus extends AviRestResource {
     @JsonProperty("controller_version")
     @JsonInclude(Include.NON_NULL)
-    private String controllerVersion = null;
+    private String controllerVersion;
 
     @JsonProperty("disrupted_vs_ref")
     @JsonInclude(Include.NON_NULL)
-    private List<String> disruptedVsRef = null;
+    private List<String> disruptedVsRef;
 
     @JsonProperty("duration")
     @JsonInclude(Include.NON_NULL)
-    private String duration = null;
+    private String duration;
 
     @JsonProperty("end_time")
     @JsonInclude(Include.NON_NULL)
-    private String endTime = null;
+    private String endTime;
 
     @JsonProperty("enqueue_time")
     @JsonInclude(Include.NON_NULL)
-    private String enqueueTime = null;
+    private String enqueueTime;
 
     @JsonProperty("ha_mode")
     @JsonInclude(Include.NON_NULL)
-    private String haMode = null;
+    private String haMode;
 
     @JsonProperty("in_progress")
     @JsonInclude(Include.NON_NULL)
-    private Boolean inProgress = null;
+    private Boolean inProgress;
 
     @JsonProperty("notes")
     @JsonInclude(Include.NON_NULL)
-    private List<String> notes = null;
+    private List<String> notes;
 
     @JsonProperty("num_se")
     @JsonInclude(Include.NON_NULL)
-    private Integer numSe = null;
+    private Integer numSe;
 
     @JsonProperty("num_se_with_no_vs")
     @JsonInclude(Include.NON_NULL)
-    private Integer numSeWithNoVs = null;
+    private Integer numSeWithNoVs;
 
     @JsonProperty("num_se_with_vs_not_scaledout")
     @JsonInclude(Include.NON_NULL)
-    private Integer numSeWithVsNotScaledout = null;
+    private Integer numSeWithVsNotScaledout;
 
     @JsonProperty("num_se_with_vs_scaledout")
     @JsonInclude(Include.NON_NULL)
-    private Integer numSeWithVsScaledout = null;
+    private Integer numSeWithVsScaledout;
 
     @JsonProperty("num_vs")
     @JsonInclude(Include.NON_NULL)
-    private Integer numVs = null;
+    private Integer numVs;
 
     @JsonProperty("num_vs_disrupted")
     @JsonInclude(Include.NON_NULL)
-    private Integer numVsDisrupted = null;
+    private Integer numVsDisrupted;
 
     @JsonProperty("progress")
     @JsonInclude(Include.NON_NULL)
-    private Integer progress = null;
+    private Integer progress;
 
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private List<String> reason = null;
+    private List<String> reason;
 
     @JsonProperty("request_time")
     @JsonInclude(Include.NON_NULL)
-    private String requestTime = null;
+    private String requestTime;
 
     @JsonProperty("se_already_upgraded_at_start")
     @JsonInclude(Include.NON_NULL)
-    private List<String> seAlreadyUpgradedAtStart = null;
+    private List<String> seAlreadyUpgradedAtStart;
 
     @JsonProperty("se_disconnected_at_start")
     @JsonInclude(Include.NON_NULL)
-    private List<String> seDisconnectedAtStart = null;
+    private List<String> seDisconnectedAtStart;
 
     @JsonProperty("se_group_name")
     @JsonInclude(Include.NON_NULL)
-    private String seGroupName = null;
+    private String seGroupName;
 
     @JsonProperty("se_group_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String seGroupUuid = null;
+    private String seGroupUuid;
 
     @JsonProperty("se_ip_missing_at_start")
     @JsonInclude(Include.NON_NULL)
-    private List<String> seIpMissingAtStart = null;
+    private List<String> seIpMissingAtStart;
 
     @JsonProperty("se_poweredoff_at_start")
     @JsonInclude(Include.NON_NULL)
-    private List<String> sePoweredoffAtStart = null;
+    private List<String> sePoweredoffAtStart;
 
     @JsonProperty("se_reboot_in_progress_ref")
     @JsonInclude(Include.NON_NULL)
-    private String seRebootInProgressRef = null;
+    private String seRebootInProgressRef;
 
     @JsonProperty("se_upgrade_completed")
     @JsonInclude(Include.NON_NULL)
-    private List<String> seUpgradeCompleted = null;
+    private List<String> seUpgradeCompleted;
 
     @JsonProperty("se_upgrade_errors")
     @JsonInclude(Include.NON_NULL)
-    private List<SeUpgradeEvents> seUpgradeErrors = null;
+    private List<SeUpgradeEvents> seUpgradeErrors;
 
     @JsonProperty("se_upgrade_failed")
     @JsonInclude(Include.NON_NULL)
-    private List<String> seUpgradeFailed = null;
+    private List<String> seUpgradeFailed;
 
     @JsonProperty("se_upgrade_in_progress")
     @JsonInclude(Include.NON_NULL)
-    private List<String> seUpgradeInProgress = null;
+    private List<String> seUpgradeInProgress;
 
     @JsonProperty("se_upgrade_not_started")
     @JsonInclude(Include.NON_NULL)
-    private List<String> seUpgradeNotStarted = null;
+    private List<String> seUpgradeNotStarted;
 
     @JsonProperty("se_upgrade_skip_suspended")
     @JsonInclude(Include.NON_NULL)
-    private List<String> seUpgradeSkipSuspended = null;
+    private List<String> seUpgradeSkipSuspended;
 
     @JsonProperty("se_upgrade_suspended")
     @JsonInclude(Include.NON_NULL)
-    private List<String> seUpgradeSuspended = null;
+    private List<String> seUpgradeSuspended;
 
     @JsonProperty("se_with_no_vs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> seWithNoVs = null;
+    private List<String> seWithNoVs;
 
     @JsonProperty("se_with_vs_not_scaledout")
     @JsonInclude(Include.NON_NULL)
-    private List<String> seWithVsNotScaledout = null;
+    private List<String> seWithVsNotScaledout;
 
     @JsonProperty("se_with_vs_scaledout")
     @JsonInclude(Include.NON_NULL)
-    private List<String> seWithVsScaledout = null;
+    private List<String> seWithVsScaledout;
 
     @JsonProperty("start_time")
     @JsonInclude(Include.NON_NULL)
-    private String startTime = null;
+    private String startTime;
 
     @JsonProperty("state")
     @JsonInclude(Include.NON_NULL)
-    private String state = null;
+    private String state;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("thread")
     @JsonInclude(Include.NON_NULL)
-    private String thread = null;
+    private String thread;
 
     @JsonProperty("traffic_status")
     @JsonInclude(Include.NON_NULL)
-    private String trafficStatus = null;
+    private String trafficStatus;
 
     @JsonProperty("vs_errors")
     @JsonInclude(Include.NON_NULL)
-    private List<VsError> vsErrors = null;
+    private List<VsError> vsErrors;
 
     @JsonProperty("vs_migrate_in_progress_ref")
     @JsonInclude(Include.NON_NULL)
-    private List<String> vsMigrateInProgressRef = null;
+    private List<String> vsMigrateInProgressRef;
 
     @JsonProperty("vs_scalein_in_progress_ref")
     @JsonInclude(Include.NON_NULL)
-    private List<String> vsScaleinInProgressRef = null;
+    private List<String> vsScaleinInProgressRef;
 
     @JsonProperty("vs_scaleout_in_progress_ref")
     @JsonInclude(Include.NON_NULL)
-    private List<String> vsScaleoutInProgressRef = null;
+    private List<String> vsScaleoutInProgressRef;
 
     @JsonProperty("worker")
     @JsonInclude(Include.NON_NULL)
-    private String worker = null;
+    private String worker;
 
 
 

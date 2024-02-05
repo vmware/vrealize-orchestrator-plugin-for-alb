@@ -35,7 +35,7 @@ public class WafApplicationSignatureProvider extends AviRestResource {
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("ruleset_version")
     @JsonInclude(Include.NON_NULL)
@@ -43,11 +43,11 @@ public class WafApplicationSignatureProvider extends AviRestResource {
 
     @JsonProperty("service_status")
     @JsonInclude(Include.NON_NULL)
-    private WebApplicationSignatureServiceStatus serviceStatus = null;
+    private WebApplicationSignatureServiceStatus serviceStatus;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -55,7 +55,7 @@ public class WafApplicationSignatureProvider extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

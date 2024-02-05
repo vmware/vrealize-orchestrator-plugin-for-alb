@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class SecureChannelConfiguration extends AviRestResource {
     @JsonProperty("sslkeyandcertificate_refs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> sslkeyandcertificateRefs = null;
+    private List<String> sslkeyandcertificateRefs;
 
 
 

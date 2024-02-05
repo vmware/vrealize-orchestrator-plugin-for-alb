@@ -32,11 +32,11 @@ public class DockerConfiguration extends AviRestResource {
 
     @JsonProperty("ca_tls_key_and_certificate_ref")
     @JsonInclude(Include.NON_NULL)
-    private String caTlsKeyAndCertificateRef = null;
+    private String caTlsKeyAndCertificateRef;
 
     @JsonProperty("client_tls_key_and_certificate_ref")
     @JsonInclude(Include.NON_NULL)
-    private String clientTlsKeyAndCertificateRef = null;
+    private String clientTlsKeyAndCertificateRef;
 
     @JsonProperty("container_port_match_http_service")
     @JsonInclude(Include.NON_NULL)
@@ -60,11 +60,11 @@ public class DockerConfiguration extends AviRestResource {
 
     @JsonProperty("docker_registry_se")
     @JsonInclude(Include.NON_NULL)
-    private DockerRegistry dockerRegistrySe = null;
+    private DockerRegistry dockerRegistrySe;
 
     @JsonProperty("east_west_placement_subnet")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrPrefix eastWestPlacementSubnet = null;
+    private IpAddrPrefix eastWestPlacementSubnet;
 
     @JsonProperty("enable_event_subscription")
     @JsonInclude(Include.NON_NULL)
@@ -80,11 +80,11 @@ public class DockerConfiguration extends AviRestResource {
 
     @JsonProperty("fleet_endpoint")
     @JsonInclude(Include.NON_NULL)
-    private String fleetEndpoint = null;
+    private String fleetEndpoint;
 
     @JsonProperty("http_container_ports")
     @JsonInclude(Include.NON_NULL)
-    private List<Integer> httpContainerPorts = null;
+    private List<Integer> httpContainerPorts;
 
     @JsonProperty("se_deployment_method")
     @JsonInclude(Include.NON_NULL)
@@ -92,11 +92,11 @@ public class DockerConfiguration extends AviRestResource {
 
     @JsonProperty("se_exclude_attributes")
     @JsonInclude(Include.NON_NULL)
-    private List<MesosAttribute> seExcludeAttributes = null;
+    private List<MesosAttribute> seExcludeAttributes;
 
     @JsonProperty("se_include_attributes")
     @JsonInclude(Include.NON_NULL)
-    private List<MesosAttribute> seIncludeAttributes = null;
+    private List<MesosAttribute> seIncludeAttributes;
 
     @JsonProperty("se_spawn_rate")
     @JsonInclude(Include.NON_NULL)
@@ -112,11 +112,11 @@ public class DockerConfiguration extends AviRestResource {
 
     @JsonProperty("ssh_user_ref")
     @JsonInclude(Include.NON_NULL)
-    private String sshUserRef = null;
+    private String sshUserRef;
 
     @JsonProperty("ucp_nodes")
     @JsonInclude(Include.NON_NULL)
-    private List<String> ucpNodes = null;
+    private List<String> ucpNodes;
 
     @JsonProperty("use_container_ip_port")
     @JsonInclude(Include.NON_NULL)

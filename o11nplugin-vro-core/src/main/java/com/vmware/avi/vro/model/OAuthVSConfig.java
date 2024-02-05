@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class OAuthVSConfig extends AviRestResource {
     @JsonProperty("cookie_name")
     @JsonInclude(Include.NON_NULL)
-    private String cookieName = null;
+    private String cookieName;
 
     @JsonProperty("cookie_timeout")
     @JsonInclude(Include.NON_NULL)
@@ -34,23 +34,23 @@ public class OAuthVSConfig extends AviRestResource {
 
     @JsonProperty("key")
     @JsonInclude(Include.NON_NULL)
-    private List<HttpCookiePersistenceKey> key = null;
+    private List<HttpCookiePersistenceKey> key;
 
     @JsonProperty("logout_uri")
     @JsonInclude(Include.NON_NULL)
-    private String logoutUri = null;
+    private String logoutUri;
 
     @JsonProperty("oauth_settings")
     @JsonInclude(Include.NON_NULL)
-    private List<OAuthSettings> oauthSettings = null;
+    private List<OAuthSettings> oauthSettings;
 
     @JsonProperty("post_logout_redirect_uri")
     @JsonInclude(Include.NON_NULL)
-    private String postLogoutRedirectUri = null;
+    private String postLogoutRedirectUri;
 
     @JsonProperty("redirect_uri")
     @JsonInclude(Include.NON_NULL)
-    private String redirectUri = null;
+    private String redirectUri;
 
 
 

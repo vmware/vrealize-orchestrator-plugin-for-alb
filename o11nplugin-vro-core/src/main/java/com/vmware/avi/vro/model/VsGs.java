@@ -26,27 +26,27 @@ import org.springframework.stereotype.Service;
 public class VsGs extends AviRestResource {
     @JsonProperty("geodb_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String geodbUuid = null;
+    private String geodbUuid;
 
     @JsonProperty("gs_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String gsUuid = null;
+    private String gsUuid;
 
     @JsonProperty("gslb_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String gslbUuid = null;
+    private String gslbUuid;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -54,11 +54,11 @@ public class VsGs extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("vs_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String vsUuid = null;
+    private String vsUuid;
 
 
 

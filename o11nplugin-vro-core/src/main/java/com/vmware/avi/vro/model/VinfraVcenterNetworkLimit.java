@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class VinfraVcenterNetworkLimit extends AviRestResource {
     @JsonProperty("additional_reason")
     @JsonInclude(Include.NON_NULL)
-    private String additionalReason = null;
+    private String additionalReason;
 
     @JsonProperty("current")
     @JsonInclude(Include.NON_NULL)
-    private Integer current = null;
+    private Integer current;
 
     @JsonProperty("limit")
     @JsonInclude(Include.NON_NULL)
-    private Integer limit = null;
+    private Integer limit;
 
 
 

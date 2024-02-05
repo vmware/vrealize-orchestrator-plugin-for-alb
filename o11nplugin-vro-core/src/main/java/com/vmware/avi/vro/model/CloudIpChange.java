@@ -28,19 +28,19 @@ import org.springframework.stereotype.Service;
 public class CloudIpChange extends AviRestResource {
     @JsonProperty("cc_id")
     @JsonInclude(Include.NON_NULL)
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("error_string")
     @JsonInclude(Include.NON_NULL)
-    private String errorString = null;
+    private String errorString;
 
     @JsonProperty("ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr ip = null;
+    private IpAddr ip;
 
     @JsonProperty("ip6")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr ip6 = null;
+    private IpAddr ip6;
 
     @JsonProperty("ip6_mask")
     @JsonInclude(Include.NON_NULL)
@@ -52,19 +52,19 @@ public class CloudIpChange extends AviRestResource {
 
     @JsonProperty("mac_addr")
     @JsonInclude(Include.NON_NULL)
-    private String macAddr = null;
+    private String macAddr;
 
     @JsonProperty("port_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String portUuid = null;
+    private String portUuid;
 
     @JsonProperty("se_vm_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String seVmUuid = null;
+    private String seVmUuid;
 
     @JsonProperty("vtype")
     @JsonInclude(Include.NON_NULL)
-    private String vtype = null;
+    private String vtype;
 
 
 

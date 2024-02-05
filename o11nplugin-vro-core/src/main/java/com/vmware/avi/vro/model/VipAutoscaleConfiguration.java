@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class VipAutoscaleConfiguration extends AviRestResource {
     @JsonProperty("zones")
     @JsonInclude(Include.NON_NULL)
-    private List<VipAutoscaleZones> zones = null;
+    private List<VipAutoscaleZones> zones;
 
 
 

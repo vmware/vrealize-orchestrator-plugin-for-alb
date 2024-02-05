@@ -30,7 +30,7 @@ public class ReplaceStringVar extends AviRestResource {
 
     @JsonProperty("val")
     @JsonInclude(Include.NON_NULL)
-    private String val = null;
+    private String val;
 
 
 

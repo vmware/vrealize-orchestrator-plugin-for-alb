@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class URIParamQuery extends AviRestResource {
     @JsonProperty("add_string")
     @JsonInclude(Include.NON_NULL)
-    private String addString = null;
+    private String addString;
 
     @JsonProperty("keep_query")
     @JsonInclude(Include.NON_NULL)

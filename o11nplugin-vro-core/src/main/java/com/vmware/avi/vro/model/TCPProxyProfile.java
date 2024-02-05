@@ -70,7 +70,7 @@ public class TCPProxyProfile extends AviRestResource {
 
     @JsonProperty("max_segment_size")
     @JsonInclude(Include.NON_NULL)
-    private Integer maxSegmentSize = null;
+    private Integer maxSegmentSize;
 
     @JsonProperty("max_syn_retransmissions")
     @JsonInclude(Include.NON_NULL)
@@ -78,7 +78,7 @@ public class TCPProxyProfile extends AviRestResource {
 
     @JsonProperty("min_rexmt_timeout")
     @JsonInclude(Include.NON_NULL)
-    private Integer minRexmtTimeout = null;
+    private Integer minRexmtTimeout;
 
     @JsonProperty("nagles_algorithm")
     @JsonInclude(Include.NON_NULL)
@@ -94,7 +94,7 @@ public class TCPProxyProfile extends AviRestResource {
 
     @JsonProperty("reorder_threshold")
     @JsonInclude(Include.NON_NULL)
-    private Integer reorderThreshold = null;
+    private Integer reorderThreshold;
 
     @JsonProperty("slow_start_scaling_factor")
     @JsonInclude(Include.NON_NULL)

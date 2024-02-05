@@ -28,31 +28,31 @@ import org.springframework.stereotype.Service;
 public class HTTPSwitchingAction extends AviRestResource {
     @JsonProperty("action")
     @JsonInclude(Include.NON_NULL)
-    private String action = null;
+    private String action;
 
     @JsonProperty("file")
     @JsonInclude(Include.NON_NULL)
-    private HTTPLocalFile file = null;
+    private HTTPLocalFile file;
 
     @JsonProperty("other_status_code")
     @JsonInclude(Include.NON_NULL)
-    private Integer otherStatusCode = null;
+    private Integer otherStatusCode;
 
     @JsonProperty("pool_group_ref")
     @JsonInclude(Include.NON_NULL)
-    private String poolGroupRef = null;
+    private String poolGroupRef;
 
     @JsonProperty("pool_ref")
     @JsonInclude(Include.NON_NULL)
-    private String poolRef = null;
+    private String poolRef;
 
     @JsonProperty("server")
     @JsonInclude(Include.NON_NULL)
-    private PoolServer server = null;
+    private PoolServer server;
 
     @JsonProperty("status_code")
     @JsonInclude(Include.NON_NULL)
-    private String statusCode = null;
+    private String statusCode;
 
 
 

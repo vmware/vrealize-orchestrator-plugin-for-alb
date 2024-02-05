@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class ALBServicesJobParam extends AviRestResource {
     @JsonProperty("key")
     @JsonInclude(Include.NON_NULL)
-    private String key = null;
+    private String key;
 
     @JsonProperty("value")
     @JsonInclude(Include.NON_NULL)
-    private String value = null;
+    private String value;
 
 
 

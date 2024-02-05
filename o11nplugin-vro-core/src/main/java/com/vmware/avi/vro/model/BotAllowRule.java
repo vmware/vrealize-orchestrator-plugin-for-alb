@@ -27,19 +27,19 @@ import org.springframework.stereotype.Service;
 public class BotAllowRule extends AviRestResource {
     @JsonProperty("action")
     @JsonInclude(Include.NON_NULL)
-    private String action = null;
+    private String action;
 
     @JsonProperty("condition")
     @JsonInclude(Include.NON_NULL)
-    private MatchTarget condition = null;
+    private MatchTarget condition;
 
     @JsonProperty("index")
     @JsonInclude(Include.NON_NULL)
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
 
 

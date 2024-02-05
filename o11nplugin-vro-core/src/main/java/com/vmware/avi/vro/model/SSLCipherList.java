@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class SSLCipherList extends AviRestResource {
     @JsonProperty("identified_ciphers")
     @JsonInclude(Include.NON_NULL)
-    private List<String> identifiedCiphers = null;
+    private List<String> identifiedCiphers;
 
     @JsonProperty("unidentified_ciphers")
     @JsonInclude(Include.NON_NULL)
-    private List<String> unidentifiedCiphers = null;
+    private List<String> unidentifiedCiphers;
 
 
 

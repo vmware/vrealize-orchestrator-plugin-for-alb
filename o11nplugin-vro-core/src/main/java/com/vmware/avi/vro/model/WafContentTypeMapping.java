@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class WafContentTypeMapping extends AviRestResource {
     @JsonProperty("content_type")
     @JsonInclude(Include.NON_NULL)
-    private String contentType = null;
+    private String contentType;
 
     @JsonProperty("match_op")
     @JsonInclude(Include.NON_NULL)
@@ -34,7 +34,7 @@ public class WafContentTypeMapping extends AviRestResource {
 
     @JsonProperty("request_body_parser")
     @JsonInclude(Include.NON_NULL)
-    private String requestBodyParser = null;
+    private String requestBodyParser;
 
 
 

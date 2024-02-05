@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class PartitionInfo extends AviRestResource {
     @JsonProperty("path")
     @JsonInclude(Include.NON_NULL)
-    private String path = null;
+    private String path;
 
     @JsonProperty("quota")
     @JsonInclude(Include.NON_NULL)
-    private Integer quota = null;
+    private Integer quota;
 
     @JsonProperty("size")
     @JsonInclude(Include.NON_NULL)
-    private Integer size = null;
+    private Integer size;
 
 
 

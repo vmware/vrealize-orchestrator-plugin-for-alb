@@ -32,27 +32,27 @@ import org.springframework.stereotype.Service;
 public class DnsRuleAction extends AviRestResource {
     @JsonProperty("allow")
     @JsonInclude(Include.NON_NULL)
-    private DnsRuleActionAllowDrop allow = null;
+    private DnsRuleActionAllowDrop allow;
 
     @JsonProperty("dns_rate_limiter")
     @JsonInclude(Include.NON_NULL)
-    private DnsRateLimiter dnsRateLimiter = null;
+    private DnsRateLimiter dnsRateLimiter;
 
     @JsonProperty("gs_group_selection")
     @JsonInclude(Include.NON_NULL)
-    private DnsRuleActionGsGroupSelection gsGroupSelection = null;
+    private DnsRuleActionGsGroupSelection gsGroupSelection;
 
     @JsonProperty("gslb_site_selection")
     @JsonInclude(Include.NON_NULL)
-    private DnsRuleActionGslbSiteSelection gslbSiteSelection = null;
+    private DnsRuleActionGslbSiteSelection gslbSiteSelection;
 
     @JsonProperty("pool_switching")
     @JsonInclude(Include.NON_NULL)
-    private DnsRuleActionPoolSwitching poolSwitching = null;
+    private DnsRuleActionPoolSwitching poolSwitching;
 
     @JsonProperty("response")
     @JsonInclude(Include.NON_NULL)
-    private DnsRuleActionResponse response = null;
+    private DnsRuleActionResponse response;
 
 
 

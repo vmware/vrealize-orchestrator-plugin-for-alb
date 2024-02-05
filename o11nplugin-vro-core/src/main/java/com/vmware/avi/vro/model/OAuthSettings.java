@@ -28,15 +28,15 @@ import org.springframework.stereotype.Service;
 public class OAuthSettings extends AviRestResource {
     @JsonProperty("app_settings")
     @JsonInclude(Include.NON_NULL)
-    private OAuthAppSettings appSettings = null;
+    private OAuthAppSettings appSettings;
 
     @JsonProperty("auth_profile_ref")
     @JsonInclude(Include.NON_NULL)
-    private String authProfileRef = null;
+    private String authProfileRef;
 
     @JsonProperty("resource_server")
     @JsonInclude(Include.NON_NULL)
-    private OAuthResourceServer resourceServer = null;
+    private OAuthResourceServer resourceServer;
 
 
 

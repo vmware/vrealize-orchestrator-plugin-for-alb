@@ -26,31 +26,31 @@ import org.springframework.stereotype.Service;
 public class CloudHealth extends AviRestResource {
     @JsonProperty("cc_id")
     @JsonInclude(Include.NON_NULL)
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("error_string")
     @JsonInclude(Include.NON_NULL)
-    private String errorString = null;
+    private String errorString;
 
     @JsonProperty("first_fail")
     @JsonInclude(Include.NON_NULL)
-    private String firstFail = null;
+    private String firstFail;
 
     @JsonProperty("last_fail")
     @JsonInclude(Include.NON_NULL)
-    private String lastFail = null;
+    private String lastFail;
 
     @JsonProperty("last_ok")
     @JsonInclude(Include.NON_NULL)
-    private String lastOk = null;
+    private String lastOk;
 
     @JsonProperty("num_fails")
     @JsonInclude(Include.NON_NULL)
-    private Integer numFails = null;
+    private Integer numFails;
 
     @JsonProperty("vtype")
     @JsonInclude(Include.NON_NULL)
-    private String vtype = null;
+    private String vtype;
 
 
 

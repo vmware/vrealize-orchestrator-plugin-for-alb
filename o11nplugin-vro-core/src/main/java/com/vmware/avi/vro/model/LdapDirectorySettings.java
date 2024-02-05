@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class LdapDirectorySettings extends AviRestResource {
     @JsonProperty("admin_bind_dn")
     @JsonInclude(Include.NON_NULL)
-    private String adminBindDn = null;
+    private String adminBindDn;
 
     @JsonProperty("group_filter")
     @JsonInclude(Include.NON_NULL)
@@ -42,7 +42,7 @@ public class LdapDirectorySettings extends AviRestResource {
 
     @JsonProperty("group_search_dn")
     @JsonInclude(Include.NON_NULL)
-    private String groupSearchDn = null;
+    private String groupSearchDn;
 
     @JsonProperty("group_search_scope")
     @JsonInclude(Include.NON_NULL)
@@ -54,19 +54,19 @@ public class LdapDirectorySettings extends AviRestResource {
 
     @JsonProperty("password")
     @JsonInclude(Include.NON_NULL)
-    private String password = null;
+    private String password;
 
     @JsonProperty("user_attributes")
     @JsonInclude(Include.NON_NULL)
-    private List<String> userAttributes = null;
+    private List<String> userAttributes;
 
     @JsonProperty("user_id_attribute")
     @JsonInclude(Include.NON_NULL)
-    private String userIdAttribute = null;
+    private String userIdAttribute;
 
     @JsonProperty("user_search_dn")
     @JsonInclude(Include.NON_NULL)
-    private String userSearchDn = null;
+    private String userSearchDn;
 
     @JsonProperty("user_search_scope")
     @JsonInclude(Include.NON_NULL)

@@ -43,7 +43,7 @@ public class HTTPServerReselect extends AviRestResource {
 
     @JsonProperty("svr_resp_code")
     @JsonInclude(Include.NON_NULL)
-    private HTTPReselectRespCode svrRespCode = null;
+    private HTTPReselectRespCode svrRespCode;
 
 
 

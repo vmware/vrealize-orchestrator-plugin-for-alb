@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class NTPConfiguration extends AviRestResource {
     @JsonProperty("ntp_authentication_keys")
     @JsonInclude(Include.NON_NULL)
-    private List<NTPAuthenticationKey> ntpAuthenticationKeys = null;
+    private List<NTPAuthenticationKey> ntpAuthenticationKeys;
 
     @JsonProperty("ntp_server_list")
     @JsonInclude(Include.NON_NULL)
-    private List<IpAddr> ntpServerList = null;
+    private List<IpAddr> ntpServerList;
 
     @JsonProperty("ntp_servers")
     @JsonInclude(Include.NON_NULL)
-    private List<NTPServer> ntpServers = null;
+    private List<NTPServer> ntpServers;
 
 
 

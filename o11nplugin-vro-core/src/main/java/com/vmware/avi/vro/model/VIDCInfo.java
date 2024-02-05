@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class VIDCInfo extends AviRestResource {
     @JsonProperty("managed_object_id")
     @JsonInclude(Include.NON_NULL)
-    private String managedObjectId = null;
+    private String managedObjectId;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -42,7 +42,7 @@ public class VIDCInfo extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

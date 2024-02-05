@@ -29,19 +29,19 @@ import org.springframework.stereotype.Service;
 public class ClusterNode extends AviRestResource {
     @JsonProperty("categories")
     @JsonInclude(Include.NON_NULL)
-    private List<String> categories = null;
+    private List<String> categories;
 
     @JsonProperty("interfaces")
     @JsonInclude(Include.NON_NULL)
-    private List<ControllerInterface> interfaces = null;
+    private List<ControllerInterface> interfaces;
 
     @JsonProperty("ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr ip = null;
+    private IpAddr ip;
 
     @JsonProperty("ip6")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr ip6 = null;
+    private IpAddr ip6;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
@@ -49,31 +49,31 @@ public class ClusterNode extends AviRestResource {
 
     @JsonProperty("password")
     @JsonInclude(Include.NON_NULL)
-    private String password = null;
+    private String password;
 
     @JsonProperty("public_ip_or_name")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr publicIpOrName = null;
+    private IpAddr publicIpOrName;
 
     @JsonProperty("static_routes")
     @JsonInclude(Include.NON_NULL)
-    private List<StaticRoute> staticRoutes = null;
+    private List<StaticRoute> staticRoutes;
 
     @JsonProperty("vm_hostname")
     @JsonInclude(Include.NON_NULL)
-    private String vmHostname = null;
+    private String vmHostname;
 
     @JsonProperty("vm_mor")
     @JsonInclude(Include.NON_NULL)
-    private String vmMor = null;
+    private String vmMor;
 
     @JsonProperty("vm_name")
     @JsonInclude(Include.NON_NULL)
-    private String vmName = null;
+    private String vmName;
 
     @JsonProperty("vm_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String vmUuid = null;
+    private String vmUuid;
 
 
 

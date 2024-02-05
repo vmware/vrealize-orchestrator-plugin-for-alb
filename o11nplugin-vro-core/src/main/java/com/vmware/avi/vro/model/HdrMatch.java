@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class HdrMatch extends AviRestResource {
     @JsonProperty("hdr")
     @JsonInclude(Include.NON_NULL)
-    private String hdr = null;
+    private String hdr;
 
     @JsonProperty("match_case")
     @JsonInclude(Include.NON_NULL)
@@ -34,11 +34,11 @@ public class HdrMatch extends AviRestResource {
 
     @JsonProperty("match_criteria")
     @JsonInclude(Include.NON_NULL)
-    private String matchCriteria = null;
+    private String matchCriteria;
 
     @JsonProperty("value")
     @JsonInclude(Include.NON_NULL)
-    private List<String> value = null;
+    private List<String> value;
 
 
 

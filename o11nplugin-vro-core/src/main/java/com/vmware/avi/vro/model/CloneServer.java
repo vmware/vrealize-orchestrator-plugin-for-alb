@@ -28,19 +28,19 @@ import org.springframework.stereotype.Service;
 public class CloneServer extends AviRestResource {
     @JsonProperty("ip_address")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr ipAddress = null;
+    private IpAddr ipAddress;
 
     @JsonProperty("mac")
     @JsonInclude(Include.NON_NULL)
-    private String mac = null;
+    private String mac;
 
     @JsonProperty("network_ref")
     @JsonInclude(Include.NON_NULL)
-    private String networkRef = null;
+    private String networkRef;
 
     @JsonProperty("subnet")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrPrefix subnet = null;
+    private IpAddrPrefix subnet;
 
 
 

@@ -26,43 +26,43 @@ import org.springframework.stereotype.Service;
 public class ConfigActionDetails extends AviRestResource {
     @JsonProperty("action_name")
     @JsonInclude(Include.NON_NULL)
-    private String actionName = null;
+    private String actionName;
 
     @JsonProperty("client_ip")
     @JsonInclude(Include.NON_NULL)
-    private String clientIp = null;
+    private String clientIp;
 
     @JsonProperty("error_message")
     @JsonInclude(Include.NON_NULL)
-    private String errorMessage = null;
+    private String errorMessage;
 
     @JsonProperty("parameter_data")
     @JsonInclude(Include.NON_NULL)
-    private String parameterData = null;
+    private String parameterData;
 
     @JsonProperty("path")
     @JsonInclude(Include.NON_NULL)
-    private String path = null;
+    private String path;
 
     @JsonProperty("resource_name")
     @JsonInclude(Include.NON_NULL)
-    private String resourceName = null;
+    private String resourceName;
 
     @JsonProperty("resource_type")
     @JsonInclude(Include.NON_NULL)
-    private String resourceType = null;
+    private String resourceType;
 
     @JsonProperty("status")
     @JsonInclude(Include.NON_NULL)
-    private String status = null;
+    private String status;
 
     @JsonProperty("user")
     @JsonInclude(Include.NON_NULL)
-    private String user = null;
+    private String user;
 
     @JsonProperty("user_agent")
     @JsonInclude(Include.NON_NULL)
-    private String userAgent = null;
+    private String userAgent;
 
 
 

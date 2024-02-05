@@ -27,11 +27,11 @@ import org.springframework.stereotype.Service;
 public class UpgradeSystemParams extends AviRestResource {
     @JsonProperty("controller_patch_ref")
     @JsonInclude(Include.NON_NULL)
-    private String controllerPatchRef = null;
+    private String controllerPatchRef;
 
     @JsonProperty("image_ref")
     @JsonInclude(Include.NON_NULL)
-    private String imageRef = null;
+    private String imageRef;
 
     @JsonProperty("prechecks_only")
     @JsonInclude(Include.NON_NULL)
@@ -39,11 +39,11 @@ public class UpgradeSystemParams extends AviRestResource {
 
     @JsonProperty("se_group_options")
     @JsonInclude(Include.NON_NULL)
-    private SeGroupOptions seGroupOptions = null;
+    private SeGroupOptions seGroupOptions;
 
     @JsonProperty("se_patch_ref")
     @JsonInclude(Include.NON_NULL)
-    private String sePatchRef = null;
+    private String sePatchRef;
 
     @JsonProperty("skip_warnings")
     @JsonInclude(Include.NON_NULL)

@@ -26,39 +26,39 @@ import org.springframework.stereotype.Service;
 public class MicroService extends AviRestResource {
     @JsonProperty("application_name")
     @JsonInclude(Include.NON_NULL)
-    private String applicationName = null;
+    private String applicationName;
 
     @JsonProperty("cloud_config_cksum")
     @JsonInclude(Include.NON_NULL)
-    private String cloudConfigCksum = null;
+    private String cloudConfigCksum;
 
     @JsonProperty("containers")
     @JsonInclude(Include.NON_NULL)
-    private List<MicroServiceContainer> containers = null;
+    private List<MicroServiceContainer> containers;
 
     @JsonProperty("created_by")
     @JsonInclude(Include.NON_NULL)
-    private String createdBy = null;
+    private String createdBy;
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("ip_list")
     @JsonInclude(Include.NON_NULL)
-    private Boolean ipList = null;
+    private Boolean ipList;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("orchestrator_name")
     @JsonInclude(Include.NON_NULL)
-    private String orchestratorName = null;
+    private String orchestratorName;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -66,7 +66,7 @@ public class MicroService extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

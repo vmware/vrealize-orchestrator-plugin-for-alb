@@ -30,11 +30,11 @@ public class NTPAuthenticationKey extends AviRestResource {
 
     @JsonProperty("key")
     @JsonInclude(Include.NON_NULL)
-    private String key = null;
+    private String key;
 
     @JsonProperty("key_number")
     @JsonInclude(Include.NON_NULL)
-    private Integer keyNumber = null;
+    private Integer keyNumber;
 
 
 

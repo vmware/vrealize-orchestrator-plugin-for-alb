@@ -27,11 +27,11 @@ import org.springframework.stereotype.Service;
 public class KniPortRange extends AviRestResource {
     @JsonProperty("protocol")
     @JsonInclude(Include.NON_NULL)
-    private String protocol = null;
+    private String protocol;
 
     @JsonProperty("range")
     @JsonInclude(Include.NON_NULL)
-    private PortRange range = null;
+    private PortRange range;
 
 
 

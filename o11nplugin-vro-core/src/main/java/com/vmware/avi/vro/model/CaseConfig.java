@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class CaseConfig extends AviRestResource {
     @JsonProperty("additional_emails")
     @JsonInclude(Include.NON_NULL)
-    private List<String> additionalEmails = null;
+    private List<String> additionalEmails;
 
     @JsonProperty("enable_auto_case_creation_on_controller_failure")
     @JsonInclude(Include.NON_NULL)

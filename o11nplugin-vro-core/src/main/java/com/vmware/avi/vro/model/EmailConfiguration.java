@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class EmailConfiguration extends AviRestResource {
     @JsonProperty("auth_password")
     @JsonInclude(Include.NON_NULL)
-    private String authPassword = null;
+    private String authPassword;
 
     @JsonProperty("auth_username")
     @JsonInclude(Include.NON_NULL)
-    private String authUsername = null;
+    private String authUsername;
 
     @JsonProperty("disable_tls")
     @JsonInclude(Include.NON_NULL)
@@ -38,7 +38,7 @@ public class EmailConfiguration extends AviRestResource {
 
     @JsonProperty("email_timezone")
     @JsonInclude(Include.NON_NULL)
-    private String emailTimezone = null;
+    private String emailTimezone;
 
     @JsonProperty("from_email")
     @JsonInclude(Include.NON_NULL)
@@ -46,7 +46,7 @@ public class EmailConfiguration extends AviRestResource {
 
     @JsonProperty("from_name")
     @JsonInclude(Include.NON_NULL)
-    private String fromName = null;
+    private String fromName;
 
     @JsonProperty("mail_server_name")
     @JsonInclude(Include.NON_NULL)

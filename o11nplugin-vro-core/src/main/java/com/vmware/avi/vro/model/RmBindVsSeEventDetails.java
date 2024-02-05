@@ -26,43 +26,43 @@ import org.springframework.stereotype.Service;
 public class RmBindVsSeEventDetails extends AviRestResource {
     @JsonProperty("ip")
     @JsonInclude(Include.NON_NULL)
-    private String ip = null;
+    private String ip;
 
     @JsonProperty("ip6")
     @JsonInclude(Include.NON_NULL)
-    private String ip6 = null;
+    private String ip6;
 
     @JsonProperty("networks")
     @JsonInclude(Include.NON_NULL)
-    private List<String> networks = null;
+    private List<String> networks;
 
     @JsonProperty("primary")
     @JsonInclude(Include.NON_NULL)
-    private Boolean primary = null;
+    private Boolean primary;
 
     @JsonProperty("se_name")
     @JsonInclude(Include.NON_NULL)
-    private String seName = null;
+    private String seName;
 
     @JsonProperty("standby")
     @JsonInclude(Include.NON_NULL)
-    private Boolean standby = null;
+    private Boolean standby;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
     @JsonProperty("vip_vnics")
     @JsonInclude(Include.NON_NULL)
-    private List<String> vipVnics = null;
+    private List<String> vipVnics;
 
     @JsonProperty("vs_name")
     @JsonInclude(Include.NON_NULL)
-    private String vsName = null;
+    private String vsName;
 
     @JsonProperty("vs_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String vsUuid = null;
+    private String vsUuid;
 
 
 

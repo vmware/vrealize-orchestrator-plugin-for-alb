@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class LinuxConfiguration extends AviRestResource {
     @JsonProperty("banner")
     @JsonInclude(Include.NON_NULL)
-    private String banner = null;
+    private String banner;
 
     @JsonProperty("cis_mode")
     @JsonInclude(Include.NON_NULL)
@@ -34,7 +34,7 @@ public class LinuxConfiguration extends AviRestResource {
 
     @JsonProperty("motd")
     @JsonInclude(Include.NON_NULL)
-    private String motd = null;
+    private String motd;
 
 
 

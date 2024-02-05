@@ -29,7 +29,7 @@ import org.springframework.stereotype.Service;
 public class AwsConfiguration extends AviRestResource {
     @JsonProperty("access_key_id")
     @JsonInclude(Include.NON_NULL)
-    private String accessKeyId = null;
+    private String accessKeyId;
 
     @JsonProperty("asg_poll_interval")
     @JsonInclude(Include.NON_NULL)
@@ -37,7 +37,7 @@ public class AwsConfiguration extends AviRestResource {
 
     @JsonProperty("ebs_encryption")
     @JsonInclude(Include.NON_NULL)
-    private AwsEncryption ebsEncryption = null;
+    private AwsEncryption ebsEncryption;
 
     @JsonProperty("free_elasticips")
     @JsonInclude(Include.NON_NULL)
@@ -45,7 +45,7 @@ public class AwsConfiguration extends AviRestResource {
 
     @JsonProperty("iam_assume_role")
     @JsonInclude(Include.NON_NULL)
-    private String iamAssumeRole = null;
+    private String iamAssumeRole;
 
     @JsonProperty("publish_vip_to_public_zone")
     @JsonInclude(Include.NON_NULL)
@@ -61,15 +61,15 @@ public class AwsConfiguration extends AviRestResource {
 
     @JsonProperty("s3_encryption")
     @JsonInclude(Include.NON_NULL)
-    private AwsEncryption s3Encryption = null;
+    private AwsEncryption s3Encryption;
 
     @JsonProperty("secret_access_key")
     @JsonInclude(Include.NON_NULL)
-    private String secretAccessKey = null;
+    private String secretAccessKey;
 
     @JsonProperty("sqs_encryption")
     @JsonInclude(Include.NON_NULL)
-    private AwsEncryption sqsEncryption = null;
+    private AwsEncryption sqsEncryption;
 
     @JsonProperty("ttl")
     @JsonInclude(Include.NON_NULL)
@@ -85,15 +85,15 @@ public class AwsConfiguration extends AviRestResource {
 
     @JsonProperty("vpc")
     @JsonInclude(Include.NON_NULL)
-    private String vpc = null;
+    private String vpc;
 
     @JsonProperty("vpc_id")
     @JsonInclude(Include.NON_NULL)
-    private String vpcId = null;
+    private String vpcId;
 
     @JsonProperty("zones")
     @JsonInclude(Include.NON_NULL)
-    private List<AwsZoneConfig> zones = null;
+    private List<AwsZoneConfig> zones;
 
 
 

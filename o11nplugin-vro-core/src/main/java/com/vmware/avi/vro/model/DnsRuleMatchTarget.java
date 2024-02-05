@@ -32,27 +32,27 @@ import org.springframework.stereotype.Service;
 public class DnsRuleMatchTarget extends AviRestResource {
     @JsonProperty("client_ip_address")
     @JsonInclude(Include.NON_NULL)
-    private DnsClientIpMatch clientIpAddress = null;
+    private DnsClientIpMatch clientIpAddress;
 
     @JsonProperty("client_port_numbers")
     @JsonInclude(Include.NON_NULL)
-    private DnsClientPortMatch clientPortNumbers = null;
+    private DnsClientPortMatch clientPortNumbers;
 
     @JsonProperty("geo_location")
     @JsonInclude(Include.NON_NULL)
-    private DnsGeoLocationMatch geoLocation = null;
+    private DnsGeoLocationMatch geoLocation;
 
     @JsonProperty("protocol")
     @JsonInclude(Include.NON_NULL)
-    private DnsTransportProtocolMatch protocol = null;
+    private DnsTransportProtocolMatch protocol;
 
     @JsonProperty("query_name")
     @JsonInclude(Include.NON_NULL)
-    private DnsQueryNameMatch queryName = null;
+    private DnsQueryNameMatch queryName;
 
     @JsonProperty("query_type")
     @JsonInclude(Include.NON_NULL)
-    private DnsQueryTypeMatch queryType = null;
+    private DnsQueryTypeMatch queryType;
 
 
 

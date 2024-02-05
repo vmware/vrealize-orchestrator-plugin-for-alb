@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class PerformanceLimits extends AviRestResource {
     @JsonProperty("max_concurrent_connections")
     @JsonInclude(Include.NON_NULL)
-    private Integer maxConcurrentConnections = null;
+    private Integer maxConcurrentConnections;
 
     @JsonProperty("max_throughput")
     @JsonInclude(Include.NON_NULL)
-    private Integer maxThroughput = null;
+    private Integer maxThroughput;
 
 
 

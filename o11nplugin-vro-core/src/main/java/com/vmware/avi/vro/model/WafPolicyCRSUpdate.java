@@ -30,7 +30,7 @@ public class WafPolicyCRSUpdate extends AviRestResource {
 
     @JsonProperty("waf_crs_ref")
     @JsonInclude(Include.NON_NULL)
-    private String wafCrsRef = null;
+    private String wafCrsRef;
 
 
 

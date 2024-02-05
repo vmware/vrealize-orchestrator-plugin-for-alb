@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class SecureChannelMetadata extends AviRestResource {
     @JsonProperty("key")
     @JsonInclude(Include.NON_NULL)
-    private String key = null;
+    private String key;
 
     @JsonProperty("val")
     @JsonInclude(Include.NON_NULL)
-    private String val = null;
+    private String val;
 
 
 

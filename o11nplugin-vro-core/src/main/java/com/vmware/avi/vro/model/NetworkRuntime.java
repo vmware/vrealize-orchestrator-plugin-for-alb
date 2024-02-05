@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class NetworkRuntime extends AviRestResource {
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("obj_uuids")
     @JsonInclude(Include.NON_NULL)
-    private List<String> objUuids = null;
+    private List<String> objUuids;
 
     @JsonProperty("subnet_runtime")
     @JsonInclude(Include.NON_NULL)
-    private List<SubnetRuntime> subnetRuntime = null;
+    private List<SubnetRuntime> subnetRuntime;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -46,7 +46,7 @@ public class NetworkRuntime extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

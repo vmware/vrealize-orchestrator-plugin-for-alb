@@ -27,19 +27,19 @@ import org.springframework.stereotype.Service;
 public class ClientFingerprints extends AviRestResource {
     @JsonProperty("filtered_tls_fingerprint")
     @JsonInclude(Include.NON_NULL)
-    private String filteredTlsFingerprint = null;
+    private String filteredTlsFingerprint;
 
     @JsonProperty("full_tls_fingerprint")
     @JsonInclude(Include.NON_NULL)
-    private String fullTlsFingerprint = null;
+    private String fullTlsFingerprint;
 
     @JsonProperty("normalized_tls_fingerprint")
     @JsonInclude(Include.NON_NULL)
-    private String normalizedTlsFingerprint = null;
+    private String normalizedTlsFingerprint;
 
     @JsonProperty("tls_client_info")
     @JsonInclude(Include.NON_NULL)
-    private TlsClientInfo tlsClientInfo = null;
+    private TlsClientInfo tlsClientInfo;
 
 
 

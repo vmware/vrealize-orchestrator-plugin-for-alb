@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class SEFaultInjectExhaustParam extends AviRestResource {
     @JsonProperty("leak")
     @JsonInclude(Include.NON_NULL)
-    private Boolean leak = null;
+    private Boolean leak;
 
     @JsonProperty("num")
     @JsonInclude(Include.NON_NULL)
-    private Integer num = null;
+    private Integer num;
 
 
 

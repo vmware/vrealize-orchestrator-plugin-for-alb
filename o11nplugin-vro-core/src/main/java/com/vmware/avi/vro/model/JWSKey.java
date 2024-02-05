@@ -30,11 +30,11 @@ public class JWSKey extends AviRestResource {
 
     @JsonProperty("key")
     @JsonInclude(Include.NON_NULL)
-    private String key = null;
+    private String key;
 
     @JsonProperty("kid")
     @JsonInclude(Include.NON_NULL)
-    private String kid = null;
+    private String kid;
 
     @JsonProperty("kty")
     @JsonInclude(Include.NON_NULL)

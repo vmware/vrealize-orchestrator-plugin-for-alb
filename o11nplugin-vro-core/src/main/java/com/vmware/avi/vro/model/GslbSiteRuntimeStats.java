@@ -26,227 +26,227 @@ import org.springframework.stereotype.Service;
 public class GslbSiteRuntimeStats extends AviRestResource {
     @JsonProperty("num_file_cr_txed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numFileCrTxed = null;
+    private Integer numFileCrTxed;
 
     @JsonProperty("num_file_del_txed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numFileDelTxed = null;
+    private Integer numFileDelTxed;
 
     @JsonProperty("num_gap_cr_rxed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGapCrRxed = null;
+    private Integer numGapCrRxed;
 
     @JsonProperty("num_gap_cr_txed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGapCrTxed = null;
+    private Integer numGapCrTxed;
 
     @JsonProperty("num_gap_del_rxed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGapDelRxed = null;
+    private Integer numGapDelRxed;
 
     @JsonProperty("num_gap_del_txed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGapDelTxed = null;
+    private Integer numGapDelTxed;
 
     @JsonProperty("num_gap_upd_rxed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGapUpdRxed = null;
+    private Integer numGapUpdRxed;
 
     @JsonProperty("num_gap_upd_txed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGapUpdTxed = null;
+    private Integer numGapUpdTxed;
 
     @JsonProperty("num_geo_cr_rxed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGeoCrRxed = null;
+    private Integer numGeoCrRxed;
 
     @JsonProperty("num_geo_cr_txed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGeoCrTxed = null;
+    private Integer numGeoCrTxed;
 
     @JsonProperty("num_geo_del_rxed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGeoDelRxed = null;
+    private Integer numGeoDelRxed;
 
     @JsonProperty("num_geo_del_txed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGeoDelTxed = null;
+    private Integer numGeoDelTxed;
 
     @JsonProperty("num_geo_upd_rxed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGeoUpdRxed = null;
+    private Integer numGeoUpdRxed;
 
     @JsonProperty("num_geo_upd_txed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGeoUpdTxed = null;
+    private Integer numGeoUpdTxed;
 
     @JsonProperty("num_ghm_cr_rxed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGhmCrRxed = null;
+    private Integer numGhmCrRxed;
 
     @JsonProperty("num_ghm_cr_txed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGhmCrTxed = null;
+    private Integer numGhmCrTxed;
 
     @JsonProperty("num_ghm_del_rxed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGhmDelRxed = null;
+    private Integer numGhmDelRxed;
 
     @JsonProperty("num_ghm_del_txed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGhmDelTxed = null;
+    private Integer numGhmDelTxed;
 
     @JsonProperty("num_ghm_upd_rxed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGhmUpdRxed = null;
+    private Integer numGhmUpdRxed;
 
     @JsonProperty("num_ghm_upd_txed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGhmUpdTxed = null;
+    private Integer numGhmUpdTxed;
 
     @JsonProperty("num_gjwt_cr_rxed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGjwtCrRxed = null;
+    private Integer numGjwtCrRxed;
 
     @JsonProperty("num_gjwt_cr_txed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGjwtCrTxed = null;
+    private Integer numGjwtCrTxed;
 
     @JsonProperty("num_gjwt_del_rxed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGjwtDelRxed = null;
+    private Integer numGjwtDelRxed;
 
     @JsonProperty("num_gjwt_del_txed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGjwtDelTxed = null;
+    private Integer numGjwtDelTxed;
 
     @JsonProperty("num_gjwt_upd_rxed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGjwtUpdRxed = null;
+    private Integer numGjwtUpdRxed;
 
     @JsonProperty("num_gjwt_upd_txed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGjwtUpdTxed = null;
+    private Integer numGjwtUpdTxed;
 
     @JsonProperty("num_glb_cr_rxed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGlbCrRxed = null;
+    private Integer numGlbCrRxed;
 
     @JsonProperty("num_glb_cr_txed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGlbCrTxed = null;
+    private Integer numGlbCrTxed;
 
     @JsonProperty("num_glb_del_rxed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGlbDelRxed = null;
+    private Integer numGlbDelRxed;
 
     @JsonProperty("num_glb_del_txed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGlbDelTxed = null;
+    private Integer numGlbDelTxed;
 
     @JsonProperty("num_glb_upd_rxed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGlbUpdRxed = null;
+    private Integer numGlbUpdRxed;
 
     @JsonProperty("num_glb_upd_txed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGlbUpdTxed = null;
+    private Integer numGlbUpdTxed;
 
     @JsonProperty("num_gpki_cr_rxed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGpkiCrRxed = null;
+    private Integer numGpkiCrRxed;
 
     @JsonProperty("num_gpki_cr_txed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGpkiCrTxed = null;
+    private Integer numGpkiCrTxed;
 
     @JsonProperty("num_gpki_del_rxed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGpkiDelRxed = null;
+    private Integer numGpkiDelRxed;
 
     @JsonProperty("num_gpki_del_txed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGpkiDelTxed = null;
+    private Integer numGpkiDelTxed;
 
     @JsonProperty("num_gpki_upd_rxed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGpkiUpdRxed = null;
+    private Integer numGpkiUpdRxed;
 
     @JsonProperty("num_gpki_upd_txed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGpkiUpdTxed = null;
+    private Integer numGpkiUpdTxed;
 
     @JsonProperty("num_gs_cr_rxed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGsCrRxed = null;
+    private Integer numGsCrRxed;
 
     @JsonProperty("num_gs_cr_txed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGsCrTxed = null;
+    private Integer numGsCrTxed;
 
     @JsonProperty("num_gs_del_rxed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGsDelRxed = null;
+    private Integer numGsDelRxed;
 
     @JsonProperty("num_gs_del_txed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGsDelTxed = null;
+    private Integer numGsDelTxed;
 
     @JsonProperty("num_gs_upd_rxed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGsUpdRxed = null;
+    private Integer numGsUpdRxed;
 
     @JsonProperty("num_gs_upd_txed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGsUpdTxed = null;
+    private Integer numGsUpdTxed;
 
     @JsonProperty("num_gssl_cert_cr_rxed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGsslCertCrRxed = null;
+    private Integer numGsslCertCrRxed;
 
     @JsonProperty("num_gssl_cert_del_rxed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGsslCertDelRxed = null;
+    private Integer numGsslCertDelRxed;
 
     @JsonProperty("num_gssl_cert_upd_rxed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGsslCertUpdRxed = null;
+    private Integer numGsslCertUpdRxed;
 
     @JsonProperty("num_gssl_cr_rxed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGsslCrRxed = null;
+    private Integer numGsslCrRxed;
 
     @JsonProperty("num_gssl_del_rxed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGsslDelRxed = null;
+    private Integer numGsslDelRxed;
 
     @JsonProperty("num_gssl_upd_rxed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numGsslUpdRxed = null;
+    private Integer numGsslUpdRxed;
 
     @JsonProperty("num_health_msgs_rxed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numHealthMsgsRxed = null;
+    private Integer numHealthMsgsRxed;
 
     @JsonProperty("num_health_msgs_txed")
     @JsonInclude(Include.NON_NULL)
-    private Integer numHealthMsgsTxed = null;
+    private Integer numHealthMsgsTxed;
 
     @JsonProperty("num_of_bad_responses")
     @JsonInclude(Include.NON_NULL)
-    private Integer numOfBadResponses = null;
+    private Integer numOfBadResponses;
 
     @JsonProperty("num_of_events_generated")
     @JsonInclude(Include.NON_NULL)
-    private Integer numOfEventsGenerated = null;
+    private Integer numOfEventsGenerated;
 
     @JsonProperty("num_of_skip_outstanding_requests")
     @JsonInclude(Include.NON_NULL)
-    private Integer numOfSkipOutstandingRequests = null;
+    private Integer numOfSkipOutstandingRequests;
 
     @JsonProperty("num_of_timeouts")
     @JsonInclude(Include.NON_NULL)
-    private Integer numOfTimeouts = null;
+    private Integer numOfTimeouts;
 
 
 

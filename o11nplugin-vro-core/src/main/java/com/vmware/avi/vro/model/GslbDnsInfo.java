@@ -27,19 +27,19 @@ import org.springframework.stereotype.Service;
 public class GslbDnsInfo extends AviRestResource {
     @JsonProperty("dns_active")
     @JsonInclude(Include.NON_NULL)
-    private Boolean dnsActive = null;
+    private Boolean dnsActive;
 
     @JsonProperty("dns_vs_states")
     @JsonInclude(Include.NON_NULL)
-    private List<GslbPerDnsState> dnsVsStates = null;
+    private List<GslbPerDnsState> dnsVsStates;
 
     @JsonProperty("gs_status")
     @JsonInclude(Include.NON_NULL)
-    private GslbDnsGsStatus gsStatus = null;
+    private GslbDnsGsStatus gsStatus;
 
     @JsonProperty("retry_count")
     @JsonInclude(Include.NON_NULL)
-    private Integer retryCount = null;
+    private Integer retryCount;
 
 
 

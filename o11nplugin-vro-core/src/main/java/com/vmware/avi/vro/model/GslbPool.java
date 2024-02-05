@@ -30,15 +30,15 @@ public class GslbPool extends AviRestResource {
 
     @JsonProperty("consistent_hash_mask")
     @JsonInclude(Include.NON_NULL)
-    private Integer consistentHashMask = null;
+    private Integer consistentHashMask;
 
     @JsonProperty("consistent_hash_mask6")
     @JsonInclude(Include.NON_NULL)
-    private Integer consistentHashMask6 = null;
+    private Integer consistentHashMask6;
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("enabled")
     @JsonInclude(Include.NON_NULL)
@@ -46,7 +46,7 @@ public class GslbPool extends AviRestResource {
 
     @JsonProperty("fallback_algorithm")
     @JsonInclude(Include.NON_NULL)
-    private String fallbackAlgorithm = null;
+    private String fallbackAlgorithm;
 
     @JsonProperty("manual_resume")
     @JsonInclude(Include.NON_NULL)
@@ -54,15 +54,15 @@ public class GslbPool extends AviRestResource {
 
     @JsonProperty("members")
     @JsonInclude(Include.NON_NULL)
-    private List<GslbPoolMember> members = null;
+    private List<GslbPoolMember> members;
 
     @JsonProperty("min_health_monitors_up")
     @JsonInclude(Include.NON_NULL)
-    private Integer minHealthMonitorsUp = null;
+    private Integer minHealthMonitorsUp;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("priority")
     @JsonInclude(Include.NON_NULL)

@@ -30,7 +30,7 @@ public class SecurityMgrDebugFilter extends AviRestResource {
 
     @JsonProperty("entity_ref")
     @JsonInclude(Include.NON_NULL)
-    private String entityRef = null;
+    private String entityRef;
 
 
 

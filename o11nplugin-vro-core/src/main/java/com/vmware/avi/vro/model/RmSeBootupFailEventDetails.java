@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class RmSeBootupFailEventDetails extends AviRestResource {
     @JsonProperty("host_name")
     @JsonInclude(Include.NON_NULL)
-    private String hostName = null;
+    private String hostName;
 
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("se_name")
     @JsonInclude(Include.NON_NULL)
-    private String seName = null;
+    private String seName;
 
 
 

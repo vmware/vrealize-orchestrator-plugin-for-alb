@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class VSDataScripts extends AviRestResource {
     @JsonProperty("index")
     @JsonInclude(Include.NON_NULL)
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("vs_datascript_set_ref")
     @JsonInclude(Include.NON_NULL)
-    private String vsDatascriptSetRef = null;
+    private String vsDatascriptSetRef;
 
 
 

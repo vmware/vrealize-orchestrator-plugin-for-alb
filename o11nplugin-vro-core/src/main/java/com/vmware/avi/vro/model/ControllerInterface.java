@@ -31,51 +31,51 @@ import org.springframework.stereotype.Service;
 public class ControllerInterface extends AviRestResource {
     @JsonProperty("gateway")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr gateway = null;
+    private IpAddr gateway;
 
     @JsonProperty("gateway6")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr gateway6 = null;
+    private IpAddr gateway6;
 
     @JsonProperty("if_name")
     @JsonInclude(Include.NON_NULL)
-    private String ifName = null;
+    private String ifName;
 
     @JsonProperty("ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrPrefix ip = null;
+    private IpAddrPrefix ip;
 
     @JsonProperty("ip6")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrPrefix ip6 = null;
+    private IpAddrPrefix ip6;
 
     @JsonProperty("labels")
     @JsonInclude(Include.NON_NULL)
-    private List<String> labels = null;
+    private List<String> labels;
 
     @JsonProperty("mac_address")
     @JsonInclude(Include.NON_NULL)
-    private String macAddress = null;
+    private String macAddress;
 
     @JsonProperty("mode")
     @JsonInclude(Include.NON_NULL)
-    private String mode = null;
+    private String mode;
 
     @JsonProperty("mode6")
     @JsonInclude(Include.NON_NULL)
-    private String mode6 = null;
+    private String mode6;
 
     @JsonProperty("public_ip_or_name")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr publicIpOrName = null;
+    private IpAddr publicIpOrName;
 
     @JsonProperty("v4_enabled")
     @JsonInclude(Include.NON_NULL)
-    private Boolean v4Enabled = null;
+    private Boolean v4Enabled;
 
     @JsonProperty("v6_enabled")
     @JsonInclude(Include.NON_NULL)
-    private Boolean v6Enabled = null;
+    private Boolean v6Enabled;
 
 
 

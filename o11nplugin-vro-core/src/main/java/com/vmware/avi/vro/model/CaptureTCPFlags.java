@@ -30,19 +30,19 @@ public class CaptureTCPFlags extends AviRestResource {
 
     @JsonProperty("tcp_ack")
     @JsonInclude(Include.NON_NULL)
-    private Boolean tcpAck = null;
+    private Boolean tcpAck;
 
     @JsonProperty("tcp_fin")
     @JsonInclude(Include.NON_NULL)
-    private Boolean tcpFin = null;
+    private Boolean tcpFin;
 
     @JsonProperty("tcp_push")
     @JsonInclude(Include.NON_NULL)
-    private Boolean tcpPush = null;
+    private Boolean tcpPush;
 
     @JsonProperty("tcp_syn")
     @JsonInclude(Include.NON_NULL)
-    private Boolean tcpSyn = null;
+    private Boolean tcpSyn;
 
 
 

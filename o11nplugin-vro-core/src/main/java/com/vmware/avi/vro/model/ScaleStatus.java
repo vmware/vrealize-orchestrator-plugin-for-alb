@@ -27,51 +27,51 @@ import org.springframework.stereotype.Service;
 public class ScaleStatus extends AviRestResource {
     @JsonProperty("action")
     @JsonInclude(Include.NON_NULL)
-    private String action = null;
+    private String action;
 
     @JsonProperty("action_success")
     @JsonInclude(Include.NON_NULL)
-    private Boolean actionSuccess = null;
+    private Boolean actionSuccess;
 
     @JsonProperty("end_time_str")
     @JsonInclude(Include.NON_NULL)
-    private String endTimeStr = null;
+    private String endTimeStr;
 
     @JsonProperty("num_se_assigned")
     @JsonInclude(Include.NON_NULL)
-    private Integer numSeAssigned = null;
+    private Integer numSeAssigned;
 
     @JsonProperty("num_se_requested")
     @JsonInclude(Include.NON_NULL)
-    private Integer numSeRequested = null;
+    private Integer numSeRequested;
 
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private List<String> reason = null;
+    private List<String> reason;
 
     @JsonProperty("reason_code")
     @JsonInclude(Include.NON_NULL)
-    private Integer reasonCode = null;
+    private Integer reasonCode;
 
     @JsonProperty("reason_code_string")
     @JsonInclude(Include.NON_NULL)
-    private String reasonCodeString = null;
+    private String reasonCodeString;
 
     @JsonProperty("scale_se")
     @JsonInclude(Include.NON_NULL)
-    private String scaleSe = null;
+    private String scaleSe;
 
     @JsonProperty("start_time_str")
     @JsonInclude(Include.NON_NULL)
-    private String startTimeStr = null;
+    private String startTimeStr;
 
     @JsonProperty("state")
     @JsonInclude(Include.NON_NULL)
-    private String state = null;
+    private String state;
 
     @JsonProperty("vip_placement_resolution_info")
     @JsonInclude(Include.NON_NULL)
-    private VipPlacementResolutionInfo vipPlacementResolutionInfo = null;
+    private VipPlacementResolutionInfo vipPlacementResolutionInfo;
 
 
 

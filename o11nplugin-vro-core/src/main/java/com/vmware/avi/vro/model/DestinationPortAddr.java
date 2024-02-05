@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class DestinationPortAddr extends AviRestResource {
     @JsonProperty("dst_port_end")
     @JsonInclude(Include.NON_NULL)
-    private Integer dstPortEnd = null;
+    private Integer dstPortEnd;
 
     @JsonProperty("dst_port_start")
     @JsonInclude(Include.NON_NULL)
-    private Integer dstPortStart = null;
+    private Integer dstPortStart;
 
     @JsonProperty("match_operation")
     @JsonInclude(Include.NON_NULL)

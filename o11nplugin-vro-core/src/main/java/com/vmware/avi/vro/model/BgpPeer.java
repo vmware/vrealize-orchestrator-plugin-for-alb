@@ -54,43 +54,43 @@ public class BgpPeer extends AviRestResource {
 
     @JsonProperty("hold_time")
     @JsonInclude(Include.NON_NULL)
-    private Integer holdTime = null;
+    private Integer holdTime;
 
     @JsonProperty("ibgp_local_as_override")
     @JsonInclude(Include.NON_NULL)
-    private Boolean ibgpLocalAsOverride = null;
+    private Boolean ibgpLocalAsOverride;
 
     @JsonProperty("keepalive_interval")
     @JsonInclude(Include.NON_NULL)
-    private Integer keepaliveInterval = null;
+    private Integer keepaliveInterval;
 
     @JsonProperty("label")
     @JsonInclude(Include.NON_NULL)
-    private String label = null;
+    private String label;
 
     @JsonProperty("local_as")
     @JsonInclude(Include.NON_NULL)
-    private Integer localAs = null;
+    private Integer localAs;
 
     @JsonProperty("md5_secret")
     @JsonInclude(Include.NON_NULL)
-    private String md5Secret = null;
+    private String md5Secret;
 
     @JsonProperty("network_ref")
     @JsonInclude(Include.NON_NULL)
-    private String networkRef = null;
+    private String networkRef;
 
     @JsonProperty("peer_ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr peerIp = null;
+    private IpAddr peerIp;
 
     @JsonProperty("peer_ip6")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr peerIp6 = null;
+    private IpAddr peerIp6;
 
     @JsonProperty("remote_as")
     @JsonInclude(Include.NON_NULL)
-    private Integer remoteAs = null;
+    private Integer remoteAs;
 
     @JsonProperty("shutdown")
     @JsonInclude(Include.NON_NULL)
@@ -98,11 +98,11 @@ public class BgpPeer extends AviRestResource {
 
     @JsonProperty("subnet")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrPrefix subnet = null;
+    private IpAddrPrefix subnet;
 
     @JsonProperty("subnet6")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrPrefix subnet6 = null;
+    private IpAddrPrefix subnet6;
 
 
 

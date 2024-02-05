@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class AWSASGDelete extends AviRestResource {
     @JsonProperty("asgs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> asgs = null;
+    private List<String> asgs;
 
     @JsonProperty("cc_id")
     @JsonInclude(Include.NON_NULL)
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("pool_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String poolUuid = null;
+    private String poolUuid;
 
 
 

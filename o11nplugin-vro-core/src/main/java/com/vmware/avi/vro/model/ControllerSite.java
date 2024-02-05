@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class ControllerSite extends AviRestResource {
     @JsonProperty("address")
     @JsonInclude(Include.NON_NULL)
-    private String address = null;
+    private String address;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("port")
     @JsonInclude(Include.NON_NULL)
@@ -38,7 +38,7 @@ public class ControllerSite extends AviRestResource {
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -46,7 +46,7 @@ public class ControllerSite extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

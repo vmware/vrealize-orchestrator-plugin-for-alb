@@ -27,7 +27,7 @@ import org.springframework.stereotype.Service;
 public class DnsAttack extends AviRestResource {
     @JsonProperty("attack_vector")
     @JsonInclude(Include.NON_NULL)
-    private String attackVector = null;
+    private String attackVector;
 
     @JsonProperty("enabled")
     @JsonInclude(Include.NON_NULL)
@@ -39,11 +39,11 @@ public class DnsAttack extends AviRestResource {
 
     @JsonProperty("mitigation_action")
     @JsonInclude(Include.NON_NULL)
-    private AttackMitigationAction mitigationAction = null;
+    private AttackMitigationAction mitigationAction;
 
     @JsonProperty("threshold")
     @JsonInclude(Include.NON_NULL)
-    private Integer threshold = null;
+    private Integer threshold;
 
 
 

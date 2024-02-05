@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class BotClassification extends AviRestResource {
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
     @JsonProperty("user_defined_type")
     @JsonInclude(Include.NON_NULL)
-    private String userDefinedType = null;
+    private String userDefinedType;
 
 
 

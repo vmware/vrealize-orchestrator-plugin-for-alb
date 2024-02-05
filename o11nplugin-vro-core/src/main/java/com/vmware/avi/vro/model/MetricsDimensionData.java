@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class MetricsDimensionData extends AviRestResource {
     @JsonProperty("dimension")
     @JsonInclude(Include.NON_NULL)
-    private String dimension = null;
+    private String dimension;
 
     @JsonProperty("dimension_id")
     @JsonInclude(Include.NON_NULL)
-    private String dimensionId = null;
+    private String dimensionId;
 
 
 

@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class IcapLog extends AviRestResource {
     @JsonProperty("action")
     @JsonInclude(Include.NON_NULL)
-    private String action = null;
+    private String action;
 
     @JsonProperty("request_logs")
     @JsonInclude(Include.NON_NULL)
-    private List<IcapRequestLog> requestLogs = null;
+    private List<IcapRequestLog> requestLogs;
 
 
 

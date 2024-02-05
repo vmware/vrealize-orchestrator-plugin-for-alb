@@ -28,11 +28,11 @@ import org.springframework.stereotype.Service;
 public class InfobloxSubnet extends AviRestResource {
     @JsonProperty("subnet")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrPrefix subnet = null;
+    private IpAddrPrefix subnet;
 
     @JsonProperty("subnet6")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrPrefix subnet6 = null;
+    private IpAddrPrefix subnet6;
 
 
 

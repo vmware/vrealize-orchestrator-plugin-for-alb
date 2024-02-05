@@ -32,19 +32,19 @@ import org.springframework.stereotype.Service;
 public class NetworkProfileUnion extends AviRestResource {
     @JsonProperty("sctp_fast_path_profile")
     @JsonInclude(Include.NON_NULL)
-    private SCTPFastPathProfile sctpFastPathProfile = null;
+    private SCTPFastPathProfile sctpFastPathProfile;
 
     @JsonProperty("sctp_proxy_profile")
     @JsonInclude(Include.NON_NULL)
-    private SCTPProxyProfile sctpProxyProfile = null;
+    private SCTPProxyProfile sctpProxyProfile;
 
     @JsonProperty("tcp_fast_path_profile")
     @JsonInclude(Include.NON_NULL)
-    private TCPFastPathProfile tcpFastPathProfile = null;
+    private TCPFastPathProfile tcpFastPathProfile;
 
     @JsonProperty("tcp_proxy_profile")
     @JsonInclude(Include.NON_NULL)
-    private TCPProxyProfile tcpProxyProfile = null;
+    private TCPProxyProfile tcpProxyProfile;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
@@ -52,11 +52,11 @@ public class NetworkProfileUnion extends AviRestResource {
 
     @JsonProperty("udp_fast_path_profile")
     @JsonInclude(Include.NON_NULL)
-    private UDPFastPathProfile udpFastPathProfile = null;
+    private UDPFastPathProfile udpFastPathProfile;
 
     @JsonProperty("udp_proxy_profile")
     @JsonInclude(Include.NON_NULL)
-    private UDPProxyProfile udpProxyProfile = null;
+    private UDPProxyProfile udpProxyProfile;
 
 
 

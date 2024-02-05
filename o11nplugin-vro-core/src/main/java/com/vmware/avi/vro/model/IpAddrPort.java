@@ -27,19 +27,19 @@ import org.springframework.stereotype.Service;
 public class IpAddrPort extends AviRestResource {
     @JsonProperty("hostname")
     @JsonInclude(Include.NON_NULL)
-    private String hostname = null;
+    private String hostname;
 
     @JsonProperty("ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr ip = null;
+    private IpAddr ip;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("port")
     @JsonInclude(Include.NON_NULL)
-    private Integer port = null;
+    private Integer port;
 
 
 

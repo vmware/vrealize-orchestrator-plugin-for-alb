@@ -28,23 +28,23 @@ import org.springframework.stereotype.Service;
 public class MetricsDataHeader extends AviRestResource {
     @JsonProperty("derivation_data")
     @JsonInclude(Include.NON_NULL)
-    private MetricsDerivationData derivationData = null;
+    private MetricsDerivationData derivationData;
 
     @JsonProperty("dimension_data")
     @JsonInclude(Include.NON_NULL)
-    private List<MetricsDimensionData> dimensionData = null;
+    private List<MetricsDimensionData> dimensionData;
 
     @JsonProperty("entity_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String entityUuid = null;
+    private String entityUuid;
 
     @JsonProperty("metric_description")
     @JsonInclude(Include.NON_NULL)
-    private String metricDescription = null;
+    private String metricDescription;
 
     @JsonProperty("metrics_min_scale")
     @JsonInclude(Include.NON_NULL)
-    private Float metricsMinScale = null;
+    private Float metricsMinScale;
 
     @JsonProperty("metrics_sum_agg_invalid")
     @JsonInclude(Include.NON_NULL)
@@ -52,23 +52,23 @@ public class MetricsDataHeader extends AviRestResource {
 
     @JsonProperty("missing_intervals")
     @JsonInclude(Include.NON_NULL)
-    private List<MetricsMissingDataInterval> missingIntervals = null;
+    private List<MetricsMissingDataInterval> missingIntervals;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("obj_id")
     @JsonInclude(Include.NON_NULL)
-    private String objId = null;
+    private String objId;
 
     @JsonProperty("obj_id_type")
     @JsonInclude(Include.NON_NULL)
-    private String objIdType = null;
+    private String objIdType;
 
     @JsonProperty("pool_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String poolUuid = null;
+    private String poolUuid;
 
     @JsonProperty("priority")
     @JsonInclude(Include.NON_NULL)
@@ -76,19 +76,19 @@ public class MetricsDataHeader extends AviRestResource {
 
     @JsonProperty("server")
     @JsonInclude(Include.NON_NULL)
-    private String server = null;
+    private String server;
 
     @JsonProperty("serviceengine_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String serviceengineUuid = null;
+    private String serviceengineUuid;
 
     @JsonProperty("statistics")
     @JsonInclude(Include.NON_NULL)
-    private MetricStatistics statistics = null;
+    private MetricStatistics statistics;
 
     @JsonProperty("tenant_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String tenantUuid = null;
+    private String tenantUuid;
 
     @JsonProperty("units")
     @JsonInclude(Include.NON_NULL)

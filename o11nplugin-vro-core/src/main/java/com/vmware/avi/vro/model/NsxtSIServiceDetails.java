@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class NsxtSIServiceDetails extends AviRestResource {
     @JsonProperty("error_string")
     @JsonInclude(Include.NON_NULL)
-    private String errorString = null;
+    private String errorString;
 
     @JsonProperty("service")
     @JsonInclude(Include.NON_NULL)
-    private String service = null;
+    private String service;
 
 
 

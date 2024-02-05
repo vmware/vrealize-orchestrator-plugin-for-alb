@@ -27,15 +27,15 @@ import org.springframework.stereotype.Service;
 public class VsFsmEventDetails extends AviRestResource {
     @JsonProperty("vip_id")
     @JsonInclude(Include.NON_NULL)
-    private String vipId = null;
+    private String vipId;
 
     @JsonProperty("vs_rt")
     @JsonInclude(Include.NON_NULL)
-    private VirtualServiceRuntime vsRt = null;
+    private VirtualServiceRuntime vsRt;
 
     @JsonProperty("vs_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String vsUuid = null;
+    private String vsUuid;
 
 
 

@@ -28,7 +28,7 @@ import org.springframework.stereotype.Service;
 public class RouteInfo extends AviRestResource {
     @JsonProperty("if_name")
     @JsonInclude(Include.NON_NULL)
-    private String ifName = null;
+    private String ifName;
 
     @JsonProperty("network_namespace")
     @JsonInclude(Include.NON_NULL)
@@ -36,11 +36,11 @@ public class RouteInfo extends AviRestResource {
 
     @JsonProperty("nexthop")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr nexthop = null;
+    private IpAddr nexthop;
 
     @JsonProperty("subnet")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrPrefix subnet = null;
+    private IpAddrPrefix subnet;
 
 
 

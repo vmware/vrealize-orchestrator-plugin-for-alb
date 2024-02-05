@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class ACSubjectInfo extends AviRestResource {
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
     @JsonProperty("value")
     @JsonInclude(Include.NON_NULL)
-    private String value = null;
+    private String value;
 
 
 

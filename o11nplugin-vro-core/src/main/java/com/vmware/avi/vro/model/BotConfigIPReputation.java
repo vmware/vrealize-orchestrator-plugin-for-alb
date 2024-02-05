@@ -30,11 +30,11 @@ public class BotConfigIPReputation extends AviRestResource {
 
     @JsonProperty("ip_reputation_db_ref")
     @JsonInclude(Include.NON_NULL)
-    private String ipReputationDbRef = null;
+    private String ipReputationDbRef;
 
     @JsonProperty("system_ip_reputation_mapping_ref")
     @JsonInclude(Include.NON_NULL)
-    private String systemIpReputationMappingRef = null;
+    private String systemIpReputationMappingRef;
 
 
 

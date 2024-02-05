@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class VcenterHosts extends AviRestResource {
     @JsonProperty("host_refs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> hostRefs = null;
+    private List<String> hostRefs;
 
     @JsonProperty("include")
     @JsonInclude(Include.NON_NULL)

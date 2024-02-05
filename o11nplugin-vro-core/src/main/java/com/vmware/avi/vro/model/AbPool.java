@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class AbPool extends AviRestResource {
     @JsonProperty("pool_ref")
     @JsonInclude(Include.NON_NULL)
-    private String poolRef = null;
+    private String poolRef;
 
     @JsonProperty("ratio")
     @JsonInclude(Include.NON_NULL)

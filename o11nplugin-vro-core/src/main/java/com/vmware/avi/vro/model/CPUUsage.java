@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class CPUUsage extends AviRestResource {
     @JsonProperty("cpu_percent")
     @JsonInclude(Include.NON_NULL)
-    private Float cpuPercent = null;
+    private Float cpuPercent;
 
     @JsonProperty("num_cores")
     @JsonInclude(Include.NON_NULL)
-    private Integer numCores = null;
+    private Integer numCores;
 
 
 

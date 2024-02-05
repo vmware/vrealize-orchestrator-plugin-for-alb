@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class DebugSeFault extends AviRestResource {
     @JsonProperty("faults")
     @JsonInclude(Include.NON_NULL)
-    private List<SeFault> faults = null;
+    private List<SeFault> faults;
 
     @JsonProperty("se_malloc_fail_frequency")
     @JsonInclude(Include.NON_NULL)

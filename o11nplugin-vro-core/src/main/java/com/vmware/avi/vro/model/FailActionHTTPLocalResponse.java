@@ -27,7 +27,7 @@ import org.springframework.stereotype.Service;
 public class FailActionHTTPLocalResponse extends AviRestResource {
     @JsonProperty("file")
     @JsonInclude(Include.NON_NULL)
-    private HTTPLocalFile file = null;
+    private HTTPLocalFile file;
 
     @JsonProperty("status_code")
     @JsonInclude(Include.NON_NULL)

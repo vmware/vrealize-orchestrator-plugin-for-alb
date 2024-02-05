@@ -26,39 +26,39 @@ import org.springframework.stereotype.Service;
 public class MetricsDbRuntime extends AviRestResource {
     @JsonProperty("db_client_name")
     @JsonInclude(Include.NON_NULL)
-    private String dbClientName = null;
+    private String dbClientName;
 
     @JsonProperty("db_num_client_queries")
     @JsonInclude(Include.NON_NULL)
-    private Integer dbNumClientQueries = null;
+    private Integer dbNumClientQueries;
 
     @JsonProperty("db_num_client_resp")
     @JsonInclude(Include.NON_NULL)
-    private Integer dbNumClientResp = null;
+    private Integer dbNumClientResp;
 
     @JsonProperty("db_num_db_queries")
     @JsonInclude(Include.NON_NULL)
-    private Integer dbNumDbQueries = null;
+    private Integer dbNumDbQueries;
 
     @JsonProperty("db_num_db_resp")
     @JsonInclude(Include.NON_NULL)
-    private Integer dbNumDbResp = null;
+    private Integer dbNumDbResp;
 
     @JsonProperty("db_num_oom")
     @JsonInclude(Include.NON_NULL)
-    private Integer dbNumOom = null;
+    private Integer dbNumOom;
 
     @JsonProperty("db_queue_size")
     @JsonInclude(Include.NON_NULL)
-    private Integer dbQueueSize = null;
+    private Integer dbQueueSize;
 
     @JsonProperty("db_rum_queries")
     @JsonInclude(Include.NON_NULL)
-    private Integer dbRumQueries = null;
+    private Integer dbRumQueries;
 
     @JsonProperty("db_rum_rows")
     @JsonInclude(Include.NON_NULL)
-    private Integer dbRumRows = null;
+    private Integer dbRumRows;
 
 
 

@@ -30,7 +30,7 @@ public class WafPSMMatchElement extends AviRestResource {
 
     @JsonProperty("index")
     @JsonInclude(Include.NON_NULL)
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("match_case")
     @JsonInclude(Include.NON_NULL)
@@ -42,11 +42,11 @@ public class WafPSMMatchElement extends AviRestResource {
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("sub_element")
     @JsonInclude(Include.NON_NULL)
-    private String subElement = null;
+    private String subElement;
 
 
 

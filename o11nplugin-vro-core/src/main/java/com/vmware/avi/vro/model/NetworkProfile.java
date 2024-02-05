@@ -31,23 +31,23 @@ public class NetworkProfile extends AviRestResource {
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("markers")
     @JsonInclude(Include.NON_NULL)
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("profile")
     @JsonInclude(Include.NON_NULL)
-    private NetworkProfileUnion profile = null;
+    private NetworkProfileUnion profile;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -55,7 +55,7 @@ public class NetworkProfile extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

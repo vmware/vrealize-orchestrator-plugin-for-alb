@@ -28,15 +28,15 @@ import org.springframework.stereotype.Service;
 public class GslbPoolMemberDatapathStatus extends AviRestResource {
     @JsonProperty("location")
     @JsonInclude(Include.NON_NULL)
-    private GeoLocation location = null;
+    private GeoLocation location;
 
     @JsonProperty("oper_status")
     @JsonInclude(Include.NON_NULL)
-    private OperationalStatus operStatus = null;
+    private OperationalStatus operStatus;
 
     @JsonProperty("site_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String siteUuid = null;
+    private String siteUuid;
 
 
 

@@ -28,11 +28,11 @@ import org.springframework.stereotype.Service;
 public class IpAddrRange extends AviRestResource {
     @JsonProperty("begin")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr begin = null;
+    private IpAddr begin;
 
     @JsonProperty("end")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr end = null;
+    private IpAddr end;
 
 
 

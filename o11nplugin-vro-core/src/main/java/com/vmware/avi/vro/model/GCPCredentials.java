@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class GCPCredentials extends AviRestResource {
     @JsonProperty("service_account_keyfile_data")
     @JsonInclude(Include.NON_NULL)
-    private String serviceAccountKeyfileData = null;
+    private String serviceAccountKeyfileData;
 
 
 

@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class GslbClientIpAddrGroup extends AviRestResource {
     @JsonProperty("addrs")
     @JsonInclude(Include.NON_NULL)
-    private List<IpAddr> addrs = null;
+    private List<IpAddr> addrs;
 
     @JsonProperty("prefixes")
     @JsonInclude(Include.NON_NULL)
-    private List<IpAddrPrefix> prefixes = null;
+    private List<IpAddrPrefix> prefixes;
 
     @JsonProperty("ranges")
     @JsonInclude(Include.NON_NULL)
-    private List<IpAddrRange> ranges = null;
+    private List<IpAddrRange> ranges;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)

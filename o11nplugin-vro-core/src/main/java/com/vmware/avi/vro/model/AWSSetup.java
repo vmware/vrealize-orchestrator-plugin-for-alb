@@ -26,27 +26,27 @@ import org.springframework.stereotype.Service;
 public class AWSSetup extends AviRestResource {
     @JsonProperty("access_key_id")
     @JsonInclude(Include.NON_NULL)
-    private String accessKeyId = null;
+    private String accessKeyId;
 
     @JsonProperty("cc_id")
     @JsonInclude(Include.NON_NULL)
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("error_string")
     @JsonInclude(Include.NON_NULL)
-    private String errorString = null;
+    private String errorString;
 
     @JsonProperty("privilege")
     @JsonInclude(Include.NON_NULL)
-    private String privilege = null;
+    private String privilege;
 
     @JsonProperty("region")
     @JsonInclude(Include.NON_NULL)
-    private String region = null;
+    private String region;
 
     @JsonProperty("vpc_id")
     @JsonInclude(Include.NON_NULL)
-    private String vpcId = null;
+    private String vpcId;
 
 
 

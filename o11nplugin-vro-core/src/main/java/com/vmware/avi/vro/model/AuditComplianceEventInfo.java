@@ -26,67 +26,67 @@ import org.springframework.stereotype.Service;
 public class AuditComplianceEventInfo extends AviRestResource {
     @JsonProperty("cluster_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String clusterUuid = null;
+    private String clusterUuid;
 
     @JsonProperty("core_archive")
     @JsonInclude(Include.NON_NULL)
-    private String coreArchive = null;
+    private String coreArchive;
 
     @JsonProperty("detailed_reason")
     @JsonInclude(Include.NON_NULL)
-    private String detailedReason = null;
+    private String detailedReason;
 
     @JsonProperty("event_generated_by_se")
     @JsonInclude(Include.NON_NULL)
-    private Boolean eventGeneratedBySe = null;
+    private Boolean eventGeneratedBySe;
 
     @JsonProperty("fingerprint")
     @JsonInclude(Include.NON_NULL)
-    private String fingerprint = null;
+    private String fingerprint;
 
     @JsonProperty("location")
     @JsonInclude(Include.NON_NULL)
-    private String location = null;
+    private String location;
 
     @JsonProperty("node")
     @JsonInclude(Include.NON_NULL)
-    private String node = null;
+    private String node;
 
     @JsonProperty("patch_version")
     @JsonInclude(Include.NON_NULL)
-    private String patchVersion = null;
+    private String patchVersion;
 
     @JsonProperty("process_name")
     @JsonInclude(Include.NON_NULL)
-    private String processName = null;
+    private String processName;
 
     @JsonProperty("protocol")
     @JsonInclude(Include.NON_NULL)
-    private String protocol = null;
+    private String protocol;
 
     @JsonProperty("result")
     @JsonInclude(Include.NON_NULL)
-    private String result = null;
+    private String result;
 
     @JsonProperty("se_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String seUuid = null;
+    private String seUuid;
 
     @JsonProperty("subjects")
     @JsonInclude(Include.NON_NULL)
-    private List<ACSubjectInfo> subjects = null;
+    private List<ACSubjectInfo> subjects;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
     @JsonProperty("user_identities")
     @JsonInclude(Include.NON_NULL)
-    private List<ACUserIdentity> userIdentities = null;
+    private List<ACUserIdentity> userIdentities;
 
     @JsonProperty("version")
     @JsonInclude(Include.NON_NULL)
-    private String version = null;
+    private String version;
 
 
 

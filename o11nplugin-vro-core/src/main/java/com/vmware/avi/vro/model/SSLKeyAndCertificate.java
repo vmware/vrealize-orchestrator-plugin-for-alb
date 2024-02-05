@@ -30,11 +30,11 @@ import org.springframework.stereotype.Service;
 public class SSLKeyAndCertificate extends AviRestResource {
     @JsonProperty("ca_certs")
     @JsonInclude(Include.NON_NULL)
-    private List<CertificateAuthority> caCerts = null;
+    private List<CertificateAuthority> caCerts;
 
     @JsonProperty("certificate")
     @JsonInclude(Include.NON_NULL)
-    private SSLCertificate certificate = null;
+    private SSLCertificate certificate;
 
     @JsonProperty("certificate_base64")
     @JsonInclude(Include.NON_NULL)
@@ -42,15 +42,15 @@ public class SSLKeyAndCertificate extends AviRestResource {
 
     @JsonProperty("certificate_management_profile_ref")
     @JsonInclude(Include.NON_NULL)
-    private String certificateManagementProfileRef = null;
+    private String certificateManagementProfileRef;
 
     @JsonProperty("created_by")
     @JsonInclude(Include.NON_NULL)
-    private String createdBy = null;
+    private String createdBy;
 
     @JsonProperty("dynamic_params")
     @JsonInclude(Include.NON_NULL)
-    private List<CustomParams> dynamicParams = null;
+    private List<CustomParams> dynamicParams;
 
     @JsonProperty("enable_ocsp_stapling")
     @JsonInclude(Include.NON_NULL)
@@ -58,11 +58,11 @@ public class SSLKeyAndCertificate extends AviRestResource {
 
     @JsonProperty("enckey_base64")
     @JsonInclude(Include.NON_NULL)
-    private String enckeyBase64 = null;
+    private String enckeyBase64;
 
     @JsonProperty("enckey_name")
     @JsonInclude(Include.NON_NULL)
-    private String enckeyName = null;
+    private String enckeyName;
 
     @JsonProperty("format")
     @JsonInclude(Include.NON_NULL)
@@ -70,7 +70,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
 
     @JsonProperty("hardwaresecuritymodulegroup_ref")
     @JsonInclude(Include.NON_NULL)
-    private String hardwaresecuritymodulegroupRef = null;
+    private String hardwaresecuritymodulegroupRef;
 
     @JsonProperty("import_key_to_hsm")
     @JsonInclude(Include.NON_NULL)
@@ -82,7 +82,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
 
     @JsonProperty("key")
     @JsonInclude(Include.NON_NULL)
-    private String key = null;
+    private String key;
 
     @JsonProperty("key_base64")
     @JsonInclude(Include.NON_NULL)
@@ -90,23 +90,23 @@ public class SSLKeyAndCertificate extends AviRestResource {
 
     @JsonProperty("key_params")
     @JsonInclude(Include.NON_NULL)
-    private SSLKeyParams keyParams = null;
+    private SSLKeyParams keyParams;
 
     @JsonProperty("key_passphrase")
     @JsonInclude(Include.NON_NULL)
-    private String keyPassphrase = null;
+    private String keyPassphrase;
 
     @JsonProperty("markers")
     @JsonInclude(Include.NON_NULL)
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("ocsp_config")
     @JsonInclude(Include.NON_NULL)
-    private OCSPConfig ocspConfig = null;
+    private OCSPConfig ocspConfig;
 
     @JsonProperty("ocsp_error_status")
     @JsonInclude(Include.NON_NULL)
@@ -126,11 +126,11 @@ public class SSLKeyAndCertificate extends AviRestResource {
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -138,7 +138,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

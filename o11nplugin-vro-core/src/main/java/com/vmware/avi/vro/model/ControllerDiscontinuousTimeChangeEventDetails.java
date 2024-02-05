@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class ControllerDiscontinuousTimeChangeEventDetails extends AviRestResource {
     @JsonProperty("from_time")
     @JsonInclude(Include.NON_NULL)
-    private String fromTime = null;
+    private String fromTime;
 
     @JsonProperty("node_name")
     @JsonInclude(Include.NON_NULL)
-    private String nodeName = null;
+    private String nodeName;
 
     @JsonProperty("ntp_servers")
     @JsonInclude(Include.NON_NULL)
-    private String ntpServers = null;
+    private String ntpServers;
 
     @JsonProperty("to_time")
     @JsonInclude(Include.NON_NULL)
-    private String toTime = null;
+    private String toTime;
 
 
 

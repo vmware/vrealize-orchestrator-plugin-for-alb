@@ -41,15 +41,15 @@ public class Service extends AviRestResource {
 
     @JsonProperty("override_application_profile_ref")
     @JsonInclude(Include.NON_NULL)
-    private String overrideApplicationProfileRef = null;
+    private String overrideApplicationProfileRef;
 
     @JsonProperty("override_network_profile_ref")
     @JsonInclude(Include.NON_NULL)
-    private String overrideNetworkProfileRef = null;
+    private String overrideNetworkProfileRef;
 
     @JsonProperty("port")
     @JsonInclude(Include.NON_NULL)
-    private Integer port = null;
+    private Integer port;
 
     @JsonProperty("port_range_end")
     @JsonInclude(Include.NON_NULL)

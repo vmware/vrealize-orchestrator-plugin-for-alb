@@ -27,23 +27,23 @@ import org.springframework.stereotype.Service;
 public class HealthMonitorLdap extends AviRestResource {
     @JsonProperty("attributes")
     @JsonInclude(Include.NON_NULL)
-    private String attributes = null;
+    private String attributes;
 
     @JsonProperty("base_dn")
     @JsonInclude(Include.NON_NULL)
-    private String baseDn = null;
+    private String baseDn;
 
     @JsonProperty("filter")
     @JsonInclude(Include.NON_NULL)
-    private String filter = null;
+    private String filter;
 
     @JsonProperty("scope")
     @JsonInclude(Include.NON_NULL)
-    private String scope = null;
+    private String scope;
 
     @JsonProperty("ssl_attributes")
     @JsonInclude(Include.NON_NULL)
-    private HealthMonitorSSLAttributes sslAttributes = null;
+    private HealthMonitorSSLAttributes sslAttributes;
 
 
 

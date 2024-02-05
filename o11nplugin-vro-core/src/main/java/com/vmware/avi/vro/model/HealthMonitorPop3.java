@@ -27,7 +27,7 @@ import org.springframework.stereotype.Service;
 public class HealthMonitorPop3 extends AviRestResource {
     @JsonProperty("ssl_attributes")
     @JsonInclude(Include.NON_NULL)
-    private HealthMonitorSSLAttributes sslAttributes = null;
+    private HealthMonitorSSLAttributes sslAttributes;
 
 
 

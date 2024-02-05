@@ -47,23 +47,23 @@ public class RoutingService extends AviRestResource {
 
     @JsonProperty("floating_intf_ip")
     @JsonInclude(Include.NON_NULL)
-    private List<IpAddr> floatingIntfIp = null;
+    private List<IpAddr> floatingIntfIp;
 
     @JsonProperty("floating_intf_ip6_addresses")
     @JsonInclude(Include.NON_NULL)
-    private List<IpAddr> floatingIntfIp6Addresses = null;
+    private List<IpAddr> floatingIntfIp6Addresses;
 
     @JsonProperty("floating_intf_ip6_se_2_addresses")
     @JsonInclude(Include.NON_NULL)
-    private List<IpAddr> floatingIntfIp6Se2Addresses = null;
+    private List<IpAddr> floatingIntfIp6Se2Addresses;
 
     @JsonProperty("floating_intf_ip_se_2")
     @JsonInclude(Include.NON_NULL)
-    private List<IpAddr> floatingIntfIpSe2 = null;
+    private List<IpAddr> floatingIntfIpSe2;
 
     @JsonProperty("flowtable_profile")
     @JsonInclude(Include.NON_NULL)
-    private FlowtableProfile flowtableProfile = null;
+    private FlowtableProfile flowtableProfile;
 
     @JsonProperty("graceful_restart")
     @JsonInclude(Include.NON_NULL)
@@ -71,7 +71,7 @@ public class RoutingService extends AviRestResource {
 
     @JsonProperty("nat_policy_ref")
     @JsonInclude(Include.NON_NULL)
-    private String natPolicyRef = null;
+    private String natPolicyRef;
 
     @JsonProperty("routing_by_linux_ipstack")
     @JsonInclude(Include.NON_NULL)

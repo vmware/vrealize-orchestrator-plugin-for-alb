@@ -27,27 +27,27 @@ import org.springframework.stereotype.Service;
 public class EventLog extends AviRestResource {
     @JsonProperty("context")
     @JsonInclude(Include.NON_NULL)
-    private String context = null;
+    private String context;
 
     @JsonProperty("details_summary")
     @JsonInclude(Include.NON_NULL)
-    private String detailsSummary = null;
+    private String detailsSummary;
 
     @JsonProperty("event_description")
     @JsonInclude(Include.NON_NULL)
-    private String eventDescription = null;
+    private String eventDescription;
 
     @JsonProperty("event_details")
     @JsonInclude(Include.NON_NULL)
-    private EventDetails eventDetails = null;
+    private EventDetails eventDetails;
 
     @JsonProperty("event_id")
     @JsonInclude(Include.NON_NULL)
-    private String eventId = null;
+    private String eventId;
 
     @JsonProperty("event_pages")
     @JsonInclude(Include.NON_NULL)
-    private List<String> eventPages = null;
+    private List<String> eventPages;
 
     @JsonProperty("ignore_event_details_display")
     @JsonInclude(Include.NON_NULL)
@@ -63,39 +63,39 @@ public class EventLog extends AviRestResource {
 
     @JsonProperty("module")
     @JsonInclude(Include.NON_NULL)
-    private String module = null;
+    private String module;
 
     @JsonProperty("obj_name")
     @JsonInclude(Include.NON_NULL)
-    private String objName = null;
+    private String objName;
 
     @JsonProperty("obj_type")
     @JsonInclude(Include.NON_NULL)
-    private String objType = null;
+    private String objType;
 
     @JsonProperty("obj_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String objUuid = null;
+    private String objUuid;
 
     @JsonProperty("reason_code")
     @JsonInclude(Include.NON_NULL)
-    private String reasonCode = null;
+    private String reasonCode;
 
     @JsonProperty("related_uuids")
     @JsonInclude(Include.NON_NULL)
-    private List<String> relatedUuids = null;
+    private List<String> relatedUuids;
 
     @JsonProperty("report_timestamp")
     @JsonInclude(Include.NON_NULL)
-    private Integer reportTimestamp = null;
+    private Integer reportTimestamp;
 
     @JsonProperty("tenant")
     @JsonInclude(Include.NON_NULL)
-    private String tenant = null;
+    private String tenant;
 
     @JsonProperty("tenant_name")
     @JsonInclude(Include.NON_NULL)
-    private String tenantName = null;
+    private String tenantName;
 
 
 

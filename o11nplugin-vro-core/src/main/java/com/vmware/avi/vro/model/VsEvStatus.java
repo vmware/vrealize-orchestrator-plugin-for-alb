@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class VsEvStatus extends AviRestResource {
     @JsonProperty("notes")
     @JsonInclude(Include.NON_NULL)
-    private List<String> notes = null;
+    private List<String> notes;
 
     @JsonProperty("request")
     @JsonInclude(Include.NON_NULL)
-    private String request = null;
+    private String request;
 
     @JsonProperty("result")
     @JsonInclude(Include.NON_NULL)
-    private String result = null;
+    private String result;
 
 
 

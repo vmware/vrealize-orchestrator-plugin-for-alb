@@ -26,23 +26,23 @@ import org.springframework.stereotype.Service;
 public class FalsePositiveResultHeader extends AviRestResource {
     @JsonProperty("end_analysis_time")
     @JsonInclude(Include.NON_NULL)
-    private String endAnalysisTime = null;
+    private String endAnalysisTime;
 
     @JsonProperty("first_data_received_time")
     @JsonInclude(Include.NON_NULL)
-    private String firstDataReceivedTime = null;
+    private String firstDataReceivedTime;
 
     @JsonProperty("last_data_received_time")
     @JsonInclude(Include.NON_NULL)
-    private String lastDataReceivedTime = null;
+    private String lastDataReceivedTime;
 
     @JsonProperty("start_analysis_time")
     @JsonInclude(Include.NON_NULL)
-    private String startAnalysisTime = null;
+    private String startAnalysisTime;
 
     @JsonProperty("transactions_count")
     @JsonInclude(Include.NON_NULL)
-    private Integer transactionsCount = null;
+    private Integer transactionsCount;
 
 
 

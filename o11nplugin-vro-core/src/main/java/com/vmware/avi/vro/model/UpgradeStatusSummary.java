@@ -35,51 +35,51 @@ public class UpgradeStatusSummary extends AviRestResource {
 
     @JsonProperty("end_time")
     @JsonInclude(Include.NON_NULL)
-    private String endTime = null;
+    private String endTime;
 
     @JsonProperty("image_ref")
     @JsonInclude(Include.NON_NULL)
-    private String imageRef = null;
+    private String imageRef;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("node_type")
     @JsonInclude(Include.NON_NULL)
-    private String nodeType = null;
+    private String nodeType;
 
     @JsonProperty("obj_cloud_ref")
     @JsonInclude(Include.NON_NULL)
-    private String objCloudRef = null;
+    private String objCloudRef;
 
     @JsonProperty("patch_image_ref")
     @JsonInclude(Include.NON_NULL)
-    private String patchImageRef = null;
+    private String patchImageRef;
 
     @JsonProperty("start_time")
     @JsonInclude(Include.NON_NULL)
-    private String startTime = null;
+    private String startTime;
 
     @JsonProperty("state")
     @JsonInclude(Include.NON_NULL)
-    private UpgradeOpsState state = null;
+    private UpgradeOpsState state;
 
     @JsonProperty("tasks_completed")
     @JsonInclude(Include.NON_NULL)
-    private Integer tasksCompleted = null;
+    private Integer tasksCompleted;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("total_tasks")
     @JsonInclude(Include.NON_NULL)
-    private Integer totalTasks = null;
+    private Integer totalTasks;
 
     @JsonProperty("upgrade_ops")
     @JsonInclude(Include.NON_NULL)
-    private String upgradeOps = null;
+    private String upgradeOps;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -87,11 +87,11 @@ public class UpgradeStatusSummary extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("version")
     @JsonInclude(Include.NON_NULL)
-    private String version = null;
+    private String version;
 
 
 

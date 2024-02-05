@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class DNSQueryError extends AviRestResource {
     @JsonProperty("error")
     @JsonInclude(Include.NON_NULL)
-    private String error = null;
+    private String error;
 
     @JsonProperty("error_message")
     @JsonInclude(Include.NON_NULL)
-    private String errorMessage = null;
+    private String errorMessage;
 
     @JsonProperty("fqdn")
     @JsonInclude(Include.NON_NULL)
-    private String fqdn = null;
+    private String fqdn;
 
 
 

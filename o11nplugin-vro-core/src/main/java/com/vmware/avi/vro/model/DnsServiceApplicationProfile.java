@@ -46,11 +46,11 @@ public class DnsServiceApplicationProfile extends AviRestResource {
 
     @JsonProperty("dns_zones")
     @JsonInclude(Include.NON_NULL)
-    private List<DnsZone> dnsZones = null;
+    private List<DnsZone> dnsZones;
 
     @JsonProperty("domain_names")
     @JsonInclude(Include.NON_NULL)
-    private List<String> domainNames = null;
+    private List<String> domainNames;
 
     @JsonProperty("ecs_stripping_enabled")
     @JsonInclude(Include.NON_NULL)
@@ -62,7 +62,7 @@ public class DnsServiceApplicationProfile extends AviRestResource {
 
     @JsonProperty("edns_client_subnet_prefix_len")
     @JsonInclude(Include.NON_NULL)
-    private Integer ednsClientSubnetPrefixLen = null;
+    private Integer ednsClientSubnetPrefixLen;
 
     @JsonProperty("error_response")
     @JsonInclude(Include.NON_NULL)
@@ -70,7 +70,7 @@ public class DnsServiceApplicationProfile extends AviRestResource {
 
     @JsonProperty("name_server")
     @JsonInclude(Include.NON_NULL)
-    private String nameServer = null;
+    private String nameServer;
 
     @JsonProperty("negative_caching_ttl")
     @JsonInclude(Include.NON_NULL)

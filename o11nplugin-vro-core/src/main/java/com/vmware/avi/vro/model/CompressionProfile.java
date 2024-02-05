@@ -34,7 +34,7 @@ public class CompressionProfile extends AviRestResource {
 
     @JsonProperty("compressible_content_ref")
     @JsonInclude(Include.NON_NULL)
-    private String compressibleContentRef = null;
+    private String compressibleContentRef;
 
     @JsonProperty("compression")
     @JsonInclude(Include.NON_NULL)
@@ -42,7 +42,7 @@ public class CompressionProfile extends AviRestResource {
 
     @JsonProperty("filter")
     @JsonInclude(Include.NON_NULL)
-    private List<CompressionFilter> filter = null;
+    private List<CompressionFilter> filter;
 
     @JsonProperty("hash_size")
     @JsonInclude(Include.NON_NULL)
@@ -70,7 +70,7 @@ public class CompressionProfile extends AviRestResource {
 
     @JsonProperty("mobile_str_ref")
     @JsonInclude(Include.NON_NULL)
-    private String mobileStrRef = null;
+    private String mobileStrRef;
 
     @JsonProperty("remove_accept_encoding_header")
     @JsonInclude(Include.NON_NULL)

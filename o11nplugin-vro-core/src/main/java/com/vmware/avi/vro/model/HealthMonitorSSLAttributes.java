@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class HealthMonitorSSLAttributes extends AviRestResource {
     @JsonProperty("pki_profile_ref")
     @JsonInclude(Include.NON_NULL)
-    private String pkiProfileRef = null;
+    private String pkiProfileRef;
 
     @JsonProperty("server_name")
     @JsonInclude(Include.NON_NULL)
-    private String serverName = null;
+    private String serverName;
 
     @JsonProperty("ssl_key_and_certificate_ref")
     @JsonInclude(Include.NON_NULL)
-    private String sslKeyAndCertificateRef = null;
+    private String sslKeyAndCertificateRef;
 
     @JsonProperty("ssl_profile_ref")
     @JsonInclude(Include.NON_NULL)
-    private String sslProfileRef = null;
+    private String sslProfileRef;
 
 
 

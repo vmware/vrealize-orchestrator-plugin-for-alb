@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class LDAPVSConfig extends AviRestResource {
     @JsonProperty("realm")
     @JsonInclude(Include.NON_NULL)
-    private String realm = null;
+    private String realm;
 
     @JsonProperty("se_auth_ldap_bind_timeout")
     @JsonInclude(Include.NON_NULL)

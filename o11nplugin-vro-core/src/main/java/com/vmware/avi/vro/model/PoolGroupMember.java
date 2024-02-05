@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class PoolGroupMember extends AviRestResource {
     @JsonProperty("deployment_state")
     @JsonInclude(Include.NON_NULL)
-    private String deploymentState = null;
+    private String deploymentState;
 
     @JsonProperty("pool_ref")
     @JsonInclude(Include.NON_NULL)
-    private String poolRef = null;
+    private String poolRef;
 
     @JsonProperty("priority_label")
     @JsonInclude(Include.NON_NULL)
-    private String priorityLabel = null;
+    private String priorityLabel;
 
     @JsonProperty("ratio")
     @JsonInclude(Include.NON_NULL)

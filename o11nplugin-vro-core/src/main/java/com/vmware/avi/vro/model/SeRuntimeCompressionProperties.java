@@ -38,7 +38,7 @@ public class SeRuntimeCompressionProperties extends AviRestResource {
 
     @JsonProperty("mobile_str")
     @JsonInclude(Include.NON_NULL)
-    private List<String> mobileStr = null;
+    private List<String> mobileStr;
 
 
 

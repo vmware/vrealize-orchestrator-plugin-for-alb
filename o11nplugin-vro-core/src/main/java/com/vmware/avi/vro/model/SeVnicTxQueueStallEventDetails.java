@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class SeVnicTxQueueStallEventDetails extends AviRestResource {
     @JsonProperty("if_name")
     @JsonInclude(Include.NON_NULL)
-    private String ifName = null;
+    private String ifName;
 
     @JsonProperty("linux_name")
     @JsonInclude(Include.NON_NULL)
-    private String linuxName = null;
+    private String linuxName;
 
     @JsonProperty("queue")
     @JsonInclude(Include.NON_NULL)
-    private Integer queue = null;
+    private Integer queue;
 
     @JsonProperty("se_ref")
     @JsonInclude(Include.NON_NULL)
-    private String seRef = null;
+    private String seRef;
 
 
 

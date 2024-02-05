@@ -28,19 +28,19 @@ import org.springframework.stereotype.Service;
 public class PackageDetails extends AviRestResource {
     @JsonProperty("build")
     @JsonInclude(Include.NON_NULL)
-    private BuildInfo build = null;
+    private BuildInfo build;
 
     @JsonProperty("hash")
     @JsonInclude(Include.NON_NULL)
-    private String hash = null;
+    private String hash;
 
     @JsonProperty("patch")
     @JsonInclude(Include.NON_NULL)
-    private PatchInfo patch = null;
+    private PatchInfo patch;
 
     @JsonProperty("path")
     @JsonInclude(Include.NON_NULL)
-    private String path = null;
+    private String path;
 
 
 

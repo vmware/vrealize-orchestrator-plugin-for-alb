@@ -28,35 +28,35 @@ import org.springframework.stereotype.Service;
 public class VsScaleInEventDetails extends AviRestResource {
     @JsonProperty("error_message")
     @JsonInclude(Include.NON_NULL)
-    private String errorMessage = null;
+    private String errorMessage;
 
     @JsonProperty("ip")
     @JsonInclude(Include.NON_NULL)
-    private String ip = null;
+    private String ip;
 
     @JsonProperty("ip6")
     @JsonInclude(Include.NON_NULL)
-    private String ip6 = null;
+    private String ip6;
 
     @JsonProperty("rpc_status")
     @JsonInclude(Include.NON_NULL)
-    private Integer rpcStatus = null;
+    private Integer rpcStatus;
 
     @JsonProperty("scale_status")
     @JsonInclude(Include.NON_NULL)
-    private ScaleStatus scaleStatus = null;
+    private ScaleStatus scaleStatus;
 
     @JsonProperty("se_assigned")
     @JsonInclude(Include.NON_NULL)
-    private List<VipSeAssigned> seAssigned = null;
+    private List<VipSeAssigned> seAssigned;
 
     @JsonProperty("se_requested")
     @JsonInclude(Include.NON_NULL)
-    private VirtualServiceResource seRequested = null;
+    private VirtualServiceResource seRequested;
 
     @JsonProperty("vs_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String vsUuid = null;
+    private String vsUuid;
 
 
 

@@ -30,11 +30,11 @@ public class HTTPHdrValue extends AviRestResource {
 
     @JsonProperty("val")
     @JsonInclude(Include.NON_NULL)
-    private String val = null;
+    private String val;
 
     @JsonProperty("var")
     @JsonInclude(Include.NON_NULL)
-    private String var = null;
+    private String var;
 
 
 

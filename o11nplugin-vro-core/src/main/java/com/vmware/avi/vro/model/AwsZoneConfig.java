@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class AwsZoneConfig extends AviRestResource {
     @JsonProperty("availability_zone")
     @JsonInclude(Include.NON_NULL)
-    private String availabilityZone = null;
+    private String availabilityZone;
 
     @JsonProperty("mgmt_network_name")
     @JsonInclude(Include.NON_NULL)
-    private String mgmtNetworkName = null;
+    private String mgmtNetworkName;
 
     @JsonProperty("mgmt_network_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String mgmtNetworkUuid = null;
+    private String mgmtNetworkUuid;
 
 
 

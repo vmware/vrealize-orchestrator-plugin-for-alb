@@ -30,7 +30,7 @@ public class AlertMetricThreshold extends AviRestResource {
 
     @JsonProperty("threshold")
     @JsonInclude(Include.NON_NULL)
-    private Integer threshold = null;
+    private Integer threshold;
 
 
 

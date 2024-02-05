@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class BgpProfile extends AviRestResource {
     @JsonProperty("community")
     @JsonInclude(Include.NON_NULL)
-    private List<String> community = null;
+    private List<String> community;
 
     @JsonProperty("hold_time")
     @JsonInclude(Include.NON_NULL)
@@ -38,7 +38,7 @@ public class BgpProfile extends AviRestResource {
 
     @JsonProperty("ip_communities")
     @JsonInclude(Include.NON_NULL)
-    private List<IpCommunity> ipCommunities = null;
+    private List<IpCommunity> ipCommunities;
 
     @JsonProperty("keepalive_interval")
     @JsonInclude(Include.NON_NULL)
@@ -46,23 +46,23 @@ public class BgpProfile extends AviRestResource {
 
     @JsonProperty("local_as")
     @JsonInclude(Include.NON_NULL)
-    private Integer localAs = null;
+    private Integer localAs;
 
     @JsonProperty("local_preference")
     @JsonInclude(Include.NON_NULL)
-    private Integer localPreference = null;
+    private Integer localPreference;
 
     @JsonProperty("num_as_path_prepend")
     @JsonInclude(Include.NON_NULL)
-    private Integer numAsPathPrepend = null;
+    private Integer numAsPathPrepend;
 
     @JsonProperty("peers")
     @JsonInclude(Include.NON_NULL)
-    private List<BgpPeer> peers = null;
+    private List<BgpPeer> peers;
 
     @JsonProperty("routing_options")
     @JsonInclude(Include.NON_NULL)
-    private List<BgpRoutingOptions> routingOptions = null;
+    private List<BgpRoutingOptions> routingOptions;
 
     @JsonProperty("send_community")
     @JsonInclude(Include.NON_NULL)

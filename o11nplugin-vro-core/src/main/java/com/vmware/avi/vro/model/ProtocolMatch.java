@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class ProtocolMatch extends AviRestResource {
     @JsonProperty("match_criteria")
     @JsonInclude(Include.NON_NULL)
-    private String matchCriteria = null;
+    private String matchCriteria;
 
     @JsonProperty("protocols")
     @JsonInclude(Include.NON_NULL)
-    private String protocols = null;
+    private String protocols;
 
 
 

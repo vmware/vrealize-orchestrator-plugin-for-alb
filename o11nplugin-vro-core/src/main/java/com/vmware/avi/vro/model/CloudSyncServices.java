@@ -26,23 +26,23 @@ import org.springframework.stereotype.Service;
 public class CloudSyncServices extends AviRestResource {
     @JsonProperty("cc_id")
     @JsonInclude(Include.NON_NULL)
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("error_string")
     @JsonInclude(Include.NON_NULL)
-    private String errorString = null;
+    private String errorString;
 
     @JsonProperty("se_vm_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String seVmUuid = null;
+    private String seVmUuid;
 
     @JsonProperty("vips")
     @JsonInclude(Include.NON_NULL)
-    private List<IpAddr> vips = null;
+    private List<IpAddr> vips;
 
     @JsonProperty("vtype")
     @JsonInclude(Include.NON_NULL)
-    private String vtype = null;
+    private String vtype;
 
 
 

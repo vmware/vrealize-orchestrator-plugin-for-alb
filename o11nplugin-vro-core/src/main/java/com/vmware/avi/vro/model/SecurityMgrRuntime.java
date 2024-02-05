@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class SecurityMgrRuntime extends AviRestResource {
     @JsonProperty("thresholds")
     @JsonInclude(Include.NON_NULL)
-    private List<SecMgrThreshold> thresholds = null;
+    private List<SecMgrThreshold> thresholds;
 
 
 

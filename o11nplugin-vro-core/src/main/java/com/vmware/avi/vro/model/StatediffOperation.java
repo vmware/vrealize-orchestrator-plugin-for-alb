@@ -26,31 +26,31 @@ import org.springframework.stereotype.Service;
 public class StatediffOperation extends AviRestResource {
     @JsonProperty("events")
     @JsonInclude(Include.NON_NULL)
-    private List<StatediffEvent> events = null;
+    private List<StatediffEvent> events;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("node_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String nodeUuid = null;
+    private String nodeUuid;
 
     @JsonProperty("operation")
     @JsonInclude(Include.NON_NULL)
-    private String operation = null;
+    private String operation;
 
     @JsonProperty("phase")
     @JsonInclude(Include.NON_NULL)
-    private String phase = null;
+    private String phase;
 
     @JsonProperty("status")
     @JsonInclude(Include.NON_NULL)
-    private String status = null;
+    private String status;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -58,7 +58,7 @@ public class StatediffOperation extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

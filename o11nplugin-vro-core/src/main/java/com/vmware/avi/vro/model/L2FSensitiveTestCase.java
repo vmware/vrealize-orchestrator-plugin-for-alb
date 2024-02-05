@@ -27,15 +27,15 @@ import org.springframework.stereotype.Service;
 public class L2FSensitiveTestCase extends AviRestResource {
     @JsonProperty("sensitive_message")
     @JsonInclude(Include.NON_NULL)
-    private SingleOptionalSensitiveFieldMessage sensitiveMessage = null;
+    private SingleOptionalSensitiveFieldMessage sensitiveMessage;
 
     @JsonProperty("sensitive_messages")
     @JsonInclude(Include.NON_NULL)
-    private List<SingleOptionalSensitiveFieldMessage> sensitiveMessages = null;
+    private List<SingleOptionalSensitiveFieldMessage> sensitiveMessages;
 
     @JsonProperty("sensitive_string")
     @JsonInclude(Include.NON_NULL)
-    private String sensitiveString = null;
+    private String sensitiveString;
 
 
 

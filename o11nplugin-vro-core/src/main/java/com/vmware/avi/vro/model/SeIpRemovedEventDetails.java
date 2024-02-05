@@ -26,39 +26,39 @@ import org.springframework.stereotype.Service;
 public class SeIpRemovedEventDetails extends AviRestResource {
     @JsonProperty("if_name")
     @JsonInclude(Include.NON_NULL)
-    private String ifName = null;
+    private String ifName;
 
     @JsonProperty("ip")
     @JsonInclude(Include.NON_NULL)
-    private String ip = null;
+    private String ip;
 
     @JsonProperty("linux_name")
     @JsonInclude(Include.NON_NULL)
-    private String linuxName = null;
+    private String linuxName;
 
     @JsonProperty("mac")
     @JsonInclude(Include.NON_NULL)
-    private String mac = null;
+    private String mac;
 
     @JsonProperty("mask")
     @JsonInclude(Include.NON_NULL)
-    private Integer mask = null;
+    private Integer mask;
 
     @JsonProperty("mode")
     @JsonInclude(Include.NON_NULL)
-    private String mode = null;
+    private String mode;
 
     @JsonProperty("network_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String networkUuid = null;
+    private String networkUuid;
 
     @JsonProperty("ns")
     @JsonInclude(Include.NON_NULL)
-    private String ns = null;
+    private String ns;
 
     @JsonProperty("se_ref")
     @JsonInclude(Include.NON_NULL)
-    private String seRef = null;
+    private String seRef;
 
 
 

@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class GCPVIPILB extends AviRestResource {
     @JsonProperty("cloud_router_names")
     @JsonInclude(Include.NON_NULL)
-    private List<String> cloudRouterNames = null;
+    private List<String> cloudRouterNames;
 
 
 

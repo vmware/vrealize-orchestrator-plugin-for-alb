@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class VlanInterface extends AviRestResource {
     @JsonProperty("dhcp_enabled")
     @JsonInclude(Include.NON_NULL)
-    private Boolean dhcpEnabled = null;
+    private Boolean dhcpEnabled;
 
     @JsonProperty("enabled")
     @JsonInclude(Include.NON_NULL)
@@ -34,11 +34,11 @@ public class VlanInterface extends AviRestResource {
 
     @JsonProperty("if_name")
     @JsonInclude(Include.NON_NULL)
-    private String ifName = null;
+    private String ifName;
 
     @JsonProperty("ip6_autocfg_enabled")
     @JsonInclude(Include.NON_NULL)
-    private Boolean ip6AutocfgEnabled = null;
+    private Boolean ip6AutocfgEnabled;
 
     @JsonProperty("is_mgmt")
     @JsonInclude(Include.NON_NULL)
@@ -50,11 +50,11 @@ public class VlanInterface extends AviRestResource {
 
     @JsonProperty("vnic_networks")
     @JsonInclude(Include.NON_NULL)
-    private List<vNICNetwork> vnicNetworks = null;
+    private List<vNICNetwork> vnicNetworks;
 
     @JsonProperty("vrf_ref")
     @JsonInclude(Include.NON_NULL)
-    private String vrfRef = null;
+    private String vrfRef;
 
 
 

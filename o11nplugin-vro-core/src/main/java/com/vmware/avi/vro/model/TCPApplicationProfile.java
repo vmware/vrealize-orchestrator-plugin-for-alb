@@ -27,11 +27,11 @@ import org.springframework.stereotype.Service;
 public class TCPApplicationProfile extends AviRestResource {
     @JsonProperty("ftp_profile")
     @JsonInclude(Include.NON_NULL)
-    private FTPProfile ftpProfile = null;
+    private FTPProfile ftpProfile;
 
     @JsonProperty("pki_profile_ref")
     @JsonInclude(Include.NON_NULL)
-    private String pkiProfileRef = null;
+    private String pkiProfileRef;
 
     @JsonProperty("proxy_protocol_enabled")
     @JsonInclude(Include.NON_NULL)

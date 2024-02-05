@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class ServerAutoScaleOutCompleteInfo extends AviRestResource {
     @JsonProperty("launch_config_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String launchConfigUuid = null;
+    private String launchConfigUuid;
 
     @JsonProperty("nscaleout")
     @JsonInclude(Include.NON_NULL)
-    private Integer nscaleout = null;
+    private Integer nscaleout;
 
     @JsonProperty("pool_ref")
     @JsonInclude(Include.NON_NULL)
-    private String poolRef = null;
+    private String poolRef;
 
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("reason_code")
     @JsonInclude(Include.NON_NULL)
@@ -46,7 +46,7 @@ public class ServerAutoScaleOutCompleteInfo extends AviRestResource {
 
     @JsonProperty("scaled_out_servers")
     @JsonInclude(Include.NON_NULL)
-    private List<ServerId> scaledOutServers = null;
+    private List<ServerId> scaledOutServers;
 
 
 

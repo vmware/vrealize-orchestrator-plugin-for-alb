@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class ServicePoolSelector extends AviRestResource {
     @JsonProperty("service_pool_group_ref")
     @JsonInclude(Include.NON_NULL)
-    private String servicePoolGroupRef = null;
+    private String servicePoolGroupRef;
 
     @JsonProperty("service_pool_ref")
     @JsonInclude(Include.NON_NULL)
-    private String servicePoolRef = null;
+    private String servicePoolRef;
 
     @JsonProperty("service_port")
     @JsonInclude(Include.NON_NULL)
-    private Integer servicePort = null;
+    private Integer servicePort;
 
     @JsonProperty("service_port_range_end")
     @JsonInclude(Include.NON_NULL)
@@ -42,7 +42,7 @@ public class ServicePoolSelector extends AviRestResource {
 
     @JsonProperty("service_protocol")
     @JsonInclude(Include.NON_NULL)
-    private String serviceProtocol = null;
+    private String serviceProtocol;
 
 
 

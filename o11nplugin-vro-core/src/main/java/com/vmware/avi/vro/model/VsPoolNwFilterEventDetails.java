@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class VsPoolNwFilterEventDetails extends AviRestResource {
     @JsonProperty("filter")
     @JsonInclude(Include.NON_NULL)
-    private String filter = null;
+    private String filter;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("network")
     @JsonInclude(Include.NON_NULL)
-    private String network = null;
+    private String network;
 
 
 

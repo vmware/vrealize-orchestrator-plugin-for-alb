@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class NsxtTier1SegmentManualMode extends AviRestResource {
     @JsonProperty("tier1_lrs")
     @JsonInclude(Include.NON_NULL)
-    private List<Tier1LogicalRouterInfo> tier1Lrs = null;
+    private List<Tier1LogicalRouterInfo> tier1Lrs;
 
 
 

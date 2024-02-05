@@ -27,23 +27,23 @@ import org.springframework.stereotype.Service;
 public class OpenStackIpChange extends AviRestResource {
     @JsonProperty("error_string")
     @JsonInclude(Include.NON_NULL)
-    private String errorString = null;
+    private String errorString;
 
     @JsonProperty("ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr ip = null;
+    private IpAddr ip;
 
     @JsonProperty("mac_addr")
     @JsonInclude(Include.NON_NULL)
-    private String macAddr = null;
+    private String macAddr;
 
     @JsonProperty("port_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String portUuid = null;
+    private String portUuid;
 
     @JsonProperty("se_vm_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String seVmUuid = null;
+    private String seVmUuid;
 
 
 

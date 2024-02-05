@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class GslbObj extends AviRestResource {
     @JsonProperty("gslb_geo_db_profile_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String gslbGeoDbProfileUuid = null;
+    private String gslbGeoDbProfileUuid;
 
     @JsonProperty("gslb_service_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String gslbServiceUuid = null;
+    private String gslbServiceUuid;
 
     @JsonProperty("gslb_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String gslbUuid = null;
+    private String gslbUuid;
 
 
 

@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class HdrPersistenceProfile extends AviRestResource {
     @JsonProperty("prst_hdr_name")
     @JsonInclude(Include.NON_NULL)
-    private String prstHdrName = null;
+    private String prstHdrName;
 
 
 

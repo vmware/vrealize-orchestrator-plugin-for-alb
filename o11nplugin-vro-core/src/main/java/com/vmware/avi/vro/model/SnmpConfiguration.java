@@ -27,7 +27,7 @@ import org.springframework.stereotype.Service;
 public class SnmpConfiguration extends AviRestResource {
     @JsonProperty("community")
     @JsonInclude(Include.NON_NULL)
-    private String community = null;
+    private String community;
 
     @JsonProperty("large_trap_payload")
     @JsonInclude(Include.NON_NULL)
@@ -35,7 +35,7 @@ public class SnmpConfiguration extends AviRestResource {
 
     @JsonProperty("snmp_v3_config")
     @JsonInclude(Include.NON_NULL)
-    private SnmpV3Configuration snmpV3Config = null;
+    private SnmpV3Configuration snmpV3Config;
 
     @JsonProperty("sys_contact")
     @JsonInclude(Include.NON_NULL)
@@ -43,7 +43,7 @@ public class SnmpConfiguration extends AviRestResource {
 
     @JsonProperty("sys_location")
     @JsonInclude(Include.NON_NULL)
-    private String sysLocation = null;
+    private String sysLocation;
 
     @JsonProperty("version")
     @JsonInclude(Include.NON_NULL)

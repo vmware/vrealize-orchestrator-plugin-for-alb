@@ -31,23 +31,23 @@ import org.springframework.stereotype.Service;
 public class MgmtIpAccessControl extends AviRestResource {
     @JsonProperty("api_access")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrMatch apiAccess = null;
+    private IpAddrMatch apiAccess;
 
     @JsonProperty("shell_server_access")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrMatch shellServerAccess = null;
+    private IpAddrMatch shellServerAccess;
 
     @JsonProperty("snmp_access")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrMatch snmpAccess = null;
+    private IpAddrMatch snmpAccess;
 
     @JsonProperty("ssh_access")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrMatch sshAccess = null;
+    private IpAddrMatch sshAccess;
 
     @JsonProperty("sysint_access")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrMatch sysintAccess = null;
+    private IpAddrMatch sysintAccess;
 
 
 

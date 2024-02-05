@@ -29,7 +29,7 @@ import org.springframework.stereotype.Service;
 public class RancherConfiguration extends AviRestResource {
     @JsonProperty("access_key")
     @JsonInclude(Include.NON_NULL)
-    private String accessKey = null;
+    private String accessKey;
 
     @JsonProperty("app_sync_frequency")
     @JsonInclude(Include.NON_NULL)
@@ -57,11 +57,11 @@ public class RancherConfiguration extends AviRestResource {
 
     @JsonProperty("docker_registry_se")
     @JsonInclude(Include.NON_NULL)
-    private DockerRegistry dockerRegistrySe = null;
+    private DockerRegistry dockerRegistrySe;
 
     @JsonProperty("east_west_placement_subnet")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrPrefix eastWestPlacementSubnet = null;
+    private IpAddrPrefix eastWestPlacementSubnet;
 
     @JsonProperty("enable_event_subscription")
     @JsonInclude(Include.NON_NULL)
@@ -77,19 +77,19 @@ public class RancherConfiguration extends AviRestResource {
 
     @JsonProperty("fleet_endpoint")
     @JsonInclude(Include.NON_NULL)
-    private String fleetEndpoint = null;
+    private String fleetEndpoint;
 
     @JsonProperty("http_container_ports")
     @JsonInclude(Include.NON_NULL)
-    private List<Integer> httpContainerPorts = null;
+    private List<Integer> httpContainerPorts;
 
     @JsonProperty("nuage_controller")
     @JsonInclude(Include.NON_NULL)
-    private NuageSDNController nuageController = null;
+    private NuageSDNController nuageController;
 
     @JsonProperty("rancher_servers")
     @JsonInclude(Include.NON_NULL)
-    private List<String> rancherServers = null;
+    private List<String> rancherServers;
 
     @JsonProperty("se_deployment_method")
     @JsonInclude(Include.NON_NULL)
@@ -97,11 +97,11 @@ public class RancherConfiguration extends AviRestResource {
 
     @JsonProperty("se_exclude_attributes")
     @JsonInclude(Include.NON_NULL)
-    private List<MesosAttribute> seExcludeAttributes = null;
+    private List<MesosAttribute> seExcludeAttributes;
 
     @JsonProperty("se_include_attributes")
     @JsonInclude(Include.NON_NULL)
-    private List<MesosAttribute> seIncludeAttributes = null;
+    private List<MesosAttribute> seIncludeAttributes;
 
     @JsonProperty("se_spawn_rate")
     @JsonInclude(Include.NON_NULL)
@@ -113,7 +113,7 @@ public class RancherConfiguration extends AviRestResource {
 
     @JsonProperty("secret_key")
     @JsonInclude(Include.NON_NULL)
-    private String secretKey = null;
+    private String secretKey;
 
     @JsonProperty("services_accessible_all_interfaces")
     @JsonInclude(Include.NON_NULL)
@@ -121,7 +121,7 @@ public class RancherConfiguration extends AviRestResource {
 
     @JsonProperty("ssh_user_ref")
     @JsonInclude(Include.NON_NULL)
-    private String sshUserRef = null;
+    private String sshUserRef;
 
     @JsonProperty("use_container_ip_port")
     @JsonInclude(Include.NON_NULL)

@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class IpamDnsCustomProfile extends AviRestResource {
     @JsonProperty("custom_ipam_dns_profile_ref")
     @JsonInclude(Include.NON_NULL)
-    private String customIpamDnsProfileRef = null;
+    private String customIpamDnsProfileRef;
 
     @JsonProperty("dynamic_params")
     @JsonInclude(Include.NON_NULL)
-    private List<CustomParams> dynamicParams = null;
+    private List<CustomParams> dynamicParams;
 
     @JsonProperty("usable_alloc_subnets")
     @JsonInclude(Include.NON_NULL)
-    private List<CustomIpamSubnet> usableAllocSubnets = null;
+    private List<CustomIpamSubnet> usableAllocSubnets;
 
     @JsonProperty("usable_domains")
     @JsonInclude(Include.NON_NULL)
-    private List<String> usableDomains = null;
+    private List<String> usableDomains;
 
 
 

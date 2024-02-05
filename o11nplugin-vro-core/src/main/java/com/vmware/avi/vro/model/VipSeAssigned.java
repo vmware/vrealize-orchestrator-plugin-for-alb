@@ -31,11 +31,11 @@ import org.springframework.stereotype.Service;
 public class VipSeAssigned extends AviRestResource {
     @JsonProperty("active_on_cloud")
     @JsonInclude(Include.NON_NULL)
-    private Boolean activeOnCloud = null;
+    private Boolean activeOnCloud;
 
     @JsonProperty("active_on_se")
     @JsonInclude(Include.NON_NULL)
-    private Boolean activeOnSe = null;
+    private Boolean activeOnSe;
 
     @JsonProperty("admin_down_requested")
     @JsonInclude(Include.NON_NULL)
@@ -43,39 +43,39 @@ public class VipSeAssigned extends AviRestResource {
 
     @JsonProperty("attach_ip_in_progress")
     @JsonInclude(Include.NON_NULL)
-    private Boolean attachIpInProgress = null;
+    private Boolean attachIpInProgress;
 
     @JsonProperty("connected")
     @JsonInclude(Include.NON_NULL)
-    private Boolean connected = null;
+    private Boolean connected;
 
     @JsonProperty("detach_ip_in_progress")
     @JsonInclude(Include.NON_NULL)
-    private Boolean detachIpInProgress = null;
+    private Boolean detachIpInProgress;
 
     @JsonProperty("mgmt_ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr mgmtIp = null;
+    private IpAddr mgmtIp;
 
     @JsonProperty("mgmt_ip6")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr mgmtIp6 = null;
+    private IpAddr mgmtIp6;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("oper_status")
     @JsonInclude(Include.NON_NULL)
-    private OperationalStatus operStatus = null;
+    private OperationalStatus operStatus;
 
     @JsonProperty("primary")
     @JsonInclude(Include.NON_NULL)
-    private Boolean primary = null;
+    private Boolean primary;
 
     @JsonProperty("ref")
     @JsonInclude(Include.NON_NULL)
-    private String ref = null;
+    private String ref;
 
     @JsonProperty("scalein_in_progress")
     @JsonInclude(Include.NON_NULL)
@@ -83,23 +83,23 @@ public class VipSeAssigned extends AviRestResource {
 
     @JsonProperty("scaleout_in_progress")
     @JsonInclude(Include.NON_NULL)
-    private Boolean scaleoutInProgress = null;
+    private Boolean scaleoutInProgress;
 
     @JsonProperty("se_ready_in_progress")
     @JsonInclude(Include.NON_NULL)
-    private Boolean seReadyInProgress = null;
+    private Boolean seReadyInProgress;
 
     @JsonProperty("snat_ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr snatIp = null;
+    private IpAddr snatIp;
 
     @JsonProperty("snat_ip6_address")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr snatIp6Address = null;
+    private IpAddr snatIp6Address;
 
     @JsonProperty("standby")
     @JsonInclude(Include.NON_NULL)
-    private Boolean standby = null;
+    private Boolean standby;
 
 
 

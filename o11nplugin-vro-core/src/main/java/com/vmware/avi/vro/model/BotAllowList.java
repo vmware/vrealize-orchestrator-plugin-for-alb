@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class BotAllowList extends AviRestResource {
     @JsonProperty("rules")
     @JsonInclude(Include.NON_NULL)
-    private List<BotAllowRule> rules = null;
+    private List<BotAllowRule> rules;
 
 
 

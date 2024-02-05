@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class ProxyConfiguration extends AviRestResource {
     @JsonProperty("host")
     @JsonInclude(Include.NON_NULL)
-    private String host = null;
+    private String host;
 
     @JsonProperty("password")
     @JsonInclude(Include.NON_NULL)
-    private String password = null;
+    private String password;
 
     @JsonProperty("port")
     @JsonInclude(Include.NON_NULL)
-    private Integer port = null;
+    private Integer port;
 
     @JsonProperty("username")
     @JsonInclude(Include.NON_NULL)
-    private String username = null;
+    private String username;
 
 
 

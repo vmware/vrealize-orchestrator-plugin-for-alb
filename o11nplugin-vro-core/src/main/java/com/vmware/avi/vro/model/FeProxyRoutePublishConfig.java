@@ -38,7 +38,7 @@ public class FeProxyRoutePublishConfig extends AviRestResource {
 
     @JsonProperty("token")
     @JsonInclude(Include.NON_NULL)
-    private String token = null;
+    private String token;
 
 
 

@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class VinfraCntlrHostUnreachableList extends AviRestResource {
     @JsonProperty("host_name")
     @JsonInclude(Include.NON_NULL)
-    private List<String> hostName = null;
+    private List<String> hostName;
 
     @JsonProperty("vcenter")
     @JsonInclude(Include.NON_NULL)
-    private String vcenter = null;
+    private String vcenter;
 
 
 

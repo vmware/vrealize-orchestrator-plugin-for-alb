@@ -26,31 +26,31 @@ import org.springframework.stereotype.Service;
 public class PoolDeploymentUpdateInfo extends AviRestResource {
     @JsonProperty("deployment_state")
     @JsonInclude(Include.NON_NULL)
-    private String deploymentState = null;
+    private String deploymentState;
 
     @JsonProperty("evaluation_duration")
     @JsonInclude(Include.NON_NULL)
-    private Integer evaluationDuration = null;
+    private Integer evaluationDuration;
 
     @JsonProperty("ratio")
     @JsonInclude(Include.NON_NULL)
-    private Integer ratio = null;
+    private Integer ratio;
 
     @JsonProperty("results")
     @JsonInclude(Include.NON_NULL)
-    private List<PGDeploymentRuleResult> results = null;
+    private List<PGDeploymentRuleResult> results;
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("webhook_reason")
     @JsonInclude(Include.NON_NULL)
-    private String webhookReason = null;
+    private String webhookReason;
 
     @JsonProperty("webhook_result")
     @JsonInclude(Include.NON_NULL)
-    private Boolean webhookResult = null;
+    private Boolean webhookResult;
 
 
 

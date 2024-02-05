@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class URIParamToken extends AviRestResource {
     @JsonProperty("end_index")
     @JsonInclude(Include.NON_NULL)
-    private Integer endIndex = null;
+    private Integer endIndex;
 
     @JsonProperty("start_index")
     @JsonInclude(Include.NON_NULL)
-    private Integer startIndex = null;
+    private Integer startIndex;
 
     @JsonProperty("str_value")
     @JsonInclude(Include.NON_NULL)
-    private String strValue = null;
+    private String strValue;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
 
 

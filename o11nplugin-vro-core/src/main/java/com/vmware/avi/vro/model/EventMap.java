@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class EventMap extends AviRestResource {
     @JsonProperty("nodes_events")
     @JsonInclude(Include.NON_NULL)
-    private List<UpgradeEvent> nodesEvents = null;
+    private List<UpgradeEvent> nodesEvents;
 
     @JsonProperty("sub_events")
     @JsonInclude(Include.NON_NULL)
-    private List<UpgradeEvent> subEvents = null;
+    private List<UpgradeEvent> subEvents;
 
     @JsonProperty("task")
     @JsonInclude(Include.NON_NULL)
-    private String task = null;
+    private String task;
 
     @JsonProperty("task_name")
     @JsonInclude(Include.NON_NULL)
-    private String taskName = null;
+    private String taskName;
 
 
 

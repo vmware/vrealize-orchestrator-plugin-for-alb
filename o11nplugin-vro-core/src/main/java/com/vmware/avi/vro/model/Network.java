@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class Network extends AviRestResource {
     @JsonProperty("attrs")
     @JsonInclude(Include.NON_NULL)
-    private List<KeyValue> attrs = null;
+    private List<KeyValue> attrs;
 
     @JsonProperty("cloud_ref")
     @JsonInclude(Include.NON_NULL)
-    private String cloudRef = null;
+    private String cloudRef;
 
     @JsonProperty("configured_subnets")
     @JsonInclude(Include.NON_NULL)
-    private List<Subnet> configuredSubnets = null;
+    private List<Subnet> configuredSubnets;
 
     @JsonProperty("dhcp_enabled")
     @JsonInclude(Include.NON_NULL)
@@ -50,11 +50,11 @@ public class Network extends AviRestResource {
 
     @JsonProperty("markers")
     @JsonInclude(Include.NON_NULL)
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("synced_from_se")
     @JsonInclude(Include.NON_NULL)
@@ -62,7 +62,7 @@ public class Network extends AviRestResource {
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -70,7 +70,7 @@ public class Network extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("vcenter_dvs")
     @JsonInclude(Include.NON_NULL)
@@ -82,7 +82,7 @@ public class Network extends AviRestResource {
 
     @JsonProperty("vrf_context_ref")
     @JsonInclude(Include.NON_NULL)
-    private String vrfContextRef = null;
+    private String vrfContextRef;
 
 
 

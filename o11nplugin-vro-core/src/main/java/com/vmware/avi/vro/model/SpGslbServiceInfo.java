@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class SpGslbServiceInfo extends AviRestResource {
     @JsonProperty("fqdns")
     @JsonInclude(Include.NON_NULL)
-    private List<String> fqdns = null;
+    private List<String> fqdns;
 
     @JsonProperty("gs_ref")
     @JsonInclude(Include.NON_NULL)
-    private String gsRef = null;
+    private String gsRef;
 
 
 

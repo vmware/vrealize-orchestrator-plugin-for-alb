@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class ConfigVersionStatus extends AviRestResource {
     @JsonProperty("event_type")
     @JsonInclude(Include.NON_NULL)
-    private String eventType = null;
+    private String eventType;
 
     @JsonProperty("obj_name")
     @JsonInclude(Include.NON_NULL)
-    private String objName = null;
+    private String objName;
 
     @JsonProperty("obj_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String objUuid = null;
+    private String objUuid;
 
 
 

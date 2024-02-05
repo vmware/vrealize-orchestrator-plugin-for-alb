@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class TencentZoneNetwork extends AviRestResource {
     @JsonProperty("availability_zone")
     @JsonInclude(Include.NON_NULL)
-    private String availabilityZone = null;
+    private String availabilityZone;
 
     @JsonProperty("usable_subnet_id")
     @JsonInclude(Include.NON_NULL)
-    private String usableSubnetId = null;
+    private String usableSubnetId;
 
 
 

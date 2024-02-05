@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class MetricsGRPCAuthFailureDetails extends AviRestResource {
     @JsonProperty("peer")
     @JsonInclude(Include.NON_NULL)
-    private String peer = null;
+    private String peer;
 
 
 

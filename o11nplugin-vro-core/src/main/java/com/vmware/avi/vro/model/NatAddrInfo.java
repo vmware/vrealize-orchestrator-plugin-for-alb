@@ -28,11 +28,11 @@ import org.springframework.stereotype.Service;
 public class NatAddrInfo extends AviRestResource {
     @JsonProperty("nat_ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr natIp = null;
+    private IpAddr natIp;
 
     @JsonProperty("nat_ip_range")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrRange natIpRange = null;
+    private IpAddrRange natIpRange;
 
 
 

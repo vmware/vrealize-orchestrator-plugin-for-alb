@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class WafPolicyAllowlist extends AviRestResource {
     @JsonProperty("rules")
     @JsonInclude(Include.NON_NULL)
-    private List<WafPolicyAllowlistRule> rules = null;
+    private List<WafPolicyAllowlistRule> rules;
 
 
 

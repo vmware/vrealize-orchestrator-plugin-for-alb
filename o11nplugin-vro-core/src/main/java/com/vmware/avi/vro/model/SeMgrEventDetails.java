@@ -27,87 +27,87 @@ import org.springframework.stereotype.Service;
 public class SeMgrEventDetails extends AviRestResource {
     @JsonProperty("cloud_name")
     @JsonInclude(Include.NON_NULL)
-    private String cloudName = null;
+    private String cloudName;
 
     @JsonProperty("cloud_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String cloudUuid = null;
+    private String cloudUuid;
 
     @JsonProperty("enable_state")
     @JsonInclude(Include.NON_NULL)
-    private String enableState = null;
+    private String enableState;
 
     @JsonProperty("gcp_info")
     @JsonInclude(Include.NON_NULL)
-    private GcpInfo gcpInfo = null;
+    private GcpInfo gcpInfo;
 
     @JsonProperty("host_name")
     @JsonInclude(Include.NON_NULL)
-    private String hostName = null;
+    private String hostName;
 
     @JsonProperty("host_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String hostUuid = null;
+    private String hostUuid;
 
     @JsonProperty("memory")
     @JsonInclude(Include.NON_NULL)
-    private Integer memory = null;
+    private Integer memory;
 
     @JsonProperty("migrate_state")
     @JsonInclude(Include.NON_NULL)
-    private String migrateState = null;
+    private String migrateState;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("new_mgmt_ip")
     @JsonInclude(Include.NON_NULL)
-    private String newMgmtIp = null;
+    private String newMgmtIp;
 
     @JsonProperty("new_mgmt_ip6")
     @JsonInclude(Include.NON_NULL)
-    private String newMgmtIp6 = null;
+    private String newMgmtIp6;
 
     @JsonProperty("old_mgmt_ip")
     @JsonInclude(Include.NON_NULL)
-    private String oldMgmtIp = null;
+    private String oldMgmtIp;
 
     @JsonProperty("old_mgmt_ip6")
     @JsonInclude(Include.NON_NULL)
-    private String oldMgmtIp6 = null;
+    private String oldMgmtIp6;
 
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("se_grp_name")
     @JsonInclude(Include.NON_NULL)
-    private String seGrpName = null;
+    private String seGrpName;
 
     @JsonProperty("se_grp_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String seGrpUuid = null;
+    private String seGrpUuid;
 
     @JsonProperty("vcpus")
     @JsonInclude(Include.NON_NULL)
-    private Integer vcpus = null;
+    private Integer vcpus;
 
     @JsonProperty("vs_name")
     @JsonInclude(Include.NON_NULL)
-    private List<String> vsName = null;
+    private List<String> vsName;
 
     @JsonProperty("vs_uuid")
     @JsonInclude(Include.NON_NULL)
-    private List<String> vsUuid = null;
+    private List<String> vsUuid;
 
     @JsonProperty("vsphere_ha_enabled")
     @JsonInclude(Include.NON_NULL)
-    private Boolean vsphereHaEnabled = null;
+    private Boolean vsphereHaEnabled;
 
     @JsonProperty("vsphere_ha_inprogress")
     @JsonInclude(Include.NON_NULL)
-    private Boolean vsphereHaInprogress = null;
+    private Boolean vsphereHaInprogress;
 
 
 

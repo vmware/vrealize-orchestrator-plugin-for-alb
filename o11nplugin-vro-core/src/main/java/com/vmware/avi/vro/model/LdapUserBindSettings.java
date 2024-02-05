@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class LdapUserBindSettings extends AviRestResource {
     @JsonProperty("dn_template")
     @JsonInclude(Include.NON_NULL)
-    private String dnTemplate = null;
+    private String dnTemplate;
 
     @JsonProperty("token")
     @JsonInclude(Include.NON_NULL)
@@ -34,11 +34,11 @@ public class LdapUserBindSettings extends AviRestResource {
 
     @JsonProperty("user_attributes")
     @JsonInclude(Include.NON_NULL)
-    private List<String> userAttributes = null;
+    private List<String> userAttributes;
 
     @JsonProperty("user_id_attribute")
     @JsonInclude(Include.NON_NULL)
-    private String userIdAttribute = null;
+    private String userIdAttribute;
 
 
 

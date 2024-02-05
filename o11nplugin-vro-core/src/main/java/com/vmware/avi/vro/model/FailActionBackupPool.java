@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class FailActionBackupPool extends AviRestResource {
     @JsonProperty("backup_pool_ref")
     @JsonInclude(Include.NON_NULL)
-    private String backupPoolRef = null;
+    private String backupPoolRef;
 
 
 

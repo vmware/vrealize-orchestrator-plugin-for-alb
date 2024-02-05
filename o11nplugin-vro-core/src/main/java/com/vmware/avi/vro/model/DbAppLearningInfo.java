@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class DbAppLearningInfo extends AviRestResource {
     @JsonProperty("app_id")
     @JsonInclude(Include.NON_NULL)
-    private String appId = null;
+    private String appId;
 
     @JsonProperty("uri_info")
     @JsonInclude(Include.NON_NULL)
-    private List<URIInfo> uriInfo = null;
+    private List<URIInfo> uriInfo;
 
     @JsonProperty("vs_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String vsUuid = null;
+    private String vsUuid;
 
 
 

@@ -30,11 +30,11 @@ public class WafRuleMatchData extends AviRestResource {
 
     @JsonProperty("match_element")
     @JsonInclude(Include.NON_NULL)
-    private String matchElement = null;
+    private String matchElement;
 
     @JsonProperty("match_value")
     @JsonInclude(Include.NON_NULL)
-    private String matchValue = null;
+    private String matchValue;
 
     @JsonProperty("match_value_offset")
     @JsonInclude(Include.NON_NULL)

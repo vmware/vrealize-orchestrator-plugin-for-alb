@@ -26,31 +26,31 @@ import org.springframework.stereotype.Service;
 public class MustChecksInfo extends AviRestResource {
     @JsonProperty("check_code")
     @JsonInclude(Include.NON_NULL)
-    private String checkCode = null;
+    private String checkCode;
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("details")
     @JsonInclude(Include.NON_NULL)
-    private List<String> details = null;
+    private List<String> details;
 
     @JsonProperty("duration")
     @JsonInclude(Include.NON_NULL)
-    private Integer duration = null;
+    private Integer duration;
 
     @JsonProperty("end_time")
     @JsonInclude(Include.NON_NULL)
-    private String endTime = null;
+    private String endTime;
 
     @JsonProperty("start_time")
     @JsonInclude(Include.NON_NULL)
-    private String startTime = null;
+    private String startTime;
 
     @JsonProperty("state")
     @JsonInclude(Include.NON_NULL)
-    private String state = null;
+    private String state;
 
 
 

@@ -26,23 +26,23 @@ import org.springframework.stereotype.Service;
 public class HttpCacheObjFilter extends AviRestResource {
     @JsonProperty("key")
     @JsonInclude(Include.NON_NULL)
-    private String key = null;
+    private String key;
 
     @JsonProperty("raw_key")
     @JsonInclude(Include.NON_NULL)
-    private String rawKey = null;
+    private String rawKey;
 
     @JsonProperty("resource_name")
     @JsonInclude(Include.NON_NULL)
-    private String resourceName = null;
+    private String resourceName;
 
     @JsonProperty("resource_type")
     @JsonInclude(Include.NON_NULL)
-    private String resourceType = null;
+    private String resourceType;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
 
 

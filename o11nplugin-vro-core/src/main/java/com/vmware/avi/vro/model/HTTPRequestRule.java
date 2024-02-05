@@ -30,7 +30,7 @@ import org.springframework.stereotype.Service;
 public class HTTPRequestRule extends AviRestResource {
     @JsonProperty("all_headers")
     @JsonInclude(Include.NON_NULL)
-    private Boolean allHeaders = null;
+    private Boolean allHeaders;
 
     @JsonProperty("enable")
     @JsonInclude(Include.NON_NULL)
@@ -38,35 +38,35 @@ public class HTTPRequestRule extends AviRestResource {
 
     @JsonProperty("hdr_action")
     @JsonInclude(Include.NON_NULL)
-    private List<HTTPHdrAction> hdrAction = null;
+    private List<HTTPHdrAction> hdrAction;
 
     @JsonProperty("index")
     @JsonInclude(Include.NON_NULL)
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("log")
     @JsonInclude(Include.NON_NULL)
-    private Boolean log = null;
+    private Boolean log;
 
     @JsonProperty("match")
     @JsonInclude(Include.NON_NULL)
-    private MatchTarget match = null;
+    private MatchTarget match;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("redirect_action")
     @JsonInclude(Include.NON_NULL)
-    private HTTPRedirectAction redirectAction = null;
+    private HTTPRedirectAction redirectAction;
 
     @JsonProperty("rewrite_url_action")
     @JsonInclude(Include.NON_NULL)
-    private HTTPRewriteURLAction rewriteUrlAction = null;
+    private HTTPRewriteURLAction rewriteUrlAction;
 
     @JsonProperty("switching_action")
     @JsonInclude(Include.NON_NULL)
-    private HTTPSwitchingAction switchingAction = null;
+    private HTTPSwitchingAction switchingAction;
 
 
 

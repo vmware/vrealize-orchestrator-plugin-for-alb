@@ -2,6 +2,7 @@ package com.vmware.avi.vro.model;
 
 import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -144,7 +145,7 @@ public class ControllerProperties extends AviRestResource {
 
     @JsonProperty("dummy")
     @JsonInclude(Include.NON_NULL)
-    private Integer dummy = null;
+    private Integer dummy;
 
     @JsonProperty("edit_system_limits")
     @JsonInclude(Include.NON_NULL)
@@ -162,9 +163,12 @@ public class ControllerProperties extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean enablePerProcessStop = false;
 
+    @JsonIgnore
+    private Boolean enableResmgrLogCachePrint = false;
+
     @JsonProperty("false_positive_learning_config")
     @JsonInclude(Include.NON_NULL)
-    private FalsePositiveLearningConfig falsePositiveLearningConfig = null;
+    private FalsePositiveLearningConfig falsePositiveLearningConfig;
 
     @JsonProperty("fatal_error_lease_time")
     @JsonInclude(Include.NON_NULL)
@@ -180,7 +184,7 @@ public class ControllerProperties extends AviRestResource {
 
     @JsonProperty("file_reference_mappings")
     @JsonInclude(Include.NON_NULL)
-    private List<FileReferenceMapping> fileReferenceMappings = null;
+    private List<FileReferenceMapping> fileReferenceMappings;
 
     @JsonProperty("gslb_purge_batch_size")
     @JsonInclude(Include.NON_NULL)
@@ -236,7 +240,7 @@ public class ControllerProperties extends AviRestResource {
 
     @JsonProperty("portal_token")
     @JsonInclude(Include.NON_NULL)
-    private String portalToken = null;
+    private String portalToken;
 
     @JsonProperty("postgres_vacuum_period")
     @JsonInclude(Include.NON_NULL)
@@ -264,7 +268,7 @@ public class ControllerProperties extends AviRestResource {
 
     @JsonProperty("safenet_hsm_version")
     @JsonInclude(Include.NON_NULL)
-    private String safenetHsmVersion = null;
+    private String safenetHsmVersion;
 
     @JsonProperty("se_create_timeout")
     @JsonInclude(Include.NON_NULL)
@@ -344,7 +348,7 @@ public class ControllerProperties extends AviRestResource {
 
     @JsonProperty("ssl_certificate_expiry_warning_days")
     @JsonInclude(Include.NON_NULL)
-    private List<Integer> sslCertificateExpiryWarningDays = null;
+    private List<Integer> sslCertificateExpiryWarningDays;
 
     @JsonProperty("system_report_limit")
     @JsonInclude(Include.NON_NULL)
@@ -384,11 +388,11 @@ public class ControllerProperties extends AviRestResource {
 
     @JsonProperty("user_agent_cache_config")
     @JsonInclude(Include.NON_NULL)
-    private UserAgentCacheConfig userAgentCacheConfig = null;
+    private UserAgentCacheConfig userAgentCacheConfig;
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("vnic_op_fail_time")
     @JsonInclude(Include.NON_NULL)
@@ -1376,6 +1380,34 @@ public class ControllerProperties extends AviRestResource {
   @VsoMethod
   public void setEnablePerProcessStop(Boolean  enablePerProcessStop) {
     this.enablePerProcessStop = enablePerProcessStop;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Enable printing of cached logs inside resource manager.
+   * Used for debugging purposes only.
+   * Field introduced in 20.1.6.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return enableResmgrLogCachePrint
+   */
+  @VsoMethod
+  public Boolean getEnableResmgrLogCachePrint() {
+    return enableResmgrLogCachePrint;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable printing of cached logs inside resource manager.
+   * Used for debugging purposes only.
+   * Field introduced in 20.1.6.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param enableResmgrLogCachePrint set the enableResmgrLogCachePrint.
+   */
+  @VsoMethod
+  public void setEnableResmgrLogCachePrint(Boolean  enableResmgrLogCachePrint) {
+    this.enableResmgrLogCachePrint = enableResmgrLogCachePrint;
   }
 
   /**
@@ -3469,6 +3501,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.resmgrLogCachingPeriod, objControllerProperties.resmgrLogCachingPeriod)&&
   Objects.equals(this.userAgentCacheConfig, objControllerProperties.userAgentCacheConfig)&&
   Objects.equals(this.delOfflineSeAfterRebootDelay, objControllerProperties.delOfflineSeAfterRebootDelay)&&
+  Objects.equals(this.enableResmgrLogCachePrint, objControllerProperties.enableResmgrLogCachePrint)&&
   Objects.equals(this.enablePerProcessStop, objControllerProperties.enablePerProcessStop)&&
   Objects.equals(this.checkVsvipFqdnSyntax, objControllerProperties.checkVsvipFqdnSyntax)&&
   Objects.equals(this.vsphereHaTimerInterval, objControllerProperties.vsphereHaTimerInterval)&&
@@ -3535,6 +3568,7 @@ public String toString() {
         sb.append("    enableApiSharding: ").append(toIndentedString(enableApiSharding)).append("\n");
         sb.append("    enableMemoryBalancer: ").append(toIndentedString(enableMemoryBalancer)).append("\n");
         sb.append("    enablePerProcessStop: ").append(toIndentedString(enablePerProcessStop)).append("\n");
+        sb.append("    enableResmgrLogCachePrint: ").append(toIndentedString(enableResmgrLogCachePrint)).append("\n");
         sb.append("    falsePositiveLearningConfig: ").append(toIndentedString(falsePositiveLearningConfig)).append("\n");
         sb.append("    fatalErrorLeaseTime: ").append(toIndentedString(fatalErrorLeaseTime)).append("\n");
         sb.append("    federatedDatastoreCleanupDuration: ").append(toIndentedString(federatedDatastoreCleanupDuration)).append("\n");

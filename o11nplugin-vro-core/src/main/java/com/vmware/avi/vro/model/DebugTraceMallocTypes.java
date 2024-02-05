@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class DebugTraceMallocTypes extends AviRestResource {
     @JsonProperty("malloc_type_index")
     @JsonInclude(Include.NON_NULL)
-    private Integer mallocTypeIndex = null;
+    private Integer mallocTypeIndex;
 
 
 

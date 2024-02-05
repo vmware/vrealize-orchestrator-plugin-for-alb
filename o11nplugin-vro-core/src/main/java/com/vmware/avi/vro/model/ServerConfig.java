@@ -29,19 +29,19 @@ import org.springframework.stereotype.Service;
 public class ServerConfig extends AviRestResource {
     @JsonProperty("def_port")
     @JsonInclude(Include.NON_NULL)
-    private Boolean defPort = null;
+    private Boolean defPort;
 
     @JsonProperty("hostname")
     @JsonInclude(Include.NON_NULL)
-    private String hostname = null;
+    private String hostname;
 
     @JsonProperty("ip_addr")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr ipAddr = null;
+    private IpAddr ipAddr;
 
     @JsonProperty("is_enabled")
     @JsonInclude(Include.NON_NULL)
-    private Boolean isEnabled = null;
+    private Boolean isEnabled;
 
     @JsonProperty("last_state")
     @JsonInclude(Include.NON_NULL)
@@ -49,19 +49,19 @@ public class ServerConfig extends AviRestResource {
 
     @JsonProperty("location")
     @JsonInclude(Include.NON_NULL)
-    private GeoLocation location = null;
+    private GeoLocation location;
 
     @JsonProperty("oper_status")
     @JsonInclude(Include.NON_NULL)
-    private OperationalStatus operStatus = null;
+    private OperationalStatus operStatus;
 
     @JsonProperty("port")
     @JsonInclude(Include.NON_NULL)
-    private Integer port = null;
+    private Integer port;
 
     @JsonProperty("propogate_state")
     @JsonInclude(Include.NON_NULL)
-    private Boolean propogateState = null;
+    private Boolean propogateState;
 
     @JsonProperty("timer_exists")
     @JsonInclude(Include.NON_NULL)

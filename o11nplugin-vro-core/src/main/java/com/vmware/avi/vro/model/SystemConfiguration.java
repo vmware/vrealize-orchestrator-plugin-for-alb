@@ -38,7 +38,7 @@ import org.springframework.stereotype.Service;
 public class SystemConfiguration extends AviRestResource {
     @JsonProperty("admin_auth_configuration")
     @JsonInclude(Include.NON_NULL)
-    private AdminAuthConfiguration adminAuthConfiguration = null;
+    private AdminAuthConfiguration adminAuthConfiguration;
 
     @JsonProperty("common_criteria_mode")
     @JsonInclude(Include.NON_NULL)
@@ -46,7 +46,7 @@ public class SystemConfiguration extends AviRestResource {
 
     @JsonProperty("controller_analytics_policy")
     @JsonInclude(Include.NON_NULL)
-    private ControllerAnalyticsPolicy controllerAnalyticsPolicy = null;
+    private ControllerAnalyticsPolicy controllerAnalyticsPolicy;
 
     @JsonProperty("default_license_tier")
     @JsonInclude(Include.NON_NULL)
@@ -54,11 +54,11 @@ public class SystemConfiguration extends AviRestResource {
 
     @JsonProperty("dns_configuration")
     @JsonInclude(Include.NON_NULL)
-    private DNSConfiguration dnsConfiguration = null;
+    private DNSConfiguration dnsConfiguration;
 
     @JsonProperty("dns_virtualservice_refs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> dnsVirtualserviceRefs = null;
+    private List<String> dnsVirtualserviceRefs;
 
     @JsonProperty("docker_mode")
     @JsonInclude(Include.NON_NULL)
@@ -66,7 +66,7 @@ public class SystemConfiguration extends AviRestResource {
 
     @JsonProperty("email_configuration")
     @JsonInclude(Include.NON_NULL)
-    private EmailConfiguration emailConfiguration = null;
+    private EmailConfiguration emailConfiguration;
 
     @JsonProperty("enable_cors")
     @JsonInclude(Include.NON_NULL)
@@ -78,35 +78,35 @@ public class SystemConfiguration extends AviRestResource {
 
     @JsonProperty("global_tenant_config")
     @JsonInclude(Include.NON_NULL)
-    private TenantConfiguration globalTenantConfig = null;
+    private TenantConfiguration globalTenantConfig;
 
     @JsonProperty("host_key_algorithm_exclude")
     @JsonInclude(Include.NON_NULL)
-    private String hostKeyAlgorithmExclude = null;
+    private String hostKeyAlgorithmExclude;
 
     @JsonProperty("kex_algorithm_exclude")
     @JsonInclude(Include.NON_NULL)
-    private String kexAlgorithmExclude = null;
+    private String kexAlgorithmExclude;
 
     @JsonProperty("linux_configuration")
     @JsonInclude(Include.NON_NULL)
-    private LinuxConfiguration linuxConfiguration = null;
+    private LinuxConfiguration linuxConfiguration;
 
     @JsonProperty("mgmt_ip_access_control")
     @JsonInclude(Include.NON_NULL)
-    private MgmtIpAccessControl mgmtIpAccessControl = null;
+    private MgmtIpAccessControl mgmtIpAccessControl;
 
     @JsonProperty("ntp_configuration")
     @JsonInclude(Include.NON_NULL)
-    private NTPConfiguration ntpConfiguration = null;
+    private NTPConfiguration ntpConfiguration;
 
     @JsonProperty("portal_configuration")
     @JsonInclude(Include.NON_NULL)
-    private PortalConfiguration portalConfiguration = null;
+    private PortalConfiguration portalConfiguration;
 
     @JsonProperty("proxy_configuration")
     @JsonInclude(Include.NON_NULL)
-    private ProxyConfiguration proxyConfiguration = null;
+    private ProxyConfiguration proxyConfiguration;
 
     @JsonProperty("rekey_time_limit")
     @JsonInclude(Include.NON_NULL)
@@ -118,19 +118,19 @@ public class SystemConfiguration extends AviRestResource {
 
     @JsonProperty("secure_channel_configuration")
     @JsonInclude(Include.NON_NULL)
-    private SecureChannelConfiguration secureChannelConfiguration = null;
+    private SecureChannelConfiguration secureChannelConfiguration;
 
     @JsonProperty("snmp_configuration")
     @JsonInclude(Include.NON_NULL)
-    private SnmpConfiguration snmpConfiguration = null;
+    private SnmpConfiguration snmpConfiguration;
 
     @JsonProperty("ssh_ciphers")
     @JsonInclude(Include.NON_NULL)
-    private List<String> sshCiphers = null;
+    private List<String> sshCiphers;
 
     @JsonProperty("ssh_hmacs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> sshHmacs = null;
+    private List<String> sshHmacs;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -138,7 +138,7 @@ public class SystemConfiguration extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("welcome_workflow_complete")
     @JsonInclude(Include.NON_NULL)

@@ -27,7 +27,7 @@ import org.springframework.stereotype.Service;
 public class HealthMonitorHttp extends AviRestResource {
     @JsonProperty("auth_type")
     @JsonInclude(Include.NON_NULL)
-    private String authType = null;
+    private String authType;
 
     @JsonProperty("exact_http_request")
     @JsonInclude(Include.NON_NULL)
@@ -39,31 +39,31 @@ public class HealthMonitorHttp extends AviRestResource {
 
     @JsonProperty("http_request_body")
     @JsonInclude(Include.NON_NULL)
-    private String httpRequestBody = null;
+    private String httpRequestBody;
 
     @JsonProperty("http_response")
     @JsonInclude(Include.NON_NULL)
-    private String httpResponse = null;
+    private String httpResponse;
 
     @JsonProperty("http_response_code")
     @JsonInclude(Include.NON_NULL)
-    private List<String> httpResponseCode = null;
+    private List<String> httpResponseCode;
 
     @JsonProperty("maintenance_code")
     @JsonInclude(Include.NON_NULL)
-    private List<Integer> maintenanceCode = null;
+    private List<Integer> maintenanceCode;
 
     @JsonProperty("maintenance_response")
     @JsonInclude(Include.NON_NULL)
-    private String maintenanceResponse = null;
+    private String maintenanceResponse;
 
     @JsonProperty("response_size")
     @JsonInclude(Include.NON_NULL)
-    private Integer responseSize = null;
+    private Integer responseSize;
 
     @JsonProperty("ssl_attributes")
     @JsonInclude(Include.NON_NULL)
-    private HealthMonitorSSLAttributes sslAttributes = null;
+    private HealthMonitorSSLAttributes sslAttributes;
 
 
 

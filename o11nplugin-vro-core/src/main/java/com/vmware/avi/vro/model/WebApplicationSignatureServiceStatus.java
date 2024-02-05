@@ -28,15 +28,15 @@ import org.springframework.stereotype.Service;
 public class WebApplicationSignatureServiceStatus extends AviRestResource {
     @JsonProperty("error")
     @JsonInclude(Include.NON_NULL)
-    private String error = null;
+    private String error;
 
     @JsonProperty("last_successful_update_check")
     @JsonInclude(Include.NON_NULL)
-    private TimeStamp lastSuccessfulUpdateCheck = null;
+    private TimeStamp lastSuccessfulUpdateCheck;
 
     @JsonProperty("upstream_sync_timestamp")
     @JsonInclude(Include.NON_NULL)
-    private TimeStamp upstreamSyncTimestamp = null;
+    private TimeStamp upstreamSyncTimestamp;
 
 
 

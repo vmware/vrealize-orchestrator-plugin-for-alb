@@ -30,7 +30,7 @@ public class HealthMonitorDNS extends AviRestResource {
 
     @JsonProperty("query_name")
     @JsonInclude(Include.NON_NULL)
-    private String queryName = null;
+    private String queryName;
 
     @JsonProperty("rcode")
     @JsonInclude(Include.NON_NULL)
@@ -42,7 +42,7 @@ public class HealthMonitorDNS extends AviRestResource {
 
     @JsonProperty("response_string")
     @JsonInclude(Include.NON_NULL)
-    private String responseString = null;
+    private String responseString;
 
 
 

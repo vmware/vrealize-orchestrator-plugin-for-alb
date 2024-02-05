@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class URIInfo extends AviRestResource {
     @JsonProperty("param_info")
     @JsonInclude(Include.NON_NULL)
-    private List<ParamInfo> paramInfo = null;
+    private List<ParamInfo> paramInfo;
 
     @JsonProperty("uri_hits")
     @JsonInclude(Include.NON_NULL)
-    private Integer uriHits = null;
+    private Integer uriHits;
 
     @JsonProperty("uri_key")
     @JsonInclude(Include.NON_NULL)
-    private String uriKey = null;
+    private String uriKey;
 
 
 

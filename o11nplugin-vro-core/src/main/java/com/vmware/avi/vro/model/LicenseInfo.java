@@ -26,23 +26,23 @@ import org.springframework.stereotype.Service;
 public class LicenseInfo extends AviRestResource {
     @JsonProperty("last_updated")
     @JsonInclude(Include.NON_NULL)
-    private Integer lastUpdated = null;
+    private Integer lastUpdated;
 
     @JsonProperty("service_cores")
     @JsonInclude(Include.NON_NULL)
-    private Float serviceCores = null;
+    private Float serviceCores;
 
     @JsonProperty("tenant_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String tenantUuid = null;
+    private String tenantUuid;
 
     @JsonProperty("tier")
     @JsonInclude(Include.NON_NULL)
-    private String tier = null;
+    private String tier;
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

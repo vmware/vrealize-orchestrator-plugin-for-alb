@@ -26,27 +26,27 @@ import org.springframework.stereotype.Service;
 public class GcpInfo extends AviRestResource {
     @JsonProperty("hostname")
     @JsonInclude(Include.NON_NULL)
-    private String hostname = null;
+    private String hostname;
 
     @JsonProperty("machine_type")
     @JsonInclude(Include.NON_NULL)
-    private String machineType = null;
+    private String machineType;
 
     @JsonProperty("network")
     @JsonInclude(Include.NON_NULL)
-    private String network = null;
+    private String network;
 
     @JsonProperty("project")
     @JsonInclude(Include.NON_NULL)
-    private String project = null;
+    private String project;
 
     @JsonProperty("subnet")
     @JsonInclude(Include.NON_NULL)
-    private String subnet = null;
+    private String subnet;
 
     @JsonProperty("zone")
     @JsonInclude(Include.NON_NULL)
-    private String zone = null;
+    private String zone;
 
 
 

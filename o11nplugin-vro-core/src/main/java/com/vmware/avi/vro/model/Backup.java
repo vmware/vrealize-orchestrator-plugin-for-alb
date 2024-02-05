@@ -26,31 +26,31 @@ import org.springframework.stereotype.Service;
 public class Backup extends AviRestResource {
     @JsonProperty("backup_config_ref")
     @JsonInclude(Include.NON_NULL)
-    private String backupConfigRef = null;
+    private String backupConfigRef;
 
     @JsonProperty("file_name")
     @JsonInclude(Include.NON_NULL)
-    private String fileName = null;
+    private String fileName;
 
     @JsonProperty("local_file_url")
     @JsonInclude(Include.NON_NULL)
-    private String localFileUrl = null;
+    private String localFileUrl;
 
     @JsonProperty("remote_file_url")
     @JsonInclude(Include.NON_NULL)
-    private String remoteFileUrl = null;
+    private String remoteFileUrl;
 
     @JsonProperty("scheduler_ref")
     @JsonInclude(Include.NON_NULL)
-    private String schedulerRef = null;
+    private String schedulerRef;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("timestamp")
     @JsonInclude(Include.NON_NULL)
-    private String timestamp = null;
+    private String timestamp;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -58,7 +58,7 @@ public class Backup extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

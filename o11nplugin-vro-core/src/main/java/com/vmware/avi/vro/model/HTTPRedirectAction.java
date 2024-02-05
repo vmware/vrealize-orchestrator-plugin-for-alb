@@ -28,11 +28,11 @@ import org.springframework.stereotype.Service;
 public class HTTPRedirectAction extends AviRestResource {
     @JsonProperty("add_string")
     @JsonInclude(Include.NON_NULL)
-    private String addString = null;
+    private String addString;
 
     @JsonProperty("host")
     @JsonInclude(Include.NON_NULL)
-    private URIParam host = null;
+    private URIParam host;
 
     @JsonProperty("keep_query")
     @JsonInclude(Include.NON_NULL)
@@ -40,15 +40,15 @@ public class HTTPRedirectAction extends AviRestResource {
 
     @JsonProperty("path")
     @JsonInclude(Include.NON_NULL)
-    private URIParam path = null;
+    private URIParam path;
 
     @JsonProperty("port")
     @JsonInclude(Include.NON_NULL)
-    private Integer port = null;
+    private Integer port;
 
     @JsonProperty("protocol")
     @JsonInclude(Include.NON_NULL)
-    private String protocol = null;
+    private String protocol;
 
     @JsonProperty("status_code")
     @JsonInclude(Include.NON_NULL)

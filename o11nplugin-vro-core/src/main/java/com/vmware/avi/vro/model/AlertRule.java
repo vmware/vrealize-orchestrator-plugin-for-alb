@@ -27,15 +27,15 @@ import org.springframework.stereotype.Service;
 public class AlertRule extends AviRestResource {
     @JsonProperty("conn_app_log_rule")
     @JsonInclude(Include.NON_NULL)
-    private AlertFilter connAppLogRule = null;
+    private AlertFilter connAppLogRule;
 
     @JsonProperty("event_match_filter")
     @JsonInclude(Include.NON_NULL)
-    private String eventMatchFilter = null;
+    private String eventMatchFilter;
 
     @JsonProperty("metrics_rule")
     @JsonInclude(Include.NON_NULL)
-    private List<AlertRuleMetric> metricsRule = null;
+    private List<AlertRuleMetric> metricsRule;
 
     @JsonProperty("operator")
     @JsonInclude(Include.NON_NULL)
@@ -43,7 +43,7 @@ public class AlertRule extends AviRestResource {
 
     @JsonProperty("sys_event_rule")
     @JsonInclude(Include.NON_NULL)
-    private List<AlertRuleEvent> sysEventRule = null;
+    private List<AlertRuleEvent> sysEventRule;
 
 
 

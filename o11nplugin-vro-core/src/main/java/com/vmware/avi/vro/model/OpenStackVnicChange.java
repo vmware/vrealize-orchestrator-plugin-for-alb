@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class OpenStackVnicChange extends AviRestResource {
     @JsonProperty("error_string")
     @JsonInclude(Include.NON_NULL)
-    private String errorString = null;
+    private String errorString;
 
     @JsonProperty("mac_addrs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> macAddrs = null;
+    private List<String> macAddrs;
 
     @JsonProperty("networks")
     @JsonInclude(Include.NON_NULL)
-    private List<String> networks = null;
+    private List<String> networks;
 
     @JsonProperty("se_vm_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String seVmUuid = null;
+    private String seVmUuid;
 
 
 

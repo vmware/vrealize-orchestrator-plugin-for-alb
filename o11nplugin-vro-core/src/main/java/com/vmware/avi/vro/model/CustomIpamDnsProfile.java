@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class CustomIpamDnsProfile extends AviRestResource {
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("script_params")
     @JsonInclude(Include.NON_NULL)
-    private List<CustomParams> scriptParams = null;
+    private List<CustomParams> scriptParams;
 
     @JsonProperty("script_uri")
     @JsonInclude(Include.NON_NULL)
-    private String scriptUri = null;
+    private String scriptUri;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -46,7 +46,7 @@ public class CustomIpamDnsProfile extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

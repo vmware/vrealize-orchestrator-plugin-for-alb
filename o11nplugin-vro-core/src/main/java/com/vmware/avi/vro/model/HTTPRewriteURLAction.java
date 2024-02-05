@@ -29,15 +29,15 @@ import org.springframework.stereotype.Service;
 public class HTTPRewriteURLAction extends AviRestResource {
     @JsonProperty("host_hdr")
     @JsonInclude(Include.NON_NULL)
-    private URIParam hostHdr = null;
+    private URIParam hostHdr;
 
     @JsonProperty("path")
     @JsonInclude(Include.NON_NULL)
-    private URIParam path = null;
+    private URIParam path;
 
     @JsonProperty("query")
     @JsonInclude(Include.NON_NULL)
-    private URIParamQuery query = null;
+    private URIParamQuery query;
 
 
 

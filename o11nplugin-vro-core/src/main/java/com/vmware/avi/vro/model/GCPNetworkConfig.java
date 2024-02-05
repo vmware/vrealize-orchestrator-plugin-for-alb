@@ -29,19 +29,19 @@ import org.springframework.stereotype.Service;
 public class GCPNetworkConfig extends AviRestResource {
     @JsonProperty("config")
     @JsonInclude(Include.NON_NULL)
-    private String config = null;
+    private String config;
 
     @JsonProperty("inband")
     @JsonInclude(Include.NON_NULL)
-    private GCPInBandManagement inband = null;
+    private GCPInBandManagement inband;
 
     @JsonProperty("one_arm")
     @JsonInclude(Include.NON_NULL)
-    private GCPOneArmMode oneArm = null;
+    private GCPOneArmMode oneArm;
 
     @JsonProperty("two_arm")
     @JsonInclude(Include.NON_NULL)
-    private GCPTwoArmMode twoArm = null;
+    private GCPTwoArmMode twoArm;
 
 
 

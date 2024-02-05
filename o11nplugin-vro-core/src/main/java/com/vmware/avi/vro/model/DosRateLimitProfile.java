@@ -28,11 +28,11 @@ import org.springframework.stereotype.Service;
 public class DosRateLimitProfile extends AviRestResource {
     @JsonProperty("dos_profile")
     @JsonInclude(Include.NON_NULL)
-    private DosThresholdProfile dosProfile = null;
+    private DosThresholdProfile dosProfile;
 
     @JsonProperty("rl_profile")
     @JsonInclude(Include.NON_NULL)
-    private RateLimiterProfile rlProfile = null;
+    private RateLimiterProfile rlProfile;
 
 
 

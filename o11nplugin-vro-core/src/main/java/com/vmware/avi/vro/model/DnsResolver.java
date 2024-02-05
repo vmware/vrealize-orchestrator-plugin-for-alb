@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class DnsResolver extends AviRestResource {
     @JsonProperty("fixed_ttl")
     @JsonInclude(Include.NON_NULL)
-    private Integer fixedTtl = null;
+    private Integer fixedTtl;
 
     @JsonProperty("min_ttl")
     @JsonInclude(Include.NON_NULL)
@@ -34,11 +34,11 @@ public class DnsResolver extends AviRestResource {
 
     @JsonProperty("nameserver_ips")
     @JsonInclude(Include.NON_NULL)
-    private List<IpAddr> nameserverIps = null;
+    private List<IpAddr> nameserverIps;
 
     @JsonProperty("resolver_name")
     @JsonInclude(Include.NON_NULL)
-    private String resolverName = null;
+    private String resolverName;
 
     @JsonProperty("use_mgmt")
     @JsonInclude(Include.NON_NULL)

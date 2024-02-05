@@ -28,19 +28,19 @@ import org.springframework.stereotype.Service;
 public class HTTPSecurityActionRateProfile extends AviRestResource {
     @JsonProperty("action")
     @JsonInclude(Include.NON_NULL)
-    private RateLimiterAction action = null;
+    private RateLimiterAction action;
 
     @JsonProperty("per_client_ip")
     @JsonInclude(Include.NON_NULL)
-    private Boolean perClientIp = null;
+    private Boolean perClientIp;
 
     @JsonProperty("per_uri_path")
     @JsonInclude(Include.NON_NULL)
-    private Boolean perUriPath = null;
+    private Boolean perUriPath;
 
     @JsonProperty("rate_limiter")
     @JsonInclude(Include.NON_NULL)
-    private RateLimiter rateLimiter = null;
+    private RateLimiter rateLimiter;
 
 
 

@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class AppHdr extends AviRestResource {
     @JsonProperty("hdr_match_case")
     @JsonInclude(Include.NON_NULL)
-    private String hdrMatchCase = null;
+    private String hdrMatchCase;
 
     @JsonProperty("hdr_name")
     @JsonInclude(Include.NON_NULL)
-    private String hdrName = null;
+    private String hdrName;
 
     @JsonProperty("hdr_string_op")
     @JsonInclude(Include.NON_NULL)
-    private String hdrStringOp = null;
+    private String hdrStringOp;
 
 
 

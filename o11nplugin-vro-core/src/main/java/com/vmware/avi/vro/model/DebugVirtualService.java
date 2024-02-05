@@ -34,23 +34,23 @@ import org.springframework.stereotype.Service;
 public class DebugVirtualService extends AviRestResource {
     @JsonProperty("capture")
     @JsonInclude(Include.NON_NULL)
-    private Boolean capture = null;
+    private Boolean capture;
 
     @JsonProperty("capture_filters")
     @JsonInclude(Include.NON_NULL)
-    private CaptureFilters captureFilters = null;
+    private CaptureFilters captureFilters;
 
     @JsonProperty("capture_params")
     @JsonInclude(Include.NON_NULL)
-    private DebugVirtualServiceCapture captureParams = null;
+    private DebugVirtualServiceCapture captureParams;
 
     @JsonProperty("capture_pkt_filter")
     @JsonInclude(Include.NON_NULL)
-    private CapturePacketFilter capturePktFilter = null;
+    private CapturePacketFilter capturePktFilter;
 
     @JsonProperty("cloud_ref")
     @JsonInclude(Include.NON_NULL)
-    private String cloudRef = null;
+    private String cloudRef;
 
     @JsonProperty("debug_hm")
     @JsonInclude(Include.NON_NULL)
@@ -58,27 +58,27 @@ public class DebugVirtualService extends AviRestResource {
 
     @JsonProperty("debug_ip")
     @JsonInclude(Include.NON_NULL)
-    private DebugIpAddr debugIp = null;
+    private DebugIpAddr debugIp;
 
     @JsonProperty("dns_options")
     @JsonInclude(Include.NON_NULL)
-    private DebugDnsOptions dnsOptions = null;
+    private DebugDnsOptions dnsOptions;
 
     @JsonProperty("flags")
     @JsonInclude(Include.NON_NULL)
-    private List<DebugVsDataplane> flags = null;
+    private List<DebugVsDataplane> flags;
 
     @JsonProperty("latency_audit_filters")
     @JsonInclude(Include.NON_NULL)
-    private CaptureFilters latencyAuditFilters = null;
+    private CaptureFilters latencyAuditFilters;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("objsync")
     @JsonInclude(Include.NON_NULL)
-    private DebugVirtualServiceObjSync objsync = null;
+    private DebugVirtualServiceObjSync objsync;
 
     @JsonProperty("resync_flows")
     @JsonInclude(Include.NON_NULL)
@@ -86,11 +86,11 @@ public class DebugVirtualService extends AviRestResource {
 
     @JsonProperty("se_params")
     @JsonInclude(Include.NON_NULL)
-    private DebugVirtualServiceSeParams seParams = null;
+    private DebugVirtualServiceSeParams seParams;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -98,7 +98,7 @@ public class DebugVirtualService extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

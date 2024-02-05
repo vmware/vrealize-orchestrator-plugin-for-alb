@@ -27,23 +27,23 @@ import org.springframework.stereotype.Service;
 public class UpgradeEvent extends AviRestResource {
     @JsonProperty("duration")
     @JsonInclude(Include.NON_NULL)
-    private Integer duration = null;
+    private Integer duration;
 
     @JsonProperty("end_time")
     @JsonInclude(Include.NON_NULL)
-    private String endTime = null;
+    private String endTime;
 
     @JsonProperty("ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr ip = null;
+    private IpAddr ip;
 
     @JsonProperty("message")
     @JsonInclude(Include.NON_NULL)
-    private String message = null;
+    private String message;
 
     @JsonProperty("start_time")
     @JsonInclude(Include.NON_NULL)
-    private String startTime = null;
+    private String startTime;
 
     @JsonProperty("status")
     @JsonInclude(Include.NON_NULL)
@@ -51,7 +51,7 @@ public class UpgradeEvent extends AviRestResource {
 
     @JsonProperty("sub_tasks")
     @JsonInclude(Include.NON_NULL)
-    private List<String> subTasks = null;
+    private List<String> subTasks;
 
 
 

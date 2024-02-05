@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class DebugSeCpuShares extends AviRestResource {
     @JsonProperty("cpu")
     @JsonInclude(Include.NON_NULL)
-    private Integer cpu = null;
+    private Integer cpu;
 
     @JsonProperty("shares")
     @JsonInclude(Include.NON_NULL)
-    private Integer shares = null;
+    private Integer shares;
 
 
 

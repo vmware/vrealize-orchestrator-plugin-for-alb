@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class RspContentRewriteRule extends AviRestResource {
     @JsonProperty("enable")
     @JsonInclude(Include.NON_NULL)
-    private Boolean enable = null;
+    private Boolean enable;
 
     @JsonProperty("index")
     @JsonInclude(Include.NON_NULL)
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("pairs")
     @JsonInclude(Include.NON_NULL)
-    private List<SearchReplacePair> pairs = null;
+    private List<SearchReplacePair> pairs;
 
 
 

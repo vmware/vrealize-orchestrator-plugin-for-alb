@@ -26,39 +26,39 @@ import org.springframework.stereotype.Service;
 public class GCPTwoArmMode extends AviRestResource {
     @JsonProperty("backend_data_vpc_network_name")
     @JsonInclude(Include.NON_NULL)
-    private String backendDataVpcNetworkName = null;
+    private String backendDataVpcNetworkName;
 
     @JsonProperty("backend_data_vpc_project_id")
     @JsonInclude(Include.NON_NULL)
-    private String backendDataVpcProjectId = null;
+    private String backendDataVpcProjectId;
 
     @JsonProperty("backend_data_vpc_subnet_name")
     @JsonInclude(Include.NON_NULL)
-    private String backendDataVpcSubnetName = null;
+    private String backendDataVpcSubnetName;
 
     @JsonProperty("frontend_data_vpc_network_name")
     @JsonInclude(Include.NON_NULL)
-    private String frontendDataVpcNetworkName = null;
+    private String frontendDataVpcNetworkName;
 
     @JsonProperty("frontend_data_vpc_project_id")
     @JsonInclude(Include.NON_NULL)
-    private String frontendDataVpcProjectId = null;
+    private String frontendDataVpcProjectId;
 
     @JsonProperty("frontend_data_vpc_subnet_name")
     @JsonInclude(Include.NON_NULL)
-    private String frontendDataVpcSubnetName = null;
+    private String frontendDataVpcSubnetName;
 
     @JsonProperty("management_vpc_network_name")
     @JsonInclude(Include.NON_NULL)
-    private String managementVpcNetworkName = null;
+    private String managementVpcNetworkName;
 
     @JsonProperty("management_vpc_project_id")
     @JsonInclude(Include.NON_NULL)
-    private String managementVpcProjectId = null;
+    private String managementVpcProjectId;
 
     @JsonProperty("management_vpc_subnet_name")
     @JsonInclude(Include.NON_NULL)
-    private String managementVpcSubnetName = null;
+    private String managementVpcSubnetName;
 
 
 

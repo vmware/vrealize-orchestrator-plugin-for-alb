@@ -35,7 +35,7 @@ public class AppLearningParams extends AviRestResource {
 
     @JsonProperty("learn_from_bots")
     @JsonInclude(Include.NON_NULL)
-    private BotDetectionMatch learnFromBots = null;
+    private BotDetectionMatch learnFromBots;
 
     @JsonProperty("max_params")
     @JsonInclude(Include.NON_NULL)
@@ -55,7 +55,7 @@ public class AppLearningParams extends AviRestResource {
 
     @JsonProperty("trusted_ipgroup_ref")
     @JsonInclude(Include.NON_NULL)
-    private String trustedIpgroupRef = null;
+    private String trustedIpgroupRef;
 
     @JsonProperty("update_interval")
     @JsonInclude(Include.NON_NULL)

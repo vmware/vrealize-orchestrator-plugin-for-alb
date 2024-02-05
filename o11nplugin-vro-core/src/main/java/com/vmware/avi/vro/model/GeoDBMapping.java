@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class GeoDBMapping extends AviRestResource {
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("elements")
     @JsonInclude(Include.NON_NULL)
-    private List<GeoDBMappingElement> elements = null;
+    private List<GeoDBMappingElement> elements;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
 
 

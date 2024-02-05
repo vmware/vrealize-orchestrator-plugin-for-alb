@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class OpenStackVipNetwork extends AviRestResource {
     @JsonProperty("os_network_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String osNetworkUuid = null;
+    private String osNetworkUuid;
 
     @JsonProperty("os_tenant_uuids")
     @JsonInclude(Include.NON_NULL)
-    private List<String> osTenantUuids = null;
+    private List<String> osTenantUuids;
 
 
 

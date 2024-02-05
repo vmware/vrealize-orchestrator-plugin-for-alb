@@ -37,47 +37,47 @@ import org.springframework.stereotype.Service;
 public class GslbSiteRuntimeCfg extends AviRestResource {
     @JsonProperty("fd_info")
     @JsonInclude(Include.NON_NULL)
-    private ConfigInfo fdInfo = null;
+    private ConfigInfo fdInfo;
 
     @JsonProperty("gap_info")
     @JsonInclude(Include.NON_NULL)
-    private ConfigInfo gapInfo = null;
+    private ConfigInfo gapInfo;
 
     @JsonProperty("geo_info")
     @JsonInclude(Include.NON_NULL)
-    private ConfigInfo geoInfo = null;
+    private ConfigInfo geoInfo;
 
     @JsonProperty("ghm_info")
     @JsonInclude(Include.NON_NULL)
-    private ConfigInfo ghmInfo = null;
+    private ConfigInfo ghmInfo;
 
     @JsonProperty("gjwt_info")
     @JsonInclude(Include.NON_NULL)
-    private ConfigInfo gjwtInfo = null;
+    private ConfigInfo gjwtInfo;
 
     @JsonProperty("glb_info")
     @JsonInclude(Include.NON_NULL)
-    private ConfigInfo glbInfo = null;
+    private ConfigInfo glbInfo;
 
     @JsonProperty("gpki_info")
     @JsonInclude(Include.NON_NULL)
-    private ConfigInfo gpkiInfo = null;
+    private ConfigInfo gpkiInfo;
 
     @JsonProperty("gs_info")
     @JsonInclude(Include.NON_NULL)
-    private ConfigInfo gsInfo = null;
+    private ConfigInfo gsInfo;
 
     @JsonProperty("mm_info")
     @JsonInclude(Include.NON_NULL)
-    private ConfigInfo mmInfo = null;
+    private ConfigInfo mmInfo;
 
     @JsonProperty("repl_queue")
     @JsonInclude(Include.NON_NULL)
-    private ConfigInfo replQueue = null;
+    private ConfigInfo replQueue;
 
     @JsonProperty("sync_info")
     @JsonInclude(Include.NON_NULL)
-    private GslbSiteCfgSyncInfo syncInfo = null;
+    private GslbSiteCfgSyncInfo syncInfo;
 
 
 

@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class ControllerInfo extends AviRestResource {
     @JsonProperty("current_controller_mem_usage")
     @JsonInclude(Include.NON_NULL)
-    private Float currentControllerMemUsage = null;
+    private Float currentControllerMemUsage;
 
 
 

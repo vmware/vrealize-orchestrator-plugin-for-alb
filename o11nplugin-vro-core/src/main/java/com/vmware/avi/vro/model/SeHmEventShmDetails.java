@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class SeHmEventShmDetails extends AviRestResource {
     @JsonProperty("average_response_time")
     @JsonInclude(Include.NON_NULL)
-    private Integer averageResponseTime = null;
+    private Integer averageResponseTime;
 
     @JsonProperty("health_monitor")
     @JsonInclude(Include.NON_NULL)
-    private String healthMonitor = null;
+    private String healthMonitor;
 
     @JsonProperty("resp_string")
     @JsonInclude(Include.NON_NULL)
-    private String respString = null;
+    private String respString;
 
     @JsonProperty("response_code")
     @JsonInclude(Include.NON_NULL)
-    private Integer responseCode = null;
+    private Integer responseCode;
 
 
 

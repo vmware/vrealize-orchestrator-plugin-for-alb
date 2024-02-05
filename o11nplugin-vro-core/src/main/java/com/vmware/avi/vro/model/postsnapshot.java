@@ -30,19 +30,19 @@ import org.springframework.stereotype.Service;
 public class postsnapshot extends AviRestResource {
     @JsonProperty("gssnapshot")
     @JsonInclude(Include.NON_NULL)
-    private FbGsInfo gssnapshot = null;
+    private FbGsInfo gssnapshot;
 
     @JsonProperty("poolsnapshot")
     @JsonInclude(Include.NON_NULL)
-    private FbPoolInfo poolsnapshot = null;
+    private FbPoolInfo poolsnapshot;
 
     @JsonProperty("sesnapshot")
     @JsonInclude(Include.NON_NULL)
-    private FbSeInfo sesnapshot = null;
+    private FbSeInfo sesnapshot;
 
     @JsonProperty("vssnapshot")
     @JsonInclude(Include.NON_NULL)
-    private FbVsInfo vssnapshot = null;
+    private FbVsInfo vssnapshot;
 
 
 

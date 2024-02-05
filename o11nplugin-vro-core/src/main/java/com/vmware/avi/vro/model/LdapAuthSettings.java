@@ -28,7 +28,7 @@ import org.springframework.stereotype.Service;
 public class LdapAuthSettings extends AviRestResource {
     @JsonProperty("base_dn")
     @JsonInclude(Include.NON_NULL)
-    private String baseDn = null;
+    private String baseDn;
 
     @JsonProperty("bind_as_administrator")
     @JsonInclude(Include.NON_NULL)
@@ -52,15 +52,15 @@ public class LdapAuthSettings extends AviRestResource {
 
     @JsonProperty("server")
     @JsonInclude(Include.NON_NULL)
-    private List<String> server = null;
+    private List<String> server;
 
     @JsonProperty("settings")
     @JsonInclude(Include.NON_NULL)
-    private LdapDirectorySettings settings = null;
+    private LdapDirectorySettings settings;
 
     @JsonProperty("user_bind")
     @JsonInclude(Include.NON_NULL)
-    private LdapUserBindSettings userBind = null;
+    private LdapUserBindSettings userBind;
 
 
 

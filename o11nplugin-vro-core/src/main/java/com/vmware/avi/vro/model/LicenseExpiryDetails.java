@@ -26,59 +26,59 @@ import org.springframework.stereotype.Service;
 public class LicenseExpiryDetails extends AviRestResource {
     @JsonProperty("backend_servers")
     @JsonInclude(Include.NON_NULL)
-    private Integer backendServers = null;
+    private Integer backendServers;
 
     @JsonProperty("burst_cores")
     @JsonInclude(Include.NON_NULL)
-    private Integer burstCores = null;
+    private Integer burstCores;
 
     @JsonProperty("cores")
     @JsonInclude(Include.NON_NULL)
-    private Integer cores = null;
+    private Integer cores;
 
     @JsonProperty("cpu_cores")
     @JsonInclude(Include.NON_NULL)
-    private Float cpuCores = null;
+    private Float cpuCores;
 
     @JsonProperty("expiry_at")
     @JsonInclude(Include.NON_NULL)
-    private String expiryAt = null;
+    private String expiryAt;
 
     @JsonProperty("license_id")
     @JsonInclude(Include.NON_NULL)
-    private String licenseId = null;
+    private String licenseId;
 
     @JsonProperty("license_tier")
     @JsonInclude(Include.NON_NULL)
-    private List<String> licenseTier = null;
+    private List<String> licenseTier;
 
     @JsonProperty("license_type")
     @JsonInclude(Include.NON_NULL)
-    private String licenseType = null;
+    private String licenseType;
 
     @JsonProperty("max_apps")
     @JsonInclude(Include.NON_NULL)
-    private Integer maxApps = null;
+    private Integer maxApps;
 
     @JsonProperty("max_ses")
     @JsonInclude(Include.NON_NULL)
-    private Integer maxSes = null;
+    private Integer maxSes;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("service_cores")
     @JsonInclude(Include.NON_NULL)
-    private Float serviceCores = null;
+    private Float serviceCores;
 
     @JsonProperty("sockets")
     @JsonInclude(Include.NON_NULL)
-    private Integer sockets = null;
+    private Integer sockets;
 
     @JsonProperty("throughput")
     @JsonInclude(Include.NON_NULL)
-    private Integer throughput = null;
+    private Integer throughput;
 
 
 

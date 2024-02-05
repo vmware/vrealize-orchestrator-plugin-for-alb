@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class NetworkSubnetClash extends AviRestResource {
     @JsonProperty("ip_nw")
     @JsonInclude(Include.NON_NULL)
-    private String ipNw = null;
+    private String ipNw;
 
     @JsonProperty("networks")
     @JsonInclude(Include.NON_NULL)
-    private List<String> networks = null;
+    private List<String> networks;
 
 
 

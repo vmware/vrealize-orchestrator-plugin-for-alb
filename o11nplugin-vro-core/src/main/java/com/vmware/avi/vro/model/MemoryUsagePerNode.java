@@ -27,11 +27,11 @@ import org.springframework.stereotype.Service;
 public class MemoryUsagePerNode extends AviRestResource {
     @JsonProperty("mem_info")
     @JsonInclude(Include.NON_NULL)
-    private MemoryUsage memInfo = null;
+    private MemoryUsage memInfo;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
 
 

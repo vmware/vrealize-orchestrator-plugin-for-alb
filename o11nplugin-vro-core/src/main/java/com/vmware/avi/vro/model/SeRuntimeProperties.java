@@ -33,7 +33,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
     @JsonProperty("app_headers")
     @JsonInclude(Include.NON_NULL)
-    private List<AppHdr> appHeaders = null;
+    private List<AppHdr> appHeaders;
 
     @JsonProperty("baremetal_dispatcher_handles_flows")
     @JsonInclude(Include.NON_NULL)
@@ -53,7 +53,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
     @JsonProperty("dos_profile")
     @JsonInclude(Include.NON_NULL)
-    private DosThresholdProfile dosProfile = null;
+    private DosThresholdProfile dosProfile;
 
     @JsonProperty("downstream_send_timeout")
     @JsonInclude(Include.NON_NULL)
@@ -209,7 +209,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
     @JsonProperty("se_dp_compression")
     @JsonInclude(Include.NON_NULL)
-    private SeRuntimeCompressionProperties seDpCompression = null;
+    private SeRuntimeCompressionProperties seDpCompression;
 
     @JsonProperty("se_dp_hm_drops")
     @JsonInclude(Include.NON_NULL)
@@ -269,15 +269,15 @@ public class SeRuntimeProperties extends AviRestResource {
 
     @JsonProperty("se_rate_limiters")
     @JsonInclude(Include.NON_NULL)
-    private SeRateLimiters seRateLimiters = null;
+    private SeRateLimiters seRateLimiters;
 
     @JsonProperty("service_ip_subnets")
     @JsonInclude(Include.NON_NULL)
-    private List<IpAddrPrefix> serviceIpSubnets = null;
+    private List<IpAddrPrefix> serviceIpSubnets;
 
     @JsonProperty("service_port_ranges")
     @JsonInclude(Include.NON_NULL)
-    private List<PortRange> servicePortRanges = null;
+    private List<PortRange> servicePortRanges;
 
     @JsonProperty("services_accessible_all_interfaces")
     @JsonInclude(Include.NON_NULL)

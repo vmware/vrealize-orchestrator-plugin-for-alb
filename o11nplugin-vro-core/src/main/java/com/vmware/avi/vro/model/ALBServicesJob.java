@@ -2,6 +2,7 @@ package com.vmware.avi.vro.model;
 
 import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -29,35 +30,35 @@ import org.springframework.stereotype.Service;
 public class ALBServicesJob extends AviRestResource {
     @JsonProperty("command")
     @JsonInclude(Include.NON_NULL)
-    private String command = null;
+    private String command;
 
     @JsonProperty("end_time")
     @JsonInclude(Include.NON_NULL)
-    private TimeStamp endTime = null;
+    private TimeStamp endTime;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("params")
     @JsonInclude(Include.NON_NULL)
-    private List<ALBServicesJobParam> params = null;
+    private List<ALBServicesJobParam> params;
 
     @JsonProperty("pulse_job_id")
     @JsonInclude(Include.NON_NULL)
-    private String pulseJobId = null;
+    private String pulseJobId;
 
     @JsonProperty("pulse_sync_status")
     @JsonInclude(Include.NON_NULL)
-    private Boolean pulseSyncStatus = null;
+    private Boolean pulseSyncStatus;
 
     @JsonProperty("result")
     @JsonInclude(Include.NON_NULL)
-    private String result = null;
+    private String result;
 
     @JsonProperty("start_time")
     @JsonInclude(Include.NON_NULL)
-    private TimeStamp startTime = null;
+    private TimeStamp startTime;
 
     @JsonProperty("status")
     @JsonInclude(Include.NON_NULL)
@@ -65,11 +66,14 @@ public class ALBServicesJob extends AviRestResource {
 
     @JsonProperty("status_update_time")
     @JsonInclude(Include.NON_NULL)
-    private TimeStamp statusUpdateTime = null;
+    private TimeStamp statusUpdateTime;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
+
+    @JsonIgnore
+    private String token;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -77,7 +81,7 @@ public class ALBServicesJob extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 
@@ -388,6 +392,32 @@ public class ALBServicesJob extends AviRestResource {
   public void setTenantRef(String  tenantRef) {
     this.tenantRef = tenantRef;
   }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Job token.
+   * Field introduced in 22.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return token
+   */
+  @VsoMethod
+  public String getToken() {
+    return token;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Job token.
+   * Field introduced in 22.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param token set the token.
+   */
+  @VsoMethod
+  public void setToken(String  token) {
+    this.token = token;
+  }
 /**
    * This is the getter method this will return the attribute value.
    * Avi controller URL of the object.
@@ -459,6 +489,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.pulseSyncStatus, objALBServicesJob.pulseSyncStatus)&&
   Objects.equals(this.result, objALBServicesJob.result)&&
   Objects.equals(this.params, objALBServicesJob.params)&&
+  Objects.equals(this.token, objALBServicesJob.token)&&
   Objects.equals(this.statusUpdateTime, objALBServicesJob.statusUpdateTime);
 }
 
@@ -477,6 +508,7 @@ public String toString() {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    statusUpdateTime: ").append(toIndentedString(statusUpdateTime)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
+        sb.append("    token: ").append(toIndentedString(token)).append("\n");
             sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
       sb.append("}");
   return sb.toString();

@@ -28,27 +28,27 @@ import org.springframework.stereotype.Service;
 public class CloudInfo extends AviRestResource {
     @JsonProperty("cca_props")
     @JsonInclude(Include.NON_NULL)
-    private CC_AgentProperties ccaProps = null;
+    private CC_AgentProperties ccaProps;
 
     @JsonProperty("controller_props")
     @JsonInclude(Include.NON_NULL)
-    private ControllerProperties controllerProps = null;
+    private ControllerProperties controllerProps;
 
     @JsonProperty("flavor_props")
     @JsonInclude(Include.NON_NULL)
-    private List<CloudFlavor> flavorProps = null;
+    private List<CloudFlavor> flavorProps;
 
     @JsonProperty("flavor_regex_filter")
     @JsonInclude(Include.NON_NULL)
-    private String flavorRegexFilter = null;
+    private String flavorRegexFilter;
 
     @JsonProperty("htypes")
     @JsonInclude(Include.NON_NULL)
-    private List<String> htypes = null;
+    private List<String> htypes;
 
     @JsonProperty("vtype")
     @JsonInclude(Include.NON_NULL)
-    private String vtype = null;
+    private String vtype;
 
 
 

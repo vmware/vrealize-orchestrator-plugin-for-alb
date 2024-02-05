@@ -28,51 +28,51 @@ import org.springframework.stereotype.Service;
 public class DnsRequest extends AviRestResource {
     @JsonProperty("additional_records_count")
     @JsonInclude(Include.NON_NULL)
-    private Integer additionalRecordsCount = null;
+    private Integer additionalRecordsCount;
 
     @JsonProperty("answer_records_count")
     @JsonInclude(Include.NON_NULL)
-    private Integer answerRecordsCount = null;
+    private Integer answerRecordsCount;
 
     @JsonProperty("authentic_data")
     @JsonInclude(Include.NON_NULL)
-    private Boolean authenticData = null;
+    private Boolean authenticData;
 
     @JsonProperty("checking_disabled")
     @JsonInclude(Include.NON_NULL)
-    private Boolean checkingDisabled = null;
+    private Boolean checkingDisabled;
 
     @JsonProperty("client_location")
     @JsonInclude(Include.NON_NULL)
-    private GeoLocation clientLocation = null;
+    private GeoLocation clientLocation;
 
     @JsonProperty("identifier")
     @JsonInclude(Include.NON_NULL)
-    private Integer identifier = null;
+    private Integer identifier;
 
     @JsonProperty("nameserver_records_count")
     @JsonInclude(Include.NON_NULL)
-    private Integer nameserverRecordsCount = null;
+    private Integer nameserverRecordsCount;
 
     @JsonProperty("opcode")
     @JsonInclude(Include.NON_NULL)
-    private String opcode = null;
+    private String opcode;
 
     @JsonProperty("opt_record")
     @JsonInclude(Include.NON_NULL)
-    private DnsOptRecord optRecord = null;
+    private DnsOptRecord optRecord;
 
     @JsonProperty("query_or_response")
     @JsonInclude(Include.NON_NULL)
-    private Boolean queryOrResponse = null;
+    private Boolean queryOrResponse;
 
     @JsonProperty("question_count")
     @JsonInclude(Include.NON_NULL)
-    private Integer questionCount = null;
+    private Integer questionCount;
 
     @JsonProperty("recursion_desired")
     @JsonInclude(Include.NON_NULL)
-    private Boolean recursionDesired = null;
+    private Boolean recursionDesired;
 
 
 

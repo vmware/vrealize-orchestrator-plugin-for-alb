@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class HTTPStatusRange extends AviRestResource {
     @JsonProperty("begin")
     @JsonInclude(Include.NON_NULL)
-    private Integer begin = null;
+    private Integer begin;
 
     @JsonProperty("end")
     @JsonInclude(Include.NON_NULL)
-    private Integer end = null;
+    private Integer end;
 
 
 

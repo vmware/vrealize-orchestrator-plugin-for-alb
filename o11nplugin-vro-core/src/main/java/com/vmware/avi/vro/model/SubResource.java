@@ -30,7 +30,7 @@ public class SubResource extends AviRestResource {
 
     @JsonProperty("subresources")
     @JsonInclude(Include.NON_NULL)
-    private List<String> subresources = null;
+    private List<String> subresources;
 
 
 

@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class OpenStackConfiguration extends AviRestResource {
     @JsonProperty("admin_tenant")
     @JsonInclude(Include.NON_NULL)
-    private String adminTenant = null;
+    private String adminTenant;
 
     @JsonProperty("admin_tenant_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String adminTenantUuid = null;
+    private String adminTenantUuid;
 
     @JsonProperty("allowed_address_pairs")
     @JsonInclude(Include.NON_NULL)
@@ -42,7 +42,7 @@ public class OpenStackConfiguration extends AviRestResource {
 
     @JsonProperty("auth_url")
     @JsonInclude(Include.NON_NULL)
-    private String authUrl = null;
+    private String authUrl;
 
     @JsonProperty("config_drive")
     @JsonInclude(Include.NON_NULL)
@@ -54,7 +54,7 @@ public class OpenStackConfiguration extends AviRestResource {
 
     @JsonProperty("contrail_endpoint")
     @JsonInclude(Include.NON_NULL)
-    private String contrailEndpoint = null;
+    private String contrailEndpoint;
 
     @JsonProperty("contrail_plugin")
     @JsonInclude(Include.NON_NULL)
@@ -62,7 +62,7 @@ public class OpenStackConfiguration extends AviRestResource {
 
     @JsonProperty("custom_se_image_properties")
     @JsonInclude(Include.NON_NULL)
-    private List<Property> customSeImageProperties = null;
+    private List<Property> customSeImageProperties;
 
     @JsonProperty("enable_os_object_caching")
     @JsonInclude(Include.NON_NULL)
@@ -86,7 +86,7 @@ public class OpenStackConfiguration extends AviRestResource {
 
     @JsonProperty("hypervisor_properties")
     @JsonInclude(Include.NON_NULL)
-    private List<OpenStackHypervisorProperties> hypervisorProperties = null;
+    private List<OpenStackHypervisorProperties> hypervisorProperties;
 
     @JsonProperty("img_format")
     @JsonInclude(Include.NON_NULL)
@@ -102,7 +102,7 @@ public class OpenStackConfiguration extends AviRestResource {
 
     @JsonProperty("keystone_host")
     @JsonInclude(Include.NON_NULL)
-    private String keystoneHost = null;
+    private String keystoneHost;
 
     @JsonProperty("map_admin_to_cloudadmin")
     @JsonInclude(Include.NON_NULL)
@@ -110,11 +110,11 @@ public class OpenStackConfiguration extends AviRestResource {
 
     @JsonProperty("mgmt_network_name")
     @JsonInclude(Include.NON_NULL)
-    private String mgmtNetworkName = null;
+    private String mgmtNetworkName;
 
     @JsonProperty("mgmt_network_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String mgmtNetworkUuid = null;
+    private String mgmtNetworkUuid;
 
     @JsonProperty("name_owner")
     @JsonInclude(Include.NON_NULL)
@@ -126,27 +126,27 @@ public class OpenStackConfiguration extends AviRestResource {
 
     @JsonProperty("password")
     @JsonInclude(Include.NON_NULL)
-    private String password = null;
+    private String password;
 
     @JsonProperty("privilege")
     @JsonInclude(Include.NON_NULL)
-    private String privilege = null;
+    private String privilege;
 
     @JsonProperty("prov_name")
     @JsonInclude(Include.NON_NULL)
-    private List<String> provName = null;
+    private List<String> provName;
 
     @JsonProperty("provider_vip_networks")
     @JsonInclude(Include.NON_NULL)
-    private List<OpenStackVipNetwork> providerVipNetworks = null;
+    private List<OpenStackVipNetwork> providerVipNetworks;
 
     @JsonProperty("region")
     @JsonInclude(Include.NON_NULL)
-    private String region = null;
+    private String region;
 
     @JsonProperty("role_mapping")
     @JsonInclude(Include.NON_NULL)
-    private List<OpenStackRoleMapping> roleMapping = null;
+    private List<OpenStackRoleMapping> roleMapping;
 
     @JsonProperty("security_groups")
     @JsonInclude(Include.NON_NULL)
@@ -170,7 +170,7 @@ public class OpenStackConfiguration extends AviRestResource {
 
     @JsonProperty("username")
     @JsonInclude(Include.NON_NULL)
-    private String username = null;
+    private String username;
 
     @JsonProperty("vip_port_in_admin_tenant")
     @JsonInclude(Include.NON_NULL)

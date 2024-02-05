@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class HTTPReselectRespCode extends AviRestResource {
     @JsonProperty("codes")
     @JsonInclude(Include.NON_NULL)
-    private List<Integer> codes = null;
+    private List<Integer> codes;
 
     @JsonProperty("ranges")
     @JsonInclude(Include.NON_NULL)
-    private List<HTTPStatusRange> ranges = null;
+    private List<HTTPStatusRange> ranges;
 
     @JsonProperty("resp_code_block")
     @JsonInclude(Include.NON_NULL)
-    private List<String> respCodeBlock = null;
+    private List<String> respCodeBlock;
 
 
 

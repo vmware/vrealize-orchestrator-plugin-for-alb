@@ -28,7 +28,7 @@ import org.springframework.stereotype.Service;
 public class GatewayMonitor extends AviRestResource {
     @JsonProperty("gateway_ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr gatewayIp = null;
+    private IpAddr gatewayIp;
 
     @JsonProperty("gateway_monitor_fail_threshold")
     @JsonInclude(Include.NON_NULL)
@@ -44,7 +44,7 @@ public class GatewayMonitor extends AviRestResource {
 
     @JsonProperty("subnet")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrPrefix subnet = null;
+    private IpAddrPrefix subnet;
 
 
 

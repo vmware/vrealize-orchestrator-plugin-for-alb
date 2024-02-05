@@ -30,11 +30,11 @@ public class LearningLogPolicy extends AviRestResource {
 
     @JsonProperty("host")
     @JsonInclude(Include.NON_NULL)
-    private String host = null;
+    private String host;
 
     @JsonProperty("port")
     @JsonInclude(Include.NON_NULL)
-    private Integer port = null;
+    private Integer port;
 
 
 

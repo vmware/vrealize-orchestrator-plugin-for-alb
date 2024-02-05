@@ -26,39 +26,39 @@ import org.springframework.stereotype.Service;
 public class NsxtSIRuleDetails extends AviRestResource {
     @JsonProperty("action")
     @JsonInclude(Include.NON_NULL)
-    private String action = null;
+    private String action;
 
     @JsonProperty("destexclude")
     @JsonInclude(Include.NON_NULL)
-    private Boolean destexclude = null;
+    private Boolean destexclude;
 
     @JsonProperty("dests")
     @JsonInclude(Include.NON_NULL)
-    private List<String> dests = null;
+    private List<String> dests;
 
     @JsonProperty("direction")
     @JsonInclude(Include.NON_NULL)
-    private String direction = null;
+    private String direction;
 
     @JsonProperty("error_string")
     @JsonInclude(Include.NON_NULL)
-    private String errorString = null;
+    private String errorString;
 
     @JsonProperty("pool")
     @JsonInclude(Include.NON_NULL)
-    private String pool = null;
+    private String pool;
 
     @JsonProperty("segroup")
     @JsonInclude(Include.NON_NULL)
-    private String segroup = null;
+    private String segroup;
 
     @JsonProperty("services")
     @JsonInclude(Include.NON_NULL)
-    private List<String> services = null;
+    private List<String> services;
 
     @JsonProperty("sources")
     @JsonInclude(Include.NON_NULL)
-    private List<String> sources = null;
+    private List<String> sources;
 
 
 

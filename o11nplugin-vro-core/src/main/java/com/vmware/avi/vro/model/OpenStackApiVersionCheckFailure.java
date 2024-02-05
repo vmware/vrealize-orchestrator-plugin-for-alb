@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class OpenStackApiVersionCheckFailure extends AviRestResource {
     @JsonProperty("cc_id")
     @JsonInclude(Include.NON_NULL)
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("cc_name")
     @JsonInclude(Include.NON_NULL)
-    private String ccName = null;
+    private String ccName;
 
     @JsonProperty("error_string")
     @JsonInclude(Include.NON_NULL)
-    private String errorString = null;
+    private String errorString;
 
 
 

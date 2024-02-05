@@ -26,27 +26,27 @@ import org.springframework.stereotype.Service;
 public class NsxtSIPolicyDetails extends AviRestResource {
     @JsonProperty("error_string")
     @JsonInclude(Include.NON_NULL)
-    private String errorString = null;
+    private String errorString;
 
     @JsonProperty("policy")
     @JsonInclude(Include.NON_NULL)
-    private String policy = null;
+    private String policy;
 
     @JsonProperty("redirectTo")
     @JsonInclude(Include.NON_NULL)
-    private List<String> redirectTo = null;
+    private List<String> redirectTo;
 
     @JsonProperty("scope")
     @JsonInclude(Include.NON_NULL)
-    private String scope = null;
+    private String scope;
 
     @JsonProperty("segroup")
     @JsonInclude(Include.NON_NULL)
-    private String segroup = null;
+    private String segroup;
 
     @JsonProperty("tier1")
     @JsonInclude(Include.NON_NULL)
-    private String tier1 = null;
+    private String tier1;
 
 
 

@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class IcapViolation extends AviRestResource {
     @JsonProperty("file_name")
     @JsonInclude(Include.NON_NULL)
-    private String fileName = null;
+    private String fileName;
 
     @JsonProperty("resolution")
     @JsonInclude(Include.NON_NULL)
-    private String resolution = null;
+    private String resolution;
 
     @JsonProperty("threat_name")
     @JsonInclude(Include.NON_NULL)
-    private String threatName = null;
+    private String threatName;
 
 
 

@@ -26,35 +26,35 @@ import org.springframework.stereotype.Service;
 public class ServerAutoScaleInInfo extends AviRestResource {
     @JsonProperty("alertconfig_name")
     @JsonInclude(Include.NON_NULL)
-    private String alertconfigName = null;
+    private String alertconfigName;
 
     @JsonProperty("alertconfig_ref")
     @JsonInclude(Include.NON_NULL)
-    private String alertconfigRef = null;
+    private String alertconfigRef;
 
     @JsonProperty("available_capacity")
     @JsonInclude(Include.NON_NULL)
-    private Float availableCapacity = null;
+    private Float availableCapacity;
 
     @JsonProperty("load")
     @JsonInclude(Include.NON_NULL)
-    private Float load = null;
+    private Float load;
 
     @JsonProperty("num_scalein_servers")
     @JsonInclude(Include.NON_NULL)
-    private Integer numScaleinServers = null;
+    private Integer numScaleinServers;
 
     @JsonProperty("num_servers_up")
     @JsonInclude(Include.NON_NULL)
-    private Integer numServersUp = null;
+    private Integer numServersUp;
 
     @JsonProperty("pool_ref")
     @JsonInclude(Include.NON_NULL)
-    private String poolRef = null;
+    private String poolRef;
 
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("reason_code")
     @JsonInclude(Include.NON_NULL)
@@ -62,11 +62,11 @@ public class ServerAutoScaleInInfo extends AviRestResource {
 
     @JsonProperty("scalein_server_candidates")
     @JsonInclude(Include.NON_NULL)
-    private List<ServerId> scaleinServerCandidates = null;
+    private List<ServerId> scaleinServerCandidates;
 
     @JsonProperty("scheduled_desired_capacity")
     @JsonInclude(Include.NON_NULL)
-    private Integer scheduledDesiredCapacity = null;
+    private Integer scheduledDesiredCapacity;
 
 
 

@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class ALBServicesCaseAttachment extends AviRestResource {
     @JsonProperty("attachment_name")
     @JsonInclude(Include.NON_NULL)
-    private String attachmentName = null;
+    private String attachmentName;
 
     @JsonProperty("attachment_size")
     @JsonInclude(Include.NON_NULL)
-    private String attachmentSize = null;
+    private String attachmentSize;
 
     @JsonProperty("attachment_url")
     @JsonInclude(Include.NON_NULL)
-    private String attachmentUrl = null;
+    private String attachmentUrl;
 
 
 

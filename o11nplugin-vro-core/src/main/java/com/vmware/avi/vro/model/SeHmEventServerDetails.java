@@ -27,35 +27,35 @@ import org.springframework.stereotype.Service;
 public class SeHmEventServerDetails extends AviRestResource {
     @JsonProperty("app_info")
     @JsonInclude(Include.NON_NULL)
-    private List<AppInfo> appInfo = null;
+    private List<AppInfo> appInfo;
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("failure_code")
     @JsonInclude(Include.NON_NULL)
-    private String failureCode = null;
+    private String failureCode;
 
     @JsonProperty("hostname")
     @JsonInclude(Include.NON_NULL)
-    private String hostname = null;
+    private String hostname;
 
     @JsonProperty("ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr ip = null;
+    private IpAddr ip;
 
     @JsonProperty("port")
     @JsonInclude(Include.NON_NULL)
-    private Integer port = null;
+    private Integer port;
 
     @JsonProperty("shm")
     @JsonInclude(Include.NON_NULL)
-    private List<SeHmEventShmDetails> shm = null;
+    private List<SeHmEventShmDetails> shm;
 
     @JsonProperty("ssl_error_code")
     @JsonInclude(Include.NON_NULL)
-    private String sslErrorCode = null;
+    private String sslErrorCode;
 
 
 

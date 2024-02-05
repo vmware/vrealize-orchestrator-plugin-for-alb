@@ -27,11 +27,11 @@ import org.springframework.stereotype.Service;
 public class GslbThirdPartySiteRuntime extends AviRestResource {
     @JsonProperty("health_monitor_info")
     @JsonInclude(Include.NON_NULL)
-    private String healthMonitorInfo = null;
+    private String healthMonitorInfo;
 
     @JsonProperty("site_info")
     @JsonInclude(Include.NON_NULL)
-    private GslbSiteRuntimeInfo siteInfo = null;
+    private GslbSiteRuntimeInfo siteInfo;
 
 
 

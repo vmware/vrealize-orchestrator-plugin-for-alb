@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class vNIC extends AviRestResource {
     @JsonProperty("adapter")
     @JsonInclude(Include.NON_NULL)
-    private String adapter = null;
+    private String adapter;
 
     @JsonProperty("aggregator_chgd")
     @JsonInclude(Include.NON_NULL)
@@ -38,7 +38,7 @@ public class vNIC extends AviRestResource {
 
     @JsonProperty("connected")
     @JsonInclude(Include.NON_NULL)
-    private Boolean connected = null;
+    private Boolean connected;
 
     @JsonProperty("del_pending")
     @JsonInclude(Include.NON_NULL)
@@ -62,7 +62,7 @@ public class vNIC extends AviRestResource {
 
     @JsonProperty("if_name")
     @JsonInclude(Include.NON_NULL)
-    private String ifName = null;
+    private String ifName;
 
     @JsonProperty("ip6_autocfg_enabled")
     @JsonInclude(Include.NON_NULL)
@@ -94,15 +94,15 @@ public class vNIC extends AviRestResource {
 
     @JsonProperty("linux_name")
     @JsonInclude(Include.NON_NULL)
-    private String linuxName = null;
+    private String linuxName;
 
     @JsonProperty("mac_address")
     @JsonInclude(Include.NON_NULL)
-    private String macAddress = null;
+    private String macAddress;
 
     @JsonProperty("members")
     @JsonInclude(Include.NON_NULL)
-    private List<MemberInterface> members = null;
+    private List<MemberInterface> members;
 
     @JsonProperty("mtu")
     @JsonInclude(Include.NON_NULL)
@@ -110,19 +110,19 @@ public class vNIC extends AviRestResource {
 
     @JsonProperty("network_name")
     @JsonInclude(Include.NON_NULL)
-    private String networkName = null;
+    private String networkName;
 
     @JsonProperty("network_ref")
     @JsonInclude(Include.NON_NULL)
-    private String networkRef = null;
+    private String networkRef;
 
     @JsonProperty("pci_id")
     @JsonInclude(Include.NON_NULL)
-    private String pciId = null;
+    private String pciId;
 
     @JsonProperty("port_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String portUuid = null;
+    private String portUuid;
 
     @JsonProperty("vlan_id")
     @JsonInclude(Include.NON_NULL)
@@ -130,11 +130,11 @@ public class vNIC extends AviRestResource {
 
     @JsonProperty("vlan_interfaces")
     @JsonInclude(Include.NON_NULL)
-    private List<VlanInterface> vlanInterfaces = null;
+    private List<VlanInterface> vlanInterfaces;
 
     @JsonProperty("vnic_networks")
     @JsonInclude(Include.NON_NULL)
-    private List<vNICNetwork> vnicNetworks = null;
+    private List<vNICNetwork> vnicNetworks;
 
     @JsonProperty("vrf_id")
     @JsonInclude(Include.NON_NULL)
@@ -142,7 +142,7 @@ public class vNIC extends AviRestResource {
 
     @JsonProperty("vrf_ref")
     @JsonInclude(Include.NON_NULL)
-    private String vrfRef = null;
+    private String vrfRef;
 
 
 

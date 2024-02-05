@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class CloudTenantsDeleted extends AviRestResource {
     @JsonProperty("cc_id")
     @JsonInclude(Include.NON_NULL)
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("tenants")
     @JsonInclude(Include.NON_NULL)
-    private List<CloudTenantCleanup> tenants = null;
+    private List<CloudTenantCleanup> tenants;
 
     @JsonProperty("vtype")
     @JsonInclude(Include.NON_NULL)
-    private String vtype = null;
+    private String vtype;
 
 
 

@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class ServiceAuthConfiguration extends AviRestResource {
     @JsonProperty("index")
     @JsonInclude(Include.NON_NULL)
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("service_auth_mapping_profile_ref")
     @JsonInclude(Include.NON_NULL)
-    private String serviceAuthMappingProfileRef = null;
+    private String serviceAuthMappingProfileRef;
 
     @JsonProperty("service_auth_profile_ref")
     @JsonInclude(Include.NON_NULL)
-    private String serviceAuthProfileRef = null;
+    private String serviceAuthProfileRef;
 
 
 

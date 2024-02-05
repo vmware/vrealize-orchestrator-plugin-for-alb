@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class SeGatewayHeartbeatSuccessDetails extends AviRestResource {
     @JsonProperty("gateway_ip")
     @JsonInclude(Include.NON_NULL)
-    private String gatewayIp = null;
+    private String gatewayIp;
 
     @JsonProperty("vrf_name")
     @JsonInclude(Include.NON_NULL)
-    private String vrfName = null;
+    private String vrfName;
 
     @JsonProperty("vrf_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String vrfUuid = null;
+    private String vrfUuid;
 
 
 

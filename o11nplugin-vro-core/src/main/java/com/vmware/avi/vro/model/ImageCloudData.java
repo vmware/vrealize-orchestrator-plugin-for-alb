@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class ImageCloudData extends AviRestResource {
     @JsonProperty("cloud_data_values")
     @JsonInclude(Include.NON_NULL)
-    private List<ImageCloudSpecificData> cloudDataValues = null;
+    private List<ImageCloudSpecificData> cloudDataValues;
 
     @JsonProperty("cloud_name")
     @JsonInclude(Include.NON_NULL)
-    private String cloudName = null;
+    private String cloudName;
 
 
 

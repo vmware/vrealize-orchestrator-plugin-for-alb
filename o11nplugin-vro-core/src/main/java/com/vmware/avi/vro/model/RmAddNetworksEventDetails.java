@@ -26,27 +26,27 @@ import org.springframework.stereotype.Service;
 public class RmAddNetworksEventDetails extends AviRestResource {
     @JsonProperty("networks")
     @JsonInclude(Include.NON_NULL)
-    private List<RmAddVnic> networks = null;
+    private List<RmAddVnic> networks;
 
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("se_name")
     @JsonInclude(Include.NON_NULL)
-    private String seName = null;
+    private String seName;
 
     @JsonProperty("se_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String seUuid = null;
+    private String seUuid;
 
     @JsonProperty("vs_name")
     @JsonInclude(Include.NON_NULL)
-    private List<String> vsName = null;
+    private List<String> vsName;
 
     @JsonProperty("vs_uuid")
     @JsonInclude(Include.NON_NULL)
-    private List<String> vsUuid = null;
+    private List<String> vsUuid;
 
 
 

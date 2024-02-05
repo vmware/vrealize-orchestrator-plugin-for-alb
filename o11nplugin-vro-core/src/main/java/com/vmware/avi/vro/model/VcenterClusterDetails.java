@@ -26,23 +26,23 @@ import org.springframework.stereotype.Service;
 public class VcenterClusterDetails extends AviRestResource {
     @JsonProperty("cc_id")
     @JsonInclude(Include.NON_NULL)
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("cluster")
     @JsonInclude(Include.NON_NULL)
-    private String cluster = null;
+    private String cluster;
 
     @JsonProperty("error_string")
     @JsonInclude(Include.NON_NULL)
-    private String errorString = null;
+    private String errorString;
 
     @JsonProperty("hosts")
     @JsonInclude(Include.NON_NULL)
-    private List<String> hosts = null;
+    private List<String> hosts;
 
     @JsonProperty("vc_url")
     @JsonInclude(Include.NON_NULL)
-    private String vcUrl = null;
+    private String vcUrl;
 
 
 

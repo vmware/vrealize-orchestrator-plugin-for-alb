@@ -30,7 +30,7 @@ public class SSLClientCertificateAction extends AviRestResource {
 
     @JsonProperty("headers")
     @JsonInclude(Include.NON_NULL)
-    private List<SSLClientRequestHeader> headers = null;
+    private List<SSLClientRequestHeader> headers;
 
 
 

@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class WafRuleLog extends AviRestResource {
     @JsonProperty("matches")
     @JsonInclude(Include.NON_NULL)
-    private List<WafRuleMatchData> matches = null;
+    private List<WafRuleMatchData> matches;
 
     @JsonProperty("msg")
     @JsonInclude(Include.NON_NULL)
-    private String msg = null;
+    private String msg;
 
     @JsonProperty("omitted_match_elements")
     @JsonInclude(Include.NON_NULL)
@@ -38,23 +38,23 @@ public class WafRuleLog extends AviRestResource {
 
     @JsonProperty("phase")
     @JsonInclude(Include.NON_NULL)
-    private String phase = null;
+    private String phase;
 
     @JsonProperty("rule_group")
     @JsonInclude(Include.NON_NULL)
-    private String ruleGroup = null;
+    private String ruleGroup;
 
     @JsonProperty("rule_id")
     @JsonInclude(Include.NON_NULL)
-    private Integer ruleId = null;
+    private Integer ruleId;
 
     @JsonProperty("rule_name")
     @JsonInclude(Include.NON_NULL)
-    private String ruleName = null;
+    private String ruleName;
 
     @JsonProperty("tags")
     @JsonInclude(Include.NON_NULL)
-    private List<String> tags = null;
+    private List<String> tags;
 
 
 

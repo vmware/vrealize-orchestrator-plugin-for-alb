@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class RebootData extends AviRestResource {
     @JsonProperty("patch_version")
     @JsonInclude(Include.NON_NULL)
-    private String patchVersion = null;
+    private String patchVersion;
 
     @JsonProperty("reboot")
     @JsonInclude(Include.NON_NULL)
-    private Boolean reboot = null;
+    private Boolean reboot;
 
 
 

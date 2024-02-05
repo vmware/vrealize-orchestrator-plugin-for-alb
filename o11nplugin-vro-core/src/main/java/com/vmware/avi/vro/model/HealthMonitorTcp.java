@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class HealthMonitorTcp extends AviRestResource {
     @JsonProperty("maintenance_response")
     @JsonInclude(Include.NON_NULL)
-    private String maintenanceResponse = null;
+    private String maintenanceResponse;
 
     @JsonProperty("tcp_half_open")
     @JsonInclude(Include.NON_NULL)
@@ -34,11 +34,11 @@ public class HealthMonitorTcp extends AviRestResource {
 
     @JsonProperty("tcp_request")
     @JsonInclude(Include.NON_NULL)
-    private String tcpRequest = null;
+    private String tcpRequest;
 
     @JsonProperty("tcp_response")
     @JsonInclude(Include.NON_NULL)
-    private String tcpResponse = null;
+    private String tcpResponse;
 
 
 

@@ -46,27 +46,27 @@ import org.springframework.stereotype.Service;
 public class HealthMonitor extends AviRestResource {
     @JsonProperty("allow_duplicate_monitors")
     @JsonInclude(Include.NON_NULL)
-    private Boolean allowDuplicateMonitors = null;
+    private Boolean allowDuplicateMonitors;
 
     @JsonProperty("authentication")
     @JsonInclude(Include.NON_NULL)
-    private HealthMonitorAuthInfo authentication = null;
+    private HealthMonitorAuthInfo authentication;
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("disable_quickstart")
     @JsonInclude(Include.NON_NULL)
-    private Boolean disableQuickstart = null;
+    private Boolean disableQuickstart;
 
     @JsonProperty("dns_monitor")
     @JsonInclude(Include.NON_NULL)
-    private HealthMonitorDNS dnsMonitor = null;
+    private HealthMonitorDNS dnsMonitor;
 
     @JsonProperty("external_monitor")
     @JsonInclude(Include.NON_NULL)
-    private HealthMonitorExternal externalMonitor = null;
+    private HealthMonitorExternal externalMonitor;
 
     @JsonProperty("failed_checks")
     @JsonInclude(Include.NON_NULL)
@@ -74,27 +74,27 @@ public class HealthMonitor extends AviRestResource {
 
     @JsonProperty("ftp_monitor")
     @JsonInclude(Include.NON_NULL)
-    private HealthMonitorFtp ftpMonitor = null;
+    private HealthMonitorFtp ftpMonitor;
 
     @JsonProperty("ftps_monitor")
     @JsonInclude(Include.NON_NULL)
-    private HealthMonitorFtp ftpsMonitor = null;
+    private HealthMonitorFtp ftpsMonitor;
 
     @JsonProperty("http_monitor")
     @JsonInclude(Include.NON_NULL)
-    private HealthMonitorHttp httpMonitor = null;
+    private HealthMonitorHttp httpMonitor;
 
     @JsonProperty("https_monitor")
     @JsonInclude(Include.NON_NULL)
-    private HealthMonitorHttp httpsMonitor = null;
+    private HealthMonitorHttp httpsMonitor;
 
     @JsonProperty("imap_monitor")
     @JsonInclude(Include.NON_NULL)
-    private HealthMonitorImap imapMonitor = null;
+    private HealthMonitorImap imapMonitor;
 
     @JsonProperty("imaps_monitor")
     @JsonInclude(Include.NON_NULL)
-    private HealthMonitorImap imapsMonitor = null;
+    private HealthMonitorImap imapsMonitor;
 
     @JsonProperty("is_federated")
     @JsonInclude(Include.NON_NULL)
@@ -102,35 +102,35 @@ public class HealthMonitor extends AviRestResource {
 
     @JsonProperty("ldap_monitor")
     @JsonInclude(Include.NON_NULL)
-    private HealthMonitorLdap ldapMonitor = null;
+    private HealthMonitorLdap ldapMonitor;
 
     @JsonProperty("ldaps_monitor")
     @JsonInclude(Include.NON_NULL)
-    private HealthMonitorLdap ldapsMonitor = null;
+    private HealthMonitorLdap ldapsMonitor;
 
     @JsonProperty("markers")
     @JsonInclude(Include.NON_NULL)
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("monitor_port")
     @JsonInclude(Include.NON_NULL)
-    private Integer monitorPort = null;
+    private Integer monitorPort;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("pop3_monitor")
     @JsonInclude(Include.NON_NULL)
-    private HealthMonitorPop3 pop3Monitor = null;
+    private HealthMonitorPop3 pop3Monitor;
 
     @JsonProperty("pop3s_monitor")
     @JsonInclude(Include.NON_NULL)
-    private HealthMonitorPop3 pop3sMonitor = null;
+    private HealthMonitorPop3 pop3sMonitor;
 
     @JsonProperty("radius_monitor")
     @JsonInclude(Include.NON_NULL)
-    private HealthMonitorRadius radiusMonitor = null;
+    private HealthMonitorRadius radiusMonitor;
 
     @JsonProperty("receive_timeout")
     @JsonInclude(Include.NON_NULL)
@@ -138,7 +138,7 @@ public class HealthMonitor extends AviRestResource {
 
     @JsonProperty("sctp_monitor")
     @JsonInclude(Include.NON_NULL)
-    private HealthMonitorSctp sctpMonitor = null;
+    private HealthMonitorSctp sctpMonitor;
 
     @JsonProperty("send_interval")
     @JsonInclude(Include.NON_NULL)
@@ -146,15 +146,15 @@ public class HealthMonitor extends AviRestResource {
 
     @JsonProperty("sip_monitor")
     @JsonInclude(Include.NON_NULL)
-    private HealthMonitorSIP sipMonitor = null;
+    private HealthMonitorSIP sipMonitor;
 
     @JsonProperty("smtp_monitor")
     @JsonInclude(Include.NON_NULL)
-    private HealthMonitorSmtp smtpMonitor = null;
+    private HealthMonitorSmtp smtpMonitor;
 
     @JsonProperty("smtps_monitor")
     @JsonInclude(Include.NON_NULL)
-    private HealthMonitorSmtp smtpsMonitor = null;
+    private HealthMonitorSmtp smtpsMonitor;
 
     @JsonProperty("successful_checks")
     @JsonInclude(Include.NON_NULL)
@@ -162,19 +162,19 @@ public class HealthMonitor extends AviRestResource {
 
     @JsonProperty("tcp_monitor")
     @JsonInclude(Include.NON_NULL)
-    private HealthMonitorTcp tcpMonitor = null;
+    private HealthMonitorTcp tcpMonitor;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
     @JsonProperty("udp_monitor")
     @JsonInclude(Include.NON_NULL)
-    private HealthMonitorUdp udpMonitor = null;
+    private HealthMonitorUdp udpMonitor;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -182,7 +182,7 @@ public class HealthMonitor extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

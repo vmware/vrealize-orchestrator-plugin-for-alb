@@ -26,31 +26,31 @@ import org.springframework.stereotype.Service;
 public class GslbDnsUpdate extends AviRestResource {
     @JsonProperty("clear_on_max_retries")
     @JsonInclude(Include.NON_NULL)
-    private Integer clearOnMaxRetries = null;
+    private Integer clearOnMaxRetries;
 
     @JsonProperty("gslb_geo_db_profile_uuids")
     @JsonInclude(Include.NON_NULL)
-    private List<String> gslbGeoDbProfileUuids = null;
+    private List<String> gslbGeoDbProfileUuids;
 
     @JsonProperty("gslb_service_uuids")
     @JsonInclude(Include.NON_NULL)
-    private List<String> gslbServiceUuids = null;
+    private List<String> gslbServiceUuids;
 
     @JsonProperty("gslb_uuids")
     @JsonInclude(Include.NON_NULL)
-    private List<String> gslbUuids = null;
+    private List<String> gslbUuids;
 
     @JsonProperty("obj_info")
     @JsonInclude(Include.NON_NULL)
-    private List<GslbObjectInfo> objInfo = null;
+    private List<GslbObjectInfo> objInfo;
 
     @JsonProperty("send_interval")
     @JsonInclude(Include.NON_NULL)
-    private Integer sendInterval = null;
+    private Integer sendInterval;
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

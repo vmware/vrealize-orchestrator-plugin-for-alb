@@ -30,11 +30,11 @@ public class RetryPlacementParams extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("vip_id")
     @JsonInclude(Include.NON_NULL)
-    private String vipId = null;
+    private String vipId;
 
 
 

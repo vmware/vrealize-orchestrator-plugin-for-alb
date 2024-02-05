@@ -28,15 +28,15 @@ import org.springframework.stereotype.Service;
 public class BotManagementLog extends AviRestResource {
     @JsonProperty("classification")
     @JsonInclude(Include.NON_NULL)
-    private BotClassification classification = null;
+    private BotClassification classification;
 
     @JsonProperty("mapping_decision")
     @JsonInclude(Include.NON_NULL)
-    private BotMappingDecision mappingDecision = null;
+    private BotMappingDecision mappingDecision;
 
     @JsonProperty("results")
     @JsonInclude(Include.NON_NULL)
-    private List<BotEvaluationResult> results = null;
+    private List<BotEvaluationResult> results;
 
 
 

@@ -28,19 +28,19 @@ import org.springframework.stereotype.Service;
 public class UpgradeOpsParam extends AviRestResource {
     @JsonProperty("image_ref")
     @JsonInclude(Include.NON_NULL)
-    private String imageRef = null;
+    private String imageRef;
 
     @JsonProperty("patch_ref")
     @JsonInclude(Include.NON_NULL)
-    private String patchRef = null;
+    private String patchRef;
 
     @JsonProperty("se_group_options")
     @JsonInclude(Include.NON_NULL)
-    private SeGroupOptions seGroupOptions = null;
+    private SeGroupOptions seGroupOptions;
 
     @JsonProperty("se_group_resume_options")
     @JsonInclude(Include.NON_NULL)
-    private SeGroupResumeOptions seGroupResumeOptions = null;
+    private SeGroupResumeOptions seGroupResumeOptions;
 
 
 

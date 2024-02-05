@@ -27,31 +27,31 @@ import org.springframework.stereotype.Service;
 public class JWTClaimMatch extends AviRestResource {
     @JsonProperty("bool_match")
     @JsonInclude(Include.NON_NULL)
-    private Boolean boolMatch = null;
+    private Boolean boolMatch;
 
     @JsonProperty("int_match")
     @JsonInclude(Include.NON_NULL)
-    private Integer intMatch = null;
+    private Integer intMatch;
 
     @JsonProperty("is_mandatory")
     @JsonInclude(Include.NON_NULL)
-    private Boolean isMandatory = null;
+    private Boolean isMandatory;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("string_match")
     @JsonInclude(Include.NON_NULL)
-    private StringMatch stringMatch = null;
+    private StringMatch stringMatch;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
     @JsonProperty("validate")
     @JsonInclude(Include.NON_NULL)
-    private Boolean validate = null;
+    private Boolean validate;
 
 
 

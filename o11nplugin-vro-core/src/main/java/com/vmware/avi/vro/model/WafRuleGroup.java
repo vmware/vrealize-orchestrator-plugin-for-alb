@@ -30,19 +30,19 @@ public class WafRuleGroup extends AviRestResource {
 
     @JsonProperty("exclude_list")
     @JsonInclude(Include.NON_NULL)
-    private List<WafExcludeListEntry> excludeList = null;
+    private List<WafExcludeListEntry> excludeList;
 
     @JsonProperty("index")
     @JsonInclude(Include.NON_NULL)
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("rules")
     @JsonInclude(Include.NON_NULL)
-    private List<WafRule> rules = null;
+    private List<WafRule> rules;
 
 
 

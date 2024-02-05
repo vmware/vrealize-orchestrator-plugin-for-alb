@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class OCICredentials extends AviRestResource {
     @JsonProperty("fingerprint")
     @JsonInclude(Include.NON_NULL)
-    private String fingerprint = null;
+    private String fingerprint;
 
     @JsonProperty("key_content")
     @JsonInclude(Include.NON_NULL)
-    private String keyContent = null;
+    private String keyContent;
 
     @JsonProperty("pass_phrase")
     @JsonInclude(Include.NON_NULL)
-    private String passPhrase = null;
+    private String passPhrase;
 
     @JsonProperty("user")
     @JsonInclude(Include.NON_NULL)
-    private String user = null;
+    private String user;
 
 
 

@@ -26,27 +26,27 @@ import org.springframework.stereotype.Service;
 public class OpenStackClusterSetup extends AviRestResource {
     @JsonProperty("admin_tenant")
     @JsonInclude(Include.NON_NULL)
-    private String adminTenant = null;
+    private String adminTenant;
 
     @JsonProperty("auth_url")
     @JsonInclude(Include.NON_NULL)
-    private String authUrl = null;
+    private String authUrl;
 
     @JsonProperty("cc_id")
     @JsonInclude(Include.NON_NULL)
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("error_string")
     @JsonInclude(Include.NON_NULL)
-    private String errorString = null;
+    private String errorString;
 
     @JsonProperty("keystone_host")
     @JsonInclude(Include.NON_NULL)
-    private String keystoneHost = null;
+    private String keystoneHost;
 
     @JsonProperty("privilege")
     @JsonInclude(Include.NON_NULL)
-    private String privilege = null;
+    private String privilege;
 
 
 

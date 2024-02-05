@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class DnsZone extends AviRestResource {
     @JsonProperty("admin_email")
     @JsonInclude(Include.NON_NULL)
-    private String adminEmail = null;
+    private String adminEmail;
 
     @JsonProperty("domain_name")
     @JsonInclude(Include.NON_NULL)
-    private String domainName = null;
+    private String domainName;
 
     @JsonProperty("name_server")
     @JsonInclude(Include.NON_NULL)
-    private String nameServer = null;
+    private String nameServer;
 
 
 

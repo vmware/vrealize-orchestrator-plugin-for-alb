@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class WafConfig extends AviRestResource {
     @JsonProperty("allowed_http_versions")
     @JsonInclude(Include.NON_NULL)
-    private List<String> allowedHttpVersions = null;
+    private List<String> allowedHttpVersions;
 
     @JsonProperty("allowed_methods")
     @JsonInclude(Include.NON_NULL)
-    private List<String> allowedMethods = null;
+    private List<String> allowedMethods;
 
     @JsonProperty("allowed_request_content_type_charsets")
     @JsonInclude(Include.NON_NULL)
-    private List<String> allowedRequestContentTypeCharsets = null;
+    private List<String> allowedRequestContentTypeCharsets;
 
     @JsonProperty("argument_separator")
     @JsonInclude(Include.NON_NULL)
@@ -46,7 +46,7 @@ public class WafConfig extends AviRestResource {
 
     @JsonProperty("content_type_mappings")
     @JsonInclude(Include.NON_NULL)
-    private List<WafContentTypeMapping> contentTypeMappings = null;
+    private List<WafContentTypeMapping> contentTypeMappings;
 
     @JsonProperty("cookie_format_version")
     @JsonInclude(Include.NON_NULL)
@@ -86,11 +86,11 @@ public class WafConfig extends AviRestResource {
 
     @JsonProperty("restricted_extensions")
     @JsonInclude(Include.NON_NULL)
-    private List<String> restrictedExtensions = null;
+    private List<String> restrictedExtensions;
 
     @JsonProperty("restricted_headers")
     @JsonInclude(Include.NON_NULL)
-    private List<String> restrictedHeaders = null;
+    private List<String> restrictedHeaders;
 
     @JsonProperty("send_status_header")
     @JsonInclude(Include.NON_NULL)
@@ -102,7 +102,7 @@ public class WafConfig extends AviRestResource {
 
     @JsonProperty("static_extensions")
     @JsonInclude(Include.NON_NULL)
-    private List<String> staticExtensions = null;
+    private List<String> staticExtensions;
 
     @JsonProperty("status_code_for_rejected_requests")
     @JsonInclude(Include.NON_NULL)

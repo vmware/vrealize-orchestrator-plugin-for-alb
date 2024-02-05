@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class ConnectionClearFilter extends AviRestResource {
     @JsonProperty("ip_addr")
     @JsonInclude(Include.NON_NULL)
-    private String ipAddr = null;
+    private String ipAddr;
 
     @JsonProperty("port")
     @JsonInclude(Include.NON_NULL)
-    private Integer port = null;
+    private Integer port;
 
 
 

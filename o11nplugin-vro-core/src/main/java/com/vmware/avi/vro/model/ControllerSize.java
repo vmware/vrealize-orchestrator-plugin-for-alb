@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class ControllerSize extends AviRestResource {
     @JsonProperty("flavor")
     @JsonInclude(Include.NON_NULL)
-    private String flavor = null;
+    private String flavor;
 
     @JsonProperty("min_cpus")
     @JsonInclude(Include.NON_NULL)
-    private Integer minCpus = null;
+    private Integer minCpus;
 
     @JsonProperty("min_memory")
     @JsonInclude(Include.NON_NULL)
-    private Integer minMemory = null;
+    private Integer minMemory;
 
 
 

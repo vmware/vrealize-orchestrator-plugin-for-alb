@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class GeoLocation extends AviRestResource {
     @JsonProperty("latitude")
     @JsonInclude(Include.NON_NULL)
-    private Float latitude = null;
+    private Float latitude;
 
     @JsonProperty("longitude")
     @JsonInclude(Include.NON_NULL)
-    private Float longitude = null;
+    private Float longitude;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("tag")
     @JsonInclude(Include.NON_NULL)
-    private String tag = null;
+    private String tag;
 
 
 

@@ -45,7 +45,7 @@ public class Vip extends AviRestResource {
 
     @JsonProperty("availability_zone")
     @JsonInclude(Include.NON_NULL)
-    private String availabilityZone = null;
+    private String availabilityZone;
 
     @JsonProperty("avi_allocated_fip")
     @JsonInclude(Include.NON_NULL)
@@ -57,7 +57,7 @@ public class Vip extends AviRestResource {
 
     @JsonProperty("discovered_networks")
     @JsonInclude(Include.NON_NULL)
-    private List<DiscoveredNetwork> discoveredNetworks = null;
+    private List<DiscoveredNetwork> discoveredNetworks;
 
     @JsonProperty("enabled")
     @JsonInclude(Include.NON_NULL)
@@ -65,43 +65,43 @@ public class Vip extends AviRestResource {
 
     @JsonProperty("floating_ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr floatingIp = null;
+    private IpAddr floatingIp;
 
     @JsonProperty("floating_ip6")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr floatingIp6 = null;
+    private IpAddr floatingIp6;
 
     @JsonProperty("floating_subnet6_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String floatingSubnet6Uuid = null;
+    private String floatingSubnet6Uuid;
 
     @JsonProperty("floating_subnet_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String floatingSubnetUuid = null;
+    private String floatingSubnetUuid;
 
     @JsonProperty("ip6_address")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr ip6Address = null;
+    private IpAddr ip6Address;
 
     @JsonProperty("ip_address")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr ipAddress = null;
+    private IpAddr ipAddress;
 
     @JsonProperty("ipam_network_subnet")
     @JsonInclude(Include.NON_NULL)
-    private IPNetworkSubnet ipamNetworkSubnet = null;
+    private IPNetworkSubnet ipamNetworkSubnet;
 
     @JsonProperty("network_ref")
     @JsonInclude(Include.NON_NULL)
-    private String networkRef = null;
+    private String networkRef;
 
     @JsonProperty("placement_networks")
     @JsonInclude(Include.NON_NULL)
-    private List<VipPlacementNetwork> placementNetworks = null;
+    private List<VipPlacementNetwork> placementNetworks;
 
     @JsonProperty("port_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String portUuid = null;
+    private String portUuid;
 
     @JsonProperty("prefix_length")
     @JsonInclude(Include.NON_NULL)
@@ -109,23 +109,23 @@ public class Vip extends AviRestResource {
 
     @JsonProperty("subnet")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrPrefix subnet = null;
+    private IpAddrPrefix subnet;
 
     @JsonProperty("subnet6")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrPrefix subnet6 = null;
+    private IpAddrPrefix subnet6;
 
     @JsonProperty("subnet6_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String subnet6Uuid = null;
+    private String subnet6Uuid;
 
     @JsonProperty("subnet_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String subnetUuid = null;
+    private String subnetUuid;
 
     @JsonProperty("vip_id")
     @JsonInclude(Include.NON_NULL)
-    private String vipId = null;
+    private String vipId;
 
 
 

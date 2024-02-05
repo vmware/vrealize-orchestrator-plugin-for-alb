@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class ALBServicesAccountUser extends AviRestResource {
     @JsonProperty("email")
     @JsonInclude(Include.NON_NULL)
-    private String email = null;
+    private String email;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("phone")
     @JsonInclude(Include.NON_NULL)
-    private String phone = null;
+    private String phone;
 
 
 

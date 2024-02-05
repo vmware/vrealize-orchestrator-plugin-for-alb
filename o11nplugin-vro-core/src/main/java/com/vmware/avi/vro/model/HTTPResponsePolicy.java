@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class HTTPResponsePolicy extends AviRestResource {
     @JsonProperty("rules")
     @JsonInclude(Include.NON_NULL)
-    private List<HTTPResponseRule> rules = null;
+    private List<HTTPResponseRule> rules;
 
 
 

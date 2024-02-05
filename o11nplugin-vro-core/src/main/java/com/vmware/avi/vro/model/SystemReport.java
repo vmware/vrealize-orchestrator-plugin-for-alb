@@ -28,11 +28,11 @@ import org.springframework.stereotype.Service;
 public class SystemReport extends AviRestResource {
     @JsonProperty("archive_ref")
     @JsonInclude(Include.NON_NULL)
-    private String archiveRef = null;
+    private String archiveRef;
 
     @JsonProperty("controller_patch_image_ref")
     @JsonInclude(Include.NON_NULL)
-    private String controllerPatchImageRef = null;
+    private String controllerPatchImageRef;
 
     @JsonProperty("downloadable")
     @JsonInclude(Include.NON_NULL)
@@ -40,35 +40,35 @@ public class SystemReport extends AviRestResource {
 
     @JsonProperty("events")
     @JsonInclude(Include.NON_NULL)
-    private List<ReportEvent> events = null;
+    private List<ReportEvent> events;
 
     @JsonProperty("image_ref")
     @JsonInclude(Include.NON_NULL)
-    private String imageRef = null;
+    private String imageRef;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("readiness_reports")
     @JsonInclude(Include.NON_NULL)
-    private List<ReportDetail> readinessReports = null;
+    private List<ReportDetail> readinessReports;
 
     @JsonProperty("se_patch_image_ref")
     @JsonInclude(Include.NON_NULL)
-    private String sePatchImageRef = null;
+    private String sePatchImageRef;
 
     @JsonProperty("state")
     @JsonInclude(Include.NON_NULL)
-    private ReportOpsState state = null;
+    private ReportOpsState state;
 
     @JsonProperty("summary")
     @JsonInclude(Include.NON_NULL)
-    private ReportSummary summary = null;
+    private ReportSummary summary;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -76,7 +76,7 @@ public class SystemReport extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

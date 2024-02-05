@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class VirtualServiceResource extends AviRestResource {
     @JsonProperty("memory")
     @JsonInclude(Include.NON_NULL)
-    private Integer memory = null;
+    private Integer memory;
 
     @JsonProperty("num_se")
     @JsonInclude(Include.NON_NULL)
-    private Integer numSe = null;
+    private Integer numSe;
 
     @JsonProperty("num_standby_se")
     @JsonInclude(Include.NON_NULL)
-    private Integer numStandbySe = null;
+    private Integer numStandbySe;
 
     @JsonProperty("num_vcpus")
     @JsonInclude(Include.NON_NULL)
-    private Integer numVcpus = null;
+    private Integer numVcpus;
 
 
 

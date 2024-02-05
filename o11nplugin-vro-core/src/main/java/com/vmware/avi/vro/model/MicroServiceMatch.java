@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class MicroServiceMatch extends AviRestResource {
     @JsonProperty("group_ref")
     @JsonInclude(Include.NON_NULL)
-    private String groupRef = null;
+    private String groupRef;
 
     @JsonProperty("match_criteria")
     @JsonInclude(Include.NON_NULL)
-    private String matchCriteria = null;
+    private String matchCriteria;
 
 
 

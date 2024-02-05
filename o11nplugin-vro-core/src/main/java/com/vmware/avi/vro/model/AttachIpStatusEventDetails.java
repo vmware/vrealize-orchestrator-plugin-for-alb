@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class AttachIpStatusEventDetails extends AviRestResource {
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("se_name")
     @JsonInclude(Include.NON_NULL)
-    private String seName = null;
+    private String seName;
 
     @JsonProperty("vip_id")
     @JsonInclude(Include.NON_NULL)
-    private String vipId = null;
+    private String vipId;
 
     @JsonProperty("vs_name")
     @JsonInclude(Include.NON_NULL)
-    private String vsName = null;
+    private String vsName;
 
 
 

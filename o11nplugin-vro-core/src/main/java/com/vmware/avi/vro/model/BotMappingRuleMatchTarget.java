@@ -33,39 +33,39 @@ import org.springframework.stereotype.Service;
 public class BotMappingRuleMatchTarget extends AviRestResource {
     @JsonProperty("class_matcher")
     @JsonInclude(Include.NON_NULL)
-    private BotClassMatcher classMatcher = null;
+    private BotClassMatcher classMatcher;
 
     @JsonProperty("client_ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrMatch clientIp = null;
+    private IpAddrMatch clientIp;
 
     @JsonProperty("component_matcher")
     @JsonInclude(Include.NON_NULL)
-    private String componentMatcher = null;
+    private String componentMatcher;
 
     @JsonProperty("hdrs")
     @JsonInclude(Include.NON_NULL)
-    private List<HdrMatch> hdrs = null;
+    private List<HdrMatch> hdrs;
 
     @JsonProperty("host_hdr")
     @JsonInclude(Include.NON_NULL)
-    private HostHdrMatch hostHdr = null;
+    private HostHdrMatch hostHdr;
 
     @JsonProperty("identifier_matcher")
     @JsonInclude(Include.NON_NULL)
-    private StringMatch identifierMatcher = null;
+    private StringMatch identifierMatcher;
 
     @JsonProperty("method")
     @JsonInclude(Include.NON_NULL)
-    private MethodMatch method = null;
+    private MethodMatch method;
 
     @JsonProperty("path")
     @JsonInclude(Include.NON_NULL)
-    private PathMatch path = null;
+    private PathMatch path;
 
     @JsonProperty("type_matcher")
     @JsonInclude(Include.NON_NULL)
-    private BotTypeMatcher typeMatcher = null;
+    private BotTypeMatcher typeMatcher;
 
 
 

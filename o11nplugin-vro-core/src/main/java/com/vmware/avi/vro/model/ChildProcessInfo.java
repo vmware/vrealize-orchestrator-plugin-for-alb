@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class ChildProcessInfo extends AviRestResource {
     @JsonProperty("memory")
     @JsonInclude(Include.NON_NULL)
-    private Integer memory = null;
+    private Integer memory;
 
     @JsonProperty("pid")
     @JsonInclude(Include.NON_NULL)
-    private Integer pid = null;
+    private Integer pid;
 
 
 

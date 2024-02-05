@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class DebugVirtualServiceSeParams extends AviRestResource {
     @JsonProperty("se_refs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> seRefs = null;
+    private List<String> seRefs;
 
 
 

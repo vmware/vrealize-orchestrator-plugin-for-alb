@@ -71,11 +71,11 @@ public class AnalyticsProfile extends AviRestResource {
 
     @JsonProperty("client_log_config")
     @JsonInclude(Include.NON_NULL)
-    private ClientLogConfiguration clientLogConfig = null;
+    private ClientLogConfiguration clientLogConfig;
 
     @JsonProperty("client_log_streaming_config")
     @JsonInclude(Include.NON_NULL)
-    private ClientLogStreamingConfig clientLogStreamingConfig = null;
+    private ClientLogStreamingConfig clientLogStreamingConfig;
 
     @JsonProperty("conn_lossy_ooo_threshold")
     @JsonInclude(Include.NON_NULL)
@@ -111,7 +111,7 @@ public class AnalyticsProfile extends AviRestResource {
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("enable_adaptive_config")
     @JsonInclude(Include.NON_NULL)
@@ -151,7 +151,7 @@ public class AnalyticsProfile extends AviRestResource {
 
     @JsonProperty("exclude_http_error_codes")
     @JsonInclude(Include.NON_NULL)
-    private List<Integer> excludeHttpErrorCodes = null;
+    private List<Integer> excludeHttpErrorCodes;
 
     @JsonProperty("exclude_invalid_dns_domain_as_error")
     @JsonInclude(Include.NON_NULL)
@@ -191,7 +191,7 @@ public class AnalyticsProfile extends AviRestResource {
 
     @JsonProperty("exclude_sip_error_codes")
     @JsonInclude(Include.NON_NULL)
-    private List<Integer> excludeSipErrorCodes = null;
+    private List<Integer> excludeSipErrorCodes;
 
     @JsonProperty("exclude_stale_ocsp_responses_as_error")
     @JsonInclude(Include.NON_NULL)
@@ -331,15 +331,15 @@ public class AnalyticsProfile extends AviRestResource {
 
     @JsonProperty("latency_audit_props")
     @JsonInclude(Include.NON_NULL)
-    private LatencyAuditProperties latencyAuditProps = null;
+    private LatencyAuditProperties latencyAuditProps;
 
     @JsonProperty("markers")
     @JsonInclude(Include.NON_NULL)
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("ondemand_metrics_idle_timeout")
     @JsonInclude(Include.NON_NULL)
@@ -347,15 +347,15 @@ public class AnalyticsProfile extends AviRestResource {
 
     @JsonProperty("ranges")
     @JsonInclude(Include.NON_NULL)
-    private List<HTTPStatusRange> ranges = null;
+    private List<HTTPStatusRange> ranges;
 
     @JsonProperty("resp_code_block")
     @JsonInclude(Include.NON_NULL)
-    private List<String> respCodeBlock = null;
+    private List<String> respCodeBlock;
 
     @JsonProperty("sensitive_log_profile")
     @JsonInclude(Include.NON_NULL)
-    private SensitiveLogProfile sensitiveLogProfile = null;
+    private SensitiveLogProfile sensitiveLogProfile;
 
     @JsonProperty("sip_log_depth")
     @JsonInclude(Include.NON_NULL)
@@ -363,11 +363,11 @@ public class AnalyticsProfile extends AviRestResource {
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("time_tracker_props")
     @JsonInclude(Include.NON_NULL)
-    private TimeTrackerProperties timeTrackerProps = null;
+    private TimeTrackerProperties timeTrackerProps;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -375,7 +375,7 @@ public class AnalyticsProfile extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class ControllerSizingCloudLimits extends AviRestResource {
     @JsonProperty("num_clouds")
     @JsonInclude(Include.NON_NULL)
-    private Integer numClouds = null;
+    private Integer numClouds;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
 
 

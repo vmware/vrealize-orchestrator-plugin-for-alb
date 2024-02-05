@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class OrgServiceUnits extends AviRestResource {
     @JsonProperty("available_service_units")
     @JsonInclude(Include.NON_NULL)
-    private Float availableServiceUnits = null;
+    private Float availableServiceUnits;
 
     @JsonProperty("org_id")
     @JsonInclude(Include.NON_NULL)
-    private String orgId = null;
+    private String orgId;
 
     @JsonProperty("used_service_units")
     @JsonInclude(Include.NON_NULL)
-    private Float usedServiceUnits = null;
+    private Float usedServiceUnits;
 
 
 

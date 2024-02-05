@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class VcenterQuarantinedHostParams extends AviRestResource {
     @JsonProperty("cloud_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String cloudUuid = null;
+    private String cloudUuid;
 
 
 

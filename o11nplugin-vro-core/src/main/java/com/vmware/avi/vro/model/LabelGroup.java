@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class LabelGroup extends AviRestResource {
     @JsonProperty("labels")
     @JsonInclude(Include.NON_NULL)
-    private List<RoleMatchOperationMatchLabel> labels = null;
+    private List<RoleMatchOperationMatchLabel> labels;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -38,7 +38,7 @@ public class LabelGroup extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

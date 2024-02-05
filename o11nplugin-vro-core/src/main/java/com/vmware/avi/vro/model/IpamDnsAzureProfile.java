@@ -28,31 +28,31 @@ import org.springframework.stereotype.Service;
 public class IpamDnsAzureProfile extends AviRestResource {
     @JsonProperty("azure_serviceprincipal")
     @JsonInclude(Include.NON_NULL)
-    private AzureServicePrincipalCredentials azureServiceprincipal = null;
+    private AzureServicePrincipalCredentials azureServiceprincipal;
 
     @JsonProperty("azure_userpass")
     @JsonInclude(Include.NON_NULL)
-    private AzureUserPassCredentials azureUserpass = null;
+    private AzureUserPassCredentials azureUserpass;
 
     @JsonProperty("egress_service_subnets")
     @JsonInclude(Include.NON_NULL)
-    private List<String> egressServiceSubnets = null;
+    private List<String> egressServiceSubnets;
 
     @JsonProperty("resource_group")
     @JsonInclude(Include.NON_NULL)
-    private String resourceGroup = null;
+    private String resourceGroup;
 
     @JsonProperty("subscription_id")
     @JsonInclude(Include.NON_NULL)
-    private String subscriptionId = null;
+    private String subscriptionId;
 
     @JsonProperty("usable_domains")
     @JsonInclude(Include.NON_NULL)
-    private List<String> usableDomains = null;
+    private List<String> usableDomains;
 
     @JsonProperty("usable_network_uuids")
     @JsonInclude(Include.NON_NULL)
-    private List<String> usableNetworkUuids = null;
+    private List<String> usableNetworkUuids;
 
     @JsonProperty("use_enhanced_ha")
     @JsonInclude(Include.NON_NULL)
@@ -64,7 +64,7 @@ public class IpamDnsAzureProfile extends AviRestResource {
 
     @JsonProperty("virtual_network_ids")
     @JsonInclude(Include.NON_NULL)
-    private List<String> virtualNetworkIds = null;
+    private List<String> virtualNetworkIds;
 
 
 

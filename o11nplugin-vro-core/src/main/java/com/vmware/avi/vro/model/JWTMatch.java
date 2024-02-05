@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class JWTMatch extends AviRestResource {
     @JsonProperty("matches")
     @JsonInclude(Include.NON_NULL)
-    private List<JWTClaimMatch> matches = null;
+    private List<JWTClaimMatch> matches;
 
     @JsonProperty("token_name")
     @JsonInclude(Include.NON_NULL)
-    private String tokenName = null;
+    private String tokenName;
 
 
 

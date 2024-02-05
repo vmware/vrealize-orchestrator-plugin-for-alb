@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class AuthorizationAction extends AviRestResource {
     @JsonProperty("status_code")
     @JsonInclude(Include.NON_NULL)
-    private String statusCode = null;
+    private String statusCode;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)

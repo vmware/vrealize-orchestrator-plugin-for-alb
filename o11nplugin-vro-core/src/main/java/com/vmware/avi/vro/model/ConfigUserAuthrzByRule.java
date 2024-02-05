@@ -26,27 +26,27 @@ import org.springframework.stereotype.Service;
 public class ConfigUserAuthrzByRule extends AviRestResource {
     @JsonProperty("policies")
     @JsonInclude(Include.NON_NULL)
-    private String policies = null;
+    private String policies;
 
     @JsonProperty("roles")
     @JsonInclude(Include.NON_NULL)
-    private String roles = null;
+    private String roles;
 
     @JsonProperty("rule")
     @JsonInclude(Include.NON_NULL)
-    private String rule = null;
+    private String rule;
 
     @JsonProperty("tenants")
     @JsonInclude(Include.NON_NULL)
-    private String tenants = null;
+    private String tenants;
 
     @JsonProperty("user")
     @JsonInclude(Include.NON_NULL)
-    private String user = null;
+    private String user;
 
     @JsonProperty("userprofile")
     @JsonInclude(Include.NON_NULL)
-    private String userprofile = null;
+    private String userprofile;
 
 
 

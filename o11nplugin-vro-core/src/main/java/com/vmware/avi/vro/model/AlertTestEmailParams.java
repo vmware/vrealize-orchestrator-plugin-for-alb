@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class AlertTestEmailParams extends AviRestResource {
     @JsonProperty("subject")
     @JsonInclude(Include.NON_NULL)
-    private String subject = null;
+    private String subject;
 
     @JsonProperty("text")
     @JsonInclude(Include.NON_NULL)
-    private String text = null;
+    private String text;
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

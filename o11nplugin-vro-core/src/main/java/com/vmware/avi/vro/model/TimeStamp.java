@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class TimeStamp extends AviRestResource {
     @JsonProperty("secs")
     @JsonInclude(Include.NON_NULL)
-    private Integer secs = null;
+    private Integer secs;
 
     @JsonProperty("usecs")
     @JsonInclude(Include.NON_NULL)
-    private Integer usecs = null;
+    private Integer usecs;
 
 
 

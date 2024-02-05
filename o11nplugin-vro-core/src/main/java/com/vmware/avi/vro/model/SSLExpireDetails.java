@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class SSLExpireDetails extends AviRestResource {
     @JsonProperty("days_left")
     @JsonInclude(Include.NON_NULL)
-    private Integer daysLeft = null;
+    private Integer daysLeft;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
 
 

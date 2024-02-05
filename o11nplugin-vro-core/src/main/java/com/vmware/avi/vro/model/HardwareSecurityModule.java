@@ -29,19 +29,19 @@ import org.springframework.stereotype.Service;
 public class HardwareSecurityModule extends AviRestResource {
     @JsonProperty("cloudhsm")
     @JsonInclude(Include.NON_NULL)
-    private HSMAwsCloudHsm cloudhsm = null;
+    private HSMAwsCloudHsm cloudhsm;
 
     @JsonProperty("nethsm")
     @JsonInclude(Include.NON_NULL)
-    private List<HSMThalesNetHsm> nethsm = null;
+    private List<HSMThalesNetHsm> nethsm;
 
     @JsonProperty("rfs")
     @JsonInclude(Include.NON_NULL)
-    private HSMThalesRFS rfs = null;
+    private HSMThalesRFS rfs;
 
     @JsonProperty("sluna")
     @JsonInclude(Include.NON_NULL)
-    private HSMSafenetLuna sluna = null;
+    private HSMSafenetLuna sluna;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)

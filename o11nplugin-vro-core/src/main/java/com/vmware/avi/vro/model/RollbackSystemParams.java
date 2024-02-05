@@ -31,7 +31,7 @@ public class RollbackSystemParams extends AviRestResource {
 
     @JsonProperty("se_group_options")
     @JsonInclude(Include.NON_NULL)
-    private SeGroupOptions seGroupOptions = null;
+    private SeGroupOptions seGroupOptions;
 
     @JsonProperty("skip_warnings")
     @JsonInclude(Include.NON_NULL)

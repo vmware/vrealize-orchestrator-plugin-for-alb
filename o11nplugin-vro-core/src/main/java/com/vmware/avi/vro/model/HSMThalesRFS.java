@@ -27,7 +27,7 @@ import org.springframework.stereotype.Service;
 public class HSMThalesRFS extends AviRestResource {
     @JsonProperty("ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr ip = null;
+    private IpAddr ip;
 
     @JsonProperty("port")
     @JsonInclude(Include.NON_NULL)

@@ -27,15 +27,15 @@ import org.springframework.stereotype.Service;
 public class AlertConfig extends AviRestResource {
     @JsonProperty("action_group_ref")
     @JsonInclude(Include.NON_NULL)
-    private String actionGroupRef = null;
+    private String actionGroupRef;
 
     @JsonProperty("alert_rule")
     @JsonInclude(Include.NON_NULL)
-    private AlertRule alertRule = null;
+    private AlertRule alertRule;
 
     @JsonProperty("autoscale_alert")
     @JsonInclude(Include.NON_NULL)
-    private Boolean autoscaleAlert = null;
+    private Boolean autoscaleAlert;
 
     @JsonProperty("category")
     @JsonInclude(Include.NON_NULL)
@@ -43,7 +43,7 @@ public class AlertConfig extends AviRestResource {
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("enabled")
     @JsonInclude(Include.NON_NULL)
@@ -55,19 +55,19 @@ public class AlertConfig extends AviRestResource {
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("obj_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String objUuid = null;
+    private String objUuid;
 
     @JsonProperty("object_type")
     @JsonInclude(Include.NON_NULL)
-    private String objectType = null;
+    private String objectType;
 
     @JsonProperty("recommendation")
     @JsonInclude(Include.NON_NULL)
-    private String recommendation = null;
+    private String recommendation;
 
     @JsonProperty("rolling_window")
     @JsonInclude(Include.NON_NULL)
@@ -75,15 +75,15 @@ public class AlertConfig extends AviRestResource {
 
     @JsonProperty("source")
     @JsonInclude(Include.NON_NULL)
-    private String source = null;
+    private String source;
 
     @JsonProperty("summary")
     @JsonInclude(Include.NON_NULL)
-    private String summary = null;
+    private String summary;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("threshold")
     @JsonInclude(Include.NON_NULL)
@@ -99,7 +99,7 @@ public class AlertConfig extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

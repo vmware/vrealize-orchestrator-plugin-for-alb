@@ -27,11 +27,11 @@ import org.springframework.stereotype.Service;
 public class LicenseServiceUpdate extends AviRestResource {
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("service_units")
     @JsonInclude(Include.NON_NULL)
-    private OrgServiceUnits serviceUnits = null;
+    private OrgServiceUnits serviceUnits;
 
 
 

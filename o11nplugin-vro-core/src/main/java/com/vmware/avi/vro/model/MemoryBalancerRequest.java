@@ -28,31 +28,31 @@ import org.springframework.stereotype.Service;
 public class MemoryBalancerRequest extends AviRestResource {
     @JsonProperty("controller_info")
     @JsonInclude(Include.NON_NULL)
-    private ControllerInfo controllerInfo = null;
+    private ControllerInfo controllerInfo;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("node_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String nodeUuid = null;
+    private String nodeUuid;
 
     @JsonProperty("process_info")
     @JsonInclude(Include.NON_NULL)
-    private ProcessInfo processInfo = null;
+    private ProcessInfo processInfo;
 
     @JsonProperty("process_instance")
     @JsonInclude(Include.NON_NULL)
-    private String processInstance = null;
+    private String processInstance;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("timestamp")
     @JsonInclude(Include.NON_NULL)
-    private String timestamp = null;
+    private String timestamp;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -60,7 +60,7 @@ public class MemoryBalancerRequest extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

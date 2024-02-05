@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class MetricsDbSyncFailureEventDetails extends AviRestResource {
     @JsonProperty("node_name")
     @JsonInclude(Include.NON_NULL)
-    private String nodeName = null;
+    private String nodeName;
 
     @JsonProperty("process_name")
     @JsonInclude(Include.NON_NULL)
-    private String processName = null;
+    private String processName;
 
     @JsonProperty("timestamp")
     @JsonInclude(Include.NON_NULL)
-    private String timestamp = null;
+    private String timestamp;
 
 
 

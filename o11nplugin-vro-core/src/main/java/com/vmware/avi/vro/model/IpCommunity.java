@@ -28,15 +28,15 @@ import org.springframework.stereotype.Service;
 public class IpCommunity extends AviRestResource {
     @JsonProperty("community")
     @JsonInclude(Include.NON_NULL)
-    private List<String> community = null;
+    private List<String> community;
 
     @JsonProperty("ip_begin")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr ipBegin = null;
+    private IpAddr ipBegin;
 
     @JsonProperty("ip_end")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr ipEnd = null;
+    private IpAddr ipEnd;
 
 
 

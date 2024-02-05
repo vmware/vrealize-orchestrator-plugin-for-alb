@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class AlertScriptConfig extends AviRestResource {
     @JsonProperty("action_script")
     @JsonInclude(Include.NON_NULL)
-    private String actionScript = null;
+    private String actionScript;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("timeout")
     @JsonInclude(Include.NON_NULL)
-    private Integer timeout = null;
+    private Integer timeout;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -46,7 +46,7 @@ public class AlertScriptConfig extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

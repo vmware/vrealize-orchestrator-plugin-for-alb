@@ -30,11 +30,11 @@ public class WafRule extends AviRestResource {
 
     @JsonProperty("exclude_list")
     @JsonInclude(Include.NON_NULL)
-    private List<WafExcludeListEntry> excludeList = null;
+    private List<WafExcludeListEntry> excludeList;
 
     @JsonProperty("index")
     @JsonInclude(Include.NON_NULL)
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("is_sensitive")
     @JsonInclude(Include.NON_NULL)
@@ -42,15 +42,15 @@ public class WafRule extends AviRestResource {
 
     @JsonProperty("mode")
     @JsonInclude(Include.NON_NULL)
-    private String mode = null;
+    private String mode;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("paranoia_level")
     @JsonInclude(Include.NON_NULL)
-    private String paranoiaLevel = null;
+    private String paranoiaLevel;
 
     @JsonProperty("phase")
     @JsonInclude(Include.NON_NULL)
@@ -58,15 +58,15 @@ public class WafRule extends AviRestResource {
 
     @JsonProperty("rule")
     @JsonInclude(Include.NON_NULL)
-    private String rule = null;
+    private String rule;
 
     @JsonProperty("rule_id")
     @JsonInclude(Include.NON_NULL)
-    private String ruleId = null;
+    private String ruleId;
 
     @JsonProperty("tags")
     @JsonInclude(Include.NON_NULL)
-    private List<String> tags = null;
+    private List<String> tags;
 
 
 

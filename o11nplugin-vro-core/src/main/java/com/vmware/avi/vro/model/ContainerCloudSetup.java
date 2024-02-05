@@ -26,51 +26,51 @@ import org.springframework.stereotype.Service;
 public class ContainerCloudSetup extends AviRestResource {
     @JsonProperty("cc_id")
     @JsonInclude(Include.NON_NULL)
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("cloud_access")
     @JsonInclude(Include.NON_NULL)
-    private Boolean cloudAccess = null;
+    private Boolean cloudAccess;
 
     @JsonProperty("failed_hosts")
     @JsonInclude(Include.NON_NULL)
-    private List<String> failedHosts = null;
+    private List<String> failedHosts;
 
     @JsonProperty("fleet_endpoint")
     @JsonInclude(Include.NON_NULL)
-    private String fleetEndpoint = null;
+    private String fleetEndpoint;
 
     @JsonProperty("hosts")
     @JsonInclude(Include.NON_NULL)
-    private List<String> hosts = null;
+    private List<String> hosts;
 
     @JsonProperty("master_nodes")
     @JsonInclude(Include.NON_NULL)
-    private List<String> masterNodes = null;
+    private List<String> masterNodes;
 
     @JsonProperty("missing_hosts")
     @JsonInclude(Include.NON_NULL)
-    private List<String> missingHosts = null;
+    private List<String> missingHosts;
 
     @JsonProperty("new_hosts")
     @JsonInclude(Include.NON_NULL)
-    private List<String> newHosts = null;
+    private List<String> newHosts;
 
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("se_deploy_method_access")
     @JsonInclude(Include.NON_NULL)
-    private Boolean seDeployMethodAccess = null;
+    private Boolean seDeployMethodAccess;
 
     @JsonProperty("se_name")
     @JsonInclude(Include.NON_NULL)
-    private String seName = null;
+    private String seName;
 
     @JsonProperty("version")
     @JsonInclude(Include.NON_NULL)
-    private String version = null;
+    private String version;
 
 
 

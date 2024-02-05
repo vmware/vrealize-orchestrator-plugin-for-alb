@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class CloudAutoscalingConfigFailureDetails extends AviRestResource {
     @JsonProperty("cc_id")
     @JsonInclude(Include.NON_NULL)
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("error_string")
     @JsonInclude(Include.NON_NULL)
-    private String errorString = null;
+    private String errorString;
 
 
 

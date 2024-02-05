@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class AuthMatchAttribute extends AviRestResource {
     @JsonProperty("criteria")
     @JsonInclude(Include.NON_NULL)
-    private String criteria = null;
+    private String criteria;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("values")
     @JsonInclude(Include.NON_NULL)
-    private List<String> values = null;
+    private List<String> values;
 
 
 

@@ -26,27 +26,27 @@ import org.springframework.stereotype.Service;
 public class OverallInfo extends AviRestResource {
     @JsonProperty("available")
     @JsonInclude(Include.NON_NULL)
-    private Integer available = null;
+    private Integer available;
 
     @JsonProperty("free_percent")
     @JsonInclude(Include.NON_NULL)
-    private String freePercent = null;
+    private String freePercent;
 
     @JsonProperty("mount_path")
     @JsonInclude(Include.NON_NULL)
-    private String mountPath = null;
+    private String mountPath;
 
     @JsonProperty("path")
     @JsonInclude(Include.NON_NULL)
-    private String path = null;
+    private String path;
 
     @JsonProperty("size")
     @JsonInclude(Include.NON_NULL)
-    private Integer size = null;
+    private Integer size;
 
     @JsonProperty("used")
     @JsonInclude(Include.NON_NULL)
-    private Integer used = null;
+    private Integer used;
 
 
 

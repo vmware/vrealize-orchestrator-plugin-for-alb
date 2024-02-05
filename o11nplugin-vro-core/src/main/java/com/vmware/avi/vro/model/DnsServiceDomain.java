@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class DnsServiceDomain extends AviRestResource {
     @JsonProperty("domain_name")
     @JsonInclude(Include.NON_NULL)
-    private String domainName = null;
+    private String domainName;
 
     @JsonProperty("pass_through")
     @JsonInclude(Include.NON_NULL)
@@ -34,7 +34,7 @@ public class DnsServiceDomain extends AviRestResource {
 
     @JsonProperty("record_ttl")
     @JsonInclude(Include.NON_NULL)
-    private Integer recordTtl = null;
+    private Integer recordTtl;
 
 
 

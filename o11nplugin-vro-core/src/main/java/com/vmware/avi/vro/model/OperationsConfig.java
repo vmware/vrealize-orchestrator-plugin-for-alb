@@ -27,7 +27,7 @@ import org.springframework.stereotype.Service;
 public class OperationsConfig extends AviRestResource {
     @JsonProperty("inventory_config")
     @JsonInclude(Include.NON_NULL)
-    private InventoryConfig inventoryConfig = null;
+    private InventoryConfig inventoryConfig;
 
 
 

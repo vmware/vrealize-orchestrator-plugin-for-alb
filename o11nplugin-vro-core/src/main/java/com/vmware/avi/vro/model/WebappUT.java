@@ -45,47 +45,47 @@ public class WebappUT extends AviRestResource {
 
     @JsonProperty("mandatory_test")
     @JsonInclude(Include.NON_NULL)
-    private L1FMandatoryTestCase mandatoryTest = null;
+    private L1FMandatoryTestCase mandatoryTest;
 
     @JsonProperty("mandatory_tests")
     @JsonInclude(Include.NON_NULL)
-    private List<L1FMandatoryTestCase> mandatoryTests = null;
+    private List<L1FMandatoryTestCase> mandatoryTests;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("sensitive_test")
     @JsonInclude(Include.NON_NULL)
-    private L1FSensitiveTestCase sensitiveTest = null;
+    private L1FSensitiveTestCase sensitiveTest;
 
     @JsonProperty("sensitive_tests")
     @JsonInclude(Include.NON_NULL)
-    private List<L1FSensitiveTestCase> sensitiveTests = null;
+    private List<L1FSensitiveTestCase> sensitiveTests;
 
     @JsonProperty("skip_optional_check_tests")
     @JsonInclude(Include.NON_NULL)
-    private Boolean skipOptionalCheckTests = null;
+    private Boolean skipOptionalCheckTests;
 
     @JsonProperty("string_length_test")
     @JsonInclude(Include.NON_NULL)
-    private L1StringLengthTestCase stringLengthTest = null;
+    private L1StringLengthTestCase stringLengthTest;
 
     @JsonProperty("string_length_tests")
     @JsonInclude(Include.NON_NULL)
-    private List<L1StringLengthTestCase> stringLengthTests = null;
+    private List<L1StringLengthTestCase> stringLengthTests;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("test_sensitive_string")
     @JsonInclude(Include.NON_NULL)
-    private String testSensitiveString = null;
+    private String testSensitiveString;
 
     @JsonProperty("test_string")
     @JsonInclude(Include.NON_NULL)
-    private String testString = null;
+    private String testString;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -93,7 +93,7 @@ public class WebappUT extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

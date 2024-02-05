@@ -33,47 +33,47 @@ import org.springframework.stereotype.Service;
 public class CloudConnectorUser extends AviRestResource {
     @JsonProperty("azure_serviceprincipal")
     @JsonInclude(Include.NON_NULL)
-    private AzureServicePrincipalCredentials azureServiceprincipal = null;
+    private AzureServicePrincipalCredentials azureServiceprincipal;
 
     @JsonProperty("azure_userpass")
     @JsonInclude(Include.NON_NULL)
-    private AzureUserPassCredentials azureUserpass = null;
+    private AzureUserPassCredentials azureUserpass;
 
     @JsonProperty("gcp_credentials")
     @JsonInclude(Include.NON_NULL)
-    private GCPCredentials gcpCredentials = null;
+    private GCPCredentials gcpCredentials;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("nsxt_credentials")
     @JsonInclude(Include.NON_NULL)
-    private NsxtCredentials nsxtCredentials = null;
+    private NsxtCredentials nsxtCredentials;
 
     @JsonProperty("oci_credentials")
     @JsonInclude(Include.NON_NULL)
-    private OCICredentials ociCredentials = null;
+    private OCICredentials ociCredentials;
 
     @JsonProperty("password")
     @JsonInclude(Include.NON_NULL)
-    private String password = null;
+    private String password;
 
     @JsonProperty("private_key")
     @JsonInclude(Include.NON_NULL)
-    private String privateKey = null;
+    private String privateKey;
 
     @JsonProperty("public_key")
     @JsonInclude(Include.NON_NULL)
-    private String publicKey = null;
+    private String publicKey;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("tencent_credentials")
     @JsonInclude(Include.NON_NULL)
-    private TencentCredentials tencentCredentials = null;
+    private TencentCredentials tencentCredentials;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -81,11 +81,11 @@ public class CloudConnectorUser extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("vcenter_credentials")
     @JsonInclude(Include.NON_NULL)
-    private VCenterCredentials vcenterCredentials = null;
+    private VCenterCredentials vcenterCredentials;
 
 
 

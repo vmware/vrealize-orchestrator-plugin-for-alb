@@ -27,19 +27,19 @@ import org.springframework.stereotype.Service;
 public class GslbObjectInfo extends AviRestResource {
     @JsonProperty("obj")
     @JsonInclude(Include.NON_NULL)
-    private GslbObj obj = null;
+    private GslbObj obj;
 
     @JsonProperty("object_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String objectUuid = null;
+    private String objectUuid;
 
     @JsonProperty("pb_name")
     @JsonInclude(Include.NON_NULL)
-    private String pbName = null;
+    private String pbName;
 
     @JsonProperty("state")
     @JsonInclude(Include.NON_NULL)
-    private String state = null;
+    private String state;
 
 
 

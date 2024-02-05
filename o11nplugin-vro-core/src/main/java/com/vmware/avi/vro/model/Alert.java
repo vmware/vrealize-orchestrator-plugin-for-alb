@@ -26,83 +26,83 @@ import org.springframework.stereotype.Service;
 public class Alert extends AviRestResource {
     @JsonProperty("action_script_output")
     @JsonInclude(Include.NON_NULL)
-    private String actionScriptOutput = null;
+    private String actionScriptOutput;
 
     @JsonProperty("alert_config_ref")
     @JsonInclude(Include.NON_NULL)
-    private String alertConfigRef = null;
+    private String alertConfigRef;
 
     @JsonProperty("app_events")
     @JsonInclude(Include.NON_NULL)
-    private List<ApplicationLog> appEvents = null;
+    private List<ApplicationLog> appEvents;
 
     @JsonProperty("conn_events")
     @JsonInclude(Include.NON_NULL)
-    private List<ConnectionLog> connEvents = null;
+    private List<ConnectionLog> connEvents;
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("event_pages")
     @JsonInclude(Include.NON_NULL)
-    private List<String> eventPages = null;
+    private List<String> eventPages;
 
     @JsonProperty("events")
     @JsonInclude(Include.NON_NULL)
-    private List<EventLog> events = null;
+    private List<EventLog> events;
 
     @JsonProperty("last_throttle_timestamp")
     @JsonInclude(Include.NON_NULL)
-    private Float lastThrottleTimestamp = null;
+    private Float lastThrottleTimestamp;
 
     @JsonProperty("level")
     @JsonInclude(Include.NON_NULL)
-    private String level = null;
+    private String level;
 
     @JsonProperty("metric_info")
     @JsonInclude(Include.NON_NULL)
-    private List<MetricLog> metricInfo = null;
+    private List<MetricLog> metricInfo;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("obj_key")
     @JsonInclude(Include.NON_NULL)
-    private String objKey = null;
+    private String objKey;
 
     @JsonProperty("obj_name")
     @JsonInclude(Include.NON_NULL)
-    private String objName = null;
+    private String objName;
 
     @JsonProperty("obj_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String objUuid = null;
+    private String objUuid;
 
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("related_uuids")
     @JsonInclude(Include.NON_NULL)
-    private List<String> relatedUuids = null;
+    private List<String> relatedUuids;
 
     @JsonProperty("state")
     @JsonInclude(Include.NON_NULL)
-    private String state = null;
+    private String state;
 
     @JsonProperty("summary")
     @JsonInclude(Include.NON_NULL)
-    private String summary = null;
+    private String summary;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("threshold")
     @JsonInclude(Include.NON_NULL)
-    private Integer threshold = null;
+    private Integer threshold;
 
     @JsonProperty("throttle_count")
     @JsonInclude(Include.NON_NULL)
@@ -110,7 +110,7 @@ public class Alert extends AviRestResource {
 
     @JsonProperty("timestamp")
     @JsonInclude(Include.NON_NULL)
-    private Float timestamp = null;
+    private Float timestamp;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -118,7 +118,7 @@ public class Alert extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

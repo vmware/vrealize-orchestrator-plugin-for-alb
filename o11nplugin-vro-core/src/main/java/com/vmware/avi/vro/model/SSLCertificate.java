@@ -29,15 +29,15 @@ import org.springframework.stereotype.Service;
 public class SSLCertificate extends AviRestResource {
     @JsonProperty("certificate")
     @JsonInclude(Include.NON_NULL)
-    private String certificate = null;
+    private String certificate;
 
     @JsonProperty("certificate_signing_request")
     @JsonInclude(Include.NON_NULL)
-    private String certificateSigningRequest = null;
+    private String certificateSigningRequest;
 
     @JsonProperty("chain_verified")
     @JsonInclude(Include.NON_NULL)
-    private Boolean chainVerified = null;
+    private Boolean chainVerified;
 
     @JsonProperty("days_until_expire")
     @JsonInclude(Include.NON_NULL)
@@ -49,59 +49,59 @@ public class SSLCertificate extends AviRestResource {
 
     @JsonProperty("fingerprint")
     @JsonInclude(Include.NON_NULL)
-    private String fingerprint = null;
+    private String fingerprint;
 
     @JsonProperty("issuer")
     @JsonInclude(Include.NON_NULL)
-    private SSLCertificateDescription issuer = null;
+    private SSLCertificateDescription issuer;
 
     @JsonProperty("key_params")
     @JsonInclude(Include.NON_NULL)
-    private SSLKeyParams keyParams = null;
+    private SSLKeyParams keyParams;
 
     @JsonProperty("not_after")
     @JsonInclude(Include.NON_NULL)
-    private String notAfter = null;
+    private String notAfter;
 
     @JsonProperty("not_before")
     @JsonInclude(Include.NON_NULL)
-    private String notBefore = null;
+    private String notBefore;
 
     @JsonProperty("public_key")
     @JsonInclude(Include.NON_NULL)
-    private String publicKey = null;
+    private String publicKey;
 
     @JsonProperty("self_signed")
     @JsonInclude(Include.NON_NULL)
-    private Boolean selfSigned = null;
+    private Boolean selfSigned;
 
     @JsonProperty("serial_number")
     @JsonInclude(Include.NON_NULL)
-    private String serialNumber = null;
+    private String serialNumber;
 
     @JsonProperty("signature")
     @JsonInclude(Include.NON_NULL)
-    private String signature = null;
+    private String signature;
 
     @JsonProperty("signature_algorithm")
     @JsonInclude(Include.NON_NULL)
-    private String signatureAlgorithm = null;
+    private String signatureAlgorithm;
 
     @JsonProperty("subject")
     @JsonInclude(Include.NON_NULL)
-    private SSLCertificateDescription subject = null;
+    private SSLCertificateDescription subject;
 
     @JsonProperty("subject_alt_names")
     @JsonInclude(Include.NON_NULL)
-    private List<String> subjectAltNames = null;
+    private List<String> subjectAltNames;
 
     @JsonProperty("text")
     @JsonInclude(Include.NON_NULL)
-    private String text = null;
+    private String text;
 
     @JsonProperty("version")
     @JsonInclude(Include.NON_NULL)
-    private String version = null;
+    private String version;
 
 
 

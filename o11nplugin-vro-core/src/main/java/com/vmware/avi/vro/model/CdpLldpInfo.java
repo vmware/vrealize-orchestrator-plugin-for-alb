@@ -26,27 +26,27 @@ import org.springframework.stereotype.Service;
 public class CdpLldpInfo extends AviRestResource {
     @JsonProperty("chassis")
     @JsonInclude(Include.NON_NULL)
-    private String chassis = null;
+    private String chassis;
 
     @JsonProperty("device")
     @JsonInclude(Include.NON_NULL)
-    private String device = null;
+    private String device;
 
     @JsonProperty("mgmtaddr")
     @JsonInclude(Include.NON_NULL)
-    private String mgmtaddr = null;
+    private String mgmtaddr;
 
     @JsonProperty("port")
     @JsonInclude(Include.NON_NULL)
-    private String port = null;
+    private String port;
 
     @JsonProperty("switch_info_type")
     @JsonInclude(Include.NON_NULL)
-    private String switchInfoType = null;
+    private String switchInfoType;
 
     @JsonProperty("system_name")
     @JsonInclude(Include.NON_NULL)
-    private String systemName = null;
+    private String systemName;
 
 
 

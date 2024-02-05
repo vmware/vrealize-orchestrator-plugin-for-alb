@@ -26,23 +26,23 @@ import org.springframework.stereotype.Service;
 public class BurstLicenseDetails extends AviRestResource {
     @JsonProperty("cores")
     @JsonInclude(Include.NON_NULL)
-    private Integer cores = null;
+    private Integer cores;
 
     @JsonProperty("end_time")
     @JsonInclude(Include.NON_NULL)
-    private String endTime = null;
+    private String endTime;
 
     @JsonProperty("se_name")
     @JsonInclude(Include.NON_NULL)
-    private String seName = null;
+    private String seName;
 
     @JsonProperty("se_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String seUuid = null;
+    private String seUuid;
 
     @JsonProperty("start_time")
     @JsonInclude(Include.NON_NULL)
-    private String startTime = null;
+    private String startTime;
 
 
 

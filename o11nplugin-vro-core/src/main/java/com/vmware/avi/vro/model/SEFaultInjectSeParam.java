@@ -30,7 +30,7 @@ public class SEFaultInjectSeParam extends AviRestResource {
 
     @JsonProperty("obj_names")
     @JsonInclude(Include.NON_NULL)
-    private List<String> objNames = null;
+    private List<String> objNames;
 
     @JsonProperty("random_core")
     @JsonInclude(Include.NON_NULL)

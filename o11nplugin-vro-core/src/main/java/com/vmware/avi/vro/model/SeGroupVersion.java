@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class SeGroupVersion extends AviRestResource {
     @JsonProperty("fips_mode")
     @JsonInclude(Include.NON_NULL)
-    private Boolean fipsMode = null;
+    private Boolean fipsMode;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("patch")
     @JsonInclude(Include.NON_NULL)
-    private String patch = null;
+    private String patch;
 
     @JsonProperty("version")
     @JsonInclude(Include.NON_NULL)
-    private String version = null;
+    private String version;
 
 
 

@@ -26,27 +26,27 @@ import org.springframework.stereotype.Service;
 public class VinfraVcenterBadCredentials extends AviRestResource {
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("previous_count")
     @JsonInclude(Include.NON_NULL)
-    private Integer previousCount = null;
+    private Integer previousCount;
 
     @JsonProperty("user")
     @JsonInclude(Include.NON_NULL)
-    private String user = null;
+    private String user;
 
     @JsonProperty("vcenter")
     @JsonInclude(Include.NON_NULL)
-    private String vcenter = null;
+    private String vcenter;
 
     @JsonProperty("vcenter_name")
     @JsonInclude(Include.NON_NULL)
-    private String vcenterName = null;
+    private String vcenterName;
 
     @JsonProperty("vcenter_object")
     @JsonInclude(Include.NON_NULL)
-    private String vcenterObject = null;
+    private String vcenterObject;
 
 
 

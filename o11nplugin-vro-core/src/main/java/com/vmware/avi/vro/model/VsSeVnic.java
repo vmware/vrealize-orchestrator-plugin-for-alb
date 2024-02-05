@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class VsSeVnic extends AviRestResource {
     @JsonProperty("lif")
     @JsonInclude(Include.NON_NULL)
-    private String lif = null;
+    private String lif;
 
     @JsonProperty("mac")
     @JsonInclude(Include.NON_NULL)
-    private String mac = null;
+    private String mac;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
 
 

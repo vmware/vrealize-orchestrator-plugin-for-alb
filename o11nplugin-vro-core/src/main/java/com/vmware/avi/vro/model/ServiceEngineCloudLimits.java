@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class ServiceEngineCloudLimits extends AviRestResource {
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
     @JsonProperty("vrfs_per_serviceengine")
     @JsonInclude(Include.NON_NULL)
-    private Integer vrfsPerServiceengine = null;
+    private Integer vrfsPerServiceengine;
 
 
 

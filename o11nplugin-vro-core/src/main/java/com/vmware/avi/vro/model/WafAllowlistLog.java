@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class WafAllowlistLog extends AviRestResource {
     @JsonProperty("actions")
     @JsonInclude(Include.NON_NULL)
-    private List<String> actions = null;
+    private List<String> actions;
 
     @JsonProperty("rule_name")
     @JsonInclude(Include.NON_NULL)
-    private String ruleName = null;
+    private String ruleName;
 
 
 

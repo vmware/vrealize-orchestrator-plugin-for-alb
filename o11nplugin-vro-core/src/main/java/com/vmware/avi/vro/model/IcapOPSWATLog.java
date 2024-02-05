@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class IcapOPSWATLog extends AviRestResource {
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("threat_id")
     @JsonInclude(Include.NON_NULL)
-    private String threatId = null;
+    private String threatId;
 
     @JsonProperty("violations")
     @JsonInclude(Include.NON_NULL)
-    private List<IcapViolation> violations = null;
+    private List<IcapViolation> violations;
 
 
 

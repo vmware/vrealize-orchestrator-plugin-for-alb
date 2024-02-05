@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class RoleFilterMatchLabel extends AviRestResource {
     @JsonProperty("key")
     @JsonInclude(Include.NON_NULL)
-    private String key = null;
+    private String key;
 
     @JsonProperty("values")
     @JsonInclude(Include.NON_NULL)
-    private List<String> values = null;
+    private List<String> values;
 
 
 

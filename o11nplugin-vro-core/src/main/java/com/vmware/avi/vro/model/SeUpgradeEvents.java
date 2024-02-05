@@ -26,55 +26,55 @@ import org.springframework.stereotype.Service;
 public class SeUpgradeEvents extends AviRestResource {
     @JsonProperty("from_se_ref")
     @JsonInclude(Include.NON_NULL)
-    private String fromSeRef = null;
+    private String fromSeRef;
 
     @JsonProperty("num_se")
     @JsonInclude(Include.NON_NULL)
-    private Integer numSe = null;
+    private Integer numSe;
 
     @JsonProperty("num_se_group")
     @JsonInclude(Include.NON_NULL)
-    private Integer numSeGroup = null;
+    private Integer numSeGroup;
 
     @JsonProperty("num_vs")
     @JsonInclude(Include.NON_NULL)
-    private Integer numVs = null;
+    private Integer numVs;
 
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private List<String> reason = null;
+    private List<String> reason;
 
     @JsonProperty("se_group_ha_mode")
     @JsonInclude(Include.NON_NULL)
-    private String seGroupHaMode = null;
+    private String seGroupHaMode;
 
     @JsonProperty("se_group_ref")
     @JsonInclude(Include.NON_NULL)
-    private String seGroupRef = null;
+    private String seGroupRef;
 
     @JsonProperty("se_ref")
     @JsonInclude(Include.NON_NULL)
-    private String seRef = null;
+    private String seRef;
 
     @JsonProperty("sub_tasks")
     @JsonInclude(Include.NON_NULL)
-    private List<String> subTasks = null;
+    private List<String> subTasks;
 
     @JsonProperty("task")
     @JsonInclude(Include.NON_NULL)
-    private String task = null;
+    private String task;
 
     @JsonProperty("to_se_ref")
     @JsonInclude(Include.NON_NULL)
-    private String toSeRef = null;
+    private String toSeRef;
 
     @JsonProperty("traffic_status")
     @JsonInclude(Include.NON_NULL)
-    private String trafficStatus = null;
+    private String trafficStatus;
 
     @JsonProperty("vs_ref")
     @JsonInclude(Include.NON_NULL)
-    private String vsRef = null;
+    private String vsRef;
 
 
 

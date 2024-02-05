@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class GslbSubDomainPlacementRuntime extends AviRestResource {
     @JsonProperty("placement_allowed")
     @JsonInclude(Include.NON_NULL)
-    private Boolean placementAllowed = null;
+    private Boolean placementAllowed;
 
     @JsonProperty("sub_domain")
     @JsonInclude(Include.NON_NULL)
-    private String subDomain = null;
+    private String subDomain;
 
     @JsonProperty("transition_ops")
     @JsonInclude(Include.NON_NULL)

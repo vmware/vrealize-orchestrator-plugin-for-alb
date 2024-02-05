@@ -27,7 +27,7 @@ import org.springframework.stereotype.Service;
 public class FbPoolInfo extends AviRestResource {
     @JsonProperty("oper_status")
     @JsonInclude(Include.NON_NULL)
-    private OperationalStatus operStatus = null;
+    private OperationalStatus operStatus;
 
 
 

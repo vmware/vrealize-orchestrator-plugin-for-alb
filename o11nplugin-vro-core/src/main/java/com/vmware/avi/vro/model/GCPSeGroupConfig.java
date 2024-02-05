@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class GCPSeGroupConfig extends AviRestResource {
     @JsonProperty("backend_data_vpc_network_name")
     @JsonInclude(Include.NON_NULL)
-    private String backendDataVpcNetworkName = null;
+    private String backendDataVpcNetworkName;
 
     @JsonProperty("backend_data_vpc_project_id")
     @JsonInclude(Include.NON_NULL)
-    private String backendDataVpcProjectId = null;
+    private String backendDataVpcProjectId;
 
     @JsonProperty("backend_data_vpc_subnet_name")
     @JsonInclude(Include.NON_NULL)
-    private String backendDataVpcSubnetName = null;
+    private String backendDataVpcSubnetName;
 
 
 

@@ -31,7 +31,7 @@ public class DynamicDnsRecord extends AviRestResource {
 
     @JsonProperty("cname")
     @JsonInclude(Include.NON_NULL)
-    private DnsCnameRdata cname = null;
+    private DnsCnameRdata cname;
 
     @JsonProperty("delegated")
     @JsonInclude(Include.NON_NULL)
@@ -39,63 +39,63 @@ public class DynamicDnsRecord extends AviRestResource {
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("dns_vs_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String dnsVsUuid = null;
+    private String dnsVsUuid;
 
     @JsonProperty("fqdn")
     @JsonInclude(Include.NON_NULL)
-    private String fqdn = null;
+    private String fqdn;
 
     @JsonProperty("ip6_address")
     @JsonInclude(Include.NON_NULL)
-    private List<DnsAAAARdata> ip6Address = null;
+    private List<DnsAAAARdata> ip6Address;
 
     @JsonProperty("ip_address")
     @JsonInclude(Include.NON_NULL)
-    private List<DnsARdata> ipAddress = null;
+    private List<DnsARdata> ipAddress;
 
     @JsonProperty("metadata")
     @JsonInclude(Include.NON_NULL)
-    private String metadata = null;
+    private String metadata;
 
     @JsonProperty("mx_records")
     @JsonInclude(Include.NON_NULL)
-    private List<DnsMxRdata> mxRecords = null;
+    private List<DnsMxRdata> mxRecords;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("ns")
     @JsonInclude(Include.NON_NULL)
-    private List<DnsNsRdata> ns = null;
+    private List<DnsNsRdata> ns;
 
     @JsonProperty("num_records_in_response")
     @JsonInclude(Include.NON_NULL)
-    private Integer numRecordsInResponse = null;
+    private Integer numRecordsInResponse;
 
     @JsonProperty("service_locators")
     @JsonInclude(Include.NON_NULL)
-    private List<DnsSrvRdata> serviceLocators = null;
+    private List<DnsSrvRdata> serviceLocators;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("ttl")
     @JsonInclude(Include.NON_NULL)
-    private Integer ttl = null;
+    private Integer ttl;
 
     @JsonProperty("txt_records")
     @JsonInclude(Include.NON_NULL)
-    private List<DnsTxtRdata> txtRecords = null;
+    private List<DnsTxtRdata> txtRecords;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -103,7 +103,7 @@ public class DynamicDnsRecord extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("wildcard_match")
     @JsonInclude(Include.NON_NULL)

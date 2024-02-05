@@ -27,63 +27,63 @@ import org.springframework.stereotype.Service;
 public class DnsResponse extends AviRestResource {
     @JsonProperty("additional_records_count")
     @JsonInclude(Include.NON_NULL)
-    private Integer additionalRecordsCount = null;
+    private Integer additionalRecordsCount;
 
     @JsonProperty("answer_records_count")
     @JsonInclude(Include.NON_NULL)
-    private Integer answerRecordsCount = null;
+    private Integer answerRecordsCount;
 
     @JsonProperty("authoritative_answer")
     @JsonInclude(Include.NON_NULL)
-    private Boolean authoritativeAnswer = null;
+    private Boolean authoritativeAnswer;
 
     @JsonProperty("fallback_algorithm_used")
     @JsonInclude(Include.NON_NULL)
-    private Boolean fallbackAlgorithmUsed = null;
+    private Boolean fallbackAlgorithmUsed;
 
     @JsonProperty("is_wildcard")
     @JsonInclude(Include.NON_NULL)
-    private Boolean isWildcard = null;
+    private Boolean isWildcard;
 
     @JsonProperty("nameserver_records_count")
     @JsonInclude(Include.NON_NULL)
-    private Integer nameserverRecordsCount = null;
+    private Integer nameserverRecordsCount;
 
     @JsonProperty("opcode")
     @JsonInclude(Include.NON_NULL)
-    private String opcode = null;
+    private String opcode;
 
     @JsonProperty("opt_record")
     @JsonInclude(Include.NON_NULL)
-    private DnsOptRecord optRecord = null;
+    private DnsOptRecord optRecord;
 
     @JsonProperty("query_or_response")
     @JsonInclude(Include.NON_NULL)
-    private Boolean queryOrResponse = null;
+    private Boolean queryOrResponse;
 
     @JsonProperty("question_count")
     @JsonInclude(Include.NON_NULL)
-    private Integer questionCount = null;
+    private Integer questionCount;
 
     @JsonProperty("records")
     @JsonInclude(Include.NON_NULL)
-    private List<DnsResourceRecord> records = null;
+    private List<DnsResourceRecord> records;
 
     @JsonProperty("recursion_available")
     @JsonInclude(Include.NON_NULL)
-    private Boolean recursionAvailable = null;
+    private Boolean recursionAvailable;
 
     @JsonProperty("recursion_desired")
     @JsonInclude(Include.NON_NULL)
-    private Boolean recursionDesired = null;
+    private Boolean recursionDesired;
 
     @JsonProperty("response_code")
     @JsonInclude(Include.NON_NULL)
-    private String responseCode = null;
+    private String responseCode;
 
     @JsonProperty("truncation")
     @JsonInclude(Include.NON_NULL)
-    private Boolean truncation = null;
+    private Boolean truncation;
 
 
 

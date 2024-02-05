@@ -26,23 +26,23 @@ import org.springframework.stereotype.Service;
 public class RecommendationRequest extends AviRestResource {
     @JsonProperty("match_element")
     @JsonInclude(Include.NON_NULL)
-    private String matchElement = null;
+    private String matchElement;
 
     @JsonProperty("report_timestamp")
     @JsonInclude(Include.NON_NULL)
-    private String reportTimestamp = null;
+    private String reportTimestamp;
 
     @JsonProperty("request_id")
     @JsonInclude(Include.NON_NULL)
-    private String requestId = null;
+    private String requestId;
 
     @JsonProperty("rule_id")
     @JsonInclude(Include.NON_NULL)
-    private String ruleId = null;
+    private String ruleId;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
 
 

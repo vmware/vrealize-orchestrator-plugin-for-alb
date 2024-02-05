@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class IPReputationTypeMatch extends AviRestResource {
     @JsonProperty("match_operation")
     @JsonInclude(Include.NON_NULL)
-    private String matchOperation = null;
+    private String matchOperation;
 
     @JsonProperty("reputation_types")
     @JsonInclude(Include.NON_NULL)
-    private List<String> reputationTypes = null;
+    private List<String> reputationTypes;
 
 
 

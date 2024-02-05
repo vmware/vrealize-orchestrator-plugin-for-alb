@@ -29,19 +29,19 @@ import org.springframework.stereotype.Service;
 public class InventoryFaultConfig extends AviRestResource {
     @JsonProperty("controller_faults")
     @JsonInclude(Include.NON_NULL)
-    private ControllerFaults controllerFaults = null;
+    private ControllerFaults controllerFaults;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("serviceengine_faults")
     @JsonInclude(Include.NON_NULL)
-    private ServiceengineFaults serviceengineFaults = null;
+    private ServiceengineFaults serviceengineFaults;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -49,11 +49,11 @@ public class InventoryFaultConfig extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("virtualservice_faults")
     @JsonInclude(Include.NON_NULL)
-    private VirtualserviceFaults virtualserviceFaults = null;
+    private VirtualserviceFaults virtualserviceFaults;
 
 
 

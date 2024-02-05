@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class PaaLog extends AviRestResource {
     @JsonProperty("cache_hit")
     @JsonInclude(Include.NON_NULL)
-    private Boolean cacheHit = null;
+    private Boolean cacheHit;
 
     @JsonProperty("client_request_body_sent")
     @JsonInclude(Include.NON_NULL)
-    private Boolean clientRequestBodySent = null;
+    private Boolean clientRequestBodySent;
 
     @JsonProperty("request_logs")
     @JsonInclude(Include.NON_NULL)
-    private List<PaaRequestLog> requestLogs = null;
+    private List<PaaRequestLog> requestLogs;
 
 
 

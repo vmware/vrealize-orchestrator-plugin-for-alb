@@ -26,35 +26,35 @@ import org.springframework.stereotype.Service;
 public class SamlServiceProviderSettings extends AviRestResource {
     @JsonProperty("fqdn")
     @JsonInclude(Include.NON_NULL)
-    private String fqdn = null;
+    private String fqdn;
 
     @JsonProperty("org_display_name")
     @JsonInclude(Include.NON_NULL)
-    private String orgDisplayName = null;
+    private String orgDisplayName;
 
     @JsonProperty("org_name")
     @JsonInclude(Include.NON_NULL)
-    private String orgName = null;
+    private String orgName;
 
     @JsonProperty("org_url")
     @JsonInclude(Include.NON_NULL)
-    private String orgUrl = null;
+    private String orgUrl;
 
     @JsonProperty("saml_entity_type")
     @JsonInclude(Include.NON_NULL)
-    private String samlEntityType = null;
+    private String samlEntityType;
 
     @JsonProperty("sp_nodes")
     @JsonInclude(Include.NON_NULL)
-    private List<SamlServiceProviderNode> spNodes = null;
+    private List<SamlServiceProviderNode> spNodes;
 
     @JsonProperty("tech_contact_email")
     @JsonInclude(Include.NON_NULL)
-    private String techContactEmail = null;
+    private String techContactEmail;
 
     @JsonProperty("tech_contact_name")
     @JsonInclude(Include.NON_NULL)
-    private String techContactName = null;
+    private String techContactName;
 
 
 

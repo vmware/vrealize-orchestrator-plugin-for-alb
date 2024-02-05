@@ -26,391 +26,391 @@ import org.springframework.stereotype.Service;
 public class VserverL4MetricsObj extends AviRestResource {
     @JsonProperty("apdexc")
     @JsonInclude(Include.NON_NULL)
-    private Float apdexc = null;
+    private Float apdexc;
 
     @JsonProperty("apdexrtt")
     @JsonInclude(Include.NON_NULL)
-    private Float apdexrtt = null;
+    private Float apdexrtt;
 
     @JsonProperty("avg_application_dos_attacks")
     @JsonInclude(Include.NON_NULL)
-    private Float avgApplicationDosAttacks = null;
+    private Float avgApplicationDosAttacks;
 
     @JsonProperty("avg_bandwidth")
     @JsonInclude(Include.NON_NULL)
-    private Float avgBandwidth = null;
+    private Float avgBandwidth;
 
     @JsonProperty("avg_bytes_policy_drops")
     @JsonInclude(Include.NON_NULL)
-    private Float avgBytesPolicyDrops = null;
+    private Float avgBytesPolicyDrops;
 
     @JsonProperty("avg_complete_conns")
     @JsonInclude(Include.NON_NULL)
-    private Float avgCompleteConns = null;
+    private Float avgCompleteConns;
 
     @JsonProperty("avg_connections_dropped")
     @JsonInclude(Include.NON_NULL)
-    private Float avgConnectionsDropped = null;
+    private Float avgConnectionsDropped;
 
     @JsonProperty("avg_dos_app_error")
     @JsonInclude(Include.NON_NULL)
-    private Float avgDosAppError = null;
+    private Float avgDosAppError;
 
     @JsonProperty("avg_dos_attacks")
     @JsonInclude(Include.NON_NULL)
-    private Float avgDosAttacks = null;
+    private Float avgDosAttacks;
 
     @JsonProperty("avg_dos_bad_rst_flood")
     @JsonInclude(Include.NON_NULL)
-    private Float avgDosBadRstFlood = null;
+    private Float avgDosBadRstFlood;
 
     @JsonProperty("avg_dos_bandwidth")
     @JsonInclude(Include.NON_NULL)
-    private Float avgDosBandwidth = null;
+    private Float avgDosBandwidth;
 
     @JsonProperty("avg_dos_conn")
     @JsonInclude(Include.NON_NULL)
-    private Float avgDosConn = null;
+    private Float avgDosConn;
 
     @JsonProperty("avg_dos_conn_ip_rl_drop")
     @JsonInclude(Include.NON_NULL)
-    private Float avgDosConnIpRlDrop = null;
+    private Float avgDosConnIpRlDrop;
 
     @JsonProperty("avg_dos_conn_rl_drop")
     @JsonInclude(Include.NON_NULL)
-    private Float avgDosConnRlDrop = null;
+    private Float avgDosConnRlDrop;
 
     @JsonProperty("avg_dos_fake_session")
     @JsonInclude(Include.NON_NULL)
-    private Float avgDosFakeSession = null;
+    private Float avgDosFakeSession;
 
     @JsonProperty("avg_dos_http_abort")
     @JsonInclude(Include.NON_NULL)
-    private Float avgDosHttpAbort = null;
+    private Float avgDosHttpAbort;
 
     @JsonProperty("avg_dos_http_error")
     @JsonInclude(Include.NON_NULL)
-    private Float avgDosHttpError = null;
+    private Float avgDosHttpError;
 
     @JsonProperty("avg_dos_http_timeout")
     @JsonInclude(Include.NON_NULL)
-    private Float avgDosHttpTimeout = null;
+    private Float avgDosHttpTimeout;
 
     @JsonProperty("avg_dos_malformed_flood")
     @JsonInclude(Include.NON_NULL)
-    private Float avgDosMalformedFlood = null;
+    private Float avgDosMalformedFlood;
 
     @JsonProperty("avg_dos_non_syn_flood")
     @JsonInclude(Include.NON_NULL)
-    private Float avgDosNonSynFlood = null;
+    private Float avgDosNonSynFlood;
 
     @JsonProperty("avg_dos_req")
     @JsonInclude(Include.NON_NULL)
-    private Float avgDosReq = null;
+    private Float avgDosReq;
 
     @JsonProperty("avg_dos_req_cookie_rl_drop")
     @JsonInclude(Include.NON_NULL)
-    private Float avgDosReqCookieRlDrop = null;
+    private Float avgDosReqCookieRlDrop;
 
     @JsonProperty("avg_dos_req_custom_rl_drop")
     @JsonInclude(Include.NON_NULL)
-    private Float avgDosReqCustomRlDrop = null;
+    private Float avgDosReqCustomRlDrop;
 
     @JsonProperty("avg_dos_req_hdr_rl_drop")
     @JsonInclude(Include.NON_NULL)
-    private Float avgDosReqHdrRlDrop = null;
+    private Float avgDosReqHdrRlDrop;
 
     @JsonProperty("avg_dos_req_ip_rl_drop")
     @JsonInclude(Include.NON_NULL)
-    private Float avgDosReqIpRlDrop = null;
+    private Float avgDosReqIpRlDrop;
 
     @JsonProperty("avg_dos_req_ip_rl_drop_bad")
     @JsonInclude(Include.NON_NULL)
-    private Float avgDosReqIpRlDropBad = null;
+    private Float avgDosReqIpRlDropBad;
 
     @JsonProperty("avg_dos_req_ip_scan_bad_rl_drop")
     @JsonInclude(Include.NON_NULL)
-    private Float avgDosReqIpScanBadRlDrop = null;
+    private Float avgDosReqIpScanBadRlDrop;
 
     @JsonProperty("avg_dos_req_ip_scan_unknown_rl_drop")
     @JsonInclude(Include.NON_NULL)
-    private Float avgDosReqIpScanUnknownRlDrop = null;
+    private Float avgDosReqIpScanUnknownRlDrop;
 
     @JsonProperty("avg_dos_req_ip_uri_rl_drop")
     @JsonInclude(Include.NON_NULL)
-    private Float avgDosReqIpUriRlDrop = null;
+    private Float avgDosReqIpUriRlDrop;
 
     @JsonProperty("avg_dos_req_ip_uri_rl_drop_bad")
     @JsonInclude(Include.NON_NULL)
-    private Float avgDosReqIpUriRlDropBad = null;
+    private Float avgDosReqIpUriRlDropBad;
 
     @JsonProperty("avg_dos_req_rl_drop")
     @JsonInclude(Include.NON_NULL)
-    private Float avgDosReqRlDrop = null;
+    private Float avgDosReqRlDrop;
 
     @JsonProperty("avg_dos_req_uri_rl_drop")
     @JsonInclude(Include.NON_NULL)
-    private Float avgDosReqUriRlDrop = null;
+    private Float avgDosReqUriRlDrop;
 
     @JsonProperty("avg_dos_req_uri_rl_drop_bad")
     @JsonInclude(Include.NON_NULL)
-    private Float avgDosReqUriRlDropBad = null;
+    private Float avgDosReqUriRlDropBad;
 
     @JsonProperty("avg_dos_req_uri_scan_bad_rl_drop")
     @JsonInclude(Include.NON_NULL)
-    private Float avgDosReqUriScanBadRlDrop = null;
+    private Float avgDosReqUriScanBadRlDrop;
 
     @JsonProperty("avg_dos_req_uri_scan_unknown_rl_drop")
     @JsonInclude(Include.NON_NULL)
-    private Float avgDosReqUriScanUnknownRlDrop = null;
+    private Float avgDosReqUriScanUnknownRlDrop;
 
     @JsonProperty("avg_dos_rx_bytes")
     @JsonInclude(Include.NON_NULL)
-    private Float avgDosRxBytes = null;
+    private Float avgDosRxBytes;
 
     @JsonProperty("avg_dos_slow_uri")
     @JsonInclude(Include.NON_NULL)
-    private Float avgDosSlowUri = null;
+    private Float avgDosSlowUri;
 
     @JsonProperty("avg_dos_small_window_stress")
     @JsonInclude(Include.NON_NULL)
-    private Float avgDosSmallWindowStress = null;
+    private Float avgDosSmallWindowStress;
 
     @JsonProperty("avg_dos_ssl_error")
     @JsonInclude(Include.NON_NULL)
-    private Float avgDosSslError = null;
+    private Float avgDosSslError;
 
     @JsonProperty("avg_dos_syn_flood")
     @JsonInclude(Include.NON_NULL)
-    private Float avgDosSynFlood = null;
+    private Float avgDosSynFlood;
 
     @JsonProperty("avg_dos_total_req")
     @JsonInclude(Include.NON_NULL)
-    private Float avgDosTotalReq = null;
+    private Float avgDosTotalReq;
 
     @JsonProperty("avg_dos_tx_bytes")
     @JsonInclude(Include.NON_NULL)
-    private Float avgDosTxBytes = null;
+    private Float avgDosTxBytes;
 
     @JsonProperty("avg_dos_zero_window_stress")
     @JsonInclude(Include.NON_NULL)
-    private Float avgDosZeroWindowStress = null;
+    private Float avgDosZeroWindowStress;
 
     @JsonProperty("avg_errored_connections")
     @JsonInclude(Include.NON_NULL)
-    private Float avgErroredConnections = null;
+    private Float avgErroredConnections;
 
     @JsonProperty("avg_half_open_conns")
     @JsonInclude(Include.NON_NULL)
-    private Float avgHalfOpenConns = null;
+    private Float avgHalfOpenConns;
 
     @JsonProperty("avg_l4_client_latency")
     @JsonInclude(Include.NON_NULL)
-    private Float avgL4ClientLatency = null;
+    private Float avgL4ClientLatency;
 
     @JsonProperty("avg_lossy_connections")
     @JsonInclude(Include.NON_NULL)
-    private Float avgLossyConnections = null;
+    private Float avgLossyConnections;
 
     @JsonProperty("avg_lossy_req")
     @JsonInclude(Include.NON_NULL)
-    private Float avgLossyReq = null;
+    private Float avgLossyReq;
 
     @JsonProperty("avg_network_dos_attacks")
     @JsonInclude(Include.NON_NULL)
-    private Float avgNetworkDosAttacks = null;
+    private Float avgNetworkDosAttacks;
 
     @JsonProperty("avg_new_established_conns")
     @JsonInclude(Include.NON_NULL)
-    private Float avgNewEstablishedConns = null;
+    private Float avgNewEstablishedConns;
 
     @JsonProperty("avg_pkts_policy_drops")
     @JsonInclude(Include.NON_NULL)
-    private Float avgPktsPolicyDrops = null;
+    private Float avgPktsPolicyDrops;
 
     @JsonProperty("avg_policy_drops")
     @JsonInclude(Include.NON_NULL)
-    private Float avgPolicyDrops = null;
+    private Float avgPolicyDrops;
 
     @JsonProperty("avg_rx_bytes")
     @JsonInclude(Include.NON_NULL)
-    private Float avgRxBytes = null;
+    private Float avgRxBytes;
 
     @JsonProperty("avg_rx_bytes_dropped")
     @JsonInclude(Include.NON_NULL)
-    private Float avgRxBytesDropped = null;
+    private Float avgRxBytesDropped;
 
     @JsonProperty("avg_rx_pkts")
     @JsonInclude(Include.NON_NULL)
-    private Float avgRxPkts = null;
+    private Float avgRxPkts;
 
     @JsonProperty("avg_rx_pkts_dropped")
     @JsonInclude(Include.NON_NULL)
-    private Float avgRxPktsDropped = null;
+    private Float avgRxPktsDropped;
 
     @JsonProperty("avg_syns")
     @JsonInclude(Include.NON_NULL)
-    private Float avgSyns = null;
+    private Float avgSyns;
 
     @JsonProperty("avg_total_connections")
     @JsonInclude(Include.NON_NULL)
-    private Float avgTotalConnections = null;
+    private Float avgTotalConnections;
 
     @JsonProperty("avg_total_rtt")
     @JsonInclude(Include.NON_NULL)
-    private Float avgTotalRtt = null;
+    private Float avgTotalRtt;
 
     @JsonProperty("avg_tx_bytes")
     @JsonInclude(Include.NON_NULL)
-    private Float avgTxBytes = null;
+    private Float avgTxBytes;
 
     @JsonProperty("avg_tx_pkts")
     @JsonInclude(Include.NON_NULL)
-    private Float avgTxPkts = null;
+    private Float avgTxPkts;
 
     @JsonProperty("max_connection_estb_time_fe")
     @JsonInclude(Include.NON_NULL)
-    private Float maxConnectionEstbTimeFe = null;
+    private Float maxConnectionEstbTimeFe;
 
     @JsonProperty("max_num_active_se")
     @JsonInclude(Include.NON_NULL)
-    private Float maxNumActiveSe = null;
+    private Float maxNumActiveSe;
 
     @JsonProperty("max_open_conns")
     @JsonInclude(Include.NON_NULL)
-    private Float maxOpenConns = null;
+    private Float maxOpenConns;
 
     @JsonProperty("max_rx_bytes_absolute")
     @JsonInclude(Include.NON_NULL)
-    private Float maxRxBytesAbsolute = null;
+    private Float maxRxBytesAbsolute;
 
     @JsonProperty("max_rx_pkts_absolute")
     @JsonInclude(Include.NON_NULL)
-    private Float maxRxPktsAbsolute = null;
+    private Float maxRxPktsAbsolute;
 
     @JsonProperty("max_tx_bytes_absolute")
     @JsonInclude(Include.NON_NULL)
-    private Float maxTxBytesAbsolute = null;
+    private Float maxTxBytesAbsolute;
 
     @JsonProperty("max_tx_pkts_absolute")
     @JsonInclude(Include.NON_NULL)
-    private Float maxTxPktsAbsolute = null;
+    private Float maxTxPktsAbsolute;
 
     @JsonProperty("node_obj_id")
     @JsonInclude(Include.NON_NULL)
-    private String nodeObjId = null;
+    private String nodeObjId;
 
     @JsonProperty("pct_application_dos_attacks")
     @JsonInclude(Include.NON_NULL)
-    private Float pctApplicationDosAttacks = null;
+    private Float pctApplicationDosAttacks;
 
     @JsonProperty("pct_connection_errors")
     @JsonInclude(Include.NON_NULL)
-    private Float pctConnectionErrors = null;
+    private Float pctConnectionErrors;
 
     @JsonProperty("pct_connections_dos_attacks")
     @JsonInclude(Include.NON_NULL)
-    private Float pctConnectionsDosAttacks = null;
+    private Float pctConnectionsDosAttacks;
 
     @JsonProperty("pct_dos_bandwidth")
     @JsonInclude(Include.NON_NULL)
-    private Float pctDosBandwidth = null;
+    private Float pctDosBandwidth;
 
     @JsonProperty("pct_dos_rx_bytes")
     @JsonInclude(Include.NON_NULL)
-    private Float pctDosRxBytes = null;
+    private Float pctDosRxBytes;
 
     @JsonProperty("pct_network_dos_attacks")
     @JsonInclude(Include.NON_NULL)
-    private Float pctNetworkDosAttacks = null;
+    private Float pctNetworkDosAttacks;
 
     @JsonProperty("pct_pkts_dos_attacks")
     @JsonInclude(Include.NON_NULL)
-    private Float pctPktsDosAttacks = null;
+    private Float pctPktsDosAttacks;
 
     @JsonProperty("pct_policy_drops")
     @JsonInclude(Include.NON_NULL)
-    private Float pctPolicyDrops = null;
+    private Float pctPolicyDrops;
 
     @JsonProperty("sum_conn_duration")
     @JsonInclude(Include.NON_NULL)
-    private Float sumConnDuration = null;
+    private Float sumConnDuration;
 
     @JsonProperty("sum_conn_est_time_exceeded_flows_fe")
     @JsonInclude(Include.NON_NULL)
-    private Float sumConnEstTimeExceededFlowsFe = null;
+    private Float sumConnEstTimeExceededFlowsFe;
 
     @JsonProperty("sum_connection_dropped_user_limit")
     @JsonInclude(Include.NON_NULL)
-    private Float sumConnectionDroppedUserLimit = null;
+    private Float sumConnectionDroppedUserLimit;
 
     @JsonProperty("sum_connection_errors")
     @JsonInclude(Include.NON_NULL)
-    private Float sumConnectionErrors = null;
+    private Float sumConnectionErrors;
 
     @JsonProperty("sum_connections_dropped")
     @JsonInclude(Include.NON_NULL)
-    private Float sumConnectionsDropped = null;
+    private Float sumConnectionsDropped;
 
     @JsonProperty("sum_dup_ack_retransmits")
     @JsonInclude(Include.NON_NULL)
-    private Float sumDupAckRetransmits = null;
+    private Float sumDupAckRetransmits;
 
     @JsonProperty("sum_end_to_end_rtt")
     @JsonInclude(Include.NON_NULL)
-    private Float sumEndToEndRtt = null;
+    private Float sumEndToEndRtt;
 
     @JsonProperty("sum_end_to_end_rtt_bucket1")
     @JsonInclude(Include.NON_NULL)
-    private Float sumEndToEndRttBucket1 = null;
+    private Float sumEndToEndRttBucket1;
 
     @JsonProperty("sum_end_to_end_rtt_bucket2")
     @JsonInclude(Include.NON_NULL)
-    private Float sumEndToEndRttBucket2 = null;
+    private Float sumEndToEndRttBucket2;
 
     @JsonProperty("sum_finished_conns")
     @JsonInclude(Include.NON_NULL)
-    private Float sumFinishedConns = null;
+    private Float sumFinishedConns;
 
     @JsonProperty("sum_ingress_latency_exceeded_flows")
     @JsonInclude(Include.NON_NULL)
-    private Float sumIngressLatencyExceededFlows = null;
+    private Float sumIngressLatencyExceededFlows;
 
     @JsonProperty("sum_lossy_connections")
     @JsonInclude(Include.NON_NULL)
-    private Float sumLossyConnections = null;
+    private Float sumLossyConnections;
 
     @JsonProperty("sum_lossy_req")
     @JsonInclude(Include.NON_NULL)
-    private Float sumLossyReq = null;
+    private Float sumLossyReq;
 
     @JsonProperty("sum_out_of_orders")
     @JsonInclude(Include.NON_NULL)
-    private Float sumOutOfOrders = null;
+    private Float sumOutOfOrders;
 
     @JsonProperty("sum_packet_dropped_user_bandwidth_limit")
     @JsonInclude(Include.NON_NULL)
-    private Float sumPacketDroppedUserBandwidthLimit = null;
+    private Float sumPacketDroppedUserBandwidthLimit;
 
     @JsonProperty("sum_rtt_valid_connections")
     @JsonInclude(Include.NON_NULL)
-    private Float sumRttValidConnections = null;
+    private Float sumRttValidConnections;
 
     @JsonProperty("sum_sack_retransmits")
     @JsonInclude(Include.NON_NULL)
-    private Float sumSackRetransmits = null;
+    private Float sumSackRetransmits;
 
     @JsonProperty("sum_server_flow_control")
     @JsonInclude(Include.NON_NULL)
-    private Float sumServerFlowControl = null;
+    private Float sumServerFlowControl;
 
     @JsonProperty("sum_timeout_retransmits")
     @JsonInclude(Include.NON_NULL)
-    private Float sumTimeoutRetransmits = null;
+    private Float sumTimeoutRetransmits;
 
     @JsonProperty("sum_zero_window_size_events")
     @JsonInclude(Include.NON_NULL)
-    private Float sumZeroWindowSizeEvents = null;
+    private Float sumZeroWindowSizeEvents;
 
 
 

@@ -31,11 +31,11 @@ import org.springframework.stereotype.Service;
 public class SeList extends AviRestResource {
     @JsonProperty("active_on_cloud")
     @JsonInclude(Include.NON_NULL)
-    private Boolean activeOnCloud = null;
+    private Boolean activeOnCloud;
 
     @JsonProperty("active_on_se")
     @JsonInclude(Include.NON_NULL)
-    private Boolean activeOnSe = null;
+    private Boolean activeOnSe;
 
     @JsonProperty("admin_down_requested")
     @JsonInclude(Include.NON_NULL)
@@ -43,15 +43,15 @@ public class SeList extends AviRestResource {
 
     @JsonProperty("attach_ip_in_progress")
     @JsonInclude(Include.NON_NULL)
-    private Boolean attachIpInProgress = null;
+    private Boolean attachIpInProgress;
 
     @JsonProperty("cloud_programming_done")
     @JsonInclude(Include.NON_NULL)
-    private Boolean cloudProgrammingDone = null;
+    private Boolean cloudProgrammingDone;
 
     @JsonProperty("cloud_programming_status")
     @JsonInclude(Include.NON_NULL)
-    private String cloudProgrammingStatus = null;
+    private String cloudProgrammingStatus;
 
     @JsonProperty("delete_in_progress")
     @JsonInclude(Include.NON_NULL)
@@ -59,19 +59,19 @@ public class SeList extends AviRestResource {
 
     @JsonProperty("detach_ip_in_progress")
     @JsonInclude(Include.NON_NULL)
-    private Boolean detachIpInProgress = null;
+    private Boolean detachIpInProgress;
 
     @JsonProperty("floating_intf_ip")
     @JsonInclude(Include.NON_NULL)
-    private List<IpAddr> floatingIntfIp = null;
+    private List<IpAddr> floatingIntfIp;
 
     @JsonProperty("floating_intf_ip6_addresses")
     @JsonInclude(Include.NON_NULL)
-    private List<IpAddr> floatingIntfIp6Addresses = null;
+    private List<IpAddr> floatingIntfIp6Addresses;
 
     @JsonProperty("incarnation")
     @JsonInclude(Include.NON_NULL)
-    private String incarnation = null;
+    private String incarnation;
 
     @JsonProperty("is_portchannel")
     @JsonInclude(Include.NON_NULL)
@@ -91,11 +91,11 @@ public class SeList extends AviRestResource {
 
     @JsonProperty("mgmt_ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr mgmtIp = null;
+    private IpAddr mgmtIp;
 
     @JsonProperty("mgmt_ip6")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr mgmtIp6 = null;
+    private IpAddr mgmtIp6;
 
     @JsonProperty("scaleout_in_progress")
     @JsonInclude(Include.NON_NULL)
@@ -103,15 +103,15 @@ public class SeList extends AviRestResource {
 
     @JsonProperty("se_programming_done")
     @JsonInclude(Include.NON_NULL)
-    private Boolean seProgrammingDone = null;
+    private Boolean seProgrammingDone;
 
     @JsonProperty("se_ready_in_progress")
     @JsonInclude(Include.NON_NULL)
-    private Boolean seReadyInProgress = null;
+    private Boolean seReadyInProgress;
 
     @JsonProperty("se_ref")
     @JsonInclude(Include.NON_NULL)
-    private String seRef = null;
+    private String seRef;
 
     @JsonProperty("sec_idx")
     @JsonInclude(Include.NON_NULL)
@@ -119,11 +119,11 @@ public class SeList extends AviRestResource {
 
     @JsonProperty("snat_ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr snatIp = null;
+    private IpAddr snatIp;
 
     @JsonProperty("snat_ip6_address")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr snatIp6Address = null;
+    private IpAddr snatIp6Address;
 
     @JsonProperty("vcpus")
     @JsonInclude(Include.NON_NULL)
@@ -135,15 +135,15 @@ public class SeList extends AviRestResource {
 
     @JsonProperty("vip_intf_ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr vipIntfIp = null;
+    private IpAddr vipIntfIp;
 
     @JsonProperty("vip_intf_list")
     @JsonInclude(Include.NON_NULL)
-    private List<SeVipInterfaceList> vipIntfList = null;
+    private List<SeVipInterfaceList> vipIntfList;
 
     @JsonProperty("vip_intf_mac")
     @JsonInclude(Include.NON_NULL)
-    private String vipIntfMac = null;
+    private String vipIntfMac;
 
     @JsonProperty("vip_subnet_mask")
     @JsonInclude(Include.NON_NULL)
@@ -155,7 +155,7 @@ public class SeList extends AviRestResource {
 
     @JsonProperty("vnic")
     @JsonInclude(Include.NON_NULL)
-    private List<VsSeVnic> vnic = null;
+    private List<VsSeVnic> vnic;
 
 
 

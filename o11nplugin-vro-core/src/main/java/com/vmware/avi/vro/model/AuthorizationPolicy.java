@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class AuthorizationPolicy extends AviRestResource {
     @JsonProperty("authz_rules")
     @JsonInclude(Include.NON_NULL)
-    private List<AuthorizationRule> authzRules = null;
+    private List<AuthorizationRule> authzRules;
 
 
 

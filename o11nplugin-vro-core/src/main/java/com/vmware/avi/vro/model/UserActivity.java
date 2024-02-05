@@ -34,31 +34,31 @@ public class UserActivity extends AviRestResource {
 
     @JsonProperty("last_login_ip")
     @JsonInclude(Include.NON_NULL)
-    private String lastLoginIp = null;
+    private String lastLoginIp;
 
     @JsonProperty("last_login_timestamp")
     @JsonInclude(Include.NON_NULL)
-    private String lastLoginTimestamp = null;
+    private String lastLoginTimestamp;
 
     @JsonProperty("last_password_update")
     @JsonInclude(Include.NON_NULL)
-    private String lastPasswordUpdate = null;
+    private String lastPasswordUpdate;
 
     @JsonProperty("logged_in")
     @JsonInclude(Include.NON_NULL)
-    private Boolean loggedIn = null;
+    private Boolean loggedIn;
 
     @JsonProperty("login_failure_timestamps")
     @JsonInclude(Include.NON_NULL)
-    private List<String> loginFailureTimestamps = null;
+    private List<String> loginFailureTimestamps;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("previous_password")
     @JsonInclude(Include.NON_NULL)
-    private List<String> previousPassword = null;
+    private List<String> previousPassword;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -66,7 +66,7 @@ public class UserActivity extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

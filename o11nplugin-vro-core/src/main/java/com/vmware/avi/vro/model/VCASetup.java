@@ -26,23 +26,23 @@ import org.springframework.stereotype.Service;
 public class VCASetup extends AviRestResource {
     @JsonProperty("cc_id")
     @JsonInclude(Include.NON_NULL)
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("error_string")
     @JsonInclude(Include.NON_NULL)
-    private String errorString = null;
+    private String errorString;
 
     @JsonProperty("instance")
     @JsonInclude(Include.NON_NULL)
-    private String instance = null;
+    private String instance;
 
     @JsonProperty("privilege")
     @JsonInclude(Include.NON_NULL)
-    private String privilege = null;
+    private String privilege;
 
     @JsonProperty("username")
     @JsonInclude(Include.NON_NULL)
-    private String username = null;
+    private String username;
 
 
 

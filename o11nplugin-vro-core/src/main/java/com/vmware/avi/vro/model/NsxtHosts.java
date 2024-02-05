@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class NsxtHosts extends AviRestResource {
     @JsonProperty("host_ids")
     @JsonInclude(Include.NON_NULL)
-    private List<String> hostIds = null;
+    private List<String> hostIds;
 
     @JsonProperty("include")
     @JsonInclude(Include.NON_NULL)

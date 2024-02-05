@@ -28,23 +28,23 @@ import org.springframework.stereotype.Service;
 public class SSOPolicy extends AviRestResource {
     @JsonProperty("authentication_policy")
     @JsonInclude(Include.NON_NULL)
-    private AuthenticationPolicy authenticationPolicy = null;
+    private AuthenticationPolicy authenticationPolicy;
 
     @JsonProperty("authorization_policy")
     @JsonInclude(Include.NON_NULL)
-    private AuthorizationPolicy authorizationPolicy = null;
+    private AuthorizationPolicy authorizationPolicy;
 
     @JsonProperty("markers")
     @JsonInclude(Include.NON_NULL)
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
@@ -56,7 +56,7 @@ public class SSOPolicy extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

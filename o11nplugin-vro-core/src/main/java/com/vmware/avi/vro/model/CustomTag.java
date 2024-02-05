@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class CustomTag extends AviRestResource {
     @JsonProperty("tag_key")
     @JsonInclude(Include.NON_NULL)
-    private String tagKey = null;
+    private String tagKey;
 
     @JsonProperty("tag_val")
     @JsonInclude(Include.NON_NULL)
-    private String tagVal = null;
+    private String tagVal;
 
 
 

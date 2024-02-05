@@ -28,19 +28,19 @@ import org.springframework.stereotype.Service;
 public class LogAgentEventDetail extends AviRestResource {
     @JsonProperty("protocol")
     @JsonInclude(Include.NON_NULL)
-    private String protocol = null;
+    private String protocol;
 
     @JsonProperty("rapid_connection")
     @JsonInclude(Include.NON_NULL)
-    private LogAgentTCPConnEstRateExcdEvent rapidConnection = null;
+    private LogAgentTCPConnEstRateExcdEvent rapidConnection;
 
     @JsonProperty("tcp_detail")
     @JsonInclude(Include.NON_NULL)
-    private LogAgentTCPClientEventDetail tcpDetail = null;
+    private LogAgentTCPClientEventDetail tcpDetail;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
 
 

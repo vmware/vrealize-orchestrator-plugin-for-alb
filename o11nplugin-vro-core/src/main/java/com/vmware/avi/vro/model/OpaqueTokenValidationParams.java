@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class OpaqueTokenValidationParams extends AviRestResource {
     @JsonProperty("server_id")
     @JsonInclude(Include.NON_NULL)
-    private String serverId = null;
+    private String serverId;
 
     @JsonProperty("server_secret")
     @JsonInclude(Include.NON_NULL)
-    private String serverSecret = null;
+    private String serverSecret;
 
 
 

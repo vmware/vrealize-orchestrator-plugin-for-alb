@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class CentralLicenseSubscriptionDetails extends AviRestResource {
     @JsonProperty("message")
     @JsonInclude(Include.NON_NULL)
-    private String message = null;
+    private String message;
 
     @JsonProperty("tenant_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String tenantUuid = null;
+    private String tenantUuid;
 
 
 

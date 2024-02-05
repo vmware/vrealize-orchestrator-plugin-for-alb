@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class SummarizedInfo extends AviRestResource {
     @JsonProperty("subnet_info")
     @JsonInclude(Include.NON_NULL)
-    private List<SummarizedSubnetInfo> subnetInfo = null;
+    private List<SummarizedSubnetInfo> subnetInfo;
 
 
 

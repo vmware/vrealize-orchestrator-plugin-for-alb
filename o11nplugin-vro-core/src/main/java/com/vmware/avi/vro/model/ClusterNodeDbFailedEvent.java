@@ -27,15 +27,15 @@ import org.springframework.stereotype.Service;
 public class ClusterNodeDbFailedEvent extends AviRestResource {
     @JsonProperty("failure_count")
     @JsonInclude(Include.NON_NULL)
-    private Integer failureCount = null;
+    private Integer failureCount;
 
     @JsonProperty("ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr ip = null;
+    private IpAddr ip;
 
     @JsonProperty("node_name")
     @JsonInclude(Include.NON_NULL)
-    private String nodeName = null;
+    private String nodeName;
 
 
 

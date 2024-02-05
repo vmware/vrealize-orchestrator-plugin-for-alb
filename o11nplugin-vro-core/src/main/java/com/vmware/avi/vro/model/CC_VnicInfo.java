@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class CC_VnicInfo extends AviRestResource {
     @JsonProperty("mac_address")
     @JsonInclude(Include.NON_NULL)
-    private String macAddress = null;
+    private String macAddress;
 
     @JsonProperty("network_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String networkUuid = null;
+    private String networkUuid;
 
     @JsonProperty("port_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String portUuid = null;
+    private String portUuid;
 
     @JsonProperty("status")
     @JsonInclude(Include.NON_NULL)
@@ -42,15 +42,15 @@ public class CC_VnicInfo extends AviRestResource {
 
     @JsonProperty("status_string")
     @JsonInclude(Include.NON_NULL)
-    private String statusString = null;
+    private String statusString;
 
     @JsonProperty("subnet_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String subnetUuid = null;
+    private String subnetUuid;
 
     @JsonProperty("vrf_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String vrfUuid = null;
+    private String vrfUuid;
 
 
 

@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class PatchData extends AviRestResource {
     @JsonProperty("patch_image_path")
     @JsonInclude(Include.NON_NULL)
-    private String patchImagePath = null;
+    private String patchImagePath;
 
     @JsonProperty("patch_image_ref")
     @JsonInclude(Include.NON_NULL)
-    private String patchImageRef = null;
+    private String patchImageRef;
 
     @JsonProperty("patch_version")
     @JsonInclude(Include.NON_NULL)
-    private String patchVersion = null;
+    private String patchVersion;
 
 
 

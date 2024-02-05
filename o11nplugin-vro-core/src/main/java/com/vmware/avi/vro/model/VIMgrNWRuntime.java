@@ -26,71 +26,71 @@ import org.springframework.stereotype.Service;
 public class VIMgrNWRuntime extends AviRestResource {
     @JsonProperty("auto_expand")
     @JsonInclude(Include.NON_NULL)
-    private Boolean autoExpand = null;
+    private Boolean autoExpand;
 
     @JsonProperty("availability_zone")
     @JsonInclude(Include.NON_NULL)
-    private String availabilityZone = null;
+    private String availabilityZone;
 
     @JsonProperty("cloud_ref")
     @JsonInclude(Include.NON_NULL)
-    private String cloudRef = null;
+    private String cloudRef;
 
     @JsonProperty("datacenter_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String datacenterUuid = null;
+    private String datacenterUuid;
 
     @JsonProperty("dvs")
     @JsonInclude(Include.NON_NULL)
-    private Boolean dvs = null;
+    private Boolean dvs;
 
     @JsonProperty("host_refs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> hostRefs = null;
+    private List<String> hostRefs;
 
     @JsonProperty("interested_nw")
     @JsonInclude(Include.NON_NULL)
-    private Boolean interestedNw = null;
+    private Boolean interestedNw;
 
     @JsonProperty("ip_subnet")
     @JsonInclude(Include.NON_NULL)
-    private List<VIMgrIPSubnetRuntime> ipSubnet = null;
+    private List<VIMgrIPSubnetRuntime> ipSubnet;
 
     @JsonProperty("logical_switch_id")
     @JsonInclude(Include.NON_NULL)
-    private String logicalSwitchId = null;
+    private String logicalSwitchId;
 
     @JsonProperty("managed_object_id")
     @JsonInclude(Include.NON_NULL)
-    private String managedObjectId = null;
+    private String managedObjectId;
 
     @JsonProperty("MgmtNW")
     @JsonInclude(Include.NON_NULL)
-    private Boolean MgmtNW = null;
+    private Boolean MgmtNW;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("num_ports")
     @JsonInclude(Include.NON_NULL)
-    private Integer numPorts = null;
+    private Integer numPorts;
 
     @JsonProperty("switch_name")
     @JsonInclude(Include.NON_NULL)
-    private String switchName = null;
+    private String switchName;
 
     @JsonProperty("tenant_name")
     @JsonInclude(Include.NON_NULL)
-    private String tenantName = null;
+    private String tenantName;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -98,23 +98,23 @@ public class VIMgrNWRuntime extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("vlan")
     @JsonInclude(Include.NON_NULL)
-    private Integer vlan = null;
+    private Integer vlan;
 
     @JsonProperty("vlan_range")
     @JsonInclude(Include.NON_NULL)
-    private List<VlanRange> vlanRange = null;
+    private List<VlanRange> vlanRange;
 
     @JsonProperty("vm_refs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> vmRefs = null;
+    private List<String> vmRefs;
 
     @JsonProperty("vrf_context_ref")
     @JsonInclude(Include.NON_NULL)
-    private String vrfContextRef = null;
+    private String vrfContextRef;
 
 
 

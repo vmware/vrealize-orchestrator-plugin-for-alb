@@ -26,27 +26,27 @@ import org.springframework.stereotype.Service;
 public class SipLog extends AviRestResource {
     @JsonProperty("server_protocol")
     @JsonInclude(Include.NON_NULL)
-    private String serverProtocol = null;
+    private String serverProtocol;
 
     @JsonProperty("sip_callid_hdr")
     @JsonInclude(Include.NON_NULL)
-    private String sipCallidHdr = null;
+    private String sipCallidHdr;
 
     @JsonProperty("sip_contact_hdr")
     @JsonInclude(Include.NON_NULL)
-    private String sipContactHdr = null;
+    private String sipContactHdr;
 
     @JsonProperty("sip_from_hdr")
     @JsonInclude(Include.NON_NULL)
-    private String sipFromHdr = null;
+    private String sipFromHdr;
 
     @JsonProperty("sip_messages")
     @JsonInclude(Include.NON_NULL)
-    private List<SipMessage> sipMessages = null;
+    private List<SipMessage> sipMessages;
 
     @JsonProperty("sip_to_hdr")
     @JsonInclude(Include.NON_NULL)
-    private String sipToHdr = null;
+    private String sipToHdr;
 
 
 

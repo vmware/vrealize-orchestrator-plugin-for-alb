@@ -26,27 +26,27 @@ import org.springframework.stereotype.Service;
 public class CloudTenantCleanup extends AviRestResource {
     @JsonProperty("id")
     @JsonInclude(Include.NON_NULL)
-    private String id = null;
+    private String id;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("num_ports")
     @JsonInclude(Include.NON_NULL)
-    private Integer numPorts = null;
+    private Integer numPorts;
 
     @JsonProperty("num_se")
     @JsonInclude(Include.NON_NULL)
-    private Integer numSe = null;
+    private Integer numSe;
 
     @JsonProperty("num_secgrp")
     @JsonInclude(Include.NON_NULL)
-    private Integer numSecgrp = null;
+    private Integer numSecgrp;
 
     @JsonProperty("num_svrgrp")
     @JsonInclude(Include.NON_NULL)
-    private Integer numSvrgrp = null;
+    private Integer numSvrgrp;
 
 
 

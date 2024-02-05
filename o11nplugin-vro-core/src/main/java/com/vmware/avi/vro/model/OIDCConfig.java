@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class OIDCConfig extends AviRestResource {
     @JsonProperty("oidc_enable")
     @JsonInclude(Include.NON_NULL)
-    private Boolean oidcEnable = null;
+    private Boolean oidcEnable;
 
     @JsonProperty("profile")
     @JsonInclude(Include.NON_NULL)
@@ -34,7 +34,7 @@ public class OIDCConfig extends AviRestResource {
 
     @JsonProperty("userinfo")
     @JsonInclude(Include.NON_NULL)
-    private Boolean userinfo = null;
+    private Boolean userinfo;
 
 
 

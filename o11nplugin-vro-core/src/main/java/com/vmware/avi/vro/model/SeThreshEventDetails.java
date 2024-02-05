@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class SeThreshEventDetails extends AviRestResource {
     @JsonProperty("curr_value")
     @JsonInclude(Include.NON_NULL)
-    private Integer currValue = null;
+    private Integer currValue;
 
     @JsonProperty("thresh")
     @JsonInclude(Include.NON_NULL)
-    private Integer thresh = null;
+    private Integer thresh;
 
 
 

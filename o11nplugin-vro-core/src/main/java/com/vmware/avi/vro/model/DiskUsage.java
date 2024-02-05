@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class DiskUsage extends AviRestResource {
     @JsonProperty("cntlr_disk_free")
     @JsonInclude(Include.NON_NULL)
-    private List<OverallInfo> cntlrDiskFree = null;
+    private List<OverallInfo> cntlrDiskFree;
 
     @JsonProperty("cntlr_disk_usage")
     @JsonInclude(Include.NON_NULL)
-    private List<PartitionInfo> cntlrDiskUsage = null;
+    private List<PartitionInfo> cntlrDiskUsage;
 
     @JsonProperty("se_disk_free")
     @JsonInclude(Include.NON_NULL)
-    private List<OverallInfo> seDiskFree = null;
+    private List<OverallInfo> seDiskFree;
 
     @JsonProperty("se_disk_usage")
     @JsonInclude(Include.NON_NULL)
-    private List<PartitionInfo> seDiskUsage = null;
+    private List<PartitionInfo> seDiskUsage;
 
 
 

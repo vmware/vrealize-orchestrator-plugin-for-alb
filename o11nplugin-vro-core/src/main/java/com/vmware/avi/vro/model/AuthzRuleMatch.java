@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class AuthzRuleMatch extends AviRestResource {
     @JsonProperty("rule_action")
     @JsonInclude(Include.NON_NULL)
-    private String ruleAction = null;
+    private String ruleAction;
 
     @JsonProperty("rule_name")
     @JsonInclude(Include.NON_NULL)
-    private String ruleName = null;
+    private String ruleName;
 
 
 

@@ -28,19 +28,19 @@ import org.springframework.stereotype.Service;
 public class JwtLog extends AviRestResource {
     @JsonProperty("authn_rule_match")
     @JsonInclude(Include.NON_NULL)
-    private AuthnRuleMatch authnRuleMatch = null;
+    private AuthnRuleMatch authnRuleMatch;
 
     @JsonProperty("authz_rule_match")
     @JsonInclude(Include.NON_NULL)
-    private AuthzRuleMatch authzRuleMatch = null;
+    private AuthzRuleMatch authzRuleMatch;
 
     @JsonProperty("is_jwt_verified")
     @JsonInclude(Include.NON_NULL)
-    private Boolean isJwtVerified = null;
+    private Boolean isJwtVerified;
 
     @JsonProperty("token_payload")
     @JsonInclude(Include.NON_NULL)
-    private String tokenPayload = null;
+    private String tokenPayload;
 
 
 

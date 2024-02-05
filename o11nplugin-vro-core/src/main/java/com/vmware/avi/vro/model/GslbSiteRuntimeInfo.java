@@ -30,35 +30,35 @@ import org.springframework.stereotype.Service;
 public class GslbSiteRuntimeInfo extends AviRestResource {
     @JsonProperty("cluster_leader")
     @JsonInclude(Include.NON_NULL)
-    private String clusterLeader = null;
+    private String clusterLeader;
 
     @JsonProperty("cluster_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String clusterUuid = null;
+    private String clusterUuid;
 
     @JsonProperty("dns_info")
     @JsonInclude(Include.NON_NULL)
-    private GslbDnsInfo dnsInfo = null;
+    private GslbDnsInfo dnsInfo;
 
     @JsonProperty("enabled")
     @JsonInclude(Include.NON_NULL)
-    private Boolean enabled = null;
+    private Boolean enabled;
 
     @JsonProperty("event_cache")
     @JsonInclude(Include.NON_NULL)
-    private EventCache eventCache = null;
+    private EventCache eventCache;
 
     @JsonProperty("hs_state")
     @JsonInclude(Include.NON_NULL)
-    private Boolean hsState = null;
+    private Boolean hsState;
 
     @JsonProperty("last_changed_time")
     @JsonInclude(Include.NON_NULL)
-    private TimeStamp lastChangedTime = null;
+    private TimeStamp lastChangedTime;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("num_of_retries")
     @JsonInclude(Include.NON_NULL)
@@ -66,7 +66,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
 
     @JsonProperty("oper_status")
     @JsonInclude(Include.NON_NULL)
-    private OperationalStatus operStatus = null;
+    private OperationalStatus operStatus;
 
     @JsonProperty("role")
     @JsonInclude(Include.NON_NULL)
@@ -74,11 +74,11 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
 
     @JsonProperty("rrtoken")
     @JsonInclude(Include.NON_NULL)
-    private List<String> rrtoken = null;
+    private List<String> rrtoken;
 
     @JsonProperty("site_type")
     @JsonInclude(Include.NON_NULL)
-    private String siteType = null;
+    private String siteType;
 
     @JsonProperty("state")
     @JsonInclude(Include.NON_NULL)
@@ -86,7 +86,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
 
     @JsonProperty("state_reason")
     @JsonInclude(Include.NON_NULL)
-    private String stateReason = null;
+    private String stateReason;
 
     @JsonProperty("sw_version")
     @JsonInclude(Include.NON_NULL)

@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class RmSeIpFailEventDetails extends AviRestResource {
     @JsonProperty("host_name")
     @JsonInclude(Include.NON_NULL)
-    private String hostName = null;
+    private String hostName;
 
     @JsonProperty("networks")
     @JsonInclude(Include.NON_NULL)
-    private List<RmAddVnic> networks = null;
+    private List<RmAddVnic> networks;
 
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("se_name")
     @JsonInclude(Include.NON_NULL)
-    private String seName = null;
+    private String seName;
 
 
 

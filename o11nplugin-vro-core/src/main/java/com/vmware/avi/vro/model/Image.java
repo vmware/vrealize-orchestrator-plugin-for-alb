@@ -30,31 +30,31 @@ import org.springframework.stereotype.Service;
 public class Image extends AviRestResource {
     @JsonProperty("cloud_info_values")
     @JsonInclude(Include.NON_NULL)
-    private List<ImageCloudData> cloudInfoValues = null;
+    private List<ImageCloudData> cloudInfoValues;
 
     @JsonProperty("controller_info")
     @JsonInclude(Include.NON_NULL)
-    private PackageDetails controllerInfo = null;
+    private PackageDetails controllerInfo;
 
     @JsonProperty("controller_patch_name")
     @JsonInclude(Include.NON_NULL)
-    private String controllerPatchName = null;
+    private String controllerPatchName;
 
     @JsonProperty("controller_patch_ref")
     @JsonInclude(Include.NON_NULL)
-    private String controllerPatchRef = null;
+    private String controllerPatchRef;
 
     @JsonProperty("duration")
     @JsonInclude(Include.NON_NULL)
-    private Integer duration = null;
+    private Integer duration;
 
     @JsonProperty("end_time")
     @JsonInclude(Include.NON_NULL)
-    private String endTime = null;
+    private String endTime;
 
     @JsonProperty("events")
     @JsonInclude(Include.NON_NULL)
-    private List<ImageEventMap> events = null;
+    private List<ImageEventMap> events;
 
     @JsonProperty("fips_mode_transition_applicable")
     @JsonInclude(Include.NON_NULL)
@@ -62,15 +62,15 @@ public class Image extends AviRestResource {
 
     @JsonProperty("img_state")
     @JsonInclude(Include.NON_NULL)
-    private ImageUploadOpsStatus imgState = null;
+    private ImageUploadOpsStatus imgState;
 
     @JsonProperty("migrations")
     @JsonInclude(Include.NON_NULL)
-    private SupportedMigrations migrations = null;
+    private SupportedMigrations migrations;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("progress")
     @JsonInclude(Include.NON_NULL)
@@ -78,19 +78,19 @@ public class Image extends AviRestResource {
 
     @JsonProperty("se_info")
     @JsonInclude(Include.NON_NULL)
-    private PackageDetails seInfo = null;
+    private PackageDetails seInfo;
 
     @JsonProperty("se_patch_name")
     @JsonInclude(Include.NON_NULL)
-    private String sePatchName = null;
+    private String sePatchName;
 
     @JsonProperty("se_patch_ref")
     @JsonInclude(Include.NON_NULL)
-    private String sePatchRef = null;
+    private String sePatchRef;
 
     @JsonProperty("start_time")
     @JsonInclude(Include.NON_NULL)
-    private String startTime = null;
+    private String startTime;
 
     @JsonProperty("tasks_completed")
     @JsonInclude(Include.NON_NULL)
@@ -98,7 +98,7 @@ public class Image extends AviRestResource {
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("total_tasks")
     @JsonInclude(Include.NON_NULL)
@@ -106,7 +106,7 @@ public class Image extends AviRestResource {
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
     @JsonProperty("uber_bundle")
     @JsonInclude(Include.NON_NULL)
@@ -118,7 +118,7 @@ public class Image extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

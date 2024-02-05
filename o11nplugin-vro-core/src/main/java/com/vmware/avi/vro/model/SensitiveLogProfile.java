@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class SensitiveLogProfile extends AviRestResource {
     @JsonProperty("header_field_rules")
     @JsonInclude(Include.NON_NULL)
-    private List<SensitiveFieldRule> headerFieldRules = null;
+    private List<SensitiveFieldRule> headerFieldRules;
 
     @JsonProperty("uri_query_field_rules")
     @JsonInclude(Include.NON_NULL)
-    private List<SensitiveFieldRule> uriQueryFieldRules = null;
+    private List<SensitiveFieldRule> uriQueryFieldRules;
 
     @JsonProperty("waf_field_rules")
     @JsonInclude(Include.NON_NULL)
-    private List<SensitiveFieldRule> wafFieldRules = null;
+    private List<SensitiveFieldRule> wafFieldRules;
 
 
 

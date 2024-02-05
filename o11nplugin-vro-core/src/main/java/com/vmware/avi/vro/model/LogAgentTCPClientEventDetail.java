@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class LogAgentTCPClientEventDetail extends AviRestResource {
     @JsonProperty("error_code")
     @JsonInclude(Include.NON_NULL)
-    private String errorCode = null;
+    private String errorCode;
 
     @JsonProperty("error_reason")
     @JsonInclude(Include.NON_NULL)
-    private String errorReason = null;
+    private String errorReason;
 
     @JsonProperty("host")
     @JsonInclude(Include.NON_NULL)
-    private String host = null;
+    private String host;
 
     @JsonProperty("port")
     @JsonInclude(Include.NON_NULL)
-    private String port = null;
+    private String port;
 
 
 

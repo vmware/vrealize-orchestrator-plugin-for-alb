@@ -26,35 +26,35 @@ import org.springframework.stereotype.Service;
 public class VIMgrClusterRuntime extends AviRestResource {
     @JsonProperty("cloud_ref")
     @JsonInclude(Include.NON_NULL)
-    private String cloudRef = null;
+    private String cloudRef;
 
     @JsonProperty("datacenter_managed_object_id")
     @JsonInclude(Include.NON_NULL)
-    private String datacenterManagedObjectId = null;
+    private String datacenterManagedObjectId;
 
     @JsonProperty("datacenter_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String datacenterUuid = null;
+    private String datacenterUuid;
 
     @JsonProperty("host_refs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> hostRefs = null;
+    private List<String> hostRefs;
 
     @JsonProperty("managed_object_id")
     @JsonInclude(Include.NON_NULL)
-    private String managedObjectId = null;
+    private String managedObjectId;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -62,7 +62,7 @@ public class VIMgrClusterRuntime extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

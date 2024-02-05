@@ -30,11 +30,11 @@ public class AnomalyEventDetails extends AviRestResource {
 
     @JsonProperty("metric_id")
     @JsonInclude(Include.NON_NULL)
-    private String metricId = null;
+    private String metricId;
 
     @JsonProperty("metric_timestamp")
     @JsonInclude(Include.NON_NULL)
-    private String metricTimestamp = null;
+    private String metricTimestamp;
 
     @JsonProperty("model")
     @JsonInclude(Include.NON_NULL)
@@ -42,35 +42,35 @@ public class AnomalyEventDetails extends AviRestResource {
 
     @JsonProperty("models")
     @JsonInclude(Include.NON_NULL)
-    private List<String> models = null;
+    private List<String> models;
 
     @JsonProperty("node_id")
     @JsonInclude(Include.NON_NULL)
-    private String nodeId = null;
+    private String nodeId;
 
     @JsonProperty("obj_type")
     @JsonInclude(Include.NON_NULL)
-    private String objType = null;
+    private String objType;
 
     @JsonProperty("pool_name")
     @JsonInclude(Include.NON_NULL)
-    private String poolName = null;
+    private String poolName;
 
     @JsonProperty("pool_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String poolUuid = null;
+    private String poolUuid;
 
     @JsonProperty("priority")
     @JsonInclude(Include.NON_NULL)
-    private String priority = null;
+    private String priority;
 
     @JsonProperty("server")
     @JsonInclude(Include.NON_NULL)
-    private String server = null;
+    private String server;
 
     @JsonProperty("value")
     @JsonInclude(Include.NON_NULL)
-    private Float value = null;
+    private Float value;
 
 
 

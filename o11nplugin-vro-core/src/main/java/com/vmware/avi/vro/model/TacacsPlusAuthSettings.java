@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class TacacsPlusAuthSettings extends AviRestResource {
     @JsonProperty("authorization_attrs")
     @JsonInclude(Include.NON_NULL)
-    private List<AuthTacacsPlusAttributeValuePair> authorizationAttrs = null;
+    private List<AuthTacacsPlusAttributeValuePair> authorizationAttrs;
 
     @JsonProperty("password")
     @JsonInclude(Include.NON_NULL)
-    private String password = null;
+    private String password;
 
     @JsonProperty("port")
     @JsonInclude(Include.NON_NULL)
@@ -38,7 +38,7 @@ public class TacacsPlusAuthSettings extends AviRestResource {
 
     @JsonProperty("server")
     @JsonInclude(Include.NON_NULL)
-    private List<String> server = null;
+    private List<String> server;
 
     @JsonProperty("service")
     @JsonInclude(Include.NON_NULL)

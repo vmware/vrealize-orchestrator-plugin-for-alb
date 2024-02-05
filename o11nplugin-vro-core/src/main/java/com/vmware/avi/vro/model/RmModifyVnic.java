@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class RmModifyVnic extends AviRestResource {
     @JsonProperty("mac_addr")
     @JsonInclude(Include.NON_NULL)
-    private String macAddr = null;
+    private String macAddr;
 
     @JsonProperty("network_name")
     @JsonInclude(Include.NON_NULL)
-    private String networkName = null;
+    private String networkName;
 
     @JsonProperty("network_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String networkUuid = null;
+    private String networkUuid;
 
 
 

@@ -63,19 +63,19 @@ public class HttpCacheConfig extends AviRestResource {
 
     @JsonProperty("mime_types_block_group_refs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> mimeTypesBlockGroupRefs = null;
+    private List<String> mimeTypesBlockGroupRefs;
 
     @JsonProperty("mime_types_block_lists")
     @JsonInclude(Include.NON_NULL)
-    private List<String> mimeTypesBlockLists = null;
+    private List<String> mimeTypesBlockLists;
 
     @JsonProperty("mime_types_group_refs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> mimeTypesGroupRefs = null;
+    private List<String> mimeTypesGroupRefs;
 
     @JsonProperty("mime_types_list")
     @JsonInclude(Include.NON_NULL)
-    private List<String> mimeTypesList = null;
+    private List<String> mimeTypesList;
 
     @JsonProperty("min_object_size")
     @JsonInclude(Include.NON_NULL)
@@ -87,7 +87,7 @@ public class HttpCacheConfig extends AviRestResource {
 
     @JsonProperty("uri_non_cacheable")
     @JsonInclude(Include.NON_NULL)
-    private PathMatch uriNonCacheable = null;
+    private PathMatch uriNonCacheable;
 
     @JsonProperty("xcache_header")
     @JsonInclude(Include.NON_NULL)

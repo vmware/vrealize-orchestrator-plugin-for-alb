@@ -28,11 +28,11 @@ import org.springframework.stereotype.Service;
 public class MarathonConfiguration extends AviRestResource {
     @JsonProperty("framework_tag")
     @JsonInclude(Include.NON_NULL)
-    private String frameworkTag = null;
+    private String frameworkTag;
 
     @JsonProperty("marathon_password")
     @JsonInclude(Include.NON_NULL)
-    private String marathonPassword = null;
+    private String marathonPassword;
 
     @JsonProperty("marathon_url")
     @JsonInclude(Include.NON_NULL)
@@ -40,15 +40,15 @@ public class MarathonConfiguration extends AviRestResource {
 
     @JsonProperty("marathon_username")
     @JsonInclude(Include.NON_NULL)
-    private String marathonUsername = null;
+    private String marathonUsername;
 
     @JsonProperty("private_port_range")
     @JsonInclude(Include.NON_NULL)
-    private PortRange privatePortRange = null;
+    private PortRange privatePortRange;
 
     @JsonProperty("public_port_range")
     @JsonInclude(Include.NON_NULL)
-    private PortRange publicPortRange = null;
+    private PortRange publicPortRange;
 
     @JsonProperty("tenant")
     @JsonInclude(Include.NON_NULL)

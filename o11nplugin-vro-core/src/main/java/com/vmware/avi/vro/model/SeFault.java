@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class SeFault extends AviRestResource {
     @JsonProperty("arg")
     @JsonInclude(Include.NON_NULL)
-    private Integer arg = null;
+    private Integer arg;
 
     @JsonProperty("fault_name")
     @JsonInclude(Include.NON_NULL)
-    private String faultName = null;
+    private String faultName;
 
     @JsonProperty("function_name")
     @JsonInclude(Include.NON_NULL)
-    private String functionName = null;
+    private String functionName;
 
     @JsonProperty("num_executions")
     @JsonInclude(Include.NON_NULL)

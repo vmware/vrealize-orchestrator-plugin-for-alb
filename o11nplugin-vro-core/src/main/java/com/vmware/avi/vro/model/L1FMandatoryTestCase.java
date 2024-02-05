@@ -27,19 +27,19 @@ import org.springframework.stereotype.Service;
 public class L1FMandatoryTestCase extends AviRestResource {
     @JsonProperty("mandatory_message")
     @JsonInclude(Include.NON_NULL)
-    private L2FMandatoryTestCase mandatoryMessage = null;
+    private L2FMandatoryTestCase mandatoryMessage;
 
     @JsonProperty("mandatory_messages")
     @JsonInclude(Include.NON_NULL)
-    private List<L2FMandatoryTestCase> mandatoryMessages = null;
+    private List<L2FMandatoryTestCase> mandatoryMessages;
 
     @JsonProperty("mandatory_string")
     @JsonInclude(Include.NON_NULL)
-    private String mandatoryString = null;
+    private String mandatoryString;
 
     @JsonProperty("mandatory_strings")
     @JsonInclude(Include.NON_NULL)
-    private List<String> mandatoryStrings = null;
+    private List<String> mandatoryStrings;
 
 
 

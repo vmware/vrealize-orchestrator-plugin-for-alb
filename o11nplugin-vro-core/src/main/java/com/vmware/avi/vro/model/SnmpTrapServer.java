@@ -28,11 +28,11 @@ import org.springframework.stereotype.Service;
 public class SnmpTrapServer extends AviRestResource {
     @JsonProperty("community")
     @JsonInclude(Include.NON_NULL)
-    private String community = null;
+    private String community;
 
     @JsonProperty("ip_addr")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr ipAddr = null;
+    private IpAddr ipAddr;
 
     @JsonProperty("port")
     @JsonInclude(Include.NON_NULL)
@@ -40,7 +40,7 @@ public class SnmpTrapServer extends AviRestResource {
 
     @JsonProperty("user")
     @JsonInclude(Include.NON_NULL)
-    private SnmpV3UserParams user = null;
+    private SnmpV3UserParams user;
 
     @JsonProperty("version")
     @JsonInclude(Include.NON_NULL)

@@ -28,79 +28,79 @@ import org.springframework.stereotype.Service;
 public class IcapRequestLog extends AviRestResource {
     @JsonProperty("action")
     @JsonInclude(Include.NON_NULL)
-    private String action = null;
+    private String action;
 
     @JsonProperty("complete_body_sent")
     @JsonInclude(Include.NON_NULL)
-    private Boolean completeBodySent = null;
+    private Boolean completeBodySent;
 
     @JsonProperty("http_method")
     @JsonInclude(Include.NON_NULL)
-    private String httpMethod = null;
+    private String httpMethod;
 
     @JsonProperty("http_response_code")
     @JsonInclude(Include.NON_NULL)
-    private Integer httpResponseCode = null;
+    private Integer httpResponseCode;
 
     @JsonProperty("icap_absolute_uri")
     @JsonInclude(Include.NON_NULL)
-    private String icapAbsoluteUri = null;
+    private String icapAbsoluteUri;
 
     @JsonProperty("icap_headers_received_from_server")
     @JsonInclude(Include.NON_NULL)
-    private String icapHeadersReceivedFromServer = null;
+    private String icapHeadersReceivedFromServer;
 
     @JsonProperty("icap_headers_sent_to_server")
     @JsonInclude(Include.NON_NULL)
-    private String icapHeadersSentToServer = null;
+    private String icapHeadersSentToServer;
 
     @JsonProperty("icap_method")
     @JsonInclude(Include.NON_NULL)
-    private String icapMethod = null;
+    private String icapMethod;
 
     @JsonProperty("icap_response_code")
     @JsonInclude(Include.NON_NULL)
-    private Integer icapResponseCode = null;
+    private Integer icapResponseCode;
 
     @JsonProperty("icap_server_ip")
     @JsonInclude(Include.NON_NULL)
-    private Integer icapServerIp = null;
+    private Integer icapServerIp;
 
     @JsonProperty("icap_server_port")
     @JsonInclude(Include.NON_NULL)
-    private Integer icapServerPort = null;
+    private Integer icapServerPort;
 
     @JsonProperty("latency")
     @JsonInclude(Include.NON_NULL)
-    private Integer latency = null;
+    private Integer latency;
 
     @JsonProperty("modified_content_length")
     @JsonInclude(Include.NON_NULL)
-    private Integer modifiedContentLength = null;
+    private Integer modifiedContentLength;
 
     @JsonProperty("nsx_defender_log")
     @JsonInclude(Include.NON_NULL)
-    private IcapNSXDefenderLog nsxDefenderLog = null;
+    private IcapNSXDefenderLog nsxDefenderLog;
 
     @JsonProperty("opswat_log")
     @JsonInclude(Include.NON_NULL)
-    private IcapOPSWATLog opswatLog = null;
+    private IcapOPSWATLog opswatLog;
 
     @JsonProperty("pool_name")
     @JsonInclude(Include.NON_NULL)
-    private String poolName = null;
+    private String poolName;
 
     @JsonProperty("pool_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String poolUuid = null;
+    private String poolUuid;
 
     @JsonProperty("source_port")
     @JsonInclude(Include.NON_NULL)
-    private Integer sourcePort = null;
+    private Integer sourcePort;
 
     @JsonProperty("vendor")
     @JsonInclude(Include.NON_NULL)
-    private String vendor = null;
+    private String vendor;
 
 
 

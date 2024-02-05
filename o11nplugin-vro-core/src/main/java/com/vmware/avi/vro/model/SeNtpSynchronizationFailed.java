@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class SeNtpSynchronizationFailed extends AviRestResource {
     @JsonProperty("ntp_servers")
     @JsonInclude(Include.NON_NULL)
-    private String ntpServers = null;
+    private String ntpServers;
 
     @JsonProperty("se_name")
     @JsonInclude(Include.NON_NULL)
-    private String seName = null;
+    private String seName;
 
     @JsonProperty("se_ref")
     @JsonInclude(Include.NON_NULL)
-    private String seRef = null;
+    private String seRef;
 
 
 

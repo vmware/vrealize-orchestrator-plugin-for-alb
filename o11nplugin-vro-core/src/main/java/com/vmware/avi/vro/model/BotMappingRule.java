@@ -28,19 +28,19 @@ import org.springframework.stereotype.Service;
 public class BotMappingRule extends AviRestResource {
     @JsonProperty("classification")
     @JsonInclude(Include.NON_NULL)
-    private BotClassification classification = null;
+    private BotClassification classification;
 
     @JsonProperty("index")
     @JsonInclude(Include.NON_NULL)
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("match")
     @JsonInclude(Include.NON_NULL)
-    private BotMappingRuleMatchTarget match = null;
+    private BotMappingRuleMatchTarget match;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
 
 

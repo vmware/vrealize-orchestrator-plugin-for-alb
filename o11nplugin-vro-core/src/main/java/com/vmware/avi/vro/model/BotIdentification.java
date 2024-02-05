@@ -25,16 +25,15 @@ import org.springframework.stereotype.Service;
 @Service
 public class BotIdentification extends AviRestResource {
     @JsonProperty("class")
-    @JsonInclude(Include.NON_NULL)
-    private String classStr = null;
+    private String classStr;
 
     @JsonProperty("identifier")
     @JsonInclude(Include.NON_NULL)
-    private String identifier = null;
+    private String identifier;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
 
 

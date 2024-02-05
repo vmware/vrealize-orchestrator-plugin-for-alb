@@ -26,67 +26,67 @@ import org.springframework.stereotype.Service;
 public class SubRequestLog extends AviRestResource {
     @JsonProperty("headers_received_from_server")
     @JsonInclude(Include.NON_NULL)
-    private String headersReceivedFromServer = null;
+    private String headersReceivedFromServer;
 
     @JsonProperty("headers_sent_to_server")
     @JsonInclude(Include.NON_NULL)
-    private String headersSentToServer = null;
+    private String headersSentToServer;
 
     @JsonProperty("http_response_code")
     @JsonInclude(Include.NON_NULL)
-    private Integer httpResponseCode = null;
+    private Integer httpResponseCode;
 
     @JsonProperty("http_version")
     @JsonInclude(Include.NON_NULL)
-    private String httpVersion = null;
+    private String httpVersion;
 
     @JsonProperty("method")
     @JsonInclude(Include.NON_NULL)
-    private String method = null;
+    private String method;
 
     @JsonProperty("pool_name")
     @JsonInclude(Include.NON_NULL)
-    private String poolName = null;
+    private String poolName;
 
     @JsonProperty("pool_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String poolUuid = null;
+    private String poolUuid;
 
     @JsonProperty("request_length")
     @JsonInclude(Include.NON_NULL)
-    private Integer requestLength = null;
+    private Integer requestLength;
 
     @JsonProperty("response_length")
     @JsonInclude(Include.NON_NULL)
-    private Integer responseLength = null;
+    private Integer responseLength;
 
     @JsonProperty("server_ip")
     @JsonInclude(Include.NON_NULL)
-    private Integer serverIp = null;
+    private Integer serverIp;
 
     @JsonProperty("server_name")
     @JsonInclude(Include.NON_NULL)
-    private String serverName = null;
+    private String serverName;
 
     @JsonProperty("server_port")
     @JsonInclude(Include.NON_NULL)
-    private Integer serverPort = null;
+    private Integer serverPort;
 
     @JsonProperty("source_port")
     @JsonInclude(Include.NON_NULL)
-    private Integer sourcePort = null;
+    private Integer sourcePort;
 
     @JsonProperty("total_time")
     @JsonInclude(Include.NON_NULL)
-    private Integer totalTime = null;
+    private Integer totalTime;
 
     @JsonProperty("uri_path")
     @JsonInclude(Include.NON_NULL)
-    private String uriPath = null;
+    private String uriPath;
 
     @JsonProperty("uri_query")
     @JsonInclude(Include.NON_NULL)
-    private String uriQuery = null;
+    private String uriQuery;
 
 
 

@@ -28,7 +28,7 @@ import org.springframework.stereotype.Service;
 public class GCPVIPAllocation extends AviRestResource {
     @JsonProperty("ilb")
     @JsonInclude(Include.NON_NULL)
-    private GCPVIPILB ilb = null;
+    private GCPVIPILB ilb;
 
     @JsonProperty("mode")
     @JsonInclude(Include.NON_NULL)
@@ -36,7 +36,7 @@ public class GCPVIPAllocation extends AviRestResource {
 
     @JsonProperty("routes")
     @JsonInclude(Include.NON_NULL)
-    private GCPVIPRoutes routes = null;
+    private GCPVIPRoutes routes;
 
 
 

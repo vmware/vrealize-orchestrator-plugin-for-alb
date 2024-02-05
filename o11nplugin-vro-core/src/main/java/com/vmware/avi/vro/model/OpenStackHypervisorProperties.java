@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class OpenStackHypervisorProperties extends AviRestResource {
     @JsonProperty("hypervisor")
     @JsonInclude(Include.NON_NULL)
-    private String hypervisor = null;
+    private String hypervisor;
 
     @JsonProperty("image_properties")
     @JsonInclude(Include.NON_NULL)
-    private List<Property> imageProperties = null;
+    private List<Property> imageProperties;
 
 
 

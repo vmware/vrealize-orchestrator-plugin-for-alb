@@ -27,7 +27,7 @@ import org.springframework.stereotype.Service;
 public class L4RuleAction extends AviRestResource {
     @JsonProperty("select_pool")
     @JsonInclude(Include.NON_NULL)
-    private L4RuleActionSelectPool selectPool = null;
+    private L4RuleActionSelectPool selectPool;
 
 
 

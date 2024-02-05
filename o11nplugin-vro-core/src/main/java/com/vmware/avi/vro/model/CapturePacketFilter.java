@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class CapturePacketFilter extends AviRestResource {
     @JsonProperty("capture_tcp_filters")
     @JsonInclude(Include.NON_NULL)
-    private List<CaptureTCPFilter> captureTcpFilters = null;
+    private List<CaptureTCPFilter> captureTcpFilters;
 
 
 

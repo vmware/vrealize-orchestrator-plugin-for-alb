@@ -29,15 +29,15 @@ import org.springframework.stereotype.Service;
 public class L4RuleMatchTarget extends AviRestResource {
     @JsonProperty("client_ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrMatch clientIp = null;
+    private IpAddrMatch clientIp;
 
     @JsonProperty("port")
     @JsonInclude(Include.NON_NULL)
-    private L4RulePortMatch port = null;
+    private L4RulePortMatch port;
 
     @JsonProperty("protocol")
     @JsonInclude(Include.NON_NULL)
-    private L4RuleProtocolMatch protocol = null;
+    private L4RuleProtocolMatch protocol;
 
 
 

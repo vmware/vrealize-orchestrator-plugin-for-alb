@@ -29,15 +29,15 @@ import org.springframework.stereotype.Service;
 public class ClientInsightsSampling extends AviRestResource {
     @JsonProperty("client_ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrMatch clientIp = null;
+    private IpAddrMatch clientIp;
 
     @JsonProperty("sample_uris")
     @JsonInclude(Include.NON_NULL)
-    private StringMatch sampleUris = null;
+    private StringMatch sampleUris;
 
     @JsonProperty("skip_uris")
     @JsonInclude(Include.NON_NULL)
-    private StringMatch skipUris = null;
+    private StringMatch skipUris;
 
 
 

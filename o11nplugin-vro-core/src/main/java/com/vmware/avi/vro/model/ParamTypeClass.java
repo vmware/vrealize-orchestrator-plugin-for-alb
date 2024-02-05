@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class ParamTypeClass extends AviRestResource {
     @JsonProperty("hits")
     @JsonInclude(Include.NON_NULL)
-    private Integer hits = null;
+    private Integer hits;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
 
 

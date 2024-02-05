@@ -27,11 +27,11 @@ import org.springframework.stereotype.Service;
 public class SeUpgradeScaleinEventDetails extends AviRestResource {
     @JsonProperty("scalein_params")
     @JsonInclude(Include.NON_NULL)
-    private VsScaleinParams scaleinParams = null;
+    private VsScaleinParams scaleinParams;
 
     @JsonProperty("vs_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String vsUuid = null;
+    private String vsUuid;
 
 
 

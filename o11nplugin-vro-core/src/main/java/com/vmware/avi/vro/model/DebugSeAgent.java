@@ -30,15 +30,15 @@ public class DebugSeAgent extends AviRestResource {
 
     @JsonProperty("log_level")
     @JsonInclude(Include.NON_NULL)
-    private String logLevel = null;
+    private String logLevel;
 
     @JsonProperty("sub_module")
     @JsonInclude(Include.NON_NULL)
-    private String subModule = null;
+    private String subModule;
 
     @JsonProperty("trace_level")
     @JsonInclude(Include.NON_NULL)
-    private String traceLevel = null;
+    private String traceLevel;
 
 
 

@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class FileReferenceMapping extends AviRestResource {
     @JsonProperty("file_path")
     @JsonInclude(Include.NON_NULL)
-    private String filePath = null;
+    private String filePath;
 
     @JsonProperty("reference")
     @JsonInclude(Include.NON_NULL)
-    private String reference = null;
+    private String reference;
 
 
 

@@ -28,11 +28,11 @@ import org.springframework.stereotype.Service;
 public class ClusterLeaderFailoverEvent extends AviRestResource {
     @JsonProperty("leader_node")
     @JsonInclude(Include.NON_NULL)
-    private ClusterNode leaderNode = null;
+    private ClusterNode leaderNode;
 
     @JsonProperty("previous_leader_node")
     @JsonInclude(Include.NON_NULL)
-    private ClusterNode previousLeaderNode = null;
+    private ClusterNode previousLeaderNode;
 
 
 

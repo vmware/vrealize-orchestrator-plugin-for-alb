@@ -28,15 +28,15 @@ import org.springframework.stereotype.Service;
 public class LicenseStatus extends AviRestResource {
     @JsonProperty("saas_status")
     @JsonInclude(Include.NON_NULL)
-    private SaasLicensingStatus saasStatus = null;
+    private SaasLicensingStatus saasStatus;
 
     @JsonProperty("service_update")
     @JsonInclude(Include.NON_NULL)
-    private LicenseServiceUpdate serviceUpdate = null;
+    private LicenseServiceUpdate serviceUpdate;
 
     @JsonProperty("tenant_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String tenantUuid = null;
+    private String tenantUuid;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -44,7 +44,7 @@ public class LicenseStatus extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

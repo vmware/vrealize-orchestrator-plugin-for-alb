@@ -40,59 +40,59 @@ public class IpamDnsProviderProfile extends AviRestResource {
 
     @JsonProperty("aws_profile")
     @JsonInclude(Include.NON_NULL)
-    private IpamDnsAwsProfile awsProfile = null;
+    private IpamDnsAwsProfile awsProfile;
 
     @JsonProperty("azure_profile")
     @JsonInclude(Include.NON_NULL)
-    private IpamDnsAzureProfile azureProfile = null;
+    private IpamDnsAzureProfile azureProfile;
 
     @JsonProperty("custom_profile")
     @JsonInclude(Include.NON_NULL)
-    private IpamDnsCustomProfile customProfile = null;
+    private IpamDnsCustomProfile customProfile;
 
     @JsonProperty("gcp_profile")
     @JsonInclude(Include.NON_NULL)
-    private IpamDnsGCPProfile gcpProfile = null;
+    private IpamDnsGCPProfile gcpProfile;
 
     @JsonProperty("infoblox_profile")
     @JsonInclude(Include.NON_NULL)
-    private IpamDnsInfobloxProfile infobloxProfile = null;
+    private IpamDnsInfobloxProfile infobloxProfile;
 
     @JsonProperty("internal_profile")
     @JsonInclude(Include.NON_NULL)
-    private IpamDnsInternalProfile internalProfile = null;
+    private IpamDnsInternalProfile internalProfile;
 
     @JsonProperty("markers")
     @JsonInclude(Include.NON_NULL)
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("oci_profile")
     @JsonInclude(Include.NON_NULL)
-    private IpamDnsOCIProfile ociProfile = null;
+    private IpamDnsOCIProfile ociProfile;
 
     @JsonProperty("openstack_profile")
     @JsonInclude(Include.NON_NULL)
-    private IpamDnsOpenstackProfile openstackProfile = null;
+    private IpamDnsOpenstackProfile openstackProfile;
 
     @JsonProperty("proxy_configuration")
     @JsonInclude(Include.NON_NULL)
-    private ProxyConfiguration proxyConfiguration = null;
+    private ProxyConfiguration proxyConfiguration;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("tencent_profile")
     @JsonInclude(Include.NON_NULL)
-    private IpamDnsTencentProfile tencentProfile = null;
+    private IpamDnsTencentProfile tencentProfile;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -100,7 +100,7 @@ public class IpamDnsProviderProfile extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

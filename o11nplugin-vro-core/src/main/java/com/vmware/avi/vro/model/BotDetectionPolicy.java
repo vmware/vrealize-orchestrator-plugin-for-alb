@@ -31,39 +31,39 @@ import org.springframework.stereotype.Service;
 public class BotDetectionPolicy extends AviRestResource {
     @JsonProperty("allow_list")
     @JsonInclude(Include.NON_NULL)
-    private BotAllowList allowList = null;
+    private BotAllowList allowList;
 
     @JsonProperty("client_behavior_detector")
     @JsonInclude(Include.NON_NULL)
-    private BotConfigClientBehavior clientBehaviorDetector = null;
+    private BotConfigClientBehavior clientBehaviorDetector;
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("ip_location_detector")
     @JsonInclude(Include.NON_NULL)
-    private BotConfigIPLocation ipLocationDetector = null;
+    private BotConfigIPLocation ipLocationDetector;
 
     @JsonProperty("ip_reputation_detector")
     @JsonInclude(Include.NON_NULL)
-    private BotConfigIPReputation ipReputationDetector = null;
+    private BotConfigIPReputation ipReputationDetector;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("system_bot_mapping_ref")
     @JsonInclude(Include.NON_NULL)
-    private String systemBotMappingRef = null;
+    private String systemBotMappingRef;
 
     @JsonProperty("system_consolidator_ref")
     @JsonInclude(Include.NON_NULL)
-    private String systemConsolidatorRef = null;
+    private String systemConsolidatorRef;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -71,19 +71,19 @@ public class BotDetectionPolicy extends AviRestResource {
 
     @JsonProperty("user_agent_detector")
     @JsonInclude(Include.NON_NULL)
-    private BotConfigUserAgent userAgentDetector = null;
+    private BotConfigUserAgent userAgentDetector;
 
     @JsonProperty("user_bot_mapping_ref")
     @JsonInclude(Include.NON_NULL)
-    private String userBotMappingRef = null;
+    private String userBotMappingRef;
 
     @JsonProperty("user_consolidator_ref")
     @JsonInclude(Include.NON_NULL)
-    private String userConsolidatorRef = null;
+    private String userConsolidatorRef;
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

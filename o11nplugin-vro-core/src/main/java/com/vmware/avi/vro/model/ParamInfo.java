@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class ParamInfo extends AviRestResource {
     @JsonProperty("param_hits")
     @JsonInclude(Include.NON_NULL)
-    private Integer paramHits = null;
+    private Integer paramHits;
 
     @JsonProperty("param_key")
     @JsonInclude(Include.NON_NULL)
-    private String paramKey = null;
+    private String paramKey;
 
     @JsonProperty("param_size_classes")
     @JsonInclude(Include.NON_NULL)
-    private List<ParamSizeClass> paramSizeClasses = null;
+    private List<ParamSizeClass> paramSizeClasses;
 
     @JsonProperty("param_type_classes")
     @JsonInclude(Include.NON_NULL)
-    private List<ParamTypeClass> paramTypeClasses = null;
+    private List<ParamTypeClass> paramTypeClasses;
 
 
 

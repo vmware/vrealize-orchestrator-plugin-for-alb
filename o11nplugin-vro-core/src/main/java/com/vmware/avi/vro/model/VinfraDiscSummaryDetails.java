@@ -26,27 +26,27 @@ import org.springframework.stereotype.Service;
 public class VinfraDiscSummaryDetails extends AviRestResource {
     @JsonProperty("num_clusters")
     @JsonInclude(Include.NON_NULL)
-    private Integer numClusters = null;
+    private Integer numClusters;
 
     @JsonProperty("num_dcs")
     @JsonInclude(Include.NON_NULL)
-    private Integer numDcs = null;
+    private Integer numDcs;
 
     @JsonProperty("num_hosts")
     @JsonInclude(Include.NON_NULL)
-    private Integer numHosts = null;
+    private Integer numHosts;
 
     @JsonProperty("num_nws")
     @JsonInclude(Include.NON_NULL)
-    private Integer numNws = null;
+    private Integer numNws;
 
     @JsonProperty("num_vms")
     @JsonInclude(Include.NON_NULL)
-    private Integer numVms = null;
+    private Integer numVms;
 
     @JsonProperty("vcenter")
     @JsonInclude(Include.NON_NULL)
-    private String vcenter = null;
+    private String vcenter;
 
 
 

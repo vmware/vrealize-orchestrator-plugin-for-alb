@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class SeObjsyncPeerDownDetails extends AviRestResource {
     @JsonProperty("peer_se_uuids")
     @JsonInclude(Include.NON_NULL)
-    private String peerSeUuids = null;
+    private String peerSeUuids;
 
 
 

@@ -32,43 +32,43 @@ import org.springframework.stereotype.Service;
 public class ApplicationProfile extends AviRestResource {
     @JsonProperty("app_service_type")
     @JsonInclude(Include.NON_NULL)
-    private String appServiceType = null;
+    private String appServiceType;
 
     @JsonProperty("cloud_config_cksum")
     @JsonInclude(Include.NON_NULL)
-    private String cloudConfigCksum = null;
+    private String cloudConfigCksum;
 
     @JsonProperty("created_by")
     @JsonInclude(Include.NON_NULL)
-    private String createdBy = null;
+    private String createdBy;
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("dns_service_profile")
     @JsonInclude(Include.NON_NULL)
-    private DnsServiceApplicationProfile dnsServiceProfile = null;
+    private DnsServiceApplicationProfile dnsServiceProfile;
 
     @JsonProperty("dos_rl_profile")
     @JsonInclude(Include.NON_NULL)
-    private DosRateLimitProfile dosRlProfile = null;
+    private DosRateLimitProfile dosRlProfile;
 
     @JsonProperty("http_profile")
     @JsonInclude(Include.NON_NULL)
-    private HTTPApplicationProfile httpProfile = null;
+    private HTTPApplicationProfile httpProfile;
 
     @JsonProperty("l4_ssl_profile")
     @JsonInclude(Include.NON_NULL)
-    private L4SSLApplicationProfile l4SslProfile = null;
+    private L4SSLApplicationProfile l4SslProfile;
 
     @JsonProperty("markers")
     @JsonInclude(Include.NON_NULL)
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("preserve_client_ip")
     @JsonInclude(Include.NON_NULL)
@@ -76,7 +76,7 @@ public class ApplicationProfile extends AviRestResource {
 
     @JsonProperty("preserve_client_port")
     @JsonInclude(Include.NON_NULL)
-    private Boolean preserveClientPort = null;
+    private Boolean preserveClientPort;
 
     @JsonProperty("preserve_dest_ip_port")
     @JsonInclude(Include.NON_NULL)
@@ -84,19 +84,19 @@ public class ApplicationProfile extends AviRestResource {
 
     @JsonProperty("sip_service_profile")
     @JsonInclude(Include.NON_NULL)
-    private SipServiceApplicationProfile sipServiceProfile = null;
+    private SipServiceApplicationProfile sipServiceProfile;
 
     @JsonProperty("tcp_app_profile")
     @JsonInclude(Include.NON_NULL)
-    private TCPApplicationProfile tcpAppProfile = null;
+    private TCPApplicationProfile tcpAppProfile;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -104,7 +104,7 @@ public class ApplicationProfile extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

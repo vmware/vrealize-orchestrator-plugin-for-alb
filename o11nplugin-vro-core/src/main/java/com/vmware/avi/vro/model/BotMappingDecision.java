@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class BotMappingDecision extends AviRestResource {
     @JsonProperty("mapping_name")
     @JsonInclude(Include.NON_NULL)
-    private String mappingName = null;
+    private String mappingName;
 
     @JsonProperty("mapping_rule_name")
     @JsonInclude(Include.NON_NULL)
-    private String mappingRuleName = null;
+    private String mappingRuleName;
 
 
 

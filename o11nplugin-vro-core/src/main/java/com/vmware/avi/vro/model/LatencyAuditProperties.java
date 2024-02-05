@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class LatencyAuditProperties extends AviRestResource {
     @JsonProperty("conn_est_audit_mode")
     @JsonInclude(Include.NON_NULL)
-    private String connEstAuditMode = null;
+    private String connEstAuditMode;
 
     @JsonProperty("conn_est_threshold")
     @JsonInclude(Include.NON_NULL)
-    private Integer connEstThreshold = null;
+    private Integer connEstThreshold;
 
     @JsonProperty("latency_audit_mode")
     @JsonInclude(Include.NON_NULL)
-    private String latencyAuditMode = null;
+    private String latencyAuditMode;
 
     @JsonProperty("latency_threshold")
     @JsonInclude(Include.NON_NULL)
-    private Integer latencyThreshold = null;
+    private Integer latencyThreshold;
 
 
 

@@ -29,15 +29,15 @@ import org.springframework.stereotype.Service;
 public class GslbPoolMember extends AviRestResource {
     @JsonProperty("cloud_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String cloudUuid = null;
+    private String cloudUuid;
 
     @JsonProperty("cluster_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String clusterUuid = null;
+    private String clusterUuid;
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("enabled")
     @JsonInclude(Include.NON_NULL)
@@ -45,19 +45,19 @@ public class GslbPoolMember extends AviRestResource {
 
     @JsonProperty("fqdn")
     @JsonInclude(Include.NON_NULL)
-    private String fqdn = null;
+    private String fqdn;
 
     @JsonProperty("hostname")
     @JsonInclude(Include.NON_NULL)
-    private String hostname = null;
+    private String hostname;
 
     @JsonProperty("ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr ip = null;
+    private IpAddr ip;
 
     @JsonProperty("location")
     @JsonInclude(Include.NON_NULL)
-    private GslbGeoLocation location = null;
+    private GslbGeoLocation location;
 
     @JsonProperty("preference_order")
     @JsonInclude(Include.NON_NULL)
@@ -65,7 +65,7 @@ public class GslbPoolMember extends AviRestResource {
 
     @JsonProperty("public_ip")
     @JsonInclude(Include.NON_NULL)
-    private GslbIpAddr publicIp = null;
+    private GslbIpAddr publicIp;
 
     @JsonProperty("ratio")
     @JsonInclude(Include.NON_NULL)
@@ -77,7 +77,7 @@ public class GslbPoolMember extends AviRestResource {
 
     @JsonProperty("vs_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String vsUuid = null;
+    private String vsUuid;
 
 
 

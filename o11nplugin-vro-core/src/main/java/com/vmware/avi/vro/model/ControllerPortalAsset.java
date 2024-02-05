@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class ControllerPortalAsset extends AviRestResource {
     @JsonProperty("asset_id")
     @JsonInclude(Include.NON_NULL)
-    private String assetId = null;
+    private String assetId;
 
 
 

@@ -30,7 +30,7 @@ public class Tag extends AviRestResource {
 
     @JsonProperty("value")
     @JsonInclude(Include.NON_NULL)
-    private String value = null;
+    private String value;
 
 
 

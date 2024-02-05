@@ -34,11 +34,11 @@ public class MarathonSeDeployment extends AviRestResource {
 
     @JsonProperty("resource_roles")
     @JsonInclude(Include.NON_NULL)
-    private List<String> resourceRoles = null;
+    private List<String> resourceRoles;
 
     @JsonProperty("uris")
     @JsonInclude(Include.NON_NULL)
-    private List<String> uris = null;
+    private List<String> uris;
 
 
 

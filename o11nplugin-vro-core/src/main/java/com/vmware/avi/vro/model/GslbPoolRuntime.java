@@ -27,15 +27,15 @@ import org.springframework.stereotype.Service;
 public class GslbPoolRuntime extends AviRestResource {
     @JsonProperty("members")
     @JsonInclude(Include.NON_NULL)
-    private List<GslbPoolMemberRuntimeInfo> members = null;
+    private List<GslbPoolMemberRuntimeInfo> members;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("oper_status")
     @JsonInclude(Include.NON_NULL)
-    private OperationalStatus operStatus = null;
+    private OperationalStatus operStatus;
 
 
 

@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class ServerAutoScaleInCompleteInfo extends AviRestResource {
     @JsonProperty("nscalein")
     @JsonInclude(Include.NON_NULL)
-    private Integer nscalein = null;
+    private Integer nscalein;
 
     @JsonProperty("pool_ref")
     @JsonInclude(Include.NON_NULL)
-    private String poolRef = null;
+    private String poolRef;
 
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("reason_code")
     @JsonInclude(Include.NON_NULL)
@@ -42,7 +42,7 @@ public class ServerAutoScaleInCompleteInfo extends AviRestResource {
 
     @JsonProperty("scaled_in_servers")
     @JsonInclude(Include.NON_NULL)
-    private List<ServerId> scaledInServers = null;
+    private List<ServerId> scaledInServers;
 
 
 

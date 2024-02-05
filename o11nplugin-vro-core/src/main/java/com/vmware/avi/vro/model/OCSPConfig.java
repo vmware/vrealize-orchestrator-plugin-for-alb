@@ -38,11 +38,11 @@ public class OCSPConfig extends AviRestResource {
 
     @JsonProperty("ocsp_resp_timeout")
     @JsonInclude(Include.NON_NULL)
-    private Integer ocspRespTimeout = null;
+    private Integer ocspRespTimeout;
 
     @JsonProperty("responder_url_lists")
     @JsonInclude(Include.NON_NULL)
-    private List<String> responderUrlLists = null;
+    private List<String> responderUrlLists;
 
     @JsonProperty("url_action")
     @JsonInclude(Include.NON_NULL)

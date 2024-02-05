@@ -26,75 +26,75 @@ import org.springframework.stereotype.Service;
 public class ControllerLicense extends AviRestResource {
     @JsonProperty("active_burst_resources")
     @JsonInclude(Include.NON_NULL)
-    private List<BurstResource> activeBurstResources = null;
+    private List<BurstResource> activeBurstResources;
 
     @JsonProperty("burst_cores")
     @JsonInclude(Include.NON_NULL)
-    private Integer burstCores = null;
+    private Integer burstCores;
 
     @JsonProperty("cores")
     @JsonInclude(Include.NON_NULL)
-    private Integer cores = null;
+    private Integer cores;
 
     @JsonProperty("customer_name")
     @JsonInclude(Include.NON_NULL)
-    private String customerName = null;
+    private String customerName;
 
     @JsonProperty("disable_enforcement")
     @JsonInclude(Include.NON_NULL)
-    private Boolean disableEnforcement = null;
+    private Boolean disableEnforcement;
 
     @JsonProperty("expired_burst_resources")
     @JsonInclude(Include.NON_NULL)
-    private List<BurstResource> expiredBurstResources = null;
+    private List<BurstResource> expiredBurstResources;
 
     @JsonProperty("initialized")
     @JsonInclude(Include.NON_NULL)
-    private Boolean initialized = null;
+    private Boolean initialized;
 
     @JsonProperty("license_id")
     @JsonInclude(Include.NON_NULL)
-    private String licenseId = null;
+    private String licenseId;
 
     @JsonProperty("license_tier")
     @JsonInclude(Include.NON_NULL)
-    private List<String> licenseTier = null;
+    private List<String> licenseTier;
 
     @JsonProperty("license_tiers")
     @JsonInclude(Include.NON_NULL)
-    private List<CumulativeLicense> licenseTiers = null;
+    private List<CumulativeLicense> licenseTiers;
 
     @JsonProperty("licenses")
     @JsonInclude(Include.NON_NULL)
-    private List<SingleLicense> licenses = null;
+    private List<SingleLicense> licenses;
 
     @JsonProperty("max_ses")
     @JsonInclude(Include.NON_NULL)
-    private Integer maxSes = null;
+    private Integer maxSes;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("se_bandwidth_limits")
     @JsonInclude(Include.NON_NULL)
-    private List<SEBandwidthLimit> seBandwidthLimits = null;
+    private List<SEBandwidthLimit> seBandwidthLimits;
 
     @JsonProperty("service_cores")
     @JsonInclude(Include.NON_NULL)
-    private Float serviceCores = null;
+    private Float serviceCores;
 
     @JsonProperty("sockets")
     @JsonInclude(Include.NON_NULL)
-    private Integer sockets = null;
+    private Integer sockets;
 
     @JsonProperty("start_on")
     @JsonInclude(Include.NON_NULL)
-    private String startOn = null;
+    private String startOn;
 
     @JsonProperty("tenant_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String tenantUuid = null;
+    private String tenantUuid;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -102,11 +102,11 @@ public class ControllerLicense extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("valid_until")
     @JsonInclude(Include.NON_NULL)
-    private String validUntil = null;
+    private String validUntil;
 
 
 

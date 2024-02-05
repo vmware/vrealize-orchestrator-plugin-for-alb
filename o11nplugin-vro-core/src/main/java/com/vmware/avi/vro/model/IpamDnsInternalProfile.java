@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class IpamDnsInternalProfile extends AviRestResource {
     @JsonProperty("dns_service_domain")
     @JsonInclude(Include.NON_NULL)
-    private List<DnsServiceDomain> dnsServiceDomain = null;
+    private List<DnsServiceDomain> dnsServiceDomain;
 
     @JsonProperty("dns_virtualservice_ref")
     @JsonInclude(Include.NON_NULL)
-    private String dnsVirtualserviceRef = null;
+    private String dnsVirtualserviceRef;
 
     @JsonProperty("ttl")
     @JsonInclude(Include.NON_NULL)
@@ -38,7 +38,7 @@ public class IpamDnsInternalProfile extends AviRestResource {
 
     @JsonProperty("usable_networks")
     @JsonInclude(Include.NON_NULL)
-    private List<IpamUsableNetwork> usableNetworks = null;
+    private List<IpamUsableNetwork> usableNetworks;
 
 
 

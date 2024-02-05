@@ -31,7 +31,7 @@ public class DnsRecord extends AviRestResource {
 
     @JsonProperty("cname")
     @JsonInclude(Include.NON_NULL)
-    private DnsCnameRdata cname = null;
+    private DnsCnameRdata cname;
 
     @JsonProperty("delegated")
     @JsonInclude(Include.NON_NULL)
@@ -39,31 +39,31 @@ public class DnsRecord extends AviRestResource {
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("fqdn")
     @JsonInclude(Include.NON_NULL)
-    private List<String> fqdn = null;
+    private List<String> fqdn;
 
     @JsonProperty("ip6_address")
     @JsonInclude(Include.NON_NULL)
-    private List<DnsAAAARdata> ip6Address = null;
+    private List<DnsAAAARdata> ip6Address;
 
     @JsonProperty("ip_address")
     @JsonInclude(Include.NON_NULL)
-    private List<DnsARdata> ipAddress = null;
+    private List<DnsARdata> ipAddress;
 
     @JsonProperty("metadata")
     @JsonInclude(Include.NON_NULL)
-    private String metadata = null;
+    private String metadata;
 
     @JsonProperty("mx_records")
     @JsonInclude(Include.NON_NULL)
-    private List<DnsMxRdata> mxRecords = null;
+    private List<DnsMxRdata> mxRecords;
 
     @JsonProperty("ns")
     @JsonInclude(Include.NON_NULL)
-    private List<DnsNsRdata> ns = null;
+    private List<DnsNsRdata> ns;
 
     @JsonProperty("num_records_in_response")
     @JsonInclude(Include.NON_NULL)
@@ -71,19 +71,19 @@ public class DnsRecord extends AviRestResource {
 
     @JsonProperty("service_locator")
     @JsonInclude(Include.NON_NULL)
-    private List<DnsSrvRdata> serviceLocator = null;
+    private List<DnsSrvRdata> serviceLocator;
 
     @JsonProperty("ttl")
     @JsonInclude(Include.NON_NULL)
-    private Integer ttl = null;
+    private Integer ttl;
 
     @JsonProperty("txt_records")
     @JsonInclude(Include.NON_NULL)
-    private List<DnsTxtRdata> txtRecords = null;
+    private List<DnsTxtRdata> txtRecords;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
     @JsonProperty("wildcard_match")
     @JsonInclude(Include.NON_NULL)

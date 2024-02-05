@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class WafPSMRule extends AviRestResource {
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("enable")
     @JsonInclude(Include.NON_NULL)
@@ -34,7 +34,7 @@ public class WafPSMRule extends AviRestResource {
 
     @JsonProperty("index")
     @JsonInclude(Include.NON_NULL)
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("match_case")
     @JsonInclude(Include.NON_NULL)
@@ -42,31 +42,31 @@ public class WafPSMRule extends AviRestResource {
 
     @JsonProperty("match_elements")
     @JsonInclude(Include.NON_NULL)
-    private List<WafPSMMatchElement> matchElements = null;
+    private List<WafPSMMatchElement> matchElements;
 
     @JsonProperty("match_value_max_length")
     @JsonInclude(Include.NON_NULL)
-    private Integer matchValueMaxLength = null;
+    private Integer matchValueMaxLength;
 
     @JsonProperty("match_value_pattern")
     @JsonInclude(Include.NON_NULL)
-    private String matchValuePattern = null;
+    private String matchValuePattern;
 
     @JsonProperty("match_value_string_group_key")
     @JsonInclude(Include.NON_NULL)
-    private String matchValueStringGroupKey = null;
+    private String matchValueStringGroupKey;
 
     @JsonProperty("match_value_string_group_ref")
     @JsonInclude(Include.NON_NULL)
-    private String matchValueStringGroupRef = null;
+    private String matchValueStringGroupRef;
 
     @JsonProperty("mode")
     @JsonInclude(Include.NON_NULL)
-    private String mode = null;
+    private String mode;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("paranoia_level")
     @JsonInclude(Include.NON_NULL)
@@ -74,7 +74,7 @@ public class WafPSMRule extends AviRestResource {
 
     @JsonProperty("rule_id")
     @JsonInclude(Include.NON_NULL)
-    private String ruleId = null;
+    private String ruleId;
 
 
 

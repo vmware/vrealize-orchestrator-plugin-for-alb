@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class ContainerCloudBatchSetup extends AviRestResource {
     @JsonProperty("ccs")
     @JsonInclude(Include.NON_NULL)
-    private List<ContainerCloudSetup> ccs = null;
+    private List<ContainerCloudSetup> ccs;
 
 
 

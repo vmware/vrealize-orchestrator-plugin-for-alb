@@ -26,23 +26,23 @@ import org.springframework.stereotype.Service;
 public class ApiVersionDeprecated extends AviRestResource {
     @JsonProperty("api_version_used")
     @JsonInclude(Include.NON_NULL)
-    private String apiVersionUsed = null;
+    private String apiVersionUsed;
 
     @JsonProperty("client_ip")
     @JsonInclude(Include.NON_NULL)
-    private String clientIp = null;
+    private String clientIp;
 
     @JsonProperty("min_supported_api_version")
     @JsonInclude(Include.NON_NULL)
-    private String minSupportedApiVersion = null;
+    private String minSupportedApiVersion;
 
     @JsonProperty("path")
     @JsonInclude(Include.NON_NULL)
-    private String path = null;
+    private String path;
 
     @JsonProperty("user")
     @JsonInclude(Include.NON_NULL)
-    private String user = null;
+    private String user;
 
 
 

@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class CertificateAuthority extends AviRestResource {
     @JsonProperty("ca_ref")
     @JsonInclude(Include.NON_NULL)
-    private String caRef = null;
+    private String caRef;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
 
 

@@ -35,15 +35,15 @@ public class SensitiveFieldRule extends AviRestResource {
 
     @JsonProperty("index")
     @JsonInclude(Include.NON_NULL)
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("match")
     @JsonInclude(Include.NON_NULL)
-    private StringMatch match = null;
+    private StringMatch match;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
 
 

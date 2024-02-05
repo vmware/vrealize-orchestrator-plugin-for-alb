@@ -28,51 +28,51 @@ import org.springframework.stereotype.Service;
 public class CaptureFilters extends AviRestResource {
     @JsonProperty("capture_ip")
     @JsonInclude(Include.NON_NULL)
-    private DebugIpAddr captureIp = null;
+    private DebugIpAddr captureIp;
 
     @JsonProperty("capture_ipc")
     @JsonInclude(Include.NON_NULL)
-    private CaptureIPC captureIpc = null;
+    private CaptureIPC captureIpc;
 
     @JsonProperty("dst_port_end")
     @JsonInclude(Include.NON_NULL)
-    private Integer dstPortEnd = null;
+    private Integer dstPortEnd;
 
     @JsonProperty("dst_port_start")
     @JsonInclude(Include.NON_NULL)
-    private Integer dstPortStart = null;
+    private Integer dstPortStart;
 
     @JsonProperty("eth_proto")
     @JsonInclude(Include.NON_NULL)
-    private String ethProto = null;
+    private String ethProto;
 
     @JsonProperty("ip_proto")
     @JsonInclude(Include.NON_NULL)
-    private String ipProto = null;
+    private String ipProto;
 
     @JsonProperty("src_port")
     @JsonInclude(Include.NON_NULL)
-    private Integer srcPort = null;
+    private Integer srcPort;
 
     @JsonProperty("src_port_range_end")
     @JsonInclude(Include.NON_NULL)
-    private Integer srcPortRangeEnd = null;
+    private Integer srcPortRangeEnd;
 
     @JsonProperty("tcp_ack")
     @JsonInclude(Include.NON_NULL)
-    private Boolean tcpAck = null;
+    private Boolean tcpAck;
 
     @JsonProperty("tcp_fin")
     @JsonInclude(Include.NON_NULL)
-    private Boolean tcpFin = null;
+    private Boolean tcpFin;
 
     @JsonProperty("tcp_push")
     @JsonInclude(Include.NON_NULL)
-    private Boolean tcpPush = null;
+    private Boolean tcpPush;
 
     @JsonProperty("tcp_syn")
     @JsonInclude(Include.NON_NULL)
-    private Boolean tcpSyn = null;
+    private Boolean tcpSyn;
 
 
 

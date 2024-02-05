@@ -27,7 +27,7 @@ import org.springframework.stereotype.Service;
 public class HealthMonitorFtp extends AviRestResource {
     @JsonProperty("filename")
     @JsonInclude(Include.NON_NULL)
-    private String filename = null;
+    private String filename;
 
     @JsonProperty("mode")
     @JsonInclude(Include.NON_NULL)
@@ -35,7 +35,7 @@ public class HealthMonitorFtp extends AviRestResource {
 
     @JsonProperty("ssl_attributes")
     @JsonInclude(Include.NON_NULL)
-    private HealthMonitorSSLAttributes sslAttributes = null;
+    private HealthMonitorSSLAttributes sslAttributes;
 
 
 

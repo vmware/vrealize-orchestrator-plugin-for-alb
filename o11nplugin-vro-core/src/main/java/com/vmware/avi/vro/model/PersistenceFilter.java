@@ -30,35 +30,35 @@ import org.springframework.stereotype.Service;
 public class PersistenceFilter extends AviRestResource {
     @JsonProperty("persistence_cookie")
     @JsonInclude(Include.NON_NULL)
-    private String persistenceCookie = null;
+    private String persistenceCookie;
 
     @JsonProperty("persistence_end_ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr persistenceEndIp = null;
+    private IpAddr persistenceEndIp;
 
     @JsonProperty("persistence_ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr persistenceIp = null;
+    private IpAddr persistenceIp;
 
     @JsonProperty("persistence_mask")
     @JsonInclude(Include.NON_NULL)
-    private Integer persistenceMask = null;
+    private Integer persistenceMask;
 
     @JsonProperty("server_end_ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr serverEndIp = null;
+    private IpAddr serverEndIp;
 
     @JsonProperty("server_ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr serverIp = null;
+    private IpAddr serverIp;
 
     @JsonProperty("server_mask")
     @JsonInclude(Include.NON_NULL)
-    private Integer serverMask = null;
+    private Integer serverMask;
 
     @JsonProperty("server_port")
     @JsonInclude(Include.NON_NULL)
-    private Integer serverPort = null;
+    private Integer serverPort;
 
 
 

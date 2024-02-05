@@ -28,35 +28,35 @@ import org.springframework.stereotype.Service;
 public class UpgradeOpsEntry extends AviRestResource {
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("node_type")
     @JsonInclude(Include.NON_NULL)
-    private String nodeType = null;
+    private String nodeType;
 
     @JsonProperty("obj_cloud_ref")
     @JsonInclude(Include.NON_NULL)
-    private String objCloudRef = null;
+    private String objCloudRef;
 
     @JsonProperty("params")
     @JsonInclude(Include.NON_NULL)
-    private UpgradeOpsParam params = null;
+    private UpgradeOpsParam params;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("upgrade_info")
     @JsonInclude(Include.NON_NULL)
-    private UpgradeStatusInfo upgradeInfo = null;
+    private UpgradeStatusInfo upgradeInfo;
 
     @JsonProperty("upgrade_ops")
     @JsonInclude(Include.NON_NULL)
-    private String upgradeOps = null;
+    private String upgradeOps;
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

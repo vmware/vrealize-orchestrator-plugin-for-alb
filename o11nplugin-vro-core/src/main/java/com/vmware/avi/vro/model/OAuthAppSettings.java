@@ -27,19 +27,19 @@ import org.springframework.stereotype.Service;
 public class OAuthAppSettings extends AviRestResource {
     @JsonProperty("client_id")
     @JsonInclude(Include.NON_NULL)
-    private String clientId = null;
+    private String clientId;
 
     @JsonProperty("client_secret")
     @JsonInclude(Include.NON_NULL)
-    private String clientSecret = null;
+    private String clientSecret;
 
     @JsonProperty("oidc_config")
     @JsonInclude(Include.NON_NULL)
-    private OIDCConfig oidcConfig = null;
+    private OIDCConfig oidcConfig;
 
     @JsonProperty("scopes")
     @JsonInclude(Include.NON_NULL)
-    private List<String> scopes = null;
+    private List<String> scopes;
 
 
 

@@ -26,23 +26,23 @@ import org.springframework.stereotype.Service;
 public class HSMSafenetLunaServer extends AviRestResource {
     @JsonProperty("index")
     @JsonInclude(Include.NON_NULL)
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("partition_passwd")
     @JsonInclude(Include.NON_NULL)
-    private String partitionPasswd = null;
+    private String partitionPasswd;
 
     @JsonProperty("partition_serial_number")
     @JsonInclude(Include.NON_NULL)
-    private String partitionSerialNumber = null;
+    private String partitionSerialNumber;
 
     @JsonProperty("remote_ip")
     @JsonInclude(Include.NON_NULL)
-    private String remoteIp = null;
+    private String remoteIp;
 
     @JsonProperty("server_cert")
     @JsonInclude(Include.NON_NULL)
-    private String serverCert = null;
+    private String serverCert;
 
 
 

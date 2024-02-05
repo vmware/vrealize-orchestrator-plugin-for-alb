@@ -34,11 +34,11 @@ public class AlertSyslogServer extends AviRestResource {
 
     @JsonProperty("pkiprofile_ref")
     @JsonInclude(Include.NON_NULL)
-    private String pkiprofileRef = null;
+    private String pkiprofileRef;
 
     @JsonProperty("ssl_key_and_certificate_ref")
     @JsonInclude(Include.NON_NULL)
-    private String sslKeyAndCertificateRef = null;
+    private String sslKeyAndCertificateRef;
 
     @JsonProperty("strict_cert_verify")
     @JsonInclude(Include.NON_NULL)
@@ -46,7 +46,7 @@ public class AlertSyslogServer extends AviRestResource {
 
     @JsonProperty("syslog_server")
     @JsonInclude(Include.NON_NULL)
-    private String syslogServer = null;
+    private String syslogServer;
 
     @JsonProperty("syslog_server_port")
     @JsonInclude(Include.NON_NULL)

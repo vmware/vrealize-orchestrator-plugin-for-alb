@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class SeDupipEventDetails extends AviRestResource {
     @JsonProperty("local_mac")
     @JsonInclude(Include.NON_NULL)
-    private String localMac = null;
+    private String localMac;
 
     @JsonProperty("remote_mac")
     @JsonInclude(Include.NON_NULL)
-    private String remoteMac = null;
+    private String remoteMac;
 
     @JsonProperty("vnic_ip")
     @JsonInclude(Include.NON_NULL)
-    private String vnicIp = null;
+    private String vnicIp;
 
     @JsonProperty("vnic_name")
     @JsonInclude(Include.NON_NULL)
-    private String vnicName = null;
+    private String vnicName;
 
 
 

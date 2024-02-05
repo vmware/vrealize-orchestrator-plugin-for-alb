@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class AuthenticationPolicy extends AviRestResource {
     @JsonProperty("authn_rules")
     @JsonInclude(Include.NON_NULL)
-    private List<AuthenticationRule> authnRules = null;
+    private List<AuthenticationRule> authnRules;
 
     @JsonProperty("default_auth_profile_ref")
     @JsonInclude(Include.NON_NULL)
-    private String defaultAuthProfileRef = null;
+    private String defaultAuthProfileRef;
 
 
 

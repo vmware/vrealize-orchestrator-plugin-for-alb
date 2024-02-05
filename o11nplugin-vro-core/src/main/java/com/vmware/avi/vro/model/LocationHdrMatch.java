@@ -30,11 +30,11 @@ public class LocationHdrMatch extends AviRestResource {
 
     @JsonProperty("match_criteria")
     @JsonInclude(Include.NON_NULL)
-    private String matchCriteria = null;
+    private String matchCriteria;
 
     @JsonProperty("value")
     @JsonInclude(Include.NON_NULL)
-    private List<String> value = null;
+    private List<String> value;
 
 
 

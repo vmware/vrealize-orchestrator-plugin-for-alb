@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class HTTPLocalFile extends AviRestResource {
     @JsonProperty("content_type")
     @JsonInclude(Include.NON_NULL)
-    private String contentType = null;
+    private String contentType;
 
     @JsonProperty("file_content")
     @JsonInclude(Include.NON_NULL)
-    private String fileContent = null;
+    private String fileContent;
 
 
 

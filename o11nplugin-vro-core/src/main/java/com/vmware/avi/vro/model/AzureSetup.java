@@ -26,43 +26,43 @@ import org.springframework.stereotype.Service;
 public class AzureSetup extends AviRestResource {
     @JsonProperty("alb_id")
     @JsonInclude(Include.NON_NULL)
-    private String albId = null;
+    private String albId;
 
     @JsonProperty("cc_id")
     @JsonInclude(Include.NON_NULL)
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("nic_id")
     @JsonInclude(Include.NON_NULL)
-    private String nicId = null;
+    private String nicId;
 
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("resource_group")
     @JsonInclude(Include.NON_NULL)
-    private String resourceGroup = null;
+    private String resourceGroup;
 
     @JsonProperty("status")
     @JsonInclude(Include.NON_NULL)
-    private String status = null;
+    private String status;
 
     @JsonProperty("subscription_id")
     @JsonInclude(Include.NON_NULL)
-    private String subscriptionId = null;
+    private String subscriptionId;
 
     @JsonProperty("vips")
     @JsonInclude(Include.NON_NULL)
-    private List<IpAddr> vips = null;
+    private List<IpAddr> vips;
 
     @JsonProperty("vnet_id")
     @JsonInclude(Include.NON_NULL)
-    private String vnetId = null;
+    private String vnetId;
 
     @JsonProperty("vs_uuids")
     @JsonInclude(Include.NON_NULL)
-    private List<String> vsUuids = null;
+    private List<String> vsUuids;
 
 
 

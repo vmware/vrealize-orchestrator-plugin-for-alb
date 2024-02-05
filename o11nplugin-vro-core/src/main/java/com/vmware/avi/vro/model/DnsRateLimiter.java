@@ -28,11 +28,11 @@ import org.springframework.stereotype.Service;
 public class DnsRateLimiter extends AviRestResource {
     @JsonProperty("action")
     @JsonInclude(Include.NON_NULL)
-    private DnsRuleRLAction action = null;
+    private DnsRuleRLAction action;
 
     @JsonProperty("rate_limiter_object")
     @JsonInclude(Include.NON_NULL)
-    private RateLimiter rateLimiterObject = null;
+    private RateLimiter rateLimiterObject;
 
 
 

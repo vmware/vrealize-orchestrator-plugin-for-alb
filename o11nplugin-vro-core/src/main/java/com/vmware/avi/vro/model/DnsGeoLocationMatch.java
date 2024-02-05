@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class DnsGeoLocationMatch extends AviRestResource {
     @JsonProperty("geolocation_name")
     @JsonInclude(Include.NON_NULL)
-    private String geolocationName = null;
+    private String geolocationName;
 
     @JsonProperty("geolocation_tag")
     @JsonInclude(Include.NON_NULL)
-    private String geolocationTag = null;
+    private String geolocationTag;
 
     @JsonProperty("match_criteria")
     @JsonInclude(Include.NON_NULL)
-    private String matchCriteria = null;
+    private String matchCriteria;
 
     @JsonProperty("use_edns_client_subnet_ip")
     @JsonInclude(Include.NON_NULL)

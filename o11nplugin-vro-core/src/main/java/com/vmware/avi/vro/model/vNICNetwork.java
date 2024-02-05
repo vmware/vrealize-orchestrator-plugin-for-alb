@@ -31,7 +31,7 @@ public class vNICNetwork extends AviRestResource {
 
     @JsonProperty("ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrPrefix ip = null;
+    private IpAddrPrefix ip;
 
     @JsonProperty("mode")
     @JsonInclude(Include.NON_NULL)

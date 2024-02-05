@@ -26,51 +26,51 @@ import org.springframework.stereotype.Service;
 public class WafCRS extends AviRestResource {
     @JsonProperty("allowed_request_content_type_charsets")
     @JsonInclude(Include.NON_NULL)
-    private List<String> allowedRequestContentTypeCharsets = null;
+    private List<String> allowedRequestContentTypeCharsets;
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("files")
     @JsonInclude(Include.NON_NULL)
-    private List<WafDataFile> files = null;
+    private List<WafDataFile> files;
 
     @JsonProperty("groups")
     @JsonInclude(Include.NON_NULL)
-    private List<WafRuleGroup> groups = null;
+    private List<WafRuleGroup> groups;
 
     @JsonProperty("integrity")
     @JsonInclude(Include.NON_NULL)
-    private String integrity = null;
+    private String integrity;
 
     @JsonProperty("integrity_values")
     @JsonInclude(Include.NON_NULL)
-    private List<String> integrityValues = null;
+    private List<String> integrityValues;
 
     @JsonProperty("markers")
     @JsonInclude(Include.NON_NULL)
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("release_date")
     @JsonInclude(Include.NON_NULL)
-    private String releaseDate = null;
+    private String releaseDate;
 
     @JsonProperty("restricted_extensions")
     @JsonInclude(Include.NON_NULL)
-    private List<String> restrictedExtensions = null;
+    private List<String> restrictedExtensions;
 
     @JsonProperty("restricted_headers")
     @JsonInclude(Include.NON_NULL)
-    private List<String> restrictedHeaders = null;
+    private List<String> restrictedHeaders;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -78,11 +78,11 @@ public class WafCRS extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("version")
     @JsonInclude(Include.NON_NULL)
-    private String version = null;
+    private String version;
 
 
 

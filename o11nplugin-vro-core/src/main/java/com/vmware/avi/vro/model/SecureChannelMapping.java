@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class SecureChannelMapping extends AviRestResource {
     @JsonProperty("auth_token")
     @JsonInclude(Include.NON_NULL)
-    private String authToken = null;
+    private String authToken;
 
     @JsonProperty("ip")
     @JsonInclude(Include.NON_NULL)
-    private String ip = null;
+    private String ip;
 
     @JsonProperty("is_controller")
     @JsonInclude(Include.NON_NULL)
@@ -38,7 +38,7 @@ public class SecureChannelMapping extends AviRestResource {
 
     @JsonProperty("local_ip")
     @JsonInclude(Include.NON_NULL)
-    private String localIp = null;
+    private String localIp;
 
     @JsonProperty("marked_for_delete")
     @JsonInclude(Include.NON_NULL)
@@ -46,19 +46,19 @@ public class SecureChannelMapping extends AviRestResource {
 
     @JsonProperty("metadata")
     @JsonInclude(Include.NON_NULL)
-    private List<SecureChannelMetadata> metadata = null;
+    private List<SecureChannelMetadata> metadata;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("pub_key")
     @JsonInclude(Include.NON_NULL)
-    private String pubKey = null;
+    private String pubKey;
 
     @JsonProperty("pub_key_pem")
     @JsonInclude(Include.NON_NULL)
-    private String pubKeyPem = null;
+    private String pubKeyPem;
 
     @JsonProperty("status")
     @JsonInclude(Include.NON_NULL)
@@ -70,7 +70,7 @@ public class SecureChannelMapping extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

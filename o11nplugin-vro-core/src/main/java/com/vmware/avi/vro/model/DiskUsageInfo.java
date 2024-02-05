@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class DiskUsageInfo extends AviRestResource {
     @JsonProperty("disk_usage_on_nodes")
     @JsonInclude(Include.NON_NULL)
-    private List<DiskUsagePerNode> diskUsageOnNodes = null;
+    private List<DiskUsagePerNode> diskUsageOnNodes;
 
 
 

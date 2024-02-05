@@ -27,11 +27,11 @@ import org.springframework.stereotype.Service;
 public class IpAddrPrefix extends AviRestResource {
     @JsonProperty("ip_addr")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr ipAddr = null;
+    private IpAddr ipAddr;
 
     @JsonProperty("mask")
     @JsonInclude(Include.NON_NULL)
-    private Integer mask = null;
+    private Integer mask;
 
 
 

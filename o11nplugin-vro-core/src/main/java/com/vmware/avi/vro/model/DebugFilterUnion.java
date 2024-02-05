@@ -39,59 +39,59 @@ import org.springframework.stereotype.Service;
 public class DebugFilterUnion extends AviRestResource {
     @JsonProperty("alert_debug_filter")
     @JsonInclude(Include.NON_NULL)
-    private AlertMgrDebugFilter alertDebugFilter = null;
+    private AlertMgrDebugFilter alertDebugFilter;
 
     @JsonProperty("autoscale_mgr_debug_filter")
     @JsonInclude(Include.NON_NULL)
-    private AutoScaleMgrDebugFilter autoscaleMgrDebugFilter = null;
+    private AutoScaleMgrDebugFilter autoscaleMgrDebugFilter;
 
     @JsonProperty("cloud_connector_debug_filter")
     @JsonInclude(Include.NON_NULL)
-    private CloudConnectorDebugFilter cloudConnectorDebugFilter = null;
+    private CloudConnectorDebugFilter cloudConnectorDebugFilter;
 
     @JsonProperty("hs_debug_filter")
     @JsonInclude(Include.NON_NULL)
-    private HSMgrDebugFilter hsDebugFilter = null;
+    private HSMgrDebugFilter hsDebugFilter;
 
     @JsonProperty("logmanager_debug_filter")
     @JsonInclude(Include.NON_NULL)
-    private LogManagerDebugFilter logmanagerDebugFilter = null;
+    private LogManagerDebugFilter logmanagerDebugFilter;
 
     @JsonProperty("mesos_metrics_debug_filter")
     @JsonInclude(Include.NON_NULL)
-    private MesosMetricsDebugFilter mesosMetricsDebugFilter = null;
+    private MesosMetricsDebugFilter mesosMetricsDebugFilter;
 
     @JsonProperty("metrics_debug_filter")
     @JsonInclude(Include.NON_NULL)
-    private MetricsMgrDebugFilter metricsDebugFilter = null;
+    private MetricsMgrDebugFilter metricsDebugFilter;
 
     @JsonProperty("metricsapi_srv_debug_filter")
     @JsonInclude(Include.NON_NULL)
-    private MetricsApiSrvDebugFilter metricsapiSrvDebugFilter = null;
+    private MetricsApiSrvDebugFilter metricsapiSrvDebugFilter;
 
     @JsonProperty("se_mgr_debug_filter")
     @JsonInclude(Include.NON_NULL)
-    private SeMgrDebugFilter seMgrDebugFilter = null;
+    private SeMgrDebugFilter seMgrDebugFilter;
 
     @JsonProperty("se_rpc_proxy_filter")
     @JsonInclude(Include.NON_NULL)
-    private SeRpcProxyDebugFilter seRpcProxyFilter = null;
+    private SeRpcProxyDebugFilter seRpcProxyFilter;
 
     @JsonProperty("securitymgr_debug_filter")
     @JsonInclude(Include.NON_NULL)
-    private SecurityMgrDebugFilter securitymgrDebugFilter = null;
+    private SecurityMgrDebugFilter securitymgrDebugFilter;
 
     @JsonProperty("state_cache_mgr_debug_filter")
     @JsonInclude(Include.NON_NULL)
-    private StateCacheMgrDebugFilter stateCacheMgrDebugFilter = null;
+    private StateCacheMgrDebugFilter stateCacheMgrDebugFilter;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
     @JsonProperty("vs_debug_filter")
     @JsonInclude(Include.NON_NULL)
-    private VsDebugFilter vsDebugFilter = null;
+    private VsDebugFilter vsDebugFilter;
 
 
 

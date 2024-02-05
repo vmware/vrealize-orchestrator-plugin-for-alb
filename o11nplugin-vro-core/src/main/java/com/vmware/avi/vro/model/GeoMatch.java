@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class GeoMatch extends AviRestResource {
     @JsonProperty("attribute")
     @JsonInclude(Include.NON_NULL)
-    private String attribute = null;
+    private String attribute;
 
     @JsonProperty("match_operation")
     @JsonInclude(Include.NON_NULL)
-    private String matchOperation = null;
+    private String matchOperation;
 
     @JsonProperty("values")
     @JsonInclude(Include.NON_NULL)
-    private List<String> values = null;
+    private List<String> values;
 
 
 

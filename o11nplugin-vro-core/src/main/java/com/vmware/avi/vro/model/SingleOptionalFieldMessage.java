@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class SingleOptionalFieldMessage extends AviRestResource {
     @JsonProperty("optional_string")
     @JsonInclude(Include.NON_NULL)
-    private String optionalString = null;
+    private String optionalString;
 
 
 

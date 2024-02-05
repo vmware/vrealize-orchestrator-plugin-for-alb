@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class ConnectionEventDetails extends AviRestResource {
     @JsonProperty("host")
     @JsonInclude(Include.NON_NULL)
-    private String host = null;
+    private String host;
 
     @JsonProperty("info")
     @JsonInclude(Include.NON_NULL)
-    private String info = null;
+    private String info;
 
     @JsonProperty("port")
     @JsonInclude(Include.NON_NULL)
-    private Integer port = null;
+    private Integer port;
 
 
 

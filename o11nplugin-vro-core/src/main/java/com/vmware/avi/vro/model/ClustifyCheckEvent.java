@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class ClustifyCheckEvent extends AviRestResource {
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private String reason = null;
+    private String reason;
 
 
 

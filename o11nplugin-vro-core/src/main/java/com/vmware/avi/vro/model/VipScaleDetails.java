@@ -26,23 +26,23 @@ import org.springframework.stereotype.Service;
 public class VipScaleDetails extends AviRestResource {
     @JsonProperty("availability_zone")
     @JsonInclude(Include.NON_NULL)
-    private String availabilityZone = null;
+    private String availabilityZone;
 
     @JsonProperty("error")
     @JsonInclude(Include.NON_NULL)
-    private String error = null;
+    private String error;
 
     @JsonProperty("subnet_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String subnetUuid = null;
+    private String subnetUuid;
 
     @JsonProperty("vip_id")
     @JsonInclude(Include.NON_NULL)
-    private String vipId = null;
+    private String vipId;
 
     @JsonProperty("vsvip_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String vsvipUuid = null;
+    private String vsvipUuid;
 
 
 

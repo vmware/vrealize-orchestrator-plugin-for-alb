@@ -30,31 +30,31 @@ public class vCloudAirConfiguration extends AviRestResource {
 
     @JsonProperty("vca_host")
     @JsonInclude(Include.NON_NULL)
-    private String vcaHost = null;
+    private String vcaHost;
 
     @JsonProperty("vca_instance")
     @JsonInclude(Include.NON_NULL)
-    private String vcaInstance = null;
+    private String vcaInstance;
 
     @JsonProperty("vca_mgmt_network")
     @JsonInclude(Include.NON_NULL)
-    private String vcaMgmtNetwork = null;
+    private String vcaMgmtNetwork;
 
     @JsonProperty("vca_orgnization")
     @JsonInclude(Include.NON_NULL)
-    private String vcaOrgnization = null;
+    private String vcaOrgnization;
 
     @JsonProperty("vca_password")
     @JsonInclude(Include.NON_NULL)
-    private String vcaPassword = null;
+    private String vcaPassword;
 
     @JsonProperty("vca_username")
     @JsonInclude(Include.NON_NULL)
-    private String vcaUsername = null;
+    private String vcaUsername;
 
     @JsonProperty("vca_vdc")
     @JsonInclude(Include.NON_NULL)
-    private String vcaVdc = null;
+    private String vcaVdc;
 
 
 

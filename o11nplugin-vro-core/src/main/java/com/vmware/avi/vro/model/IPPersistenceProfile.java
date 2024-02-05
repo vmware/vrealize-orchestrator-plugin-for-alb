@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class IPPersistenceProfile extends AviRestResource {
     @JsonProperty("ip_mask")
     @JsonInclude(Include.NON_NULL)
-    private Integer ipMask = null;
+    private Integer ipMask;
 
     @JsonProperty("ip_persistent_timeout")
     @JsonInclude(Include.NON_NULL)

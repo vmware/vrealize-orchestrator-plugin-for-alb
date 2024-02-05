@@ -26,35 +26,35 @@ import org.springframework.stereotype.Service;
 public class SSLCertificateDescription extends AviRestResource {
     @JsonProperty("common_name")
     @JsonInclude(Include.NON_NULL)
-    private String commonName = null;
+    private String commonName;
 
     @JsonProperty("country")
     @JsonInclude(Include.NON_NULL)
-    private String country = null;
+    private String country;
 
     @JsonProperty("distinguished_name")
     @JsonInclude(Include.NON_NULL)
-    private String distinguishedName = null;
+    private String distinguishedName;
 
     @JsonProperty("email_address")
     @JsonInclude(Include.NON_NULL)
-    private String emailAddress = null;
+    private String emailAddress;
 
     @JsonProperty("locality")
     @JsonInclude(Include.NON_NULL)
-    private String locality = null;
+    private String locality;
 
     @JsonProperty("organization")
     @JsonInclude(Include.NON_NULL)
-    private String organization = null;
+    private String organization;
 
     @JsonProperty("organization_unit")
     @JsonInclude(Include.NON_NULL)
-    private String organizationUnit = null;
+    private String organizationUnit;
 
     @JsonProperty("state")
     @JsonInclude(Include.NON_NULL)
-    private String state = null;
+    private String state;
 
 
 

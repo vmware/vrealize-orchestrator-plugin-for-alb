@@ -33,11 +33,11 @@ import org.springframework.stereotype.Service;
 public class Pool extends AviRestResource {
     @JsonProperty("analytics_policy")
     @JsonInclude(Include.NON_NULL)
-    private PoolAnalyticsPolicy analyticsPolicy = null;
+    private PoolAnalyticsPolicy analyticsPolicy;
 
     @JsonProperty("analytics_profile_ref")
     @JsonInclude(Include.NON_NULL)
-    private String analyticsProfileRef = null;
+    private String analyticsProfileRef;
 
     @JsonProperty("append_port")
     @JsonInclude(Include.NON_NULL)
@@ -45,19 +45,19 @@ public class Pool extends AviRestResource {
 
     @JsonProperty("application_persistence_profile_ref")
     @JsonInclude(Include.NON_NULL)
-    private String applicationPersistenceProfileRef = null;
+    private String applicationPersistenceProfileRef;
 
     @JsonProperty("autoscale_launch_config_ref")
     @JsonInclude(Include.NON_NULL)
-    private String autoscaleLaunchConfigRef = null;
+    private String autoscaleLaunchConfigRef;
 
     @JsonProperty("autoscale_networks")
     @JsonInclude(Include.NON_NULL)
-    private List<String> autoscaleNetworks = null;
+    private List<String> autoscaleNetworks;
 
     @JsonProperty("autoscale_policy_ref")
     @JsonInclude(Include.NON_NULL)
-    private String autoscalePolicyRef = null;
+    private String autoscalePolicyRef;
 
     @JsonProperty("capacity_estimation")
     @JsonInclude(Include.NON_NULL)
@@ -69,15 +69,15 @@ public class Pool extends AviRestResource {
 
     @JsonProperty("cloud_config_cksum")
     @JsonInclude(Include.NON_NULL)
-    private String cloudConfigCksum = null;
+    private String cloudConfigCksum;
 
     @JsonProperty("cloud_ref")
     @JsonInclude(Include.NON_NULL)
-    private String cloudRef = null;
+    private String cloudRef;
 
     @JsonProperty("conn_pool_properties")
     @JsonInclude(Include.NON_NULL)
-    private ConnPoolProperties connPoolProperties = null;
+    private ConnPoolProperties connPoolProperties;
 
     @JsonProperty("connection_ramp_duration")
     @JsonInclude(Include.NON_NULL)
@@ -85,7 +85,7 @@ public class Pool extends AviRestResource {
 
     @JsonProperty("created_by")
     @JsonInclude(Include.NON_NULL)
-    private String createdBy = null;
+    private String createdBy;
 
     @JsonProperty("default_server_port")
     @JsonInclude(Include.NON_NULL)
@@ -97,15 +97,15 @@ public class Pool extends AviRestResource {
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("domain_name")
     @JsonInclude(Include.NON_NULL)
-    private List<String> domainName = null;
+    private List<String> domainName;
 
     @JsonProperty("east_west")
     @JsonInclude(Include.NON_NULL)
-    private Boolean eastWest = null;
+    private Boolean eastWest;
 
     @JsonProperty("enable_http2")
     @JsonInclude(Include.NON_NULL)
@@ -117,11 +117,11 @@ public class Pool extends AviRestResource {
 
     @JsonProperty("external_autoscale_groups")
     @JsonInclude(Include.NON_NULL)
-    private List<String> externalAutoscaleGroups = null;
+    private List<String> externalAutoscaleGroups;
 
     @JsonProperty("fail_action")
     @JsonInclude(Include.NON_NULL)
-    private FailAction failAction = null;
+    private FailAction failAction;
 
     @JsonProperty("fewest_tasks_feedback_delay")
     @JsonInclude(Include.NON_NULL)
@@ -141,11 +141,11 @@ public class Pool extends AviRestResource {
 
     @JsonProperty("health_monitor_refs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> healthMonitorRefs = null;
+    private List<String> healthMonitorRefs;
 
     @JsonProperty("horizon_profile")
     @JsonInclude(Include.NON_NULL)
-    private HorizonProfile horizonProfile = null;
+    private HorizonProfile horizonProfile;
 
     @JsonProperty("host_check_enabled")
     @JsonInclude(Include.NON_NULL)
@@ -153,7 +153,7 @@ public class Pool extends AviRestResource {
 
     @JsonProperty("http2_properties")
     @JsonInclude(Include.NON_NULL)
-    private HTTP2PoolProperties http2Properties = null;
+    private HTTP2PoolProperties http2Properties;
 
     @JsonProperty("ignore_server_port")
     @JsonInclude(Include.NON_NULL)
@@ -165,7 +165,7 @@ public class Pool extends AviRestResource {
 
     @JsonProperty("ipaddrgroup_ref")
     @JsonInclude(Include.NON_NULL)
-    private String ipaddrgroupRef = null;
+    private String ipaddrgroupRef;
 
     @JsonProperty("lb_algo_rr_per_se")
     @JsonInclude(Include.NON_NULL)
@@ -177,7 +177,7 @@ public class Pool extends AviRestResource {
 
     @JsonProperty("lb_algorithm_consistent_hash_hdr")
     @JsonInclude(Include.NON_NULL)
-    private String lbAlgorithmConsistentHashHdr = null;
+    private String lbAlgorithmConsistentHashHdr;
 
     @JsonProperty("lb_algorithm_core_nonaffinity")
     @JsonInclude(Include.NON_NULL)
@@ -193,7 +193,7 @@ public class Pool extends AviRestResource {
 
     @JsonProperty("markers")
     @JsonInclude(Include.NON_NULL)
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("max_concurrent_connections_per_server")
     @JsonInclude(Include.NON_NULL)
@@ -201,35 +201,35 @@ public class Pool extends AviRestResource {
 
     @JsonProperty("max_conn_rate_per_server")
     @JsonInclude(Include.NON_NULL)
-    private RateProfile maxConnRatePerServer = null;
+    private RateProfile maxConnRatePerServer;
 
     @JsonProperty("min_health_monitors_up")
     @JsonInclude(Include.NON_NULL)
-    private Integer minHealthMonitorsUp = null;
+    private Integer minHealthMonitorsUp;
 
     @JsonProperty("min_servers_up")
     @JsonInclude(Include.NON_NULL)
-    private Integer minServersUp = null;
+    private Integer minServersUp;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("networks")
     @JsonInclude(Include.NON_NULL)
-    private List<NetworkFilter> networks = null;
+    private List<NetworkFilter> networks;
 
     @JsonProperty("nsx_securitygroup")
     @JsonInclude(Include.NON_NULL)
-    private List<String> nsxSecuritygroup = null;
+    private List<String> nsxSecuritygroup;
 
     @JsonProperty("pki_profile_ref")
     @JsonInclude(Include.NON_NULL)
-    private String pkiProfileRef = null;
+    private String pkiProfileRef;
 
     @JsonProperty("placement_networks")
     @JsonInclude(Include.NON_NULL)
-    private List<PlacementNetwork> placementNetworks = null;
+    private List<PlacementNetwork> placementNetworks;
 
     @JsonProperty("pool_type")
     @JsonInclude(Include.NON_NULL)
@@ -261,11 +261,11 @@ public class Pool extends AviRestResource {
 
     @JsonProperty("server_name")
     @JsonInclude(Include.NON_NULL)
-    private String serverName = null;
+    private String serverName;
 
     @JsonProperty("server_reselect")
     @JsonInclude(Include.NON_NULL)
-    private HTTPServerReselect serverReselect = null;
+    private HTTPServerReselect serverReselect;
 
     @JsonProperty("server_timeout")
     @JsonInclude(Include.NON_NULL)
@@ -273,11 +273,11 @@ public class Pool extends AviRestResource {
 
     @JsonProperty("servers")
     @JsonInclude(Include.NON_NULL)
-    private List<Server> servers = null;
+    private List<Server> servers;
 
     @JsonProperty("service_metadata")
     @JsonInclude(Include.NON_NULL)
-    private String serviceMetadata = null;
+    private String serviceMetadata;
 
     @JsonProperty("sni_enabled")
     @JsonInclude(Include.NON_NULL)
@@ -285,19 +285,19 @@ public class Pool extends AviRestResource {
 
     @JsonProperty("ssl_key_and_certificate_ref")
     @JsonInclude(Include.NON_NULL)
-    private String sslKeyAndCertificateRef = null;
+    private String sslKeyAndCertificateRef;
 
     @JsonProperty("ssl_profile_ref")
     @JsonInclude(Include.NON_NULL)
-    private String sslProfileRef = null;
+    private String sslProfileRef;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("tier1_lr")
     @JsonInclude(Include.NON_NULL)
-    private String tier1Lr = null;
+    private String tier1Lr;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -313,11 +313,11 @@ public class Pool extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("vrf_ref")
     @JsonInclude(Include.NON_NULL)
-    private String vrfRef = null;
+    private String vrfRef;
 
 
 

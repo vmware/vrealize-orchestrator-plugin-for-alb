@@ -30,15 +30,15 @@ public class SeHbRecoveredEventDetails extends AviRestResource {
 
     @JsonProperty("remote_se_ref")
     @JsonInclude(Include.NON_NULL)
-    private String remoteSeRef = null;
+    private String remoteSeRef;
 
     @JsonProperty("reporting_se_ref")
     @JsonInclude(Include.NON_NULL)
-    private String reportingSeRef = null;
+    private String reportingSeRef;
 
     @JsonProperty("vs_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String vsUuid = null;
+    private String vsUuid;
 
 
 

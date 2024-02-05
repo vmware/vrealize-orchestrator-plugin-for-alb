@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class CloudConnectorDebugFilter extends AviRestResource {
     @JsonProperty("app_id")
     @JsonInclude(Include.NON_NULL)
-    private String appId = null;
+    private String appId;
 
     @JsonProperty("disable_se_reboot")
     @JsonInclude(Include.NON_NULL)
-    private Boolean disableSeReboot = null;
+    private Boolean disableSeReboot;
 
     @JsonProperty("se_id")
     @JsonInclude(Include.NON_NULL)
-    private String seId = null;
+    private String seId;
 
 
 

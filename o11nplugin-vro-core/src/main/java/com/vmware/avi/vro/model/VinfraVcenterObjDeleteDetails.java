@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class VinfraVcenterObjDeleteDetails extends AviRestResource {
     @JsonProperty("obj_name")
     @JsonInclude(Include.NON_NULL)
-    private String objName = null;
+    private String objName;
 
     @JsonProperty("vcenter")
     @JsonInclude(Include.NON_NULL)
-    private String vcenter = null;
+    private String vcenter;
 
 
 

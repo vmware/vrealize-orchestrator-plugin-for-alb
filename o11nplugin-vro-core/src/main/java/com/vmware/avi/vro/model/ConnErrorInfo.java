@@ -26,63 +26,63 @@ import org.springframework.stereotype.Service;
 public class ConnErrorInfo extends AviRestResource {
     @JsonProperty("num_syn_retransmit")
     @JsonInclude(Include.NON_NULL)
-    private Integer numSynRetransmit = null;
+    private Integer numSynRetransmit;
 
     @JsonProperty("num_window_shrink")
     @JsonInclude(Include.NON_NULL)
-    private Integer numWindowShrink = null;
+    private Integer numWindowShrink;
 
     @JsonProperty("out_of_orders")
     @JsonInclude(Include.NON_NULL)
-    private Integer outOfOrders = null;
+    private Integer outOfOrders;
 
     @JsonProperty("retransmits")
     @JsonInclude(Include.NON_NULL)
-    private Integer retransmits = null;
+    private Integer retransmits;
 
     @JsonProperty("rx_pkts")
     @JsonInclude(Include.NON_NULL)
-    private Integer rxPkts = null;
+    private Integer rxPkts;
 
     @JsonProperty("server_num_window_shrink")
     @JsonInclude(Include.NON_NULL)
-    private Integer serverNumWindowShrink = null;
+    private Integer serverNumWindowShrink;
 
     @JsonProperty("server_out_of_orders")
     @JsonInclude(Include.NON_NULL)
-    private Integer serverOutOfOrders = null;
+    private Integer serverOutOfOrders;
 
     @JsonProperty("server_retransmits")
     @JsonInclude(Include.NON_NULL)
-    private Integer serverRetransmits = null;
+    private Integer serverRetransmits;
 
     @JsonProperty("server_rx_pkts")
     @JsonInclude(Include.NON_NULL)
-    private Integer serverRxPkts = null;
+    private Integer serverRxPkts;
 
     @JsonProperty("server_timeouts")
     @JsonInclude(Include.NON_NULL)
-    private Integer serverTimeouts = null;
+    private Integer serverTimeouts;
 
     @JsonProperty("server_tx_pkts")
     @JsonInclude(Include.NON_NULL)
-    private Integer serverTxPkts = null;
+    private Integer serverTxPkts;
 
     @JsonProperty("server_zero_window_size_events")
     @JsonInclude(Include.NON_NULL)
-    private Integer serverZeroWindowSizeEvents = null;
+    private Integer serverZeroWindowSizeEvents;
 
     @JsonProperty("timeouts")
     @JsonInclude(Include.NON_NULL)
-    private Integer timeouts = null;
+    private Integer timeouts;
 
     @JsonProperty("tx_pkts")
     @JsonInclude(Include.NON_NULL)
-    private Integer txPkts = null;
+    private Integer txPkts;
 
     @JsonProperty("zero_window_size_events")
     @JsonInclude(Include.NON_NULL)
-    private Integer zeroWindowSizeEvents = null;
+    private Integer zeroWindowSizeEvents;
 
 
 

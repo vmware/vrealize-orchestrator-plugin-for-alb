@@ -26,39 +26,39 @@ import org.springframework.stereotype.Service;
 public class AzureMarketplace extends AviRestResource {
     @JsonProperty("cc_id")
     @JsonInclude(Include.NON_NULL)
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("offer")
     @JsonInclude(Include.NON_NULL)
-    private String offer = null;
+    private String offer;
 
     @JsonProperty("publisher")
     @JsonInclude(Include.NON_NULL)
-    private String publisher = null;
+    private String publisher;
 
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("resource_group")
     @JsonInclude(Include.NON_NULL)
-    private String resourceGroup = null;
+    private String resourceGroup;
 
     @JsonProperty("skus")
     @JsonInclude(Include.NON_NULL)
-    private List<String> skus = null;
+    private List<String> skus;
 
     @JsonProperty("status")
     @JsonInclude(Include.NON_NULL)
-    private String status = null;
+    private String status;
 
     @JsonProperty("subscription_id")
     @JsonInclude(Include.NON_NULL)
-    private String subscriptionId = null;
+    private String subscriptionId;
 
     @JsonProperty("vnet_id")
     @JsonInclude(Include.NON_NULL)
-    private String vnetId = null;
+    private String vnetId;
 
 
 

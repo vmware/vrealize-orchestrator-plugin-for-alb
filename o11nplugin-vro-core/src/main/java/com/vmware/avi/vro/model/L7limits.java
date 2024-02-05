@@ -26,55 +26,55 @@ import org.springframework.stereotype.Service;
 public class L7limits extends AviRestResource {
     @JsonProperty("http_policies_per_vs")
     @JsonInclude(Include.NON_NULL)
-    private Integer httpPoliciesPerVs = null;
+    private Integer httpPoliciesPerVs;
 
     @JsonProperty("num_compression_filters")
     @JsonInclude(Include.NON_NULL)
-    private Integer numCompressionFilters = null;
+    private Integer numCompressionFilters;
 
     @JsonProperty("num_custom_str")
     @JsonInclude(Include.NON_NULL)
-    private Integer numCustomStr = null;
+    private Integer numCustomStr;
 
     @JsonProperty("num_matches_per_rule")
     @JsonInclude(Include.NON_NULL)
-    private Integer numMatchesPerRule = null;
+    private Integer numMatchesPerRule;
 
     @JsonProperty("num_rules_per_evh_host")
     @JsonInclude(Include.NON_NULL)
-    private Integer numRulesPerEvhHost = null;
+    private Integer numRulesPerEvhHost;
 
     @JsonProperty("num_rules_per_http_policy")
     @JsonInclude(Include.NON_NULL)
-    private Integer numRulesPerHttpPolicy = null;
+    private Integer numRulesPerHttpPolicy;
 
     @JsonProperty("num_strgroups_per_match")
     @JsonInclude(Include.NON_NULL)
-    private Integer numStrgroupsPerMatch = null;
+    private Integer numStrgroupsPerMatch;
 
     @JsonProperty("str_cache_mime")
     @JsonInclude(Include.NON_NULL)
-    private Integer strCacheMime = null;
+    private Integer strCacheMime;
 
     @JsonProperty("str_groups_cache_mime")
     @JsonInclude(Include.NON_NULL)
-    private Integer strGroupsCacheMime = null;
+    private Integer strGroupsCacheMime;
 
     @JsonProperty("str_groups_no_cache_mime")
     @JsonInclude(Include.NON_NULL)
-    private Integer strGroupsNoCacheMime = null;
+    private Integer strGroupsNoCacheMime;
 
     @JsonProperty("str_groups_no_cache_uri")
     @JsonInclude(Include.NON_NULL)
-    private Integer strGroupsNoCacheUri = null;
+    private Integer strGroupsNoCacheUri;
 
     @JsonProperty("str_no_cache_mime")
     @JsonInclude(Include.NON_NULL)
-    private Integer strNoCacheMime = null;
+    private Integer strNoCacheMime;
 
     @JsonProperty("str_no_cache_uri")
     @JsonInclude(Include.NON_NULL)
-    private Integer strNoCacheUri = null;
+    private Integer strNoCacheUri;
 
 
 

@@ -30,43 +30,43 @@ import org.springframework.stereotype.Service;
 public class FalsePositiveResult extends AviRestResource {
     @JsonProperty("attack")
     @JsonInclude(Include.NON_NULL)
-    private Boolean attack = null;
+    private Boolean attack;
 
     @JsonProperty("confidence")
     @JsonInclude(Include.NON_NULL)
-    private Float confidence = null;
+    private Float confidence;
 
     @JsonProperty("false_positive")
     @JsonInclude(Include.NON_NULL)
-    private Boolean falsePositive = null;
+    private Boolean falsePositive;
 
     @JsonProperty("fp_result_header")
     @JsonInclude(Include.NON_NULL)
-    private FalsePositiveResultHeader fpResultHeader = null;
+    private FalsePositiveResultHeader fpResultHeader;
 
     @JsonProperty("http_method")
     @JsonInclude(Include.NON_NULL)
-    private String httpMethod = null;
+    private String httpMethod;
 
     @JsonProperty("http_request_header_info")
     @JsonInclude(Include.NON_NULL)
-    private HeaderInfoInURI httpRequestHeaderInfo = null;
+    private HeaderInfoInURI httpRequestHeaderInfo;
 
     @JsonProperty("params_info")
     @JsonInclude(Include.NON_NULL)
-    private ParamsInURI paramsInfo = null;
+    private ParamsInURI paramsInfo;
 
     @JsonProperty("rule_info")
     @JsonInclude(Include.NON_NULL)
-    private RuleInfo ruleInfo = null;
+    private RuleInfo ruleInfo;
 
     @JsonProperty("uri")
     @JsonInclude(Include.NON_NULL)
-    private String uri = null;
+    private String uri;
 
     @JsonProperty("uri_result_mode")
     @JsonInclude(Include.NON_NULL)
-    private String uriResultMode = null;
+    private String uriResultMode;
 
 
 

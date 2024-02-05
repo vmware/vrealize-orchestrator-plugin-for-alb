@@ -28,11 +28,11 @@ import org.springframework.stereotype.Service;
 public class NsxtTier1SegmentConfig extends AviRestResource {
     @JsonProperty("automatic")
     @JsonInclude(Include.NON_NULL)
-    private NsxtTier1SegmentAutomaticMode automatic = null;
+    private NsxtTier1SegmentAutomaticMode automatic;
 
     @JsonProperty("manual")
     @JsonInclude(Include.NON_NULL)
-    private NsxtTier1SegmentManualMode manual = null;
+    private NsxtTier1SegmentManualMode manual;
 
     @JsonProperty("segment_config_mode")
     @JsonInclude(Include.NON_NULL)

@@ -28,7 +28,7 @@ import org.springframework.stereotype.Service;
 public class L4Rule extends AviRestResource {
     @JsonProperty("action")
     @JsonInclude(Include.NON_NULL)
-    private L4RuleAction action = null;
+    private L4RuleAction action;
 
     @JsonProperty("enable")
     @JsonInclude(Include.NON_NULL)
@@ -36,15 +36,15 @@ public class L4Rule extends AviRestResource {
 
     @JsonProperty("index")
     @JsonInclude(Include.NON_NULL)
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("match")
     @JsonInclude(Include.NON_NULL)
-    private L4RuleMatchTarget match = null;
+    private L4RuleMatchTarget match;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
 
 

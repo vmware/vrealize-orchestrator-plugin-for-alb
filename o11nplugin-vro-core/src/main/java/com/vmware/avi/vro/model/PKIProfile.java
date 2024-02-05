@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class PKIProfile extends AviRestResource {
     @JsonProperty("allow_pki_errors")
     @JsonInclude(Include.NON_NULL)
-    private List<String> allowPkiErrors = null;
+    private List<String> allowPkiErrors;
 
     @JsonProperty("ca_certs")
     @JsonInclude(Include.NON_NULL)
-    private List<SSLCertificate> caCerts = null;
+    private List<SSLCertificate> caCerts;
 
     @JsonProperty("created_by")
     @JsonInclude(Include.NON_NULL)
-    private String createdBy = null;
+    private String createdBy;
 
     @JsonProperty("crl_check")
     @JsonInclude(Include.NON_NULL)
@@ -42,7 +42,7 @@ public class PKIProfile extends AviRestResource {
 
     @JsonProperty("crls")
     @JsonInclude(Include.NON_NULL)
-    private List<CRL> crls = null;
+    private List<CRL> crls;
 
     @JsonProperty("ignore_peer_chain")
     @JsonInclude(Include.NON_NULL)
@@ -54,15 +54,15 @@ public class PKIProfile extends AviRestResource {
 
     @JsonProperty("markers")
     @JsonInclude(Include.NON_NULL)
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -70,7 +70,7 @@ public class PKIProfile extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("validate_only_leaf_crl")
     @JsonInclude(Include.NON_NULL)

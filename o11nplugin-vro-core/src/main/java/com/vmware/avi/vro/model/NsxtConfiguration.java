@@ -36,7 +36,7 @@ public class NsxtConfiguration extends AviRestResource {
 
     @JsonProperty("data_network_config")
     @JsonInclude(Include.NON_NULL)
-    private DataNetworkConfig dataNetworkConfig = null;
+    private DataNetworkConfig dataNetworkConfig;
 
     @JsonProperty("domain_id")
     @JsonInclude(Include.NON_NULL)
@@ -48,15 +48,15 @@ public class NsxtConfiguration extends AviRestResource {
 
     @JsonProperty("management_network_config")
     @JsonInclude(Include.NON_NULL)
-    private ManagementNetworkConfig managementNetworkConfig = null;
+    private ManagementNetworkConfig managementNetworkConfig;
 
     @JsonProperty("nsxt_credentials_ref")
     @JsonInclude(Include.NON_NULL)
-    private String nsxtCredentialsRef = null;
+    private String nsxtCredentialsRef;
 
     @JsonProperty("nsxt_url")
     @JsonInclude(Include.NON_NULL)
-    private String nsxtUrl = null;
+    private String nsxtUrl;
 
     @JsonProperty("site_id")
     @JsonInclude(Include.NON_NULL)
@@ -68,7 +68,7 @@ public class NsxtConfiguration extends AviRestResource {
 
     @JsonProperty("vpc_mode")
     @JsonInclude(Include.NON_NULL)
-    private Boolean vpcMode = null;
+    private Boolean vpcMode;
 
 
 

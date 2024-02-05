@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class OutOfBandRequestLog extends AviRestResource {
     @JsonProperty("ds_req_logs")
     @JsonInclude(Include.NON_NULL)
-    private List<DSRequestLog> dsReqLogs = null;
+    private List<DSRequestLog> dsReqLogs;
 
 
 

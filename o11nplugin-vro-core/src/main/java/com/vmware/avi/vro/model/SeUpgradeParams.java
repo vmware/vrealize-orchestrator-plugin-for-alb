@@ -42,7 +42,7 @@ public class SeUpgradeParams extends AviRestResource {
 
     @JsonProperty("se_group_refs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> seGroupRefs = null;
+    private List<String> seGroupRefs;
 
     @JsonProperty("suspend_on_failure")
     @JsonInclude(Include.NON_NULL)
@@ -50,7 +50,7 @@ public class SeUpgradeParams extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

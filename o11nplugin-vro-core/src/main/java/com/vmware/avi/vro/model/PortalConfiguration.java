@@ -54,11 +54,11 @@ public class PortalConfiguration extends AviRestResource {
 
     @JsonProperty("http_port")
     @JsonInclude(Include.NON_NULL)
-    private Integer httpPort = null;
+    private Integer httpPort;
 
     @JsonProperty("https_port")
     @JsonInclude(Include.NON_NULL)
-    private Integer httpsPort = null;
+    private Integer httpsPort;
 
     @JsonProperty("minimum_password_length")
     @JsonInclude(Include.NON_NULL)
@@ -70,7 +70,7 @@ public class PortalConfiguration extends AviRestResource {
 
     @JsonProperty("pkiprofile_ref")
     @JsonInclude(Include.NON_NULL)
-    private String pkiprofileRef = null;
+    private String pkiprofileRef;
 
     @JsonProperty("redirect_to_https")
     @JsonInclude(Include.NON_NULL)
@@ -78,11 +78,11 @@ public class PortalConfiguration extends AviRestResource {
 
     @JsonProperty("sslkeyandcertificate_refs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> sslkeyandcertificateRefs = null;
+    private List<String> sslkeyandcertificateRefs;
 
     @JsonProperty("sslprofile_ref")
     @JsonInclude(Include.NON_NULL)
-    private String sslprofileRef = null;
+    private String sslprofileRef;
 
     @JsonProperty("use_uuid_from_input")
     @JsonInclude(Include.NON_NULL)

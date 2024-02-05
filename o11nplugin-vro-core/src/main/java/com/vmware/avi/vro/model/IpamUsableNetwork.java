@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class IpamUsableNetwork extends AviRestResource {
     @JsonProperty("labels")
     @JsonInclude(Include.NON_NULL)
-    private List<KeyValueTuple> labels = null;
+    private List<KeyValueTuple> labels;
 
     @JsonProperty("nw_ref")
     @JsonInclude(Include.NON_NULL)
-    private String nwRef = null;
+    private String nwRef;
 
 
 

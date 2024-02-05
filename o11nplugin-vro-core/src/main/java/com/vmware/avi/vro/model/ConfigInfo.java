@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class ConfigInfo extends AviRestResource {
     @JsonProperty("queue")
     @JsonInclude(Include.NON_NULL)
-    private List<VersionInfo> queue = null;
+    private List<VersionInfo> queue;
 
     @JsonProperty("reader_count")
     @JsonInclude(Include.NON_NULL)
-    private Integer readerCount = null;
+    private Integer readerCount;
 
     @JsonProperty("state")
     @JsonInclude(Include.NON_NULL)
-    private String state = null;
+    private String state;
 
     @JsonProperty("writer_count")
     @JsonInclude(Include.NON_NULL)
-    private Integer writerCount = null;
+    private Integer writerCount;
 
 
 

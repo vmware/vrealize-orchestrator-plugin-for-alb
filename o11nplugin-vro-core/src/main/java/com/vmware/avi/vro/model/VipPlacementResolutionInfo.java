@@ -27,15 +27,15 @@ import org.springframework.stereotype.Service;
 public class VipPlacementResolutionInfo extends AviRestResource {
     @JsonProperty("ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr ip = null;
+    private IpAddr ip;
 
     @JsonProperty("networks")
     @JsonInclude(Include.NON_NULL)
-    private List<DiscoveredNetwork> networks = null;
+    private List<DiscoveredNetwork> networks;
 
     @JsonProperty("pool_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String poolUuid = null;
+    private String poolUuid;
 
 
 

@@ -27,11 +27,11 @@ import org.springframework.stereotype.Service;
 public class SSLProfileSelector extends AviRestResource {
     @JsonProperty("client_ip_list")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrMatch clientIpList = null;
+    private IpAddrMatch clientIpList;
 
     @JsonProperty("ssl_profile_ref")
     @JsonInclude(Include.NON_NULL)
-    private String sslProfileRef = null;
+    private String sslProfileRef;
 
 
 
