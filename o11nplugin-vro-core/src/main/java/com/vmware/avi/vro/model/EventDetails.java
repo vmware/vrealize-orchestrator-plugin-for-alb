@@ -81,6 +81,7 @@ import com.vmware.avi.vro.model.RmDeleteSeEventDetails;
 import com.vmware.avi.vro.model.DetachIpStatusEventDetails;
 import com.vmware.avi.vro.model.DisableSeMigrateEventDetails;
 import com.vmware.avi.vro.model.VinfraDiscSummaryDetails;
+import com.vmware.avi.vro.model.LogMgrCleanupEventDetails;
 import com.vmware.avi.vro.model.DNSQueryError;
 import com.vmware.avi.vro.model.DNSVsSyncInfo;
 import com.vmware.avi.vro.model.DockerUCPSetup;
@@ -551,6 +552,10 @@ public class EventDetails extends AviRestResource {
     @JsonProperty("disc_summary")
     @JsonInclude(Include.NON_NULL)
     private VinfraDiscSummaryDetails discSummary;
+
+    @JsonProperty("disk_cleanup_event_details")
+    @JsonInclude(Include.NON_NULL)
+    private LogMgrCleanupEventDetails diskCleanupEventDetails;
 
     @JsonProperty("dns_query_error")
     @JsonInclude(Include.NON_NULL)
@@ -2864,6 +2869,32 @@ public class EventDetails extends AviRestResource {
   @VsoMethod
   public void setDiscSummary(VinfraDiscSummaryDetails discSummary) {
     this.discSummary = discSummary;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Log files exsiting on controller need to be cleanup.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return diskCleanupEventDetails
+   */
+  @VsoMethod
+  public LogMgrCleanupEventDetails getDiskCleanupEventDetails() {
+    return diskCleanupEventDetails;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Log files exsiting on controller need to be cleanup.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param diskCleanupEventDetails set the diskCleanupEventDetails.
+   */
+  @VsoMethod
+  public void setDiskCleanupEventDetails(LogMgrCleanupEventDetails diskCleanupEventDetails) {
+    this.diskCleanupEventDetails = diskCleanupEventDetails;
   }
 
   /**
@@ -6464,7 +6495,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.dnsQueryError, objEventDetails.dnsQueryError)&&
   Objects.equals(this.connectionEvent, objEventDetails.connectionEvent)&&
   Objects.equals(this.adaptreplEvent, objEventDetails.adaptreplEvent)&&
-  Objects.equals(this.pkiprofileDetails, objEventDetails.pkiprofileDetails);
+  Objects.equals(this.pkiprofileDetails, objEventDetails.pkiprofileDetails)&&
+  Objects.equals(this.diskCleanupEventDetails, objEventDetails.diskCleanupEventDetails);
 }
 
 @Override
@@ -6547,6 +6579,7 @@ public String toString() {
         sb.append("    detachIpStatusDetails: ").append(toIndentedString(detachIpStatusDetails)).append("\n");
         sb.append("    disableSeMigrateDetails: ").append(toIndentedString(disableSeMigrateDetails)).append("\n");
         sb.append("    discSummary: ").append(toIndentedString(discSummary)).append("\n");
+        sb.append("    diskCleanupEventDetails: ").append(toIndentedString(diskCleanupEventDetails)).append("\n");
         sb.append("    dnsQueryError: ").append(toIndentedString(dnsQueryError)).append("\n");
         sb.append("    dnsSyncInfo: ").append(toIndentedString(dnsSyncInfo)).append("\n");
         sb.append("    dockerUcpDetails: ").append(toIndentedString(dockerUcpDetails)).append("\n");
