@@ -615,6 +615,7 @@ public class Constants {
     public static final String FINDER_VRO_LOGAGENTTCPCONNESTRATEEXCDEVENT = "LogAgentTCPConnEstRateExcdEvent";
     public static final String FINDER_VRO_LOGCONTROLLERMAPPING = "LogControllerMapping";
     public static final String FINDER_VRO_LOGMANAGERDEBUGFILTER = "LogManagerDebugFilter";
+    public static final String FINDER_VRO_LOGMGRCLEANUPEVENTDETAILS = "LogMgrCleanupEventDetails";
     public static final String FINDER_VRO_MANAGEMENTNETWORKCONFIG = "ManagementNetworkConfig";
     public static final String FINDER_VRO_MARATHONCONFIGURATION = "MarathonConfiguration";
     public static final String FINDER_VRO_MARATHONSEDEPLOYMENT = "MarathonSeDeployment";
