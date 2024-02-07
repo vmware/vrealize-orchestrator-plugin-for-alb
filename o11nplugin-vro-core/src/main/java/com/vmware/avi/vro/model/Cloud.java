@@ -43,19 +43,19 @@ public class Cloud extends AviRestResource {
 
     @JsonProperty("aws_configuration")
     @JsonInclude(Include.NON_NULL)
-    private AwsConfiguration awsConfiguration = null;
+    private AwsConfiguration awsConfiguration;
 
     @JsonProperty("azure_configuration")
     @JsonInclude(Include.NON_NULL)
-    private AzureConfiguration azureConfiguration = null;
+    private AzureConfiguration azureConfiguration;
 
     @JsonProperty("cloudstack_configuration")
     @JsonInclude(Include.NON_NULL)
-    private CloudStackConfiguration cloudstackConfiguration = null;
+    private CloudStackConfiguration cloudstackConfiguration;
 
     @JsonProperty("custom_tags")
     @JsonInclude(Include.NON_NULL)
-    private List<CustomTag> customTags = null;
+    private List<CustomTag> customTags;
 
     @JsonProperty("dhcp_enabled")
     @JsonInclude(Include.NON_NULL)
@@ -63,7 +63,7 @@ public class Cloud extends AviRestResource {
 
     @JsonProperty("dns_provider_ref")
     @JsonInclude(Include.NON_NULL)
-    private String dnsProviderRef = null;
+    private String dnsProviderRef;
 
     @JsonProperty("dns_resolution_on_se")
     @JsonInclude(Include.NON_NULL)
@@ -71,19 +71,19 @@ public class Cloud extends AviRestResource {
 
     @JsonProperty("dns_resolvers")
     @JsonInclude(Include.NON_NULL)
-    private List<DnsResolver> dnsResolvers = null;
+    private List<DnsResolver> dnsResolvers;
 
     @JsonProperty("docker_configuration")
     @JsonInclude(Include.NON_NULL)
-    private DockerConfiguration dockerConfiguration = null;
+    private DockerConfiguration dockerConfiguration;
 
     @JsonProperty("east_west_dns_provider_ref")
     @JsonInclude(Include.NON_NULL)
-    private String eastWestDnsProviderRef = null;
+    private String eastWestDnsProviderRef;
 
     @JsonProperty("east_west_ipam_provider_ref")
     @JsonInclude(Include.NON_NULL)
-    private String eastWestIpamProviderRef = null;
+    private String eastWestIpamProviderRef;
 
     @JsonProperty("enable_vip_on_all_interfaces")
     @JsonInclude(Include.NON_NULL)
@@ -95,7 +95,7 @@ public class Cloud extends AviRestResource {
 
     @JsonProperty("gcp_configuration")
     @JsonInclude(Include.NON_NULL)
-    private GCPConfiguration gcpConfiguration = null;
+    private GCPConfiguration gcpConfiguration;
 
     @JsonProperty("ip6_autocfg_enabled")
     @JsonInclude(Include.NON_NULL)
@@ -103,19 +103,19 @@ public class Cloud extends AviRestResource {
 
     @JsonProperty("ipam_provider_ref")
     @JsonInclude(Include.NON_NULL)
-    private String ipamProviderRef = null;
+    private String ipamProviderRef;
 
     @JsonProperty("license_tier")
     @JsonInclude(Include.NON_NULL)
-    private String licenseTier = null;
+    private String licenseTier;
 
     @JsonProperty("license_type")
     @JsonInclude(Include.NON_NULL)
-    private String licenseType = null;
+    private String licenseType;
 
     @JsonProperty("linuxserver_configuration")
     @JsonInclude(Include.NON_NULL)
-    private LinuxServerConfiguration linuxserverConfiguration = null;
+    private LinuxServerConfiguration linuxserverConfiguration;
 
     @JsonProperty("maintenance_mode")
     @JsonInclude(Include.NON_NULL)
@@ -123,7 +123,7 @@ public class Cloud extends AviRestResource {
 
     @JsonProperty("markers")
     @JsonInclude(Include.NON_NULL)
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("metrics_polling_interval")
     @JsonInclude(Include.NON_NULL)
@@ -143,23 +143,23 @@ public class Cloud extends AviRestResource {
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("nsxt_configuration")
     @JsonInclude(Include.NON_NULL)
-    private NsxtConfiguration nsxtConfiguration = null;
+    private NsxtConfiguration nsxtConfiguration;
 
     @JsonProperty("ntp_configuration")
     @JsonInclude(Include.NON_NULL)
-    private NTPConfiguration ntpConfiguration = null;
+    private NTPConfiguration ntpConfiguration;
 
     @JsonProperty("obj_name_prefix")
     @JsonInclude(Include.NON_NULL)
-    private String objNamePrefix = null;
+    private String objNamePrefix;
 
     @JsonProperty("openstack_configuration")
     @JsonInclude(Include.NON_NULL)
-    private OpenStackConfiguration openstackConfiguration = null;
+    private OpenStackConfiguration openstackConfiguration;
 
     @JsonProperty("prefer_static_routes")
     @JsonInclude(Include.NON_NULL)
@@ -167,11 +167,11 @@ public class Cloud extends AviRestResource {
 
     @JsonProperty("proxy_configuration")
     @JsonInclude(Include.NON_NULL)
-    private ProxyConfiguration proxyConfiguration = null;
+    private ProxyConfiguration proxyConfiguration;
 
     @JsonProperty("rancher_configuration")
     @JsonInclude(Include.NON_NULL)
-    private RancherConfiguration rancherConfiguration = null;
+    private RancherConfiguration rancherConfiguration;
 
     @JsonProperty("resolve_fqdn_to_ipv6")
     @JsonInclude(Include.NON_NULL)
@@ -179,7 +179,7 @@ public class Cloud extends AviRestResource {
 
     @JsonProperty("se_group_template_ref")
     @JsonInclude(Include.NON_NULL)
-    private String seGroupTemplateRef = null;
+    private String seGroupTemplateRef;
 
     @JsonProperty("state_based_dns_registration")
     @JsonInclude(Include.NON_NULL)
@@ -187,7 +187,7 @@ public class Cloud extends AviRestResource {
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -195,15 +195,15 @@ public class Cloud extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("vca_configuration")
     @JsonInclude(Include.NON_NULL)
-    private vCloudAirConfiguration vcaConfiguration = null;
+    private vCloudAirConfiguration vcaConfiguration;
 
     @JsonProperty("vcenter_configuration")
     @JsonInclude(Include.NON_NULL)
-    private vCenterConfiguration vcenterConfiguration = null;
+    private vCenterConfiguration vcenterConfiguration;
 
     @JsonProperty("vmc_deployment")
     @JsonInclude(Include.NON_NULL)

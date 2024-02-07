@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class SamlAttribute extends AviRestResource {
     @JsonProperty("attr_name")
     @JsonInclude(Include.NON_NULL)
-    private String attrName = null;
+    private String attrName;
 
     @JsonProperty("attr_values")
     @JsonInclude(Include.NON_NULL)
-    private List<String> attrValues = null;
+    private List<String> attrValues;
 
 
 

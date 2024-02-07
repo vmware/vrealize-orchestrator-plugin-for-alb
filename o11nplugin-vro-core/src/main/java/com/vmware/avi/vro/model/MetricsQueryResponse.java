@@ -26,39 +26,39 @@ import org.springframework.stereotype.Service;
 public class MetricsQueryResponse extends AviRestResource {
     @JsonProperty("entity_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String entityUuid = null;
+    private String entityUuid;
 
     @JsonProperty("id")
     @JsonInclude(Include.NON_NULL)
-    private String id = null;
+    private String id;
 
     @JsonProperty("limit")
     @JsonInclude(Include.NON_NULL)
-    private Integer limit = null;
+    private Integer limit;
 
     @JsonProperty("metric_entity")
     @JsonInclude(Include.NON_NULL)
-    private String metricEntity = null;
+    private String metricEntity;
 
     @JsonProperty("metric_id")
     @JsonInclude(Include.NON_NULL)
-    private String metricId = null;
+    private String metricId;
 
     @JsonProperty("series")
     @JsonInclude(Include.NON_NULL)
-    private List<MetricsDataSeries> series = null;
+    private List<MetricsDataSeries> series;
 
     @JsonProperty("start")
     @JsonInclude(Include.NON_NULL)
-    private String start = null;
+    private String start;
 
     @JsonProperty("step")
     @JsonInclude(Include.NON_NULL)
-    private Integer step = null;
+    private Integer step;
 
     @JsonProperty("stop")
     @JsonInclude(Include.NON_NULL)
-    private String stop = null;
+    private String stop;
 
 
 

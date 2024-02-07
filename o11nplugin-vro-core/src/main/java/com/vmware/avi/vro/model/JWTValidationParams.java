@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class JWTValidationParams extends AviRestResource {
     @JsonProperty("audience")
     @JsonInclude(Include.NON_NULL)
-    private String audience = null;
+    private String audience;
 
 
 

@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class VHMatch extends AviRestResource {
     @JsonProperty("host")
     @JsonInclude(Include.NON_NULL)
-    private String host = null;
+    private String host;
 
     @JsonProperty("rules")
     @JsonInclude(Include.NON_NULL)
-    private List<VHMatchRule> rules = null;
+    private List<VHMatchRule> rules;
 
 
 

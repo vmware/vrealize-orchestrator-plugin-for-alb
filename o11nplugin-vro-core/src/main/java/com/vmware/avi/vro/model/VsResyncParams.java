@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class VsResyncParams extends AviRestResource {
     @JsonProperty("se_ref")
     @JsonInclude(Include.NON_NULL)
-    private List<String> seRef = null;
+    private List<String> seRef;
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

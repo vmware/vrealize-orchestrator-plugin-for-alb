@@ -29,7 +29,7 @@ import org.springframework.stereotype.Service;
 public class CaptureTCPFilter extends AviRestResource {
     @JsonProperty("dst_port_range")
     @JsonInclude(Include.NON_NULL)
-    private DestinationPortAddr dstPortRange = null;
+    private DestinationPortAddr dstPortRange;
 
     @JsonProperty("eth_proto")
     @JsonInclude(Include.NON_NULL)
@@ -37,15 +37,15 @@ public class CaptureTCPFilter extends AviRestResource {
 
     @JsonProperty("host_ip")
     @JsonInclude(Include.NON_NULL)
-    private DebugIpAddr hostIp = null;
+    private DebugIpAddr hostIp;
 
     @JsonProperty("src_port_range")
     @JsonInclude(Include.NON_NULL)
-    private SourcePortAddr srcPortRange = null;
+    private SourcePortAddr srcPortRange;
 
     @JsonProperty("tcpflags")
     @JsonInclude(Include.NON_NULL)
-    private List<CaptureTCP> tcpflags = null;
+    private List<CaptureTCP> tcpflags;
 
 
 

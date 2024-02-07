@@ -127,7 +127,7 @@ public class SeAgentProperties extends AviRestResource {
 
     @JsonProperty("seagent_statecache_properties")
     @JsonInclude(Include.NON_NULL)
-    private SeAgentStateCacheProperties seagentStatecacheProperties = null;
+    private SeAgentStateCacheProperties seagentStatecacheProperties;
 
     @JsonProperty("send_se_ready_timeout")
     @JsonInclude(Include.NON_NULL)

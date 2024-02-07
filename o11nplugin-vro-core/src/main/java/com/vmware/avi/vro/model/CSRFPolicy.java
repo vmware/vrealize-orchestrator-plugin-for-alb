@@ -30,19 +30,19 @@ public class CSRFPolicy extends AviRestResource {
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("rules")
     @JsonInclude(Include.NON_NULL)
-    private List<CSRFRule> rules = null;
+    private List<CSRFRule> rules;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("token_validity_time_min")
     @JsonInclude(Include.NON_NULL)
@@ -54,7 +54,7 @@ public class CSRFPolicy extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

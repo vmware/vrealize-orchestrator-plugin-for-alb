@@ -26,23 +26,23 @@ import org.springframework.stereotype.Service;
 public class SePoolLbEventDetails extends AviRestResource {
     @JsonProperty("failure_code")
     @JsonInclude(Include.NON_NULL)
-    private String failureCode = null;
+    private String failureCode;
 
     @JsonProperty("pool")
     @JsonInclude(Include.NON_NULL)
-    private String pool = null;
+    private String pool;
 
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("src_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String srcUuid = null;
+    private String srcUuid;
 
     @JsonProperty("virtual_service")
     @JsonInclude(Include.NON_NULL)
-    private String virtualService = null;
+    private String virtualService;
 
 
 

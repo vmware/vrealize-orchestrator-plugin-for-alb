@@ -28,7 +28,7 @@ import org.springframework.stereotype.Service;
 public class NetworkSecurityRule extends AviRestResource {
     @JsonProperty("action")
     @JsonInclude(Include.NON_NULL)
-    private String action = null;
+    private String action;
 
     @JsonProperty("age")
     @JsonInclude(Include.NON_NULL)
@@ -36,15 +36,15 @@ public class NetworkSecurityRule extends AviRestResource {
 
     @JsonProperty("created_by")
     @JsonInclude(Include.NON_NULL)
-    private String createdBy = null;
+    private String createdBy;
 
     @JsonProperty("enable")
     @JsonInclude(Include.NON_NULL)
-    private Boolean enable = null;
+    private Boolean enable;
 
     @JsonProperty("index")
     @JsonInclude(Include.NON_NULL)
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("log")
     @JsonInclude(Include.NON_NULL)
@@ -52,15 +52,15 @@ public class NetworkSecurityRule extends AviRestResource {
 
     @JsonProperty("match")
     @JsonInclude(Include.NON_NULL)
-    private NetworkSecurityMatchTarget match = null;
+    private NetworkSecurityMatchTarget match;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("rl_param")
     @JsonInclude(Include.NON_NULL)
-    private NetworkSecurityPolicyActionRLParam rlParam = null;
+    private NetworkSecurityPolicyActionRLParam rlParam;
 
 
 

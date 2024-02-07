@@ -26,23 +26,23 @@ import org.springframework.stereotype.Service;
 public class AvgUptimeChangeDetails extends AviRestResource {
     @JsonProperty("current_value")
     @JsonInclude(Include.NON_NULL)
-    private Float currentValue = null;
+    private Float currentValue;
 
     @JsonProperty("metric_id")
     @JsonInclude(Include.NON_NULL)
-    private String metricId = null;
+    private String metricId;
 
     @JsonProperty("metric_name")
     @JsonInclude(Include.NON_NULL)
-    private String metricName = null;
+    private String metricName;
 
     @JsonProperty("resource_str")
     @JsonInclude(Include.NON_NULL)
-    private String resourceStr = null;
+    private String resourceStr;
 
     @JsonProperty("threshold")
     @JsonInclude(Include.NON_NULL)
-    private Float threshold = null;
+    private Float threshold;
 
 
 

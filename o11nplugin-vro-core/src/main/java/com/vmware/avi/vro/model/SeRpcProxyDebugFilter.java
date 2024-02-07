@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class SeRpcProxyDebugFilter extends AviRestResource {
     @JsonProperty("method_name")
     @JsonInclude(Include.NON_NULL)
-    private String methodName = null;
+    private String methodName;
 
     @JsonProperty("queue")
     @JsonInclude(Include.NON_NULL)
-    private String queue = null;
+    private String queue;
 
     @JsonProperty("se_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String seUuid = null;
+    private String seUuid;
 
 
 

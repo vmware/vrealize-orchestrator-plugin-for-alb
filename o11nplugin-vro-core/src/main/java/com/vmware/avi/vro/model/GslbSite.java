@@ -27,15 +27,15 @@ import org.springframework.stereotype.Service;
 public class GslbSite extends AviRestResource {
     @JsonProperty("address")
     @JsonInclude(Include.NON_NULL)
-    private String address = null;
+    private String address;
 
     @JsonProperty("cluster_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String clusterUuid = null;
+    private String clusterUuid;
 
     @JsonProperty("dns_vses")
     @JsonInclude(Include.NON_NULL)
-    private List<GslbSiteDnsVs> dnsVses = null;
+    private List<GslbSiteDnsVs> dnsVses;
 
     @JsonProperty("enabled")
     @JsonInclude(Include.NON_NULL)
@@ -43,7 +43,7 @@ public class GslbSite extends AviRestResource {
 
     @JsonProperty("hm_proxies")
     @JsonInclude(Include.NON_NULL)
-    private List<GslbHealthMonitorProxy> hmProxies = null;
+    private List<GslbHealthMonitorProxy> hmProxies;
 
     @JsonProperty("hm_shard_enabled")
     @JsonInclude(Include.NON_NULL)
@@ -51,11 +51,11 @@ public class GslbSite extends AviRestResource {
 
     @JsonProperty("ip_addresses")
     @JsonInclude(Include.NON_NULL)
-    private List<IpAddr> ipAddresses = null;
+    private List<IpAddr> ipAddresses;
 
     @JsonProperty("location")
     @JsonInclude(Include.NON_NULL)
-    private GslbGeoLocation location = null;
+    private GslbGeoLocation location;
 
     @JsonProperty("member_type")
     @JsonInclude(Include.NON_NULL)
@@ -63,11 +63,11 @@ public class GslbSite extends AviRestResource {
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("password")
     @JsonInclude(Include.NON_NULL)
-    private String password = null;
+    private String password;
 
     @JsonProperty("port")
     @JsonInclude(Include.NON_NULL)
@@ -75,7 +75,7 @@ public class GslbSite extends AviRestResource {
 
     @JsonProperty("ratio")
     @JsonInclude(Include.NON_NULL)
-    private Integer ratio = null;
+    private Integer ratio;
 
     @JsonProperty("suspend_mode")
     @JsonInclude(Include.NON_NULL)
@@ -83,7 +83,7 @@ public class GslbSite extends AviRestResource {
 
     @JsonProperty("username")
     @JsonInclude(Include.NON_NULL)
-    private String username = null;
+    private String username;
 
 
 

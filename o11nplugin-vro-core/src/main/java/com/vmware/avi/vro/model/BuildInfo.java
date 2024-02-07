@@ -2,6 +2,7 @@ package com.vmware.avi.vro.model;
 
 import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -26,35 +27,38 @@ import org.springframework.stereotype.Service;
 public class BuildInfo extends AviRestResource {
     @JsonProperty("build_no")
     @JsonInclude(Include.NON_NULL)
-    private Integer buildNo = null;
+    private Integer buildNo;
 
     @JsonProperty("date")
     @JsonInclude(Include.NON_NULL)
-    private String date = null;
+    private String date;
 
     @JsonProperty("min_version")
     @JsonInclude(Include.NON_NULL)
-    private String minVersion = null;
+    private String minVersion;
 
     @JsonProperty("patch_version")
     @JsonInclude(Include.NON_NULL)
-    private String patchVersion = null;
+    private String patchVersion;
 
     @JsonProperty("product")
     @JsonInclude(Include.NON_NULL)
-    private String product = null;
+    private String product;
 
     @JsonProperty("product_name")
     @JsonInclude(Include.NON_NULL)
-    private String productName = null;
+    private String productName;
+
+    @JsonIgnore
+    private String remoteImageRef;
 
     @JsonProperty("tag")
     @JsonInclude(Include.NON_NULL)
-    private String tag = null;
+    private String tag;
 
     @JsonProperty("version")
     @JsonInclude(Include.NON_NULL)
-    private String version = null;
+    private String version;
 
 
 
@@ -216,6 +220,32 @@ public class BuildInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Remote reference of the container image.
+   * Field introduced in 30.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return remoteImageRef
+   */
+  @VsoMethod
+  public String getRemoteImageRef() {
+    return remoteImageRef;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Remote reference of the container image.
+   * Field introduced in 30.1.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param remoteImageRef set the remoteImageRef.
+   */
+  @VsoMethod
+  public void setRemoteImageRef(String  remoteImageRef) {
+    this.remoteImageRef = remoteImageRef;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Tag related to the package.
    * Field introduced in 18.2.6.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
@@ -284,7 +314,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.minVersion, objBuildInfo.minVersion)&&
   Objects.equals(this.patchVersion, objBuildInfo.patchVersion)&&
   Objects.equals(this.product, objBuildInfo.product)&&
-  Objects.equals(this.productName, objBuildInfo.productName);
+  Objects.equals(this.productName, objBuildInfo.productName)&&
+  Objects.equals(this.remoteImageRef, objBuildInfo.remoteImageRef);
 }
 
 @Override
@@ -297,6 +328,7 @@ public String toString() {
         sb.append("    patchVersion: ").append(toIndentedString(patchVersion)).append("\n");
         sb.append("    product: ").append(toIndentedString(product)).append("\n");
         sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
+        sb.append("    remoteImageRef: ").append(toIndentedString(remoteImageRef)).append("\n");
         sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
       sb.append("}");

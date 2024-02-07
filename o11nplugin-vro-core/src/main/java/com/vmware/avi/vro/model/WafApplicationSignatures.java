@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class WafApplicationSignatures extends AviRestResource {
     @JsonProperty("provider_ref")
     @JsonInclude(Include.NON_NULL)
-    private String providerRef = null;
+    private String providerRef;
 
     @JsonProperty("rule_overrides")
     @JsonInclude(Include.NON_NULL)
-    private List<WafRuleOverrides> ruleOverrides = null;
+    private List<WafRuleOverrides> ruleOverrides;
 
     @JsonProperty("ruleset_version")
     @JsonInclude(Include.NON_NULL)
@@ -38,7 +38,7 @@ public class WafApplicationSignatures extends AviRestResource {
 
     @JsonProperty("selected_applications")
     @JsonInclude(Include.NON_NULL)
-    private List<String> selectedApplications = null;
+    private List<String> selectedApplications;
 
 
 

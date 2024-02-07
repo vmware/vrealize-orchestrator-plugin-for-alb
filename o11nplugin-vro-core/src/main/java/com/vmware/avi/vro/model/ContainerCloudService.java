@@ -26,23 +26,23 @@ import org.springframework.stereotype.Service;
 public class ContainerCloudService extends AviRestResource {
     @JsonProperty("cc_id")
     @JsonInclude(Include.NON_NULL)
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("object")
     @JsonInclude(Include.NON_NULL)
-    private String object = null;
+    private String object;
 
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("service")
     @JsonInclude(Include.NON_NULL)
-    private String service = null;
+    private String service;
 
     @JsonProperty("status")
     @JsonInclude(Include.NON_NULL)
-    private String status = null;
+    private String status;
 
 
 

@@ -27,11 +27,11 @@ import org.springframework.stereotype.Service;
 public class HSMThalesNetHsm extends AviRestResource {
     @JsonProperty("esn")
     @JsonInclude(Include.NON_NULL)
-    private String esn = null;
+    private String esn;
 
     @JsonProperty("keyhash")
     @JsonInclude(Include.NON_NULL)
-    private String keyhash = null;
+    private String keyhash;
 
     @JsonProperty("module_id")
     @JsonInclude(Include.NON_NULL)
@@ -43,7 +43,7 @@ public class HSMThalesNetHsm extends AviRestResource {
 
     @JsonProperty("remote_ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr remoteIp = null;
+    private IpAddr remoteIp;
 
     @JsonProperty("remote_port")
     @JsonInclude(Include.NON_NULL)

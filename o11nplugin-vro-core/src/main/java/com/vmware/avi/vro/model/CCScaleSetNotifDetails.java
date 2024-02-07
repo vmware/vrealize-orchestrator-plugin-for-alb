@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class CCScaleSetNotifDetails extends AviRestResource {
     @JsonProperty("cc_id")
     @JsonInclude(Include.NON_NULL)
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("scaleset_names")
     @JsonInclude(Include.NON_NULL)
-    private List<String> scalesetNames = null;
+    private List<String> scalesetNames;
 
 
 

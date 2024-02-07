@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class RemoteAuthConfiguration extends AviRestResource {
     @JsonProperty("auth_mapping_profile_ref")
     @JsonInclude(Include.NON_NULL)
-    private String authMappingProfileRef = null;
+    private String authMappingProfileRef;
 
     @JsonProperty("auth_profile_ref")
     @JsonInclude(Include.NON_NULL)
-    private String authProfileRef = null;
+    private String authProfileRef;
 
     @JsonProperty("index")
     @JsonInclude(Include.NON_NULL)
-    private Integer index = null;
+    private Integer index;
 
 
 

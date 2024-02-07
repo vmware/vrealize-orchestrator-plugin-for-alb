@@ -27,19 +27,19 @@ import org.springframework.stereotype.Service;
 public class L1StringLengthTestCase extends AviRestResource {
     @JsonProperty("string_length_message")
     @JsonInclude(Include.NON_NULL)
-    private L2StringLengthTestCase stringLengthMessage = null;
+    private L2StringLengthTestCase stringLengthMessage;
 
     @JsonProperty("string_length_messages")
     @JsonInclude(Include.NON_NULL)
-    private List<L2StringLengthTestCase> stringLengthMessages = null;
+    private List<L2StringLengthTestCase> stringLengthMessages;
 
     @JsonProperty("test_string")
     @JsonInclude(Include.NON_NULL)
-    private String testString = null;
+    private String testString;
 
     @JsonProperty("test_strings")
     @JsonInclude(Include.NON_NULL)
-    private List<String> testStrings = null;
+    private List<String> testStrings;
 
 
 

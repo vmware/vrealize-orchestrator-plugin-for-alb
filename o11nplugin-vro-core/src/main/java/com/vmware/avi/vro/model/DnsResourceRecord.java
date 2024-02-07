@@ -27,63 +27,63 @@ import org.springframework.stereotype.Service;
 public class DnsResourceRecord extends AviRestResource {
     @JsonProperty("addr6_ip_str")
     @JsonInclude(Include.NON_NULL)
-    private String addr6IpStr = null;
+    private String addr6IpStr;
 
     @JsonProperty("addr_ip")
     @JsonInclude(Include.NON_NULL)
-    private Integer addrIp = null;
+    private Integer addrIp;
 
     @JsonProperty("cname")
     @JsonInclude(Include.NON_NULL)
-    private String cname = null;
+    private String cname;
 
     @JsonProperty("dclass")
     @JsonInclude(Include.NON_NULL)
-    private Integer dclass = null;
+    private Integer dclass;
 
     @JsonProperty("location")
     @JsonInclude(Include.NON_NULL)
-    private GeoLocation location = null;
+    private GeoLocation location;
 
     @JsonProperty("mail_server")
     @JsonInclude(Include.NON_NULL)
-    private String mailServer = null;
+    private String mailServer;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("nsname")
     @JsonInclude(Include.NON_NULL)
-    private String nsname = null;
+    private String nsname;
 
     @JsonProperty("port")
     @JsonInclude(Include.NON_NULL)
-    private Integer port = null;
+    private Integer port;
 
     @JsonProperty("priority")
     @JsonInclude(Include.NON_NULL)
-    private Integer priority = null;
+    private Integer priority;
 
     @JsonProperty("site_name")
     @JsonInclude(Include.NON_NULL)
-    private String siteName = null;
+    private String siteName;
 
     @JsonProperty("text_rdata")
     @JsonInclude(Include.NON_NULL)
-    private String textRdata = null;
+    private String textRdata;
 
     @JsonProperty("ttl")
     @JsonInclude(Include.NON_NULL)
-    private Integer ttl = null;
+    private Integer ttl;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
     @JsonProperty("vs_name")
     @JsonInclude(Include.NON_NULL)
-    private String vsName = null;
+    private String vsName;
 
 
 

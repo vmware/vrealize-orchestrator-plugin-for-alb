@@ -27,23 +27,23 @@ import org.springframework.stereotype.Service;
 public class MicroServiceContainer extends AviRestResource {
     @JsonProperty("container_id")
     @JsonInclude(Include.NON_NULL)
-    private String containerId = null;
+    private String containerId;
 
     @JsonProperty("host")
     @JsonInclude(Include.NON_NULL)
-    private String host = null;
+    private String host;
 
     @JsonProperty("ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr ip = null;
+    private IpAddr ip;
 
     @JsonProperty("port")
     @JsonInclude(Include.NON_NULL)
-    private Integer port = null;
+    private Integer port;
 
     @JsonProperty("task_id")
     @JsonInclude(Include.NON_NULL)
-    private String taskId = null;
+    private String taskId;
 
 
 

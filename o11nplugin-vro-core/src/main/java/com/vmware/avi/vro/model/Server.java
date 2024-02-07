@@ -28,19 +28,19 @@ import org.springframework.stereotype.Service;
 public class Server extends AviRestResource {
     @JsonProperty("autoscaling_group_name")
     @JsonInclude(Include.NON_NULL)
-    private String autoscalingGroupName = null;
+    private String autoscalingGroupName;
 
     @JsonProperty("availability_zone")
     @JsonInclude(Include.NON_NULL)
-    private String availabilityZone = null;
+    private String availabilityZone;
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("discovered_networks")
     @JsonInclude(Include.NON_NULL)
-    private List<DiscoveredNetwork> discoveredNetworks = null;
+    private List<DiscoveredNetwork> discoveredNetworks;
 
     @JsonProperty("enabled")
     @JsonInclude(Include.NON_NULL)
@@ -48,43 +48,42 @@ public class Server extends AviRestResource {
 
     @JsonProperty("external_orchestration_id")
     @JsonInclude(Include.NON_NULL)
-    private String externalOrchestrationId = null;
+    private String externalOrchestrationId;
 
     @JsonProperty("external_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String externalUuid = null;
+    private String externalUuid;
 
     @JsonProperty("hostname")
     @JsonInclude(Include.NON_NULL)
-    private String hostname = null;
+    private String hostname;
 
     @JsonProperty("ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr ip = null;
+    private IpAddr ip;
 
     @JsonProperty("static")
-    @JsonInclude(Include.NON_NULL)
     private Boolean isStatic = false;
 
     @JsonProperty("location")
     @JsonInclude(Include.NON_NULL)
-    private GeoLocation location = null;
+    private GeoLocation location;
 
     @JsonProperty("mac_address")
     @JsonInclude(Include.NON_NULL)
-    private String macAddress = null;
+    private String macAddress;
 
     @JsonProperty("nw_ref")
     @JsonInclude(Include.NON_NULL)
-    private String nwRef = null;
+    private String nwRef;
 
     @JsonProperty("port")
     @JsonInclude(Include.NON_NULL)
-    private Integer port = null;
+    private Integer port;
 
     @JsonProperty("prst_hdr_val")
     @JsonInclude(Include.NON_NULL)
-    private String prstHdrVal = null;
+    private String prstHdrVal;
 
     @JsonProperty("ratio")
     @JsonInclude(Include.NON_NULL)
@@ -100,7 +99,7 @@ public class Server extends AviRestResource {
 
     @JsonProperty("server_node")
     @JsonInclude(Include.NON_NULL)
-    private String serverNode = null;
+    private String serverNode;
 
     @JsonProperty("verify_network")
     @JsonInclude(Include.NON_NULL)
@@ -108,7 +107,7 @@ public class Server extends AviRestResource {
 
     @JsonProperty("vm_ref")
     @JsonInclude(Include.NON_NULL)
-    private String vmRef = null;
+    private String vmRef;
 
 
 

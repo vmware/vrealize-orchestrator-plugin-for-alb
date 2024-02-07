@@ -29,47 +29,47 @@ import org.springframework.stereotype.Service;
 public class GCPConfiguration extends AviRestResource {
     @JsonProperty("cloud_credentials_ref")
     @JsonInclude(Include.NON_NULL)
-    private String cloudCredentialsRef = null;
+    private String cloudCredentialsRef;
 
     @JsonProperty("encryption_keys")
     @JsonInclude(Include.NON_NULL)
-    private GCPEncryptionKeys encryptionKeys = null;
+    private GCPEncryptionKeys encryptionKeys;
 
     @JsonProperty("firewall_target_tags")
     @JsonInclude(Include.NON_NULL)
-    private List<String> firewallTargetTags = null;
+    private List<String> firewallTargetTags;
 
     @JsonProperty("gcp_service_account_email")
     @JsonInclude(Include.NON_NULL)
-    private String gcpServiceAccountEmail = null;
+    private String gcpServiceAccountEmail;
 
     @JsonProperty("gcs_bucket_name")
     @JsonInclude(Include.NON_NULL)
-    private String gcsBucketName = null;
+    private String gcsBucketName;
 
     @JsonProperty("gcs_project_id")
     @JsonInclude(Include.NON_NULL)
-    private String gcsProjectId = null;
+    private String gcsProjectId;
 
     @JsonProperty("network_config")
     @JsonInclude(Include.NON_NULL)
-    private GCPNetworkConfig networkConfig = null;
+    private GCPNetworkConfig networkConfig;
 
     @JsonProperty("region_name")
     @JsonInclude(Include.NON_NULL)
-    private String regionName = null;
+    private String regionName;
 
     @JsonProperty("se_project_id")
     @JsonInclude(Include.NON_NULL)
-    private String seProjectId = null;
+    private String seProjectId;
 
     @JsonProperty("vip_allocation_strategy")
     @JsonInclude(Include.NON_NULL)
-    private GCPVIPAllocation vipAllocationStrategy = null;
+    private GCPVIPAllocation vipAllocationStrategy;
 
     @JsonProperty("zones")
     @JsonInclude(Include.NON_NULL)
-    private List<String> zones = null;
+    private List<String> zones;
 
 
 

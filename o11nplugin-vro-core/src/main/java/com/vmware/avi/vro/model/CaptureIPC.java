@@ -26,51 +26,51 @@ import org.springframework.stereotype.Service;
 public class CaptureIPC extends AviRestResource {
     @JsonProperty("flow_del_probe")
     @JsonInclude(Include.NON_NULL)
-    private Boolean flowDelProbe = null;
+    private Boolean flowDelProbe;
 
     @JsonProperty("flow_mirror_add")
     @JsonInclude(Include.NON_NULL)
-    private Boolean flowMirrorAdd = null;
+    private Boolean flowMirrorAdd;
 
     @JsonProperty("flow_mirror_all")
     @JsonInclude(Include.NON_NULL)
-    private Boolean flowMirrorAll = null;
+    private Boolean flowMirrorAll;
 
     @JsonProperty("flow_mirror_del")
     @JsonInclude(Include.NON_NULL)
-    private Boolean flowMirrorDel = null;
+    private Boolean flowMirrorDel;
 
     @JsonProperty("flow_probe")
     @JsonInclude(Include.NON_NULL)
-    private Boolean flowProbe = null;
+    private Boolean flowProbe;
 
     @JsonProperty("flow_probe_all")
     @JsonInclude(Include.NON_NULL)
-    private Boolean flowProbeAll = null;
+    private Boolean flowProbeAll;
 
     @JsonProperty("ipc_batched")
     @JsonInclude(Include.NON_NULL)
-    private Boolean ipcBatched = null;
+    private Boolean ipcBatched;
 
     @JsonProperty("ipc_rx_req")
     @JsonInclude(Include.NON_NULL)
-    private Boolean ipcRxReq = null;
+    private Boolean ipcRxReq;
 
     @JsonProperty("ipc_rx_res")
     @JsonInclude(Include.NON_NULL)
-    private Boolean ipcRxRes = null;
+    private Boolean ipcRxRes;
 
     @JsonProperty("ipc_tx_req")
     @JsonInclude(Include.NON_NULL)
-    private Boolean ipcTxReq = null;
+    private Boolean ipcTxReq;
 
     @JsonProperty("ipc_tx_res")
     @JsonInclude(Include.NON_NULL)
-    private Boolean ipcTxRes = null;
+    private Boolean ipcTxRes;
 
     @JsonProperty("vs_hb")
     @JsonInclude(Include.NON_NULL)
-    private Boolean vsHb = null;
+    private Boolean vsHb;
 
 
 

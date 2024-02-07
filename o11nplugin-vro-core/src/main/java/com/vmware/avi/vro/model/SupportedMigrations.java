@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class SupportedMigrations extends AviRestResource {
     @JsonProperty("api_version")
     @JsonInclude(Include.NON_NULL)
-    private String apiVersion = null;
+    private String apiVersion;
 
     @JsonProperty("controller_host_min_free_disk_size")
     @JsonInclude(Include.NON_NULL)
@@ -58,7 +58,7 @@ public class SupportedMigrations extends AviRestResource {
 
     @JsonProperty("min_supported_api_version")
     @JsonInclude(Include.NON_NULL)
-    private String minSupportedApiVersion = null;
+    private String minSupportedApiVersion;
 
     @JsonProperty("podman_controller_host_min_free_disk_size")
     @JsonInclude(Include.NON_NULL)
@@ -98,7 +98,7 @@ public class SupportedMigrations extends AviRestResource {
 
     @JsonProperty("versions")
     @JsonInclude(Include.NON_NULL)
-    private List<String> versions = null;
+    private List<String> versions;
 
 
 

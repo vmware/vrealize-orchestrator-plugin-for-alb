@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class InventoryConfig extends AviRestResource {
     @JsonProperty("enable")
     @JsonInclude(Include.NON_NULL)
-    private Boolean enable = null;
+    private Boolean enable;
 
 
 

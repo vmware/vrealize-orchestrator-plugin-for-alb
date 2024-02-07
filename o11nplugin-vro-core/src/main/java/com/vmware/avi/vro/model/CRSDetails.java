@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class CRSDetails extends AviRestResource {
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("release_date")
     @JsonInclude(Include.NON_NULL)
-    private String releaseDate = null;
+    private String releaseDate;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -38,7 +38,7 @@ public class CRSDetails extends AviRestResource {
 
     @JsonProperty("version")
     @JsonInclude(Include.NON_NULL)
-    private String version = null;
+    private String version;
 
 
 

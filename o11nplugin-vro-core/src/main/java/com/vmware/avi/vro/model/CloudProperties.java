@@ -27,19 +27,19 @@ import org.springframework.stereotype.Service;
 public class CloudProperties extends AviRestResource {
     @JsonProperty("cc_props")
     @JsonInclude(Include.NON_NULL)
-    private CC_Properties ccProps = null;
+    private CC_Properties ccProps;
 
     @JsonProperty("cc_vtypes")
     @JsonInclude(Include.NON_NULL)
-    private List<String> ccVtypes = null;
+    private List<String> ccVtypes;
 
     @JsonProperty("hyp_props")
     @JsonInclude(Include.NON_NULL)
-    private List<Hypervisor_Properties> hypProps = null;
+    private List<Hypervisor_Properties> hypProps;
 
     @JsonProperty("info")
     @JsonInclude(Include.NON_NULL)
-    private List<CloudInfo> info = null;
+    private List<CloudInfo> info;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -47,7 +47,7 @@ public class CloudProperties extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

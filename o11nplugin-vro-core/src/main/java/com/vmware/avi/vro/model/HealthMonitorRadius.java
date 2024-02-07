@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class HealthMonitorRadius extends AviRestResource {
     @JsonProperty("password")
     @JsonInclude(Include.NON_NULL)
-    private String password = null;
+    private String password;
 
     @JsonProperty("shared_secret")
     @JsonInclude(Include.NON_NULL)
-    private String sharedSecret = null;
+    private String sharedSecret;
 
     @JsonProperty("username")
     @JsonInclude(Include.NON_NULL)
-    private String username = null;
+    private String username;
 
 
 

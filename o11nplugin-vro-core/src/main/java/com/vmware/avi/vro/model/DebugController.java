@@ -27,27 +27,27 @@ import org.springframework.stereotype.Service;
 public class DebugController extends AviRestResource {
     @JsonProperty("filters")
     @JsonInclude(Include.NON_NULL)
-    private DebugFilterUnion filters = null;
+    private DebugFilterUnion filters;
 
     @JsonProperty("log_level")
     @JsonInclude(Include.NON_NULL)
-    private String logLevel = null;
+    private String logLevel;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("sub_module")
     @JsonInclude(Include.NON_NULL)
-    private String subModule = null;
+    private String subModule;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("trace_level")
     @JsonInclude(Include.NON_NULL)
-    private String traceLevel = null;
+    private String traceLevel;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -55,7 +55,7 @@ public class DebugController extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

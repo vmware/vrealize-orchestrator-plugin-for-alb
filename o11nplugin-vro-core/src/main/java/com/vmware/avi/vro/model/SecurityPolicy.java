@@ -28,15 +28,15 @@ import org.springframework.stereotype.Service;
 public class SecurityPolicy extends AviRestResource {
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("dns_amplification_denyports")
     @JsonInclude(Include.NON_NULL)
-    private PortMatchGeneric dnsAmplificationDenyports = null;
+    private PortMatchGeneric dnsAmplificationDenyports;
 
     @JsonProperty("dns_attacks")
     @JsonInclude(Include.NON_NULL)
-    private DnsAttacks dnsAttacks = null;
+    private DnsAttacks dnsAttacks;
 
     @JsonProperty("dns_policy_index")
     @JsonInclude(Include.NON_NULL)
@@ -44,11 +44,11 @@ public class SecurityPolicy extends AviRestResource {
 
     @JsonProperty("markers")
     @JsonInclude(Include.NON_NULL)
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("network_security_policy_index")
     @JsonInclude(Include.NON_NULL)
@@ -60,7 +60,7 @@ public class SecurityPolicy extends AviRestResource {
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -68,7 +68,7 @@ public class SecurityPolicy extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class ServerAutoScaleFailedInfo extends AviRestResource {
     @JsonProperty("num_scalein_servers")
     @JsonInclude(Include.NON_NULL)
-    private Integer numScaleinServers = null;
+    private Integer numScaleinServers;
 
     @JsonProperty("num_servers_up")
     @JsonInclude(Include.NON_NULL)
-    private Integer numServersUp = null;
+    private Integer numServersUp;
 
     @JsonProperty("pool_ref")
     @JsonInclude(Include.NON_NULL)
-    private String poolRef = null;
+    private String poolRef;
 
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("reason_code")
     @JsonInclude(Include.NON_NULL)

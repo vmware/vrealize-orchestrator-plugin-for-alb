@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class MarathonServicePortConflict extends AviRestResource {
     @JsonProperty("app_name")
     @JsonInclude(Include.NON_NULL)
-    private String appName = null;
+    private String appName;
 
     @JsonProperty("cc_id")
     @JsonInclude(Include.NON_NULL)
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("marathon_url")
     @JsonInclude(Include.NON_NULL)
-    private String marathonUrl = null;
+    private String marathonUrl;
 
     @JsonProperty("port")
     @JsonInclude(Include.NON_NULL)
-    private Integer port = null;
+    private Integer port;
 
 
 

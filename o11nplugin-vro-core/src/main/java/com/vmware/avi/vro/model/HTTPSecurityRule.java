@@ -28,7 +28,7 @@ import org.springframework.stereotype.Service;
 public class HTTPSecurityRule extends AviRestResource {
     @JsonProperty("action")
     @JsonInclude(Include.NON_NULL)
-    private HTTPSecurityAction action = null;
+    private HTTPSecurityAction action;
 
     @JsonProperty("enable")
     @JsonInclude(Include.NON_NULL)
@@ -36,19 +36,19 @@ public class HTTPSecurityRule extends AviRestResource {
 
     @JsonProperty("index")
     @JsonInclude(Include.NON_NULL)
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("log")
     @JsonInclude(Include.NON_NULL)
-    private Boolean log = null;
+    private Boolean log;
 
     @JsonProperty("match")
     @JsonInclude(Include.NON_NULL)
-    private MatchTarget match = null;
+    private MatchTarget match;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
 
 

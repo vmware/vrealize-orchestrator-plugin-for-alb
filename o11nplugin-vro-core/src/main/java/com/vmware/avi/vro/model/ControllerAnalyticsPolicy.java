@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class ControllerAnalyticsPolicy extends AviRestResource {
     @JsonProperty("metrics_event_thresholds")
     @JsonInclude(Include.NON_NULL)
-    private List<MetricsEventThreshold> metricsEventThresholds = null;
+    private List<MetricsEventThreshold> metricsEventThresholds;
 
 
 

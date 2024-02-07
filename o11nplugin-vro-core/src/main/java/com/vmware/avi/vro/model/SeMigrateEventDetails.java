@@ -26,27 +26,27 @@ import org.springframework.stereotype.Service;
 public class SeMigrateEventDetails extends AviRestResource {
     @JsonProperty("num_vs")
     @JsonInclude(Include.NON_NULL)
-    private Integer numVs = null;
+    private Integer numVs;
 
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private List<String> reason = null;
+    private List<String> reason;
 
     @JsonProperty("se_name")
     @JsonInclude(Include.NON_NULL)
-    private String seName = null;
+    private String seName;
 
     @JsonProperty("se_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String seUuid = null;
+    private String seUuid;
 
     @JsonProperty("vs_name")
     @JsonInclude(Include.NON_NULL)
-    private String vsName = null;
+    private String vsName;
 
     @JsonProperty("vs_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String vsUuid = null;
+    private String vsUuid;
 
 
 

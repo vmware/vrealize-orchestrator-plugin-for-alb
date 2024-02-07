@@ -27,15 +27,15 @@ import org.springframework.stereotype.Service;
 public class StaticIpAllocInfo extends AviRestResource {
     @JsonProperty("ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr ip = null;
+    private IpAddr ip;
 
     @JsonProperty("obj_info")
     @JsonInclude(Include.NON_NULL)
-    private String objInfo = null;
+    private String objInfo;
 
     @JsonProperty("obj_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String objUuid = null;
+    private String objUuid;
 
 
 

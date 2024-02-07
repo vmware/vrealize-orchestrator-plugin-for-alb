@@ -250,899 +250,899 @@ import org.springframework.stereotype.Service;
 public class EventDetails extends AviRestResource {
     @JsonProperty("adaptrepl_event")
     @JsonInclude(Include.NON_NULL)
-    private AdaptReplEventInfo adaptreplEvent = null;
+    private AdaptReplEventInfo adaptreplEvent;
 
     @JsonProperty("add_networks_details")
     @JsonInclude(Include.NON_NULL)
-    private RmAddNetworksEventDetails addNetworksDetails = null;
+    private RmAddNetworksEventDetails addNetworksDetails;
 
     @JsonProperty("albservices_case_details")
     @JsonInclude(Include.NON_NULL)
-    private ALBServicesCase albservicesCaseDetails = null;
+    private ALBServicesCase albservicesCaseDetails;
 
     @JsonProperty("albservices_file_download_details")
     @JsonInclude(Include.NON_NULL)
-    private ALBServicesFileDownload albservicesFileDownloadDetails = null;
+    private ALBServicesFileDownload albservicesFileDownloadDetails;
 
     @JsonProperty("albservices_file_upload_details")
     @JsonInclude(Include.NON_NULL)
-    private ALBServicesFileUpload albservicesFileUploadDetails = null;
+    private ALBServicesFileUpload albservicesFileUploadDetails;
 
     @JsonProperty("albservices_status_details")
     @JsonInclude(Include.NON_NULL)
-    private ALBServicesStatusDetails albservicesStatusDetails = null;
+    private ALBServicesStatusDetails albservicesStatusDetails;
 
     @JsonProperty("all_seupgrade_event_details")
     @JsonInclude(Include.NON_NULL)
-    private AllSeUpgradeEventDetails allSeupgradeEventDetails = null;
+    private AllSeUpgradeEventDetails allSeupgradeEventDetails;
 
     @JsonProperty("anomaly_details")
     @JsonInclude(Include.NON_NULL)
-    private AnomalyEventDetails anomalyDetails = null;
+    private AnomalyEventDetails anomalyDetails;
 
     @JsonProperty("api_version_deprecated")
     @JsonInclude(Include.NON_NULL)
-    private ApiVersionDeprecated apiVersionDeprecated = null;
+    private ApiVersionDeprecated apiVersionDeprecated;
 
     @JsonProperty("app_signature_event_data")
     @JsonInclude(Include.NON_NULL)
-    private AppSignatureEventData appSignatureEventData = null;
+    private AppSignatureEventData appSignatureEventData;
 
     @JsonProperty("attach_ip_status_details")
     @JsonInclude(Include.NON_NULL)
-    private AttachIpStatusEventDetails attachIpStatusDetails = null;
+    private AttachIpStatusEventDetails attachIpStatusDetails;
 
     @JsonProperty("avg_uptime_change_details")
     @JsonInclude(Include.NON_NULL)
-    private AvgUptimeChangeDetails avgUptimeChangeDetails = null;
+    private AvgUptimeChangeDetails avgUptimeChangeDetails;
 
     @JsonProperty("aws_asg_deletion_details")
     @JsonInclude(Include.NON_NULL)
-    private AWSASGDelete awsAsgDeletionDetails = null;
+    private AWSASGDelete awsAsgDeletionDetails;
 
     @JsonProperty("aws_asg_notif_details")
     @JsonInclude(Include.NON_NULL)
-    private AWSASGNotifDetails awsAsgNotifDetails = null;
+    private AWSASGNotifDetails awsAsgNotifDetails;
 
     @JsonProperty("aws_infra_details")
     @JsonInclude(Include.NON_NULL)
-    private AWSSetup awsInfraDetails = null;
+    private AWSSetup awsInfraDetails;
 
     @JsonProperty("azure_info")
     @JsonInclude(Include.NON_NULL)
-    private AzureSetup azureInfo = null;
+    private AzureSetup azureInfo;
 
     @JsonProperty("azure_mp_info")
     @JsonInclude(Include.NON_NULL)
-    private AzureMarketplace azureMpInfo = null;
+    private AzureMarketplace azureMpInfo;
 
     @JsonProperty("bind_vs_se_details")
     @JsonInclude(Include.NON_NULL)
-    private RmBindVsSeEventDetails bindVsSeDetails = null;
+    private RmBindVsSeEventDetails bindVsSeDetails;
 
     @JsonProperty("bm_infra_details")
     @JsonInclude(Include.NON_NULL)
-    private BMSetup bmInfraDetails = null;
+    private BMSetup bmInfraDetails;
 
     @JsonProperty("bootup_fail_details")
     @JsonInclude(Include.NON_NULL)
-    private RmSeBootupFailEventDetails bootupFailDetails = null;
+    private RmSeBootupFailEventDetails bootupFailDetails;
 
     @JsonProperty("burst_checkout_details")
     @JsonInclude(Include.NON_NULL)
-    private BurstLicenseDetails burstCheckoutDetails = null;
+    private BurstLicenseDetails burstCheckoutDetails;
 
     @JsonProperty("cc_cluster_vip_details")
     @JsonInclude(Include.NON_NULL)
-    private CloudClusterVip ccClusterVipDetails = null;
+    private CloudClusterVip ccClusterVipDetails;
 
     @JsonProperty("cc_dns_update_details")
     @JsonInclude(Include.NON_NULL)
-    private CloudDnsUpdate ccDnsUpdateDetails = null;
+    private CloudDnsUpdate ccDnsUpdateDetails;
 
     @JsonProperty("cc_health_details")
     @JsonInclude(Include.NON_NULL)
-    private CloudHealth ccHealthDetails = null;
+    private CloudHealth ccHealthDetails;
 
     @JsonProperty("cc_infra_details")
     @JsonInclude(Include.NON_NULL)
-    private CloudGeneric ccInfraDetails = null;
+    private CloudGeneric ccInfraDetails;
 
     @JsonProperty("cc_ip_details")
     @JsonInclude(Include.NON_NULL)
-    private CloudIpChange ccIpDetails = null;
+    private CloudIpChange ccIpDetails;
 
     @JsonProperty("cc_parkintf_details")
     @JsonInclude(Include.NON_NULL)
-    private CloudVipParkingIntf ccParkintfDetails = null;
+    private CloudVipParkingIntf ccParkintfDetails;
 
     @JsonProperty("cc_scaleset_notif_details")
     @JsonInclude(Include.NON_NULL)
-    private CCScaleSetNotifDetails ccScalesetNotifDetails = null;
+    private CCScaleSetNotifDetails ccScalesetNotifDetails;
 
     @JsonProperty("cc_se_vm_details")
     @JsonInclude(Include.NON_NULL)
-    private CloudSeVmChange ccSeVmDetails = null;
+    private CloudSeVmChange ccSeVmDetails;
 
     @JsonProperty("cc_sync_services_details")
     @JsonInclude(Include.NON_NULL)
-    private CloudSyncServices ccSyncServicesDetails = null;
+    private CloudSyncServices ccSyncServicesDetails;
 
     @JsonProperty("cc_tenant_del_details")
     @JsonInclude(Include.NON_NULL)
-    private CloudTenantsDeleted ccTenantDelDetails = null;
+    private CloudTenantsDeleted ccTenantDelDetails;
 
     @JsonProperty("cc_vip_update_details")
     @JsonInclude(Include.NON_NULL)
-    private CloudVipUpdate ccVipUpdateDetails = null;
+    private CloudVipUpdate ccVipUpdateDetails;
 
     @JsonProperty("cc_vnic_details")
     @JsonInclude(Include.NON_NULL)
-    private CloudVnicChange ccVnicDetails = null;
+    private CloudVnicChange ccVnicDetails;
 
     @JsonProperty("central_license_refresh_details")
     @JsonInclude(Include.NON_NULL)
-    private CentralLicenseRefreshDetails centralLicenseRefreshDetails = null;
+    private CentralLicenseRefreshDetails centralLicenseRefreshDetails;
 
     @JsonProperty("central_license_subscription_details")
     @JsonInclude(Include.NON_NULL)
-    private CentralLicenseSubscriptionDetails centralLicenseSubscriptionDetails = null;
+    private CentralLicenseSubscriptionDetails centralLicenseSubscriptionDetails;
 
     @JsonProperty("cloud_asg_notif_details")
     @JsonInclude(Include.NON_NULL)
-    private CloudASGNotifDetails cloudAsgNotifDetails = null;
+    private CloudASGNotifDetails cloudAsgNotifDetails;
 
     @JsonProperty("cloud_autoscaling_config_failure_details")
     @JsonInclude(Include.NON_NULL)
-    private CloudAutoscalingConfigFailureDetails cloudAutoscalingConfigFailureDetails = null;
+    private CloudAutoscalingConfigFailureDetails cloudAutoscalingConfigFailureDetails;
 
     @JsonProperty("cloud_route_notif_details")
     @JsonInclude(Include.NON_NULL)
-    private CloudRouteNotifDetails cloudRouteNotifDetails = null;
+    private CloudRouteNotifDetails cloudRouteNotifDetails;
 
     @JsonProperty("cluster_config_failed_details")
     @JsonInclude(Include.NON_NULL)
-    private ClusterConfigFailedEvent clusterConfigFailedDetails = null;
+    private ClusterConfigFailedEvent clusterConfigFailedDetails;
 
     @JsonProperty("cluster_leader_failover_details")
     @JsonInclude(Include.NON_NULL)
-    private ClusterLeaderFailoverEvent clusterLeaderFailoverDetails = null;
+    private ClusterLeaderFailoverEvent clusterLeaderFailoverDetails;
 
     @JsonProperty("cluster_node_add_details")
     @JsonInclude(Include.NON_NULL)
-    private ClusterNodeAddEvent clusterNodeAddDetails = null;
+    private ClusterNodeAddEvent clusterNodeAddDetails;
 
     @JsonProperty("cluster_node_db_failed_details")
     @JsonInclude(Include.NON_NULL)
-    private ClusterNodeDbFailedEvent clusterNodeDbFailedDetails = null;
+    private ClusterNodeDbFailedEvent clusterNodeDbFailedDetails;
 
     @JsonProperty("cluster_node_remove_details")
     @JsonInclude(Include.NON_NULL)
-    private ClusterNodeRemoveEvent clusterNodeRemoveDetails = null;
+    private ClusterNodeRemoveEvent clusterNodeRemoveDetails;
 
     @JsonProperty("cluster_node_shutdown_details")
     @JsonInclude(Include.NON_NULL)
-    private ClusterNodeShutdownEvent clusterNodeShutdownDetails = null;
+    private ClusterNodeShutdownEvent clusterNodeShutdownDetails;
 
     @JsonProperty("cluster_node_started_details")
     @JsonInclude(Include.NON_NULL)
-    private ClusterNodeStartedEvent clusterNodeStartedDetails = null;
+    private ClusterNodeStartedEvent clusterNodeStartedDetails;
 
     @JsonProperty("cluster_service_critical_failure_details")
     @JsonInclude(Include.NON_NULL)
-    private ClusterServiceCriticalFailureEvent clusterServiceCriticalFailureDetails = null;
+    private ClusterServiceCriticalFailureEvent clusterServiceCriticalFailureDetails;
 
     @JsonProperty("cluster_service_failed_details")
     @JsonInclude(Include.NON_NULL)
-    private ClusterServiceFailedEvent clusterServiceFailedDetails = null;
+    private ClusterServiceFailedEvent clusterServiceFailedDetails;
 
     @JsonProperty("cluster_service_restored_details")
     @JsonInclude(Include.NON_NULL)
-    private ClusterServiceRestoredEvent clusterServiceRestoredDetails = null;
+    private ClusterServiceRestoredEvent clusterServiceRestoredDetails;
 
     @JsonProperty("clustify_check_details")
     @JsonInclude(Include.NON_NULL)
-    private ClustifyCheckEvent clustifyCheckDetails = null;
+    private ClustifyCheckEvent clustifyCheckDetails;
 
     @JsonProperty("cntlr_host_list_details")
     @JsonInclude(Include.NON_NULL)
-    private VinfraCntlrHostUnreachableList cntlrHostListDetails = null;
+    private VinfraCntlrHostUnreachableList cntlrHostListDetails;
 
     @JsonProperty("config_action_details")
     @JsonInclude(Include.NON_NULL)
-    private ConfigActionDetails configActionDetails = null;
+    private ConfigActionDetails configActionDetails;
 
     @JsonProperty("config_create_details")
     @JsonInclude(Include.NON_NULL)
-    private ConfigCreateDetails configCreateDetails = null;
+    private ConfigCreateDetails configCreateDetails;
 
     @JsonProperty("config_delete_details")
     @JsonInclude(Include.NON_NULL)
-    private ConfigDeleteDetails configDeleteDetails = null;
+    private ConfigDeleteDetails configDeleteDetails;
 
     @JsonProperty("config_password_change_request_details")
     @JsonInclude(Include.NON_NULL)
-    private ConfigUserPasswordChangeRequest configPasswordChangeRequestDetails = null;
+    private ConfigUserPasswordChangeRequest configPasswordChangeRequestDetails;
 
     @JsonProperty("config_se_grp_flv_update_details")
     @JsonInclude(Include.NON_NULL)
-    private ConfigSeGrpFlvUpdate configSeGrpFlvUpdateDetails = null;
+    private ConfigSeGrpFlvUpdate configSeGrpFlvUpdateDetails;
 
     @JsonProperty("config_update_details")
     @JsonInclude(Include.NON_NULL)
-    private ConfigUpdateDetails configUpdateDetails = null;
+    private ConfigUpdateDetails configUpdateDetails;
 
     @JsonProperty("config_user_authrz_rule_details")
     @JsonInclude(Include.NON_NULL)
-    private ConfigUserAuthrzByRule configUserAuthrzRuleDetails = null;
+    private ConfigUserAuthrzByRule configUserAuthrzRuleDetails;
 
     @JsonProperty("config_user_login_details")
     @JsonInclude(Include.NON_NULL)
-    private ConfigUserLogin configUserLoginDetails = null;
+    private ConfigUserLogin configUserLoginDetails;
 
     @JsonProperty("config_user_logout_details")
     @JsonInclude(Include.NON_NULL)
-    private ConfigUserLogout configUserLogoutDetails = null;
+    private ConfigUserLogout configUserLogoutDetails;
 
     @JsonProperty("config_user_not_authrz_rule_details")
     @JsonInclude(Include.NON_NULL)
-    private ConfigUserNotAuthrzByRule configUserNotAuthrzRuleDetails = null;
+    private ConfigUserNotAuthrzByRule configUserNotAuthrzRuleDetails;
 
     @JsonProperty("connection_event")
     @JsonInclude(Include.NON_NULL)
-    private ConnectionEventDetails connectionEvent = null;
+    private ConnectionEventDetails connectionEvent;
 
     @JsonProperty("container_cloud_batch_setup")
     @JsonInclude(Include.NON_NULL)
-    private ContainerCloudBatchSetup containerCloudBatchSetup = null;
+    private ContainerCloudBatchSetup containerCloudBatchSetup;
 
     @JsonProperty("container_cloud_setup")
     @JsonInclude(Include.NON_NULL)
-    private ContainerCloudSetup containerCloudSetup = null;
+    private ContainerCloudSetup containerCloudSetup;
 
     @JsonProperty("container_cloud_sevice")
     @JsonInclude(Include.NON_NULL)
-    private ContainerCloudService containerCloudSevice = null;
+    private ContainerCloudService containerCloudSevice;
 
     @JsonProperty("controller_discontinuous_time_change_event_details")
     @JsonInclude(Include.NON_NULL)
-    private ControllerDiscontinuousTimeChangeEventDetails controllerDiscontinuousTimeChangeEventDetails = null;
+    private ControllerDiscontinuousTimeChangeEventDetails controllerDiscontinuousTimeChangeEventDetails;
 
     @JsonProperty("controller_license_reconcile_details")
     @JsonInclude(Include.NON_NULL)
-    private ControllerLicenseReconcileDetails controllerLicenseReconcileDetails = null;
+    private ControllerLicenseReconcileDetails controllerLicenseReconcileDetails;
 
     @JsonProperty("crs_deployment_failure")
     @JsonInclude(Include.NON_NULL)
-    private CRSDeploymentFailure crsDeploymentFailure = null;
+    private CRSDeploymentFailure crsDeploymentFailure;
 
     @JsonProperty("crs_deployment_success")
     @JsonInclude(Include.NON_NULL)
-    private CRSDeploymentSuccess crsDeploymentSuccess = null;
+    private CRSDeploymentSuccess crsDeploymentSuccess;
 
     @JsonProperty("crs_details")
     @JsonInclude(Include.NON_NULL)
-    private CRSDetails crsDetails = null;
+    private CRSDetails crsDetails;
 
     @JsonProperty("crs_update_details")
     @JsonInclude(Include.NON_NULL)
-    private CRSUpdateDetails crsUpdateDetails = null;
+    private CRSUpdateDetails crsUpdateDetails;
 
     @JsonProperty("cs_infra_details")
     @JsonInclude(Include.NON_NULL)
-    private CloudStackSetup csInfraDetails = null;
+    private CloudStackSetup csInfraDetails;
 
     @JsonProperty("database_event_info")
     @JsonInclude(Include.NON_NULL)
-    private DatabaseEventInfo databaseEventInfo = null;
+    private DatabaseEventInfo databaseEventInfo;
 
     @JsonProperty("delete_se_details")
     @JsonInclude(Include.NON_NULL)
-    private RmDeleteSeEventDetails deleteSeDetails = null;
+    private RmDeleteSeEventDetails deleteSeDetails;
 
     @JsonProperty("detach_ip_status_details")
     @JsonInclude(Include.NON_NULL)
-    private DetachIpStatusEventDetails detachIpStatusDetails = null;
+    private DetachIpStatusEventDetails detachIpStatusDetails;
 
     @JsonProperty("disable_se_migrate_details")
     @JsonInclude(Include.NON_NULL)
-    private DisableSeMigrateEventDetails disableSeMigrateDetails = null;
+    private DisableSeMigrateEventDetails disableSeMigrateDetails;
 
     @JsonProperty("disc_summary")
     @JsonInclude(Include.NON_NULL)
-    private VinfraDiscSummaryDetails discSummary = null;
+    private VinfraDiscSummaryDetails discSummary;
 
     @JsonProperty("dns_query_error")
     @JsonInclude(Include.NON_NULL)
-    private DNSQueryError dnsQueryError = null;
+    private DNSQueryError dnsQueryError;
 
     @JsonProperty("dns_sync_info")
     @JsonInclude(Include.NON_NULL)
-    private DNSVsSyncInfo dnsSyncInfo = null;
+    private DNSVsSyncInfo dnsSyncInfo;
 
     @JsonProperty("docker_ucp_details")
     @JsonInclude(Include.NON_NULL)
-    private DockerUCPSetup dockerUcpDetails = null;
+    private DockerUCPSetup dockerUcpDetails;
 
     @JsonProperty("dos_attack_event_details")
     @JsonInclude(Include.NON_NULL)
-    private DosAttackEventDetails dosAttackEventDetails = null;
+    private DosAttackEventDetails dosAttackEventDetails;
 
     @JsonProperty("false_positive_details")
     @JsonInclude(Include.NON_NULL)
-    private FalsePositiveDetails falsePositiveDetails = null;
+    private FalsePositiveDetails falsePositiveDetails;
 
     @JsonProperty("gcp_cloud_router_info")
     @JsonInclude(Include.NON_NULL)
-    private GCPCloudRouterUpdate gcpCloudRouterInfo = null;
+    private GCPCloudRouterUpdate gcpCloudRouterInfo;
 
     @JsonProperty("gcp_info")
     @JsonInclude(Include.NON_NULL)
-    private GCPSetup gcpInfo = null;
+    private GCPSetup gcpInfo;
 
     @JsonProperty("generic_audit_compliance_event_info")
     @JsonInclude(Include.NON_NULL)
-    private AuditComplianceEventInfo genericAuditComplianceEventInfo = null;
+    private AuditComplianceEventInfo genericAuditComplianceEventInfo;
 
     @JsonProperty("glb_info")
     @JsonInclude(Include.NON_NULL)
-    private GslbStatus glbInfo = null;
+    private GslbStatus glbInfo;
 
     @JsonProperty("gs_info")
     @JsonInclude(Include.NON_NULL)
-    private GslbServiceStatus gsInfo = null;
+    private GslbServiceStatus gsInfo;
 
     @JsonProperty("host_unavail_details")
     @JsonInclude(Include.NON_NULL)
-    private HostUnavailEventDetails hostUnavailDetails = null;
+    private HostUnavailEventDetails hostUnavailDetails;
 
     @JsonProperty("hs_details")
     @JsonInclude(Include.NON_NULL)
-    private HealthScoreDetails hsDetails = null;
+    private HealthScoreDetails hsDetails;
 
     @JsonProperty("ip_fail_details")
     @JsonInclude(Include.NON_NULL)
-    private RmSeIpFailEventDetails ipFailDetails = null;
+    private RmSeIpFailEventDetails ipFailDetails;
 
     @JsonProperty("ip_threat_db_event_data")
     @JsonInclude(Include.NON_NULL)
-    private IPThreatDBEventData ipThreatDbEventData = null;
+    private IPThreatDBEventData ipThreatDbEventData;
 
     @JsonProperty("license_details")
     @JsonInclude(Include.NON_NULL)
-    private LicenseDetails licenseDetails = null;
+    private LicenseDetails licenseDetails;
 
     @JsonProperty("license_expiry_details")
     @JsonInclude(Include.NON_NULL)
-    private LicenseExpiryDetails licenseExpiryDetails = null;
+    private LicenseExpiryDetails licenseExpiryDetails;
 
     @JsonProperty("license_tier_switch_details")
     @JsonInclude(Include.NON_NULL)
-    private LicenseTierSwitchDetiails licenseTierSwitchDetails = null;
+    private LicenseTierSwitchDetiails licenseTierSwitchDetails;
 
     @JsonProperty("license_transaction_details")
     @JsonInclude(Include.NON_NULL)
-    private LicenseTransactionDetails licenseTransactionDetails = null;
+    private LicenseTransactionDetails licenseTransactionDetails;
 
     @JsonProperty("log_agent_event_details")
     @JsonInclude(Include.NON_NULL)
-    private LogAgentEventDetail logAgentEventDetails = null;
+    private LogAgentEventDetail logAgentEventDetails;
 
     @JsonProperty("marathon_service_port_conflict_details")
     @JsonInclude(Include.NON_NULL)
-    private MarathonServicePortConflict marathonServicePortConflictDetails = null;
+    private MarathonServicePortConflict marathonServicePortConflictDetails;
 
     @JsonProperty("memory_balancer_info")
     @JsonInclude(Include.NON_NULL)
-    private MemoryBalancerInfo memoryBalancerInfo = null;
+    private MemoryBalancerInfo memoryBalancerInfo;
 
     @JsonProperty("mesos_infra_details")
     @JsonInclude(Include.NON_NULL)
-    private MesosSetup mesosInfraDetails = null;
+    private MesosSetup mesosInfraDetails;
 
     @JsonProperty("metric_threshold_up_details")
     @JsonInclude(Include.NON_NULL)
-    private MetricThresoldUpDetails metricThresholdUpDetails = null;
+    private MetricThresoldUpDetails metricThresholdUpDetails;
 
     @JsonProperty("metrics_db_disk_details")
     @JsonInclude(Include.NON_NULL)
-    private MetricsDbDiskEventDetails metricsDbDiskDetails = null;
+    private MetricsDbDiskEventDetails metricsDbDiskDetails;
 
     @JsonProperty("metrics_db_queue_full_details")
     @JsonInclude(Include.NON_NULL)
-    private MetricsDbQueueFullEventDetails metricsDbQueueFullDetails = null;
+    private MetricsDbQueueFullEventDetails metricsDbQueueFullDetails;
 
     @JsonProperty("metrics_db_queue_healthy_details")
     @JsonInclude(Include.NON_NULL)
-    private MetricsDbQueueHealthyEventDetails metricsDbQueueHealthyDetails = null;
+    private MetricsDbQueueHealthyEventDetails metricsDbQueueHealthyDetails;
 
     @JsonProperty("metrics_db_sync_failure_details")
     @JsonInclude(Include.NON_NULL)
-    private MetricsDbSyncFailureEventDetails metricsDbSyncFailureDetails = null;
+    private MetricsDbSyncFailureEventDetails metricsDbSyncFailureDetails;
 
     @JsonProperty("metrics_grpc_auth_failure_details")
     @JsonInclude(Include.NON_NULL)
-    private MetricsGRPCAuthFailureDetails metricsGrpcAuthFailureDetails = null;
+    private MetricsGRPCAuthFailureDetails metricsGrpcAuthFailureDetails;
 
     @JsonProperty("mgmt_nw_change_details")
     @JsonInclude(Include.NON_NULL)
-    private VinfraMgmtNwChangeDetails mgmtNwChangeDetails = null;
+    private VinfraMgmtNwChangeDetails mgmtNwChangeDetails;
 
     @JsonProperty("modify_networks_details")
     @JsonInclude(Include.NON_NULL)
-    private RmModifyNetworksEventDetails modifyNetworksDetails = null;
+    private RmModifyNetworksEventDetails modifyNetworksDetails;
 
     @JsonProperty("network_subnet_details")
     @JsonInclude(Include.NON_NULL)
-    private NetworkSubnetInfo networkSubnetDetails = null;
+    private NetworkSubnetInfo networkSubnetDetails;
 
     @JsonProperty("nsxt_endpoint_details")
     @JsonInclude(Include.NON_NULL)
-    private NsxtSIEndpointDetails nsxtEndpointDetails = null;
+    private NsxtSIEndpointDetails nsxtEndpointDetails;
 
     @JsonProperty("nsxt_img_details")
     @JsonInclude(Include.NON_NULL)
-    private NsxtImageDetails nsxtImgDetails = null;
+    private NsxtImageDetails nsxtImgDetails;
 
     @JsonProperty("nsxt_info")
     @JsonInclude(Include.NON_NULL)
-    private NsxtSetup nsxtInfo = null;
+    private NsxtSetup nsxtInfo;
 
     @JsonProperty("nsxt_policy_details")
     @JsonInclude(Include.NON_NULL)
-    private NsxtSIPolicyDetails nsxtPolicyDetails = null;
+    private NsxtSIPolicyDetails nsxtPolicyDetails;
 
     @JsonProperty("nsxt_rule_details")
     @JsonInclude(Include.NON_NULL)
-    private NsxtSIRuleDetails nsxtRuleDetails = null;
+    private NsxtSIRuleDetails nsxtRuleDetails;
 
     @JsonProperty("nsxt_service_details")
     @JsonInclude(Include.NON_NULL)
-    private NsxtSIServiceDetails nsxtServiceDetails = null;
+    private NsxtSIServiceDetails nsxtServiceDetails;
 
     @JsonProperty("nsxt_t1_seg_details")
     @JsonInclude(Include.NON_NULL)
-    private NsxtT1SegDetails nsxtT1SegDetails = null;
+    private NsxtT1SegDetails nsxtT1SegDetails;
 
     @JsonProperty("nw_subnet_clash_details")
     @JsonInclude(Include.NON_NULL)
-    private NetworkSubnetClash nwSubnetClashDetails = null;
+    private NetworkSubnetClash nwSubnetClashDetails;
 
     @JsonProperty("nw_summarized_details")
     @JsonInclude(Include.NON_NULL)
-    private SummarizedInfo nwSummarizedDetails = null;
+    private SummarizedInfo nwSummarizedDetails;
 
     @JsonProperty("oci_info")
     @JsonInclude(Include.NON_NULL)
-    private OCISetup ociInfo = null;
+    private OCISetup ociInfo;
 
     @JsonProperty("os_api_ver_check_failure")
     @JsonInclude(Include.NON_NULL)
-    private OpenStackApiVersionCheckFailure osApiVerCheckFailure = null;
+    private OpenStackApiVersionCheckFailure osApiVerCheckFailure;
 
     @JsonProperty("os_infra_details")
     @JsonInclude(Include.NON_NULL)
-    private OpenStackClusterSetup osInfraDetails = null;
+    private OpenStackClusterSetup osInfraDetails;
 
     @JsonProperty("os_ip_details")
     @JsonInclude(Include.NON_NULL)
-    private OpenStackIpChange osIpDetails = null;
+    private OpenStackIpChange osIpDetails;
 
     @JsonProperty("os_lbaudit_details")
     @JsonInclude(Include.NON_NULL)
-    private OpenStackLbProvAuditCheck osLbauditDetails = null;
+    private OpenStackLbProvAuditCheck osLbauditDetails;
 
     @JsonProperty("os_lbplugin_op_details")
     @JsonInclude(Include.NON_NULL)
-    private OpenStackLbPluginOp osLbpluginOpDetails = null;
+    private OpenStackLbPluginOp osLbpluginOpDetails;
 
     @JsonProperty("os_se_vm_details")
     @JsonInclude(Include.NON_NULL)
-    private OpenStackSeVmChange osSeVmDetails = null;
+    private OpenStackSeVmChange osSeVmDetails;
 
     @JsonProperty("os_sync_services_details")
     @JsonInclude(Include.NON_NULL)
-    private OpenStackSyncServices osSyncServicesDetails = null;
+    private OpenStackSyncServices osSyncServicesDetails;
 
     @JsonProperty("os_vnic_details")
     @JsonInclude(Include.NON_NULL)
-    private OpenStackVnicChange osVnicDetails = null;
+    private OpenStackVnicChange osVnicDetails;
 
     @JsonProperty("pkiprofile_details")
     @JsonInclude(Include.NON_NULL)
-    private PKIProfileDetails pkiprofileDetails = null;
+    private PKIProfileDetails pkiprofileDetails;
 
     @JsonProperty("pool_deployment_failure_info")
     @JsonInclude(Include.NON_NULL)
-    private PoolDeploymentFailureInfo poolDeploymentFailureInfo = null;
+    private PoolDeploymentFailureInfo poolDeploymentFailureInfo;
 
     @JsonProperty("pool_deployment_success_info")
     @JsonInclude(Include.NON_NULL)
-    private PoolDeploymentSuccessInfo poolDeploymentSuccessInfo = null;
+    private PoolDeploymentSuccessInfo poolDeploymentSuccessInfo;
 
     @JsonProperty("pool_deployment_update_info")
     @JsonInclude(Include.NON_NULL)
-    private PoolDeploymentUpdateInfo poolDeploymentUpdateInfo = null;
+    private PoolDeploymentUpdateInfo poolDeploymentUpdateInfo;
 
     @JsonProperty("pool_server_delete_details")
     @JsonInclude(Include.NON_NULL)
-    private VinfraPoolServerDeleteDetails poolServerDeleteDetails = null;
+    private VinfraPoolServerDeleteDetails poolServerDeleteDetails;
 
     @JsonProperty("psm_program_details")
     @JsonInclude(Include.NON_NULL)
-    private PsmProgramDetails psmProgramDetails = null;
+    private PsmProgramDetails psmProgramDetails;
 
     @JsonProperty("rate_limiter_event_details")
     @JsonInclude(Include.NON_NULL)
-    private RateLimiterEventDetails rateLimiterEventDetails = null;
+    private RateLimiterEventDetails rateLimiterEventDetails;
 
     @JsonProperty("rebalance_migrate_details")
     @JsonInclude(Include.NON_NULL)
-    private RebalanceMigrateEventDetails rebalanceMigrateDetails = null;
+    private RebalanceMigrateEventDetails rebalanceMigrateDetails;
 
     @JsonProperty("rebalance_scalein_details")
     @JsonInclude(Include.NON_NULL)
-    private RebalanceScaleinEventDetails rebalanceScaleinDetails = null;
+    private RebalanceScaleinEventDetails rebalanceScaleinDetails;
 
     @JsonProperty("rebalance_scaleout_details")
     @JsonInclude(Include.NON_NULL)
-    private RebalanceScaleoutEventDetails rebalanceScaleoutDetails = null;
+    private RebalanceScaleoutEventDetails rebalanceScaleoutDetails;
 
     @JsonProperty("reboot_se_details")
     @JsonInclude(Include.NON_NULL)
-    private RmRebootSeEventDetails rebootSeDetails = null;
+    private RmRebootSeEventDetails rebootSeDetails;
 
     @JsonProperty("saml_metadata_failed_events")
     @JsonInclude(Include.NON_NULL)
-    private SamlMetadataUpdateFailedDetails samlMetadataFailedEvents = null;
+    private SamlMetadataUpdateFailedDetails samlMetadataFailedEvents;
 
     @JsonProperty("scheduler_action_info")
     @JsonInclude(Include.NON_NULL)
-    private SchedulerActionDetails schedulerActionInfo = null;
+    private SchedulerActionDetails schedulerActionInfo;
 
     @JsonProperty("se_bgp_peer_down_details")
     @JsonInclude(Include.NON_NULL)
-    private SeBgpPeerDownDetails seBgpPeerDownDetails = null;
+    private SeBgpPeerDownDetails seBgpPeerDownDetails;
 
     @JsonProperty("se_bgp_peer_state_change_details")
     @JsonInclude(Include.NON_NULL)
-    private SeBgpPeerStateChangeDetails seBgpPeerStateChangeDetails = null;
+    private SeBgpPeerStateChangeDetails seBgpPeerStateChangeDetails;
 
     @JsonProperty("se_debug_mode_event_detail")
     @JsonInclude(Include.NON_NULL)
-    private SeDebugModeEventDetail seDebugModeEventDetail = null;
+    private SeDebugModeEventDetail seDebugModeEventDetail;
 
     @JsonProperty("se_details")
     @JsonInclude(Include.NON_NULL)
-    private SeMgrEventDetails seDetails = null;
+    private SeMgrEventDetails seDetails;
 
     @JsonProperty("se_discontinuous_time_change_event_details")
     @JsonInclude(Include.NON_NULL)
-    private SeDiscontinuousTimeChangeEventDetails seDiscontinuousTimeChangeEventDetails = null;
+    private SeDiscontinuousTimeChangeEventDetails seDiscontinuousTimeChangeEventDetails;
 
     @JsonProperty("se_dupip_event_details")
     @JsonInclude(Include.NON_NULL)
-    private SeDupipEventDetails seDupipEventDetails = null;
+    private SeDupipEventDetails seDupipEventDetails;
 
     @JsonProperty("se_gateway_heartbeat_failed_details")
     @JsonInclude(Include.NON_NULL)
-    private SeGatewayHeartbeatFailedDetails seGatewayHeartbeatFailedDetails = null;
+    private SeGatewayHeartbeatFailedDetails seGatewayHeartbeatFailedDetails;
 
     @JsonProperty("se_gateway_heartbeat_success_details")
     @JsonInclude(Include.NON_NULL)
-    private SeGatewayHeartbeatSuccessDetails seGatewayHeartbeatSuccessDetails = null;
+    private SeGatewayHeartbeatSuccessDetails seGatewayHeartbeatSuccessDetails;
 
     @JsonProperty("se_geo_db_details")
     @JsonInclude(Include.NON_NULL)
-    private SeGeoDbDetails seGeoDbDetails = null;
+    private SeGeoDbDetails seGeoDbDetails;
 
     @JsonProperty("se_hb_event_details")
     @JsonInclude(Include.NON_NULL)
-    private SeHBEventDetails seHbEventDetails = null;
+    private SeHBEventDetails seHbEventDetails;
 
     @JsonProperty("se_hb_recovered_event_details")
     @JsonInclude(Include.NON_NULL)
-    private SeHbRecoveredEventDetails seHbRecoveredEventDetails = null;
+    private SeHbRecoveredEventDetails seHbRecoveredEventDetails;
 
     @JsonProperty("se_high_egress_proc_latency_event_details")
     @JsonInclude(Include.NON_NULL)
-    private SeHighEgressProcLatencyEventDetails seHighEgressProcLatencyEventDetails = null;
+    private SeHighEgressProcLatencyEventDetails seHighEgressProcLatencyEventDetails;
 
     @JsonProperty("se_high_ingress_proc_latency_event_details")
     @JsonInclude(Include.NON_NULL)
-    private SeHighIngressProcLatencyEventDetails seHighIngressProcLatencyEventDetails = null;
+    private SeHighIngressProcLatencyEventDetails seHighIngressProcLatencyEventDetails;
 
     @JsonProperty("se_hm_gs_details")
     @JsonInclude(Include.NON_NULL)
-    private SeHmEventGSDetails seHmGsDetails = null;
+    private SeHmEventGSDetails seHmGsDetails;
 
     @JsonProperty("se_hm_gsgroup_details")
     @JsonInclude(Include.NON_NULL)
-    private SeHmEventGslbPoolDetails seHmGsgroupDetails = null;
+    private SeHmEventGslbPoolDetails seHmGsgroupDetails;
 
     @JsonProperty("se_hm_pool_details")
     @JsonInclude(Include.NON_NULL)
-    private SeHmEventPoolDetails seHmPoolDetails = null;
+    private SeHmEventPoolDetails seHmPoolDetails;
 
     @JsonProperty("se_hm_vs_details")
     @JsonInclude(Include.NON_NULL)
-    private SeHmEventVsDetails seHmVsDetails = null;
+    private SeHmEventVsDetails seHmVsDetails;
 
     @JsonProperty("se_ip6_dad_failed_event_details")
     @JsonInclude(Include.NON_NULL)
-    private SeIP6DadFailedEventDetails seIp6DadFailedEventDetails = null;
+    private SeIP6DadFailedEventDetails seIp6DadFailedEventDetails;
 
     @JsonProperty("se_ip_added_event_details")
     @JsonInclude(Include.NON_NULL)
-    private SeIpAddedEventDetails seIpAddedEventDetails = null;
+    private SeIpAddedEventDetails seIpAddedEventDetails;
 
     @JsonProperty("se_ip_removed_event_details")
     @JsonInclude(Include.NON_NULL)
-    private SeIpRemovedEventDetails seIpRemovedEventDetails = null;
+    private SeIpRemovedEventDetails seIpRemovedEventDetails;
 
     @JsonProperty("se_ipfailure_event_details")
     @JsonInclude(Include.NON_NULL)
-    private SeIpfailureEventDetails seIpfailureEventDetails = null;
+    private SeIpfailureEventDetails seIpfailureEventDetails;
 
     @JsonProperty("se_licensed_bandwdith_exceeded_event_details")
     @JsonInclude(Include.NON_NULL)
-    private SeLicensedBandwdithExceededEventDetails seLicensedBandwdithExceededEventDetails = null;
+    private SeLicensedBandwdithExceededEventDetails seLicensedBandwdithExceededEventDetails;
 
     @JsonProperty("se_memory_limit_event_details")
     @JsonInclude(Include.NON_NULL)
-    private SeMemoryLimitEventDetails seMemoryLimitEventDetails = null;
+    private SeMemoryLimitEventDetails seMemoryLimitEventDetails;
 
     @JsonProperty("se_ntp_synchronization_failed")
     @JsonInclude(Include.NON_NULL)
-    private SeNtpSynchronizationFailed seNtpSynchronizationFailed = null;
+    private SeNtpSynchronizationFailed seNtpSynchronizationFailed;
 
     @JsonProperty("se_objsync_peer_down_details")
     @JsonInclude(Include.NON_NULL)
-    private SeObjsyncPeerDownDetails seObjsyncPeerDownDetails = null;
+    private SeObjsyncPeerDownDetails seObjsyncPeerDownDetails;
 
     @JsonProperty("se_persistence_details")
     @JsonInclude(Include.NON_NULL)
-    private SePersistenceEventDetails sePersistenceDetails = null;
+    private SePersistenceEventDetails sePersistenceDetails;
 
     @JsonProperty("se_pool_lb_details")
     @JsonInclude(Include.NON_NULL)
-    private SePoolLbEventDetails sePoolLbDetails = null;
+    private SePoolLbEventDetails sePoolLbDetails;
 
     @JsonProperty("se_reconcile_details")
     @JsonInclude(Include.NON_NULL)
-    private SeReconcileDetails seReconcileDetails = null;
+    private SeReconcileDetails seReconcileDetails;
 
     @JsonProperty("se_thresh_event_details")
     @JsonInclude(Include.NON_NULL)
-    private SeThreshEventDetails seThreshEventDetails = null;
+    private SeThreshEventDetails seThreshEventDetails;
 
     @JsonProperty("se_vnic_down_event_details")
     @JsonInclude(Include.NON_NULL)
-    private SeVnicDownEventDetails seVnicDownEventDetails = null;
+    private SeVnicDownEventDetails seVnicDownEventDetails;
 
     @JsonProperty("se_vnic_tx_queue_stall_event_details")
     @JsonInclude(Include.NON_NULL)
-    private SeVnicTxQueueStallEventDetails seVnicTxQueueStallEventDetails = null;
+    private SeVnicTxQueueStallEventDetails seVnicTxQueueStallEventDetails;
 
     @JsonProperty("se_vnic_up_event_details")
     @JsonInclude(Include.NON_NULL)
-    private SeVnicUpEventDetails seVnicUpEventDetails = null;
+    private SeVnicUpEventDetails seVnicUpEventDetails;
 
     @JsonProperty("se_vs_del_flows_disrupted")
     @JsonInclude(Include.NON_NULL)
-    private SeVsDelFlowsDisrupted seVsDelFlowsDisrupted = null;
+    private SeVsDelFlowsDisrupted seVsDelFlowsDisrupted;
 
     @JsonProperty("se_vs_fault_event_details")
     @JsonInclude(Include.NON_NULL)
-    private SeVsFaultEventDetails seVsFaultEventDetails = null;
+    private SeVsFaultEventDetails seVsFaultEventDetails;
 
     @JsonProperty("se_vs_pkt_buf_high_event_details")
     @JsonInclude(Include.NON_NULL)
-    private SeVsPktBufHighEventDetails seVsPktBufHighEventDetails = null;
+    private SeVsPktBufHighEventDetails seVsPktBufHighEventDetails;
 
     @JsonProperty("sec_mgr_data_event")
     @JsonInclude(Include.NON_NULL)
-    private SecMgrDataEvent secMgrDataEvent = null;
+    private SecMgrDataEvent secMgrDataEvent;
 
     @JsonProperty("sec_mgr_ua_event_details")
     @JsonInclude(Include.NON_NULL)
-    private SecMgrUAEventDetails secMgrUaEventDetails = null;
+    private SecMgrUAEventDetails secMgrUaEventDetails;
 
     @JsonProperty("secure_key_exchange_info")
     @JsonInclude(Include.NON_NULL)
-    private SecureKeyExchangeDetails secureKeyExchangeInfo = null;
+    private SecureKeyExchangeDetails secureKeyExchangeInfo;
 
     @JsonProperty("semigrate_event_details")
     @JsonInclude(Include.NON_NULL)
-    private SeMigrateEventDetails semigrateEventDetails = null;
+    private SeMigrateEventDetails semigrateEventDetails;
 
     @JsonProperty("server_autoscale_failed_info")
     @JsonInclude(Include.NON_NULL)
-    private ServerAutoScaleFailedInfo serverAutoscaleFailedInfo = null;
+    private ServerAutoScaleFailedInfo serverAutoscaleFailedInfo;
 
     @JsonProperty("server_autoscalein_complete_info")
     @JsonInclude(Include.NON_NULL)
-    private ServerAutoScaleInCompleteInfo serverAutoscaleinCompleteInfo = null;
+    private ServerAutoScaleInCompleteInfo serverAutoscaleinCompleteInfo;
 
     @JsonProperty("server_autoscalein_info")
     @JsonInclude(Include.NON_NULL)
-    private ServerAutoScaleInInfo serverAutoscaleinInfo = null;
+    private ServerAutoScaleInInfo serverAutoscaleinInfo;
 
     @JsonProperty("server_autoscaleout_complete_info")
     @JsonInclude(Include.NON_NULL)
-    private ServerAutoScaleOutCompleteInfo serverAutoscaleoutCompleteInfo = null;
+    private ServerAutoScaleOutCompleteInfo serverAutoscaleoutCompleteInfo;
 
     @JsonProperty("server_autoscaleout_info")
     @JsonInclude(Include.NON_NULL)
-    private ServerAutoScaleOutInfo serverAutoscaleoutInfo = null;
+    private ServerAutoScaleOutInfo serverAutoscaleoutInfo;
 
     @JsonProperty("seupgrade_disrupted_details")
     @JsonInclude(Include.NON_NULL)
-    private SeUpgradeVsDisruptedEventDetails seupgradeDisruptedDetails = null;
+    private SeUpgradeVsDisruptedEventDetails seupgradeDisruptedDetails;
 
     @JsonProperty("seupgrade_event_details")
     @JsonInclude(Include.NON_NULL)
-    private SeUpgradeEventDetails seupgradeEventDetails = null;
+    private SeUpgradeEventDetails seupgradeEventDetails;
 
     @JsonProperty("seupgrade_migrate_details")
     @JsonInclude(Include.NON_NULL)
-    private SeUpgradeMigrateEventDetails seupgradeMigrateDetails = null;
+    private SeUpgradeMigrateEventDetails seupgradeMigrateDetails;
 
     @JsonProperty("seupgrade_scalein_details")
     @JsonInclude(Include.NON_NULL)
-    private SeUpgradeScaleinEventDetails seupgradeScaleinDetails = null;
+    private SeUpgradeScaleinEventDetails seupgradeScaleinDetails;
 
     @JsonProperty("seupgrade_scaleout_details")
     @JsonInclude(Include.NON_NULL)
-    private SeUpgradeScaleoutEventDetails seupgradeScaleoutDetails = null;
+    private SeUpgradeScaleoutEventDetails seupgradeScaleoutDetails;
 
     @JsonProperty("spawn_se_details")
     @JsonInclude(Include.NON_NULL)
-    private RmSpawnSeEventDetails spawnSeDetails = null;
+    private RmSpawnSeEventDetails spawnSeDetails;
 
     @JsonProperty("ssl_expire_details")
     @JsonInclude(Include.NON_NULL)
-    private SSLExpireDetails sslExpireDetails = null;
+    private SSLExpireDetails sslExpireDetails;
 
     @JsonProperty("ssl_export_details")
     @JsonInclude(Include.NON_NULL)
-    private SSLExportDetails sslExportDetails = null;
+    private SSLExportDetails sslExportDetails;
 
     @JsonProperty("ssl_ignored_details")
     @JsonInclude(Include.NON_NULL)
-    private SSLIgnoredDetails sslIgnoredDetails = null;
+    private SSLIgnoredDetails sslIgnoredDetails;
 
     @JsonProperty("ssl_renew_details")
     @JsonInclude(Include.NON_NULL)
-    private SSLRenewDetails sslRenewDetails = null;
+    private SSLRenewDetails sslRenewDetails;
 
     @JsonProperty("ssl_renew_failed_details")
     @JsonInclude(Include.NON_NULL)
-    private SSLRenewFailedDetails sslRenewFailedDetails = null;
+    private SSLRenewFailedDetails sslRenewFailedDetails;
 
     @JsonProperty("ssl_revoked_details")
     @JsonInclude(Include.NON_NULL)
-    private SSLRevokedDetails sslRevokedDetails = null;
+    private SSLRevokedDetails sslRevokedDetails;
 
     @JsonProperty("switchover_details")
     @JsonInclude(Include.NON_NULL)
-    private SwitchoverEventDetails switchoverDetails = null;
+    private SwitchoverEventDetails switchoverDetails;
 
     @JsonProperty("switchover_fail_details")
     @JsonInclude(Include.NON_NULL)
-    private SwitchoverFailEventDetails switchoverFailDetails = null;
+    private SwitchoverFailEventDetails switchoverFailDetails;
 
     @JsonProperty("sync_services_info")
     @JsonInclude(Include.NON_NULL)
-    private CloudSyncServices syncServicesInfo = null;
+    private CloudSyncServices syncServicesInfo;
 
     @JsonProperty("tencent_info")
     @JsonInclude(Include.NON_NULL)
-    private TencentSetup tencentInfo = null;
+    private TencentSetup tencentInfo;
 
     @JsonProperty("unbind_vs_se_details")
     @JsonInclude(Include.NON_NULL)
-    private RmUnbindVsSeEventDetails unbindVsSeDetails = null;
+    private RmUnbindVsSeEventDetails unbindVsSeDetails;
 
     @JsonProperty("upgrade_entry")
     @JsonInclude(Include.NON_NULL)
-    private UpgradeOpsEntry upgradeEntry = null;
+    private UpgradeOpsEntry upgradeEntry;
 
     @JsonProperty("upgrade_status_info")
     @JsonInclude(Include.NON_NULL)
-    private UpgradeStatusInfo upgradeStatusInfo = null;
+    private UpgradeStatusInfo upgradeStatusInfo;
 
     @JsonProperty("vca_infra_details")
     @JsonInclude(Include.NON_NULL)
-    private VCASetup vcaInfraDetails = null;
+    private VCASetup vcaInfraDetails;
 
     @JsonProperty("vcenter_cloud_delete_details")
     @JsonInclude(Include.NON_NULL)
-    private VcenterCloudDeleteDetails vcenterCloudDeleteDetails = null;
+    private VcenterCloudDeleteDetails vcenterCloudDeleteDetails;
 
     @JsonProperty("vcenter_cluster_details")
     @JsonInclude(Include.NON_NULL)
-    private VcenterClusterDetails vcenterClusterDetails = null;
+    private VcenterClusterDetails vcenterClusterDetails;
 
     @JsonProperty("vcenter_connectivity_status")
     @JsonInclude(Include.NON_NULL)
-    private VinfraVcenterConnectivityStatus vcenterConnectivityStatus = null;
+    private VinfraVcenterConnectivityStatus vcenterConnectivityStatus;
 
     @JsonProperty("vcenter_details")
     @JsonInclude(Include.NON_NULL)
-    private VinfraVcenterBadCredentials vcenterDetails = null;
+    private VinfraVcenterBadCredentials vcenterDetails;
 
     @JsonProperty("vcenter_disc_failure")
     @JsonInclude(Include.NON_NULL)
-    private VinfraVcenterDiscoveryFailure vcenterDiscFailure = null;
+    private VinfraVcenterDiscoveryFailure vcenterDiscFailure;
 
     @JsonProperty("vcenter_img_details")
     @JsonInclude(Include.NON_NULL)
-    private VcenterImageDetails vcenterImgDetails = null;
+    private VcenterImageDetails vcenterImgDetails;
 
     @JsonProperty("vcenter_network_limit")
     @JsonInclude(Include.NON_NULL)
-    private VinfraVcenterNetworkLimit vcenterNetworkLimit = null;
+    private VinfraVcenterNetworkLimit vcenterNetworkLimit;
 
     @JsonProperty("vcenter_obj_delete_details")
     @JsonInclude(Include.NON_NULL)
-    private VinfraVcenterObjDeleteDetails vcenterObjDeleteDetails = null;
+    private VinfraVcenterObjDeleteDetails vcenterObjDeleteDetails;
 
     @JsonProperty("vcenter_tag_event_details")
     @JsonInclude(Include.NON_NULL)
-    private VcenterTagEventDetails vcenterTagEventDetails = null;
+    private VcenterTagEventDetails vcenterTagEventDetails;
 
     @JsonProperty("vip_autoscale")
     @JsonInclude(Include.NON_NULL)
-    private VipScaleDetails vipAutoscale = null;
+    private VipScaleDetails vipAutoscale;
 
     @JsonProperty("vip_dns_info")
     @JsonInclude(Include.NON_NULL)
-    private DNSRegisterInfo vipDnsInfo = null;
+    private DNSRegisterInfo vipDnsInfo;
 
     @JsonProperty("vip_symmetry_details")
     @JsonInclude(Include.NON_NULL)
-    private VipSymmetryDetails vipSymmetryDetails = null;
+    private VipSymmetryDetails vipSymmetryDetails;
 
     @JsonProperty("vm_details")
     @JsonInclude(Include.NON_NULL)
-    private VinfraVmDetails vmDetails = null;
+    private VinfraVmDetails vmDetails;
 
     @JsonProperty("vs_awaitingse_details")
     @JsonInclude(Include.NON_NULL)
-    private VsAwaitingSeEventDetails vsAwaitingseDetails = null;
+    private VsAwaitingSeEventDetails vsAwaitingseDetails;
 
     @JsonProperty("vs_error_details")
     @JsonInclude(Include.NON_NULL)
-    private VsErrorEventDetails vsErrorDetails = null;
+    private VsErrorEventDetails vsErrorDetails;
 
     @JsonProperty("vs_fsm_details")
     @JsonInclude(Include.NON_NULL)
-    private VsFsmEventDetails vsFsmDetails = null;
+    private VsFsmEventDetails vsFsmDetails;
 
     @JsonProperty("vs_initialplacement_details")
     @JsonInclude(Include.NON_NULL)
-    private VsInitialPlacementEventDetails vsInitialplacementDetails = null;
+    private VsInitialPlacementEventDetails vsInitialplacementDetails;
 
     @JsonProperty("vs_migrate_details")
     @JsonInclude(Include.NON_NULL)
-    private VsMigrateEventDetails vsMigrateDetails = null;
+    private VsMigrateEventDetails vsMigrateDetails;
 
     @JsonProperty("vs_pool_nw_fltr_details")
     @JsonInclude(Include.NON_NULL)
-    private VsPoolNwFilterEventDetails vsPoolNwFltrDetails = null;
+    private VsPoolNwFilterEventDetails vsPoolNwFltrDetails;
 
     @JsonProperty("vs_scalein_details")
     @JsonInclude(Include.NON_NULL)
-    private VsScaleInEventDetails vsScaleinDetails = null;
+    private VsScaleInEventDetails vsScaleinDetails;
 
     @JsonProperty("vs_scaleout_details")
     @JsonInclude(Include.NON_NULL)
-    private VsScaleOutEventDetails vsScaleoutDetails = null;
+    private VsScaleOutEventDetails vsScaleoutDetails;
 
     @JsonProperty("vs_switchover_details")
     @JsonInclude(Include.NON_NULL)
-    private VsSwitchoverEventDetails vsSwitchoverDetails = null;
+    private VsSwitchoverEventDetails vsSwitchoverDetails;
 
 
 

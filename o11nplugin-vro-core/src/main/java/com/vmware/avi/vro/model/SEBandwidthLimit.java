@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class SEBandwidthLimit extends AviRestResource {
     @JsonProperty("count")
     @JsonInclude(Include.NON_NULL)
-    private Integer count = null;
+    private Integer count;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
 
 

@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class LinuxServerConfiguration extends AviRestResource {
     @JsonProperty("hosts")
     @JsonInclude(Include.NON_NULL)
-    private List<LinuxServerHost> hosts = null;
+    private List<LinuxServerHost> hosts;
 
     @JsonProperty("se_inband_mgmt")
     @JsonInclude(Include.NON_NULL)
@@ -34,7 +34,7 @@ public class LinuxServerConfiguration extends AviRestResource {
 
     @JsonProperty("se_log_disk_path")
     @JsonInclude(Include.NON_NULL)
-    private String seLogDiskPath = null;
+    private String seLogDiskPath;
 
     @JsonProperty("se_log_disk_size_GB")
     @JsonInclude(Include.NON_NULL)
@@ -42,7 +42,7 @@ public class LinuxServerConfiguration extends AviRestResource {
 
     @JsonProperty("se_sys_disk_path")
     @JsonInclude(Include.NON_NULL)
-    private String seSysDiskPath = null;
+    private String seSysDiskPath;
 
     @JsonProperty("se_sys_disk_size_GB")
     @JsonInclude(Include.NON_NULL)
@@ -50,7 +50,7 @@ public class LinuxServerConfiguration extends AviRestResource {
 
     @JsonProperty("ssh_user_ref")
     @JsonInclude(Include.NON_NULL)
-    private String sshUserRef = null;
+    private String sshUserRef;
 
 
 

@@ -27,11 +27,11 @@ import org.springframework.stereotype.Service;
 public class GslbDnsGsStatus extends AviRestResource {
     @JsonProperty("last_changed_time")
     @JsonInclude(Include.NON_NULL)
-    private TimeStamp lastChangedTime = null;
+    private TimeStamp lastChangedTime;
 
     @JsonProperty("num_partial_updates")
     @JsonInclude(Include.NON_NULL)
-    private Integer numPartialUpdates = null;
+    private Integer numPartialUpdates;
 
     @JsonProperty("partial_update_threshold")
     @JsonInclude(Include.NON_NULL)
@@ -39,11 +39,11 @@ public class GslbDnsGsStatus extends AviRestResource {
 
     @JsonProperty("state")
     @JsonInclude(Include.NON_NULL)
-    private String state = null;
+    private String state;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
 
 

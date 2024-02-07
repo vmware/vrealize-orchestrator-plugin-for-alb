@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class GeoDB extends AviRestResource {
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("files")
     @JsonInclude(Include.NON_NULL)
-    private List<GeoDBFile> files = null;
+    private List<GeoDBFile> files;
 
     @JsonProperty("is_federated")
     @JsonInclude(Include.NON_NULL)
@@ -38,15 +38,15 @@ public class GeoDB extends AviRestResource {
 
     @JsonProperty("mappings")
     @JsonInclude(Include.NON_NULL)
-    private List<GeoDBMapping> mappings = null;
+    private List<GeoDBMapping> mappings;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -54,7 +54,7 @@ public class GeoDB extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

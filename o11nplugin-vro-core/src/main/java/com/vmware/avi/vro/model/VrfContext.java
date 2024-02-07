@@ -30,35 +30,35 @@ import org.springframework.stereotype.Service;
 public class VrfContext extends AviRestResource {
     @JsonProperty("attrs")
     @JsonInclude(Include.NON_NULL)
-    private List<KeyValue> attrs = null;
+    private List<KeyValue> attrs;
 
     @JsonProperty("bfd_profile")
     @JsonInclude(Include.NON_NULL)
-    private BfdProfile bfdProfile = null;
+    private BfdProfile bfdProfile;
 
     @JsonProperty("bgp_profile")
     @JsonInclude(Include.NON_NULL)
-    private BgpProfile bgpProfile = null;
+    private BgpProfile bgpProfile;
 
     @JsonProperty("cloud_ref")
     @JsonInclude(Include.NON_NULL)
-    private String cloudRef = null;
+    private String cloudRef;
 
     @JsonProperty("debugvrfcontext")
     @JsonInclude(Include.NON_NULL)
-    private DebugVrfContext debugvrfcontext = null;
+    private DebugVrfContext debugvrfcontext;
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("gateway_mon")
     @JsonInclude(Include.NON_NULL)
-    private List<GatewayMonitor> gatewayMon = null;
+    private List<GatewayMonitor> gatewayMon;
 
     @JsonProperty("internal_gateway_monitor")
     @JsonInclude(Include.NON_NULL)
-    private InternalGatewayMonitor internalGatewayMonitor = null;
+    private InternalGatewayMonitor internalGatewayMonitor;
 
     @JsonProperty("lldp_enable")
     @JsonInclude(Include.NON_NULL)
@@ -66,15 +66,15 @@ public class VrfContext extends AviRestResource {
 
     @JsonProperty("markers")
     @JsonInclude(Include.NON_NULL)
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("static_routes")
     @JsonInclude(Include.NON_NULL)
-    private List<StaticRoute> staticRoutes = null;
+    private List<StaticRoute> staticRoutes;
 
     @JsonProperty("system_default")
     @JsonInclude(Include.NON_NULL)
@@ -82,7 +82,7 @@ public class VrfContext extends AviRestResource {
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -90,7 +90,7 @@ public class VrfContext extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

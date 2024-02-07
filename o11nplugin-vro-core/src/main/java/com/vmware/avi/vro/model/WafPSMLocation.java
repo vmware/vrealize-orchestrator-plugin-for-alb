@@ -27,23 +27,23 @@ import org.springframework.stereotype.Service;
 public class WafPSMLocation extends AviRestResource {
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("index")
     @JsonInclude(Include.NON_NULL)
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("match")
     @JsonInclude(Include.NON_NULL)
-    private WafPSMLocationMatch match = null;
+    private WafPSMLocationMatch match;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("rules")
     @JsonInclude(Include.NON_NULL)
-    private List<WafPSMRule> rules = null;
+    private List<WafPSMRule> rules;
 
 
 

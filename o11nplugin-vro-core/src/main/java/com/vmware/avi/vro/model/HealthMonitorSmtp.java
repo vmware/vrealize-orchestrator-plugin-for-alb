@@ -27,23 +27,23 @@ import org.springframework.stereotype.Service;
 public class HealthMonitorSmtp extends AviRestResource {
     @JsonProperty("domainname")
     @JsonInclude(Include.NON_NULL)
-    private String domainname = null;
+    private String domainname;
 
     @JsonProperty("mail_data")
     @JsonInclude(Include.NON_NULL)
-    private String mailData = null;
+    private String mailData;
 
     @JsonProperty("recipients_ids")
     @JsonInclude(Include.NON_NULL)
-    private List<String> recipientsIds = null;
+    private List<String> recipientsIds;
 
     @JsonProperty("sender_id")
     @JsonInclude(Include.NON_NULL)
-    private String senderId = null;
+    private String senderId;
 
     @JsonProperty("ssl_attributes")
     @JsonInclude(Include.NON_NULL)
-    private HealthMonitorSSLAttributes sslAttributes = null;
+    private HealthMonitorSSLAttributes sslAttributes;
 
 
 

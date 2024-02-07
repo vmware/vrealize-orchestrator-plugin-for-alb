@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class ClientLogStreamingFormat extends AviRestResource {
     @JsonProperty("format")
     @JsonInclude(Include.NON_NULL)
-    private String format = null;
+    private String format;
 
     @JsonProperty("included_fields")
     @JsonInclude(Include.NON_NULL)
-    private List<String> includedFields = null;
+    private List<String> includedFields;
 
 
 

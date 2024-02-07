@@ -26,43 +26,43 @@ import org.springframework.stereotype.Service;
 public class SecureKeyExchangeDetails extends AviRestResource {
     @JsonProperty("ctlr_mgmt_ip")
     @JsonInclude(Include.NON_NULL)
-    private String ctlrMgmtIp = null;
+    private String ctlrMgmtIp;
 
     @JsonProperty("ctlr_public_ip")
     @JsonInclude(Include.NON_NULL)
-    private String ctlrPublicIp = null;
+    private String ctlrPublicIp;
 
     @JsonProperty("error")
     @JsonInclude(Include.NON_NULL)
-    private String error = null;
+    private String error;
 
     @JsonProperty("follower_ip")
     @JsonInclude(Include.NON_NULL)
-    private String followerIp = null;
+    private String followerIp;
 
     @JsonProperty("leader_ip")
     @JsonInclude(Include.NON_NULL)
-    private String leaderIp = null;
+    private String leaderIp;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("se_ip")
     @JsonInclude(Include.NON_NULL)
-    private String seIp = null;
+    private String seIp;
 
     @JsonProperty("source_ip")
     @JsonInclude(Include.NON_NULL)
-    private String sourceIp = null;
+    private String sourceIp;
 
     @JsonProperty("status")
     @JsonInclude(Include.NON_NULL)
-    private String status = null;
+    private String status;
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

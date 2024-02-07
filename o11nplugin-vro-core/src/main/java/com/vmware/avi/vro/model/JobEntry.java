@@ -26,23 +26,23 @@ import org.springframework.stereotype.Service;
 public class JobEntry extends AviRestResource {
     @JsonProperty("expires_at")
     @JsonInclude(Include.NON_NULL)
-    private String expiresAt = null;
+    private String expiresAt;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("obj_key")
     @JsonInclude(Include.NON_NULL)
-    private String objKey = null;
+    private String objKey;
 
     @JsonProperty("subjobs")
     @JsonInclude(Include.NON_NULL)
-    private List<SubJob> subjobs = null;
+    private List<SubJob> subjobs;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -50,7 +50,7 @@ public class JobEntry extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

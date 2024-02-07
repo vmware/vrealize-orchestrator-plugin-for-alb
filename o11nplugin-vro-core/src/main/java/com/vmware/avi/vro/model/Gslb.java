@@ -36,15 +36,15 @@ public class Gslb extends AviRestResource {
 
     @JsonProperty("client_ip_addr_group")
     @JsonInclude(Include.NON_NULL)
-    private GslbClientIpAddrGroup clientIpAddrGroup = null;
+    private GslbClientIpAddrGroup clientIpAddrGroup;
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("dns_configs")
     @JsonInclude(Include.NON_NULL)
-    private List<DNSConfig> dnsConfigs = null;
+    private List<DNSConfig> dnsConfigs;
 
     @JsonProperty("enable_config_by_members")
     @JsonInclude(Include.NON_NULL)
@@ -60,7 +60,7 @@ public class Gslb extends AviRestResource {
 
     @JsonProperty("leader_cluster_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String leaderClusterUuid = null;
+    private String leaderClusterUuid;
 
     @JsonProperty("maintenance_mode")
     @JsonInclude(Include.NON_NULL)
@@ -68,11 +68,11 @@ public class Gslb extends AviRestResource {
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("replication_policy")
     @JsonInclude(Include.NON_NULL)
-    private ReplicationPolicy replicationPolicy = null;
+    private ReplicationPolicy replicationPolicy;
 
     @JsonProperty("send_interval")
     @JsonInclude(Include.NON_NULL)
@@ -80,11 +80,11 @@ public class Gslb extends AviRestResource {
 
     @JsonProperty("sites")
     @JsonInclude(Include.NON_NULL)
-    private List<GslbSite> sites = null;
+    private List<GslbSite> sites;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("tenant_scoped")
     @JsonInclude(Include.NON_NULL)
@@ -92,7 +92,7 @@ public class Gslb extends AviRestResource {
 
     @JsonProperty("third_party_sites")
     @JsonInclude(Include.NON_NULL)
-    private List<GslbThirdPartySite> thirdPartySites = null;
+    private List<GslbThirdPartySite> thirdPartySites;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -100,7 +100,7 @@ public class Gslb extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("view_id")
     @JsonInclude(Include.NON_NULL)

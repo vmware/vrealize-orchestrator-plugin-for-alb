@@ -27,7 +27,7 @@ import org.springframework.stereotype.Service;
 public class GslbGeoDbEntry extends AviRestResource {
     @JsonProperty("file")
     @JsonInclude(Include.NON_NULL)
-    private GslbGeoDbFile file = null;
+    private GslbGeoDbFile file;
 
     @JsonProperty("priority")
     @JsonInclude(Include.NON_NULL)

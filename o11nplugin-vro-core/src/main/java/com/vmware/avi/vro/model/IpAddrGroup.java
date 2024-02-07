@@ -26,47 +26,47 @@ import org.springframework.stereotype.Service;
 public class IpAddrGroup extends AviRestResource {
     @JsonProperty("addrs")
     @JsonInclude(Include.NON_NULL)
-    private List<IpAddr> addrs = null;
+    private List<IpAddr> addrs;
 
     @JsonProperty("country_codes")
     @JsonInclude(Include.NON_NULL)
-    private List<String> countryCodes = null;
+    private List<String> countryCodes;
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("ip_ports")
     @JsonInclude(Include.NON_NULL)
-    private List<IpAddrPort> ipPorts = null;
+    private List<IpAddrPort> ipPorts;
 
     @JsonProperty("marathon_app_name")
     @JsonInclude(Include.NON_NULL)
-    private String marathonAppName = null;
+    private String marathonAppName;
 
     @JsonProperty("marathon_service_port")
     @JsonInclude(Include.NON_NULL)
-    private Integer marathonServicePort = null;
+    private Integer marathonServicePort;
 
     @JsonProperty("markers")
     @JsonInclude(Include.NON_NULL)
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("prefixes")
     @JsonInclude(Include.NON_NULL)
-    private List<IpAddrPrefix> prefixes = null;
+    private List<IpAddrPrefix> prefixes;
 
     @JsonProperty("ranges")
     @JsonInclude(Include.NON_NULL)
-    private List<IpAddrRange> ranges = null;
+    private List<IpAddrRange> ranges;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -74,7 +74,7 @@ public class IpAddrGroup extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

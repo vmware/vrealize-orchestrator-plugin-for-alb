@@ -27,15 +27,15 @@ import org.springframework.stereotype.Service;
 public class Permission extends AviRestResource {
     @JsonProperty("resource")
     @JsonInclude(Include.NON_NULL)
-    private String resource = null;
+    private String resource;
 
     @JsonProperty("subresource")
     @JsonInclude(Include.NON_NULL)
-    private SubResource subresource = null;
+    private SubResource subresource;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
 
 

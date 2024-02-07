@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class DnsRuleActionGslbSiteSelection extends AviRestResource {
     @JsonProperty("fallback_site_names")
     @JsonInclude(Include.NON_NULL)
-    private List<String> fallbackSiteNames = null;
+    private List<String> fallbackSiteNames;
 
     @JsonProperty("is_site_preferred")
     @JsonInclude(Include.NON_NULL)
@@ -34,7 +34,7 @@ public class DnsRuleActionGslbSiteSelection extends AviRestResource {
 
     @JsonProperty("site_name")
     @JsonInclude(Include.NON_NULL)
-    private String siteName = null;
+    private String siteName;
 
 
 

@@ -2,11 +2,13 @@ package com.vmware.avi.vro.model;
 
 import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.ClientInsightsSampling;
 import com.vmware.avi.vro.model.FullClientLogs;
+import com.vmware.avi.vro.model.LearningLogPolicy;
 import com.vmware.avi.vro.model.MetricsRealTimeUpdate;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
@@ -37,19 +39,22 @@ public class AnalyticsPolicy extends AviRestResource {
 
     @JsonProperty("client_insights_sampling")
     @JsonInclude(Include.NON_NULL)
-    private ClientInsightsSampling clientInsightsSampling = null;
+    private ClientInsightsSampling clientInsightsSampling;
 
     @JsonProperty("client_log_filters")
     @JsonInclude(Include.NON_NULL)
-    private List<ClientLogFilter> clientLogFilters = null;
+    private List<ClientLogFilter> clientLogFilters;
 
     @JsonProperty("full_client_logs")
     @JsonInclude(Include.NON_NULL)
-    private FullClientLogs fullClientLogs = null;
+    private FullClientLogs fullClientLogs;
+
+    @JsonIgnore
+    private LearningLogPolicy learningLogPolicy;
 
     @JsonProperty("metrics_realtime_update")
     @JsonInclude(Include.NON_NULL)
-    private MetricsRealTimeUpdate metricsRealtimeUpdate = null;
+    private MetricsRealTimeUpdate metricsRealtimeUpdate;
 
     @JsonProperty("significant_log_throttle")
     @JsonInclude(Include.NON_NULL)
@@ -197,6 +202,32 @@ public class AnalyticsPolicy extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Configuration for learning logging determining whether it's enabled and where is the destination.
+   * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return learningLogPolicy
+   */
+  @VsoMethod
+  public LearningLogPolicy getLearningLogPolicy() {
+    return learningLogPolicy;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Configuration for learning logging determining whether it's enabled and where is the destination.
+   * Field introduced in 20.1.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param learningLogPolicy set the learningLogPolicy.
+   */
+  @VsoMethod
+  public void setLearningLogPolicy(LearningLogPolicy learningLogPolicy) {
+    this.learningLogPolicy = learningLogPolicy;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Settings to turn on realtime metrics and set duration for realtime updates.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -303,7 +334,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.clientInsights, objAnalyticsPolicy.clientInsights)&&
   Objects.equals(this.metricsRealtimeUpdate, objAnalyticsPolicy.metricsRealtimeUpdate)&&
   Objects.equals(this.clientInsightsSampling, objAnalyticsPolicy.clientInsightsSampling)&&
-  Objects.equals(this.allHeaders, objAnalyticsPolicy.allHeaders);
+  Objects.equals(this.allHeaders, objAnalyticsPolicy.allHeaders)&&
+  Objects.equals(this.learningLogPolicy, objAnalyticsPolicy.learningLogPolicy);
 }
 
 @Override
@@ -315,6 +347,7 @@ public String toString() {
         sb.append("    clientInsightsSampling: ").append(toIndentedString(clientInsightsSampling)).append("\n");
         sb.append("    clientLogFilters: ").append(toIndentedString(clientLogFilters)).append("\n");
         sb.append("    fullClientLogs: ").append(toIndentedString(fullClientLogs)).append("\n");
+        sb.append("    learningLogPolicy: ").append(toIndentedString(learningLogPolicy)).append("\n");
         sb.append("    metricsRealtimeUpdate: ").append(toIndentedString(metricsRealtimeUpdate)).append("\n");
         sb.append("    significantLogThrottle: ").append(toIndentedString(significantLogThrottle)).append("\n");
         sb.append("    udfLogThrottle: ").append(toIndentedString(udfLogThrottle)).append("\n");

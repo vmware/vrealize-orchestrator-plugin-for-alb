@@ -49,27 +49,27 @@ public class DebugServiceEngine extends AviRestResource {
 
     @JsonProperty("capture")
     @JsonInclude(Include.NON_NULL)
-    private Boolean capture = null;
+    private Boolean capture;
 
     @JsonProperty("capture_filters")
     @JsonInclude(Include.NON_NULL)
-    private CaptureFilters captureFilters = null;
+    private CaptureFilters captureFilters;
 
     @JsonProperty("capture_params")
     @JsonInclude(Include.NON_NULL)
-    private DebugVirtualServiceCapture captureParams = null;
+    private DebugVirtualServiceCapture captureParams;
 
     @JsonProperty("capture_pkt_filter")
     @JsonInclude(Include.NON_NULL)
-    private CapturePacketFilter capturePktFilter = null;
+    private CapturePacketFilter capturePktFilter;
 
     @JsonProperty("cpu_shares")
     @JsonInclude(Include.NON_NULL)
-    private List<DebugSeCpuShares> cpuShares = null;
+    private List<DebugSeCpuShares> cpuShares;
 
     @JsonProperty("debug_ip")
     @JsonInclude(Include.NON_NULL)
-    private DebugIpAddr debugIp = null;
+    private DebugIpAddr debugIp;
 
     @JsonProperty("enable_kdump")
     @JsonInclude(Include.NON_NULL)
@@ -81,11 +81,11 @@ public class DebugServiceEngine extends AviRestResource {
 
     @JsonProperty("fault")
     @JsonInclude(Include.NON_NULL)
-    private DebugSeFault fault = null;
+    private DebugSeFault fault;
 
     @JsonProperty("flags")
     @JsonInclude(Include.NON_NULL)
-    private List<DebugSeDataplane> flags = null;
+    private List<DebugSeDataplane> flags;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
@@ -93,19 +93,19 @@ public class DebugServiceEngine extends AviRestResource {
 
     @JsonProperty("seagent_debug")
     @JsonInclude(Include.NON_NULL)
-    private List<DebugSeAgent> seagentDebug = null;
+    private List<DebugSeAgent> seagentDebug;
 
     @JsonProperty("selogagent_debug")
     @JsonInclude(Include.NON_NULL)
-    private DebugSeAgent selogagentDebug = null;
+    private DebugSeAgent selogagentDebug;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("trace_memory")
     @JsonInclude(Include.NON_NULL)
-    private DebugTraceMemory traceMemory = null;
+    private DebugTraceMemory traceMemory;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -113,7 +113,7 @@ public class DebugServiceEngine extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

@@ -26,27 +26,27 @@ import org.springframework.stereotype.Service;
 public class IpamDnsOpenstackProfile extends AviRestResource {
     @JsonProperty("keystone_host")
     @JsonInclude(Include.NON_NULL)
-    private String keystoneHost = null;
+    private String keystoneHost;
 
     @JsonProperty("password")
     @JsonInclude(Include.NON_NULL)
-    private String password = null;
+    private String password;
 
     @JsonProperty("region")
     @JsonInclude(Include.NON_NULL)
-    private String region = null;
+    private String region;
 
     @JsonProperty("tenant")
     @JsonInclude(Include.NON_NULL)
-    private String tenant = null;
+    private String tenant;
 
     @JsonProperty("username")
     @JsonInclude(Include.NON_NULL)
-    private String username = null;
+    private String username;
 
     @JsonProperty("vip_network_name")
     @JsonInclude(Include.NON_NULL)
-    private String vipNetworkName = null;
+    private String vipNetworkName;
 
 
 

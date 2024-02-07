@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class AwsEncryption extends AviRestResource {
     @JsonProperty("master_key")
     @JsonInclude(Include.NON_NULL)
-    private String masterKey = null;
+    private String masterKey;
 
     @JsonProperty("mode")
     @JsonInclude(Include.NON_NULL)

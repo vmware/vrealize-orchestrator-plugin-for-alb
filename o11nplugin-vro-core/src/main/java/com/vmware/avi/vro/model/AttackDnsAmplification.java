@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class AttackDnsAmplification extends AviRestResource {
     @JsonProperty("record_type")
     @JsonInclude(Include.NON_NULL)
-    private String recordType = null;
+    private String recordType;
 
     @JsonProperty("src_port")
     @JsonInclude(Include.NON_NULL)
-    private Integer srcPort = null;
+    private Integer srcPort;
 
 
 

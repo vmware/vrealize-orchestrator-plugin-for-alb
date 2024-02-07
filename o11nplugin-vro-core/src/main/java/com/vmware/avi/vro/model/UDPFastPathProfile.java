@@ -27,7 +27,7 @@ import org.springframework.stereotype.Service;
 public class UDPFastPathProfile extends AviRestResource {
     @JsonProperty("dsr_profile")
     @JsonInclude(Include.NON_NULL)
-    private DsrProfile dsrProfile = null;
+    private DsrProfile dsrProfile;
 
     @JsonProperty("per_pkt_loadbalance")
     @JsonInclude(Include.NON_NULL)

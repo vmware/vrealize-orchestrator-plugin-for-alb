@@ -26,39 +26,39 @@ import org.springframework.stereotype.Service;
 public class LicenseTransactionDetails extends AviRestResource {
     @JsonProperty("cookie")
     @JsonInclude(Include.NON_NULL)
-    private String cookie = null;
+    private String cookie;
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("id")
     @JsonInclude(Include.NON_NULL)
-    private String id = null;
+    private String id;
 
     @JsonProperty("licensed_service_cores")
     @JsonInclude(Include.NON_NULL)
-    private Float licensedServiceCores = null;
+    private Float licensedServiceCores;
 
     @JsonProperty("operation")
     @JsonInclude(Include.NON_NULL)
-    private String operation = null;
+    private String operation;
 
     @JsonProperty("overdraft")
     @JsonInclude(Include.NON_NULL)
-    private Boolean overdraft = null;
+    private Boolean overdraft;
 
     @JsonProperty("service_cores")
     @JsonInclude(Include.NON_NULL)
-    private Float serviceCores = null;
+    private Float serviceCores;
 
     @JsonProperty("tenant_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String tenantUuid = null;
+    private String tenantUuid;
 
     @JsonProperty("tier")
     @JsonInclude(Include.NON_NULL)
-    private String tier = null;
+    private String tier;
 
 
 

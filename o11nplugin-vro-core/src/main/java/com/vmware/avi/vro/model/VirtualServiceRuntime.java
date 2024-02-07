@@ -32,11 +32,11 @@ import org.springframework.stereotype.Service;
 public class VirtualServiceRuntime extends AviRestResource {
     @JsonProperty("controller_ip")
     @JsonInclude(Include.NON_NULL)
-    private String controllerIp = null;
+    private String controllerIp;
 
     @JsonProperty("datapath_debug")
     @JsonInclude(Include.NON_NULL)
-    private DebugVirtualService datapathDebug = null;
+    private DebugVirtualService datapathDebug;
 
     @JsonProperty("east_west")
     @JsonInclude(Include.NON_NULL)
@@ -44,11 +44,11 @@ public class VirtualServiceRuntime extends AviRestResource {
 
     @JsonProperty("gslb_dns_update")
     @JsonInclude(Include.NON_NULL)
-    private GslbDnsUpdate gslbDnsUpdate = null;
+    private GslbDnsUpdate gslbDnsUpdate;
 
     @JsonProperty("ipam_dns_records")
     @JsonInclude(Include.NON_NULL)
-    private List<DnsRecord> ipamDnsRecords = null;
+    private List<DnsRecord> ipamDnsRecords;
 
     @JsonProperty("is_dns_vs")
     @JsonInclude(Include.NON_NULL)
@@ -56,19 +56,19 @@ public class VirtualServiceRuntime extends AviRestResource {
 
     @JsonProperty("key_rotation_count")
     @JsonInclude(Include.NON_NULL)
-    private Integer keyRotationCount = null;
+    private Integer keyRotationCount;
 
     @JsonProperty("last_changed_time")
     @JsonInclude(Include.NON_NULL)
-    private TimeStamp lastChangedTime = null;
+    private TimeStamp lastChangedTime;
 
     @JsonProperty("last_key_rotation_time")
     @JsonInclude(Include.NON_NULL)
-    private TimeStamp lastKeyRotationTime = null;
+    private TimeStamp lastKeyRotationTime;
 
     @JsonProperty("lif")
     @JsonInclude(Include.NON_NULL)
-    private List<String> lif = null;
+    private List<String> lif;
 
     @JsonProperty("manual_placement")
     @JsonInclude(Include.NON_NULL)
@@ -80,7 +80,7 @@ public class VirtualServiceRuntime extends AviRestResource {
 
     @JsonProperty("metrics_mgr_port")
     @JsonInclude(Include.NON_NULL)
-    private String metricsMgrPort = null;
+    private String metricsMgrPort;
 
     @JsonProperty("num_additional_se")
     @JsonInclude(Include.NON_NULL)
@@ -92,23 +92,23 @@ public class VirtualServiceRuntime extends AviRestResource {
 
     @JsonProperty("prev_controller_ip")
     @JsonInclude(Include.NON_NULL)
-    private String prevControllerIp = null;
+    private String prevControllerIp;
 
     @JsonProperty("prev_metrics_mgr_port")
     @JsonInclude(Include.NON_NULL)
-    private String prevMetricsMgrPort = null;
+    private String prevMetricsMgrPort;
 
     @JsonProperty("redis_db")
     @JsonInclude(Include.NON_NULL)
-    private Integer redisDb = null;
+    private Integer redisDb;
 
     @JsonProperty("redis_port")
     @JsonInclude(Include.NON_NULL)
-    private Integer redisPort = null;
+    private Integer redisPort;
 
     @JsonProperty("sec_mgr_info")
     @JsonInclude(Include.NON_NULL)
-    private SecurityMgrRuntime secMgrInfo = null;
+    private SecurityMgrRuntime secMgrInfo;
 
     @JsonProperty("self_se_election")
     @JsonInclude(Include.NON_NULL)
@@ -116,7 +116,7 @@ public class VirtualServiceRuntime extends AviRestResource {
 
     @JsonProperty("tls_ticket_key")
     @JsonInclude(Include.NON_NULL)
-    private List<TLSTicket> tlsTicketKey = null;
+    private List<TLSTicket> tlsTicketKey;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
@@ -124,7 +124,7 @@ public class VirtualServiceRuntime extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("version")
     @JsonInclude(Include.NON_NULL)
@@ -132,15 +132,15 @@ public class VirtualServiceRuntime extends AviRestResource {
 
     @JsonProperty("vh_child_vs_ref")
     @JsonInclude(Include.NON_NULL)
-    private List<String> vhChildVsRef = null;
+    private List<String> vhChildVsRef;
 
     @JsonProperty("vip_runtime")
     @JsonInclude(Include.NON_NULL)
-    private List<VipRuntime> vipRuntime = null;
+    private List<VipRuntime> vipRuntime;
 
     @JsonProperty("vs_update_pending")
     @JsonInclude(Include.NON_NULL)
-    private VirtualService vsUpdatePending = null;
+    private VirtualService vsUpdatePending;
 
 
 

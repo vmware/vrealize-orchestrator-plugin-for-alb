@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class VcenterClusters extends AviRestResource {
     @JsonProperty("cluster_refs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> clusterRefs = null;
+    private List<String> clusterRefs;
 
     @JsonProperty("include")
     @JsonInclude(Include.NON_NULL)

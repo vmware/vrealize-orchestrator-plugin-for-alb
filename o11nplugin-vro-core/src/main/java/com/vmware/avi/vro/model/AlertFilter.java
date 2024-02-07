@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class AlertFilter extends AviRestResource {
     @JsonProperty("filter_action")
     @JsonInclude(Include.NON_NULL)
-    private String filterAction = null;
+    private String filterAction;
 
     @JsonProperty("filter_string")
     @JsonInclude(Include.NON_NULL)
-    private String filterString = null;
+    private String filterString;
 
 
 

@@ -30,11 +30,11 @@ public class AutoScaleMgrDebugFilter extends AviRestResource {
 
     @JsonProperty("intelligent_autoscale_period")
     @JsonInclude(Include.NON_NULL)
-    private Integer intelligentAutoscalePeriod = null;
+    private Integer intelligentAutoscalePeriod;
 
     @JsonProperty("pool_ref")
     @JsonInclude(Include.NON_NULL)
-    private String poolRef = null;
+    private String poolRef;
 
 
 

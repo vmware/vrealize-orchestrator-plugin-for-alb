@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class SSLRating extends AviRestResource {
     @JsonProperty("compatibility_rating")
     @JsonInclude(Include.NON_NULL)
-    private String compatibilityRating = null;
+    private String compatibilityRating;
 
     @JsonProperty("performance_rating")
     @JsonInclude(Include.NON_NULL)
-    private String performanceRating = null;
+    private String performanceRating;
 
     @JsonProperty("security_score")
     @JsonInclude(Include.NON_NULL)
-    private String securityScore = null;
+    private String securityScore;
 
 
 

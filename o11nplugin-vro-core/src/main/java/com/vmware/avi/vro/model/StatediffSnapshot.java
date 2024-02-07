@@ -28,59 +28,59 @@ import org.springframework.stereotype.Service;
 public class StatediffSnapshot extends AviRestResource {
     @JsonProperty("gslb_name")
     @JsonInclude(Include.NON_NULL)
-    private String gslbName = null;
+    private String gslbName;
 
     @JsonProperty("gslb_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String gslbUuid = null;
+    private String gslbUuid;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("pool_name")
     @JsonInclude(Include.NON_NULL)
-    private String poolName = null;
+    private String poolName;
 
     @JsonProperty("pool_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String poolUuid = null;
+    private String poolUuid;
 
     @JsonProperty("post_snapshot")
     @JsonInclude(Include.NON_NULL)
-    private postsnapshot postSnapshot = null;
+    private postsnapshot postSnapshot;
 
     @JsonProperty("pre_snapshot")
     @JsonInclude(Include.NON_NULL)
-    private presnapshot preSnapshot = null;
+    private presnapshot preSnapshot;
 
     @JsonProperty("se_group_name")
     @JsonInclude(Include.NON_NULL)
-    private String seGroupName = null;
+    private String seGroupName;
 
     @JsonProperty("se_group_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String seGroupUuid = null;
+    private String seGroupUuid;
 
     @JsonProperty("se_name")
     @JsonInclude(Include.NON_NULL)
-    private String seName = null;
+    private String seName;
 
     @JsonProperty("se_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String seUuid = null;
+    private String seUuid;
 
     @JsonProperty("snapshot_type")
     @JsonInclude(Include.NON_NULL)
-    private String snapshotType = null;
+    private String snapshotType;
 
     @JsonProperty("statediff_operation_ref")
     @JsonInclude(Include.NON_NULL)
-    private String statediffOperationRef = null;
+    private String statediffOperationRef;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -88,15 +88,15 @@ public class StatediffSnapshot extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("vs_name")
     @JsonInclude(Include.NON_NULL)
-    private String vsName = null;
+    private String vsName;
 
     @JsonProperty("vs_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String vsUuid = null;
+    private String vsUuid;
 
 
 

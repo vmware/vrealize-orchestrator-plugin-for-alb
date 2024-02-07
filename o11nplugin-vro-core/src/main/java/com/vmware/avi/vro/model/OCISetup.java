@@ -26,27 +26,27 @@ import org.springframework.stereotype.Service;
 public class OCISetup extends AviRestResource {
     @JsonProperty("cc_id")
     @JsonInclude(Include.NON_NULL)
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("compartment_id")
     @JsonInclude(Include.NON_NULL)
-    private String compartmentId = null;
+    private String compartmentId;
 
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("status")
     @JsonInclude(Include.NON_NULL)
-    private String status = null;
+    private String status;
 
     @JsonProperty("tenancy")
     @JsonInclude(Include.NON_NULL)
-    private String tenancy = null;
+    private String tenancy;
 
     @JsonProperty("vcn_id")
     @JsonInclude(Include.NON_NULL)
-    private String vcnId = null;
+    private String vcnId;
 
 
 

@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class NsxtT1Seg extends AviRestResource {
     @JsonProperty("segment")
     @JsonInclude(Include.NON_NULL)
-    private String segment = null;
+    private String segment;
 
     @JsonProperty("tier1")
     @JsonInclude(Include.NON_NULL)
-    private String tier1 = null;
+    private String tier1;
 
 
 

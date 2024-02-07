@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class HealthMonitorExternal extends AviRestResource {
     @JsonProperty("command_code")
     @JsonInclude(Include.NON_NULL)
-    private String commandCode = null;
+    private String commandCode;
 
     @JsonProperty("command_parameters")
     @JsonInclude(Include.NON_NULL)
-    private String commandParameters = null;
+    private String commandParameters;
 
     @JsonProperty("command_path")
     @JsonInclude(Include.NON_NULL)
-    private String commandPath = null;
+    private String commandPath;
 
     @JsonProperty("command_variables")
     @JsonInclude(Include.NON_NULL)
-    private String commandVariables = null;
+    private String commandVariables;
 
 
 

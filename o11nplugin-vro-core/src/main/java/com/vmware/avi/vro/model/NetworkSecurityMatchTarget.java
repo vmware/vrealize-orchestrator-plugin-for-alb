@@ -31,27 +31,27 @@ import org.springframework.stereotype.Service;
 public class NetworkSecurityMatchTarget extends AviRestResource {
     @JsonProperty("client_ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrMatch clientIp = null;
+    private IpAddrMatch clientIp;
 
     @JsonProperty("client_port")
     @JsonInclude(Include.NON_NULL)
-    private PortMatchGeneric clientPort = null;
+    private PortMatchGeneric clientPort;
 
     @JsonProperty("geo_matches")
     @JsonInclude(Include.NON_NULL)
-    private List<GeoMatch> geoMatches = null;
+    private List<GeoMatch> geoMatches;
 
     @JsonProperty("ip_reputation_type")
     @JsonInclude(Include.NON_NULL)
-    private IPReputationTypeMatch ipReputationType = null;
+    private IPReputationTypeMatch ipReputationType;
 
     @JsonProperty("microservice")
     @JsonInclude(Include.NON_NULL)
-    private MicroServiceMatch microservice = null;
+    private MicroServiceMatch microservice;
 
     @JsonProperty("vs_port")
     @JsonInclude(Include.NON_NULL)
-    private PortMatch vsPort = null;
+    private PortMatch vsPort;
 
 
 

@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class ALBServicesStatusDetails extends AviRestResource {
     @JsonProperty("connectivity")
     @JsonInclude(Include.NON_NULL)
-    private String connectivity = null;
+    private String connectivity;
 
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("registration")
     @JsonInclude(Include.NON_NULL)
-    private String registration = null;
+    private String registration;
 
 
 

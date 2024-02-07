@@ -27,7 +27,7 @@ import org.springframework.stereotype.Service;
 public class GslbService extends AviRestResource {
     @JsonProperty("application_persistence_profile_ref")
     @JsonInclude(Include.NON_NULL)
-    private String applicationPersistenceProfileRef = null;
+    private String applicationPersistenceProfileRef;
 
     @JsonProperty("controller_health_status_enabled")
     @JsonInclude(Include.NON_NULL)
@@ -35,19 +35,19 @@ public class GslbService extends AviRestResource {
 
     @JsonProperty("created_by")
     @JsonInclude(Include.NON_NULL)
-    private String createdBy = null;
+    private String createdBy;
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("domain_names")
     @JsonInclude(Include.NON_NULL)
-    private List<String> domainNames = null;
+    private List<String> domainNames;
 
     @JsonProperty("down_response")
     @JsonInclude(Include.NON_NULL)
-    private GslbServiceDownResponse downResponse = null;
+    private GslbServiceDownResponse downResponse;
 
     @JsonProperty("enabled")
     @JsonInclude(Include.NON_NULL)
@@ -55,11 +55,11 @@ public class GslbService extends AviRestResource {
 
     @JsonProperty("groups")
     @JsonInclude(Include.NON_NULL)
-    private List<GslbPool> groups = null;
+    private List<GslbPool> groups;
 
     @JsonProperty("health_monitor_refs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> healthMonitorRefs = null;
+    private List<String> healthMonitorRefs;
 
     @JsonProperty("health_monitor_scope")
     @JsonInclude(Include.NON_NULL)
@@ -71,7 +71,7 @@ public class GslbService extends AviRestResource {
 
     @JsonProperty("markers")
     @JsonInclude(Include.NON_NULL)
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("min_members")
     @JsonInclude(Include.NON_NULL)
@@ -79,15 +79,15 @@ public class GslbService extends AviRestResource {
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("num_dns_ip")
     @JsonInclude(Include.NON_NULL)
-    private Integer numDnsIp = null;
+    private Integer numDnsIp;
 
     @JsonProperty("pki_profile_ref")
     @JsonInclude(Include.NON_NULL)
-    private String pkiProfileRef = null;
+    private String pkiProfileRef;
 
     @JsonProperty("pool_algorithm")
     @JsonInclude(Include.NON_NULL)
@@ -103,7 +103,7 @@ public class GslbService extends AviRestResource {
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("topology_policy_enabled")
     @JsonInclude(Include.NON_NULL)
@@ -111,7 +111,7 @@ public class GslbService extends AviRestResource {
 
     @JsonProperty("ttl")
     @JsonInclude(Include.NON_NULL)
-    private Integer ttl = null;
+    private Integer ttl;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -123,7 +123,7 @@ public class GslbService extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("wildcard_match")
     @JsonInclude(Include.NON_NULL)

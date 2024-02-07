@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class SingleOptionalSensitiveFieldMessage extends AviRestResource {
     @JsonProperty("optional_sensitive_string")
     @JsonInclude(Include.NON_NULL)
-    private String optionalSensitiveString = null;
+    private String optionalSensitiveString;
 
 
 

@@ -28,23 +28,23 @@ import org.springframework.stereotype.Service;
 public class HTTPSecurityAction extends AviRestResource {
     @JsonProperty("action")
     @JsonInclude(Include.NON_NULL)
-    private String action = null;
+    private String action;
 
     @JsonProperty("file")
     @JsonInclude(Include.NON_NULL)
-    private HTTPLocalFile file = null;
+    private HTTPLocalFile file;
 
     @JsonProperty("https_port")
     @JsonInclude(Include.NON_NULL)
-    private Integer httpsPort = null;
+    private Integer httpsPort;
 
     @JsonProperty("rate_profile")
     @JsonInclude(Include.NON_NULL)
-    private HTTPSecurityActionRateProfile rateProfile = null;
+    private HTTPSecurityActionRateProfile rateProfile;
 
     @JsonProperty("status_code")
     @JsonInclude(Include.NON_NULL)
-    private String statusCode = null;
+    private String statusCode;
 
 
 

@@ -30,15 +30,15 @@ public class CookieMatch extends AviRestResource {
 
     @JsonProperty("match_criteria")
     @JsonInclude(Include.NON_NULL)
-    private String matchCriteria = null;
+    private String matchCriteria;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("value")
     @JsonInclude(Include.NON_NULL)
-    private String value = null;
+    private String value;
 
 
 

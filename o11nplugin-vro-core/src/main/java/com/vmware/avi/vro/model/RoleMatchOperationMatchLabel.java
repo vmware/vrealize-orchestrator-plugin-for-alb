@@ -27,7 +27,7 @@ import org.springframework.stereotype.Service;
 public class RoleMatchOperationMatchLabel extends AviRestResource {
     @JsonProperty("match_label")
     @JsonInclude(Include.NON_NULL)
-    private RoleFilterMatchLabel matchLabel = null;
+    private RoleFilterMatchLabel matchLabel;
 
     @JsonProperty("match_operation")
     @JsonInclude(Include.NON_NULL)

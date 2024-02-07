@@ -30,11 +30,11 @@ public class AuthProfileHTTPClientParams extends AviRestResource {
 
     @JsonProperty("request_header")
     @JsonInclude(Include.NON_NULL)
-    private String requestHeader = null;
+    private String requestHeader;
 
     @JsonProperty("require_user_groups")
     @JsonInclude(Include.NON_NULL)
-    private List<String> requireUserGroups = null;
+    private List<String> requireUserGroups;
 
 
 

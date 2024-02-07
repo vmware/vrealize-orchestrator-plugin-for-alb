@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class HTTPPolicies extends AviRestResource {
     @JsonProperty("http_policy_set_ref")
     @JsonInclude(Include.NON_NULL)
-    private String httpPolicySetRef = null;
+    private String httpPolicySetRef;
 
     @JsonProperty("index")
     @JsonInclude(Include.NON_NULL)
-    private Integer index = null;
+    private Integer index;
 
 
 

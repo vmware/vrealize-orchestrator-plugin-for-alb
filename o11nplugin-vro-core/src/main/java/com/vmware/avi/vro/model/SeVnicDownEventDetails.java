@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class SeVnicDownEventDetails extends AviRestResource {
     @JsonProperty("if_name")
     @JsonInclude(Include.NON_NULL)
-    private String ifName = null;
+    private String ifName;
 
     @JsonProperty("linux_name")
     @JsonInclude(Include.NON_NULL)
-    private String linuxName = null;
+    private String linuxName;
 
     @JsonProperty("mac")
     @JsonInclude(Include.NON_NULL)
-    private String mac = null;
+    private String mac;
 
     @JsonProperty("se_ref")
     @JsonInclude(Include.NON_NULL)
-    private String seRef = null;
+    private String seRef;
 
 
 

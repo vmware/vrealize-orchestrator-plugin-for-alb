@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class DebugDnsOptions extends AviRestResource {
     @JsonProperty("domain_name")
     @JsonInclude(Include.NON_NULL)
-    private List<String> domainName = null;
+    private List<String> domainName;
 
     @JsonProperty("gslb_service_name")
     @JsonInclude(Include.NON_NULL)
-    private List<String> gslbServiceName = null;
+    private List<String> gslbServiceName;
 
 
 

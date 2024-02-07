@@ -28,55 +28,55 @@ import org.springframework.stereotype.Service;
 public class GCPSetup extends AviRestResource {
     @JsonProperty("cc_id")
     @JsonInclude(Include.NON_NULL)
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("hostname")
     @JsonInclude(Include.NON_NULL)
-    private String hostname = null;
+    private String hostname;
 
     @JsonProperty("network")
     @JsonInclude(Include.NON_NULL)
-    private String network = null;
+    private String network;
 
     @JsonProperty("nhop_inst")
     @JsonInclude(Include.NON_NULL)
-    private String nhopInst = null;
+    private String nhopInst;
 
     @JsonProperty("nhop_ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr nhopIp = null;
+    private IpAddr nhopIp;
 
     @JsonProperty("project")
     @JsonInclude(Include.NON_NULL)
-    private String project = null;
+    private String project;
 
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("route_name")
     @JsonInclude(Include.NON_NULL)
-    private String routeName = null;
+    private String routeName;
 
     @JsonProperty("subnet")
     @JsonInclude(Include.NON_NULL)
-    private String subnet = null;
+    private String subnet;
 
     @JsonProperty("vip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr vip = null;
+    private IpAddr vip;
 
     @JsonProperty("vs_name")
     @JsonInclude(Include.NON_NULL)
-    private String vsName = null;
+    private String vsName;
 
     @JsonProperty("vs_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String vsUuid = null;
+    private String vsUuid;
 
     @JsonProperty("zone")
     @JsonInclude(Include.NON_NULL)
-    private String zone = null;
+    private String zone;
 
 
 

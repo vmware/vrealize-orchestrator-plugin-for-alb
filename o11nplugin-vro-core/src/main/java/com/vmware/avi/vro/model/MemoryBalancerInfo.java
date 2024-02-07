@@ -26,47 +26,47 @@ import org.springframework.stereotype.Service;
 public class MemoryBalancerInfo extends AviRestResource {
     @JsonProperty("child")
     @JsonInclude(Include.NON_NULL)
-    private List<ChildProcessInfo> child = null;
+    private List<ChildProcessInfo> child;
 
     @JsonProperty("controller_memory")
     @JsonInclude(Include.NON_NULL)
-    private Integer controllerMemory = null;
+    private Integer controllerMemory;
 
     @JsonProperty("controller_memory_usage_percent")
     @JsonInclude(Include.NON_NULL)
-    private Float controllerMemoryUsagePercent = null;
+    private Float controllerMemoryUsagePercent;
 
     @JsonProperty("debug_message")
     @JsonInclude(Include.NON_NULL)
-    private String debugMessage = null;
+    private String debugMessage;
 
     @JsonProperty("limit")
     @JsonInclude(Include.NON_NULL)
-    private Integer limit = null;
+    private Integer limit;
 
     @JsonProperty("memory_used")
     @JsonInclude(Include.NON_NULL)
-    private Integer memoryUsed = null;
+    private Integer memoryUsed;
 
     @JsonProperty("pid")
     @JsonInclude(Include.NON_NULL)
-    private Integer pid = null;
+    private Integer pid;
 
     @JsonProperty("process")
     @JsonInclude(Include.NON_NULL)
-    private String process = null;
+    private String process;
 
     @JsonProperty("process_mode")
     @JsonInclude(Include.NON_NULL)
-    private String processMode = null;
+    private String processMode;
 
     @JsonProperty("process_trend")
     @JsonInclude(Include.NON_NULL)
-    private String processTrend = null;
+    private String processTrend;
 
     @JsonProperty("threshold_percent")
     @JsonInclude(Include.NON_NULL)
-    private Float thresholdPercent = null;
+    private Float thresholdPercent;
 
 
 

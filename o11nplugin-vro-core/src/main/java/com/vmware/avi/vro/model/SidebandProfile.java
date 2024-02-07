@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class SidebandProfile extends AviRestResource {
     @JsonProperty("ip")
     @JsonInclude(Include.NON_NULL)
-    private List<IpAddr> ip = null;
+    private List<IpAddr> ip;
 
     @JsonProperty("sideband_max_request_body_size")
     @JsonInclude(Include.NON_NULL)

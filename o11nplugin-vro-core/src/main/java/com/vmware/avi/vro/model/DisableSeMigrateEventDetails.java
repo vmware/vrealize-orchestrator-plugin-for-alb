@@ -27,11 +27,11 @@ import org.springframework.stereotype.Service;
 public class DisableSeMigrateEventDetails extends AviRestResource {
     @JsonProperty("migrate_params")
     @JsonInclude(Include.NON_NULL)
-    private VsMigrateParams migrateParams = null;
+    private VsMigrateParams migrateParams;
 
     @JsonProperty("vs_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String vsUuid = null;
+    private String vsUuid;
 
 
 

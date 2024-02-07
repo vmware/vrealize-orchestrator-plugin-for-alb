@@ -29,27 +29,27 @@ import org.springframework.stereotype.Service;
 public class WafExcludeListEntry extends AviRestResource {
     @JsonProperty("client_subnet")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrPrefix clientSubnet = null;
+    private IpAddrPrefix clientSubnet;
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("match_element")
     @JsonInclude(Include.NON_NULL)
-    private String matchElement = null;
+    private String matchElement;
 
     @JsonProperty("match_element_criteria")
     @JsonInclude(Include.NON_NULL)
-    private WafExclusionType matchElementCriteria = null;
+    private WafExclusionType matchElementCriteria;
 
     @JsonProperty("uri_match_criteria")
     @JsonInclude(Include.NON_NULL)
-    private WafExclusionType uriMatchCriteria = null;
+    private WafExclusionType uriMatchCriteria;
 
     @JsonProperty("uri_path")
     @JsonInclude(Include.NON_NULL)
-    private String uriPath = null;
+    private String uriPath;
 
 
 

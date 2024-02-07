@@ -27,7 +27,7 @@ import org.springframework.stereotype.Service;
 public class GslbDownloadStatus extends AviRestResource {
     @JsonProperty("last_changed_time")
     @JsonInclude(Include.NON_NULL)
-    private TimeStamp lastChangedTime = null;
+    private TimeStamp lastChangedTime;
 
     @JsonProperty("state")
     @JsonInclude(Include.NON_NULL)

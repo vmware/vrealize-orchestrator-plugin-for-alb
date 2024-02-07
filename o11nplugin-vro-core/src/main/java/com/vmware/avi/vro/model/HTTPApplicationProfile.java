@@ -36,7 +36,7 @@ public class HTTPApplicationProfile extends AviRestResource {
 
     @JsonProperty("cache_config")
     @JsonInclude(Include.NON_NULL)
-    private HttpCacheConfig cacheConfig = null;
+    private HttpCacheConfig cacheConfig;
 
     @JsonProperty("client_body_timeout")
     @JsonInclude(Include.NON_NULL)
@@ -68,7 +68,7 @@ public class HTTPApplicationProfile extends AviRestResource {
 
     @JsonProperty("compression_profile")
     @JsonInclude(Include.NON_NULL)
-    private CompressionProfile compressionProfile = null;
+    private CompressionProfile compressionProfile;
 
     @JsonProperty("connection_multiplexing_enabled")
     @JsonInclude(Include.NON_NULL)
@@ -120,7 +120,7 @@ public class HTTPApplicationProfile extends AviRestResource {
 
     @JsonProperty("http2_profile")
     @JsonInclude(Include.NON_NULL)
-    private HTTP2ApplicationProfile http2Profile = null;
+    private HTTP2ApplicationProfile http2Profile;
 
     @JsonProperty("http_to_https")
     @JsonInclude(Include.NON_NULL)
@@ -192,7 +192,7 @@ public class HTTPApplicationProfile extends AviRestResource {
 
     @JsonProperty("pki_profile_ref")
     @JsonInclude(Include.NON_NULL)
-    private String pkiProfileRef = null;
+    private String pkiProfileRef;
 
     @JsonProperty("post_accept_timeout")
     @JsonInclude(Include.NON_NULL)
@@ -216,11 +216,11 @@ public class HTTPApplicationProfile extends AviRestResource {
 
     @JsonProperty("session_config")
     @JsonInclude(Include.NON_NULL)
-    private HTTPSessionConfig sessionConfig = null;
+    private HTTPSessionConfig sessionConfig;
 
     @JsonProperty("ssl_client_certificate_action")
     @JsonInclude(Include.NON_NULL)
-    private SSLClientCertificateAction sslClientCertificateAction = null;
+    private SSLClientCertificateAction sslClientCertificateAction;
 
     @JsonProperty("ssl_client_certificate_mode")
     @JsonInclude(Include.NON_NULL)
@@ -228,7 +228,7 @@ public class HTTPApplicationProfile extends AviRestResource {
 
     @JsonProperty("true_client_ip")
     @JsonInclude(Include.NON_NULL)
-    private TrueClientIPConfig trueClientIp = null;
+    private TrueClientIPConfig trueClientIp;
 
     @JsonProperty("use_app_keepalive_timeout")
     @JsonInclude(Include.NON_NULL)

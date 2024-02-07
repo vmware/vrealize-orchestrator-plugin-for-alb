@@ -26,71 +26,71 @@ import org.springframework.stereotype.Service;
 public class WAFLimits extends AviRestResource {
     @JsonProperty("num_allowed_content_types")
     @JsonInclude(Include.NON_NULL)
-    private Integer numAllowedContentTypes = null;
+    private Integer numAllowedContentTypes;
 
     @JsonProperty("num_allowed_request_content_type_charsets")
     @JsonInclude(Include.NON_NULL)
-    private Integer numAllowedRequestContentTypeCharsets = null;
+    private Integer numAllowedRequestContentTypeCharsets;
 
     @JsonProperty("num_allowlist_policy_rules")
     @JsonInclude(Include.NON_NULL)
-    private Integer numAllowlistPolicyRules = null;
+    private Integer numAllowlistPolicyRules;
 
     @JsonProperty("num_applications")
     @JsonInclude(Include.NON_NULL)
-    private Integer numApplications = null;
+    private Integer numApplications;
 
     @JsonProperty("num_content_type_mappings")
     @JsonInclude(Include.NON_NULL)
-    private Integer numContentTypeMappings = null;
+    private Integer numContentTypeMappings;
 
     @JsonProperty("num_data_files")
     @JsonInclude(Include.NON_NULL)
-    private Integer numDataFiles = null;
+    private Integer numDataFiles;
 
     @JsonProperty("num_exclude_list_per_rule_group")
     @JsonInclude(Include.NON_NULL)
-    private Integer numExcludeListPerRuleGroup = null;
+    private Integer numExcludeListPerRuleGroup;
 
     @JsonProperty("num_pre_post_crs_groups")
     @JsonInclude(Include.NON_NULL)
-    private Integer numPrePostCrsGroups = null;
+    private Integer numPrePostCrsGroups;
 
     @JsonProperty("num_psm_groups")
     @JsonInclude(Include.NON_NULL)
-    private Integer numPsmGroups = null;
+    private Integer numPsmGroups;
 
     @JsonProperty("num_psm_match_elements")
     @JsonInclude(Include.NON_NULL)
-    private Integer numPsmMatchElements = null;
+    private Integer numPsmMatchElements;
 
     @JsonProperty("num_psm_match_rules_per_loc")
     @JsonInclude(Include.NON_NULL)
-    private Integer numPsmMatchRulesPerLoc = null;
+    private Integer numPsmMatchRulesPerLoc;
 
     @JsonProperty("num_psm_total_locations")
     @JsonInclude(Include.NON_NULL)
-    private Integer numPsmTotalLocations = null;
+    private Integer numPsmTotalLocations;
 
     @JsonProperty("num_restricted_extensions")
     @JsonInclude(Include.NON_NULL)
-    private Integer numRestrictedExtensions = null;
+    private Integer numRestrictedExtensions;
 
     @JsonProperty("num_restricted_headers")
     @JsonInclude(Include.NON_NULL)
-    private Integer numRestrictedHeaders = null;
+    private Integer numRestrictedHeaders;
 
     @JsonProperty("num_rule_tags")
     @JsonInclude(Include.NON_NULL)
-    private Integer numRuleTags = null;
+    private Integer numRuleTags;
 
     @JsonProperty("num_rules_per_rulegroup")
     @JsonInclude(Include.NON_NULL)
-    private Integer numRulesPerRulegroup = null;
+    private Integer numRulesPerRulegroup;
 
     @JsonProperty("num_static_extensions")
     @JsonInclude(Include.NON_NULL)
-    private Integer numStaticExtensions = null;
+    private Integer numStaticExtensions;
 
 
 

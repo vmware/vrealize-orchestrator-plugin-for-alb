@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class JWTValidationVsConfig extends AviRestResource {
     @JsonProperty("audience")
     @JsonInclude(Include.NON_NULL)
-    private String audience = null;
+    private String audience;
 
     @JsonProperty("jwt_location")
     @JsonInclude(Include.NON_NULL)
@@ -34,7 +34,7 @@ public class JWTValidationVsConfig extends AviRestResource {
 
     @JsonProperty("jwt_name")
     @JsonInclude(Include.NON_NULL)
-    private String jwtName = null;
+    private String jwtName;
 
 
 

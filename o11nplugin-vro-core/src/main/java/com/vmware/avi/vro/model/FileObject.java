@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class FileObject extends AviRestResource {
     @JsonProperty("checksum")
     @JsonInclude(Include.NON_NULL)
-    private String checksum = null;
+    private String checksum;
 
     @JsonProperty("compressed")
     @JsonInclude(Include.NON_NULL)
@@ -34,15 +34,15 @@ public class FileObject extends AviRestResource {
 
     @JsonProperty("created")
     @JsonInclude(Include.NON_NULL)
-    private String created = null;
+    private String created;
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("expires_at")
     @JsonInclude(Include.NON_NULL)
-    private String expiresAt = null;
+    private String expiresAt;
 
     @JsonProperty("is_federated")
     @JsonInclude(Include.NON_NULL)
@@ -50,31 +50,31 @@ public class FileObject extends AviRestResource {
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("path")
     @JsonInclude(Include.NON_NULL)
-    private String path = null;
+    private String path;
 
     @JsonProperty("read_only")
     @JsonInclude(Include.NON_NULL)
-    private Boolean readOnly = null;
+    private Boolean readOnly;
 
     @JsonProperty("restrict_download")
     @JsonInclude(Include.NON_NULL)
-    private Boolean restrictDownload = null;
+    private Boolean restrictDownload;
 
     @JsonProperty("size")
     @JsonInclude(Include.NON_NULL)
-    private Integer size = null;
+    private Integer size;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -82,11 +82,11 @@ public class FileObject extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("version")
     @JsonInclude(Include.NON_NULL)
-    private String version = null;
+    private String version;
 
 
 

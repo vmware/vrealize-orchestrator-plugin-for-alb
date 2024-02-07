@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class WafPolicyPSMGroup extends AviRestResource {
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("enable")
     @JsonInclude(Include.NON_NULL)
@@ -42,11 +42,11 @@ public class WafPolicyPSMGroup extends AviRestResource {
 
     @JsonProperty("locations")
     @JsonInclude(Include.NON_NULL)
-    private List<WafPSMLocation> locations = null;
+    private List<WafPSMLocation> locations;
 
     @JsonProperty("markers")
     @JsonInclude(Include.NON_NULL)
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("miss_action")
     @JsonInclude(Include.NON_NULL)
@@ -54,11 +54,11 @@ public class WafPolicyPSMGroup extends AviRestResource {
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -66,7 +66,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

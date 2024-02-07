@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class SePersistenceEventDetails extends AviRestResource {
     @JsonProperty("entries")
     @JsonInclude(Include.NON_NULL)
-    private Integer entries = null;
+    private Integer entries;
 
     @JsonProperty("pool")
     @JsonInclude(Include.NON_NULL)
-    private String pool = null;
+    private String pool;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
 
 

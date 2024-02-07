@@ -26,31 +26,31 @@ import org.springframework.stereotype.Service;
 public class PaaRequestLog extends AviRestResource {
     @JsonProperty("headers_received_from_server")
     @JsonInclude(Include.NON_NULL)
-    private String headersReceivedFromServer = null;
+    private String headersReceivedFromServer;
 
     @JsonProperty("headers_sent_to_server")
     @JsonInclude(Include.NON_NULL)
-    private String headersSentToServer = null;
+    private String headersSentToServer;
 
     @JsonProperty("http_version")
     @JsonInclude(Include.NON_NULL)
-    private String httpVersion = null;
+    private String httpVersion;
 
     @JsonProperty("method")
     @JsonInclude(Include.NON_NULL)
-    private String method = null;
+    private String method;
 
     @JsonProperty("pool_name")
     @JsonInclude(Include.NON_NULL)
-    private String poolName = null;
+    private String poolName;
 
     @JsonProperty("response_code")
     @JsonInclude(Include.NON_NULL)
-    private Integer responseCode = null;
+    private Integer responseCode;
 
     @JsonProperty("server_ip")
     @JsonInclude(Include.NON_NULL)
-    private Integer serverIp = null;
+    private Integer serverIp;
 
     @JsonProperty("servers_tried")
     @JsonInclude(Include.NON_NULL)
@@ -58,7 +58,7 @@ public class PaaRequestLog extends AviRestResource {
 
     @JsonProperty("uri_path")
     @JsonInclude(Include.NON_NULL)
-    private String uriPath = null;
+    private String uriPath;
 
 
 

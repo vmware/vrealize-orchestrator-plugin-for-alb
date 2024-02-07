@@ -27,11 +27,11 @@ import org.springframework.stereotype.Service;
 public class DockerRegistry extends AviRestResource {
     @JsonProperty("oshift_registry")
     @JsonInclude(Include.NON_NULL)
-    private OshiftDockerRegistryMetaData oshiftRegistry = null;
+    private OshiftDockerRegistryMetaData oshiftRegistry;
 
     @JsonProperty("password")
     @JsonInclude(Include.NON_NULL)
-    private String password = null;
+    private String password;
 
     @JsonProperty("privates")
     @JsonInclude(Include.NON_NULL)
@@ -43,7 +43,7 @@ public class DockerRegistry extends AviRestResource {
 
     @JsonProperty("username")
     @JsonInclude(Include.NON_NULL)
-    private String username = null;
+    private String username;
 
 
 

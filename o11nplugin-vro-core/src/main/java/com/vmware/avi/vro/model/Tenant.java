@@ -27,19 +27,19 @@ import org.springframework.stereotype.Service;
 public class Tenant extends AviRestResource {
     @JsonProperty("attrs")
     @JsonInclude(Include.NON_NULL)
-    private List<KeyValue> attrs = null;
+    private List<KeyValue> attrs;
 
     @JsonProperty("config_settings")
     @JsonInclude(Include.NON_NULL)
-    private TenantConfiguration configSettings = null;
+    private TenantConfiguration configSettings;
 
     @JsonProperty("created_by")
     @JsonInclude(Include.NON_NULL)
-    private String createdBy = null;
+    private String createdBy;
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("enforce_label_group")
     @JsonInclude(Include.NON_NULL)
@@ -47,7 +47,7 @@ public class Tenant extends AviRestResource {
 
     @JsonProperty("label_group_refs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> labelGroupRefs = null;
+    private List<String> labelGroupRefs;
 
     @JsonProperty("local")
     @JsonInclude(Include.NON_NULL)
@@ -55,7 +55,7 @@ public class Tenant extends AviRestResource {
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -63,7 +63,7 @@ public class Tenant extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

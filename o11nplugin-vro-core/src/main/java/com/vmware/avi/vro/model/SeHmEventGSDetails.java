@@ -26,23 +26,23 @@ import org.springframework.stereotype.Service;
 public class SeHmEventGSDetails extends AviRestResource {
     @JsonProperty("gslb_service")
     @JsonInclude(Include.NON_NULL)
-    private String gslbService = null;
+    private String gslbService;
 
     @JsonProperty("ha_reason")
     @JsonInclude(Include.NON_NULL)
-    private String haReason = null;
+    private String haReason;
 
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("se_name")
     @JsonInclude(Include.NON_NULL)
-    private String seName = null;
+    private String seName;
 
     @JsonProperty("src_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String srcUuid = null;
+    private String srcUuid;
 
 
 

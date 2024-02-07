@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class PortRange extends AviRestResource {
     @JsonProperty("end")
     @JsonInclude(Include.NON_NULL)
-    private Integer end = null;
+    private Integer end;
 
     @JsonProperty("start")
     @JsonInclude(Include.NON_NULL)
-    private Integer start = null;
+    private Integer start;
 
 
 

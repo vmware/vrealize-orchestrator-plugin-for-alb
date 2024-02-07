@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class GCPEncryptionKeys extends AviRestResource {
     @JsonProperty("gcs_bucket_kms_key_id")
     @JsonInclude(Include.NON_NULL)
-    private String gcsBucketKmsKeyId = null;
+    private String gcsBucketKmsKeyId;
 
     @JsonProperty("gcs_objects_kms_key_id")
     @JsonInclude(Include.NON_NULL)
-    private String gcsObjectsKmsKeyId = null;
+    private String gcsObjectsKmsKeyId;
 
     @JsonProperty("se_disk_kms_key_id")
     @JsonInclude(Include.NON_NULL)
-    private String seDiskKmsKeyId = null;
+    private String seDiskKmsKeyId;
 
     @JsonProperty("se_image_kms_key_id")
     @JsonInclude(Include.NON_NULL)
-    private String seImageKmsKeyId = null;
+    private String seImageKmsKeyId;
 
 
 

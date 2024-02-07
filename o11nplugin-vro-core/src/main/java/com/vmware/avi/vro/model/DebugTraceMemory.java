@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class DebugTraceMemory extends AviRestResource {
     @JsonProperty("trace_malloc_types")
     @JsonInclude(Include.NON_NULL)
-    private List<DebugTraceMallocTypes> traceMallocTypes = null;
+    private List<DebugTraceMallocTypes> traceMallocTypes;
 
     @JsonProperty("trace_shm_malloc_types")
     @JsonInclude(Include.NON_NULL)
-    private List<DebugTraceShmMallocTypes> traceShmMallocTypes = null;
+    private List<DebugTraceShmMallocTypes> traceShmMallocTypes;
 
 
 

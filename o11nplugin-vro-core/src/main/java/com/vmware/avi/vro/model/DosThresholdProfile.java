@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class DosThresholdProfile extends AviRestResource {
     @JsonProperty("thresh_info")
     @JsonInclude(Include.NON_NULL)
-    private List<DosThreshold> threshInfo = null;
+    private List<DosThreshold> threshInfo;
 
     @JsonProperty("thresh_period")
     @JsonInclude(Include.NON_NULL)

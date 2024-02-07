@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class AppSignatureEventData extends AviRestResource {
     @JsonProperty("last_successful_updated_time")
     @JsonInclude(Include.NON_NULL)
-    private String lastSuccessfulUpdatedTime = null;
+    private String lastSuccessfulUpdatedTime;
 
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("status")
     @JsonInclude(Include.NON_NULL)
-    private String status = null;
+    private String status;
 
 
 

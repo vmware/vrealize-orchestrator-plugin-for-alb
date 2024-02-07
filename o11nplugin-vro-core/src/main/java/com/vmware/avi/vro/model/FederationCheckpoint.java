@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class FederationCheckpoint extends AviRestResource {
     @JsonProperty("date")
     @JsonInclude(Include.NON_NULL)
-    private String date = null;
+    private String date;
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("is_federated")
     @JsonInclude(Include.NON_NULL)
@@ -38,11 +38,11 @@ public class FederationCheckpoint extends AviRestResource {
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -50,7 +50,7 @@ public class FederationCheckpoint extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

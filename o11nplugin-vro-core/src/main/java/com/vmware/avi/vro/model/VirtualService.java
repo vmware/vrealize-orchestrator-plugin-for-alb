@@ -48,15 +48,15 @@ public class VirtualService extends AviRestResource {
 
     @JsonProperty("analytics_policy")
     @JsonInclude(Include.NON_NULL)
-    private AnalyticsPolicy analyticsPolicy = null;
+    private AnalyticsPolicy analyticsPolicy;
 
     @JsonProperty("analytics_profile_ref")
     @JsonInclude(Include.NON_NULL)
-    private String analyticsProfileRef = null;
+    private String analyticsProfileRef;
 
     @JsonProperty("application_profile_ref")
     @JsonInclude(Include.NON_NULL)
-    private String applicationProfileRef = null;
+    private String applicationProfileRef;
 
     @JsonProperty("azure_availability_set")
     @JsonInclude(Include.NON_NULL)
@@ -64,11 +64,11 @@ public class VirtualService extends AviRestResource {
 
     @JsonProperty("bgp_peer_labels")
     @JsonInclude(Include.NON_NULL)
-    private List<String> bgpPeerLabels = null;
+    private List<String> bgpPeerLabels;
 
     @JsonProperty("bot_policy_ref")
     @JsonInclude(Include.NON_NULL)
-    private String botPolicyRef = null;
+    private String botPolicyRef;
 
     @JsonProperty("bulk_sync_kvcache")
     @JsonInclude(Include.NON_NULL)
@@ -80,11 +80,11 @@ public class VirtualService extends AviRestResource {
 
     @JsonProperty("cloud_config_cksum")
     @JsonInclude(Include.NON_NULL)
-    private String cloudConfigCksum = null;
+    private String cloudConfigCksum;
 
     @JsonProperty("cloud_ref")
     @JsonInclude(Include.NON_NULL)
-    private String cloudRef = null;
+    private String cloudRef;
 
     @JsonProperty("cloud_type")
     @JsonInclude(Include.NON_NULL)
@@ -92,19 +92,19 @@ public class VirtualService extends AviRestResource {
 
     @JsonProperty("connections_rate_limit")
     @JsonInclude(Include.NON_NULL)
-    private RateProfile connectionsRateLimit = null;
+    private RateProfile connectionsRateLimit;
 
     @JsonProperty("content_rewrite")
     @JsonInclude(Include.NON_NULL)
-    private ContentRewriteProfile contentRewrite = null;
+    private ContentRewriteProfile contentRewrite;
 
     @JsonProperty("created_by")
     @JsonInclude(Include.NON_NULL)
-    private String createdBy = null;
+    private String createdBy;
 
     @JsonProperty("csrf_policy_ref")
     @JsonInclude(Include.NON_NULL)
-    private String csrfPolicyRef = null;
+    private String csrfPolicyRef;
 
     @JsonProperty("delay_fairness")
     @JsonInclude(Include.NON_NULL)
@@ -112,15 +112,15 @@ public class VirtualService extends AviRestResource {
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("dns_info")
     @JsonInclude(Include.NON_NULL)
-    private List<DnsInfo> dnsInfo = null;
+    private List<DnsInfo> dnsInfo;
 
     @JsonProperty("dns_policies")
     @JsonInclude(Include.NON_NULL)
-    private List<DnsPolicies> dnsPolicies = null;
+    private List<DnsPolicies> dnsPolicies;
 
     @JsonProperty("east_west_placement")
     @JsonInclude(Include.NON_NULL)
@@ -132,11 +132,11 @@ public class VirtualService extends AviRestResource {
 
     @JsonProperty("enable_rhi")
     @JsonInclude(Include.NON_NULL)
-    private Boolean enableRhi = null;
+    private Boolean enableRhi;
 
     @JsonProperty("enable_rhi_snat")
     @JsonInclude(Include.NON_NULL)
-    private Boolean enableRhiSnat = null;
+    private Boolean enableRhiSnat;
 
     @JsonProperty("enable_session")
     @JsonInclude(Include.NON_NULL)
@@ -148,7 +148,7 @@ public class VirtualService extends AviRestResource {
 
     @JsonProperty("error_page_profile_ref")
     @JsonInclude(Include.NON_NULL)
-    private String errorPageProfileRef = null;
+    private String errorPageProfileRef;
 
     @JsonProperty("flow_dist")
     @JsonInclude(Include.NON_NULL)
@@ -160,19 +160,19 @@ public class VirtualService extends AviRestResource {
 
     @JsonProperty("fqdn")
     @JsonInclude(Include.NON_NULL)
-    private String fqdn = null;
+    private String fqdn;
 
     @JsonProperty("host_name_xlate")
     @JsonInclude(Include.NON_NULL)
-    private String hostNameXlate = null;
+    private String hostNameXlate;
 
     @JsonProperty("http_policies")
     @JsonInclude(Include.NON_NULL)
-    private List<HTTPPolicies> httpPolicies = null;
+    private List<HTTPPolicies> httpPolicies;
 
     @JsonProperty("icap_request_profile_refs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> icapRequestProfileRefs = null;
+    private List<String> icapRequestProfileRefs;
 
     @JsonProperty("ign_pool_net_reach")
     @JsonInclude(Include.NON_NULL)
@@ -180,15 +180,15 @@ public class VirtualService extends AviRestResource {
 
     @JsonProperty("jwt_config")
     @JsonInclude(Include.NON_NULL)
-    private JWTValidationVsConfig jwtConfig = null;
+    private JWTValidationVsConfig jwtConfig;
 
     @JsonProperty("l4_policies")
     @JsonInclude(Include.NON_NULL)
-    private List<L4Policies> l4Policies = null;
+    private List<L4Policies> l4Policies;
 
     @JsonProperty("ldap_vs_config")
     @JsonInclude(Include.NON_NULL)
-    private LDAPVSConfig ldapVsConfig = null;
+    private LDAPVSConfig ldapVsConfig;
 
     @JsonProperty("limit_doser")
     @JsonInclude(Include.NON_NULL)
@@ -196,7 +196,7 @@ public class VirtualService extends AviRestResource {
 
     @JsonProperty("markers")
     @JsonInclude(Include.NON_NULL)
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("max_cps_per_client")
     @JsonInclude(Include.NON_NULL)
@@ -204,43 +204,43 @@ public class VirtualService extends AviRestResource {
 
     @JsonProperty("microservice_ref")
     @JsonInclude(Include.NON_NULL)
-    private String microserviceRef = null;
+    private String microserviceRef;
 
     @JsonProperty("min_pools_up")
     @JsonInclude(Include.NON_NULL)
-    private Integer minPoolsUp = null;
+    private Integer minPoolsUp;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("network_profile_ref")
     @JsonInclude(Include.NON_NULL)
-    private String networkProfileRef = null;
+    private String networkProfileRef;
 
     @JsonProperty("network_security_policy_ref")
     @JsonInclude(Include.NON_NULL)
-    private String networkSecurityPolicyRef = null;
+    private String networkSecurityPolicyRef;
 
     @JsonProperty("nsx_securitygroup")
     @JsonInclude(Include.NON_NULL)
-    private List<String> nsxSecuritygroup = null;
+    private List<String> nsxSecuritygroup;
 
     @JsonProperty("oauth_vs_config")
     @JsonInclude(Include.NON_NULL)
-    private OAuthVSConfig oauthVsConfig = null;
+    private OAuthVSConfig oauthVsConfig;
 
     @JsonProperty("performance_limits")
     @JsonInclude(Include.NON_NULL)
-    private PerformanceLimits performanceLimits = null;
+    private PerformanceLimits performanceLimits;
 
     @JsonProperty("pool_group_ref")
     @JsonInclude(Include.NON_NULL)
-    private String poolGroupRef = null;
+    private String poolGroupRef;
 
     @JsonProperty("pool_ref")
     @JsonInclude(Include.NON_NULL)
-    private String poolRef = null;
+    private String poolRef;
 
     @JsonProperty("remove_listening_port_on_vs_down")
     @JsonInclude(Include.NON_NULL)
@@ -248,7 +248,7 @@ public class VirtualService extends AviRestResource {
 
     @JsonProperty("requests_rate_limit")
     @JsonInclude(Include.NON_NULL)
-    private RateProfile requestsRateLimit = null;
+    private RateProfile requestsRateLimit;
 
     @JsonProperty("revoke_vip_route")
     @JsonInclude(Include.NON_NULL)
@@ -256,7 +256,7 @@ public class VirtualService extends AviRestResource {
 
     @JsonProperty("saml_sp_config")
     @JsonInclude(Include.NON_NULL)
-    private SAMLSPConfig samlSpConfig = null;
+    private SAMLSPConfig samlSpConfig;
 
     @JsonProperty("scaleout_ecmp")
     @JsonInclude(Include.NON_NULL)
@@ -264,39 +264,39 @@ public class VirtualService extends AviRestResource {
 
     @JsonProperty("se_group_ref")
     @JsonInclude(Include.NON_NULL)
-    private String seGroupRef = null;
+    private String seGroupRef;
 
     @JsonProperty("security_policy_ref")
     @JsonInclude(Include.NON_NULL)
-    private String securityPolicyRef = null;
+    private String securityPolicyRef;
 
     @JsonProperty("server_network_profile_ref")
     @JsonInclude(Include.NON_NULL)
-    private String serverNetworkProfileRef = null;
+    private String serverNetworkProfileRef;
 
     @JsonProperty("service_metadata")
     @JsonInclude(Include.NON_NULL)
-    private String serviceMetadata = null;
+    private String serviceMetadata;
 
     @JsonProperty("service_pool_select")
     @JsonInclude(Include.NON_NULL)
-    private List<ServicePoolSelector> servicePoolSelect = null;
+    private List<ServicePoolSelector> servicePoolSelect;
 
     @JsonProperty("services")
     @JsonInclude(Include.NON_NULL)
-    private List<com.vmware.avi.vro.model.Service> services = null;
+    private List<com.vmware.avi.vro.model.Service> services;
 
     @JsonProperty("sideband_profile")
     @JsonInclude(Include.NON_NULL)
-    private SidebandProfile sidebandProfile = null;
+    private SidebandProfile sidebandProfile;
 
     @JsonProperty("snat_ip")
     @JsonInclude(Include.NON_NULL)
-    private List<IpAddr> snatIp = null;
+    private List<IpAddr> snatIp;
 
     @JsonProperty("snat_ip6_addresses")
     @JsonInclude(Include.NON_NULL)
-    private List<IpAddr> snatIp6Addresses = null;
+    private List<IpAddr> snatIp6Addresses;
 
     @JsonProperty("sp_pool_refs")
     @JsonInclude(Include.NON_NULL)
@@ -304,15 +304,15 @@ public class VirtualService extends AviRestResource {
 
     @JsonProperty("ssl_key_and_certificate_refs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> sslKeyAndCertificateRefs = null;
+    private List<String> sslKeyAndCertificateRefs;
 
     @JsonProperty("ssl_profile_ref")
     @JsonInclude(Include.NON_NULL)
-    private String sslProfileRef = null;
+    private String sslProfileRef;
 
     @JsonProperty("ssl_profile_selectors")
     @JsonInclude(Include.NON_NULL)
-    private List<SSLProfileSelector> sslProfileSelectors = null;
+    private List<SSLProfileSelector> sslProfileSelectors;
 
     @JsonProperty("ssl_sess_cache_avg_size")
     @JsonInclude(Include.NON_NULL)
@@ -320,27 +320,27 @@ public class VirtualService extends AviRestResource {
 
     @JsonProperty("sso_policy_ref")
     @JsonInclude(Include.NON_NULL)
-    private String ssoPolicyRef = null;
+    private String ssoPolicyRef;
 
     @JsonProperty("static_dns_records")
     @JsonInclude(Include.NON_NULL)
-    private List<DnsRecord> staticDnsRecords = null;
+    private List<DnsRecord> staticDnsRecords;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("test_se_datastore_level_1_ref")
     @JsonInclude(Include.NON_NULL)
-    private String testSeDatastoreLevel1Ref = null;
+    private String testSeDatastoreLevel1Ref;
 
     @JsonProperty("topology_policies")
     @JsonInclude(Include.NON_NULL)
-    private List<DnsPolicies> topologyPolicies = null;
+    private List<DnsPolicies> topologyPolicies;
 
     @JsonProperty("traffic_clone_profile_ref")
     @JsonInclude(Include.NON_NULL)
-    private String trafficCloneProfileRef = null;
+    private String trafficCloneProfileRef;
 
     @JsonProperty("traffic_enabled")
     @JsonInclude(Include.NON_NULL)
@@ -364,19 +364,19 @@ public class VirtualService extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("vh_domain_name")
     @JsonInclude(Include.NON_NULL)
-    private List<String> vhDomainName = null;
+    private List<String> vhDomainName;
 
     @JsonProperty("vh_matches")
     @JsonInclude(Include.NON_NULL)
-    private List<VHMatch> vhMatches = null;
+    private List<VHMatch> vhMatches;
 
     @JsonProperty("vh_parent_vs_ref")
     @JsonInclude(Include.NON_NULL)
-    private String vhParentVsRef = null;
+    private String vhParentVsRef;
 
     @JsonProperty("vh_type")
     @JsonInclude(Include.NON_NULL)
@@ -384,23 +384,23 @@ public class VirtualService extends AviRestResource {
 
     @JsonProperty("vip")
     @JsonInclude(Include.NON_NULL)
-    private List<Vip> vip = null;
+    private List<Vip> vip;
 
     @JsonProperty("vrf_context_ref")
     @JsonInclude(Include.NON_NULL)
-    private String vrfContextRef = null;
+    private String vrfContextRef;
 
     @JsonProperty("vs_datascripts")
     @JsonInclude(Include.NON_NULL)
-    private List<VSDataScripts> vsDatascripts = null;
+    private List<VSDataScripts> vsDatascripts;
 
     @JsonProperty("vsvip_ref")
     @JsonInclude(Include.NON_NULL)
-    private String vsvipRef = null;
+    private String vsvipRef;
 
     @JsonProperty("waf_policy_ref")
     @JsonInclude(Include.NON_NULL)
-    private String wafPolicyRef = null;
+    private String wafPolicyRef;
 
     @JsonProperty("weight")
     @JsonInclude(Include.NON_NULL)

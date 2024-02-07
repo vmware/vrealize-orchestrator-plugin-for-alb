@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class LicenseTierSwitchDetiails extends AviRestResource {
     @JsonProperty("destination_tier")
     @JsonInclude(Include.NON_NULL)
-    private String destinationTier = null;
+    private String destinationTier;
 
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("source_tier")
     @JsonInclude(Include.NON_NULL)
-    private String sourceTier = null;
+    private String sourceTier;
 
     @JsonProperty("status")
     @JsonInclude(Include.NON_NULL)
-    private String status = null;
+    private String status;
 
 
 

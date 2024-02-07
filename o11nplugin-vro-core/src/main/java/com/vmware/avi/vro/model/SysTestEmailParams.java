@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class SysTestEmailParams extends AviRestResource {
     @JsonProperty("cc_emails")
     @JsonInclude(Include.NON_NULL)
-    private String ccEmails = null;
+    private String ccEmails;
 
     @JsonProperty("subject")
     @JsonInclude(Include.NON_NULL)
-    private String subject = null;
+    private String subject;
 
     @JsonProperty("text")
     @JsonInclude(Include.NON_NULL)
-    private String text = null;
+    private String text;
 
     @JsonProperty("to_emails")
     @JsonInclude(Include.NON_NULL)
-    private String toEmails = null;
+    private String toEmails;
 
 
 

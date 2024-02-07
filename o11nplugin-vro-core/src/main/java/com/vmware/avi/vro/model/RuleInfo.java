@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class RuleInfo extends AviRestResource {
     @JsonProperty("matches")
     @JsonInclude(Include.NON_NULL)
-    private List<Matches> matches = null;
+    private List<Matches> matches;
 
     @JsonProperty("rule_group_id")
     @JsonInclude(Include.NON_NULL)
-    private String ruleGroupId = null;
+    private String ruleGroupId;
 
     @JsonProperty("rule_id")
     @JsonInclude(Include.NON_NULL)
-    private String ruleId = null;
+    private String ruleId;
 
 
 

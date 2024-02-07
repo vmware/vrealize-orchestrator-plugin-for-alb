@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class HostAttributes extends AviRestResource {
     @JsonProperty("attr_key")
     @JsonInclude(Include.NON_NULL)
-    private String attrKey = null;
+    private String attrKey;
 
     @JsonProperty("attr_val")
     @JsonInclude(Include.NON_NULL)
-    private String attrVal = null;
+    private String attrVal;
 
 
 

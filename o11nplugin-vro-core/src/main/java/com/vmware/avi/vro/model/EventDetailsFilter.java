@@ -30,11 +30,11 @@ public class EventDetailsFilter extends AviRestResource {
 
     @JsonProperty("event_details_key")
     @JsonInclude(Include.NON_NULL)
-    private String eventDetailsKey = null;
+    private String eventDetailsKey;
 
     @JsonProperty("event_details_value")
     @JsonInclude(Include.NON_NULL)
-    private String eventDetailsValue = null;
+    private String eventDetailsValue;
 
 
 

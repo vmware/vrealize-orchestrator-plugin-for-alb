@@ -27,39 +27,39 @@ import org.springframework.stereotype.Service;
 public class VsError extends AviRestResource {
     @JsonProperty("event_timestamp")
     @JsonInclude(Include.NON_NULL)
-    private TimeStamp eventTimestamp = null;
+    private TimeStamp eventTimestamp;
 
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private List<String> reason = null;
+    private List<String> reason;
 
     @JsonProperty("se_group_ha_mode")
     @JsonInclude(Include.NON_NULL)
-    private String seGroupHaMode = null;
+    private String seGroupHaMode;
 
     @JsonProperty("se_group_ref")
     @JsonInclude(Include.NON_NULL)
-    private String seGroupRef = null;
+    private String seGroupRef;
 
     @JsonProperty("se_ref")
     @JsonInclude(Include.NON_NULL)
-    private String seRef = null;
+    private String seRef;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("traffic_status")
     @JsonInclude(Include.NON_NULL)
-    private String trafficStatus = null;
+    private String trafficStatus;
 
     @JsonProperty("vip_id")
     @JsonInclude(Include.NON_NULL)
-    private String vipId = null;
+    private String vipId;
 
     @JsonProperty("vs_ref")
     @JsonInclude(Include.NON_NULL)
-    private String vsRef = null;
+    private String vsRef;
 
 
 

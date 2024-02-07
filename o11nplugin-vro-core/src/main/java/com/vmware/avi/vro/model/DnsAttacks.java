@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class DnsAttacks extends AviRestResource {
     @JsonProperty("attacks")
     @JsonInclude(Include.NON_NULL)
-    private List<DnsAttack> attacks = null;
+    private List<DnsAttack> attacks;
 
     @JsonProperty("oper_mode")
     @JsonInclude(Include.NON_NULL)
-    private String operMode = null;
+    private String operMode;
 
 
 

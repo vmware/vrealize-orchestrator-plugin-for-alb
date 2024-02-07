@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class TlsFingerprintMatch extends AviRestResource {
     @JsonProperty("fingerprints")
     @JsonInclude(Include.NON_NULL)
-    private List<String> fingerprints = null;
+    private List<String> fingerprints;
 
     @JsonProperty("match_operation")
     @JsonInclude(Include.NON_NULL)
-    private String matchOperation = null;
+    private String matchOperation;
 
     @JsonProperty("string_group_refs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> stringGroupRefs = null;
+    private List<String> stringGroupRefs;
 
 
 

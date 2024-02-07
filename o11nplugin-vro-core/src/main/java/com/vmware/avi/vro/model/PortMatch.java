@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class PortMatch extends AviRestResource {
     @JsonProperty("match_criteria")
     @JsonInclude(Include.NON_NULL)
-    private String matchCriteria = null;
+    private String matchCriteria;
 
     @JsonProperty("ports")
     @JsonInclude(Include.NON_NULL)
-    private List<Integer> ports = null;
+    private List<Integer> ports;
 
 
 

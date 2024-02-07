@@ -30,19 +30,19 @@ public class GeoDBFile extends AviRestResource {
 
     @JsonProperty("file_ref")
     @JsonInclude(Include.NON_NULL)
-    private String fileRef = null;
+    private String fileRef;
 
     @JsonProperty("index")
     @JsonInclude(Include.NON_NULL)
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("vendor")
     @JsonInclude(Include.NON_NULL)
-    private String vendor = null;
+    private String vendor;
 
 
 

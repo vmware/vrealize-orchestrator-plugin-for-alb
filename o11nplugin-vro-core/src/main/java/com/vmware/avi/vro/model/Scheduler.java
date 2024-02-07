@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class Scheduler extends AviRestResource {
     @JsonProperty("backup_config_ref")
     @JsonInclude(Include.NON_NULL)
-    private String backupConfigRef = null;
+    private String backupConfigRef;
 
     @JsonProperty("enabled")
     @JsonInclude(Include.NON_NULL)
@@ -34,27 +34,27 @@ public class Scheduler extends AviRestResource {
 
     @JsonProperty("end_date_time")
     @JsonInclude(Include.NON_NULL)
-    private String endDateTime = null;
+    private String endDateTime;
 
     @JsonProperty("frequency")
     @JsonInclude(Include.NON_NULL)
-    private Integer frequency = null;
+    private Integer frequency;
 
     @JsonProperty("frequency_unit")
     @JsonInclude(Include.NON_NULL)
-    private String frequencyUnit = null;
+    private String frequencyUnit;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("run_mode")
     @JsonInclude(Include.NON_NULL)
-    private String runMode = null;
+    private String runMode;
 
     @JsonProperty("run_script_ref")
     @JsonInclude(Include.NON_NULL)
-    private String runScriptRef = null;
+    private String runScriptRef;
 
     @JsonProperty("scheduler_action")
     @JsonInclude(Include.NON_NULL)
@@ -62,11 +62,11 @@ public class Scheduler extends AviRestResource {
 
     @JsonProperty("start_date_time")
     @JsonInclude(Include.NON_NULL)
-    private String startDateTime = null;
+    private String startDateTime;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -74,7 +74,7 @@ public class Scheduler extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

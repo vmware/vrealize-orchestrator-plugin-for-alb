@@ -26,23 +26,23 @@ import org.springframework.stereotype.Service;
 public class ConfigUserLogout extends AviRestResource {
     @JsonProperty("client_ip")
     @JsonInclude(Include.NON_NULL)
-    private String clientIp = null;
+    private String clientIp;
 
     @JsonProperty("error_message")
     @JsonInclude(Include.NON_NULL)
-    private String errorMessage = null;
+    private String errorMessage;
 
     @JsonProperty("local")
     @JsonInclude(Include.NON_NULL)
-    private Boolean local = null;
+    private Boolean local;
 
     @JsonProperty("status")
     @JsonInclude(Include.NON_NULL)
-    private String status = null;
+    private String status;
 
     @JsonProperty("user")
     @JsonInclude(Include.NON_NULL)
-    private String user = null;
+    private String user;
 
 
 

@@ -27,7 +27,7 @@ import org.springframework.stereotype.Service;
 public class DnsClientIpMatch extends AviRestResource {
     @JsonProperty("client_ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrMatch clientIp = null;
+    private IpAddrMatch clientIp;
 
     @JsonProperty("use_edns_client_subnet_ip")
     @JsonInclude(Include.NON_NULL)

@@ -28,19 +28,19 @@ import org.springframework.stereotype.Service;
 public class HTTPHdrAction extends AviRestResource {
     @JsonProperty("action")
     @JsonInclude(Include.NON_NULL)
-    private String action = null;
+    private String action;
 
     @JsonProperty("cookie")
     @JsonInclude(Include.NON_NULL)
-    private HTTPCookieData cookie = null;
+    private HTTPCookieData cookie;
 
     @JsonProperty("hdr")
     @JsonInclude(Include.NON_NULL)
-    private HTTPHdrData hdr = null;
+    private HTTPHdrData hdr;
 
     @JsonProperty("hdr_index")
     @JsonInclude(Include.NON_NULL)
-    private Integer hdrIndex = null;
+    private Integer hdrIndex;
 
 
 

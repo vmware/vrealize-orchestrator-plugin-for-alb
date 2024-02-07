@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class SSLClientRequestHeader extends AviRestResource {
     @JsonProperty("request_header")
     @JsonInclude(Include.NON_NULL)
-    private String requestHeader = null;
+    private String requestHeader;
 
     @JsonProperty("request_header_value")
     @JsonInclude(Include.NON_NULL)
-    private String requestHeaderValue = null;
+    private String requestHeaderValue;
 
 
 

@@ -27,31 +27,31 @@ import org.springframework.stereotype.Service;
 public class SeHmEventPoolDetails extends AviRestResource {
     @JsonProperty("ha_reason")
     @JsonInclude(Include.NON_NULL)
-    private String haReason = null;
+    private String haReason;
 
     @JsonProperty("percent_servers_up")
     @JsonInclude(Include.NON_NULL)
-    private String percentServersUp = null;
+    private String percentServersUp;
 
     @JsonProperty("pool")
     @JsonInclude(Include.NON_NULL)
-    private String pool = null;
+    private String pool;
 
     @JsonProperty("se_name")
     @JsonInclude(Include.NON_NULL)
-    private String seName = null;
+    private String seName;
 
     @JsonProperty("server")
     @JsonInclude(Include.NON_NULL)
-    private SeHmEventServerDetails server = null;
+    private SeHmEventServerDetails server;
 
     @JsonProperty("src_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String srcUuid = null;
+    private String srcUuid;
 
     @JsonProperty("virtual_service")
     @JsonInclude(Include.NON_NULL)
-    private String virtualService = null;
+    private String virtualService;
 
 
 

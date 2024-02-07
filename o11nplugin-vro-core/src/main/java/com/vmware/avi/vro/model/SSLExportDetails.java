@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class SSLExportDetails extends AviRestResource {
     @JsonProperty("user")
     @JsonInclude(Include.NON_NULL)
-    private String user = null;
+    private String user;
 
 
 

@@ -28,11 +28,11 @@ import org.springframework.stereotype.Service;
 public class ServiceEngine extends AviRestResource {
     @JsonProperty("availability_zone")
     @JsonInclude(Include.NON_NULL)
-    private String availabilityZone = null;
+    private String availabilityZone;
 
     @JsonProperty("cloud_ref")
     @JsonInclude(Include.NON_NULL)
-    private String cloudRef = null;
+    private String cloudRef;
 
     @JsonProperty("container_mode")
     @JsonInclude(Include.NON_NULL)
@@ -48,11 +48,11 @@ public class ServiceEngine extends AviRestResource {
 
     @JsonProperty("controller_ip")
     @JsonInclude(Include.NON_NULL)
-    private String controllerIp = null;
+    private String controllerIp;
 
     @JsonProperty("data_vnics")
     @JsonInclude(Include.NON_NULL)
-    private List<vNIC> dataVnics = null;
+    private List<vNIC> dataVnics;
 
     @JsonProperty("enable_state")
     @JsonInclude(Include.NON_NULL)
@@ -60,19 +60,19 @@ public class ServiceEngine extends AviRestResource {
 
     @JsonProperty("flavor")
     @JsonInclude(Include.NON_NULL)
-    private String flavor = null;
+    private String flavor;
 
     @JsonProperty("host_ref")
     @JsonInclude(Include.NON_NULL)
-    private String hostRef = null;
+    private String hostRef;
 
     @JsonProperty("hypervisor")
     @JsonInclude(Include.NON_NULL)
-    private String hypervisor = null;
+    private String hypervisor;
 
     @JsonProperty("mgmt_vnic")
     @JsonInclude(Include.NON_NULL)
-    private vNIC mgmtVnic = null;
+    private vNIC mgmtVnic;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
@@ -80,19 +80,19 @@ public class ServiceEngine extends AviRestResource {
 
     @JsonProperty("nsxt_no_hotplug")
     @JsonInclude(Include.NON_NULL)
-    private Boolean nsxtNoHotplug = null;
+    private Boolean nsxtNoHotplug;
 
     @JsonProperty("resources")
     @JsonInclude(Include.NON_NULL)
-    private SeResources resources = null;
+    private SeResources resources;
 
     @JsonProperty("se_group_ref")
     @JsonInclude(Include.NON_NULL)
-    private String seGroupRef = null;
+    private String seGroupRef;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -100,7 +100,7 @@ public class ServiceEngine extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

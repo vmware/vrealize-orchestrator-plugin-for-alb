@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class NsxtDatastores extends AviRestResource {
     @JsonProperty("ds_ids")
     @JsonInclude(Include.NON_NULL)
-    private List<String> dsIds = null;
+    private List<String> dsIds;
 
     @JsonProperty("include")
     @JsonInclude(Include.NON_NULL)

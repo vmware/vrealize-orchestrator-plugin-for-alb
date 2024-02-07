@@ -26,71 +26,71 @@ import org.springframework.stereotype.Service;
 public class VSDataScriptSet extends AviRestResource {
     @JsonProperty("created_by")
     @JsonInclude(Include.NON_NULL)
-    private String createdBy = null;
+    private String createdBy;
 
     @JsonProperty("datascript")
     @JsonInclude(Include.NON_NULL)
-    private List<VSDataScript> datascript = null;
+    private List<VSDataScript> datascript;
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("geo_db_ref")
     @JsonInclude(Include.NON_NULL)
-    private String geoDbRef = null;
+    private String geoDbRef;
 
     @JsonProperty("ip_reputation_db_ref")
     @JsonInclude(Include.NON_NULL)
-    private String ipReputationDbRef = null;
+    private String ipReputationDbRef;
 
     @JsonProperty("ipgroup_refs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> ipgroupRefs = null;
+    private List<String> ipgroupRefs;
 
     @JsonProperty("markers")
     @JsonInclude(Include.NON_NULL)
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("pki_profile_refs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> pkiProfileRefs = null;
+    private List<String> pkiProfileRefs;
 
     @JsonProperty("pool_group_refs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> poolGroupRefs = null;
+    private List<String> poolGroupRefs;
 
     @JsonProperty("pool_refs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> poolRefs = null;
+    private List<String> poolRefs;
 
     @JsonProperty("protocol_parser_refs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> protocolParserRefs = null;
+    private List<String> protocolParserRefs;
 
     @JsonProperty("rate_limiters")
     @JsonInclude(Include.NON_NULL)
-    private List<RateLimiter> rateLimiters = null;
+    private List<RateLimiter> rateLimiters;
 
     @JsonProperty("ssl_key_certificate_refs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> sslKeyCertificateRefs = null;
+    private List<String> sslKeyCertificateRefs;
 
     @JsonProperty("ssl_profile_refs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> sslProfileRefs = null;
+    private List<String> sslProfileRefs;
 
     @JsonProperty("string_group_refs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> stringGroupRefs = null;
+    private List<String> stringGroupRefs;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -98,7 +98,7 @@ public class VSDataScriptSet extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

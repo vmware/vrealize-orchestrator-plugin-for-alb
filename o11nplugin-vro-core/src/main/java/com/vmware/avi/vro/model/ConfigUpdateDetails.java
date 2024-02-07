@@ -26,39 +26,39 @@ import org.springframework.stereotype.Service;
 public class ConfigUpdateDetails extends AviRestResource {
     @JsonProperty("error_message")
     @JsonInclude(Include.NON_NULL)
-    private String errorMessage = null;
+    private String errorMessage;
 
     @JsonProperty("new_resource_data")
     @JsonInclude(Include.NON_NULL)
-    private String newResourceData = null;
+    private String newResourceData;
 
     @JsonProperty("old_resource_data")
     @JsonInclude(Include.NON_NULL)
-    private String oldResourceData = null;
+    private String oldResourceData;
 
     @JsonProperty("path")
     @JsonInclude(Include.NON_NULL)
-    private String path = null;
+    private String path;
 
     @JsonProperty("request_data")
     @JsonInclude(Include.NON_NULL)
-    private String requestData = null;
+    private String requestData;
 
     @JsonProperty("resource_name")
     @JsonInclude(Include.NON_NULL)
-    private String resourceName = null;
+    private String resourceName;
 
     @JsonProperty("resource_type")
     @JsonInclude(Include.NON_NULL)
-    private String resourceType = null;
+    private String resourceType;
 
     @JsonProperty("status")
     @JsonInclude(Include.NON_NULL)
-    private String status = null;
+    private String status;
 
     @JsonProperty("user")
     @JsonInclude(Include.NON_NULL)
-    private String user = null;
+    private String user;
 
 
 

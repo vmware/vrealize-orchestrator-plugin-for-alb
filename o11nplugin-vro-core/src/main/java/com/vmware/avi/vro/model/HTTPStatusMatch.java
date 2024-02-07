@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class HTTPStatusMatch extends AviRestResource {
     @JsonProperty("match_criteria")
     @JsonInclude(Include.NON_NULL)
-    private String matchCriteria = null;
+    private String matchCriteria;
 
     @JsonProperty("ranges")
     @JsonInclude(Include.NON_NULL)
-    private List<HTTPStatusRange> ranges = null;
+    private List<HTTPStatusRange> ranges;
 
     @JsonProperty("status_codes")
     @JsonInclude(Include.NON_NULL)
-    private List<Integer> statusCodes = null;
+    private List<Integer> statusCodes;
 
 
 

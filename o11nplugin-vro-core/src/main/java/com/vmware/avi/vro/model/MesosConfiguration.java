@@ -64,11 +64,11 @@ public class MesosConfiguration extends AviRestResource {
 
     @JsonProperty("docker_registry_se")
     @JsonInclude(Include.NON_NULL)
-    private DockerRegistry dockerRegistrySe = null;
+    private DockerRegistry dockerRegistrySe;
 
     @JsonProperty("east_west_placement_subnet")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrPrefix eastWestPlacementSubnet = null;
+    private IpAddrPrefix eastWestPlacementSubnet;
 
     @JsonProperty("enable_event_subscription")
     @JsonInclude(Include.NON_NULL)
@@ -84,7 +84,7 @@ public class MesosConfiguration extends AviRestResource {
 
     @JsonProperty("feproxy_route_publish")
     @JsonInclude(Include.NON_NULL)
-    private FeProxyRoutePublishConfig feproxyRoutePublish = null;
+    private FeProxyRoutePublishConfig feproxyRoutePublish;
 
     @JsonProperty("feproxy_vips_enable_proxy_arp")
     @JsonInclude(Include.NON_NULL)
@@ -92,19 +92,19 @@ public class MesosConfiguration extends AviRestResource {
 
     @JsonProperty("fleet_endpoint")
     @JsonInclude(Include.NON_NULL)
-    private String fleetEndpoint = null;
+    private String fleetEndpoint;
 
     @JsonProperty("http_container_ports")
     @JsonInclude(Include.NON_NULL)
-    private List<Integer> httpContainerPorts = null;
+    private List<Integer> httpContainerPorts;
 
     @JsonProperty("marathon_configurations")
     @JsonInclude(Include.NON_NULL)
-    private List<MarathonConfiguration> marathonConfigurations = null;
+    private List<MarathonConfiguration> marathonConfigurations;
 
     @JsonProperty("marathon_se_deployment")
     @JsonInclude(Include.NON_NULL)
-    private MarathonSeDeployment marathonSeDeployment = null;
+    private MarathonSeDeployment marathonSeDeployment;
 
     @JsonProperty("mesos_url")
     @JsonInclude(Include.NON_NULL)
@@ -112,11 +112,11 @@ public class MesosConfiguration extends AviRestResource {
 
     @JsonProperty("node_availability_zone_label")
     @JsonInclude(Include.NON_NULL)
-    private String nodeAvailabilityZoneLabel = null;
+    private String nodeAvailabilityZoneLabel;
 
     @JsonProperty("nuage_controller")
     @JsonInclude(Include.NON_NULL)
-    private NuageSDNController nuageController = null;
+    private NuageSDNController nuageController;
 
     @JsonProperty("se_deployment_method")
     @JsonInclude(Include.NON_NULL)
@@ -124,15 +124,15 @@ public class MesosConfiguration extends AviRestResource {
 
     @JsonProperty("se_exclude_attributes")
     @JsonInclude(Include.NON_NULL)
-    private List<MesosAttribute> seExcludeAttributes = null;
+    private List<MesosAttribute> seExcludeAttributes;
 
     @JsonProperty("se_include_attributes")
     @JsonInclude(Include.NON_NULL)
-    private List<MesosAttribute> seIncludeAttributes = null;
+    private List<MesosAttribute> seIncludeAttributes;
 
     @JsonProperty("se_resources")
     @JsonInclude(Include.NON_NULL)
-    private List<MesosSeResources> seResources = null;
+    private List<MesosSeResources> seResources;
 
     @JsonProperty("se_spawn_rate")
     @JsonInclude(Include.NON_NULL)
@@ -148,7 +148,7 @@ public class MesosConfiguration extends AviRestResource {
 
     @JsonProperty("ssh_user_ref")
     @JsonInclude(Include.NON_NULL)
-    private String sshUserRef = null;
+    private String sshUserRef;
 
     @JsonProperty("use_bridge_ip_as_vip")
     @JsonInclude(Include.NON_NULL)
@@ -168,7 +168,7 @@ public class MesosConfiguration extends AviRestResource {
 
     @JsonProperty("vip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr vip = null;
+    private IpAddr vip;
 
 
 

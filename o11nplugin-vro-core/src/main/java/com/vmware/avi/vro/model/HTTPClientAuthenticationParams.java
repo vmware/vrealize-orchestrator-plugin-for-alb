@@ -27,19 +27,19 @@ import org.springframework.stereotype.Service;
 public class HTTPClientAuthenticationParams extends AviRestResource {
     @JsonProperty("auth_profile_ref")
     @JsonInclude(Include.NON_NULL)
-    private String authProfileRef = null;
+    private String authProfileRef;
 
     @JsonProperty("realm")
     @JsonInclude(Include.NON_NULL)
-    private String realm = null;
+    private String realm;
 
     @JsonProperty("request_uri_path")
     @JsonInclude(Include.NON_NULL)
-    private StringMatch requestUriPath = null;
+    private StringMatch requestUriPath;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
 
 

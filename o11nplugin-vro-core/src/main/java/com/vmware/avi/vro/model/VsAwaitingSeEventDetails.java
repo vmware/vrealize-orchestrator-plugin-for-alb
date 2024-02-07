@@ -27,23 +27,23 @@ import org.springframework.stereotype.Service;
 public class VsAwaitingSeEventDetails extends AviRestResource {
     @JsonProperty("awaitingse_timeout")
     @JsonInclude(Include.NON_NULL)
-    private Integer awaitingseTimeout = null;
+    private Integer awaitingseTimeout;
 
     @JsonProperty("ip")
     @JsonInclude(Include.NON_NULL)
-    private String ip = null;
+    private String ip;
 
     @JsonProperty("se_assigned")
     @JsonInclude(Include.NON_NULL)
-    private List<VipSeAssigned> seAssigned = null;
+    private List<VipSeAssigned> seAssigned;
 
     @JsonProperty("se_requested")
     @JsonInclude(Include.NON_NULL)
-    private VirtualServiceResource seRequested = null;
+    private VirtualServiceResource seRequested;
 
     @JsonProperty("vs_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String vsUuid = null;
+    private String vsUuid;
 
 
 

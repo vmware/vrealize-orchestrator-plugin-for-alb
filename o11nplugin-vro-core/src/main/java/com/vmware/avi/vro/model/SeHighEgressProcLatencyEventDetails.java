@@ -26,27 +26,27 @@ import org.springframework.stereotype.Service;
 public class SeHighEgressProcLatencyEventDetails extends AviRestResource {
     @JsonProperty("dispatcher_core")
     @JsonInclude(Include.NON_NULL)
-    private Integer dispatcherCore = null;
+    private Integer dispatcherCore;
 
     @JsonProperty("event_count")
     @JsonInclude(Include.NON_NULL)
-    private Integer eventCount = null;
+    private Integer eventCount;
 
     @JsonProperty("flow_core")
     @JsonInclude(Include.NON_NULL)
-    private List<Integer> flowCore = null;
+    private List<Integer> flowCore;
 
     @JsonProperty("max_proxy_to_disp_queing_delay")
     @JsonInclude(Include.NON_NULL)
-    private Integer maxProxyToDispQueingDelay = null;
+    private Integer maxProxyToDispQueingDelay;
 
     @JsonProperty("se_name")
     @JsonInclude(Include.NON_NULL)
-    private String seName = null;
+    private String seName;
 
     @JsonProperty("se_ref")
     @JsonInclude(Include.NON_NULL)
-    private String seRef = null;
+    private String seRef;
 
 
 

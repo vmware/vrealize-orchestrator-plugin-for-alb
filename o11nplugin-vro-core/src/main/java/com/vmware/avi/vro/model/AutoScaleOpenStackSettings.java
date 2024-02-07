@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class AutoScaleOpenStackSettings extends AviRestResource {
     @JsonProperty("heat_scale_down_url")
     @JsonInclude(Include.NON_NULL)
-    private String heatScaleDownUrl = null;
+    private String heatScaleDownUrl;
 
     @JsonProperty("heat_scale_up_url")
     @JsonInclude(Include.NON_NULL)
-    private String heatScaleUpUrl = null;
+    private String heatScaleUpUrl;
 
 
 

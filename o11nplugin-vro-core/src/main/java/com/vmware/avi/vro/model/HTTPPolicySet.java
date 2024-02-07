@@ -29,35 +29,35 @@ import org.springframework.stereotype.Service;
 public class HTTPPolicySet extends AviRestResource {
     @JsonProperty("cloud_config_cksum")
     @JsonInclude(Include.NON_NULL)
-    private String cloudConfigCksum = null;
+    private String cloudConfigCksum;
 
     @JsonProperty("created_by")
     @JsonInclude(Include.NON_NULL)
-    private String createdBy = null;
+    private String createdBy;
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("geo_db_ref")
     @JsonInclude(Include.NON_NULL)
-    private String geoDbRef = null;
+    private String geoDbRef;
 
     @JsonProperty("http_request_policy")
     @JsonInclude(Include.NON_NULL)
-    private HTTPRequestPolicy httpRequestPolicy = null;
+    private HTTPRequestPolicy httpRequestPolicy;
 
     @JsonProperty("http_response_policy")
     @JsonInclude(Include.NON_NULL)
-    private HTTPResponsePolicy httpResponsePolicy = null;
+    private HTTPResponsePolicy httpResponsePolicy;
 
     @JsonProperty("http_security_policy")
     @JsonInclude(Include.NON_NULL)
-    private HTTPSecurityPolicy httpSecurityPolicy = null;
+    private HTTPSecurityPolicy httpSecurityPolicy;
 
     @JsonProperty("ip_reputation_db_ref")
     @JsonInclude(Include.NON_NULL)
-    private String ipReputationDbRef = null;
+    private String ipReputationDbRef;
 
     @JsonProperty("is_internal_policy")
     @JsonInclude(Include.NON_NULL)
@@ -65,15 +65,15 @@ public class HTTPPolicySet extends AviRestResource {
 
     @JsonProperty("markers")
     @JsonInclude(Include.NON_NULL)
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -81,7 +81,7 @@ public class HTTPPolicySet extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

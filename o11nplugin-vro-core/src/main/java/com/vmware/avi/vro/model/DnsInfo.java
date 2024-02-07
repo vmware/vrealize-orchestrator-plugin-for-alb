@@ -31,11 +31,11 @@ public class DnsInfo extends AviRestResource {
 
     @JsonProperty("cname")
     @JsonInclude(Include.NON_NULL)
-    private DnsCnameRdata cname = null;
+    private DnsCnameRdata cname;
 
     @JsonProperty("fqdn")
     @JsonInclude(Include.NON_NULL)
-    private String fqdn = null;
+    private String fqdn;
 
     @JsonProperty("metadata")
     @JsonInclude(Include.NON_NULL)
@@ -43,11 +43,11 @@ public class DnsInfo extends AviRestResource {
 
     @JsonProperty("num_records_in_response")
     @JsonInclude(Include.NON_NULL)
-    private Integer numRecordsInResponse = null;
+    private Integer numRecordsInResponse;
 
     @JsonProperty("ttl")
     @JsonInclude(Include.NON_NULL)
-    private Integer ttl = null;
+    private Integer ttl;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)

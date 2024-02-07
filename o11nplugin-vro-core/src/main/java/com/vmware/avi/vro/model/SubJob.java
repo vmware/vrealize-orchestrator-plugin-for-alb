@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class SubJob extends AviRestResource {
     @JsonProperty("expires_at")
     @JsonInclude(Include.NON_NULL)
-    private String expiresAt = null;
+    private String expiresAt;
 
     @JsonProperty("metadata")
     @JsonInclude(Include.NON_NULL)
-    private String metadata = null;
+    private String metadata;
 
     @JsonProperty("num_retries")
     @JsonInclude(Include.NON_NULL)
-    private Integer numRetries = null;
+    private Integer numRetries;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
 
 

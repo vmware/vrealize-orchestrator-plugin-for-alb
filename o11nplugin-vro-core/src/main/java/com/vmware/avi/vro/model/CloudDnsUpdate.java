@@ -28,31 +28,31 @@ import org.springframework.stereotype.Service;
 public class CloudDnsUpdate extends AviRestResource {
     @JsonProperty("cc_id")
     @JsonInclude(Include.NON_NULL)
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("dns_fqdn")
     @JsonInclude(Include.NON_NULL)
-    private String dnsFqdn = null;
+    private String dnsFqdn;
 
     @JsonProperty("error_string")
     @JsonInclude(Include.NON_NULL)
-    private String errorString = null;
+    private String errorString;
 
     @JsonProperty("fip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr fip = null;
+    private IpAddr fip;
 
     @JsonProperty("vip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr vip = null;
+    private IpAddr vip;
 
     @JsonProperty("vs_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String vsUuid = null;
+    private String vsUuid;
 
     @JsonProperty("vtype")
     @JsonInclude(Include.NON_NULL)
-    private String vtype = null;
+    private String vtype;
 
 
 

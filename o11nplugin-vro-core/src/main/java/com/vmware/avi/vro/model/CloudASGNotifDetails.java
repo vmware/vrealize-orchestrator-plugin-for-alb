@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class CloudASGNotifDetails extends AviRestResource {
     @JsonProperty("asg_name")
     @JsonInclude(Include.NON_NULL)
-    private String asgName = null;
+    private String asgName;
 
     @JsonProperty("cc_id")
     @JsonInclude(Include.NON_NULL)
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("error_string")
     @JsonInclude(Include.NON_NULL)
-    private String errorString = null;
+    private String errorString;
 
     @JsonProperty("pool_ref")
     @JsonInclude(Include.NON_NULL)
-    private String poolRef = null;
+    private String poolRef;
 
 
 

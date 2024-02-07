@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class RestoreParams extends AviRestResource {
     @JsonProperty("file")
     @JsonInclude(Include.NON_NULL)
-    private String file = null;
+    private String file;
 
     @JsonProperty("passphrase")
     @JsonInclude(Include.NON_NULL)
-    private String passphrase = null;
+    private String passphrase;
 
     @JsonProperty("prechecks_only")
     @JsonInclude(Include.NON_NULL)

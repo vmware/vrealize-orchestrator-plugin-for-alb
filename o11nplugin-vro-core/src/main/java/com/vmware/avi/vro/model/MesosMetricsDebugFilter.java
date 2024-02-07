@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class MesosMetricsDebugFilter extends AviRestResource {
     @JsonProperty("mesos_master")
     @JsonInclude(Include.NON_NULL)
-    private String mesosMaster = null;
+    private String mesosMaster;
 
     @JsonProperty("mesos_slave")
     @JsonInclude(Include.NON_NULL)
-    private String mesosSlave = null;
+    private String mesosSlave;
 
     @JsonProperty("metric_entity")
     @JsonInclude(Include.NON_NULL)
-    private String metricEntity = null;
+    private String metricEntity;
 
     @JsonProperty("metrics_collection_frq")
     @JsonInclude(Include.NON_NULL)

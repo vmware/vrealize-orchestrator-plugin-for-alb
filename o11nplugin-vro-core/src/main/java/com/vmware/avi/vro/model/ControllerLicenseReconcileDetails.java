@@ -26,43 +26,43 @@ import org.springframework.stereotype.Service;
 public class ControllerLicenseReconcileDetails extends AviRestResource {
     @JsonProperty("new_available_service_cores")
     @JsonInclude(Include.NON_NULL)
-    private Float newAvailableServiceCores = null;
+    private Float newAvailableServiceCores;
 
     @JsonProperty("new_consumed_service_cores")
     @JsonInclude(Include.NON_NULL)
-    private Float newConsumedServiceCores = null;
+    private Float newConsumedServiceCores;
 
     @JsonProperty("new_escrow_service_cores")
     @JsonInclude(Include.NON_NULL)
-    private Float newEscrowServiceCores = null;
+    private Float newEscrowServiceCores;
 
     @JsonProperty("new_remaining_service_cores")
     @JsonInclude(Include.NON_NULL)
-    private Float newRemainingServiceCores = null;
+    private Float newRemainingServiceCores;
 
     @JsonProperty("old_available_service_cores")
     @JsonInclude(Include.NON_NULL)
-    private Float oldAvailableServiceCores = null;
+    private Float oldAvailableServiceCores;
 
     @JsonProperty("old_consumed_service_cores")
     @JsonInclude(Include.NON_NULL)
-    private Float oldConsumedServiceCores = null;
+    private Float oldConsumedServiceCores;
 
     @JsonProperty("old_escrow_service_cores")
     @JsonInclude(Include.NON_NULL)
-    private Float oldEscrowServiceCores = null;
+    private Float oldEscrowServiceCores;
 
     @JsonProperty("old_remaining_service_cores")
     @JsonInclude(Include.NON_NULL)
-    private Float oldRemainingServiceCores = null;
+    private Float oldRemainingServiceCores;
 
     @JsonProperty("tenant_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String tenantUuid = null;
+    private String tenantUuid;
 
     @JsonProperty("tier")
     @JsonInclude(Include.NON_NULL)
-    private String tier = null;
+    private String tier;
 
 
 

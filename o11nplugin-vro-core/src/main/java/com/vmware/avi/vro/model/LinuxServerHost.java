@@ -27,19 +27,19 @@ import org.springframework.stereotype.Service;
 public class LinuxServerHost extends AviRestResource {
     @JsonProperty("host_attr")
     @JsonInclude(Include.NON_NULL)
-    private List<HostAttributes> hostAttr = null;
+    private List<HostAttributes> hostAttr;
 
     @JsonProperty("host_ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr hostIp = null;
+    private IpAddr hostIp;
 
     @JsonProperty("node_availability_zone")
     @JsonInclude(Include.NON_NULL)
-    private String nodeAvailabilityZone = null;
+    private String nodeAvailabilityZone;
 
     @JsonProperty("se_group_ref")
     @JsonInclude(Include.NON_NULL)
-    private String seGroupRef = null;
+    private String seGroupRef;
 
 
 

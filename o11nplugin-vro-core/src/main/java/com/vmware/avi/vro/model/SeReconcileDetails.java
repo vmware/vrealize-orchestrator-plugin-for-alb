@@ -26,23 +26,23 @@ import org.springframework.stereotype.Service;
 public class SeReconcileDetails extends AviRestResource {
     @JsonProperty("new_service_cores")
     @JsonInclude(Include.NON_NULL)
-    private Float newServiceCores = null;
+    private Float newServiceCores;
 
     @JsonProperty("old_service_cores")
     @JsonInclude(Include.NON_NULL)
-    private Float oldServiceCores = null;
+    private Float oldServiceCores;
 
     @JsonProperty("se_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String seUuid = null;
+    private String seUuid;
 
     @JsonProperty("tenant_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String tenantUuid = null;
+    private String tenantUuid;
 
     @JsonProperty("tier")
     @JsonInclude(Include.NON_NULL)
-    private String tier = null;
+    private String tier;
 
 
 

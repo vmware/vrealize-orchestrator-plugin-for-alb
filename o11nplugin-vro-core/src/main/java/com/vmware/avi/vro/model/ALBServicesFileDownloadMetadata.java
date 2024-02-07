@@ -26,27 +26,27 @@ import org.springframework.stereotype.Service;
 public class ALBServicesFileDownloadMetadata extends AviRestResource {
     @JsonProperty("checksum")
     @JsonInclude(Include.NON_NULL)
-    private String checksum = null;
+    private String checksum;
 
     @JsonProperty("checksum_type")
     @JsonInclude(Include.NON_NULL)
-    private String checksumType = null;
+    private String checksumType;
 
     @JsonProperty("chunk_size")
     @JsonInclude(Include.NON_NULL)
-    private Integer chunkSize = null;
+    private Integer chunkSize;
 
     @JsonProperty("is_multi_part_download")
     @JsonInclude(Include.NON_NULL)
-    private Boolean isMultiPartDownload = null;
+    private Boolean isMultiPartDownload;
 
     @JsonProperty("signed_url")
     @JsonInclude(Include.NON_NULL)
-    private String signedUrl = null;
+    private String signedUrl;
 
     @JsonProperty("total_size")
     @JsonInclude(Include.NON_NULL)
-    private Integer totalSize = null;
+    private Integer totalSize;
 
 
 

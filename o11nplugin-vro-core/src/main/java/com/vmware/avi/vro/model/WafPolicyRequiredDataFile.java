@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class WafPolicyRequiredDataFile extends AviRestResource {
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
 
 

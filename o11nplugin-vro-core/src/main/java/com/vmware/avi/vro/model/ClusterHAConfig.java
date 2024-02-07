@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class ClusterHAConfig extends AviRestResource {
     @JsonProperty("cluster_id")
     @JsonInclude(Include.NON_NULL)
-    private String clusterId = null;
+    private String clusterId;
 
     @JsonProperty("override_vsphere_ha")
     @JsonInclude(Include.NON_NULL)
@@ -34,7 +34,7 @@ public class ClusterHAConfig extends AviRestResource {
 
     @JsonProperty("vmg_name")
     @JsonInclude(Include.NON_NULL)
-    private String vmgName = null;
+    private String vmgName;
 
 
 

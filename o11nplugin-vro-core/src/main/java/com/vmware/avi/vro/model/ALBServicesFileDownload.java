@@ -27,15 +27,15 @@ import org.springframework.stereotype.Service;
 public class ALBServicesFileDownload extends AviRestResource {
     @JsonProperty("destination_dir")
     @JsonInclude(Include.NON_NULL)
-    private String destinationDir = null;
+    private String destinationDir;
 
     @JsonProperty("file_type")
     @JsonInclude(Include.NON_NULL)
-    private String fileType = null;
+    private String fileType;
 
     @JsonProperty("file_uri")
     @JsonInclude(Include.NON_NULL)
-    private String fileUri = null;
+    private String fileUri;
 
     @JsonProperty("message")
     @JsonInclude(Include.NON_NULL)
@@ -47,7 +47,7 @@ public class ALBServicesFileDownload extends AviRestResource {
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("status")
     @JsonInclude(Include.NON_NULL)
@@ -55,7 +55,7 @@ public class ALBServicesFileDownload extends AviRestResource {
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -63,7 +63,7 @@ public class ALBServicesFileDownload extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

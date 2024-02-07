@@ -27,11 +27,11 @@ import org.springframework.stereotype.Service;
 public class RebalanceScaleoutEventDetails extends AviRestResource {
     @JsonProperty("scaleout_params")
     @JsonInclude(Include.NON_NULL)
-    private VsScaleoutParams scaleoutParams = null;
+    private VsScaleoutParams scaleoutParams;
 
     @JsonProperty("vs_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String vsUuid = null;
+    private String vsUuid;
 
 
 

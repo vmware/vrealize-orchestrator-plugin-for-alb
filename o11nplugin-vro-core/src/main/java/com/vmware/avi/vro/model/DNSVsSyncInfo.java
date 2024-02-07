@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class DNSVsSyncInfo extends AviRestResource {
     @JsonProperty("error")
     @JsonInclude(Include.NON_NULL)
-    private String error = null;
+    private String error;
 
     @JsonProperty("total_records")
     @JsonInclude(Include.NON_NULL)
-    private Integer totalRecords = null;
+    private Integer totalRecords;
 
 
 

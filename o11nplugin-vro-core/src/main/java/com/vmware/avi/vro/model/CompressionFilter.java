@@ -26,27 +26,27 @@ import org.springframework.stereotype.Service;
 public class CompressionFilter extends AviRestResource {
     @JsonProperty("devices_ref")
     @JsonInclude(Include.NON_NULL)
-    private String devicesRef = null;
+    private String devicesRef;
 
     @JsonProperty("index")
     @JsonInclude(Include.NON_NULL)
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("ip_addr_prefixes")
     @JsonInclude(Include.NON_NULL)
-    private List<IpAddrPrefix> ipAddrPrefixes = null;
+    private List<IpAddrPrefix> ipAddrPrefixes;
 
     @JsonProperty("ip_addr_ranges")
     @JsonInclude(Include.NON_NULL)
-    private List<IpAddrRange> ipAddrRanges = null;
+    private List<IpAddrRange> ipAddrRanges;
 
     @JsonProperty("ip_addrs")
     @JsonInclude(Include.NON_NULL)
-    private List<IpAddr> ipAddrs = null;
+    private List<IpAddr> ipAddrs;
 
     @JsonProperty("ip_addrs_ref")
     @JsonInclude(Include.NON_NULL)
-    private String ipAddrsRef = null;
+    private String ipAddrsRef;
 
     @JsonProperty("level")
     @JsonInclude(Include.NON_NULL)
@@ -58,11 +58,11 @@ public class CompressionFilter extends AviRestResource {
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("user_agent")
     @JsonInclude(Include.NON_NULL)
-    private List<String> userAgent = null;
+    private List<String> userAgent;
 
 
 

@@ -26,27 +26,27 @@ import org.springframework.stereotype.Service;
 public class GCPOneArmMode extends AviRestResource {
     @JsonProperty("data_vpc_network_name")
     @JsonInclude(Include.NON_NULL)
-    private String dataVpcNetworkName = null;
+    private String dataVpcNetworkName;
 
     @JsonProperty("data_vpc_project_id")
     @JsonInclude(Include.NON_NULL)
-    private String dataVpcProjectId = null;
+    private String dataVpcProjectId;
 
     @JsonProperty("data_vpc_subnet_name")
     @JsonInclude(Include.NON_NULL)
-    private String dataVpcSubnetName = null;
+    private String dataVpcSubnetName;
 
     @JsonProperty("management_vpc_network_name")
     @JsonInclude(Include.NON_NULL)
-    private String managementVpcNetworkName = null;
+    private String managementVpcNetworkName;
 
     @JsonProperty("management_vpc_project_id")
     @JsonInclude(Include.NON_NULL)
-    private String managementVpcProjectId = null;
+    private String managementVpcProjectId;
 
     @JsonProperty("management_vpc_subnet_name")
     @JsonInclude(Include.NON_NULL)
-    private String managementVpcSubnetName = null;
+    private String managementVpcSubnetName;
 
 
 

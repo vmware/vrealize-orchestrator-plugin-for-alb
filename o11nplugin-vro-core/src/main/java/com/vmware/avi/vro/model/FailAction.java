@@ -28,11 +28,11 @@ import org.springframework.stereotype.Service;
 public class FailAction extends AviRestResource {
     @JsonProperty("local_rsp")
     @JsonInclude(Include.NON_NULL)
-    private FailActionHTTPLocalResponse localRsp = null;
+    private FailActionHTTPLocalResponse localRsp;
 
     @JsonProperty("redirect")
     @JsonInclude(Include.NON_NULL)
-    private FailActionHTTPRedirect redirect = null;
+    private FailActionHTTPRedirect redirect;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)

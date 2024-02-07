@@ -35,7 +35,7 @@ public class OshiftDockerRegistryMetaData extends AviRestResource {
 
     @JsonProperty("registry_vip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr registryVip = null;
+    private IpAddr registryVip;
 
 
 

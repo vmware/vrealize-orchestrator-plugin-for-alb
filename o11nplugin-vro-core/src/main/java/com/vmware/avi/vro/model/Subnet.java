@@ -27,11 +27,11 @@ import org.springframework.stereotype.Service;
 public class Subnet extends AviRestResource {
     @JsonProperty("prefix")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrPrefix prefix = null;
+    private IpAddrPrefix prefix;
 
     @JsonProperty("static_ip_ranges")
     @JsonInclude(Include.NON_NULL)
-    private List<StaticIpRange> staticIpRanges = null;
+    private List<StaticIpRange> staticIpRanges;
 
 
 

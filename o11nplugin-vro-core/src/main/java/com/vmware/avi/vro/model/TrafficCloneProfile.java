@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class TrafficCloneProfile extends AviRestResource {
     @JsonProperty("clone_servers")
     @JsonInclude(Include.NON_NULL)
-    private List<CloneServer> cloneServers = null;
+    private List<CloneServer> cloneServers;
 
     @JsonProperty("cloud_ref")
     @JsonInclude(Include.NON_NULL)
-    private String cloudRef = null;
+    private String cloudRef;
 
     @JsonProperty("markers")
     @JsonInclude(Include.NON_NULL)
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("preserve_client_ip")
     @JsonInclude(Include.NON_NULL)
@@ -46,7 +46,7 @@ public class TrafficCloneProfile extends AviRestResource {
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -54,7 +54,7 @@ public class TrafficCloneProfile extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

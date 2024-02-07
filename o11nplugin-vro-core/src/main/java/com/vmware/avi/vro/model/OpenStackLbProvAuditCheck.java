@@ -26,31 +26,31 @@ import org.springframework.stereotype.Service;
 public class OpenStackLbProvAuditCheck extends AviRestResource {
     @JsonProperty("cc_id")
     @JsonInclude(Include.NON_NULL)
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("detail")
     @JsonInclude(Include.NON_NULL)
-    private String detail = null;
+    private String detail;
 
     @JsonProperty("elapsed")
     @JsonInclude(Include.NON_NULL)
-    private Integer elapsed = null;
+    private Integer elapsed;
 
     @JsonProperty("id")
     @JsonInclude(Include.NON_NULL)
-    private String id = null;
+    private String id;
 
     @JsonProperty("result")
     @JsonInclude(Include.NON_NULL)
-    private String result = null;
+    private String result;
 
     @JsonProperty("tenant")
     @JsonInclude(Include.NON_NULL)
-    private String tenant = null;
+    private String tenant;
 
     @JsonProperty("user")
     @JsonInclude(Include.NON_NULL)
-    private String user = null;
+    private String user;
 
 
 

@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class EquivalentLabels extends AviRestResource {
     @JsonProperty("labels")
     @JsonInclude(Include.NON_NULL)
-    private List<String> labels = null;
+    private List<String> labels;
 
 
 

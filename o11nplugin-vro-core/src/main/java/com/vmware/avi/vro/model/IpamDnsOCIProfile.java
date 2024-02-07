@@ -26,23 +26,23 @@ import org.springframework.stereotype.Service;
 public class IpamDnsOCIProfile extends AviRestResource {
     @JsonProperty("cloud_credentials_ref")
     @JsonInclude(Include.NON_NULL)
-    private String cloudCredentialsRef = null;
+    private String cloudCredentialsRef;
 
     @JsonProperty("region")
     @JsonInclude(Include.NON_NULL)
-    private String region = null;
+    private String region;
 
     @JsonProperty("tenancy")
     @JsonInclude(Include.NON_NULL)
-    private String tenancy = null;
+    private String tenancy;
 
     @JsonProperty("vcn_compartment_id")
     @JsonInclude(Include.NON_NULL)
-    private String vcnCompartmentId = null;
+    private String vcnCompartmentId;
 
     @JsonProperty("vcn_id")
     @JsonInclude(Include.NON_NULL)
-    private String vcnId = null;
+    private String vcnId;
 
 
 

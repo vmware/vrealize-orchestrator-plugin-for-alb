@@ -29,55 +29,55 @@ import org.springframework.stereotype.Service;
 public class GslbServiceRuntime extends AviRestResource {
     @JsonProperty("checksum")
     @JsonInclude(Include.NON_NULL)
-    private String checksum = null;
+    private String checksum;
 
     @JsonProperty("domain_names")
     @JsonInclude(Include.NON_NULL)
-    private List<String> domainNames = null;
+    private List<String> domainNames;
 
     @JsonProperty("flr_state")
     @JsonInclude(Include.NON_NULL)
-    private List<CfgState> flrState = null;
+    private List<CfgState> flrState;
 
     @JsonProperty("groups")
     @JsonInclude(Include.NON_NULL)
-    private List<GslbPoolRuntime> groups = null;
+    private List<GslbPoolRuntime> groups;
 
     @JsonProperty("ldr_state")
     @JsonInclude(Include.NON_NULL)
-    private CfgState ldrState = null;
+    private CfgState ldrState;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("oper_status")
     @JsonInclude(Include.NON_NULL)
-    private OperationalStatus operStatus = null;
+    private OperationalStatus operStatus;
 
     @JsonProperty("send_event")
     @JsonInclude(Include.NON_NULL)
-    private Boolean sendEvent = null;
+    private Boolean sendEvent;
 
     @JsonProperty("send_status")
     @JsonInclude(Include.NON_NULL)
-    private Boolean sendStatus = null;
+    private Boolean sendStatus;
 
     @JsonProperty("services_state")
     @JsonInclude(Include.NON_NULL)
-    private String servicesState = null;
+    private String servicesState;
 
     @JsonProperty("sp_oper_status")
     @JsonInclude(Include.NON_NULL)
-    private OperationalStatus spOperStatus = null;
+    private OperationalStatus spOperStatus;
 
     @JsonProperty("tenant_name")
     @JsonInclude(Include.NON_NULL)
-    private String tenantName = null;
+    private String tenantName;
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

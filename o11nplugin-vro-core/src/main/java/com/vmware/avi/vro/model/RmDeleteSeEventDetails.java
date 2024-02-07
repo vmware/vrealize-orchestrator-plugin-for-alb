@@ -26,47 +26,47 @@ import org.springframework.stereotype.Service;
 public class RmDeleteSeEventDetails extends AviRestResource {
     @JsonProperty("cloud_name")
     @JsonInclude(Include.NON_NULL)
-    private String cloudName = null;
+    private String cloudName;
 
     @JsonProperty("cloud_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String cloudUuid = null;
+    private String cloudUuid;
 
     @JsonProperty("host_name")
     @JsonInclude(Include.NON_NULL)
-    private String hostName = null;
+    private String hostName;
 
     @JsonProperty("host_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String hostUuid = null;
+    private String hostUuid;
 
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("se_cookie")
     @JsonInclude(Include.NON_NULL)
-    private String seCookie = null;
+    private String seCookie;
 
     @JsonProperty("se_grp_name")
     @JsonInclude(Include.NON_NULL)
-    private String seGrpName = null;
+    private String seGrpName;
 
     @JsonProperty("se_grp_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String seGrpUuid = null;
+    private String seGrpUuid;
 
     @JsonProperty("se_name")
     @JsonInclude(Include.NON_NULL)
-    private String seName = null;
+    private String seName;
 
     @JsonProperty("se_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String seUuid = null;
+    private String seUuid;
 
     @JsonProperty("status_code")
     @JsonInclude(Include.NON_NULL)
-    private Integer statusCode = null;
+    private Integer statusCode;
 
 
 

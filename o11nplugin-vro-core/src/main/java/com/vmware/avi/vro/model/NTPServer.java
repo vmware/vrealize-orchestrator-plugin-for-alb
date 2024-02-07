@@ -27,11 +27,11 @@ import org.springframework.stereotype.Service;
 public class NTPServer extends AviRestResource {
     @JsonProperty("key_number")
     @JsonInclude(Include.NON_NULL)
-    private Integer keyNumber = null;
+    private Integer keyNumber;
 
     @JsonProperty("server")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr server = null;
+    private IpAddr server;
 
 
 

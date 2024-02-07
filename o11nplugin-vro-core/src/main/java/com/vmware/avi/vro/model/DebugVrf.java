@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class DebugVrf extends AviRestResource {
     @JsonProperty("flag")
     @JsonInclude(Include.NON_NULL)
-    private String flag = null;
+    private String flag;
 
 
 

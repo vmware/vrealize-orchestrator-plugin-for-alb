@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class AlertMgrDebugFilter extends AviRestResource {
     @JsonProperty("alert_objid")
     @JsonInclude(Include.NON_NULL)
-    private String alertObjid = null;
+    private String alertObjid;
 
     @JsonProperty("alert_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String alertUuid = null;
+    private String alertUuid;
 
     @JsonProperty("cfg_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String cfgUuid = null;
+    private String cfgUuid;
 
 
 

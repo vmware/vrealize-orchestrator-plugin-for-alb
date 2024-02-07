@@ -26,23 +26,23 @@ import org.springframework.stereotype.Service;
 public class IpAddrMatch extends AviRestResource {
     @JsonProperty("addrs")
     @JsonInclude(Include.NON_NULL)
-    private List<IpAddr> addrs = null;
+    private List<IpAddr> addrs;
 
     @JsonProperty("group_refs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> groupRefs = null;
+    private List<String> groupRefs;
 
     @JsonProperty("match_criteria")
     @JsonInclude(Include.NON_NULL)
-    private String matchCriteria = null;
+    private String matchCriteria;
 
     @JsonProperty("prefixes")
     @JsonInclude(Include.NON_NULL)
-    private List<IpAddrPrefix> prefixes = null;
+    private List<IpAddrPrefix> prefixes;
 
     @JsonProperty("ranges")
     @JsonInclude(Include.NON_NULL)
-    private List<IpAddrRange> ranges = null;
+    private List<IpAddrRange> ranges;
 
 
 

@@ -27,15 +27,15 @@ import org.springframework.stereotype.Service;
 public class AlertRuleMetric extends AviRestResource {
     @JsonProperty("duration")
     @JsonInclude(Include.NON_NULL)
-    private Integer duration = null;
+    private Integer duration;
 
     @JsonProperty("metric_id")
     @JsonInclude(Include.NON_NULL)
-    private String metricId = null;
+    private String metricId;
 
     @JsonProperty("metric_threshold")
     @JsonInclude(Include.NON_NULL)
-    private AlertMetricThreshold metricThreshold = null;
+    private AlertMetricThreshold metricThreshold;
 
 
 

@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class GslbSiteDnsVs extends AviRestResource {
     @JsonProperty("dns_vs_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String dnsVsUuid = null;
+    private String dnsVsUuid;
 
     @JsonProperty("domain_names")
     @JsonInclude(Include.NON_NULL)
-    private List<String> domainNames = null;
+    private List<String> domainNames;
 
 
 

@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class RateLimiterEventDetails extends AviRestResource {
     @JsonProperty("error_message")
     @JsonInclude(Include.NON_NULL)
-    private String errorMessage = null;
+    private String errorMessage;
 
     @JsonProperty("rl_resource_name")
     @JsonInclude(Include.NON_NULL)
-    private String rlResourceName = null;
+    private String rlResourceName;
 
     @JsonProperty("rl_resource_type")
     @JsonInclude(Include.NON_NULL)
-    private String rlResourceType = null;
+    private String rlResourceType;
 
     @JsonProperty("status")
     @JsonInclude(Include.NON_NULL)
-    private String status = null;
+    private String status;
 
 
 

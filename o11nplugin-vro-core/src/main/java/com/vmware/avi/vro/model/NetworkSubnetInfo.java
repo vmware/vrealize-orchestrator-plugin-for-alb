@@ -27,31 +27,31 @@ import org.springframework.stereotype.Service;
 public class NetworkSubnetInfo extends AviRestResource {
     @JsonProperty("free")
     @JsonInclude(Include.NON_NULL)
-    private Integer free = null;
+    private Integer free;
 
     @JsonProperty("network_name")
     @JsonInclude(Include.NON_NULL)
-    private String networkName = null;
+    private String networkName;
 
     @JsonProperty("network_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String networkUuid = null;
+    private String networkUuid;
 
     @JsonProperty("subnet")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrPrefix subnet = null;
+    private IpAddrPrefix subnet;
 
     @JsonProperty("total")
     @JsonInclude(Include.NON_NULL)
-    private Integer total = null;
+    private Integer total;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
     @JsonProperty("used")
     @JsonInclude(Include.NON_NULL)
-    private Integer used = null;
+    private Integer used;
 
 
 

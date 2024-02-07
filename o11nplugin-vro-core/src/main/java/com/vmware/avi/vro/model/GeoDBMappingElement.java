@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class GeoDBMappingElement extends AviRestResource {
     @JsonProperty("attribute")
     @JsonInclude(Include.NON_NULL)
-    private String attribute = null;
+    private String attribute;
 
     @JsonProperty("values")
     @JsonInclude(Include.NON_NULL)
-    private List<String> values = null;
+    private List<String> values;
 
 
 

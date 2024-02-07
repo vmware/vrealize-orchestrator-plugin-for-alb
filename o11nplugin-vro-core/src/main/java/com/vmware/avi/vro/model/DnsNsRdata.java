@@ -28,15 +28,15 @@ import org.springframework.stereotype.Service;
 public class DnsNsRdata extends AviRestResource {
     @JsonProperty("ip6_address")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr ip6Address = null;
+    private IpAddr ip6Address;
 
     @JsonProperty("ip_address")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr ipAddress = null;
+    private IpAddr ipAddress;
 
     @JsonProperty("nsname")
     @JsonInclude(Include.NON_NULL)
-    private String nsname = null;
+    private String nsname;
 
 
 

@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class MesosSeResources extends AviRestResource {
     @JsonProperty("attribute_key")
     @JsonInclude(Include.NON_NULL)
-    private String attributeKey = null;
+    private String attributeKey;
 
     @JsonProperty("attribute_value")
     @JsonInclude(Include.NON_NULL)
-    private String attributeValue = null;
+    private String attributeValue;
 
     @JsonProperty("cpu")
     @JsonInclude(Include.NON_NULL)

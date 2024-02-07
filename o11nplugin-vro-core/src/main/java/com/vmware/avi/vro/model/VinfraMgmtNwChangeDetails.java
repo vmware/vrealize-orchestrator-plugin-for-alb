@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class VinfraMgmtNwChangeDetails extends AviRestResource {
     @JsonProperty("existing_nw")
     @JsonInclude(Include.NON_NULL)
-    private String existingNw = null;
+    private String existingNw;
 
     @JsonProperty("new_nw")
     @JsonInclude(Include.NON_NULL)
-    private String newNw = null;
+    private String newNw;
 
     @JsonProperty("vcenter")
     @JsonInclude(Include.NON_NULL)
-    private String vcenter = null;
+    private String vcenter;
 
 
 

@@ -26,31 +26,31 @@ import org.springframework.stereotype.Service;
 public class CumulativeLicense extends AviRestResource {
     @JsonProperty("burst_cores")
     @JsonInclude(Include.NON_NULL)
-    private Integer burstCores = null;
+    private Integer burstCores;
 
     @JsonProperty("cores")
     @JsonInclude(Include.NON_NULL)
-    private Integer cores = null;
+    private Integer cores;
 
     @JsonProperty("max_ses")
     @JsonInclude(Include.NON_NULL)
-    private Integer maxSes = null;
+    private Integer maxSes;
 
     @JsonProperty("se_bandwidth_limits")
     @JsonInclude(Include.NON_NULL)
-    private List<SEBandwidthLimit> seBandwidthLimits = null;
+    private List<SEBandwidthLimit> seBandwidthLimits;
 
     @JsonProperty("service_cores")
     @JsonInclude(Include.NON_NULL)
-    private Float serviceCores = null;
+    private Float serviceCores;
 
     @JsonProperty("sockets")
     @JsonInclude(Include.NON_NULL)
-    private Integer sockets = null;
+    private Integer sockets;
 
     @JsonProperty("tier_type")
     @JsonInclude(Include.NON_NULL)
-    private String tierType = null;
+    private String tierType;
 
 
 

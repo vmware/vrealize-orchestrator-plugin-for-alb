@@ -29,15 +29,15 @@ import org.springframework.stereotype.Service;
 public class SeProperties extends AviRestResource {
     @JsonProperty("se_agent_properties")
     @JsonInclude(Include.NON_NULL)
-    private SeAgentProperties seAgentProperties = null;
+    private SeAgentProperties seAgentProperties;
 
     @JsonProperty("se_bootup_properties")
     @JsonInclude(Include.NON_NULL)
-    private SeBootupProperties seBootupProperties = null;
+    private SeBootupProperties seBootupProperties;
 
     @JsonProperty("se_runtime_properties")
     @JsonInclude(Include.NON_NULL)
-    private SeRuntimeProperties seRuntimeProperties = null;
+    private SeRuntimeProperties seRuntimeProperties;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)

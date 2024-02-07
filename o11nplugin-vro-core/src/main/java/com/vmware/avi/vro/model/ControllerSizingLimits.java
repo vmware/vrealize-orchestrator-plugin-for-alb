@@ -26,47 +26,47 @@ import org.springframework.stereotype.Service;
 public class ControllerSizingLimits extends AviRestResource {
     @JsonProperty("controller_sizing_cloud_limits")
     @JsonInclude(Include.NON_NULL)
-    private List<ControllerSizingCloudLimits> controllerSizingCloudLimits = null;
+    private List<ControllerSizingCloudLimits> controllerSizingCloudLimits;
 
     @JsonProperty("flavor")
     @JsonInclude(Include.NON_NULL)
-    private String flavor = null;
+    private String flavor;
 
     @JsonProperty("num_clouds")
     @JsonInclude(Include.NON_NULL)
-    private Integer numClouds = null;
+    private Integer numClouds;
 
     @JsonProperty("num_east_west_virtualservices")
     @JsonInclude(Include.NON_NULL)
-    private Integer numEastWestVirtualservices = null;
+    private Integer numEastWestVirtualservices;
 
     @JsonProperty("num_servers")
     @JsonInclude(Include.NON_NULL)
-    private Integer numServers = null;
+    private Integer numServers;
 
     @JsonProperty("num_serviceengines")
     @JsonInclude(Include.NON_NULL)
-    private Integer numServiceengines = null;
+    private Integer numServiceengines;
 
     @JsonProperty("num_tenants")
     @JsonInclude(Include.NON_NULL)
-    private Integer numTenants = null;
+    private Integer numTenants;
 
     @JsonProperty("num_virtualservices")
     @JsonInclude(Include.NON_NULL)
-    private Integer numVirtualservices = null;
+    private Integer numVirtualservices;
 
     @JsonProperty("num_virtualservices_rt_metrics")
     @JsonInclude(Include.NON_NULL)
-    private Integer numVirtualservicesRtMetrics = null;
+    private Integer numVirtualservicesRtMetrics;
 
     @JsonProperty("num_vrfs")
     @JsonInclude(Include.NON_NULL)
-    private Integer numVrfs = null;
+    private Integer numVrfs;
 
     @JsonProperty("num_waf_virtualservices")
     @JsonInclude(Include.NON_NULL)
-    private Integer numWafVirtualservices = null;
+    private Integer numWafVirtualservices;
 
 
 

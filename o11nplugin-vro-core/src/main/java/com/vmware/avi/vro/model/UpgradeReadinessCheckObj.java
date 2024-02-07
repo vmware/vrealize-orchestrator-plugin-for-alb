@@ -27,43 +27,43 @@ import org.springframework.stereotype.Service;
 public class UpgradeReadinessCheckObj extends AviRestResource {
     @JsonProperty("checks")
     @JsonInclude(Include.NON_NULL)
-    private List<MustChecksInfo> checks = null;
+    private List<MustChecksInfo> checks;
 
     @JsonProperty("checks_completed")
     @JsonInclude(Include.NON_NULL)
-    private Integer checksCompleted = null;
+    private Integer checksCompleted;
 
     @JsonProperty("duration")
     @JsonInclude(Include.NON_NULL)
-    private Integer duration = null;
+    private Integer duration;
 
     @JsonProperty("end_time")
     @JsonInclude(Include.NON_NULL)
-    private String endTime = null;
+    private String endTime;
 
     @JsonProperty("image_ref")
     @JsonInclude(Include.NON_NULL)
-    private String imageRef = null;
+    private String imageRef;
 
     @JsonProperty("patch_image_ref")
     @JsonInclude(Include.NON_NULL)
-    private String patchImageRef = null;
+    private String patchImageRef;
 
     @JsonProperty("start_time")
     @JsonInclude(Include.NON_NULL)
-    private String startTime = null;
+    private String startTime;
 
     @JsonProperty("state")
     @JsonInclude(Include.NON_NULL)
-    private UpgradeOpsState state = null;
+    private UpgradeOpsState state;
 
     @JsonProperty("total_checks")
     @JsonInclude(Include.NON_NULL)
-    private Integer totalChecks = null;
+    private Integer totalChecks;
 
     @JsonProperty("upgrade_ops")
     @JsonInclude(Include.NON_NULL)
-    private String upgradeOps = null;
+    private String upgradeOps;
 
 
 

@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class DnsSrvRdata extends AviRestResource {
     @JsonProperty("port")
     @JsonInclude(Include.NON_NULL)
-    private Integer port = null;
+    private Integer port;
 
     @JsonProperty("priority")
     @JsonInclude(Include.NON_NULL)

@@ -28,15 +28,15 @@ import org.springframework.stereotype.Service;
 public class SystemLimits extends AviRestResource {
     @JsonProperty("controller_limits")
     @JsonInclude(Include.NON_NULL)
-    private ControllerLimits controllerLimits = null;
+    private ControllerLimits controllerLimits;
 
     @JsonProperty("controller_sizes")
     @JsonInclude(Include.NON_NULL)
-    private List<ControllerSize> controllerSizes = null;
+    private List<ControllerSize> controllerSizes;
 
     @JsonProperty("serviceengine_limits")
     @JsonInclude(Include.NON_NULL)
-    private ServiceEngineLimits serviceengineLimits = null;
+    private ServiceEngineLimits serviceengineLimits;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -44,7 +44,7 @@ public class SystemLimits extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

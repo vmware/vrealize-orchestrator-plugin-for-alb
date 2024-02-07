@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class VinfraVcenterDiscoveryFailure extends AviRestResource {
     @JsonProperty("state")
     @JsonInclude(Include.NON_NULL)
-    private String state = null;
+    private String state;
 
     @JsonProperty("vcenter")
     @JsonInclude(Include.NON_NULL)
-    private String vcenter = null;
+    private String vcenter;
 
 
 

@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class SSLIgnoredDetails extends AviRestResource {
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private String reason = null;
+    private String reason;
 
 
 

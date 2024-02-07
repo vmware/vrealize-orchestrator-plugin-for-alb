@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class DebugIpAddr extends AviRestResource {
     @JsonProperty("addrs")
     @JsonInclude(Include.NON_NULL)
-    private List<IpAddr> addrs = null;
+    private List<IpAddr> addrs;
 
     @JsonProperty("match_operation")
     @JsonInclude(Include.NON_NULL)
@@ -34,11 +34,11 @@ public class DebugIpAddr extends AviRestResource {
 
     @JsonProperty("prefixes")
     @JsonInclude(Include.NON_NULL)
-    private List<IpAddrPrefix> prefixes = null;
+    private List<IpAddrPrefix> prefixes;
 
     @JsonProperty("ranges")
     @JsonInclude(Include.NON_NULL)
-    private List<IpAddrRange> ranges = null;
+    private List<IpAddrRange> ranges;
 
 
 

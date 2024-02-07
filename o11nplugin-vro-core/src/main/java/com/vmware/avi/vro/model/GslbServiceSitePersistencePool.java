@@ -26,27 +26,27 @@ import org.springframework.stereotype.Service;
 public class GslbServiceSitePersistencePool extends AviRestResource {
     @JsonProperty("enable_http2")
     @JsonInclude(Include.NON_NULL)
-    private Boolean enableHttp2 = null;
+    private Boolean enableHttp2;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("num_servers")
     @JsonInclude(Include.NON_NULL)
-    private Integer numServers = null;
+    private Integer numServers;
 
     @JsonProperty("num_servers_up")
     @JsonInclude(Include.NON_NULL)
-    private Integer numServersUp = null;
+    private Integer numServersUp;
 
     @JsonProperty("servers")
     @JsonInclude(Include.NON_NULL)
-    private List<ServerConfig> servers = null;
+    private List<ServerConfig> servers;
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

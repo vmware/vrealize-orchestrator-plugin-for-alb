@@ -26,731 +26,731 @@ import org.springframework.stereotype.Service;
 public class VserverL7MetricsObj extends AviRestResource {
     @JsonProperty("apdexr")
     @JsonInclude(Include.NON_NULL)
-    private Float apdexr = null;
+    private Float apdexr;
 
     @JsonProperty("avg_application_response_time")
     @JsonInclude(Include.NON_NULL)
-    private Float avgApplicationResponseTime = null;
+    private Float avgApplicationResponseTime;
 
     @JsonProperty("avg_blocking_time")
     @JsonInclude(Include.NON_NULL)
-    private Float avgBlockingTime = null;
+    private Float avgBlockingTime;
 
     @JsonProperty("avg_browser_rendering_time")
     @JsonInclude(Include.NON_NULL)
-    private Float avgBrowserRenderingTime = null;
+    private Float avgBrowserRenderingTime;
 
     @JsonProperty("avg_cache_bytes")
     @JsonInclude(Include.NON_NULL)
-    private Float avgCacheBytes = null;
+    private Float avgCacheBytes;
 
     @JsonProperty("avg_cache_hits")
     @JsonInclude(Include.NON_NULL)
-    private Float avgCacheHits = null;
+    private Float avgCacheHits;
 
     @JsonProperty("avg_cacheable_bytes")
     @JsonInclude(Include.NON_NULL)
-    private Float avgCacheableBytes = null;
+    private Float avgCacheableBytes;
 
     @JsonProperty("avg_cacheable_hits")
     @JsonInclude(Include.NON_NULL)
-    private Float avgCacheableHits = null;
+    private Float avgCacheableHits;
 
     @JsonProperty("avg_client_data_transfer_time")
     @JsonInclude(Include.NON_NULL)
-    private Float avgClientDataTransferTime = null;
+    private Float avgClientDataTransferTime;
 
     @JsonProperty("avg_client_rtt")
     @JsonInclude(Include.NON_NULL)
-    private Float avgClientRtt = null;
+    private Float avgClientRtt;
 
     @JsonProperty("avg_client_txn_latency")
     @JsonInclude(Include.NON_NULL)
-    private Float avgClientTxnLatency = null;
+    private Float avgClientTxnLatency;
 
     @JsonProperty("avg_complete_responses")
     @JsonInclude(Include.NON_NULL)
-    private Float avgCompleteResponses = null;
+    private Float avgCompleteResponses;
 
     @JsonProperty("avg_connection_time")
     @JsonInclude(Include.NON_NULL)
-    private Float avgConnectionTime = null;
+    private Float avgConnectionTime;
 
     @JsonProperty("avg_dns_lookup_time")
     @JsonInclude(Include.NON_NULL)
-    private Float avgDnsLookupTime = null;
+    private Float avgDnsLookupTime;
 
     @JsonProperty("avg_dom_content_load_time")
     @JsonInclude(Include.NON_NULL)
-    private Float avgDomContentLoadTime = null;
+    private Float avgDomContentLoadTime;
 
     @JsonProperty("avg_error_responses")
     @JsonInclude(Include.NON_NULL)
-    private Float avgErrorResponses = null;
+    private Float avgErrorResponses;
 
     @JsonProperty("avg_errors_excluded")
     @JsonInclude(Include.NON_NULL)
-    private Float avgErrorsExcluded = null;
+    private Float avgErrorsExcluded;
 
     @JsonProperty("avg_frustrated_responses")
     @JsonInclude(Include.NON_NULL)
-    private Float avgFrustratedResponses = null;
+    private Float avgFrustratedResponses;
 
     @JsonProperty("avg_http_headers_bytes")
     @JsonInclude(Include.NON_NULL)
-    private Float avgHttpHeadersBytes = null;
+    private Float avgHttpHeadersBytes;
 
     @JsonProperty("avg_http_headers_count")
     @JsonInclude(Include.NON_NULL)
-    private Float avgHttpHeadersCount = null;
+    private Float avgHttpHeadersCount;
 
     @JsonProperty("avg_http_params_count")
     @JsonInclude(Include.NON_NULL)
-    private Float avgHttpParamsCount = null;
+    private Float avgHttpParamsCount;
 
     @JsonProperty("avg_page_download_time")
     @JsonInclude(Include.NON_NULL)
-    private Float avgPageDownloadTime = null;
+    private Float avgPageDownloadTime;
 
     @JsonProperty("avg_page_load_time")
     @JsonInclude(Include.NON_NULL)
-    private Float avgPageLoadTime = null;
+    private Float avgPageLoadTime;
 
     @JsonProperty("avg_params_per_req")
     @JsonInclude(Include.NON_NULL)
-    private Float avgParamsPerReq = null;
+    private Float avgParamsPerReq;
 
     @JsonProperty("avg_post_bytes")
     @JsonInclude(Include.NON_NULL)
-    private Float avgPostBytes = null;
+    private Float avgPostBytes;
 
     @JsonProperty("avg_post_compression_bytes")
     @JsonInclude(Include.NON_NULL)
-    private Float avgPostCompressionBytes = null;
+    private Float avgPostCompressionBytes;
 
     @JsonProperty("avg_pre_compression_bytes")
     @JsonInclude(Include.NON_NULL)
-    private Float avgPreCompressionBytes = null;
+    private Float avgPreCompressionBytes;
 
     @JsonProperty("avg_redirection_time")
     @JsonInclude(Include.NON_NULL)
-    private Float avgRedirectionTime = null;
+    private Float avgRedirectionTime;
 
     @JsonProperty("avg_reqs_per_session")
     @JsonInclude(Include.NON_NULL)
-    private Float avgReqsPerSession = null;
+    private Float avgReqsPerSession;
 
     @JsonProperty("avg_resp_1xx")
     @JsonInclude(Include.NON_NULL)
-    private Float avgResp1Xx = null;
+    private Float avgResp1Xx;
 
     @JsonProperty("avg_resp_2xx")
     @JsonInclude(Include.NON_NULL)
-    private Float avgResp2Xx = null;
+    private Float avgResp2Xx;
 
     @JsonProperty("avg_resp_3xx")
     @JsonInclude(Include.NON_NULL)
-    private Float avgResp3Xx = null;
+    private Float avgResp3Xx;
 
     @JsonProperty("avg_resp_4xx")
     @JsonInclude(Include.NON_NULL)
-    private Float avgResp4Xx = null;
+    private Float avgResp4Xx;
 
     @JsonProperty("avg_resp_4xx_avi_errors")
     @JsonInclude(Include.NON_NULL)
-    private Float avgResp4XxAviErrors = null;
+    private Float avgResp4XxAviErrors;
 
     @JsonProperty("avg_resp_5xx")
     @JsonInclude(Include.NON_NULL)
-    private Float avgResp5Xx = null;
+    private Float avgResp5Xx;
 
     @JsonProperty("avg_resp_5xx_avi_errors")
     @JsonInclude(Include.NON_NULL)
-    private Float avgResp5XxAviErrors = null;
+    private Float avgResp5XxAviErrors;
 
     @JsonProperty("avg_rum_client_data_transfer_time")
     @JsonInclude(Include.NON_NULL)
-    private Float avgRumClientDataTransferTime = null;
+    private Float avgRumClientDataTransferTime;
 
     @JsonProperty("avg_satisfactory_responses")
     @JsonInclude(Include.NON_NULL)
-    private Float avgSatisfactoryResponses = null;
+    private Float avgSatisfactoryResponses;
 
     @JsonProperty("avg_server_rtt")
     @JsonInclude(Include.NON_NULL)
-    private Float avgServerRtt = null;
+    private Float avgServerRtt;
 
     @JsonProperty("avg_service_time")
     @JsonInclude(Include.NON_NULL)
-    private Float avgServiceTime = null;
+    private Float avgServiceTime;
 
     @JsonProperty("avg_ssl_auth_dsa")
     @JsonInclude(Include.NON_NULL)
-    private Float avgSslAuthDsa = null;
+    private Float avgSslAuthDsa;
 
     @JsonProperty("avg_ssl_auth_ecdsa")
     @JsonInclude(Include.NON_NULL)
-    private Float avgSslAuthEcdsa = null;
+    private Float avgSslAuthEcdsa;
 
     @JsonProperty("avg_ssl_auth_rsa")
     @JsonInclude(Include.NON_NULL)
-    private Float avgSslAuthRsa = null;
+    private Float avgSslAuthRsa;
 
     @JsonProperty("avg_ssl_connections")
     @JsonInclude(Include.NON_NULL)
-    private Float avgSslConnections = null;
+    private Float avgSslConnections;
 
     @JsonProperty("avg_ssl_ecdsa_non_pfs")
     @JsonInclude(Include.NON_NULL)
-    private Float avgSslEcdsaNonPfs = null;
+    private Float avgSslEcdsaNonPfs;
 
     @JsonProperty("avg_ssl_ecdsa_pfs")
     @JsonInclude(Include.NON_NULL)
-    private Float avgSslEcdsaPfs = null;
+    private Float avgSslEcdsaPfs;
 
     @JsonProperty("avg_ssl_errors")
     @JsonInclude(Include.NON_NULL)
-    private Float avgSslErrors = null;
+    private Float avgSslErrors;
 
     @JsonProperty("avg_ssl_failed_connections")
     @JsonInclude(Include.NON_NULL)
-    private Float avgSslFailedConnections = null;
+    private Float avgSslFailedConnections;
 
     @JsonProperty("avg_ssl_handshake_network_errors")
     @JsonInclude(Include.NON_NULL)
-    private Float avgSslHandshakeNetworkErrors = null;
+    private Float avgSslHandshakeNetworkErrors;
 
     @JsonProperty("avg_ssl_handshake_protocol_errors")
     @JsonInclude(Include.NON_NULL)
-    private Float avgSslHandshakeProtocolErrors = null;
+    private Float avgSslHandshakeProtocolErrors;
 
     @JsonProperty("avg_ssl_handshakes_new")
     @JsonInclude(Include.NON_NULL)
-    private Float avgSslHandshakesNew = null;
+    private Float avgSslHandshakesNew;
 
     @JsonProperty("avg_ssl_handshakes_non_pfs")
     @JsonInclude(Include.NON_NULL)
-    private Float avgSslHandshakesNonPfs = null;
+    private Float avgSslHandshakesNonPfs;
 
     @JsonProperty("avg_ssl_handshakes_pfs")
     @JsonInclude(Include.NON_NULL)
-    private Float avgSslHandshakesPfs = null;
+    private Float avgSslHandshakesPfs;
 
     @JsonProperty("avg_ssl_handshakes_reused")
     @JsonInclude(Include.NON_NULL)
-    private Float avgSslHandshakesReused = null;
+    private Float avgSslHandshakesReused;
 
     @JsonProperty("avg_ssl_handshakes_timedout")
     @JsonInclude(Include.NON_NULL)
-    private Float avgSslHandshakesTimedout = null;
+    private Float avgSslHandshakesTimedout;
 
     @JsonProperty("avg_ssl_kx_dh")
     @JsonInclude(Include.NON_NULL)
-    private Float avgSslKxDh = null;
+    private Float avgSslKxDh;
 
     @JsonProperty("avg_ssl_kx_ecdh")
     @JsonInclude(Include.NON_NULL)
-    private Float avgSslKxEcdh = null;
+    private Float avgSslKxEcdh;
 
     @JsonProperty("avg_ssl_kx_rsa")
     @JsonInclude(Include.NON_NULL)
-    private Float avgSslKxRsa = null;
+    private Float avgSslKxRsa;
 
     @JsonProperty("avg_ssl_rsa_non_pfs")
     @JsonInclude(Include.NON_NULL)
-    private Float avgSslRsaNonPfs = null;
+    private Float avgSslRsaNonPfs;
 
     @JsonProperty("avg_ssl_rsa_pfs")
     @JsonInclude(Include.NON_NULL)
-    private Float avgSslRsaPfs = null;
+    private Float avgSslRsaPfs;
 
     @JsonProperty("avg_ssl_ver_ssl30")
     @JsonInclude(Include.NON_NULL)
-    private Float avgSslVerSsl30 = null;
+    private Float avgSslVerSsl30;
 
     @JsonProperty("avg_ssl_ver_tls10")
     @JsonInclude(Include.NON_NULL)
-    private Float avgSslVerTls10 = null;
+    private Float avgSslVerTls10;
 
     @JsonProperty("avg_ssl_ver_tls11")
     @JsonInclude(Include.NON_NULL)
-    private Float avgSslVerTls11 = null;
+    private Float avgSslVerTls11;
 
     @JsonProperty("avg_ssl_ver_tls12")
     @JsonInclude(Include.NON_NULL)
-    private Float avgSslVerTls12 = null;
+    private Float avgSslVerTls12;
 
     @JsonProperty("avg_ssl_ver_tls13")
     @JsonInclude(Include.NON_NULL)
-    private Float avgSslVerTls13 = null;
+    private Float avgSslVerTls13;
 
     @JsonProperty("avg_tolerated_responses")
     @JsonInclude(Include.NON_NULL)
-    private Float avgToleratedResponses = null;
+    private Float avgToleratedResponses;
 
     @JsonProperty("avg_total_http2_requests")
     @JsonInclude(Include.NON_NULL)
-    private Float avgTotalHttp2Requests = null;
+    private Float avgTotalHttp2Requests;
 
     @JsonProperty("avg_total_requests")
     @JsonInclude(Include.NON_NULL)
-    private Float avgTotalRequests = null;
+    private Float avgTotalRequests;
 
     @JsonProperty("avg_uri_length")
     @JsonInclude(Include.NON_NULL)
-    private Float avgUriLength = null;
+    private Float avgUriLength;
 
     @JsonProperty("avg_waf_attacks")
     @JsonInclude(Include.NON_NULL)
-    private Float avgWafAttacks = null;
+    private Float avgWafAttacks;
 
     @JsonProperty("avg_waf_disabled")
     @JsonInclude(Include.NON_NULL)
-    private Float avgWafDisabled = null;
+    private Float avgWafDisabled;
 
     @JsonProperty("avg_waf_evaluated")
     @JsonInclude(Include.NON_NULL)
-    private Float avgWafEvaluated = null;
+    private Float avgWafEvaluated;
 
     @JsonProperty("avg_waf_evaluated_request_body_phase")
     @JsonInclude(Include.NON_NULL)
-    private Float avgWafEvaluatedRequestBodyPhase = null;
+    private Float avgWafEvaluatedRequestBodyPhase;
 
     @JsonProperty("avg_waf_evaluated_request_header_phase")
     @JsonInclude(Include.NON_NULL)
-    private Float avgWafEvaluatedRequestHeaderPhase = null;
+    private Float avgWafEvaluatedRequestHeaderPhase;
 
     @JsonProperty("avg_waf_evaluated_response_body_phase")
     @JsonInclude(Include.NON_NULL)
-    private Float avgWafEvaluatedResponseBodyPhase = null;
+    private Float avgWafEvaluatedResponseBodyPhase;
 
     @JsonProperty("avg_waf_evaluated_response_header_phase")
     @JsonInclude(Include.NON_NULL)
-    private Float avgWafEvaluatedResponseHeaderPhase = null;
+    private Float avgWafEvaluatedResponseHeaderPhase;
 
     @JsonProperty("avg_waf_flagged")
     @JsonInclude(Include.NON_NULL)
-    private Float avgWafFlagged = null;
+    private Float avgWafFlagged;
 
     @JsonProperty("avg_waf_flagged_request_body_phase")
     @JsonInclude(Include.NON_NULL)
-    private Float avgWafFlaggedRequestBodyPhase = null;
+    private Float avgWafFlaggedRequestBodyPhase;
 
     @JsonProperty("avg_waf_flagged_request_header_phase")
     @JsonInclude(Include.NON_NULL)
-    private Float avgWafFlaggedRequestHeaderPhase = null;
+    private Float avgWafFlaggedRequestHeaderPhase;
 
     @JsonProperty("avg_waf_flagged_response_body_phase")
     @JsonInclude(Include.NON_NULL)
-    private Float avgWafFlaggedResponseBodyPhase = null;
+    private Float avgWafFlaggedResponseBodyPhase;
 
     @JsonProperty("avg_waf_flagged_response_header_phase")
     @JsonInclude(Include.NON_NULL)
-    private Float avgWafFlaggedResponseHeaderPhase = null;
+    private Float avgWafFlaggedResponseHeaderPhase;
 
     @JsonProperty("avg_waf_latency_request_body_phase")
     @JsonInclude(Include.NON_NULL)
-    private Float avgWafLatencyRequestBodyPhase = null;
+    private Float avgWafLatencyRequestBodyPhase;
 
     @JsonProperty("avg_waf_latency_request_header_phase")
     @JsonInclude(Include.NON_NULL)
-    private Float avgWafLatencyRequestHeaderPhase = null;
+    private Float avgWafLatencyRequestHeaderPhase;
 
     @JsonProperty("avg_waf_latency_response_body_phase")
     @JsonInclude(Include.NON_NULL)
-    private Float avgWafLatencyResponseBodyPhase = null;
+    private Float avgWafLatencyResponseBodyPhase;
 
     @JsonProperty("avg_waf_latency_response_header_phase")
     @JsonInclude(Include.NON_NULL)
-    private Float avgWafLatencyResponseHeaderPhase = null;
+    private Float avgWafLatencyResponseHeaderPhase;
 
     @JsonProperty("avg_waf_matched")
     @JsonInclude(Include.NON_NULL)
-    private Float avgWafMatched = null;
+    private Float avgWafMatched;
 
     @JsonProperty("avg_waf_matched_request_body_phase")
     @JsonInclude(Include.NON_NULL)
-    private Float avgWafMatchedRequestBodyPhase = null;
+    private Float avgWafMatchedRequestBodyPhase;
 
     @JsonProperty("avg_waf_matched_request_header_phase")
     @JsonInclude(Include.NON_NULL)
-    private Float avgWafMatchedRequestHeaderPhase = null;
+    private Float avgWafMatchedRequestHeaderPhase;
 
     @JsonProperty("avg_waf_matched_response_body_phase")
     @JsonInclude(Include.NON_NULL)
-    private Float avgWafMatchedResponseBodyPhase = null;
+    private Float avgWafMatchedResponseBodyPhase;
 
     @JsonProperty("avg_waf_matched_response_header_phase")
     @JsonInclude(Include.NON_NULL)
-    private Float avgWafMatchedResponseHeaderPhase = null;
+    private Float avgWafMatchedResponseHeaderPhase;
 
     @JsonProperty("avg_waf_rejected")
     @JsonInclude(Include.NON_NULL)
-    private Float avgWafRejected = null;
+    private Float avgWafRejected;
 
     @JsonProperty("avg_waf_rejected_request_body_phase")
     @JsonInclude(Include.NON_NULL)
-    private Float avgWafRejectedRequestBodyPhase = null;
+    private Float avgWafRejectedRequestBodyPhase;
 
     @JsonProperty("avg_waf_rejected_request_header_phase")
     @JsonInclude(Include.NON_NULL)
-    private Float avgWafRejectedRequestHeaderPhase = null;
+    private Float avgWafRejectedRequestHeaderPhase;
 
     @JsonProperty("avg_waf_rejected_response_body_phase")
     @JsonInclude(Include.NON_NULL)
-    private Float avgWafRejectedResponseBodyPhase = null;
+    private Float avgWafRejectedResponseBodyPhase;
 
     @JsonProperty("avg_waf_rejected_response_header_phase")
     @JsonInclude(Include.NON_NULL)
-    private Float avgWafRejectedResponseHeaderPhase = null;
+    private Float avgWafRejectedResponseHeaderPhase;
 
     @JsonProperty("avg_waiting_time")
     @JsonInclude(Include.NON_NULL)
-    private Float avgWaitingTime = null;
+    private Float avgWaitingTime;
 
     @JsonProperty("max_concurrent_sessions")
     @JsonInclude(Include.NON_NULL)
-    private Float maxConcurrentSessions = null;
+    private Float maxConcurrentSessions;
 
     @JsonProperty("max_ssl_open_sessions")
     @JsonInclude(Include.NON_NULL)
-    private Float maxSslOpenSessions = null;
+    private Float maxSslOpenSessions;
 
     @JsonProperty("node_obj_id")
     @JsonInclude(Include.NON_NULL)
-    private String nodeObjId = null;
+    private String nodeObjId;
 
     @JsonProperty("pct_cache_hits")
     @JsonInclude(Include.NON_NULL)
-    private Float pctCacheHits = null;
+    private Float pctCacheHits;
 
     @JsonProperty("pct_cacheable_hits")
     @JsonInclude(Include.NON_NULL)
-    private Float pctCacheableHits = null;
+    private Float pctCacheableHits;
 
     @JsonProperty("pct_get_reqs")
     @JsonInclude(Include.NON_NULL)
-    private Float pctGetReqs = null;
+    private Float pctGetReqs;
 
     @JsonProperty("pct_post_reqs")
     @JsonInclude(Include.NON_NULL)
-    private Float pctPostReqs = null;
+    private Float pctPostReqs;
 
     @JsonProperty("pct_response_errors")
     @JsonInclude(Include.NON_NULL)
-    private Float pctResponseErrors = null;
+    private Float pctResponseErrors;
 
     @JsonProperty("pct_ssl_failed_connections")
     @JsonInclude(Include.NON_NULL)
-    private Float pctSslFailedConnections = null;
+    private Float pctSslFailedConnections;
 
     @JsonProperty("pct_waf_attacks")
     @JsonInclude(Include.NON_NULL)
-    private Float pctWafAttacks = null;
+    private Float pctWafAttacks;
 
     @JsonProperty("pct_waf_disabled")
     @JsonInclude(Include.NON_NULL)
-    private Float pctWafDisabled = null;
+    private Float pctWafDisabled;
 
     @JsonProperty("pct_waf_evaluated")
     @JsonInclude(Include.NON_NULL)
-    private Float pctWafEvaluated = null;
+    private Float pctWafEvaluated;
 
     @JsonProperty("pct_waf_flagged")
     @JsonInclude(Include.NON_NULL)
-    private Float pctWafFlagged = null;
+    private Float pctWafFlagged;
 
     @JsonProperty("pct_waf_matched")
     @JsonInclude(Include.NON_NULL)
-    private Float pctWafMatched = null;
+    private Float pctWafMatched;
 
     @JsonProperty("pct_waf_rejected")
     @JsonInclude(Include.NON_NULL)
-    private Float pctWafRejected = null;
+    private Float pctWafRejected;
 
     @JsonProperty("rum_apdexr")
     @JsonInclude(Include.NON_NULL)
-    private Float rumApdexr = null;
+    private Float rumApdexr;
 
     @JsonProperty("ssl_protocol_strength")
     @JsonInclude(Include.NON_NULL)
-    private Float sslProtocolStrength = null;
+    private Float sslProtocolStrength;
 
     @JsonProperty("sum_application_response_time")
     @JsonInclude(Include.NON_NULL)
-    private Float sumApplicationResponseTime = null;
+    private Float sumApplicationResponseTime;
 
     @JsonProperty("sum_blocking_time")
     @JsonInclude(Include.NON_NULL)
-    private Float sumBlockingTime = null;
+    private Float sumBlockingTime;
 
     @JsonProperty("sum_browser_rendering_time")
     @JsonInclude(Include.NON_NULL)
-    private Float sumBrowserRenderingTime = null;
+    private Float sumBrowserRenderingTime;
 
     @JsonProperty("sum_client_data_transfer_time")
     @JsonInclude(Include.NON_NULL)
-    private Float sumClientDataTransferTime = null;
+    private Float sumClientDataTransferTime;
 
     @JsonProperty("sum_client_rtt")
     @JsonInclude(Include.NON_NULL)
-    private Float sumClientRtt = null;
+    private Float sumClientRtt;
 
     @JsonProperty("sum_connection_time")
     @JsonInclude(Include.NON_NULL)
-    private Float sumConnectionTime = null;
+    private Float sumConnectionTime;
 
     @JsonProperty("sum_dns_lookup_time")
     @JsonInclude(Include.NON_NULL)
-    private Float sumDnsLookupTime = null;
+    private Float sumDnsLookupTime;
 
     @JsonProperty("sum_dom_content_load_time")
     @JsonInclude(Include.NON_NULL)
-    private Float sumDomContentLoadTime = null;
+    private Float sumDomContentLoadTime;
 
     @JsonProperty("sum_errors")
     @JsonInclude(Include.NON_NULL)
-    private Float sumErrors = null;
+    private Float sumErrors;
 
     @JsonProperty("sum_finished_sessions")
     @JsonInclude(Include.NON_NULL)
-    private Float sumFinishedSessions = null;
+    private Float sumFinishedSessions;
 
     @JsonProperty("sum_get_client_txn_latency")
     @JsonInclude(Include.NON_NULL)
-    private Float sumGetClientTxnLatency = null;
+    private Float sumGetClientTxnLatency;
 
     @JsonProperty("sum_get_client_txn_latency_bucket1")
     @JsonInclude(Include.NON_NULL)
-    private Float sumGetClientTxnLatencyBucket1 = null;
+    private Float sumGetClientTxnLatencyBucket1;
 
     @JsonProperty("sum_get_client_txn_latency_bucket2")
     @JsonInclude(Include.NON_NULL)
-    private Float sumGetClientTxnLatencyBucket2 = null;
+    private Float sumGetClientTxnLatencyBucket2;
 
     @JsonProperty("sum_get_reqs")
     @JsonInclude(Include.NON_NULL)
-    private Float sumGetReqs = null;
+    private Float sumGetReqs;
 
     @JsonProperty("sum_http_headers_bytes")
     @JsonInclude(Include.NON_NULL)
-    private Float sumHttpHeadersBytes = null;
+    private Float sumHttpHeadersBytes;
 
     @JsonProperty("sum_http_headers_count")
     @JsonInclude(Include.NON_NULL)
-    private Float sumHttpHeadersCount = null;
+    private Float sumHttpHeadersCount;
 
     @JsonProperty("sum_http_params_count")
     @JsonInclude(Include.NON_NULL)
-    private Float sumHttpParamsCount = null;
+    private Float sumHttpParamsCount;
 
     @JsonProperty("sum_num_page_load_time_bucket1")
     @JsonInclude(Include.NON_NULL)
-    private Float sumNumPageLoadTimeBucket1 = null;
+    private Float sumNumPageLoadTimeBucket1;
 
     @JsonProperty("sum_num_page_load_time_bucket2")
     @JsonInclude(Include.NON_NULL)
-    private Float sumNumPageLoadTimeBucket2 = null;
+    private Float sumNumPageLoadTimeBucket2;
 
     @JsonProperty("sum_num_rum_samples")
     @JsonInclude(Include.NON_NULL)
-    private Float sumNumRumSamples = null;
+    private Float sumNumRumSamples;
 
     @JsonProperty("sum_other_client_txn_latency")
     @JsonInclude(Include.NON_NULL)
-    private Float sumOtherClientTxnLatency = null;
+    private Float sumOtherClientTxnLatency;
 
     @JsonProperty("sum_other_client_txn_latency_bucket1")
     @JsonInclude(Include.NON_NULL)
-    private Float sumOtherClientTxnLatencyBucket1 = null;
+    private Float sumOtherClientTxnLatencyBucket1;
 
     @JsonProperty("sum_other_client_txn_latency_bucket2")
     @JsonInclude(Include.NON_NULL)
-    private Float sumOtherClientTxnLatencyBucket2 = null;
+    private Float sumOtherClientTxnLatencyBucket2;
 
     @JsonProperty("sum_other_reqs")
     @JsonInclude(Include.NON_NULL)
-    private Float sumOtherReqs = null;
+    private Float sumOtherReqs;
 
     @JsonProperty("sum_page_download_time")
     @JsonInclude(Include.NON_NULL)
-    private Float sumPageDownloadTime = null;
+    private Float sumPageDownloadTime;
 
     @JsonProperty("sum_page_load_time")
     @JsonInclude(Include.NON_NULL)
-    private Float sumPageLoadTime = null;
+    private Float sumPageLoadTime;
 
     @JsonProperty("sum_post_bytes")
     @JsonInclude(Include.NON_NULL)
-    private Float sumPostBytes = null;
+    private Float sumPostBytes;
 
     @JsonProperty("sum_post_client_txn_latency")
     @JsonInclude(Include.NON_NULL)
-    private Float sumPostClientTxnLatency = null;
+    private Float sumPostClientTxnLatency;
 
     @JsonProperty("sum_post_client_txn_latency_bucket1")
     @JsonInclude(Include.NON_NULL)
-    private Float sumPostClientTxnLatencyBucket1 = null;
+    private Float sumPostClientTxnLatencyBucket1;
 
     @JsonProperty("sum_post_client_txn_latency_bucket2")
     @JsonInclude(Include.NON_NULL)
-    private Float sumPostClientTxnLatencyBucket2 = null;
+    private Float sumPostClientTxnLatencyBucket2;
 
     @JsonProperty("sum_post_reqs")
     @JsonInclude(Include.NON_NULL)
-    private Float sumPostReqs = null;
+    private Float sumPostReqs;
 
     @JsonProperty("sum_redirection_time")
     @JsonInclude(Include.NON_NULL)
-    private Float sumRedirectionTime = null;
+    private Float sumRedirectionTime;
 
     @JsonProperty("sum_reqs_finished_sessions")
     @JsonInclude(Include.NON_NULL)
-    private Float sumReqsFinishedSessions = null;
+    private Float sumReqsFinishedSessions;
 
     @JsonProperty("sum_reqs_with_params")
     @JsonInclude(Include.NON_NULL)
-    private Float sumReqsWithParams = null;
+    private Float sumReqsWithParams;
 
     @JsonProperty("sum_resp_1xx")
     @JsonInclude(Include.NON_NULL)
-    private Float sumResp1Xx = null;
+    private Float sumResp1Xx;
 
     @JsonProperty("sum_resp_2xx")
     @JsonInclude(Include.NON_NULL)
-    private Float sumResp2Xx = null;
+    private Float sumResp2Xx;
 
     @JsonProperty("sum_resp_3xx")
     @JsonInclude(Include.NON_NULL)
-    private Float sumResp3Xx = null;
+    private Float sumResp3Xx;
 
     @JsonProperty("sum_resp_4xx")
     @JsonInclude(Include.NON_NULL)
-    private Float sumResp4Xx = null;
+    private Float sumResp4Xx;
 
     @JsonProperty("sum_resp_5xx")
     @JsonInclude(Include.NON_NULL)
-    private Float sumResp5Xx = null;
+    private Float sumResp5Xx;
 
     @JsonProperty("sum_rum_client_data_transfer_time")
     @JsonInclude(Include.NON_NULL)
-    private Float sumRumClientDataTransferTime = null;
+    private Float sumRumClientDataTransferTime;
 
     @JsonProperty("sum_server_rtt")
     @JsonInclude(Include.NON_NULL)
-    private Float sumServerRtt = null;
+    private Float sumServerRtt;
 
     @JsonProperty("sum_service_time")
     @JsonInclude(Include.NON_NULL)
-    private Float sumServiceTime = null;
+    private Float sumServiceTime;
 
     @JsonProperty("sum_total_responses")
     @JsonInclude(Include.NON_NULL)
-    private Float sumTotalResponses = null;
+    private Float sumTotalResponses;
 
     @JsonProperty("sum_uri_length")
     @JsonInclude(Include.NON_NULL)
-    private Float sumUriLength = null;
+    private Float sumUriLength;
 
     @JsonProperty("sum_waf_attacks")
     @JsonInclude(Include.NON_NULL)
-    private Float sumWafAttacks = null;
+    private Float sumWafAttacks;
 
     @JsonProperty("sum_waf_disabled")
     @JsonInclude(Include.NON_NULL)
-    private Float sumWafDisabled = null;
+    private Float sumWafDisabled;
 
     @JsonProperty("sum_waf_evaluated_request_body_phase")
     @JsonInclude(Include.NON_NULL)
-    private Float sumWafEvaluatedRequestBodyPhase = null;
+    private Float sumWafEvaluatedRequestBodyPhase;
 
     @JsonProperty("sum_waf_evaluated_request_header_phase")
     @JsonInclude(Include.NON_NULL)
-    private Float sumWafEvaluatedRequestHeaderPhase = null;
+    private Float sumWafEvaluatedRequestHeaderPhase;
 
     @JsonProperty("sum_waf_evaluated_response_body_phase")
     @JsonInclude(Include.NON_NULL)
-    private Float sumWafEvaluatedResponseBodyPhase = null;
+    private Float sumWafEvaluatedResponseBodyPhase;
 
     @JsonProperty("sum_waf_evaluated_response_header_phase")
     @JsonInclude(Include.NON_NULL)
-    private Float sumWafEvaluatedResponseHeaderPhase = null;
+    private Float sumWafEvaluatedResponseHeaderPhase;
 
     @JsonProperty("sum_waf_flagged")
     @JsonInclude(Include.NON_NULL)
-    private Float sumWafFlagged = null;
+    private Float sumWafFlagged;
 
     @JsonProperty("sum_waf_flagged_request_body_phase")
     @JsonInclude(Include.NON_NULL)
-    private Float sumWafFlaggedRequestBodyPhase = null;
+    private Float sumWafFlaggedRequestBodyPhase;
 
     @JsonProperty("sum_waf_flagged_request_header_phase")
     @JsonInclude(Include.NON_NULL)
-    private Float sumWafFlaggedRequestHeaderPhase = null;
+    private Float sumWafFlaggedRequestHeaderPhase;
 
     @JsonProperty("sum_waf_flagged_response_body_phase")
     @JsonInclude(Include.NON_NULL)
-    private Float sumWafFlaggedResponseBodyPhase = null;
+    private Float sumWafFlaggedResponseBodyPhase;
 
     @JsonProperty("sum_waf_flagged_response_header_phase")
     @JsonInclude(Include.NON_NULL)
-    private Float sumWafFlaggedResponseHeaderPhase = null;
+    private Float sumWafFlaggedResponseHeaderPhase;
 
     @JsonProperty("sum_waf_latency_request_body_phase")
     @JsonInclude(Include.NON_NULL)
-    private Float sumWafLatencyRequestBodyPhase = null;
+    private Float sumWafLatencyRequestBodyPhase;
 
     @JsonProperty("sum_waf_latency_request_header_phase")
     @JsonInclude(Include.NON_NULL)
-    private Float sumWafLatencyRequestHeaderPhase = null;
+    private Float sumWafLatencyRequestHeaderPhase;
 
     @JsonProperty("sum_waf_latency_response_body_phase")
     @JsonInclude(Include.NON_NULL)
-    private Float sumWafLatencyResponseBodyPhase = null;
+    private Float sumWafLatencyResponseBodyPhase;
 
     @JsonProperty("sum_waf_latency_response_header_phase")
     @JsonInclude(Include.NON_NULL)
-    private Float sumWafLatencyResponseHeaderPhase = null;
+    private Float sumWafLatencyResponseHeaderPhase;
 
     @JsonProperty("sum_waf_matched_request_body_phase")
     @JsonInclude(Include.NON_NULL)
-    private Float sumWafMatchedRequestBodyPhase = null;
+    private Float sumWafMatchedRequestBodyPhase;
 
     @JsonProperty("sum_waf_matched_request_header_phase")
     @JsonInclude(Include.NON_NULL)
-    private Float sumWafMatchedRequestHeaderPhase = null;
+    private Float sumWafMatchedRequestHeaderPhase;
 
     @JsonProperty("sum_waf_matched_response_body_phase")
     @JsonInclude(Include.NON_NULL)
-    private Float sumWafMatchedResponseBodyPhase = null;
+    private Float sumWafMatchedResponseBodyPhase;
 
     @JsonProperty("sum_waf_matched_response_header_phase")
     @JsonInclude(Include.NON_NULL)
-    private Float sumWafMatchedResponseHeaderPhase = null;
+    private Float sumWafMatchedResponseHeaderPhase;
 
     @JsonProperty("sum_waf_rejected")
     @JsonInclude(Include.NON_NULL)
-    private Float sumWafRejected = null;
+    private Float sumWafRejected;
 
     @JsonProperty("sum_waf_rejected_request_body_phase")
     @JsonInclude(Include.NON_NULL)
-    private Float sumWafRejectedRequestBodyPhase = null;
+    private Float sumWafRejectedRequestBodyPhase;
 
     @JsonProperty("sum_waf_rejected_request_header_phase")
     @JsonInclude(Include.NON_NULL)
-    private Float sumWafRejectedRequestHeaderPhase = null;
+    private Float sumWafRejectedRequestHeaderPhase;
 
     @JsonProperty("sum_waf_rejected_response_body_phase")
     @JsonInclude(Include.NON_NULL)
-    private Float sumWafRejectedResponseBodyPhase = null;
+    private Float sumWafRejectedResponseBodyPhase;
 
     @JsonProperty("sum_waf_rejected_response_header_phase")
     @JsonInclude(Include.NON_NULL)
-    private Float sumWafRejectedResponseHeaderPhase = null;
+    private Float sumWafRejectedResponseHeaderPhase;
 
     @JsonProperty("sum_waiting_time")
     @JsonInclude(Include.NON_NULL)
-    private Float sumWaitingTime = null;
+    private Float sumWaitingTime;
 
 
 

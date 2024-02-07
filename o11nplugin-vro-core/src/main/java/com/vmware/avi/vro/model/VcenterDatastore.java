@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class VcenterDatastore extends AviRestResource {
     @JsonProperty("datastore_name")
     @JsonInclude(Include.NON_NULL)
-    private String datastoreName = null;
+    private String datastoreName;
 
     @JsonProperty("managed_object_id")
     @JsonInclude(Include.NON_NULL)
-    private String managedObjectId = null;
+    private String managedObjectId;
 
 
 

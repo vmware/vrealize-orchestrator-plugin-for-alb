@@ -27,23 +27,23 @@ import org.springframework.stereotype.Service;
 public class CfgState extends AviRestResource {
     @JsonProperty("cfg_version")
     @JsonInclude(Include.NON_NULL)
-    private Integer cfgVersion = null;
+    private Integer cfgVersion;
 
     @JsonProperty("cfg_version_in_flight")
     @JsonInclude(Include.NON_NULL)
-    private Integer cfgVersionInFlight = null;
+    private Integer cfgVersionInFlight;
 
     @JsonProperty("last_changed_time")
     @JsonInclude(Include.NON_NULL)
-    private TimeStamp lastChangedTime = null;
+    private TimeStamp lastChangedTime;
 
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("site_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String siteUuid = null;
+    private String siteUuid;
 
     @JsonProperty("status")
     @JsonInclude(Include.NON_NULL)
@@ -51,7 +51,7 @@ public class CfgState extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class VinfraVcenterConnectivityStatus extends AviRestResource {
     @JsonProperty("cloud")
     @JsonInclude(Include.NON_NULL)
-    private String cloud = null;
+    private String cloud;
 
     @JsonProperty("datacenter")
     @JsonInclude(Include.NON_NULL)
-    private String datacenter = null;
+    private String datacenter;
 
     @JsonProperty("vcenter")
     @JsonInclude(Include.NON_NULL)
-    private String vcenter = null;
+    private String vcenter;
 
 
 

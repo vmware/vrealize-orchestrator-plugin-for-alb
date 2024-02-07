@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class AzureNetworkInfo extends AviRestResource {
     @JsonProperty("management_network_id")
     @JsonInclude(Include.NON_NULL)
-    private String managementNetworkId = null;
+    private String managementNetworkId;
 
     @JsonProperty("se_network_id")
     @JsonInclude(Include.NON_NULL)
-    private String seNetworkId = null;
+    private String seNetworkId;
 
     @JsonProperty("virtual_network_id")
     @JsonInclude(Include.NON_NULL)
-    private String virtualNetworkId = null;
+    private String virtualNetworkId;
 
 
 

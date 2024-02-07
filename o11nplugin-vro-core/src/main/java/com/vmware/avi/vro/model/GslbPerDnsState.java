@@ -29,31 +29,31 @@ import org.springframework.stereotype.Service;
 public class GslbPerDnsState extends AviRestResource {
     @JsonProperty("geo_download")
     @JsonInclude(Include.NON_NULL)
-    private GslbDownloadStatus geoDownload = null;
+    private GslbDownloadStatus geoDownload;
 
     @JsonProperty("gslb_download")
     @JsonInclude(Include.NON_NULL)
-    private GslbDownloadStatus gslbDownload = null;
+    private GslbDownloadStatus gslbDownload;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("oper_status")
     @JsonInclude(Include.NON_NULL)
-    private OperationalStatus operStatus = null;
+    private OperationalStatus operStatus;
 
     @JsonProperty("placement_rules")
     @JsonInclude(Include.NON_NULL)
-    private List<GslbSubDomainPlacementRuntime> placementRules = null;
+    private List<GslbSubDomainPlacementRuntime> placementRules;
 
     @JsonProperty("se_list")
     @JsonInclude(Include.NON_NULL)
-    private List<String> seList = null;
+    private List<String> seList;
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("valid_dns_vs")
     @JsonInclude(Include.NON_NULL)

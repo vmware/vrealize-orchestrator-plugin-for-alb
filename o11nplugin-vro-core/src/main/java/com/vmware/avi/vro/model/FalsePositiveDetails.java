@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class FalsePositiveDetails extends AviRestResource {
     @JsonProperty("false_positive_results")
     @JsonInclude(Include.NON_NULL)
-    private List<FalsePositiveResult> falsePositiveResults = null;
+    private List<FalsePositiveResult> falsePositiveResults;
 
     @JsonProperty("vs_name")
     @JsonInclude(Include.NON_NULL)
-    private String vsName = null;
+    private String vsName;
 
     @JsonProperty("vs_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String vsUuid = null;
+    private String vsUuid;
 
 
 

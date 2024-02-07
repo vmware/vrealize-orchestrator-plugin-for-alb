@@ -30,7 +30,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("evaluation_duration")
     @JsonInclude(Include.NON_NULL)
@@ -38,15 +38,15 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
 
     @JsonProperty("markers")
     @JsonInclude(Include.NON_NULL)
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("rules")
     @JsonInclude(Include.NON_NULL)
-    private List<PGDeploymentRule> rules = null;
+    private List<PGDeploymentRule> rules;
 
     @JsonProperty("scheme")
     @JsonInclude(Include.NON_NULL)
@@ -58,7 +58,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("test_traffic_ratio_rampup")
     @JsonInclude(Include.NON_NULL)
@@ -70,11 +70,11 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("webhook_ref")
     @JsonInclude(Include.NON_NULL)
-    private String webhookRef = null;
+    private String webhookRef;
 
 
 

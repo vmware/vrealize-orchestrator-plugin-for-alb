@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class IpamDnsAwsProfile extends AviRestResource {
     @JsonProperty("access_key_id")
     @JsonInclude(Include.NON_NULL)
-    private String accessKeyId = null;
+    private String accessKeyId;
 
     @JsonProperty("egress_service_subnets")
     @JsonInclude(Include.NON_NULL)
-    private List<String> egressServiceSubnets = null;
+    private List<String> egressServiceSubnets;
 
     @JsonProperty("iam_assume_role")
     @JsonInclude(Include.NON_NULL)
-    private String iamAssumeRole = null;
+    private String iamAssumeRole;
 
     @JsonProperty("publish_vip_to_public_zone")
     @JsonInclude(Include.NON_NULL)
@@ -42,11 +42,11 @@ public class IpamDnsAwsProfile extends AviRestResource {
 
     @JsonProperty("region")
     @JsonInclude(Include.NON_NULL)
-    private String region = null;
+    private String region;
 
     @JsonProperty("secret_access_key")
     @JsonInclude(Include.NON_NULL)
-    private String secretAccessKey = null;
+    private String secretAccessKey;
 
     @JsonProperty("ttl")
     @JsonInclude(Include.NON_NULL)
@@ -54,11 +54,11 @@ public class IpamDnsAwsProfile extends AviRestResource {
 
     @JsonProperty("usable_domains")
     @JsonInclude(Include.NON_NULL)
-    private List<String> usableDomains = null;
+    private List<String> usableDomains;
 
     @JsonProperty("usable_network_uuids")
     @JsonInclude(Include.NON_NULL)
-    private List<String> usableNetworkUuids = null;
+    private List<String> usableNetworkUuids;
 
     @JsonProperty("use_iam_roles")
     @JsonInclude(Include.NON_NULL)
@@ -66,15 +66,15 @@ public class IpamDnsAwsProfile extends AviRestResource {
 
     @JsonProperty("vpc")
     @JsonInclude(Include.NON_NULL)
-    private String vpc = null;
+    private String vpc;
 
     @JsonProperty("vpc_id")
     @JsonInclude(Include.NON_NULL)
-    private String vpcId = null;
+    private String vpcId;
 
     @JsonProperty("zones")
     @JsonInclude(Include.NON_NULL)
-    private List<AwsZoneNetwork> zones = null;
+    private List<AwsZoneNetwork> zones;
 
 
 

@@ -27,7 +27,7 @@ import org.springframework.stereotype.Service;
 public class NsxtTier1SegmentAutomaticMode extends AviRestResource {
     @JsonProperty("nsxt_segment_subnet")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrPrefix nsxtSegmentSubnet = null;
+    private IpAddrPrefix nsxtSegmentSubnet;
 
     @JsonProperty("num_se_per_segment")
     @JsonInclude(Include.NON_NULL)
@@ -35,7 +35,7 @@ public class NsxtTier1SegmentAutomaticMode extends AviRestResource {
 
     @JsonProperty("tier1_lr_ids")
     @JsonInclude(Include.NON_NULL)
-    private List<String> tier1LrIds = null;
+    private List<String> tier1LrIds;
 
 
 

@@ -31,19 +31,19 @@ public class SCPoolServerStateInfo extends AviRestResource {
 
     @JsonProperty("oper_status")
     @JsonInclude(Include.NON_NULL)
-    private OperationalStatus operStatus = null;
+    private OperationalStatus operStatus;
 
     @JsonProperty("pool_id")
     @JsonInclude(Include.NON_NULL)
-    private String poolId = null;
+    private String poolId;
 
     @JsonProperty("server_states")
     @JsonInclude(Include.NON_NULL)
-    private List<SCServerStateInfo> serverStates = null;
+    private List<SCServerStateInfo> serverStates;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -51,7 +51,7 @@ public class SCPoolServerStateInfo extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

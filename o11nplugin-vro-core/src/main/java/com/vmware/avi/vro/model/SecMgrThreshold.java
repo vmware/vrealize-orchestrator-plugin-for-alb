@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class SecMgrThreshold extends AviRestResource {
     @JsonProperty("attack_type")
     @JsonInclude(Include.NON_NULL)
-    private String attackType = null;
+    private String attackType;
 
     @JsonProperty("threshold")
     @JsonInclude(Include.NON_NULL)
-    private Integer threshold = null;
+    private Integer threshold;
 
 
 

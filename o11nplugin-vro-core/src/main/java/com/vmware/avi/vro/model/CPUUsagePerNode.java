@@ -27,11 +27,11 @@ import org.springframework.stereotype.Service;
 public class CPUUsagePerNode extends AviRestResource {
     @JsonProperty("cpu_info")
     @JsonInclude(Include.NON_NULL)
-    private CPUUsage cpuInfo = null;
+    private CPUUsage cpuInfo;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
 
 

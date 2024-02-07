@@ -26,23 +26,23 @@ import org.springframework.stereotype.Service;
 public class CloudVipParkingIntf extends AviRestResource {
     @JsonProperty("cc_id")
     @JsonInclude(Include.NON_NULL)
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("error_string")
     @JsonInclude(Include.NON_NULL)
-    private String errorString = null;
+    private String errorString;
 
     @JsonProperty("intf_id")
     @JsonInclude(Include.NON_NULL)
-    private String intfId = null;
+    private String intfId;
 
     @JsonProperty("subnet_id")
     @JsonInclude(Include.NON_NULL)
-    private String subnetId = null;
+    private String subnetId;
 
     @JsonProperty("vtype")
     @JsonInclude(Include.NON_NULL)
-    private String vtype = null;
+    private String vtype;
 
 
 

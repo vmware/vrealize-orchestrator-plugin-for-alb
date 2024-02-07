@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class NsxtSegmentRuntime extends AviRestResource {
     @JsonProperty("cloud_ref")
     @JsonInclude(Include.NON_NULL)
-    private String cloudRef = null;
+    private String cloudRef;
 
     @JsonProperty("dhcp6_ranges")
     @JsonInclude(Include.NON_NULL)
-    private List<String> dhcp6Ranges = null;
+    private List<String> dhcp6Ranges;
 
     @JsonProperty("dhcp_enabled")
     @JsonInclude(Include.NON_NULL)
@@ -38,27 +38,27 @@ public class NsxtSegmentRuntime extends AviRestResource {
 
     @JsonProperty("dhcp_ranges")
     @JsonInclude(Include.NON_NULL)
-    private List<String> dhcpRanges = null;
+    private List<String> dhcpRanges;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("nw_name")
     @JsonInclude(Include.NON_NULL)
-    private String nwName = null;
+    private String nwName;
 
     @JsonProperty("nw_ref")
     @JsonInclude(Include.NON_NULL)
-    private String nwRef = null;
+    private String nwRef;
 
     @JsonProperty("opaque_network_id")
     @JsonInclude(Include.NON_NULL)
-    private String opaqueNetworkId = null;
+    private String opaqueNetworkId;
 
     @JsonProperty("origin_id")
     @JsonInclude(Include.NON_NULL)
-    private String originId = null;
+    private String originId;
 
     @JsonProperty("security_only_nsxt")
     @JsonInclude(Include.NON_NULL)
@@ -66,35 +66,35 @@ public class NsxtSegmentRuntime extends AviRestResource {
 
     @JsonProperty("segment_gw")
     @JsonInclude(Include.NON_NULL)
-    private String segmentGw = null;
+    private String segmentGw;
 
     @JsonProperty("segment_gw6")
     @JsonInclude(Include.NON_NULL)
-    private String segmentGw6 = null;
+    private String segmentGw6;
 
     @JsonProperty("segment_id")
     @JsonInclude(Include.NON_NULL)
-    private String segmentId = null;
+    private String segmentId;
 
     @JsonProperty("segname")
     @JsonInclude(Include.NON_NULL)
-    private String segname = null;
+    private String segname;
 
     @JsonProperty("subnet")
     @JsonInclude(Include.NON_NULL)
-    private String subnet = null;
+    private String subnet;
 
     @JsonProperty("subnet6")
     @JsonInclude(Include.NON_NULL)
-    private String subnet6 = null;
+    private String subnet6;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("tier1_id")
     @JsonInclude(Include.NON_NULL)
-    private String tier1Id = null;
+    private String tier1Id;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -102,15 +102,15 @@ public class NsxtSegmentRuntime extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("vlan_ids")
     @JsonInclude(Include.NON_NULL)
-    private List<String> vlanIds = null;
+    private List<String> vlanIds;
 
     @JsonProperty("vrf_context_ref")
     @JsonInclude(Include.NON_NULL)
-    private String vrfContextRef = null;
+    private String vrfContextRef;
 
 
 

@@ -28,7 +28,7 @@ import org.springframework.stereotype.Service;
 public class AuthorizationRule extends AviRestResource {
     @JsonProperty("action")
     @JsonInclude(Include.NON_NULL)
-    private AuthorizationAction action = null;
+    private AuthorizationAction action;
 
     @JsonProperty("enable")
     @JsonInclude(Include.NON_NULL)
@@ -36,15 +36,15 @@ public class AuthorizationRule extends AviRestResource {
 
     @JsonProperty("index")
     @JsonInclude(Include.NON_NULL)
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("match")
     @JsonInclude(Include.NON_NULL)
-    private AuthorizationMatch match = null;
+    private AuthorizationMatch match;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
 
 

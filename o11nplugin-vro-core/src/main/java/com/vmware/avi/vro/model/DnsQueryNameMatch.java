@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class DnsQueryNameMatch extends AviRestResource {
     @JsonProperty("match_criteria")
     @JsonInclude(Include.NON_NULL)
-    private String matchCriteria = null;
+    private String matchCriteria;
 
     @JsonProperty("query_domain_names")
     @JsonInclude(Include.NON_NULL)
-    private List<String> queryDomainNames = null;
+    private List<String> queryDomainNames;
 
     @JsonProperty("string_group_refs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> stringGroupRefs = null;
+    private List<String> stringGroupRefs;
 
 
 

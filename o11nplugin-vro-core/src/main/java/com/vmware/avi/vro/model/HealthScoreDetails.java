@@ -30,11 +30,11 @@ public class HealthScoreDetails extends AviRestResource {
 
     @JsonProperty("anomaly_reason")
     @JsonInclude(Include.NON_NULL)
-    private String anomalyReason = null;
+    private String anomalyReason;
 
     @JsonProperty("performance_reason")
     @JsonInclude(Include.NON_NULL)
-    private String performanceReason = null;
+    private String performanceReason;
 
     @JsonProperty("performance_score")
     @JsonInclude(Include.NON_NULL)
@@ -42,11 +42,11 @@ public class HealthScoreDetails extends AviRestResource {
 
     @JsonProperty("previous_value")
     @JsonInclude(Include.NON_NULL)
-    private Float previousValue = null;
+    private Float previousValue;
 
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("resources_penalty")
     @JsonInclude(Include.NON_NULL)
@@ -54,7 +54,7 @@ public class HealthScoreDetails extends AviRestResource {
 
     @JsonProperty("resources_reason")
     @JsonInclude(Include.NON_NULL)
-    private String resourcesReason = null;
+    private String resourcesReason;
 
     @JsonProperty("security_penalty")
     @JsonInclude(Include.NON_NULL)
@@ -62,23 +62,23 @@ public class HealthScoreDetails extends AviRestResource {
 
     @JsonProperty("security_reason")
     @JsonInclude(Include.NON_NULL)
-    private String securityReason = null;
+    private String securityReason;
 
     @JsonProperty("step")
     @JsonInclude(Include.NON_NULL)
-    private Integer step = null;
+    private Integer step;
 
     @JsonProperty("sub_resource_prefix")
     @JsonInclude(Include.NON_NULL)
-    private String subResourcePrefix = null;
+    private String subResourcePrefix;
 
     @JsonProperty("timestamp")
     @JsonInclude(Include.NON_NULL)
-    private String timestamp = null;
+    private String timestamp;
 
     @JsonProperty("value")
     @JsonInclude(Include.NON_NULL)
-    private Float value = null;
+    private Float value;
 
 
 

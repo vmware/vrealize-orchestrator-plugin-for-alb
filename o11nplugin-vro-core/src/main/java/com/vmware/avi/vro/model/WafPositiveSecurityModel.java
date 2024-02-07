@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class WafPositiveSecurityModel extends AviRestResource {
     @JsonProperty("group_refs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> groupRefs = null;
+    private List<String> groupRefs;
 
 
 

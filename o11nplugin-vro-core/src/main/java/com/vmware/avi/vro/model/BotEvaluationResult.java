@@ -27,19 +27,19 @@ import org.springframework.stereotype.Service;
 public class BotEvaluationResult extends AviRestResource {
     @JsonProperty("component")
     @JsonInclude(Include.NON_NULL)
-    private String component = null;
+    private String component;
 
     @JsonProperty("confidence")
     @JsonInclude(Include.NON_NULL)
-    private String confidence = null;
+    private String confidence;
 
     @JsonProperty("identification")
     @JsonInclude(Include.NON_NULL)
-    private BotIdentification identification = null;
+    private BotIdentification identification;
 
     @JsonProperty("notes")
     @JsonInclude(Include.NON_NULL)
-    private List<String> notes = null;
+    private List<String> notes;
 
 
 

@@ -30,7 +30,7 @@ public class GslbHealthMonitorProxy extends AviRestResource {
 
     @JsonProperty("site_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String siteUuid = null;
+    private String siteUuid;
 
 
 

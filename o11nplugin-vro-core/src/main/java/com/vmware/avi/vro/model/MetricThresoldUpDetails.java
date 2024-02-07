@@ -26,35 +26,35 @@ import org.springframework.stereotype.Service;
 public class MetricThresoldUpDetails extends AviRestResource {
     @JsonProperty("current_value")
     @JsonInclude(Include.NON_NULL)
-    private Float currentValue = null;
+    private Float currentValue;
 
     @JsonProperty("entity_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String entityUuid = null;
+    private String entityUuid;
 
     @JsonProperty("metric_id")
     @JsonInclude(Include.NON_NULL)
-    private String metricId = null;
+    private String metricId;
 
     @JsonProperty("metric_name")
     @JsonInclude(Include.NON_NULL)
-    private String metricName = null;
+    private String metricName;
 
     @JsonProperty("pool_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String poolUuid = null;
+    private String poolUuid;
 
     @JsonProperty("server")
     @JsonInclude(Include.NON_NULL)
-    private String server = null;
+    private String server;
 
     @JsonProperty("threshold")
     @JsonInclude(Include.NON_NULL)
-    private Float threshold = null;
+    private Float threshold;
 
     @JsonProperty("vm_type")
     @JsonInclude(Include.NON_NULL)
-    private String vmType = null;
+    private String vmType;
 
 
 

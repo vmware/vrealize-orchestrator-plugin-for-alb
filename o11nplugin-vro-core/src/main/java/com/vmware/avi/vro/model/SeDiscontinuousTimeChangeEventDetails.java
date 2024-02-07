@@ -26,27 +26,27 @@ import org.springframework.stereotype.Service;
 public class SeDiscontinuousTimeChangeEventDetails extends AviRestResource {
     @JsonProperty("drift_time")
     @JsonInclude(Include.NON_NULL)
-    private Integer driftTime = null;
+    private Integer driftTime;
 
     @JsonProperty("from_time")
     @JsonInclude(Include.NON_NULL)
-    private String fromTime = null;
+    private String fromTime;
 
     @JsonProperty("ntp_servers")
     @JsonInclude(Include.NON_NULL)
-    private String ntpServers = null;
+    private String ntpServers;
 
     @JsonProperty("se_name")
     @JsonInclude(Include.NON_NULL)
-    private String seName = null;
+    private String seName;
 
     @JsonProperty("se_ref")
     @JsonInclude(Include.NON_NULL)
-    private String seRef = null;
+    private String seRef;
 
     @JsonProperty("to_time")
     @JsonInclude(Include.NON_NULL)
-    private String toTime = null;
+    private String toTime;
 
 
 

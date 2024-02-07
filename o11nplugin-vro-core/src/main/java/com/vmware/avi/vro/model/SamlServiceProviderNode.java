@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class SamlServiceProviderNode extends AviRestResource {
     @JsonProperty("entity_id")
     @JsonInclude(Include.NON_NULL)
-    private String entityId = null;
+    private String entityId;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("signing_ssl_key_and_certificate_ref")
     @JsonInclude(Include.NON_NULL)
-    private String signingSslKeyAndCertificateRef = null;
+    private String signingSslKeyAndCertificateRef;
 
     @JsonProperty("single_signon_url")
     @JsonInclude(Include.NON_NULL)
-    private String singleSignonUrl = null;
+    private String singleSignonUrl;
 
 
 

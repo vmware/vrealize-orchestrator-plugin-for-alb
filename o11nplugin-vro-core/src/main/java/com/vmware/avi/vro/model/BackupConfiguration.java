@@ -26,27 +26,27 @@ import org.springframework.stereotype.Service;
 public class BackupConfiguration extends AviRestResource {
     @JsonProperty("aws_access_key")
     @JsonInclude(Include.NON_NULL)
-    private String awsAccessKey = null;
+    private String awsAccessKey;
 
     @JsonProperty("aws_bucket_id")
     @JsonInclude(Include.NON_NULL)
-    private String awsBucketId = null;
+    private String awsBucketId;
 
     @JsonProperty("aws_bucket_region")
     @JsonInclude(Include.NON_NULL)
-    private String awsBucketRegion = null;
+    private String awsBucketRegion;
 
     @JsonProperty("aws_secret_access")
     @JsonInclude(Include.NON_NULL)
-    private String awsSecretAccess = null;
+    private String awsSecretAccess;
 
     @JsonProperty("backup_file_prefix")
     @JsonInclude(Include.NON_NULL)
-    private String backupFilePrefix = null;
+    private String backupFilePrefix;
 
     @JsonProperty("backup_passphrase")
     @JsonInclude(Include.NON_NULL)
-    private String backupPassphrase = null;
+    private String backupPassphrase;
 
     @JsonProperty("maximum_backups_stored")
     @JsonInclude(Include.NON_NULL)
@@ -54,11 +54,11 @@ public class BackupConfiguration extends AviRestResource {
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("remote_directory")
     @JsonInclude(Include.NON_NULL)
-    private String remoteDirectory = null;
+    private String remoteDirectory;
 
     @JsonProperty("remote_file_transfer_protocol")
     @JsonInclude(Include.NON_NULL)
@@ -66,31 +66,31 @@ public class BackupConfiguration extends AviRestResource {
 
     @JsonProperty("remote_hostname")
     @JsonInclude(Include.NON_NULL)
-    private String remoteHostname = null;
+    private String remoteHostname;
 
     @JsonProperty("s3_bucket_folder")
     @JsonInclude(Include.NON_NULL)
-    private String s3BucketFolder = null;
+    private String s3BucketFolder;
 
     @JsonProperty("save_local")
     @JsonInclude(Include.NON_NULL)
-    private Boolean saveLocal = null;
+    private Boolean saveLocal;
 
     @JsonProperty("ssh_user_ref")
     @JsonInclude(Include.NON_NULL)
-    private String sshUserRef = null;
+    private String sshUserRef;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("upload_to_remote_host")
     @JsonInclude(Include.NON_NULL)
-    private Boolean uploadToRemoteHost = null;
+    private Boolean uploadToRemoteHost;
 
     @JsonProperty("upload_to_s3")
     @JsonInclude(Include.NON_NULL)
-    private Boolean uploadToS3 = null;
+    private Boolean uploadToS3;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -98,7 +98,7 @@ public class BackupConfiguration extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

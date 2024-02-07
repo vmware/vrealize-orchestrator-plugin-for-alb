@@ -26,91 +26,91 @@ import org.springframework.stereotype.Service;
 public class MetricsData extends AviRestResource {
     @JsonProperty("application_response_time")
     @JsonInclude(Include.NON_NULL)
-    private Float applicationResponseTime = null;
+    private Float applicationResponseTime;
 
     @JsonProperty("blocking_time")
     @JsonInclude(Include.NON_NULL)
-    private Float blockingTime = null;
+    private Float blockingTime;
 
     @JsonProperty("browser_rendering_time")
     @JsonInclude(Include.NON_NULL)
-    private Float browserRenderingTime = null;
+    private Float browserRenderingTime;
 
     @JsonProperty("client_rtt")
     @JsonInclude(Include.NON_NULL)
-    private Float clientRtt = null;
+    private Float clientRtt;
 
     @JsonProperty("connection_time")
     @JsonInclude(Include.NON_NULL)
-    private Float connectionTime = null;
+    private Float connectionTime;
 
     @JsonProperty("dns_lookup_time")
     @JsonInclude(Include.NON_NULL)
-    private Float dnsLookupTime = null;
+    private Float dnsLookupTime;
 
     @JsonProperty("dom_content_load_time")
     @JsonInclude(Include.NON_NULL)
-    private Float domContentLoadTime = null;
+    private Float domContentLoadTime;
 
     @JsonProperty("is_null")
     @JsonInclude(Include.NON_NULL)
-    private Boolean isNull = null;
+    private Boolean isNull;
 
     @JsonProperty("num_samples")
     @JsonInclude(Include.NON_NULL)
-    private Integer numSamples = null;
+    private Integer numSamples;
 
     @JsonProperty("page_download_time")
     @JsonInclude(Include.NON_NULL)
-    private Float pageDownloadTime = null;
+    private Float pageDownloadTime;
 
     @JsonProperty("page_load_time")
     @JsonInclude(Include.NON_NULL)
-    private Float pageLoadTime = null;
+    private Float pageLoadTime;
 
     @JsonProperty("prediction_interval_high")
     @JsonInclude(Include.NON_NULL)
-    private Float predictionIntervalHigh = null;
+    private Float predictionIntervalHigh;
 
     @JsonProperty("prediction_interval_low")
     @JsonInclude(Include.NON_NULL)
-    private Float predictionIntervalLow = null;
+    private Float predictionIntervalLow;
 
     @JsonProperty("redirection_time")
     @JsonInclude(Include.NON_NULL)
-    private Float redirectionTime = null;
+    private Float redirectionTime;
 
     @JsonProperty("rum_client_data_transfer_time")
     @JsonInclude(Include.NON_NULL)
-    private Float rumClientDataTransferTime = null;
+    private Float rumClientDataTransferTime;
 
     @JsonProperty("server_rtt")
     @JsonInclude(Include.NON_NULL)
-    private Float serverRtt = null;
+    private Float serverRtt;
 
     @JsonProperty("service_time")
     @JsonInclude(Include.NON_NULL)
-    private Float serviceTime = null;
+    private Float serviceTime;
 
     @JsonProperty("timestamp")
     @JsonInclude(Include.NON_NULL)
-    private String timestamp = null;
+    private String timestamp;
 
     @JsonProperty("value")
     @JsonInclude(Include.NON_NULL)
-    private Float value = null;
+    private Float value;
 
     @JsonProperty("value_str")
     @JsonInclude(Include.NON_NULL)
-    private String valueStr = null;
+    private String valueStr;
 
     @JsonProperty("value_str_desc")
     @JsonInclude(Include.NON_NULL)
-    private String valueStrDesc = null;
+    private String valueStrDesc;
 
     @JsonProperty("waiting_time")
     @JsonInclude(Include.NON_NULL)
-    private Float waitingTime = null;
+    private Float waitingTime;
 
 
 

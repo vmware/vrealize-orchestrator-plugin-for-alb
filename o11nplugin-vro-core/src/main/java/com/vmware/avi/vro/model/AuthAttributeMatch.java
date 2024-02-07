@@ -27,11 +27,11 @@ import org.springframework.stereotype.Service;
 public class AuthAttributeMatch extends AviRestResource {
     @JsonProperty("attribute_name")
     @JsonInclude(Include.NON_NULL)
-    private String attributeName = null;
+    private String attributeName;
 
     @JsonProperty("attribute_value_list")
     @JsonInclude(Include.NON_NULL)
-    private StringMatch attributeValueList = null;
+    private StringMatch attributeValueList;
 
 
 

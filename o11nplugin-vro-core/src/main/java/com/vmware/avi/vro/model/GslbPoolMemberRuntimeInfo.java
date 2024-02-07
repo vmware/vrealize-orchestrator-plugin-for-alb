@@ -31,87 +31,87 @@ import org.springframework.stereotype.Service;
 public class GslbPoolMemberRuntimeInfo extends AviRestResource {
     @JsonProperty("app_type")
     @JsonInclude(Include.NON_NULL)
-    private String appType = null;
+    private String appType;
 
     @JsonProperty("cluster_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String clusterUuid = null;
+    private String clusterUuid;
 
     @JsonProperty("controller_status")
     @JsonInclude(Include.NON_NULL)
-    private OperationalStatus controllerStatus = null;
+    private OperationalStatus controllerStatus;
 
     @JsonProperty("datapath_status")
     @JsonInclude(Include.NON_NULL)
-    private List<GslbPoolMemberDatapathStatus> datapathStatus = null;
+    private List<GslbPoolMemberDatapathStatus> datapathStatus;
 
     @JsonProperty("fqdn")
     @JsonInclude(Include.NON_NULL)
-    private String fqdn = null;
+    private String fqdn;
 
     @JsonProperty("gs_name")
     @JsonInclude(Include.NON_NULL)
-    private String gsName = null;
+    private String gsName;
 
     @JsonProperty("gs_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String gsUuid = null;
+    private String gsUuid;
 
     @JsonProperty("health_monitor_info")
     @JsonInclude(Include.NON_NULL)
-    private List<String> healthMonitorInfo = null;
+    private List<String> healthMonitorInfo;
 
     @JsonProperty("ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr ip = null;
+    private IpAddr ip;
 
     @JsonProperty("ip_value_to_se")
     @JsonInclude(Include.NON_NULL)
-    private Integer ipValueToSe = null;
+    private Integer ipValueToSe;
 
     @JsonProperty("ipv6_value_to_se")
     @JsonInclude(Include.NON_NULL)
-    private List<Integer> ipv6ValueToSe = null;
+    private List<Integer> ipv6ValueToSe;
 
     @JsonProperty("oper_ips")
     @JsonInclude(Include.NON_NULL)
-    private List<IpAddr> operIps = null;
+    private List<IpAddr> operIps;
 
     @JsonProperty("oper_status")
     @JsonInclude(Include.NON_NULL)
-    private OperationalStatus operStatus = null;
+    private OperationalStatus operStatus;
 
     @JsonProperty("services")
     @JsonInclude(Include.NON_NULL)
-    private List<com.vmware.avi.vro.model.Service> services = null;
+    private List<com.vmware.avi.vro.model.Service> services;
 
     @JsonProperty("site_name")
     @JsonInclude(Include.NON_NULL)
-    private String siteName = null;
+    private String siteName;
 
     @JsonProperty("sp_pools")
     @JsonInclude(Include.NON_NULL)
-    private List<GslbServiceSitePersistencePool> spPools = null;
+    private List<GslbServiceSitePersistencePool> spPools;
 
     @JsonProperty("vip_type")
     @JsonInclude(Include.NON_NULL)
-    private String vipType = null;
+    private String vipType;
 
     @JsonProperty("vs_name")
     @JsonInclude(Include.NON_NULL)
-    private String vsName = null;
+    private String vsName;
 
     @JsonProperty("vs_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String vsUuid = null;
+    private String vsUuid;
 
     @JsonProperty("vserver_l4_metrics")
     @JsonInclude(Include.NON_NULL)
-    private VserverL4MetricsObj vserverL4Metrics = null;
+    private VserverL4MetricsObj vserverL4Metrics;
 
     @JsonProperty("vserver_l7_metrics")
     @JsonInclude(Include.NON_NULL)
-    private VserverL7MetricsObj vserverL7Metrics = null;
+    private VserverL7MetricsObj vserverL7Metrics;
 
 
 

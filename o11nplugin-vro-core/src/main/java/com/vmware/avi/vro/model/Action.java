@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class Action extends AviRestResource {
     @JsonProperty("data")
     @JsonInclude(Include.NON_NULL)
-    private String data = null;
+    private String data;
 
     @JsonProperty("url_ref")
     @JsonInclude(Include.NON_NULL)
-    private String urlRef = null;
+    private String urlRef;
 
 
 

@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class ReportSummary extends AviRestResource {
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("previews")
     @JsonInclude(Include.NON_NULL)
-    private List<String> previews = null;
+    private List<String> previews;
 
     @JsonProperty("title")
     @JsonInclude(Include.NON_NULL)
-    private String title = null;
+    private String title;
 
 
 

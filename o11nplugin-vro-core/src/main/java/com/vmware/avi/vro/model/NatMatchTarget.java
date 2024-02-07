@@ -29,15 +29,15 @@ import org.springframework.stereotype.Service;
 public class NatMatchTarget extends AviRestResource {
     @JsonProperty("destination_ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrMatch destinationIp = null;
+    private IpAddrMatch destinationIp;
 
     @JsonProperty("services")
     @JsonInclude(Include.NON_NULL)
-    private ServiceMatch services = null;
+    private ServiceMatch services;
 
     @JsonProperty("source_ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrMatch sourceIp = null;
+    private IpAddrMatch sourceIp;
 
 
 

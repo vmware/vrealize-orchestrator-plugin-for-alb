@@ -2,6 +2,7 @@ package com.vmware.avi.vro.model;
 
 import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -31,11 +32,11 @@ public class SSLProfile extends AviRestResource {
 
     @JsonProperty("accepted_versions")
     @JsonInclude(Include.NON_NULL)
-    private List<SSLVersion> acceptedVersions = null;
+    private List<SSLVersion> acceptedVersions;
 
     @JsonProperty("cipher_enums")
     @JsonInclude(Include.NON_NULL)
-    private List<String> cipherEnums = null;
+    private List<String> cipherEnums;
 
     @JsonProperty("ciphersuites")
     @JsonInclude(Include.NON_NULL)
@@ -43,7 +44,10 @@ public class SSLProfile extends AviRestResource {
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
+
+    @JsonIgnore
+    private String dhparam;
 
     @JsonProperty("ec_named_curve")
     @JsonInclude(Include.NON_NULL)
@@ -63,11 +67,11 @@ public class SSLProfile extends AviRestResource {
 
     @JsonProperty("markers")
     @JsonInclude(Include.NON_NULL)
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("prefer_client_cipher_ordering")
     @JsonInclude(Include.NON_NULL)
@@ -83,7 +87,7 @@ public class SSLProfile extends AviRestResource {
 
     @JsonProperty("ssl_rating")
     @JsonInclude(Include.NON_NULL)
-    private SSLRating sslRating = null;
+    private SSLRating sslRating;
 
     @JsonProperty("ssl_session_timeout")
     @JsonInclude(Include.NON_NULL)
@@ -91,11 +95,11 @@ public class SSLProfile extends AviRestResource {
 
     @JsonProperty("tags")
     @JsonInclude(Include.NON_NULL)
-    private List<Tag> tags = null;
+    private List<Tag> tags;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
@@ -107,7 +111,7 @@ public class SSLProfile extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 
@@ -295,6 +299,32 @@ public class SSLProfile extends AviRestResource {
   @VsoMethod
   public void setDescription(String  description) {
     this.description = description;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Dh parameters used in ssl.
+   * At this time, it is not configurable and is set to 2048 bits.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return dhparam
+   */
+  @VsoMethod
+  public String getDhparam() {
+    return dhparam;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Dh parameters used in ssl.
+   * At this time, it is not configurable and is set to 2048 bits.
+   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param dhparam set the dhparam.
+   */
+  @VsoMethod
+  public void setDhparam(String  dhparam) {
+    this.dhparam = dhparam;
   }
 
   /**
@@ -749,6 +779,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.tags, objSSLProfile.tags)&&
   Objects.equals(this.sslRating, objSSLProfile.sslRating)&&
   Objects.equals(this.sendCloseNotify, objSSLProfile.sendCloseNotify)&&
+  Objects.equals(this.dhparam, objSSLProfile.dhparam)&&
   Objects.equals(this.preferClientCipherOrdering, objSSLProfile.preferClientCipherOrdering)&&
   Objects.equals(this.enableSslSessionReuse, objSSLProfile.enableSslSessionReuse)&&
   Objects.equals(this.sslSessionTimeout, objSSLProfile.sslSessionTimeout)&&
@@ -772,6 +803,7 @@ public String toString() {
         sb.append("    cipherEnums: ").append(toIndentedString(cipherEnums)).append("\n");
         sb.append("    ciphersuites: ").append(toIndentedString(ciphersuites)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    dhparam: ").append(toIndentedString(dhparam)).append("\n");
         sb.append("    ecNamedCurve: ").append(toIndentedString(ecNamedCurve)).append("\n");
         sb.append("    enableEarlyData: ").append(toIndentedString(enableEarlyData)).append("\n");
         sb.append("    enableSslSessionReuse: ").append(toIndentedString(enableSslSessionReuse)).append("\n");

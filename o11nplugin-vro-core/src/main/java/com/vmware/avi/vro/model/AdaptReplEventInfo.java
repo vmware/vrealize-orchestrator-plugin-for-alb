@@ -27,15 +27,15 @@ import org.springframework.stereotype.Service;
 public class AdaptReplEventInfo extends AviRestResource {
     @JsonProperty("obj_info")
     @JsonInclude(Include.NON_NULL)
-    private ConfigVersionStatus objInfo = null;
+    private ConfigVersionStatus objInfo;
 
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("recommendation")
     @JsonInclude(Include.NON_NULL)
-    private String recommendation = null;
+    private String recommendation;
 
 
 

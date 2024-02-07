@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class VersionInfo extends AviRestResource {
     @JsonProperty("ds_name")
     @JsonInclude(Include.NON_NULL)
-    private String dsName = null;
+    private String dsName;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("ops")
     @JsonInclude(Include.NON_NULL)
-    private String ops = null;
+    private String ops;
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

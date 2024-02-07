@@ -32,19 +32,19 @@ public class SeVipInterfaceList extends AviRestResource {
 
     @JsonProperty("networks")
     @JsonInclude(Include.NON_NULL)
-    private List<DiscoveredNetwork> networks = null;
+    private List<DiscoveredNetwork> networks;
 
     @JsonProperty("vip_intf_ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr vipIntfIp = null;
+    private IpAddr vipIntfIp;
 
     @JsonProperty("vip_intf_ip6")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr vipIntfIp6 = null;
+    private IpAddr vipIntfIp6;
 
     @JsonProperty("vip_intf_mac")
     @JsonInclude(Include.NON_NULL)
-    private String vipIntfMac = null;
+    private String vipIntfMac;
 
     @JsonProperty("vlan_id")
     @JsonInclude(Include.NON_NULL)

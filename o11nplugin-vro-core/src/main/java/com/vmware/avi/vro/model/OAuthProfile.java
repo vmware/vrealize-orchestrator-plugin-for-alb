@@ -27,23 +27,23 @@ import org.springframework.stereotype.Service;
 public class OAuthProfile extends AviRestResource {
     @JsonProperty("authorization_endpoint")
     @JsonInclude(Include.NON_NULL)
-    private String authorizationEndpoint = null;
+    private String authorizationEndpoint;
 
     @JsonProperty("end_session_endpoint")
     @JsonInclude(Include.NON_NULL)
-    private String endSessionEndpoint = null;
+    private String endSessionEndpoint;
 
     @JsonProperty("instance_id")
     @JsonInclude(Include.NON_NULL)
-    private String instanceId = null;
+    private String instanceId;
 
     @JsonProperty("introspection_endpoint")
     @JsonInclude(Include.NON_NULL)
-    private String introspectionEndpoint = null;
+    private String introspectionEndpoint;
 
     @JsonProperty("issuer")
     @JsonInclude(Include.NON_NULL)
-    private String issuer = null;
+    private String issuer;
 
     @JsonProperty("jwks_timeout")
     @JsonInclude(Include.NON_NULL)
@@ -51,11 +51,11 @@ public class OAuthProfile extends AviRestResource {
 
     @JsonProperty("jwks_uri")
     @JsonInclude(Include.NON_NULL)
-    private String jwksUri = null;
+    private String jwksUri;
 
     @JsonProperty("oauth_controller_settings")
     @JsonInclude(Include.NON_NULL)
-    private OAuthAppSettings oauthControllerSettings = null;
+    private OAuthAppSettings oauthControllerSettings;
 
     @JsonProperty("oauth_profile_type")
     @JsonInclude(Include.NON_NULL)
@@ -63,7 +63,7 @@ public class OAuthProfile extends AviRestResource {
 
     @JsonProperty("oauth_provider")
     @JsonInclude(Include.NON_NULL)
-    private String oauthProvider = null;
+    private String oauthProvider;
 
     @JsonProperty("oauth_resp_buffer_sz")
     @JsonInclude(Include.NON_NULL)
@@ -71,31 +71,31 @@ public class OAuthProfile extends AviRestResource {
 
     @JsonProperty("org_id")
     @JsonInclude(Include.NON_NULL)
-    private String orgId = null;
+    private String orgId;
 
     @JsonProperty("pool_ref")
     @JsonInclude(Include.NON_NULL)
-    private String poolRef = null;
+    private String poolRef;
 
     @JsonProperty("redirect_uri")
     @JsonInclude(Include.NON_NULL)
-    private String redirectUri = null;
+    private String redirectUri;
 
     @JsonProperty("service_id")
     @JsonInclude(Include.NON_NULL)
-    private String serviceId = null;
+    private String serviceId;
 
     @JsonProperty("service_name")
     @JsonInclude(Include.NON_NULL)
-    private String serviceName = null;
+    private String serviceName;
 
     @JsonProperty("token_endpoint")
     @JsonInclude(Include.NON_NULL)
-    private String tokenEndpoint = null;
+    private String tokenEndpoint;
 
     @JsonProperty("userinfo_endpoint")
     @JsonInclude(Include.NON_NULL)
-    private String userinfoEndpoint = null;
+    private String userinfoEndpoint;
 
 
 

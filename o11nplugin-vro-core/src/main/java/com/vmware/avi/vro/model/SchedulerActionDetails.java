@@ -26,23 +26,23 @@ import org.springframework.stereotype.Service;
 public class SchedulerActionDetails extends AviRestResource {
     @JsonProperty("backup_uri")
     @JsonInclude(Include.NON_NULL)
-    private List<String> backupUri = null;
+    private List<String> backupUri;
 
     @JsonProperty("control_script_output")
     @JsonInclude(Include.NON_NULL)
-    private String controlScriptOutput = null;
+    private String controlScriptOutput;
 
     @JsonProperty("execution_datestamp")
     @JsonInclude(Include.NON_NULL)
-    private String executionDatestamp = null;
+    private String executionDatestamp;
 
     @JsonProperty("scheduler_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String schedulerUuid = null;
+    private String schedulerUuid;
 
     @JsonProperty("status")
     @JsonInclude(Include.NON_NULL)
-    private String status = null;
+    private String status;
 
 
 

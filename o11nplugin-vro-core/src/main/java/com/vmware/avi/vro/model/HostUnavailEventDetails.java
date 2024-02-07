@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class HostUnavailEventDetails extends AviRestResource {
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("reasons")
     @JsonInclude(Include.NON_NULL)
-    private List<String> reasons = null;
+    private List<String> reasons;
 
     @JsonProperty("vs_name")
     @JsonInclude(Include.NON_NULL)
-    private String vsName = null;
+    private String vsName;
 
 
 

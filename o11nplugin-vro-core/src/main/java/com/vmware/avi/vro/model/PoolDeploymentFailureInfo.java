@@ -26,31 +26,31 @@ import org.springframework.stereotype.Service;
 public class PoolDeploymentFailureInfo extends AviRestResource {
     @JsonProperty("curr_in_service_pool_name")
     @JsonInclude(Include.NON_NULL)
-    private String currInServicePoolName = null;
+    private String currInServicePoolName;
 
     @JsonProperty("curr_in_service_pool_ref")
     @JsonInclude(Include.NON_NULL)
-    private String currInServicePoolRef = null;
+    private String currInServicePoolRef;
 
     @JsonProperty("ratio")
     @JsonInclude(Include.NON_NULL)
-    private Integer ratio = null;
+    private Integer ratio;
 
     @JsonProperty("results")
     @JsonInclude(Include.NON_NULL)
-    private List<PGDeploymentRuleResult> results = null;
+    private List<PGDeploymentRuleResult> results;
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("webhook_reason")
     @JsonInclude(Include.NON_NULL)
-    private String webhookReason = null;
+    private String webhookReason;
 
     @JsonProperty("webhook_result")
     @JsonInclude(Include.NON_NULL)
-    private Boolean webhookResult = null;
+    private Boolean webhookResult;
 
 
 

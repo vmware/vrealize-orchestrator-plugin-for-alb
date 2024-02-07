@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class RmRebootSeEventDetails extends AviRestResource {
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("se_name")
     @JsonInclude(Include.NON_NULL)
-    private String seName = null;
+    private String seName;
 
 
 

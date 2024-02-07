@@ -27,31 +27,31 @@ import org.springframework.stereotype.Service;
 public class MetricsDbQueueFullEventDetails extends AviRestResource {
     @JsonProperty("high")
     @JsonInclude(Include.NON_NULL)
-    private Integer high = null;
+    private Integer high;
 
     @JsonProperty("instanceport")
     @JsonInclude(Include.NON_NULL)
-    private Integer instanceport = null;
+    private Integer instanceport;
 
     @JsonProperty("low")
     @JsonInclude(Include.NON_NULL)
-    private Integer low = null;
+    private Integer low;
 
     @JsonProperty("nodeid")
     @JsonInclude(Include.NON_NULL)
-    private String nodeid = null;
+    private String nodeid;
 
     @JsonProperty("period")
     @JsonInclude(Include.NON_NULL)
-    private String period = null;
+    private String period;
 
     @JsonProperty("runtime")
     @JsonInclude(Include.NON_NULL)
-    private MetricsDbRuntime runtime = null;
+    private MetricsDbRuntime runtime;
 
     @JsonProperty("watermark")
     @JsonInclude(Include.NON_NULL)
-    private Integer watermark = null;
+    private Integer watermark;
 
 
 

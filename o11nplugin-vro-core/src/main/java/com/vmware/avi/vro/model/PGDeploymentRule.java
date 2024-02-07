@@ -34,7 +34,7 @@ public class PGDeploymentRule extends AviRestResource {
 
     @JsonProperty("threshold")
     @JsonInclude(Include.NON_NULL)
-    private Float threshold = null;
+    private Float threshold;
 
 
 

@@ -27,7 +27,7 @@ import org.springframework.stereotype.Service;
 public class StaticIpRange extends AviRestResource {
     @JsonProperty("range")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrRange range = null;
+    private IpAddrRange range;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)

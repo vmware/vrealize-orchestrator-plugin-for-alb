@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class LogControllerMapping extends AviRestResource {
     @JsonProperty("controller_ip")
     @JsonInclude(Include.NON_NULL)
-    private String controllerIp = null;
+    private String controllerIp;
 
     @JsonProperty("metrics_mgr_port")
     @JsonInclude(Include.NON_NULL)
@@ -34,11 +34,11 @@ public class LogControllerMapping extends AviRestResource {
 
     @JsonProperty("node_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String nodeUuid = null;
+    private String nodeUuid;
 
     @JsonProperty("prev_controller_ip")
     @JsonInclude(Include.NON_NULL)
-    private String prevControllerIp = null;
+    private String prevControllerIp;
 
     @JsonProperty("prev_metrics_mgr_port")
     @JsonInclude(Include.NON_NULL)
@@ -50,7 +50,7 @@ public class LogControllerMapping extends AviRestResource {
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -58,11 +58,11 @@ public class LogControllerMapping extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("vs_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String vsUuid = null;
+    private String vsUuid;
 
 
 

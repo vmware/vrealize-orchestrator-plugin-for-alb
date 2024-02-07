@@ -27,11 +27,11 @@ import org.springframework.stereotype.Service;
 public class SubnetRuntime extends AviRestResource {
     @JsonProperty("ip_range_runtimes")
     @JsonInclude(Include.NON_NULL)
-    private List<StaticIpRangeRuntime> ipRangeRuntimes = null;
+    private List<StaticIpRangeRuntime> ipRangeRuntimes;
 
     @JsonProperty("prefix")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrPrefix prefix = null;
+    private IpAddrPrefix prefix;
 
 
 

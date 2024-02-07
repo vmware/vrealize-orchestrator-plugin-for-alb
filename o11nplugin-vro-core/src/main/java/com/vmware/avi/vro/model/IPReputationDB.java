@@ -27,31 +27,31 @@ import org.springframework.stereotype.Service;
 public class IPReputationDB extends AviRestResource {
     @JsonProperty("base_file_refs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> baseFileRefs = null;
+    private List<String> baseFileRefs;
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("incremental_file_refs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> incrementalFileRefs = null;
+    private List<String> incrementalFileRefs;
 
     @JsonProperty("markers")
     @JsonInclude(Include.NON_NULL)
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("service_status")
     @JsonInclude(Include.NON_NULL)
-    private IPReputationServiceStatus serviceStatus = null;
+    private IPReputationServiceStatus serviceStatus;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -59,15 +59,15 @@ public class IPReputationDB extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("vendor")
     @JsonInclude(Include.NON_NULL)
-    private String vendor = null;
+    private String vendor;
 
     @JsonProperty("version")
     @JsonInclude(Include.NON_NULL)
-    private String version = null;
+    private String version;
 
 
 

@@ -26,27 +26,27 @@ import org.springframework.stereotype.Service;
 public class ConfigSeGrpFlvUpdate extends AviRestResource {
     @JsonProperty("new_flv")
     @JsonInclude(Include.NON_NULL)
-    private String newFlv = null;
+    private String newFlv;
 
     @JsonProperty("old_flv")
     @JsonInclude(Include.NON_NULL)
-    private String oldFlv = null;
+    private String oldFlv;
 
     @JsonProperty("se_group_name")
     @JsonInclude(Include.NON_NULL)
-    private String seGroupName = null;
+    private String seGroupName;
 
     @JsonProperty("se_group_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String seGroupUuid = null;
+    private String seGroupUuid;
 
     @JsonProperty("tenant_name")
     @JsonInclude(Include.NON_NULL)
-    private String tenantName = null;
+    private String tenantName;
 
     @JsonProperty("tenant_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String tenantUuid = null;
+    private String tenantUuid;
 
 
 

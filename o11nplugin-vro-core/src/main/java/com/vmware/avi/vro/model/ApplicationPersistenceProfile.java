@@ -30,23 +30,23 @@ import org.springframework.stereotype.Service;
 public class ApplicationPersistenceProfile extends AviRestResource {
     @JsonProperty("app_cookie_persistence_profile")
     @JsonInclude(Include.NON_NULL)
-    private AppCookiePersistenceProfile appCookiePersistenceProfile = null;
+    private AppCookiePersistenceProfile appCookiePersistenceProfile;
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("hdr_persistence_profile")
     @JsonInclude(Include.NON_NULL)
-    private HdrPersistenceProfile hdrPersistenceProfile = null;
+    private HdrPersistenceProfile hdrPersistenceProfile;
 
     @JsonProperty("http_cookie_persistence_profile")
     @JsonInclude(Include.NON_NULL)
-    private HttpCookiePersistenceProfile httpCookiePersistenceProfile = null;
+    private HttpCookiePersistenceProfile httpCookiePersistenceProfile;
 
     @JsonProperty("ip_persistence_profile")
     @JsonInclude(Include.NON_NULL)
-    private IPPersistenceProfile ipPersistenceProfile = null;
+    private IPPersistenceProfile ipPersistenceProfile;
 
     @JsonProperty("is_federated")
     @JsonInclude(Include.NON_NULL)
@@ -54,11 +54,11 @@ public class ApplicationPersistenceProfile extends AviRestResource {
 
     @JsonProperty("markers")
     @JsonInclude(Include.NON_NULL)
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("persistence_type")
     @JsonInclude(Include.NON_NULL)
@@ -70,7 +70,7 @@ public class ApplicationPersistenceProfile extends AviRestResource {
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -78,7 +78,7 @@ public class ApplicationPersistenceProfile extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

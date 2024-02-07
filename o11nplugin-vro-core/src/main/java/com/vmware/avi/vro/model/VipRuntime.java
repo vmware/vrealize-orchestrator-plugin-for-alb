@@ -35,15 +35,15 @@ import org.springframework.stereotype.Service;
 public class VipRuntime extends AviRestResource {
     @JsonProperty("ev")
     @JsonInclude(Include.NON_NULL)
-    private List<String> ev = null;
+    private List<String> ev;
 
     @JsonProperty("ev_status")
     @JsonInclude(Include.NON_NULL)
-    private VsEvStatus evStatus = null;
+    private VsEvStatus evStatus;
 
     @JsonProperty("first_se_assigned_time")
     @JsonInclude(Include.NON_NULL)
-    private TimeStamp firstSeAssignedTime = null;
+    private TimeStamp firstSeAssignedTime;
 
     @JsonProperty("first_time_placement")
     @JsonInclude(Include.NON_NULL)
@@ -59,11 +59,11 @@ public class VipRuntime extends AviRestResource {
 
     @JsonProperty("last_changed_time")
     @JsonInclude(Include.NON_NULL)
-    private TimeStamp lastChangedTime = null;
+    private TimeStamp lastChangedTime;
 
     @JsonProperty("last_scale_status")
     @JsonInclude(Include.NON_NULL)
-    private ScaleStatus lastScaleStatus = null;
+    private ScaleStatus lastScaleStatus;
 
     @JsonProperty("marked_for_delete")
     @JsonInclude(Include.NON_NULL)
@@ -71,7 +71,7 @@ public class VipRuntime extends AviRestResource {
 
     @JsonProperty("metrics_mgr_port")
     @JsonInclude(Include.NON_NULL)
-    private String metricsMgrPort = null;
+    private String metricsMgrPort;
 
     @JsonProperty("migrate_in_progress")
     @JsonInclude(Include.NON_NULL)
@@ -79,7 +79,7 @@ public class VipRuntime extends AviRestResource {
 
     @JsonProperty("migrate_request")
     @JsonInclude(Include.NON_NULL)
-    private VsMigrateParams migrateRequest = null;
+    private VsMigrateParams migrateRequest;
 
     @JsonProperty("migrate_scalein_pending")
     @JsonInclude(Include.NON_NULL)
@@ -95,7 +95,7 @@ public class VipRuntime extends AviRestResource {
 
     @JsonProperty("prev_metrics_mgr_port")
     @JsonInclude(Include.NON_NULL)
-    private String prevMetricsMgrPort = null;
+    private String prevMetricsMgrPort;
 
     @JsonProperty("progress_percent")
     @JsonInclude(Include.NON_NULL)
@@ -103,11 +103,11 @@ public class VipRuntime extends AviRestResource {
 
     @JsonProperty("requested_resource")
     @JsonInclude(Include.NON_NULL)
-    private VirtualServiceResource requestedResource = null;
+    private VirtualServiceResource requestedResource;
 
     @JsonProperty("scale_status")
     @JsonInclude(Include.NON_NULL)
-    private ScaleStatus scaleStatus = null;
+    private ScaleStatus scaleStatus;
 
     @JsonProperty("scalein_in_progress")
     @JsonInclude(Include.NON_NULL)
@@ -115,7 +115,7 @@ public class VipRuntime extends AviRestResource {
 
     @JsonProperty("scalein_request")
     @JsonInclude(Include.NON_NULL)
-    private VsScaleinParams scaleinRequest = null;
+    private VsScaleinParams scaleinRequest;
 
     @JsonProperty("scaleout_in_progress")
     @JsonInclude(Include.NON_NULL)
@@ -123,11 +123,11 @@ public class VipRuntime extends AviRestResource {
 
     @JsonProperty("se_list")
     @JsonInclude(Include.NON_NULL)
-    private List<SeList> seList = null;
+    private List<SeList> seList;
 
     @JsonProperty("supp_runtime_status")
     @JsonInclude(Include.NON_NULL)
-    private OperationalStatus suppRuntimeStatus = null;
+    private OperationalStatus suppRuntimeStatus;
 
     @JsonProperty("user_scaleout_pending")
     @JsonInclude(Include.NON_NULL)
@@ -135,7 +135,7 @@ public class VipRuntime extends AviRestResource {
 
     @JsonProperty("vip_id")
     @JsonInclude(Include.NON_NULL)
-    private String vipId = null;
+    private String vipId;
 
     @JsonProperty("warmstart_resync_done")
     @JsonInclude(Include.NON_NULL)

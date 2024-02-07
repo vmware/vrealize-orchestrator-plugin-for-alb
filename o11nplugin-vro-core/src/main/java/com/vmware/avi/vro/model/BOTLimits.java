@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class BOTLimits extends AviRestResource {
     @JsonProperty("allow_rules")
     @JsonInclude(Include.NON_NULL)
-    private Integer allowRules = null;
+    private Integer allowRules;
 
     @JsonProperty("hdrs")
     @JsonInclude(Include.NON_NULL)
-    private Integer hdrs = null;
+    private Integer hdrs;
 
     @JsonProperty("mapping_rules")
     @JsonInclude(Include.NON_NULL)
-    private Integer mappingRules = null;
+    private Integer mappingRules;
 
 
 

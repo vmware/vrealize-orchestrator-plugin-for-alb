@@ -31,43 +31,43 @@ import org.springframework.stereotype.Service;
 public class IptableRule extends AviRestResource {
     @JsonProperty("action")
     @JsonInclude(Include.NON_NULL)
-    private String action = null;
+    private String action;
 
     @JsonProperty("dnat_ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr dnatIp = null;
+    private IpAddr dnatIp;
 
     @JsonProperty("dst_ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrPrefix dstIp = null;
+    private IpAddrPrefix dstIp;
 
     @JsonProperty("dst_port")
     @JsonInclude(Include.NON_NULL)
-    private PortRange dstPort = null;
+    private PortRange dstPort;
 
     @JsonProperty("input_interface")
     @JsonInclude(Include.NON_NULL)
-    private String inputInterface = null;
+    private String inputInterface;
 
     @JsonProperty("output_interface")
     @JsonInclude(Include.NON_NULL)
-    private String outputInterface = null;
+    private String outputInterface;
 
     @JsonProperty("proto")
     @JsonInclude(Include.NON_NULL)
-    private String proto = null;
+    private String proto;
 
     @JsonProperty("src_ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrPrefix srcIp = null;
+    private IpAddrPrefix srcIp;
 
     @JsonProperty("src_port")
     @JsonInclude(Include.NON_NULL)
-    private PortRange srcPort = null;
+    private PortRange srcPort;
 
     @JsonProperty("tag")
     @JsonInclude(Include.NON_NULL)
-    private String tag = null;
+    private String tag;
 
 
 

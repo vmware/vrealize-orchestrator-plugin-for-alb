@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class CloudConnectorUserTestParams extends AviRestResource {
     @JsonProperty("host")
     @JsonInclude(Include.NON_NULL)
-    private String host = null;
+    private String host;
 
 
 

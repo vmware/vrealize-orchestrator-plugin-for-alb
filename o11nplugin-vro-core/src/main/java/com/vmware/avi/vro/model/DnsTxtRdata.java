@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class DnsTxtRdata extends AviRestResource {
     @JsonProperty("text_str")
     @JsonInclude(Include.NON_NULL)
-    private String textStr = null;
+    private String textStr;
 
 
 

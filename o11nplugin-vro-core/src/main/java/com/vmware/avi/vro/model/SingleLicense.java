@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class SingleLicense extends AviRestResource {
     @JsonProperty("addons")
     @JsonInclude(Include.NON_NULL)
-    private List<String> addons = null;
+    private List<String> addons;
 
     @JsonProperty("burst_cores")
     @JsonInclude(Include.NON_NULL)
-    private Integer burstCores = null;
+    private Integer burstCores;
 
     @JsonProperty("capacity")
     @JsonInclude(Include.NON_NULL)
@@ -42,7 +42,7 @@ public class SingleLicense extends AviRestResource {
 
     @JsonProperty("cores")
     @JsonInclude(Include.NON_NULL)
-    private Float cores = null;
+    private Float cores;
 
     @JsonProperty("cpu_cores")
     @JsonInclude(Include.NON_NULL)
@@ -50,15 +50,15 @@ public class SingleLicense extends AviRestResource {
 
     @JsonProperty("created_on")
     @JsonInclude(Include.NON_NULL)
-    private String createdOn = null;
+    private String createdOn;
 
     @JsonProperty("customer_name")
     @JsonInclude(Include.NON_NULL)
-    private String customerName = null;
+    private String customerName;
 
     @JsonProperty("enforced_params")
     @JsonInclude(Include.NON_NULL)
-    private List<String> enforcedParams = null;
+    private List<String> enforcedParams;
 
     @JsonProperty("expired")
     @JsonInclude(Include.NON_NULL)
@@ -66,39 +66,39 @@ public class SingleLicense extends AviRestResource {
 
     @JsonProperty("last_update")
     @JsonInclude(Include.NON_NULL)
-    private String lastUpdate = null;
+    private String lastUpdate;
 
     @JsonProperty("license_id")
     @JsonInclude(Include.NON_NULL)
-    private String licenseId = null;
+    private String licenseId;
 
     @JsonProperty("license_name")
     @JsonInclude(Include.NON_NULL)
-    private String licenseName = null;
+    private String licenseName;
 
     @JsonProperty("license_string")
     @JsonInclude(Include.NON_NULL)
-    private String licenseString = null;
+    private String licenseString;
 
     @JsonProperty("license_tier")
     @JsonInclude(Include.NON_NULL)
-    private List<String> licenseTier = null;
+    private List<String> licenseTier;
 
     @JsonProperty("license_type")
     @JsonInclude(Include.NON_NULL)
-    private String licenseType = null;
+    private String licenseType;
 
     @JsonProperty("max_ses")
     @JsonInclude(Include.NON_NULL)
-    private Integer maxSes = null;
+    private Integer maxSes;
 
     @JsonProperty("se_bandwidth_limits")
     @JsonInclude(Include.NON_NULL)
-    private List<SEBandwidthLimit> seBandwidthLimits = null;
+    private List<SEBandwidthLimit> seBandwidthLimits;
 
     @JsonProperty("serial_key")
     @JsonInclude(Include.NON_NULL)
-    private String serialKey = null;
+    private String serialKey;
 
     @JsonProperty("service_cores")
     @JsonInclude(Include.NON_NULL)
@@ -106,19 +106,19 @@ public class SingleLicense extends AviRestResource {
 
     @JsonProperty("sockets")
     @JsonInclude(Include.NON_NULL)
-    private Integer sockets = null;
+    private Integer sockets;
 
     @JsonProperty("start_on")
     @JsonInclude(Include.NON_NULL)
-    private String startOn = null;
+    private String startOn;
 
     @JsonProperty("tenant_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String tenantUuid = null;
+    private String tenantUuid;
 
     @JsonProperty("tier_type")
     @JsonInclude(Include.NON_NULL)
-    private String tierType = null;
+    private String tierType;
 
     @JsonProperty("unit")
     @JsonInclude(Include.NON_NULL)
@@ -126,11 +126,11 @@ public class SingleLicense extends AviRestResource {
 
     @JsonProperty("valid_until")
     @JsonInclude(Include.NON_NULL)
-    private String validUntil = null;
+    private String validUntil;
 
     @JsonProperty("version")
     @JsonInclude(Include.NON_NULL)
-    private String version = null;
+    private String version;
 
 
 

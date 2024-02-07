@@ -27,11 +27,11 @@ import org.springframework.stereotype.Service;
 public class VHMatchRule extends AviRestResource {
     @JsonProperty("matches")
     @JsonInclude(Include.NON_NULL)
-    private MatchTarget matches = null;
+    private MatchTarget matches;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
 
 

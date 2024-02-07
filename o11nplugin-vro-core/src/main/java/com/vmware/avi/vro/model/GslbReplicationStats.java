@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class GslbReplicationStats extends AviRestResource {
     @JsonProperty("acknowledged_version")
     @JsonInclude(Include.NON_NULL)
-    private Integer acknowledgedVersion = null;
+    private Integer acknowledgedVersion;
 
     @JsonProperty("pending_object_count")
     @JsonInclude(Include.NON_NULL)
-    private Integer pendingObjectCount = null;
+    private Integer pendingObjectCount;
 
     @JsonProperty("received_version")
     @JsonInclude(Include.NON_NULL)
-    private Integer receivedVersion = null;
+    private Integer receivedVersion;
 
 
 

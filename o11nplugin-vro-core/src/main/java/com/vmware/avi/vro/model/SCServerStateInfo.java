@@ -28,15 +28,15 @@ import org.springframework.stereotype.Service;
 public class SCServerStateInfo extends AviRestResource {
     @JsonProperty("oper_status")
     @JsonInclude(Include.NON_NULL)
-    private OperationalStatus operStatus = null;
+    private OperationalStatus operStatus;
 
     @JsonProperty("server_ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr serverIp = null;
+    private IpAddr serverIp;
 
     @JsonProperty("server_port")
     @JsonInclude(Include.NON_NULL)
-    private Integer serverPort = null;
+    private Integer serverPort;
 
 
 

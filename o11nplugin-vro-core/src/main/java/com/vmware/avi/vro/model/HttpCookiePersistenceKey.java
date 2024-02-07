@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class HttpCookiePersistenceKey extends AviRestResource {
     @JsonProperty("aes_key")
     @JsonInclude(Include.NON_NULL)
-    private String aesKey = null;
+    private String aesKey;
 
     @JsonProperty("hmac_key")
     @JsonInclude(Include.NON_NULL)
-    private String hmacKey = null;
+    private String hmacKey;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
 
 

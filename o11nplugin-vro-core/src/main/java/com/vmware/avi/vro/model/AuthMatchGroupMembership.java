@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class AuthMatchGroupMembership extends AviRestResource {
     @JsonProperty("criteria")
     @JsonInclude(Include.NON_NULL)
-    private String criteria = null;
+    private String criteria;
 
     @JsonProperty("groups")
     @JsonInclude(Include.NON_NULL)
-    private List<String> groups = null;
+    private List<String> groups;
 
 
 

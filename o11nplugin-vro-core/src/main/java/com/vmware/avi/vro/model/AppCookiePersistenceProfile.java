@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class AppCookiePersistenceProfile extends AviRestResource {
     @JsonProperty("encryption_key")
     @JsonInclude(Include.NON_NULL)
-    private String encryptionKey = null;
+    private String encryptionKey;
 
     @JsonProperty("prst_hdr_name")
     @JsonInclude(Include.NON_NULL)
-    private String prstHdrName = null;
+    private String prstHdrName;
 
     @JsonProperty("timeout")
     @JsonInclude(Include.NON_NULL)

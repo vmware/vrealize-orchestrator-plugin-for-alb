@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class AzureServicePrincipalCredentials extends AviRestResource {
     @JsonProperty("application_id")
     @JsonInclude(Include.NON_NULL)
-    private String applicationId = null;
+    private String applicationId;
 
     @JsonProperty("authentication_token")
     @JsonInclude(Include.NON_NULL)
-    private String authenticationToken = null;
+    private String authenticationToken;
 
     @JsonProperty("tenant_id")
     @JsonInclude(Include.NON_NULL)
-    private String tenantId = null;
+    private String tenantId;
 
 
 

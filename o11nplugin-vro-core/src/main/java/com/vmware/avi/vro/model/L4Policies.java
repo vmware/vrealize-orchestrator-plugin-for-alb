@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class L4Policies extends AviRestResource {
     @JsonProperty("index")
     @JsonInclude(Include.NON_NULL)
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("l4_policy_set_ref")
     @JsonInclude(Include.NON_NULL)
-    private String l4PolicySetRef = null;
+    private String l4PolicySetRef;
 
 
 

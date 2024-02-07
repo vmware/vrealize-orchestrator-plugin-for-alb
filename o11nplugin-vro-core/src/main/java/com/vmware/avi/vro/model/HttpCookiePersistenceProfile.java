@@ -30,11 +30,11 @@ public class HttpCookiePersistenceProfile extends AviRestResource {
 
     @JsonProperty("cookie_name")
     @JsonInclude(Include.NON_NULL)
-    private String cookieName = null;
+    private String cookieName;
 
     @JsonProperty("encryption_key")
     @JsonInclude(Include.NON_NULL)
-    private String encryptionKey = null;
+    private String encryptionKey;
 
     @JsonProperty("http_only")
     @JsonInclude(Include.NON_NULL)
@@ -46,11 +46,11 @@ public class HttpCookiePersistenceProfile extends AviRestResource {
 
     @JsonProperty("key")
     @JsonInclude(Include.NON_NULL)
-    private List<HttpCookiePersistenceKey> key = null;
+    private List<HttpCookiePersistenceKey> key;
 
     @JsonProperty("timeout")
     @JsonInclude(Include.NON_NULL)
-    private Integer timeout = null;
+    private Integer timeout;
 
 
 

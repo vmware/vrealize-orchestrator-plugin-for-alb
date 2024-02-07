@@ -33,51 +33,51 @@ public class ConnectionLog extends AviRestResource {
 
     @JsonProperty("average_turntime")
     @JsonInclude(Include.NON_NULL)
-    private Integer averageTurntime = null;
+    private Integer averageTurntime;
 
     @JsonProperty("avg_ingress_latency_be")
     @JsonInclude(Include.NON_NULL)
-    private Integer avgIngressLatencyBe = null;
+    private Integer avgIngressLatencyBe;
 
     @JsonProperty("avg_ingress_latency_fe")
     @JsonInclude(Include.NON_NULL)
-    private Integer avgIngressLatencyFe = null;
+    private Integer avgIngressLatencyFe;
 
     @JsonProperty("client_dest_port")
     @JsonInclude(Include.NON_NULL)
-    private Integer clientDestPort = null;
+    private Integer clientDestPort;
 
     @JsonProperty("client_ip")
     @JsonInclude(Include.NON_NULL)
-    private Integer clientIp = null;
+    private Integer clientIp;
 
     @JsonProperty("client_ip6")
     @JsonInclude(Include.NON_NULL)
-    private String clientIp6 = null;
+    private String clientIp6;
 
     @JsonProperty("client_location")
     @JsonInclude(Include.NON_NULL)
-    private String clientLocation = null;
+    private String clientLocation;
 
     @JsonProperty("client_log_filter_name")
     @JsonInclude(Include.NON_NULL)
-    private String clientLogFilterName = null;
+    private String clientLogFilterName;
 
     @JsonProperty("client_rtt")
     @JsonInclude(Include.NON_NULL)
-    private Integer clientRtt = null;
+    private Integer clientRtt;
 
     @JsonProperty("client_src_port")
     @JsonInclude(Include.NON_NULL)
-    private Integer clientSrcPort = null;
+    private Integer clientSrcPort;
 
     @JsonProperty("conn_est_time_be")
     @JsonInclude(Include.NON_NULL)
-    private Integer connEstTimeBe = null;
+    private Integer connEstTimeBe;
 
     @JsonProperty("conn_est_time_fe")
     @JsonInclude(Include.NON_NULL)
-    private Integer connEstTimeFe = null;
+    private Integer connEstTimeFe;
 
     @JsonProperty("connection_ended")
     @JsonInclude(Include.NON_NULL)
@@ -85,67 +85,67 @@ public class ConnectionLog extends AviRestResource {
 
     @JsonProperty("dns_etype")
     @JsonInclude(Include.NON_NULL)
-    private String dnsEtype = null;
+    private String dnsEtype;
 
     @JsonProperty("dns_fqdn")
     @JsonInclude(Include.NON_NULL)
-    private String dnsFqdn = null;
+    private String dnsFqdn;
 
     @JsonProperty("dns_ips")
     @JsonInclude(Include.NON_NULL)
-    private List<Integer> dnsIps = null;
+    private List<Integer> dnsIps;
 
     @JsonProperty("dns_qtype")
     @JsonInclude(Include.NON_NULL)
-    private String dnsQtype = null;
+    private String dnsQtype;
 
     @JsonProperty("dns_request")
     @JsonInclude(Include.NON_NULL)
-    private DnsRequest dnsRequest = null;
+    private DnsRequest dnsRequest;
 
     @JsonProperty("dns_response")
     @JsonInclude(Include.NON_NULL)
-    private DnsResponse dnsResponse = null;
+    private DnsResponse dnsResponse;
 
     @JsonProperty("dns_tcp_conn_close_from_se")
     @JsonInclude(Include.NON_NULL)
-    private Boolean dnsTcpConnCloseFromSe = null;
+    private Boolean dnsTcpConnCloseFromSe;
 
     @JsonProperty("ds_log")
     @JsonInclude(Include.NON_NULL)
-    private String dsLog = null;
+    private String dsLog;
 
     @JsonProperty("gslbpool_name")
     @JsonInclude(Include.NON_NULL)
-    private String gslbpoolName = null;
+    private String gslbpoolName;
 
     @JsonProperty("gslbservice")
     @JsonInclude(Include.NON_NULL)
-    private String gslbservice = null;
+    private String gslbservice;
 
     @JsonProperty("gslbservice_name")
     @JsonInclude(Include.NON_NULL)
-    private String gslbserviceName = null;
+    private String gslbserviceName;
 
     @JsonProperty("log_id")
     @JsonInclude(Include.NON_NULL)
-    private Integer logId = null;
+    private Integer logId;
 
     @JsonProperty("max_ingress_latency_be")
     @JsonInclude(Include.NON_NULL)
-    private Integer maxIngressLatencyBe = null;
+    private Integer maxIngressLatencyBe;
 
     @JsonProperty("max_ingress_latency_fe")
     @JsonInclude(Include.NON_NULL)
-    private Integer maxIngressLatencyFe = null;
+    private Integer maxIngressLatencyFe;
 
     @JsonProperty("microservice")
     @JsonInclude(Include.NON_NULL)
-    private String microservice = null;
+    private String microservice;
 
     @JsonProperty("microservice_name")
     @JsonInclude(Include.NON_NULL)
-    private String microserviceName = null;
+    private String microserviceName;
 
     @JsonProperty("mss")
     @JsonInclude(Include.NON_NULL)
@@ -153,19 +153,19 @@ public class ConnectionLog extends AviRestResource {
 
     @JsonProperty("network_security_policy_rule_name")
     @JsonInclude(Include.NON_NULL)
-    private String networkSecurityPolicyRuleName = null;
+    private String networkSecurityPolicyRuleName;
 
     @JsonProperty("num_syn_retransmit")
     @JsonInclude(Include.NON_NULL)
-    private Integer numSynRetransmit = null;
+    private Integer numSynRetransmit;
 
     @JsonProperty("num_transaction")
     @JsonInclude(Include.NON_NULL)
-    private Integer numTransaction = null;
+    private Integer numTransaction;
 
     @JsonProperty("num_window_shrink")
     @JsonInclude(Include.NON_NULL)
-    private Integer numWindowShrink = null;
+    private Integer numWindowShrink;
 
     @JsonProperty("ocsp_status_resp_sent")
     @JsonInclude(Include.NON_NULL)
@@ -181,23 +181,23 @@ public class ConnectionLog extends AviRestResource {
 
     @JsonProperty("pool")
     @JsonInclude(Include.NON_NULL)
-    private String pool = null;
+    private String pool;
 
     @JsonProperty("pool_name")
     @JsonInclude(Include.NON_NULL)
-    private String poolName = null;
+    private String poolName;
 
     @JsonProperty("protocol")
     @JsonInclude(Include.NON_NULL)
-    private String protocol = null;
+    private String protocol;
 
     @JsonProperty("proxy_protocol")
     @JsonInclude(Include.NON_NULL)
-    private String proxyProtocol = null;
+    private String proxyProtocol;
 
     @JsonProperty("report_timestamp")
     @JsonInclude(Include.NON_NULL)
-    private Integer reportTimestamp = null;
+    private Integer reportTimestamp;
 
     @JsonProperty("retransmits")
     @JsonInclude(Include.NON_NULL)
@@ -205,39 +205,39 @@ public class ConnectionLog extends AviRestResource {
 
     @JsonProperty("rx_bytes")
     @JsonInclude(Include.NON_NULL)
-    private Integer rxBytes = null;
+    private Integer rxBytes;
 
     @JsonProperty("rx_pkts")
     @JsonInclude(Include.NON_NULL)
-    private Integer rxPkts = null;
+    private Integer rxPkts;
 
     @JsonProperty("server_conn_src_ip")
     @JsonInclude(Include.NON_NULL)
-    private Integer serverConnSrcIp = null;
+    private Integer serverConnSrcIp;
 
     @JsonProperty("server_conn_src_ip6")
     @JsonInclude(Include.NON_NULL)
-    private String serverConnSrcIp6 = null;
+    private String serverConnSrcIp6;
 
     @JsonProperty("server_dest_port")
     @JsonInclude(Include.NON_NULL)
-    private Integer serverDestPort = null;
+    private Integer serverDestPort;
 
     @JsonProperty("server_ip")
     @JsonInclude(Include.NON_NULL)
-    private Integer serverIp = null;
+    private Integer serverIp;
 
     @JsonProperty("server_ip6")
     @JsonInclude(Include.NON_NULL)
-    private String serverIp6 = null;
+    private String serverIp6;
 
     @JsonProperty("server_name")
     @JsonInclude(Include.NON_NULL)
-    private String serverName = null;
+    private String serverName;
 
     @JsonProperty("server_num_window_shrink")
     @JsonInclude(Include.NON_NULL)
-    private Integer serverNumWindowShrink = null;
+    private Integer serverNumWindowShrink;
 
     @JsonProperty("server_out_of_orders")
     @JsonInclude(Include.NON_NULL)
@@ -249,19 +249,19 @@ public class ConnectionLog extends AviRestResource {
 
     @JsonProperty("server_rtt")
     @JsonInclude(Include.NON_NULL)
-    private Integer serverRtt = null;
+    private Integer serverRtt;
 
     @JsonProperty("server_rx_bytes")
     @JsonInclude(Include.NON_NULL)
-    private Integer serverRxBytes = null;
+    private Integer serverRxBytes;
 
     @JsonProperty("server_rx_pkts")
     @JsonInclude(Include.NON_NULL)
-    private Integer serverRxPkts = null;
+    private Integer serverRxPkts;
 
     @JsonProperty("server_src_port")
     @JsonInclude(Include.NON_NULL)
-    private Integer serverSrcPort = null;
+    private Integer serverSrcPort;
 
     @JsonProperty("server_timeouts")
     @JsonInclude(Include.NON_NULL)
@@ -269,19 +269,19 @@ public class ConnectionLog extends AviRestResource {
 
     @JsonProperty("server_total_bytes")
     @JsonInclude(Include.NON_NULL)
-    private Integer serverTotalBytes = null;
+    private Integer serverTotalBytes;
 
     @JsonProperty("server_total_pkts")
     @JsonInclude(Include.NON_NULL)
-    private Integer serverTotalPkts = null;
+    private Integer serverTotalPkts;
 
     @JsonProperty("server_tx_bytes")
     @JsonInclude(Include.NON_NULL)
-    private Integer serverTxBytes = null;
+    private Integer serverTxBytes;
 
     @JsonProperty("server_tx_pkts")
     @JsonInclude(Include.NON_NULL)
-    private Integer serverTxPkts = null;
+    private Integer serverTxPkts;
 
     @JsonProperty("server_zero_window_size_events")
     @JsonInclude(Include.NON_NULL)
@@ -289,43 +289,43 @@ public class ConnectionLog extends AviRestResource {
 
     @JsonProperty("service_engine")
     @JsonInclude(Include.NON_NULL)
-    private String serviceEngine = null;
+    private String serviceEngine;
 
     @JsonProperty("significance")
     @JsonInclude(Include.NON_NULL)
-    private String significance = null;
+    private String significance;
 
     @JsonProperty("significant")
     @JsonInclude(Include.NON_NULL)
-    private Integer significant = null;
+    private Integer significant;
 
     @JsonProperty("significant_log")
     @JsonInclude(Include.NON_NULL)
-    private List<String> significantLog = null;
+    private List<String> significantLog;
 
     @JsonProperty("sip_log")
     @JsonInclude(Include.NON_NULL)
-    private SipLog sipLog = null;
+    private SipLog sipLog;
 
     @JsonProperty("sni_hostname")
     @JsonInclude(Include.NON_NULL)
-    private String sniHostname = null;
+    private String sniHostname;
 
     @JsonProperty("ssl_cipher")
     @JsonInclude(Include.NON_NULL)
-    private String sslCipher = null;
+    private String sslCipher;
 
     @JsonProperty("ssl_session_id")
     @JsonInclude(Include.NON_NULL)
-    private String sslSessionId = null;
+    private String sslSessionId;
 
     @JsonProperty("ssl_version")
     @JsonInclude(Include.NON_NULL)
-    private String sslVersion = null;
+    private String sslVersion;
 
     @JsonProperty("start_timestamp")
     @JsonInclude(Include.NON_NULL)
-    private Integer startTimestamp = null;
+    private Integer startTimestamp;
 
     @JsonProperty("timeouts")
     @JsonInclude(Include.NON_NULL)
@@ -345,11 +345,11 @@ public class ConnectionLog extends AviRestResource {
 
     @JsonProperty("tx_bytes")
     @JsonInclude(Include.NON_NULL)
-    private Integer txBytes = null;
+    private Integer txBytes;
 
     @JsonProperty("tx_pkts")
     @JsonInclude(Include.NON_NULL)
-    private Integer txPkts = null;
+    private Integer txPkts;
 
     @JsonProperty("udf")
     @JsonInclude(Include.NON_NULL)
@@ -357,19 +357,19 @@ public class ConnectionLog extends AviRestResource {
 
     @JsonProperty("vcpu_id")
     @JsonInclude(Include.NON_NULL)
-    private Integer vcpuId = null;
+    private Integer vcpuId;
 
     @JsonProperty("virtualservice")
     @JsonInclude(Include.NON_NULL)
-    private String virtualservice = null;
+    private String virtualservice;
 
     @JsonProperty("vs_ip")
     @JsonInclude(Include.NON_NULL)
-    private Integer vsIp = null;
+    private Integer vsIp;
 
     @JsonProperty("vs_ip6")
     @JsonInclude(Include.NON_NULL)
-    private String vsIp6 = null;
+    private String vsIp6;
 
     @JsonProperty("zero_window_size_events")
     @JsonInclude(Include.NON_NULL)

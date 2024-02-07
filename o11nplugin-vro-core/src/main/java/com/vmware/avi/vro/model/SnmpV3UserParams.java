@@ -42,7 +42,7 @@ public class SnmpV3UserParams extends AviRestResource {
 
     @JsonProperty("username")
     @JsonInclude(Include.NON_NULL)
-    private String username = null;
+    private String username;
 
 
 

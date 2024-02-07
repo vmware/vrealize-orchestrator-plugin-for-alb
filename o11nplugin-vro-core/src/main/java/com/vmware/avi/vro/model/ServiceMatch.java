@@ -29,15 +29,15 @@ import org.springframework.stereotype.Service;
 public class ServiceMatch extends AviRestResource {
     @JsonProperty("destination_port")
     @JsonInclude(Include.NON_NULL)
-    private PortMatch destinationPort = null;
+    private PortMatch destinationPort;
 
     @JsonProperty("protocol")
     @JsonInclude(Include.NON_NULL)
-    private L4RuleProtocolMatch protocol = null;
+    private L4RuleProtocolMatch protocol;
 
     @JsonProperty("source_port")
     @JsonInclude(Include.NON_NULL)
-    private PortMatch sourcePort = null;
+    private PortMatch sourcePort;
 
 
 

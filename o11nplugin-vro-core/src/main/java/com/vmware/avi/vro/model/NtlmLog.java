@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class NtlmLog extends AviRestResource {
     @JsonProperty("ntlm_detected")
     @JsonInclude(Include.NON_NULL)
-    private Boolean ntlmDetected = null;
+    private Boolean ntlmDetected;
 
     @JsonProperty("ntlm_status")
     @JsonInclude(Include.NON_NULL)
-    private String ntlmStatus = null;
+    private String ntlmStatus;
 
 
 

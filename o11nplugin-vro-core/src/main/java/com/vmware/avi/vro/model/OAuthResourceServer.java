@@ -36,11 +36,11 @@ public class OAuthResourceServer extends AviRestResource {
 
     @JsonProperty("jwt_params")
     @JsonInclude(Include.NON_NULL)
-    private JWTValidationParams jwtParams = null;
+    private JWTValidationParams jwtParams;
 
     @JsonProperty("opaque_token_params")
     @JsonInclude(Include.NON_NULL)
-    private OpaqueTokenValidationParams opaqueTokenParams = null;
+    private OpaqueTokenValidationParams opaqueTokenParams;
 
 
 

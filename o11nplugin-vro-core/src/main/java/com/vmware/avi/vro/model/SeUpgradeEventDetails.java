@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class SeUpgradeEventDetails extends AviRestResource {
     @JsonProperty("notes")
     @JsonInclude(Include.NON_NULL)
-    private List<String> notes = null;
+    private List<String> notes;
 
     @JsonProperty("num_vs")
     @JsonInclude(Include.NON_NULL)
-    private Integer numVs = null;
+    private Integer numVs;
 
     @JsonProperty("se_grp_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String seGrpUuid = null;
+    private String seGrpUuid;
 
     @JsonProperty("se_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String seUuid = null;
+    private String seUuid;
 
 
 

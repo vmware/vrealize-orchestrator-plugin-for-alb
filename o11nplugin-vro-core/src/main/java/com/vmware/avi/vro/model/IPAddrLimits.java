@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class IPAddrLimits extends AviRestResource {
     @JsonProperty("ip_address_group_per_match_criteria")
     @JsonInclude(Include.NON_NULL)
-    private Integer ipAddressGroupPerMatchCriteria = null;
+    private Integer ipAddressGroupPerMatchCriteria;
 
     @JsonProperty("ip_address_prefix_per_match_criteria")
     @JsonInclude(Include.NON_NULL)
-    private Integer ipAddressPrefixPerMatchCriteria = null;
+    private Integer ipAddressPrefixPerMatchCriteria;
 
     @JsonProperty("ip_address_range_per_match_criteria")
     @JsonInclude(Include.NON_NULL)
-    private Integer ipAddressRangePerMatchCriteria = null;
+    private Integer ipAddressRangePerMatchCriteria;
 
     @JsonProperty("ip_addresses_per_match_criteria")
     @JsonInclude(Include.NON_NULL)
-    private Integer ipAddressesPerMatchCriteria = null;
+    private Integer ipAddressesPerMatchCriteria;
 
 
 

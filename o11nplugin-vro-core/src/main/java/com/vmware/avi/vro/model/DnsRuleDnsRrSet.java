@@ -27,7 +27,7 @@ import org.springframework.stereotype.Service;
 public class DnsRuleDnsRrSet extends AviRestResource {
     @JsonProperty("resource_record_set")
     @JsonInclude(Include.NON_NULL)
-    private DnsRrSet resourceRecordSet = null;
+    private DnsRrSet resourceRecordSet;
 
     @JsonProperty("section")
     @JsonInclude(Include.NON_NULL)

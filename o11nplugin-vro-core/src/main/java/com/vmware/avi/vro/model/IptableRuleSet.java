@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class IptableRuleSet extends AviRestResource {
     @JsonProperty("chain")
     @JsonInclude(Include.NON_NULL)
-    private String chain = null;
+    private String chain;
 
     @JsonProperty("rules")
     @JsonInclude(Include.NON_NULL)
-    private List<IptableRule> rules = null;
+    private List<IptableRule> rules;
 
     @JsonProperty("table")
     @JsonInclude(Include.NON_NULL)
-    private String table = null;
+    private String table;
 
 
 

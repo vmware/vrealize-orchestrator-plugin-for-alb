@@ -59,7 +59,7 @@ public class SeBootupProperties extends AviRestResource {
 
     @JsonProperty("se_dp_compression")
     @JsonInclude(Include.NON_NULL)
-    private SeBootupCompressionProperties seDpCompression = null;
+    private SeBootupCompressionProperties seDpCompression;
 
     @JsonProperty("se_emulated_cores")
     @JsonInclude(Include.NON_NULL)

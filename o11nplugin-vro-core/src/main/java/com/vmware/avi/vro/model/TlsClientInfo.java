@@ -26,27 +26,27 @@ import org.springframework.stereotype.Service;
 public class TlsClientInfo extends AviRestResource {
     @JsonProperty("cipher_suites")
     @JsonInclude(Include.NON_NULL)
-    private List<Integer> cipherSuites = null;
+    private List<Integer> cipherSuites;
 
     @JsonProperty("client_hello_tls_version")
     @JsonInclude(Include.NON_NULL)
-    private Integer clientHelloTlsVersion = null;
+    private Integer clientHelloTlsVersion;
 
     @JsonProperty("point_formats")
     @JsonInclude(Include.NON_NULL)
-    private List<Integer> pointFormats = null;
+    private List<Integer> pointFormats;
 
     @JsonProperty("supported_groups")
     @JsonInclude(Include.NON_NULL)
-    private List<Integer> supportedGroups = null;
+    private List<Integer> supportedGroups;
 
     @JsonProperty("tls_extensions")
     @JsonInclude(Include.NON_NULL)
-    private List<Integer> tlsExtensions = null;
+    private List<Integer> tlsExtensions;
 
     @JsonProperty("uses_grease")
     @JsonInclude(Include.NON_NULL)
-    private Boolean usesGrease = null;
+    private Boolean usesGrease;
 
 
 

@@ -50,7 +50,7 @@ public class UserAccountProfile extends AviRestResource {
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -58,7 +58,7 @@ public class UserAccountProfile extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class StringMatch extends AviRestResource {
     @JsonProperty("match_criteria")
     @JsonInclude(Include.NON_NULL)
-    private String matchCriteria = null;
+    private String matchCriteria;
 
     @JsonProperty("match_str")
     @JsonInclude(Include.NON_NULL)
-    private List<String> matchStr = null;
+    private List<String> matchStr;
 
     @JsonProperty("string_group_refs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> stringGroupRefs = null;
+    private List<String> stringGroupRefs;
 
 
 

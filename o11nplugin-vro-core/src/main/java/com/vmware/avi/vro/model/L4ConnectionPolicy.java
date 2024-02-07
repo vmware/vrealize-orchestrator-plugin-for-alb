@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class L4ConnectionPolicy extends AviRestResource {
     @JsonProperty("rules")
     @JsonInclude(Include.NON_NULL)
-    private List<L4Rule> rules = null;
+    private List<L4Rule> rules;
 
 
 

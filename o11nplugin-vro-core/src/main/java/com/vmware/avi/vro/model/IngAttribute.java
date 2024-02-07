@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class IngAttribute extends AviRestResource {
     @JsonProperty("attribute")
     @JsonInclude(Include.NON_NULL)
-    private String attribute = null;
+    private String attribute;
 
     @JsonProperty("value")
     @JsonInclude(Include.NON_NULL)
-    private String value = null;
+    private String value;
 
 
 

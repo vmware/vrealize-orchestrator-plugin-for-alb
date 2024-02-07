@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class EventCache extends AviRestResource {
     @JsonProperty("dns_state")
     @JsonInclude(Include.NON_NULL)
-    private Boolean dnsState = null;
+    private Boolean dnsState;
 
     @JsonProperty("exceptions")
     @JsonInclude(Include.NON_NULL)
-    private List<String> exceptions = null;
+    private List<String> exceptions;
 
 
 

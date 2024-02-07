@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class VcenterCloudDeleteDetails extends AviRestResource {
     @JsonProperty("cc_id")
     @JsonInclude(Include.NON_NULL)
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("objects")
     @JsonInclude(Include.NON_NULL)
-    private String objects = null;
+    private String objects;
 
 
 

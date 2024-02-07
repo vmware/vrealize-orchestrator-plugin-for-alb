@@ -38,7 +38,7 @@ public class GslbGeoDbFile extends AviRestResource {
 
     @JsonProperty("filename")
     @JsonInclude(Include.NON_NULL)
-    private String filename = null;
+    private String filename;
 
     @JsonProperty("format")
     @JsonInclude(Include.NON_NULL)

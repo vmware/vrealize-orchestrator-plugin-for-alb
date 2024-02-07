@@ -28,67 +28,67 @@ import org.springframework.stereotype.Service;
 public class AuthMappingRule extends AviRestResource {
     @JsonProperty("assign_policy")
     @JsonInclude(Include.NON_NULL)
-    private String assignPolicy = null;
+    private String assignPolicy;
 
     @JsonProperty("assign_role")
     @JsonInclude(Include.NON_NULL)
-    private String assignRole = null;
+    private String assignRole;
 
     @JsonProperty("assign_tenant")
     @JsonInclude(Include.NON_NULL)
-    private String assignTenant = null;
+    private String assignTenant;
 
     @JsonProperty("assign_userprofile")
     @JsonInclude(Include.NON_NULL)
-    private String assignUserprofile = null;
+    private String assignUserprofile;
 
     @JsonProperty("attribute_match")
     @JsonInclude(Include.NON_NULL)
-    private AuthMatchAttribute attributeMatch = null;
+    private AuthMatchAttribute attributeMatch;
 
     @JsonProperty("default_tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String defaultTenantRef = null;
+    private String defaultTenantRef;
 
     @JsonProperty("group_match")
     @JsonInclude(Include.NON_NULL)
-    private AuthMatchGroupMembership groupMatch = null;
+    private AuthMatchGroupMembership groupMatch;
 
     @JsonProperty("index")
     @JsonInclude(Include.NON_NULL)
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("is_superuser")
     @JsonInclude(Include.NON_NULL)
-    private Boolean isSuperuser = null;
+    private Boolean isSuperuser;
 
     @JsonProperty("policy_attribute_name")
     @JsonInclude(Include.NON_NULL)
-    private String policyAttributeName = null;
+    private String policyAttributeName;
 
     @JsonProperty("role_attribute_name")
     @JsonInclude(Include.NON_NULL)
-    private String roleAttributeName = null;
+    private String roleAttributeName;
 
     @JsonProperty("role_refs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> roleRefs = null;
+    private List<String> roleRefs;
 
     @JsonProperty("tenant_attribute_name")
     @JsonInclude(Include.NON_NULL)
-    private String tenantAttributeName = null;
+    private String tenantAttributeName;
 
     @JsonProperty("tenant_refs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> tenantRefs = null;
+    private List<String> tenantRefs;
 
     @JsonProperty("userprofile_attribute_name")
     @JsonInclude(Include.NON_NULL)
-    private String userprofileAttributeName = null;
+    private String userprofileAttributeName;
 
     @JsonProperty("userprofile_ref")
     @JsonInclude(Include.NON_NULL)
-    private String userprofileRef = null;
+    private String userprofileRef;
 
 
 

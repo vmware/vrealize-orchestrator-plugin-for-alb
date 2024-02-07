@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class NsxtCredentials extends AviRestResource {
     @JsonProperty("password")
     @JsonInclude(Include.NON_NULL)
-    private String password = null;
+    private String password;
 
     @JsonProperty("username")
     @JsonInclude(Include.NON_NULL)
-    private String username = null;
+    private String username;
 
 
 

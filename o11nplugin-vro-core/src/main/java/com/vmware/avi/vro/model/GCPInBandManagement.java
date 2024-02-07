@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class GCPInBandManagement extends AviRestResource {
     @JsonProperty("vpc_network_name")
     @JsonInclude(Include.NON_NULL)
-    private String vpcNetworkName = null;
+    private String vpcNetworkName;
 
     @JsonProperty("vpc_project_id")
     @JsonInclude(Include.NON_NULL)
-    private String vpcProjectId = null;
+    private String vpcProjectId;
 
     @JsonProperty("vpc_subnet_name")
     @JsonInclude(Include.NON_NULL)
-    private String vpcSubnetName = null;
+    private String vpcSubnetName;
 
 
 

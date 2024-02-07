@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class ConfigUserPasswordChangeRequest extends AviRestResource {
     @JsonProperty("client_ip")
     @JsonInclude(Include.NON_NULL)
-    private String clientIp = null;
+    private String clientIp;
 
     @JsonProperty("status")
     @JsonInclude(Include.NON_NULL)
-    private String status = null;
+    private String status;
 
     @JsonProperty("user")
     @JsonInclude(Include.NON_NULL)
-    private String user = null;
+    private String user;
 
     @JsonProperty("user_email")
     @JsonInclude(Include.NON_NULL)
-    private String userEmail = null;
+    private String userEmail;
 
 
 

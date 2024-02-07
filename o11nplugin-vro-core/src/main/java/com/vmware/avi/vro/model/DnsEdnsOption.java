@@ -26,27 +26,27 @@ import org.springframework.stereotype.Service;
 public class DnsEdnsOption extends AviRestResource {
     @JsonProperty("addr_family")
     @JsonInclude(Include.NON_NULL)
-    private Integer addrFamily = null;
+    private Integer addrFamily;
 
     @JsonProperty("code")
     @JsonInclude(Include.NON_NULL)
-    private String code = null;
+    private String code;
 
     @JsonProperty("scope_prefix_len")
     @JsonInclude(Include.NON_NULL)
-    private Integer scopePrefixLen = null;
+    private Integer scopePrefixLen;
 
     @JsonProperty("source_prefix_len")
     @JsonInclude(Include.NON_NULL)
-    private Integer sourcePrefixLen = null;
+    private Integer sourcePrefixLen;
 
     @JsonProperty("subnet_ip")
     @JsonInclude(Include.NON_NULL)
-    private Integer subnetIp = null;
+    private Integer subnetIp;
 
     @JsonProperty("subnet_ip6")
     @JsonInclude(Include.NON_NULL)
-    private String subnetIp6 = null;
+    private String subnetIp6;
 
 
 

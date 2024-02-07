@@ -28,11 +28,11 @@ import org.springframework.stereotype.Service;
 public class VipAutoscaleGroup extends AviRestResource {
     @JsonProperty("configuration")
     @JsonInclude(Include.NON_NULL)
-    private VipAutoscaleConfiguration configuration = null;
+    private VipAutoscaleConfiguration configuration;
 
     @JsonProperty("policy")
     @JsonInclude(Include.NON_NULL)
-    private VipAutoscalePolicy policy = null;
+    private VipAutoscalePolicy policy;
 
 
 

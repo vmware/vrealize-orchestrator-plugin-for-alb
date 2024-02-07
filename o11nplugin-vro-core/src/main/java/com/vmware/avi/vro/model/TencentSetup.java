@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class TencentSetup extends AviRestResource {
     @JsonProperty("cc_id")
     @JsonInclude(Include.NON_NULL)
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("error_string")
     @JsonInclude(Include.NON_NULL)
-    private String errorString = null;
+    private String errorString;
 
     @JsonProperty("region")
     @JsonInclude(Include.NON_NULL)
-    private String region = null;
+    private String region;
 
     @JsonProperty("vpc_id")
     @JsonInclude(Include.NON_NULL)
-    private String vpcId = null;
+    private String vpcId;
 
 
 

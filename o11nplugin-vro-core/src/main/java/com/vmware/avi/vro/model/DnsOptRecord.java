@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class DnsOptRecord extends AviRestResource {
     @JsonProperty("dnssec_ok")
     @JsonInclude(Include.NON_NULL)
-    private Boolean dnssecOk = null;
+    private Boolean dnssecOk;
 
     @JsonProperty("options")
     @JsonInclude(Include.NON_NULL)
-    private List<DnsEdnsOption> options = null;
+    private List<DnsEdnsOption> options;
 
     @JsonProperty("udp_payload_size")
     @JsonInclude(Include.NON_NULL)
-    private Integer udpPayloadSize = null;
+    private Integer udpPayloadSize;
 
     @JsonProperty("version")
     @JsonInclude(Include.NON_NULL)
-    private Integer version = null;
+    private Integer version;
 
 
 

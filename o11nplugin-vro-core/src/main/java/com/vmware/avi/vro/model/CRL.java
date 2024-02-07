@@ -26,51 +26,51 @@ import org.springframework.stereotype.Service;
 public class CRL extends AviRestResource {
     @JsonProperty("body")
     @JsonInclude(Include.NON_NULL)
-    private String body = null;
+    private String body;
 
     @JsonProperty("common_name")
     @JsonInclude(Include.NON_NULL)
-    private String commonName = null;
+    private String commonName;
 
     @JsonProperty("distinguished_name")
     @JsonInclude(Include.NON_NULL)
-    private String distinguishedName = null;
+    private String distinguishedName;
 
     @JsonProperty("etag")
     @JsonInclude(Include.NON_NULL)
-    private String etag = null;
+    private String etag;
 
     @JsonProperty("file_ref")
     @JsonInclude(Include.NON_NULL)
-    private String fileRef = null;
+    private String fileRef;
 
     @JsonProperty("fingerprint")
     @JsonInclude(Include.NON_NULL)
-    private String fingerprint = null;
+    private String fingerprint;
 
     @JsonProperty("last_refreshed")
     @JsonInclude(Include.NON_NULL)
-    private String lastRefreshed = null;
+    private String lastRefreshed;
 
     @JsonProperty("last_update")
     @JsonInclude(Include.NON_NULL)
-    private String lastUpdate = null;
+    private String lastUpdate;
 
     @JsonProperty("next_update")
     @JsonInclude(Include.NON_NULL)
-    private String nextUpdate = null;
+    private String nextUpdate;
 
     @JsonProperty("server_url")
     @JsonInclude(Include.NON_NULL)
-    private String serverUrl = null;
+    private String serverUrl;
 
     @JsonProperty("text")
     @JsonInclude(Include.NON_NULL)
-    private String text = null;
+    private String text;
 
     @JsonProperty("update_interval")
     @JsonInclude(Include.NON_NULL)
-    private Integer updateInterval = null;
+    private Integer updateInterval;
 
 
 

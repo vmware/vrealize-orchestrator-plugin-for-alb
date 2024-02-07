@@ -28,11 +28,11 @@ import org.springframework.stereotype.Service;
 public class RateLimiterAction extends AviRestResource {
     @JsonProperty("file")
     @JsonInclude(Include.NON_NULL)
-    private HTTPLocalFile file = null;
+    private HTTPLocalFile file;
 
     @JsonProperty("redirect")
     @JsonInclude(Include.NON_NULL)
-    private HTTPRedirectAction redirect = null;
+    private HTTPRedirectAction redirect;
 
     @JsonProperty("status_code")
     @JsonInclude(Include.NON_NULL)

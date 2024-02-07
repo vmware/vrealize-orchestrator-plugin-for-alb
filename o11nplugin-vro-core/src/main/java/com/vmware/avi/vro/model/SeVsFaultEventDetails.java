@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class SeVsFaultEventDetails extends AviRestResource {
     @JsonProperty("fault_object")
     @JsonInclude(Include.NON_NULL)
-    private String faultObject = null;
+    private String faultObject;
 
     @JsonProperty("fault_reason")
     @JsonInclude(Include.NON_NULL)
-    private String faultReason = null;
+    private String faultReason;
 
     @JsonProperty("service_engine")
     @JsonInclude(Include.NON_NULL)
-    private String serviceEngine = null;
+    private String serviceEngine;
 
     @JsonProperty("virtual_service")
     @JsonInclude(Include.NON_NULL)
-    private String virtualService = null;
+    private String virtualService;
 
 
 

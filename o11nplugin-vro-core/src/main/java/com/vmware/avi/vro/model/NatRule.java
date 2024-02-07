@@ -28,27 +28,27 @@ import org.springframework.stereotype.Service;
 public class NatRule extends AviRestResource {
     @JsonProperty("action")
     @JsonInclude(Include.NON_NULL)
-    private NatPolicyAction action = null;
+    private NatPolicyAction action;
 
     @JsonProperty("created_by")
     @JsonInclude(Include.NON_NULL)
-    private String createdBy = null;
+    private String createdBy;
 
     @JsonProperty("enable")
     @JsonInclude(Include.NON_NULL)
-    private Boolean enable = null;
+    private Boolean enable;
 
     @JsonProperty("index")
     @JsonInclude(Include.NON_NULL)
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("match")
     @JsonInclude(Include.NON_NULL)
-    private NatMatchTarget match = null;
+    private NatMatchTarget match;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
 
 

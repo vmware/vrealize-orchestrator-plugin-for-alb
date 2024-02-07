@@ -36,47 +36,47 @@ import org.springframework.stereotype.Service;
 public class RateLimiterProfile extends AviRestResource {
     @JsonProperty("client_ip_connections_rate_limit")
     @JsonInclude(Include.NON_NULL)
-    private RateProfile clientIpConnectionsRateLimit = null;
+    private RateProfile clientIpConnectionsRateLimit;
 
     @JsonProperty("client_ip_failed_requests_rate_limit")
     @JsonInclude(Include.NON_NULL)
-    private RateProfile clientIpFailedRequestsRateLimit = null;
+    private RateProfile clientIpFailedRequestsRateLimit;
 
     @JsonProperty("client_ip_requests_rate_limit")
     @JsonInclude(Include.NON_NULL)
-    private RateProfile clientIpRequestsRateLimit = null;
+    private RateProfile clientIpRequestsRateLimit;
 
     @JsonProperty("client_ip_scanners_requests_rate_limit")
     @JsonInclude(Include.NON_NULL)
-    private RateProfile clientIpScannersRequestsRateLimit = null;
+    private RateProfile clientIpScannersRequestsRateLimit;
 
     @JsonProperty("client_ip_to_uri_failed_requests_rate_limit")
     @JsonInclude(Include.NON_NULL)
-    private RateProfile clientIpToUriFailedRequestsRateLimit = null;
+    private RateProfile clientIpToUriFailedRequestsRateLimit;
 
     @JsonProperty("client_ip_to_uri_requests_rate_limit")
     @JsonInclude(Include.NON_NULL)
-    private RateProfile clientIpToUriRequestsRateLimit = null;
+    private RateProfile clientIpToUriRequestsRateLimit;
 
     @JsonProperty("custom_requests_rate_limit")
     @JsonInclude(Include.NON_NULL)
-    private RateProfile customRequestsRateLimit = null;
+    private RateProfile customRequestsRateLimit;
 
     @JsonProperty("http_header_rate_limits")
     @JsonInclude(Include.NON_NULL)
-    private List<RateProfile> httpHeaderRateLimits = null;
+    private List<RateProfile> httpHeaderRateLimits;
 
     @JsonProperty("uri_failed_requests_rate_limit")
     @JsonInclude(Include.NON_NULL)
-    private RateProfile uriFailedRequestsRateLimit = null;
+    private RateProfile uriFailedRequestsRateLimit;
 
     @JsonProperty("uri_requests_rate_limit")
     @JsonInclude(Include.NON_NULL)
-    private RateProfile uriRequestsRateLimit = null;
+    private RateProfile uriRequestsRateLimit;
 
     @JsonProperty("uri_scanners_requests_rate_limit")
     @JsonInclude(Include.NON_NULL)
-    private RateProfile uriScannersRequestsRateLimit = null;
+    private RateProfile uriScannersRequestsRateLimit;
 
 
 

@@ -28,27 +28,27 @@ import org.springframework.stereotype.Service;
 public class StaticRoute extends AviRestResource {
     @JsonProperty("disable_gateway_monitor")
     @JsonInclude(Include.NON_NULL)
-    private Boolean disableGatewayMonitor = null;
+    private Boolean disableGatewayMonitor;
 
     @JsonProperty("if_name")
     @JsonInclude(Include.NON_NULL)
-    private String ifName = null;
+    private String ifName;
 
     @JsonProperty("labels")
     @JsonInclude(Include.NON_NULL)
-    private List<KeyValue> labels = null;
+    private List<KeyValue> labels;
 
     @JsonProperty("next_hop")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr nextHop = null;
+    private IpAddr nextHop;
 
     @JsonProperty("prefix")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrPrefix prefix = null;
+    private IpAddrPrefix prefix;
 
     @JsonProperty("route_id")
     @JsonInclude(Include.NON_NULL)
-    private String routeId = null;
+    private String routeId;
 
 
 

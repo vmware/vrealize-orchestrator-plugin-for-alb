@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class NuageSDNController extends AviRestResource {
     @JsonProperty("nuage_organization")
     @JsonInclude(Include.NON_NULL)
-    private String nuageOrganization = null;
+    private String nuageOrganization;
 
     @JsonProperty("nuage_password")
     @JsonInclude(Include.NON_NULL)
-    private String nuagePassword = null;
+    private String nuagePassword;
 
     @JsonProperty("nuage_port")
     @JsonInclude(Include.NON_NULL)
@@ -38,35 +38,35 @@ public class NuageSDNController extends AviRestResource {
 
     @JsonProperty("nuage_username")
     @JsonInclude(Include.NON_NULL)
-    private String nuageUsername = null;
+    private String nuageUsername;
 
     @JsonProperty("nuage_vsd_host")
     @JsonInclude(Include.NON_NULL)
-    private String nuageVsdHost = null;
+    private String nuageVsdHost;
 
     @JsonProperty("se_domain")
     @JsonInclude(Include.NON_NULL)
-    private String seDomain = null;
+    private String seDomain;
 
     @JsonProperty("se_enterprise")
     @JsonInclude(Include.NON_NULL)
-    private String seEnterprise = null;
+    private String seEnterprise;
 
     @JsonProperty("se_network")
     @JsonInclude(Include.NON_NULL)
-    private String seNetwork = null;
+    private String seNetwork;
 
     @JsonProperty("se_policy_group")
     @JsonInclude(Include.NON_NULL)
-    private String sePolicyGroup = null;
+    private String sePolicyGroup;
 
     @JsonProperty("se_user")
     @JsonInclude(Include.NON_NULL)
-    private String seUser = null;
+    private String seUser;
 
     @JsonProperty("se_zone")
     @JsonInclude(Include.NON_NULL)
-    private String seZone = null;
+    private String seZone;
 
 
 

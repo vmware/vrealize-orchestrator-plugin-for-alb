@@ -39,11 +39,11 @@ public class IcapProfile extends AviRestResource {
 
     @JsonProperty("cloud_ref")
     @JsonInclude(Include.NON_NULL)
-    private String cloudRef = null;
+    private String cloudRef;
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("enable_preview")
     @JsonInclude(Include.NON_NULL)
@@ -55,15 +55,15 @@ public class IcapProfile extends AviRestResource {
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("nsx_defender_config")
     @JsonInclude(Include.NON_NULL)
-    private IcapNsxDefenderConfig nsxDefenderConfig = null;
+    private IcapNsxDefenderConfig nsxDefenderConfig;
 
     @JsonProperty("pool_group_ref")
     @JsonInclude(Include.NON_NULL)
-    private String poolGroupRef = null;
+    private String poolGroupRef;
 
     @JsonProperty("preview_size")
     @JsonInclude(Include.NON_NULL)
@@ -75,7 +75,7 @@ public class IcapProfile extends AviRestResource {
 
     @JsonProperty("service_uri")
     @JsonInclude(Include.NON_NULL)
-    private String serviceUri = null;
+    private String serviceUri;
 
     @JsonProperty("slow_response_warning_threshold")
     @JsonInclude(Include.NON_NULL)
@@ -83,7 +83,7 @@ public class IcapProfile extends AviRestResource {
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -91,7 +91,7 @@ public class IcapProfile extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("vendor")
     @JsonInclude(Include.NON_NULL)

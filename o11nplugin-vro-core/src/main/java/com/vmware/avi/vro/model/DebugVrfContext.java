@@ -34,7 +34,7 @@ public class DebugVrfContext extends AviRestResource {
 
     @JsonProperty("flags")
     @JsonInclude(Include.NON_NULL)
-    private List<DebugVrf> flags = null;
+    private List<DebugVrf> flags;
 
 
 

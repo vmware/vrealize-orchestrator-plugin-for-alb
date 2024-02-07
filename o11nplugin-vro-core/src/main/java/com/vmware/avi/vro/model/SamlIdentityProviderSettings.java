@@ -30,11 +30,11 @@ public class SamlIdentityProviderSettings extends AviRestResource {
 
     @JsonProperty("metadata")
     @JsonInclude(Include.NON_NULL)
-    private String metadata = null;
+    private String metadata;
 
     @JsonProperty("metadata_url")
     @JsonInclude(Include.NON_NULL)
-    private String metadataUrl = null;
+    private String metadataUrl;
 
     @JsonProperty("periodic_download")
     @JsonInclude(Include.NON_NULL)

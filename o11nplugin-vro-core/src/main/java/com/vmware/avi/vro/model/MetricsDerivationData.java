@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class MetricsDerivationData extends AviRestResource {
     @JsonProperty("derivation_fn")
     @JsonInclude(Include.NON_NULL)
-    private String derivationFn = null;
+    private String derivationFn;
 
     @JsonProperty("exclude_derived_metric")
     @JsonInclude(Include.NON_NULL)
@@ -38,11 +38,11 @@ public class MetricsDerivationData extends AviRestResource {
 
     @JsonProperty("join_tables")
     @JsonInclude(Include.NON_NULL)
-    private String joinTables = null;
+    private String joinTables;
 
     @JsonProperty("metric_ids")
     @JsonInclude(Include.NON_NULL)
-    private String metricIds = null;
+    private String metricIds;
 
     @JsonProperty("result_has_additional_fields")
     @JsonInclude(Include.NON_NULL)

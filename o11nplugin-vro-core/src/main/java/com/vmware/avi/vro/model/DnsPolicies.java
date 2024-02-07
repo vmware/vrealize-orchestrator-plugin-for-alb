@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class DnsPolicies extends AviRestResource {
     @JsonProperty("dns_policy_ref")
     @JsonInclude(Include.NON_NULL)
-    private String dnsPolicyRef = null;
+    private String dnsPolicyRef;
 
     @JsonProperty("index")
     @JsonInclude(Include.NON_NULL)
-    private Integer index = null;
+    private Integer index;
 
 
 

@@ -26,23 +26,23 @@ import org.springframework.stereotype.Service;
 public class WafRuleGroupOverrides extends AviRestResource {
     @JsonProperty("enable")
     @JsonInclude(Include.NON_NULL)
-    private Boolean enable = null;
+    private Boolean enable;
 
     @JsonProperty("exclude_list")
     @JsonInclude(Include.NON_NULL)
-    private List<WafExcludeListEntry> excludeList = null;
+    private List<WafExcludeListEntry> excludeList;
 
     @JsonProperty("mode")
     @JsonInclude(Include.NON_NULL)
-    private String mode = null;
+    private String mode;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("rule_overrides")
     @JsonInclude(Include.NON_NULL)
-    private List<WafRuleOverrides> ruleOverrides = null;
+    private List<WafRuleOverrides> ruleOverrides;
 
 
 

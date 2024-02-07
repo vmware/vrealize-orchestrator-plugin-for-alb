@@ -27,15 +27,15 @@ import org.springframework.stereotype.Service;
 public class PGDeploymentRuleResult extends AviRestResource {
     @JsonProperty("metric_value")
     @JsonInclude(Include.NON_NULL)
-    private Float metricValue = null;
+    private Float metricValue;
 
     @JsonProperty("result")
     @JsonInclude(Include.NON_NULL)
-    private Boolean result = null;
+    private Boolean result;
 
     @JsonProperty("rule")
     @JsonInclude(Include.NON_NULL)
-    private PGDeploymentRule rule = null;
+    private PGDeploymentRule rule;
 
 
 

@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class DataScriptErrorTrace extends AviRestResource {
     @JsonProperty("error")
     @JsonInclude(Include.NON_NULL)
-    private String error = null;
+    private String error;
 
     @JsonProperty("event")
     @JsonInclude(Include.NON_NULL)
-    private String event = null;
+    private String event;
 
     @JsonProperty("stack_trace")
     @JsonInclude(Include.NON_NULL)
-    private String stackTrace = null;
+    private String stackTrace;
 
 
 

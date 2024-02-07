@@ -26,23 +26,23 @@ import org.springframework.stereotype.Service;
 public class ServiceOAuth extends AviRestResource {
     @JsonProperty("authorization_endpoint")
     @JsonInclude(Include.NON_NULL)
-    private String authorizationEndpoint = null;
+    private String authorizationEndpoint;
 
     @JsonProperty("client_id")
     @JsonInclude(Include.NON_NULL)
-    private String clientId = null;
+    private String clientId;
 
     @JsonProperty("org_id")
     @JsonInclude(Include.NON_NULL)
-    private String orgId = null;
+    private String orgId;
 
     @JsonProperty("service_id")
     @JsonInclude(Include.NON_NULL)
-    private String serviceId = null;
+    private String serviceId;
 
     @JsonProperty("service_name")
     @JsonInclude(Include.NON_NULL)
-    private String serviceName = null;
+    private String serviceName;
 
 
 

@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class ContentRewriteProfile extends AviRestResource {
     @JsonProperty("rewritable_content_ref")
     @JsonInclude(Include.NON_NULL)
-    private String rewritableContentRef = null;
+    private String rewritableContentRef;
 
     @JsonProperty("rsp_rewrite_rules")
     @JsonInclude(Include.NON_NULL)
-    private List<RspContentRewriteRule> rspRewriteRules = null;
+    private List<RspContentRewriteRule> rspRewriteRules;
 
 
 

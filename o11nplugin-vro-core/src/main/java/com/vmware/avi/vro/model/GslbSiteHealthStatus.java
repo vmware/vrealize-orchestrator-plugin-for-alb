@@ -27,43 +27,43 @@ import org.springframework.stereotype.Service;
 public class GslbSiteHealthStatus extends AviRestResource {
     @JsonProperty("controller_gsinfo")
     @JsonInclude(Include.NON_NULL)
-    private List<GslbPoolMemberRuntimeInfo> controllerGsinfo = null;
+    private List<GslbPoolMemberRuntimeInfo> controllerGsinfo;
 
     @JsonProperty("datapath_gsinfo")
     @JsonInclude(Include.NON_NULL)
-    private List<GslbPoolMemberRuntimeInfo> datapathGsinfo = null;
+    private List<GslbPoolMemberRuntimeInfo> datapathGsinfo;
 
     @JsonProperty("dns_info")
     @JsonInclude(Include.NON_NULL)
-    private GslbDnsInfo dnsInfo = null;
+    private GslbDnsInfo dnsInfo;
 
     @JsonProperty("gap_table")
     @JsonInclude(Include.NON_NULL)
-    private List<CfgState> gapTable = null;
+    private List<CfgState> gapTable;
 
     @JsonProperty("geo_table")
     @JsonInclude(Include.NON_NULL)
-    private List<CfgState> geoTable = null;
+    private List<CfgState> geoTable;
 
     @JsonProperty("ghm_table")
     @JsonInclude(Include.NON_NULL)
-    private List<CfgState> ghmTable = null;
+    private List<CfgState> ghmTable;
 
     @JsonProperty("glb_table")
     @JsonInclude(Include.NON_NULL)
-    private List<CfgState> glbTable = null;
+    private List<CfgState> glbTable;
 
     @JsonProperty("gs_table")
     @JsonInclude(Include.NON_NULL)
-    private List<CfgState> gsTable = null;
+    private List<CfgState> gsTable;
 
     @JsonProperty("sw_version")
     @JsonInclude(Include.NON_NULL)
-    private String swVersion = null;
+    private String swVersion;
 
     @JsonProperty("timestamp")
     @JsonInclude(Include.NON_NULL)
-    private Float timestamp = null;
+    private Float timestamp;
 
 
 

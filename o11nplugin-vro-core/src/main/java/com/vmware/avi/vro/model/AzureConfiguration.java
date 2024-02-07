@@ -26,35 +26,35 @@ import org.springframework.stereotype.Service;
 public class AzureConfiguration extends AviRestResource {
     @JsonProperty("availability_zones")
     @JsonInclude(Include.NON_NULL)
-    private List<String> availabilityZones = null;
+    private List<String> availabilityZones;
 
     @JsonProperty("cloud_credentials_ref")
     @JsonInclude(Include.NON_NULL)
-    private String cloudCredentialsRef = null;
+    private String cloudCredentialsRef;
 
     @JsonProperty("des_id")
     @JsonInclude(Include.NON_NULL)
-    private String desId = null;
+    private String desId;
 
     @JsonProperty("location")
     @JsonInclude(Include.NON_NULL)
-    private String location = null;
+    private String location;
 
     @JsonProperty("network_info")
     @JsonInclude(Include.NON_NULL)
-    private List<AzureNetworkInfo> networkInfo = null;
+    private List<AzureNetworkInfo> networkInfo;
 
     @JsonProperty("resource_group")
     @JsonInclude(Include.NON_NULL)
-    private String resourceGroup = null;
+    private String resourceGroup;
 
     @JsonProperty("se_storage_account")
     @JsonInclude(Include.NON_NULL)
-    private String seStorageAccount = null;
+    private String seStorageAccount;
 
     @JsonProperty("subscription_id")
     @JsonInclude(Include.NON_NULL)
-    private String subscriptionId = null;
+    private String subscriptionId;
 
     @JsonProperty("use_azure_dns")
     @JsonInclude(Include.NON_NULL)

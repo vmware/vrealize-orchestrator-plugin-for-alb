@@ -30,23 +30,23 @@ import org.springframework.stereotype.Service;
 public class AuthorizationMatch extends AviRestResource {
     @JsonProperty("access_token")
     @JsonInclude(Include.NON_NULL)
-    private JWTMatch accessToken = null;
+    private JWTMatch accessToken;
 
     @JsonProperty("attr_matches")
     @JsonInclude(Include.NON_NULL)
-    private List<AuthAttributeMatch> attrMatches = null;
+    private List<AuthAttributeMatch> attrMatches;
 
     @JsonProperty("host_hdr")
     @JsonInclude(Include.NON_NULL)
-    private HostHdrMatch hostHdr = null;
+    private HostHdrMatch hostHdr;
 
     @JsonProperty("method")
     @JsonInclude(Include.NON_NULL)
-    private MethodMatch method = null;
+    private MethodMatch method;
 
     @JsonProperty("path")
     @JsonInclude(Include.NON_NULL)
-    private PathMatch path = null;
+    private PathMatch path;
 
 
 

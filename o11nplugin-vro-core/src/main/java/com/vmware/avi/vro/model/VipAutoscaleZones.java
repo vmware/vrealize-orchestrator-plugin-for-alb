@@ -34,7 +34,7 @@ public class VipAutoscaleZones extends AviRestResource {
 
     @JsonProperty("subnet_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String subnetUuid = null;
+    private String subnetUuid;
 
 
 

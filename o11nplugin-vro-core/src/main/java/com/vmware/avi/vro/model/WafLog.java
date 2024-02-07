@@ -32,7 +32,7 @@ public class WafLog extends AviRestResource {
 
     @JsonProperty("allowlist_logs")
     @JsonInclude(Include.NON_NULL)
-    private List<WafAllowlistLog> allowlistLogs = null;
+    private List<WafAllowlistLog> allowlistLogs;
 
     @JsonProperty("allowlist_processed")
     @JsonInclude(Include.NON_NULL)
@@ -40,7 +40,7 @@ public class WafLog extends AviRestResource {
 
     @JsonProperty("application_rule_logs")
     @JsonInclude(Include.NON_NULL)
-    private List<WafRuleLog> applicationRuleLogs = null;
+    private List<WafRuleLog> applicationRuleLogs;
 
     @JsonProperty("application_rules_configured")
     @JsonInclude(Include.NON_NULL)
@@ -52,19 +52,19 @@ public class WafLog extends AviRestResource {
 
     @JsonProperty("latency_request_body_phase")
     @JsonInclude(Include.NON_NULL)
-    private Integer latencyRequestBodyPhase = null;
+    private Integer latencyRequestBodyPhase;
 
     @JsonProperty("latency_request_header_phase")
     @JsonInclude(Include.NON_NULL)
-    private Integer latencyRequestHeaderPhase = null;
+    private Integer latencyRequestHeaderPhase;
 
     @JsonProperty("latency_response_body_phase")
     @JsonInclude(Include.NON_NULL)
-    private Integer latencyResponseBodyPhase = null;
+    private Integer latencyResponseBodyPhase;
 
     @JsonProperty("latency_response_header_phase")
     @JsonInclude(Include.NON_NULL)
-    private Integer latencyResponseHeaderPhase = null;
+    private Integer latencyResponseHeaderPhase;
 
     @JsonProperty("learning_status")
     @JsonInclude(Include.NON_NULL)
@@ -72,15 +72,15 @@ public class WafLog extends AviRestResource {
 
     @JsonProperty("memory_allocated")
     @JsonInclude(Include.NON_NULL)
-    private Integer memoryAllocated = null;
+    private Integer memoryAllocated;
 
     @JsonProperty("omitted_app_rule_stats")
     @JsonInclude(Include.NON_NULL)
-    private OmittedWafLogStats omittedAppRuleStats = null;
+    private OmittedWafLogStats omittedAppRuleStats;
 
     @JsonProperty("omitted_signature_stats")
     @JsonInclude(Include.NON_NULL)
-    private OmittedWafLogStats omittedSignatureStats = null;
+    private OmittedWafLogStats omittedSignatureStats;
 
     @JsonProperty("psm_configured")
     @JsonInclude(Include.NON_NULL)
@@ -88,7 +88,7 @@ public class WafLog extends AviRestResource {
 
     @JsonProperty("psm_logs")
     @JsonInclude(Include.NON_NULL)
-    private List<WafPSMLog> psmLogs = null;
+    private List<WafPSMLog> psmLogs;
 
     @JsonProperty("psm_processed")
     @JsonInclude(Include.NON_NULL)
@@ -96,7 +96,7 @@ public class WafLog extends AviRestResource {
 
     @JsonProperty("rule_logs")
     @JsonInclude(Include.NON_NULL)
-    private List<WafRuleLog> ruleLogs = null;
+    private List<WafRuleLog> ruleLogs;
 
     @JsonProperty("rules_configured")
     @JsonInclude(Include.NON_NULL)
@@ -108,7 +108,7 @@ public class WafLog extends AviRestResource {
 
     @JsonProperty("status")
     @JsonInclude(Include.NON_NULL)
-    private String status = null;
+    private String status;
 
 
 

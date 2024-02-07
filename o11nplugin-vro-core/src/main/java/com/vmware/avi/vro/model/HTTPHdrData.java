@@ -27,11 +27,11 @@ import org.springframework.stereotype.Service;
 public class HTTPHdrData extends AviRestResource {
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("value")
     @JsonInclude(Include.NON_NULL)
-    private HTTPHdrValue value = null;
+    private HTTPHdrValue value;
 
 
 

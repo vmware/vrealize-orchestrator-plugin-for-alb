@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class CloudStackConfiguration extends AviRestResource {
     @JsonProperty("access_key_id")
     @JsonInclude(Include.NON_NULL)
-    private String accessKeyId = null;
+    private String accessKeyId;
 
     @JsonProperty("api_url")
     @JsonInclude(Include.NON_NULL)
-    private String apiUrl = null;
+    private String apiUrl;
 
     @JsonProperty("cntr_public_ip")
     @JsonInclude(Include.NON_NULL)
-    private String cntrPublicIp = null;
+    private String cntrPublicIp;
 
     @JsonProperty("hypervisor")
     @JsonInclude(Include.NON_NULL)
@@ -42,15 +42,15 @@ public class CloudStackConfiguration extends AviRestResource {
 
     @JsonProperty("mgmt_network_name")
     @JsonInclude(Include.NON_NULL)
-    private String mgmtNetworkName = null;
+    private String mgmtNetworkName;
 
     @JsonProperty("mgmt_network_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String mgmtNetworkUuid = null;
+    private String mgmtNetworkUuid;
 
     @JsonProperty("secret_access_key")
     @JsonInclude(Include.NON_NULL)
-    private String secretAccessKey = null;
+    private String secretAccessKey;
 
 
 

@@ -27,7 +27,7 @@ import org.springframework.stereotype.Service;
 public class GslbIpAddr extends AviRestResource {
     @JsonProperty("ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr ip = null;
+    private IpAddr ip;
 
 
 

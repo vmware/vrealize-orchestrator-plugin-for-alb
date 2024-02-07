@@ -26,35 +26,35 @@ import org.springframework.stereotype.Service;
 public class SipMessage extends AviRestResource {
     @JsonProperty("content")
     @JsonInclude(Include.NON_NULL)
-    private String content = null;
+    private String content;
 
     @JsonProperty("from_client")
     @JsonInclude(Include.NON_NULL)
-    private Boolean fromClient = null;
+    private Boolean fromClient;
 
     @JsonProperty("method")
     @JsonInclude(Include.NON_NULL)
-    private String method = null;
+    private String method;
 
     @JsonProperty("rcv_timestamp")
     @JsonInclude(Include.NON_NULL)
-    private Integer rcvTimestamp = null;
+    private Integer rcvTimestamp;
 
     @JsonProperty("rx_bytes")
     @JsonInclude(Include.NON_NULL)
-    private Integer rxBytes = null;
+    private Integer rxBytes;
 
     @JsonProperty("status")
     @JsonInclude(Include.NON_NULL)
-    private String status = null;
+    private String status;
 
     @JsonProperty("status_code")
     @JsonInclude(Include.NON_NULL)
-    private Integer statusCode = null;
+    private Integer statusCode;
 
     @JsonProperty("tx_bytes")
     @JsonInclude(Include.NON_NULL)
-    private Integer txBytes = null;
+    private Integer txBytes;
 
 
 

@@ -27,11 +27,11 @@ import org.springframework.stereotype.Service;
 public class IPReputationTypeMapping extends AviRestResource {
     @JsonProperty("bot_identification")
     @JsonInclude(Include.NON_NULL)
-    private BotIdentification botIdentification = null;
+    private BotIdentification botIdentification;
 
     @JsonProperty("ip_reputation_type")
     @JsonInclude(Include.NON_NULL)
-    private String ipReputationType = null;
+    private String ipReputationType;
 
 
 

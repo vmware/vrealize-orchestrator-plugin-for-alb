@@ -27,15 +27,15 @@ import org.springframework.stereotype.Service;
 public class AttackMetaData extends AviRestResource {
     @JsonProperty("amplification")
     @JsonInclude(Include.NON_NULL)
-    private AttackDnsAmplification amplification = null;
+    private AttackDnsAmplification amplification;
 
     @JsonProperty("ip")
     @JsonInclude(Include.NON_NULL)
-    private String ip = null;
+    private String ip;
 
     @JsonProperty("max_resp_time")
     @JsonInclude(Include.NON_NULL)
-    private Integer maxRespTime = null;
+    private Integer maxRespTime;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)

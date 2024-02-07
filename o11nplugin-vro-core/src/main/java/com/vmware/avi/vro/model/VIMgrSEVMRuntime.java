@@ -27,139 +27,139 @@ import org.springframework.stereotype.Service;
 public class VIMgrSEVMRuntime extends AviRestResource {
     @JsonProperty("availability_zone")
     @JsonInclude(Include.NON_NULL)
-    private String availabilityZone = null;
+    private String availabilityZone;
 
     @JsonProperty("azure_info")
     @JsonInclude(Include.NON_NULL)
-    private AzureInfo azureInfo = null;
+    private AzureInfo azureInfo;
 
     @JsonProperty("cloud_name")
     @JsonInclude(Include.NON_NULL)
-    private String cloudName = null;
+    private String cloudName;
 
     @JsonProperty("cloud_ref")
     @JsonInclude(Include.NON_NULL)
-    private String cloudRef = null;
+    private String cloudRef;
 
     @JsonProperty("cluster_id")
     @JsonInclude(Include.NON_NULL)
-    private String clusterId = null;
+    private String clusterId;
 
     @JsonProperty("cluster_vmgroup")
     @JsonInclude(Include.NON_NULL)
-    private String clusterVmgroup = null;
+    private String clusterVmgroup;
 
     @JsonProperty("connection_state")
     @JsonInclude(Include.NON_NULL)
-    private String connectionState = null;
+    private String connectionState;
 
     @JsonProperty("controller_cluster_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String controllerClusterUuid = null;
+    private String controllerClusterUuid;
 
     @JsonProperty("controller_ip_addr")
     @JsonInclude(Include.NON_NULL)
-    private String controllerIpAddr = null;
+    private String controllerIpAddr;
 
     @JsonProperty("cookie")
     @JsonInclude(Include.NON_NULL)
-    private String cookie = null;
+    private String cookie;
 
     @JsonProperty("creation_in_progress")
     @JsonInclude(Include.NON_NULL)
-    private Boolean creationInProgress = null;
+    private Boolean creationInProgress;
 
     @JsonProperty("deletion_in_progress")
     @JsonInclude(Include.NON_NULL)
-    private Boolean deletionInProgress = null;
+    private Boolean deletionInProgress;
 
     @JsonProperty("discovery_response")
     @JsonInclude(Include.NON_NULL)
-    private String discoveryResponse = null;
+    private String discoveryResponse;
 
     @JsonProperty("discovery_status")
     @JsonInclude(Include.NON_NULL)
-    private Integer discoveryStatus = null;
+    private Integer discoveryStatus;
 
     @JsonProperty("disk_gb")
     @JsonInclude(Include.NON_NULL)
-    private Integer diskGb = null;
+    private Integer diskGb;
 
     @JsonProperty("flavor")
     @JsonInclude(Include.NON_NULL)
-    private String flavor = null;
+    private String flavor;
 
     @JsonProperty("gcp_se_project_id")
     @JsonInclude(Include.NON_NULL)
-    private String gcpSeProjectId = null;
+    private String gcpSeProjectId;
 
     @JsonProperty("guest_nic")
     @JsonInclude(Include.NON_NULL)
-    private List<VIMgrGuestNicRuntime> guestNic = null;
+    private List<VIMgrGuestNicRuntime> guestNic;
 
     @JsonProperty("host")
     @JsonInclude(Include.NON_NULL)
-    private String host = null;
+    private String host;
 
     @JsonProperty("host_ref")
     @JsonInclude(Include.NON_NULL)
-    private String hostRef = null;
+    private String hostRef;
 
     @JsonProperty("hostid")
     @JsonInclude(Include.NON_NULL)
-    private String hostid = null;
+    private String hostid;
 
     @JsonProperty("hypervisor")
     @JsonInclude(Include.NON_NULL)
-    private String hypervisor = null;
+    private String hypervisor;
 
     @JsonProperty("init_vnics")
     @JsonInclude(Include.NON_NULL)
-    private Integer initVnics = null;
+    private Integer initVnics;
 
     @JsonProperty("last_discovery")
     @JsonInclude(Include.NON_NULL)
-    private Integer lastDiscovery = null;
+    private Integer lastDiscovery;
 
     @JsonProperty("managed_object_id")
     @JsonInclude(Include.NON_NULL)
-    private String managedObjectId = null;
+    private String managedObjectId;
 
     @JsonProperty("memory_mb")
     @JsonInclude(Include.NON_NULL)
-    private Integer memoryMb = null;
+    private Integer memoryMb;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("nsxt_no_hotplug")
     @JsonInclude(Include.NON_NULL)
-    private Boolean nsxtNoHotplug = null;
+    private Boolean nsxtNoHotplug;
 
     @JsonProperty("powerstate")
     @JsonInclude(Include.NON_NULL)
-    private String powerstate = null;
+    private String powerstate;
 
     @JsonProperty("security_group_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String securityGroupUuid = null;
+    private String securityGroupUuid;
 
     @JsonProperty("segroup_ref")
     @JsonInclude(Include.NON_NULL)
-    private String segroupRef = null;
+    private String segroupRef;
 
     @JsonProperty("server_group_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String serverGroupUuid = null;
+    private String serverGroupUuid;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -167,67 +167,67 @@ public class VIMgrSEVMRuntime extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("vcenter_datacenter_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String vcenterDatacenterUuid = null;
+    private String vcenterDatacenterUuid;
 
     @JsonProperty("vcenter_host_connection_state")
     @JsonInclude(Include.NON_NULL)
-    private String vcenterHostConnectionState = null;
+    private String vcenterHostConnectionState;
 
     @JsonProperty("vcenter_host_ha_state")
     @JsonInclude(Include.NON_NULL)
-    private String vcenterHostHaState = null;
+    private String vcenterHostHaState;
 
     @JsonProperty("vcenter_instance_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String vcenterInstanceUuid = null;
+    private String vcenterInstanceUuid;
 
     @JsonProperty("vcenter_ref")
     @JsonInclude(Include.NON_NULL)
-    private String vcenterRef = null;
+    private String vcenterRef;
 
     @JsonProperty("vcenter_rm_cookie")
     @JsonInclude(Include.NON_NULL)
-    private String vcenterRmCookie = null;
+    private String vcenterRmCookie;
 
     @JsonProperty("vcenter_se_type")
     @JsonInclude(Include.NON_NULL)
-    private String vcenterSeType = null;
+    private String vcenterSeType;
 
     @JsonProperty("vcenter_template_vm")
     @JsonInclude(Include.NON_NULL)
-    private Boolean vcenterTemplateVm = null;
+    private Boolean vcenterTemplateVm;
 
     @JsonProperty("vcenter_url")
     @JsonInclude(Include.NON_NULL)
-    private String vcenterUrl = null;
+    private String vcenterUrl;
 
     @JsonProperty("vcenter_vAppName")
     @JsonInclude(Include.NON_NULL)
-    private String vcenterVappname = null;
+    private String vcenterVappname;
 
     @JsonProperty("vcenter_vAppVendor")
     @JsonInclude(Include.NON_NULL)
-    private String vcenterVappvendor = null;
+    private String vcenterVappvendor;
 
     @JsonProperty("vcenter_vm_type")
     @JsonInclude(Include.NON_NULL)
-    private String vcenterVmType = null;
+    private String vcenterVmType;
 
     @JsonProperty("vcpus")
     @JsonInclude(Include.NON_NULL)
-    private Integer vcpus = null;
+    private Integer vcpus;
 
     @JsonProperty("vsphere_ha_enabled")
     @JsonInclude(Include.NON_NULL)
-    private Boolean vsphereHaEnabled = null;
+    private Boolean vsphereHaEnabled;
 
     @JsonProperty("vsphere_ha_inprogress")
     @JsonInclude(Include.NON_NULL)
-    private Boolean vsphereHaInprogress = null;
+    private Boolean vsphereHaInprogress;
 
 
 

@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class DosThreshold extends AviRestResource {
     @JsonProperty("attack")
     @JsonInclude(Include.NON_NULL)
-    private String attack = null;
+    private String attack;
 
     @JsonProperty("max_value")
     @JsonInclude(Include.NON_NULL)
-    private Integer maxValue = null;
+    private Integer maxValue;
 
     @JsonProperty("min_value")
     @JsonInclude(Include.NON_NULL)
-    private Integer minValue = null;
+    private Integer minValue;
 
 
 

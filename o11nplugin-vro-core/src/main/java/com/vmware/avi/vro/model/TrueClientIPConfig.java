@@ -30,7 +30,7 @@ public class TrueClientIPConfig extends AviRestResource {
 
     @JsonProperty("headers")
     @JsonInclude(Include.NON_NULL)
-    private List<String> headers = null;
+    private List<String> headers;
 
     @JsonProperty("index_in_header")
     @JsonInclude(Include.NON_NULL)

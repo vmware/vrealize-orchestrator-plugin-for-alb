@@ -31,11 +31,11 @@ public class ResumeSeGroupParams extends AviRestResource {
 
     @JsonProperty("se_group_options")
     @JsonInclude(Include.NON_NULL)
-    private SeGroupResumeOptions seGroupOptions = null;
+    private SeGroupResumeOptions seGroupOptions;
 
     @JsonProperty("se_group_refs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> seGroupRefs = null;
+    private List<String> seGroupRefs;
 
     @JsonProperty("skip_warnings")
     @JsonInclude(Include.NON_NULL)

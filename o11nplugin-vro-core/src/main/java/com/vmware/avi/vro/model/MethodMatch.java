@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class MethodMatch extends AviRestResource {
     @JsonProperty("match_criteria")
     @JsonInclude(Include.NON_NULL)
-    private String matchCriteria = null;
+    private String matchCriteria;
 
     @JsonProperty("methods")
     @JsonInclude(Include.NON_NULL)
-    private List<String> methods = null;
+    private List<String> methods;
 
 
 

@@ -26,39 +26,39 @@ import org.springframework.stereotype.Service;
 public class MetricStatistics extends AviRestResource {
     @JsonProperty("last_sample")
     @JsonInclude(Include.NON_NULL)
-    private Float lastSample = null;
+    private Float lastSample;
 
     @JsonProperty("max")
     @JsonInclude(Include.NON_NULL)
-    private Float max = null;
+    private Float max;
 
     @JsonProperty("max_ts")
     @JsonInclude(Include.NON_NULL)
-    private String maxTs = null;
+    private String maxTs;
 
     @JsonProperty("mean")
     @JsonInclude(Include.NON_NULL)
-    private Float mean = null;
+    private Float mean;
 
     @JsonProperty("min")
     @JsonInclude(Include.NON_NULL)
-    private Float min = null;
+    private Float min;
 
     @JsonProperty("min_ts")
     @JsonInclude(Include.NON_NULL)
-    private String minTs = null;
+    private String minTs;
 
     @JsonProperty("num_samples")
     @JsonInclude(Include.NON_NULL)
-    private Integer numSamples = null;
+    private Integer numSamples;
 
     @JsonProperty("sum")
     @JsonInclude(Include.NON_NULL)
-    private Float sum = null;
+    private Float sum;
 
     @JsonProperty("trend")
     @JsonInclude(Include.NON_NULL)
-    private Float trend = null;
+    private Float trend;
 
 
 

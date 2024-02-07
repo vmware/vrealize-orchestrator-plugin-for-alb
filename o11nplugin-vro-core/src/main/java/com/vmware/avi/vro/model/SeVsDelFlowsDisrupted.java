@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class SeVsDelFlowsDisrupted extends AviRestResource {
     @JsonProperty("deleted_vs_name")
     @JsonInclude(Include.NON_NULL)
-    private String deletedVsName = null;
+    private String deletedVsName;
 
     @JsonProperty("num_vs_flows_disrupted")
     @JsonInclude(Include.NON_NULL)
-    private Integer numVsFlowsDisrupted = null;
+    private Integer numVsFlowsDisrupted;
 
     @JsonProperty("reporting_se_name")
     @JsonInclude(Include.NON_NULL)
-    private String reportingSeName = null;
+    private String reportingSeName;
 
 
 

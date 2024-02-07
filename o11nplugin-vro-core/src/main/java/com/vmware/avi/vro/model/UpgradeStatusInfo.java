@@ -31,19 +31,19 @@ import org.springframework.stereotype.Service;
 public class UpgradeStatusInfo extends AviRestResource {
     @JsonProperty("after_reboot_rollback_fnc")
     @JsonInclude(Include.NON_NULL)
-    private String afterRebootRollbackFnc = null;
+    private String afterRebootRollbackFnc;
 
     @JsonProperty("after_reboot_task_name")
     @JsonInclude(Include.NON_NULL)
-    private String afterRebootTaskName = null;
+    private String afterRebootTaskName;
 
     @JsonProperty("clean")
     @JsonInclude(Include.NON_NULL)
-    private Boolean clean = null;
+    private Boolean clean;
 
     @JsonProperty("duration")
     @JsonInclude(Include.NON_NULL)
-    private Integer duration = null;
+    private Integer duration;
 
     @JsonProperty("enable_patch_rollback")
     @JsonInclude(Include.NON_NULL)
@@ -55,95 +55,95 @@ public class UpgradeStatusInfo extends AviRestResource {
 
     @JsonProperty("end_time")
     @JsonInclude(Include.NON_NULL)
-    private String endTime = null;
+    private String endTime;
 
     @JsonProperty("enqueue_time")
     @JsonInclude(Include.NON_NULL)
-    private String enqueueTime = null;
+    private String enqueueTime;
 
     @JsonProperty("fips_mode")
     @JsonInclude(Include.NON_NULL)
-    private Boolean fipsMode = null;
+    private Boolean fipsMode;
 
     @JsonProperty("history")
     @JsonInclude(Include.NON_NULL)
-    private List<OpsHistory> history = null;
+    private List<OpsHistory> history;
 
     @JsonProperty("image_path")
     @JsonInclude(Include.NON_NULL)
-    private String imagePath = null;
+    private String imagePath;
 
     @JsonProperty("image_ref")
     @JsonInclude(Include.NON_NULL)
-    private String imageRef = null;
+    private String imageRef;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("node_type")
     @JsonInclude(Include.NON_NULL)
-    private String nodeType = null;
+    private String nodeType;
 
     @JsonProperty("obj_cloud_ref")
     @JsonInclude(Include.NON_NULL)
-    private String objCloudRef = null;
+    private String objCloudRef;
 
     @JsonProperty("params")
     @JsonInclude(Include.NON_NULL)
-    private UpgradeOpsParam params = null;
+    private UpgradeOpsParam params;
 
     @JsonProperty("patch_image_path")
     @JsonInclude(Include.NON_NULL)
-    private String patchImagePath = null;
+    private String patchImagePath;
 
     @JsonProperty("patch_image_ref")
     @JsonInclude(Include.NON_NULL)
-    private String patchImageRef = null;
+    private String patchImageRef;
 
     @JsonProperty("patch_list")
     @JsonInclude(Include.NON_NULL)
-    private List<PatchData> patchList = null;
+    private List<PatchData> patchList;
 
     @JsonProperty("patch_reboot")
     @JsonInclude(Include.NON_NULL)
-    private Boolean patchReboot = null;
+    private Boolean patchReboot;
 
     @JsonProperty("patch_version")
     @JsonInclude(Include.NON_NULL)
-    private String patchVersion = null;
+    private String patchVersion;
 
     @JsonProperty("prev_image_path")
     @JsonInclude(Include.NON_NULL)
-    private String prevImagePath = null;
+    private String prevImagePath;
 
     @JsonProperty("prev_patch_image_path")
     @JsonInclude(Include.NON_NULL)
-    private String prevPatchImagePath = null;
+    private String prevPatchImagePath;
 
     @JsonProperty("prev_remote_image_ref")
     @JsonInclude(Include.NON_NULL)
-    private String prevRemoteImageRef = null;
+    private String prevRemoteImageRef;
 
     @JsonProperty("previous_image_ref")
     @JsonInclude(Include.NON_NULL)
-    private String previousImageRef = null;
+    private String previousImageRef;
 
     @JsonProperty("previous_patch_image_ref")
     @JsonInclude(Include.NON_NULL)
-    private String previousPatchImageRef = null;
+    private String previousPatchImageRef;
 
     @JsonProperty("previous_patch_list")
     @JsonInclude(Include.NON_NULL)
-    private List<PatchData> previousPatchList = null;
+    private List<PatchData> previousPatchList;
 
     @JsonProperty("previous_patch_version")
     @JsonInclude(Include.NON_NULL)
-    private String previousPatchVersion = null;
+    private String previousPatchVersion;
 
     @JsonProperty("previous_version")
     @JsonInclude(Include.NON_NULL)
-    private String previousVersion = null;
+    private String previousVersion;
 
     @JsonProperty("progress")
     @JsonInclude(Include.NON_NULL)
@@ -151,75 +151,75 @@ public class UpgradeStatusInfo extends AviRestResource {
 
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("remote_image_ref")
     @JsonInclude(Include.NON_NULL)
-    private String remoteImageRef = null;
+    private String remoteImageRef;
 
     @JsonProperty("se_patch_image_path")
     @JsonInclude(Include.NON_NULL)
-    private String sePatchImagePath = null;
+    private String sePatchImagePath;
 
     @JsonProperty("se_patch_image_ref")
     @JsonInclude(Include.NON_NULL)
-    private String sePatchImageRef = null;
+    private String sePatchImageRef;
 
     @JsonProperty("se_upgrade_events")
     @JsonInclude(Include.NON_NULL)
-    private List<SeUpgradeEvents> seUpgradeEvents = null;
+    private List<SeUpgradeEvents> seUpgradeEvents;
 
     @JsonProperty("seg_params")
     @JsonInclude(Include.NON_NULL)
-    private UpgradeOpsParam segParams = null;
+    private UpgradeOpsParam segParams;
 
     @JsonProperty("seg_status")
     @JsonInclude(Include.NON_NULL)
-    private SeGroupStatus segStatus = null;
+    private SeGroupStatus segStatus;
 
     @JsonProperty("start_time")
     @JsonInclude(Include.NON_NULL)
-    private String startTime = null;
+    private String startTime;
 
     @JsonProperty("state")
     @JsonInclude(Include.NON_NULL)
-    private UpgradeOpsState state = null;
+    private UpgradeOpsState state;
 
     @JsonProperty("statediff_ref")
     @JsonInclude(Include.NON_NULL)
-    private String statediffRef = null;
+    private String statediffRef;
 
     @JsonProperty("system")
     @JsonInclude(Include.NON_NULL)
-    private Boolean system = null;
+    private Boolean system;
 
     @JsonProperty("system_report_refs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> systemReportRefs = null;
+    private List<String> systemReportRefs;
 
     @JsonProperty("tasks_completed")
     @JsonInclude(Include.NON_NULL)
-    private Integer tasksCompleted = null;
+    private Integer tasksCompleted;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("total_tasks")
     @JsonInclude(Include.NON_NULL)
-    private Integer totalTasks = null;
+    private Integer totalTasks;
 
     @JsonProperty("upgrade_events")
     @JsonInclude(Include.NON_NULL)
-    private List<EventMap> upgradeEvents = null;
+    private List<EventMap> upgradeEvents;
 
     @JsonProperty("upgrade_ops")
     @JsonInclude(Include.NON_NULL)
-    private String upgradeOps = null;
+    private String upgradeOps;
 
     @JsonProperty("upgrade_readiness")
     @JsonInclude(Include.NON_NULL)
-    private UpgradeReadinessCheckObj upgradeReadiness = null;
+    private UpgradeReadinessCheckObj upgradeReadiness;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -227,11 +227,11 @@ public class UpgradeStatusInfo extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("version")
     @JsonInclude(Include.NON_NULL)
-    private String version = null;
+    private String version;
 
 
 

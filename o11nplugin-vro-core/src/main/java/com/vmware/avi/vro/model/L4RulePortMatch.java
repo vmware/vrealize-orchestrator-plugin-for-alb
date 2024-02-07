@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class L4RulePortMatch extends AviRestResource {
     @JsonProperty("match_criteria")
     @JsonInclude(Include.NON_NULL)
-    private String matchCriteria = null;
+    private String matchCriteria;
 
     @JsonProperty("port_ranges")
     @JsonInclude(Include.NON_NULL)
-    private List<PortRange> portRanges = null;
+    private List<PortRange> portRanges;
 
     @JsonProperty("ports")
     @JsonInclude(Include.NON_NULL)
-    private List<Integer> ports = null;
+    private List<Integer> ports;
 
 
 

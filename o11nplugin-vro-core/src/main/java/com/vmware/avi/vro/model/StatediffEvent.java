@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class StatediffEvent extends AviRestResource {
     @JsonProperty("duration")
     @JsonInclude(Include.NON_NULL)
-    private Integer duration = null;
+    private Integer duration;
 
     @JsonProperty("end_time")
     @JsonInclude(Include.NON_NULL)
-    private String endTime = null;
+    private String endTime;
 
     @JsonProperty("message")
     @JsonInclude(Include.NON_NULL)
-    private String message = null;
+    private String message;
 
     @JsonProperty("start_time")
     @JsonInclude(Include.NON_NULL)
-    private String startTime = null;
+    private String startTime;
 
     @JsonProperty("status")
     @JsonInclude(Include.NON_NULL)
@@ -46,7 +46,7 @@ public class StatediffEvent extends AviRestResource {
 
     @JsonProperty("task_name")
     @JsonInclude(Include.NON_NULL)
-    private String taskName = null;
+    private String taskName;
 
 
 

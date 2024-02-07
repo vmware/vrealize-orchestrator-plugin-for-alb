@@ -27,23 +27,23 @@ import org.springframework.stereotype.Service;
 public class ReportDetail extends AviRestResource {
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("node_ref")
     @JsonInclude(Include.NON_NULL)
-    private String nodeRef = null;
+    private String nodeRef;
 
     @JsonProperty("node_type")
     @JsonInclude(Include.NON_NULL)
-    private String nodeType = null;
+    private String nodeType;
 
     @JsonProperty("obj_cloud_ref")
     @JsonInclude(Include.NON_NULL)
-    private String objCloudRef = null;
+    private String objCloudRef;
 
     @JsonProperty("system_readiness")
     @JsonInclude(Include.NON_NULL)
-    private UpgradeReadinessCheckObj systemReadiness = null;
+    private UpgradeReadinessCheckObj systemReadiness;
 
 
 

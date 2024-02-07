@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class TencentCredentials extends AviRestResource {
     @JsonProperty("secret_id")
     @JsonInclude(Include.NON_NULL)
-    private String secretId = null;
+    private String secretId;
 
     @JsonProperty("secret_key")
     @JsonInclude(Include.NON_NULL)
-    private String secretKey = null;
+    private String secretKey;
 
 
 

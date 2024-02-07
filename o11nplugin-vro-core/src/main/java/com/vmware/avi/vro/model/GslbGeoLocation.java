@@ -27,11 +27,11 @@ import org.springframework.stereotype.Service;
 public class GslbGeoLocation extends AviRestResource {
     @JsonProperty("location")
     @JsonInclude(Include.NON_NULL)
-    private GeoLocation location = null;
+    private GeoLocation location;
 
     @JsonProperty("source")
     @JsonInclude(Include.NON_NULL)
-    private String source = null;
+    private String source;
 
 
 

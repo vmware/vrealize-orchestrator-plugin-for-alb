@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class ParamsInURI extends AviRestResource {
     @JsonProperty("param_info")
     @JsonInclude(Include.NON_NULL)
-    private List<ParamInURI> paramInfo = null;
+    private List<ParamInURI> paramInfo;
 
 
 

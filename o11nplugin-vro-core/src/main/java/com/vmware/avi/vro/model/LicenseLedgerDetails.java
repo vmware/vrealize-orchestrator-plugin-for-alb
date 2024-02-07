@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class LicenseLedgerDetails extends AviRestResource {
     @JsonProperty("escrow_infos")
     @JsonInclude(Include.NON_NULL)
-    private List<LicenseInfo> escrowInfos = null;
+    private List<LicenseInfo> escrowInfos;
 
     @JsonProperty("se_infos")
     @JsonInclude(Include.NON_NULL)
-    private List<LicenseInfo> seInfos = null;
+    private List<LicenseInfo> seInfos;
 
     @JsonProperty("tier_usages")
     @JsonInclude(Include.NON_NULL)
-    private List<LicenseTierUsage> tierUsages = null;
+    private List<LicenseTierUsage> tierUsages;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -42,7 +42,7 @@ public class LicenseLedgerDetails extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

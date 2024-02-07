@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class SummarizedSubnetInfo extends AviRestResource {
     @JsonProperty("cidr_prefix")
     @JsonInclude(Include.NON_NULL)
-    private String cidrPrefix = null;
+    private String cidrPrefix;
 
     @JsonProperty("network")
     @JsonInclude(Include.NON_NULL)
-    private String network = null;
+    private String network;
 
 
 

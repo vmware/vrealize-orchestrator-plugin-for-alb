@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class VinfraPoolServerDeleteDetails extends AviRestResource {
     @JsonProperty("pool_name")
     @JsonInclude(Include.NON_NULL)
-    private String poolName = null;
+    private String poolName;
 
     @JsonProperty("server_ip")
     @JsonInclude(Include.NON_NULL)
-    private List<String> serverIp = null;
+    private List<String> serverIp;
 
 
 

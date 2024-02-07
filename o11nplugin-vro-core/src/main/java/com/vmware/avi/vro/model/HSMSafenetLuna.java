@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class HSMSafenetLuna extends AviRestResource {
     @JsonProperty("ha_group_num")
     @JsonInclude(Include.NON_NULL)
-    private Integer haGroupNum = null;
+    private Integer haGroupNum;
 
     @JsonProperty("is_ha")
     @JsonInclude(Include.NON_NULL)
@@ -34,15 +34,15 @@ public class HSMSafenetLuna extends AviRestResource {
 
     @JsonProperty("node_info")
     @JsonInclude(Include.NON_NULL)
-    private List<HSMSafenetClientInfo> nodeInfo = null;
+    private List<HSMSafenetClientInfo> nodeInfo;
 
     @JsonProperty("server")
     @JsonInclude(Include.NON_NULL)
-    private List<HSMSafenetLunaServer> server = null;
+    private List<HSMSafenetLunaServer> server;
 
     @JsonProperty("server_pem")
     @JsonInclude(Include.NON_NULL)
-    private String serverPem = null;
+    private String serverPem;
 
     @JsonProperty("use_dedicated_network")
     @JsonInclude(Include.NON_NULL)

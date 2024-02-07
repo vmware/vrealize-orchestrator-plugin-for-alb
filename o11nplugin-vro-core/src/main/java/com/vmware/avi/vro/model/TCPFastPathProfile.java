@@ -27,7 +27,7 @@ import org.springframework.stereotype.Service;
 public class TCPFastPathProfile extends AviRestResource {
     @JsonProperty("dsr_profile")
     @JsonInclude(Include.NON_NULL)
-    private DsrProfile dsrProfile = null;
+    private DsrProfile dsrProfile;
 
     @JsonProperty("enable_syn_protection")
     @JsonInclude(Include.NON_NULL)

@@ -27,15 +27,15 @@ import org.springframework.stereotype.Service;
 public class OauthSubRequestLog extends AviRestResource {
     @JsonProperty("error_code")
     @JsonInclude(Include.NON_NULL)
-    private String errorCode = null;
+    private String errorCode;
 
     @JsonProperty("error_description")
     @JsonInclude(Include.NON_NULL)
-    private String errorDescription = null;
+    private String errorDescription;
 
     @JsonProperty("sub_request_log")
     @JsonInclude(Include.NON_NULL)
-    private SubRequestLog subRequestLog = null;
+    private SubRequestLog subRequestLog;
 
 
 

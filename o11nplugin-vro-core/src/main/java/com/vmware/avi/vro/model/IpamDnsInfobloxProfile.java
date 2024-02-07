@@ -28,39 +28,39 @@ import org.springframework.stereotype.Service;
 public class IpamDnsInfobloxProfile extends AviRestResource {
     @JsonProperty("dns_view")
     @JsonInclude(Include.NON_NULL)
-    private String dnsView = null;
+    private String dnsView;
 
     @JsonProperty("extensible_attributes")
     @JsonInclude(Include.NON_NULL)
-    private List<CustomParams> extensibleAttributes = null;
+    private List<CustomParams> extensibleAttributes;
 
     @JsonProperty("ip6_address")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr ip6Address = null;
+    private IpAddr ip6Address;
 
     @JsonProperty("ip_address")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr ipAddress = null;
+    private IpAddr ipAddress;
 
     @JsonProperty("network_view")
     @JsonInclude(Include.NON_NULL)
-    private String networkView = null;
+    private String networkView;
 
     @JsonProperty("password")
     @JsonInclude(Include.NON_NULL)
-    private String password = null;
+    private String password;
 
     @JsonProperty("usable_alloc_subnets")
     @JsonInclude(Include.NON_NULL)
-    private List<InfobloxSubnet> usableAllocSubnets = null;
+    private List<InfobloxSubnet> usableAllocSubnets;
 
     @JsonProperty("usable_domains")
     @JsonInclude(Include.NON_NULL)
-    private List<String> usableDomains = null;
+    private List<String> usableDomains;
 
     @JsonProperty("username")
     @JsonInclude(Include.NON_NULL)
-    private String username = null;
+    private String username;
 
     @JsonProperty("wapi_version")
     @JsonInclude(Include.NON_NULL)

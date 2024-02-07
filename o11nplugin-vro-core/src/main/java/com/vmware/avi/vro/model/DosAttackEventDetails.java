@@ -26,27 +26,27 @@ import org.springframework.stereotype.Service;
 public class DosAttackEventDetails extends AviRestResource {
     @JsonProperty("attack")
     @JsonInclude(Include.NON_NULL)
-    private String attack = null;
+    private String attack;
 
     @JsonProperty("attack_count")
     @JsonInclude(Include.NON_NULL)
-    private Float attackCount = null;
+    private Float attackCount;
 
     @JsonProperty("ipgroup_uuids")
     @JsonInclude(Include.NON_NULL)
-    private List<String> ipgroupUuids = null;
+    private List<String> ipgroupUuids;
 
     @JsonProperty("meta_data")
     @JsonInclude(Include.NON_NULL)
-    private List<AttackMetaData> metaData = null;
+    private List<AttackMetaData> metaData;
 
     @JsonProperty("src_ips")
     @JsonInclude(Include.NON_NULL)
-    private List<String> srcIps = null;
+    private List<String> srcIps;
 
     @JsonProperty("urls")
     @JsonInclude(Include.NON_NULL)
-    private List<String> urls = null;
+    private List<String> urls;
 
 
 

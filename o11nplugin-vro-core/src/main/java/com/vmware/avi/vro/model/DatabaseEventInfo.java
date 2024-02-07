@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class DatabaseEventInfo extends AviRestResource {
     @JsonProperty("component")
     @JsonInclude(Include.NON_NULL)
-    private String component = null;
+    private String component;
 
     @JsonProperty("message")
     @JsonInclude(Include.NON_NULL)
-    private String message = null;
+    private String message;
 
 
 

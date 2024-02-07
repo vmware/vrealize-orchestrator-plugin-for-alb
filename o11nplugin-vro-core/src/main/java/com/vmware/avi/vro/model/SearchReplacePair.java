@@ -28,11 +28,11 @@ import org.springframework.stereotype.Service;
 public class SearchReplacePair extends AviRestResource {
     @JsonProperty("replacement_string")
     @JsonInclude(Include.NON_NULL)
-    private ReplaceStringVar replacementString = null;
+    private ReplaceStringVar replacementString;
 
     @JsonProperty("search_string")
     @JsonInclude(Include.NON_NULL)
-    private SearchStringVar searchString = null;
+    private SearchStringVar searchString;
 
 
 

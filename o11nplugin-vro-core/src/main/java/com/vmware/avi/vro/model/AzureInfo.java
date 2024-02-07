@@ -26,35 +26,35 @@ import org.springframework.stereotype.Service;
 public class AzureInfo extends AviRestResource {
     @JsonProperty("availability_set")
     @JsonInclude(Include.NON_NULL)
-    private String availabilitySet = null;
+    private String availabilitySet;
 
     @JsonProperty("fault_domain")
     @JsonInclude(Include.NON_NULL)
-    private String faultDomain = null;
+    private String faultDomain;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("resource_group")
     @JsonInclude(Include.NON_NULL)
-    private String resourceGroup = null;
+    private String resourceGroup;
 
     @JsonProperty("subnet_id")
     @JsonInclude(Include.NON_NULL)
-    private String subnetId = null;
+    private String subnetId;
 
     @JsonProperty("update_domain")
     @JsonInclude(Include.NON_NULL)
-    private String updateDomain = null;
+    private String updateDomain;
 
     @JsonProperty("vm_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String vmUuid = null;
+    private String vmUuid;
 
     @JsonProperty("vnic_id")
     @JsonInclude(Include.NON_NULL)
-    private String vnicId = null;
+    private String vnicId;
 
 
 

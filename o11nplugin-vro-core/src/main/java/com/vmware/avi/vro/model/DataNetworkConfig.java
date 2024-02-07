@@ -27,19 +27,19 @@ import org.springframework.stereotype.Service;
 public class DataNetworkConfig extends AviRestResource {
     @JsonProperty("tier1_segment_config")
     @JsonInclude(Include.NON_NULL)
-    private NsxtTier1SegmentConfig tier1SegmentConfig = null;
+    private NsxtTier1SegmentConfig tier1SegmentConfig;
 
     @JsonProperty("transport_zone")
     @JsonInclude(Include.NON_NULL)
-    private String transportZone = null;
+    private String transportZone;
 
     @JsonProperty("tz_type")
     @JsonInclude(Include.NON_NULL)
-    private String tzType = null;
+    private String tzType;
 
     @JsonProperty("vlan_segments")
     @JsonInclude(Include.NON_NULL)
-    private List<String> vlanSegments = null;
+    private List<String> vlanSegments;
 
 
 

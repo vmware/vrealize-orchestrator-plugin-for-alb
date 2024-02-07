@@ -27,19 +27,19 @@ import org.springframework.stereotype.Service;
 public class VCenterServer extends AviRestResource {
     @JsonProperty("cloud_ref")
     @JsonInclude(Include.NON_NULL)
-    private String cloudRef = null;
+    private String cloudRef;
 
     @JsonProperty("content_lib")
     @JsonInclude(Include.NON_NULL)
-    private ContentLibConfig contentLib = null;
+    private ContentLibConfig contentLib;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -47,15 +47,15 @@ public class VCenterServer extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("vcenter_credentials_ref")
     @JsonInclude(Include.NON_NULL)
-    private String vcenterCredentialsRef = null;
+    private String vcenterCredentialsRef;
 
     @JsonProperty("vcenter_url")
     @JsonInclude(Include.NON_NULL)
-    private String vcenterUrl = null;
+    private String vcenterUrl;
 
 
 

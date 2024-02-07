@@ -34,7 +34,7 @@ public class DnsRuleActionResponse extends AviRestResource {
 
     @JsonProperty("resource_record_sets")
     @JsonInclude(Include.NON_NULL)
-    private List<DnsRuleDnsRrSet> resourceRecordSets = null;
+    private List<DnsRuleDnsRrSet> resourceRecordSets;
 
     @JsonProperty("truncation")
     @JsonInclude(Include.NON_NULL)

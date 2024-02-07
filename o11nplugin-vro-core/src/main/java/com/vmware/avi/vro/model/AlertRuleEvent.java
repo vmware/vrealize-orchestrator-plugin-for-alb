@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class AlertRuleEvent extends AviRestResource {
     @JsonProperty("event_details")
     @JsonInclude(Include.NON_NULL)
-    private List<EventDetailsFilter> eventDetails = null;
+    private List<EventDetailsFilter> eventDetails;
 
     @JsonProperty("event_id")
     @JsonInclude(Include.NON_NULL)
-    private String eventId = null;
+    private String eventId;
 
     @JsonProperty("not_cond")
     @JsonInclude(Include.NON_NULL)

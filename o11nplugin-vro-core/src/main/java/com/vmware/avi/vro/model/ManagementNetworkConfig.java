@@ -27,19 +27,19 @@ import org.springframework.stereotype.Service;
 public class ManagementNetworkConfig extends AviRestResource {
     @JsonProperty("overlay_segment")
     @JsonInclude(Include.NON_NULL)
-    private Tier1LogicalRouterInfo overlaySegment = null;
+    private Tier1LogicalRouterInfo overlaySegment;
 
     @JsonProperty("transport_zone")
     @JsonInclude(Include.NON_NULL)
-    private String transportZone = null;
+    private String transportZone;
 
     @JsonProperty("tz_type")
     @JsonInclude(Include.NON_NULL)
-    private String tzType = null;
+    private String tzType;
 
     @JsonProperty("vlan_segment")
     @JsonInclude(Include.NON_NULL)
-    private String vlanSegment = null;
+    private String vlanSegment;
 
 
 

@@ -26,23 +26,23 @@ import org.springframework.stereotype.Service;
 public class BgpRoutingOptions extends AviRestResource {
     @JsonProperty("advertise_default_route")
     @JsonInclude(Include.NON_NULL)
-    private Boolean advertiseDefaultRoute = null;
+    private Boolean advertiseDefaultRoute;
 
     @JsonProperty("advertise_learned_routes")
     @JsonInclude(Include.NON_NULL)
-    private Boolean advertiseLearnedRoutes = null;
+    private Boolean advertiseLearnedRoutes;
 
     @JsonProperty("label")
     @JsonInclude(Include.NON_NULL)
-    private String label = null;
+    private String label;
 
     @JsonProperty("learn_only_default_route")
     @JsonInclude(Include.NON_NULL)
-    private Boolean learnOnlyDefaultRoute = null;
+    private Boolean learnOnlyDefaultRoute;
 
     @JsonProperty("learn_routes")
     @JsonInclude(Include.NON_NULL)
-    private Boolean learnRoutes = null;
+    private Boolean learnRoutes;
 
     @JsonProperty("max_learn_limit")
     @JsonInclude(Include.NON_NULL)

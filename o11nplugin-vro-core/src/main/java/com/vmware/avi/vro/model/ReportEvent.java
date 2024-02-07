@@ -26,27 +26,27 @@ import org.springframework.stereotype.Service;
 public class ReportEvent extends AviRestResource {
     @JsonProperty("duration")
     @JsonInclude(Include.NON_NULL)
-    private Integer duration = null;
+    private Integer duration;
 
     @JsonProperty("end_time")
     @JsonInclude(Include.NON_NULL)
-    private String endTime = null;
+    private String endTime;
 
     @JsonProperty("event_name")
     @JsonInclude(Include.NON_NULL)
-    private String eventName = null;
+    private String eventName;
 
     @JsonProperty("messages")
     @JsonInclude(Include.NON_NULL)
-    private List<String> messages = null;
+    private List<String> messages;
 
     @JsonProperty("start_time")
     @JsonInclude(Include.NON_NULL)
-    private String startTime = null;
+    private String startTime;
 
     @JsonProperty("status")
     @JsonInclude(Include.NON_NULL)
-    private String status = null;
+    private String status;
 
 
 

@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class Tier1LogicalRouterInfo extends AviRestResource {
     @JsonProperty("locale_service")
     @JsonInclude(Include.NON_NULL)
-    private String localeService = null;
+    private String localeService;
 
     @JsonProperty("segment_id")
     @JsonInclude(Include.NON_NULL)
-    private String segmentId = null;
+    private String segmentId;
 
     @JsonProperty("tier1_lr_id")
     @JsonInclude(Include.NON_NULL)
-    private String tier1LrId = null;
+    private String tier1LrId;
 
 
 

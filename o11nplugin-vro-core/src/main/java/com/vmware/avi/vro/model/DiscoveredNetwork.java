@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class DiscoveredNetwork extends AviRestResource {
     @JsonProperty("network_ref")
     @JsonInclude(Include.NON_NULL)
-    private String networkRef = null;
+    private String networkRef;
 
     @JsonProperty("subnet")
     @JsonInclude(Include.NON_NULL)
-    private List<IpAddrPrefix> subnet = null;
+    private List<IpAddrPrefix> subnet;
 
     @JsonProperty("subnet6")
     @JsonInclude(Include.NON_NULL)
-    private List<IpAddrPrefix> subnet6 = null;
+    private List<IpAddrPrefix> subnet6;
 
 
 

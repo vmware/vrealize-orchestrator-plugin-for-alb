@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class MetricsMissingDataInterval extends AviRestResource {
     @JsonProperty("end")
     @JsonInclude(Include.NON_NULL)
-    private String end = null;
+    private String end;
 
     @JsonProperty("start")
     @JsonInclude(Include.NON_NULL)
-    private String start = null;
+    private String start;
 
 
 

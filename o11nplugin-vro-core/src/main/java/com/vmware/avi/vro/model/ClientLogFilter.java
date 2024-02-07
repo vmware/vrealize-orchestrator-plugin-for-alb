@@ -32,7 +32,7 @@ public class ClientLogFilter extends AviRestResource {
 
     @JsonProperty("client_ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrMatch clientIp = null;
+    private IpAddrMatch clientIp;
 
     @JsonProperty("duration")
     @JsonInclude(Include.NON_NULL)
@@ -44,15 +44,15 @@ public class ClientLogFilter extends AviRestResource {
 
     @JsonProperty("index")
     @JsonInclude(Include.NON_NULL)
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("uri")
     @JsonInclude(Include.NON_NULL)
-    private StringMatch uri = null;
+    private StringMatch uri;
 
 
 

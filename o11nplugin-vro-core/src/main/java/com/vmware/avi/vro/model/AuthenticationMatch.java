@@ -29,15 +29,15 @@ import org.springframework.stereotype.Service;
 public class AuthenticationMatch extends AviRestResource {
     @JsonProperty("client_ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrMatch clientIp = null;
+    private IpAddrMatch clientIp;
 
     @JsonProperty("host_hdr")
     @JsonInclude(Include.NON_NULL)
-    private HostHdrMatch hostHdr = null;
+    private HostHdrMatch hostHdr;
 
     @JsonProperty("path")
     @JsonInclude(Include.NON_NULL)
-    private PathMatch path = null;
+    private PathMatch path;
 
 
 

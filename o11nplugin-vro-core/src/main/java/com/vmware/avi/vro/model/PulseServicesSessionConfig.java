@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class PulseServicesSessionConfig extends AviRestResource {
     @JsonProperty("session_headers")
     @JsonInclude(Include.NON_NULL)
-    private List<SessionHeaders> sessionHeaders = null;
+    private List<SessionHeaders> sessionHeaders;
 
 
 

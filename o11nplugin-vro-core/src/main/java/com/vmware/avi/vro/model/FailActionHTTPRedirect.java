@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class FailActionHTTPRedirect extends AviRestResource {
     @JsonProperty("host")
     @JsonInclude(Include.NON_NULL)
-    private String host = null;
+    private String host;
 
     @JsonProperty("path")
     @JsonInclude(Include.NON_NULL)
-    private String path = null;
+    private String path;
 
     @JsonProperty("protocol")
     @JsonInclude(Include.NON_NULL)
@@ -38,7 +38,7 @@ public class FailActionHTTPRedirect extends AviRestResource {
 
     @JsonProperty("query")
     @JsonInclude(Include.NON_NULL)
-    private String query = null;
+    private String query;
 
     @JsonProperty("status_code")
     @JsonInclude(Include.NON_NULL)

@@ -28,11 +28,11 @@ import org.springframework.stereotype.Service;
 public class SamlSettings extends AviRestResource {
     @JsonProperty("idp")
     @JsonInclude(Include.NON_NULL)
-    private SamlIdentityProviderSettings idp = null;
+    private SamlIdentityProviderSettings idp;
 
     @JsonProperty("sp")
     @JsonInclude(Include.NON_NULL)
-    private SamlServiceProviderSettings sp = null;
+    private SamlServiceProviderSettings sp;
 
 
 

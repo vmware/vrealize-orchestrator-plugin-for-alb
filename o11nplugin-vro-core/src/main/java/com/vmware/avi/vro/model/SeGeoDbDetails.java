@@ -26,31 +26,31 @@ import org.springframework.stereotype.Service;
 public class SeGeoDbDetails extends AviRestResource {
     @JsonProperty("file_name")
     @JsonInclude(Include.NON_NULL)
-    private String fileName = null;
+    private String fileName;
 
     @JsonProperty("geo_db_profile_name")
     @JsonInclude(Include.NON_NULL)
-    private String geoDbProfileName = null;
+    private String geoDbProfileName;
 
     @JsonProperty("geo_db_profile_ref")
     @JsonInclude(Include.NON_NULL)
-    private String geoDbProfileRef = null;
+    private String geoDbProfileRef;
 
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("se_ref")
     @JsonInclude(Include.NON_NULL)
-    private String seRef = null;
+    private String seRef;
 
     @JsonProperty("vip_id")
     @JsonInclude(Include.NON_NULL)
-    private String vipId = null;
+    private String vipId;
 
     @JsonProperty("virtual_service")
     @JsonInclude(Include.NON_NULL)
-    private String virtualService = null;
+    private String virtualService;
 
 
 

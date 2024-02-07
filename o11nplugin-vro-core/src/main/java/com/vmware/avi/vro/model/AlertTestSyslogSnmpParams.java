@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class AlertTestSyslogSnmpParams extends AviRestResource {
     @JsonProperty("text")
     @JsonInclude(Include.NON_NULL)
-    private String text = null;
+    private String text;
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

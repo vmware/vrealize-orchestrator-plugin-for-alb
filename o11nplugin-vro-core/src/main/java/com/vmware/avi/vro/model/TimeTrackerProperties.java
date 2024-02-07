@@ -26,23 +26,23 @@ import org.springframework.stereotype.Service;
 public class TimeTrackerProperties extends AviRestResource {
     @JsonProperty("be_conn_est_audit_mode")
     @JsonInclude(Include.NON_NULL)
-    private String beConnEstAuditMode = null;
+    private String beConnEstAuditMode;
 
     @JsonProperty("be_conn_est_threshold")
     @JsonInclude(Include.NON_NULL)
-    private Integer beConnEstThreshold = null;
+    private Integer beConnEstThreshold;
 
     @JsonProperty("fe_conn_est_audit_mode")
     @JsonInclude(Include.NON_NULL)
-    private String feConnEstAuditMode = null;
+    private String feConnEstAuditMode;
 
     @JsonProperty("fe_conn_est_threshold")
     @JsonInclude(Include.NON_NULL)
-    private Integer feConnEstThreshold = null;
+    private Integer feConnEstThreshold;
 
     @JsonProperty("ingress_sig_log")
     @JsonInclude(Include.NON_NULL)
-    private Boolean ingressSigLog = null;
+    private Boolean ingressSigLog;
 
 
 

@@ -26,23 +26,23 @@ import org.springframework.stereotype.Service;
 public class CloudStackSetup extends AviRestResource {
     @JsonProperty("access_key_id")
     @JsonInclude(Include.NON_NULL)
-    private String accessKeyId = null;
+    private String accessKeyId;
 
     @JsonProperty("api_url")
     @JsonInclude(Include.NON_NULL)
-    private String apiUrl = null;
+    private String apiUrl;
 
     @JsonProperty("cc_id")
     @JsonInclude(Include.NON_NULL)
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("error_string")
     @JsonInclude(Include.NON_NULL)
-    private String errorString = null;
+    private String errorString;
 
     @JsonProperty("privilege")
     @JsonInclude(Include.NON_NULL)
-    private String privilege = null;
+    private String privilege;
 
 
 

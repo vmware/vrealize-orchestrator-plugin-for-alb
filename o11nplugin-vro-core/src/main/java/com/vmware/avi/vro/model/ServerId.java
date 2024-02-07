@@ -27,15 +27,15 @@ import org.springframework.stereotype.Service;
 public class ServerId extends AviRestResource {
     @JsonProperty("external_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String externalUuid = null;
+    private String externalUuid;
 
     @JsonProperty("ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr ip = null;
+    private IpAddr ip;
 
     @JsonProperty("port")
     @JsonInclude(Include.NON_NULL)
-    private Integer port = null;
+    private Integer port;
 
 
 

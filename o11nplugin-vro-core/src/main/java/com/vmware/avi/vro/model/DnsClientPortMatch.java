@@ -27,7 +27,7 @@ import org.springframework.stereotype.Service;
 public class DnsClientPortMatch extends AviRestResource {
     @JsonProperty("client_ports")
     @JsonInclude(Include.NON_NULL)
-    private PortMatchGeneric clientPorts = null;
+    private PortMatchGeneric clientPorts;
 
 
 

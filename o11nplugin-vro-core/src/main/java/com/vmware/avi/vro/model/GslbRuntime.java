@@ -28,47 +28,47 @@ import org.springframework.stereotype.Service;
 public class GslbRuntime extends AviRestResource {
     @JsonProperty("checksum")
     @JsonInclude(Include.NON_NULL)
-    private String checksum = null;
+    private String checksum;
 
     @JsonProperty("delete_in_progress")
     @JsonInclude(Include.NON_NULL)
-    private Boolean deleteInProgress = null;
+    private Boolean deleteInProgress;
 
     @JsonProperty("dns_enabled")
     @JsonInclude(Include.NON_NULL)
-    private Boolean dnsEnabled = null;
+    private Boolean dnsEnabled;
 
     @JsonProperty("event_cache")
     @JsonInclude(Include.NON_NULL)
-    private EventCache eventCache = null;
+    private EventCache eventCache;
 
     @JsonProperty("flr_state")
     @JsonInclude(Include.NON_NULL)
-    private List<CfgState> flrState = null;
+    private List<CfgState> flrState;
 
     @JsonProperty("ldr_state")
     @JsonInclude(Include.NON_NULL)
-    private CfgState ldrState = null;
+    private CfgState ldrState;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("site")
     @JsonInclude(Include.NON_NULL)
-    private List<GslbSiteRuntime> site = null;
+    private List<GslbSiteRuntime> site;
 
     @JsonProperty("tenant_name")
     @JsonInclude(Include.NON_NULL)
-    private String tenantName = null;
+    private String tenantName;
 
     @JsonProperty("third_party_sites")
     @JsonInclude(Include.NON_NULL)
-    private List<GslbThirdPartySiteRuntime> thirdPartySites = null;
+    private List<GslbThirdPartySiteRuntime> thirdPartySites;
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

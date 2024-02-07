@@ -29,27 +29,27 @@ import org.springframework.stereotype.Service;
 public class PlacementScopeConfig extends AviRestResource {
     @JsonProperty("clusters")
     @JsonInclude(Include.NON_NULL)
-    private List<ClusterHAConfig> clusters = null;
+    private List<ClusterHAConfig> clusters;
 
     @JsonProperty("nsxt_clusters")
     @JsonInclude(Include.NON_NULL)
-    private NsxtClusters nsxtClusters = null;
+    private NsxtClusters nsxtClusters;
 
     @JsonProperty("nsxt_datastores")
     @JsonInclude(Include.NON_NULL)
-    private NsxtDatastores nsxtDatastores = null;
+    private NsxtDatastores nsxtDatastores;
 
     @JsonProperty("nsxt_hosts")
     @JsonInclude(Include.NON_NULL)
-    private NsxtHosts nsxtHosts = null;
+    private NsxtHosts nsxtHosts;
 
     @JsonProperty("vcenter_folder")
     @JsonInclude(Include.NON_NULL)
-    private String vcenterFolder = null;
+    private String vcenterFolder;
 
     @JsonProperty("vcenter_ref")
     @JsonInclude(Include.NON_NULL)
-    private String vcenterRef = null;
+    private String vcenterRef;
 
 
 

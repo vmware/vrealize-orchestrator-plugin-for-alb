@@ -28,31 +28,31 @@ import org.springframework.stereotype.Service;
 public class GCPCloudRouterUpdate extends AviRestResource {
     @JsonProperty("action")
     @JsonInclude(Include.NON_NULL)
-    private String action = null;
+    private String action;
 
     @JsonProperty("cc_id")
     @JsonInclude(Include.NON_NULL)
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("error_string")
     @JsonInclude(Include.NON_NULL)
-    private String errorString = null;
+    private String errorString;
 
     @JsonProperty("fip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr fip = null;
+    private IpAddr fip;
 
     @JsonProperty("router_url")
     @JsonInclude(Include.NON_NULL)
-    private String routerUrl = null;
+    private String routerUrl;
 
     @JsonProperty("vip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr vip = null;
+    private IpAddr vip;
 
     @JsonProperty("vs_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String vsUuid = null;
+    private String vsUuid;
 
 
 

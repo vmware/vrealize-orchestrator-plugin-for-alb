@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class AzureClusterInfo extends AviRestResource {
     @JsonProperty("cloud_credential_ref")
     @JsonInclude(Include.NON_NULL)
-    private String cloudCredentialRef = null;
+    private String cloudCredentialRef;
 
     @JsonProperty("subscription_id")
     @JsonInclude(Include.NON_NULL)
-    private String subscriptionId = null;
+    private String subscriptionId;
 
 
 

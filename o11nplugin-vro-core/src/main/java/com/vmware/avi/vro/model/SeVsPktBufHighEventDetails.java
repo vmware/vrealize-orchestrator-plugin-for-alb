@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class SeVsPktBufHighEventDetails extends AviRestResource {
     @JsonProperty("current_value")
     @JsonInclude(Include.NON_NULL)
-    private Integer currentValue = null;
+    private Integer currentValue;
 
     @JsonProperty("threshold")
     @JsonInclude(Include.NON_NULL)
-    private Integer threshold = null;
+    private Integer threshold;
 
     @JsonProperty("virtual_service")
     @JsonInclude(Include.NON_NULL)
-    private String virtualService = null;
+    private String virtualService;
 
 
 

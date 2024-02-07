@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class SeLicensedBandwdithExceededEventDetails extends AviRestResource {
     @JsonProperty("num_pkts_dropped")
     @JsonInclude(Include.NON_NULL)
-    private Integer numPktsDropped = null;
+    private Integer numPktsDropped;
 
     @JsonProperty("se_ref")
     @JsonInclude(Include.NON_NULL)
-    private String seRef = null;
+    private String seRef;
 
 
 

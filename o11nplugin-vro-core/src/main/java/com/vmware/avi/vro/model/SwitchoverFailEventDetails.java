@@ -26,27 +26,27 @@ import org.springframework.stereotype.Service;
 public class SwitchoverFailEventDetails extends AviRestResource {
     @JsonProperty("from_se_name")
     @JsonInclude(Include.NON_NULL)
-    private String fromSeName = null;
+    private String fromSeName;
 
     @JsonProperty("ip")
     @JsonInclude(Include.NON_NULL)
-    private String ip = null;
+    private String ip;
 
     @JsonProperty("ip6")
     @JsonInclude(Include.NON_NULL)
-    private String ip6 = null;
+    private String ip6;
 
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("vs_name")
     @JsonInclude(Include.NON_NULL)
-    private String vsName = null;
+    private String vsName;
 
     @JsonProperty("vs_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String vsUuid = null;
+    private String vsUuid;
 
 
 

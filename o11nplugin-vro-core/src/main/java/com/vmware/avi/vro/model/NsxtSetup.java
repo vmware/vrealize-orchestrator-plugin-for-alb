@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class NsxtSetup extends AviRestResource {
     @JsonProperty("cc_id")
     @JsonInclude(Include.NON_NULL)
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("status")
     @JsonInclude(Include.NON_NULL)
-    private String status = null;
+    private String status;
 
     @JsonProperty("transportzone_id")
     @JsonInclude(Include.NON_NULL)
-    private String transportzoneId = null;
+    private String transportzoneId;
 
 
 

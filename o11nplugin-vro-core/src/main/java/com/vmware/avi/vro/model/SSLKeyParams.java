@@ -32,11 +32,11 @@ public class SSLKeyParams extends AviRestResource {
 
     @JsonProperty("ec_params")
     @JsonInclude(Include.NON_NULL)
-    private SSLKeyECParams ecParams = null;
+    private SSLKeyECParams ecParams;
 
     @JsonProperty("rsa_params")
     @JsonInclude(Include.NON_NULL)
-    private SSLKeyRSAParams rsaParams = null;
+    private SSLKeyRSAParams rsaParams;
 
 
 

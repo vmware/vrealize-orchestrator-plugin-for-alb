@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class SSLCacheFilter extends AviRestResource {
     @JsonProperty("ssl_session_id")
     @JsonInclude(Include.NON_NULL)
-    private String sslSessionId = null;
+    private String sslSessionId;
 
 
 

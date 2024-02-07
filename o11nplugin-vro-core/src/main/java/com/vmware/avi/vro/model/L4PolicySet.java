@@ -27,11 +27,11 @@ import org.springframework.stereotype.Service;
 public class L4PolicySet extends AviRestResource {
     @JsonProperty("created_by")
     @JsonInclude(Include.NON_NULL)
-    private String createdBy = null;
+    private String createdBy;
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("is_internal_policy")
     @JsonInclude(Include.NON_NULL)
@@ -39,19 +39,19 @@ public class L4PolicySet extends AviRestResource {
 
     @JsonProperty("l4_connection_policy")
     @JsonInclude(Include.NON_NULL)
-    private L4ConnectionPolicy l4ConnectionPolicy = null;
+    private L4ConnectionPolicy l4ConnectionPolicy;
 
     @JsonProperty("markers")
     @JsonInclude(Include.NON_NULL)
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -59,7 +59,7 @@ public class L4PolicySet extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

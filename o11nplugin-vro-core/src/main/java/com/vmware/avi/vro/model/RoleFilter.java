@@ -31,7 +31,7 @@ public class RoleFilter extends AviRestResource {
 
     @JsonProperty("match_label")
     @JsonInclude(Include.NON_NULL)
-    private RoleFilterMatchLabel matchLabel = null;
+    private RoleFilterMatchLabel matchLabel;
 
     @JsonProperty("match_operation")
     @JsonInclude(Include.NON_NULL)
@@ -39,7 +39,7 @@ public class RoleFilter extends AviRestResource {
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
 
 

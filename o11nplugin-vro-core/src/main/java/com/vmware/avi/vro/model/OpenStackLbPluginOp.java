@@ -26,31 +26,31 @@ import org.springframework.stereotype.Service;
 public class OpenStackLbPluginOp extends AviRestResource {
     @JsonProperty("cc_id")
     @JsonInclude(Include.NON_NULL)
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("command")
     @JsonInclude(Include.NON_NULL)
-    private String command = null;
+    private String command;
 
     @JsonProperty("detail")
     @JsonInclude(Include.NON_NULL)
-    private String detail = null;
+    private String detail;
 
     @JsonProperty("elapsed")
     @JsonInclude(Include.NON_NULL)
-    private Integer elapsed = null;
+    private Integer elapsed;
 
     @JsonProperty("id")
     @JsonInclude(Include.NON_NULL)
-    private String id = null;
+    private String id;
 
     @JsonProperty("prov")
     @JsonInclude(Include.NON_NULL)
-    private String prov = null;
+    private String prov;
 
     @JsonProperty("result")
     @JsonInclude(Include.NON_NULL)
-    private String result = null;
+    private String result;
 
 
 

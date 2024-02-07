@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class NatPolicyAction extends AviRestResource {
     @JsonProperty("nat_info")
     @JsonInclude(Include.NON_NULL)
-    private List<NatAddrInfo> natInfo = null;
+    private List<NatAddrInfo> natInfo;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
 
 

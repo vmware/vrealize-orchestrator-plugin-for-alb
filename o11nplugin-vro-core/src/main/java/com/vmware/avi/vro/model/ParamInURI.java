@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class ParamInURI extends AviRestResource {
     @JsonProperty("param_name")
     @JsonInclude(Include.NON_NULL)
-    private String paramName = null;
+    private String paramName;
 
     @JsonProperty("value")
     @JsonInclude(Include.NON_NULL)
-    private String value = null;
+    private String value;
 
 
 

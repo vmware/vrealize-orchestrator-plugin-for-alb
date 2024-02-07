@@ -30,11 +30,11 @@ public class SourcePortAddr extends AviRestResource {
 
     @JsonProperty("src_port_end")
     @JsonInclude(Include.NON_NULL)
-    private Integer srcPortEnd = null;
+    private Integer srcPortEnd;
 
     @JsonProperty("src_port_start")
     @JsonInclude(Include.NON_NULL)
-    private Integer srcPortStart = null;
+    private Integer srcPortStart;
 
 
 

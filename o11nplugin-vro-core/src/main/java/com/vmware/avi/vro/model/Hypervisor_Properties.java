@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class Hypervisor_Properties extends AviRestResource {
     @JsonProperty("htype")
     @JsonInclude(Include.NON_NULL)
-    private String htype = null;
+    private String htype;
 
     @JsonProperty("max_ips_per_nic")
     @JsonInclude(Include.NON_NULL)
-    private Integer maxIpsPerNic = null;
+    private Integer maxIpsPerNic;
 
     @JsonProperty("max_nics")
     @JsonInclude(Include.NON_NULL)
-    private Integer maxNics = null;
+    private Integer maxNics;
 
 
 

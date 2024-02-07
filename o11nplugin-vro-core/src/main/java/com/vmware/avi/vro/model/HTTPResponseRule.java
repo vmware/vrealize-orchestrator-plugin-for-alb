@@ -28,7 +28,7 @@ import org.springframework.stereotype.Service;
 public class HTTPResponseRule extends AviRestResource {
     @JsonProperty("all_headers")
     @JsonInclude(Include.NON_NULL)
-    private Boolean allHeaders = null;
+    private Boolean allHeaders;
 
     @JsonProperty("enable")
     @JsonInclude(Include.NON_NULL)
@@ -36,27 +36,27 @@ public class HTTPResponseRule extends AviRestResource {
 
     @JsonProperty("hdr_action")
     @JsonInclude(Include.NON_NULL)
-    private List<HTTPHdrAction> hdrAction = null;
+    private List<HTTPHdrAction> hdrAction;
 
     @JsonProperty("index")
     @JsonInclude(Include.NON_NULL)
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("loc_hdr_action")
     @JsonInclude(Include.NON_NULL)
-    private HTTPRewriteLocHdrAction locHdrAction = null;
+    private HTTPRewriteLocHdrAction locHdrAction;
 
     @JsonProperty("log")
     @JsonInclude(Include.NON_NULL)
-    private Boolean log = null;
+    private Boolean log;
 
     @JsonProperty("match")
     @JsonInclude(Include.NON_NULL)
-    private ResponseMatchTarget match = null;
+    private ResponseMatchTarget match;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
 
 

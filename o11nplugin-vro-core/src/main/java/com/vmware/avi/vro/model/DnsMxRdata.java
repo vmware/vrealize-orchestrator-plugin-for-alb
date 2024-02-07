@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class DnsMxRdata extends AviRestResource {
     @JsonProperty("host")
     @JsonInclude(Include.NON_NULL)
-    private String host = null;
+    private String host;
 
     @JsonProperty("priority")
     @JsonInclude(Include.NON_NULL)
-    private Integer priority = null;
+    private Integer priority;
 
 
 

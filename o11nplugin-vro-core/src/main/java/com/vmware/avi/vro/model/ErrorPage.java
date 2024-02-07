@@ -31,19 +31,19 @@ public class ErrorPage extends AviRestResource {
 
     @JsonProperty("error_page_body_ref")
     @JsonInclude(Include.NON_NULL)
-    private String errorPageBodyRef = null;
+    private String errorPageBodyRef;
 
     @JsonProperty("error_redirect")
     @JsonInclude(Include.NON_NULL)
-    private String errorRedirect = null;
+    private String errorRedirect;
 
     @JsonProperty("index")
     @JsonInclude(Include.NON_NULL)
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("match")
     @JsonInclude(Include.NON_NULL)
-    private HTTPStatusMatch match = null;
+    private HTTPStatusMatch match;
 
 
 

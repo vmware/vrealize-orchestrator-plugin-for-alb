@@ -27,23 +27,23 @@ import org.springframework.stereotype.Service;
 public class VsVip extends AviRestResource {
     @JsonProperty("bgp_local_preference")
     @JsonInclude(Include.NON_NULL)
-    private Integer bgpLocalPreference = null;
+    private Integer bgpLocalPreference;
 
     @JsonProperty("bgp_num_as_path_prepend")
     @JsonInclude(Include.NON_NULL)
-    private Integer bgpNumAsPathPrepend = null;
+    private Integer bgpNumAsPathPrepend;
 
     @JsonProperty("bgp_peer_labels")
     @JsonInclude(Include.NON_NULL)
-    private List<String> bgpPeerLabels = null;
+    private List<String> bgpPeerLabels;
 
     @JsonProperty("cloud_ref")
     @JsonInclude(Include.NON_NULL)
-    private String cloudRef = null;
+    private String cloudRef;
 
     @JsonProperty("dns_info")
     @JsonInclude(Include.NON_NULL)
-    private List<DnsInfo> dnsInfo = null;
+    private List<DnsInfo> dnsInfo;
 
     @JsonProperty("east_west_placement")
     @JsonInclude(Include.NON_NULL)
@@ -51,23 +51,23 @@ public class VsVip extends AviRestResource {
 
     @JsonProperty("ipam_selector")
     @JsonInclude(Include.NON_NULL)
-    private Selector ipamSelector = null;
+    private Selector ipamSelector;
 
     @JsonProperty("markers")
     @JsonInclude(Include.NON_NULL)
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("tier1_lr")
     @JsonInclude(Include.NON_NULL)
-    private String tier1Lr = null;
+    private String tier1Lr;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -75,23 +75,23 @@ public class VsVip extends AviRestResource {
 
     @JsonProperty("use_standard_alb")
     @JsonInclude(Include.NON_NULL)
-    private Boolean useStandardAlb = null;
+    private Boolean useStandardAlb;
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("vip")
     @JsonInclude(Include.NON_NULL)
-    private List<Vip> vip = null;
+    private List<Vip> vip;
 
     @JsonProperty("vrf_context_ref")
     @JsonInclude(Include.NON_NULL)
-    private String vrfContextRef = null;
+    private String vrfContextRef;
 
     @JsonProperty("vsvip_cloud_config_cksum")
     @JsonInclude(Include.NON_NULL)
-    private String vsvipCloudConfigCksum = null;
+    private String vsvipCloudConfigCksum;
 
 
 

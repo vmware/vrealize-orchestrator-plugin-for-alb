@@ -30,7 +30,7 @@ public class NetworkSecurityPolicyActionRLParam extends AviRestResource {
 
     @JsonProperty("max_rate")
     @JsonInclude(Include.NON_NULL)
-    private Integer maxRate = null;
+    private Integer maxRate;
 
 
 

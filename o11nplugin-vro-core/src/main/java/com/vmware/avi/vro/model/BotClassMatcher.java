@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class BotClassMatcher extends AviRestResource {
     @JsonProperty("client_classes")
     @JsonInclude(Include.NON_NULL)
-    private List<String> clientClasses = null;
+    private List<String> clientClasses;
 
     @JsonProperty("op")
     @JsonInclude(Include.NON_NULL)

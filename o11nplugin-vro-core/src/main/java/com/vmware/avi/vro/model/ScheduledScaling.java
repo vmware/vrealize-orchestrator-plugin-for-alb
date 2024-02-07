@@ -30,11 +30,11 @@ public class ScheduledScaling extends AviRestResource {
 
     @JsonProperty("cron_expression")
     @JsonInclude(Include.NON_NULL)
-    private String cronExpression = null;
+    private String cronExpression;
 
     @JsonProperty("desired_capacity")
     @JsonInclude(Include.NON_NULL)
-    private Integer desiredCapacity = null;
+    private Integer desiredCapacity;
 
     @JsonProperty("enable")
     @JsonInclude(Include.NON_NULL)
@@ -42,7 +42,7 @@ public class ScheduledScaling extends AviRestResource {
 
     @JsonProperty("end_date")
     @JsonInclude(Include.NON_NULL)
-    private String endDate = null;
+    private String endDate;
 
     @JsonProperty("schedule_max_step")
     @JsonInclude(Include.NON_NULL)
@@ -50,7 +50,7 @@ public class ScheduledScaling extends AviRestResource {
 
     @JsonProperty("start_date")
     @JsonInclude(Include.NON_NULL)
-    private String startDate = null;
+    private String startDate;
 
 
 

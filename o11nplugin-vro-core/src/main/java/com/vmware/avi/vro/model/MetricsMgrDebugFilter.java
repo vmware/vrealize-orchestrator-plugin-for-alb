@@ -26,43 +26,43 @@ import org.springframework.stereotype.Service;
 public class MetricsMgrDebugFilter extends AviRestResource {
     @JsonProperty("debug_skip_eval_period")
     @JsonInclude(Include.NON_NULL)
-    private String debugSkipEvalPeriod = null;
+    private String debugSkipEvalPeriod;
 
     @JsonProperty("disable_hw_training")
     @JsonInclude(Include.NON_NULL)
-    private String disableHwTraining = null;
+    private String disableHwTraining;
 
     @JsonProperty("entity")
     @JsonInclude(Include.NON_NULL)
-    private String entity = null;
+    private String entity;
 
     @JsonProperty("license_grace_period")
     @JsonInclude(Include.NON_NULL)
-    private String licenseGracePeriod = null;
+    private String licenseGracePeriod;
 
     @JsonProperty("log_first_n")
     @JsonInclude(Include.NON_NULL)
-    private String logFirstN = null;
+    private String logFirstN;
 
     @JsonProperty("logging_freq")
     @JsonInclude(Include.NON_NULL)
-    private String loggingFreq = null;
+    private String loggingFreq;
 
     @JsonProperty("metric_instance_id")
     @JsonInclude(Include.NON_NULL)
-    private String metricInstanceId = null;
+    private String metricInstanceId;
 
     @JsonProperty("obj")
     @JsonInclude(Include.NON_NULL)
-    private String obj = null;
+    private String obj;
 
     @JsonProperty("skip_cluster_map_check")
     @JsonInclude(Include.NON_NULL)
-    private String skipClusterMapCheck = null;
+    private String skipClusterMapCheck;
 
     @JsonProperty("skip_metrics_db_writes")
     @JsonInclude(Include.NON_NULL)
-    private String skipMetricsDbWrites = null;
+    private String skipMetricsDbWrites;
 
 
 

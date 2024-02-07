@@ -26,23 +26,23 @@ import org.springframework.stereotype.Service;
 public class AlertEmailConfig extends AviRestResource {
     @JsonProperty("cc_emails")
     @JsonInclude(Include.NON_NULL)
-    private String ccEmails = null;
+    private String ccEmails;
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("to_emails")
     @JsonInclude(Include.NON_NULL)
-    private String toEmails = null;
+    private String toEmails;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -50,7 +50,7 @@ public class AlertEmailConfig extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class ConnpoolFilter extends AviRestResource {
     @JsonProperty("ip_addr")
     @JsonInclude(Include.NON_NULL)
-    private String ipAddr = null;
+    private String ipAddr;
 
     @JsonProperty("ip_mask")
     @JsonInclude(Include.NON_NULL)
-    private String ipMask = null;
+    private String ipMask;
 
     @JsonProperty("port")
     @JsonInclude(Include.NON_NULL)
-    private Integer port = null;
+    private Integer port;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
 
 

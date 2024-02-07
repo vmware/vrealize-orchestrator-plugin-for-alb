@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class VsMigrateParams extends AviRestResource {
     @JsonProperty("from_se_ref")
     @JsonInclude(Include.NON_NULL)
-    private String fromSeRef = null;
+    private String fromSeRef;
 
     @JsonProperty("new_vcpus")
     @JsonInclude(Include.NON_NULL)
-    private Integer newVcpus = null;
+    private Integer newVcpus;
 
     @JsonProperty("to_host_ref")
     @JsonInclude(Include.NON_NULL)
-    private String toHostRef = null;
+    private String toHostRef;
 
     @JsonProperty("to_new_se")
     @JsonInclude(Include.NON_NULL)
@@ -42,15 +42,15 @@ public class VsMigrateParams extends AviRestResource {
 
     @JsonProperty("to_se_ref")
     @JsonInclude(Include.NON_NULL)
-    private String toSeRef = null;
+    private String toSeRef;
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("vip_id")
     @JsonInclude(Include.NON_NULL)
-    private String vipId = null;
+    private String vipId;
 
 
 

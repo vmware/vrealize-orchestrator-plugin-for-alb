@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class HealthMonitorSctp extends AviRestResource {
     @JsonProperty("sctp_request")
     @JsonInclude(Include.NON_NULL)
-    private String sctpRequest = null;
+    private String sctpRequest;
 
     @JsonProperty("sctp_response")
     @JsonInclude(Include.NON_NULL)
-    private String sctpResponse = null;
+    private String sctpResponse;
 
 
 

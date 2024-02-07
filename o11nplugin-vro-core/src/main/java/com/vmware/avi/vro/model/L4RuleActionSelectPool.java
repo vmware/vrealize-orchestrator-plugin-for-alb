@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class L4RuleActionSelectPool extends AviRestResource {
     @JsonProperty("action_type")
     @JsonInclude(Include.NON_NULL)
-    private String actionType = null;
+    private String actionType;
 
     @JsonProperty("pool_group_ref")
     @JsonInclude(Include.NON_NULL)
-    private String poolGroupRef = null;
+    private String poolGroupRef;
 
     @JsonProperty("pool_ref")
     @JsonInclude(Include.NON_NULL)
-    private String poolRef = null;
+    private String poolRef;
 
 
 

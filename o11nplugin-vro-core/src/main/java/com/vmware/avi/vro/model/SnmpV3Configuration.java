@@ -27,11 +27,11 @@ import org.springframework.stereotype.Service;
 public class SnmpV3Configuration extends AviRestResource {
     @JsonProperty("engine_id")
     @JsonInclude(Include.NON_NULL)
-    private String engineId = null;
+    private String engineId;
 
     @JsonProperty("user")
     @JsonInclude(Include.NON_NULL)
-    private SnmpV3UserParams user = null;
+    private SnmpV3UserParams user;
 
 
 

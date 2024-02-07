@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class VcenterImageDetails extends AviRestResource {
     @JsonProperty("cc_id")
     @JsonInclude(Include.NON_NULL)
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("error_string")
     @JsonInclude(Include.NON_NULL)
-    private String errorString = null;
+    private String errorString;
 
     @JsonProperty("image_version")
     @JsonInclude(Include.NON_NULL)
-    private String imageVersion = null;
+    private String imageVersion;
 
     @JsonProperty("vc_url")
     @JsonInclude(Include.NON_NULL)
-    private String vcUrl = null;
+    private String vcUrl;
 
 
 

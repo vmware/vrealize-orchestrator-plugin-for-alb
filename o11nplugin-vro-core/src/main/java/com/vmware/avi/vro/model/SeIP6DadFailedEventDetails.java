@@ -27,15 +27,15 @@ import org.springframework.stereotype.Service;
 public class SeIP6DadFailedEventDetails extends AviRestResource {
     @JsonProperty("dad_ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr dadIp = null;
+    private IpAddr dadIp;
 
     @JsonProperty("if_name")
     @JsonInclude(Include.NON_NULL)
-    private String ifName = null;
+    private String ifName;
 
     @JsonProperty("se_ref")
     @JsonInclude(Include.NON_NULL)
-    private String seRef = null;
+    private String seRef;
 
 
 

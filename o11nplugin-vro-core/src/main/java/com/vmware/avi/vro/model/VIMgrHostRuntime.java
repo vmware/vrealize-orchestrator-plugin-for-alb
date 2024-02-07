@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class VIMgrHostRuntime extends AviRestResource {
     @JsonProperty("cloud_ref")
     @JsonInclude(Include.NON_NULL)
-    private String cloudRef = null;
+    private String cloudRef;
 
     @JsonProperty("cluster_name")
     @JsonInclude(Include.NON_NULL)
-    private String clusterName = null;
+    private String clusterName;
 
     @JsonProperty("cluster_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String clusterUuid = null;
+    private String clusterUuid;
 
     @JsonProperty("cntlr_accessible")
     @JsonInclude(Include.NON_NULL)
@@ -46,59 +46,59 @@ public class VIMgrHostRuntime extends AviRestResource {
 
     @JsonProperty("cpu_hz")
     @JsonInclude(Include.NON_NULL)
-    private Integer cpuHz = null;
+    private Integer cpuHz;
 
     @JsonProperty("maintenance_mode")
     @JsonInclude(Include.NON_NULL)
-    private Boolean maintenanceMode = null;
+    private Boolean maintenanceMode;
 
     @JsonProperty("managed_object_id")
     @JsonInclude(Include.NON_NULL)
-    private String managedObjectId = null;
+    private String managedObjectId;
 
     @JsonProperty("mem")
     @JsonInclude(Include.NON_NULL)
-    private Integer mem = null;
+    private Integer mem;
 
     @JsonProperty("mgmt_portgroup")
     @JsonInclude(Include.NON_NULL)
-    private String mgmtPortgroup = null;
+    private String mgmtPortgroup;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("network_uuids")
     @JsonInclude(Include.NON_NULL)
-    private List<String> networkUuids = null;
+    private List<String> networkUuids;
 
     @JsonProperty("num_cpu_cores")
     @JsonInclude(Include.NON_NULL)
-    private Integer numCpuCores = null;
+    private Integer numCpuCores;
 
     @JsonProperty("num_cpu_packages")
     @JsonInclude(Include.NON_NULL)
-    private Integer numCpuPackages = null;
+    private Integer numCpuPackages;
 
     @JsonProperty("num_cpu_threads")
     @JsonInclude(Include.NON_NULL)
-    private Integer numCpuThreads = null;
+    private Integer numCpuThreads;
 
     @JsonProperty("pnics")
     @JsonInclude(Include.NON_NULL)
-    private List<CdpLldpInfo> pnics = null;
+    private List<CdpLldpInfo> pnics;
 
     @JsonProperty("powerstate")
     @JsonInclude(Include.NON_NULL)
-    private String powerstate = null;
+    private String powerstate;
 
     @JsonProperty("quarantine_start_ts")
     @JsonInclude(Include.NON_NULL)
-    private String quarantineStartTs = null;
+    private String quarantineStartTs;
 
     @JsonProperty("quarantined")
     @JsonInclude(Include.NON_NULL)
-    private Boolean quarantined = null;
+    private Boolean quarantined;
 
     @JsonProperty("quarantined_periods")
     @JsonInclude(Include.NON_NULL)
@@ -106,19 +106,19 @@ public class VIMgrHostRuntime extends AviRestResource {
 
     @JsonProperty("se_fail_cnt")
     @JsonInclude(Include.NON_NULL)
-    private Integer seFailCnt = null;
+    private Integer seFailCnt;
 
     @JsonProperty("se_success_cnt")
     @JsonInclude(Include.NON_NULL)
-    private Integer seSuccessCnt = null;
+    private Integer seSuccessCnt;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -126,11 +126,11 @@ public class VIMgrHostRuntime extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("vm_refs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> vmRefs = null;
+    private List<String> vmRefs;
 
 
 

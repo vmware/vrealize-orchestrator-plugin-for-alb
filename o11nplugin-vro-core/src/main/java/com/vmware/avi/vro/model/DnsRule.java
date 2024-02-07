@@ -28,7 +28,7 @@ import org.springframework.stereotype.Service;
 public class DnsRule extends AviRestResource {
     @JsonProperty("action")
     @JsonInclude(Include.NON_NULL)
-    private DnsRuleAction action = null;
+    private DnsRuleAction action;
 
     @JsonProperty("enable")
     @JsonInclude(Include.NON_NULL)
@@ -36,19 +36,19 @@ public class DnsRule extends AviRestResource {
 
     @JsonProperty("index")
     @JsonInclude(Include.NON_NULL)
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("log")
     @JsonInclude(Include.NON_NULL)
-    private Boolean log = null;
+    private Boolean log;
 
     @JsonProperty("match")
     @JsonInclude(Include.NON_NULL)
-    private DnsRuleMatchTarget match = null;
+    private DnsRuleMatchTarget match;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
 
 

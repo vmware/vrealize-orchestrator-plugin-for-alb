@@ -26,27 +26,27 @@ import org.springframework.stereotype.Service;
 public class NsxtSIEndpointDetails extends AviRestResource {
     @JsonProperty("endpoint")
     @JsonInclude(Include.NON_NULL)
-    private String endpoint = null;
+    private String endpoint;
 
     @JsonProperty("error_string")
     @JsonInclude(Include.NON_NULL)
-    private String errorString = null;
+    private String errorString;
 
     @JsonProperty("segroup")
     @JsonInclude(Include.NON_NULL)
-    private String segroup = null;
+    private String segroup;
 
     @JsonProperty("services")
     @JsonInclude(Include.NON_NULL)
-    private List<String> services = null;
+    private List<String> services;
 
     @JsonProperty("targetIps")
     @JsonInclude(Include.NON_NULL)
-    private List<String> targetIps = null;
+    private List<String> targetIps;
 
     @JsonProperty("tier1")
     @JsonInclude(Include.NON_NULL)
-    private String tier1 = null;
+    private String tier1;
 
 
 

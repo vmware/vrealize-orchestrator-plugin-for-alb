@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class OpenStackRoleMapping extends AviRestResource {
     @JsonProperty("avi_role")
     @JsonInclude(Include.NON_NULL)
-    private String aviRole = null;
+    private String aviRole;
 
     @JsonProperty("os_role")
     @JsonInclude(Include.NON_NULL)
-    private String osRole = null;
+    private String osRole;
 
 
 

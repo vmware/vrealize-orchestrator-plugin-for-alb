@@ -30,19 +30,19 @@ public class Role extends AviRestResource {
 
     @JsonProperty("filters")
     @JsonInclude(Include.NON_NULL)
-    private List<RoleFilter> filters = null;
+    private List<RoleFilter> filters;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("privileges")
     @JsonInclude(Include.NON_NULL)
-    private List<Permission> privileges = null;
+    private List<Permission> privileges;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -50,7 +50,7 @@ public class Role extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

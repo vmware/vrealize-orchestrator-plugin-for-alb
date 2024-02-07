@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class SamlAuthnRuleMatch extends AviRestResource {
     @JsonProperty("saml_authn_matched_rule_action")
     @JsonInclude(Include.NON_NULL)
-    private String samlAuthnMatchedRuleAction = null;
+    private String samlAuthnMatchedRuleAction;
 
     @JsonProperty("saml_authn_matched_rule_name")
     @JsonInclude(Include.NON_NULL)
-    private String samlAuthnMatchedRuleName = null;
+    private String samlAuthnMatchedRuleName;
 
 
 

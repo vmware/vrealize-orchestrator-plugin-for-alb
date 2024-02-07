@@ -28,7 +28,7 @@ import org.springframework.stereotype.Service;
 public class ClientLogStreamingConfig extends AviRestResource {
     @JsonProperty("external_server")
     @JsonInclude(Include.NON_NULL)
-    private String externalServer = null;
+    private String externalServer;
 
     @JsonProperty("external_server_port")
     @JsonInclude(Include.NON_NULL)
@@ -36,7 +36,7 @@ public class ClientLogStreamingConfig extends AviRestResource {
 
     @JsonProperty("format_config")
     @JsonInclude(Include.NON_NULL)
-    private ClientLogStreamingFormat formatConfig = null;
+    private ClientLogStreamingFormat formatConfig;
 
     @JsonProperty("log_types_to_send")
     @JsonInclude(Include.NON_NULL)
@@ -44,7 +44,7 @@ public class ClientLogStreamingConfig extends AviRestResource {
 
     @JsonProperty("marker_keys")
     @JsonInclude(Include.NON_NULL)
-    private List<RoleFilterMatchLabel> markerKeys = null;
+    private List<RoleFilterMatchLabel> markerKeys;
 
     @JsonProperty("max_logs_per_second")
     @JsonInclude(Include.NON_NULL)
@@ -56,7 +56,7 @@ public class ClientLogStreamingConfig extends AviRestResource {
 
     @JsonProperty("syslog_config")
     @JsonInclude(Include.NON_NULL)
-    private StreamingSyslogConfig syslogConfig = null;
+    private StreamingSyslogConfig syslogConfig;
 
 
 

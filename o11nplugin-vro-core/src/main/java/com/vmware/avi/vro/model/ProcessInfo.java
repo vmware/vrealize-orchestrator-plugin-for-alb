@@ -26,31 +26,31 @@ import org.springframework.stereotype.Service;
 public class ProcessInfo extends AviRestResource {
     @JsonProperty("current_process_id")
     @JsonInclude(Include.NON_NULL)
-    private Float currentProcessId = null;
+    private Float currentProcessId;
 
     @JsonProperty("current_process_mem_usage")
     @JsonInclude(Include.NON_NULL)
-    private Float currentProcessMemUsage = null;
+    private Float currentProcessMemUsage;
 
     @JsonProperty("intimation_count")
     @JsonInclude(Include.NON_NULL)
-    private Float intimationCount = null;
+    private Float intimationCount;
 
     @JsonProperty("memory_limit")
     @JsonInclude(Include.NON_NULL)
-    private Float memoryLimit = null;
+    private Float memoryLimit;
 
     @JsonProperty("memory_trend_usage")
     @JsonInclude(Include.NON_NULL)
-    private String memoryTrendUsage = null;
+    private String memoryTrendUsage;
 
     @JsonProperty("process_mode")
     @JsonInclude(Include.NON_NULL)
-    private String processMode = null;
+    private String processMode;
 
     @JsonProperty("threshold_percent")
     @JsonInclude(Include.NON_NULL)
-    private Float thresholdPercent = null;
+    private Float thresholdPercent;
 
 
 

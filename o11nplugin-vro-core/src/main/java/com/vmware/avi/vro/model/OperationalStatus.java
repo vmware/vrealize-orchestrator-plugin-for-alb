@@ -27,19 +27,19 @@ import org.springframework.stereotype.Service;
 public class OperationalStatus extends AviRestResource {
     @JsonProperty("last_changed_time")
     @JsonInclude(Include.NON_NULL)
-    private TimeStamp lastChangedTime = null;
+    private TimeStamp lastChangedTime;
 
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private List<String> reason = null;
+    private List<String> reason;
 
     @JsonProperty("reason_code")
     @JsonInclude(Include.NON_NULL)
-    private Integer reasonCode = null;
+    private Integer reasonCode;
 
     @JsonProperty("reason_code_string")
     @JsonInclude(Include.NON_NULL)
-    private String reasonCodeString = null;
+    private String reasonCodeString;
 
     @JsonProperty("state")
     @JsonInclude(Include.NON_NULL)

@@ -27,27 +27,27 @@ import org.springframework.stereotype.Service;
 public class MetricLog extends AviRestResource {
     @JsonProperty("end_timestamp")
     @JsonInclude(Include.NON_NULL)
-    private Float endTimestamp = null;
+    private Float endTimestamp;
 
     @JsonProperty("metric_id")
     @JsonInclude(Include.NON_NULL)
-    private String metricId = null;
+    private String metricId;
 
     @JsonProperty("report_timestamp")
     @JsonInclude(Include.NON_NULL)
-    private Float reportTimestamp = null;
+    private Float reportTimestamp;
 
     @JsonProperty("step")
     @JsonInclude(Include.NON_NULL)
-    private Integer step = null;
+    private Integer step;
 
     @JsonProperty("time_series")
     @JsonInclude(Include.NON_NULL)
-    private MetricsQueryResponse timeSeries = null;
+    private MetricsQueryResponse timeSeries;
 
     @JsonProperty("value")
     @JsonInclude(Include.NON_NULL)
-    private Float value = null;
+    private Float value;
 
 
 

@@ -27,7 +27,7 @@ import org.springframework.stereotype.Service;
 public class CaptureTCP extends AviRestResource {
     @JsonProperty("tcpflag")
     @JsonInclude(Include.NON_NULL)
-    private CaptureTCPFlags tcpflag = null;
+    private CaptureTCPFlags tcpflag;
 
 
 

@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class ServerScaleInParams extends AviRestResource {
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("servers")
     @JsonInclude(Include.NON_NULL)
-    private List<ServerId> servers = null;
+    private List<ServerId> servers;
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

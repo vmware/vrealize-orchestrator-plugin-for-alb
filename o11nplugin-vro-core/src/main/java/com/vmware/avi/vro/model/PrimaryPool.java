@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class PrimaryPool extends AviRestResource {
     @JsonProperty("pool_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String poolUuid = null;
+    private String poolUuid;
 
 
 

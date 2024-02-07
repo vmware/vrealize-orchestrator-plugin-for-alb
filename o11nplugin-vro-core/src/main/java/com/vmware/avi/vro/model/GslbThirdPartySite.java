@@ -35,19 +35,19 @@ public class GslbThirdPartySite extends AviRestResource {
 
     @JsonProperty("hm_proxies")
     @JsonInclude(Include.NON_NULL)
-    private List<GslbHealthMonitorProxy> hmProxies = null;
+    private List<GslbHealthMonitorProxy> hmProxies;
 
     @JsonProperty("location")
     @JsonInclude(Include.NON_NULL)
-    private GslbGeoLocation location = null;
+    private GslbGeoLocation location;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("ratio")
     @JsonInclude(Include.NON_NULL)
-    private Integer ratio = null;
+    private Integer ratio;
 
 
 

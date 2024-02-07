@@ -28,27 +28,27 @@ import org.springframework.stereotype.Service;
 public class GslbSiteCfgSyncInfo extends AviRestResource {
     @JsonProperty("errored_objects")
     @JsonInclude(Include.NON_NULL)
-    private List<VersionInfo> erroredObjects = null;
+    private List<VersionInfo> erroredObjects;
 
     @JsonProperty("last_changed_time")
     @JsonInclude(Include.NON_NULL)
-    private TimeStamp lastChangedTime = null;
+    private TimeStamp lastChangedTime;
 
     @JsonProperty("last_fail_obj")
     @JsonInclude(Include.NON_NULL)
-    private ConfigVersionStatus lastFailObj = null;
+    private ConfigVersionStatus lastFailObj;
 
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("recommendation")
     @JsonInclude(Include.NON_NULL)
-    private String recommendation = null;
+    private String recommendation;
 
     @JsonProperty("sync_state")
     @JsonInclude(Include.NON_NULL)
-    private String syncState = null;
+    private String syncState;
 
 
 

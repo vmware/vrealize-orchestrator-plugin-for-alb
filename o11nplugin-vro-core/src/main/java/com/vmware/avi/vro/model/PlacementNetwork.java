@@ -27,11 +27,11 @@ import org.springframework.stereotype.Service;
 public class PlacementNetwork extends AviRestResource {
     @JsonProperty("network_ref")
     @JsonInclude(Include.NON_NULL)
-    private String networkRef = null;
+    private String networkRef;
 
     @JsonProperty("subnet")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrPrefix subnet = null;
+    private IpAddrPrefix subnet;
 
 
 

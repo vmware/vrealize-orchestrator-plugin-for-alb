@@ -30,87 +30,87 @@ import org.springframework.stereotype.Service;
 public class ControllerLimits extends AviRestResource {
     @JsonProperty("bot_limits")
     @JsonInclude(Include.NON_NULL)
-    private BOTLimits botLimits = null;
+    private BOTLimits botLimits;
 
     @JsonProperty("certificates_per_virtualservice")
     @JsonInclude(Include.NON_NULL)
-    private Integer certificatesPerVirtualservice = null;
+    private Integer certificatesPerVirtualservice;
 
     @JsonProperty("controller_cloud_limits")
     @JsonInclude(Include.NON_NULL)
-    private List<ControllerCloudLimits> controllerCloudLimits = null;
+    private List<ControllerCloudLimits> controllerCloudLimits;
 
     @JsonProperty("controller_sizing_limits")
     @JsonInclude(Include.NON_NULL)
-    private List<ControllerSizingLimits> controllerSizingLimits = null;
+    private List<ControllerSizingLimits> controllerSizingLimits;
 
     @JsonProperty("default_routes_per_vrfcontext")
     @JsonInclude(Include.NON_NULL)
-    private Integer defaultRoutesPerVrfcontext = null;
+    private Integer defaultRoutesPerVrfcontext;
 
     @JsonProperty("gateway_mon_per_vrf")
     @JsonInclude(Include.NON_NULL)
-    private Integer gatewayMonPerVrf = null;
+    private Integer gatewayMonPerVrf;
 
     @JsonProperty("ipaddress_limits")
     @JsonInclude(Include.NON_NULL)
-    private IPAddrLimits ipaddressLimits = null;
+    private IPAddrLimits ipaddressLimits;
 
     @JsonProperty("ips_per_ipgroup")
     @JsonInclude(Include.NON_NULL)
-    private Integer ipsPerIpgroup = null;
+    private Integer ipsPerIpgroup;
 
     @JsonProperty("l7_limits")
     @JsonInclude(Include.NON_NULL)
-    private L7limits l7Limits = null;
+    private L7limits l7Limits;
 
     @JsonProperty("poolgroups_per_virtualservice")
     @JsonInclude(Include.NON_NULL)
-    private Integer poolgroupsPerVirtualservice = null;
+    private Integer poolgroupsPerVirtualservice;
 
     @JsonProperty("pools_per_poolgroup")
     @JsonInclude(Include.NON_NULL)
-    private Integer poolsPerPoolgroup = null;
+    private Integer poolsPerPoolgroup;
 
     @JsonProperty("pools_per_virtualservice")
     @JsonInclude(Include.NON_NULL)
-    private Integer poolsPerVirtualservice = null;
+    private Integer poolsPerVirtualservice;
 
     @JsonProperty("routes_per_vrfcontext")
     @JsonInclude(Include.NON_NULL)
-    private Integer routesPerVrfcontext = null;
+    private Integer routesPerVrfcontext;
 
     @JsonProperty("rules_per_nat_policy")
     @JsonInclude(Include.NON_NULL)
-    private Integer rulesPerNatPolicy = null;
+    private Integer rulesPerNatPolicy;
 
     @JsonProperty("rules_per_networksecuritypolicy")
     @JsonInclude(Include.NON_NULL)
-    private Integer rulesPerNetworksecuritypolicy = null;
+    private Integer rulesPerNetworksecuritypolicy;
 
     @JsonProperty("servers_per_pool")
     @JsonInclude(Include.NON_NULL)
-    private Integer serversPerPool = null;
+    private Integer serversPerPool;
 
     @JsonProperty("sni_children_per_parent")
     @JsonInclude(Include.NON_NULL)
-    private Integer sniChildrenPerParent = null;
+    private Integer sniChildrenPerParent;
 
     @JsonProperty("strings_per_stringgroup")
     @JsonInclude(Include.NON_NULL)
-    private Integer stringsPerStringgroup = null;
+    private Integer stringsPerStringgroup;
 
     @JsonProperty("vs_bgp_scaleout")
     @JsonInclude(Include.NON_NULL)
-    private Integer vsBgpScaleout = null;
+    private Integer vsBgpScaleout;
 
     @JsonProperty("vs_l2_scaleout")
     @JsonInclude(Include.NON_NULL)
-    private Integer vsL2Scaleout = null;
+    private Integer vsL2Scaleout;
 
     @JsonProperty("waf_limits")
     @JsonInclude(Include.NON_NULL)
-    private WAFLimits wafLimits = null;
+    private WAFLimits wafLimits;
 
 
 

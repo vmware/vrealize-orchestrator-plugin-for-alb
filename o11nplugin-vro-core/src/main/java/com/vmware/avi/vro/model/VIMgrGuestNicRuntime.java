@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class VIMgrGuestNicRuntime extends AviRestResource {
     @JsonProperty("avi_internal_network")
     @JsonInclude(Include.NON_NULL)
-    private Boolean aviInternalNetwork = null;
+    private Boolean aviInternalNetwork;
 
     @JsonProperty("connected")
     @JsonInclude(Include.NON_NULL)
-    private Boolean connected = null;
+    private Boolean connected;
 
     @JsonProperty("del_pending")
     @JsonInclude(Include.NON_NULL)
@@ -38,7 +38,7 @@ public class VIMgrGuestNicRuntime extends AviRestResource {
 
     @JsonProperty("guest_ip")
     @JsonInclude(Include.NON_NULL)
-    private List<VIMgrIPSubnetRuntime> guestIp = null;
+    private List<VIMgrIPSubnetRuntime> guestIp;
 
     @JsonProperty("label")
     @JsonInclude(Include.NON_NULL)
@@ -46,27 +46,27 @@ public class VIMgrGuestNicRuntime extends AviRestResource {
 
     @JsonProperty("mac_addr")
     @JsonInclude(Include.NON_NULL)
-    private String macAddr = null;
+    private String macAddr;
 
     @JsonProperty("mgmt_vnic")
     @JsonInclude(Include.NON_NULL)
-    private Boolean mgmtVnic = null;
+    private Boolean mgmtVnic;
 
     @JsonProperty("network_name")
     @JsonInclude(Include.NON_NULL)
-    private String networkName = null;
+    private String networkName;
 
     @JsonProperty("network_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String networkUuid = null;
+    private String networkUuid;
 
     @JsonProperty("os_port_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String osPortUuid = null;
+    private String osPortUuid;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
 
 

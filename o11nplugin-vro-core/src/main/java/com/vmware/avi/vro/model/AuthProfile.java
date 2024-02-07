@@ -31,51 +31,51 @@ import org.springframework.stereotype.Service;
 public class AuthProfile extends AviRestResource {
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("http")
     @JsonInclude(Include.NON_NULL)
-    private AuthProfileHTTPClientParams http = null;
+    private AuthProfileHTTPClientParams http;
 
     @JsonProperty("jwt_profile_ref")
     @JsonInclude(Include.NON_NULL)
-    private String jwtProfileRef = null;
+    private String jwtProfileRef;
 
     @JsonProperty("ldap")
     @JsonInclude(Include.NON_NULL)
-    private LdapAuthSettings ldap = null;
+    private LdapAuthSettings ldap;
 
     @JsonProperty("markers")
     @JsonInclude(Include.NON_NULL)
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("oauth_profile")
     @JsonInclude(Include.NON_NULL)
-    private OAuthProfile oauthProfile = null;
+    private OAuthProfile oauthProfile;
 
     @JsonProperty("pa_agent_ref")
     @JsonInclude(Include.NON_NULL)
-    private String paAgentRef = null;
+    private String paAgentRef;
 
     @JsonProperty("saml")
     @JsonInclude(Include.NON_NULL)
-    private SamlSettings saml = null;
+    private SamlSettings saml;
 
     @JsonProperty("tacacs_plus")
     @JsonInclude(Include.NON_NULL)
-    private TacacsPlusAuthSettings tacacsPlus = null;
+    private TacacsPlusAuthSettings tacacsPlus;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -83,7 +83,7 @@ public class AuthProfile extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

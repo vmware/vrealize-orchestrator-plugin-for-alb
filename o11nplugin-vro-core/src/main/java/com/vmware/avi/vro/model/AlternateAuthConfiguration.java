@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class AlternateAuthConfiguration extends AviRestResource {
     @JsonProperty("auth_profile_ref")
     @JsonInclude(Include.NON_NULL)
-    private String authProfileRef = null;
+    private String authProfileRef;
 
     @JsonProperty("index")
     @JsonInclude(Include.NON_NULL)
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("mapping_rules")
     @JsonInclude(Include.NON_NULL)
-    private List<AuthMappingRule> mappingRules = null;
+    private List<AuthMappingRule> mappingRules;
 
 
 

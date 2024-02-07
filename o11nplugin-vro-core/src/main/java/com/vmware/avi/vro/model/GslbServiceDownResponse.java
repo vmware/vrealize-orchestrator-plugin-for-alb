@@ -28,15 +28,15 @@ import org.springframework.stereotype.Service;
 public class GslbServiceDownResponse extends AviRestResource {
     @JsonProperty("fallback_cname")
     @JsonInclude(Include.NON_NULL)
-    private String fallbackCname = null;
+    private String fallbackCname;
 
     @JsonProperty("fallback_ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr fallbackIp = null;
+    private IpAddr fallbackIp;
 
     @JsonProperty("fallback_ip6")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr fallbackIp6 = null;
+    private IpAddr fallbackIp6;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)

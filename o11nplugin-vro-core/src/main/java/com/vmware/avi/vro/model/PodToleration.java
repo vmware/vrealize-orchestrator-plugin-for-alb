@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class PodToleration extends AviRestResource {
     @JsonProperty("effect")
     @JsonInclude(Include.NON_NULL)
-    private String effect = null;
+    private String effect;
 
     @JsonProperty("key")
     @JsonInclude(Include.NON_NULL)
-    private String key = null;
+    private String key;
 
     @JsonProperty("operator")
     @JsonInclude(Include.NON_NULL)
@@ -38,11 +38,11 @@ public class PodToleration extends AviRestResource {
 
     @JsonProperty("toleration_seconds")
     @JsonInclude(Include.NON_NULL)
-    private Integer tolerationSeconds = null;
+    private Integer tolerationSeconds;
 
     @JsonProperty("value")
     @JsonInclude(Include.NON_NULL)
-    private String value = null;
+    private String value;
 
 
 

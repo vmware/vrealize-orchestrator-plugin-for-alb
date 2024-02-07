@@ -784,6 +784,7 @@ public class Constants {
     public static final String FINDER_VRO_PROXYCONFIGURATION = "ProxyConfiguration";
     public static final String FINDER_VRO_PSMPROGRAMDETAILS = "PsmProgramDetails";
     public static final String FINDER_VRO_PULSESERVICESSESSIONCONFIG = "PulseServicesSessionConfig";
+    public static final String FINDER_VRO_PULSESERVICESTENANTCONFIG = "PulseServicesTenantConfig";
     public static final String FINDER_VRO_QUERYMATCH = "QueryMatch";
     public static final String FINDER_VRO_RANCHERCONFIGURATION = "RancherConfiguration";
     public static final String FINDER_VRO_RATELIMITER = "RateLimiter";
@@ -985,6 +986,7 @@ public class Constants {
     public static final String FINDER_VRO_SERVICEOAUTH = "ServiceOAuth";
     public static final String FINDER_VRO_SERVICEPOOLSELECTOR = "ServicePoolSelector";
     public static final String FINDER_VRO_SERVICEENGINEFAULTS = "ServiceengineFaults";
+    public static final String FINDER_VRO_SESSIONHEADERS = "SessionHeaders";
     public static final String FINDER_VRO_SIDEBANDPROFILE = "SidebandProfile";
     public static final String FINDER_VRO_SINGLELICENSE = "SingleLicense";
     public static final String FINDER_VRO_SINGLEOPTIONALFIELDMESSAGE = "SingleOptionalFieldMessage";

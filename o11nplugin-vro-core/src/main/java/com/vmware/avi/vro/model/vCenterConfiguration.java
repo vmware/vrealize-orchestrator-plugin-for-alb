@@ -28,15 +28,15 @@ import org.springframework.stereotype.Service;
 public class vCenterConfiguration extends AviRestResource {
     @JsonProperty("content_lib")
     @JsonInclude(Include.NON_NULL)
-    private ContentLibConfig contentLib = null;
+    private ContentLibConfig contentLib;
 
     @JsonProperty("datacenter")
     @JsonInclude(Include.NON_NULL)
-    private String datacenter = null;
+    private String datacenter;
 
     @JsonProperty("datacenter_managed_object_id")
     @JsonInclude(Include.NON_NULL)
-    private String datacenterManagedObjectId = null;
+    private String datacenterManagedObjectId;
 
     @JsonProperty("deactivate_vm_discovery")
     @JsonInclude(Include.NON_NULL)
@@ -48,15 +48,15 @@ public class vCenterConfiguration extends AviRestResource {
 
     @JsonProperty("management_ip_subnet")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrPrefix managementIpSubnet = null;
+    private IpAddrPrefix managementIpSubnet;
 
     @JsonProperty("management_network")
     @JsonInclude(Include.NON_NULL)
-    private String managementNetwork = null;
+    private String managementNetwork;
 
     @JsonProperty("password")
     @JsonInclude(Include.NON_NULL)
-    private String password = null;
+    private String password;
 
     @JsonProperty("privilege")
     @JsonInclude(Include.NON_NULL)
@@ -68,15 +68,15 @@ public class vCenterConfiguration extends AviRestResource {
 
     @JsonProperty("username")
     @JsonInclude(Include.NON_NULL)
-    private String username = null;
+    private String username;
 
     @JsonProperty("vcenter_template_se_location")
     @JsonInclude(Include.NON_NULL)
-    private String vcenterTemplateSeLocation = null;
+    private String vcenterTemplateSeLocation;
 
     @JsonProperty("vcenter_url")
     @JsonInclude(Include.NON_NULL)
-    private String vcenterUrl = null;
+    private String vcenterUrl;
 
 
 

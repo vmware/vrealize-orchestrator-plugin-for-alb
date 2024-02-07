@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class CPUUsageInfo extends AviRestResource {
     @JsonProperty("cpu_usage_on_nodes")
     @JsonInclude(Include.NON_NULL)
-    private List<CPUUsagePerNode> cpuUsageOnNodes = null;
+    private List<CPUUsagePerNode> cpuUsageOnNodes;
 
 
 

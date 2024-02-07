@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class DnsRuleActionPoolSwitching extends AviRestResource {
     @JsonProperty("pool_group_ref")
     @JsonInclude(Include.NON_NULL)
-    private String poolGroupRef = null;
+    private String poolGroupRef;
 
     @JsonProperty("pool_ref")
     @JsonInclude(Include.NON_NULL)
-    private String poolRef = null;
+    private String poolRef;
 
 
 

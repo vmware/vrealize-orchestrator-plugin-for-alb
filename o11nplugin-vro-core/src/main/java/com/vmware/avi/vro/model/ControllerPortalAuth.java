@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class ControllerPortalAuth extends AviRestResource {
     @JsonProperty("access_token")
     @JsonInclude(Include.NON_NULL)
-    private String accessToken = null;
+    private String accessToken;
 
     @JsonProperty("grant_type")
     @JsonInclude(Include.NON_NULL)
@@ -34,15 +34,15 @@ public class ControllerPortalAuth extends AviRestResource {
 
     @JsonProperty("instance_url")
     @JsonInclude(Include.NON_NULL)
-    private String instanceUrl = null;
+    private String instanceUrl;
 
     @JsonProperty("jwt_token")
     @JsonInclude(Include.NON_NULL)
-    private String jwtToken = null;
+    private String jwtToken;
 
     @JsonProperty("tenant")
     @JsonInclude(Include.NON_NULL)
-    private String tenant = null;
+    private String tenant;
 
 
 

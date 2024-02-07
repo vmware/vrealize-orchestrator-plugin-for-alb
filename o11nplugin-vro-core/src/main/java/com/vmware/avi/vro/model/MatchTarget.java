@@ -39,63 +39,63 @@ import org.springframework.stereotype.Service;
 public class MatchTarget extends AviRestResource {
     @JsonProperty("bot_detection_result")
     @JsonInclude(Include.NON_NULL)
-    private BotDetectionMatch botDetectionResult = null;
+    private BotDetectionMatch botDetectionResult;
 
     @JsonProperty("client_ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrMatch clientIp = null;
+    private IpAddrMatch clientIp;
 
     @JsonProperty("cookie")
     @JsonInclude(Include.NON_NULL)
-    private CookieMatch cookie = null;
+    private CookieMatch cookie;
 
     @JsonProperty("geo_matches")
     @JsonInclude(Include.NON_NULL)
-    private List<GeoMatch> geoMatches = null;
+    private List<GeoMatch> geoMatches;
 
     @JsonProperty("hdrs")
     @JsonInclude(Include.NON_NULL)
-    private List<HdrMatch> hdrs = null;
+    private List<HdrMatch> hdrs;
 
     @JsonProperty("host_hdr")
     @JsonInclude(Include.NON_NULL)
-    private HostHdrMatch hostHdr = null;
+    private HostHdrMatch hostHdr;
 
     @JsonProperty("ip_reputation_type")
     @JsonInclude(Include.NON_NULL)
-    private IPReputationTypeMatch ipReputationType = null;
+    private IPReputationTypeMatch ipReputationType;
 
     @JsonProperty("method")
     @JsonInclude(Include.NON_NULL)
-    private MethodMatch method = null;
+    private MethodMatch method;
 
     @JsonProperty("path")
     @JsonInclude(Include.NON_NULL)
-    private PathMatch path = null;
+    private PathMatch path;
 
     @JsonProperty("protocol")
     @JsonInclude(Include.NON_NULL)
-    private ProtocolMatch protocol = null;
+    private ProtocolMatch protocol;
 
     @JsonProperty("query")
     @JsonInclude(Include.NON_NULL)
-    private QueryMatch query = null;
+    private QueryMatch query;
 
     @JsonProperty("source_ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrMatch sourceIp = null;
+    private IpAddrMatch sourceIp;
 
     @JsonProperty("tls_fingerprint_match")
     @JsonInclude(Include.NON_NULL)
-    private TlsFingerprintMatch tlsFingerprintMatch = null;
+    private TlsFingerprintMatch tlsFingerprintMatch;
 
     @JsonProperty("version")
     @JsonInclude(Include.NON_NULL)
-    private HTTPVersionMatch version = null;
+    private HTTPVersionMatch version;
 
     @JsonProperty("vs_port")
     @JsonInclude(Include.NON_NULL)
-    private PortMatch vsPort = null;
+    private PortMatch vsPort;
 
 
 

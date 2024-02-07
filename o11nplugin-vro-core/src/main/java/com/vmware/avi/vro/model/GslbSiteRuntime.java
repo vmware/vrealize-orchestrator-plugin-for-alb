@@ -31,47 +31,47 @@ import org.springframework.stereotype.Service;
 public class GslbSiteRuntime extends AviRestResource {
     @JsonProperty("clear_on_max_retries")
     @JsonInclude(Include.NON_NULL)
-    private Integer clearOnMaxRetries = null;
+    private Integer clearOnMaxRetries;
 
     @JsonProperty("glb_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String glbUuid = null;
+    private String glbUuid;
 
     @JsonProperty("health_monitor_info")
     @JsonInclude(Include.NON_NULL)
-    private String healthMonitorInfo = null;
+    private String healthMonitorInfo;
 
     @JsonProperty("replication_stats")
     @JsonInclude(Include.NON_NULL)
-    private GslbReplicationStats replicationStats = null;
+    private GslbReplicationStats replicationStats;
 
     @JsonProperty("rxed_site_hs")
     @JsonInclude(Include.NON_NULL)
-    private GslbSiteHealthStatus rxedSiteHs = null;
+    private GslbSiteHealthStatus rxedSiteHs;
 
     @JsonProperty("send_interval")
     @JsonInclude(Include.NON_NULL)
-    private Integer sendInterval = null;
+    private Integer sendInterval;
 
     @JsonProperty("site_cfg")
     @JsonInclude(Include.NON_NULL)
-    private GslbSiteRuntimeCfg siteCfg = null;
+    private GslbSiteRuntimeCfg siteCfg;
 
     @JsonProperty("site_info")
     @JsonInclude(Include.NON_NULL)
-    private GslbSiteRuntimeInfo siteInfo = null;
+    private GslbSiteRuntimeInfo siteInfo;
 
     @JsonProperty("site_stats")
     @JsonInclude(Include.NON_NULL)
-    private GslbSiteRuntimeStats siteStats = null;
+    private GslbSiteRuntimeStats siteStats;
 
     @JsonProperty("tenant_name")
     @JsonInclude(Include.NON_NULL)
-    private String tenantName = null;
+    private String tenantName;
 
     @JsonProperty("view_id")
     @JsonInclude(Include.NON_NULL)
-    private Integer viewId = null;
+    private Integer viewId;
 
 
 

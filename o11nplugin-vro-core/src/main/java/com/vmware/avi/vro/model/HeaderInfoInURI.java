@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class HeaderInfoInURI extends AviRestResource {
     @JsonProperty("header_field_name")
     @JsonInclude(Include.NON_NULL)
-    private String headerFieldName = null;
+    private String headerFieldName;
 
     @JsonProperty("value")
     @JsonInclude(Include.NON_NULL)
-    private String value = null;
+    private String value;
 
 
 

@@ -30,7 +30,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("intelligent_autoscale")
     @JsonInclude(Include.NON_NULL)
@@ -46,7 +46,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
 
     @JsonProperty("markers")
     @JsonInclude(Include.NON_NULL)
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("max_scalein_adjustment_step")
     @JsonInclude(Include.NON_NULL)
@@ -58,19 +58,19 @@ public class ServerAutoScalePolicy extends AviRestResource {
 
     @JsonProperty("max_size")
     @JsonInclude(Include.NON_NULL)
-    private Integer maxSize = null;
+    private Integer maxSize;
 
     @JsonProperty("min_size")
     @JsonInclude(Include.NON_NULL)
-    private Integer minSize = null;
+    private Integer minSize;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("scalein_alertconfig_refs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> scaleinAlertconfigRefs = null;
+    private List<String> scaleinAlertconfigRefs;
 
     @JsonProperty("scalein_cooldown")
     @JsonInclude(Include.NON_NULL)
@@ -78,7 +78,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
 
     @JsonProperty("scaleout_alertconfig_refs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> scaleoutAlertconfigRefs = null;
+    private List<String> scaleoutAlertconfigRefs;
 
     @JsonProperty("scaleout_cooldown")
     @JsonInclude(Include.NON_NULL)
@@ -86,11 +86,11 @@ public class ServerAutoScalePolicy extends AviRestResource {
 
     @JsonProperty("scheduled_scalings")
     @JsonInclude(Include.NON_NULL)
-    private List<ScheduledScaling> scheduledScalings = null;
+    private List<ScheduledScaling> scheduledScalings;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -102,7 +102,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

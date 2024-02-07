@@ -26,23 +26,23 @@ import org.springframework.stereotype.Service;
 public class Webhook extends AviRestResource {
     @JsonProperty("callback_url")
     @JsonInclude(Include.NON_NULL)
-    private String callbackUrl = null;
+    private String callbackUrl;
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("markers")
     @JsonInclude(Include.NON_NULL)
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -50,11 +50,11 @@ public class Webhook extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("verification_token")
     @JsonInclude(Include.NON_NULL)
-    private String verificationToken = null;
+    private String verificationToken;
 
 
 

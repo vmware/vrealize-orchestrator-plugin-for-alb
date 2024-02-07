@@ -26,35 +26,35 @@ import org.springframework.stereotype.Service;
 public class SeResources extends AviRestResource {
     @JsonProperty("cores_per_socket")
     @JsonInclude(Include.NON_NULL)
-    private Integer coresPerSocket = null;
+    private Integer coresPerSocket;
 
     @JsonProperty("disk")
     @JsonInclude(Include.NON_NULL)
-    private Integer disk = null;
+    private Integer disk;
 
     @JsonProperty("hyper_threading")
     @JsonInclude(Include.NON_NULL)
-    private Boolean hyperThreading = null;
+    private Boolean hyperThreading;
 
     @JsonProperty("hypervisor_mode")
     @JsonInclude(Include.NON_NULL)
-    private Boolean hypervisorMode = null;
+    private Boolean hypervisorMode;
 
     @JsonProperty("memory")
     @JsonInclude(Include.NON_NULL)
-    private Integer memory = null;
+    private Integer memory;
 
     @JsonProperty("num_datapath_processes")
     @JsonInclude(Include.NON_NULL)
-    private Integer numDatapathProcesses = null;
+    private Integer numDatapathProcesses;
 
     @JsonProperty("num_vcpus")
     @JsonInclude(Include.NON_NULL)
-    private Integer numVcpus = null;
+    private Integer numVcpus;
 
     @JsonProperty("sockets")
     @JsonInclude(Include.NON_NULL)
-    private Integer sockets = null;
+    private Integer sockets;
 
 
 

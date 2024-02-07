@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class HealthMonitorUdp extends AviRestResource {
     @JsonProperty("maintenance_response")
     @JsonInclude(Include.NON_NULL)
-    private String maintenanceResponse = null;
+    private String maintenanceResponse;
 
     @JsonProperty("udp_request")
     @JsonInclude(Include.NON_NULL)
-    private String udpRequest = null;
+    private String udpRequest;
 
     @JsonProperty("udp_response")
     @JsonInclude(Include.NON_NULL)
-    private String udpResponse = null;
+    private String udpResponse;
 
 
 

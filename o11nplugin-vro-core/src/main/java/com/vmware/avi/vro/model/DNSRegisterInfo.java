@@ -30,43 +30,43 @@ import org.springframework.stereotype.Service;
 public class DNSRegisterInfo extends AviRestResource {
     @JsonProperty("dns_info")
     @JsonInclude(Include.NON_NULL)
-    private List<DnsInfo> dnsInfo = null;
+    private List<DnsInfo> dnsInfo;
 
     @JsonProperty("error")
     @JsonInclude(Include.NON_NULL)
-    private String error = null;
+    private String error;
 
     @JsonProperty("fip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr fip = null;
+    private IpAddr fip;
 
     @JsonProperty("fip6")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr fip6 = null;
+    private IpAddr fip6;
 
     @JsonProperty("total_records")
     @JsonInclude(Include.NON_NULL)
-    private Integer totalRecords = null;
+    private Integer totalRecords;
 
     @JsonProperty("vip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr vip = null;
+    private IpAddr vip;
 
     @JsonProperty("vip6")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr vip6 = null;
+    private IpAddr vip6;
 
     @JsonProperty("vip_id")
     @JsonInclude(Include.NON_NULL)
-    private String vipId = null;
+    private String vipId;
 
     @JsonProperty("vs_names")
     @JsonInclude(Include.NON_NULL)
-    private List<String> vsNames = null;
+    private List<String> vsNames;
 
     @JsonProperty("vs_uuids")
     @JsonInclude(Include.NON_NULL)
-    private List<String> vsUuids = null;
+    private List<String> vsUuids;
 
 
 

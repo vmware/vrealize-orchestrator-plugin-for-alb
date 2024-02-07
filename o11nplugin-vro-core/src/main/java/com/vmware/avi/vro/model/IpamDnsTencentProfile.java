@@ -26,23 +26,23 @@ import org.springframework.stereotype.Service;
 public class IpamDnsTencentProfile extends AviRestResource {
     @JsonProperty("cloud_credentials_ref")
     @JsonInclude(Include.NON_NULL)
-    private String cloudCredentialsRef = null;
+    private String cloudCredentialsRef;
 
     @JsonProperty("region")
     @JsonInclude(Include.NON_NULL)
-    private String region = null;
+    private String region;
 
     @JsonProperty("usable_subnet_ids")
     @JsonInclude(Include.NON_NULL)
-    private List<String> usableSubnetIds = null;
+    private List<String> usableSubnetIds;
 
     @JsonProperty("vpc_id")
     @JsonInclude(Include.NON_NULL)
-    private String vpcId = null;
+    private String vpcId;
 
     @JsonProperty("zones")
     @JsonInclude(Include.NON_NULL)
-    private List<TencentZoneNetwork> zones = null;
+    private List<TencentZoneNetwork> zones;
 
 
 

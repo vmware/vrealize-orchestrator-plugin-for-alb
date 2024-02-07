@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class DebugTraceShmMallocTypes extends AviRestResource {
     @JsonProperty("shm_malloc_type_index")
     @JsonInclude(Include.NON_NULL)
-    private Integer shmMallocTypeIndex = null;
+    private Integer shmMallocTypeIndex;
 
 
 

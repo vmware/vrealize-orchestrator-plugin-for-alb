@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class ClusterServiceFailedEvent extends AviRestResource {
     @JsonProperty("node_name")
     @JsonInclude(Include.NON_NULL)
-    private String nodeName = null;
+    private String nodeName;
 
     @JsonProperty("service_name")
     @JsonInclude(Include.NON_NULL)
-    private String serviceName = null;
+    private String serviceName;
 
 
 

@@ -28,7 +28,7 @@ import org.springframework.stereotype.Service;
 public class RateProfile extends AviRestResource {
     @JsonProperty("action")
     @JsonInclude(Include.NON_NULL)
-    private RateLimiterAction action = null;
+    private RateLimiterAction action;
 
     @JsonProperty("explicit_tracking")
     @JsonInclude(Include.NON_NULL)
@@ -40,15 +40,15 @@ public class RateProfile extends AviRestResource {
 
     @JsonProperty("http_cookie")
     @JsonInclude(Include.NON_NULL)
-    private String httpCookie = null;
+    private String httpCookie;
 
     @JsonProperty("http_header")
     @JsonInclude(Include.NON_NULL)
-    private String httpHeader = null;
+    private String httpHeader;
 
     @JsonProperty("rate_limiter")
     @JsonInclude(Include.NON_NULL)
-    private RateLimiter rateLimiter = null;
+    private RateLimiter rateLimiter;
 
 
 

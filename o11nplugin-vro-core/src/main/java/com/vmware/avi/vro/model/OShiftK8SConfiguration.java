@@ -38,19 +38,19 @@ public class OShiftK8SConfiguration extends AviRestResource {
 
     @JsonProperty("avi_bridge_subnet")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrPrefix aviBridgeSubnet = null;
+    private IpAddrPrefix aviBridgeSubnet;
 
     @JsonProperty("ca_tls_key_and_certificate_ref")
     @JsonInclude(Include.NON_NULL)
-    private String caTlsKeyAndCertificateRef = null;
+    private String caTlsKeyAndCertificateRef;
 
     @JsonProperty("client_tls_key_and_certificate_ref")
     @JsonInclude(Include.NON_NULL)
-    private String clientTlsKeyAndCertificateRef = null;
+    private String clientTlsKeyAndCertificateRef;
 
     @JsonProperty("cluster_tag")
     @JsonInclude(Include.NON_NULL)
-    private String clusterTag = null;
+    private String clusterTag;
 
     @JsonProperty("container_port_match_http_service")
     @JsonInclude(Include.NON_NULL)
@@ -86,11 +86,11 @@ public class OShiftK8SConfiguration extends AviRestResource {
 
     @JsonProperty("docker_registry_se")
     @JsonInclude(Include.NON_NULL)
-    private DockerRegistry dockerRegistrySe = null;
+    private DockerRegistry dockerRegistrySe;
 
     @JsonProperty("east_west_placement_subnet")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrPrefix eastWestPlacementSubnet = null;
+    private IpAddrPrefix eastWestPlacementSubnet;
 
     @JsonProperty("enable_event_subscription")
     @JsonInclude(Include.NON_NULL)
@@ -106,15 +106,15 @@ public class OShiftK8SConfiguration extends AviRestResource {
 
     @JsonProperty("http_container_ports")
     @JsonInclude(Include.NON_NULL)
-    private List<Integer> httpContainerPorts = null;
+    private List<Integer> httpContainerPorts;
 
     @JsonProperty("ing_exclude_attributes")
     @JsonInclude(Include.NON_NULL)
-    private List<IngAttribute> ingExcludeAttributes = null;
+    private List<IngAttribute> ingExcludeAttributes;
 
     @JsonProperty("ing_include_attributes")
     @JsonInclude(Include.NON_NULL)
-    private List<IngAttribute> ingIncludeAttributes = null;
+    private List<IngAttribute> ingIncludeAttributes;
 
     @JsonProperty("l4_health_monitoring")
     @JsonInclude(Include.NON_NULL)
@@ -122,19 +122,19 @@ public class OShiftK8SConfiguration extends AviRestResource {
 
     @JsonProperty("master_nodes")
     @JsonInclude(Include.NON_NULL)
-    private List<String> masterNodes = null;
+    private List<String> masterNodes;
 
     @JsonProperty("node_availability_zone_label")
     @JsonInclude(Include.NON_NULL)
-    private String nodeAvailabilityZoneLabel = null;
+    private String nodeAvailabilityZoneLabel;
 
     @JsonProperty("ns_exclude_attributes")
     @JsonInclude(Include.NON_NULL)
-    private List<MesosAttribute> nsExcludeAttributes = null;
+    private List<MesosAttribute> nsExcludeAttributes;
 
     @JsonProperty("ns_include_attributes")
     @JsonInclude(Include.NON_NULL)
-    private List<MesosAttribute> nsIncludeAttributes = null;
+    private List<MesosAttribute> nsIncludeAttributes;
 
     @JsonProperty("num_shards")
     @JsonInclude(Include.NON_NULL)
@@ -146,11 +146,11 @@ public class OShiftK8SConfiguration extends AviRestResource {
 
     @JsonProperty("persistent_volume_claim")
     @JsonInclude(Include.NON_NULL)
-    private String persistentVolumeClaim = null;
+    private String persistentVolumeClaim;
 
     @JsonProperty("routes")
     @JsonInclude(Include.NON_NULL)
-    private List<RouteInfo> routes = null;
+    private List<RouteInfo> routes;
 
     @JsonProperty("sdn_overlay")
     @JsonInclude(Include.NON_NULL)
@@ -162,15 +162,15 @@ public class OShiftK8SConfiguration extends AviRestResource {
 
     @JsonProperty("se_exclude_attributes")
     @JsonInclude(Include.NON_NULL)
-    private List<MesosAttribute> seExcludeAttributes = null;
+    private List<MesosAttribute> seExcludeAttributes;
 
     @JsonProperty("se_image_pull_secret")
     @JsonInclude(Include.NON_NULL)
-    private String seImagePullSecret = null;
+    private String seImagePullSecret;
 
     @JsonProperty("se_include_attributes")
     @JsonInclude(Include.NON_NULL)
-    private List<MesosAttribute> seIncludeAttributes = null;
+    private List<MesosAttribute> seIncludeAttributes;
 
     @JsonProperty("se_namespace")
     @JsonInclude(Include.NON_NULL)
@@ -178,11 +178,11 @@ public class OShiftK8SConfiguration extends AviRestResource {
 
     @JsonProperty("se_pod_tolerations")
     @JsonInclude(Include.NON_NULL)
-    private List<PodToleration> sePodTolerations = null;
+    private List<PodToleration> sePodTolerations;
 
     @JsonProperty("se_priority_class")
     @JsonInclude(Include.NON_NULL)
-    private String sePriorityClass = null;
+    private String sePriorityClass;
 
     @JsonProperty("se_restart_batch_size")
     @JsonInclude(Include.NON_NULL)
@@ -202,11 +202,11 @@ public class OShiftK8SConfiguration extends AviRestResource {
 
     @JsonProperty("service_account_token")
     @JsonInclude(Include.NON_NULL)
-    private String serviceAccountToken = null;
+    private String serviceAccountToken;
 
     @JsonProperty("shard_prefix")
     @JsonInclude(Include.NON_NULL)
-    private String shardPrefix = null;
+    private String shardPrefix;
 
     @JsonProperty("shared_virtualservice_namespace")
     @JsonInclude(Include.NON_NULL)
@@ -214,7 +214,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
 
     @JsonProperty("ssh_user_ref")
     @JsonInclude(Include.NON_NULL)
-    private String sshUserRef = null;
+    private String sshUserRef;
 
     @JsonProperty("sync_not_ready_addresses")
     @JsonInclude(Include.NON_NULL)
@@ -238,7 +238,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
 
     @JsonProperty("vip_default_gateway")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr vipDefaultGateway = null;
+    private IpAddr vipDefaultGateway;
 
 
 

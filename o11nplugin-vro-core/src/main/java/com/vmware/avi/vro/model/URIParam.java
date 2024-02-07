@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class URIParam extends AviRestResource {
     @JsonProperty("tokens")
     @JsonInclude(Include.NON_NULL)
-    private List<URIParamToken> tokens = null;
+    private List<URIParamToken> tokens;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
 
 

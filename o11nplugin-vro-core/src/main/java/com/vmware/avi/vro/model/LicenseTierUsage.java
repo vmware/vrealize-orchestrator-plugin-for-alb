@@ -27,11 +27,11 @@ import org.springframework.stereotype.Service;
 public class LicenseTierUsage extends AviRestResource {
     @JsonProperty("tier")
     @JsonInclude(Include.NON_NULL)
-    private String tier = null;
+    private String tier;
 
     @JsonProperty("usage")
     @JsonInclude(Include.NON_NULL)
-    private LicenseUsage usage = null;
+    private LicenseUsage usage;
 
 
 

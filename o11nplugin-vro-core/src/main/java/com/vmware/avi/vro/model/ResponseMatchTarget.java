@@ -38,59 +38,59 @@ import org.springframework.stereotype.Service;
 public class ResponseMatchTarget extends AviRestResource {
     @JsonProperty("client_ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrMatch clientIp = null;
+    private IpAddrMatch clientIp;
 
     @JsonProperty("cookie")
     @JsonInclude(Include.NON_NULL)
-    private CookieMatch cookie = null;
+    private CookieMatch cookie;
 
     @JsonProperty("hdrs")
     @JsonInclude(Include.NON_NULL)
-    private List<HdrMatch> hdrs = null;
+    private List<HdrMatch> hdrs;
 
     @JsonProperty("host_hdr")
     @JsonInclude(Include.NON_NULL)
-    private HostHdrMatch hostHdr = null;
+    private HostHdrMatch hostHdr;
 
     @JsonProperty("loc_hdr")
     @JsonInclude(Include.NON_NULL)
-    private LocationHdrMatch locHdr = null;
+    private LocationHdrMatch locHdr;
 
     @JsonProperty("method")
     @JsonInclude(Include.NON_NULL)
-    private MethodMatch method = null;
+    private MethodMatch method;
 
     @JsonProperty("path")
     @JsonInclude(Include.NON_NULL)
-    private PathMatch path = null;
+    private PathMatch path;
 
     @JsonProperty("protocol")
     @JsonInclude(Include.NON_NULL)
-    private ProtocolMatch protocol = null;
+    private ProtocolMatch protocol;
 
     @JsonProperty("query")
     @JsonInclude(Include.NON_NULL)
-    private QueryMatch query = null;
+    private QueryMatch query;
 
     @JsonProperty("rsp_hdrs")
     @JsonInclude(Include.NON_NULL)
-    private List<HdrMatch> rspHdrs = null;
+    private List<HdrMatch> rspHdrs;
 
     @JsonProperty("source_ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrMatch sourceIp = null;
+    private IpAddrMatch sourceIp;
 
     @JsonProperty("status")
     @JsonInclude(Include.NON_NULL)
-    private HTTPStatusMatch status = null;
+    private HTTPStatusMatch status;
 
     @JsonProperty("version")
     @JsonInclude(Include.NON_NULL)
-    private HTTPVersionMatch version = null;
+    private HTTPVersionMatch version;
 
     @JsonProperty("vs_port")
     @JsonInclude(Include.NON_NULL)
-    private PortMatch vsPort = null;
+    private PortMatch vsPort;
 
 
 

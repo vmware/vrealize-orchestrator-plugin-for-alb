@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class MetricsEventThreshold extends AviRestResource {
     @JsonProperty("metrics_event_threshold_type")
     @JsonInclude(Include.NON_NULL)
-    private String metricsEventThresholdType = null;
+    private String metricsEventThresholdType;
 
     @JsonProperty("reset_threshold")
     @JsonInclude(Include.NON_NULL)
-    private Float resetThreshold = null;
+    private Float resetThreshold;
 
     @JsonProperty("watermark_thresholds")
     @JsonInclude(Include.NON_NULL)
-    private List<Integer> watermarkThresholds = null;
+    private List<Integer> watermarkThresholds;
 
 
 

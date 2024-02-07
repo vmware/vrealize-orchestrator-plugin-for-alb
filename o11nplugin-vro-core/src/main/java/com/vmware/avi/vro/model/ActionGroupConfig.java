@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class ActionGroupConfig extends AviRestResource {
     @JsonProperty("action_script_config_ref")
     @JsonInclude(Include.NON_NULL)
-    private String actionScriptConfigRef = null;
+    private String actionScriptConfigRef;
 
     @JsonProperty("autoscale_trigger_notification")
     @JsonInclude(Include.NON_NULL)
@@ -34,11 +34,11 @@ public class ActionGroupConfig extends AviRestResource {
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("email_config_ref")
     @JsonInclude(Include.NON_NULL)
-    private String emailConfigRef = null;
+    private String emailConfigRef;
 
     @JsonProperty("external_only")
     @JsonInclude(Include.NON_NULL)
@@ -50,19 +50,19 @@ public class ActionGroupConfig extends AviRestResource {
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("snmp_trap_profile_ref")
     @JsonInclude(Include.NON_NULL)
-    private String snmpTrapProfileRef = null;
+    private String snmpTrapProfileRef;
 
     @JsonProperty("syslog_config_ref")
     @JsonInclude(Include.NON_NULL)
-    private String syslogConfigRef = null;
+    private String syslogConfigRef;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -70,7 +70,7 @@ public class ActionGroupConfig extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

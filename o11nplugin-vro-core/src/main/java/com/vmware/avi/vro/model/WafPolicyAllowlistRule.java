@@ -27,11 +27,11 @@ import org.springframework.stereotype.Service;
 public class WafPolicyAllowlistRule extends AviRestResource {
     @JsonProperty("actions")
     @JsonInclude(Include.NON_NULL)
-    private List<String> actions = null;
+    private List<String> actions;
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("enable")
     @JsonInclude(Include.NON_NULL)
@@ -39,15 +39,15 @@ public class WafPolicyAllowlistRule extends AviRestResource {
 
     @JsonProperty("index")
     @JsonInclude(Include.NON_NULL)
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("match")
     @JsonInclude(Include.NON_NULL)
-    private MatchTarget match = null;
+    private MatchTarget match;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("sampling_percent")
     @JsonInclude(Include.NON_NULL)

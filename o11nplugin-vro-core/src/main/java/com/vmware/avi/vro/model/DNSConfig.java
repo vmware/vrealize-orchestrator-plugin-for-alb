@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class DNSConfig extends AviRestResource {
     @JsonProperty("domain_name")
     @JsonInclude(Include.NON_NULL)
-    private String domainName = null;
+    private String domainName;
 
 
 

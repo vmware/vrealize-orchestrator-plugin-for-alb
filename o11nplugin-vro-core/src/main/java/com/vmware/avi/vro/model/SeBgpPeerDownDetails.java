@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class SeBgpPeerDownDetails extends AviRestResource {
     @JsonProperty("message")
     @JsonInclude(Include.NON_NULL)
-    private String message = null;
+    private String message;
 
     @JsonProperty("peer_ip")
     @JsonInclude(Include.NON_NULL)
-    private String peerIp = null;
+    private String peerIp;
 
     @JsonProperty("vrf_name")
     @JsonInclude(Include.NON_NULL)
-    private String vrfName = null;
+    private String vrfName;
 
 
 

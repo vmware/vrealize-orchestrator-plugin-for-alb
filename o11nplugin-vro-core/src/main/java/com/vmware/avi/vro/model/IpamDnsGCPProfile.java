@@ -30,19 +30,19 @@ public class IpamDnsGCPProfile extends AviRestResource {
 
     @JsonProperty("network_host_project_id")
     @JsonInclude(Include.NON_NULL)
-    private String networkHostProjectId = null;
+    private String networkHostProjectId;
 
     @JsonProperty("region_name")
     @JsonInclude(Include.NON_NULL)
-    private String regionName = null;
+    private String regionName;
 
     @JsonProperty("se_project_id")
     @JsonInclude(Include.NON_NULL)
-    private String seProjectId = null;
+    private String seProjectId;
 
     @JsonProperty("usable_network_refs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> usableNetworkRefs = null;
+    private List<String> usableNetworkRefs;
 
     @JsonProperty("use_gcp_network")
     @JsonInclude(Include.NON_NULL)
@@ -50,7 +50,7 @@ public class IpamDnsGCPProfile extends AviRestResource {
 
     @JsonProperty("vpc_network_name")
     @JsonInclude(Include.NON_NULL)
-    private String vpcNetworkName = null;
+    private String vpcNetworkName;
 
 
 

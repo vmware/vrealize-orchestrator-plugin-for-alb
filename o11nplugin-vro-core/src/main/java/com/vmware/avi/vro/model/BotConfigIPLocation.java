@@ -30,15 +30,15 @@ public class BotConfigIPLocation extends AviRestResource {
 
     @JsonProperty("ip_location_db_ref")
     @JsonInclude(Include.NON_NULL)
-    private String ipLocationDbRef = null;
+    private String ipLocationDbRef;
 
     @JsonProperty("system_cloud_providers_ref")
     @JsonInclude(Include.NON_NULL)
-    private String systemCloudProvidersRef = null;
+    private String systemCloudProvidersRef;
 
     @JsonProperty("system_search_engines_ref")
     @JsonInclude(Include.NON_NULL)
-    private String systemSearchEnginesRef = null;
+    private String systemSearchEnginesRef;
 
 
 

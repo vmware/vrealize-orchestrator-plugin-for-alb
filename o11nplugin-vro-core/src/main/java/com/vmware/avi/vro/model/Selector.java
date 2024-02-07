@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class Selector extends AviRestResource {
     @JsonProperty("labels")
     @JsonInclude(Include.NON_NULL)
-    private List<KeyValueTuple> labels = null;
+    private List<KeyValueTuple> labels;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
 
 

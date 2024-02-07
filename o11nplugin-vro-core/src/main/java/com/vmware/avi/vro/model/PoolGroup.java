@@ -27,15 +27,15 @@ import org.springframework.stereotype.Service;
 public class PoolGroup extends AviRestResource {
     @JsonProperty("cloud_config_cksum")
     @JsonInclude(Include.NON_NULL)
-    private String cloudConfigCksum = null;
+    private String cloudConfigCksum;
 
     @JsonProperty("cloud_ref")
     @JsonInclude(Include.NON_NULL)
-    private String cloudRef = null;
+    private String cloudRef;
 
     @JsonProperty("created_by")
     @JsonInclude(Include.NON_NULL)
-    private String createdBy = null;
+    private String createdBy;
 
     @JsonProperty("deactivate_primary_pool_on_down")
     @JsonInclude(Include.NON_NULL)
@@ -43,11 +43,11 @@ public class PoolGroup extends AviRestResource {
 
     @JsonProperty("deployment_policy_ref")
     @JsonInclude(Include.NON_NULL)
-    private String deploymentPolicyRef = null;
+    private String deploymentPolicyRef;
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String description = null;
+    private String description;
 
     @JsonProperty("enable_http2")
     @JsonInclude(Include.NON_NULL)
@@ -55,7 +55,7 @@ public class PoolGroup extends AviRestResource {
 
     @JsonProperty("fail_action")
     @JsonInclude(Include.NON_NULL)
-    private FailAction failAction = null;
+    private FailAction failAction;
 
     @JsonProperty("implicit_priority_labels")
     @JsonInclude(Include.NON_NULL)
@@ -63,11 +63,11 @@ public class PoolGroup extends AviRestResource {
 
     @JsonProperty("markers")
     @JsonInclude(Include.NON_NULL)
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("members")
     @JsonInclude(Include.NON_NULL)
-    private List<PoolGroupMember> members = null;
+    private List<PoolGroupMember> members;
 
     @JsonProperty("min_servers")
     @JsonInclude(Include.NON_NULL)
@@ -75,19 +75,19 @@ public class PoolGroup extends AviRestResource {
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("priority_labels_ref")
     @JsonInclude(Include.NON_NULL)
-    private String priorityLabelsRef = null;
+    private String priorityLabelsRef;
 
     @JsonProperty("service_metadata")
     @JsonInclude(Include.NON_NULL)
-    private String serviceMetadata = null;
+    private String serviceMetadata;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -95,7 +95,7 @@ public class PoolGroup extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

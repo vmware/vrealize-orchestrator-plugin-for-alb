@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class PatchInfo extends AviRestResource {
     @JsonProperty("patch_type")
     @JsonInclude(Include.NON_NULL)
-    private String patchType = null;
+    private String patchType;
 
     @JsonProperty("reboot")
     @JsonInclude(Include.NON_NULL)
-    private Boolean reboot = null;
+    private Boolean reboot;
 
     @JsonProperty("reboot_list")
     @JsonInclude(Include.NON_NULL)
-    private List<RebootData> rebootList = null;
+    private List<RebootData> rebootList;
 
 
 

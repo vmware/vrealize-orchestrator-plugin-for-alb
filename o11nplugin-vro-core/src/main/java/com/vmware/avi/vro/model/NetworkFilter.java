@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class NetworkFilter extends AviRestResource {
     @JsonProperty("network_ref")
     @JsonInclude(Include.NON_NULL)
-    private String networkRef = null;
+    private String networkRef;
 
     @JsonProperty("server_filter")
     @JsonInclude(Include.NON_NULL)
-    private String serverFilter = null;
+    private String serverFilter;
 
 
 

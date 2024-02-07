@@ -26,39 +26,39 @@ import org.springframework.stereotype.Service;
 public class ConfigDeleteDetails extends AviRestResource {
     @JsonProperty("client_ip")
     @JsonInclude(Include.NON_NULL)
-    private String clientIp = null;
+    private String clientIp;
 
     @JsonProperty("error_message")
     @JsonInclude(Include.NON_NULL)
-    private String errorMessage = null;
+    private String errorMessage;
 
     @JsonProperty("path")
     @JsonInclude(Include.NON_NULL)
-    private String path = null;
+    private String path;
 
     @JsonProperty("resource_data")
     @JsonInclude(Include.NON_NULL)
-    private String resourceData = null;
+    private String resourceData;
 
     @JsonProperty("resource_name")
     @JsonInclude(Include.NON_NULL)
-    private String resourceName = null;
+    private String resourceName;
 
     @JsonProperty("resource_type")
     @JsonInclude(Include.NON_NULL)
-    private String resourceType = null;
+    private String resourceType;
 
     @JsonProperty("status")
     @JsonInclude(Include.NON_NULL)
-    private String status = null;
+    private String status;
 
     @JsonProperty("user")
     @JsonInclude(Include.NON_NULL)
-    private String user = null;
+    private String user;
 
     @JsonProperty("user_agent")
     @JsonInclude(Include.NON_NULL)
-    private String userAgent = null;
+    private String userAgent;
 
 
 

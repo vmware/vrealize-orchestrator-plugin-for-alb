@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class ControllerInternalAuth extends AviRestResource {
     @JsonProperty("symmetric_jwks_keys")
     @JsonInclude(Include.NON_NULL)
-    private List<JWSKey> symmetricJwksKeys = null;
+    private List<JWSKey> symmetricJwksKeys;
 
 
 

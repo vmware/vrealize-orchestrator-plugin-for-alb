@@ -26,27 +26,27 @@ import org.springframework.stereotype.Service;
 public class HSMSafenetClientInfo extends AviRestResource {
     @JsonProperty("chrystoki_conf")
     @JsonInclude(Include.NON_NULL)
-    private String chrystokiConf = null;
+    private String chrystokiConf;
 
     @JsonProperty("client_cert")
     @JsonInclude(Include.NON_NULL)
-    private String clientCert = null;
+    private String clientCert;
 
     @JsonProperty("client_ip")
     @JsonInclude(Include.NON_NULL)
-    private String clientIp = null;
+    private String clientIp;
 
     @JsonProperty("client_priv_key")
     @JsonInclude(Include.NON_NULL)
-    private String clientPrivKey = null;
+    private String clientPrivKey;
 
     @JsonProperty("session_major_number")
     @JsonInclude(Include.NON_NULL)
-    private Integer sessionMajorNumber = null;
+    private Integer sessionMajorNumber;
 
     @JsonProperty("session_minor_number")
     @JsonInclude(Include.NON_NULL)
-    private Integer sessionMinorNumber = null;
+    private Integer sessionMinorNumber;
 
 
 

@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class AppInfo extends AviRestResource {
     @JsonProperty("app_hdr_name")
     @JsonInclude(Include.NON_NULL)
-    private String appHdrName = null;
+    private String appHdrName;
 
     @JsonProperty("app_hdr_value")
     @JsonInclude(Include.NON_NULL)
-    private String appHdrValue = null;
+    private String appHdrValue;
 
 
 

@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class Matches extends AviRestResource {
     @JsonProperty("match_element")
     @JsonInclude(Include.NON_NULL)
-    private String matchElement = null;
+    private String matchElement;
 
     @JsonProperty("match_value")
     @JsonInclude(Include.NON_NULL)
-    private String matchValue = null;
+    private String matchValue;
 
 
 

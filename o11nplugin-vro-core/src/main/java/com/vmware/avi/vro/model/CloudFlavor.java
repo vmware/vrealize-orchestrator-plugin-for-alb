@@ -26,43 +26,43 @@ import org.springframework.stereotype.Service;
 public class CloudFlavor extends AviRestResource {
     @JsonProperty("cost")
     @JsonInclude(Include.NON_NULL)
-    private String cost = null;
+    private String cost;
 
     @JsonProperty("disk_gb")
     @JsonInclude(Include.NON_NULL)
-    private Integer diskGb = null;
+    private Integer diskGb;
 
     @JsonProperty("enhanced_nw")
     @JsonInclude(Include.NON_NULL)
-    private Boolean enhancedNw = null;
+    private Boolean enhancedNw;
 
     @JsonProperty("id")
     @JsonInclude(Include.NON_NULL)
-    private String id = null;
+    private String id;
 
     @JsonProperty("is_recommended")
     @JsonInclude(Include.NON_NULL)
-    private Boolean isRecommended = null;
+    private Boolean isRecommended;
 
     @JsonProperty("max_ip6s_per_nic")
     @JsonInclude(Include.NON_NULL)
-    private Integer maxIp6SPerNic = null;
+    private Integer maxIp6SPerNic;
 
     @JsonProperty("max_ips_per_nic")
     @JsonInclude(Include.NON_NULL)
-    private Integer maxIpsPerNic = null;
+    private Integer maxIpsPerNic;
 
     @JsonProperty("max_nics")
     @JsonInclude(Include.NON_NULL)
-    private Integer maxNics = null;
+    private Integer maxNics;
 
     @JsonProperty("meta")
     @JsonInclude(Include.NON_NULL)
-    private List<CloudMeta> meta = null;
+    private List<CloudMeta> meta;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("publics")
     @JsonInclude(Include.NON_NULL)
@@ -70,11 +70,11 @@ public class CloudFlavor extends AviRestResource {
 
     @JsonProperty("ram_mb")
     @JsonInclude(Include.NON_NULL)
-    private Integer ramMb = null;
+    private Integer ramMb;
 
     @JsonProperty("vcpus")
     @JsonInclude(Include.NON_NULL)
-    private Integer vcpus = null;
+    private Integer vcpus;
 
 
 

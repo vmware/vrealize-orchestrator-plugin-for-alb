@@ -27,31 +27,31 @@ import org.springframework.stereotype.Service;
 public class DnsRrSet extends AviRestResource {
     @JsonProperty("cname")
     @JsonInclude(Include.NON_NULL)
-    private DnsCnameRdata cname = null;
+    private DnsCnameRdata cname;
 
     @JsonProperty("fqdn")
     @JsonInclude(Include.NON_NULL)
-    private String fqdn = null;
+    private String fqdn;
 
     @JsonProperty("ip6_addresses")
     @JsonInclude(Include.NON_NULL)
-    private List<DnsAAAARdata> ip6Addresses = null;
+    private List<DnsAAAARdata> ip6Addresses;
 
     @JsonProperty("ip_addresses")
     @JsonInclude(Include.NON_NULL)
-    private List<DnsARdata> ipAddresses = null;
+    private List<DnsARdata> ipAddresses;
 
     @JsonProperty("nses")
     @JsonInclude(Include.NON_NULL)
-    private List<DnsNsRdata> nses = null;
+    private List<DnsNsRdata> nses;
 
     @JsonProperty("ttl")
     @JsonInclude(Include.NON_NULL)
-    private Integer ttl = null;
+    private Integer ttl;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = null;
+    private String type;
 
 
 

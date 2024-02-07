@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class ReplicationPolicy extends AviRestResource {
     @JsonProperty("checkpoint_ref")
     @JsonInclude(Include.NON_NULL)
-    private String checkpointRef = null;
+    private String checkpointRef;
 
     @JsonProperty("replication_mode")
     @JsonInclude(Include.NON_NULL)

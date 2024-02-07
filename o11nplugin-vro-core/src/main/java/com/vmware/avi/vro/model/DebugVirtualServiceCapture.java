@@ -27,7 +27,7 @@ import org.springframework.stereotype.Service;
 public class DebugVirtualServiceCapture extends AviRestResource {
     @JsonProperty("capture_file_size")
     @JsonInclude(Include.NON_NULL)
-    private CaptureFileSize captureFileSize = null;
+    private CaptureFileSize captureFileSize;
 
     @JsonProperty("duration")
     @JsonInclude(Include.NON_NULL)
@@ -43,7 +43,7 @@ public class DebugVirtualServiceCapture extends AviRestResource {
 
     @JsonProperty("num_pkts")
     @JsonInclude(Include.NON_NULL)
-    private Integer numPkts = null;
+    private Integer numPkts;
 
     @JsonProperty("pcap_ng")
     @JsonInclude(Include.NON_NULL)

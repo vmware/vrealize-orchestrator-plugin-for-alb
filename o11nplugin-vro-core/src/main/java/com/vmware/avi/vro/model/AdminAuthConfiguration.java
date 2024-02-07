@@ -30,11 +30,11 @@ public class AdminAuthConfiguration extends AviRestResource {
 
     @JsonProperty("remote_auth_configurations")
     @JsonInclude(Include.NON_NULL)
-    private List<RemoteAuthConfiguration> remoteAuthConfigurations = null;
+    private List<RemoteAuthConfiguration> remoteAuthConfigurations;
 
     @JsonProperty("service_auth_configurations")
     @JsonInclude(Include.NON_NULL)
-    private List<ServiceAuthConfiguration> serviceAuthConfigurations = null;
+    private List<ServiceAuthConfiguration> serviceAuthConfigurations;
 
 
 

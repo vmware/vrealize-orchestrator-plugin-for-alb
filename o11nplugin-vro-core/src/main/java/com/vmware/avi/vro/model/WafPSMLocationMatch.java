@@ -29,15 +29,15 @@ import org.springframework.stereotype.Service;
 public class WafPSMLocationMatch extends AviRestResource {
     @JsonProperty("host")
     @JsonInclude(Include.NON_NULL)
-    private HostHdrMatch host = null;
+    private HostHdrMatch host;
 
     @JsonProperty("methods")
     @JsonInclude(Include.NON_NULL)
-    private MethodMatch methods = null;
+    private MethodMatch methods;
 
     @JsonProperty("path")
     @JsonInclude(Include.NON_NULL)
-    private PathMatch path = null;
+    private PathMatch path;
 
 
 

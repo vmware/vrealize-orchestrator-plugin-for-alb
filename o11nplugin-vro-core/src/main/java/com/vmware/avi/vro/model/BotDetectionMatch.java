@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class BotDetectionMatch extends AviRestResource {
     @JsonProperty("classifications")
     @JsonInclude(Include.NON_NULL)
-    private List<BotClassification> classifications = null;
+    private List<BotClassification> classifications;
 
     @JsonProperty("match_operation")
     @JsonInclude(Include.NON_NULL)
-    private String matchOperation = null;
+    private String matchOperation;
 
 
 

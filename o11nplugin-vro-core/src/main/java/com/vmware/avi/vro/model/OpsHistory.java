@@ -28,47 +28,47 @@ import org.springframework.stereotype.Service;
 public class OpsHistory extends AviRestResource {
     @JsonProperty("duration")
     @JsonInclude(Include.NON_NULL)
-    private Integer duration = null;
+    private Integer duration;
 
     @JsonProperty("end_time")
     @JsonInclude(Include.NON_NULL)
-    private String endTime = null;
+    private String endTime;
 
     @JsonProperty("ops")
     @JsonInclude(Include.NON_NULL)
-    private String ops = null;
+    private String ops;
 
     @JsonProperty("patch_version")
     @JsonInclude(Include.NON_NULL)
-    private String patchVersion = null;
+    private String patchVersion;
 
     @JsonProperty("se_upgrade_events")
     @JsonInclude(Include.NON_NULL)
-    private List<SeUpgradeEvents> seUpgradeEvents = null;
+    private List<SeUpgradeEvents> seUpgradeEvents;
 
     @JsonProperty("seg_status")
     @JsonInclude(Include.NON_NULL)
-    private SeGroupStatus segStatus = null;
+    private SeGroupStatus segStatus;
 
     @JsonProperty("start_time")
     @JsonInclude(Include.NON_NULL)
-    private String startTime = null;
+    private String startTime;
 
     @JsonProperty("state")
     @JsonInclude(Include.NON_NULL)
-    private UpgradeOpsState state = null;
+    private UpgradeOpsState state;
 
     @JsonProperty("statediff_ref")
     @JsonInclude(Include.NON_NULL)
-    private String statediffRef = null;
+    private String statediffRef;
 
     @JsonProperty("upgrade_events")
     @JsonInclude(Include.NON_NULL)
-    private List<EventMap> upgradeEvents = null;
+    private List<EventMap> upgradeEvents;
 
     @JsonProperty("version")
     @JsonInclude(Include.NON_NULL)
-    private String version = null;
+    private String version;
 
 
 

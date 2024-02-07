@@ -27,11 +27,11 @@ import org.springframework.stereotype.Service;
 public class MetricsDataSeries extends AviRestResource {
     @JsonProperty("data")
     @JsonInclude(Include.NON_NULL)
-    private List<MetricsData> data = null;
+    private List<MetricsData> data;
 
     @JsonProperty("header")
     @JsonInclude(Include.NON_NULL)
-    private MetricsDataHeader header = null;
+    private MetricsDataHeader header;
 
 
 

@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class BotMapping extends AviRestResource {
     @JsonProperty("mapping_rules")
     @JsonInclude(Include.NON_NULL)
-    private List<BotMappingRule> mappingRules = null;
+    private List<BotMappingRule> mappingRules;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -42,7 +42,7 @@ public class BotMapping extends AviRestResource {
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String uuid = null;
+    private String uuid;
 
 
 

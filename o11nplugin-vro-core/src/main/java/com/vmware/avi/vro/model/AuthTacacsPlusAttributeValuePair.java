@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class AuthTacacsPlusAttributeValuePair extends AviRestResource {
     @JsonProperty("mandatory")
     @JsonInclude(Include.NON_NULL)
-    private Boolean mandatory = null;
+    private Boolean mandatory;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String name = null;
+    private String name;
 
     @JsonProperty("value")
     @JsonInclude(Include.NON_NULL)
-    private String value = null;
+    private String value;
 
 
 

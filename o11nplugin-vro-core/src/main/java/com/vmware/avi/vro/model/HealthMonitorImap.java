@@ -27,11 +27,11 @@ import org.springframework.stereotype.Service;
 public class HealthMonitorImap extends AviRestResource {
     @JsonProperty("folder")
     @JsonInclude(Include.NON_NULL)
-    private String folder = null;
+    private String folder;
 
     @JsonProperty("ssl_attributes")
     @JsonInclude(Include.NON_NULL)
-    private HealthMonitorSSLAttributes sslAttributes = null;
+    private HealthMonitorSSLAttributes sslAttributes;
 
 
 

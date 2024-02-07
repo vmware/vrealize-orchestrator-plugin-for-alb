@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class OpenStackSeVmChange extends AviRestResource {
     @JsonProperty("error_string")
     @JsonInclude(Include.NON_NULL)
-    private String errorString = null;
+    private String errorString;
 
     @JsonProperty("se_vm_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String seVmUuid = null;
+    private String seVmUuid;
 
 
 

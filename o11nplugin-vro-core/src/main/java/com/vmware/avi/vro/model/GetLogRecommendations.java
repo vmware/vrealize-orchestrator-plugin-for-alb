@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class GetLogRecommendations extends AviRestResource {
     @JsonProperty("requests")
     @JsonInclude(Include.NON_NULL)
-    private List<RecommendationRequest> requests = null;
+    private List<RecommendationRequest> requests;
 
 
 
