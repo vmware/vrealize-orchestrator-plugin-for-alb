@@ -757,7 +757,6 @@ public class Constants {
     public static final String FINDER_VRO_PERFORMANCELIMITS = "PerformanceLimits";
     public static final String FINDER_VRO_PERMISSION = "Permission";
     public static final String FINDER_VRO_PERSISTENCEFILTER = "PersistenceFilter";
-    public static final String FINDER_VRO_PINGACCESSAGENT = "PingAccessAgent";
     public static final String FINDER_VRO_PLACEMENTNETWORK = "PlacementNetwork";
     public static final String FINDER_VRO_PLACEMENTSCOPECONFIG = "PlacementScopeConfig";
     public static final String FINDER_VRO_PODTOLERATION = "PodToleration";
