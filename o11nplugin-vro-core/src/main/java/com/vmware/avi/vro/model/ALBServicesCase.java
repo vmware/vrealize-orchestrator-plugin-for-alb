@@ -647,7 +647,7 @@ public class ALBServicesCase extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Stores the alb services configuration mode.
-   * Enum options - MODE_UNKNOWN, SALESFORCE, SYSTEST, MYVMWARE.
+   * Enum options - MODE_UNKNOWN, SALESFORCE, SYSTEST, MYVMWARE, BROADCOM.
    * Field introduced in 21.1.3.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -661,7 +661,7 @@ public class ALBServicesCase extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Stores the alb services configuration mode.
-   * Enum options - MODE_UNKNOWN, SALESFORCE, SYSTEST, MYVMWARE.
+   * Enum options - MODE_UNKNOWN, SALESFORCE, SYSTEST, MYVMWARE, BROADCOM.
    * Field introduced in 21.1.3.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
