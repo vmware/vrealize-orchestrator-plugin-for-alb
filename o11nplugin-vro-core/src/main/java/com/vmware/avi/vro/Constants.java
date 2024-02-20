@@ -68,6 +68,7 @@ public class Constants {
     public static final String FINDER_VRO_APPLICATIONPROFILE = "ApplicationProfile";
     public static final String FINDER_VRO_APPLYLOGRECOMMENDATIONS = "ApplyLogRecommendations";
     public static final String FINDER_VRO_ARPTABLEFILTER = "ArpTableFilter";
+    public static final String FINDER_VRO_ASYNCPATCHSTATE = "AsyncPatchState";
     public static final String FINDER_VRO_ATTACHIPSTATUSEVENTDETAILS = "AttachIpStatusEventDetails";
     public static final String FINDER_VRO_ATTACKDNSAMPLIFICATION = "AttackDnsAmplification";
     public static final String FINDER_VRO_ATTACKMETADATA = "AttackMetaData";
