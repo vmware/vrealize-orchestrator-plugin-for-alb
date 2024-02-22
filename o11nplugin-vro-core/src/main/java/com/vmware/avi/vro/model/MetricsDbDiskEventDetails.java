@@ -30,16 +30,17 @@ public class MetricsDbDiskEventDetails extends AviRestResource {
 
     @JsonProperty("metrics_free_sz")
     @JsonInclude(Include.NON_NULL)
-    private Integer metricsFreeSz;
+    private Float metricsFreeSz;
 
     @JsonProperty("metrics_quota")
     @JsonInclude(Include.NON_NULL)
-    private Integer metricsQuota;
+    private Float metricsQuota;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
+   * List of dropped metrics tables.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricsDeletedTables
@@ -51,6 +52,7 @@ public class MetricsDbDiskEventDetails extends AviRestResource {
 
   /**
    * This is the setter method. this will set the metricsDeletedTables
+   * List of dropped metrics tables.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricsDeletedTables
@@ -62,6 +64,7 @@ public class MetricsDbDiskEventDetails extends AviRestResource {
 
   /**
    * This is the setter method this will set the metricsDeletedTables
+   * List of dropped metrics tables.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricsDeletedTables
@@ -78,45 +81,53 @@ public class MetricsDbDiskEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Total size of freed metrics tables.
+   * In kbs.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricsFreeSz
    */
   @VsoMethod
-  public Integer getMetricsFreeSz() {
+  public Float getMetricsFreeSz() {
     return metricsFreeSz;
   }
 
   /**
    * This is the setter method to the attribute.
+   * Total size of freed metrics tables.
+   * In kbs.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricsFreeSz set the metricsFreeSz.
    */
   @VsoMethod
-  public void setMetricsFreeSz(Integer  metricsFreeSz) {
+  public void setMetricsFreeSz(Float  metricsFreeSz) {
     this.metricsFreeSz = metricsFreeSz;
   }
 
   /**
    * This is the getter method this will return the attribute value.
+   * Disk quota allocated for metrics db.
+   * In gbs.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricsQuota
    */
   @VsoMethod
-  public Integer getMetricsQuota() {
+  public Float getMetricsQuota() {
     return metricsQuota;
   }
 
   /**
    * This is the setter method to the attribute.
+   * Disk quota allocated for metrics db.
+   * In gbs.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricsQuota set the metricsQuota.
    */
   @VsoMethod
-  public void setMetricsQuota(Integer  metricsQuota) {
+  public void setMetricsQuota(Float  metricsQuota) {
     this.metricsQuota = metricsQuota;
   }
 

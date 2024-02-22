@@ -27,7 +27,7 @@ import org.springframework.stereotype.Service;
 public class CSRFRule extends AviRestResource {
     @JsonProperty("action")
     @JsonInclude(Include.NON_NULL)
-    private String action = "VERIFY_CSRF_TOKEN";
+    private String action = "VERIFY_ORIGIN_AND_CSRF_TOKEN";
 
     @JsonProperty("enable")
     @JsonInclude(Include.NON_NULL)
@@ -50,10 +50,10 @@ public class CSRFRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Csrf action to be applied for matched target.
-   * Enum options - VERIFY_CSRF_TOKEN, VERIFY_ORIGIN, VERIFY_CSRF_TOKEN_AND_ORIGIN, BYPASS_CSRF.
+   * Enum options - VERIFY_CSRF_TOKEN, VERIFY_ORIGIN, VERIFY_ORIGIN_AND_CSRF_TOKEN, BYPASS_CSRF.
    * Field introduced in 30.2.1.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as "VERIFY_CSRF_TOKEN".
+   * Default value when not specified in API or module is interpreted by Avi Controller as "VERIFY_ORIGIN_AND_CSRF_TOKEN".
    * @return action
    */
   @VsoMethod
@@ -64,10 +64,10 @@ public class CSRFRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Csrf action to be applied for matched target.
-   * Enum options - VERIFY_CSRF_TOKEN, VERIFY_ORIGIN, VERIFY_CSRF_TOKEN_AND_ORIGIN, BYPASS_CSRF.
+   * Enum options - VERIFY_CSRF_TOKEN, VERIFY_ORIGIN, VERIFY_ORIGIN_AND_CSRF_TOKEN, BYPASS_CSRF.
    * Field introduced in 30.2.1.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as "VERIFY_CSRF_TOKEN".
+   * Default value when not specified in API or module is interpreted by Avi Controller as "VERIFY_ORIGIN_AND_CSRF_TOKEN".
    * @param action set the action.
    */
   @VsoMethod
