@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.DestinationPortAddr;
 import com.vmware.avi.vro.model.DebugIpAddr;
 import com.vmware.avi.vro.model.SourcePortAddr;
+import com.vmware.avi.vro.model.CaptureTCPFlags;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -43,9 +44,9 @@ public class CaptureTCPFilter extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private SourcePortAddr srcPortRange;
 
-    @JsonProperty("tcpflags")
+    @JsonProperty("tcpflag")
     @JsonInclude(Include.NON_NULL)
-    private List<CaptureTCP> tcpflags;
+    private CaptureTCPFlags tcpflag;
 
 
 
@@ -162,50 +163,28 @@ public class CaptureTCPFilter extends AviRestResource {
    * Tcp flags filter.
    * Or'ed internally and and'ed amongst each other.
    * Field introduced in 30.2.1.
-   * Maximum of 4 items allowed.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return tcpflags
+   * @return tcpflag
    */
   @VsoMethod
-  public List<CaptureTCP> getTcpflags() {
-    return tcpflags;
+  public CaptureTCPFlags getTcpflag() {
+    return tcpflag;
   }
 
   /**
-   * This is the setter method. this will set the tcpflags
+   * This is the setter method to the attribute.
    * Tcp flags filter.
    * Or'ed internally and and'ed amongst each other.
    * Field introduced in 30.2.1.
-   * Maximum of 4 items allowed.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return tcpflags
+   * @param tcpflag set the tcpflag.
    */
   @VsoMethod
-  public void setTcpflags(List<CaptureTCP>  tcpflags) {
-    this.tcpflags = tcpflags;
+  public void setTcpflag(CaptureTCPFlags tcpflag) {
+    this.tcpflag = tcpflag;
   }
-
-  /**
-   * This is the setter method this will set the tcpflags
-   * Tcp flags filter.
-   * Or'ed internally and and'ed amongst each other.
-   * Field introduced in 30.2.1.
-   * Maximum of 4 items allowed.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return tcpflags
-   */
-  @VsoMethod
-  public CaptureTCPFilter addTcpflagsItem(CaptureTCP tcpflagsItem) {
-    if (this.tcpflags == null) {
-      this.tcpflags = new ArrayList<CaptureTCP>();
-    }
-    this.tcpflags.add(tcpflagsItem);
-    return this;
-  }
-
 
 
 
@@ -218,7 +197,7 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   CaptureTCPFilter objCaptureTCPFilter = (CaptureTCPFilter) o;
-  return   Objects.equals(this.tcpflags, objCaptureTCPFilter.tcpflags)&&
+  return   Objects.equals(this.tcpflag, objCaptureTCPFilter.tcpflag)&&
   Objects.equals(this.hostIp, objCaptureTCPFilter.hostIp)&&
   Objects.equals(this.ethProto, objCaptureTCPFilter.ethProto)&&
   Objects.equals(this.srcPortRange, objCaptureTCPFilter.srcPortRange)&&
@@ -233,7 +212,7 @@ public String toString() {
         sb.append("    ethProto: ").append(toIndentedString(ethProto)).append("\n");
         sb.append("    hostIp: ").append(toIndentedString(hostIp)).append("\n");
         sb.append("    srcPortRange: ").append(toIndentedString(srcPortRange)).append("\n");
-        sb.append("    tcpflags: ").append(toIndentedString(tcpflags)).append("\n");
+        sb.append("    tcpflag: ").append(toIndentedString(tcpflag)).append("\n");
       sb.append("}");
   return sb.toString();
 }

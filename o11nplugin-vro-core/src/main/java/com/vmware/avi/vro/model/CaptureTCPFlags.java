@@ -24,6 +24,10 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class CaptureTCPFlags extends AviRestResource {
+    @JsonProperty("filter_op")
+    @JsonInclude(Include.NON_NULL)
+    private String filterOp = "OR";
+
     @JsonProperty("match_operation")
     @JsonInclude(Include.NON_NULL)
     private String matchOperation = "IS_IN";
@@ -40,11 +44,43 @@ public class CaptureTCPFlags extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean tcpPush;
 
+    @JsonProperty("tcp_rst")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean tcpRst;
+
     @JsonProperty("tcp_syn")
     @JsonInclude(Include.NON_NULL)
     private Boolean tcpSyn;
 
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Logical operation based filter criteria.
+   * Enum options - OR, AND.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "OR".
+   * @return filterOp
+   */
+  @VsoMethod
+  public String getFilterOp() {
+    return filterOp;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Logical operation based filter criteria.
+   * Enum options - OR, AND.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "OR".
+   * @param filterOp set the filterOp.
+   */
+  @VsoMethod
+  public void setFilterOp(String  filterOp) {
+    this.filterOp = filterOp;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -154,6 +190,32 @@ public class CaptureTCPFlags extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Tcp rst flag filter.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return tcpRst
+   */
+  @VsoMethod
+  public Boolean getTcpRst() {
+    return tcpRst;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Tcp rst flag filter.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param tcpRst set the tcpRst.
+   */
+  @VsoMethod
+  public void setTcpRst(Boolean  tcpRst) {
+    this.tcpRst = tcpRst;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Tcp syn flag filter.
    * Field introduced in 30.2.1.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
@@ -193,17 +255,21 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.tcpAck, objCaptureTCPFlags.tcpAck)&&
   Objects.equals(this.tcpFin, objCaptureTCPFlags.tcpFin)&&
   Objects.equals(this.tcpPush, objCaptureTCPFlags.tcpPush)&&
-  Objects.equals(this.matchOperation, objCaptureTCPFlags.matchOperation);
+  Objects.equals(this.matchOperation, objCaptureTCPFlags.matchOperation)&&
+  Objects.equals(this.tcpRst, objCaptureTCPFlags.tcpRst)&&
+  Objects.equals(this.filterOp, objCaptureTCPFlags.filterOp);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class CaptureTCPFlags {\n");
-      sb.append("    matchOperation: ").append(toIndentedString(matchOperation)).append("\n");
+      sb.append("    filterOp: ").append(toIndentedString(filterOp)).append("\n");
+        sb.append("    matchOperation: ").append(toIndentedString(matchOperation)).append("\n");
         sb.append("    tcpAck: ").append(toIndentedString(tcpAck)).append("\n");
         sb.append("    tcpFin: ").append(toIndentedString(tcpFin)).append("\n");
         sb.append("    tcpPush: ").append(toIndentedString(tcpPush)).append("\n");
+        sb.append("    tcpRst: ").append(toIndentedString(tcpRst)).append("\n");
         sb.append("    tcpSyn: ").append(toIndentedString(tcpSyn)).append("\n");
       sb.append("}");
   return sb.toString();
