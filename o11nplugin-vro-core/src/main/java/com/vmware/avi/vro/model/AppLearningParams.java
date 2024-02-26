@@ -25,6 +25,10 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AppLearningParams extends AviRestResource {
+    @JsonProperty("enable_learn_from_bots")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableLearnFromBots = true;
+
     @JsonProperty("enable_per_uri_learning")
     @JsonInclude(Include.NON_NULL)
     private Boolean enablePerUriLearning = true;
@@ -62,6 +66,34 @@ public class AppLearningParams extends AviRestResource {
     private Integer updateInterval = 30;
 
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * If this is set to true, waf will only learn from clients which match the learn_from_bots specification.
+   * The settings learn_from_authenticated_requests and trusted_ip_groups always take precedence.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @return enableLearnFromBots
+   */
+  @VsoMethod
+  public Boolean getEnableLearnFromBots() {
+    return enableLearnFromBots;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * If this is set to true, waf will only learn from clients which match the learn_from_bots specification.
+   * The settings learn_from_authenticated_requests and trusted_ip_groups always take precedence.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param enableLearnFromBots set the enableLearnFromBots.
+   */
+  @VsoMethod
+  public void setEnableLearnFromBots(Boolean  enableLearnFromBots) {
+    this.enableLearnFromBots = enableLearnFromBots;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -334,14 +366,16 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.minHitsToLearn, objAppLearningParams.minHitsToLearn)&&
   Objects.equals(this.learnFromAuthenticatedClientsOnly, objAppLearningParams.learnFromAuthenticatedClientsOnly)&&
   Objects.equals(this.trustedIpgroupRef, objAppLearningParams.trustedIpgroupRef)&&
-  Objects.equals(this.learnFromBots, objAppLearningParams.learnFromBots);
+  Objects.equals(this.learnFromBots, objAppLearningParams.learnFromBots)&&
+  Objects.equals(this.enableLearnFromBots, objAppLearningParams.enableLearnFromBots);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class AppLearningParams {\n");
-      sb.append("    enablePerUriLearning: ").append(toIndentedString(enablePerUriLearning)).append("\n");
+      sb.append("    enableLearnFromBots: ").append(toIndentedString(enableLearnFromBots)).append("\n");
+        sb.append("    enablePerUriLearning: ").append(toIndentedString(enablePerUriLearning)).append("\n");
         sb.append("    learnFromAuthenticatedClientsOnly: ").append(toIndentedString(learnFromAuthenticatedClientsOnly)).append("\n");
         sb.append("    learnFromBots: ").append(toIndentedString(learnFromBots)).append("\n");
         sb.append("    maxParams: ").append(toIndentedString(maxParams)).append("\n");
