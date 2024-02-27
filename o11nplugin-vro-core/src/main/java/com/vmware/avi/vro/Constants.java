@@ -160,7 +160,6 @@ public class Constants {
     public static final String FINDER_VRO_CAPTUREFILTERS = "CaptureFilters";
     public static final String FINDER_VRO_CAPTUREIPC = "CaptureIPC";
     public static final String FINDER_VRO_CAPTUREPACKETFILTER = "CapturePacketFilter";
-    public static final String FINDER_VRO_CAPTURETCP = "CaptureTCP";
     public static final String FINDER_VRO_CAPTURETCPFILTER = "CaptureTCPFilter";
     public static final String FINDER_VRO_CAPTURETCPFLAGS = "CaptureTCPFlags";
     public static final String FINDER_VRO_CASECONFIG = "CaseConfig";
