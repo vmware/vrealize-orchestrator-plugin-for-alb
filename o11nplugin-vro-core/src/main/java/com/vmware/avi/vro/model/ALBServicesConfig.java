@@ -9,6 +9,7 @@ import com.vmware.avi.vro.model.AppSignatureConfig;
 import com.vmware.avi.vro.model.ALBServicesUser;
 import com.vmware.avi.vro.model.CaseConfig;
 import com.vmware.avi.vro.model.PortalFeatureOptIn;
+import com.vmware.avi.vro.model.InventoryConfiguration;
 import com.vmware.avi.vro.model.IpReputationConfig;
 import com.vmware.avi.vro.model.OperationsConfig;
 import com.vmware.avi.vro.model.SaasLicensingInfo;
@@ -51,6 +52,10 @@ public class ALBServicesConfig extends AviRestResource {
     @JsonProperty("feature_opt_in_status")
     @JsonInclude(Include.NON_NULL)
     private PortalFeatureOptIn featureOptInStatus;
+
+    @JsonProperty("inventory_config")
+    @JsonInclude(Include.NON_NULL)
+    private InventoryConfiguration inventoryConfig;
 
     @JsonProperty("ip_reputation_config")
     @JsonInclude(Include.NON_NULL)
@@ -226,6 +231,34 @@ public class ALBServicesConfig extends AviRestResource {
   @VsoMethod
   public void setFeatureOptInStatus(PortalFeatureOptIn featureOptInStatus) {
     this.featureOptInStatus = featureOptInStatus;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Inventory configurations for pulse cloud services.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return inventoryConfig
+   */
+  @VsoMethod
+  public InventoryConfiguration getInventoryConfig() {
+    return inventoryConfig;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Inventory configurations for pulse cloud services.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+   * edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param inventoryConfig set the inventoryConfig.
+   */
+  @VsoMethod
+  public void setInventoryConfig(InventoryConfiguration inventoryConfig) {
+    this.inventoryConfig = inventoryConfig;
   }
 
   /**
@@ -718,7 +751,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.tenantRef, objALBServicesConfig.tenantRef)&&
   Objects.equals(this.name, objALBServicesConfig.name)&&
   Objects.equals(this.tenantConfig, objALBServicesConfig.tenantConfig)&&
-  Objects.equals(this.sessionConfig, objALBServicesConfig.sessionConfig);
+  Objects.equals(this.sessionConfig, objALBServicesConfig.sessionConfig)&&
+  Objects.equals(this.inventoryConfig, objALBServicesConfig.inventoryConfig);
 }
 
 @Override
@@ -729,6 +763,7 @@ public String toString() {
         sb.append("    assetContact: ").append(toIndentedString(assetContact)).append("\n");
         sb.append("    caseConfig: ").append(toIndentedString(caseConfig)).append("\n");
         sb.append("    featureOptInStatus: ").append(toIndentedString(featureOptInStatus)).append("\n");
+        sb.append("    inventoryConfig: ").append(toIndentedString(inventoryConfig)).append("\n");
         sb.append("    ipReputationConfig: ").append(toIndentedString(ipReputationConfig)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
