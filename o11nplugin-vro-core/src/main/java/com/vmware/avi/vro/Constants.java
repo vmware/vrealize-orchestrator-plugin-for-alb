@@ -537,6 +537,7 @@ public class Constants {
     public static final String FINDER_VRO_INGATTRIBUTE = "IngAttribute";
     public static final String FINDER_VRO_INTERNALGATEWAYMONITOR = "InternalGatewayMonitor";
     public static final String FINDER_VRO_INVENTORYCONFIG = "InventoryConfig";
+    public static final String FINDER_VRO_INVENTORYCONFIGURATION = "InventoryConfiguration";
     public static final String FINDER_VRO_INVENTORYFAULTCONFIG = "InventoryFaultConfig";
     public static final String FINDER_VRO_IPADDR = "IpAddr";
     public static final String FINDER_VRO_IPADDRGROUP = "IpAddrGroup";

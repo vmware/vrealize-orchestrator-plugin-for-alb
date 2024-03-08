@@ -285,7 +285,7 @@ public class ControllerInterface extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ipv4 address mode dhcp/static.
-   * Enum options - DHCP, STATIC, VIP, DOCKER_HOST.
+   * Enum options - DHCP, STATIC, VIP, DOCKER_HOST, MODE_MANUAL.
    * Field introduced in 21.1.3.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -299,7 +299,7 @@ public class ControllerInterface extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ipv4 address mode dhcp/static.
-   * Enum options - DHCP, STATIC, VIP, DOCKER_HOST.
+   * Enum options - DHCP, STATIC, VIP, DOCKER_HOST, MODE_MANUAL.
    * Field introduced in 21.1.3.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -313,7 +313,7 @@ public class ControllerInterface extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ipv6 address mode static.
-   * Enum options - DHCP, STATIC, VIP, DOCKER_HOST.
+   * Enum options - DHCP, STATIC, VIP, DOCKER_HOST, MODE_MANUAL.
    * Field introduced in 22.1.3.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -327,7 +327,7 @@ public class ControllerInterface extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ipv6 address mode static.
-   * Enum options - DHCP, STATIC, VIP, DOCKER_HOST.
+   * Enum options - DHCP, STATIC, VIP, DOCKER_HOST, MODE_MANUAL.
    * Field introduced in 22.1.3.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.

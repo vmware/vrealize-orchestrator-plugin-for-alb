@@ -203,6 +203,7 @@ import com.vmware.avi.vro.model.SSLRevokedDetails;
 import com.vmware.avi.vro.model.SwitchoverEventDetails;
 import com.vmware.avi.vro.model.SwitchoverFailEventDetails;
 import com.vmware.avi.vro.model.CloudSyncServices;
+import com.vmware.avi.vro.model.SystemReport;
 import com.vmware.avi.vro.model.TencentSetup;
 import com.vmware.avi.vro.model.RmUnbindVsSeEventDetails;
 import com.vmware.avi.vro.model.UpgradeOpsEntry;
@@ -1040,6 +1041,10 @@ public class EventDetails extends AviRestResource {
     @JsonProperty("sync_services_info")
     @JsonInclude(Include.NON_NULL)
     private CloudSyncServices syncServicesInfo;
+
+    @JsonProperty("system_report_event_details")
+    @JsonInclude(Include.NON_NULL)
+    private SystemReport systemReportEventDetails;
 
     @JsonProperty("tencent_info")
     @JsonInclude(Include.NON_NULL)
@@ -5641,6 +5646,32 @@ public class EventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * System report event details.
+   * Field introduced in 22.1.6, 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return systemReportEventDetails
+   */
+  @VsoMethod
+  public SystemReport getSystemReportEventDetails() {
+    return systemReportEventDetails;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * System report event details.
+   * Field introduced in 22.1.6, 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param systemReportEventDetails set the systemReportEventDetails.
+   */
+  @VsoMethod
+  public void setSystemReportEventDetails(SystemReport systemReportEventDetails) {
+    this.systemReportEventDetails = systemReportEventDetails;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tencentInfo
@@ -6496,6 +6527,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.connectionEvent, objEventDetails.connectionEvent)&&
   Objects.equals(this.adaptreplEvent, objEventDetails.adaptreplEvent)&&
   Objects.equals(this.pkiprofileDetails, objEventDetails.pkiprofileDetails)&&
+  Objects.equals(this.systemReportEventDetails, objEventDetails.systemReportEventDetails)&&
   Objects.equals(this.diskCleanupEventDetails, objEventDetails.diskCleanupEventDetails);
 }
 
@@ -6701,6 +6733,7 @@ public String toString() {
         sb.append("    switchoverDetails: ").append(toIndentedString(switchoverDetails)).append("\n");
         sb.append("    switchoverFailDetails: ").append(toIndentedString(switchoverFailDetails)).append("\n");
         sb.append("    syncServicesInfo: ").append(toIndentedString(syncServicesInfo)).append("\n");
+        sb.append("    systemReportEventDetails: ").append(toIndentedString(systemReportEventDetails)).append("\n");
         sb.append("    tencentInfo: ").append(toIndentedString(tencentInfo)).append("\n");
         sb.append("    unbindVsSeDetails: ").append(toIndentedString(unbindVsSeDetails)).append("\n");
         sb.append("    upgradeEntry: ").append(toIndentedString(upgradeEntry)).append("\n");
