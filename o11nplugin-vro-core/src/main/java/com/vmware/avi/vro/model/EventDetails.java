@@ -15,6 +15,7 @@ import com.vmware.avi.vro.model.AllSeUpgradeEventDetails;
 import com.vmware.avi.vro.model.AnomalyEventDetails;
 import com.vmware.avi.vro.model.ApiVersionDeprecated;
 import com.vmware.avi.vro.model.AppSignatureEventData;
+import com.vmware.avi.vro.model.AsyncPatchState;
 import com.vmware.avi.vro.model.AttachIpStatusEventDetails;
 import com.vmware.avi.vro.model.AvgUptimeChangeDetails;
 import com.vmware.avi.vro.model.AWSASGDelete;
@@ -289,6 +290,10 @@ public class EventDetails extends AviRestResource {
     @JsonProperty("app_signature_event_data")
     @JsonInclude(Include.NON_NULL)
     private AppSignatureEventData appSignatureEventData;
+
+    @JsonProperty("async_patch_state")
+    @JsonInclude(Include.NON_NULL)
+    private AsyncPatchState asyncPatchState;
 
     @JsonProperty("attach_ip_status_details")
     @JsonInclude(Include.NON_NULL)
@@ -1384,6 +1389,30 @@ public class EventDetails extends AviRestResource {
   @VsoMethod
   public void setAppSignatureEventData(AppSignatureEventData appSignatureEventData) {
     this.appSignatureEventData = appSignatureEventData;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Field introduced in 22.1.6,30.1.2.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return asyncPatchState
+   */
+  @VsoMethod
+  public AsyncPatchState getAsyncPatchState() {
+    return asyncPatchState;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 22.1.6,30.1.2.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param asyncPatchState set the asyncPatchState.
+   */
+  @VsoMethod
+  public void setAsyncPatchState(AsyncPatchState asyncPatchState) {
+    this.asyncPatchState = asyncPatchState;
   }
 
   /**
@@ -6399,6 +6428,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.configUserNotAuthrzRuleDetails, objEventDetails.configUserNotAuthrzRuleDetails)&&
   Objects.equals(this.configSeGrpFlvUpdateDetails, objEventDetails.configSeGrpFlvUpdateDetails)&&
   Objects.equals(this.apiVersionDeprecated, objEventDetails.apiVersionDeprecated)&&
+  Objects.equals(this.asyncPatchState, objEventDetails.asyncPatchState)&&
   Objects.equals(this.sslExpireDetails, objEventDetails.sslExpireDetails)&&
   Objects.equals(this.sslExportDetails, objEventDetails.sslExportDetails)&&
   Objects.equals(this.sslRenewDetails, objEventDetails.sslRenewDetails)&&
@@ -6545,6 +6575,7 @@ public String toString() {
         sb.append("    anomalyDetails: ").append(toIndentedString(anomalyDetails)).append("\n");
         sb.append("    apiVersionDeprecated: ").append(toIndentedString(apiVersionDeprecated)).append("\n");
         sb.append("    appSignatureEventData: ").append(toIndentedString(appSignatureEventData)).append("\n");
+        sb.append("    asyncPatchState: ").append(toIndentedString(asyncPatchState)).append("\n");
         sb.append("    attachIpStatusDetails: ").append(toIndentedString(attachIpStatusDetails)).append("\n");
         sb.append("    avgUptimeChangeDetails: ").append(toIndentedString(avgUptimeChangeDetails)).append("\n");
         sb.append("    awsAsgDeletionDetails: ").append(toIndentedString(awsAsgDeletionDetails)).append("\n");
