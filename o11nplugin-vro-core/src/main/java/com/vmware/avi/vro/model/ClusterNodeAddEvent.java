@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.IpAddr;
+import com.vmware.avi.vro.model.IpAddr;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -29,6 +30,10 @@ public class ClusterNodeAddEvent extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private IpAddr ip;
 
+    @JsonProperty("ip6")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr ip6;
+
     @JsonProperty("node_name")
     @JsonInclude(Include.NON_NULL)
     private String nodeName;
@@ -41,7 +46,7 @@ public class ClusterNodeAddEvent extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Ip address of the controller vm.
+   * Ipv4 address of the controller vm.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip
@@ -53,7 +58,7 @@ public class ClusterNodeAddEvent extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Ip address of the controller vm.
+   * Ipv4 address of the controller vm.
    * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip set the ip.
@@ -61,6 +66,32 @@ public class ClusterNodeAddEvent extends AviRestResource {
   @VsoMethod
   public void setIp(IpAddr ip) {
     this.ip = ip;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Ipv6 address of the controller vm.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return ip6
+   */
+  @VsoMethod
+  public IpAddr getIp6() {
+    return ip6;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Ipv6 address of the controller vm.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param ip6 set the ip6.
+   */
+  @VsoMethod
+  public void setIp6(IpAddr ip6) {
+    this.ip6 = ip6;
   }
 
   /**
@@ -126,7 +157,8 @@ public boolean equals(java.lang.Object o) {
   ClusterNodeAddEvent objClusterNodeAddEvent = (ClusterNodeAddEvent) o;
   return   Objects.equals(this.nodeName, objClusterNodeAddEvent.nodeName)&&
   Objects.equals(this.ip, objClusterNodeAddEvent.ip)&&
-  Objects.equals(this.role, objClusterNodeAddEvent.role);
+  Objects.equals(this.role, objClusterNodeAddEvent.role)&&
+  Objects.equals(this.ip6, objClusterNodeAddEvent.ip6);
 }
 
 @Override
@@ -134,6 +166,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class ClusterNodeAddEvent {\n");
       sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
+        sb.append("    ip6: ").append(toIndentedString(ip6)).append("\n");
         sb.append("    nodeName: ").append(toIndentedString(nodeName)).append("\n");
         sb.append("    role: ").append(toIndentedString(role)).append("\n");
       sb.append("}");
