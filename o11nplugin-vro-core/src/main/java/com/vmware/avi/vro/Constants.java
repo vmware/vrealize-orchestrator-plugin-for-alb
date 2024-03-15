@@ -381,6 +381,7 @@ public class Constants {
     public static final String FINDER_VRO_FEPROXYROUTEPUBLISHCONFIG = "FeProxyRoutePublishConfig";
     public static final String FINDER_VRO_FEDERATIONCHECKPOINT = "FederationCheckpoint";
     public static final String FINDER_VRO_FILEOBJECT = "FileObject";
+    public static final String FINDER_VRO_FILEOBJECTDETAILS = "FileObjectDetails";
     public static final String FINDER_VRO_FILEREFERENCEMAPPING = "FileReferenceMapping";
     public static final String FINDER_VRO_FLOATINGIPSUBNET = "FloatingIpSubnet";
     public static final String FINDER_VRO_FLOWTABLEPROFILE = "FlowtableProfile";

@@ -88,6 +88,7 @@ import com.vmware.avi.vro.model.DNSVsSyncInfo;
 import com.vmware.avi.vro.model.DockerUCPSetup;
 import com.vmware.avi.vro.model.DosAttackEventDetails;
 import com.vmware.avi.vro.model.FalsePositiveDetails;
+import com.vmware.avi.vro.model.FileObjectDetails;
 import com.vmware.avi.vro.model.GCPCloudRouterUpdate;
 import com.vmware.avi.vro.model.GCPSetup;
 import com.vmware.avi.vro.model.AuditComplianceEventInfo;
@@ -582,6 +583,10 @@ public class EventDetails extends AviRestResource {
     @JsonProperty("false_positive_details")
     @JsonInclude(Include.NON_NULL)
     private FalsePositiveDetails falsePositiveDetails;
+
+    @JsonProperty("fileobject_details")
+    @JsonInclude(Include.NON_NULL)
+    private FileObjectDetails fileobjectDetails;
 
     @JsonProperty("gcp_cloud_router_info")
     @JsonInclude(Include.NON_NULL)
@@ -3043,6 +3048,32 @@ public class EventDetails extends AviRestResource {
   @VsoMethod
   public void setFalsePositiveDetails(FalsePositiveDetails falsePositiveDetails) {
     this.falsePositiveDetails = falsePositiveDetails;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * File object event.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return fileobjectDetails
+   */
+  @VsoMethod
+  public FileObjectDetails getFileobjectDetails() {
+    return fileobjectDetails;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * File object event.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param fileobjectDetails set the fileobjectDetails.
+   */
+  @VsoMethod
+  public void setFileobjectDetails(FileObjectDetails fileobjectDetails) {
+    this.fileobjectDetails = fileobjectDetails;
   }
 
   /**
@@ -6557,6 +6588,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.connectionEvent, objEventDetails.connectionEvent)&&
   Objects.equals(this.adaptreplEvent, objEventDetails.adaptreplEvent)&&
   Objects.equals(this.pkiprofileDetails, objEventDetails.pkiprofileDetails)&&
+  Objects.equals(this.fileobjectDetails, objEventDetails.fileobjectDetails)&&
   Objects.equals(this.systemReportEventDetails, objEventDetails.systemReportEventDetails)&&
   Objects.equals(this.diskCleanupEventDetails, objEventDetails.diskCleanupEventDetails);
 }
@@ -6648,6 +6680,7 @@ public String toString() {
         sb.append("    dockerUcpDetails: ").append(toIndentedString(dockerUcpDetails)).append("\n");
         sb.append("    dosAttackEventDetails: ").append(toIndentedString(dosAttackEventDetails)).append("\n");
         sb.append("    falsePositiveDetails: ").append(toIndentedString(falsePositiveDetails)).append("\n");
+        sb.append("    fileobjectDetails: ").append(toIndentedString(fileobjectDetails)).append("\n");
         sb.append("    gcpCloudRouterInfo: ").append(toIndentedString(gcpCloudRouterInfo)).append("\n");
         sb.append("    gcpInfo: ").append(toIndentedString(gcpInfo)).append("\n");
         sb.append("    genericAuditComplianceEventInfo: ").append(toIndentedString(genericAuditComplianceEventInfo)).append("\n");

@@ -54,6 +54,10 @@ public class Gslb extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer errorResyncInterval = 300;
 
+    @JsonProperty("fileobject_max_file_versions")
+    @JsonInclude(Include.NON_NULL)
+    private Integer fileobjectMaxFileVersions = 3;
+
     @JsonProperty("is_federated")
     @JsonInclude(Include.NON_NULL)
     private Boolean isFederated = true;
@@ -318,6 +322,42 @@ public class Gslb extends AviRestResource {
   @VsoMethod
   public void setErrorResyncInterval(Integer  errorResyncInterval) {
     this.errorResyncInterval = errorResyncInterval;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * This is the max number of file versions that will be retained for a file referenced by the federated fileobject.
+   * Subsequent uploads of file will result in the file rotation of the older version and the latest version retained.
+   * Example  when a file upload is done for the first time, there will be a v1 version.
+   * Subsequent uploads will get mapped to v1, v2 and v3 versions.
+   * On the fourth upload of the file, the v1 will be file rotated and v2, v3 and v4 will be retained.
+   * Allowed values are 1-5.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 3.
+   * @return fileobjectMaxFileVersions
+   */
+  @VsoMethod
+  public Integer getFileobjectMaxFileVersions() {
+    return fileobjectMaxFileVersions;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * This is the max number of file versions that will be retained for a file referenced by the federated fileobject.
+   * Subsequent uploads of file will result in the file rotation of the older version and the latest version retained.
+   * Example  when a file upload is done for the first time, there will be a v1 version.
+   * Subsequent uploads will get mapped to v1, v2 and v3 versions.
+   * On the fourth upload of the file, the v1 will be file rotated and v2, v3 and v4 will be retained.
+   * Allowed values are 1-5.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 3.
+   * @param fileobjectMaxFileVersions set the fileobjectMaxFileVersions.
+   */
+  @VsoMethod
+  public void setFileobjectMaxFileVersions(Integer  fileobjectMaxFileVersions) {
+    this.fileobjectMaxFileVersions = fileobjectMaxFileVersions;
   }
 
   /**
@@ -725,7 +765,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.description, objGslb.description)&&
   Objects.equals(this.tenantRef, objGslb.tenantRef)&&
   Objects.equals(this.tenantScoped, objGslb.tenantScoped)&&
-  Objects.equals(this.enableConfigByMembers, objGslb.enableConfigByMembers);
+  Objects.equals(this.enableConfigByMembers, objGslb.enableConfigByMembers)&&
+  Objects.equals(this.fileobjectMaxFileVersions, objGslb.fileobjectMaxFileVersions);
 }
 
 @Override
@@ -739,6 +780,7 @@ public String toString() {
         sb.append("    dnsConfigs: ").append(toIndentedString(dnsConfigs)).append("\n");
         sb.append("    enableConfigByMembers: ").append(toIndentedString(enableConfigByMembers)).append("\n");
         sb.append("    errorResyncInterval: ").append(toIndentedString(errorResyncInterval)).append("\n");
+        sb.append("    fileobjectMaxFileVersions: ").append(toIndentedString(fileobjectMaxFileVersions)).append("\n");
         sb.append("    isFederated: ").append(toIndentedString(isFederated)).append("\n");
         sb.append("    leaderClusterUuid: ").append(toIndentedString(leaderClusterUuid)).append("\n");
         sb.append("    maintenanceMode: ").append(toIndentedString(maintenanceMode)).append("\n");
