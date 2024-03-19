@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.CRL;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -35,6 +36,10 @@ public class FileObject extends AviRestResource {
     @JsonProperty("created")
     @JsonInclude(Include.NON_NULL)
     private String created;
+
+    @JsonProperty("crl_info")
+    @JsonInclude(Include.NON_NULL)
+    private CRL crlInfo;
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
@@ -166,6 +171,32 @@ public class FileObject extends AviRestResource {
   @VsoMethod
   public void setCreated(String  created) {
     this.created = created;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * This field contains certificate revocation list metadata.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return crlInfo
+   */
+  @VsoMethod
+  public CRL getCrlInfo() {
+    return crlInfo;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * This field contains certificate revocation list metadata.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param crlInfo set the crlInfo.
+   */
+  @VsoMethod
+  public void setCrlInfo(CRL crlInfo) {
+    this.crlInfo = crlInfo;
   }
 
   /**
@@ -539,7 +570,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.restrictDownload, objFileObject.restrictDownload)&&
   Objects.equals(this.isFederated, objFileObject.isFederated)&&
   Objects.equals(this.compressed, objFileObject.compressed)&&
-  Objects.equals(this.expiresAt, objFileObject.expiresAt);
+  Objects.equals(this.expiresAt, objFileObject.expiresAt)&&
+  Objects.equals(this.crlInfo, objFileObject.crlInfo);
 }
 
 @Override
@@ -549,6 +581,7 @@ public String toString() {
       sb.append("    checksum: ").append(toIndentedString(checksum)).append("\n");
         sb.append("    compressed: ").append(toIndentedString(compressed)).append("\n");
         sb.append("    created: ").append(toIndentedString(created)).append("\n");
+        sb.append("    crlInfo: ").append(toIndentedString(crlInfo)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    expiresAt: ").append(toIndentedString(expiresAt)).append("\n");
         sb.append("    isFederated: ").append(toIndentedString(isFederated)).append("\n");

@@ -70,6 +70,7 @@ public class Constants {
     public static final String FINDER_VRO_APPLICATIONPROFILE = "ApplicationProfile";
     public static final String FINDER_VRO_APPLYLOGRECOMMENDATIONS = "ApplyLogRecommendations";
     public static final String FINDER_VRO_ARPTABLEFILTER = "ArpTableFilter";
+    public static final String FINDER_VRO_ASYNCPATCHSTATE = "AsyncPatchState";
     public static final String FINDER_VRO_ATTACHIPSTATUSEVENTDETAILS = "AttachIpStatusEventDetails";
     public static final String FINDER_VRO_ATTACKDNSAMPLIFICATION = "AttackDnsAmplification";
     public static final String FINDER_VRO_ATTACKMETADATA = "AttackMetaData";
@@ -380,6 +381,7 @@ public class Constants {
     public static final String FINDER_VRO_FEPROXYROUTEPUBLISHCONFIG = "FeProxyRoutePublishConfig";
     public static final String FINDER_VRO_FEDERATIONCHECKPOINT = "FederationCheckpoint";
     public static final String FINDER_VRO_FILEOBJECT = "FileObject";
+    public static final String FINDER_VRO_FILEOBJECTDETAILS = "FileObjectDetails";
     public static final String FINDER_VRO_FILEREFERENCEMAPPING = "FileReferenceMapping";
     public static final String FINDER_VRO_FLOATINGIPSUBNET = "FloatingIpSubnet";
     public static final String FINDER_VRO_FLOWTABLEPROFILE = "FlowtableProfile";
