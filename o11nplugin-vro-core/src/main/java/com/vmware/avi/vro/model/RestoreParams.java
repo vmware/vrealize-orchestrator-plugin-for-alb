@@ -2,6 +2,7 @@ package com.vmware.avi.vro.model;
 
 import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -24,6 +25,9 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class RestoreParams extends AviRestResource {
+    @JsonIgnore
+    private Boolean enableMigration = false;
+
     @JsonProperty("file")
     @JsonInclude(Include.NON_NULL)
     private String file;
@@ -45,6 +49,32 @@ public class RestoreParams extends AviRestResource {
     private String type = "JSON";
 
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * This flag is set to allow migration across version during controller restore operations.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return enableMigration
+   */
+  @VsoMethod
+  public Boolean getEnableMigration() {
+    return enableMigration;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * This flag is set to allow migration across version during controller restore operations.
+   * Field introduced in 30.2.1.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param enableMigration set the enableMigration.
+   */
+  @VsoMethod
+  public void setEnableMigration(Boolean  enableMigration) {
+    this.enableMigration = enableMigration;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -100,7 +130,7 @@ public class RestoreParams extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * This flag is set to run the pre-checks without the subsequent upgrade operations.
+   * This flag is set to run the pre-checks without the subsequent restore operations.
    * Field introduced in 30.2.1.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
@@ -113,7 +143,7 @@ public class RestoreParams extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * This flag is set to run the pre-checks without the subsequent upgrade operations.
+   * This flag is set to run the pre-checks without the subsequent restore operations.
    * Field introduced in 30.2.1.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
@@ -193,14 +223,16 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.type, objRestoreParams.type)&&
   Objects.equals(this.skipWarnings, objRestoreParams.skipWarnings)&&
   Objects.equals(this.passphrase, objRestoreParams.passphrase)&&
-  Objects.equals(this.prechecksOnly, objRestoreParams.prechecksOnly);
+  Objects.equals(this.prechecksOnly, objRestoreParams.prechecksOnly)&&
+  Objects.equals(this.enableMigration, objRestoreParams.enableMigration);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class RestoreParams {\n");
-      sb.append("    file: ").append(toIndentedString(file)).append("\n");
+      sb.append("    enableMigration: ").append(toIndentedString(enableMigration)).append("\n");
+        sb.append("    file: ").append(toIndentedString(file)).append("\n");
         sb.append("    passphrase: ").append(toIndentedString(passphrase)).append("\n");
         sb.append("    prechecksOnly: ").append(toIndentedString(prechecksOnly)).append("\n");
         sb.append("    skipWarnings: ").append(toIndentedString(skipWarnings)).append("\n");
