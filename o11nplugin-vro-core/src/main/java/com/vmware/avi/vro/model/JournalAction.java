@@ -38,7 +38,7 @@ public class JournalAction extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Details of the process for each object type.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return objects
    */
@@ -51,7 +51,7 @@ public class JournalAction extends AviRestResource {
    * This is the setter method. this will set the objects
    * Details of the process for each object type.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return objects
    */
@@ -64,7 +64,7 @@ public class JournalAction extends AviRestResource {
    * This is the setter method this will set the objects
    * Details of the process for each object type.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return objects
    */
@@ -82,7 +82,7 @@ public class JournalAction extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Migrated version.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return version
    */
@@ -95,7 +95,7 @@ public class JournalAction extends AviRestResource {
    * This is the setter method to the attribute.
    * Migrated version.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param version set the version.
    */

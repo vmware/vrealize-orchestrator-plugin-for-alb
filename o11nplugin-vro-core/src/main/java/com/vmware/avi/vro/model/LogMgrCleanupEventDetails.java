@@ -49,7 +49,7 @@ public class LogMgrCleanupEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cleanupCount
    */
@@ -61,7 +61,7 @@ public class LogMgrCleanupEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cleanupCount set the cleanupCount.
    */
@@ -73,7 +73,7 @@ public class LogMgrCleanupEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controller
    */
@@ -85,7 +85,7 @@ public class LogMgrCleanupEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param controller set the controller.
    */
@@ -97,7 +97,7 @@ public class LogMgrCleanupEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return currSize
    */
@@ -109,7 +109,7 @@ public class LogMgrCleanupEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param currSize set the currSize.
    */
@@ -121,7 +121,7 @@ public class LogMgrCleanupEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fromTime
    */
@@ -133,7 +133,7 @@ public class LogMgrCleanupEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fromTime set the fromTime.
    */
@@ -145,7 +145,7 @@ public class LogMgrCleanupEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sizeLimit
    */
@@ -157,7 +157,7 @@ public class LogMgrCleanupEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sizeLimit set the sizeLimit.
    */

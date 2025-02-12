@@ -48,7 +48,7 @@ public class GslbServiceDownResponse extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Fallback cname to use in response to the client query when the gslb service is down.
    * Field introduced in 30.2.1, 22.1.5.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fallbackCname
    */
@@ -61,7 +61,7 @@ public class GslbServiceDownResponse extends AviRestResource {
    * This is the setter method to the attribute.
    * Fallback cname to use in response to the client query when the gslb service is down.
    * Field introduced in 30.2.1, 22.1.5.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fallbackCname set the fallbackCname.
    */
@@ -73,7 +73,7 @@ public class GslbServiceDownResponse extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Fallback ip address to use in a response to the client query when the gslb service is down.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fallbackIp
    */
@@ -85,7 +85,7 @@ public class GslbServiceDownResponse extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Fallback ip address to use in a response to the client query when the gslb service is down.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fallbackIp set the fallbackIp.
    */
@@ -98,7 +98,7 @@ public class GslbServiceDownResponse extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Fallback ipv6 address to use in aaaa response to the client query when the gslb service is down.
    * Field introduced in 18.2.8.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fallbackIp6
    */
@@ -111,7 +111,7 @@ public class GslbServiceDownResponse extends AviRestResource {
    * This is the setter method to the attribute.
    * Fallback ipv6 address to use in aaaa response to the client query when the gslb service is down.
    * Field introduced in 18.2.8.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fallbackIp6 set the fallbackIp6.
    */
@@ -125,7 +125,7 @@ public class GslbServiceDownResponse extends AviRestResource {
    * Response from dns service towards the client when the gslb service is down.
    * Enum options - GSLB_SERVICE_DOWN_RESPONSE_NONE, GSLB_SERVICE_DOWN_RESPONSE_ALL_RECORDS, GSLB_SERVICE_DOWN_RESPONSE_FALLBACK_IP,
    * GSLB_SERVICE_DOWN_RESPONSE_EMPTY, GSLB_SERVICE_DOWN_RESPONSE_CNAME.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_SERVICE_DOWN_RESPONSE_NONE".
    * @return type
    */
@@ -139,7 +139,7 @@ public class GslbServiceDownResponse extends AviRestResource {
    * Response from dns service towards the client when the gslb service is down.
    * Enum options - GSLB_SERVICE_DOWN_RESPONSE_NONE, GSLB_SERVICE_DOWN_RESPONSE_ALL_RECORDS, GSLB_SERVICE_DOWN_RESPONSE_FALLBACK_IP,
    * GSLB_SERVICE_DOWN_RESPONSE_EMPTY, GSLB_SERVICE_DOWN_RESPONSE_CNAME.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_SERVICE_DOWN_RESPONSE_NONE".
    * @param type set the type.
    */

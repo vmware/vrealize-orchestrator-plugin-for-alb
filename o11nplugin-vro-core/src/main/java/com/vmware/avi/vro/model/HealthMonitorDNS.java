@@ -51,7 +51,7 @@ public class HealthMonitorDNS extends AviRestResource {
    * Query_type  response has atleast one answer of which      the resource record type matches the query type   any_type  response should contain
    * atleast one answer  anything  an empty answer is enough.
    * Enum options - DNS_QUERY_TYPE, DNS_ANY_TYPE, DNS_ANY_THING.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "DNS_QUERY_TYPE".
    * @return qtype
    */
@@ -65,7 +65,7 @@ public class HealthMonitorDNS extends AviRestResource {
    * Query_type  response has atleast one answer of which      the resource record type matches the query type   any_type  response should contain
    * atleast one answer  anything  an empty answer is enough.
    * Enum options - DNS_QUERY_TYPE, DNS_ANY_TYPE, DNS_ANY_THING.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "DNS_QUERY_TYPE".
    * @param qtype set the qtype.
    */
@@ -77,7 +77,7 @@ public class HealthMonitorDNS extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The dns monitor will query the dns server for the fully qualified name in this field.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return queryName
    */
@@ -89,7 +89,7 @@ public class HealthMonitorDNS extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The dns monitor will query the dns server for the fully qualified name in this field.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param queryName set the queryName.
    */
@@ -103,7 +103,7 @@ public class HealthMonitorDNS extends AviRestResource {
    * When no error is selected, a dns query will be marked failed is any error code is returned by the server.
    * With any selected, the monitor ignores error code in the responses.
    * Enum options - RCODE_NO_ERROR, RCODE_ANYTHING.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "RCODE_NO_ERROR".
    * @return rcode
    */
@@ -117,7 +117,7 @@ public class HealthMonitorDNS extends AviRestResource {
    * When no error is selected, a dns query will be marked failed is any error code is returned by the server.
    * With any selected, the monitor ignores error code in the responses.
    * Enum options - RCODE_NO_ERROR, RCODE_ANYTHING.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "RCODE_NO_ERROR".
    * @param rcode set the rcode.
    */
@@ -133,7 +133,7 @@ public class HealthMonitorDNS extends AviRestResource {
    * DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR,
    * DNS_RECORD_ANY.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "DNS_RECORD_A".
    * @return recordType
    */
@@ -149,7 +149,7 @@ public class HealthMonitorDNS extends AviRestResource {
    * DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR,
    * DNS_RECORD_ANY.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "DNS_RECORD_A".
    * @param recordType set the recordType.
    */
@@ -161,7 +161,7 @@ public class HealthMonitorDNS extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The resource record of the queried dns server's response for the request name must include the ip address defined in this field.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return responseString
    */
@@ -173,7 +173,7 @@ public class HealthMonitorDNS extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The resource record of the queried dns server's response for the request name must include the ip address defined in this field.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param responseString set the responseString.
    */

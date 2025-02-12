@@ -55,7 +55,7 @@ public class StatediffEvent extends AviRestResource {
    * Time taken to complete statediff event in seconds.
    * Field introduced in 21.1.3.
    * Unit is sec.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return duration
    */
@@ -69,7 +69,7 @@ public class StatediffEvent extends AviRestResource {
    * Time taken to complete statediff event in seconds.
    * Field introduced in 21.1.3.
    * Unit is sec.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param duration set the duration.
    */
@@ -82,7 +82,7 @@ public class StatediffEvent extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Task end time.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return endTime
    */
@@ -95,7 +95,7 @@ public class StatediffEvent extends AviRestResource {
    * This is the setter method to the attribute.
    * Task end time.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param endTime set the endTime.
    */
@@ -108,7 +108,7 @@ public class StatediffEvent extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Statediff event message if any.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return message
    */
@@ -121,7 +121,7 @@ public class StatediffEvent extends AviRestResource {
    * This is the setter method to the attribute.
    * Statediff event message if any.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param message set the message.
    */
@@ -134,7 +134,7 @@ public class StatediffEvent extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Task start time.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return startTime
    */
@@ -147,7 +147,7 @@ public class StatediffEvent extends AviRestResource {
    * This is the setter method to the attribute.
    * Task start time.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param startTime set the startTime.
    */
@@ -161,7 +161,7 @@ public class StatediffEvent extends AviRestResource {
    * Statediff event status.
    * Enum options - FB_INIT, FB_IN_PROGRESS, FB_COMPLETED, FB_FAILED, FB_COMPLETED_WITH_ERRORS.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "FB_INIT".
    * @return status
    */
@@ -175,7 +175,7 @@ public class StatediffEvent extends AviRestResource {
    * Statediff event status.
    * Enum options - FB_INIT, FB_IN_PROGRESS, FB_COMPLETED, FB_FAILED, FB_COMPLETED_WITH_ERRORS.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "FB_INIT".
    * @param status set the status.
    */
@@ -188,7 +188,7 @@ public class StatediffEvent extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of statediff task.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return taskName
    */
@@ -201,7 +201,7 @@ public class StatediffEvent extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of statediff task.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param taskName set the taskName.
    */

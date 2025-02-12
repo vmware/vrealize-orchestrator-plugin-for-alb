@@ -45,7 +45,7 @@ public class ConfigUserPasswordChangeRequest extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Client ip.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientIp
    */
@@ -57,7 +57,7 @@ public class ConfigUserPasswordChangeRequest extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Client ip.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientIp set the clientIp.
    */
@@ -69,7 +69,7 @@ public class ConfigUserPasswordChangeRequest extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Password link is sent or rejected.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return status
    */
@@ -81,7 +81,7 @@ public class ConfigUserPasswordChangeRequest extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Password link is sent or rejected.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param status set the status.
    */
@@ -93,7 +93,7 @@ public class ConfigUserPasswordChangeRequest extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Matched username of email address.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return user
    */
@@ -105,7 +105,7 @@ public class ConfigUserPasswordChangeRequest extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Matched username of email address.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param user set the user.
    */
@@ -117,7 +117,7 @@ public class ConfigUserPasswordChangeRequest extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Email address of user.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return userEmail
    */
@@ -129,7 +129,7 @@ public class ConfigUserPasswordChangeRequest extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Email address of user.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param userEmail set the userEmail.
    */

@@ -52,6 +52,10 @@ public class SeResources extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer numVcpus;
 
+    @JsonProperty("qat_mode")
+    @JsonInclude(Include.NON_NULL)
+    private String qatMode = "QAT_OFF";
+
     @JsonProperty("sockets")
     @JsonInclude(Include.NON_NULL)
     private Integer sockets;
@@ -60,7 +64,7 @@ public class SeResources extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return coresPerSocket
    */
@@ -71,7 +75,7 @@ public class SeResources extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param coresPerSocket set the coresPerSocket.
    */
@@ -82,7 +86,7 @@ public class SeResources extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return disk
    */
@@ -93,7 +97,7 @@ public class SeResources extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param disk set the disk.
    */
@@ -104,7 +108,7 @@ public class SeResources extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hyperThreading
    */
@@ -115,7 +119,7 @@ public class SeResources extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hyperThreading set the hyperThreading.
    */
@@ -128,7 +132,7 @@ public class SeResources extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Indicates that the se is running on a virtual machine.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hypervisorMode
    */
@@ -141,7 +145,7 @@ public class SeResources extends AviRestResource {
    * This is the setter method to the attribute.
    * Indicates that the se is running on a virtual machine.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hypervisorMode set the hypervisorMode.
    */
@@ -152,7 +156,7 @@ public class SeResources extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return memory
    */
@@ -163,7 +167,7 @@ public class SeResources extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param memory set the memory.
    */
@@ -176,7 +180,7 @@ public class SeResources extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Indicates the number of active datapath processes.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numDatapathProcesses
    */
@@ -189,7 +193,7 @@ public class SeResources extends AviRestResource {
    * This is the setter method to the attribute.
    * Indicates the number of active datapath processes.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numDatapathProcesses set the numDatapathProcesses.
    */
@@ -200,7 +204,7 @@ public class SeResources extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numVcpus
    */
@@ -211,7 +215,7 @@ public class SeResources extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numVcpus set the numVcpus.
    */
@@ -222,7 +226,35 @@ public class SeResources extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Usage of intel qat for crypto offloads.
+   * Enum options - QAT_OFF, QAT_SW_ACCELERATION, QAT_HW_OFFLOAD.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "QAT_OFF".
+   * @return qatMode
+   */
+  @VsoMethod
+  public String getQatMode() {
+    return qatMode;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Usage of intel qat for crypto offloads.
+   * Enum options - QAT_OFF, QAT_SW_ACCELERATION, QAT_HW_OFFLOAD.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "QAT_OFF".
+   * @param qatMode set the qatMode.
+   */
+  @VsoMethod
+  public void setQatMode(String  qatMode) {
+    this.qatMode = qatMode;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sockets
    */
@@ -233,7 +265,7 @@ public class SeResources extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sockets set the sockets.
    */
@@ -260,7 +292,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.sockets, objSeResources.sockets)&&
   Objects.equals(this.coresPerSocket, objSeResources.coresPerSocket)&&
   Objects.equals(this.hypervisorMode, objSeResources.hypervisorMode)&&
-  Objects.equals(this.numDatapathProcesses, objSeResources.numDatapathProcesses);
+  Objects.equals(this.numDatapathProcesses, objSeResources.numDatapathProcesses)&&
+  Objects.equals(this.qatMode, objSeResources.qatMode);
 }
 
 @Override
@@ -274,6 +307,7 @@ public String toString() {
         sb.append("    memory: ").append(toIndentedString(memory)).append("\n");
         sb.append("    numDatapathProcesses: ").append(toIndentedString(numDatapathProcesses)).append("\n");
         sb.append("    numVcpus: ").append(toIndentedString(numVcpus)).append("\n");
+        sb.append("    qatMode: ").append(toIndentedString(qatMode)).append("\n");
         sb.append("    sockets: ").append(toIndentedString(sockets)).append("\n");
       sb.append("}");
   return sb.toString();

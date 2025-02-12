@@ -57,10 +57,6 @@ public class AuthProfile extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private OAuthProfile oauthProfile;
 
-    @JsonProperty("pa_agent_ref")
-    @JsonInclude(Include.NON_NULL)
-    private String paAgentRef;
-
     @JsonProperty("saml")
     @JsonInclude(Include.NON_NULL)
     private SamlSettings saml;
@@ -89,7 +85,7 @@ public class AuthProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
@@ -100,7 +96,7 @@ public class AuthProfile extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
@@ -112,7 +108,7 @@ public class AuthProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Http user authentication params.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return http
    */
@@ -124,7 +120,7 @@ public class AuthProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Http user authentication params.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param http set the http.
    */
@@ -138,7 +134,7 @@ public class AuthProfile extends AviRestResource {
    * Jwtserverprofile to be used for authentication.
    * It is a reference to an object of type jwtserverprofile.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return jwtProfileRef
    */
@@ -152,7 +148,7 @@ public class AuthProfile extends AviRestResource {
    * Jwtserverprofile to be used for authentication.
    * It is a reference to an object of type jwtserverprofile.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param jwtProfileRef set the jwtProfileRef.
    */
@@ -164,7 +160,7 @@ public class AuthProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ldap server and directory settings.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ldap
    */
@@ -176,7 +172,7 @@ public class AuthProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ldap server and directory settings.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ldap set the ldap.
    */
@@ -189,8 +185,7 @@ public class AuthProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.6.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -203,8 +198,7 @@ public class AuthProfile extends AviRestResource {
    * This is the setter method. this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.6.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -217,8 +211,7 @@ public class AuthProfile extends AviRestResource {
    * This is the setter method this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.6.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -235,7 +228,7 @@ public class AuthProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the auth profile.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -247,7 +240,7 @@ public class AuthProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the auth profile.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -260,7 +253,7 @@ public class AuthProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Oauth profile - common endpoint information.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return oauthProfile
    */
@@ -273,7 +266,7 @@ public class AuthProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Oauth profile - common endpoint information.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param oauthProfile set the oauthProfile.
    */
@@ -284,37 +277,9 @@ public class AuthProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Pingaccessagent uuid.
-   * It is a reference to an object of type pingaccessagent.
-   * Field deprecated in 30.2.1.
-   * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-   * @return paAgentRef
-   */
-  @VsoMethod
-  public String getPaAgentRef() {
-    return paAgentRef;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Pingaccessagent uuid.
-   * It is a reference to an object of type pingaccessagent.
-   * Field deprecated in 30.2.1.
-   * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-   * @param paAgentRef set the paAgentRef.
-   */
-  @VsoMethod
-  public void setPaAgentRef(String  paAgentRef) {
-    this.paAgentRef = paAgentRef;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Saml settings.
    * Field introduced in 17.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return saml
    */
@@ -327,7 +292,7 @@ public class AuthProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Saml settings.
    * Field introduced in 17.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param saml set the saml.
    */
@@ -339,7 +304,7 @@ public class AuthProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Tacacs+ settings.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tacacsPlus
    */
@@ -351,7 +316,7 @@ public class AuthProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Tacacs+ settings.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tacacsPlus set the tacacsPlus.
    */
@@ -363,7 +328,7 @@ public class AuthProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -375,7 +340,7 @@ public class AuthProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
@@ -388,9 +353,9 @@ public class AuthProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Type of the auth profile.
    * Enum options - AUTH_PROFILE_LDAP, AUTH_PROFILE_TACACS_PLUS, AUTH_PROFILE_SAML, AUTH_PROFILE_PINGACCESS, AUTH_PROFILE_JWT, AUTH_PROFILE_OAUTH.
-   * Allowed in enterprise edition with any value, essentials edition(allowed values-
-   * auth_profile_ldap,auth_profile_tacacs_plus,auth_profile_saml,auth_profile_jwt,auth_profile_oauth), basic edition(allowed values-
-   * auth_profile_ldap,auth_profile_tacacs_plus,auth_profile_saml,auth_profile_jwt,auth_profile_oauth), enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed in essentials (allowed values- auth_profile_ldap,auth_profile_tacacs_plus,auth_profile_saml,auth_profile_jwt,auth_profile_oauth), basic
+   * (allowed values- auth_profile_ldap,auth_profile_tacacs_plus,auth_profile_saml,auth_profile_jwt,auth_profile_oauth) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
@@ -403,9 +368,9 @@ public class AuthProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Type of the auth profile.
    * Enum options - AUTH_PROFILE_LDAP, AUTH_PROFILE_TACACS_PLUS, AUTH_PROFILE_SAML, AUTH_PROFILE_PINGACCESS, AUTH_PROFILE_JWT, AUTH_PROFILE_OAUTH.
-   * Allowed in enterprise edition with any value, essentials edition(allowed values-
-   * auth_profile_ldap,auth_profile_tacacs_plus,auth_profile_saml,auth_profile_jwt,auth_profile_oauth), basic edition(allowed values-
-   * auth_profile_ldap,auth_profile_tacacs_plus,auth_profile_saml,auth_profile_jwt,auth_profile_oauth), enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed in essentials (allowed values- auth_profile_ldap,auth_profile_tacacs_plus,auth_profile_saml,auth_profile_jwt,auth_profile_oauth), basic
+   * (allowed values- auth_profile_ldap,auth_profile_tacacs_plus,auth_profile_saml,auth_profile_jwt,auth_profile_oauth) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */
@@ -436,7 +401,7 @@ public class AuthProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the auth profile.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -448,7 +413,7 @@ public class AuthProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the auth profile.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
@@ -478,7 +443,6 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.http, objAuthProfile.http)&&
   Objects.equals(this.tacacsPlus, objAuthProfile.tacacsPlus)&&
   Objects.equals(this.saml, objAuthProfile.saml)&&
-  Objects.equals(this.paAgentRef, objAuthProfile.paAgentRef)&&
   Objects.equals(this.jwtProfileRef, objAuthProfile.jwtProfileRef)&&
   Objects.equals(this.oauthProfile, objAuthProfile.oauthProfile)&&
   Objects.equals(this.markers, objAuthProfile.markers)&&
@@ -497,7 +461,6 @@ public String toString() {
         sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    oauthProfile: ").append(toIndentedString(oauthProfile)).append("\n");
-        sb.append("    paAgentRef: ").append(toIndentedString(paAgentRef)).append("\n");
         sb.append("    saml: ").append(toIndentedString(saml)).append("\n");
         sb.append("    tacacsPlus: ").append(toIndentedString(tacacsPlus)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");

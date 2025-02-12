@@ -51,7 +51,7 @@ public class ReportDetail extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the node such as cluster name, se group name or se name.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -64,7 +64,7 @@ public class ReportDetail extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the node such as cluster name, se group name or se name.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -78,7 +78,7 @@ public class ReportDetail extends AviRestResource {
    * Uuid identifier for the node such as cluster, se group or se.
    * It is a reference to an object of type upgradestatusinfo.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nodeRef
    */
@@ -92,7 +92,7 @@ public class ReportDetail extends AviRestResource {
    * Uuid identifier for the node such as cluster, se group or se.
    * It is a reference to an object of type upgradestatusinfo.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nodeRef set the nodeRef.
    */
@@ -106,7 +106,7 @@ public class ReportDetail extends AviRestResource {
    * Type of the system such as controller_cluster, se_group or se.
    * Enum options - NODE_CONTROLLER_CLUSTER, NODE_SE_GROUP, NODE_SE_TYPE.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nodeType
    */
@@ -120,7 +120,7 @@ public class ReportDetail extends AviRestResource {
    * Type of the system such as controller_cluster, se_group or se.
    * Enum options - NODE_CONTROLLER_CLUSTER, NODE_SE_GROUP, NODE_SE_TYPE.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nodeType set the nodeType.
    */
@@ -134,7 +134,7 @@ public class ReportDetail extends AviRestResource {
    * Cloud that this object belongs to.
    * It is a reference to an object of type cloud.
    * Field introduced in 22.1.6.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return objCloudRef
    */
@@ -148,7 +148,7 @@ public class ReportDetail extends AviRestResource {
    * Cloud that this object belongs to.
    * It is a reference to an object of type cloud.
    * Field introduced in 22.1.6.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param objCloudRef set the objCloudRef.
    */
@@ -161,7 +161,7 @@ public class ReportDetail extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * System readiness check detail.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return systemReadiness
    */
@@ -174,7 +174,7 @@ public class ReportDetail extends AviRestResource {
    * This is the setter method to the attribute.
    * System readiness check detail.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param systemReadiness set the systemReadiness.
    */

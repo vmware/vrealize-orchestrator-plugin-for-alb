@@ -46,7 +46,7 @@ public class GslbDnsInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * This field indicates that atleast one dns is active at the site.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsActive
    */
@@ -58,7 +58,7 @@ public class GslbDnsInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * This field indicates that atleast one dns is active at the site.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dnsActive set the dnsActive.
    */
@@ -69,7 +69,7 @@ public class GslbDnsInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsVsStates
    */
@@ -80,7 +80,7 @@ public class GslbDnsInfo extends AviRestResource {
 
   /**
    * This is the setter method. this will set the dnsVsStates
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsVsStates
    */
@@ -91,7 +91,7 @@ public class GslbDnsInfo extends AviRestResource {
 
   /**
    * This is the setter method this will set the dnsVsStates
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsVsStates
    */
@@ -108,9 +108,9 @@ public class GslbDnsInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * This field encapsulates the gs-status edge-triggered framework.
+   * Field deprecated in 31.1.1.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * @return gsStatus
    */
   @VsoMethod
@@ -121,9 +121,9 @@ public class GslbDnsInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * This field encapsulates the gs-status edge-triggered framework.
+   * Field deprecated in 31.1.1.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * @param gsStatus set the gsStatus.
    */
   @VsoMethod
@@ -134,9 +134,9 @@ public class GslbDnsInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * This field is used to track the retry attempts for se download errors.
+   * Field deprecated in 31.1.1.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * @return retryCount
    */
   @VsoMethod
@@ -147,9 +147,9 @@ public class GslbDnsInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * This field is used to track the retry attempts for se download errors.
+   * Field deprecated in 31.1.1.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * @param retryCount set the retryCount.
    */
   @VsoMethod

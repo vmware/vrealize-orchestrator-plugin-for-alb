@@ -46,7 +46,7 @@ public class RateLimiterEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Rate limiter error message.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorMessage
    */
@@ -59,7 +59,7 @@ public class RateLimiterEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Rate limiter error message.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param errorMessage set the errorMessage.
    */
@@ -72,7 +72,7 @@ public class RateLimiterEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the rate limiter.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rlResourceName
    */
@@ -85,7 +85,7 @@ public class RateLimiterEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the rate limiter.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rlResourceName set the rlResourceName.
    */
@@ -98,7 +98,7 @@ public class RateLimiterEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Rate limiter type.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rlResourceType
    */
@@ -111,7 +111,7 @@ public class RateLimiterEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Rate limiter type.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rlResourceType set the rlResourceType.
    */
@@ -124,7 +124,7 @@ public class RateLimiterEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Status.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return status
    */
@@ -137,7 +137,7 @@ public class RateLimiterEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Status.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param status set the status.
    */

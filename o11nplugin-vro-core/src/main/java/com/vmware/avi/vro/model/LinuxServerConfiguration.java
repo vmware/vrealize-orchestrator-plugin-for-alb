@@ -56,7 +56,7 @@ public class LinuxServerConfiguration extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hosts
    */
@@ -67,7 +67,7 @@ public class LinuxServerConfiguration extends AviRestResource {
 
   /**
    * This is the setter method. this will set the hosts
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hosts
    */
@@ -78,7 +78,7 @@ public class LinuxServerConfiguration extends AviRestResource {
 
   /**
    * This is the setter method this will set the hosts
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hosts
    */
@@ -96,7 +96,7 @@ public class LinuxServerConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Flag to notify the se's in this cloud have an inband management interface, this can be overridden at se host level by setting host_attr attr_key
    * as se_inband_mgmt with value of true or false.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return seInbandMgmt
    */
@@ -109,7 +109,7 @@ public class LinuxServerConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Flag to notify the se's in this cloud have an inband management interface, this can be overridden at se host level by setting host_attr attr_key
    * as se_inband_mgmt with value of true or false.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param seInbandMgmt set the seInbandMgmt.
    */
@@ -121,7 +121,7 @@ public class LinuxServerConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Se client logs disk path for cloud.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seLogDiskPath
    */
@@ -133,7 +133,7 @@ public class LinuxServerConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Se client logs disk path for cloud.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seLogDiskPath set the seLogDiskPath.
    */
@@ -145,7 +145,7 @@ public class LinuxServerConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Se client log disk size for cloud.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @return seLogDiskSizeGb
    */
@@ -157,7 +157,7 @@ public class LinuxServerConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Se client log disk size for cloud.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @param seLogDiskSizeGb set the seLogDiskSizeGb.
    */
@@ -169,7 +169,7 @@ public class LinuxServerConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Se system logs disk path for cloud.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seSysDiskPath
    */
@@ -181,7 +181,7 @@ public class LinuxServerConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Se system logs disk path for cloud.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seSysDiskPath set the seSysDiskPath.
    */
@@ -193,7 +193,7 @@ public class LinuxServerConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Se system logs disk size for cloud.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return seSysDiskSizeGb
    */
@@ -205,7 +205,7 @@ public class LinuxServerConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Se system logs disk size for cloud.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param seSysDiskSizeGb set the seSysDiskSizeGb.
    */
@@ -219,7 +219,7 @@ public class LinuxServerConfiguration extends AviRestResource {
    * Cloud connector user uuid for ssh to hosts.
    * It is a reference to an object of type cloudconnectoruser.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sshUserRef
    */
@@ -233,7 +233,7 @@ public class LinuxServerConfiguration extends AviRestResource {
    * Cloud connector user uuid for ssh to hosts.
    * It is a reference to an object of type cloudconnectoruser.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sshUserRef set the sshUserRef.
    */

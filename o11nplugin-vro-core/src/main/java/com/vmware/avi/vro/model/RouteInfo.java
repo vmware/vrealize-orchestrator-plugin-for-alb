@@ -48,7 +48,7 @@ public class RouteInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Host interface name.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ifName
    */
@@ -61,7 +61,7 @@ public class RouteInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Host interface name.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ifName set the ifName.
    */
@@ -75,7 +75,7 @@ public class RouteInfo extends AviRestResource {
    * Network namespace type used to add an route entry in a specific namespace.
    * Enum options - LOCAL_NAMESPACE, HOST_NAMESPACE, OTHER_NAMESPACE.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "HOST_NAMESPACE".
    * @return networkNamespace
    */
@@ -89,7 +89,7 @@ public class RouteInfo extends AviRestResource {
    * Network namespace type used to add an route entry in a specific namespace.
    * Enum options - LOCAL_NAMESPACE, HOST_NAMESPACE, OTHER_NAMESPACE.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "HOST_NAMESPACE".
    * @param networkNamespace set the networkNamespace.
    */
@@ -102,7 +102,7 @@ public class RouteInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Host nexthop ip address.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nexthop
    */
@@ -115,7 +115,7 @@ public class RouteInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Host nexthop ip address.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nexthop set the nexthop.
    */
@@ -128,7 +128,7 @@ public class RouteInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Host subnet address.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnet
    */
@@ -141,7 +141,7 @@ public class RouteInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Host subnet address.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnet set the subnet.
    */

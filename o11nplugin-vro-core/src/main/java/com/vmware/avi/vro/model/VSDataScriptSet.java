@@ -106,7 +106,7 @@ public class VSDataScriptSet extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Creator name.
    * Field introduced in 17.1.11,17.2.4.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return createdBy
    */
@@ -119,7 +119,7 @@ public class VSDataScriptSet extends AviRestResource {
    * This is the setter method to the attribute.
    * Creator name.
    * Field introduced in 17.1.11,17.2.4.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param createdBy set the createdBy.
    */
@@ -131,7 +131,7 @@ public class VSDataScriptSet extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Datascripts to execute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return datascript
    */
@@ -143,7 +143,7 @@ public class VSDataScriptSet extends AviRestResource {
   /**
    * This is the setter method. this will set the datascript
    * Datascripts to execute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return datascript
    */
@@ -155,7 +155,7 @@ public class VSDataScriptSet extends AviRestResource {
   /**
    * This is the setter method this will set the datascript
    * Datascripts to execute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return datascript
    */
@@ -171,7 +171,7 @@ public class VSDataScriptSet extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
@@ -182,7 +182,7 @@ public class VSDataScriptSet extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
@@ -196,7 +196,7 @@ public class VSDataScriptSet extends AviRestResource {
    * Geo location mapping database used by this datascriptset.
    * It is a reference to an object of type geodb.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return geoDbRef
    */
@@ -210,7 +210,7 @@ public class VSDataScriptSet extends AviRestResource {
    * Geo location mapping database used by this datascriptset.
    * It is a reference to an object of type geodb.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param geoDbRef set the geoDbRef.
    */
@@ -224,7 +224,7 @@ public class VSDataScriptSet extends AviRestResource {
    * Ip reputation database that can be used by datascript functions.
    * It is a reference to an object of type ipreputationdb.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipReputationDbRef
    */
@@ -238,7 +238,7 @@ public class VSDataScriptSet extends AviRestResource {
    * Ip reputation database that can be used by datascript functions.
    * It is a reference to an object of type ipreputationdb.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipReputationDbRef set the ipReputationDbRef.
    */
@@ -251,7 +251,7 @@ public class VSDataScriptSet extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of ip groups that could be referred by vsdatascriptset objects.
    * It is a reference to an object of type ipaddrgroup.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipgroupRefs
    */
@@ -264,7 +264,7 @@ public class VSDataScriptSet extends AviRestResource {
    * This is the setter method. this will set the ipgroupRefs
    * Uuid of ip groups that could be referred by vsdatascriptset objects.
    * It is a reference to an object of type ipaddrgroup.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipgroupRefs
    */
@@ -277,7 +277,7 @@ public class VSDataScriptSet extends AviRestResource {
    * This is the setter method this will set the ipgroupRefs
    * Uuid of ip groups that could be referred by vsdatascriptset objects.
    * It is a reference to an object of type ipaddrgroup.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipgroupRefs
    */
@@ -295,8 +295,7 @@ public class VSDataScriptSet extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -309,8 +308,7 @@ public class VSDataScriptSet extends AviRestResource {
    * This is the setter method. this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -323,8 +321,7 @@ public class VSDataScriptSet extends AviRestResource {
    * This is the setter method this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -341,7 +338,7 @@ public class VSDataScriptSet extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name for the virtual service datascript collection.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -353,7 +350,7 @@ public class VSDataScriptSet extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name for the virtual service datascript collection.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -367,7 +364,7 @@ public class VSDataScriptSet extends AviRestResource {
    * Uuids of pkiprofile objects that could be referred by vsdatascriptset objects.
    * It is a reference to an object of type pkiprofile.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pkiProfileRefs
    */
@@ -381,7 +378,7 @@ public class VSDataScriptSet extends AviRestResource {
    * Uuids of pkiprofile objects that could be referred by vsdatascriptset objects.
    * It is a reference to an object of type pkiprofile.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pkiProfileRefs
    */
@@ -395,7 +392,7 @@ public class VSDataScriptSet extends AviRestResource {
    * Uuids of pkiprofile objects that could be referred by vsdatascriptset objects.
    * It is a reference to an object of type pkiprofile.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pkiProfileRefs
    */
@@ -413,7 +410,7 @@ public class VSDataScriptSet extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of pool groups that could be referred by vsdatascriptset objects.
    * It is a reference to an object of type poolgroup.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolGroupRefs
    */
@@ -426,7 +423,7 @@ public class VSDataScriptSet extends AviRestResource {
    * This is the setter method. this will set the poolGroupRefs
    * Uuid of pool groups that could be referred by vsdatascriptset objects.
    * It is a reference to an object of type poolgroup.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolGroupRefs
    */
@@ -439,7 +436,7 @@ public class VSDataScriptSet extends AviRestResource {
    * This is the setter method this will set the poolGroupRefs
    * Uuid of pool groups that could be referred by vsdatascriptset objects.
    * It is a reference to an object of type poolgroup.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolGroupRefs
    */
@@ -457,7 +454,7 @@ public class VSDataScriptSet extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of pools that could be referred by vsdatascriptset objects.
    * It is a reference to an object of type pool.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolRefs
    */
@@ -470,7 +467,7 @@ public class VSDataScriptSet extends AviRestResource {
    * This is the setter method. this will set the poolRefs
    * Uuid of pools that could be referred by vsdatascriptset objects.
    * It is a reference to an object of type pool.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolRefs
    */
@@ -483,7 +480,7 @@ public class VSDataScriptSet extends AviRestResource {
    * This is the setter method this will set the poolRefs
    * Uuid of pools that could be referred by vsdatascriptset objects.
    * It is a reference to an object of type pool.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolRefs
    */
@@ -502,7 +499,7 @@ public class VSDataScriptSet extends AviRestResource {
    * List of protocol parsers that could be referred by vsdatascriptset objects.
    * It is a reference to an object of type protocolparser.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return protocolParserRefs
    */
@@ -516,7 +513,7 @@ public class VSDataScriptSet extends AviRestResource {
    * List of protocol parsers that could be referred by vsdatascriptset objects.
    * It is a reference to an object of type protocolparser.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return protocolParserRefs
    */
@@ -530,7 +527,7 @@ public class VSDataScriptSet extends AviRestResource {
    * List of protocol parsers that could be referred by vsdatascriptset objects.
    * It is a reference to an object of type protocolparser.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return protocolParserRefs
    */
@@ -549,7 +546,7 @@ public class VSDataScriptSet extends AviRestResource {
    * The rate limit definitions needed for this datascript.
    * The name is composed of the virtual service name and the datascript name.
    * Field introduced in 18.2.9.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rateLimiters
    */
@@ -563,7 +560,7 @@ public class VSDataScriptSet extends AviRestResource {
    * The rate limit definitions needed for this datascript.
    * The name is composed of the virtual service name and the datascript name.
    * Field introduced in 18.2.9.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rateLimiters
    */
@@ -577,7 +574,7 @@ public class VSDataScriptSet extends AviRestResource {
    * The rate limit definitions needed for this datascript.
    * The name is composed of the virtual service name and the datascript name.
    * Field introduced in 18.2.9.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rateLimiters
    */
@@ -596,7 +593,7 @@ public class VSDataScriptSet extends AviRestResource {
    * Uuids of sslkeyandcertificate objects that could be referred by vsdatascriptset objects.
    * It is a reference to an object of type sslkeyandcertificate.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslKeyCertificateRefs
    */
@@ -610,7 +607,7 @@ public class VSDataScriptSet extends AviRestResource {
    * Uuids of sslkeyandcertificate objects that could be referred by vsdatascriptset objects.
    * It is a reference to an object of type sslkeyandcertificate.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslKeyCertificateRefs
    */
@@ -624,7 +621,7 @@ public class VSDataScriptSet extends AviRestResource {
    * Uuids of sslkeyandcertificate objects that could be referred by vsdatascriptset objects.
    * It is a reference to an object of type sslkeyandcertificate.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslKeyCertificateRefs
    */
@@ -643,7 +640,7 @@ public class VSDataScriptSet extends AviRestResource {
    * Uuids of sslprofile objects that could be referred by vsdatascriptset objects.
    * It is a reference to an object of type sslprofile.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslProfileRefs
    */
@@ -657,7 +654,7 @@ public class VSDataScriptSet extends AviRestResource {
    * Uuids of sslprofile objects that could be referred by vsdatascriptset objects.
    * It is a reference to an object of type sslprofile.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslProfileRefs
    */
@@ -671,7 +668,7 @@ public class VSDataScriptSet extends AviRestResource {
    * Uuids of sslprofile objects that could be referred by vsdatascriptset objects.
    * It is a reference to an object of type sslprofile.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslProfileRefs
    */
@@ -689,7 +686,7 @@ public class VSDataScriptSet extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of string groups that could be referred by vsdatascriptset objects.
    * It is a reference to an object of type stringgroup.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stringGroupRefs
    */
@@ -702,7 +699,7 @@ public class VSDataScriptSet extends AviRestResource {
    * This is the setter method. this will set the stringGroupRefs
    * Uuid of string groups that could be referred by vsdatascriptset objects.
    * It is a reference to an object of type stringgroup.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stringGroupRefs
    */
@@ -715,7 +712,7 @@ public class VSDataScriptSet extends AviRestResource {
    * This is the setter method this will set the stringGroupRefs
    * Uuid of string groups that could be referred by vsdatascriptset objects.
    * It is a reference to an object of type stringgroup.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stringGroupRefs
    */
@@ -732,7 +729,7 @@ public class VSDataScriptSet extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -744,7 +741,7 @@ public class VSDataScriptSet extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
@@ -775,7 +772,7 @@ public class VSDataScriptSet extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the virtual service datascript collection.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -787,7 +784,7 @@ public class VSDataScriptSet extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the virtual service datascript collection.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */

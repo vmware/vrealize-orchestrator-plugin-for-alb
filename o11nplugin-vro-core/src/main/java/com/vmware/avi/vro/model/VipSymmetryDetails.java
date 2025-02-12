@@ -66,7 +66,7 @@ public class VipSymmetryDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of ses assigned across all virtual services sharing this vip.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxNumSeAssigned
    */
@@ -79,7 +79,7 @@ public class VipSymmetryDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of ses assigned across all virtual services sharing this vip.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxNumSeAssigned set the maxNumSeAssigned.
    */
@@ -92,7 +92,7 @@ public class VipSymmetryDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of ses requested across all virtual services sharing this vip.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxNumSeRequested
    */
@@ -105,7 +105,7 @@ public class VipSymmetryDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of ses requested across all virtual services sharing this vip.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxNumSeRequested set the maxNumSeRequested.
    */
@@ -118,7 +118,7 @@ public class VipSymmetryDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Minimum number of ses assigned across all virtual services sharing this vip.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return minNumSeAssigned
    */
@@ -131,7 +131,7 @@ public class VipSymmetryDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Minimum number of ses assigned across all virtual services sharing this vip.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param minNumSeAssigned set the minNumSeAssigned.
    */
@@ -144,7 +144,7 @@ public class VipSymmetryDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Minimum number of ses requested across all virtual services sharing this vip.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return minNumSeRequested
    */
@@ -157,7 +157,7 @@ public class VipSymmetryDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Minimum number of ses requested across all virtual services sharing this vip.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param minNumSeRequested set the minNumSeRequested.
    */
@@ -170,7 +170,7 @@ public class VipSymmetryDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of virtual services sharing vsvip.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numVs
    */
@@ -183,7 +183,7 @@ public class VipSymmetryDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of virtual services sharing vsvip.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numVs set the numVs.
    */
@@ -196,7 +196,7 @@ public class VipSymmetryDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Reason for symmetric/asymmetric shared vip event.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
@@ -209,7 +209,7 @@ public class VipSymmetryDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Reason for symmetric/asymmetric shared vip event.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
@@ -222,7 +222,7 @@ public class VipSymmetryDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Vip id.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipId
    */
@@ -235,7 +235,7 @@ public class VipSymmetryDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Vip id.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vipId set the vipId.
    */
@@ -248,7 +248,7 @@ public class VipSymmetryDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Vsvip name.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsvipName
    */
@@ -261,7 +261,7 @@ public class VipSymmetryDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Vsvip name.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsvipName set the vsvipName.
    */
@@ -274,7 +274,7 @@ public class VipSymmetryDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Vsvip uuid.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsvipUuid
    */
@@ -287,7 +287,7 @@ public class VipSymmetryDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Vsvip uuid.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsvipUuid set the vsvipUuid.
    */

@@ -45,7 +45,7 @@ public class HealthMonitorExternal extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Command script provided inline.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return commandCode
    */
@@ -57,7 +57,7 @@ public class HealthMonitorExternal extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Command script provided inline.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param commandCode set the commandCode.
    */
@@ -69,7 +69,7 @@ public class HealthMonitorExternal extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Optional arguments to feed into the script.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return commandParameters
    */
@@ -81,7 +81,7 @@ public class HealthMonitorExternal extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Optional arguments to feed into the script.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param commandParameters set the commandParameters.
    */
@@ -93,7 +93,7 @@ public class HealthMonitorExternal extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Path of external health monitor script.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return commandPath
    */
@@ -105,7 +105,7 @@ public class HealthMonitorExternal extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Path of external health monitor script.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param commandPath set the commandPath.
    */
@@ -117,7 +117,7 @@ public class HealthMonitorExternal extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Environment variables to be fed into the script.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return commandVariables
    */
@@ -129,7 +129,7 @@ public class HealthMonitorExternal extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Environment variables to be fed into the script.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param commandVariables set the commandVariables.
    */

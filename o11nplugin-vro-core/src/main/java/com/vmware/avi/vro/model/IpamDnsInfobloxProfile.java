@@ -71,7 +71,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dns view used for infoblox host record creation, if this field is not configured by the user, then its value will be set to 'default'.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsView
    */
@@ -83,7 +83,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dns view used for infoblox host record creation, if this field is not configured by the user, then its value will be set to 'default'.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dnsView set the dnsView.
    */
@@ -96,7 +96,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Custom parameters that will passed to the infoblox provider as extensible attributes.
    * Field introduced in 18.2.7, 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return extensibleAttributes
    */
@@ -109,7 +109,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
    * This is the setter method. this will set the extensibleAttributes
    * Custom parameters that will passed to the infoblox provider as extensible attributes.
    * Field introduced in 18.2.7, 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return extensibleAttributes
    */
@@ -122,7 +122,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
    * This is the setter method this will set the extensibleAttributes
    * Custom parameters that will passed to the infoblox provider as extensible attributes.
    * Field introduced in 18.2.7, 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return extensibleAttributes
    */
@@ -140,7 +140,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ipv6 address of infoblox appliance.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip6Address
    */
@@ -153,7 +153,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Ipv6 address of infoblox appliance.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip6Address set the ip6Address.
    */
@@ -165,7 +165,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ipv4 address of infoblox appliance.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAddress
    */
@@ -177,7 +177,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ipv4 address of infoblox appliance.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipAddress set the ipAddress.
    */
@@ -189,7 +189,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Network view used for infoblox host record creation, if this field is not configured by the user, then its value will be set to 'default'.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkView
    */
@@ -201,7 +201,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Network view used for infoblox host record creation, if this field is not configured by the user, then its value will be set to 'default'.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param networkView set the networkView.
    */
@@ -213,7 +213,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Password for api access for infoblox appliance.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return password
    */
@@ -225,7 +225,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Password for api access for infoblox appliance.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param password set the password.
    */
@@ -238,7 +238,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Subnets to use for infoblox ip allocation.
    * Field introduced in 18.2.8, 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableAllocSubnets
    */
@@ -251,7 +251,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
    * This is the setter method. this will set the usableAllocSubnets
    * Subnets to use for infoblox ip allocation.
    * Field introduced in 18.2.8, 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableAllocSubnets
    */
@@ -264,7 +264,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
    * This is the setter method this will set the usableAllocSubnets
    * Subnets to use for infoblox ip allocation.
    * Field introduced in 18.2.8, 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableAllocSubnets
    */
@@ -281,7 +281,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Usable domains to pick from infoblox.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableDomains
    */
@@ -293,7 +293,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
   /**
    * This is the setter method. this will set the usableDomains
    * Usable domains to pick from infoblox.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableDomains
    */
@@ -305,7 +305,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
   /**
    * This is the setter method this will set the usableDomains
    * Usable domains to pick from infoblox.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableDomains
    */
@@ -322,7 +322,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Username for api access for infoblox appliance.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return username
    */
@@ -334,7 +334,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Username for api access for infoblox appliance.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param username set the username.
    */
@@ -346,7 +346,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Wapi version.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "2.0".
    * @return wapiVersion
    */
@@ -358,7 +358,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Wapi version.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "2.0".
    * @param wapiVersion set the wapiVersion.
    */

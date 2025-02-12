@@ -58,7 +58,7 @@ public class FederationCheckpoint extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Date when the checkpoint was created.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return date
    */
@@ -71,7 +71,7 @@ public class FederationCheckpoint extends AviRestResource {
    * This is the setter method to the attribute.
    * Date when the checkpoint was created.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param date set the date.
    */
@@ -84,7 +84,7 @@ public class FederationCheckpoint extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Description for this checkpoint.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
@@ -97,7 +97,7 @@ public class FederationCheckpoint extends AviRestResource {
    * This is the setter method to the attribute.
    * Description for this checkpoint.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
@@ -112,7 +112,7 @@ public class FederationCheckpoint extends AviRestResource {
    * If the field is set to false, then the object is visible within the controller-cluster and its associated service-engines.
    * If the field is set to true, then the object is replicated across the federation.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return isFederated
    */
@@ -127,7 +127,7 @@ public class FederationCheckpoint extends AviRestResource {
    * If the field is set to false, then the object is visible within the controller-cluster and its associated service-engines.
    * If the field is set to true, then the object is replicated across the federation.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param isFederated set the isFederated.
    */
@@ -140,7 +140,7 @@ public class FederationCheckpoint extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the checkpoint.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -153,7 +153,7 @@ public class FederationCheckpoint extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the checkpoint.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -167,7 +167,7 @@ public class FederationCheckpoint extends AviRestResource {
    * Tenant that this object belongs to.
    * It is a reference to an object of type tenant.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -181,7 +181,7 @@ public class FederationCheckpoint extends AviRestResource {
    * Tenant that this object belongs to.
    * It is a reference to an object of type tenant.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
@@ -213,7 +213,7 @@ public class FederationCheckpoint extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the checkpoint.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -226,7 +226,7 @@ public class FederationCheckpoint extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the checkpoint.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */

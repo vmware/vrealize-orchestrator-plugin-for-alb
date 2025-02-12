@@ -40,6 +40,10 @@ public class HealthMonitorSSLAttributes extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String sslProfileRef;
 
+    @JsonProperty("use_pool_sni_server_name")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean usePoolSniServerName;
+
 
 
   /**
@@ -47,7 +51,7 @@ public class HealthMonitorSSLAttributes extends AviRestResource {
    * Pki profile used to validate the ssl certificate presented by a server.
    * It is a reference to an object of type pkiprofile.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pkiProfileRef
    */
@@ -61,7 +65,7 @@ public class HealthMonitorSSLAttributes extends AviRestResource {
    * Pki profile used to validate the ssl certificate presented by a server.
    * It is a reference to an object of type pkiprofile.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pkiProfileRef set the pkiProfileRef.
    */
@@ -74,7 +78,7 @@ public class HealthMonitorSSLAttributes extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Fully qualified dns hostname which will be used in the tls sni extension in server connections indicating sni is enabled.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverName
    */
@@ -87,7 +91,7 @@ public class HealthMonitorSSLAttributes extends AviRestResource {
    * This is the setter method to the attribute.
    * Fully qualified dns hostname which will be used in the tls sni extension in server connections indicating sni is enabled.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverName set the serverName.
    */
@@ -101,7 +105,7 @@ public class HealthMonitorSSLAttributes extends AviRestResource {
    * Service engines will present this ssl certificate to the server.
    * It is a reference to an object of type sslkeyandcertificate.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslKeyAndCertificateRef
    */
@@ -115,7 +119,7 @@ public class HealthMonitorSSLAttributes extends AviRestResource {
    * Service engines will present this ssl certificate to the server.
    * It is a reference to an object of type sslkeyandcertificate.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sslKeyAndCertificateRef set the sslKeyAndCertificateRef.
    */
@@ -129,7 +133,7 @@ public class HealthMonitorSSLAttributes extends AviRestResource {
    * Ssl profile defines ciphers and ssl versions to be used for healthmonitor traffic to the back-end servers.
    * It is a reference to an object of type sslprofile.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslProfileRef
    */
@@ -143,13 +147,41 @@ public class HealthMonitorSSLAttributes extends AviRestResource {
    * Ssl profile defines ciphers and ssl versions to be used for healthmonitor traffic to the back-end servers.
    * It is a reference to an object of type sslprofile.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sslProfileRef set the sslProfileRef.
    */
   @VsoMethod
   public void setSslProfileRef(String  sslProfileRef) {
     this.sslProfileRef = sslProfileRef;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Use the sni server name configured in the pool.
+   * This will override the server_name configured in the health monitor.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return usePoolSniServerName
+   */
+  @VsoMethod
+  public Boolean getUsePoolSniServerName() {
+    return usePoolSniServerName;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Use the sni server name configured in the pool.
+   * This will override the server_name configured in the health monitor.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param usePoolSniServerName set the usePoolSniServerName.
+   */
+  @VsoMethod
+  public void setUsePoolSniServerName(Boolean  usePoolSniServerName) {
+    this.usePoolSniServerName = usePoolSniServerName;
   }
 
 
@@ -166,7 +198,8 @@ public boolean equals(java.lang.Object o) {
   return   Objects.equals(this.sslProfileRef, objHealthMonitorSSLAttributes.sslProfileRef)&&
   Objects.equals(this.pkiProfileRef, objHealthMonitorSSLAttributes.pkiProfileRef)&&
   Objects.equals(this.sslKeyAndCertificateRef, objHealthMonitorSSLAttributes.sslKeyAndCertificateRef)&&
-  Objects.equals(this.serverName, objHealthMonitorSSLAttributes.serverName);
+  Objects.equals(this.serverName, objHealthMonitorSSLAttributes.serverName)&&
+  Objects.equals(this.usePoolSniServerName, objHealthMonitorSSLAttributes.usePoolSniServerName);
 }
 
 @Override
@@ -177,6 +210,7 @@ public String toString() {
         sb.append("    serverName: ").append(toIndentedString(serverName)).append("\n");
         sb.append("    sslKeyAndCertificateRef: ").append(toIndentedString(sslKeyAndCertificateRef)).append("\n");
         sb.append("    sslProfileRef: ").append(toIndentedString(sslProfileRef)).append("\n");
+        sb.append("    usePoolSniServerName: ").append(toIndentedString(usePoolSniServerName)).append("\n");
       sb.append("}");
   return sb.toString();
 }

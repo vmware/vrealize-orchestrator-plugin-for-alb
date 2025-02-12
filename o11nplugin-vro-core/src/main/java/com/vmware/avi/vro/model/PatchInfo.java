@@ -42,7 +42,7 @@ public class PatchInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Patch type describes the controller or se patch type.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return patchType
    */
@@ -55,7 +55,7 @@ public class PatchInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Patch type describes the controller or se patch type.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param patchType set the patchType.
    */
@@ -68,7 +68,7 @@ public class PatchInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This variable tells whether reboot has to be performed.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reboot
    */
@@ -81,7 +81,7 @@ public class PatchInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * This variable tells whether reboot has to be performed.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reboot set the reboot.
    */
@@ -94,7 +94,7 @@ public class PatchInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This variable is for full list of patch reboot details.
    * Field introduced in 18.2.8, 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rebootList
    */
@@ -107,7 +107,7 @@ public class PatchInfo extends AviRestResource {
    * This is the setter method. this will set the rebootList
    * This variable is for full list of patch reboot details.
    * Field introduced in 18.2.8, 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rebootList
    */
@@ -120,7 +120,7 @@ public class PatchInfo extends AviRestResource {
    * This is the setter method this will set the rebootList
    * This variable is for full list of patch reboot details.
    * Field introduced in 18.2.8, 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rebootList
    */

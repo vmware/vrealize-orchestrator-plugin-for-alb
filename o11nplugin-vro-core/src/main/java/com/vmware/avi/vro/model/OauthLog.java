@@ -77,7 +77,7 @@ public class OauthLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Authentication policy rule match.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authnRuleMatch
    */
@@ -90,7 +90,7 @@ public class OauthLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Authentication policy rule match.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param authnRuleMatch set the authnRuleMatch.
    */
@@ -103,7 +103,7 @@ public class OauthLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Authorization policy rule match.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authzRuleMatch
    */
@@ -116,7 +116,7 @@ public class OauthLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Authorization policy rule match.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param authzRuleMatch set the authzRuleMatch.
    */
@@ -129,7 +129,7 @@ public class OauthLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Oauth sessioncookie expired.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return isSessionCookieExpired
    */
@@ -142,7 +142,7 @@ public class OauthLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Oauth sessioncookie expired.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param isSessionCookieExpired set the isSessionCookieExpired.
    */
@@ -155,7 +155,7 @@ public class OauthLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Subrequest info related to fetching jwks keys from jwks uri endpoint.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return jwksSubrequest
    */
@@ -168,7 +168,7 @@ public class OauthLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Subrequest info related to fetching jwks keys from jwks uri endpoint.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param jwksSubrequest set the jwksSubrequest.
    */
@@ -185,7 +185,7 @@ public class OauthLog extends AviRestResource {
    * OAUTH_STATE_REFRESH_TOKEN_REQUEST, OAUTH_STATE_REFRESH_TOKEN_RESPONSE, OAUTH_STATE_JWKS_URI_REQUEST, OAUTH_STATE_JWKS_URI_RESPONSE,
    * OAUTH_STATE_USERINFO_REQUEST, OAUTH_STATE_USERINFO_RESPONSE.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return oauthState
    */
@@ -202,7 +202,7 @@ public class OauthLog extends AviRestResource {
    * OAUTH_STATE_REFRESH_TOKEN_REQUEST, OAUTH_STATE_REFRESH_TOKEN_RESPONSE, OAUTH_STATE_JWKS_URI_REQUEST, OAUTH_STATE_JWKS_URI_RESPONSE,
    * OAUTH_STATE_USERINFO_REQUEST, OAUTH_STATE_USERINFO_RESPONSE.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param oauthState set the oauthState.
    */
@@ -215,7 +215,7 @@ public class OauthLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Oauth request state to avoid csrf atatcks.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return state
    */
@@ -228,7 +228,7 @@ public class OauthLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Oauth request state to avoid csrf atatcks.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param state set the state.
    */
@@ -241,7 +241,7 @@ public class OauthLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Subrequest info related to the code exchange flow.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tokenExchangeSubrequest
    */
@@ -254,7 +254,7 @@ public class OauthLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Subrequest info related to the code exchange flow.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tokenExchangeSubrequest set the tokenExchangeSubrequest.
    */
@@ -267,7 +267,7 @@ public class OauthLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Subrequest info related to token introspection.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tokenIntrospectionSubrequest
    */
@@ -280,7 +280,7 @@ public class OauthLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Subrequest info related to token introspection.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tokenIntrospectionSubrequest set the tokenIntrospectionSubrequest.
    */
@@ -293,7 +293,7 @@ public class OauthLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Subrequest info related to refresh access token flow.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tokenRefreshSubrequest
    */
@@ -306,7 +306,7 @@ public class OauthLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Subrequest info related to refresh access token flow.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tokenRefreshSubrequest set the tokenRefreshSubrequest.
    */
@@ -319,7 +319,7 @@ public class OauthLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Subrequest info related to fetching userinfo from userinfo endpoint.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return userinfoSubrequest
    */
@@ -332,7 +332,7 @@ public class OauthLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Subrequest info related to fetching userinfo from userinfo endpoint.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param userinfoSubrequest set the userinfoSubrequest.
    */

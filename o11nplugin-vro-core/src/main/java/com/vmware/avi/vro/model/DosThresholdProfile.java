@@ -37,7 +37,7 @@ public class DosThresholdProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Attack type, min and max values for dos attack detection.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return threshInfo
    */
@@ -49,7 +49,7 @@ public class DosThresholdProfile extends AviRestResource {
   /**
    * This is the setter method. this will set the threshInfo
    * Attack type, min and max values for dos attack detection.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return threshInfo
    */
@@ -61,7 +61,7 @@ public class DosThresholdProfile extends AviRestResource {
   /**
    * This is the setter method this will set the threshInfo
    * Attack type, min and max values for dos attack detection.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return threshInfo
    */
@@ -79,7 +79,7 @@ public class DosThresholdProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Timer value in seconds to collect dos attack metrics based on threshold on the service engine for this virtual service.
    * Unit is sec.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @return threshPeriod
    */
@@ -92,7 +92,7 @@ public class DosThresholdProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Timer value in seconds to collect dos attack metrics based on threshold on the service engine for this virtual service.
    * Unit is sec.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @param threshPeriod set the threshPeriod.
    */

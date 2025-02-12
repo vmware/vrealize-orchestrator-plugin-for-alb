@@ -52,7 +52,7 @@ public class PatchSystemParams extends AviRestResource {
    * Image uuid for identifying controller patch image.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerPatchRef
    */
@@ -66,7 +66,7 @@ public class PatchSystemParams extends AviRestResource {
    * Image uuid for identifying controller patch image.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param controllerPatchRef set the controllerPatchRef.
    */
@@ -79,7 +79,7 @@ public class PatchSystemParams extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This flag is set to run the pre-checks without the subsequent upgrade operations.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return prechecksOnly
    */
@@ -92,7 +92,7 @@ public class PatchSystemParams extends AviRestResource {
    * This is the setter method to the attribute.
    * This flag is set to run the pre-checks without the subsequent upgrade operations.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param prechecksOnly set the prechecksOnly.
    */
@@ -105,7 +105,7 @@ public class PatchSystemParams extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Se group options for the patch operations.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGroupOptions
    */
@@ -118,7 +118,7 @@ public class PatchSystemParams extends AviRestResource {
    * This is the setter method to the attribute.
    * Se group options for the patch operations.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seGroupOptions set the seGroupOptions.
    */
@@ -132,7 +132,7 @@ public class PatchSystemParams extends AviRestResource {
    * Image uuid for identifying se patch image.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sePatchRef
    */
@@ -146,7 +146,7 @@ public class PatchSystemParams extends AviRestResource {
    * Image uuid for identifying se patch image.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sePatchRef set the sePatchRef.
    */
@@ -159,7 +159,7 @@ public class PatchSystemParams extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This is flag when set as true skips few optional must checks.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return skipWarnings
    */
@@ -172,7 +172,7 @@ public class PatchSystemParams extends AviRestResource {
    * This is the setter method to the attribute.
    * This is flag when set as true skips few optional must checks.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param skipWarnings set the skipWarnings.
    */

@@ -43,7 +43,7 @@ public class AzureServicePrincipalCredentials extends AviRestResource {
    * Application id created for avi controller.
    * Required for application id based authentication only.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return applicationId
    */
@@ -57,7 +57,7 @@ public class AzureServicePrincipalCredentials extends AviRestResource {
    * Application id created for avi controller.
    * Required for application id based authentication only.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param applicationId set the applicationId.
    */
@@ -71,7 +71,7 @@ public class AzureServicePrincipalCredentials extends AviRestResource {
    * Authentication token created for the avi controller application.
    * Required for application id based authentication only.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authenticationToken
    */
@@ -85,7 +85,7 @@ public class AzureServicePrincipalCredentials extends AviRestResource {
    * Authentication token created for the avi controller application.
    * Required for application id based authentication only.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param authenticationToken set the authenticationToken.
    */
@@ -99,7 +99,7 @@ public class AzureServicePrincipalCredentials extends AviRestResource {
    * Tenant id for the subscription.
    * Required for application id based authentication only.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantId
    */
@@ -113,7 +113,7 @@ public class AzureServicePrincipalCredentials extends AviRestResource {
    * Tenant id for the subscription.
    * Required for application id based authentication only.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantId set the tenantId.
    */

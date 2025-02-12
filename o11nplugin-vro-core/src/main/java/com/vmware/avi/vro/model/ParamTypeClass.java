@@ -36,8 +36,9 @@ public class ParamTypeClass extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Indicates the number of hits for this parameter type.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hits
    */
@@ -48,8 +49,9 @@ public class ParamTypeClass extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
+   * Indicates the number of hits for this parameter type.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hits set the hits.
    */
@@ -60,10 +62,11 @@ public class ParamTypeClass extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Indicates the type of the parameter.
    * Enum options - PARAM_FLAG, PARAM_DIGITS, PARAM_HEXDIGITS, PARAM_WORD, PARAM_SAFE_TEXT, PARAM_SAFE_TEXT_MULTILINE, PARAM_TEXT,
    * PARAM_TEXT_MULTILINE, PARAM_ALL.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
@@ -74,10 +77,11 @@ public class ParamTypeClass extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
+   * Indicates the type of the parameter.
    * Enum options - PARAM_FLAG, PARAM_DIGITS, PARAM_HEXDIGITS, PARAM_WORD, PARAM_SAFE_TEXT, PARAM_SAFE_TEXT_MULTILINE, PARAM_TEXT,
    * PARAM_TEXT_MULTILINE, PARAM_ALL.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */

@@ -49,7 +49,7 @@ public class BotEvaluationResult extends AviRestResource {
    * Enum options - BOT_DECIDER_CONSOLIDATION, BOT_DECIDER_USER_AGENT, BOT_DECIDER_IP_REPUTATION, BOT_DECIDER_IP_NETWORK_LOCATION,
    * BOT_DECIDER_CLIENT_BEHAVIOR.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return component
    */
@@ -64,7 +64,7 @@ public class BotEvaluationResult extends AviRestResource {
    * Enum options - BOT_DECIDER_CONSOLIDATION, BOT_DECIDER_USER_AGENT, BOT_DECIDER_IP_REPUTATION, BOT_DECIDER_IP_NETWORK_LOCATION,
    * BOT_DECIDER_CLIENT_BEHAVIOR.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param component set the component.
    */
@@ -78,7 +78,7 @@ public class BotEvaluationResult extends AviRestResource {
    * The confidence of this evaluation.
    * Enum options - LOW_CONFIDENCE, MEDIUM_CONFIDENCE, HIGH_CONFIDENCE.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return confidence
    */
@@ -92,7 +92,7 @@ public class BotEvaluationResult extends AviRestResource {
    * The confidence of this evaluation.
    * Enum options - LOW_CONFIDENCE, MEDIUM_CONFIDENCE, HIGH_CONFIDENCE.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param confidence set the confidence.
    */
@@ -105,7 +105,7 @@ public class BotEvaluationResult extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The resulting bot identification.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return identification
    */
@@ -118,7 +118,7 @@ public class BotEvaluationResult extends AviRestResource {
    * This is the setter method to the attribute.
    * The resulting bot identification.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param identification set the identification.
    */
@@ -131,7 +131,7 @@ public class BotEvaluationResult extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Additional notes for this result.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return notes
    */
@@ -144,7 +144,7 @@ public class BotEvaluationResult extends AviRestResource {
    * This is the setter method. this will set the notes
    * Additional notes for this result.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return notes
    */
@@ -157,7 +157,7 @@ public class BotEvaluationResult extends AviRestResource {
    * This is the setter method this will set the notes
    * Additional notes for this result.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return notes
    */

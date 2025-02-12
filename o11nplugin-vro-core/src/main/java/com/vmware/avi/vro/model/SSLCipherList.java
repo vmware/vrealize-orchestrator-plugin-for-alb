@@ -46,7 +46,7 @@ public class SSLCipherList extends AviRestResource {
    * AVI_TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA...
    * Field introduced in 18.1.4, 18.2.1.
    * Maximum of 255 items allowed.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return identifiedCiphers
    */
@@ -67,7 +67,7 @@ public class SSLCipherList extends AviRestResource {
    * AVI_TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA...
    * Field introduced in 18.1.4, 18.2.1.
    * Maximum of 255 items allowed.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return identifiedCiphers
    */
@@ -88,7 +88,7 @@ public class SSLCipherList extends AviRestResource {
    * AVI_TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA...
    * Field introduced in 18.1.4, 18.2.1.
    * Maximum of 255 items allowed.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return identifiedCiphers
    */
@@ -108,7 +108,7 @@ public class SSLCipherList extends AviRestResource {
    * The ciphers are represented by their rfc 2 byte hex value.
    * Field introduced in 18.1.4, 18.2.1.
    * Maximum of 255 items allowed.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return unidentifiedCiphers
    */
@@ -123,7 +123,7 @@ public class SSLCipherList extends AviRestResource {
    * The ciphers are represented by their rfc 2 byte hex value.
    * Field introduced in 18.1.4, 18.2.1.
    * Maximum of 255 items allowed.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return unidentifiedCiphers
    */
@@ -138,7 +138,7 @@ public class SSLCipherList extends AviRestResource {
    * The ciphers are represented by their rfc 2 byte hex value.
    * Field introduced in 18.1.4, 18.2.1.
    * Maximum of 255 items allowed.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return unidentifiedCiphers
    */

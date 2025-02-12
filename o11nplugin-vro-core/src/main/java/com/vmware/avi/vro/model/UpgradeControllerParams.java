@@ -28,6 +28,10 @@ public class UpgradeControllerParams extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String controllerPatchRef;
 
+    @JsonProperty("dryrun")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean dryrun = false;
+
     @JsonProperty("image_ref")
     @JsonInclude(Include.NON_NULL)
     private String imageRef;
@@ -47,7 +51,7 @@ public class UpgradeControllerParams extends AviRestResource {
    * Image uuid for identifying controller patch image.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerPatchRef
    */
@@ -61,7 +65,7 @@ public class UpgradeControllerParams extends AviRestResource {
    * Image uuid for identifying controller patch image.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param controllerPatchRef set the controllerPatchRef.
    */
@@ -72,10 +76,36 @@ public class UpgradeControllerParams extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * This flag is set to perform the upgrade dry-run operations.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return dryrun
+   */
+  @VsoMethod
+  public Boolean getDryrun() {
+    return dryrun;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * This flag is set to perform the upgrade dry-run operations.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param dryrun set the dryrun.
+   */
+  @VsoMethod
+  public void setDryrun(Boolean  dryrun) {
+    this.dryrun = dryrun;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Image uuid for identifying base image.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return imageRef
    */
@@ -89,7 +119,7 @@ public class UpgradeControllerParams extends AviRestResource {
    * Image uuid for identifying base image.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param imageRef set the imageRef.
    */
@@ -102,7 +132,7 @@ public class UpgradeControllerParams extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This flag is set to run the pre-checks without the subsequent upgrade operations.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return prechecksOnly
    */
@@ -115,7 +145,7 @@ public class UpgradeControllerParams extends AviRestResource {
    * This is the setter method to the attribute.
    * This flag is set to run the pre-checks without the subsequent upgrade operations.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param prechecksOnly set the prechecksOnly.
    */
@@ -128,7 +158,7 @@ public class UpgradeControllerParams extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This is flag when set as true skips few optional must checks.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return skipWarnings
    */
@@ -141,7 +171,7 @@ public class UpgradeControllerParams extends AviRestResource {
    * This is the setter method to the attribute.
    * This is flag when set as true skips few optional must checks.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param skipWarnings set the skipWarnings.
    */
@@ -164,7 +194,8 @@ public boolean equals(java.lang.Object o) {
   return   Objects.equals(this.imageRef, objUpgradeControllerParams.imageRef)&&
   Objects.equals(this.controllerPatchRef, objUpgradeControllerParams.controllerPatchRef)&&
   Objects.equals(this.skipWarnings, objUpgradeControllerParams.skipWarnings)&&
-  Objects.equals(this.prechecksOnly, objUpgradeControllerParams.prechecksOnly);
+  Objects.equals(this.prechecksOnly, objUpgradeControllerParams.prechecksOnly)&&
+  Objects.equals(this.dryrun, objUpgradeControllerParams.dryrun);
 }
 
 @Override
@@ -172,6 +203,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class UpgradeControllerParams {\n");
       sb.append("    controllerPatchRef: ").append(toIndentedString(controllerPatchRef)).append("\n");
+        sb.append("    dryrun: ").append(toIndentedString(dryrun)).append("\n");
         sb.append("    imageRef: ").append(toIndentedString(imageRef)).append("\n");
         sb.append("    prechecksOnly: ").append(toIndentedString(prechecksOnly)).append("\n");
         sb.append("    skipWarnings: ").append(toIndentedString(skipWarnings)).append("\n");

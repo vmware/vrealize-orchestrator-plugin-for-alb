@@ -118,7 +118,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * Default is round-robin.
    * Enum options - DNS_RECORD_RESPONSE_ROUND_ROBIN, DNS_RECORD_RESPONSE_CONSISTENT_HASH.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "DNS_RECORD_RESPONSE_ROUND_ROBIN".
    * @return algorithm
    */
@@ -134,7 +134,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * Default is round-robin.
    * Enum options - DNS_RECORD_RESPONSE_ROUND_ROBIN, DNS_RECORD_RESPONSE_CONSISTENT_HASH.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "DNS_RECORD_RESPONSE_ROUND_ROBIN".
    * @param algorithm set the algorithm.
    */
@@ -147,7 +147,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Canonical name in cname record.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cname
    */
@@ -160,7 +160,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * This is the setter method to the attribute.
    * Canonical name in cname record.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cname set the cname.
    */
@@ -174,7 +174,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * Configured fqdns are delegated domains (i.e.
    * They represent a zone cut).
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return delegated
    */
@@ -188,7 +188,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * Configured fqdns are delegated domains (i.e.
    * They represent a zone cut).
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param delegated set the delegated.
    */
@@ -201,7 +201,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Details of dns record.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
@@ -214,7 +214,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * This is the setter method to the attribute.
    * Details of dns record.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
@@ -227,7 +227,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the dns vs.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsVsUuid
    */
@@ -240,7 +240,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the dns vs.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dnsVsUuid set the dnsVsUuid.
    */
@@ -253,7 +253,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Fully qualified domain name.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fqdn
    */
@@ -266,7 +266,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * This is the setter method to the attribute.
    * Fully qualified domain name.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fqdn set the fqdn.
    */
@@ -280,7 +280,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * Ipv6 address in aaaa record.
    * Field introduced in 20.1.3.
    * Maximum of 4 items allowed.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip6Address
    */
@@ -294,7 +294,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * Ipv6 address in aaaa record.
    * Field introduced in 20.1.3.
    * Maximum of 4 items allowed.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip6Address
    */
@@ -308,7 +308,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * Ipv6 address in aaaa record.
    * Field introduced in 20.1.3.
    * Maximum of 4 items allowed.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip6Address
    */
@@ -327,7 +327,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * Ip address in a record.
    * Field introduced in 20.1.3.
    * Maximum of 4 items allowed.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAddress
    */
@@ -341,7 +341,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * Ip address in a record.
    * Field introduced in 20.1.3.
    * Maximum of 4 items allowed.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAddress
    */
@@ -355,7 +355,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * Ip address in a record.
    * Field introduced in 20.1.3.
    * Maximum of 4 items allowed.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAddress
    */
@@ -373,7 +373,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Internal metadata for the dns record.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metadata
    */
@@ -386,7 +386,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * This is the setter method to the attribute.
    * Internal metadata for the dns record.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metadata set the metadata.
    */
@@ -400,7 +400,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * Mx record.
    * Field introduced in 20.1.3.
    * Maximum of 4 items allowed.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mxRecords
    */
@@ -414,7 +414,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * Mx record.
    * Field introduced in 20.1.3.
    * Maximum of 4 items allowed.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mxRecords
    */
@@ -428,7 +428,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * Mx record.
    * Field introduced in 20.1.3.
    * Maximum of 4 items allowed.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mxRecords
    */
@@ -446,7 +446,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Dynamicdnsrecord name, needed for a top level uuid protobuf, for display in shell.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -459,7 +459,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * This is the setter method to the attribute.
    * Dynamicdnsrecord name, needed for a top level uuid protobuf, for display in shell.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -473,7 +473,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * Name server information in ns record.
    * Field introduced in 20.1.3.
    * Maximum of 13 items allowed.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ns
    */
@@ -487,7 +487,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * Name server information in ns record.
    * Field introduced in 20.1.3.
    * Maximum of 13 items allowed.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ns
    */
@@ -501,7 +501,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * Name server information in ns record.
    * Field introduced in 20.1.3.
    * Maximum of 13 items allowed.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ns
    */
@@ -522,7 +522,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * Allowed values are 0-20.
    * Special values are 0- return all records.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numRecordsInResponse
    */
@@ -538,7 +538,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * Allowed values are 0-20.
    * Special values are 0- return all records.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numRecordsInResponse set the numRecordsInResponse.
    */
@@ -552,7 +552,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * Service locator info in srv record.
    * Field introduced in 20.1.3.
    * Maximum of 4 items allowed.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceLocators
    */
@@ -566,7 +566,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * Service locator info in srv record.
    * Field introduced in 20.1.3.
    * Maximum of 4 items allowed.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceLocators
    */
@@ -580,7 +580,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * Service locator info in srv record.
    * Field introduced in 20.1.3.
    * Maximum of 4 items allowed.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceLocators
    */
@@ -599,7 +599,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * Tenant_uuid from dns vs's tenant_uuid.
    * It is a reference to an object of type tenant.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -613,7 +613,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * Tenant_uuid from dns vs's tenant_uuid.
    * It is a reference to an object of type tenant.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
@@ -626,7 +626,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Time to live for this dns record.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ttl
    */
@@ -639,7 +639,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * This is the setter method to the attribute.
    * Time to live for this dns record.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ttl set the ttl.
    */
@@ -653,7 +653,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * Text record.
    * Field introduced in 20.1.3.
    * Maximum of 4 items allowed.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return txtRecords
    */
@@ -667,7 +667,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * Text record.
    * Field introduced in 20.1.3.
    * Maximum of 4 items allowed.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return txtRecords
    */
@@ -681,7 +681,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * Text record.
    * Field introduced in 20.1.3.
    * Maximum of 4 items allowed.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return txtRecords
    */
@@ -702,7 +702,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR,
    * DNS_RECORD_ANY.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
@@ -718,7 +718,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR,
    * DNS_RECORD_ANY.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */
@@ -750,7 +750,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the dns record.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -763,7 +763,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the dns record.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
@@ -778,7 +778,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * request.
    * Default is false.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return wildcardMatch
    */
@@ -793,7 +793,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * request.
    * Default is false.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param wildcardMatch set the wildcardMatch.
    */

@@ -65,7 +65,7 @@ public class GslbPerDnsState extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This field describes the geodbprofile download status to the dns-vs.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return geoDownload
    */
@@ -78,7 +78,7 @@ public class GslbPerDnsState extends AviRestResource {
    * This is the setter method to the attribute.
    * This field describes the geodbprofile download status to the dns-vs.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param geoDownload set the geoDownload.
    */
@@ -91,7 +91,7 @@ public class GslbPerDnsState extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This field describes the gslb, gslbservice, healthmonitor download status to the dns-vs.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbDownload
    */
@@ -104,7 +104,7 @@ public class GslbPerDnsState extends AviRestResource {
    * This is the setter method to the attribute.
    * This field describes the gslb, gslbservice, healthmonitor download status to the dns-vs.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gslbDownload set the gslbDownload.
    */
@@ -116,7 +116,7 @@ public class GslbPerDnsState extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configured dns-vs-name at the site.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -128,7 +128,7 @@ public class GslbPerDnsState extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Configured dns-vs-name at the site.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -139,7 +139,7 @@ public class GslbPerDnsState extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return operStatus
    */
@@ -150,7 +150,7 @@ public class GslbPerDnsState extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param operStatus set the operStatus.
    */
@@ -163,7 +163,7 @@ public class GslbPerDnsState extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This field describes the subdomain placement rules for this dns-vs.
    * Field introduced in 17.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return placementRules
    */
@@ -176,7 +176,7 @@ public class GslbPerDnsState extends AviRestResource {
    * This is the setter method. this will set the placementRules
    * This field describes the subdomain placement rules for this dns-vs.
    * Field introduced in 17.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return placementRules
    */
@@ -189,7 +189,7 @@ public class GslbPerDnsState extends AviRestResource {
    * This is the setter method this will set the placementRules
    * This field describes the subdomain placement rules for this dns-vs.
    * Field introduced in 17.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return placementRules
    */
@@ -207,7 +207,7 @@ public class GslbPerDnsState extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The service engines associated with the dns-vs.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seList
    */
@@ -220,7 +220,7 @@ public class GslbPerDnsState extends AviRestResource {
    * This is the setter method. this will set the seList
    * The service engines associated with the dns-vs.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seList
    */
@@ -233,7 +233,7 @@ public class GslbPerDnsState extends AviRestResource {
    * This is the setter method this will set the seList
    * The service engines associated with the dns-vs.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seList
    */
@@ -250,7 +250,7 @@ public class GslbPerDnsState extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configured dns-vs-uuid at the site.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -262,7 +262,7 @@ public class GslbPerDnsState extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Configured dns-vs-uuid at the site.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
@@ -275,7 +275,7 @@ public class GslbPerDnsState extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This field indicates that the local vs is configured to be a dns service.
    * The services, network profile and application profile are configured in virtual service for dns operations.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return validDnsVs
    */
@@ -288,7 +288,7 @@ public class GslbPerDnsState extends AviRestResource {
    * This is the setter method to the attribute.
    * This field indicates that the local vs is configured to be a dns service.
    * The services, network profile and application profile are configured in virtual service for dns operations.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param validDnsVs set the validDnsVs.
    */

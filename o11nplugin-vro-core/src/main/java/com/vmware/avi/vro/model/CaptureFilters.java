@@ -82,7 +82,7 @@ public class CaptureFilters extends AviRestResource {
    * Matches with source and destination address.
    * Curently not applicable for debugserviceengine.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return captureIp
    */
@@ -97,7 +97,7 @@ public class CaptureFilters extends AviRestResource {
    * Matches with source and destination address.
    * Curently not applicable for debugserviceengine.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param captureIp set the captureIp.
    */
@@ -111,7 +111,7 @@ public class CaptureFilters extends AviRestResource {
    * Capture filter for se ipc.
    * Not applicable for debug virtual service.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return captureIpc
    */
@@ -125,7 +125,7 @@ public class CaptureFilters extends AviRestResource {
    * Capture filter for se ipc.
    * Not applicable for debug virtual service.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param captureIpc set the captureIpc.
    */
@@ -138,7 +138,7 @@ public class CaptureFilters extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Destination port range filter.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dstPortEnd
    */
@@ -151,7 +151,7 @@ public class CaptureFilters extends AviRestResource {
    * This is the setter method to the attribute.
    * Destination port range filter.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dstPortEnd set the dstPortEnd.
    */
@@ -164,7 +164,7 @@ public class CaptureFilters extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Destination port range filter.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dstPortStart
    */
@@ -177,7 +177,7 @@ public class CaptureFilters extends AviRestResource {
    * This is the setter method to the attribute.
    * Destination port range filter.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dstPortStart set the dstPortStart.
    */
@@ -189,9 +189,9 @@ public class CaptureFilters extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ethernet proto filter.
-   * Enum options - ETH_TYPE_IPV4.
+   * Enum options - ETH_TYPE_IPV4, ETH_TYPE_IPV6.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ethProto
    */
@@ -203,9 +203,9 @@ public class CaptureFilters extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ethernet proto filter.
-   * Enum options - ETH_TYPE_IPV4.
+   * Enum options - ETH_TYPE_IPV4, ETH_TYPE_IPV6.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ethProto set the ethProto.
    */
@@ -220,7 +220,7 @@ public class CaptureFilters extends AviRestResource {
    * Support for tcp only for now.
    * Enum options - IP_TYPE_TCP.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipProto
    */
@@ -235,7 +235,7 @@ public class CaptureFilters extends AviRestResource {
    * Support for tcp only for now.
    * Enum options - IP_TYPE_TCP.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipProto set the ipProto.
    */
@@ -248,7 +248,7 @@ public class CaptureFilters extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Source port filter.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return srcPort
    */
@@ -261,7 +261,7 @@ public class CaptureFilters extends AviRestResource {
    * This is the setter method to the attribute.
    * Source port filter.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param srcPort set the srcPort.
    */
@@ -276,7 +276,7 @@ public class CaptureFilters extends AviRestResource {
    * If specified, the source port filter will be a range.
    * The filter range will be between src_port and src_port_range_end.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return srcPortRangeEnd
    */
@@ -291,7 +291,7 @@ public class CaptureFilters extends AviRestResource {
    * If specified, the source port filter will be a range.
    * The filter range will be between src_port and src_port_range_end.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param srcPortRangeEnd set the srcPortRangeEnd.
    */
@@ -304,7 +304,7 @@ public class CaptureFilters extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tcp ack flag filter.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tcpAck
    */
@@ -317,7 +317,7 @@ public class CaptureFilters extends AviRestResource {
    * This is the setter method to the attribute.
    * Tcp ack flag filter.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tcpAck set the tcpAck.
    */
@@ -330,7 +330,7 @@ public class CaptureFilters extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tcp fin flag filter.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tcpFin
    */
@@ -343,7 +343,7 @@ public class CaptureFilters extends AviRestResource {
    * This is the setter method to the attribute.
    * Tcp fin flag filter.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tcpFin set the tcpFin.
    */
@@ -356,7 +356,7 @@ public class CaptureFilters extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tcp push flag filter.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tcpPush
    */
@@ -369,7 +369,7 @@ public class CaptureFilters extends AviRestResource {
    * This is the setter method to the attribute.
    * Tcp push flag filter.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tcpPush set the tcpPush.
    */
@@ -382,7 +382,7 @@ public class CaptureFilters extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tcp syn flag filter.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tcpSyn
    */
@@ -395,7 +395,7 @@ public class CaptureFilters extends AviRestResource {
    * This is the setter method to the attribute.
    * Tcp syn flag filter.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tcpSyn set the tcpSyn.
    */

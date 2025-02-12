@@ -53,7 +53,7 @@ public class SeBootupCompressionProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Number of buffers to use for compression output.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 128.
    * @return bufNum
    */
@@ -65,7 +65,7 @@ public class SeBootupCompressionProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Number of buffers to use for compression output.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 128.
    * @param bufNum set the bufNum.
    */
@@ -77,7 +77,7 @@ public class SeBootupCompressionProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Size of each buffer used for compression output, this should ideally be a multiple of pagesize.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4096.
    * @return bufSize
    */
@@ -89,7 +89,7 @@ public class SeBootupCompressionProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Size of each buffer used for compression output, this should ideally be a multiple of pagesize.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4096.
    * @param bufSize set the bufSize.
    */
@@ -101,7 +101,7 @@ public class SeBootupCompressionProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Hash size used by compression, rounded to the last power of 2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 16384.
    * @return hashSize
    */
@@ -113,7 +113,7 @@ public class SeBootupCompressionProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Hash size used by compression, rounded to the last power of 2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 16384.
    * @param hashSize set the hashSize.
    */
@@ -125,7 +125,7 @@ public class SeBootupCompressionProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Level of compression to apply on content selected for aggressive compression.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @return levelAggressive
    */
@@ -137,7 +137,7 @@ public class SeBootupCompressionProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Level of compression to apply on content selected for aggressive compression.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @param levelAggressive set the levelAggressive.
    */
@@ -149,7 +149,7 @@ public class SeBootupCompressionProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Level of compression to apply on content selected for normal compression.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @return levelNormal
    */
@@ -161,7 +161,7 @@ public class SeBootupCompressionProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Level of compression to apply on content selected for normal compression.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @param levelNormal set the levelNormal.
    */
@@ -173,7 +173,7 @@ public class SeBootupCompressionProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Window size used by compression, rounded to the last power of 2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4096.
    * @return windowSize
    */
@@ -185,7 +185,7 @@ public class SeBootupCompressionProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Window size used by compression, rounded to the last power of 2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4096.
    * @param windowSize set the windowSize.
    */

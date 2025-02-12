@@ -62,7 +62,7 @@ public class DnsInfo extends AviRestResource {
    * Default is consistent hash.
    * Enum options - DNS_RECORD_RESPONSE_ROUND_ROBIN, DNS_RECORD_RESPONSE_CONSISTENT_HASH.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "DNS_RECORD_RESPONSE_CONSISTENT_HASH".
    * @return algorithm
    */
@@ -78,7 +78,7 @@ public class DnsInfo extends AviRestResource {
    * Default is consistent hash.
    * Enum options - DNS_RECORD_RESPONSE_ROUND_ROBIN, DNS_RECORD_RESPONSE_CONSISTENT_HASH.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "DNS_RECORD_RESPONSE_CONSISTENT_HASH".
    * @param algorithm set the algorithm.
    */
@@ -91,7 +91,7 @@ public class DnsInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Canonical name in cname record.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cname
    */
@@ -104,7 +104,7 @@ public class DnsInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Canonical name in cname record.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cname set the cname.
    */
@@ -116,7 +116,7 @@ public class DnsInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Fully qualified domain name.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fqdn
    */
@@ -128,7 +128,7 @@ public class DnsInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Fully qualified domain name.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fqdn set the fqdn.
    */
@@ -141,8 +141,7 @@ public class DnsInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Any metadata associated with this record.
    * Field introduced in 17.2.2.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * @return metadata
    */
   @VsoMethod
@@ -154,8 +153,7 @@ public class DnsInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Any metadata associated with this record.
    * Field introduced in 17.2.2.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * @param metadata set the metadata.
    */
   @VsoMethod
@@ -171,7 +169,7 @@ public class DnsInfo extends AviRestResource {
    * Allowed values are 0-20.
    * Special values are 0- return all records.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numRecordsInResponse
    */
@@ -188,7 +186,7 @@ public class DnsInfo extends AviRestResource {
    * Allowed values are 0-20.
    * Special values are 0- return all records.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numRecordsInResponse set the numRecordsInResponse.
    */
@@ -201,7 +199,7 @@ public class DnsInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Time to live for fqdn record.
    * Default value is chosen from dns profile for this cloud if no value provided.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ttl
    */
@@ -214,7 +212,7 @@ public class DnsInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Time to live for fqdn record.
    * Default value is chosen from dns profile for this cloud if no value provided.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ttl set the ttl.
    */
@@ -229,7 +227,7 @@ public class DnsInfo extends AviRestResource {
    * Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX,
    * DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR,
    * DNS_RECORD_ANY.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "DNS_RECORD_A".
    * @return type
    */
@@ -244,7 +242,7 @@ public class DnsInfo extends AviRestResource {
    * Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX,
    * DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR,
    * DNS_RECORD_ANY.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "DNS_RECORD_A".
    * @param type set the type.
    */

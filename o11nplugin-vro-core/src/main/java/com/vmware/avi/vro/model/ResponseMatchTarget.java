@@ -97,7 +97,7 @@ public class ResponseMatchTarget extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configure client ip addresses.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientIp
    */
@@ -109,7 +109,7 @@ public class ResponseMatchTarget extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Configure client ip addresses.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientIp set the clientIp.
    */
@@ -121,7 +121,7 @@ public class ResponseMatchTarget extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configure http cookie(s).
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cookie
    */
@@ -133,7 +133,7 @@ public class ResponseMatchTarget extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Configure http cookie(s).
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cookie set the cookie.
    */
@@ -145,7 +145,7 @@ public class ResponseMatchTarget extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configure http headers.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hdrs
    */
@@ -157,7 +157,7 @@ public class ResponseMatchTarget extends AviRestResource {
   /**
    * This is the setter method. this will set the hdrs
    * Configure http headers.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hdrs
    */
@@ -169,7 +169,7 @@ public class ResponseMatchTarget extends AviRestResource {
   /**
    * This is the setter method this will set the hdrs
    * Configure http headers.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hdrs
    */
@@ -186,7 +186,7 @@ public class ResponseMatchTarget extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configure the host header.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostHdr
    */
@@ -198,7 +198,7 @@ public class ResponseMatchTarget extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Configure the host header.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hostHdr set the hostHdr.
    */
@@ -210,7 +210,7 @@ public class ResponseMatchTarget extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configure the location header.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return locHdr
    */
@@ -222,7 +222,7 @@ public class ResponseMatchTarget extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Configure the location header.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param locHdr set the locHdr.
    */
@@ -234,7 +234,7 @@ public class ResponseMatchTarget extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configure http methods.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return method
    */
@@ -246,7 +246,7 @@ public class ResponseMatchTarget extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Configure http methods.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param method set the method.
    */
@@ -258,7 +258,7 @@ public class ResponseMatchTarget extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configure request paths.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return path
    */
@@ -270,7 +270,7 @@ public class ResponseMatchTarget extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Configure request paths.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param path set the path.
    */
@@ -282,7 +282,7 @@ public class ResponseMatchTarget extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configure the type of http protocol.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return protocol
    */
@@ -294,7 +294,7 @@ public class ResponseMatchTarget extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Configure the type of http protocol.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param protocol set the protocol.
    */
@@ -306,7 +306,7 @@ public class ResponseMatchTarget extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configure request query.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return query
    */
@@ -318,7 +318,7 @@ public class ResponseMatchTarget extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Configure request query.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param query set the query.
    */
@@ -330,7 +330,7 @@ public class ResponseMatchTarget extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configure the http headers in response.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rspHdrs
    */
@@ -342,7 +342,7 @@ public class ResponseMatchTarget extends AviRestResource {
   /**
    * This is the setter method. this will set the rspHdrs
    * Configure the http headers in response.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rspHdrs
    */
@@ -354,7 +354,7 @@ public class ResponseMatchTarget extends AviRestResource {
   /**
    * This is the setter method this will set the rspHdrs
    * Configure the http headers in response.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rspHdrs
    */
@@ -372,7 +372,7 @@ public class ResponseMatchTarget extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Configure source ip addresses.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sourceIp
    */
@@ -385,7 +385,7 @@ public class ResponseMatchTarget extends AviRestResource {
    * This is the setter method to the attribute.
    * Configure source ip addresses.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sourceIp set the sourceIp.
    */
@@ -397,7 +397,7 @@ public class ResponseMatchTarget extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configure the http status code(s).
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return status
    */
@@ -409,7 +409,7 @@ public class ResponseMatchTarget extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Configure the http status code(s).
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param status set the status.
    */
@@ -421,7 +421,7 @@ public class ResponseMatchTarget extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configure versions of the http protocol.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return version
    */
@@ -433,7 +433,7 @@ public class ResponseMatchTarget extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Configure versions of the http protocol.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param version set the version.
    */
@@ -445,7 +445,7 @@ public class ResponseMatchTarget extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configure virtual service ports.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsPort
    */
@@ -457,7 +457,7 @@ public class ResponseMatchTarget extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Configure virtual service ports.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsPort set the vsPort.
    */

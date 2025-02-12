@@ -38,7 +38,7 @@ public class ImageCloudSpecificData extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Each cloud has specific parameters.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return key
    */
@@ -51,7 +51,7 @@ public class ImageCloudSpecificData extends AviRestResource {
    * This is the setter method to the attribute.
    * Each cloud has specific parameters.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param key set the key.
    */
@@ -64,7 +64,7 @@ public class ImageCloudSpecificData extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Each parameter can have multiple values.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return values
    */
@@ -77,7 +77,7 @@ public class ImageCloudSpecificData extends AviRestResource {
    * This is the setter method. this will set the values
    * Each parameter can have multiple values.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return values
    */
@@ -90,7 +90,7 @@ public class ImageCloudSpecificData extends AviRestResource {
    * This is the setter method this will set the values
    * Each parameter can have multiple values.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return values
    */
