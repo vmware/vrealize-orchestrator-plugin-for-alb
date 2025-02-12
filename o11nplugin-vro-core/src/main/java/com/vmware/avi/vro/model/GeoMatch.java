@@ -46,7 +46,7 @@ public class GeoMatch extends AviRestResource {
    * ATTRIBUTE_LONGITUDE, ATTRIBUTE_LATITUDE, ATTRIBUTE_CUSTOM_1, ATTRIBUTE_CUSTOM_2, ATTRIBUTE_CUSTOM_3, ATTRIBUTE_CUSTOM_4, ATTRIBUTE_CUSTOM_5,
    * ATTRIBUTE_CUSTOM_6, ATTRIBUTE_CUSTOM_7...
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attribute
    */
@@ -63,7 +63,7 @@ public class GeoMatch extends AviRestResource {
    * ATTRIBUTE_LONGITUDE, ATTRIBUTE_LATITUDE, ATTRIBUTE_CUSTOM_1, ATTRIBUTE_CUSTOM_2, ATTRIBUTE_CUSTOM_3, ATTRIBUTE_CUSTOM_4, ATTRIBUTE_CUSTOM_5,
    * ATTRIBUTE_CUSTOM_6, ATTRIBUTE_CUSTOM_7...
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param attribute set the attribute.
    */
@@ -77,7 +77,7 @@ public class GeoMatch extends AviRestResource {
    * Match criteria.
    * Enum options - IS_IN, IS_NOT_IN.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchOperation
    */
@@ -91,7 +91,7 @@ public class GeoMatch extends AviRestResource {
    * Match criteria.
    * Enum options - IS_IN, IS_NOT_IN.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchOperation set the matchOperation.
    */
@@ -104,7 +104,7 @@ public class GeoMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The values to match.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return values
    */
@@ -117,7 +117,7 @@ public class GeoMatch extends AviRestResource {
    * This is the setter method. this will set the values
    * The values to match.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return values
    */
@@ -130,7 +130,7 @@ public class GeoMatch extends AviRestResource {
    * This is the setter method this will set the values
    * The values to match.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return values
    */

@@ -34,7 +34,7 @@ public class ServiceengineFaults extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable debug faults.
    * Field introduced in 20.1.6.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return debugFaults
    */
@@ -47,7 +47,7 @@ public class ServiceengineFaults extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable debug faults.
    * Field introduced in 20.1.6.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param debugFaults set the debugFaults.
    */

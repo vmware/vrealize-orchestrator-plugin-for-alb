@@ -57,7 +57,7 @@ public class CloudStackConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Cloudstack api key.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return accessKeyId
    */
@@ -69,7 +69,7 @@ public class CloudStackConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Cloudstack api key.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param accessKeyId set the accessKeyId.
    */
@@ -81,7 +81,7 @@ public class CloudStackConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Cloudstack api url.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return apiUrl
    */
@@ -93,7 +93,7 @@ public class CloudStackConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Cloudstack api url.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param apiUrl set the apiUrl.
    */
@@ -105,7 +105,7 @@ public class CloudStackConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * If controller's management ip is in a private network, a publicly accessible ip to reach the controller.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cntrPublicIp
    */
@@ -117,7 +117,7 @@ public class CloudStackConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * If controller's management ip is in a private network, a publicly accessible ip to reach the controller.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cntrPublicIp set the cntrPublicIp.
    */
@@ -130,7 +130,7 @@ public class CloudStackConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Default hypervisor type.
    * Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "KVM".
    * @return hypervisor
    */
@@ -143,7 +143,7 @@ public class CloudStackConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Default hypervisor type.
    * Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "KVM".
    * @param hypervisor set the hypervisor.
    */
@@ -155,7 +155,7 @@ public class CloudStackConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Avi management network name.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mgmtNetworkName
    */
@@ -167,7 +167,7 @@ public class CloudStackConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Avi management network name.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mgmtNetworkName set the mgmtNetworkName.
    */
@@ -179,7 +179,7 @@ public class CloudStackConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Avi management network name.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mgmtNetworkUuid
    */
@@ -191,7 +191,7 @@ public class CloudStackConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Avi management network name.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mgmtNetworkUuid set the mgmtNetworkUuid.
    */
@@ -203,7 +203,7 @@ public class CloudStackConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Cloudstack secret key.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return secretAccessKey
    */
@@ -215,7 +215,7 @@ public class CloudStackConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Cloudstack secret key.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param secretAccessKey set the secretAccessKey.
    */

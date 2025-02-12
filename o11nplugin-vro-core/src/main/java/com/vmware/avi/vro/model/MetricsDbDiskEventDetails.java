@@ -41,7 +41,7 @@ public class MetricsDbDiskEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * List of dropped metrics tables.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricsDeletedTables
    */
@@ -53,7 +53,7 @@ public class MetricsDbDiskEventDetails extends AviRestResource {
   /**
    * This is the setter method. this will set the metricsDeletedTables
    * List of dropped metrics tables.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricsDeletedTables
    */
@@ -65,7 +65,7 @@ public class MetricsDbDiskEventDetails extends AviRestResource {
   /**
    * This is the setter method this will set the metricsDeletedTables
    * List of dropped metrics tables.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricsDeletedTables
    */
@@ -83,7 +83,7 @@ public class MetricsDbDiskEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total size of freed metrics tables.
    * In kbs.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricsFreeSz
    */
@@ -96,7 +96,7 @@ public class MetricsDbDiskEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Total size of freed metrics tables.
    * In kbs.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricsFreeSz set the metricsFreeSz.
    */
@@ -109,7 +109,7 @@ public class MetricsDbDiskEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Disk quota allocated for metrics db.
    * In gbs.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricsQuota
    */
@@ -122,7 +122,7 @@ public class MetricsDbDiskEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Disk quota allocated for metrics db.
    * In gbs.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricsQuota set the metricsQuota.
    */

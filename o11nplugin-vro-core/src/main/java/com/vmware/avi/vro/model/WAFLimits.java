@@ -98,7 +98,7 @@ public class WAFLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of waf allowed content types.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numAllowedContentTypes
    */
@@ -111,7 +111,7 @@ public class WAFLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of waf allowed content types.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numAllowedContentTypes set the numAllowedContentTypes.
    */
@@ -124,7 +124,7 @@ public class WAFLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of allowed request content type character sets in waf.
    * Field introduced in 22.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numAllowedRequestContentTypeCharsets
    */
@@ -137,7 +137,7 @@ public class WAFLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of allowed request content type character sets in waf.
    * Field introduced in 22.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numAllowedRequestContentTypeCharsets set the numAllowedRequestContentTypeCharsets.
    */
@@ -150,7 +150,7 @@ public class WAFLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of rules used in waf allowlist policy.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numAllowlistPolicyRules
    */
@@ -163,7 +163,7 @@ public class WAFLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of rules used in waf allowlist policy.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numAllowlistPolicyRules set the numAllowlistPolicyRules.
    */
@@ -176,7 +176,7 @@ public class WAFLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of applications for which we use rules from sig provider.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numApplications
    */
@@ -189,7 +189,7 @@ public class WAFLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of applications for which we use rules from sig provider.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numApplications set the numApplications.
    */
@@ -202,7 +202,7 @@ public class WAFLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of allowed request content type mappings in waf profile.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numContentTypeMappings
    */
@@ -215,7 +215,7 @@ public class WAFLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of allowed request content type mappings in waf profile.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numContentTypeMappings set the numContentTypeMappings.
    */
@@ -228,7 +228,7 @@ public class WAFLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of datafiles used in waf.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numDataFiles
    */
@@ -241,7 +241,7 @@ public class WAFLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of datafiles used in waf.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numDataFiles set the numDataFiles.
    */
@@ -254,7 +254,7 @@ public class WAFLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of exclude list entries in waf rule group.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numExcludeListPerRuleGroup
    */
@@ -267,7 +267,7 @@ public class WAFLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of exclude list entries in waf rule group.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numExcludeListPerRuleGroup set the numExcludeListPerRuleGroup.
    */
@@ -280,7 +280,7 @@ public class WAFLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of pre, post crs groups.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numPrePostCrsGroups
    */
@@ -293,7 +293,7 @@ public class WAFLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of pre, post crs groups.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numPrePostCrsGroups set the numPrePostCrsGroups.
    */
@@ -306,7 +306,7 @@ public class WAFLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of total psm groups in waf.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numPsmGroups
    */
@@ -319,7 +319,7 @@ public class WAFLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of total psm groups in waf.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numPsmGroups set the numPsmGroups.
    */
@@ -332,7 +332,7 @@ public class WAFLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of match elements used in waf psm.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numPsmMatchElements
    */
@@ -345,7 +345,7 @@ public class WAFLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of match elements used in waf psm.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numPsmMatchElements set the numPsmMatchElements.
    */
@@ -358,7 +358,7 @@ public class WAFLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of match rules per location.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numPsmMatchRulesPerLoc
    */
@@ -371,7 +371,7 @@ public class WAFLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of match rules per location.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numPsmMatchRulesPerLoc set the numPsmMatchRulesPerLoc.
    */
@@ -384,7 +384,7 @@ public class WAFLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of locations used in waf psm.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numPsmTotalLocations
    */
@@ -397,7 +397,7 @@ public class WAFLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of locations used in waf psm.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numPsmTotalLocations set the numPsmTotalLocations.
    */
@@ -410,7 +410,7 @@ public class WAFLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of restricted extensions in waf.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numRestrictedExtensions
    */
@@ -423,7 +423,7 @@ public class WAFLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of restricted extensions in waf.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numRestrictedExtensions set the numRestrictedExtensions.
    */
@@ -436,7 +436,7 @@ public class WAFLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of restricted http headers in waf.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numRestrictedHeaders
    */
@@ -449,7 +449,7 @@ public class WAFLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of restricted http headers in waf.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numRestrictedHeaders set the numRestrictedHeaders.
    */
@@ -462,7 +462,7 @@ public class WAFLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of tags for waf rule.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numRuleTags
    */
@@ -475,7 +475,7 @@ public class WAFLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of tags for waf rule.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numRuleTags set the numRuleTags.
    */
@@ -488,7 +488,7 @@ public class WAFLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of rules as per modsec language.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numRulesPerRulegroup
    */
@@ -501,7 +501,7 @@ public class WAFLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of rules as per modsec language.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numRulesPerRulegroup set the numRulesPerRulegroup.
    */
@@ -514,7 +514,7 @@ public class WAFLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of restricted static extensions in waf.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numStaticExtensions
    */
@@ -527,7 +527,7 @@ public class WAFLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of restricted static extensions in waf.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numStaticExtensions set the numStaticExtensions.
    */

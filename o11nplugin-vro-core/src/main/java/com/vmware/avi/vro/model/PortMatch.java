@@ -38,7 +38,7 @@ public class PortMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Criterion to use for port matching the http request.
    * Enum options - IS_IN, IS_NOT_IN.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchCriteria
    */
@@ -51,7 +51,7 @@ public class PortMatch extends AviRestResource {
    * This is the setter method to the attribute.
    * Criterion to use for port matching the http request.
    * Enum options - IS_IN, IS_NOT_IN.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchCriteria set the matchCriteria.
    */
@@ -65,7 +65,7 @@ public class PortMatch extends AviRestResource {
    * Listening tcp port(s).
    * Allowed values are 1-65535.
    * Minimum of 1 items required.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ports
    */
@@ -79,7 +79,7 @@ public class PortMatch extends AviRestResource {
    * Listening tcp port(s).
    * Allowed values are 1-65535.
    * Minimum of 1 items required.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ports
    */
@@ -93,7 +93,7 @@ public class PortMatch extends AviRestResource {
    * Listening tcp port(s).
    * Allowed values are 1-65535.
    * Minimum of 1 items required.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ports
    */

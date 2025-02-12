@@ -28,6 +28,10 @@ public class CSRFPolicy extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String cookieName = "X-CSRF-TOKEN";
 
+    @JsonProperty("csrf_file_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String csrfFileRef;
+
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
     private String description;
@@ -62,7 +66,7 @@ public class CSRFPolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the cookie to be used for csrf token.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "X-CSRF-TOKEN".
    * @return cookieName
    */
@@ -75,7 +79,7 @@ public class CSRFPolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the cookie to be used for csrf token.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "X-CSRF-TOKEN".
    * @param cookieName set the cookieName.
    */
@@ -86,9 +90,39 @@ public class CSRFPolicy extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * The file object that contains csrf javascript content.
+   * Must be of type 'csrf'.
+   * It is a reference to an object of type fileobject.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return csrfFileRef
+   */
+  @VsoMethod
+  public String getCsrfFileRef() {
+    return csrfFileRef;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * The file object that contains csrf javascript content.
+   * Must be of type 'csrf'.
+   * It is a reference to an object of type fileobject.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param csrfFileRef set the csrfFileRef.
+   */
+  @VsoMethod
+  public void setCsrfFileRef(String  csrfFileRef) {
+    this.csrfFileRef = csrfFileRef;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Human-readable description of this csrf protection policy.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
@@ -101,7 +135,7 @@ public class CSRFPolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * Human-readable description of this csrf protection policy.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
@@ -114,7 +148,7 @@ public class CSRFPolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The name of this csrf protection policy.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -127,7 +161,7 @@ public class CSRFPolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * The name of this csrf protection policy.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -142,7 +176,7 @@ public class CSRFPolicy extends AviRestResource {
    * applied.
    * Field introduced in 30.2.1.
    * Minimum of 1 items required.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */
@@ -157,7 +191,7 @@ public class CSRFPolicy extends AviRestResource {
    * applied.
    * Field introduced in 30.2.1.
    * Minimum of 1 items required.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */
@@ -172,7 +206,7 @@ public class CSRFPolicy extends AviRestResource {
    * applied.
    * Field introduced in 30.2.1.
    * Minimum of 1 items required.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */
@@ -191,7 +225,7 @@ public class CSRFPolicy extends AviRestResource {
    * The unique identifier of the tenant to which this policy belongs.
    * It is a reference to an object of type tenant.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -205,7 +239,7 @@ public class CSRFPolicy extends AviRestResource {
    * The unique identifier of the tenant to which this policy belongs.
    * It is a reference to an object of type tenant.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
@@ -216,13 +250,16 @@ public class CSRFPolicy extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Csrf token is rotated when this time expires.
-   * Tokens will be acceptable for twice the token_validity_time time.
+   * A csrf token is rotated when this amount of time has passed.
+   * Even after that, tokens will be accepted until twice this amount of time has passed.
+   * Note, however, that other timeouts from the underlying session layer also affect how long a given token can be used.
+   * A token will be invalidated (rotated or deleted) after one of 'token_validity_time_min' (this value), 'session_establishment_timeout',
+   * 'session_idle_timeout', 'session_maximum_timeout' is reached, whichever occurs first.
    * Allowed values are 10-1440.
    * Special values are 0- unlimited.
    * Field introduced in 30.2.1.
    * Unit is min.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 360.
    * @return tokenValidityTimeMin
    */
@@ -233,13 +270,16 @@ public class CSRFPolicy extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Csrf token is rotated when this time expires.
-   * Tokens will be acceptable for twice the token_validity_time time.
+   * A csrf token is rotated when this amount of time has passed.
+   * Even after that, tokens will be accepted until twice this amount of time has passed.
+   * Note, however, that other timeouts from the underlying session layer also affect how long a given token can be used.
+   * A token will be invalidated (rotated or deleted) after one of 'token_validity_time_min' (this value), 'session_establishment_timeout',
+   * 'session_idle_timeout', 'session_maximum_timeout' is reached, whichever occurs first.
    * Allowed values are 10-1440.
    * Special values are 0- unlimited.
    * Field introduced in 30.2.1.
    * Unit is min.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 360.
    * @param tokenValidityTimeMin set the tokenValidityTimeMin.
    */
@@ -271,7 +311,7 @@ public class CSRFPolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * A unique identifier to this csrf protection policy.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -284,7 +324,7 @@ public class CSRFPolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * A unique identifier to this csrf protection policy.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
@@ -313,7 +353,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.description, objCSRFPolicy.description)&&
   Objects.equals(this.tokenValidityTimeMin, objCSRFPolicy.tokenValidityTimeMin)&&
   Objects.equals(this.rules, objCSRFPolicy.rules)&&
-  Objects.equals(this.cookieName, objCSRFPolicy.cookieName);
+  Objects.equals(this.cookieName, objCSRFPolicy.cookieName)&&
+  Objects.equals(this.csrfFileRef, objCSRFPolicy.csrfFileRef);
 }
 
 @Override
@@ -321,6 +362,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class CSRFPolicy {\n");
       sb.append("    cookieName: ").append(toIndentedString(cookieName)).append("\n");
+        sb.append("    csrfFileRef: ").append(toIndentedString(csrfFileRef)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    rules: ").append(toIndentedString(rules)).append("\n");

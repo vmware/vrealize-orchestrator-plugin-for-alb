@@ -167,7 +167,7 @@ public class SeList extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Vip is active on cloud.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return activeOnCloud
    */
@@ -180,7 +180,7 @@ public class SeList extends AviRestResource {
    * This is the setter method to the attribute.
    * Vip is active on cloud.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param activeOnCloud set the activeOnCloud.
    */
@@ -193,7 +193,7 @@ public class SeList extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Vip is active on this serviceengine.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return activeOnSe
    */
@@ -206,7 +206,7 @@ public class SeList extends AviRestResource {
    * This is the setter method to the attribute.
    * Vip is active on this serviceengine.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param activeOnSe set the activeOnSe.
    */
@@ -218,7 +218,7 @@ public class SeList extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * This flag is set when scaling in an se in admin down mode.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return adminDownRequested
    */
@@ -230,7 +230,7 @@ public class SeList extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * This flag is set when scaling in an se in admin down mode.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param adminDownRequested set the adminDownRequested.
    */
@@ -243,7 +243,7 @@ public class SeList extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Attach ip is in progress.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attachIpInProgress
    */
@@ -256,7 +256,7 @@ public class SeList extends AviRestResource {
    * This is the setter method to the attribute.
    * Attach ip is in progress.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param attachIpInProgress set the attachIpInProgress.
    */
@@ -269,7 +269,7 @@ public class SeList extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * All attempts to program the vip on cloud have been made.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudProgrammingDone
    */
@@ -282,7 +282,7 @@ public class SeList extends AviRestResource {
    * This is the setter method to the attribute.
    * All attempts to program the vip on cloud have been made.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudProgrammingDone set the cloudProgrammingDone.
    */
@@ -295,7 +295,7 @@ public class SeList extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Status of vip on the cloud.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudProgrammingStatus
    */
@@ -308,7 +308,7 @@ public class SeList extends AviRestResource {
    * This is the setter method to the attribute.
    * Status of vip on the cloud.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudProgrammingStatus set the cloudProgrammingStatus.
    */
@@ -320,7 +320,7 @@ public class SeList extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * This flag is set when an se is admin down or scaling in.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return deleteInProgress
    */
@@ -332,7 +332,7 @@ public class SeList extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * This flag is set when an se is admin down or scaling in.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param deleteInProgress set the deleteInProgress.
    */
@@ -345,7 +345,7 @@ public class SeList extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Detach ip is in progress.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return detachIpInProgress
    */
@@ -358,7 +358,7 @@ public class SeList extends AviRestResource {
    * This is the setter method to the attribute.
    * Detach ip is in progress.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param detachIpInProgress set the detachIpInProgress.
    */
@@ -369,7 +369,7 @@ public class SeList extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return floatingIntfIp
    */
@@ -380,7 +380,7 @@ public class SeList extends AviRestResource {
 
   /**
    * This is the setter method. this will set the floatingIntfIp
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return floatingIntfIp
    */
@@ -391,7 +391,7 @@ public class SeList extends AviRestResource {
 
   /**
    * This is the setter method this will set the floatingIntfIp
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return floatingIntfIp
    */
@@ -409,7 +409,7 @@ public class SeList extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ipv6 floating interface ips for the routingservice.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return floatingIntfIp6Addresses
    */
@@ -422,7 +422,7 @@ public class SeList extends AviRestResource {
    * This is the setter method. this will set the floatingIntfIp6Addresses
    * Ipv6 floating interface ips for the routingservice.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return floatingIntfIp6Addresses
    */
@@ -435,7 +435,7 @@ public class SeList extends AviRestResource {
    * This is the setter method this will set the floatingIntfIp6Addresses
    * Ipv6 floating interface ips for the routingservice.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return floatingIntfIp6Addresses
    */
@@ -454,7 +454,7 @@ public class SeList extends AviRestResource {
    * Updated whenever this entry is created.
    * When the sees this has changed, it means that the se should disrupt, since there was a delete then create, not an update.
    * Field introduced in 18.1.5,18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return incarnation
    */
@@ -468,7 +468,7 @@ public class SeList extends AviRestResource {
    * Updated whenever this entry is created.
    * When the sees this has changed, it means that the se should disrupt, since there was a delete then create, not an update.
    * Field introduced in 18.1.5,18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param incarnation set the incarnation.
    */
@@ -479,7 +479,7 @@ public class SeList extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return isPortchannel
    */
@@ -490,7 +490,7 @@ public class SeList extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param isPortchannel set the isPortchannel.
    */
@@ -501,7 +501,7 @@ public class SeList extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return isPrimary
    */
@@ -512,7 +512,7 @@ public class SeList extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param isPrimary set the isPrimary.
    */
@@ -523,7 +523,7 @@ public class SeList extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return isStandby
    */
@@ -534,7 +534,7 @@ public class SeList extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param isStandby set the isStandby.
    */
@@ -545,7 +545,7 @@ public class SeList extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2001.
    * @return memory
    */
@@ -556,7 +556,7 @@ public class SeList extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2001.
    * @param memory set the memory.
    */
@@ -569,7 +569,7 @@ public class SeList extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Management ipv4 address of se.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mgmtIp
    */
@@ -582,7 +582,7 @@ public class SeList extends AviRestResource {
    * This is the setter method to the attribute.
    * Management ipv4 address of se.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mgmtIp set the mgmtIp.
    */
@@ -595,7 +595,7 @@ public class SeList extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Management ipv6 address of se.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mgmtIp6
    */
@@ -608,7 +608,7 @@ public class SeList extends AviRestResource {
    * This is the setter method to the attribute.
    * Management ipv6 address of se.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mgmtIp6 set the mgmtIp6.
    */
@@ -621,7 +621,7 @@ public class SeList extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Vip route is revoked as pool went down.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return routeRevokedPoolDown
    */
@@ -634,7 +634,7 @@ public class SeList extends AviRestResource {
    * This is the setter method to the attribute.
    * Vip route is revoked as pool went down.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param routeRevokedPoolDown set the routeRevokedPoolDown.
    */
@@ -647,7 +647,7 @@ public class SeList extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This flag is set when a vs is actively scaling out to this se.
    * Field introduced in 18.1.5, 18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return scaleoutInProgress
    */
@@ -660,7 +660,7 @@ public class SeList extends AviRestResource {
    * This is the setter method to the attribute.
    * This flag is set when a vs is actively scaling out to this se.
    * Field introduced in 18.1.5, 18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param scaleoutInProgress set the scaleoutInProgress.
    */
@@ -673,7 +673,7 @@ public class SeList extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * All attempts to program the vip on this serviceengine have been made.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seProgrammingDone
    */
@@ -686,7 +686,7 @@ public class SeList extends AviRestResource {
    * This is the setter method to the attribute.
    * All attempts to program the vip on this serviceengine have been made.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seProgrammingDone set the seProgrammingDone.
    */
@@ -699,7 +699,7 @@ public class SeList extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Vip is awaiting response from this serviceengine.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seReadyInProgress
    */
@@ -712,7 +712,7 @@ public class SeList extends AviRestResource {
    * This is the setter method to the attribute.
    * Vip is awaiting response from this serviceengine.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seReadyInProgress set the seReadyInProgress.
    */
@@ -724,7 +724,7 @@ public class SeList extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type serviceengine.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seRef
    */
@@ -736,7 +736,7 @@ public class SeList extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type serviceengine.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seRef set the seRef.
    */
@@ -747,7 +747,7 @@ public class SeList extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @return secIdx
    */
@@ -758,7 +758,7 @@ public class SeList extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @param secIdx set the secIdx.
    */
@@ -769,7 +769,7 @@ public class SeList extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return snatIp
    */
@@ -780,7 +780,7 @@ public class SeList extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param snatIp set the snatIp.
    */
@@ -793,7 +793,7 @@ public class SeList extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ipv6 address for se snat.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return snatIp6Address
    */
@@ -806,7 +806,7 @@ public class SeList extends AviRestResource {
    * This is the setter method to the attribute.
    * Ipv6 address for se snat.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param snatIp6Address set the snatIp6Address.
    */
@@ -817,7 +817,7 @@ public class SeList extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2.
    * @return vcpus
    */
@@ -828,7 +828,7 @@ public class SeList extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2.
    * @param vcpus set the vcpus.
    */
@@ -840,7 +840,7 @@ public class SeList extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 128.
    * @return vip6SubnetMask
    */
@@ -852,7 +852,7 @@ public class SeList extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 128.
    * @param vip6SubnetMask set the vip6SubnetMask.
    */
@@ -863,7 +863,7 @@ public class SeList extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipIntfIp
    */
@@ -874,7 +874,7 @@ public class SeList extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vipIntfIp set the vipIntfIp.
    */
@@ -885,7 +885,7 @@ public class SeList extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipIntfList
    */
@@ -896,7 +896,7 @@ public class SeList extends AviRestResource {
 
   /**
    * This is the setter method. this will set the vipIntfList
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipIntfList
    */
@@ -907,7 +907,7 @@ public class SeList extends AviRestResource {
 
   /**
    * This is the setter method this will set the vipIntfList
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipIntfList
    */
@@ -923,7 +923,7 @@ public class SeList extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipIntfMac
    */
@@ -934,7 +934,7 @@ public class SeList extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vipIntfMac set the vipIntfMac.
    */
@@ -945,7 +945,7 @@ public class SeList extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 32.
    * @return vipSubnetMask
    */
@@ -956,7 +956,7 @@ public class SeList extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 32.
    * @param vipSubnetMask set the vipSubnetMask.
    */
@@ -967,7 +967,7 @@ public class SeList extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return vlanId
    */
@@ -978,7 +978,7 @@ public class SeList extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param vlanId set the vlanId.
    */
@@ -989,7 +989,7 @@ public class SeList extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vnic
    */
@@ -1000,7 +1000,7 @@ public class SeList extends AviRestResource {
 
   /**
    * This is the setter method. this will set the vnic
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vnic
    */
@@ -1011,7 +1011,7 @@ public class SeList extends AviRestResource {
 
   /**
    * This is the setter method this will set the vnic
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vnic
    */

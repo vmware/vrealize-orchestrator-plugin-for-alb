@@ -59,7 +59,7 @@ public class IpamDnsGCPProfile extends AviRestResource {
    * Match se group subnets for vip placement.
    * Default is to not match se group subnets.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return matchSeGroupSubnet
    */
@@ -73,7 +73,7 @@ public class IpamDnsGCPProfile extends AviRestResource {
    * Match se group subnets for vip placement.
    * Default is to not match se group subnets.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param matchSeGroupSubnet set the matchSeGroupSubnet.
    */
@@ -87,7 +87,7 @@ public class IpamDnsGCPProfile extends AviRestResource {
    * Google cloud platform network host project id.
    * This is the host project in which google cloud platform network resides.
    * Field introduced in 18.1.2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkHostProjectId
    */
@@ -101,7 +101,7 @@ public class IpamDnsGCPProfile extends AviRestResource {
    * Google cloud platform network host project id.
    * This is the host project in which google cloud platform network resides.
    * Field introduced in 18.1.2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param networkHostProjectId set the networkHostProjectId.
    */
@@ -114,7 +114,7 @@ public class IpamDnsGCPProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Google cloud platform region name.
    * Field introduced in 18.1.2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return regionName
    */
@@ -127,7 +127,7 @@ public class IpamDnsGCPProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Google cloud platform region name.
    * Field introduced in 18.1.2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param regionName set the regionName.
    */
@@ -143,7 +143,7 @@ public class IpamDnsGCPProfile extends AviRestResource {
    * This field is optional.
    * By default it will use the value of the field network_host_project_id.
    * Field introduced in 18.1.2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seProjectId
    */
@@ -159,7 +159,7 @@ public class IpamDnsGCPProfile extends AviRestResource {
    * This field is optional.
    * By default it will use the value of the field network_host_project_id.
    * Field introduced in 18.1.2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seProjectId set the seProjectId.
    */
@@ -174,7 +174,7 @@ public class IpamDnsGCPProfile extends AviRestResource {
    * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
    * allocation.
    * It is a reference to an object of type network.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableNetworkRefs
    */
@@ -189,7 +189,7 @@ public class IpamDnsGCPProfile extends AviRestResource {
    * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
    * allocation.
    * It is a reference to an object of type network.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableNetworkRefs
    */
@@ -204,7 +204,7 @@ public class IpamDnsGCPProfile extends AviRestResource {
    * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
    * allocation.
    * It is a reference to an object of type network.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableNetworkRefs
    */
@@ -221,9 +221,9 @@ public class IpamDnsGCPProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Use google cloud platform network for private vip allocation.
-   * By default avi vantage network is used for private vip allocation.
+   * By default avi network is used for private vip allocation.
    * Field introduced in 18.1.2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return useGcpNetwork
    */
@@ -235,9 +235,9 @@ public class IpamDnsGCPProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Use google cloud platform network for private vip allocation.
-   * By default avi vantage network is used for private vip allocation.
+   * By default avi network is used for private vip allocation.
    * Field introduced in 18.1.2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param useGcpNetwork set the useGcpNetwork.
    */
@@ -250,7 +250,7 @@ public class IpamDnsGCPProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Google cloud platform vpc network name.
    * Field introduced in 18.1.2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vpcNetworkName
    */
@@ -263,7 +263,7 @@ public class IpamDnsGCPProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Google cloud platform vpc network name.
    * Field introduced in 18.1.2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vpcNetworkName set the vpcNetworkName.
    */

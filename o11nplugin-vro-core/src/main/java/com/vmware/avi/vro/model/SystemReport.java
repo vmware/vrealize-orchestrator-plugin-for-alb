@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.DryrunInfo;
 import com.vmware.avi.vro.model.ReportOpsState;
 import com.vmware.avi.vro.model.ReportSummary;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
@@ -38,6 +39,10 @@ public class SystemReport extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean downloadable = false;
 
+    @JsonProperty("dryrun_info")
+    @JsonInclude(Include.NON_NULL)
+    private DryrunInfo dryrunInfo;
+
     @JsonProperty("events")
     @JsonInclude(Include.NON_NULL)
     private List<ReportEvent> events;
@@ -49,6 +54,10 @@ public class SystemReport extends AviRestResource {
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
     private String name;
+
+    @JsonProperty("operation")
+    @JsonInclude(Include.NON_NULL)
+    private String operation;
 
     @JsonProperty("readiness_reports")
     @JsonInclude(Include.NON_NULL)
@@ -74,6 +83,10 @@ public class SystemReport extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String tenantRef;
 
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type;
+
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
     private String url = "url";
@@ -88,7 +101,7 @@ public class SystemReport extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Relative path to the report archive file on filesystem.the archive includes exported system configuration and current object as json.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return archiveRef
    */
@@ -101,7 +114,7 @@ public class SystemReport extends AviRestResource {
    * This is the setter method to the attribute.
    * Relative path to the report archive file on filesystem.the archive includes exported system configuration and current object as json.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param archiveRef set the archiveRef.
    */
@@ -115,7 +128,7 @@ public class SystemReport extends AviRestResource {
    * Controller patch image associated with the report.
    * It is a reference to an object of type image.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerPatchImageRef
    */
@@ -129,7 +142,7 @@ public class SystemReport extends AviRestResource {
    * Controller patch image associated with the report.
    * It is a reference to an object of type image.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param controllerPatchImageRef set the controllerPatchImageRef.
    */
@@ -142,7 +155,7 @@ public class SystemReport extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Indicates whether this report is downloadable as an archive.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return downloadable
    */
@@ -155,7 +168,7 @@ public class SystemReport extends AviRestResource {
    * This is the setter method to the attribute.
    * Indicates whether this report is downloadable as an archive.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param downloadable set the downloadable.
    */
@@ -166,9 +179,35 @@ public class SystemReport extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Dry-run report.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return dryrunInfo
+   */
+  @VsoMethod
+  public DryrunInfo getDryrunInfo() {
+    return dryrunInfo;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Dry-run report.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param dryrunInfo set the dryrunInfo.
+   */
+  @VsoMethod
+  public void setDryrunInfo(DryrunInfo dryrunInfo) {
+    this.dryrunInfo = dryrunInfo;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * List of events associated with the report.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return events
    */
@@ -181,7 +220,7 @@ public class SystemReport extends AviRestResource {
    * This is the setter method. this will set the events
    * List of events associated with the report.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return events
    */
@@ -194,7 +233,7 @@ public class SystemReport extends AviRestResource {
    * This is the setter method this will set the events
    * List of events associated with the report.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return events
    */
@@ -213,7 +252,7 @@ public class SystemReport extends AviRestResource {
    * System image associated with the report.
    * It is a reference to an object of type image.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return imageRef
    */
@@ -227,7 +266,7 @@ public class SystemReport extends AviRestResource {
    * System image associated with the report.
    * It is a reference to an object of type image.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param imageRef set the imageRef.
    */
@@ -241,7 +280,7 @@ public class SystemReport extends AviRestResource {
    * Name of the report derived from operation in a readable format.
    * Ex  upgrade_system_1a5c.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -255,7 +294,7 @@ public class SystemReport extends AviRestResource {
    * Name of the report derived from operation in a readable format.
    * Ex  upgrade_system_1a5c.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -266,10 +305,38 @@ public class SystemReport extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Nature of operation.
+   * Ex  controller upgrade, system patch, etc.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return operation
+   */
+  @VsoMethod
+  public String getOperation() {
+    return operation;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Nature of operation.
+   * Ex  controller upgrade, system patch, etc.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param operation set the operation.
+   */
+  @VsoMethod
+  public void setOperation(String  operation) {
+    this.operation = operation;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Readiness state of the system.
    * Ex  upgrade pre-check results.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return readinessReports
    */
@@ -283,7 +350,7 @@ public class SystemReport extends AviRestResource {
    * Readiness state of the system.
    * Ex  upgrade pre-check results.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return readinessReports
    */
@@ -297,7 +364,7 @@ public class SystemReport extends AviRestResource {
    * Readiness state of the system.
    * Ex  upgrade pre-check results.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return readinessReports
    */
@@ -316,7 +383,7 @@ public class SystemReport extends AviRestResource {
    * Se patch image associated with the report.
    * It is a reference to an object of type image.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sePatchImageRef
    */
@@ -330,7 +397,7 @@ public class SystemReport extends AviRestResource {
    * Se patch image associated with the report.
    * It is a reference to an object of type image.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sePatchImageRef set the sePatchImageRef.
    */
@@ -344,7 +411,7 @@ public class SystemReport extends AviRestResource {
    * Report state combines all applicable states.
    * Ex  readiness_reports.system_readiness.state.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return state
    */
@@ -358,7 +425,7 @@ public class SystemReport extends AviRestResource {
    * Report state combines all applicable states.
    * Ex  readiness_reports.system_readiness.state.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param state set the state.
    */
@@ -371,7 +438,7 @@ public class SystemReport extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Summary of the report.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return summary
    */
@@ -384,7 +451,7 @@ public class SystemReport extends AviRestResource {
    * This is the setter method to the attribute.
    * Summary of the report.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param summary set the summary.
    */
@@ -397,7 +464,7 @@ public class SystemReport extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of tasks associated with the report.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tasks
    */
@@ -410,7 +477,7 @@ public class SystemReport extends AviRestResource {
    * This is the setter method. this will set the tasks
    * List of tasks associated with the report.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tasks
    */
@@ -423,7 +490,7 @@ public class SystemReport extends AviRestResource {
    * This is the setter method this will set the tasks
    * List of tasks associated with the report.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tasks
    */
@@ -442,7 +509,7 @@ public class SystemReport extends AviRestResource {
    * Tenant uuid associated with the object.
    * It is a reference to an object of type tenant.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -456,13 +523,41 @@ public class SystemReport extends AviRestResource {
    * Tenant uuid associated with the object.
    * It is a reference to an object of type tenant.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
   public void setTenantRef(String  tenantRef) {
     this.tenantRef = tenantRef;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Type of report.
+   * Pre-checks, dry-run or an upgrade operation.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return type
+   */
+  @VsoMethod
+  public String getType() {
+    return type;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Type of report.
+   * Pre-checks, dry-run or an upgrade operation.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param type set the type.
+   */
+  @VsoMethod
+  public void setType(String  type) {
+    this.type = type;
   }
 /**
    * This is the getter method this will return the attribute value.
@@ -488,7 +583,7 @@ public class SystemReport extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid identifier for the report.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -501,7 +596,7 @@ public class SystemReport extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid identifier for the report.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
@@ -536,7 +631,10 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.summary, objSystemReport.summary)&&
   Objects.equals(this.readinessReports, objSystemReport.readinessReports)&&
   Objects.equals(this.events, objSystemReport.events)&&
-  Objects.equals(this.tasks, objSystemReport.tasks);
+  Objects.equals(this.tasks, objSystemReport.tasks)&&
+  Objects.equals(this.dryrunInfo, objSystemReport.dryrunInfo)&&
+  Objects.equals(this.operation, objSystemReport.operation)&&
+  Objects.equals(this.type, objSystemReport.type);
 }
 
 @Override
@@ -546,15 +644,18 @@ public String toString() {
       sb.append("    archiveRef: ").append(toIndentedString(archiveRef)).append("\n");
         sb.append("    controllerPatchImageRef: ").append(toIndentedString(controllerPatchImageRef)).append("\n");
         sb.append("    downloadable: ").append(toIndentedString(downloadable)).append("\n");
+        sb.append("    dryrunInfo: ").append(toIndentedString(dryrunInfo)).append("\n");
         sb.append("    events: ").append(toIndentedString(events)).append("\n");
         sb.append("    imageRef: ").append(toIndentedString(imageRef)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    operation: ").append(toIndentedString(operation)).append("\n");
         sb.append("    readinessReports: ").append(toIndentedString(readinessReports)).append("\n");
         sb.append("    sePatchImageRef: ").append(toIndentedString(sePatchImageRef)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    summary: ").append(toIndentedString(summary)).append("\n");
         sb.append("    tasks: ").append(toIndentedString(tasks)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
             sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
       sb.append("}");
   return sb.toString();

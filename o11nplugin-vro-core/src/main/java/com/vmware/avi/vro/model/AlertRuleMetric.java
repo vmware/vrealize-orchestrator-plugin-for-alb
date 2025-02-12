@@ -43,7 +43,7 @@ public class AlertRuleMetric extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Evaluation window for the metrics.
    * Unit is sec.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return duration
    */
@@ -56,7 +56,7 @@ public class AlertRuleMetric extends AviRestResource {
    * This is the setter method to the attribute.
    * Evaluation window for the metrics.
    * Unit is sec.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param duration set the duration.
    */
@@ -70,7 +70,7 @@ public class AlertRuleMetric extends AviRestResource {
    * Metric id for the alert.
    * Eg.
    * L4_client.avg_complete_conns.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricId
    */
@@ -84,7 +84,7 @@ public class AlertRuleMetric extends AviRestResource {
    * Metric id for the alert.
    * Eg.
    * L4_client.avg_complete_conns.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricId set the metricId.
    */
@@ -95,7 +95,7 @@ public class AlertRuleMetric extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricThreshold
    */
@@ -106,7 +106,7 @@ public class AlertRuleMetric extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricThreshold set the metricThreshold.
    */

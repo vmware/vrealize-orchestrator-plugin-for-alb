@@ -68,7 +68,7 @@ public class LdapAuthSettings extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The ldap base dn.
    * For example, avinetworks.com would be dc=avinetworks,dc=com.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return baseDn
    */
@@ -81,7 +81,7 @@ public class LdapAuthSettings extends AviRestResource {
    * This is the setter method to the attribute.
    * The ldap base dn.
    * For example, avinetworks.com would be dc=avinetworks,dc=com.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param baseDn set the baseDn.
    */
@@ -93,7 +93,7 @@ public class LdapAuthSettings extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ldap administrator credentials are used to search for users and group memberships.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return bindAsAdministrator
    */
@@ -105,7 +105,7 @@ public class LdapAuthSettings extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ldap administrator credentials are used to search for users and group memberships.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param bindAsAdministrator set the bindAsAdministrator.
    */
@@ -117,7 +117,7 @@ public class LdapAuthSettings extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ldap attribute that refers to user email.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "email".
    * @return emailAttribute
    */
@@ -129,7 +129,7 @@ public class LdapAuthSettings extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ldap attribute that refers to user email.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "email".
    * @param emailAttribute set the emailAttribute.
    */
@@ -141,7 +141,7 @@ public class LdapAuthSettings extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ldap attribute that refers to user's full name.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "name".
    * @return fullNameAttribute
    */
@@ -153,7 +153,7 @@ public class LdapAuthSettings extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ldap attribute that refers to user's full name.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "name".
    * @param fullNameAttribute set the fullNameAttribute.
    */
@@ -165,7 +165,7 @@ public class LdapAuthSettings extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Query the ldap servers on this port.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 389.
    * @return port
    */
@@ -177,7 +177,7 @@ public class LdapAuthSettings extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Query the ldap servers on this port.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 389.
    * @param port set the port.
    */
@@ -190,7 +190,7 @@ public class LdapAuthSettings extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ldap connection security mode.
    * Enum options - AUTH_LDAP_SECURE_NONE, AUTH_LDAP_SECURE_USE_LDAPS.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "AUTH_LDAP_SECURE_USE_LDAPS".
    * @return securityMode
    */
@@ -203,7 +203,7 @@ public class LdapAuthSettings extends AviRestResource {
    * This is the setter method to the attribute.
    * Ldap connection security mode.
    * Enum options - AUTH_LDAP_SECURE_NONE, AUTH_LDAP_SECURE_USE_LDAPS.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "AUTH_LDAP_SECURE_USE_LDAPS".
    * @param securityMode set the securityMode.
    */
@@ -217,7 +217,7 @@ public class LdapAuthSettings extends AviRestResource {
    * Ldap server ip(v4/v6) address or fqdn.
    * Use ip address if an auth profile is used to configure virtual service.
    * Minimum of 1 items required.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return server
    */
@@ -231,7 +231,7 @@ public class LdapAuthSettings extends AviRestResource {
    * Ldap server ip(v4/v6) address or fqdn.
    * Use ip address if an auth profile is used to configure virtual service.
    * Minimum of 1 items required.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return server
    */
@@ -245,7 +245,7 @@ public class LdapAuthSettings extends AviRestResource {
    * Ldap server ip(v4/v6) address or fqdn.
    * Use ip address if an auth profile is used to configure virtual service.
    * Minimum of 1 items required.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return server
    */
@@ -262,7 +262,7 @@ public class LdapAuthSettings extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ldap full directory configuration with administrator credentials.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return settings
    */
@@ -274,7 +274,7 @@ public class LdapAuthSettings extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ldap full directory configuration with administrator credentials.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param settings set the settings.
    */
@@ -286,7 +286,7 @@ public class LdapAuthSettings extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ldap anonymous bind configuration.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return userBind
    */
@@ -298,7 +298,7 @@ public class LdapAuthSettings extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ldap anonymous bind configuration.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param userBind set the userBind.
    */

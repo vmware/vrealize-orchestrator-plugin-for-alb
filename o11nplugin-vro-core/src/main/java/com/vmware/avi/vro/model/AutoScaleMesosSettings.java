@@ -33,7 +33,7 @@ public class AutoScaleMesosSettings extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Apply scale-out even when there are deployments inprogress.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return force
    */
@@ -45,7 +45,7 @@ public class AutoScaleMesosSettings extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Apply scale-out even when there are deployments inprogress.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param force set the force.
    */

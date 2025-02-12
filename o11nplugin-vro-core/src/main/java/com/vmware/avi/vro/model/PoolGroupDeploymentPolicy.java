@@ -81,7 +81,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It will automatically disable old production pools once there is a new production candidate.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return autoDisableOldProdPools
    */
@@ -93,7 +93,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It will automatically disable old production pools once there is a new production candidate.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param autoDisableOldProdPools set the autoDisableOldProdPools.
    */
@@ -104,7 +104,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
@@ -115,7 +115,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
@@ -129,7 +129,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
    * Duration of evaluation period for automatic deployment.
    * Allowed values are 60-86400.
    * Unit is sec.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @return evaluationDuration
    */
@@ -143,7 +143,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
    * Duration of evaluation period for automatic deployment.
    * Allowed values are 60-86400.
    * Unit is sec.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @param evaluationDuration set the evaluationDuration.
    */
@@ -156,8 +156,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -170,8 +169,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
    * This is the setter method. this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -184,8 +182,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
    * This is the setter method this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -202,7 +199,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The name of the pool group deployment policy.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -214,7 +211,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The name of the pool group deployment policy.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -225,7 +222,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */
@@ -236,7 +233,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
 
   /**
    * This is the setter method. this will set the rules
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */
@@ -247,7 +244,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
 
   /**
    * This is the setter method this will set the rules
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */
@@ -265,7 +262,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Deployment scheme.
    * Enum options - BLUE_GREEN, CANARY.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "BLUE_GREEN".
    * @return scheme
    */
@@ -278,7 +275,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * Deployment scheme.
    * Enum options - BLUE_GREEN, CANARY.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "BLUE_GREEN".
    * @param scheme set the scheme.
    */
@@ -292,7 +289,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
    * Target traffic ratio before pool is made production.
    * Allowed values are 1-100.
    * Unit is ratio.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @return targetTestTrafficRatio
    */
@@ -306,7 +303,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
    * Target traffic ratio before pool is made production.
    * Allowed values are 1-100.
    * Unit is ratio.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @param targetTestTrafficRatio set the targetTestTrafficRatio.
    */
@@ -318,7 +315,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -330,7 +327,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
@@ -344,7 +341,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
    * Ratio of the traffic that is sent to the pool under test.
    * Test ratio of 100 means blue green.
    * Allowed values are 1-100.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @return testTrafficRatioRampup
    */
@@ -358,7 +355,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
    * Ratio of the traffic that is sent to the pool under test.
    * Test ratio of 100 means blue green.
    * Allowed values are 1-100.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @param testTrafficRatioRampup set the testTrafficRatioRampup.
    */
@@ -389,7 +386,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the pool group deployment policy.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -401,7 +398,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the pool group deployment policy.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
@@ -416,7 +413,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
    * rule results.
    * It is a reference to an object of type webhook.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return webhookRef
    */
@@ -431,7 +428,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
    * rule results.
    * It is a reference to an object of type webhook.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param webhookRef set the webhookRef.
    */

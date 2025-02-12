@@ -51,7 +51,7 @@ public class TenantSystemConfiguration extends AviRestResource {
    * Dns virtual services hosting fqdn records for applications configured within this tenant.
    * It is a reference to an object of type virtualservice.
    * Field introduced in 30.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsVirtualserviceRefs
    */
@@ -65,7 +65,7 @@ public class TenantSystemConfiguration extends AviRestResource {
    * Dns virtual services hosting fqdn records for applications configured within this tenant.
    * It is a reference to an object of type virtualservice.
    * Field introduced in 30.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsVirtualserviceRefs
    */
@@ -79,7 +79,7 @@ public class TenantSystemConfiguration extends AviRestResource {
    * Dns virtual services hosting fqdn records for applications configured within this tenant.
    * It is a reference to an object of type virtualservice.
    * Field introduced in 30.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsVirtualserviceRefs
    */
@@ -97,7 +97,7 @@ public class TenantSystemConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the tenant system configuration object.
    * Field introduced in 30.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -110,7 +110,7 @@ public class TenantSystemConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the tenant system configuration object.
    * Field introduced in 30.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -124,7 +124,7 @@ public class TenantSystemConfiguration extends AviRestResource {
    * Unique identifier of the tenant that this object belongs to.
    * It is a reference to an object of type tenant.
    * Field introduced in 30.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -138,7 +138,7 @@ public class TenantSystemConfiguration extends AviRestResource {
    * Unique identifier of the tenant that this object belongs to.
    * It is a reference to an object of type tenant.
    * Field introduced in 30.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
@@ -170,7 +170,7 @@ public class TenantSystemConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tenant system configuration uuid.
    * Field introduced in 30.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -183,7 +183,7 @@ public class TenantSystemConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Tenant system configuration uuid.
    * Field introduced in 30.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */

@@ -47,7 +47,7 @@ public class OAuthAppSettings extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Application specific identifier.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientId
    */
@@ -60,7 +60,7 @@ public class OAuthAppSettings extends AviRestResource {
    * This is the setter method to the attribute.
    * Application specific identifier.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientId set the clientId.
    */
@@ -73,7 +73,7 @@ public class OAuthAppSettings extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Application specific identifier secret.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientSecret
    */
@@ -86,7 +86,7 @@ public class OAuthAppSettings extends AviRestResource {
    * This is the setter method to the attribute.
    * Application specific identifier secret.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientSecret set the clientSecret.
    */
@@ -99,7 +99,7 @@ public class OAuthAppSettings extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Openid connect specific configuration.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return oidcConfig
    */
@@ -112,7 +112,7 @@ public class OAuthAppSettings extends AviRestResource {
    * This is the setter method to the attribute.
    * Openid connect specific configuration.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param oidcConfig set the oidcConfig.
    */
@@ -125,7 +125,7 @@ public class OAuthAppSettings extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Scope specified to give limited access to the app.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scopes
    */
@@ -138,7 +138,7 @@ public class OAuthAppSettings extends AviRestResource {
    * This is the setter method. this will set the scopes
    * Scope specified to give limited access to the app.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scopes
    */
@@ -151,7 +151,7 @@ public class OAuthAppSettings extends AviRestResource {
    * This is the setter method this will set the scopes
    * Scope specified to give limited access to the app.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scopes
    */

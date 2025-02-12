@@ -124,7 +124,7 @@ public class WafConfig extends AviRestResource {
    * Enum options - ZERO_NINE, ONE_ZERO, ONE_ONE, TWO_ZERO.
    * Field introduced in 17.2.1.
    * Maximum of 8 items allowed.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return allowedHttpVersions
    */
@@ -139,7 +139,7 @@ public class WafConfig extends AviRestResource {
    * Enum options - ZERO_NINE, ONE_ZERO, ONE_ONE, TWO_ZERO.
    * Field introduced in 17.2.1.
    * Maximum of 8 items allowed.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return allowedHttpVersions
    */
@@ -154,7 +154,7 @@ public class WafConfig extends AviRestResource {
    * Enum options - ZERO_NINE, ONE_ZERO, ONE_ONE, TWO_ZERO.
    * Field introduced in 17.2.1.
    * Maximum of 8 items allowed.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return allowedHttpVersions
    */
@@ -175,7 +175,7 @@ public class WafConfig extends AviRestResource {
    * HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE,
    * HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return allowedMethods
    */
@@ -191,7 +191,7 @@ public class WafConfig extends AviRestResource {
    * HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE,
    * HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return allowedMethods
    */
@@ -207,7 +207,7 @@ public class WafConfig extends AviRestResource {
    * HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE,
    * HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return allowedMethods
    */
@@ -225,7 +225,7 @@ public class WafConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Allowed request content type character sets in waf.
    * Field introduced in 22.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return allowedRequestContentTypeCharsets
    */
@@ -238,7 +238,7 @@ public class WafConfig extends AviRestResource {
    * This is the setter method. this will set the allowedRequestContentTypeCharsets
    * Allowed request content type character sets in waf.
    * Field introduced in 22.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return allowedRequestContentTypeCharsets
    */
@@ -251,7 +251,7 @@ public class WafConfig extends AviRestResource {
    * This is the setter method this will set the allowedRequestContentTypeCharsets
    * Allowed request content type character sets in waf.
    * Field introduced in 22.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return allowedRequestContentTypeCharsets
    */
@@ -269,7 +269,7 @@ public class WafConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Argument seperator.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "&".
    * @return argumentSeparator
    */
@@ -282,7 +282,7 @@ public class WafConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Argument seperator.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "&".
    * @param argumentSeparator set the argumentSeparator.
    */
@@ -297,7 +297,7 @@ public class WafConfig extends AviRestResource {
    * Allowed values are 1-32768.
    * Field introduced in 18.1.5, 18.2.1.
    * Unit is kb.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 32.
    * @return clientRequestMaxBodySize
    */
@@ -312,7 +312,7 @@ public class WafConfig extends AviRestResource {
    * Allowed values are 1-32768.
    * Field introduced in 18.1.5, 18.2.1.
    * Unit is kb.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 32.
    * @param clientRequestMaxBodySize set the clientRequestMaxBodySize.
    */
@@ -329,7 +329,7 @@ public class WafConfig extends AviRestResource {
    * The order of entries matters.
    * If the request's content-type matches an entry, its request body parser will run and no other parser will be invoked.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return contentTypeMappings
    */
@@ -346,7 +346,7 @@ public class WafConfig extends AviRestResource {
    * The order of entries matters.
    * If the request's content-type matches an entry, its request body parser will run and no other parser will be invoked.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return contentTypeMappings
    */
@@ -363,7 +363,7 @@ public class WafConfig extends AviRestResource {
    * The order of entries matters.
    * If the request's content-type matches an entry, its request body parser will run and no other parser will be invoked.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return contentTypeMappings
    */
@@ -383,7 +383,7 @@ public class WafConfig extends AviRestResource {
    * 1  for version 1 cookies.
    * Allowed values are 0-1.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return cookieFormatVersion
    */
@@ -398,7 +398,7 @@ public class WafConfig extends AviRestResource {
    * 1  for version 1 cookies.
    * Allowed values are 0-1.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param cookieFormatVersion set the cookieFormatVersion.
    */
@@ -411,7 +411,7 @@ public class WafConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ignore request body parsing errors due to partial scanning.
    * Field introduced in 18.1.5, 18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return ignoreIncompleteRequestBodyError
    */
@@ -424,7 +424,7 @@ public class WafConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Ignore request body parsing errors due to partial scanning.
    * Field introduced in 18.1.5, 18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param ignoreIncompleteRequestBodyError set the ignoreIncompleteRequestBodyError.
    */
@@ -446,7 +446,7 @@ public class WafConfig extends AviRestResource {
    * Allowed values are 0-5000.
    * Field introduced in 17.2.12, 18.1.2.
    * Unit is milliseconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 50.
    * @return maxExecutionTime
    */
@@ -468,7 +468,7 @@ public class WafConfig extends AviRestResource {
    * Allowed values are 0-5000.
    * Field introduced in 17.2.12, 18.1.2.
    * Unit is milliseconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 50.
    * @param maxExecutionTime set the maxExecutionTime.
    */
@@ -481,7 +481,7 @@ public class WafConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Limit cpu utilization for each regular expression match when processing rules.
    * Field introduced in 17.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30000.
    * @return regexMatchLimit
    */
@@ -494,7 +494,7 @@ public class WafConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Limit cpu utilization for each regular expression match when processing rules.
    * Field introduced in 17.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30000.
    * @param regexMatchLimit set the regexMatchLimit.
    */
@@ -507,7 +507,7 @@ public class WafConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Limit depth of recursion for each regular expression match when processing rules.
    * Field introduced in 18.2.9.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
    * @return regexRecursionLimit
    */
@@ -520,7 +520,7 @@ public class WafConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Limit depth of recursion for each regular expression match when processing rules.
    * Field introduced in 18.2.9.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
    * @param regexRecursionLimit set the regexRecursionLimit.
    */
@@ -533,7 +533,7 @@ public class WafConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Waf default action for request body phase.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "phase:2,deny,status:403,log,auditlog".
    * @return requestBodyDefaultAction
    */
@@ -546,7 +546,7 @@ public class WafConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Waf default action for request body phase.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "phase:2,deny,status:403,log,auditlog".
    * @param requestBodyDefaultAction set the requestBodyDefaultAction.
    */
@@ -559,7 +559,7 @@ public class WafConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Waf default action for request header phase.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "phase:1,deny,status:403,log,auditlog".
    * @return requestHdrDefaultAction
    */
@@ -572,7 +572,7 @@ public class WafConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Waf default action for request header phase.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "phase:1,deny,status:403,log,auditlog".
    * @param requestHdrDefaultAction set the requestHdrDefaultAction.
    */
@@ -585,7 +585,7 @@ public class WafConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Waf default action for response body phase.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "phase:4,deny,status:403,log,auditlog".
    * @return responseBodyDefaultAction
    */
@@ -598,7 +598,7 @@ public class WafConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Waf default action for response body phase.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "phase:4,deny,status:403,log,auditlog".
    * @param responseBodyDefaultAction set the responseBodyDefaultAction.
    */
@@ -611,7 +611,7 @@ public class WafConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Waf default action for response header phase.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "phase:3,deny,status:403,log,auditlog".
    * @return responseHdrDefaultAction
    */
@@ -624,7 +624,7 @@ public class WafConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Waf default action for response header phase.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "phase:3,deny,status:403,log,auditlog".
    * @param responseHdrDefaultAction set the responseHdrDefaultAction.
    */
@@ -637,7 +637,7 @@ public class WafConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Waf restricted file extensions.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return restrictedExtensions
    */
@@ -650,7 +650,7 @@ public class WafConfig extends AviRestResource {
    * This is the setter method. this will set the restrictedExtensions
    * Waf restricted file extensions.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return restrictedExtensions
    */
@@ -663,7 +663,7 @@ public class WafConfig extends AviRestResource {
    * This is the setter method this will set the restrictedExtensions
    * Waf restricted file extensions.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return restrictedExtensions
    */
@@ -681,7 +681,7 @@ public class WafConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Waf restricted http headers.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return restrictedHeaders
    */
@@ -694,7 +694,7 @@ public class WafConfig extends AviRestResource {
    * This is the setter method. this will set the restrictedHeaders
    * Waf restricted http headers.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return restrictedHeaders
    */
@@ -707,7 +707,7 @@ public class WafConfig extends AviRestResource {
    * This is the setter method this will set the restrictedHeaders
    * Waf restricted http headers.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return restrictedHeaders
    */
@@ -725,7 +725,7 @@ public class WafConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Whether or not to send waf status in a request header to pool servers.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return sendStatusHeader
    */
@@ -738,7 +738,7 @@ public class WafConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Whether or not to send waf status in a request header to pool servers.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param sendStatusHeader set the sendStatusHeader.
    */
@@ -753,7 +753,7 @@ public class WafConfig extends AviRestResource {
    * Allowed values are 1-32768.
    * Field introduced in 17.2.1.
    * Unit is kb.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 128.
    * @return serverResponseMaxBodySize
    */
@@ -768,7 +768,7 @@ public class WafConfig extends AviRestResource {
    * Allowed values are 1-32768.
    * Field introduced in 17.2.1.
    * Unit is kb.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 128.
    * @param serverResponseMaxBodySize set the serverResponseMaxBodySize.
    */
@@ -782,7 +782,7 @@ public class WafConfig extends AviRestResource {
    * Waf static file extensions.
    * Get and head requests with no query args and one of these extensions are allowed and not checked by the ruleset.
    * Field introduced in 17.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return staticExtensions
    */
@@ -796,7 +796,7 @@ public class WafConfig extends AviRestResource {
    * Waf static file extensions.
    * Get and head requests with no query args and one of these extensions are allowed and not checked by the ruleset.
    * Field introduced in 17.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return staticExtensions
    */
@@ -810,7 +810,7 @@ public class WafConfig extends AviRestResource {
    * Waf static file extensions.
    * Get and head requests with no query args and one of these extensions are allowed and not checked by the ruleset.
    * Field introduced in 17.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return staticExtensions
    */
@@ -832,7 +832,7 @@ public class WafConfig extends AviRestResource {
    * HTTP_RESPONSE_CODE_301, HTTP_RESPONSE_CODE_302, HTTP_RESPONSE_CODE_303, HTTP_RESPONSE_CODE_304, HTTP_RESPONSE_CODE_305, HTTP_RESPONSE_CODE_307,
    * HTTP_RESPONSE_CODE_400, HTTP_RESPONSE_CODE_401, HTTP_RESPONSE_CODE_402...
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "HTTP_RESPONSE_CODE_403".
    * @return statusCodeForRejectedRequests
    */
@@ -849,7 +849,7 @@ public class WafConfig extends AviRestResource {
    * HTTP_RESPONSE_CODE_301, HTTP_RESPONSE_CODE_302, HTTP_RESPONSE_CODE_303, HTTP_RESPONSE_CODE_304, HTTP_RESPONSE_CODE_305, HTTP_RESPONSE_CODE_307,
    * HTTP_RESPONSE_CODE_400, HTTP_RESPONSE_CODE_401, HTTP_RESPONSE_CODE_402...
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "HTTP_RESPONSE_CODE_403".
    * @param statusCodeForRejectedRequests set the statusCodeForRejectedRequests.
    */
@@ -862,7 +862,7 @@ public class WafConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The name of the request header indicating waf evaluation status to pool servers.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "X-WAF-Result".
    * @return statusHeaderName
    */
@@ -875,7 +875,7 @@ public class WafConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * The name of the request header indicating waf evaluation status to pool servers.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "X-WAF-Result".
    * @param statusHeaderName set the statusHeaderName.
    */
@@ -888,7 +888,7 @@ public class WafConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Block or flag xml requests referring to external entities.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return xmlXxeProtection
    */
@@ -901,7 +901,7 @@ public class WafConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Block or flag xml requests referring to external entities.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param xmlXxeProtection set the xmlXxeProtection.
    */

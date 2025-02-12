@@ -45,7 +45,7 @@ public class AuthenticationMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Configure client ip addresses.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientIp
    */
@@ -58,7 +58,7 @@ public class AuthenticationMatch extends AviRestResource {
    * This is the setter method to the attribute.
    * Configure client ip addresses.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientIp set the clientIp.
    */
@@ -71,7 +71,7 @@ public class AuthenticationMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Configure the host header.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostHdr
    */
@@ -84,7 +84,7 @@ public class AuthenticationMatch extends AviRestResource {
    * This is the setter method to the attribute.
    * Configure the host header.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hostHdr set the hostHdr.
    */
@@ -97,7 +97,7 @@ public class AuthenticationMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Configure request paths.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return path
    */
@@ -110,7 +110,7 @@ public class AuthenticationMatch extends AviRestResource {
    * This is the setter method to the attribute.
    * Configure request paths.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param path set the path.
    */

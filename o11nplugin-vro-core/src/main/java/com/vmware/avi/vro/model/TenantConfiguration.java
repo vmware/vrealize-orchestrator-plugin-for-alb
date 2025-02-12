@@ -43,7 +43,7 @@ public class TenantConfiguration extends AviRestResource {
    * Controls the ownership of serviceengines.
    * Service engines can either be exclusively owned by each tenant or owned by the administrator and shared by all tenants.
    * When serviceengines are owned by the administrator, each tenant can have either read access or no access to their service engines.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return seInProviderContext
    */
@@ -57,7 +57,7 @@ public class TenantConfiguration extends AviRestResource {
    * Controls the ownership of serviceengines.
    * Service engines can either be exclusively owned by each tenant or owned by the administrator and shared by all tenants.
    * When serviceengines are owned by the administrator, each tenant can have either read access or no access to their service engines.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param seInProviderContext set the seInProviderContext.
    */
@@ -68,7 +68,7 @@ public class TenantConfiguration extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return tenantAccessToProviderSe
    */
@@ -79,7 +79,7 @@ public class TenantConfiguration extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param tenantAccessToProviderSe set the tenantAccessToProviderSe.
    */
@@ -92,7 +92,7 @@ public class TenantConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * When 'per tenant ip domain' is selected, each tenant gets its own routing domain that is not shared with any other tenant.
    * When 'share ip domain across all tenants' is selected, all tenants share the same routing domain.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return tenantVrf
    */
@@ -105,7 +105,7 @@ public class TenantConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * When 'per tenant ip domain' is selected, each tenant gets its own routing domain that is not shared with any other tenant.
    * When 'share ip domain across all tenants' is selected, all tenants share the same routing domain.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param tenantVrf set the tenantVrf.
    */

@@ -5,8 +5,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.ControllerParams;
 import com.vmware.avi.vro.model.SeGroupOptions;
 import com.vmware.avi.vro.model.SeGroupResumeOptions;
+import com.vmware.avi.vro.model.ServiceEngineParams;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -26,6 +28,10 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class UpgradeOpsParam extends AviRestResource {
+    @JsonProperty("controller")
+    @JsonInclude(Include.NON_NULL)
+    private ControllerParams controller;
+
     @JsonProperty("image_ref")
     @JsonInclude(Include.NON_NULL)
     private String imageRef;
@@ -42,14 +48,44 @@ public class UpgradeOpsParam extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private SeGroupResumeOptions seGroupResumeOptions;
 
+    @JsonProperty("service_engine")
+    @JsonInclude(Include.NON_NULL)
+    private ServiceEngineParams serviceEngine;
 
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * This field holds the configurable controller params required in upgrade flows for current request.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return controller
+   */
+  @VsoMethod
+  public ControllerParams getController() {
+    return controller;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * This field holds the configurable controller params required in upgrade flows for current request.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param controller set the controller.
+   */
+  @VsoMethod
+  public void setController(ControllerParams controller) {
+    this.controller = controller;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
    * Image uuid for identifying base image.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return imageRef
    */
@@ -63,7 +99,7 @@ public class UpgradeOpsParam extends AviRestResource {
    * Image uuid for identifying base image.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param imageRef set the imageRef.
    */
@@ -77,7 +113,7 @@ public class UpgradeOpsParam extends AviRestResource {
    * Image uuid for identifying patch.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return patchRef
    */
@@ -91,7 +127,7 @@ public class UpgradeOpsParam extends AviRestResource {
    * Image uuid for identifying patch.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param patchRef set the patchRef.
    */
@@ -104,7 +140,7 @@ public class UpgradeOpsParam extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This field identifies se group options that need to be applied during the upgrade operations.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGroupOptions
    */
@@ -117,7 +153,7 @@ public class UpgradeOpsParam extends AviRestResource {
    * This is the setter method to the attribute.
    * This field identifies se group options that need to be applied during the upgrade operations.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seGroupOptions set the seGroupOptions.
    */
@@ -130,7 +166,7 @@ public class UpgradeOpsParam extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Apply options while resuming se group upgrade operations.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGroupResumeOptions
    */
@@ -143,13 +179,39 @@ public class UpgradeOpsParam extends AviRestResource {
    * This is the setter method to the attribute.
    * Apply options while resuming se group upgrade operations.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seGroupResumeOptions set the seGroupResumeOptions.
    */
   @VsoMethod
   public void setSeGroupResumeOptions(SeGroupResumeOptions seGroupResumeOptions) {
     this.seGroupResumeOptions = seGroupResumeOptions;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * This field holds the configurable serviceenginegroup params required in upgrade flows for current request.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return serviceEngine
+   */
+  @VsoMethod
+  public ServiceEngineParams getServiceEngine() {
+    return serviceEngine;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * This field holds the configurable serviceenginegroup params required in upgrade flows for current request.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param serviceEngine set the serviceEngine.
+   */
+  @VsoMethod
+  public void setServiceEngine(ServiceEngineParams serviceEngine) {
+    this.serviceEngine = serviceEngine;
   }
 
 
@@ -166,17 +228,21 @@ public boolean equals(java.lang.Object o) {
   return   Objects.equals(this.imageRef, objUpgradeOpsParam.imageRef)&&
   Objects.equals(this.patchRef, objUpgradeOpsParam.patchRef)&&
   Objects.equals(this.seGroupOptions, objUpgradeOpsParam.seGroupOptions)&&
-  Objects.equals(this.seGroupResumeOptions, objUpgradeOpsParam.seGroupResumeOptions);
+  Objects.equals(this.seGroupResumeOptions, objUpgradeOpsParam.seGroupResumeOptions)&&
+  Objects.equals(this.controller, objUpgradeOpsParam.controller)&&
+  Objects.equals(this.serviceEngine, objUpgradeOpsParam.serviceEngine);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class UpgradeOpsParam {\n");
-      sb.append("    imageRef: ").append(toIndentedString(imageRef)).append("\n");
+      sb.append("    controller: ").append(toIndentedString(controller)).append("\n");
+        sb.append("    imageRef: ").append(toIndentedString(imageRef)).append("\n");
         sb.append("    patchRef: ").append(toIndentedString(patchRef)).append("\n");
         sb.append("    seGroupOptions: ").append(toIndentedString(seGroupOptions)).append("\n");
         sb.append("    seGroupResumeOptions: ").append(toIndentedString(seGroupResumeOptions)).append("\n");
+        sb.append("    serviceEngine: ").append(toIndentedString(serviceEngine)).append("\n");
       sb.append("}");
   return sb.toString();
 }

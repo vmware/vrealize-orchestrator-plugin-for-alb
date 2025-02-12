@@ -46,7 +46,7 @@ public class AppLearningConfidenceOverride extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Confidence threshold for label confidence_high.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 9500.
    * @return confidHighValue
    */
@@ -59,7 +59,7 @@ public class AppLearningConfidenceOverride extends AviRestResource {
    * This is the setter method to the attribute.
    * Confidence threshold for label confidence_high.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 9500.
    * @param confidHighValue set the confidHighValue.
    */
@@ -72,7 +72,7 @@ public class AppLearningConfidenceOverride extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Confidence threshold for label confidence_low.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 7500.
    * @return confidLowValue
    */
@@ -85,7 +85,7 @@ public class AppLearningConfidenceOverride extends AviRestResource {
    * This is the setter method to the attribute.
    * Confidence threshold for label confidence_low.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 7500.
    * @param confidLowValue set the confidLowValue.
    */
@@ -98,7 +98,7 @@ public class AppLearningConfidenceOverride extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Confidence threshold for label confidence_probable.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 9000.
    * @return confidProbableValue
    */
@@ -111,7 +111,7 @@ public class AppLearningConfidenceOverride extends AviRestResource {
    * This is the setter method to the attribute.
    * Confidence threshold for label confidence_probable.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 9000.
    * @param confidProbableValue set the confidProbableValue.
    */
@@ -124,7 +124,7 @@ public class AppLearningConfidenceOverride extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Confidence threshold for label confidence_very_high.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 9999.
    * @return confidVeryHighValue
    */
@@ -137,7 +137,7 @@ public class AppLearningConfidenceOverride extends AviRestResource {
    * This is the setter method to the attribute.
    * Confidence threshold for label confidence_very_high.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 9999.
    * @param confidVeryHighValue set the confidVeryHighValue.
    */

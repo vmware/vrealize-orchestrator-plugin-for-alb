@@ -60,7 +60,7 @@ public class DnsRuleMatchTarget extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ip addresses to match against client ip or the edns client subnet ip.
    * Field introduced in 17.1.6,17.2.2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientIpAddress
    */
@@ -73,7 +73,7 @@ public class DnsRuleMatchTarget extends AviRestResource {
    * This is the setter method to the attribute.
    * Ip addresses to match against client ip or the edns client subnet ip.
    * Field introduced in 17.1.6,17.2.2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientIpAddress set the clientIpAddress.
    */
@@ -86,7 +86,7 @@ public class DnsRuleMatchTarget extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Port number to match against client port number.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientPortNumbers
    */
@@ -99,7 +99,7 @@ public class DnsRuleMatchTarget extends AviRestResource {
    * This is the setter method to the attribute.
    * Port number to match against client port number.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientPortNumbers set the clientPortNumbers.
    */
@@ -112,7 +112,7 @@ public class DnsRuleMatchTarget extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Geographical location attribute to match against that of the client ip.
    * Field introduced in 17.1.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return geoLocation
    */
@@ -125,7 +125,7 @@ public class DnsRuleMatchTarget extends AviRestResource {
    * This is the setter method to the attribute.
    * Geographical location attribute to match against that of the client ip.
    * Field introduced in 17.1.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param geoLocation set the geoLocation.
    */
@@ -138,7 +138,7 @@ public class DnsRuleMatchTarget extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Dns transport protocol match.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return protocol
    */
@@ -151,7 +151,7 @@ public class DnsRuleMatchTarget extends AviRestResource {
    * This is the setter method to the attribute.
    * Dns transport protocol match.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param protocol set the protocol.
    */
@@ -164,7 +164,7 @@ public class DnsRuleMatchTarget extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Domain names to match against query name.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return queryName
    */
@@ -177,7 +177,7 @@ public class DnsRuleMatchTarget extends AviRestResource {
    * This is the setter method to the attribute.
    * Domain names to match against query name.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param queryName set the queryName.
    */
@@ -190,7 +190,7 @@ public class DnsRuleMatchTarget extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Dns query types to match against request query type.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return queryType
    */
@@ -203,7 +203,7 @@ public class DnsRuleMatchTarget extends AviRestResource {
    * This is the setter method to the attribute.
    * Dns query types to match against request query type.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param queryType set the queryType.
    */

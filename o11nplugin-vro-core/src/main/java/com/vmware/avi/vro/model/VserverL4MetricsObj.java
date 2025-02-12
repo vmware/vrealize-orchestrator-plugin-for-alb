@@ -417,7 +417,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Apdex measuring quality of network connections to servers.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return apdexc
    */
@@ -429,7 +429,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Apdex measuring quality of network connections to servers.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param apdexc set the apdexc.
    */
@@ -441,7 +441,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Apdex measuring network connection quality based on rtt.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return apdexrtt
    */
@@ -453,7 +453,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Apdex measuring network connection quality based on rtt.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param apdexrtt set the apdexrtt.
    */
@@ -465,7 +465,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Number of application ddos attacks occurring.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgApplicationDosAttacks
    */
@@ -477,7 +477,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Number of application ddos attacks occurring.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgApplicationDosAttacks set the avgApplicationDosAttacks.
    */
@@ -489,7 +489,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average transmit and receive network bandwidth between client and virtual service.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgBandwidth
    */
@@ -501,7 +501,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average transmit and receive network bandwidth between client and virtual service.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgBandwidth set the avgBandwidth.
    */
@@ -513,7 +513,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Averaged rate bytes dropped per second.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgBytesPolicyDrops
    */
@@ -525,7 +525,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Averaged rate bytes dropped per second.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgBytesPolicyDrops set the avgBytesPolicyDrops.
    */
@@ -537,7 +537,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate of total connections per second.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgCompleteConns
    */
@@ -549,7 +549,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate of total connections per second.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgCompleteConns set the avgCompleteConns.
    */
@@ -561,7 +561,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate of dropped connections per second.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgConnectionsDropped
    */
@@ -573,7 +573,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate of dropped connections per second.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgConnectionsDropped set the avgConnectionsDropped.
    */
@@ -585,7 +585,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  rate of http app errors.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosAppError
    */
@@ -597,7 +597,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  rate of http app errors.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosAppError set the avgDosAppError.
    */
@@ -609,7 +609,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Number ddos attacks occurring.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosAttacks
    */
@@ -621,7 +621,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Number ddos attacks occurring.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosAttacks set the avgDosAttacks.
    */
@@ -633,7 +633,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  rate of bad rst floods.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosBadRstFlood
    */
@@ -645,7 +645,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  rate of bad rst floods.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosBadRstFlood set the avgDosBadRstFlood.
    */
@@ -657,7 +657,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average transmit and receive network bandwidth between client and virtual service related to ddos attack.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosBandwidth
    */
@@ -669,7 +669,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average transmit and receive network bandwidth between client and virtual service related to ddos attack.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosBandwidth set the avgDosBandwidth.
    */
@@ -681,7 +681,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Number of connections considered as dos.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosConn
    */
@@ -693,7 +693,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Number of connections considered as dos.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosConn set the avgDosConn.
    */
@@ -705,7 +705,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  connections dropped due to ip rate limit.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosConnIpRlDrop
    */
@@ -717,7 +717,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  connections dropped due to ip rate limit.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosConnIpRlDrop set the avgDosConnIpRlDrop.
    */
@@ -729,7 +729,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  connections dropped due to vs rate limit.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosConnRlDrop
    */
@@ -741,7 +741,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  connections dropped due to vs rate limit.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosConnRlDrop set the avgDosConnRlDrop.
    */
@@ -753,7 +753,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  rate of fake sessions.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosFakeSession
    */
@@ -765,7 +765,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  rate of fake sessions.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosFakeSession set the avgDosFakeSession.
    */
@@ -777,7 +777,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  rate of http aborts.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosHttpAbort
    */
@@ -789,7 +789,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  rate of http aborts.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosHttpAbort set the avgDosHttpAbort.
    */
@@ -801,7 +801,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  rate of http errors.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosHttpError
    */
@@ -813,7 +813,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  rate of http errors.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosHttpError set the avgDosHttpError.
    */
@@ -825,7 +825,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  rate of http timeouts.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosHttpTimeout
    */
@@ -837,7 +837,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  rate of http timeouts.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosHttpTimeout set the avgDosHttpTimeout.
    */
@@ -849,7 +849,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  rate of malformed packet floods.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosMalformedFlood
    */
@@ -861,7 +861,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  rate of malformed packet floods.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosMalformedFlood set the avgDosMalformedFlood.
    */
@@ -873,7 +873,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  non syn packet flood.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosNonSynFlood
    */
@@ -885,7 +885,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  non syn packet flood.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosNonSynFlood set the avgDosNonSynFlood.
    */
@@ -897,7 +897,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Number of request considered as dos.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosReq
    */
@@ -909,7 +909,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Number of request considered as dos.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosReq set the avgDosReq.
    */
@@ -921,7 +921,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  requests dropped due to cookie rate limit.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosReqCookieRlDrop
    */
@@ -933,7 +933,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  requests dropped due to cookie rate limit.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosReqCookieRlDrop set the avgDosReqCookieRlDrop.
    */
@@ -946,7 +946,7 @@ public class VserverL4MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Dos attack  requests dropped due to custom rate limit.
    * Field introduced in 17.2.13,18.1.3,18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosReqCustomRlDrop
    */
@@ -959,7 +959,7 @@ public class VserverL4MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Dos attack  requests dropped due to custom rate limit.
    * Field introduced in 17.2.13,18.1.3,18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosReqCustomRlDrop set the avgDosReqCustomRlDrop.
    */
@@ -971,7 +971,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  requests dropped due to header rate limit.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosReqHdrRlDrop
    */
@@ -983,7 +983,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  requests dropped due to header rate limit.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosReqHdrRlDrop set the avgDosReqHdrRlDrop.
    */
@@ -995,7 +995,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  requests dropped due to ip rate limit.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosReqIpRlDrop
    */
@@ -1007,7 +1007,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  requests dropped due to ip rate limit.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosReqIpRlDrop set the avgDosReqIpRlDrop.
    */
@@ -1019,7 +1019,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  requests dropped due to ip rate limit for bad requests.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosReqIpRlDropBad
    */
@@ -1031,7 +1031,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  requests dropped due to ip rate limit for bad requests.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosReqIpRlDropBad set the avgDosReqIpRlDropBad.
    */
@@ -1043,7 +1043,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  requests dropped due to bad ip rate limit.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosReqIpScanBadRlDrop
    */
@@ -1055,7 +1055,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  requests dropped due to bad ip rate limit.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosReqIpScanBadRlDrop set the avgDosReqIpScanBadRlDrop.
    */
@@ -1067,7 +1067,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  requests dropped due to unknown ip rate limit.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosReqIpScanUnknownRlDrop
    */
@@ -1079,7 +1079,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  requests dropped due to unknown ip rate limit.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosReqIpScanUnknownRlDrop set the avgDosReqIpScanUnknownRlDrop.
    */
@@ -1091,7 +1091,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  requests dropped due to ip+url rate limit.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosReqIpUriRlDrop
    */
@@ -1103,7 +1103,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  requests dropped due to ip+url rate limit.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosReqIpUriRlDrop set the avgDosReqIpUriRlDrop.
    */
@@ -1115,7 +1115,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  requests dropped due to ip+url rate limit for bad requests.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosReqIpUriRlDropBad
    */
@@ -1127,7 +1127,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  requests dropped due to ip+url rate limit for bad requests.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosReqIpUriRlDropBad set the avgDosReqIpUriRlDropBad.
    */
@@ -1139,7 +1139,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  requests dropped due to vs rate limit.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosReqRlDrop
    */
@@ -1151,7 +1151,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  requests dropped due to vs rate limit.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosReqRlDrop set the avgDosReqRlDrop.
    */
@@ -1163,7 +1163,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  requests dropped due to url rate limit.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosReqUriRlDrop
    */
@@ -1175,7 +1175,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  requests dropped due to url rate limit.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosReqUriRlDrop set the avgDosReqUriRlDrop.
    */
@@ -1187,7 +1187,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  requests dropped due to url rate limit for bad requests.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosReqUriRlDropBad
    */
@@ -1199,7 +1199,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  requests dropped due to url rate limit for bad requests.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosReqUriRlDropBad set the avgDosReqUriRlDropBad.
    */
@@ -1211,7 +1211,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  requests dropped due to bad url rate limit.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosReqUriScanBadRlDrop
    */
@@ -1223,7 +1223,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  requests dropped due to bad url rate limit.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosReqUriScanBadRlDrop set the avgDosReqUriScanBadRlDrop.
    */
@@ -1235,7 +1235,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  requests dropped due to unknown url rate limit.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosReqUriScanUnknownRlDrop
    */
@@ -1247,7 +1247,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  requests dropped due to unknown url rate limit.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosReqUriScanUnknownRlDrop set the avgDosReqUriScanUnknownRlDrop.
    */
@@ -1259,7 +1259,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average rate of bytes received per second related to ddos attack.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosRxBytes
    */
@@ -1271,7 +1271,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average rate of bytes received per second related to ddos attack.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosRxBytes set the avgDosRxBytes.
    */
@@ -1283,7 +1283,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  slow uri.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosSlowUri
    */
@@ -1295,7 +1295,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  slow uri.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosSlowUri set the avgDosSlowUri.
    */
@@ -1307,7 +1307,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  rate of small window stresses.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosSmallWindowStress
    */
@@ -1319,7 +1319,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  rate of small window stresses.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosSmallWindowStress set the avgDosSmallWindowStress.
    */
@@ -1331,7 +1331,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  rate of http ssl errors.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosSslError
    */
@@ -1343,7 +1343,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  rate of http ssl errors.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosSslError set the avgDosSslError.
    */
@@ -1355,7 +1355,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  rate of syn floods.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosSynFlood
    */
@@ -1367,7 +1367,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  rate of syn floods.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosSynFlood set the avgDosSynFlood.
    */
@@ -1379,7 +1379,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number of request used for l7 dos requests normalization.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosTotalReq
    */
@@ -1391,7 +1391,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number of request used for l7 dos requests normalization.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosTotalReq set the avgDosTotalReq.
    */
@@ -1403,7 +1403,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average rate of bytes transmitted per second related to ddos attack.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosTxBytes
    */
@@ -1415,7 +1415,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average rate of bytes transmitted per second related to ddos attack.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosTxBytes set the avgDosTxBytes.
    */
@@ -1427,7 +1427,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  rate of zero window stresses.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosZeroWindowStress
    */
@@ -1439,7 +1439,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  rate of zero window stresses.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosZeroWindowStress set the avgDosZeroWindowStress.
    */
@@ -1451,7 +1451,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate of total errored connections per second.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgErroredConnections
    */
@@ -1463,7 +1463,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate of total errored connections per second.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgErroredConnections set the avgErroredConnections.
    */
@@ -1475,7 +1475,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average rate of syn ddos attacks on virtual service.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgHalfOpenConns
    */
@@ -1487,7 +1487,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average rate of syn ddos attacks on virtual service.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgHalfOpenConns set the avgHalfOpenConns.
    */
@@ -1499,7 +1499,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average l4 connection duration which does not include client rtt.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgL4ClientLatency
    */
@@ -1511,7 +1511,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average l4 connection duration which does not include client rtt.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgL4ClientLatency set the avgL4ClientLatency.
    */
@@ -1523,7 +1523,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate of lossy connections per second.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgLossyConnections
    */
@@ -1535,7 +1535,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate of lossy connections per second.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgLossyConnections set the avgLossyConnections.
    */
@@ -1547,7 +1547,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Averaged rate of lossy request per second.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgLossyReq
    */
@@ -1559,7 +1559,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Averaged rate of lossy request per second.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgLossyReq set the avgLossyReq.
    */
@@ -1571,7 +1571,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Number of network ddos attacks occurring.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgNetworkDosAttacks
    */
@@ -1583,7 +1583,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Number of network ddos attacks occurring.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgNetworkDosAttacks set the avgNetworkDosAttacks.
    */
@@ -1595,7 +1595,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Averaged rate of new client connections per second.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgNewEstablishedConns
    */
@@ -1607,7 +1607,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Averaged rate of new client connections per second.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgNewEstablishedConns set the avgNewEstablishedConns.
    */
@@ -1619,7 +1619,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Averaged rate of dropped packets per second due to policy.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgPktsPolicyDrops
    */
@@ -1631,7 +1631,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Averaged rate of dropped packets per second due to policy.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgPktsPolicyDrops set the avgPktsPolicyDrops.
    */
@@ -1644,7 +1644,7 @@ public class VserverL4MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Rate of total connections dropped due to vs policy per second.
    * It includes drops due to rate limits, security policy drops, connection limits etc.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgPolicyDrops
    */
@@ -1657,7 +1657,7 @@ public class VserverL4MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Rate of total connections dropped due to vs policy per second.
    * It includes drops due to rate limits, security policy drops, connection limits etc.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgPolicyDrops set the avgPolicyDrops.
    */
@@ -1669,7 +1669,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average rate of bytes received per second.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgRxBytes
    */
@@ -1681,7 +1681,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average rate of bytes received per second.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgRxBytes set the avgRxBytes.
    */
@@ -1693,7 +1693,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average rate of received bytes dropped per second.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgRxBytesDropped
    */
@@ -1705,7 +1705,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average rate of received bytes dropped per second.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgRxBytesDropped set the avgRxBytesDropped.
    */
@@ -1717,7 +1717,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average rate of packets received per second.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgRxPkts
    */
@@ -1729,7 +1729,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average rate of packets received per second.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgRxPkts set the avgRxPkts.
    */
@@ -1741,7 +1741,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average rate of received packets dropped per second.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgRxPktsDropped
    */
@@ -1753,7 +1753,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average rate of received packets dropped per second.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgRxPktsDropped set the avgRxPktsDropped.
    */
@@ -1765,7 +1765,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total syncs sent across all connections.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgSyns
    */
@@ -1777,7 +1777,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total syncs sent across all connections.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgSyns set the avgSyns.
    */
@@ -1789,7 +1789,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Averaged rate bytes dropped per second.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgTotalConnections
    */
@@ -1801,7 +1801,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Averaged rate bytes dropped per second.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgTotalConnections set the avgTotalConnections.
    */
@@ -1813,7 +1813,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average network round trip time between client and virtual service.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgTotalRtt
    */
@@ -1825,7 +1825,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average network round trip time between client and virtual service.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgTotalRtt set the avgTotalRtt.
    */
@@ -1837,7 +1837,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average rate of bytes transmitted per second.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgTxBytes
    */
@@ -1849,7 +1849,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average rate of bytes transmitted per second.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgTxBytes set the avgTxBytes.
    */
@@ -1861,7 +1861,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average rate of packets transmitted per second.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgTxPkts
    */
@@ -1873,7 +1873,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average rate of packets transmitted per second.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgTxPkts set the avgTxPkts.
    */
@@ -1886,7 +1886,7 @@ public class VserverL4MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum connection establishment time on the client side.
    * Field introduced in 22.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxConnectionEstbTimeFe
    */
@@ -1899,7 +1899,7 @@ public class VserverL4MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum connection establishment time on the client side.
    * Field introduced in 22.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxConnectionEstbTimeFe set the maxConnectionEstbTimeFe.
    */
@@ -1911,7 +1911,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Max number of ses.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxNumActiveSe
    */
@@ -1923,7 +1923,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Max number of ses.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxNumActiveSe set the maxNumActiveSe.
    */
@@ -1935,7 +1935,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Max number of open connections.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxOpenConns
    */
@@ -1947,7 +1947,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Max number of open connections.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxOpenConns set the maxOpenConns.
    */
@@ -1959,7 +1959,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number of received bytes.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxRxBytesAbsolute
    */
@@ -1971,7 +1971,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number of received bytes.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxRxBytesAbsolute set the maxRxBytesAbsolute.
    */
@@ -1983,7 +1983,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number of received frames.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxRxPktsAbsolute
    */
@@ -1995,7 +1995,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number of received frames.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxRxPktsAbsolute set the maxRxPktsAbsolute.
    */
@@ -2007,7 +2007,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number of transmitted bytes.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxTxBytesAbsolute
    */
@@ -2019,7 +2019,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number of transmitted bytes.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxTxBytesAbsolute set the maxTxBytesAbsolute.
    */
@@ -2031,7 +2031,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number of transmitted frames.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxTxPktsAbsolute
    */
@@ -2043,7 +2043,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number of transmitted frames.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxTxPktsAbsolute set the maxTxPktsAbsolute.
    */
@@ -2054,7 +2054,7 @@ public class VserverL4MetricsObj extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nodeObjId
    */
@@ -2065,7 +2065,7 @@ public class VserverL4MetricsObj extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nodeObjId set the nodeObjId.
    */
@@ -2077,7 +2077,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Fraction of l7 requests owing to dos.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pctApplicationDosAttacks
    */
@@ -2089,7 +2089,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Fraction of l7 requests owing to dos.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pctApplicationDosAttacks set the pctApplicationDosAttacks.
    */
@@ -2101,7 +2101,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Percent of l4 connection dropped and lossy for virtual service.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pctConnectionErrors
    */
@@ -2113,7 +2113,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Percent of l4 connection dropped and lossy for virtual service.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pctConnectionErrors set the pctConnectionErrors.
    */
@@ -2125,7 +2125,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Fraction of l4 connections owing to dos.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pctConnectionsDosAttacks
    */
@@ -2137,7 +2137,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Fraction of l4 connections owing to dos.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pctConnectionsDosAttacks set the pctConnectionsDosAttacks.
    */
@@ -2149,7 +2149,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos bandwidth percentage.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pctDosBandwidth
    */
@@ -2161,7 +2161,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos bandwidth percentage.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pctDosBandwidth set the pctDosBandwidth.
    */
@@ -2173,7 +2173,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Percentage of received bytes as part of a dos attack.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pctDosRxBytes
    */
@@ -2185,7 +2185,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Percentage of received bytes as part of a dos attack.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pctDosRxBytes set the pctDosRxBytes.
    */
@@ -2197,7 +2197,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Deprecated.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pctNetworkDosAttacks
    */
@@ -2209,7 +2209,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Deprecated.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pctNetworkDosAttacks set the pctNetworkDosAttacks.
    */
@@ -2221,7 +2221,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Fraction of packets owing to dos.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pctPktsDosAttacks
    */
@@ -2233,7 +2233,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Fraction of packets owing to dos.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pctPktsDosAttacks set the pctPktsDosAttacks.
    */
@@ -2245,7 +2245,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Fraction of l4 requests dropped owing to policy.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pctPolicyDrops
    */
@@ -2257,7 +2257,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Fraction of l4 requests dropped owing to policy.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pctPolicyDrops set the pctPolicyDrops.
    */
@@ -2269,7 +2269,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total duration across all connections.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumConnDuration
    */
@@ -2281,7 +2281,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total duration across all connections.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumConnDuration set the sumConnDuration.
    */
@@ -2294,7 +2294,7 @@ public class VserverL4MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total number of times client side connection establishment time was breached.
    * Field introduced in 22.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumConnEstTimeExceededFlowsFe
    */
@@ -2307,7 +2307,7 @@ public class VserverL4MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Total number of times client side connection establishment time was breached.
    * Field introduced in 22.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumConnEstTimeExceededFlowsFe set the sumConnEstTimeExceededFlowsFe.
    */
@@ -2319,7 +2319,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number of connection dropped due to vserver connection limit.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumConnectionDroppedUserLimit
    */
@@ -2331,7 +2331,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number of connection dropped due to vserver connection limit.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumConnectionDroppedUserLimit set the sumConnectionDroppedUserLimit.
    */
@@ -2343,7 +2343,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number of client network connections that were lossy or dropped.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumConnectionErrors
    */
@@ -2355,7 +2355,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number of client network connections that were lossy or dropped.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumConnectionErrors set the sumConnectionErrors.
    */
@@ -2367,7 +2367,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total connections dropped including failed.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumConnectionsDropped
    */
@@ -2379,7 +2379,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total connections dropped including failed.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumConnectionsDropped set the sumConnectionsDropped.
    */
@@ -2391,7 +2391,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total duplicate ack retransmits across all connections.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumDupAckRetransmits
    */
@@ -2403,7 +2403,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total duplicate ack retransmits across all connections.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumDupAckRetransmits set the sumDupAckRetransmits.
    */
@@ -2416,7 +2416,7 @@ public class VserverL4MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Sum of end to end network rtt experienced by end clients.
    * Higher value would increase response times experienced by clients.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumEndToEndRtt
    */
@@ -2429,7 +2429,7 @@ public class VserverL4MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Sum of end to end network rtt experienced by end clients.
    * Higher value would increase response times experienced by clients.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumEndToEndRtt set the sumEndToEndRtt.
    */
@@ -2441,7 +2441,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total connections that have rtt values from 0 to rtt threshold.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumEndToEndRttBucket1
    */
@@ -2453,7 +2453,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total connections that have rtt values from 0 to rtt threshold.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumEndToEndRttBucket1 set the sumEndToEndRttBucket1.
    */
@@ -2465,7 +2465,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total connections that have rtt values rtt threshold and above.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumEndToEndRttBucket2
    */
@@ -2477,7 +2477,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total connections that have rtt values rtt threshold and above.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumEndToEndRttBucket2 set the sumEndToEndRttBucket2.
    */
@@ -2489,7 +2489,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number of finished connections.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumFinishedConns
    */
@@ -2501,7 +2501,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number of finished connections.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumFinishedConns set the sumFinishedConns.
    */
@@ -2514,7 +2514,7 @@ public class VserverL4MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total number of times 'latency_threshold' was breached during ingress.
    * Field introduced in 22.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumIngressLatencyExceededFlows
    */
@@ -2527,7 +2527,7 @@ public class VserverL4MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Total number of times 'latency_threshold' was breached during ingress.
    * Field introduced in 22.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumIngressLatencyExceededFlows set the sumIngressLatencyExceededFlows.
    */
@@ -2539,7 +2539,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total connections that were lossy due to high packet retransmissions.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumLossyConnections
    */
@@ -2551,7 +2551,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total connections that were lossy due to high packet retransmissions.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumLossyConnections set the sumLossyConnections.
    */
@@ -2563,7 +2563,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total requests that were lossy due to high packet retransmissions.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumLossyReq
    */
@@ -2575,7 +2575,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total requests that were lossy due to high packet retransmissions.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumLossyReq set the sumLossyReq.
    */
@@ -2587,7 +2587,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total out of order packets across all connections.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumOutOfOrders
    */
@@ -2599,7 +2599,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total out of order packets across all connections.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumOutOfOrders set the sumOutOfOrders.
    */
@@ -2611,7 +2611,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number of packets dropped due to vserver bandwidth limit.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumPacketDroppedUserBandwidthLimit
    */
@@ -2623,7 +2623,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number of packets dropped due to vserver bandwidth limit.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumPacketDroppedUserBandwidthLimit set the sumPacketDroppedUserBandwidthLimit.
    */
@@ -2635,7 +2635,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number connections used for rtt.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumRttValidConnections
    */
@@ -2647,7 +2647,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number connections used for rtt.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumRttValidConnections set the sumRttValidConnections.
    */
@@ -2659,7 +2659,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total sack retransmits across all connections.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumSackRetransmits
    */
@@ -2671,7 +2671,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total sack retransmits across all connections.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumSackRetransmits set the sumSackRetransmits.
    */
@@ -2683,7 +2683,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number of connections with server flow control condition.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumServerFlowControl
    */
@@ -2695,7 +2695,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number of connections with server flow control condition.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumServerFlowControl set the sumServerFlowControl.
    */
@@ -2707,7 +2707,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total connection timeouts in the interval.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumTimeoutRetransmits
    */
@@ -2719,7 +2719,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total connection timeouts in the interval.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumTimeoutRetransmits set the sumTimeoutRetransmits.
    */
@@ -2731,7 +2731,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number of zero window size events across all connections.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumZeroWindowSizeEvents
    */
@@ -2743,7 +2743,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number of zero window size events across all connections.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumZeroWindowSizeEvents set the sumZeroWindowSizeEvents.
    */

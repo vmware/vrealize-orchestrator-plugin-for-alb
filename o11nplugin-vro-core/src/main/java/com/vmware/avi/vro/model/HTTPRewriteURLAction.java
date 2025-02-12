@@ -44,7 +44,7 @@ public class HTTPRewriteURLAction extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Host config.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostHdr
    */
@@ -56,7 +56,7 @@ public class HTTPRewriteURLAction extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Host config.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hostHdr set the hostHdr.
    */
@@ -68,7 +68,7 @@ public class HTTPRewriteURLAction extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Path config.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return path
    */
@@ -80,7 +80,7 @@ public class HTTPRewriteURLAction extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Path config.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param path set the path.
    */
@@ -92,7 +92,7 @@ public class HTTPRewriteURLAction extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Query config.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return query
    */
@@ -104,7 +104,7 @@ public class HTTPRewriteURLAction extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Query config.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param query set the query.
    */

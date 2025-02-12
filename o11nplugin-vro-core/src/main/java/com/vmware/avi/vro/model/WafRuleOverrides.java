@@ -46,7 +46,7 @@ public class WafRuleOverrides extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Override the enable flag for this rule.
    * Field introduced in 20.1.6.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return enable
    */
@@ -59,7 +59,7 @@ public class WafRuleOverrides extends AviRestResource {
    * This is the setter method to the attribute.
    * Override the enable flag for this rule.
    * Field introduced in 20.1.6.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param enable set the enable.
    */
@@ -72,7 +72,7 @@ public class WafRuleOverrides extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Replace the exclude list for this rule.
    * Field introduced in 20.1.6.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return excludeList
    */
@@ -85,7 +85,7 @@ public class WafRuleOverrides extends AviRestResource {
    * This is the setter method. this will set the excludeList
    * Replace the exclude list for this rule.
    * Field introduced in 20.1.6.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return excludeList
    */
@@ -98,7 +98,7 @@ public class WafRuleOverrides extends AviRestResource {
    * This is the setter method this will set the excludeList
    * Replace the exclude list for this rule.
    * Field introduced in 20.1.6.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return excludeList
    */
@@ -117,7 +117,7 @@ public class WafRuleOverrides extends AviRestResource {
    * Override the waf mode for this rule.
    * Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT.
    * Field introduced in 20.1.6.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mode
    */
@@ -131,7 +131,7 @@ public class WafRuleOverrides extends AviRestResource {
    * Override the waf mode for this rule.
    * Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT.
    * Field introduced in 20.1.6.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mode set the mode.
    */
@@ -144,7 +144,7 @@ public class WafRuleOverrides extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The rule_id of the rule where attributes are overridden.
    * Field introduced in 20.1.6.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ruleId
    */
@@ -157,7 +157,7 @@ public class WafRuleOverrides extends AviRestResource {
    * This is the setter method to the attribute.
    * The rule_id of the rule where attributes are overridden.
    * Field introduced in 20.1.6.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ruleId set the ruleId.
    */

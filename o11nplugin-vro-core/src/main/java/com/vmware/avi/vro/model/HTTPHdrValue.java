@@ -42,7 +42,7 @@ public class HTTPHdrValue extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The custom value field is sensitive and will not be displayed.
    * Field introduced in 22.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return isSensitive
    */
@@ -55,7 +55,7 @@ public class HTTPHdrValue extends AviRestResource {
    * This is the setter method to the attribute.
    * The custom value field is sensitive and will not be displayed.
    * Field introduced in 22.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param isSensitive set the isSensitive.
    */
@@ -67,7 +67,7 @@ public class HTTPHdrValue extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Http header value or variable representing an http header.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return val
    */
@@ -79,7 +79,7 @@ public class HTTPHdrValue extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Http header value or variable representing an http header.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param val set the val.
    */
@@ -97,7 +97,7 @@ public class HTTPHdrValue extends AviRestResource {
    * HTTP_POLICY_VAR_SSL_CIPHER, HTTP_POLICY_VAR_REQUEST_ID, HTTP_POLICY_VAR_SSL_CLIENT_VERSION, HTTP_POLICY_VAR_SSL_CLIENT_SIGALG,
    * HTTP_POLICY_VAR_SSL_CLIENT_NOTVALIDBEFORE, HTTP_POLICY_VAR_SSL_CLIENT_NOTVALIDAFTER, HTTP_POLICY_VAR_SSL_CLIENT_ESCAPED,
    * HTTP_POLICY_VAR_SOURCE_IP.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return var
    */
@@ -115,7 +115,7 @@ public class HTTPHdrValue extends AviRestResource {
    * HTTP_POLICY_VAR_SSL_CIPHER, HTTP_POLICY_VAR_REQUEST_ID, HTTP_POLICY_VAR_SSL_CLIENT_VERSION, HTTP_POLICY_VAR_SSL_CLIENT_SIGALG,
    * HTTP_POLICY_VAR_SSL_CLIENT_NOTVALIDBEFORE, HTTP_POLICY_VAR_SSL_CLIENT_NOTVALIDAFTER, HTTP_POLICY_VAR_SSL_CLIENT_ESCAPED,
    * HTTP_POLICY_VAR_SOURCE_IP.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param var set the var.
    */

@@ -42,7 +42,7 @@ public class OpenStackApiVersionCheckFailure extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Cloud uuid.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccId
    */
@@ -55,7 +55,7 @@ public class OpenStackApiVersionCheckFailure extends AviRestResource {
    * This is the setter method to the attribute.
    * Cloud uuid.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccId set the ccId.
    */
@@ -68,7 +68,7 @@ public class OpenStackApiVersionCheckFailure extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Cloud name.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccName
    */
@@ -81,7 +81,7 @@ public class OpenStackApiVersionCheckFailure extends AviRestResource {
    * This is the setter method to the attribute.
    * Cloud name.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccName set the ccName.
    */
@@ -94,7 +94,7 @@ public class OpenStackApiVersionCheckFailure extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Failure reason containing expected api version and actual version.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorString
    */
@@ -107,7 +107,7 @@ public class OpenStackApiVersionCheckFailure extends AviRestResource {
    * This is the setter method to the attribute.
    * Failure reason containing expected api version and actual version.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param errorString set the errorString.
    */

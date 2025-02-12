@@ -41,7 +41,7 @@ public class NTPConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ntp authentication keys.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ntpAuthenticationKeys
    */
@@ -53,7 +53,7 @@ public class NTPConfiguration extends AviRestResource {
   /**
    * This is the setter method. this will set the ntpAuthenticationKeys
    * Ntp authentication keys.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ntpAuthenticationKeys
    */
@@ -65,7 +65,7 @@ public class NTPConfiguration extends AviRestResource {
   /**
    * This is the setter method this will set the ntpAuthenticationKeys
    * Ntp authentication keys.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ntpAuthenticationKeys
    */
@@ -82,7 +82,7 @@ public class NTPConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * List of ntp server fqdns or ip(v4/v6) addresses.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ntpServerList
    */
@@ -94,7 +94,7 @@ public class NTPConfiguration extends AviRestResource {
   /**
    * This is the setter method. this will set the ntpServerList
    * List of ntp server fqdns or ip(v4/v6) addresses.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ntpServerList
    */
@@ -106,7 +106,7 @@ public class NTPConfiguration extends AviRestResource {
   /**
    * This is the setter method this will set the ntpServerList
    * List of ntp server fqdns or ip(v4/v6) addresses.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ntpServerList
    */
@@ -123,7 +123,7 @@ public class NTPConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * List of ntp servers.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ntpServers
    */
@@ -135,7 +135,7 @@ public class NTPConfiguration extends AviRestResource {
   /**
    * This is the setter method. this will set the ntpServers
    * List of ntp servers.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ntpServers
    */
@@ -147,7 +147,7 @@ public class NTPConfiguration extends AviRestResource {
   /**
    * This is the setter method this will set the ntpServers
    * List of ntp servers.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ntpServers
    */

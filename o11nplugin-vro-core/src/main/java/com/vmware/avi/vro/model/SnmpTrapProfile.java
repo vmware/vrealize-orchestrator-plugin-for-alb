@@ -49,7 +49,7 @@ public class SnmpTrapProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * A user-friendly name of the snmp trap configuration.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -61,7 +61,7 @@ public class SnmpTrapProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * A user-friendly name of the snmp trap configuration.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -73,7 +73,7 @@ public class SnmpTrapProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -85,7 +85,7 @@ public class SnmpTrapProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
@@ -97,7 +97,7 @@ public class SnmpTrapProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The ip address or hostname of the snmp trap destination server.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return trapServers
    */
@@ -109,7 +109,7 @@ public class SnmpTrapProfile extends AviRestResource {
   /**
    * This is the setter method. this will set the trapServers
    * The ip address or hostname of the snmp trap destination server.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return trapServers
    */
@@ -121,7 +121,7 @@ public class SnmpTrapProfile extends AviRestResource {
   /**
    * This is the setter method this will set the trapServers
    * The ip address or hostname of the snmp trap destination server.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return trapServers
    */
@@ -157,7 +157,7 @@ public class SnmpTrapProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the snmp trap profile object.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -169,7 +169,7 @@ public class SnmpTrapProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the snmp trap profile object.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */

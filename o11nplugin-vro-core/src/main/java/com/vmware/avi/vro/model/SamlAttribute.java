@@ -38,7 +38,7 @@ public class SamlAttribute extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Saml attribute name.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attrName
    */
@@ -51,7 +51,7 @@ public class SamlAttribute extends AviRestResource {
    * This is the setter method to the attribute.
    * Saml attribute name.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param attrName set the attrName.
    */
@@ -64,7 +64,7 @@ public class SamlAttribute extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Saml attribute values.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attrValues
    */
@@ -77,7 +77,7 @@ public class SamlAttribute extends AviRestResource {
    * This is the setter method. this will set the attrValues
    * Saml attribute values.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attrValues
    */
@@ -90,7 +90,7 @@ public class SamlAttribute extends AviRestResource {
    * This is the setter method this will set the attrValues
    * Saml attribute values.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attrValues
    */

@@ -63,7 +63,7 @@ public class SeHmEventVsDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ha compromised reason.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return haReason
    */
@@ -75,7 +75,7 @@ public class SeHmEventVsDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ha compromised reason.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param haReason set the haReason.
    */
@@ -87,7 +87,7 @@ public class SeHmEventVsDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Reason for virtual service down.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
@@ -99,7 +99,7 @@ public class SeHmEventVsDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Reason for virtual service down.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
@@ -111,7 +111,7 @@ public class SeHmEventVsDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Service engine name.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seName
    */
@@ -123,7 +123,7 @@ public class SeHmEventVsDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Service engine name.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seName set the seName.
    */
@@ -135,7 +135,7 @@ public class SeHmEventVsDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the event generator.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return srcUuid
    */
@@ -147,7 +147,7 @@ public class SeHmEventVsDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the event generator.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param srcUuid set the srcUuid.
    */
@@ -159,7 +159,7 @@ public class SeHmEventVsDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Vip address.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vip6Address
    */
@@ -171,7 +171,7 @@ public class SeHmEventVsDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Vip address.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vip6Address set the vip6Address.
    */
@@ -183,7 +183,7 @@ public class SeHmEventVsDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Vip address.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipAddress
    */
@@ -195,7 +195,7 @@ public class SeHmEventVsDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Vip address.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vipAddress set the vipAddress.
    */
@@ -207,7 +207,7 @@ public class SeHmEventVsDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Vip id.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipId
    */
@@ -219,7 +219,7 @@ public class SeHmEventVsDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Vip id.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vipId set the vipId.
    */
@@ -232,7 +232,7 @@ public class SeHmEventVsDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Virtual service name.
    * It is a reference to an object of type virtualservice.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return virtualService
    */
@@ -245,7 +245,7 @@ public class SeHmEventVsDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Virtual service name.
    * It is a reference to an object of type virtualservice.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param virtualService set the virtualService.
    */

@@ -573,7 +573,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return adf
    */
@@ -584,7 +584,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param adf set the adf.
    */
@@ -595,7 +595,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return allRequestHeaders
    */
@@ -606,7 +606,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param allRequestHeaders set the allRequestHeaders.
    */
@@ -617,7 +617,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return allResponseHeaders
    */
@@ -628,7 +628,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param allResponseHeaders set the allResponseHeaders.
    */
@@ -640,7 +640,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unit is milliseconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return appResponseTime
    */
@@ -652,7 +652,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unit is milliseconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param appResponseTime set the appResponseTime.
    */
@@ -667,7 +667,7 @@ public class ApplicationLog extends AviRestResource {
    * Enum options - AUTH_STATUS_NO_AUTHENTICATION, AUTH_STATUS_AUTHENTICATION_SUCCESS, AUTH_STATUS_AUTHENTICATION_FAILURE, AUTH_STATUS_UNAUTHORIZED,
    * AUTH_STATUS_AUTHENTICATED_REQUEST, AUTH_STATUS_AUTHZ_FAILED.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "AUTH_STATUS_NO_AUTHENTICATION".
    * @return authStatus
    */
@@ -682,7 +682,7 @@ public class ApplicationLog extends AviRestResource {
    * Enum options - AUTH_STATUS_NO_AUTHENTICATION, AUTH_STATUS_AUTHENTICATION_SUCCESS, AUTH_STATUS_AUTHENTICATION_FAILURE, AUTH_STATUS_UNAUTHORIZED,
    * AUTH_STATUS_AUTHENTICATED_REQUEST, AUTH_STATUS_AUTHZ_FAILED.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "AUTH_STATUS_NO_AUTHENTICATION".
    * @param authStatus set the authStatus.
    */
@@ -695,7 +695,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Average packet processing latency for the backend flow.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgIngressLatencyBe
    */
@@ -708,7 +708,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Average packet processing latency for the backend flow.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgIngressLatencyBe set the avgIngressLatencyBe.
    */
@@ -721,7 +721,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Average packet processing latency for the frontend flow.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgIngressLatencyFe
    */
@@ -734,7 +734,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Average packet processing latency for the frontend flow.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgIngressLatencyFe set the avgIngressLatencyFe.
    */
@@ -747,7 +747,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enum options - NOT_UPDATED, BY_CONTENT_REWRITE_PROFILE, BY_DATA_SCRIPT.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "NOT_UPDATED".
    * @return bodyUpdated
    */
@@ -760,7 +760,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Enum options - NOT_UPDATED, BY_CONTENT_REWRITE_PROFILE, BY_DATA_SCRIPT.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "NOT_UPDATED".
    * @param bodyUpdated set the bodyUpdated.
    */
@@ -773,7 +773,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Logs related to bot detection.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return botManagementLog
    */
@@ -786,7 +786,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Logs related to bot detection.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param botManagementLog set the botManagementLog.
    */
@@ -799,7 +799,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Cache fetch and store is disabled by the datascript policies.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return cacheDisabledByDs
    */
@@ -812,7 +812,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Cache fetch and store is disabled by the datascript policies.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param cacheDisabledByDs set the cacheDisabledByDs.
    */
@@ -823,7 +823,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return cacheHit
    */
@@ -834,7 +834,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param cacheHit set the cacheHit.
    */
@@ -845,7 +845,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return cacheable
    */
@@ -856,7 +856,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param cacheable set the cacheable.
    */
@@ -867,7 +867,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientBrowser
    */
@@ -878,7 +878,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientBrowser set the clientBrowser.
    */
@@ -892,7 +892,7 @@ public class ApplicationLog extends AviRestResource {
    * List of ciphers sent by client in tls client hello.
    * This field is only generated when tls handshake fails due to no shared cipher.
    * Field introduced in 18.1.4, 18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientCipherList
    */
@@ -906,7 +906,7 @@ public class ApplicationLog extends AviRestResource {
    * List of ciphers sent by client in tls client hello.
    * This field is only generated when tls handshake fails due to no shared cipher.
    * Field introduced in 18.1.4, 18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientCipherList set the clientCipherList.
    */
@@ -917,7 +917,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientDestPort
    */
@@ -928,7 +928,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientDestPort set the clientDestPort.
    */
@@ -939,7 +939,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientDevice
    */
@@ -950,7 +950,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientDevice set the clientDevice.
    */
@@ -963,7 +963,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The fingerprints for this client.
    * Field introduced in 22.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientFingerprints
    */
@@ -976,7 +976,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * The fingerprints for this client.
    * Field introduced in 22.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientFingerprints set the clientFingerprints.
    */
@@ -990,7 +990,7 @@ public class ApplicationLog extends AviRestResource {
    * Enum options - INSIGHTS_DISABLED, NO_INSIGHTS_NOT_SAMPLED_COUNT, NO_INSIGHTS_NOT_SAMPLED_TYPE, NO_INSIGHTS_NOT_SAMPLED_SKIP_URI,
    * NO_INSIGHTS_NOT_SAMPLED_URI_NOT_IN_LIST, NO_INSIGHTS_NOT_SAMPLED_CLIENT_IP_NOT_IN_RANGE, NO_INSIGHTS_NOT_SAMPLED_OTHER, ACTIVE_INSIGHTS_FAILED,
    * ACTIVE_INSIGHTS_ENABLED, PASSIVE_INSIGHTS_ENABLED.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientInsights
    */
@@ -1004,7 +1004,7 @@ public class ApplicationLog extends AviRestResource {
    * Enum options - INSIGHTS_DISABLED, NO_INSIGHTS_NOT_SAMPLED_COUNT, NO_INSIGHTS_NOT_SAMPLED_TYPE, NO_INSIGHTS_NOT_SAMPLED_SKIP_URI,
    * NO_INSIGHTS_NOT_SAMPLED_URI_NOT_IN_LIST, NO_INSIGHTS_NOT_SAMPLED_CLIENT_IP_NOT_IN_RANGE, NO_INSIGHTS_NOT_SAMPLED_OTHER, ACTIVE_INSIGHTS_FAILED,
    * ACTIVE_INSIGHTS_ENABLED, PASSIVE_INSIGHTS_ENABLED.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientInsights set the clientInsights.
    */
@@ -1017,7 +1017,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ipv4 address of the client.
    * When true client ip feature is enabled, this will be derived from the header configured in the true client ip feature, if present in the request.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientIp
    */
@@ -1030,7 +1030,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Ipv4 address of the client.
    * When true client ip feature is enabled, this will be derived from the header configured in the true client ip feature, if present in the request.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientIp set the clientIp.
    */
@@ -1043,7 +1043,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ipv6 address of the client.
    * Field introduced in 18.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientIp6
    */
@@ -1056,7 +1056,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Ipv6 address of the client.
    * Field introduced in 18.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientIp6 set the clientIp6.
    */
@@ -1067,7 +1067,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientLocation
    */
@@ -1078,7 +1078,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientLocation set the clientLocation.
    */
@@ -1091,7 +1091,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the client log filter applied.
    * Field introduced in 18.1.5, 18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientLogFilterName
    */
@@ -1104,7 +1104,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the client log filter applied.
    * Field introduced in 18.1.5, 18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientLogFilterName set the clientLogFilterName.
    */
@@ -1115,7 +1115,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientOs
    */
@@ -1126,7 +1126,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientOs set the clientOs.
    */
@@ -1138,7 +1138,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unit is milliseconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientRtt
    */
@@ -1150,7 +1150,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unit is milliseconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientRtt set the clientRtt.
    */
@@ -1161,7 +1161,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientSrcPort
    */
@@ -1172,7 +1172,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientSrcPort set the clientSrcPort.
    */
@@ -1185,7 +1185,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enum options - NO_COMPRESSION_DISABLED, NO_COMPRESSION_GZIP_CONTENT, NO_COMPRESSION_CONTENT_TYPE, NO_COMPRESSION_CUSTOM_FILTER,
    * NO_COMPRESSION_AUTO_FILTER, NO_COMPRESSION_MIN_LENGTH, NO_COMPRESSION_CAN_BE_COMPRESSED, COMPRESSED.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return compression
    */
@@ -1198,7 +1198,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Enum options - NO_COMPRESSION_DISABLED, NO_COMPRESSION_GZIP_CONTENT, NO_COMPRESSION_CONTENT_TYPE, NO_COMPRESSION_CUSTOM_FILTER,
    * NO_COMPRESSION_AUTO_FILTER, NO_COMPRESSION_MIN_LENGTH, NO_COMPRESSION_CAN_BE_COMPRESSED, COMPRESSED.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param compression set the compression.
    */
@@ -1209,7 +1209,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return compressionPercentage
    */
@@ -1220,7 +1220,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param compressionPercentage set the compressionPercentage.
    */
@@ -1233,7 +1233,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tcp connection establishment time for the backend flow.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return connEstTimeBe
    */
@@ -1246,7 +1246,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Tcp connection establishment time for the backend flow.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param connEstTimeBe set the connEstTimeBe.
    */
@@ -1259,7 +1259,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tcp connection establishment time for the frontend flow.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return connEstTimeFe
    */
@@ -1272,7 +1272,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Tcp connection establishment time for the frontend flow.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param connEstTimeFe set the connEstTimeFe.
    */
@@ -1283,7 +1283,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return connectionErrorInfo
    */
@@ -1294,7 +1294,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param connectionErrorInfo set the connectionErrorInfo.
    */
@@ -1307,7 +1307,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Critical error encountered during request processing.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return criticalErrorEncountered
    */
@@ -1320,7 +1320,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Critical error encountered during request processing.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param criticalErrorEncountered set the criticalErrorEncountered.
    */
@@ -1332,7 +1332,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unit is milliseconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dataTransferTime
    */
@@ -1344,7 +1344,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unit is milliseconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dataTransferTime set the dataTransferTime.
    */
@@ -1355,7 +1355,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return datascriptErrorTrace
    */
@@ -1366,7 +1366,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param datascriptErrorTrace set the datascriptErrorTrace.
    */
@@ -1378,7 +1378,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Log created by the invocations of the datascript api avi.vs.log().
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return datascriptLog
    */
@@ -1390,7 +1390,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Log created by the invocations of the datascript api avi.vs.log().
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param datascriptLog set the datascriptLog.
    */
@@ -1401,7 +1401,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return etag
    */
@@ -1412,7 +1412,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param etag set the etag.
    */
@@ -1425,7 +1425,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The method called by the grpc request.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return grpcMethodName
    */
@@ -1438,7 +1438,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * The method called by the grpc request.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param grpcMethodName set the grpcMethodName.
    */
@@ -1451,7 +1451,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The service called by the grpc request.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return grpcServiceName
    */
@@ -1464,7 +1464,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * The service called by the grpc request.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param grpcServiceName set the grpcServiceName.
    */
@@ -1478,7 +1478,7 @@ public class ApplicationLog extends AviRestResource {
    * Grpc response status sent in the grpc trailer.
    * Special values are -1- no grpc status recevied even though client sent content-type as application/grpc.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return grpcStatus
    */
@@ -1492,7 +1492,7 @@ public class ApplicationLog extends AviRestResource {
    * Grpc response status sent in the grpc trailer.
    * Special values are -1- no grpc status recevied even though client sent content-type as application/grpc.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param grpcStatus set the grpcStatus.
    */
@@ -1510,7 +1510,7 @@ public class ApplicationLog extends AviRestResource {
    * GRPC_STATUS_CODE_UNIMPLEMENTED, GRPC_STATUS_CODE_INTERNAL, GRPC_STATUS_CODE_UNAVAILABLE, GRPC_STATUS_CODE_DATA_LOSS,
    * GRPC_STATUS_CODE_UNAUTHENTICATED.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return grpcStatusReasonPhrase
    */
@@ -1528,7 +1528,7 @@ public class ApplicationLog extends AviRestResource {
    * GRPC_STATUS_CODE_UNIMPLEMENTED, GRPC_STATUS_CODE_INTERNAL, GRPC_STATUS_CODE_UNAVAILABLE, GRPC_STATUS_CODE_DATA_LOSS,
    * GRPC_STATUS_CODE_UNAUTHENTICATED.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param grpcStatusReasonPhrase set the grpcStatusReasonPhrase.
    */
@@ -1540,7 +1540,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Response headers received from backend server.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return headersReceivedFromServer
    */
@@ -1552,7 +1552,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Response headers received from backend server.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param headersReceivedFromServer set the headersReceivedFromServer.
    */
@@ -1564,7 +1564,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Request headers sent to backend server.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return headersSentToServer
    */
@@ -1576,7 +1576,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Request headers sent to backend server.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param headersSentToServer set the headersSentToServer.
    */
@@ -1587,7 +1587,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return host
    */
@@ -1598,7 +1598,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param host set the host.
    */
@@ -1611,7 +1611,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Stream identifier corresponding to an http2 request.
    * Field introduced in 18.1.2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return http2StreamId
    */
@@ -1624,7 +1624,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Stream identifier corresponding to an http2 request.
    * Field introduced in 18.1.2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param http2StreamId set the http2StreamId.
    */
@@ -1635,7 +1635,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpRequestPolicyRuleName
    */
@@ -1646,7 +1646,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param httpRequestPolicyRuleName set the httpRequestPolicyRuleName.
    */
@@ -1657,7 +1657,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpResponsePolicyRuleName
    */
@@ -1668,7 +1668,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param httpResponsePolicyRuleName set the httpResponsePolicyRuleName.
    */
@@ -1679,7 +1679,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpSecurityPolicyRuleName
    */
@@ -1690,7 +1690,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param httpSecurityPolicyRuleName set the httpSecurityPolicyRuleName.
    */
@@ -1701,7 +1701,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpVersion
    */
@@ -1712,7 +1712,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param httpVersion set the httpVersion.
    */
@@ -1725,7 +1725,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Log for the icap processing.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return icapLog
    */
@@ -1738,7 +1738,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Log for the icap processing.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param icapLog set the icapLog.
    */
@@ -1751,7 +1751,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Logs for the jwt validation process.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return jwtLog
    */
@@ -1764,7 +1764,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Logs for the jwt validation process.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param jwtLog set the jwtLog.
    */
@@ -1775,7 +1775,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return logId
    */
@@ -1786,7 +1786,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param logId set the logId.
    */
@@ -1799,7 +1799,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum packet processing latency for the backend flow.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxIngressLatencyBe
    */
@@ -1812,7 +1812,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum packet processing latency for the backend flow.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxIngressLatencyBe set the maxIngressLatencyBe.
    */
@@ -1825,7 +1825,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum packet processing latency for the frontend flow.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxIngressLatencyFe
    */
@@ -1838,7 +1838,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum packet processing latency for the frontend flow.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxIngressLatencyFe set the maxIngressLatencyFe.
    */
@@ -1849,7 +1849,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return method
    */
@@ -1860,7 +1860,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param method set the method.
    */
@@ -1871,7 +1871,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return microservice
    */
@@ -1882,7 +1882,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param microservice set the microservice.
    */
@@ -1893,7 +1893,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return microserviceName
    */
@@ -1904,7 +1904,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param microserviceName set the microserviceName.
    */
@@ -1915,7 +1915,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkSecurityPolicyRuleName
    */
@@ -1926,7 +1926,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param networkSecurityPolicyRuleName set the networkSecurityPolicyRuleName.
    */
@@ -1939,7 +1939,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ntlm auto-detection logs.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ntlmLog
    */
@@ -1952,7 +1952,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Ntlm auto-detection logs.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ntlmLog set the ntlmLog.
    */
@@ -1965,7 +1965,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Logs related to oauth requests.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return oauthLog
    */
@@ -1978,7 +1978,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Logs related to oauth requests.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param oauthLog set the oauthLog.
    */
@@ -1991,7 +1991,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ocsp certificate status response sent in the ssl/tls connection handshake.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return ocspStatusRespSent
    */
@@ -2004,7 +2004,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Ocsp certificate status response sent in the ssl/tls connection handshake.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param ocspStatusRespSent set the ocspStatusRespSent.
    */
@@ -2017,7 +2017,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Logs for http out-of-band requests.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return oobLog
    */
@@ -2030,7 +2030,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Logs for http out-of-band requests.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param oobLog set the oobLog.
    */
@@ -2044,7 +2044,7 @@ public class ApplicationLog extends AviRestResource {
    * The actual client request uri sent before normalization.
    * Only included if it differs from the normalized uri.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return origUri
    */
@@ -2058,7 +2058,7 @@ public class ApplicationLog extends AviRestResource {
    * The actual client request uri sent before normalization.
    * Only included if it differs from the normalized uri.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param origUri set the origUri.
    */
@@ -2071,7 +2071,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Logs for the pingaccess authentication process.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return paaLog
    */
@@ -2084,7 +2084,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Logs for the pingaccess authentication process.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param paaLog set the paaLog.
    */
@@ -2095,7 +2095,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return persistenceUsed
    */
@@ -2106,7 +2106,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param persistenceUsed set the persistenceUsed.
    */
@@ -2117,7 +2117,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return persistentSessionId
    */
@@ -2128,7 +2128,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param persistentSessionId set the persistentSessionId.
    */
@@ -2139,7 +2139,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pool
    */
@@ -2150,7 +2150,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pool set the pool.
    */
@@ -2161,7 +2161,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolName
    */
@@ -2172,7 +2172,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolName set the poolName.
    */
@@ -2183,7 +2183,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return redirectedUri
    */
@@ -2194,7 +2194,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param redirectedUri set the redirectedUri.
    */
@@ -2205,7 +2205,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return referer
    */
@@ -2216,7 +2216,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param referer set the referer.
    */
@@ -2227,7 +2227,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reportTimestamp
    */
@@ -2238,7 +2238,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reportTimestamp set the reportTimestamp.
    */
@@ -2249,7 +2249,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return requestContentType
    */
@@ -2260,7 +2260,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param requestContentType set the requestContentType.
    */
@@ -2271,7 +2271,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return requestHeaders
    */
@@ -2282,7 +2282,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param requestHeaders set the requestHeaders.
    */
@@ -2295,7 +2295,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Unique http request id.
    * Field introduced in 17.2.4.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return requestId
    */
@@ -2308,7 +2308,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Unique http request id.
    * Field introduced in 17.2.4.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param requestId set the requestId.
    */
@@ -2320,7 +2320,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unit is bytes.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return requestLength
    */
@@ -2332,7 +2332,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unit is bytes.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param requestLength set the requestLength.
    */
@@ -2345,7 +2345,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Flag to indicate if request was served locally because the remote site was down.
    * Field introduced in 17.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return requestServedLocallyRemoteSiteDown
    */
@@ -2358,7 +2358,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Flag to indicate if request was served locally because the remote site was down.
    * Field introduced in 17.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param requestServedLocallyRemoteSiteDown set the requestServedLocallyRemoteSiteDown.
    */
@@ -2377,7 +2377,7 @@ public class ApplicationLog extends AviRestResource {
    * AVI_HTTP_REQUEST_STATE_READ_CLIENT_PIPELINE_REQ_LINE, AVI_HTTP_REQUEST_STATE_SSL_HANDSHAKE_TO_UPSTREAM,
    * AVI_HTTP_REQUEST_STATE_WAITING_IN_CONNPOOL_CACHE, AVI_HTTP_REQUEST_STATE_SEND_RESPONSE_HEADER_TO_CLIENT,
    * AVI_HTTP_REQUEST_STATE_SEND_RESPONSE_BODY_TO_CLIENT.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return requestState
    */
@@ -2396,7 +2396,7 @@ public class ApplicationLog extends AviRestResource {
    * AVI_HTTP_REQUEST_STATE_READ_CLIENT_PIPELINE_REQ_LINE, AVI_HTTP_REQUEST_STATE_SSL_HANDSHAKE_TO_UPSTREAM,
    * AVI_HTTP_REQUEST_STATE_WAITING_IN_CONNPOOL_CACHE, AVI_HTTP_REQUEST_STATE_SEND_RESPONSE_HEADER_TO_CLIENT,
    * AVI_HTTP_REQUEST_STATE_SEND_RESPONSE_BODY_TO_CLIENT.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param requestState set the requestState.
    */
@@ -2407,7 +2407,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return responseCode
    */
@@ -2418,7 +2418,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param responseCode set the responseCode.
    */
@@ -2429,7 +2429,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return responseContentType
    */
@@ -2440,7 +2440,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param responseContentType set the responseContentType.
    */
@@ -2451,7 +2451,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return responseHeaders
    */
@@ -2462,7 +2462,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param responseHeaders set the responseHeaders.
    */
@@ -2474,7 +2474,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unit is bytes.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return responseLength
    */
@@ -2486,7 +2486,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unit is bytes.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param responseLength set the responseLength.
    */
@@ -2498,7 +2498,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unit is milliseconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return responseTimeFirstByte
    */
@@ -2510,7 +2510,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unit is milliseconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param responseTimeFirstByte set the responseTimeFirstByte.
    */
@@ -2522,7 +2522,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unit is milliseconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return responseTimeLastByte
    */
@@ -2534,7 +2534,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unit is milliseconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param responseTimeLastByte set the responseTimeLastByte.
    */
@@ -2545,7 +2545,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rewrittenUriPath
    */
@@ -2556,7 +2556,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rewrittenUriPath set the rewrittenUriPath.
    */
@@ -2567,7 +2567,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rewrittenUriQuery
    */
@@ -2578,7 +2578,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rewrittenUriQuery set the rewrittenUriQuery.
    */
@@ -2591,7 +2591,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Saml authentication request is generated.
    * Field introduced in 18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return samlAuthRequestGenerated
    */
@@ -2604,7 +2604,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Saml authentication request is generated.
    * Field introduced in 18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param samlAuthRequestGenerated set the samlAuthRequestGenerated.
    */
@@ -2617,7 +2617,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Saml authentication response is received.
    * Field introduced in 18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return samlAuthResponseReceived
    */
@@ -2630,7 +2630,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Saml authentication response is received.
    * Field introduced in 18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param samlAuthResponseReceived set the samlAuthResponseReceived.
    */
@@ -2643,7 +2643,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Saml authentication session id.
    * Field introduced in 18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return samlAuthSessionId
    */
@@ -2656,7 +2656,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Saml authentication session id.
    * Field introduced in 18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param samlAuthSessionId set the samlAuthSessionId.
    */
@@ -2669,7 +2669,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Saml authentication is used.
    * Field introduced in 18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return samlAuthenticationUsed
    */
@@ -2682,7 +2682,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Saml authentication is used.
    * Field introduced in 18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param samlAuthenticationUsed set the samlAuthenticationUsed.
    */
@@ -2695,7 +2695,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Logs for the saml authentication/authorization process.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return samlLog
    */
@@ -2708,7 +2708,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Logs for the saml authentication/authorization process.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param samlLog set the samlLog.
    */
@@ -2721,7 +2721,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Saml authentication session cookie is valid.
    * Field introduced in 18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return samlSessionCookieValid
    */
@@ -2734,7 +2734,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Saml authentication session cookie is valid.
    * Field introduced in 18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param samlSessionCookieValid set the samlSessionCookieValid.
    */
@@ -2745,7 +2745,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverConnSrcIp
    */
@@ -2756,7 +2756,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverConnSrcIp set the serverConnSrcIp.
    */
@@ -2769,7 +2769,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ipv6 address used to connect to server.
    * Field introduced in 18.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverConnSrcIp6
    */
@@ -2782,7 +2782,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Ipv6 address used to connect to server.
    * Field introduced in 18.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverConnSrcIp6 set the serverConnSrcIp6.
    */
@@ -2794,7 +2794,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Flag to indicate if connection from the connection pool was reused.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return serverConnectionReused
    */
@@ -2806,7 +2806,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Flag to indicate if connection from the connection pool was reused.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param serverConnectionReused set the serverConnectionReused.
    */
@@ -2817,7 +2817,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverDestPort
    */
@@ -2828,7 +2828,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverDestPort set the serverDestPort.
    */
@@ -2839,7 +2839,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverIp
    */
@@ -2850,7 +2850,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverIp set the serverIp.
    */
@@ -2863,7 +2863,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ipv6 address of the server.
    * Field introduced in 18.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverIp6
    */
@@ -2876,7 +2876,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Ipv6 address of the server.
    * Field introduced in 18.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverIp6 set the serverIp6.
    */
@@ -2887,7 +2887,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverName
    */
@@ -2898,7 +2898,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverName set the serverName.
    */
@@ -2911,7 +2911,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Request which initiates server push.
    * Field introduced in 22.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverPushInitiated
    */
@@ -2924,7 +2924,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Request which initiates server push.
    * Field introduced in 22.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverPushInitiated set the serverPushInitiated.
    */
@@ -2937,7 +2937,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Requests served via server push.
    * Field introduced in 22.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverPushedRequest
    */
@@ -2950,7 +2950,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Requests served via server push.
    * Field introduced in 22.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverPushedRequest set the serverPushedRequest.
    */
@@ -2961,7 +2961,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverResponseCode
    */
@@ -2972,7 +2972,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverResponseCode set the serverResponseCode.
    */
@@ -2984,7 +2984,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unit is bytes.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverResponseLength
    */
@@ -2996,7 +2996,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unit is bytes.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverResponseLength set the serverResponseLength.
    */
@@ -3008,7 +3008,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unit is milliseconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverResponseTimeFirstByte
    */
@@ -3020,7 +3020,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unit is milliseconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverResponseTimeFirstByte set the serverResponseTimeFirstByte.
    */
@@ -3032,7 +3032,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unit is milliseconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverResponseTimeLastByte
    */
@@ -3044,7 +3044,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unit is milliseconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverResponseTimeLastByte set the serverResponseTimeLastByte.
    */
@@ -3056,7 +3056,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unit is milliseconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverRtt
    */
@@ -3068,7 +3068,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unit is milliseconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverRtt set the serverRtt.
    */
@@ -3079,7 +3079,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverSideRedirectUri
    */
@@ -3090,7 +3090,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverSideRedirectUri set the serverSideRedirectUri.
    */
@@ -3101,7 +3101,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverSrcPort
    */
@@ -3112,7 +3112,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverSrcPort set the serverSrcPort.
    */
@@ -3124,7 +3124,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ssl session id for the backend connection.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverSslSessionId
    */
@@ -3136,7 +3136,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ssl session id for the backend connection.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverSslSessionId set the serverSslSessionId.
    */
@@ -3148,7 +3148,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Flag to indicate if ssl session was reused.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return serverSslSessionReused
    */
@@ -3160,7 +3160,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Flag to indicate if ssl session was reused.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param serverSslSessionReused set the serverSslSessionReused.
    */
@@ -3173,7 +3173,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of servers tried during server reselect before the response is sent back.
    * Field introduced in 18.2.2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return serversTried
    */
@@ -3186,7 +3186,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of servers tried during server reselect before the response is sent back.
    * Field introduced in 18.2.2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param serversTried set the serversTried.
    */
@@ -3197,7 +3197,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceEngine
    */
@@ -3208,7 +3208,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serviceEngine set the serviceEngine.
    */
@@ -3219,9 +3219,10 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Field set by datascript using avi.vs.set_session_id().
+   * If the http session module is enabled for the virtual service, this field will contain the session id created by the module.
+   * Later calls to the datascript function avi.vs.set_session_id() overwrite the value of this field with the value supplied in the function call.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sessionId
    */
@@ -3232,9 +3233,10 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Field set by datascript using avi.vs.set_session_id().
+   * If the http session module is enabled for the virtual service, this field will contain the session id created by the module.
+   * Later calls to the datascript function avi.vs.set_session_id() overwrite the value of this field with the value supplied in the function call.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sessionId set the sessionId.
    */
@@ -3245,7 +3247,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return significance
    */
@@ -3256,7 +3258,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param significance set the significance.
    */
@@ -3267,7 +3269,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return significant
    */
@@ -3278,7 +3280,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param significant set the significant.
    */
@@ -3296,7 +3298,7 @@ public class ApplicationLog extends AviRestResource {
    * ADF_SCTP_SERVER_CONN_SETUP_TIMEDOUT, ADF_SCTP_SERVER_CONN_SETUP_FAILED_INTERNAL, ADF_CLIENT_SENT_RESET, ADF_SERVER_SENT_RESET,
    * ADF_CLIENT_CONN_TIMEDOUT, ADF_SERVER_CONN_TIMEDOUT, ADF_USER_DELETE_OPERATION, ADF_CLIENT_REQUEST_TIMEOUT, ADF_CLIENT_CONN_ABORTED,
    * ADF_CLIENT_SSL_HANDSHAKE_FAILURE...
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return significantLog
    */
@@ -3314,7 +3316,7 @@ public class ApplicationLog extends AviRestResource {
    * ADF_SCTP_SERVER_CONN_SETUP_TIMEDOUT, ADF_SCTP_SERVER_CONN_SETUP_FAILED_INTERNAL, ADF_CLIENT_SENT_RESET, ADF_SERVER_SENT_RESET,
    * ADF_CLIENT_CONN_TIMEDOUT, ADF_SERVER_CONN_TIMEDOUT, ADF_USER_DELETE_OPERATION, ADF_CLIENT_REQUEST_TIMEOUT, ADF_CLIENT_CONN_ABORTED,
    * ADF_CLIENT_SSL_HANDSHAKE_FAILURE...
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return significantLog
    */
@@ -3332,7 +3334,7 @@ public class ApplicationLog extends AviRestResource {
    * ADF_SCTP_SERVER_CONN_SETUP_TIMEDOUT, ADF_SCTP_SERVER_CONN_SETUP_FAILED_INTERNAL, ADF_CLIENT_SENT_RESET, ADF_SERVER_SENT_RESET,
    * ADF_CLIENT_CONN_TIMEDOUT, ADF_SERVER_CONN_TIMEDOUT, ADF_USER_DELETE_OPERATION, ADF_CLIENT_REQUEST_TIMEOUT, ADF_CLIENT_CONN_ABORTED,
    * ADF_CLIENT_SSL_HANDSHAKE_FAILURE...
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return significantLog
    */
@@ -3349,7 +3351,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sniHostname
    */
@@ -3361,7 +3363,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sniHostname set the sniHostname.
    */
@@ -3375,7 +3377,7 @@ public class ApplicationLog extends AviRestResource {
    * Source ip of the client connection to the vs.
    * This can be different from client ip when true client ip feature is enabled.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sourceIp
    */
@@ -3389,7 +3391,7 @@ public class ApplicationLog extends AviRestResource {
    * Source ip of the client connection to the vs.
    * This can be different from client ip when true client ip feature is enabled.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sourceIp set the sourceIp.
    */
@@ -3403,7 +3405,7 @@ public class ApplicationLog extends AviRestResource {
    * Ipv6 address of the source of the client connection to the vs.
    * This can be different from client ipv6 address when true client ip feature is enabled.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sourceIp6
    */
@@ -3417,7 +3419,7 @@ public class ApplicationLog extends AviRestResource {
    * Ipv6 address of the source of the client connection to the vs.
    * This can be different from client ipv6 address when true client ip feature is enabled.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sourceIp6 set the sourceIp6.
    */
@@ -3428,7 +3430,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return spdyVersion
    */
@@ -3439,7 +3441,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param spdyVersion set the spdyVersion.
    */
@@ -3450,7 +3452,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslCipher
    */
@@ -3461,7 +3463,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sslCipher set the sslCipher.
    */
@@ -3472,7 +3474,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslSessionId
    */
@@ -3483,7 +3485,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sslSessionId set the sslSessionId.
    */
@@ -3494,7 +3496,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslVersion
    */
@@ -3505,7 +3507,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sslVersion set the sslVersion.
    */
@@ -3517,7 +3519,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unit is milliseconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return totalTime
    */
@@ -3529,7 +3531,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unit is milliseconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param totalTime set the totalTime.
    */
@@ -3540,7 +3542,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return udf
    */
@@ -3551,7 +3553,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param udf set the udf.
    */
@@ -3562,7 +3564,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uriPath
    */
@@ -3573,7 +3575,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uriPath set the uriPath.
    */
@@ -3584,7 +3586,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uriQuery
    */
@@ -3595,7 +3597,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uriQuery set the uriQuery.
    */
@@ -3606,7 +3608,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return userAgent
    */
@@ -3617,7 +3619,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param userAgent set the userAgent.
    */
@@ -3628,7 +3630,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return userId
    */
@@ -3639,7 +3641,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param userId set the userId.
    */
@@ -3650,7 +3652,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcpuId
    */
@@ -3661,7 +3663,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcpuId set the vcpuId.
    */
@@ -3674,7 +3676,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Evh rule matching the request.
    * Field introduced in 22.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vhMatchRule
    */
@@ -3687,7 +3689,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Evh rule matching the request.
    * Field introduced in 22.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vhMatchRule set the vhMatchRule.
    */
@@ -3698,7 +3700,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return virtualservice
    */
@@ -3709,7 +3711,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param virtualservice set the virtualservice.
    */
@@ -3721,7 +3723,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsIp
    */
@@ -3733,7 +3735,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsIp set the vsIp.
    */
@@ -3746,7 +3748,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Virtual ipv6 address of the vs.
    * Field introduced in 18.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsIp6
    */
@@ -3759,7 +3761,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Virtual ipv6 address of the vs.
    * Field introduced in 18.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsIp6 set the vsIp6.
    */
@@ -3772,7 +3774,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Presence of waf_log indicates that atleast 1 waf rule was hit for the transaction.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return wafLog
    */
@@ -3785,7 +3787,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Presence of waf_log indicates that atleast 1 waf rule was hit for the transaction.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param wafLog set the wafLog.
    */
@@ -3796,7 +3798,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return xff
    */
@@ -3807,7 +3809,7 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param xff set the xff.
    */

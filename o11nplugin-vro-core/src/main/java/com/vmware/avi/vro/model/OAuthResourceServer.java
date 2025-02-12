@@ -49,7 +49,7 @@ public class OAuthResourceServer extends AviRestResource {
    * Access token type.
    * Enum options - ACCESS_TOKEN_TYPE_JWT, ACCESS_TOKEN_TYPE_OPAQUE.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "ACCESS_TOKEN_TYPE_JWT".
    * @return accessType
    */
@@ -63,7 +63,7 @@ public class OAuthResourceServer extends AviRestResource {
    * Access token type.
    * Enum options - ACCESS_TOKEN_TYPE_JWT, ACCESS_TOKEN_TYPE_OPAQUE.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "ACCESS_TOKEN_TYPE_JWT".
    * @param accessType set the accessType.
    */
@@ -79,7 +79,7 @@ public class OAuthResourceServer extends AviRestResource {
    * Special values are 0- no caching of introspection data.
    * Field introduced in 22.1.3.
    * Unit is min.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return introspectionDataTimeout
    */
@@ -95,7 +95,7 @@ public class OAuthResourceServer extends AviRestResource {
    * Special values are 0- no caching of introspection data.
    * Field introduced in 22.1.3.
    * Unit is min.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param introspectionDataTimeout set the introspectionDataTimeout.
    */
@@ -108,7 +108,7 @@ public class OAuthResourceServer extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Validation parameters to be used when access token type is jwt.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return jwtParams
    */
@@ -121,7 +121,7 @@ public class OAuthResourceServer extends AviRestResource {
    * This is the setter method to the attribute.
    * Validation parameters to be used when access token type is jwt.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param jwtParams set the jwtParams.
    */
@@ -134,7 +134,7 @@ public class OAuthResourceServer extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Validation parameters to be used when access token type is opaque.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return opaqueTokenParams
    */
@@ -147,7 +147,7 @@ public class OAuthResourceServer extends AviRestResource {
    * This is the setter method to the attribute.
    * Validation parameters to be used when access token type is opaque.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param opaqueTokenParams set the opaqueTokenParams.
    */

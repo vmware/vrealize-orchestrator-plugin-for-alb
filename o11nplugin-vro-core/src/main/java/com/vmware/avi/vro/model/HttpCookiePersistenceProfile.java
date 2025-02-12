@@ -57,7 +57,7 @@ public class HttpCookiePersistenceProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * If no persistence cookie was received from the client, always send it.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return alwaysSendCookie
    */
@@ -69,7 +69,7 @@ public class HttpCookiePersistenceProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * If no persistence cookie was received from the client, always send it.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param alwaysSendCookie set the alwaysSendCookie.
    */
@@ -81,7 +81,7 @@ public class HttpCookiePersistenceProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Http cookie name for cookie persistence.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cookieName
    */
@@ -93,7 +93,7 @@ public class HttpCookiePersistenceProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Http cookie name for cookie persistence.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cookieName set the cookieName.
    */
@@ -105,7 +105,7 @@ public class HttpCookiePersistenceProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Key name to use for cookie encryption.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return encryptionKey
    */
@@ -117,7 +117,7 @@ public class HttpCookiePersistenceProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Key name to use for cookie encryption.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param encryptionKey set the encryptionKey.
    */
@@ -131,7 +131,7 @@ public class HttpCookiePersistenceProfile extends AviRestResource {
    * Sets the httponly attribute in the cookie.
    * Setting this helps to prevent the client side scripts from accessing this cookie, if supported by browser.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return httpOnly
    */
@@ -145,7 +145,7 @@ public class HttpCookiePersistenceProfile extends AviRestResource {
    * Sets the httponly attribute in the cookie.
    * Setting this helps to prevent the client side scripts from accessing this cookie, if supported by browser.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param httpOnly set the httpOnly.
    */
@@ -161,7 +161,7 @@ public class HttpCookiePersistenceProfile extends AviRestResource {
    * By default, it is set to false, making the cookie a session cookie, which allows clients to use it even after the timeout, if the session is
    * still open.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return isPersistentCookie
    */
@@ -177,7 +177,7 @@ public class HttpCookiePersistenceProfile extends AviRestResource {
    * By default, it is set to false, making the cookie a session cookie, which allows clients to use it even after the timeout, if the session is
    * still open.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param isPersistentCookie set the isPersistentCookie.
    */
@@ -188,7 +188,7 @@ public class HttpCookiePersistenceProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return key
    */
@@ -199,7 +199,7 @@ public class HttpCookiePersistenceProfile extends AviRestResource {
 
   /**
    * This is the setter method. this will set the key
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return key
    */
@@ -210,7 +210,7 @@ public class HttpCookiePersistenceProfile extends AviRestResource {
 
   /**
    * This is the setter method this will set the key
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return key
    */
@@ -231,7 +231,7 @@ public class HttpCookiePersistenceProfile extends AviRestResource {
    * Allowed values are 1-14400.
    * Special values are 0- no timeout.
    * Unit is min.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return timeout
    */
@@ -247,7 +247,7 @@ public class HttpCookiePersistenceProfile extends AviRestResource {
    * Allowed values are 1-14400.
    * Special values are 0- no timeout.
    * Unit is min.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param timeout set the timeout.
    */

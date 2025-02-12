@@ -42,7 +42,7 @@ public class SeNtpSynchronizationFailed extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of ntp servers.
    * Field introduced in 22.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ntpServers
    */
@@ -55,7 +55,7 @@ public class SeNtpSynchronizationFailed extends AviRestResource {
    * This is the setter method to the attribute.
    * List of ntp servers.
    * Field introduced in 22.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ntpServers set the ntpServers.
    */
@@ -69,7 +69,7 @@ public class SeNtpSynchronizationFailed extends AviRestResource {
    * Name of the se reporting this event.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 22.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seName
    */
@@ -83,7 +83,7 @@ public class SeNtpSynchronizationFailed extends AviRestResource {
    * Name of the se reporting this event.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 22.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seName set the seName.
    */
@@ -97,7 +97,7 @@ public class SeNtpSynchronizationFailed extends AviRestResource {
    * Uuid of the se responsible for this event.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 22.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seRef
    */
@@ -111,7 +111,7 @@ public class SeNtpSynchronizationFailed extends AviRestResource {
    * Uuid of the se responsible for this event.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 22.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seRef set the seRef.
    */

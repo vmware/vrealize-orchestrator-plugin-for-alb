@@ -41,7 +41,7 @@ public class DnsServiceDomain extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Service domain string used for fqdn.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return domainName
    */
@@ -53,7 +53,7 @@ public class DnsServiceDomain extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Service domain string used for fqdn.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param domainName set the domainName.
    */
@@ -65,7 +65,7 @@ public class DnsServiceDomain extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Third-party authoritative domain requests are delegated todns virtualservice's pool of nameservers.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return passThrough
    */
@@ -77,7 +77,7 @@ public class DnsServiceDomain extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Third-party authoritative domain requests are delegated todns virtualservice's pool of nameservers.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param passThrough set the passThrough.
    */
@@ -91,7 +91,7 @@ public class DnsServiceDomain extends AviRestResource {
    * Ttl value for dns records.
    * Allowed values are 1-604800.
    * Unit is sec.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return recordTtl
    */
@@ -105,7 +105,7 @@ public class DnsServiceDomain extends AviRestResource {
    * Ttl value for dns records.
    * Allowed values are 1-604800.
    * Unit is sec.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param recordTtl set the recordTtl.
    */

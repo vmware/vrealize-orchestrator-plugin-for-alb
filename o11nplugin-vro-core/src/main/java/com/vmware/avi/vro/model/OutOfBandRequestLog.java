@@ -34,7 +34,7 @@ public class OutOfBandRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Logs for out-of-band requests sent from the datascript.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dsReqLogs
    */
@@ -47,7 +47,7 @@ public class OutOfBandRequestLog extends AviRestResource {
    * This is the setter method. this will set the dsReqLogs
    * Logs for out-of-band requests sent from the datascript.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dsReqLogs
    */
@@ -60,7 +60,7 @@ public class OutOfBandRequestLog extends AviRestResource {
    * This is the setter method this will set the dsReqLogs
    * Logs for out-of-band requests sent from the datascript.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dsReqLogs
    */

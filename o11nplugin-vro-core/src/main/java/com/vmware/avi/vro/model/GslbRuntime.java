@@ -46,6 +46,18 @@ public class GslbRuntime extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private List<CfgState> flrState;
 
+    @JsonProperty("gslb_crm_runtime")
+    @JsonInclude(Include.NON_NULL)
+    private List<GslbCRMRuntime> gslbCrmRuntime;
+
+    @JsonProperty("gslb_hsm_runtime")
+    @JsonInclude(Include.NON_NULL)
+    private List<GslbHSMRuntime> gslbHsmRuntime;
+
+    @JsonProperty("gslb_sm_runtime")
+    @JsonInclude(Include.NON_NULL)
+    private List<GslbSMRuntime> gslbSmRuntime;
+
     @JsonProperty("ldr_state")
     @JsonInclude(Include.NON_NULL)
     private CfgState ldrState;
@@ -75,7 +87,7 @@ public class GslbRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return checksum
    */
@@ -87,7 +99,7 @@ public class GslbRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param checksum set the checksum.
    */
@@ -100,7 +112,7 @@ public class GslbRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This field indicates delete is in progress for this gslb instance.
    * Field introduced in 17.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return deleteInProgress
    */
@@ -113,7 +125,7 @@ public class GslbRuntime extends AviRestResource {
    * This is the setter method to the attribute.
    * This field indicates delete is in progress for this gslb instance.
    * Field introduced in 17.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param deleteInProgress set the deleteInProgress.
    */
@@ -124,7 +136,7 @@ public class GslbRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsEnabled
    */
@@ -135,7 +147,7 @@ public class GslbRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dnsEnabled set the dnsEnabled.
    */
@@ -146,7 +158,7 @@ public class GslbRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return eventCache
    */
@@ -157,7 +169,7 @@ public class GslbRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param eventCache set the eventCache.
    */
@@ -168,7 +180,7 @@ public class GslbRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return flrState
    */
@@ -179,7 +191,7 @@ public class GslbRuntime extends AviRestResource {
 
   /**
    * This is the setter method. this will set the flrState
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return flrState
    */
@@ -190,7 +202,7 @@ public class GslbRuntime extends AviRestResource {
 
   /**
    * This is the setter method this will set the flrState
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return flrState
    */
@@ -206,7 +218,139 @@ public class GslbRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Contains the replication details.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return gslbCrmRuntime
+   */
+  @VsoMethod
+  public List<GslbCRMRuntime> getGslbCrmRuntime() {
+    return gslbCrmRuntime;
+  }
+
+  /**
+   * This is the setter method. this will set the gslbCrmRuntime
+   * Contains the replication details.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return gslbCrmRuntime
+   */
+  @VsoMethod
+  public void setGslbCrmRuntime(List<GslbCRMRuntime>  gslbCrmRuntime) {
+    this.gslbCrmRuntime = gslbCrmRuntime;
+  }
+
+  /**
+   * This is the setter method this will set the gslbCrmRuntime
+   * Contains the replication details.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return gslbCrmRuntime
+   */
+  @VsoMethod
+  public GslbRuntime addGslbCrmRuntimeItem(GslbCRMRuntime gslbCrmRuntimeItem) {
+    if (this.gslbCrmRuntime == null) {
+      this.gslbCrmRuntime = new ArrayList<GslbCRMRuntime>();
+    }
+    this.gslbCrmRuntime.add(gslbCrmRuntimeItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Contains the health status details.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return gslbHsmRuntime
+   */
+  @VsoMethod
+  public List<GslbHSMRuntime> getGslbHsmRuntime() {
+    return gslbHsmRuntime;
+  }
+
+  /**
+   * This is the setter method. this will set the gslbHsmRuntime
+   * Contains the health status details.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return gslbHsmRuntime
+   */
+  @VsoMethod
+  public void setGslbHsmRuntime(List<GslbHSMRuntime>  gslbHsmRuntime) {
+    this.gslbHsmRuntime = gslbHsmRuntime;
+  }
+
+  /**
+   * This is the setter method this will set the gslbHsmRuntime
+   * Contains the health status details.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return gslbHsmRuntime
+   */
+  @VsoMethod
+  public GslbRuntime addGslbHsmRuntimeItem(GslbHSMRuntime gslbHsmRuntimeItem) {
+    if (this.gslbHsmRuntime == null) {
+      this.gslbHsmRuntime = new ArrayList<GslbHSMRuntime>();
+    }
+    this.gslbHsmRuntime.add(gslbHsmRuntimeItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Contains the site details.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return gslbSmRuntime
+   */
+  @VsoMethod
+  public List<GslbSMRuntime> getGslbSmRuntime() {
+    return gslbSmRuntime;
+  }
+
+  /**
+   * This is the setter method. this will set the gslbSmRuntime
+   * Contains the site details.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return gslbSmRuntime
+   */
+  @VsoMethod
+  public void setGslbSmRuntime(List<GslbSMRuntime>  gslbSmRuntime) {
+    this.gslbSmRuntime = gslbSmRuntime;
+  }
+
+  /**
+   * This is the setter method this will set the gslbSmRuntime
+   * Contains the site details.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return gslbSmRuntime
+   */
+  @VsoMethod
+  public GslbRuntime addGslbSmRuntimeItem(GslbSMRuntime gslbSmRuntimeItem) {
+    if (this.gslbSmRuntime == null) {
+      this.gslbSmRuntime = new ArrayList<GslbSMRuntime>();
+    }
+    this.gslbSmRuntime.add(gslbSmRuntimeItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ldrState
    */
@@ -217,7 +361,7 @@ public class GslbRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ldrState set the ldrState.
    */
@@ -228,7 +372,7 @@ public class GslbRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -239,7 +383,7 @@ public class GslbRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -250,7 +394,7 @@ public class GslbRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return site
    */
@@ -261,7 +405,7 @@ public class GslbRuntime extends AviRestResource {
 
   /**
    * This is the setter method. this will set the site
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return site
    */
@@ -272,7 +416,7 @@ public class GslbRuntime extends AviRestResource {
 
   /**
    * This is the setter method this will set the site
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return site
    */
@@ -290,7 +434,7 @@ public class GslbRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Remap the tenant_uuid to its tenant-name so that we can use the tenant_name directly in remote-site ops.
    * Field introduced in 17.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantName
    */
@@ -303,7 +447,7 @@ public class GslbRuntime extends AviRestResource {
    * This is the setter method to the attribute.
    * Remap the tenant_uuid to its tenant-name so that we can use the tenant_name directly in remote-site ops.
    * Field introduced in 17.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantName set the tenantName.
    */
@@ -315,7 +459,7 @@ public class GslbRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return thirdPartySites
    */
@@ -327,7 +471,7 @@ public class GslbRuntime extends AviRestResource {
   /**
    * This is the setter method. this will set the thirdPartySites
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return thirdPartySites
    */
@@ -339,7 +483,7 @@ public class GslbRuntime extends AviRestResource {
   /**
    * This is the setter method this will set the thirdPartySites
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return thirdPartySites
    */
@@ -355,7 +499,7 @@ public class GslbRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -366,7 +510,7 @@ public class GslbRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
@@ -395,6 +539,9 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.eventCache, objGslbRuntime.eventCache)&&
   Objects.equals(this.thirdPartySites, objGslbRuntime.thirdPartySites)&&
   Objects.equals(this.checksum, objGslbRuntime.checksum)&&
+  Objects.equals(this.gslbSmRuntime, objGslbRuntime.gslbSmRuntime)&&
+  Objects.equals(this.gslbCrmRuntime, objGslbRuntime.gslbCrmRuntime)&&
+  Objects.equals(this.gslbHsmRuntime, objGslbRuntime.gslbHsmRuntime)&&
   Objects.equals(this.deleteInProgress, objGslbRuntime.deleteInProgress)&&
   Objects.equals(this.tenantName, objGslbRuntime.tenantName);
 }
@@ -408,6 +555,9 @@ public String toString() {
         sb.append("    dnsEnabled: ").append(toIndentedString(dnsEnabled)).append("\n");
         sb.append("    eventCache: ").append(toIndentedString(eventCache)).append("\n");
         sb.append("    flrState: ").append(toIndentedString(flrState)).append("\n");
+        sb.append("    gslbCrmRuntime: ").append(toIndentedString(gslbCrmRuntime)).append("\n");
+        sb.append("    gslbHsmRuntime: ").append(toIndentedString(gslbHsmRuntime)).append("\n");
+        sb.append("    gslbSmRuntime: ").append(toIndentedString(gslbSmRuntime)).append("\n");
         sb.append("    ldrState: ").append(toIndentedString(ldrState)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    site: ").append(toIndentedString(site)).append("\n");
