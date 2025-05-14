@@ -44,6 +44,10 @@ public class TCPProxyProfile extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer congestionRecoveryScalingFactor = 2;
 
+    @JsonProperty("delayed_ack_mode")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean delayedAckMode;
+
     @JsonProperty("idle_connection_timeout")
     @JsonInclude(Include.NON_NULL)
     private Integer idleConnectionTimeout = 600;
@@ -238,6 +242,32 @@ public class TCPProxyProfile extends AviRestResource {
   @VsoMethod
   public void setCongestionRecoveryScalingFactor(Integer  congestionRecoveryScalingFactor) {
     this.congestionRecoveryScalingFactor = congestionRecoveryScalingFactor;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Determines if delayed ack mode is enabledtrue  unconditionally use delayed ackfalse  don't use delayed ack.
+   * Field introduced in 30.2.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return delayedAckMode
+   */
+  @VsoMethod
+  public Boolean getDelayedAckMode() {
+    return delayedAckMode;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Determines if delayed ack mode is enabledtrue  unconditionally use delayed ackfalse  don't use delayed ack.
+   * Field introduced in 30.2.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param delayedAckMode set the delayedAckMode.
+   */
+  @VsoMethod
+  public void setDelayedAckMode(Boolean  delayedAckMode) {
+    this.delayedAckMode = delayedAckMode;
   }
 
   /**
@@ -727,7 +757,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.congestionRecoveryScalingFactor, objTCPProxyProfile.congestionRecoveryScalingFactor)&&
   Objects.equals(this.reassemblyQueueSize, objTCPProxyProfile.reassemblyQueueSize)&&
   Objects.equals(this.keepaliveInHalfcloseState, objTCPProxyProfile.keepaliveInHalfcloseState)&&
-  Objects.equals(this.autoWindowGrowth, objTCPProxyProfile.autoWindowGrowth);
+  Objects.equals(this.autoWindowGrowth, objTCPProxyProfile.autoWindowGrowth)&&
+  Objects.equals(this.delayedAckMode, objTCPProxyProfile.delayedAckMode);
 }
 
 @Override
@@ -739,6 +770,7 @@ public String toString() {
         sb.append("    automatic: ").append(toIndentedString(automatic)).append("\n");
         sb.append("    ccAlgo: ").append(toIndentedString(ccAlgo)).append("\n");
         sb.append("    congestionRecoveryScalingFactor: ").append(toIndentedString(congestionRecoveryScalingFactor)).append("\n");
+        sb.append("    delayedAckMode: ").append(toIndentedString(delayedAckMode)).append("\n");
         sb.append("    idleConnectionTimeout: ").append(toIndentedString(idleConnectionTimeout)).append("\n");
         sb.append("    idleConnectionType: ").append(toIndentedString(idleConnectionType)).append("\n");
         sb.append("    ignoreTimeWait: ").append(toIndentedString(ignoreTimeWait)).append("\n");
