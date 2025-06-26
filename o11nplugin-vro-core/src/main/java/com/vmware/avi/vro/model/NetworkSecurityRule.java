@@ -68,8 +68,9 @@ public class NetworkSecurityRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enum options - NETWORK_SECURITY_POLICY_ACTION_TYPE_ALLOW, NETWORK_SECURITY_POLICY_ACTION_TYPE_DENY,
    * NETWORK_SECURITY_POLICY_ACTION_TYPE_RATE_LIMIT.
-   * Allowed in enterprise edition with any value, essentials edition(allowed values- network_security_policy_action_type_deny), basic edition(allowed
-   * values- network_security_policy_action_type_deny), enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed in essentials (allowed values- network_security_policy_action_type_deny), basic (allowed values-
+   * network_security_policy_action_type_deny) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return action
    */
@@ -82,8 +83,9 @@ public class NetworkSecurityRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Enum options - NETWORK_SECURITY_POLICY_ACTION_TYPE_ALLOW, NETWORK_SECURITY_POLICY_ACTION_TYPE_DENY,
    * NETWORK_SECURITY_POLICY_ACTION_TYPE_RATE_LIMIT.
-   * Allowed in enterprise edition with any value, essentials edition(allowed values- network_security_policy_action_type_deny), basic edition(allowed
-   * values- network_security_policy_action_type_deny), enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed in essentials (allowed values- network_security_policy_action_type_deny), basic (allowed values-
+   * network_security_policy_action_type_deny) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param action set the action.
    */
@@ -98,8 +100,8 @@ public class NetworkSecurityRule extends AviRestResource {
    * Allowed values are 1-4294967295.
    * Special values are 0- blocked for ever.
    * Unit is min.
-   * Allowed in enterprise edition with any value, essentials edition(allowed values- 0), basic edition(allowed values- 0), enterprise with cloud
-   * services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed in essentials (allowed values- 0), basic (allowed values- 0) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return age
    */
@@ -114,8 +116,8 @@ public class NetworkSecurityRule extends AviRestResource {
    * Allowed values are 1-4294967295.
    * Special values are 0- blocked for ever.
    * Unit is min.
-   * Allowed in enterprise edition with any value, essentials edition(allowed values- 0), basic edition(allowed values- 0), enterprise with cloud
-   * services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed in essentials (allowed values- 0), basic (allowed values- 0) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param age set the age.
    */
@@ -127,7 +129,7 @@ public class NetworkSecurityRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Creator name.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return createdBy
    */
@@ -139,7 +141,7 @@ public class NetworkSecurityRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Creator name.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param createdBy set the createdBy.
    */
@@ -150,7 +152,7 @@ public class NetworkSecurityRule extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return enable
    */
@@ -161,7 +163,7 @@ public class NetworkSecurityRule extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param enable set the enable.
    */
@@ -172,7 +174,7 @@ public class NetworkSecurityRule extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return index
    */
@@ -183,7 +185,7 @@ public class NetworkSecurityRule extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param index set the index.
    */
@@ -194,8 +196,8 @@ public class NetworkSecurityRule extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-   * cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return log
    */
@@ -206,8 +208,8 @@ public class NetworkSecurityRule extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-   * cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param log set the log.
    */
@@ -218,7 +220,7 @@ public class NetworkSecurityRule extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return match
    */
@@ -229,7 +231,7 @@ public class NetworkSecurityRule extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param match set the match.
    */
@@ -240,7 +242,7 @@ public class NetworkSecurityRule extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -251,7 +253,7 @@ public class NetworkSecurityRule extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -262,7 +264,7 @@ public class NetworkSecurityRule extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rlParam
    */
@@ -273,7 +275,7 @@ public class NetworkSecurityRule extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rlParam set the rlParam.
    */

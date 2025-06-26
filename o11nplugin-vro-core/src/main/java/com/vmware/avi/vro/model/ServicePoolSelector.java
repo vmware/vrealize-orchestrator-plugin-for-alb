@@ -49,7 +49,7 @@ public class ServicePoolSelector extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type poolgroup.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return servicePoolGroupRef
    */
@@ -61,7 +61,7 @@ public class ServicePoolSelector extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type poolgroup.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param servicePoolGroupRef set the servicePoolGroupRef.
    */
@@ -73,7 +73,7 @@ public class ServicePoolSelector extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type pool.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return servicePoolRef
    */
@@ -85,7 +85,7 @@ public class ServicePoolSelector extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type pool.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param servicePoolRef set the servicePoolRef.
    */
@@ -98,7 +98,7 @@ public class ServicePoolSelector extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Pool based destination port.
    * Allowed values are 1-65535.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return servicePort
    */
@@ -111,7 +111,7 @@ public class ServicePoolSelector extends AviRestResource {
    * This is the setter method to the attribute.
    * Pool based destination port.
    * Allowed values are 1-65535.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param servicePort set the servicePort.
    */
@@ -126,7 +126,7 @@ public class ServicePoolSelector extends AviRestResource {
    * Allowed values are 1-65535.
    * Special values are 0- single port.
    * Field introduced in 17.2.4.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return servicePortRangeEnd
    */
@@ -141,7 +141,7 @@ public class ServicePoolSelector extends AviRestResource {
    * Allowed values are 1-65535.
    * Special values are 0- single port.
    * Field introduced in 17.2.4.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param servicePortRangeEnd set the servicePortRangeEnd.
    */
@@ -156,7 +156,7 @@ public class ServicePoolSelector extends AviRestResource {
    * If not specified, it will match any protocol.
    * Enum options - PROTOCOL_TYPE_TCP_PROXY, PROTOCOL_TYPE_TCP_FAST_PATH, PROTOCOL_TYPE_UDP_FAST_PATH, PROTOCOL_TYPE_UDP_PROXY,
    * PROTOCOL_TYPE_SCTP_PROXY, PROTOCOL_TYPE_SCTP_FAST_PATH.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceProtocol
    */
@@ -171,7 +171,7 @@ public class ServicePoolSelector extends AviRestResource {
    * If not specified, it will match any protocol.
    * Enum options - PROTOCOL_TYPE_TCP_PROXY, PROTOCOL_TYPE_TCP_FAST_PATH, PROTOCOL_TYPE_UDP_FAST_PATH, PROTOCOL_TYPE_UDP_PROXY,
    * PROTOCOL_TYPE_SCTP_PROXY, PROTOCOL_TYPE_SCTP_FAST_PATH.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serviceProtocol set the serviceProtocol.
    */

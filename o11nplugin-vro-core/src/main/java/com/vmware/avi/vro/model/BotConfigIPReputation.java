@@ -42,7 +42,7 @@ public class BotConfigIPReputation extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Whether ip reputation-based bot detection is enabled.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enabled
    */
@@ -55,7 +55,7 @@ public class BotConfigIPReputation extends AviRestResource {
    * This is the setter method to the attribute.
    * Whether ip reputation-based bot detection is enabled.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enabled set the enabled.
    */
@@ -69,7 +69,7 @@ public class BotConfigIPReputation extends AviRestResource {
    * The uuid of the ip reputation db to use.
    * It is a reference to an object of type ipreputationdb.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipReputationDbRef
    */
@@ -83,7 +83,7 @@ public class BotConfigIPReputation extends AviRestResource {
    * The uuid of the ip reputation db to use.
    * It is a reference to an object of type ipreputationdb.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipReputationDbRef set the ipReputationDbRef.
    */
@@ -97,7 +97,7 @@ public class BotConfigIPReputation extends AviRestResource {
    * The system-provided mapping from ip reputation types to bot types.
    * It is a reference to an object of type botipreputationtypemapping.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return systemIpReputationMappingRef
    */
@@ -111,7 +111,7 @@ public class BotConfigIPReputation extends AviRestResource {
    * The system-provided mapping from ip reputation types to bot types.
    * It is a reference to an object of type botipreputationtypemapping.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param systemIpReputationMappingRef set the systemIpReputationMappingRef.
    */

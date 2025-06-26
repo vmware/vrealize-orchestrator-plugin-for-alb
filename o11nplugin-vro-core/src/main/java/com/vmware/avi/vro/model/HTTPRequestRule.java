@@ -73,7 +73,7 @@ public class HTTPRequestRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Log all http headers upon rule match.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return allHeaders
    */
@@ -85,7 +85,7 @@ public class HTTPRequestRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Log all http headers upon rule match.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param allHeaders set the allHeaders.
    */
@@ -97,7 +97,7 @@ public class HTTPRequestRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enable or disable the rule.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enable
    */
@@ -109,7 +109,7 @@ public class HTTPRequestRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enable or disable the rule.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enable set the enable.
    */
@@ -121,7 +121,7 @@ public class HTTPRequestRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Http header rewrite action.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hdrAction
    */
@@ -133,7 +133,7 @@ public class HTTPRequestRule extends AviRestResource {
   /**
    * This is the setter method. this will set the hdrAction
    * Http header rewrite action.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hdrAction
    */
@@ -145,7 +145,7 @@ public class HTTPRequestRule extends AviRestResource {
   /**
    * This is the setter method this will set the hdrAction
    * Http header rewrite action.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hdrAction
    */
@@ -162,7 +162,7 @@ public class HTTPRequestRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Index of the rule.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return index
    */
@@ -174,7 +174,7 @@ public class HTTPRequestRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Index of the rule.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param index set the index.
    */
@@ -186,7 +186,7 @@ public class HTTPRequestRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Log http request upon rule match.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return log
    */
@@ -198,7 +198,7 @@ public class HTTPRequestRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Log http request upon rule match.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param log set the log.
    */
@@ -210,7 +210,7 @@ public class HTTPRequestRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Add match criteria to the rule.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return match
    */
@@ -222,7 +222,7 @@ public class HTTPRequestRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Add match criteria to the rule.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param match set the match.
    */
@@ -234,7 +234,7 @@ public class HTTPRequestRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the rule.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -246,7 +246,7 @@ public class HTTPRequestRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the rule.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -258,7 +258,7 @@ public class HTTPRequestRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Http redirect action.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return redirectAction
    */
@@ -270,7 +270,7 @@ public class HTTPRequestRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Http redirect action.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param redirectAction set the redirectAction.
    */
@@ -282,7 +282,7 @@ public class HTTPRequestRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Http request url rewrite action.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rewriteUrlAction
    */
@@ -294,7 +294,7 @@ public class HTTPRequestRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Http request url rewrite action.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rewriteUrlAction set the rewriteUrlAction.
    */
@@ -306,7 +306,7 @@ public class HTTPRequestRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Content switching action.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return switchingAction
    */
@@ -318,7 +318,7 @@ public class HTTPRequestRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Content switching action.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param switchingAction set the switchingAction.
    */

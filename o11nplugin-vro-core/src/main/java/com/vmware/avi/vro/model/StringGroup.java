@@ -64,7 +64,7 @@ public class StringGroup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
@@ -75,7 +75,7 @@ public class StringGroup extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
@@ -87,7 +87,7 @@ public class StringGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configure key value in the string group.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return kv
    */
@@ -99,7 +99,7 @@ public class StringGroup extends AviRestResource {
   /**
    * This is the setter method. this will set the kv
    * Configure key value in the string group.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return kv
    */
@@ -111,7 +111,7 @@ public class StringGroup extends AviRestResource {
   /**
    * This is the setter method this will set the kv
    * Configure key value in the string group.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return kv
    */
@@ -129,7 +129,7 @@ public class StringGroup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable the longest match, default is the shortest match.
    * Field introduced in 18.2.8.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return longestMatch
    */
@@ -142,7 +142,7 @@ public class StringGroup extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable the longest match, default is the shortest match.
    * Field introduced in 18.2.8.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param longestMatch set the longestMatch.
    */
@@ -155,8 +155,7 @@ public class StringGroup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -169,8 +168,7 @@ public class StringGroup extends AviRestResource {
    * This is the setter method. this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -183,8 +181,7 @@ public class StringGroup extends AviRestResource {
    * This is the setter method this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -201,7 +198,7 @@ public class StringGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the string group.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -213,7 +210,7 @@ public class StringGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the string group.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -225,7 +222,7 @@ public class StringGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -237,7 +234,7 @@ public class StringGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
@@ -250,7 +247,7 @@ public class StringGroup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Type of stringgroup.
    * Enum options - SG_TYPE_STRING, SG_TYPE_KEYVAL.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "SG_TYPE_STRING".
    * @return type
    */
@@ -263,7 +260,7 @@ public class StringGroup extends AviRestResource {
    * This is the setter method to the attribute.
    * Type of stringgroup.
    * Enum options - SG_TYPE_STRING, SG_TYPE_KEYVAL.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "SG_TYPE_STRING".
    * @param type set the type.
    */
@@ -294,7 +291,7 @@ public class StringGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the string group.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -306,7 +303,7 @@ public class StringGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the string group.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */

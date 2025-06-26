@@ -42,7 +42,7 @@ public class SeIP6DadFailedEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ipv6 address.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dadIp
    */
@@ -54,7 +54,7 @@ public class SeIP6DadFailedEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ipv6 address.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dadIp set the dadIp.
    */
@@ -66,7 +66,7 @@ public class SeIP6DadFailedEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Vnic name.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ifName
    */
@@ -78,7 +78,7 @@ public class SeIP6DadFailedEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Vnic name.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ifName set the ifName.
    */
@@ -91,7 +91,7 @@ public class SeIP6DadFailedEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the se responsible for this event.
    * It is a reference to an object of type serviceengine.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seRef
    */
@@ -104,7 +104,7 @@ public class SeIP6DadFailedEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the se responsible for this event.
    * It is a reference to an object of type serviceengine.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seRef set the seRef.
    */

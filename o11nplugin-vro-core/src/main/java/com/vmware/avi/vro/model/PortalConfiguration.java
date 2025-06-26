@@ -52,6 +52,10 @@ public class PortalConfiguration extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean enableHttps = true;
 
+    @JsonProperty("enable_rate_limiter")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableRateLimiter = false;
+
     @JsonProperty("http_port")
     @JsonInclude(Include.NON_NULL)
     private Integer httpPort;
@@ -59,6 +63,10 @@ public class PortalConfiguration extends AviRestResource {
     @JsonProperty("https_port")
     @JsonInclude(Include.NON_NULL)
     private Integer httpsPort;
+
+    @JsonProperty("legacy_ssl_support")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean legacySslSupport = false;
 
     @JsonProperty("minimum_password_length")
     @JsonInclude(Include.NON_NULL)
@@ -93,7 +101,7 @@ public class PortalConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enable/disable http basic authentication.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return allowBasicAuthentication
    */
@@ -105,7 +113,7 @@ public class PortalConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enable/disable http basic authentication.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param allowBasicAuthentication set the allowBasicAuthentication.
    */
@@ -120,7 +128,7 @@ public class PortalConfiguration extends AviRestResource {
    * Allowed values are 1-24.
    * Field introduced in 18.2.3.
    * Unit is hours.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 24.
    * @return apiForceTimeout
    */
@@ -135,7 +143,7 @@ public class PortalConfiguration extends AviRestResource {
    * Allowed values are 1-24.
    * Field introduced in 18.2.3.
    * Unit is hours.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 24.
    * @param apiForceTimeout set the apiForceTimeout.
    */
@@ -147,7 +155,7 @@ public class PortalConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Disable remote cli shell client access.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return disableRemoteCliShell
    */
@@ -159,7 +167,7 @@ public class PortalConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Disable remote cli shell client access.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param disableRemoteCliShell set the disableRemoteCliShell.
    */
@@ -172,7 +180,7 @@ public class PortalConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Disable swagger access.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return disableSwagger
    */
@@ -185,7 +193,7 @@ public class PortalConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Disable swagger access.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param disableSwagger set the disableSwagger.
    */
@@ -197,7 +205,7 @@ public class PortalConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enable/disable clickjacking protection.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enableClickjackingProtection
    */
@@ -209,7 +217,7 @@ public class PortalConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enable/disable clickjacking protection.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enableClickjackingProtection set the enableClickjackingProtection.
    */
@@ -220,7 +228,7 @@ public class PortalConfiguration extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enableHttp
    */
@@ -231,7 +239,7 @@ public class PortalConfiguration extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enableHttp set the enableHttp.
    */
@@ -242,7 +250,7 @@ public class PortalConfiguration extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enableHttps
    */
@@ -253,7 +261,7 @@ public class PortalConfiguration extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enableHttps set the enableHttps.
    */
@@ -264,8 +272,35 @@ public class PortalConfiguration extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Feature flag for enabling rate limiter(false by default).
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return enableRateLimiter
+   */
+  @VsoMethod
+  public Boolean getEnableRateLimiter() {
+    return enableRateLimiter;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Feature flag for enabling rate limiter(false by default).
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param enableRateLimiter set the enableRateLimiter.
+   */
+  @VsoMethod
+  public void setEnableRateLimiter(Boolean  enableRateLimiter) {
+    this.enableRateLimiter = enableRateLimiter;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Http port.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed values are 1-65535.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpPort
    */
@@ -277,7 +312,8 @@ public class PortalConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Http port.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed values are 1-65535.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param httpPort set the httpPort.
    */
@@ -289,7 +325,8 @@ public class PortalConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Https port.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed values are 1-65535.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpsPort
    */
@@ -301,7 +338,8 @@ public class PortalConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Https port.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed values are 1-65535.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param httpsPort set the httpsPort.
    */
@@ -312,10 +350,36 @@ public class PortalConfiguration extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Allow incoming connections from clients using tls 1.0/1.1 to controller.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return legacySslSupport
+   */
+  @VsoMethod
+  public Boolean getLegacySslSupport() {
+    return legacySslSupport;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Allow incoming connections from clients using tls 1.0/1.1 to controller.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param legacySslSupport set the legacySslSupport.
+   */
+  @VsoMethod
+  public void setLegacySslSupport(Boolean  legacySslSupport) {
+    this.legacySslSupport = legacySslSupport;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Minimum password length for user accounts.
    * Allowed values are 6-32.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 8.
    * @return minimumPasswordLength
    */
@@ -329,7 +393,7 @@ public class PortalConfiguration extends AviRestResource {
    * Minimum password length for user accounts.
    * Allowed values are 6-32.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 8.
    * @param minimumPasswordLength set the minimumPasswordLength.
    */
@@ -341,7 +405,7 @@ public class PortalConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Strict checking of password strength for user accounts.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return passwordStrengthCheck
    */
@@ -353,7 +417,7 @@ public class PortalConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Strict checking of password strength for user accounts.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param passwordStrengthCheck set the passwordStrengthCheck.
    */
@@ -367,7 +431,7 @@ public class PortalConfiguration extends AviRestResource {
    * Reference to pkiprofile config used for crl validation.
    * It is a reference to an object of type pkiprofile.
    * Field introduced in 30.1.2.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pkiprofileRef
    */
@@ -381,7 +445,7 @@ public class PortalConfiguration extends AviRestResource {
    * Reference to pkiprofile config used for crl validation.
    * It is a reference to an object of type pkiprofile.
    * Field introduced in 30.1.2.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pkiprofileRef set the pkiprofileRef.
    */
@@ -392,7 +456,7 @@ public class PortalConfiguration extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return redirectToHttps
    */
@@ -403,7 +467,7 @@ public class PortalConfiguration extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param redirectToHttps set the redirectToHttps.
    */
@@ -419,7 +483,7 @@ public class PortalConfiguration extends AviRestResource {
    * Leave list empty to use system default certs.
    * It is a reference to an object of type sslkeyandcertificate.
    * Maximum of 2 items allowed.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslkeyandcertificateRefs
    */
@@ -435,7 +499,7 @@ public class PortalConfiguration extends AviRestResource {
    * Leave list empty to use system default certs.
    * It is a reference to an object of type sslkeyandcertificate.
    * Maximum of 2 items allowed.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslkeyandcertificateRefs
    */
@@ -451,7 +515,7 @@ public class PortalConfiguration extends AviRestResource {
    * Leave list empty to use system default certs.
    * It is a reference to an object of type sslkeyandcertificate.
    * Maximum of 2 items allowed.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslkeyandcertificateRefs
    */
@@ -468,7 +532,7 @@ public class PortalConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type sslprofile.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslprofileRef
    */
@@ -480,7 +544,7 @@ public class PortalConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type sslprofile.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sslprofileRef set the sslprofileRef.
    */
@@ -492,7 +556,7 @@ public class PortalConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Use uuid in post object data as uuid of the new object, instead of a generated uuid.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return useUuidFromInput
    */
@@ -504,7 +568,7 @@ public class PortalConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Use uuid in post object data as uuid of the new object, instead of a generated uuid.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param useUuidFromInput set the useUuidFromInput.
    */
@@ -539,7 +603,9 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.disableSwagger, objPortalConfiguration.disableSwagger)&&
   Objects.equals(this.apiForceTimeout, objPortalConfiguration.apiForceTimeout)&&
   Objects.equals(this.minimumPasswordLength, objPortalConfiguration.minimumPasswordLength)&&
-  Objects.equals(this.pkiprofileRef, objPortalConfiguration.pkiprofileRef);
+  Objects.equals(this.pkiprofileRef, objPortalConfiguration.pkiprofileRef)&&
+  Objects.equals(this.legacySslSupport, objPortalConfiguration.legacySslSupport)&&
+  Objects.equals(this.enableRateLimiter, objPortalConfiguration.enableRateLimiter);
 }
 
 @Override
@@ -553,8 +619,10 @@ public String toString() {
         sb.append("    enableClickjackingProtection: ").append(toIndentedString(enableClickjackingProtection)).append("\n");
         sb.append("    enableHttp: ").append(toIndentedString(enableHttp)).append("\n");
         sb.append("    enableHttps: ").append(toIndentedString(enableHttps)).append("\n");
+        sb.append("    enableRateLimiter: ").append(toIndentedString(enableRateLimiter)).append("\n");
         sb.append("    httpPort: ").append(toIndentedString(httpPort)).append("\n");
         sb.append("    httpsPort: ").append(toIndentedString(httpsPort)).append("\n");
+        sb.append("    legacySslSupport: ").append(toIndentedString(legacySslSupport)).append("\n");
         sb.append("    minimumPasswordLength: ").append(toIndentedString(minimumPasswordLength)).append("\n");
         sb.append("    passwordStrengthCheck: ").append(toIndentedString(passwordStrengthCheck)).append("\n");
         sb.append("    pkiprofileRef: ").append(toIndentedString(pkiprofileRef)).append("\n");

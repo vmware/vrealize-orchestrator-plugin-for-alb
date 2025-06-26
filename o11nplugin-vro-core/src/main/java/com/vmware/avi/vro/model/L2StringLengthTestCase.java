@@ -47,7 +47,7 @@ public class L2StringLengthTestCase extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * String length message for nested string length test cases.
    * Field introduced in 21.1.5, 22.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stringLengthMessage
    */
@@ -60,7 +60,7 @@ public class L2StringLengthTestCase extends AviRestResource {
    * This is the setter method to the attribute.
    * String length message for nested string length test cases.
    * Field introduced in 21.1.5, 22.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param stringLengthMessage set the stringLengthMessage.
    */
@@ -73,7 +73,7 @@ public class L2StringLengthTestCase extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Repeated string length message for nested string length test cases.
    * Field introduced in 21.1.5, 22.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stringLengthMessages
    */
@@ -86,7 +86,7 @@ public class L2StringLengthTestCase extends AviRestResource {
    * This is the setter method. this will set the stringLengthMessages
    * Repeated string length message for nested string length test cases.
    * Field introduced in 21.1.5, 22.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stringLengthMessages
    */
@@ -99,7 +99,7 @@ public class L2StringLengthTestCase extends AviRestResource {
    * This is the setter method this will set the stringLengthMessages
    * Repeated string length message for nested string length test cases.
    * Field introduced in 21.1.5, 22.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stringLengthMessages
    */
@@ -117,7 +117,7 @@ public class L2StringLengthTestCase extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * String field for nested string length test cases.
    * Field introduced in 21.1.5, 22.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return testString
    */
@@ -130,7 +130,7 @@ public class L2StringLengthTestCase extends AviRestResource {
    * This is the setter method to the attribute.
    * String field for nested string length test cases.
    * Field introduced in 21.1.5, 22.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param testString set the testString.
    */
@@ -143,7 +143,7 @@ public class L2StringLengthTestCase extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Repeated  string field for nested string length test cases.
    * Field introduced in 21.1.5, 22.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return testStrings
    */
@@ -156,7 +156,7 @@ public class L2StringLengthTestCase extends AviRestResource {
    * This is the setter method. this will set the testStrings
    * Repeated  string field for nested string length test cases.
    * Field introduced in 21.1.5, 22.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return testStrings
    */
@@ -169,7 +169,7 @@ public class L2StringLengthTestCase extends AviRestResource {
    * This is the setter method this will set the testStrings
    * Repeated  string field for nested string length test cases.
    * Field introduced in 21.1.5, 22.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return testStrings
    */

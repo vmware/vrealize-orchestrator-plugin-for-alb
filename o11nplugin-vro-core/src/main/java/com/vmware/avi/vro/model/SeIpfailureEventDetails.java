@@ -45,7 +45,7 @@ public class SeIpfailureEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Mac address.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mac
    */
@@ -57,7 +57,7 @@ public class SeIpfailureEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Mac address.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mac set the mac.
    */
@@ -69,7 +69,7 @@ public class SeIpfailureEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Network uuid.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkUuid
    */
@@ -81,7 +81,7 @@ public class SeIpfailureEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Network uuid.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param networkUuid set the networkUuid.
    */
@@ -94,7 +94,7 @@ public class SeIpfailureEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the se responsible for this event.
    * It is a reference to an object of type serviceengine.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seRef
    */
@@ -107,7 +107,7 @@ public class SeIpfailureEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the se responsible for this event.
    * It is a reference to an object of type serviceengine.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seRef set the seRef.
    */
@@ -119,7 +119,7 @@ public class SeIpfailureEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Vnic name.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vnicName
    */
@@ -131,7 +131,7 @@ public class SeIpfailureEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Vnic name.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vnicName set the vnicName.
    */

@@ -55,7 +55,7 @@ public class HSMThalesNetHsm extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Electronic serial number of the nethsm device.
    * Use thales anonkneti utility to find the nethsm esn.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return esn
    */
@@ -68,7 +68,7 @@ public class HSMThalesNetHsm extends AviRestResource {
    * This is the setter method to the attribute.
    * Electronic serial number of the nethsm device.
    * Use thales anonkneti utility to find the nethsm esn.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param esn set the esn.
    */
@@ -81,7 +81,7 @@ public class HSMThalesNetHsm extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Hash of the key that nethsm device uses to authenticate itself.
    * Use thales anonkneti utility to find the nethsm keyhash.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return keyhash
    */
@@ -94,7 +94,7 @@ public class HSMThalesNetHsm extends AviRestResource {
    * This is the setter method to the attribute.
    * Hash of the key that nethsm device uses to authenticate itself.
    * Use thales anonkneti utility to find the nethsm keyhash.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param keyhash set the keyhash.
    */
@@ -106,7 +106,7 @@ public class HSMThalesNetHsm extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Local module id of the nethsm device.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return moduleId
    */
@@ -118,7 +118,7 @@ public class HSMThalesNetHsm extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Local module id of the nethsm device.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param moduleId set the moduleId.
    */
@@ -132,7 +132,7 @@ public class HSMThalesNetHsm extends AviRestResource {
    * Priority class of the nethsm in an high availability setup.
    * 1 is the highest priority and 100 is the lowest priority.
    * Allowed values are 1-100.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @return priority
    */
@@ -146,7 +146,7 @@ public class HSMThalesNetHsm extends AviRestResource {
    * Priority class of the nethsm in an high availability setup.
    * 1 is the highest priority and 100 is the lowest priority.
    * Allowed values are 1-100.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @param priority set the priority.
    */
@@ -158,7 +158,7 @@ public class HSMThalesNetHsm extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ip address of the nethsm device.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return remoteIp
    */
@@ -170,7 +170,7 @@ public class HSMThalesNetHsm extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ip address of the nethsm device.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param remoteIp set the remoteIp.
    */
@@ -183,7 +183,7 @@ public class HSMThalesNetHsm extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Port at which the nethsm device accepts the connection.
    * Allowed values are 1-65535.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 9004.
    * @return remotePort
    */
@@ -196,7 +196,7 @@ public class HSMThalesNetHsm extends AviRestResource {
    * This is the setter method to the attribute.
    * Port at which the nethsm device accepts the connection.
    * Allowed values are 1-65535.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 9004.
    * @param remotePort set the remotePort.
    */

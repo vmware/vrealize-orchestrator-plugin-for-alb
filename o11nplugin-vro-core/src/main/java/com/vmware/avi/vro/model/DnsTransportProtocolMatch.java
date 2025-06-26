@@ -39,7 +39,7 @@ public class DnsTransportProtocolMatch extends AviRestResource {
    * Criterion to use for matching the dns transport protocol.
    * Enum options - IS_IN, IS_NOT_IN.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchCriteria
    */
@@ -53,7 +53,7 @@ public class DnsTransportProtocolMatch extends AviRestResource {
    * Criterion to use for matching the dns transport protocol.
    * Enum options - IS_IN, IS_NOT_IN.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchCriteria set the matchCriteria.
    */
@@ -67,7 +67,7 @@ public class DnsTransportProtocolMatch extends AviRestResource {
    * Protocol to match against transport protocol used by dns query.
    * Enum options - DNS_OVER_UDP, DNS_OVER_TCP.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return protocol
    */
@@ -81,7 +81,7 @@ public class DnsTransportProtocolMatch extends AviRestResource {
    * Protocol to match against transport protocol used by dns query.
    * Enum options - DNS_OVER_UDP, DNS_OVER_TCP.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param protocol set the protocol.
    */

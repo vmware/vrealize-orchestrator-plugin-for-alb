@@ -43,7 +43,7 @@ public class DestinationPortAddr extends AviRestResource {
    * Tcp/udp port range end (inclusive).
    * Allowed values are 1-65535.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dstPortEnd
    */
@@ -57,7 +57,7 @@ public class DestinationPortAddr extends AviRestResource {
    * Tcp/udp port range end (inclusive).
    * Allowed values are 1-65535.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dstPortEnd set the dstPortEnd.
    */
@@ -71,7 +71,7 @@ public class DestinationPortAddr extends AviRestResource {
    * Tcp/udp port range start (inclusive).
    * Allowed values are 1-65535.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dstPortStart
    */
@@ -85,7 +85,7 @@ public class DestinationPortAddr extends AviRestResource {
    * Tcp/udp port range start (inclusive).
    * Allowed values are 1-65535.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dstPortStart set the dstPortStart.
    */
@@ -99,7 +99,7 @@ public class DestinationPortAddr extends AviRestResource {
    * Match criteria.
    * Enum options - IS_IN, IS_NOT_IN.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "IS_IN".
    * @return matchOperation
    */
@@ -113,7 +113,7 @@ public class DestinationPortAddr extends AviRestResource {
    * Match criteria.
    * Enum options - IS_IN, IS_NOT_IN.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "IS_IN".
    * @param matchOperation set the matchOperation.
    */

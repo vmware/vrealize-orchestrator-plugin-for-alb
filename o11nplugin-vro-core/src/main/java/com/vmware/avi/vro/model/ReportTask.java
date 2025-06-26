@@ -47,7 +47,7 @@ public class ReportTask extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name for the task journal.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -60,7 +60,7 @@ public class ReportTask extends AviRestResource {
    * This is the setter method to the attribute.
    * Name for the task journal.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -73,7 +73,7 @@ public class ReportTask extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Reason in case of failure.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
@@ -86,7 +86,7 @@ public class ReportTask extends AviRestResource {
    * This is the setter method to the attribute.
    * Reason in case of failure.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
@@ -99,7 +99,7 @@ public class ReportTask extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Copy of journal summary for immediate visibility.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return summary
    */
@@ -112,7 +112,7 @@ public class ReportTask extends AviRestResource {
    * This is the setter method to the attribute.
    * Copy of journal summary for immediate visibility.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param summary set the summary.
    */
@@ -126,7 +126,7 @@ public class ReportTask extends AviRestResource {
    * Journal reference for the task.
    * It is a reference to an object of type taskjournal.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return taskJournalRef
    */
@@ -140,7 +140,7 @@ public class ReportTask extends AviRestResource {
    * Journal reference for the task.
    * It is a reference to an object of type taskjournal.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param taskJournalRef set the taskJournalRef.
    */

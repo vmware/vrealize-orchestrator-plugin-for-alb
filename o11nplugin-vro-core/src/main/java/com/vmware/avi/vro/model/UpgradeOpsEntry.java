@@ -64,7 +64,7 @@ public class UpgradeOpsEntry extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the system such as cluster name, se group name and se name.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -77,7 +77,7 @@ public class UpgradeOpsEntry extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the system such as cluster name, se group name and se name.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -91,7 +91,7 @@ public class UpgradeOpsEntry extends AviRestResource {
    * Describes the system  controller or se-group or se.
    * Enum options - NODE_CONTROLLER_CLUSTER, NODE_SE_GROUP, NODE_SE_TYPE.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nodeType
    */
@@ -105,7 +105,7 @@ public class UpgradeOpsEntry extends AviRestResource {
    * Describes the system  controller or se-group or se.
    * Enum options - NODE_CONTROLLER_CLUSTER, NODE_SE_GROUP, NODE_SE_TYPE.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nodeType set the nodeType.
    */
@@ -119,7 +119,7 @@ public class UpgradeOpsEntry extends AviRestResource {
    * Cloud that this object belongs to.
    * It is a reference to an object of type cloud.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return objCloudRef
    */
@@ -133,7 +133,7 @@ public class UpgradeOpsEntry extends AviRestResource {
    * Cloud that this object belongs to.
    * It is a reference to an object of type cloud.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param objCloudRef set the objCloudRef.
    */
@@ -146,7 +146,7 @@ public class UpgradeOpsEntry extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Parameters associated with the upgrade ops request.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return params
    */
@@ -159,7 +159,7 @@ public class UpgradeOpsEntry extends AviRestResource {
    * This is the setter method to the attribute.
    * Parameters associated with the upgrade ops request.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param params set the params.
    */
@@ -173,7 +173,7 @@ public class UpgradeOpsEntry extends AviRestResource {
    * Tenant that this object belongs to.
    * It is a reference to an object of type tenant.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -187,7 +187,7 @@ public class UpgradeOpsEntry extends AviRestResource {
    * Tenant that this object belongs to.
    * It is a reference to an object of type tenant.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
@@ -200,7 +200,7 @@ public class UpgradeOpsEntry extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Current upgrade status info for this node.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return upgradeInfo
    */
@@ -213,7 +213,7 @@ public class UpgradeOpsEntry extends AviRestResource {
    * This is the setter method to the attribute.
    * Current upgrade status info for this node.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param upgradeInfo set the upgradeInfo.
    */
@@ -228,7 +228,7 @@ public class UpgradeOpsEntry extends AviRestResource {
    * Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME, EVAL_UPGRADE, EVAL_PATCH, EVAL_ROLLBACK, EVAL_ROLLBACKPATCH,
    * EVAL_SEGROUP_RESUME, EVAL_RESTORE, RESTORE, UPGRADE_DRYRUN.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return upgradeOps
    */
@@ -243,7 +243,7 @@ public class UpgradeOpsEntry extends AviRestResource {
    * Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME, EVAL_UPGRADE, EVAL_PATCH, EVAL_ROLLBACK, EVAL_ROLLBACKPATCH,
    * EVAL_SEGROUP_RESUME, EVAL_RESTORE, RESTORE, UPGRADE_DRYRUN.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param upgradeOps set the upgradeOps.
    */
@@ -256,7 +256,7 @@ public class UpgradeOpsEntry extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid identifier for the system such as cluster, se group and se.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -269,7 +269,7 @@ public class UpgradeOpsEntry extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid identifier for the system such as cluster, se group and se.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */

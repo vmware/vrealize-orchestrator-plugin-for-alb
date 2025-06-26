@@ -38,7 +38,7 @@ public class KeyValueTuple extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Key.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return key
    */
@@ -51,7 +51,7 @@ public class KeyValueTuple extends AviRestResource {
    * This is the setter method to the attribute.
    * Key.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param key set the key.
    */
@@ -64,7 +64,7 @@ public class KeyValueTuple extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Value.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return value
    */
@@ -77,7 +77,7 @@ public class KeyValueTuple extends AviRestResource {
    * This is the setter method to the attribute.
    * Value.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param value set the value.
    */

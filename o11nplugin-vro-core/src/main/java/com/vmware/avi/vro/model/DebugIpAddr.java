@@ -44,7 +44,7 @@ public class DebugIpAddr extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return addrs
    */
@@ -55,7 +55,7 @@ public class DebugIpAddr extends AviRestResource {
 
   /**
    * This is the setter method. this will set the addrs
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return addrs
    */
@@ -66,7 +66,7 @@ public class DebugIpAddr extends AviRestResource {
 
   /**
    * This is the setter method this will set the addrs
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return addrs
    */
@@ -85,7 +85,7 @@ public class DebugIpAddr extends AviRestResource {
    * Match criteria.
    * Enum options - IS_IN, IS_NOT_IN.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "IS_IN".
    * @return matchOperation
    */
@@ -99,7 +99,7 @@ public class DebugIpAddr extends AviRestResource {
    * Match criteria.
    * Enum options - IS_IN, IS_NOT_IN.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "IS_IN".
    * @param matchOperation set the matchOperation.
    */
@@ -110,7 +110,7 @@ public class DebugIpAddr extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return prefixes
    */
@@ -121,7 +121,7 @@ public class DebugIpAddr extends AviRestResource {
 
   /**
    * This is the setter method. this will set the prefixes
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return prefixes
    */
@@ -132,7 +132,7 @@ public class DebugIpAddr extends AviRestResource {
 
   /**
    * This is the setter method this will set the prefixes
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return prefixes
    */
@@ -148,7 +148,7 @@ public class DebugIpAddr extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ranges
    */
@@ -159,7 +159,7 @@ public class DebugIpAddr extends AviRestResource {
 
   /**
    * This is the setter method. this will set the ranges
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ranges
    */
@@ -170,7 +170,7 @@ public class DebugIpAddr extends AviRestResource {
 
   /**
    * This is the setter method this will set the ranges
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ranges
    */

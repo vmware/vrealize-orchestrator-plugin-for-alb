@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.TimeStamp;
+import com.vmware.avi.vro.model.LocalConfig;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -37,6 +38,10 @@ public class CfgState extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private TimeStamp lastChangedTime;
 
+    @JsonProperty("local_config")
+    @JsonInclude(Include.NON_NULL)
+    private LocalConfig localConfig;
+
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
     private String reason;
@@ -49,16 +54,12 @@ public class CfgState extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String status = "SYSERR_SUCCESS";
 
-    @JsonProperty("uuid")
-    @JsonInclude(Include.NON_NULL)
-    private String uuid;
-
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Cfg-version synced to follower.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cfgVersion
    */
@@ -70,7 +71,7 @@ public class CfgState extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Cfg-version synced to follower.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cfgVersion set the cfgVersion.
    */
@@ -82,7 +83,7 @@ public class CfgState extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Cfg-version in flight to follower.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cfgVersionInFlight
    */
@@ -94,7 +95,7 @@ public class CfgState extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Cfg-version in flight to follower.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cfgVersionInFlight set the cfgVersionInFlight.
    */
@@ -105,7 +106,7 @@ public class CfgState extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lastChangedTime
    */
@@ -116,7 +117,7 @@ public class CfgState extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lastChangedTime set the lastChangedTime.
    */
@@ -127,7 +128,33 @@ public class CfgState extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Config push to se(s) information in the local site.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return localConfig
+   */
+  @VsoMethod
+  public LocalConfig getLocalConfig() {
+    return localConfig;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Config push to se(s) information in the local site.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param localConfig set the localConfig.
+   */
+  @VsoMethod
+  public void setLocalConfig(LocalConfig localConfig) {
+    this.localConfig = localConfig;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
@@ -138,7 +165,7 @@ public class CfgState extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
@@ -150,7 +177,7 @@ public class CfgState extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Site_uuid to which the object was synced.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return siteUuid
    */
@@ -162,7 +189,7 @@ public class CfgState extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Site_uuid to which the object was synced.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param siteUuid set the siteUuid.
    */
@@ -176,8 +203,8 @@ public class CfgState extends AviRestResource {
    * Status of the object.
    * Enum options - SYSERR_SUCCESS, SYSERR_FAILURE, SYSERR_OUT_OF_MEMORY, SYSERR_NO_ENT, SYSERR_INVAL, SYSERR_ACCESS, SYSERR_FAULT, SYSERR_IO,
    * SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN,
-   * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_BAD_REQUEST...
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_FAILED...
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "SYSERR_SUCCESS".
    * @return status
    */
@@ -191,38 +218,14 @@ public class CfgState extends AviRestResource {
    * Status of the object.
    * Enum options - SYSERR_SUCCESS, SYSERR_FAILURE, SYSERR_OUT_OF_MEMORY, SYSERR_NO_ENT, SYSERR_INVAL, SYSERR_ACCESS, SYSERR_FAULT, SYSERR_IO,
    * SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN,
-   * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_BAD_REQUEST...
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_FAILED...
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "SYSERR_SUCCESS".
    * @param status set the status.
    */
   @VsoMethod
   public void setStatus(String  status) {
     this.status = status;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Object-uuid that is being synced to follower.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return uuid
-   */
-  @VsoMethod
-  public String getUuid() {
-    return uuid;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Object-uuid that is being synced to follower.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param uuid set the uuid.
-   */
-  @VsoMethod
-  public void setUuid(String  uuid) {
-    this.uuid = uuid;
   }
 
 
@@ -236,13 +239,13 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   CfgState objCfgState = (CfgState) o;
-  return   Objects.equals(this.uuid, objCfgState.uuid)&&
-  Objects.equals(this.cfgVersion, objCfgState.cfgVersion)&&
+  return   Objects.equals(this.cfgVersion, objCfgState.cfgVersion)&&
   Objects.equals(this.cfgVersionInFlight, objCfgState.cfgVersionInFlight)&&
   Objects.equals(this.status, objCfgState.status)&&
   Objects.equals(this.reason, objCfgState.reason)&&
   Objects.equals(this.siteUuid, objCfgState.siteUuid)&&
-  Objects.equals(this.lastChangedTime, objCfgState.lastChangedTime);
+  Objects.equals(this.lastChangedTime, objCfgState.lastChangedTime)&&
+  Objects.equals(this.localConfig, objCfgState.localConfig);
 }
 
 @Override
@@ -252,10 +255,10 @@ public String toString() {
       sb.append("    cfgVersion: ").append(toIndentedString(cfgVersion)).append("\n");
         sb.append("    cfgVersionInFlight: ").append(toIndentedString(cfgVersionInFlight)).append("\n");
         sb.append("    lastChangedTime: ").append(toIndentedString(lastChangedTime)).append("\n");
+        sb.append("    localConfig: ").append(toIndentedString(localConfig)).append("\n");
         sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
         sb.append("    siteUuid: ").append(toIndentedString(siteUuid)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
       sb.append("}");
   return sb.toString();
 }

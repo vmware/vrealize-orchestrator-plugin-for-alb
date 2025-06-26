@@ -50,7 +50,7 @@ public class ControllerPortalAuth extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Access token to authenticate customer portal rest calls.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return accessToken
    */
@@ -63,7 +63,7 @@ public class ControllerPortalAuth extends AviRestResource {
    * This is the setter method to the attribute.
    * Access token to authenticate customer portal rest calls.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param accessToken set the accessToken.
    */
@@ -77,7 +77,7 @@ public class ControllerPortalAuth extends AviRestResource {
    * Grant type of the jwt token.
    * Enum options - REFRESH_TOKEN, CLIENT_CREDENTIALS.
    * Field introduced in 30.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "REFRESH_TOKEN".
    * @return grantType
    */
@@ -91,7 +91,7 @@ public class ControllerPortalAuth extends AviRestResource {
    * Grant type of the jwt token.
    * Enum options - REFRESH_TOKEN, CLIENT_CREDENTIALS.
    * Field introduced in 30.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "REFRESH_TOKEN".
    * @param grantType set the grantType.
    */
@@ -104,7 +104,7 @@ public class ControllerPortalAuth extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Cloud services instance url.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return instanceUrl
    */
@@ -117,7 +117,7 @@ public class ControllerPortalAuth extends AviRestResource {
    * This is the setter method to the attribute.
    * Cloud services instance url.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param instanceUrl set the instanceUrl.
    */
@@ -130,7 +130,7 @@ public class ControllerPortalAuth extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Signed jwt to refresh the access token.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return jwtToken
    */
@@ -143,7 +143,7 @@ public class ControllerPortalAuth extends AviRestResource {
    * This is the setter method to the attribute.
    * Signed jwt to refresh the access token.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param jwtToken set the jwtToken.
    */
@@ -156,7 +156,7 @@ public class ControllerPortalAuth extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tenant information for which cloud services authentication information is persisted.
    * Field introduced in 30.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenant
    */
@@ -169,7 +169,7 @@ public class ControllerPortalAuth extends AviRestResource {
    * This is the setter method to the attribute.
    * Tenant information for which cloud services authentication information is persisted.
    * Field introduced in 30.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenant set the tenant.
    */

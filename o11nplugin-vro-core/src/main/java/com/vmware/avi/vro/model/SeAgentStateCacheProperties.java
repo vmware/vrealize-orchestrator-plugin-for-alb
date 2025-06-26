@@ -79,7 +79,7 @@ public class SeAgentStateCacheProperties extends AviRestResource {
    * Max elements to flush in one shot from the internal buffer by the statecache thread.
    * Allowed values are 1-10000.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @return scBatchBufferFlushLimit
    */
@@ -93,7 +93,7 @@ public class SeAgentStateCacheProperties extends AviRestResource {
    * Max elements to flush in one shot from the internal buffer by the statecache thread.
    * Allowed values are 1-10000.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @param scBatchBufferFlushLimit set the scBatchBufferFlushLimit.
    */
@@ -107,7 +107,7 @@ public class SeAgentStateCacheProperties extends AviRestResource {
    * Max elements to dequeue in one shot from the q by the statecache thread.
    * Allowed values are 1-10000.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @return scCfgQBatchDequeueLimit
    */
@@ -121,7 +121,7 @@ public class SeAgentStateCacheProperties extends AviRestResource {
    * Max elements to dequeue in one shot from the q by the statecache thread.
    * Allowed values are 1-10000.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @param scCfgQBatchDequeueLimit set the scCfgQBatchDequeueLimit.
    */
@@ -135,7 +135,7 @@ public class SeAgentStateCacheProperties extends AviRestResource {
    * Max elements in the config queue between seagent main and the statecache thread.
    * Allowed values are 1-10000.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4096.
    * @return scCfgQMaxSize
    */
@@ -149,7 +149,7 @@ public class SeAgentStateCacheProperties extends AviRestResource {
    * Max elements in the config queue between seagent main and the statecache thread.
    * Allowed values are 1-10000.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4096.
    * @param scCfgQMaxSize set the scCfgQMaxSize.
    */
@@ -163,7 +163,7 @@ public class SeAgentStateCacheProperties extends AviRestResource {
    * Max elements to dequeue in one shot from the q by the statecache thread.
    * Allowed values are 1-10000.
    * Field introduced in 20.1.5.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @return scDnsQBatchDequeueLimit
    */
@@ -177,7 +177,7 @@ public class SeAgentStateCacheProperties extends AviRestResource {
    * Max elements to dequeue in one shot from the q by the statecache thread.
    * Allowed values are 1-10000.
    * Field introduced in 20.1.5.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @param scDnsQBatchDequeueLimit set the scDnsQBatchDequeueLimit.
    */
@@ -191,7 +191,7 @@ public class SeAgentStateCacheProperties extends AviRestResource {
    * Max elements in the dns queue between seagent main and the statecache thread.
    * Allowed values are 1-10000.
    * Field introduced in 20.1.5.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4096.
    * @return scDnsQMaxSize
    */
@@ -205,7 +205,7 @@ public class SeAgentStateCacheProperties extends AviRestResource {
    * Max elements in the dns queue between seagent main and the statecache thread.
    * Allowed values are 1-10000.
    * Field introduced in 20.1.5.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4096.
    * @param scDnsQMaxSize set the scDnsQMaxSize.
    */
@@ -220,7 +220,7 @@ public class SeAgentStateCacheProperties extends AviRestResource {
    * Allowed values are 1-1000000.
    * Field introduced in 18.2.5.
    * Unit is seconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 900.
    * @return scShardCleanupMaxTime
    */
@@ -235,7 +235,7 @@ public class SeAgentStateCacheProperties extends AviRestResource {
    * Allowed values are 1-1000000.
    * Field introduced in 18.2.5.
    * Unit is seconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 900.
    * @param scShardCleanupMaxTime set the scShardCleanupMaxTime.
    */
@@ -249,7 +249,7 @@ public class SeAgentStateCacheProperties extends AviRestResource {
    * Max elements to dequeue in one shot from the state_ring by the statecache thread.
    * Allowed values are 1-10000.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @return scStateRingBatchDequeueLimit
    */
@@ -263,7 +263,7 @@ public class SeAgentStateCacheProperties extends AviRestResource {
    * Max elements to dequeue in one shot from the state_ring by the statecache thread.
    * Allowed values are 1-10000.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @param scStateRingBatchDequeueLimit set the scStateRingBatchDequeueLimit.
    */
@@ -278,7 +278,7 @@ public class SeAgentStateCacheProperties extends AviRestResource {
    * Allowed values are 1-10000.
    * Field introduced in 18.2.5.
    * Unit is milliseconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @return scStatesFlushInterval
    */
@@ -293,7 +293,7 @@ public class SeAgentStateCacheProperties extends AviRestResource {
    * Allowed values are 1-10000.
    * Field introduced in 18.2.5.
    * Unit is milliseconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @param scStatesFlushInterval set the scStatesFlushInterval.
    */
@@ -308,7 +308,7 @@ public class SeAgentStateCacheProperties extends AviRestResource {
    * Allowed values are 1-90000.
    * Field introduced in 18.2.5.
    * Unit is milliseconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5000.
    * @return scStreamCheckInterval
    */
@@ -323,7 +323,7 @@ public class SeAgentStateCacheProperties extends AviRestResource {
    * Allowed values are 1-90000.
    * Field introduced in 18.2.5.
    * Unit is milliseconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5000.
    * @param scStreamCheckInterval set the scStreamCheckInterval.
    */
@@ -337,7 +337,7 @@ public class SeAgentStateCacheProperties extends AviRestResource {
    * Max elements to dequeue in one shot from the q by the statecache thread.
    * Allowed values are 1-10000.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @return scThreadQBatchDequeueLimit
    */
@@ -351,7 +351,7 @@ public class SeAgentStateCacheProperties extends AviRestResource {
    * Max elements to dequeue in one shot from the q by the statecache thread.
    * Allowed values are 1-10000.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @param scThreadQBatchDequeueLimit set the scThreadQBatchDequeueLimit.
    */
@@ -365,7 +365,7 @@ public class SeAgentStateCacheProperties extends AviRestResource {
    * Max elements in the q between seagent main and the statecache thread.
    * Allowed values are 1-10000.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4096.
    * @return scThreadQMaxSize
    */
@@ -379,7 +379,7 @@ public class SeAgentStateCacheProperties extends AviRestResource {
    * Max elements in the q between seagent main and the statecache thread.
    * Allowed values are 1-10000.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4096.
    * @param scThreadQMaxSize set the scThreadQMaxSize.
    */
@@ -394,7 +394,7 @@ public class SeAgentStateCacheProperties extends AviRestResource {
    * Allowed values are 1-10000.
    * Field introduced in 18.2.5.
    * Unit is milliseconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return scThreadSleepInterval
    */
@@ -409,7 +409,7 @@ public class SeAgentStateCacheProperties extends AviRestResource {
    * Allowed values are 1-10000.
    * Field introduced in 18.2.5.
    * Unit is milliseconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param scThreadSleepInterval set the scThreadSleepInterval.
    */

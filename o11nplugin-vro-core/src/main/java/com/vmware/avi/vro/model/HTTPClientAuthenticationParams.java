@@ -47,7 +47,7 @@ public class HTTPClientAuthenticationParams extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Auth profile to use for validating users.
    * It is a reference to an object of type authprofile.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authProfileRef
    */
@@ -60,7 +60,7 @@ public class HTTPClientAuthenticationParams extends AviRestResource {
    * This is the setter method to the attribute.
    * Auth profile to use for validating users.
    * It is a reference to an object of type authprofile.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param authProfileRef set the authProfileRef.
    */
@@ -72,7 +72,7 @@ public class HTTPClientAuthenticationParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Basic authentication realm to present to a user along with the prompt for credentials.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return realm
    */
@@ -84,7 +84,7 @@ public class HTTPClientAuthenticationParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Basic authentication realm to present to a user along with the prompt for credentials.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param realm set the realm.
    */
@@ -96,7 +96,7 @@ public class HTTPClientAuthenticationParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rrequest uri path when the authentication applies.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return requestUriPath
    */
@@ -108,7 +108,7 @@ public class HTTPClientAuthenticationParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rrequest uri path when the authentication applies.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param requestUriPath set the requestUriPath.
    */
@@ -121,7 +121,7 @@ public class HTTPClientAuthenticationParams extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Type of client authentication.
    * Enum options - HTTP_BASIC_AUTH.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
@@ -134,7 +134,7 @@ public class HTTPClientAuthenticationParams extends AviRestResource {
    * This is the setter method to the attribute.
    * Type of client authentication.
    * Enum options - HTTP_BASIC_AUTH.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */

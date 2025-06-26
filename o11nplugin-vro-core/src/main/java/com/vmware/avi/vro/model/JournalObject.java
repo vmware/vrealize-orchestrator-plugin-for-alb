@@ -46,7 +46,7 @@ public class JournalObject extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of object caused a failure.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return failed
    */
@@ -59,7 +59,7 @@ public class JournalObject extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of object caused a failure.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param failed set the failed.
    */
@@ -72,7 +72,7 @@ public class JournalObject extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the model.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return model
    */
@@ -85,7 +85,7 @@ public class JournalObject extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the model.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param model set the model.
    */
@@ -98,7 +98,7 @@ public class JournalObject extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of object skipped.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return skipped
    */
@@ -111,7 +111,7 @@ public class JournalObject extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of object skipped.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param skipped set the skipped.
    */
@@ -124,7 +124,7 @@ public class JournalObject extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of object for which processing is successful.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return success
    */
@@ -137,7 +137,7 @@ public class JournalObject extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of object for which processing is successful.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param success set the success.
    */

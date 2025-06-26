@@ -126,8 +126,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Default values for application signature sync.
    * Field introduced in 20.1.4.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return appSignatureConfig
    */
@@ -140,8 +139,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Default values for application signature sync.
    * Field introduced in 20.1.4.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param appSignatureConfig set the appSignatureConfig.
    */
@@ -154,7 +152,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Default contact for this controller cluster.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return assetContact
    */
@@ -167,7 +165,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Default contact for this controller cluster.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param assetContact set the assetContact.
    */
@@ -180,8 +178,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Default values for case management.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return caseConfig
    */
@@ -194,8 +191,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Default values for case management.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param caseConfig set the caseConfig.
    */
@@ -232,8 +228,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Inventory configurations for pulse cloud services.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return inventoryConfig
    */
@@ -246,8 +241,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Inventory configurations for pulse cloud services.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param inventoryConfig set the inventoryConfig.
    */
@@ -260,7 +254,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Default values to be used for ip reputation sync.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipReputationConfig
    */
@@ -273,7 +267,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Default values to be used for ip reputation sync.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipReputationConfig set the ipReputationConfig.
    */
@@ -287,8 +281,8 @@ public class ALBServicesConfig extends AviRestResource {
    * Mode helps log collection and upload.
    * Enum options - MODE_UNKNOWN, SALESFORCE, SYSTEST, MYVMWARE, BROADCOM.
    * Field introduced in 20.1.2.
-   * Allowed in enterprise edition with any value, essentials edition(allowed values- salesforce,myvmware,systest), basic edition(allowed values-
-   * salesforce,myvmware,systest), enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed in essentials (allowed values- salesforce,myvmware,systest), basic (allowed values- salesforce,myvmware,systest) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "MYVMWARE".
    * @return mode
    */
@@ -302,8 +296,8 @@ public class ALBServicesConfig extends AviRestResource {
    * Mode helps log collection and upload.
    * Enum options - MODE_UNKNOWN, SALESFORCE, SYSTEST, MYVMWARE, BROADCOM.
    * Field introduced in 20.1.2.
-   * Allowed in enterprise edition with any value, essentials edition(allowed values- salesforce,myvmware,systest), basic edition(allowed values-
-   * salesforce,myvmware,systest), enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed in essentials (allowed values- salesforce,myvmware,systest), basic (allowed values- salesforce,myvmware,systest) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "MYVMWARE".
    * @param mode set the mode.
    */
@@ -316,8 +310,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the albservicesconfig object.
    * Field introduced in 30.1.1.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -330,8 +323,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the albservicesconfig object.
    * Field introduced in 30.1.1.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -345,7 +337,7 @@ public class ALBServicesConfig extends AviRestResource {
    * Time interval in minutes.
    * Allowed values are 5-60.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return pollingInterval
    */
@@ -359,7 +351,7 @@ public class ALBServicesConfig extends AviRestResource {
    * Time interval in minutes.
    * Allowed values are 5-60.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param pollingInterval set the pollingInterval.
    */
@@ -372,7 +364,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The fqdn or ip address of the pulse cloud services.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return portalUrl
    */
@@ -385,7 +377,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * The fqdn or ip address of the pulse cloud services.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param portalUrl set the portalUrl.
    */
@@ -398,8 +390,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Saas licensing configuration.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return saasLicensingConfig
    */
@@ -412,8 +403,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Saas licensing configuration.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param saasLicensingConfig set the saasLicensingConfig.
    */
@@ -426,8 +416,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Session configuration data.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sessionConfig
    */
@@ -440,8 +429,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Session configuration data.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sessionConfig set the sessionConfig.
    */
@@ -454,7 +442,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Split proxy configuration to connect external pulse cloud services.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return splitProxyConfiguration
    */
@@ -467,7 +455,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Split proxy configuration to connect external pulse cloud services.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param splitProxyConfiguration set the splitProxyConfiguration.
    */
@@ -480,8 +468,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tenant based configuration data.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantConfig
    */
@@ -494,8 +481,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Tenant based configuration data.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantConfig set the tenantConfig.
    */
@@ -509,8 +495,7 @@ public class ALBServicesConfig extends AviRestResource {
    * Tenant uuid associated with the object.
    * It is a reference to an object of type tenant.
    * Field introduced in 30.1.1.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -524,8 +509,7 @@ public class ALBServicesConfig extends AviRestResource {
    * Tenant uuid associated with the object.
    * It is a reference to an object of type tenant.
    * Field introduced in 30.1.1.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
@@ -558,7 +542,7 @@ public class ALBServicesConfig extends AviRestResource {
    * By default, pulse cloud services uses proxy added in system configuration.
    * If it should use a separate proxy, set this flag to true and configure split proxy configuration.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return useSplitProxy
    */
@@ -572,7 +556,7 @@ public class ALBServicesConfig extends AviRestResource {
    * By default, pulse cloud services uses proxy added in system configuration.
    * If it should use a separate proxy, set this flag to true and configure split proxy configuration.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param useSplitProxy set the useSplitProxy.
    */
@@ -585,7 +569,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Secure the controller to pulse cloud services communication over tls.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, basic edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return useTls
    */
@@ -598,7 +582,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Secure the controller to pulse cloud services communication over tls.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, basic edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param useTls set the useTls.
    */
@@ -611,8 +595,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Default values for user agent db service.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return userAgentDbConfig
    */
@@ -625,8 +608,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Default values for user agent db service.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param userAgentDbConfig set the userAgentDbConfig.
    */
@@ -638,7 +620,7 @@ public class ALBServicesConfig extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -650,7 +632,7 @@ public class ALBServicesConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
@@ -663,7 +645,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Default values for waf management.
    * Field introduced in 21.1.1.
-   * Allowed in essentials edition with any value, basic edition with any value, enterprise, enterprise with cloud services edition.
+   * Allowed with any value in essentials, basic, enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return wafConfig
    */
@@ -676,7 +658,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Default values for waf management.
    * Field introduced in 21.1.1.
-   * Allowed in essentials edition with any value, basic edition with any value, enterprise, enterprise with cloud services edition.
+   * Allowed with any value in essentials, basic, enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param wafConfig set the wafConfig.
    */

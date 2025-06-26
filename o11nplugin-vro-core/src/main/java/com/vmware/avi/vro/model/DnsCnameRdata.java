@@ -33,7 +33,7 @@ public class DnsCnameRdata extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Canonical name.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cname
    */
@@ -45,7 +45,7 @@ public class DnsCnameRdata extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Canonical name.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cname set the cname.
    */

@@ -39,7 +39,7 @@ public class AuthnRuleMatch extends AviRestResource {
    * Name of the executed authentication rule action.
    * Enum options - SKIP_AUTHENTICATION, USE_DEFAULT_AUTHENTICATION.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ruleAction
    */
@@ -53,7 +53,7 @@ public class AuthnRuleMatch extends AviRestResource {
    * Name of the executed authentication rule action.
    * Enum options - SKIP_AUTHENTICATION, USE_DEFAULT_AUTHENTICATION.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ruleAction set the ruleAction.
    */
@@ -66,7 +66,7 @@ public class AuthnRuleMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the matched authentication rule.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ruleName
    */
@@ -79,7 +79,7 @@ public class AuthnRuleMatch extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the matched authentication rule.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ruleName set the ruleName.
    */

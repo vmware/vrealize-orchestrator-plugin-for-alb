@@ -41,7 +41,7 @@ public class PoolAnalyticsPolicy extends AviRestResource {
    * L4_server.xxx, l7_server.xxx.
    * Field deprecated in 31.1.1.
    * Field introduced in 18.1.5, 18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * @return enableRealtimeMetrics
    */
   @VsoMethod
@@ -55,7 +55,7 @@ public class PoolAnalyticsPolicy extends AviRestResource {
    * L4_server.xxx, l7_server.xxx.
    * Field deprecated in 31.1.1.
    * Field introduced in 18.1.5, 18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * @param enableRealtimeMetrics set the enableRealtimeMetrics.
    */
   @VsoMethod
@@ -67,7 +67,7 @@ public class PoolAnalyticsPolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable realtime metrics and its duration.
    * Field introduced in 31.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricsRealtimeUpdate
    */
@@ -80,7 +80,7 @@ public class PoolAnalyticsPolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable realtime metrics and its duration.
    * Field introduced in 31.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricsRealtimeUpdate set the metricsRealtimeUpdate.
    */

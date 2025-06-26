@@ -46,7 +46,7 @@ public class WafPSMLocationMatch extends AviRestResource {
    * Apply the rules only to requests that match the specified host header.
    * If this is not set, the host header will not be checked.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return host
    */
@@ -60,7 +60,7 @@ public class WafPSMLocationMatch extends AviRestResource {
    * Apply the rules only to requests that match the specified host header.
    * If this is not set, the host header will not be checked.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param host set the host.
    */
@@ -74,7 +74,7 @@ public class WafPSMLocationMatch extends AviRestResource {
    * Apply the rules only to requests that have the specified methods.
    * If this is not set, the method will not be checked.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return methods
    */
@@ -88,7 +88,7 @@ public class WafPSMLocationMatch extends AviRestResource {
    * Apply the rules only to requests that have the specified methods.
    * If this is not set, the method will not be checked.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param methods set the methods.
    */
@@ -102,7 +102,7 @@ public class WafPSMLocationMatch extends AviRestResource {
    * Apply the rules only to requests that match the specified uri.
    * If this is not set, the path will not be checked.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return path
    */
@@ -116,7 +116,7 @@ public class WafPSMLocationMatch extends AviRestResource {
    * Apply the rules only to requests that match the specified uri.
    * If this is not set, the path will not be checked.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param path set the path.
    */

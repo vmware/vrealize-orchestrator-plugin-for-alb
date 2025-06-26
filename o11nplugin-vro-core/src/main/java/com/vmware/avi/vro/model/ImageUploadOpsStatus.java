@@ -43,7 +43,7 @@ public class ImageUploadOpsStatus extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The last time the state changed.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lastChangedTime
    */
@@ -56,7 +56,7 @@ public class ImageUploadOpsStatus extends AviRestResource {
    * This is the setter method to the attribute.
    * The last time the state changed.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lastChangedTime set the lastChangedTime.
    */
@@ -69,7 +69,7 @@ public class ImageUploadOpsStatus extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Descriptive reason for the state of the image.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
@@ -82,7 +82,7 @@ public class ImageUploadOpsStatus extends AviRestResource {
    * This is the setter method to the attribute.
    * Descriptive reason for the state of the image.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
@@ -96,7 +96,7 @@ public class ImageUploadOpsStatus extends AviRestResource {
    * Current fsm-state of image upload operation.
    * Enum options - IMAGE_FSM_STARTED, IMAGE_FSM_IN_PROGRESS, IMAGE_FSM_COMPLETED, IMAGE_FSM_FAILED.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return state
    */
@@ -110,7 +110,7 @@ public class ImageUploadOpsStatus extends AviRestResource {
    * Current fsm-state of image upload operation.
    * Enum options - IMAGE_FSM_STARTED, IMAGE_FSM_IN_PROGRESS, IMAGE_FSM_COMPLETED, IMAGE_FSM_FAILED.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param state set the state.
    */

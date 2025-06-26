@@ -39,7 +39,7 @@ public class IcapLog extends AviRestResource {
    * Denotes whether the content was processed by icap server and an action was taken.
    * Enum options - ICAP_DISABLED, ICAP_PASSED, ICAP_MODIFIED, ICAP_BLOCKED, ICAP_FAILED.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return action
    */
@@ -53,7 +53,7 @@ public class IcapLog extends AviRestResource {
    * Denotes whether the content was processed by icap server and an action was taken.
    * Enum options - ICAP_DISABLED, ICAP_PASSED, ICAP_MODIFIED, ICAP_BLOCKED, ICAP_FAILED.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param action set the action.
    */
@@ -66,7 +66,7 @@ public class IcapLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Logs for the http request's content sent to the icap server.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return requestLogs
    */
@@ -79,7 +79,7 @@ public class IcapLog extends AviRestResource {
    * This is the setter method. this will set the requestLogs
    * Logs for the http request's content sent to the icap server.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return requestLogs
    */
@@ -92,7 +92,7 @@ public class IcapLog extends AviRestResource {
    * This is the setter method this will set the requestLogs
    * Logs for the http request's content sent to the icap server.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return requestLogs
    */

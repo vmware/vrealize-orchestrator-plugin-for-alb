@@ -37,7 +37,7 @@ public class SidebandProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ip address of the sideband server.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip
    */
@@ -49,7 +49,7 @@ public class SidebandProfile extends AviRestResource {
   /**
    * This is the setter method. this will set the ip
    * Ip address of the sideband server.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip
    */
@@ -61,7 +61,7 @@ public class SidebandProfile extends AviRestResource {
   /**
    * This is the setter method this will set the ip
    * Ip address of the sideband server.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip
    */
@@ -80,7 +80,7 @@ public class SidebandProfile extends AviRestResource {
    * Maximum size of the request body that will be sent on the sideband.
    * Allowed values are 0-16384.
    * Unit is bytes.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
    * @return sidebandMaxRequestBodySize
    */
@@ -94,7 +94,7 @@ public class SidebandProfile extends AviRestResource {
    * Maximum size of the request body that will be sent on the sideband.
    * Allowed values are 0-16384.
    * Unit is bytes.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
    * @param sidebandMaxRequestBodySize set the sidebandMaxRequestBodySize.
    */

@@ -183,7 +183,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * Openstack admin tenant (or project) information.
    * For keystone v3, provide the project information in project@domain format.
    * Domain need not be specified if the project belongs to the 'default' domain.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return adminTenant
    */
@@ -197,7 +197,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * Openstack admin tenant (or project) information.
    * For keystone v3, provide the project information in project@domain format.
    * Domain need not be specified if the project belongs to the 'default' domain.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param adminTenant set the adminTenant.
    */
@@ -209,7 +209,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Admin-tenant's uuid in openstack.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return adminTenantUuid
    */
@@ -221,7 +221,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Admin-tenant's uuid in openstack.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param adminTenantUuid set the adminTenantUuid.
    */
@@ -233,7 +233,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * If false, allowed-address-pairs extension will not be used.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return allowedAddressPairs
    */
@@ -245,7 +245,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * If false, allowed-address-pairs extension will not be used.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param allowedAddressPairs set the allowedAddressPairs.
    */
@@ -257,7 +257,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * If true, an anti-affinity policy will be applied to all ses of a se-group, else no such policy will be applied.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return antiAffinity
    */
@@ -269,7 +269,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * If true, an anti-affinity policy will be applied to all ses of a se-group, else no such policy will be applied.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param antiAffinity set the antiAffinity.
    */
@@ -282,7 +282,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Auth url for connecting to keystone.
    * If this is specified, any value provided for keystone_host is ignored.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authUrl
    */
@@ -295,7 +295,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Auth url for connecting to keystone.
    * If this is specified, any value provided for keystone_host is ignored.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param authUrl set the authUrl.
    */
@@ -307,7 +307,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * If false, metadata service will be used instead of  config-drive functionality to retrieve se vm metadata.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return configDrive
    */
@@ -319,7 +319,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * If false, metadata service will be used instead of  config-drive functionality to retrieve se vm metadata.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param configDrive set the configDrive.
    */
@@ -333,7 +333,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * When set to true, the vip and data ports will be programmed to set virtual machine interface disable-policy.
    * Please refer contrail documentation for more on disable-policy.
    * Field introduced in 18.1.2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return contrailDisablePolicy
    */
@@ -347,7 +347,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * When set to true, the vip and data ports will be programmed to set virtual machine interface disable-policy.
    * Please refer contrail documentation for more on disable-policy.
    * Field introduced in 18.1.2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param contrailDisablePolicy set the contrailDisablePolicy.
    */
@@ -360,7 +360,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Contrail vnc endpoint url (example http //10.10.10.100 8082).
    * By default, 'http //' scheme and 8082 port will be used if not provided in the url.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return contrailEndpoint
    */
@@ -373,7 +373,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Contrail vnc endpoint url (example http //10.10.10.100 8082).
    * By default, 'http //' scheme and 8082 port will be used if not provided in the url.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param contrailEndpoint set the contrailEndpoint.
    */
@@ -386,7 +386,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable contrail plugin mode.
    * (deprecated).
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return contrailPlugin
    */
@@ -399,7 +399,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable contrail plugin mode.
    * (deprecated).
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param contrailPlugin set the contrailPlugin.
    */
@@ -414,7 +414,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * Only hw_vif_multiqueue_enabled property is supported.
    * Other properties will be ignored.
    * Field introduced in 18.2.7, 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return customSeImageProperties
    */
@@ -429,7 +429,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * Only hw_vif_multiqueue_enabled property is supported.
    * Other properties will be ignored.
    * Field introduced in 18.2.7, 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return customSeImageProperties
    */
@@ -444,7 +444,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * Only hw_vif_multiqueue_enabled property is supported.
    * Other properties will be ignored.
    * Field introduced in 18.2.7, 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return customSeImageProperties
    */
@@ -465,7 +465,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * Suitable for openstack environments where neutron resources are not frequently created, updated, or deleted.the cache is refreshed when cloud gc
    * api is issued.
    * Field introduced in 21.1.5, 22.1.2.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enableOsObjectCaching
    */
@@ -481,7 +481,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * Suitable for openstack environments where neutron resources are not frequently created, updated, or deleted.the cache is refreshed when cloud gc
    * api is issued.
    * Field introduced in 21.1.5, 22.1.2.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param enableOsObjectCaching set the enableOsObjectCaching.
    */
@@ -494,7 +494,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * When set to true, openstack resources created by avi are tagged with avi cloud uuid.
    * Field introduced in 21.1.5, 22.1.2.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enableTagging
    */
@@ -507,7 +507,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * When set to true, openstack resources created by avi are tagged with avi cloud uuid.
    * Field introduced in 21.1.5, 22.1.2.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param enableTagging set the enableTagging.
    */
@@ -519,7 +519,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * If true, allow selection of networks marked as 'external' for management,  vip or data networks.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return externalNetworks
    */
@@ -531,7 +531,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * If true, allow selection of networks marked as 'external' for management,  vip or data networks.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param externalNetworks set the externalNetworks.
    */
@@ -543,7 +543,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Free unused floating ips.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return freeFloatingips
    */
@@ -555,7 +555,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Free unused floating ips.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param freeFloatingips set the freeFloatingips.
    */
@@ -568,7 +568,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Default hypervisor type, only kvm is supported.
    * Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "KVM".
    * @return hypervisor
    */
@@ -581,7 +581,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Default hypervisor type, only kvm is supported.
    * Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "KVM".
    * @param hypervisor set the hypervisor.
    */
@@ -594,7 +594,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Custom properties per hypervisor type.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hypervisorProperties
    */
@@ -607,7 +607,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the setter method. this will set the hypervisorProperties
    * Custom properties per hypervisor type.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hypervisorProperties
    */
@@ -620,7 +620,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the setter method this will set the hypervisorProperties
    * Custom properties per hypervisor type.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hypervisorProperties
    */
@@ -638,7 +638,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * If os_img_fmt_raw, use raw images else use qcow2 for kvm.
    * Enum options - OS_IMG_FMT_AUTO, OS_IMG_FMT_QCOW2, OS_IMG_FMT_VMDK, OS_IMG_FMT_RAW, OS_IMG_FMT_FLAT.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "OS_IMG_FMT_AUTO".
    * @return imgFormat
    */
@@ -651,7 +651,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * If os_img_fmt_raw, use raw images else use qcow2 for kvm.
    * Enum options - OS_IMG_FMT_AUTO, OS_IMG_FMT_QCOW2, OS_IMG_FMT_VMDK, OS_IMG_FMT_RAW, OS_IMG_FMT_FLAT.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "OS_IMG_FMT_AUTO".
    * @param imgFormat set the imgFormat.
    */
@@ -663,7 +663,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Import keystone tenants list into avi.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return importKeystoneTenants
    */
@@ -675,7 +675,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Import keystone tenants list into avi.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param importKeystoneTenants set the importKeystoneTenants.
    */
@@ -687,7 +687,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Allow self-signed certificates when communicating with https service endpoints.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return insecure
    */
@@ -699,7 +699,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Allow self-signed certificates when communicating with https service endpoints.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param insecure set the insecure.
    */
@@ -712,7 +712,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Keystone's hostname or ip address.
    * (deprecated) use auth_url instead.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return keystoneHost
    */
@@ -725,7 +725,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Keystone's hostname or ip address.
    * (deprecated) use auth_url instead.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param keystoneHost set the keystoneHost.
    */
@@ -738,7 +738,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * If true, map avi 'admin' tenant to the admin_tenant of the cloud.
    * Else map avi 'admin' to openstack 'admin' tenant.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return mapAdminToCloudadmin
    */
@@ -751,7 +751,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * If true, map avi 'admin' tenant to the admin_tenant of the cloud.
    * Else map avi 'admin' to openstack 'admin' tenant.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param mapAdminToCloudadmin set the mapAdminToCloudadmin.
    */
@@ -763,7 +763,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Avi management network name or cidr.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mgmtNetworkName
    */
@@ -775,7 +775,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Avi management network name or cidr.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mgmtNetworkName set the mgmtNetworkName.
    */
@@ -787,7 +787,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Management network uuid.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mgmtNetworkUuid
    */
@@ -799,7 +799,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Management network uuid.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mgmtNetworkUuid set the mgmtNetworkUuid.
    */
@@ -811,7 +811,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * If true, embed owner info in vip port 'name', else embed owner info in 'device_id' field.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return nameOwner
    */
@@ -823,7 +823,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * If true, embed owner info in vip port 'name', else embed owner info in 'device_id' field.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param nameOwner set the nameOwner.
    */
@@ -835,7 +835,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * If true, enable neutron rbac discovery of networks shared across tenants/projects.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return neutronRbac
    */
@@ -847,7 +847,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * If true, enable neutron rbac discovery of networks shared across tenants/projects.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param neutronRbac set the neutronRbac.
    */
@@ -859,7 +859,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The password avi vantage will use when authenticating to keystone.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return password
    */
@@ -871,7 +871,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The password avi vantage will use when authenticating to keystone.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param password set the password.
    */
@@ -884,7 +884,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Access privilege.
    * Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return privilege
    */
@@ -897,7 +897,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Access privilege.
    * Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param privilege set the privilege.
    */
@@ -909,7 +909,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Lbaas provider name.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return provName
    */
@@ -921,7 +921,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the setter method. this will set the provName
    * Lbaas provider name.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return provName
    */
@@ -933,7 +933,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the setter method this will set the provName
    * Lbaas provider name.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return provName
    */
@@ -952,7 +952,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * A tenant can normally use its own networks and any networks shared with it.
    * In addition, this setting provides extra networks that are usable by tenants.
    * Field introduced in 18.1.2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return providerVipNetworks
    */
@@ -966,7 +966,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * A tenant can normally use its own networks and any networks shared with it.
    * In addition, this setting provides extra networks that are usable by tenants.
    * Field introduced in 18.1.2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return providerVipNetworks
    */
@@ -980,7 +980,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * A tenant can normally use its own networks and any networks shared with it.
    * In addition, this setting provides extra networks that are usable by tenants.
    * Field introduced in 18.1.2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return providerVipNetworks
    */
@@ -997,7 +997,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Region name.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return region
    */
@@ -1009,7 +1009,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Region name.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param region set the region.
    */
@@ -1024,7 +1024,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * For an openstack role, this mapping is consulted only if there is no local avi role with the same name as the openstack role.
    * This is an ordered list and only the first matching entry is used.
    * You can use '*' to match all openstack role names.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return roleMapping
    */
@@ -1039,7 +1039,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * For an openstack role, this mapping is consulted only if there is no local avi role with the same name as the openstack role.
    * This is an ordered list and only the first matching entry is used.
    * You can use '*' to match all openstack role names.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return roleMapping
    */
@@ -1054,7 +1054,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * For an openstack role, this mapping is consulted only if there is no local avi role with the same name as the openstack role.
    * This is an ordered list and only the first matching entry is used.
    * You can use '*' to match all openstack role names.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return roleMapping
    */
@@ -1071,7 +1071,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * If false, security-groups extension will not be used.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return securityGroups
    */
@@ -1083,7 +1083,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * If false, security-groups extension will not be used.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param securityGroups set the securityGroups.
    */
@@ -1095,7 +1095,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * If true, then ses will be created in the appropriate tenants, else ses will be created in the admin_tenant.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return tenantSe
    */
@@ -1107,7 +1107,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * If true, then ses will be created in the appropriate tenants, else ses will be created in the admin_tenant.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param tenantSe set the tenantSe.
    */
@@ -1119,7 +1119,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * If admin urls are either inaccessible or not to be accessed from avi controller, then set this to false.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return useAdminUrl
    */
@@ -1131,7 +1131,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * If admin urls are either inaccessible or not to be accessed from avi controller, then set this to false.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param useAdminUrl set the useAdminUrl.
    */
@@ -1143,7 +1143,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Use internalurl for openstack endpoints instead of the default publicurl endpoints.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return useInternalEndpoints
    */
@@ -1155,7 +1155,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Use internalurl for openstack endpoints instead of the default publicurl endpoints.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param useInternalEndpoints set the useInternalEndpoints.
    */
@@ -1167,7 +1167,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Use keystone for user authentication.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return useKeystoneAuth
    */
@@ -1179,7 +1179,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Use keystone for user authentication.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param useKeystoneAuth set the useKeystoneAuth.
    */
@@ -1192,7 +1192,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The username avi vantage will use when authenticating to keystone.
    * For keystone v3, provide the user information in user@domain format, unless that user belongs to the default domain.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return username
    */
@@ -1205,7 +1205,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * The username avi vantage will use when authenticating to keystone.
    * For keystone v3, provide the user information in user@domain format, unless that user belongs to the default domain.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param username set the username.
    */
@@ -1219,7 +1219,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * When set to true, vip ports are created in openstack tenant configured as admin_tenant in cloud.
    * Otherwise, default behavior is to create vip ports in user tenant.
    * Field introduced in 21.1.5, 22.1.2.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return vipPortInAdminTenant
    */
@@ -1233,7 +1233,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * When set to true, vip ports are created in openstack tenant configured as admin_tenant in cloud.
    * Otherwise, default behavior is to create vip ports in user tenant.
    * Field introduced in 21.1.5, 22.1.2.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param vipPortInAdminTenant set the vipPortInAdminTenant.
    */

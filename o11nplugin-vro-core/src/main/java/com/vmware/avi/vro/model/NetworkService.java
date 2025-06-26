@@ -71,7 +71,7 @@ public class NetworkService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type cloud.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudRef
    */
@@ -84,7 +84,7 @@ public class NetworkService extends AviRestResource {
    * This is the setter method to the attribute.
    * It is a reference to an object of type cloud.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudRef set the cloudRef.
    */
@@ -97,8 +97,7 @@ public class NetworkService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -111,8 +110,7 @@ public class NetworkService extends AviRestResource {
    * This is the setter method. this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -125,8 +123,7 @@ public class NetworkService extends AviRestResource {
    * This is the setter method this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -144,7 +141,7 @@ public class NetworkService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the networkservice.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -157,7 +154,7 @@ public class NetworkService extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the networkservice.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -170,7 +167,7 @@ public class NetworkService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Routing information of the networkservice.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return routingService
    */
@@ -183,7 +180,7 @@ public class NetworkService extends AviRestResource {
    * This is the setter method to the attribute.
    * Routing information of the networkservice.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param routingService set the routingService.
    */
@@ -197,7 +194,7 @@ public class NetworkService extends AviRestResource {
    * Service engine group to which the service is applied.
    * It is a reference to an object of type serviceenginegroup.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGroupRef
    */
@@ -211,7 +208,7 @@ public class NetworkService extends AviRestResource {
    * Service engine group to which the service is applied.
    * It is a reference to an object of type serviceenginegroup.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seGroupRef set the seGroupRef.
    */
@@ -225,7 +222,7 @@ public class NetworkService extends AviRestResource {
    * Indicates the type of networkservice.
    * Enum options - ROUTING_SERVICE.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceType
    */
@@ -239,7 +236,7 @@ public class NetworkService extends AviRestResource {
    * Indicates the type of networkservice.
    * Enum options - ROUTING_SERVICE.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serviceType set the serviceType.
    */
@@ -252,7 +249,7 @@ public class NetworkService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -265,7 +262,7 @@ public class NetworkService extends AviRestResource {
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
@@ -297,7 +294,7 @@ public class NetworkService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the networkservice.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -310,7 +307,7 @@ public class NetworkService extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the networkservice.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
@@ -324,7 +321,7 @@ public class NetworkService extends AviRestResource {
    * Vrf context to which the service is scoped.
    * It is a reference to an object of type vrfcontext.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vrfRef
    */
@@ -338,7 +335,7 @@ public class NetworkService extends AviRestResource {
    * Vrf context to which the service is scoped.
    * It is a reference to an object of type vrfcontext.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vrfRef set the vrfRef.
    */

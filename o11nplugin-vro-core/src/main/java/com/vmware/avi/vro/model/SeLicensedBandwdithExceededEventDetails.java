@@ -37,7 +37,7 @@ public class SeLicensedBandwdithExceededEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Number of packets dropped since the last event.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numPktsDropped
    */
@@ -49,7 +49,7 @@ public class SeLicensedBandwdithExceededEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Number of packets dropped since the last event.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numPktsDropped set the numPktsDropped.
    */
@@ -62,7 +62,7 @@ public class SeLicensedBandwdithExceededEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the se responsible for this event.
    * It is a reference to an object of type serviceengine.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seRef
    */
@@ -75,7 +75,7 @@ public class SeLicensedBandwdithExceededEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the se responsible for this event.
    * It is a reference to an object of type serviceengine.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seRef set the seRef.
    */

@@ -25,10 +25,6 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class RestoreParams extends AviRestResource {
-    @JsonProperty("dryrun")
-    @JsonInclude(Include.NON_NULL)
-    private Boolean dryrun = false;
-
     @JsonIgnore
     private Boolean enableMigration = false;
 
@@ -56,35 +52,9 @@ public class RestoreParams extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * This flag is set to perform the upgrade dry-run operations.
-   * Field introduced in 31.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @return dryrun
-   */
-  @VsoMethod
-  public Boolean getDryrun() {
-    return dryrun;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * This flag is set to perform the upgrade dry-run operations.
-   * Field introduced in 31.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @param dryrun set the dryrun.
-   */
-  @VsoMethod
-  public void setDryrun(Boolean  dryrun) {
-    this.dryrun = dryrun;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * This flag is set to allow migration across version during controller restore operations.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enableMigration
    */
@@ -97,7 +67,7 @@ public class RestoreParams extends AviRestResource {
    * This is the setter method to the attribute.
    * This flag is set to allow migration across version during controller restore operations.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param enableMigration set the enableMigration.
    */
@@ -110,7 +80,7 @@ public class RestoreParams extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Requested config file path.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return file
    */
@@ -123,7 +93,7 @@ public class RestoreParams extends AviRestResource {
    * This is the setter method to the attribute.
    * Requested config file path.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param file set the file.
    */
@@ -136,7 +106,7 @@ public class RestoreParams extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The passphrase with which the configuration was exported.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return passphrase
    */
@@ -149,7 +119,7 @@ public class RestoreParams extends AviRestResource {
    * This is the setter method to the attribute.
    * The passphrase with which the configuration was exported.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param passphrase set the passphrase.
    */
@@ -162,7 +132,7 @@ public class RestoreParams extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This flag is set to run the pre-checks without the subsequent restore operations.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return prechecksOnly
    */
@@ -175,7 +145,7 @@ public class RestoreParams extends AviRestResource {
    * This is the setter method to the attribute.
    * This flag is set to run the pre-checks without the subsequent restore operations.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param prechecksOnly set the prechecksOnly.
    */
@@ -188,7 +158,7 @@ public class RestoreParams extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This flag allows you to bypass the warning prechecks.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return skipWarnings
    */
@@ -201,7 +171,7 @@ public class RestoreParams extends AviRestResource {
    * This is the setter method to the attribute.
    * This flag allows you to bypass the warning prechecks.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param skipWarnings set the skipWarnings.
    */
@@ -215,7 +185,7 @@ public class RestoreParams extends AviRestResource {
    * Type of the file.
    * Enum options - JSON, BUNDLE.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "JSON".
    * @return type
    */
@@ -229,7 +199,7 @@ public class RestoreParams extends AviRestResource {
    * Type of the file.
    * Enum options - JSON, BUNDLE.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "JSON".
    * @param type set the type.
    */
@@ -254,16 +224,14 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.skipWarnings, objRestoreParams.skipWarnings)&&
   Objects.equals(this.passphrase, objRestoreParams.passphrase)&&
   Objects.equals(this.prechecksOnly, objRestoreParams.prechecksOnly)&&
-  Objects.equals(this.enableMigration, objRestoreParams.enableMigration)&&
-  Objects.equals(this.dryrun, objRestoreParams.dryrun);
+  Objects.equals(this.enableMigration, objRestoreParams.enableMigration);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class RestoreParams {\n");
-      sb.append("    dryrun: ").append(toIndentedString(dryrun)).append("\n");
-        sb.append("    enableMigration: ").append(toIndentedString(enableMigration)).append("\n");
+      sb.append("    enableMigration: ").append(toIndentedString(enableMigration)).append("\n");
         sb.append("    file: ").append(toIndentedString(file)).append("\n");
         sb.append("    passphrase: ").append(toIndentedString(passphrase)).append("\n");
         sb.append("    prechecksOnly: ").append(toIndentedString(prechecksOnly)).append("\n");

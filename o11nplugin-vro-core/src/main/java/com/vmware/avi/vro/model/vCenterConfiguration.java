@@ -74,13 +74,17 @@ public class vCenterConfiguration extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String vcenterUrl;
 
+    @JsonProperty("verify_certificate")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean verifyCertificate = false;
+
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Vcenter content library where service engine images are stored.
    * Field introduced in 22.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return contentLib
    */
@@ -93,7 +97,7 @@ public class vCenterConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Vcenter content library where service engine images are stored.
    * Field introduced in 22.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param contentLib set the contentLib.
    */
@@ -105,7 +109,7 @@ public class vCenterConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Datacenter for virtual infrastructure discovery.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return datacenter
    */
@@ -117,7 +121,7 @@ public class vCenterConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Datacenter for virtual infrastructure discovery.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param datacenter set the datacenter.
    */
@@ -130,7 +134,7 @@ public class vCenterConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Managed object id of the datacenter.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, essentials edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return datacenterManagedObjectId
    */
@@ -143,7 +147,7 @@ public class vCenterConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Managed object id of the datacenter.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, essentials edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param datacenterManagedObjectId set the datacenterManagedObjectId.
    */
@@ -156,7 +160,7 @@ public class vCenterConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * If true, nsx-t segment spanning multiple vds with vcenter cloud are merged to a single network in avi.
    * Field introduced in 22.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return isNsxEnvironment
    */
@@ -169,7 +173,7 @@ public class vCenterConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * If true, nsx-t segment spanning multiple vds with vcenter cloud are merged to a single network in avi.
    * Field introduced in 22.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param isNsxEnvironment set the isNsxEnvironment.
    */
@@ -181,7 +185,7 @@ public class vCenterConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Management subnet to use for avi service engines.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return managementIpSubnet
    */
@@ -193,7 +197,7 @@ public class vCenterConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Management subnet to use for avi service engines.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param managementIpSubnet set the managementIpSubnet.
    */
@@ -206,7 +210,7 @@ public class vCenterConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Management network to use for avi service engines.
    * It is a reference to an object of type vimgrnwruntime.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return managementNetwork
    */
@@ -219,7 +223,7 @@ public class vCenterConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Management network to use for avi service engines.
    * It is a reference to an object of type vimgrnwruntime.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param managementNetwork set the managementNetwork.
    */
@@ -231,7 +235,7 @@ public class vCenterConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The password avi vantage will use when authenticating with vcenter.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return password
    */
@@ -243,7 +247,7 @@ public class vCenterConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The password avi vantage will use when authenticating with vcenter.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param password set the password.
    */
@@ -257,7 +261,7 @@ public class vCenterConfiguration extends AviRestResource {
    * Set the access mode to vcenter as either read, which allows avi to discover networks and servers, or write, which also allows avi to create
    * service engines and configure their network properties.
    * Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "WRITE_ACCESS".
    * @return privilege
    */
@@ -271,7 +275,7 @@ public class vCenterConfiguration extends AviRestResource {
    * Set the access mode to vcenter as either read, which allows avi to discover networks and servers, or write, which also allows avi to create
    * service engines and configure their network properties.
    * Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "WRITE_ACCESS".
    * @param privilege set the privilege.
    */
@@ -284,7 +288,7 @@ public class vCenterConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * If false, service engine image will not be pushed to content library.
    * Field introduced in 22.1.1.
-   * Allowed in enterprise edition with any value, essentials edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return useContentLib
    */
@@ -297,7 +301,7 @@ public class vCenterConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * If false, service engine image will not be pushed to content library.
    * Field introduced in 22.1.1.
-   * Allowed in enterprise edition with any value, essentials edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param useContentLib set the useContentLib.
    */
@@ -309,7 +313,7 @@ public class vCenterConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The username avi vantage will use when authenticating with vcenter.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return username
    */
@@ -321,7 +325,7 @@ public class vCenterConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The username avi vantage will use when authenticating with vcenter.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param username set the username.
    */
@@ -333,7 +337,7 @@ public class vCenterConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Avi service engine template in vcenter to be used for creating service engines.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterTemplateSeLocation
    */
@@ -345,7 +349,7 @@ public class vCenterConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Avi service engine template in vcenter to be used for creating service engines.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcenterTemplateSeLocation set the vcenterTemplateSeLocation.
    */
@@ -357,7 +361,7 @@ public class vCenterConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Vcenter hostname or ip address.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterUrl
    */
@@ -369,13 +373,39 @@ public class vCenterConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Vcenter hostname or ip address.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcenterUrl set the vcenterUrl.
    */
   @VsoMethod
   public void setVcenterUrl(String  vcenterUrl) {
     this.vcenterUrl = vcenterUrl;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Flag is used to indicate whether tls certificate verificationbe done when establishing a connection to a vcenter server.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return verifyCertificate
+   */
+  @VsoMethod
+  public Boolean getVerifyCertificate() {
+    return verifyCertificate;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Flag is used to indicate whether tls certificate verificationbe done when establishing a connection to a vcenter server.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param verifyCertificate set the verifyCertificate.
+   */
+  @VsoMethod
+  public void setVerifyCertificate(Boolean  verifyCertificate) {
+    this.verifyCertificate = verifyCertificate;
   }
 
 
@@ -400,7 +430,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.useContentLib, objvCenterConfiguration.useContentLib)&&
   Objects.equals(this.contentLib, objvCenterConfiguration.contentLib)&&
   Objects.equals(this.isNsxEnvironment, objvCenterConfiguration.isNsxEnvironment)&&
-  Objects.equals(this.datacenterManagedObjectId, objvCenterConfiguration.datacenterManagedObjectId);
+  Objects.equals(this.datacenterManagedObjectId, objvCenterConfiguration.datacenterManagedObjectId)&&
+  Objects.equals(this.verifyCertificate, objvCenterConfiguration.verifyCertificate);
 }
 
 @Override
@@ -419,6 +450,7 @@ public String toString() {
         sb.append("    username: ").append(toIndentedString(username)).append("\n");
         sb.append("    vcenterTemplateSeLocation: ").append(toIndentedString(vcenterTemplateSeLocation)).append("\n");
         sb.append("    vcenterUrl: ").append(toIndentedString(vcenterUrl)).append("\n");
+        sb.append("    verifyCertificate: ").append(toIndentedString(verifyCertificate)).append("\n");
       sb.append("}");
   return sb.toString();
 }

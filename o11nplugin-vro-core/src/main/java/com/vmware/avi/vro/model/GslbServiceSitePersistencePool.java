@@ -40,6 +40,10 @@ public class GslbServiceSitePersistencePool extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer numServersUp;
 
+    @JsonProperty("server_info")
+    @JsonInclude(Include.NON_NULL)
+    private List<ServerRuntimeSummary> serverInfo;
+
     @JsonProperty("servers")
     @JsonInclude(Include.NON_NULL)
     private List<ServerConfig> servers;
@@ -54,7 +58,7 @@ public class GslbServiceSitePersistencePool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Site persistence pool's http2 state.
    * Field introduced in 20.1.6.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return enableHttp2
    */
@@ -67,7 +71,7 @@ public class GslbServiceSitePersistencePool extends AviRestResource {
    * This is the setter method to the attribute.
    * Site persistence pool's http2 state.
    * Field introduced in 20.1.6.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param enableHttp2 set the enableHttp2.
    */
@@ -80,7 +84,7 @@ public class GslbServiceSitePersistencePool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Site persistence pool's name.
    * Field introduced in 17.2.2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -93,7 +97,7 @@ public class GslbServiceSitePersistencePool extends AviRestResource {
    * This is the setter method to the attribute.
    * Site persistence pool's name.
    * Field introduced in 17.2.2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -106,7 +110,7 @@ public class GslbServiceSitePersistencePool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of servers configured in the pool.
    * Field introduced in 17.2.2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numServers
    */
@@ -119,7 +123,7 @@ public class GslbServiceSitePersistencePool extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of servers configured in the pool.
    * Field introduced in 17.2.2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numServers set the numServers.
    */
@@ -132,7 +136,7 @@ public class GslbServiceSitePersistencePool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of servers operationally up in the pool.
    * Field introduced in 17.2.2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numServersUp
    */
@@ -145,7 +149,7 @@ public class GslbServiceSitePersistencePool extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of servers operationally up in the pool.
    * Field introduced in 17.2.2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numServersUp set the numServersUp.
    */
@@ -157,9 +161,53 @@ public class GslbServiceSitePersistencePool extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Detailed information of the servers in the pool.
-   * Field introduced in 17.2.8.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return serverInfo
+   */
+  @VsoMethod
+  public List<ServerRuntimeSummary> getServerInfo() {
+    return serverInfo;
+  }
+
+  /**
+   * This is the setter method. this will set the serverInfo
+   * Detailed information of the servers in the pool.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return serverInfo
+   */
+  @VsoMethod
+  public void setServerInfo(List<ServerRuntimeSummary>  serverInfo) {
+    this.serverInfo = serverInfo;
+  }
+
+  /**
+   * This is the setter method this will set the serverInfo
+   * Detailed information of the servers in the pool.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return serverInfo
+   */
+  @VsoMethod
+  public GslbServiceSitePersistencePool addServerInfoItem(ServerRuntimeSummary serverInfoItem) {
+    if (this.serverInfo == null) {
+      this.serverInfo = new ArrayList<ServerRuntimeSummary>();
+    }
+    this.serverInfo.add(serverInfoItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Detailed information of the servers in the pool.
+   * Field deprecated in 31.1.1.
+   * Field introduced in 17.2.8.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * @return servers
    */
   @VsoMethod
@@ -170,9 +218,9 @@ public class GslbServiceSitePersistencePool extends AviRestResource {
   /**
    * This is the setter method. this will set the servers
    * Detailed information of the servers in the pool.
+   * Field deprecated in 31.1.1.
    * Field introduced in 17.2.8.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * @return servers
    */
   @VsoMethod
@@ -183,9 +231,9 @@ public class GslbServiceSitePersistencePool extends AviRestResource {
   /**
    * This is the setter method this will set the servers
    * Detailed information of the servers in the pool.
+   * Field deprecated in 31.1.1.
    * Field introduced in 17.2.8.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * @return servers
    */
   @VsoMethod
@@ -202,7 +250,7 @@ public class GslbServiceSitePersistencePool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Site persistence pool's uuid.
    * Field introduced in 17.2.2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -215,7 +263,7 @@ public class GslbServiceSitePersistencePool extends AviRestResource {
    * This is the setter method to the attribute.
    * Site persistence pool's uuid.
    * Field introduced in 17.2.2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
@@ -240,7 +288,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.numServers, objGslbServiceSitePersistencePool.numServers)&&
   Objects.equals(this.numServersUp, objGslbServiceSitePersistencePool.numServersUp)&&
   Objects.equals(this.servers, objGslbServiceSitePersistencePool.servers)&&
-  Objects.equals(this.enableHttp2, objGslbServiceSitePersistencePool.enableHttp2);
+  Objects.equals(this.enableHttp2, objGslbServiceSitePersistencePool.enableHttp2)&&
+  Objects.equals(this.serverInfo, objGslbServiceSitePersistencePool.serverInfo);
 }
 
 @Override
@@ -251,6 +300,7 @@ public String toString() {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    numServers: ").append(toIndentedString(numServers)).append("\n");
         sb.append("    numServersUp: ").append(toIndentedString(numServersUp)).append("\n");
+        sb.append("    serverInfo: ").append(toIndentedString(serverInfo)).append("\n");
         sb.append("    servers: ").append(toIndentedString(servers)).append("\n");
         sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
       sb.append("}");

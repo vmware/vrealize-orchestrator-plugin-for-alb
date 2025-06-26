@@ -100,7 +100,7 @@ public class VsVip extends AviRestResource {
    * Local_pref to be used for vsvip advertised.
    * Applicable only over ibgp.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return bgpLocalPreference
    */
@@ -114,7 +114,7 @@ public class VsVip extends AviRestResource {
    * Local_pref to be used for vsvip advertised.
    * Applicable only over ibgp.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param bgpLocalPreference set the bgpLocalPreference.
    */
@@ -129,7 +129,7 @@ public class VsVip extends AviRestResource {
    * Applicable only over ebgp.
    * Allowed values are 1-10.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return bgpNumAsPathPrepend
    */
@@ -144,7 +144,7 @@ public class VsVip extends AviRestResource {
    * Applicable only over ebgp.
    * Allowed values are 1-10.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param bgpNumAsPathPrepend set the bgpNumAsPathPrepend.
    */
@@ -158,7 +158,7 @@ public class VsVip extends AviRestResource {
    * Select bgp peers, using peer label, for vsvip advertisement.
    * Field introduced in 20.1.5.
    * Maximum of 128 items allowed.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return bgpPeerLabels
    */
@@ -172,7 +172,7 @@ public class VsVip extends AviRestResource {
    * Select bgp peers, using peer label, for vsvip advertisement.
    * Field introduced in 20.1.5.
    * Maximum of 128 items allowed.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return bgpPeerLabels
    */
@@ -186,7 +186,7 @@ public class VsVip extends AviRestResource {
    * Select bgp peers, using peer label, for vsvip advertisement.
    * Field introduced in 20.1.5.
    * Maximum of 128 items allowed.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return bgpPeerLabels
    */
@@ -204,7 +204,7 @@ public class VsVip extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type cloud.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudRef
    */
@@ -217,7 +217,7 @@ public class VsVip extends AviRestResource {
    * This is the setter method to the attribute.
    * It is a reference to an object of type cloud.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudRef set the cloudRef.
    */
@@ -232,7 +232,7 @@ public class VsVip extends AviRestResource {
    * This takes effect only if dns profile isassociated with cloud.
    * Field introduced in 17.1.1.
    * Maximum of 1000 items allowed.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsInfo
    */
@@ -247,7 +247,7 @@ public class VsVip extends AviRestResource {
    * This takes effect only if dns profile isassociated with cloud.
    * Field introduced in 17.1.1.
    * Maximum of 1000 items allowed.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsInfo
    */
@@ -262,7 +262,7 @@ public class VsVip extends AviRestResource {
    * This takes effect only if dns profile isassociated with cloud.
    * Field introduced in 17.1.1.
    * Maximum of 1000 items allowed.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsInfo
    */
@@ -280,8 +280,8 @@ public class VsVip extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Force placement on all service engines in the service engine group (container clouds only).
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-   * cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return eastWestPlacement
    */
@@ -294,8 +294,8 @@ public class VsVip extends AviRestResource {
    * This is the setter method to the attribute.
    * Force placement on all service engines in the service engine group (container clouds only).
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-   * cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param eastWestPlacement set the eastWestPlacement.
    */
@@ -309,7 +309,7 @@ public class VsVip extends AviRestResource {
    * Determines the set of ipam networks to use for this vsvip.
    * Selector type must be selector_ipam and only one label is supported.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipamSelector
    */
@@ -323,7 +323,7 @@ public class VsVip extends AviRestResource {
    * Determines the set of ipam networks to use for this vsvip.
    * Selector type must be selector_ipam and only one label is supported.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipamSelector set the ipamSelector.
    */
@@ -336,8 +336,7 @@ public class VsVip extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -350,8 +349,7 @@ public class VsVip extends AviRestResource {
    * This is the setter method. this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -364,8 +362,7 @@ public class VsVip extends AviRestResource {
    * This is the setter method this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -383,7 +380,7 @@ public class VsVip extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name for the vsvip object.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -396,7 +393,7 @@ public class VsVip extends AviRestResource {
    * This is the setter method to the attribute.
    * Name for the vsvip object.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -409,7 +406,7 @@ public class VsVip extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -422,7 +419,7 @@ public class VsVip extends AviRestResource {
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
@@ -435,7 +432,7 @@ public class VsVip extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This sets the placement scope of virtualservice to given tier1 logical router in nsx-t.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tier1Lr
    */
@@ -448,7 +445,7 @@ public class VsVip extends AviRestResource {
    * This is the setter method to the attribute.
    * This sets the placement scope of virtualservice to given tier1 logical router in nsx-t.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tier1Lr set the tier1Lr.
    */
@@ -481,9 +478,9 @@ public class VsVip extends AviRestResource {
    * This overrides the cloud level default and needs to match the se group value in which it will be used if the se group use_standard_alb value is
    * set.
    * This is only used when fip is used for vs on azure cloud.
+   * Field deprecated in 31.1.1.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * @return useStandardAlb
    */
   @VsoMethod
@@ -496,9 +493,9 @@ public class VsVip extends AviRestResource {
    * This overrides the cloud level default and needs to match the se group value in which it will be used if the se group use_standard_alb value is
    * set.
    * This is only used when fip is used for vs on azure cloud.
+   * Field deprecated in 31.1.1.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * @param useStandardAlb set the useStandardAlb.
    */
   @VsoMethod
@@ -510,7 +507,7 @@ public class VsVip extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the vsvip object.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -523,7 +520,7 @@ public class VsVip extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the vsvip object.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
@@ -536,7 +533,7 @@ public class VsVip extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of virtual service ips and other shareable entities.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vip
    */
@@ -549,7 +546,7 @@ public class VsVip extends AviRestResource {
    * This is the setter method. this will set the vip
    * List of virtual service ips and other shareable entities.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vip
    */
@@ -562,7 +559,7 @@ public class VsVip extends AviRestResource {
    * This is the setter method this will set the vip
    * List of virtual service ips and other shareable entities.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vip
    */
@@ -582,7 +579,7 @@ public class VsVip extends AviRestResource {
    * This is used to provide the isolation of the set of networks the application is attached to.
    * It is a reference to an object of type vrfcontext.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vrfContextRef
    */
@@ -597,7 +594,7 @@ public class VsVip extends AviRestResource {
    * This is used to provide the isolation of the set of networks the application is attached to.
    * It is a reference to an object of type vrfcontext.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vrfContextRef set the vrfContextRef.
    */
@@ -611,7 +608,7 @@ public class VsVip extends AviRestResource {
    * Checksum of cloud configuration for vsvip.
    * Internally set by cloud connector.
    * Field introduced in 17.2.9, 18.1.2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsvipCloudConfigCksum
    */
@@ -625,7 +622,7 @@ public class VsVip extends AviRestResource {
    * Checksum of cloud configuration for vsvip.
    * Internally set by cloud connector.
    * Field introduced in 17.2.9, 18.1.2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsvipCloudConfigCksum set the vsvipCloudConfigCksum.
    */

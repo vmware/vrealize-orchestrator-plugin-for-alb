@@ -62,7 +62,7 @@ public class AzureInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the availability set of which the vm is a part of.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return availabilitySet
    */
@@ -75,7 +75,7 @@ public class AzureInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the availability set of which the vm is a part of.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param availabilitySet set the availabilitySet.
    */
@@ -88,7 +88,7 @@ public class AzureInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Fault domain within the availability set the vm is a part of.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return faultDomain
    */
@@ -101,7 +101,7 @@ public class AzureInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Fault domain within the availability set the vm is a part of.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param faultDomain set the faultDomain.
    */
@@ -114,7 +114,7 @@ public class AzureInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the azure vm.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -127,7 +127,7 @@ public class AzureInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the azure vm.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -140,7 +140,7 @@ public class AzureInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Resource group name for the vm.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return resourceGroup
    */
@@ -153,7 +153,7 @@ public class AzureInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Resource group name for the vm.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param resourceGroup set the resourceGroup.
    */
@@ -166,7 +166,7 @@ public class AzureInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Subnet id of the primary nic of the vm.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnetId
    */
@@ -179,7 +179,7 @@ public class AzureInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Subnet id of the primary nic of the vm.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnetId set the subnetId.
    */
@@ -192,7 +192,7 @@ public class AzureInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Update domain within the availability set the vm is a part of.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return updateDomain
    */
@@ -205,7 +205,7 @@ public class AzureInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Update domain within the availability set the vm is a part of.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param updateDomain set the updateDomain.
    */
@@ -218,7 +218,7 @@ public class AzureInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Azure vm uuid for the se vm.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vmUuid
    */
@@ -231,7 +231,7 @@ public class AzureInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Azure vm uuid for the se vm.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vmUuid set the vmUuid.
    */
@@ -244,7 +244,7 @@ public class AzureInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Vnic id of the primary nic of the vm.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vnicId
    */
@@ -257,7 +257,7 @@ public class AzureInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Vnic id of the primary nic of the vm.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vnicId set the vnicId.
    */

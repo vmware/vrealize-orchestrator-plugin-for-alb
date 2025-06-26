@@ -46,7 +46,7 @@ public class FeProxyRoutePublishConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Publish ecmp route to upstream router for vip.
    * Enum options - FE_PROXY_ROUTE_PUBLISH_NONE, FE_PROXY_ROUTE_PUBLISH_QUAGGA_WEBAPP.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "FE_PROXY_ROUTE_PUBLISH_NONE".
    * @return mode
    */
@@ -59,7 +59,7 @@ public class FeProxyRoutePublishConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Publish ecmp route to upstream router for vip.
    * Enum options - FE_PROXY_ROUTE_PUBLISH_NONE, FE_PROXY_ROUTE_PUBLISH_QUAGGA_WEBAPP.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "FE_PROXY_ROUTE_PUBLISH_NONE".
    * @param mode set the mode.
    */
@@ -71,7 +71,7 @@ public class FeProxyRoutePublishConfig extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Listener port for publisher.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 80.
    * @return publisherPort
    */
@@ -83,7 +83,7 @@ public class FeProxyRoutePublishConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Listener port for publisher.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 80.
    * @param publisherPort set the publisherPort.
    */
@@ -95,7 +95,7 @@ public class FeProxyRoutePublishConfig extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Subnet for publisher.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 32.
    * @return subnet
    */
@@ -107,7 +107,7 @@ public class FeProxyRoutePublishConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Subnet for publisher.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 32.
    * @param subnet set the subnet.
    */
@@ -119,7 +119,7 @@ public class FeProxyRoutePublishConfig extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Token for tracking changes.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return token
    */
@@ -131,7 +131,7 @@ public class FeProxyRoutePublishConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Token for tracking changes.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param token set the token.
    */

@@ -28,10 +28,6 @@ public class ParamTypeClass extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer hits;
 
-    @JsonProperty("timestamps")
-    @JsonInclude(Include.NON_NULL)
-    private List<Integer> timestamps;
-
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
     private String type;
@@ -42,7 +38,7 @@ public class ParamTypeClass extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Indicates the number of hits for this parameter type.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hits
    */
@@ -55,7 +51,7 @@ public class ParamTypeClass extends AviRestResource {
    * This is the setter method to the attribute.
    * Indicates the number of hits for this parameter type.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hits set the hits.
    */
@@ -66,55 +62,11 @@ public class ParamTypeClass extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Timestamps representing the moments at which this parameter type was current.
-   * Field introduced in 31.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return timestamps
-   */
-  @VsoMethod
-  public List<Integer> getTimestamps() {
-    return timestamps;
-  }
-
-  /**
-   * This is the setter method. this will set the timestamps
-   * Timestamps representing the moments at which this parameter type was current.
-   * Field introduced in 31.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return timestamps
-   */
-  @VsoMethod
-  public void setTimestamps(List<Integer>  timestamps) {
-    this.timestamps = timestamps;
-  }
-
-  /**
-   * This is the setter method this will set the timestamps
-   * Timestamps representing the moments at which this parameter type was current.
-   * Field introduced in 31.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return timestamps
-   */
-  @VsoMethod
-  public ParamTypeClass addTimestampsItem(Integer timestampsItem) {
-    if (this.timestamps == null) {
-      this.timestamps = new ArrayList<Integer>();
-    }
-    this.timestamps.add(timestampsItem);
-    return this;
-  }
-
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Indicates the type of the parameter.
    * Enum options - PARAM_FLAG, PARAM_DIGITS, PARAM_HEXDIGITS, PARAM_WORD, PARAM_SAFE_TEXT, PARAM_SAFE_TEXT_MULTILINE, PARAM_TEXT,
    * PARAM_TEXT_MULTILINE, PARAM_ALL.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
@@ -129,7 +81,7 @@ public class ParamTypeClass extends AviRestResource {
    * Enum options - PARAM_FLAG, PARAM_DIGITS, PARAM_HEXDIGITS, PARAM_WORD, PARAM_SAFE_TEXT, PARAM_SAFE_TEXT_MULTILINE, PARAM_TEXT,
    * PARAM_TEXT_MULTILINE, PARAM_ALL.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */
@@ -150,8 +102,7 @@ public boolean equals(java.lang.Object o) {
   }
   ParamTypeClass objParamTypeClass = (ParamTypeClass) o;
   return   Objects.equals(this.type, objParamTypeClass.type)&&
-  Objects.equals(this.hits, objParamTypeClass.hits)&&
-  Objects.equals(this.timestamps, objParamTypeClass.timestamps);
+  Objects.equals(this.hits, objParamTypeClass.hits);
 }
 
 @Override
@@ -159,7 +110,6 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class ParamTypeClass {\n");
       sb.append("    hits: ").append(toIndentedString(hits)).append("\n");
-        sb.append("    timestamps: ").append(toIndentedString(timestamps)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
       sb.append("}");
   return sb.toString();

@@ -42,7 +42,7 @@ public class HealthMonitorUdp extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Match or look for this keyword in the first 2kb of server's response indicating server maintenance.
    * A successful match results in the server being marked down.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maintenanceResponse
    */
@@ -55,7 +55,7 @@ public class HealthMonitorUdp extends AviRestResource {
    * This is the setter method to the attribute.
    * Match or look for this keyword in the first 2kb of server's response indicating server maintenance.
    * A successful match results in the server being marked down.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maintenanceResponse set the maintenanceResponse.
    */
@@ -67,7 +67,7 @@ public class HealthMonitorUdp extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Send udp request.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return udpRequest
    */
@@ -79,7 +79,7 @@ public class HealthMonitorUdp extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Send udp request.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param udpRequest set the udpRequest.
    */
@@ -91,7 +91,7 @@ public class HealthMonitorUdp extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Match for keyword in the udp response.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return udpResponse
    */
@@ -103,7 +103,7 @@ public class HealthMonitorUdp extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Match for keyword in the udp response.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param udpResponse set the udpResponse.
    */

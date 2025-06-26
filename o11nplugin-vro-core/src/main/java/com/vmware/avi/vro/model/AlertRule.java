@@ -49,7 +49,7 @@ public class AlertRule extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return connAppLogRule
    */
@@ -60,7 +60,7 @@ public class AlertRule extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param connAppLogRule set the connAppLogRule.
    */
@@ -71,7 +71,7 @@ public class AlertRule extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return eventMatchFilter
    */
@@ -82,7 +82,7 @@ public class AlertRule extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param eventMatchFilter set the eventMatchFilter.
    */
@@ -93,7 +93,7 @@ public class AlertRule extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricsRule
    */
@@ -104,7 +104,7 @@ public class AlertRule extends AviRestResource {
 
   /**
    * This is the setter method. this will set the metricsRule
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricsRule
    */
@@ -115,7 +115,7 @@ public class AlertRule extends AviRestResource {
 
   /**
    * This is the setter method this will set the metricsRule
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricsRule
    */
@@ -132,7 +132,7 @@ public class AlertRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - OPERATOR_AND, OPERATOR_OR.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "OPERATOR_AND".
    * @return operator
    */
@@ -144,7 +144,7 @@ public class AlertRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - OPERATOR_AND, OPERATOR_OR.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "OPERATOR_AND".
    * @param operator set the operator.
    */
@@ -155,7 +155,7 @@ public class AlertRule extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sysEventRule
    */
@@ -166,7 +166,7 @@ public class AlertRule extends AviRestResource {
 
   /**
    * This is the setter method. this will set the sysEventRule
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sysEventRule
    */
@@ -177,7 +177,7 @@ public class AlertRule extends AviRestResource {
 
   /**
    * This is the setter method this will set the sysEventRule
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sysEventRule
    */

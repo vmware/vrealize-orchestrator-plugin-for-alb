@@ -43,7 +43,7 @@ public class PoolServer extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Dns resolvable name of the server.
    * May be used in place of the ip address.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostname
    */
@@ -56,7 +56,7 @@ public class PoolServer extends AviRestResource {
    * This is the setter method to the attribute.
    * Dns resolvable name of the server.
    * May be used in place of the ip address.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hostname set the hostname.
    */
@@ -68,7 +68,7 @@ public class PoolServer extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ip address of the server in the poool.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip
    */
@@ -80,7 +80,7 @@ public class PoolServer extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ip address of the server in the poool.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip set the ip.
    */
@@ -94,7 +94,7 @@ public class PoolServer extends AviRestResource {
    * Port of the pool server listening for http/https.
    * Default value is the default port in the pool.
    * Allowed values are 1-65535.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return port
    */
@@ -108,7 +108,7 @@ public class PoolServer extends AviRestResource {
    * Port of the pool server listening for http/https.
    * Default value is the default port in the pool.
    * Allowed values are 1-65535.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param port set the port.
    */

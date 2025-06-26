@@ -43,7 +43,7 @@ public class IcapOPSWATLog extends AviRestResource {
    * Blocking reason for the content.
    * It is available only if content was scanned by icap server and some violations were found.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
@@ -57,7 +57,7 @@ public class IcapOPSWATLog extends AviRestResource {
    * Blocking reason for the content.
    * It is available only if content was scanned by icap server and some violations were found.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
@@ -71,7 +71,7 @@ public class IcapOPSWATLog extends AviRestResource {
    * Short description of the threat found in the content.
    * Available only if content was scanned by icap server and some violations were found.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return threatId
    */
@@ -85,7 +85,7 @@ public class IcapOPSWATLog extends AviRestResource {
    * Short description of the threat found in the content.
    * Available only if content was scanned by icap server and some violations were found.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param threatId set the threatId.
    */
@@ -99,7 +99,7 @@ public class IcapOPSWATLog extends AviRestResource {
    * Threat found in the content.
    * Available only if content was scanned by icap server and some violations were found.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return violations
    */
@@ -113,7 +113,7 @@ public class IcapOPSWATLog extends AviRestResource {
    * Threat found in the content.
    * Available only if content was scanned by icap server and some violations were found.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return violations
    */
@@ -127,7 +127,7 @@ public class IcapOPSWATLog extends AviRestResource {
    * Threat found in the content.
    * Available only if content was scanned by icap server and some violations were found.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return violations
    */

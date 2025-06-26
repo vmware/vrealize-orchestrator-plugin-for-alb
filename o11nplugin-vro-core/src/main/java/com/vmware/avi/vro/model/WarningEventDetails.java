@@ -12,74 +12,74 @@ import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
 
 /**
- * The ConnectionClearFilter is a POJO class extends AviRestResource that used for creating
- * ConnectionClearFilter.
+ * The WarningEventDetails is a POJO class extends AviRestResource that used for creating
+ * WarningEventDetails.
  *
  * @version 1.0
  * @since 
  *
  */
-@VsoObject(create = false, name = "ConnectionClearFilter")
-@VsoFinder(name = Constants.FINDER_VRO_CONNECTIONCLEARFILTER)
+@VsoObject(create = false, name = "WarningEventDetails")
+@VsoFinder(name = Constants.FINDER_VRO_WARNINGEVENTDETAILS)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class ConnectionClearFilter extends AviRestResource {
-    @JsonProperty("ip_addr")
+public class WarningEventDetails extends AviRestResource {
+    @JsonProperty("event_data")
     @JsonInclude(Include.NON_NULL)
-    private String ipAddr;
+    private String eventData;
 
-    @JsonProperty("port")
+    @JsonProperty("warning_message")
     @JsonInclude(Include.NON_NULL)
-    private Integer port;
+    private String warningMessage;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
-   * Ip address in dotted decimal notation.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Event data.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return ipAddr
+   * @return eventData
    */
   @VsoMethod
-  public String getIpAddr() {
-    return ipAddr;
+  public String getEventData() {
+    return eventData;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Ip address in dotted decimal notation.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Event data.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param ipAddr set the ipAddr.
+   * @param eventData set the eventData.
    */
   @VsoMethod
-  public void setIpAddr(String  ipAddr) {
-    this.ipAddr = ipAddr;
+  public void setEventData(String  eventData) {
+    this.eventData = eventData;
   }
 
   /**
    * This is the getter method this will return the attribute value.
-   * Port number.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Warning message.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return port
+   * @return warningMessage
    */
   @VsoMethod
-  public Integer getPort() {
-    return port;
+  public String getWarningMessage() {
+    return warningMessage;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Port number.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Warning message.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param port set the port.
+   * @param warningMessage set the warningMessage.
    */
   @VsoMethod
-  public void setPort(Integer  port) {
-    this.port = port;
+  public void setWarningMessage(String  warningMessage) {
+    this.warningMessage = warningMessage;
   }
 
 
@@ -92,17 +92,17 @@ public boolean equals(java.lang.Object o) {
   if (o == null || getClass() != o.getClass()) {
     return false;
   }
-  ConnectionClearFilter objConnectionClearFilter = (ConnectionClearFilter) o;
-  return   Objects.equals(this.ipAddr, objConnectionClearFilter.ipAddr)&&
-  Objects.equals(this.port, objConnectionClearFilter.port);
+  WarningEventDetails objWarningEventDetails = (WarningEventDetails) o;
+  return   Objects.equals(this.eventData, objWarningEventDetails.eventData)&&
+  Objects.equals(this.warningMessage, objWarningEventDetails.warningMessage);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
-  sb.append("class ConnectionClearFilter {\n");
-      sb.append("    ipAddr: ").append(toIndentedString(ipAddr)).append("\n");
-        sb.append("    port: ").append(toIndentedString(port)).append("\n");
+  sb.append("class WarningEventDetails {\n");
+      sb.append("    eventData: ").append(toIndentedString(eventData)).append("\n");
+        sb.append("    warningMessage: ").append(toIndentedString(warningMessage)).append("\n");
       sb.append("}");
   return sb.toString();
 }

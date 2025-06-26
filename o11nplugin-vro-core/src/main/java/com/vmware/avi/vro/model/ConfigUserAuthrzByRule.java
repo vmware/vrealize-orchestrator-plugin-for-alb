@@ -54,7 +54,7 @@ public class ConfigUserAuthrzByRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Comma separated list of policies assigned to the user.
    * Field introduced in 18.2.7, 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return policies
    */
@@ -67,7 +67,7 @@ public class ConfigUserAuthrzByRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Comma separated list of policies assigned to the user.
    * Field introduced in 18.2.7, 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param policies set the policies.
    */
@@ -79,7 +79,7 @@ public class ConfigUserAuthrzByRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Assigned roles.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return roles
    */
@@ -91,7 +91,7 @@ public class ConfigUserAuthrzByRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Assigned roles.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param roles set the roles.
    */
@@ -103,7 +103,7 @@ public class ConfigUserAuthrzByRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Matching rule string.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rule
    */
@@ -115,7 +115,7 @@ public class ConfigUserAuthrzByRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Matching rule string.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rule set the rule.
    */
@@ -127,7 +127,7 @@ public class ConfigUserAuthrzByRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Assigned tenants.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenants
    */
@@ -139,7 +139,7 @@ public class ConfigUserAuthrzByRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Assigned tenants.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenants set the tenants.
    */
@@ -151,7 +151,7 @@ public class ConfigUserAuthrzByRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Request user.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return user
    */
@@ -163,7 +163,7 @@ public class ConfigUserAuthrzByRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Request user.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param user set the user.
    */
@@ -176,7 +176,7 @@ public class ConfigUserAuthrzByRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Assigned user account profile name.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return userprofile
    */
@@ -189,7 +189,7 @@ public class ConfigUserAuthrzByRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Assigned user account profile name.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param userprofile set the userprofile.
    */
