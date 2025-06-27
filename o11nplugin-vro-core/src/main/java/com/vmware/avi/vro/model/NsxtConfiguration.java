@@ -28,7 +28,7 @@ import org.springframework.stereotype.Service;
 public class NsxtConfiguration extends AviRestResource {
     @JsonProperty("automate_dfw_objects")
     @JsonInclude(Include.NON_NULL)
-    private Boolean automateDfwObjects = true;
+    private Boolean automateDfwObjects = false;
 
     @JsonProperty("automate_dfw_rules")
     @JsonInclude(Include.NON_NULL)
@@ -77,7 +77,7 @@ public class NsxtConfiguration extends AviRestResource {
    * Automatically create/delete dfw objects such as nsgroups and nsservices in nsx-t manager.
    * Field introduced in 30.2.1.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return automateDfwObjects
    */
   @VsoMethod
@@ -90,7 +90,7 @@ public class NsxtConfiguration extends AviRestResource {
    * Automatically create/delete dfw objects such as nsgroups and nsservices in nsx-t manager.
    * Field introduced in 30.2.1.
    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param automateDfwObjects set the automateDfwObjects.
    */
   @VsoMethod
