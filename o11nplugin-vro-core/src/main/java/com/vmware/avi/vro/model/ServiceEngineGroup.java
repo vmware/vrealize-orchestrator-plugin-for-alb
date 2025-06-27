@@ -326,6 +326,10 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer grpcChannelConnectTimeout = 15;
 
+    @JsonProperty("gve_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean gveEnabled = false;
+
     @JsonProperty("ha_mode")
     @JsonInclude(Include.NON_NULL)
     private String haMode;
@@ -717,6 +721,10 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonProperty("sdb_flush_interval")
     @JsonInclude(Include.NON_NULL)
     private Integer sdbFlushInterval = 100;
+
+    @JsonProperty("sdb_key_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer sdbKeyTimeout = 60;
 
     @JsonProperty("sdb_pipeline_size")
     @JsonInclude(Include.NON_NULL)
@@ -3284,6 +3292,34 @@ public class ServiceEngineGroup extends AviRestResource {
   @VsoMethod
   public void setGrpcChannelConnectTimeout(Integer  grpcChannelConnectTimeout) {
     this.grpcChannelConnectTimeout = grpcChannelConnectTimeout;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Deploys google virtual ethernet (gve) - gvnic for all supported intances types in gcp.
+   * Applies only to newly created se's.
+   * Field introduced in 30.2.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return gveEnabled
+   */
+  @VsoMethod
+  public Boolean getGveEnabled() {
+    return gveEnabled;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Deploys google virtual ethernet (gve) - gvnic for all supported intances types in gcp.
+   * Applies only to newly created se's.
+   * Field introduced in 30.2.3.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param gveEnabled set the gveEnabled.
+   */
+  @VsoMethod
+  public void setGveEnabled(Boolean  gveEnabled) {
+    this.gveEnabled = gveEnabled;
   }
 
   /**
@@ -6122,6 +6158,36 @@ public class ServiceEngineGroup extends AviRestResource {
   @VsoMethod
   public void setSdbFlushInterval(Integer  sdbFlushInterval) {
     this.sdbFlushInterval = sdbFlushInterval;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * The time in seconds controller redis server persists the key.
+   * Allowed values are 60-600.
+   * Field introduced in 30.2.4.
+   * Unit is seconds.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 60.
+   * @return sdbKeyTimeout
+   */
+  @VsoMethod
+  public Integer getSdbKeyTimeout() {
+    return sdbKeyTimeout;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * The time in seconds controller redis server persists the key.
+   * Allowed values are 60-600.
+   * Field introduced in 30.2.4.
+   * Unit is seconds.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 60.
+   * @param sdbKeyTimeout set the sdbKeyTimeout.
+   */
+  @VsoMethod
+  public void setSdbKeyTimeout(Integer  sdbKeyTimeout) {
+    this.sdbKeyTimeout = sdbKeyTimeout;
   }
 
   /**
@@ -9798,7 +9864,9 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.metricsCollectionMode, objServiceEngineGroup.metricsCollectionMode)&&
   Objects.equals(this.seDebugTraceSz, objServiceEngineGroup.seDebugTraceSz)&&
   Objects.equals(this.multicastEnable, objServiceEngineGroup.multicastEnable)&&
-  Objects.equals(this.maxNumHttpSessionsToStore, objServiceEngineGroup.maxNumHttpSessionsToStore);
+  Objects.equals(this.maxNumHttpSessionsToStore, objServiceEngineGroup.maxNumHttpSessionsToStore)&&
+  Objects.equals(this.gveEnabled, objServiceEngineGroup.gveEnabled)&&
+  Objects.equals(this.sdbKeyTimeout, objServiceEngineGroup.sdbKeyTimeout);
 }
 
 @Override
@@ -9877,6 +9945,7 @@ public String toString() {
         sb.append("    gcpConfig: ").append(toIndentedString(gcpConfig)).append("\n");
         sb.append("    gratarpPermanentPeriodicity: ").append(toIndentedString(gratarpPermanentPeriodicity)).append("\n");
         sb.append("    grpcChannelConnectTimeout: ").append(toIndentedString(grpcChannelConnectTimeout)).append("\n");
+        sb.append("    gveEnabled: ").append(toIndentedString(gveEnabled)).append("\n");
         sb.append("    haMode: ").append(toIndentedString(haMode)).append("\n");
         sb.append("    handlePerPktAttack: ").append(toIndentedString(handlePerPktAttack)).append("\n");
         sb.append("    hardwaresecuritymodulegroupRef: ").append(toIndentedString(hardwaresecuritymodulegroupRef)).append("\n");
@@ -9975,6 +10044,7 @@ public String toString() {
         sb.append("    replayVrfRoutesInterval: ").append(toIndentedString(replayVrfRoutesInterval)).append("\n");
         sb.append("    resyncTimeInterval: ").append(toIndentedString(resyncTimeInterval)).append("\n");
         sb.append("    sdbFlushInterval: ").append(toIndentedString(sdbFlushInterval)).append("\n");
+        sb.append("    sdbKeyTimeout: ").append(toIndentedString(sdbKeyTimeout)).append("\n");
         sb.append("    sdbPipelineSize: ").append(toIndentedString(sdbPipelineSize)).append("\n");
         sb.append("    sdbScanCount: ").append(toIndentedString(sdbScanCount)).append("\n");
         sb.append("    seBandwidthType: ").append(toIndentedString(seBandwidthType)).append("\n");
