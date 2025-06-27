@@ -734,6 +734,10 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer sdbFlushInterval = 100;
 
+    @JsonProperty("sdb_key_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer sdbKeyTimeout = 60;
+
     @JsonProperty("sdb_pipeline_size")
     @JsonInclude(Include.NON_NULL)
     private Integer sdbPipelineSize = 100;
@@ -6235,6 +6239,36 @@ public class ServiceEngineGroup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * The time in seconds controller redis server persists the key.
+   * Allowed values are 60-600.
+   * Field introduced in 31.1.2.
+   * Unit is seconds.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 60.
+   * @return sdbKeyTimeout
+   */
+  @VsoMethod
+  public Integer getSdbKeyTimeout() {
+    return sdbKeyTimeout;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * The time in seconds controller redis server persists the key.
+   * Allowed values are 60-600.
+   * Field introduced in 31.1.2.
+   * Unit is seconds.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 60.
+   * @param sdbKeyTimeout set the sdbKeyTimeout.
+   */
+  @VsoMethod
+  public void setSdbKeyTimeout(Integer  sdbKeyTimeout) {
+    this.sdbKeyTimeout = sdbKeyTimeout;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Sdb pipeline size.
    * Allowed values are 1-10000.
    * Field introduced in 21.1.1.
@@ -9912,7 +9946,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.wafUseJitForPcre, objServiceEngineGroup.wafUseJitForPcre)&&
   Objects.equals(this.enableQat, objServiceEngineGroup.enableQat)&&
   Objects.equals(this.preUpgradeSeAvailableMemThreshold, objServiceEngineGroup.preUpgradeSeAvailableMemThreshold)&&
-  Objects.equals(this.kvValMaxLen, objServiceEngineGroup.kvValMaxLen);
+  Objects.equals(this.kvValMaxLen, objServiceEngineGroup.kvValMaxLen)&&
+  Objects.equals(this.sdbKeyTimeout, objServiceEngineGroup.sdbKeyTimeout);
 }
 
 @Override
@@ -10093,6 +10128,7 @@ public String toString() {
         sb.append("    replayVrfRoutesInterval: ").append(toIndentedString(replayVrfRoutesInterval)).append("\n");
         sb.append("    resyncTimeInterval: ").append(toIndentedString(resyncTimeInterval)).append("\n");
         sb.append("    sdbFlushInterval: ").append(toIndentedString(sdbFlushInterval)).append("\n");
+        sb.append("    sdbKeyTimeout: ").append(toIndentedString(sdbKeyTimeout)).append("\n");
         sb.append("    sdbPipelineSize: ").append(toIndentedString(sdbPipelineSize)).append("\n");
         sb.append("    sdbScanCount: ").append(toIndentedString(sdbScanCount)).append("\n");
         sb.append("    seBandwidthType: ").append(toIndentedString(seBandwidthType)).append("\n");
