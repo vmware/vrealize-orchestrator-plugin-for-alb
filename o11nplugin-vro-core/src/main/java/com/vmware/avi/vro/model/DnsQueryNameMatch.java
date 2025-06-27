@@ -44,10 +44,10 @@ public class DnsQueryNameMatch extends AviRestResource {
    * Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH,
    * REGEX_DOES_NOT_MATCH.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials edition(allowed values-
-   * begins_with,does_not_begin_with,contains,does_not_contain,ends_with,does_not_end_with,equals,does_not_equal), basic edition(allowed values-
-   * begins_with,does_not_begin_with,contains,does_not_contain,ends_with,does_not_end_with,equals,does_not_equal), enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed in essentials (allowed values-
+   * begins_with,does_not_begin_with,contains,does_not_contain,ends_with,does_not_end_with,equals,does_not_equal), basic (allowed values-
+   * begins_with,does_not_begin_with,contains,does_not_contain,ends_with,does_not_end_with,equals,does_not_equal) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchCriteria
    */
@@ -62,10 +62,10 @@ public class DnsQueryNameMatch extends AviRestResource {
    * Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH,
    * REGEX_DOES_NOT_MATCH.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials edition(allowed values-
-   * begins_with,does_not_begin_with,contains,does_not_contain,ends_with,does_not_end_with,equals,does_not_equal), basic edition(allowed values-
-   * begins_with,does_not_begin_with,contains,does_not_contain,ends_with,does_not_end_with,equals,does_not_equal), enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed in essentials (allowed values-
+   * begins_with,does_not_begin_with,contains,does_not_contain,ends_with,does_not_end_with,equals,does_not_equal), basic (allowed values-
+   * begins_with,does_not_begin_with,contains,does_not_contain,ends_with,does_not_end_with,equals,does_not_equal) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchCriteria set the matchCriteria.
    */
@@ -78,7 +78,7 @@ public class DnsQueryNameMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Domain name to match against that specified in the question section of the dns query.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return queryDomainNames
    */
@@ -91,7 +91,7 @@ public class DnsQueryNameMatch extends AviRestResource {
    * This is the setter method. this will set the queryDomainNames
    * Domain name to match against that specified in the question section of the dns query.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return queryDomainNames
    */
@@ -104,7 +104,7 @@ public class DnsQueryNameMatch extends AviRestResource {
    * This is the setter method this will set the queryDomainNames
    * Domain name to match against that specified in the question section of the dns query.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return queryDomainNames
    */
@@ -123,7 +123,7 @@ public class DnsQueryNameMatch extends AviRestResource {
    * Uuid of the string group(s) for matching against dns query domain name in the question section.
    * It is a reference to an object of type stringgroup.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stringGroupRefs
    */
@@ -137,7 +137,7 @@ public class DnsQueryNameMatch extends AviRestResource {
    * Uuid of the string group(s) for matching against dns query domain name in the question section.
    * It is a reference to an object of type stringgroup.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stringGroupRefs
    */
@@ -151,7 +151,7 @@ public class DnsQueryNameMatch extends AviRestResource {
    * Uuid of the string group(s) for matching against dns query domain name in the question section.
    * It is a reference to an object of type stringgroup.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stringGroupRefs
    */

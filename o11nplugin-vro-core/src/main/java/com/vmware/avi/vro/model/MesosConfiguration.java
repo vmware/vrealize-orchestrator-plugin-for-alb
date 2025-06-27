@@ -177,7 +177,7 @@ public class MesosConfiguration extends AviRestResource {
    * Consider all virtualservices as front end proxies.
    * Front end proxies are placed on specific ses as opposed to back end proxies placed on all ses.
    * Applicable where each service has its own vip and vip is reachable from anywhere.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return allVsesAreFeproxy
    */
@@ -191,7 +191,7 @@ public class MesosConfiguration extends AviRestResource {
    * Consider all virtualservices as front end proxies.
    * Front end proxies are placed on specific ses as opposed to back end proxies placed on all ses.
    * Applicable where each service has its own vip and vip is reachable from anywhere.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param allVsesAreFeproxy set the allVsesAreFeproxy.
    */
@@ -203,7 +203,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Sync frequency in seconds with frameworks.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return appSyncFrequency
    */
@@ -215,7 +215,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Sync frequency in seconds with frameworks.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @param appSyncFrequency set the appSyncFrequency.
    */
@@ -227,7 +227,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Perform container port matching to create a http virtualservice instead of a tcp/udp virtualservice.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return containerPortMatchHttpService
    */
@@ -239,7 +239,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Perform container port matching to create a http virtualservice instead of a tcp/udp virtualservice.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param containerPortMatchHttpService set the containerPortMatchHttpService.
    */
@@ -253,7 +253,7 @@ public class MesosConfiguration extends AviRestResource {
    * Directory to mount to check for core dumps on service engines.
    * This will be mapped read only to /var/crash on any new service engines.
    * This is a disruptive change.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "/var/lib/systemd/coredump".
    * @return coredumpDirectory
    */
@@ -267,7 +267,7 @@ public class MesosConfiguration extends AviRestResource {
    * Directory to mount to check for core dumps on service engines.
    * This will be mapped read only to /var/crash on any new service engines.
    * This is a disruptive change.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "/var/lib/systemd/coredump".
    * @param coredumpDirectory set the coredumpDirectory.
    */
@@ -279,7 +279,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Disable auto service sync for back end services.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return disableAutoBackendServiceSync
    */
@@ -291,7 +291,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Disable auto service sync for back end services.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param disableAutoBackendServiceSync set the disableAutoBackendServiceSync.
    */
@@ -303,7 +303,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Disable auto service sync for front end services.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return disableAutoFrontendServiceSync
    */
@@ -315,7 +315,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Disable auto service sync for front end services.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param disableAutoFrontendServiceSync set the disableAutoFrontendServiceSync.
    */
@@ -328,7 +328,7 @@ public class MesosConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Disable auto sync for gslb services.
    * Field introduced in 17.1.2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return disableAutoGsSync
    */
@@ -341,7 +341,7 @@ public class MesosConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Disable auto sync for gslb services.
    * Field introduced in 17.1.2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param disableAutoGsSync set the disableAutoGsSync.
    */
@@ -353,7 +353,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Disable se creation.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return disableAutoSeCreation
    */
@@ -365,7 +365,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Disable se creation.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param disableAutoSeCreation set the disableAutoSeCreation.
    */
@@ -377,7 +377,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Docker registry for serviceengine image.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dockerRegistrySe
    */
@@ -389,7 +389,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Docker registry for serviceengine image.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dockerRegistrySe set the dockerRegistrySe.
    */
@@ -401,7 +401,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Match against this prefix when placing east-west vss on ses (mesos mode only).
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return eastWestPlacementSubnet
    */
@@ -413,7 +413,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Match against this prefix when placing east-west vss on ses (mesos mode only).
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param eastWestPlacementSubnet set the eastWestPlacementSubnet.
    */
@@ -425,7 +425,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enable marathon event subscriptions.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enableEventSubscription
    */
@@ -437,7 +437,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enable marathon event subscriptions.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enableEventSubscription set the enableEventSubscription.
    */
@@ -450,7 +450,7 @@ public class MesosConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of second linux bridge on host providing connectivity for front end proxies.
    * This is a disruptive change.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "cbr1".
    * @return feproxyBridgeName
    */
@@ -463,7 +463,7 @@ public class MesosConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of second linux bridge on host providing connectivity for front end proxies.
    * This is a disruptive change.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "cbr1".
    * @param feproxyBridgeName set the feproxyBridgeName.
    */
@@ -475,7 +475,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * For front end proxies, use container port as service port.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return feproxyContainerPortAsService
    */
@@ -487,7 +487,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * For front end proxies, use container port as service port.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param feproxyContainerPortAsService set the feproxyContainerPortAsService.
    */
@@ -499,7 +499,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Publish ecmp route to upstream router for vip.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return feproxyRoutePublish
    */
@@ -511,7 +511,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Publish ecmp route to upstream router for vip.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param feproxyRoutePublish set the feproxyRoutePublish.
    */
@@ -523,7 +523,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enable proxy arp from host interface for front end  proxies.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return feproxyVipsEnableProxyArp
    */
@@ -535,7 +535,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enable proxy arp from host interface for front end  proxies.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param feproxyVipsEnableProxyArp set the feproxyVipsEnableProxyArp.
    */
@@ -547,7 +547,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Optional fleet remote endpoint if fleet is used for se deployment.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fleetEndpoint
    */
@@ -559,7 +559,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Optional fleet remote endpoint if fleet is used for se deployment.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fleetEndpoint set the fleetEndpoint.
    */
@@ -572,7 +572,7 @@ public class MesosConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of container ports that create a http virtualservice instead of a tcp/udp virtualservice.
    * Defaults to 80.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpContainerPorts
    */
@@ -585,7 +585,7 @@ public class MesosConfiguration extends AviRestResource {
    * This is the setter method. this will set the httpContainerPorts
    * List of container ports that create a http virtualservice instead of a tcp/udp virtualservice.
    * Defaults to 80.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpContainerPorts
    */
@@ -598,7 +598,7 @@ public class MesosConfiguration extends AviRestResource {
    * This is the setter method this will set the httpContainerPorts
    * List of container ports that create a http virtualservice instead of a tcp/udp virtualservice.
    * Defaults to 80.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpContainerPorts
    */
@@ -615,7 +615,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * List of marathon frameworks.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return marathonConfigurations
    */
@@ -627,7 +627,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method. this will set the marathonConfigurations
    * List of marathon frameworks.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return marathonConfigurations
    */
@@ -639,7 +639,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method this will set the marathonConfigurations
    * List of marathon frameworks.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return marathonConfigurations
    */
@@ -656,7 +656,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Options for marathon se deployment.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return marathonSeDeployment
    */
@@ -668,7 +668,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Options for marathon se deployment.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param marathonSeDeployment set the marathonSeDeployment.
    */
@@ -680,7 +680,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Mesos url of the form http //host port.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "http://leader.mesos:5050".
    * @return mesosUrl
    */
@@ -692,7 +692,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Mesos url of the form http //host port.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "http://leader.mesos:5050".
    * @param mesosUrl set the mesosUrl.
    */
@@ -705,7 +705,7 @@ public class MesosConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Mesos node label to be used as mesos node's availability zone in a dual availability zone deployment.
    * Serviceengines belonging to the availability zone will be rebooted during a manual dr failover.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nodeAvailabilityZoneLabel
    */
@@ -718,7 +718,7 @@ public class MesosConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Mesos node label to be used as mesos node's availability zone in a dual availability zone deployment.
    * Serviceengines belonging to the availability zone will be rebooted during a manual dr failover.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nodeAvailabilityZoneLabel set the nodeAvailabilityZoneLabel.
    */
@@ -730,7 +730,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Nuage overlay sdn controller information.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nuageController
    */
@@ -742,7 +742,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Nuage overlay sdn controller information.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nuageController set the nuageController.
    */
@@ -755,7 +755,7 @@ public class MesosConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Use fleet/ssh for deploying service engines.
    * Enum options - MESOS_SE_CREATE_FLEET, MESOS_SE_CREATE_SSH, MESOS_SE_CREATE_MARATHON.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "MESOS_SE_CREATE_FLEET".
    * @return seDeploymentMethod
    */
@@ -768,7 +768,7 @@ public class MesosConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Use fleet/ssh for deploying service engines.
    * Enum options - MESOS_SE_CREATE_FLEET, MESOS_SE_CREATE_SSH, MESOS_SE_CREATE_MARATHON.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "MESOS_SE_CREATE_FLEET".
    * @param seDeploymentMethod set the seDeploymentMethod.
    */
@@ -780,7 +780,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Exclude hosts with attributes for se creation.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seExcludeAttributes
    */
@@ -792,7 +792,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method. this will set the seExcludeAttributes
    * Exclude hosts with attributes for se creation.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seExcludeAttributes
    */
@@ -804,7 +804,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method this will set the seExcludeAttributes
    * Exclude hosts with attributes for se creation.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seExcludeAttributes
    */
@@ -821,7 +821,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Create ses just on hosts with include attributes.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seIncludeAttributes
    */
@@ -833,7 +833,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method. this will set the seIncludeAttributes
    * Create ses just on hosts with include attributes.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seIncludeAttributes
    */
@@ -845,7 +845,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method this will set the seIncludeAttributes
    * Create ses just on hosts with include attributes.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seIncludeAttributes
    */
@@ -862,7 +862,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Obsolete - ignored.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seResources
    */
@@ -874,7 +874,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method. this will set the seResources
    * Obsolete - ignored.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seResources
    */
@@ -886,7 +886,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method this will set the seResources
    * Obsolete - ignored.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seResources
    */
@@ -903,7 +903,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * New se spawn rate per minute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 25.
    * @return seSpawnRate
    */
@@ -915,7 +915,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * New se spawn rate per minute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 25.
    * @param seSpawnRate set the seSpawnRate.
    */
@@ -927,7 +927,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Host volume to be used as a disk for avi se, this is a disruptive change.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "/opt/avi/se".
    * @return seVolume
    */
@@ -939,7 +939,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Host volume to be used as a disk for avi se, this is a disruptive change.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "/opt/avi/se".
    * @param seVolume set the seVolume.
    */
@@ -952,7 +952,7 @@ public class MesosConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Make service ports accessible on all host interfaces in addition to east-west vip and/or bridge ip.
    * Usually enabled aws mesos clusters to export east-west services on host interface.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return servicesAccessibleAllInterfaces
    */
@@ -965,7 +965,7 @@ public class MesosConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Make service ports accessible on all host interfaces in addition to east-west vip and/or bridge ip.
    * Usually enabled aws mesos clusters to export east-west services on host interface.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param servicesAccessibleAllInterfaces set the servicesAccessibleAllInterfaces.
    */
@@ -979,7 +979,7 @@ public class MesosConfiguration extends AviRestResource {
    * Cloud connector user uuid for ssh to hosts.
    * It is a reference to an object of type cloudconnectoruser.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sshUserRef
    */
@@ -993,7 +993,7 @@ public class MesosConfiguration extends AviRestResource {
    * Cloud connector user uuid for ssh to hosts.
    * It is a reference to an object of type cloudconnectoruser.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sshUserRef set the sshUserRef.
    */
@@ -1005,7 +1005,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Use bridge ip on each host as vip.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return useBridgeIpAsVip
    */
@@ -1017,7 +1017,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Use bridge ip on each host as vip.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param useBridgeIpAsVip set the useBridgeIpAsVip.
    */
@@ -1030,7 +1030,7 @@ public class MesosConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Use container ip address port for pool instead of host ip address hostport.
    * This mode is applicable if the container ip is reachable (not a private nated ip) from other hosts in a routed environment for containers.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return useContainerIpPort
    */
@@ -1043,7 +1043,7 @@ public class MesosConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Use container ip address port for pool instead of host ip address hostport.
    * This mode is applicable if the container ip is reachable (not a private nated ip) from other hosts in a routed environment for containers.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param useContainerIpPort set the useContainerIpPort.
    */
@@ -1055,7 +1055,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * If true, use controller generated se docker image via fileservice, else use docker repository image as defined by docker_registry_se.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return useControllerImage
    */
@@ -1067,7 +1067,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * If true, use controller generated se docker image via fileservice, else use docker repository image as defined by docker_registry_se.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param useControllerImage set the useControllerImage.
    */
@@ -1080,7 +1080,7 @@ public class MesosConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Use unique virtual ip address for every east west service in mesos/marathon.
    * 'use_bridge_ip_as_vip' and 'vip' fields , if set, will not be used if this field is set.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return useVipsForEastWestServices
    */
@@ -1093,7 +1093,7 @@ public class MesosConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Use unique virtual ip address for every east west service in mesos/marathon.
    * 'use_bridge_ip_as_vip' and 'vip' fields , if set, will not be used if this field is set.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param useVipsForEastWestServices set the useVipsForEastWestServices.
    */
@@ -1106,7 +1106,7 @@ public class MesosConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Vip to be used by all east-west apps on all hosts.
    * Preferrably use an address from outside the subnet.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vip
    */
@@ -1119,7 +1119,7 @@ public class MesosConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Vip to be used by all east-west apps on all hosts.
    * Preferrably use an address from outside the subnet.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vip set the vip.
    */

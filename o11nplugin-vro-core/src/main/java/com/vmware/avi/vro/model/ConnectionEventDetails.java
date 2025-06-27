@@ -42,7 +42,7 @@ public class ConnectionEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Destinaton host name to be connected.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return host
    */
@@ -55,7 +55,7 @@ public class ConnectionEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Destinaton host name to be connected.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param host set the host.
    */
@@ -68,7 +68,7 @@ public class ConnectionEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Connection status information.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return info
    */
@@ -81,7 +81,7 @@ public class ConnectionEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Connection status information.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param info set the info.
    */
@@ -94,7 +94,7 @@ public class ConnectionEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Destinaton port to be connected.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return port
    */
@@ -107,7 +107,7 @@ public class ConnectionEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Destinaton port to be connected.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param port set the port.
    */

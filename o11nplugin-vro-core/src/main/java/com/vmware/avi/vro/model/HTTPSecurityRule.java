@@ -55,7 +55,7 @@ public class HTTPSecurityRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Action to be performed upon successful matching.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return action
    */
@@ -67,7 +67,7 @@ public class HTTPSecurityRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Action to be performed upon successful matching.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param action set the action.
    */
@@ -79,7 +79,7 @@ public class HTTPSecurityRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enable or disable the rule.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enable
    */
@@ -91,7 +91,7 @@ public class HTTPSecurityRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enable or disable the rule.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enable set the enable.
    */
@@ -103,7 +103,7 @@ public class HTTPSecurityRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Index of the rule.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return index
    */
@@ -115,7 +115,7 @@ public class HTTPSecurityRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Index of the rule.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param index set the index.
    */
@@ -127,7 +127,7 @@ public class HTTPSecurityRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Log http request upon rule match.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return log
    */
@@ -139,7 +139,7 @@ public class HTTPSecurityRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Log http request upon rule match.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param log set the log.
    */
@@ -151,7 +151,7 @@ public class HTTPSecurityRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Add match criteria to the rule.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return match
    */
@@ -163,7 +163,7 @@ public class HTTPSecurityRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Add match criteria to the rule.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param match set the match.
    */
@@ -175,7 +175,7 @@ public class HTTPSecurityRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the rule.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -187,7 +187,7 @@ public class HTTPSecurityRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the rule.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */

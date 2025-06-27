@@ -56,7 +56,7 @@ public class VsScaleoutParams extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return adminUp
    */
@@ -67,7 +67,7 @@ public class VsScaleoutParams extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param adminUp set the adminUp.
    */
@@ -78,7 +78,7 @@ public class VsScaleoutParams extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return newVcpus
    */
@@ -89,7 +89,7 @@ public class VsScaleoutParams extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param newVcpus set the newVcpus.
    */
@@ -101,7 +101,7 @@ public class VsScaleoutParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type vimgrhostruntime.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return toHostRef
    */
@@ -113,7 +113,7 @@ public class VsScaleoutParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type vimgrhostruntime.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param toHostRef set the toHostRef.
    */
@@ -124,7 +124,7 @@ public class VsScaleoutParams extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return toNewSe
    */
@@ -135,7 +135,7 @@ public class VsScaleoutParams extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param toNewSe set the toNewSe.
    */
@@ -147,7 +147,7 @@ public class VsScaleoutParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type serviceengine.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return toSeRef
    */
@@ -159,7 +159,7 @@ public class VsScaleoutParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type serviceengine.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param toSeRef set the toSeRef.
    */
@@ -170,7 +170,7 @@ public class VsScaleoutParams extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -181,7 +181,7 @@ public class VsScaleoutParams extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
@@ -193,7 +193,7 @@ public class VsScaleoutParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipId
    */
@@ -205,7 +205,7 @@ public class VsScaleoutParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vipId set the vipId.
    */

@@ -34,7 +34,7 @@ public class FailActionBackupPool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Specifies the uuid of the pool acting as backup pool.
    * It is a reference to an object of type pool.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return backupPoolRef
    */
@@ -47,7 +47,7 @@ public class FailActionBackupPool extends AviRestResource {
    * This is the setter method to the attribute.
    * Specifies the uuid of the pool acting as backup pool.
    * It is a reference to an object of type pool.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param backupPoolRef set the backupPoolRef.
    */

@@ -39,7 +39,7 @@ public class DnsQueryTypeMatch extends AviRestResource {
    * Criterion to use for matching the dns query typein the question section.
    * Enum options - IS_IN, IS_NOT_IN.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchCriteria
    */
@@ -53,7 +53,7 @@ public class DnsQueryTypeMatch extends AviRestResource {
    * Criterion to use for matching the dns query typein the question section.
    * Enum options - IS_IN, IS_NOT_IN.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchCriteria set the matchCriteria.
    */
@@ -69,7 +69,7 @@ public class DnsQueryTypeMatch extends AviRestResource {
    * DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR,
    * DNS_RECORD_ANY.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return queryType
    */
@@ -85,7 +85,7 @@ public class DnsQueryTypeMatch extends AviRestResource {
    * DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR,
    * DNS_RECORD_ANY.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return queryType
    */
@@ -101,7 +101,7 @@ public class DnsQueryTypeMatch extends AviRestResource {
    * DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR,
    * DNS_RECORD_ANY.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return queryType
    */

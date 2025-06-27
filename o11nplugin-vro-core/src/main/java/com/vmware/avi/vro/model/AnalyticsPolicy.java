@@ -70,7 +70,7 @@ public class AnalyticsPolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Log all headers.
    * Field introduced in 18.1.4, 18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return allHeaders
    */
@@ -83,7 +83,7 @@ public class AnalyticsPolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * Log all headers.
    * Field introduced in 18.1.4, 18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param allHeaders set the allHeaders.
    */
@@ -96,7 +96,7 @@ public class AnalyticsPolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Gain insights from sampled client to server http requests and responses.
    * Enum options - NO_INSIGHTS, PASSIVE, ACTIVE.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "NO_INSIGHTS".
    * @return clientInsights
    */
@@ -109,7 +109,7 @@ public class AnalyticsPolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * Gain insights from sampled client to server http requests and responses.
    * Enum options - NO_INSIGHTS, PASSIVE, ACTIVE.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "NO_INSIGHTS".
    * @param clientInsights set the clientInsights.
    */
@@ -120,7 +120,7 @@ public class AnalyticsPolicy extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientInsightsSampling
    */
@@ -131,7 +131,7 @@ public class AnalyticsPolicy extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientInsightsSampling set the clientInsightsSampling.
    */
@@ -142,7 +142,7 @@ public class AnalyticsPolicy extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientLogFilters
    */
@@ -153,7 +153,7 @@ public class AnalyticsPolicy extends AviRestResource {
 
   /**
    * This is the setter method. this will set the clientLogFilters
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientLogFilters
    */
@@ -164,7 +164,7 @@ public class AnalyticsPolicy extends AviRestResource {
 
   /**
    * This is the setter method this will set the clientLogFilters
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientLogFilters
    */
@@ -180,7 +180,7 @@ public class AnalyticsPolicy extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fullClientLogs
    */
@@ -191,7 +191,7 @@ public class AnalyticsPolicy extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fullClientLogs set the fullClientLogs.
    */
@@ -204,7 +204,7 @@ public class AnalyticsPolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Configuration for learning logging determining whether it's enabled and where is the destination.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return learningLogPolicy
    */
@@ -217,7 +217,7 @@ public class AnalyticsPolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * Configuration for learning logging determining whether it's enabled and where is the destination.
    * Field introduced in 20.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param learningLogPolicy set the learningLogPolicy.
    */
@@ -229,7 +229,7 @@ public class AnalyticsPolicy extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Settings to turn on realtime metrics and set duration for realtime updates.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricsRealtimeUpdate
    */
@@ -241,7 +241,7 @@ public class AnalyticsPolicy extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Settings to turn on realtime metrics and set duration for realtime updates.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricsRealtimeUpdate set the metricsRealtimeUpdate.
    */
@@ -255,9 +255,10 @@ public class AnalyticsPolicy extends AviRestResource {
    * This setting limits the number of significant logs generated per second for this vs on each se.
    * Default is 10 logs per second.
    * Set it to zero (0) to deactivate throttling.
+   * Note that the se group's throttle value takes precedence over this setting.
    * Field introduced in 17.1.3.
    * Unit is per_second.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return significantLogThrottle
    */
@@ -271,9 +272,10 @@ public class AnalyticsPolicy extends AviRestResource {
    * This setting limits the number of significant logs generated per second for this vs on each se.
    * Default is 10 logs per second.
    * Set it to zero (0) to deactivate throttling.
+   * Note that the se group's throttle value takes precedence over this setting.
    * Field introduced in 17.1.3.
    * Unit is per_second.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param significantLogThrottle set the significantLogThrottle.
    */
@@ -288,9 +290,10 @@ public class AnalyticsPolicy extends AviRestResource {
    * Udf logs are generated due to the configured client log filters or the rules with logging enabled.
    * Default is 10 logs per second.
    * Set it to zero (0) to deactivate throttling.
+   * Note that the se group's throttle value takes precedence over this setting.
    * Field introduced in 17.1.3.
    * Unit is per_second.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return udfLogThrottle
    */
@@ -305,9 +308,10 @@ public class AnalyticsPolicy extends AviRestResource {
    * Udf logs are generated due to the configured client log filters or the rules with logging enabled.
    * Default is 10 logs per second.
    * Set it to zero (0) to deactivate throttling.
+   * Note that the se group's throttle value takes precedence over this setting.
    * Field introduced in 17.1.3.
    * Unit is per_second.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param udfLogThrottle set the udfLogThrottle.
    */

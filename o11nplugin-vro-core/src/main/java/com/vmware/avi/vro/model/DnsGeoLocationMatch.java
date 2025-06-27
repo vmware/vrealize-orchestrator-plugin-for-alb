@@ -48,7 +48,7 @@ public class DnsGeoLocationMatch extends AviRestResource {
    * This location is of the format country/state/city e.g.
    * Us/ca/santa clara.
    * Field introduced in 17.1.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return geolocationName
    */
@@ -63,7 +63,7 @@ public class DnsGeoLocationMatch extends AviRestResource {
    * This location is of the format country/state/city e.g.
    * Us/ca/santa clara.
    * Field introduced in 17.1.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param geolocationName set the geolocationName.
    */
@@ -78,7 +78,7 @@ public class DnsGeoLocationMatch extends AviRestResource {
    * This could be any string value for the client ip, e.g.
    * Client ips from us east coast geolocation would be tagged as 'east coast'.
    * Field introduced in 17.1.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return geolocationTag
    */
@@ -93,7 +93,7 @@ public class DnsGeoLocationMatch extends AviRestResource {
    * This could be any string value for the client ip, e.g.
    * Client ips from us east coast geolocation would be tagged as 'east coast'.
    * Field introduced in 17.1.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param geolocationTag set the geolocationTag.
    */
@@ -107,7 +107,7 @@ public class DnsGeoLocationMatch extends AviRestResource {
    * Criterion to use for matching the client ip's geographical location.
    * Enum options - IS_IN, IS_NOT_IN.
    * Field introduced in 17.1.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchCriteria
    */
@@ -121,7 +121,7 @@ public class DnsGeoLocationMatch extends AviRestResource {
    * Criterion to use for matching the client ip's geographical location.
    * Enum options - IS_IN, IS_NOT_IN.
    * Field introduced in 17.1.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchCriteria set the matchCriteria.
    */
@@ -134,7 +134,7 @@ public class DnsGeoLocationMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Use the ip address from the edns client subnet option, if available, to derive geo location of the dns query.
    * Field introduced in 17.1.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return useEdnsClientSubnetIp
    */
@@ -147,7 +147,7 @@ public class DnsGeoLocationMatch extends AviRestResource {
    * This is the setter method to the attribute.
    * Use the ip address from the edns client subnet option, if available, to derive geo location of the dns query.
    * Field introduced in 17.1.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param useEdnsClientSubnetIp set the useEdnsClientSubnetIp.
    */

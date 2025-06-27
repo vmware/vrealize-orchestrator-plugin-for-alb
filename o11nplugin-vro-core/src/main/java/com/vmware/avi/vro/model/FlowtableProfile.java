@@ -60,7 +60,7 @@ public class FlowtableProfile extends AviRestResource {
    * Allowed values are 1-36000.
    * Field introduced in 20.1.3.
    * Unit is seconds.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return icmpIdleTimeout
    */
@@ -75,7 +75,7 @@ public class FlowtableProfile extends AviRestResource {
    * Allowed values are 1-36000.
    * Field introduced in 20.1.3.
    * Unit is seconds.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @param icmpIdleTimeout set the icmpIdleTimeout.
    */
@@ -90,7 +90,7 @@ public class FlowtableProfile extends AviRestResource {
    * Allowed values are 1-36000.
    * Field introduced in 18.2.5.
    * Unit is seconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @return tcpClosedTimeout
    */
@@ -105,7 +105,7 @@ public class FlowtableProfile extends AviRestResource {
    * Allowed values are 1-36000.
    * Field introduced in 18.2.5.
    * Unit is seconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @param tcpClosedTimeout set the tcpClosedTimeout.
    */
@@ -120,7 +120,7 @@ public class FlowtableProfile extends AviRestResource {
    * Allowed values are 1-36000.
    * Field introduced in 18.2.5.
    * Unit is seconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return tcpConnectionSetupTimeout
    */
@@ -135,7 +135,7 @@ public class FlowtableProfile extends AviRestResource {
    * Allowed values are 1-36000.
    * Field introduced in 18.2.5.
    * Unit is seconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param tcpConnectionSetupTimeout set the tcpConnectionSetupTimeout.
    */
@@ -150,7 +150,7 @@ public class FlowtableProfile extends AviRestResource {
    * Allowed values are 1-36000.
    * Field introduced in 18.2.5.
    * Unit is seconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @return tcpHalfClosedTimeout
    */
@@ -165,7 +165,7 @@ public class FlowtableProfile extends AviRestResource {
    * Allowed values are 1-36000.
    * Field introduced in 18.2.5.
    * Unit is seconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @param tcpHalfClosedTimeout set the tcpHalfClosedTimeout.
    */
@@ -180,7 +180,7 @@ public class FlowtableProfile extends AviRestResource {
    * Allowed values are 1-36000.
    * Field introduced in 18.2.5.
    * Unit is seconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @return tcpIdleTimeout
    */
@@ -195,7 +195,7 @@ public class FlowtableProfile extends AviRestResource {
    * Allowed values are 1-36000.
    * Field introduced in 18.2.5.
    * Unit is seconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @param tcpIdleTimeout set the tcpIdleTimeout.
    */
@@ -213,7 +213,7 @@ public class FlowtableProfile extends AviRestResource {
    * Allowed values are 1-36000.
    * Field introduced in 18.2.5.
    * Unit is seconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @return tcpResetTimeout
    */
@@ -231,7 +231,7 @@ public class FlowtableProfile extends AviRestResource {
    * Allowed values are 1-36000.
    * Field introduced in 18.2.5.
    * Unit is seconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @param tcpResetTimeout set the tcpResetTimeout.
    */
@@ -246,7 +246,7 @@ public class FlowtableProfile extends AviRestResource {
    * Allowed values are 1-36000.
    * Field introduced in 18.2.5.
    * Unit is seconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return udpIdleTimeout
    */
@@ -261,7 +261,7 @@ public class FlowtableProfile extends AviRestResource {
    * Allowed values are 1-36000.
    * Field introduced in 18.2.5.
    * Unit is seconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param udpIdleTimeout set the udpIdleTimeout.
    */

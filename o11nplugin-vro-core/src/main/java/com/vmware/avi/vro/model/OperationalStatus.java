@@ -29,6 +29,18 @@ public class OperationalStatus extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private TimeStamp lastChangedTime;
 
+    @JsonProperty("num_vs_completed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numVsCompleted;
+
+    @JsonProperty("num_vs_failed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numVsFailed;
+
+    @JsonProperty("num_vs_total")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numVsTotal;
+
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
     private List<String> reason;
@@ -49,7 +61,7 @@ public class OperationalStatus extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lastChangedTime
    */
@@ -60,7 +72,7 @@ public class OperationalStatus extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lastChangedTime set the lastChangedTime.
    */
@@ -71,7 +83,73 @@ public class OperationalStatus extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return numVsCompleted
+   */
+  @VsoMethod
+  public Integer getNumVsCompleted() {
+    return numVsCompleted;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param numVsCompleted set the numVsCompleted.
+   */
+  @VsoMethod
+  public void setNumVsCompleted(Integer  numVsCompleted) {
+    this.numVsCompleted = numVsCompleted;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return numVsFailed
+   */
+  @VsoMethod
+  public Integer getNumVsFailed() {
+    return numVsFailed;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param numVsFailed set the numVsFailed.
+   */
+  @VsoMethod
+  public void setNumVsFailed(Integer  numVsFailed) {
+    this.numVsFailed = numVsFailed;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return numVsTotal
+   */
+  @VsoMethod
+  public Integer getNumVsTotal() {
+    return numVsTotal;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param numVsTotal set the numVsTotal.
+   */
+  @VsoMethod
+  public void setNumVsTotal(Integer  numVsTotal) {
+    this.numVsTotal = numVsTotal;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
@@ -82,7 +160,7 @@ public class OperationalStatus extends AviRestResource {
 
   /**
    * This is the setter method. this will set the reason
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
@@ -93,7 +171,7 @@ public class OperationalStatus extends AviRestResource {
 
   /**
    * This is the setter method this will set the reason
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
@@ -109,7 +187,7 @@ public class OperationalStatus extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reasonCode
    */
@@ -120,7 +198,7 @@ public class OperationalStatus extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reasonCode set the reasonCode.
    */
@@ -131,7 +209,7 @@ public class OperationalStatus extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reasonCodeString
    */
@@ -142,7 +220,7 @@ public class OperationalStatus extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reasonCodeString set the reasonCodeString.
    */
@@ -156,7 +234,7 @@ public class OperationalStatus extends AviRestResource {
    * Enum options - OPER_UP, OPER_DOWN, OPER_CREATING, OPER_RESOURCES, OPER_INACTIVE, OPER_DISABLED, OPER_UNUSED, OPER_UNKNOWN, OPER_PROCESSING,
    * OPER_INITIALIZING, OPER_ERROR_DISABLED, OPER_AWAIT_MANUAL_PLACEMENT, OPER_UPGRADING, OPER_SE_PROCESSING, OPER_PARTITIONED, OPER_DISABLING,
    * OPER_FAILED, OPER_UNAVAIL, OPER_AGGREGATE_DOWN.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "OPER_UNAVAIL".
    * @return state
    */
@@ -170,7 +248,7 @@ public class OperationalStatus extends AviRestResource {
    * Enum options - OPER_UP, OPER_DOWN, OPER_CREATING, OPER_RESOURCES, OPER_INACTIVE, OPER_DISABLED, OPER_UNUSED, OPER_UNKNOWN, OPER_PROCESSING,
    * OPER_INITIALIZING, OPER_ERROR_DISABLED, OPER_AWAIT_MANUAL_PLACEMENT, OPER_UPGRADING, OPER_SE_PROCESSING, OPER_PARTITIONED, OPER_DISABLING,
    * OPER_FAILED, OPER_UNAVAIL, OPER_AGGREGATE_DOWN.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "OPER_UNAVAIL".
    * @param state set the state.
    */
@@ -194,7 +272,10 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.reason, objOperationalStatus.reason)&&
   Objects.equals(this.reasonCode, objOperationalStatus.reasonCode)&&
   Objects.equals(this.lastChangedTime, objOperationalStatus.lastChangedTime)&&
-  Objects.equals(this.reasonCodeString, objOperationalStatus.reasonCodeString);
+  Objects.equals(this.reasonCodeString, objOperationalStatus.reasonCodeString)&&
+  Objects.equals(this.numVsCompleted, objOperationalStatus.numVsCompleted)&&
+  Objects.equals(this.numVsFailed, objOperationalStatus.numVsFailed)&&
+  Objects.equals(this.numVsTotal, objOperationalStatus.numVsTotal);
 }
 
 @Override
@@ -202,6 +283,9 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class OperationalStatus {\n");
       sb.append("    lastChangedTime: ").append(toIndentedString(lastChangedTime)).append("\n");
+        sb.append("    numVsCompleted: ").append(toIndentedString(numVsCompleted)).append("\n");
+        sb.append("    numVsFailed: ").append(toIndentedString(numVsFailed)).append("\n");
+        sb.append("    numVsTotal: ").append(toIndentedString(numVsTotal)).append("\n");
         sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
         sb.append("    reasonCode: ").append(toIndentedString(reasonCode)).append("\n");
         sb.append("    reasonCodeString: ").append(toIndentedString(reasonCodeString)).append("\n");

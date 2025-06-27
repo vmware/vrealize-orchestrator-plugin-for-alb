@@ -25,8 +25,7 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SaasLicensingStatus extends AviRestResource {
-    @JsonProperty("connected")
-    @JsonInclude(Include.NON_NULL)
+    @JsonIgnore
     private Boolean connected;
 
     @JsonProperty("enabled")
@@ -36,6 +35,10 @@ public class SaasLicensingStatus extends AviRestResource {
     @JsonProperty("expired")
     @JsonInclude(Include.NON_NULL)
     private Boolean expired;
+
+    @JsonProperty("last_refreshed_at")
+    @JsonInclude(Include.NON_NULL)
+    private String lastRefreshedAt;
 
     @JsonProperty("message")
     @JsonInclude(Include.NON_NULL)
@@ -47,6 +50,14 @@ public class SaasLicensingStatus extends AviRestResource {
 
     @JsonIgnore
     private String publicKey;
+
+    @JsonProperty("refresh_status")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean refreshStatus;
+
+    @JsonProperty("refreshed_at")
+    @JsonInclude(Include.NON_NULL)
+    private String refreshedAt;
 
     @JsonProperty("reserve_service_units")
     @JsonInclude(Include.NON_NULL)
@@ -62,7 +73,7 @@ public class SaasLicensingStatus extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Portal connectivity status.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return connected
    */
@@ -75,7 +86,7 @@ public class SaasLicensingStatus extends AviRestResource {
    * This is the setter method to the attribute.
    * Portal connectivity status.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param connected set the connected.
    */
@@ -88,7 +99,7 @@ public class SaasLicensingStatus extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Status of saas licensing subscription.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return enabled
    */
@@ -101,7 +112,7 @@ public class SaasLicensingStatus extends AviRestResource {
    * This is the setter method to the attribute.
    * Status of saas licensing subscription.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param enabled set the enabled.
    */
@@ -114,7 +125,7 @@ public class SaasLicensingStatus extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Saas license expiry status.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return expired
    */
@@ -127,7 +138,7 @@ public class SaasLicensingStatus extends AviRestResource {
    * This is the setter method to the attribute.
    * Saas license expiry status.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param expired set the expired.
    */
@@ -138,9 +149,35 @@ public class SaasLicensingStatus extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Timestamp of last successful refresh.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return lastRefreshedAt
+   */
+  @VsoMethod
+  public String getLastRefreshedAt() {
+    return lastRefreshedAt;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Timestamp of last successful refresh.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param lastRefreshedAt set the lastRefreshedAt.
+   */
+  @VsoMethod
+  public void setLastRefreshedAt(String  lastRefreshedAt) {
+    this.lastRefreshedAt = lastRefreshedAt;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Message.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return message
    */
@@ -153,7 +190,7 @@ public class SaasLicensingStatus extends AviRestResource {
    * This is the setter method to the attribute.
    * Message.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param message set the message.
    */
@@ -166,7 +203,7 @@ public class SaasLicensingStatus extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -179,7 +216,7 @@ public class SaasLicensingStatus extends AviRestResource {
    * This is the setter method to the attribute.
    * Name.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -192,7 +229,7 @@ public class SaasLicensingStatus extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Public key.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return publicKey
    */
@@ -205,7 +242,7 @@ public class SaasLicensingStatus extends AviRestResource {
    * This is the setter method to the attribute.
    * Public key.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param publicKey set the publicKey.
    */
@@ -216,9 +253,61 @@ public class SaasLicensingStatus extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * License refresh status.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return refreshStatus
+   */
+  @VsoMethod
+  public Boolean getRefreshStatus() {
+    return refreshStatus;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * License refresh status.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param refreshStatus set the refreshStatus.
+   */
+  @VsoMethod
+  public void setRefreshStatus(Boolean  refreshStatus) {
+    this.refreshStatus = refreshStatus;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Timestamp of last attempted refresh.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return refreshedAt
+   */
+  @VsoMethod
+  public String getRefreshedAt() {
+    return refreshedAt;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Timestamp of last attempted refresh.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param refreshedAt set the refreshedAt.
+   */
+  @VsoMethod
+  public void setRefreshedAt(String  refreshedAt) {
+    this.refreshedAt = refreshedAt;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Service units reserved on controller.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reserveServiceUnits
    */
@@ -231,7 +320,7 @@ public class SaasLicensingStatus extends AviRestResource {
    * This is the setter method to the attribute.
    * Service units reserved on controller.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reserveServiceUnits set the reserveServiceUnits.
    */
@@ -245,7 +334,7 @@ public class SaasLicensingStatus extends AviRestResource {
    * Saas license request status.
    * Enum options - SUBSCRIPTION_NONE, SUBSCRIPTION_SUCCESS, SUBSCRIPTION_FAILED, SUBSCRIPTION_IN_PROGRESS.
    * Field introduced in 31.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return state
    */
@@ -259,7 +348,7 @@ public class SaasLicensingStatus extends AviRestResource {
    * Saas license request status.
    * Enum options - SUBSCRIPTION_NONE, SUBSCRIPTION_SUCCESS, SUBSCRIPTION_FAILED, SUBSCRIPTION_IN_PROGRESS.
    * Field introduced in 31.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param state set the state.
    */
@@ -286,7 +375,10 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.message, objSaasLicensingStatus.message)&&
   Objects.equals(this.publicKey, objSaasLicensingStatus.publicKey)&&
   Objects.equals(this.expired, objSaasLicensingStatus.expired)&&
-  Objects.equals(this.state, objSaasLicensingStatus.state);
+  Objects.equals(this.state, objSaasLicensingStatus.state)&&
+  Objects.equals(this.refreshStatus, objSaasLicensingStatus.refreshStatus)&&
+  Objects.equals(this.lastRefreshedAt, objSaasLicensingStatus.lastRefreshedAt)&&
+  Objects.equals(this.refreshedAt, objSaasLicensingStatus.refreshedAt);
 }
 
 @Override
@@ -296,9 +388,12 @@ public String toString() {
       sb.append("    connected: ").append(toIndentedString(connected)).append("\n");
         sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
         sb.append("    expired: ").append(toIndentedString(expired)).append("\n");
+        sb.append("    lastRefreshedAt: ").append(toIndentedString(lastRefreshedAt)).append("\n");
         sb.append("    message: ").append(toIndentedString(message)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    publicKey: ").append(toIndentedString(publicKey)).append("\n");
+        sb.append("    refreshStatus: ").append(toIndentedString(refreshStatus)).append("\n");
+        sb.append("    refreshedAt: ").append(toIndentedString(refreshedAt)).append("\n");
         sb.append("    reserveServiceUnits: ").append(toIndentedString(reserveServiceUnits)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
       sb.append("}");

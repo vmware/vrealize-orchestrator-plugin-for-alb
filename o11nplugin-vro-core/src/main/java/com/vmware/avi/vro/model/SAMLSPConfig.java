@@ -72,7 +72,7 @@ public class SAMLSPConfig extends AviRestResource {
    * assertionconsumerserviceindex.
    * Allowed values are 0-64.
    * Field introduced in 21.1.6, 22.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return acsIndex
    */
@@ -87,7 +87,7 @@ public class SAMLSPConfig extends AviRestResource {
    * assertionconsumerserviceindex.
    * Allowed values are 0-64.
    * Field introduced in 21.1.6, 22.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param acsIndex set the acsIndex.
    */
@@ -101,7 +101,7 @@ public class SAMLSPConfig extends AviRestResource {
    * Option to set the acs attributes in the authnrequest.
    * Enum options - SAML_AUTHN_REQ_ACS_TYPE_URL, SAML_AUTHN_REQ_ACS_TYPE_INDEX, SAML_AUTHN_REQ_ACS_TYPE_NONE.
    * Field introduced in 21.1.6, 22.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "SAML_AUTHN_REQ_ACS_TYPE_NONE".
    * @return authnReqAcsType
    */
@@ -115,7 +115,7 @@ public class SAMLSPConfig extends AviRestResource {
    * Option to set the acs attributes in the authnrequest.
    * Enum options - SAML_AUTHN_REQ_ACS_TYPE_URL, SAML_AUTHN_REQ_ACS_TYPE_INDEX, SAML_AUTHN_REQ_ACS_TYPE_NONE.
    * Field introduced in 21.1.6, 22.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "SAML_AUTHN_REQ_ACS_TYPE_NONE".
    * @param authnReqAcsType set the authnReqAcsType.
    */
@@ -128,7 +128,7 @@ public class SAMLSPConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Http cookie name for authenticated session.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cookieName
    */
@@ -141,7 +141,7 @@ public class SAMLSPConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Http cookie name for authenticated session.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cookieName set the cookieName.
    */
@@ -156,7 +156,7 @@ public class SAMLSPConfig extends AviRestResource {
    * Allowed values are 1-1440.
    * Field introduced in 18.2.3.
    * Unit is min.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return cookieTimeout
    */
@@ -171,7 +171,7 @@ public class SAMLSPConfig extends AviRestResource {
    * Allowed values are 1-1440.
    * Field introduced in 18.2.3.
    * Unit is min.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @param cookieTimeout set the cookieTimeout.
    */
@@ -185,7 +185,7 @@ public class SAMLSPConfig extends AviRestResource {
    * Globally unique saml entityid for this node.
    * The saml application entity id on the idp should match this.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return entityId
    */
@@ -199,7 +199,7 @@ public class SAMLSPConfig extends AviRestResource {
    * Globally unique saml entityid for this node.
    * The saml application entity id on the idp should match this.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param entityId set the entityId.
    */
@@ -212,7 +212,7 @@ public class SAMLSPConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Key to generate the cookie.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return key
    */
@@ -225,7 +225,7 @@ public class SAMLSPConfig extends AviRestResource {
    * This is the setter method. this will set the key
    * Key to generate the cookie.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return key
    */
@@ -238,7 +238,7 @@ public class SAMLSPConfig extends AviRestResource {
    * This is the setter method this will set the key
    * Key to generate the cookie.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return key
    */
@@ -257,7 +257,7 @@ public class SAMLSPConfig extends AviRestResource {
    * Sp will use this ssl certificate to sign requests going to the idp and decrypt the assertions coming from idp.
    * It is a reference to an object of type sslkeyandcertificate.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return signingSslKeyAndCertificateRef
    */
@@ -271,7 +271,7 @@ public class SAMLSPConfig extends AviRestResource {
    * Sp will use this ssl certificate to sign requests going to the idp and decrypt the assertions coming from idp.
    * It is a reference to an object of type sslkeyandcertificate.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param signingSslKeyAndCertificateRef set the signingSslKeyAndCertificateRef.
    */
@@ -287,7 +287,7 @@ public class SAMLSPConfig extends AviRestResource {
    * If the authn_req_acs_type is set to 'use assertionconsumerserviceurl', this endpoint will be sent in the assertionconsumerserviceurl attribute of
    * the authentication request.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return singleSignonUrl
    */
@@ -303,7 +303,7 @@ public class SAMLSPConfig extends AviRestResource {
    * If the authn_req_acs_type is set to 'use assertionconsumerserviceurl', this endpoint will be sent in the assertionconsumerserviceurl attribute of
    * the authentication request.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param singleSignonUrl set the singleSignonUrl.
    */
@@ -316,8 +316,7 @@ public class SAMLSPConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Saml sp metadata for this application.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * @return spMetadata
    */
   @VsoMethod
@@ -329,8 +328,7 @@ public class SAMLSPConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Saml sp metadata for this application.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * @param spMetadata set the spMetadata.
    */
   @VsoMethod
@@ -343,7 +341,7 @@ public class SAMLSPConfig extends AviRestResource {
    * By enabling this field idp can control how long the sp session can exist through the sessionnotonorafter field in the authnstatement of saml
    * response.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return useIdpSessionTimeout
    */
@@ -357,7 +355,7 @@ public class SAMLSPConfig extends AviRestResource {
    * By enabling this field idp can control how long the sp session can exist through the sessionnotonorafter field in the authnstatement of saml
    * response.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param useIdpSessionTimeout set the useIdpSessionTimeout.
    */

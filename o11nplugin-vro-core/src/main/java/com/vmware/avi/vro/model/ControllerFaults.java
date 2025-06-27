@@ -48,13 +48,17 @@ public class ControllerFaults extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean sslprofileFaults = true;
 
+    @JsonProperty("system_limits_faults")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean systemLimitsFaults = true;
+
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Enable backup scheduler faults.
    * Field introduced in 20.1.6.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return backupSchedulerFaults
    */
@@ -67,7 +71,7 @@ public class ControllerFaults extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable backup scheduler faults.
    * Field introduced in 20.1.6.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param backupSchedulerFaults set the backupSchedulerFaults.
    */
@@ -80,7 +84,7 @@ public class ControllerFaults extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable cluster faults.
    * Field introduced in 20.1.6.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return clusterFaults
    */
@@ -93,7 +97,7 @@ public class ControllerFaults extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable cluster faults.
    * Field introduced in 20.1.6.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param clusterFaults set the clusterFaults.
    */
@@ -106,7 +110,7 @@ public class ControllerFaults extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable deprecated api version faults.
    * Field introduced in 20.1.6.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return deprecatedApiVersionFaults
    */
@@ -119,7 +123,7 @@ public class ControllerFaults extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable deprecated api version faults.
    * Field introduced in 20.1.6.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param deprecatedApiVersionFaults set the deprecatedApiVersionFaults.
    */
@@ -132,7 +136,7 @@ public class ControllerFaults extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable license faults.
    * Field introduced in 20.1.6.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return licenseFaults
    */
@@ -145,7 +149,7 @@ public class ControllerFaults extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable license faults.
    * Field introduced in 20.1.6.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param licenseFaults set the licenseFaults.
    */
@@ -158,7 +162,7 @@ public class ControllerFaults extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable db migration faults.
    * Field introduced in 20.1.6.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return migrationFaults
    */
@@ -171,7 +175,7 @@ public class ControllerFaults extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable db migration faults.
    * Field introduced in 20.1.6.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param migrationFaults set the migrationFaults.
    */
@@ -184,7 +188,7 @@ public class ControllerFaults extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable ssl profile faults.
    * Field introduced in 20.1.6.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return sslprofileFaults
    */
@@ -197,13 +201,39 @@ public class ControllerFaults extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable ssl profile faults.
    * Field introduced in 20.1.6.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param sslprofileFaults set the sslprofileFaults.
    */
   @VsoMethod
   public void setSslprofileFaults(Boolean  sslprofileFaults) {
     this.sslprofileFaults = sslprofileFaults;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Enable system limits faults.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @return systemLimitsFaults
+   */
+  @VsoMethod
+  public Boolean getSystemLimitsFaults() {
+    return systemLimitsFaults;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable system limits faults.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param systemLimitsFaults set the systemLimitsFaults.
+   */
+  @VsoMethod
+  public void setSystemLimitsFaults(Boolean  systemLimitsFaults) {
+    this.systemLimitsFaults = systemLimitsFaults;
   }
 
 
@@ -222,7 +252,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.migrationFaults, objControllerFaults.migrationFaults)&&
   Objects.equals(this.backupSchedulerFaults, objControllerFaults.backupSchedulerFaults)&&
   Objects.equals(this.sslprofileFaults, objControllerFaults.sslprofileFaults)&&
-  Objects.equals(this.deprecatedApiVersionFaults, objControllerFaults.deprecatedApiVersionFaults);
+  Objects.equals(this.deprecatedApiVersionFaults, objControllerFaults.deprecatedApiVersionFaults)&&
+  Objects.equals(this.systemLimitsFaults, objControllerFaults.systemLimitsFaults);
 }
 
 @Override
@@ -235,6 +266,7 @@ public String toString() {
         sb.append("    licenseFaults: ").append(toIndentedString(licenseFaults)).append("\n");
         sb.append("    migrationFaults: ").append(toIndentedString(migrationFaults)).append("\n");
         sb.append("    sslprofileFaults: ").append(toIndentedString(sslprofileFaults)).append("\n");
+        sb.append("    systemLimitsFaults: ").append(toIndentedString(systemLimitsFaults)).append("\n");
       sb.append("}");
   return sb.toString();
 }

@@ -24,6 +24,10 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class TCPProxyProfile extends AviRestResource {
+    @JsonProperty("ack_on_push")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean ackOnPush = false;
+
     @JsonProperty("aggressive_congestion_avoidance")
     @JsonInclude(Include.NON_NULL)
     private Boolean aggressiveCongestionAvoidance = false;
@@ -43,6 +47,14 @@ public class TCPProxyProfile extends AviRestResource {
     @JsonProperty("congestion_recovery_scaling_factor")
     @JsonInclude(Include.NON_NULL)
     private Integer congestionRecoveryScalingFactor = 2;
+
+    @JsonProperty("delayed_ack_mode")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean delayedAckMode;
+
+    @JsonProperty("delayed_ack_timer_delay")
+    @JsonInclude(Include.NON_NULL)
+    private Integer delayedAckTimerDelay = 100;
 
     @JsonProperty("idle_connection_timeout")
     @JsonInclude(Include.NON_NULL)
@@ -112,8 +124,34 @@ public class TCPProxyProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Controls whether we immediately send ack when incoming packet has push flag marked.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return ackOnPush
+   */
+  @VsoMethod
+  public Boolean getAckOnPush() {
+    return ackOnPush;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Controls whether we immediately send ack when incoming packet has push flag marked.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param ackOnPush set the ackOnPush.
+   */
+  @VsoMethod
+  public void setAckOnPush(Boolean  ackOnPush) {
+    this.ackOnPush = ackOnPush;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Controls the our congestion window to send, normally it's 1 mss, if this option is turned on, we use 10 msses.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return aggressiveCongestionAvoidance
    */
@@ -125,7 +163,7 @@ public class TCPProxyProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Controls the our congestion window to send, normally it's 1 mss, if this option is turned on, we use 10 msses.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param aggressiveCongestionAvoidance set the aggressiveCongestionAvoidance.
    */
@@ -139,7 +177,7 @@ public class TCPProxyProfile extends AviRestResource {
    * Controls whether the windows are static or supports autogrowth.
    * Maximum that it can grow to is limited to 4mb.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return autoWindowGrowth
    */
@@ -153,7 +191,7 @@ public class TCPProxyProfile extends AviRestResource {
    * Controls whether the windows are static or supports autogrowth.
    * Maximum that it can grow to is limited to 4mb.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param autoWindowGrowth set the autoWindowGrowth.
    */
@@ -165,7 +203,8 @@ public class TCPProxyProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dynamically pick the relevant parameters for connections.
-   * Allowed in enterprise edition with any value, basic edition(allowed values- true), essentials, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
+   * Allowed in basic (allowed values- true) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return automatic
    */
@@ -177,7 +216,8 @@ public class TCPProxyProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dynamically pick the relevant parameters for connections.
-   * Allowed in enterprise edition with any value, basic edition(allowed values- true), essentials, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
+   * Allowed in basic (allowed values- true) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param automatic set the automatic.
    */
@@ -190,7 +230,7 @@ public class TCPProxyProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Controls the congestion control algorithm we use.
    * Enum options - CC_ALGO_NEW_RENO, CC_ALGO_CUBIC, CC_ALGO_HTCP.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "CC_ALGO_NEW_RENO".
    * @return ccAlgo
    */
@@ -203,7 +243,7 @@ public class TCPProxyProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Controls the congestion control algorithm we use.
    * Enum options - CC_ALGO_NEW_RENO, CC_ALGO_CUBIC, CC_ALGO_HTCP.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "CC_ALGO_NEW_RENO".
    * @param ccAlgo set the ccAlgo.
    */
@@ -217,7 +257,7 @@ public class TCPProxyProfile extends AviRestResource {
    * Congestion window scaling factor after recovery.
    * Allowed values are 0-8.
    * Field introduced in 17.2.12, 18.1.3, 18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2.
    * @return congestionRecoveryScalingFactor
    */
@@ -231,7 +271,7 @@ public class TCPProxyProfile extends AviRestResource {
    * Congestion window scaling factor after recovery.
    * Allowed values are 0-8.
    * Field introduced in 17.2.12, 18.1.3, 18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2.
    * @param congestionRecoveryScalingFactor set the congestionRecoveryScalingFactor.
    */
@@ -242,13 +282,71 @@ public class TCPProxyProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Determines if delayed ack mode is enabledtrue  unconditionally use delayed ackfalse  don't use delayed ack.
+   * Field introduced in 30.2.3, 31.1.2, 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return delayedAckMode
+   */
+  @VsoMethod
+  public Boolean getDelayedAckMode() {
+    return delayedAckMode;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Determines if delayed ack mode is enabledtrue  unconditionally use delayed ackfalse  don't use delayed ack.
+   * Field introduced in 30.2.3, 31.1.2, 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param delayedAckMode set the delayedAckMode.
+   */
+  @VsoMethod
+  public void setDelayedAckMode(Boolean  delayedAckMode) {
+    this.delayedAckMode = delayedAckMode;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * The time in milliseconds for delayed timer to kick in.
+   * Allowed values are 0-500.
+   * Special values are 0 - disable delayed ack.
+   * Field introduced in 31.1.1.
+   * Unit is milliseconds.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 100.
+   * @return delayedAckTimerDelay
+   */
+  @VsoMethod
+  public Integer getDelayedAckTimerDelay() {
+    return delayedAckTimerDelay;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * The time in milliseconds for delayed timer to kick in.
+   * Allowed values are 0-500.
+   * Special values are 0 - disable delayed ack.
+   * Field introduced in 31.1.1.
+   * Unit is milliseconds.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 100.
+   * @param delayedAckTimerDelay set the delayedAckTimerDelay.
+   */
+  @VsoMethod
+  public void setDelayedAckTimerDelay(Integer  delayedAckTimerDelay) {
+    this.delayedAckTimerDelay = delayedAckTimerDelay;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * The duration for keepalive probes or session idle timeout.
    * Max value is 14400 seconds, min is 5.
    * Set to 0 to allow infinite idle time.
    * Allowed values are 5-14400.
    * Special values are 0 - infinite.
    * Unit is sec.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 600.
    * @return idleConnectionTimeout
    */
@@ -265,7 +363,7 @@ public class TCPProxyProfile extends AviRestResource {
    * Allowed values are 5-14400.
    * Special values are 0 - infinite.
    * Unit is sec.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 600.
    * @param idleConnectionTimeout set the idleConnectionTimeout.
    */
@@ -278,7 +376,7 @@ public class TCPProxyProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Controls the behavior of idle connections.
    * Enum options - KEEP_ALIVE, CLOSE_IDLE.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "KEEP_ALIVE".
    * @return idleConnectionType
    */
@@ -291,7 +389,7 @@ public class TCPProxyProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Controls the behavior of idle connections.
    * Enum options - KEEP_ALIVE, CLOSE_IDLE.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "KEEP_ALIVE".
    * @param idleConnectionType set the idleConnectionType.
    */
@@ -304,7 +402,7 @@ public class TCPProxyProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * A new syn is accepted from the same 4-tuple even if there is already a connection in time_wait state.
    * This is equivalent of setting time wait delay to 0.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return ignoreTimeWait
    */
@@ -317,7 +415,7 @@ public class TCPProxyProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * A new syn is accepted from the same 4-tuple even if there is already a connection in time_wait state.
    * This is equivalent of setting time wait delay to 0.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param ignoreTimeWait set the ignoreTimeWait.
    */
@@ -332,7 +430,7 @@ public class TCPProxyProfile extends AviRestResource {
    * This has two options   set to a specific value, or pass through, which uses the incoming dscp value.
    * Allowed values are 0-63.
    * Special values are max - passthrough.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return ipDscp
    */
@@ -347,7 +445,7 @@ public class TCPProxyProfile extends AviRestResource {
    * This has two options   set to a specific value, or pass through, which uses the incoming dscp value.
    * Allowed values are 0-63.
    * Special values are max - passthrough.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param ipDscp set the ipDscp.
    */
@@ -362,7 +460,7 @@ public class TCPProxyProfile extends AviRestResource {
    * The interval for sending keepalive messages is 30s.
    * If a timeout is already configured in the network profile, this will not override it.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return keepaliveInHalfcloseState
    */
@@ -377,7 +475,7 @@ public class TCPProxyProfile extends AviRestResource {
    * The interval for sending keepalive messages is 30s.
    * If a timeout is already configured in the network profile, this will not override it.
    * Field introduced in 18.2.6.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param keepaliveInHalfcloseState set the keepaliveInHalfcloseState.
    */
@@ -390,7 +488,7 @@ public class TCPProxyProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The number of attempts at retransmit before closing the connection.
    * Allowed values are 3-8.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 8.
    * @return maxRetransmissions
    */
@@ -403,7 +501,7 @@ public class TCPProxyProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * The number of attempts at retransmit before closing the connection.
    * Allowed values are 3-8.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 8.
    * @param maxRetransmissions set the maxRetransmissions.
    */
@@ -418,7 +516,7 @@ public class TCPProxyProfile extends AviRestResource {
    * Allowed values are 512-9000.
    * Special values are 0 - use interface mtu.
    * Unit is bytes.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxSegmentSize
    */
@@ -433,7 +531,7 @@ public class TCPProxyProfile extends AviRestResource {
    * Allowed values are 512-9000.
    * Special values are 0 - use interface mtu.
    * Unit is bytes.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxSegmentSize set the maxSegmentSize.
    */
@@ -446,7 +544,7 @@ public class TCPProxyProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The maximum number of attempts at retransmitting a syn packet before giving up.
    * Allowed values are 3-8.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 8.
    * @return maxSynRetransmissions
    */
@@ -459,7 +557,7 @@ public class TCPProxyProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * The maximum number of attempts at retransmitting a syn packet before giving up.
    * Allowed values are 3-8.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 8.
    * @param maxSynRetransmissions set the maxSynRetransmissions.
    */
@@ -474,7 +572,7 @@ public class TCPProxyProfile extends AviRestResource {
    * Allowed values are 50-5000.
    * Field introduced in 17.2.8.
    * Unit is milliseconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return minRexmtTimeout
    */
@@ -489,7 +587,7 @@ public class TCPProxyProfile extends AviRestResource {
    * Allowed values are 50-5000.
    * Field introduced in 17.2.8.
    * Unit is milliseconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param minRexmtTimeout set the minRexmtTimeout.
    */
@@ -502,7 +600,7 @@ public class TCPProxyProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Consolidates small data packets to send clients fewer but larger packets.
    * Adversely affects real time protocols such as telnet or ssh.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return naglesAlgorithm
    */
@@ -515,7 +613,7 @@ public class TCPProxyProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Consolidates small data packets to send clients fewer but larger packets.
    * Adversely affects real time protocols such as telnet or ssh.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param naglesAlgorithm set the naglesAlgorithm.
    */
@@ -529,7 +627,7 @@ public class TCPProxyProfile extends AviRestResource {
    * Maximum number of tcp segments that can be queued for reassembly.
    * Configuring this to 0 disables the feature and provides unlimited queuing.
    * Field introduced in 17.2.13, 18.1.4, 18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return reassemblyQueueSize
    */
@@ -543,7 +641,7 @@ public class TCPProxyProfile extends AviRestResource {
    * Maximum number of tcp segments that can be queued for reassembly.
    * Configuring this to 0 disables the feature and provides unlimited queuing.
    * Field introduced in 17.2.13, 18.1.4, 18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param reassemblyQueueSize set the reassemblyQueueSize.
    */
@@ -557,7 +655,7 @@ public class TCPProxyProfile extends AviRestResource {
    * Size of the receive window.
    * Allowed values are 2-65536.
    * Unit is kb.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 64.
    * @return receiveWindow
    */
@@ -571,7 +669,7 @@ public class TCPProxyProfile extends AviRestResource {
    * Size of the receive window.
    * Allowed values are 2-65536.
    * Unit is kb.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 64.
    * @param receiveWindow set the receiveWindow.
    */
@@ -588,7 +686,7 @@ public class TCPProxyProfile extends AviRestResource {
    * The default value is 8 in public cloud platforms (aws, azure, gcp), and 3 in other environments.
    * Allowed values are 1-100.
    * Field introduced in 17.2.7.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reorderThreshold
    */
@@ -605,7 +703,7 @@ public class TCPProxyProfile extends AviRestResource {
    * The default value is 8 in public cloud platforms (aws, azure, gcp), and 3 in other environments.
    * Allowed values are 1-100.
    * Field introduced in 17.2.7.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reorderThreshold set the reorderThreshold.
    */
@@ -619,7 +717,7 @@ public class TCPProxyProfile extends AviRestResource {
    * Congestion window scaling factor during slow start.
    * Allowed values are 0-8.
    * Field introduced in 17.2.12, 18.1.3, 18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @return slowStartScalingFactor
    */
@@ -633,7 +731,7 @@ public class TCPProxyProfile extends AviRestResource {
    * Congestion window scaling factor during slow start.
    * Allowed values are 0-8.
    * Field introduced in 17.2.12, 18.1.3, 18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @param slowStartScalingFactor set the slowStartScalingFactor.
    */
@@ -648,7 +746,7 @@ public class TCPProxyProfile extends AviRestResource {
    * Allowed values are 500-2000.
    * Special values are 0 - immediate.
    * Unit is milliseconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
    * @return timeWaitDelay
    */
@@ -663,7 +761,7 @@ public class TCPProxyProfile extends AviRestResource {
    * Allowed values are 500-2000.
    * Special values are 0 - immediate.
    * Unit is milliseconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
    * @param timeWaitDelay set the timeWaitDelay.
    */
@@ -675,7 +773,7 @@ public class TCPProxyProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Use the interface mtu to calculate the tcp max segment size.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return useInterfaceMtu
    */
@@ -687,7 +785,7 @@ public class TCPProxyProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Use the interface mtu to calculate the tcp max segment size.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param useInterfaceMtu set the useInterfaceMtu.
    */
@@ -727,18 +825,24 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.congestionRecoveryScalingFactor, objTCPProxyProfile.congestionRecoveryScalingFactor)&&
   Objects.equals(this.reassemblyQueueSize, objTCPProxyProfile.reassemblyQueueSize)&&
   Objects.equals(this.keepaliveInHalfcloseState, objTCPProxyProfile.keepaliveInHalfcloseState)&&
-  Objects.equals(this.autoWindowGrowth, objTCPProxyProfile.autoWindowGrowth);
+  Objects.equals(this.autoWindowGrowth, objTCPProxyProfile.autoWindowGrowth)&&
+  Objects.equals(this.ackOnPush, objTCPProxyProfile.ackOnPush)&&
+  Objects.equals(this.delayedAckTimerDelay, objTCPProxyProfile.delayedAckTimerDelay)&&
+  Objects.equals(this.delayedAckMode, objTCPProxyProfile.delayedAckMode);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class TCPProxyProfile {\n");
-      sb.append("    aggressiveCongestionAvoidance: ").append(toIndentedString(aggressiveCongestionAvoidance)).append("\n");
+      sb.append("    ackOnPush: ").append(toIndentedString(ackOnPush)).append("\n");
+        sb.append("    aggressiveCongestionAvoidance: ").append(toIndentedString(aggressiveCongestionAvoidance)).append("\n");
         sb.append("    autoWindowGrowth: ").append(toIndentedString(autoWindowGrowth)).append("\n");
         sb.append("    automatic: ").append(toIndentedString(automatic)).append("\n");
         sb.append("    ccAlgo: ").append(toIndentedString(ccAlgo)).append("\n");
         sb.append("    congestionRecoveryScalingFactor: ").append(toIndentedString(congestionRecoveryScalingFactor)).append("\n");
+        sb.append("    delayedAckMode: ").append(toIndentedString(delayedAckMode)).append("\n");
+        sb.append("    delayedAckTimerDelay: ").append(toIndentedString(delayedAckTimerDelay)).append("\n");
         sb.append("    idleConnectionTimeout: ").append(toIndentedString(idleConnectionTimeout)).append("\n");
         sb.append("    idleConnectionType: ").append(toIndentedString(idleConnectionType)).append("\n");
         sb.append("    ignoreTimeWait: ").append(toIndentedString(ignoreTimeWait)).append("\n");

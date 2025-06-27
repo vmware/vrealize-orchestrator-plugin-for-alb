@@ -28,6 +28,10 @@ public class LogManagerDebugFilter extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String entityRef;
 
+    @JsonProperty("telemetry_trace_log_level")
+    @JsonInclude(Include.NON_NULL)
+    private String telemetryTraceLogLevel;
+
 
 
   /**
@@ -35,7 +39,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * Uuid of the entity.
    * It is a reference to an object of type virtualservice.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return entityRef
    */
@@ -49,13 +53,41 @@ public class LogManagerDebugFilter extends AviRestResource {
    * Uuid of the entity.
    * It is a reference to an object of type virtualservice.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param entityRef set the entityRef.
    */
   @VsoMethod
   public void setEntityRef(String  entityRef) {
     this.entityRef = entityRef;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Set the log level for telemetry trace logs.
+   * Enum options - LOG_LEVEL_DISABLED, LOG_LEVEL_INFO, LOG_LEVEL_WARNING, LOG_LEVEL_ERROR.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return telemetryTraceLogLevel
+   */
+  @VsoMethod
+  public String getTelemetryTraceLogLevel() {
+    return telemetryTraceLogLevel;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Set the log level for telemetry trace logs.
+   * Enum options - LOG_LEVEL_DISABLED, LOG_LEVEL_INFO, LOG_LEVEL_WARNING, LOG_LEVEL_ERROR.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param telemetryTraceLogLevel set the telemetryTraceLogLevel.
+   */
+  @VsoMethod
+  public void setTelemetryTraceLogLevel(String  telemetryTraceLogLevel) {
+    this.telemetryTraceLogLevel = telemetryTraceLogLevel;
   }
 
 
@@ -69,7 +101,8 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   LogManagerDebugFilter objLogManagerDebugFilter = (LogManagerDebugFilter) o;
-  return   Objects.equals(this.entityRef, objLogManagerDebugFilter.entityRef);
+  return   Objects.equals(this.entityRef, objLogManagerDebugFilter.entityRef)&&
+  Objects.equals(this.telemetryTraceLogLevel, objLogManagerDebugFilter.telemetryTraceLogLevel);
 }
 
 @Override
@@ -77,6 +110,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class LogManagerDebugFilter {\n");
       sb.append("    entityRef: ").append(toIndentedString(entityRef)).append("\n");
+        sb.append("    telemetryTraceLogLevel: ").append(toIndentedString(telemetryTraceLogLevel)).append("\n");
       sb.append("}");
   return sb.toString();
 }

@@ -137,7 +137,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type cloud.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudRef
    */
@@ -149,7 +149,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type cloud.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudRef set the cloudRef.
    */
@@ -160,7 +160,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clusterName
    */
@@ -171,7 +171,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clusterName set the clusterName.
    */
@@ -182,7 +182,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clusterUuid
    */
@@ -193,7 +193,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clusterUuid set the clusterUuid.
    */
@@ -204,7 +204,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return cntlrAccessible
    */
@@ -215,7 +215,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param cntlrAccessible set the cntlrAccessible.
    */
@@ -226,7 +226,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "connected".
    * @return connectionState
    */
@@ -237,7 +237,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "connected".
    * @param connectionState set the connectionState.
    */
@@ -248,7 +248,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cpuHz
    */
@@ -259,7 +259,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cpuHz set the cpuHz.
    */
@@ -270,7 +270,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maintenanceMode
    */
@@ -281,7 +281,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maintenanceMode set the maintenanceMode.
    */
@@ -292,7 +292,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return managedObjectId
    */
@@ -303,7 +303,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param managedObjectId set the managedObjectId.
    */
@@ -314,7 +314,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mem
    */
@@ -325,7 +325,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mem set the mem.
    */
@@ -336,7 +336,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mgmtPortgroup
    */
@@ -347,7 +347,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mgmtPortgroup set the mgmtPortgroup.
    */
@@ -358,7 +358,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -369,7 +369,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -380,7 +380,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkUuids
    */
@@ -391,7 +391,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the setter method. this will set the networkUuids
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkUuids
    */
@@ -402,7 +402,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the setter method this will set the networkUuids
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkUuids
    */
@@ -418,7 +418,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numCpuCores
    */
@@ -429,7 +429,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numCpuCores set the numCpuCores.
    */
@@ -440,7 +440,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numCpuPackages
    */
@@ -451,7 +451,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numCpuPackages set the numCpuPackages.
    */
@@ -462,7 +462,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numCpuThreads
    */
@@ -473,7 +473,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numCpuThreads set the numCpuThreads.
    */
@@ -484,7 +484,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pnics
    */
@@ -495,7 +495,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the setter method. this will set the pnics
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pnics
    */
@@ -506,7 +506,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the setter method this will set the pnics
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pnics
    */
@@ -522,7 +522,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return powerstate
    */
@@ -533,7 +533,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param powerstate set the powerstate.
    */
@@ -544,7 +544,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return quarantineStartTs
    */
@@ -555,7 +555,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param quarantineStartTs set the quarantineStartTs.
    */
@@ -566,7 +566,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return quarantined
    */
@@ -577,7 +577,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param quarantined set the quarantined.
    */
@@ -588,7 +588,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @return quarantinedPeriods
    */
@@ -599,7 +599,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @param quarantinedPeriods set the quarantinedPeriods.
    */
@@ -610,7 +610,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seFailCnt
    */
@@ -621,7 +621,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seFailCnt set the seFailCnt.
    */
@@ -632,7 +632,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seSuccessCnt
    */
@@ -643,7 +643,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seSuccessCnt set the seSuccessCnt.
    */
@@ -655,7 +655,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -667,7 +667,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
@@ -680,7 +680,7 @@ public class VIMgrHostRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
    * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
@@ -693,7 +693,7 @@ public class VIMgrHostRuntime extends AviRestResource {
    * This is the setter method to the attribute.
    * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
    * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */
@@ -723,7 +723,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -734,7 +734,7 @@ public class VIMgrHostRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
@@ -746,7 +746,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type vimgrvmruntime.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vmRefs
    */
@@ -758,7 +758,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the setter method. this will set the vmRefs
    * It is a reference to an object of type vimgrvmruntime.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vmRefs
    */
@@ -770,7 +770,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the setter method this will set the vmRefs
    * It is a reference to an object of type vimgrvmruntime.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vmRefs
    */

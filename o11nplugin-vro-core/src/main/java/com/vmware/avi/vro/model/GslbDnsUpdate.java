@@ -56,7 +56,7 @@ public class GslbDnsUpdate extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clearOnMaxRetries
    */
@@ -67,7 +67,7 @@ public class GslbDnsUpdate extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clearOnMaxRetries set the clearOnMaxRetries.
    */
@@ -80,7 +80,7 @@ public class GslbDnsUpdate extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of geo db profiles associated with this dns vs.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbGeoDbProfileUuids
    */
@@ -93,7 +93,7 @@ public class GslbDnsUpdate extends AviRestResource {
    * This is the setter method. this will set the gslbGeoDbProfileUuids
    * List of geo db profiles associated with this dns vs.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbGeoDbProfileUuids
    */
@@ -106,7 +106,7 @@ public class GslbDnsUpdate extends AviRestResource {
    * This is the setter method this will set the gslbGeoDbProfileUuids
    * List of geo db profiles associated with this dns vs.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbGeoDbProfileUuids
    */
@@ -124,7 +124,7 @@ public class GslbDnsUpdate extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of gslb services associated with the dns vs.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbServiceUuids
    */
@@ -137,7 +137,7 @@ public class GslbDnsUpdate extends AviRestResource {
    * This is the setter method. this will set the gslbServiceUuids
    * List of gslb services associated with the dns vs.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbServiceUuids
    */
@@ -150,7 +150,7 @@ public class GslbDnsUpdate extends AviRestResource {
    * This is the setter method this will set the gslbServiceUuids
    * List of gslb services associated with the dns vs.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbServiceUuids
    */
@@ -168,7 +168,7 @@ public class GslbDnsUpdate extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Gslb object associated with the dns vs.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbUuids
    */
@@ -181,7 +181,7 @@ public class GslbDnsUpdate extends AviRestResource {
    * This is the setter method. this will set the gslbUuids
    * Gslb object associated with the dns vs.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbUuids
    */
@@ -194,7 +194,7 @@ public class GslbDnsUpdate extends AviRestResource {
    * This is the setter method this will set the gslbUuids
    * Gslb object associated with the dns vs.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbUuids
    */
@@ -212,7 +212,7 @@ public class GslbDnsUpdate extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Gslb, gslbservice objects that is pushed on a per dns basis.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return objInfo
    */
@@ -225,7 +225,7 @@ public class GslbDnsUpdate extends AviRestResource {
    * This is the setter method. this will set the objInfo
    * Gslb, gslbservice objects that is pushed on a per dns basis.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return objInfo
    */
@@ -238,7 +238,7 @@ public class GslbDnsUpdate extends AviRestResource {
    * This is the setter method this will set the objInfo
    * Gslb, gslbservice objects that is pushed on a per dns basis.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return objInfo
    */
@@ -254,7 +254,7 @@ public class GslbDnsUpdate extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sendInterval
    */
@@ -265,7 +265,7 @@ public class GslbDnsUpdate extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sendInterval set the sendInterval.
    */
@@ -276,7 +276,7 @@ public class GslbDnsUpdate extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -287,7 +287,7 @@ public class GslbDnsUpdate extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */

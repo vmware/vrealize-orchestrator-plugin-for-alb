@@ -99,7 +99,7 @@ public class PoolGroup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Checksum of cloud configuration for poolgroup.
    * Internally set by cloud connector.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudConfigCksum
    */
@@ -112,7 +112,7 @@ public class PoolGroup extends AviRestResource {
    * This is the setter method to the attribute.
    * Checksum of cloud configuration for poolgroup.
    * Internally set by cloud connector.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudConfigCksum set the cloudConfigCksum.
    */
@@ -124,7 +124,7 @@ public class PoolGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type cloud.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudRef
    */
@@ -136,7 +136,7 @@ public class PoolGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type cloud.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudRef set the cloudRef.
    */
@@ -148,7 +148,7 @@ public class PoolGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the user who created the object.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return createdBy
    */
@@ -160,7 +160,7 @@ public class PoolGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the user who created the object.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param createdBy set the createdBy.
    */
@@ -173,7 +173,7 @@ public class PoolGroup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Deactivate primary pool for selection when down until it is activated by user via clear poolgroup command.
    * Field introduced in 20.1.7, 21.1.2, 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return deactivatePrimaryPoolOnDown
    */
@@ -186,7 +186,7 @@ public class PoolGroup extends AviRestResource {
    * This is the setter method to the attribute.
    * Deactivate primary pool for selection when down until it is activated by user via clear poolgroup command.
    * Field introduced in 20.1.7, 21.1.2, 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param deactivatePrimaryPoolOnDown set the deactivatePrimaryPoolOnDown.
    */
@@ -199,7 +199,7 @@ public class PoolGroup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * When setup autoscale manager will automatically promote new pools into production when deployment goals are met.
    * It is a reference to an object of type poolgroupdeploymentpolicy.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return deploymentPolicyRef
    */
@@ -212,7 +212,7 @@ public class PoolGroup extends AviRestResource {
    * This is the setter method to the attribute.
    * When setup autoscale manager will automatically promote new pools into production when deployment goals are met.
    * It is a reference to an object of type poolgroupdeploymentpolicy.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param deploymentPolicyRef set the deploymentPolicyRef.
    */
@@ -224,7 +224,7 @@ public class PoolGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Description of pool group.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
@@ -236,7 +236,7 @@ public class PoolGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Description of pool group.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
@@ -249,7 +249,7 @@ public class PoolGroup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable an action - close connection, http redirect, or local http response - when a pool group failure happens.
    * By default, a connection will be closed, in case the pool group experiences a failure.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return failAction
    */
@@ -262,7 +262,7 @@ public class PoolGroup extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable an action - close connection, http redirect, or local http response - when a pool group failure happens.
    * By default, a connection will be closed, in case the pool group experiences a failure.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param failAction set the failAction.
    */
@@ -275,7 +275,7 @@ public class PoolGroup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Whether an implicit set of priority labels is generated.
    * Field introduced in 17.1.9,17.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return implicitPriorityLabels
    */
@@ -288,7 +288,7 @@ public class PoolGroup extends AviRestResource {
    * This is the setter method to the attribute.
    * Whether an implicit set of priority labels is generated.
    * Field introduced in 17.1.9,17.2.3.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param implicitPriorityLabels set the implicitPriorityLabels.
    */
@@ -301,8 +301,7 @@ public class PoolGroup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -315,8 +314,7 @@ public class PoolGroup extends AviRestResource {
    * This is the setter method. this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -329,8 +327,7 @@ public class PoolGroup extends AviRestResource {
    * This is the setter method this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -347,7 +344,7 @@ public class PoolGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * List of pool group members object of type poolgroupmember.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return members
    */
@@ -359,7 +356,7 @@ public class PoolGroup extends AviRestResource {
   /**
    * This is the setter method. this will set the members
    * List of pool group members object of type poolgroupmember.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return members
    */
@@ -371,7 +368,7 @@ public class PoolGroup extends AviRestResource {
   /**
    * This is the setter method this will set the members
    * List of pool group members object of type poolgroupmember.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return members
    */
@@ -390,8 +387,8 @@ public class PoolGroup extends AviRestResource {
    * The minimum number of servers to distribute traffic to.
    * Allowed values are 1-65535.
    * Special values are 0 - disable.
-   * Allowed in enterprise edition with any value, essentials edition(allowed values- 0), basic edition(allowed values- 0), enterprise with cloud
-   * services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed in essentials (allowed values- 0), basic (allowed values- 0) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return minServers
    */
@@ -405,8 +402,8 @@ public class PoolGroup extends AviRestResource {
    * The minimum number of servers to distribute traffic to.
    * Allowed values are 1-65535.
    * Special values are 0 - disable.
-   * Allowed in enterprise edition with any value, essentials edition(allowed values- 0), basic edition(allowed values- 0), enterprise with cloud
-   * services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed in essentials (allowed values- 0), basic (allowed values- 0) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param minServers set the minServers.
    */
@@ -418,7 +415,7 @@ public class PoolGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The name of the pool group.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -430,7 +427,7 @@ public class PoolGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The name of the pool group.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -444,7 +441,7 @@ public class PoolGroup extends AviRestResource {
    * Uuid of the priority labels.
    * If not provided, pool group member priority label will be interpreted as a number with a larger number considered higher priority.
    * It is a reference to an object of type prioritylabels.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return priorityLabelsRef
    */
@@ -458,7 +455,7 @@ public class PoolGroup extends AviRestResource {
    * Uuid of the priority labels.
    * If not provided, pool group member priority label will be interpreted as a number with a larger number considered higher priority.
    * It is a reference to an object of type prioritylabels.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param priorityLabelsRef set the priorityLabelsRef.
    */
@@ -473,7 +470,7 @@ public class PoolGroup extends AviRestResource {
    * In openshift/kubernetes environments, app metadata info is stored.
    * Any user input to this field will be overwritten by avi vantage.
    * Field introduced in 17.2.14,18.1.5,18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceMetadata
    */
@@ -488,7 +485,7 @@ public class PoolGroup extends AviRestResource {
    * In openshift/kubernetes environments, app metadata info is stored.
    * Any user input to this field will be overwritten by avi vantage.
    * Field introduced in 17.2.14,18.1.5,18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serviceMetadata set the serviceMetadata.
    */
@@ -500,7 +497,7 @@ public class PoolGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -512,7 +509,7 @@ public class PoolGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
@@ -543,7 +540,7 @@ public class PoolGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the pool group.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -555,7 +552,7 @@ public class PoolGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the pool group.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */

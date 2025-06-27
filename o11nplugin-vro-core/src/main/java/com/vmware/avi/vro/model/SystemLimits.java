@@ -52,7 +52,7 @@ public class SystemLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * System limits for the entire controller cluster.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerLimits
    */
@@ -65,7 +65,7 @@ public class SystemLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * System limits for the entire controller cluster.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param controllerLimits set the controllerLimits.
    */
@@ -78,7 +78,7 @@ public class SystemLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Possible controller sizes.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerSizes
    */
@@ -91,7 +91,7 @@ public class SystemLimits extends AviRestResource {
    * This is the setter method. this will set the controllerSizes
    * Possible controller sizes.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerSizes
    */
@@ -104,7 +104,7 @@ public class SystemLimits extends AviRestResource {
    * This is the setter method this will set the controllerSizes
    * Possible controller sizes.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerSizes
    */
@@ -122,7 +122,7 @@ public class SystemLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * System limits that apply to a serviceengine.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceengineLimits
    */
@@ -135,7 +135,7 @@ public class SystemLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * System limits that apply to a serviceengine.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serviceengineLimits set the serviceengineLimits.
    */
@@ -167,7 +167,7 @@ public class SystemLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid for the system limits object.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -180,7 +180,7 @@ public class SystemLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid for the system limits object.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */

@@ -54,7 +54,7 @@ public class GCPOneArmMode extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Service engine data network name.
    * Field introduced in 18.2.2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dataVpcNetworkName
    */
@@ -67,7 +67,7 @@ public class GCPOneArmMode extends AviRestResource {
    * This is the setter method to the attribute.
    * Service engine data network name.
    * Field introduced in 18.2.2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dataVpcNetworkName set the dataVpcNetworkName.
    */
@@ -81,7 +81,7 @@ public class GCPOneArmMode extends AviRestResource {
    * Project id of the service engine data network.
    * By default, service engine project id will be used.
    * Field introduced in 18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dataVpcProjectId
    */
@@ -95,7 +95,7 @@ public class GCPOneArmMode extends AviRestResource {
    * Project id of the service engine data network.
    * By default, service engine project id will be used.
    * Field introduced in 18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dataVpcProjectId set the dataVpcProjectId.
    */
@@ -108,7 +108,7 @@ public class GCPOneArmMode extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Service engine data network subnet name.
    * Field introduced in 18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dataVpcSubnetName
    */
@@ -121,7 +121,7 @@ public class GCPOneArmMode extends AviRestResource {
    * This is the setter method to the attribute.
    * Service engine data network subnet name.
    * Field introduced in 18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dataVpcSubnetName set the dataVpcSubnetName.
    */
@@ -134,7 +134,7 @@ public class GCPOneArmMode extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Service engine management network name.
    * Field introduced in 18.2.2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return managementVpcNetworkName
    */
@@ -147,7 +147,7 @@ public class GCPOneArmMode extends AviRestResource {
    * This is the setter method to the attribute.
    * Service engine management network name.
    * Field introduced in 18.2.2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param managementVpcNetworkName set the managementVpcNetworkName.
    */
@@ -161,7 +161,7 @@ public class GCPOneArmMode extends AviRestResource {
    * Project id of the service engine management network.
    * By default, service engine project id will be used.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return managementVpcProjectId
    */
@@ -175,7 +175,7 @@ public class GCPOneArmMode extends AviRestResource {
    * Project id of the service engine management network.
    * By default, service engine project id will be used.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param managementVpcProjectId set the managementVpcProjectId.
    */
@@ -188,7 +188,7 @@ public class GCPOneArmMode extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Service engine management network subnet name.
    * Field introduced in 18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return managementVpcSubnetName
    */
@@ -201,7 +201,7 @@ public class GCPOneArmMode extends AviRestResource {
    * This is the setter method to the attribute.
    * Service engine management network subnet name.
    * Field introduced in 18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param managementVpcSubnetName set the managementVpcSubnetName.
    */

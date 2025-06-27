@@ -36,7 +36,7 @@ public class UDPProxyProfile extends AviRestResource {
    * Allowed values are 2-3600.
    * Field introduced in 17.2.8, 18.1.3, 18.2.1.
    * Unit is sec.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return sessionIdleTimeout
    */
@@ -51,7 +51,7 @@ public class UDPProxyProfile extends AviRestResource {
    * Allowed values are 2-3600.
    * Field introduced in 17.2.8, 18.1.3, 18.2.1.
    * Unit is sec.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param sessionIdleTimeout set the sessionIdleTimeout.
    */

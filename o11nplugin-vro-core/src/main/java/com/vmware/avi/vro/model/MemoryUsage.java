@@ -24,6 +24,10 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class MemoryUsage extends AviRestResource {
+    @JsonProperty("available")
+    @JsonInclude(Include.NON_NULL)
+    private Integer available;
+
     @JsonProperty("free")
     @JsonInclude(Include.NON_NULL)
     private Integer free;
@@ -36,7 +40,33 @@ public class MemoryUsage extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Available memory of the node.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return available
+   */
+  @VsoMethod
+  public Integer getAvailable() {
+    return available;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Available memory of the node.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param available set the available.
+   */
+  @VsoMethod
+  public void setAvailable(Integer  available) {
+    this.available = available;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return free
    */
@@ -47,7 +77,7 @@ public class MemoryUsage extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param free set the free.
    */
@@ -58,7 +88,7 @@ public class MemoryUsage extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return total
    */
@@ -69,7 +99,7 @@ public class MemoryUsage extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param total set the total.
    */
@@ -90,14 +120,16 @@ public boolean equals(java.lang.Object o) {
   }
   MemoryUsage objMemoryUsage = (MemoryUsage) o;
   return   Objects.equals(this.total, objMemoryUsage.total)&&
-  Objects.equals(this.free, objMemoryUsage.free);
+  Objects.equals(this.free, objMemoryUsage.free)&&
+  Objects.equals(this.available, objMemoryUsage.available);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class MemoryUsage {\n");
-      sb.append("    free: ").append(toIndentedString(free)).append("\n");
+      sb.append("    available: ").append(toIndentedString(available)).append("\n");
+        sb.append("    free: ").append(toIndentedString(free)).append("\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
       sb.append("}");
   return sb.toString();

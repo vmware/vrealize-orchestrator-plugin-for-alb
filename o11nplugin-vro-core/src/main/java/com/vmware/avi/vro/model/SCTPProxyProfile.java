@@ -64,7 +64,7 @@ public class SCTPProxyProfile extends AviRestResource {
    * Allowed values are 60-3600.
    * Field introduced in 22.1.3.
    * Unit is sec.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return cookieExpirationTimeout
    */
@@ -79,7 +79,7 @@ public class SCTPProxyProfile extends AviRestResource {
    * Allowed values are 60-3600.
    * Field introduced in 22.1.3.
    * Unit is sec.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @param cookieExpirationTimeout set the cookieExpirationTimeout.
    */
@@ -94,7 +94,7 @@ public class SCTPProxyProfile extends AviRestResource {
    * Allowed values are 30-247483647.
    * Field introduced in 22.1.3.
    * Unit is sec.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @return heartbeatInterval
    */
@@ -109,7 +109,7 @@ public class SCTPProxyProfile extends AviRestResource {
    * Allowed values are 30-247483647.
    * Field introduced in 22.1.3.
    * Unit is sec.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @param heartbeatInterval set the heartbeatInterval.
    */
@@ -125,7 +125,7 @@ public class SCTPProxyProfile extends AviRestResource {
    * Allowed values are 0-247483647.
    * Field introduced in 22.1.3.
    * Unit is sec.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return idleTimeout
    */
@@ -141,7 +141,7 @@ public class SCTPProxyProfile extends AviRestResource {
    * Allowed values are 0-247483647.
    * Field introduced in 22.1.3.
    * Unit is sec.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param idleTimeout set the idleTimeout.
    */
@@ -155,7 +155,7 @@ public class SCTPProxyProfile extends AviRestResource {
    * Sctp maximum retransmissions for association.
    * Allowed values are 1-247483647.
    * Field introduced in 22.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return maxRetransmissionsAssociation
    */
@@ -169,7 +169,7 @@ public class SCTPProxyProfile extends AviRestResource {
    * Sctp maximum retransmissions for association.
    * Allowed values are 1-247483647.
    * Field introduced in 22.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param maxRetransmissionsAssociation set the maxRetransmissionsAssociation.
    */
@@ -183,7 +183,7 @@ public class SCTPProxyProfile extends AviRestResource {
    * Sctp maximum retransmissions for init chunks.
    * Allowed values are 1-247483647.
    * Field introduced in 22.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 8.
    * @return maxRetransmissionsInitChunks
    */
@@ -197,7 +197,7 @@ public class SCTPProxyProfile extends AviRestResource {
    * Sctp maximum retransmissions for init chunks.
    * Allowed values are 1-247483647.
    * Field introduced in 22.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 8.
    * @param maxRetransmissionsInitChunks set the maxRetransmissionsInitChunks.
    */
@@ -211,7 +211,7 @@ public class SCTPProxyProfile extends AviRestResource {
    * Number of incoming sctp streams.
    * Allowed values are 1-100.
    * Field introduced in 22.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return numberOfStreams
    */
@@ -225,7 +225,7 @@ public class SCTPProxyProfile extends AviRestResource {
    * Number of incoming sctp streams.
    * Allowed values are 1-100.
    * Field introduced in 22.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param numberOfStreams set the numberOfStreams.
    */
@@ -240,7 +240,7 @@ public class SCTPProxyProfile extends AviRestResource {
    * Allowed values are 2-65536.
    * Field introduced in 22.1.3.
    * Unit is kb.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
    * @return receiveWindow
    */
@@ -255,7 +255,7 @@ public class SCTPProxyProfile extends AviRestResource {
    * Allowed values are 2-65536.
    * Field introduced in 22.1.3.
    * Unit is kb.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
    * @param receiveWindow set the receiveWindow.
    */
@@ -271,7 +271,7 @@ public class SCTPProxyProfile extends AviRestResource {
    * Allowed values are 0-247483647.
    * Field introduced in 22.1.3.
    * Unit is sec.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return resetTimeout
    */
@@ -287,7 +287,7 @@ public class SCTPProxyProfile extends AviRestResource {
    * Allowed values are 0-247483647.
    * Field introduced in 22.1.3.
    * Unit is sec.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param resetTimeout set the resetTimeout.
    */

@@ -39,7 +39,7 @@ public class SamlAuthnRuleMatch extends AviRestResource {
    * Name of the executed saml authentication rule action.
    * Enum options - SKIP_AUTHENTICATION, USE_DEFAULT_AUTHENTICATION.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return samlAuthnMatchedRuleAction
    */
@@ -53,7 +53,7 @@ public class SamlAuthnRuleMatch extends AviRestResource {
    * Name of the executed saml authentication rule action.
    * Enum options - SKIP_AUTHENTICATION, USE_DEFAULT_AUTHENTICATION.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param samlAuthnMatchedRuleAction set the samlAuthnMatchedRuleAction.
    */
@@ -66,7 +66,7 @@ public class SamlAuthnRuleMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the matched saml authentication rule.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return samlAuthnMatchedRuleName
    */
@@ -79,7 +79,7 @@ public class SamlAuthnRuleMatch extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the matched saml authentication rule.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param samlAuthnMatchedRuleName set the samlAuthnMatchedRuleName.
    */

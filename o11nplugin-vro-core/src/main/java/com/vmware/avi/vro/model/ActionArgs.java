@@ -12,80 +12,78 @@ import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
 
 /**
- * The Action is a POJO class extends AviRestResource that used for creating
- * Action.
+ * The ActionArgs is a POJO class extends AviRestResource that used for creating
+ * ActionArgs.
  *
  * @version 1.0
  * @since 
  *
  */
-@VsoObject(create = false, name = "Action")
-@VsoFinder(name = Constants.FINDER_VRO_ACTION)
+@VsoObject(create = false, name = "ActionArgs")
+@VsoFinder(name = Constants.FINDER_VRO_ACTIONARGS)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class Action extends AviRestResource {
-    @JsonProperty("data")
+public class ActionArgs extends AviRestResource {
+    @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String data;
+    private String name;
 
-    @JsonProperty("url_ref")
+    @JsonProperty("value")
     @JsonInclude(Include.NON_NULL)
-    private String urlRef;
+    private String value;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
-   * A description of the change to this object.
-   * This field is opaque to the caller, it should not be interpreted or modified.
-   * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Name of the argument.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return data
+   * @return name
    */
   @VsoMethod
-  public String getData() {
-    return data;
+  public String getName() {
+    return name;
   }
 
   /**
    * This is the setter method to the attribute.
-   * A description of the change to this object.
-   * This field is opaque to the caller, it should not be interpreted or modified.
-   * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Name of the argument.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param data set the data.
+   * @param name set the name.
    */
   @VsoMethod
-  public void setData(String  data) {
-    this.data = data;
+  public void setName(String  name) {
+    this.name = name;
   }
 
   /**
    * This is the getter method this will return the attribute value.
-   * The referenced object on which this action will be applied.
-   * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Value for the argument.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return urlRef
+   * @return value
    */
   @VsoMethod
-  public String getUrlRef() {
-    return urlRef;
+  public String getValue() {
+    return value;
   }
 
   /**
    * This is the setter method to the attribute.
-   * The referenced object on which this action will be applied.
-   * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Value for the argument.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param urlRef set the urlRef.
+   * @param value set the value.
    */
   @VsoMethod
-  public void setUrlRef(String  urlRef) {
-    this.urlRef = urlRef;
+  public void setValue(String  value) {
+    this.value = value;
   }
 
 
@@ -98,17 +96,17 @@ public boolean equals(java.lang.Object o) {
   if (o == null || getClass() != o.getClass()) {
     return false;
   }
-  Action objAction = (Action) o;
-  return   Objects.equals(this.urlRef, objAction.urlRef)&&
-  Objects.equals(this.data, objAction.data);
+  ActionArgs objActionArgs = (ActionArgs) o;
+  return   Objects.equals(this.name, objActionArgs.name)&&
+  Objects.equals(this.value, objActionArgs.value);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
-  sb.append("class Action {\n");
-      sb.append("    data: ").append(toIndentedString(data)).append("\n");
-        sb.append("    urlRef: ").append(toIndentedString(urlRef)).append("\n");
+  sb.append("class ActionArgs {\n");
+      sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    value: ").append(toIndentedString(value)).append("\n");
       sb.append("}");
   return sb.toString();
 }

@@ -37,7 +37,7 @@ public class NetworkSecurityPolicyActionRLParam extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Maximum number of connections or requests or packets to be rate limited instantaneously.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return burstSize
    */
@@ -49,7 +49,7 @@ public class NetworkSecurityPolicyActionRLParam extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Maximum number of connections or requests or packets to be rate limited instantaneously.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param burstSize set the burstSize.
    */
@@ -62,7 +62,7 @@ public class NetworkSecurityPolicyActionRLParam extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of connections or requests or packets per second.
    * Allowed values are 1-4294967295.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxRate
    */
@@ -75,7 +75,7 @@ public class NetworkSecurityPolicyActionRLParam extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of connections or requests or packets per second.
    * Allowed values are 1-4294967295.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxRate set the maxRate.
    */

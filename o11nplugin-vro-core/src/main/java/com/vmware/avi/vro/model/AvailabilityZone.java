@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.AZDatastore;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -24,6 +25,14 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AvailabilityZone extends AviRestResource {
+    @JsonProperty("az_clusters")
+    @JsonInclude(Include.NON_NULL)
+    private List<AZCluster> azClusters;
+
+    @JsonProperty("az_datastore")
+    @JsonInclude(Include.NON_NULL)
+    private AZDatastore azDatastore;
+
     @JsonProperty("cloud_ref")
     @JsonInclude(Include.NON_NULL)
     private String cloudRef;
@@ -52,10 +61,80 @@ public class AvailabilityZone extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Group of clusters belongs to the az.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return azClusters
+   */
+  @VsoMethod
+  public List<AZCluster> getAzClusters() {
+    return azClusters;
+  }
+
+  /**
+   * This is the setter method. this will set the azClusters
+   * Group of clusters belongs to the az.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return azClusters
+   */
+  @VsoMethod
+  public void setAzClusters(List<AZCluster>  azClusters) {
+    this.azClusters = azClusters;
+  }
+
+  /**
+   * This is the setter method this will set the azClusters
+   * Group of clusters belongs to the az.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return azClusters
+   */
+  @VsoMethod
+  public AvailabilityZone addAzClustersItem(AZCluster azClustersItem) {
+    if (this.azClusters == null) {
+      this.azClusters = new ArrayList<AZCluster>();
+    }
+    this.azClusters.add(azClustersItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Datastores associated with the az.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return azDatastore
+   */
+  @VsoMethod
+  public AZDatastore getAzDatastore() {
+    return azDatastore;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Datastores associated with the az.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param azDatastore set the azDatastore.
+   */
+  @VsoMethod
+  public void setAzDatastore(AZDatastore azDatastore) {
+    this.azDatastore = azDatastore;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Availability zone belongs to cloud.
    * It is a reference to an object of type cloud.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudRef
    */
@@ -69,7 +148,7 @@ public class AvailabilityZone extends AviRestResource {
    * Availability zone belongs to cloud.
    * It is a reference to an object of type cloud.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudRef set the cloudRef.
    */
@@ -82,7 +161,7 @@ public class AvailabilityZone extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Availabilty zone where vcenter list belongs to.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -95,7 +174,7 @@ public class AvailabilityZone extends AviRestResource {
    * This is the setter method to the attribute.
    * Availabilty zone where vcenter list belongs to.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -109,7 +188,7 @@ public class AvailabilityZone extends AviRestResource {
    * Availabilityzone belongs to tenant.
    * It is a reference to an object of type tenant.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -123,7 +202,7 @@ public class AvailabilityZone extends AviRestResource {
    * Availabilityzone belongs to tenant.
    * It is a reference to an object of type tenant.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
@@ -155,7 +234,7 @@ public class AvailabilityZone extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Availability zone config uuid.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -168,7 +247,7 @@ public class AvailabilityZone extends AviRestResource {
    * This is the setter method to the attribute.
    * Availability zone config uuid.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
@@ -181,10 +260,10 @@ public class AvailabilityZone extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Group of vcenter list belong to availabilty zone.
    * It is a reference to an object of type vcenterserver.
+   * Field deprecated in 31.1.1.
    * Field introduced in 20.1.1.
    * Minimum of 1 items required.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * @return vcenterRefs
    */
   @VsoMethod
@@ -196,10 +275,10 @@ public class AvailabilityZone extends AviRestResource {
    * This is the setter method. this will set the vcenterRefs
    * Group of vcenter list belong to availabilty zone.
    * It is a reference to an object of type vcenterserver.
+   * Field deprecated in 31.1.1.
    * Field introduced in 20.1.1.
    * Minimum of 1 items required.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * @return vcenterRefs
    */
   @VsoMethod
@@ -211,10 +290,10 @@ public class AvailabilityZone extends AviRestResource {
    * This is the setter method this will set the vcenterRefs
    * Group of vcenter list belong to availabilty zone.
    * It is a reference to an object of type vcenterserver.
+   * Field deprecated in 31.1.1.
    * Field introduced in 20.1.1.
    * Minimum of 1 items required.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * @return vcenterRefs
    */
   @VsoMethod
@@ -245,14 +324,18 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.name, objAvailabilityZone.name)&&
   Objects.equals(this.vcenterRefs, objAvailabilityZone.vcenterRefs)&&
   Objects.equals(this.tenantRef, objAvailabilityZone.tenantRef)&&
-  Objects.equals(this.cloudRef, objAvailabilityZone.cloudRef);
+  Objects.equals(this.cloudRef, objAvailabilityZone.cloudRef)&&
+  Objects.equals(this.azClusters, objAvailabilityZone.azClusters)&&
+  Objects.equals(this.azDatastore, objAvailabilityZone.azDatastore);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class AvailabilityZone {\n");
-      sb.append("    cloudRef: ").append(toIndentedString(cloudRef)).append("\n");
+      sb.append("    azClusters: ").append(toIndentedString(azClusters)).append("\n");
+        sb.append("    azDatastore: ").append(toIndentedString(azDatastore)).append("\n");
+        sb.append("    cloudRef: ").append(toIndentedString(cloudRef)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
             sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");

@@ -58,6 +58,10 @@ public class TaskJournal extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private JournalSummary summary;
 
+    @JsonProperty("tasks")
+    @JsonInclude(Include.NON_NULL)
+    private List<JournalTask> tasks;
+
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
     private String tenantRef;
@@ -70,13 +74,17 @@ public class TaskJournal extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String uuid;
 
+    @JsonProperty("warnings")
+    @JsonInclude(Include.NON_NULL)
+    private List<JournalError> warnings;
+
 
 
   /**
    * This is the getter method this will return the attribute value.
    * List of errors in the process.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errors
    */
@@ -89,7 +97,7 @@ public class TaskJournal extends AviRestResource {
    * This is the setter method. this will set the errors
    * List of errors in the process.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errors
    */
@@ -102,7 +110,7 @@ public class TaskJournal extends AviRestResource {
    * This is the setter method this will set the errors
    * List of errors in the process.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errors
    */
@@ -121,7 +129,7 @@ public class TaskJournal extends AviRestResource {
    * Image uuid for identifying the current base image.
    * It is a reference to an object of type image.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return imageRef
    */
@@ -135,7 +143,7 @@ public class TaskJournal extends AviRestResource {
    * Image uuid for identifying the current base image.
    * It is a reference to an object of type image.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param imageRef set the imageRef.
    */
@@ -148,7 +156,7 @@ public class TaskJournal extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Detailed information of journal.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return info
    */
@@ -161,7 +169,7 @@ public class TaskJournal extends AviRestResource {
    * This is the setter method to the attribute.
    * Detailed information of journal.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param info set the info.
    */
@@ -174,7 +182,7 @@ public class TaskJournal extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name for the task journal.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -187,7 +195,7 @@ public class TaskJournal extends AviRestResource {
    * This is the setter method to the attribute.
    * Name for the task journal.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -201,7 +209,7 @@ public class TaskJournal extends AviRestResource {
    * Cloud that this object belongs to.
    * It is a reference to an object of type cloud.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return objCloudRef
    */
@@ -215,7 +223,7 @@ public class TaskJournal extends AviRestResource {
    * Cloud that this object belongs to.
    * It is a reference to an object of type cloud.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param objCloudRef set the objCloudRef.
    */
@@ -228,7 +236,7 @@ public class TaskJournal extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Operation for which the task journal created.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return operation
    */
@@ -241,7 +249,7 @@ public class TaskJournal extends AviRestResource {
    * This is the setter method to the attribute.
    * Operation for which the task journal created.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param operation set the operation.
    */
@@ -255,7 +263,7 @@ public class TaskJournal extends AviRestResource {
    * Image uuid for identifying the current patch.
    * It is a reference to an object of type image.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return patchImageRef
    */
@@ -269,7 +277,7 @@ public class TaskJournal extends AviRestResource {
    * Image uuid for identifying the current patch.
    * It is a reference to an object of type image.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param patchImageRef set the patchImageRef.
    */
@@ -282,7 +290,7 @@ public class TaskJournal extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Summary of journal.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return summary
    */
@@ -295,7 +303,7 @@ public class TaskJournal extends AviRestResource {
    * This is the setter method to the attribute.
    * Summary of journal.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param summary set the summary.
    */
@@ -306,10 +314,57 @@ public class TaskJournal extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * List of all the tasks executed with details.
+   * For example, details of tasks to be executed for upgrade filecopy.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return tasks
+   */
+  @VsoMethod
+  public List<JournalTask> getTasks() {
+    return tasks;
+  }
+
+  /**
+   * This is the setter method. this will set the tasks
+   * List of all the tasks executed with details.
+   * For example, details of tasks to be executed for upgrade filecopy.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return tasks
+   */
+  @VsoMethod
+  public void setTasks(List<JournalTask>  tasks) {
+    this.tasks = tasks;
+  }
+
+  /**
+   * This is the setter method this will set the tasks
+   * List of all the tasks executed with details.
+   * For example, details of tasks to be executed for upgrade filecopy.
+   * Field introduced in 31.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return tasks
+   */
+  @VsoMethod
+  public TaskJournal addTasksItem(JournalTask tasksItem) {
+    if (this.tasks == null) {
+      this.tasks = new ArrayList<JournalTask>();
+    }
+    this.tasks.add(tasksItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Tenant uuid associated with the object.
    * It is a reference to an object of type tenant.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -323,7 +378,7 @@ public class TaskJournal extends AviRestResource {
    * Tenant uuid associated with the object.
    * It is a reference to an object of type tenant.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
@@ -355,7 +410,7 @@ public class TaskJournal extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid identifier for the task journal.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -368,7 +423,7 @@ public class TaskJournal extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid identifier for the task journal.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
@@ -376,6 +431,50 @@ public class TaskJournal extends AviRestResource {
   public void setUuid(String  uuid) {
     this.uuid = uuid;
   }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * List of warnings in the process.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return warnings
+   */
+  @VsoMethod
+  public List<JournalError> getWarnings() {
+    return warnings;
+  }
+
+  /**
+   * This is the setter method. this will set the warnings
+   * List of warnings in the process.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return warnings
+   */
+  @VsoMethod
+  public void setWarnings(List<JournalError>  warnings) {
+    this.warnings = warnings;
+  }
+
+  /**
+   * This is the setter method this will set the warnings
+   * List of warnings in the process.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return warnings
+   */
+  @VsoMethod
+  public TaskJournal addWarningsItem(JournalError warningsItem) {
+    if (this.warnings == null) {
+      this.warnings = new ArrayList<JournalError>();
+    }
+    this.warnings.add(warningsItem);
+    return this;
+  }
+
 
 
   public String getObjectID() {
@@ -395,11 +494,13 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.name, objTaskJournal.name)&&
   Objects.equals(this.summary, objTaskJournal.summary)&&
   Objects.equals(this.errors, objTaskJournal.errors)&&
+  Objects.equals(this.warnings, objTaskJournal.warnings)&&
   Objects.equals(this.info, objTaskJournal.info)&&
   Objects.equals(this.imageRef, objTaskJournal.imageRef)&&
   Objects.equals(this.patchImageRef, objTaskJournal.patchImageRef)&&
   Objects.equals(this.operation, objTaskJournal.operation)&&
   Objects.equals(this.objCloudRef, objTaskJournal.objCloudRef)&&
+  Objects.equals(this.tasks, objTaskJournal.tasks)&&
   Objects.equals(this.tenantRef, objTaskJournal.tenantRef);
 }
 
@@ -415,8 +516,10 @@ public String toString() {
         sb.append("    operation: ").append(toIndentedString(operation)).append("\n");
         sb.append("    patchImageRef: ").append(toIndentedString(patchImageRef)).append("\n");
         sb.append("    summary: ").append(toIndentedString(summary)).append("\n");
+        sb.append("    tasks: ").append(toIndentedString(tasks)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
             sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+        sb.append("    warnings: ").append(toIndentedString(warnings)).append("\n");
       sb.append("}");
   return sb.toString();
 }

@@ -42,7 +42,7 @@ public class URIInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Information about various params under a uri.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return paramInfo
    */
@@ -55,7 +55,7 @@ public class URIInfo extends AviRestResource {
    * This is the setter method. this will set the paramInfo
    * Information about various params under a uri.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return paramInfo
    */
@@ -68,7 +68,7 @@ public class URIInfo extends AviRestResource {
    * This is the setter method this will set the paramInfo
    * Information about various params under a uri.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return paramInfo
    */
@@ -86,7 +86,7 @@ public class URIInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total number of uri hits.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uriHits
    */
@@ -99,7 +99,7 @@ public class URIInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Total number of uri hits.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uriHits set the uriHits.
    */
@@ -112,7 +112,7 @@ public class URIInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uri name.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uriKey
    */
@@ -125,7 +125,7 @@ public class URIInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Uri name.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uriKey set the uriKey.
    */

@@ -47,7 +47,7 @@ public class IpAddrPort extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Hostname of server.
    * One of ip address or hostname should be set.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostname
    */
@@ -60,7 +60,7 @@ public class IpAddrPort extends AviRestResource {
    * This is the setter method to the attribute.
    * Hostname of server.
    * One of ip address or hostname should be set.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hostname set the hostname.
    */
@@ -73,7 +73,7 @@ public class IpAddrPort extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ip address of host.
    * One of ip address or hostname should be set.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip
    */
@@ -86,7 +86,7 @@ public class IpAddrPort extends AviRestResource {
    * This is the setter method to the attribute.
    * Ip address of host.
    * One of ip address or hostname should be set.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip set the ip.
    */
@@ -97,7 +97,7 @@ public class IpAddrPort extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -108,7 +108,7 @@ public class IpAddrPort extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -121,7 +121,7 @@ public class IpAddrPort extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Port number of server.
    * Allowed values are 1-65535.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return port
    */
@@ -134,7 +134,7 @@ public class IpAddrPort extends AviRestResource {
    * This is the setter method to the attribute.
    * Port number of server.
    * Allowed values are 1-65535.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param port set the port.
    */

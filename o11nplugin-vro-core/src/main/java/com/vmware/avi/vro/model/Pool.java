@@ -129,7 +129,11 @@ public class Pool extends AviRestResource {
 
     @JsonProperty("graceful_disable_timeout")
     @JsonInclude(Include.NON_NULL)
-    private Integer gracefulDisableTimeout = 1;
+    private Integer gracefulDisableTimeout;
+
+    @JsonProperty("graceful_disable_timeout_sec")
+    @JsonInclude(Include.NON_NULL)
+    private Integer gracefulDisableTimeoutSec = 60;
 
     @JsonProperty("graceful_hm_down_disable_timeout")
     @JsonInclude(Include.NON_NULL)
@@ -325,7 +329,7 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Determines analytics settings for the pool.
    * Field introduced in 18.1.5, 18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return analyticsPolicy
    */
@@ -338,7 +342,7 @@ public class Pool extends AviRestResource {
    * This is the setter method to the attribute.
    * Determines analytics settings for the pool.
    * Field introduced in 18.1.5, 18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param analyticsPolicy set the analyticsPolicy.
    */
@@ -352,7 +356,7 @@ public class Pool extends AviRestResource {
    * Specifies settings related to analytics.
    * It is a reference to an object of type analyticsprofile.
    * Field introduced in 18.1.4,18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return analyticsProfileRef
    */
@@ -366,7 +370,7 @@ public class Pool extends AviRestResource {
    * Specifies settings related to analytics.
    * It is a reference to an object of type analyticsprofile.
    * Field introduced in 18.1.4,18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param analyticsProfileRef set the analyticsProfileRef.
    */
@@ -383,9 +387,9 @@ public class Pool extends AviRestResource {
    * settings as well as http healthmonitors attached to pools.
    * Enum options - NON_DEFAULT_80_443, NEVER, ALWAYS.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, essentials edition(allowed values- never), basic edition(allowed values- never), enterprise with
-   * cloud services edition.
-   * Special default for essentials edition is never, basic edition is never, enterprise is non_default_80_443.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed in essentials (allowed values- never), basic (allowed values- never) edition.
+   * Special default for essentials edition is never, basic edition is never, enterprise edition is non_default_80_443.
    * @return appendPort
    */
   @VsoMethod
@@ -401,9 +405,9 @@ public class Pool extends AviRestResource {
    * settings as well as http healthmonitors attached to pools.
    * Enum options - NON_DEFAULT_80_443, NEVER, ALWAYS.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, essentials edition(allowed values- never), basic edition(allowed values- never), enterprise with
-   * cloud services edition.
-   * Special default for essentials edition is never, basic edition is never, enterprise is non_default_80_443.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed in essentials (allowed values- never), basic (allowed values- never) edition.
+   * Special default for essentials edition is never, basic edition is never, enterprise edition is non_default_80_443.
    * @param appendPort set the appendPort.
    */
   @VsoMethod
@@ -415,7 +419,7 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Persistence will ensure the same user sticks to the same server for a desired duration of time.
    * It is a reference to an object of type applicationpersistenceprofile.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return applicationPersistenceProfileRef
    */
@@ -428,7 +432,7 @@ public class Pool extends AviRestResource {
    * This is the setter method to the attribute.
    * Persistence will ensure the same user sticks to the same server for a desired duration of time.
    * It is a reference to an object of type applicationpersistenceprofile.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param applicationPersistenceProfileRef set the applicationPersistenceProfileRef.
    */
@@ -441,7 +445,7 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * If configured then avi will trigger orchestration of pool server creation and deletion.
    * It is a reference to an object of type autoscalelaunchconfig.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return autoscaleLaunchConfigRef
    */
@@ -454,7 +458,7 @@ public class Pool extends AviRestResource {
    * This is the setter method to the attribute.
    * If configured then avi will trigger orchestration of pool server creation and deletion.
    * It is a reference to an object of type autoscalelaunchconfig.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param autoscaleLaunchConfigRef set the autoscaleLaunchConfigRef.
    */
@@ -466,7 +470,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Network ids for the launch configuration.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return autoscaleNetworks
    */
@@ -478,7 +482,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the setter method. this will set the autoscaleNetworks
    * Network ids for the launch configuration.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return autoscaleNetworks
    */
@@ -490,7 +494,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the setter method this will set the autoscaleNetworks
    * Network ids for the launch configuration.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return autoscaleNetworks
    */
@@ -508,7 +512,7 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Reference to server autoscale policy.
    * It is a reference to an object of type serverautoscalepolicy.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return autoscalePolicyRef
    */
@@ -521,7 +525,7 @@ public class Pool extends AviRestResource {
    * This is the setter method to the attribute.
    * Reference to server autoscale policy.
    * It is a reference to an object of type serverautoscalepolicy.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param autoscalePolicyRef set the autoscalePolicyRef.
    */
@@ -533,8 +537,8 @@ public class Pool extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Inline estimation of capacity of servers.
-   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-   * cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return capacityEstimation
    */
@@ -546,8 +550,8 @@ public class Pool extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Inline estimation of capacity of servers.
-   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-   * cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param capacityEstimation set the capacityEstimation.
    */
@@ -562,8 +566,8 @@ public class Pool extends AviRestResource {
    * Allowed values are 1-5000.
    * Special values are 0 - automatic.
    * Unit is milliseconds.
-   * Allowed in enterprise edition with any value, essentials edition(allowed values- 0), basic edition(allowed values- 0), enterprise with cloud
-   * services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed in essentials (allowed values- 0), basic (allowed values- 0) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return capacityEstimationTtfbThresh
    */
@@ -578,8 +582,8 @@ public class Pool extends AviRestResource {
    * Allowed values are 1-5000.
    * Special values are 0 - automatic.
    * Unit is milliseconds.
-   * Allowed in enterprise edition with any value, essentials edition(allowed values- 0), basic edition(allowed values- 0), enterprise with cloud
-   * services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed in essentials (allowed values- 0), basic (allowed values- 0) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param capacityEstimationTtfbThresh set the capacityEstimationTtfbThresh.
    */
@@ -592,7 +596,7 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Checksum of cloud configuration for pool.
    * Internally set by cloud connector.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudConfigCksum
    */
@@ -605,7 +609,7 @@ public class Pool extends AviRestResource {
    * This is the setter method to the attribute.
    * Checksum of cloud configuration for pool.
    * Internally set by cloud connector.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudConfigCksum set the cloudConfigCksum.
    */
@@ -617,7 +621,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type cloud.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudRef
    */
@@ -629,7 +633,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type cloud.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudRef set the cloudRef.
    */
@@ -642,7 +646,7 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Connnection pool properties.
    * Field introduced in 18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return connPoolProperties
    */
@@ -655,7 +659,7 @@ public class Pool extends AviRestResource {
    * This is the setter method to the attribute.
    * Connnection pool properties.
    * Field introduced in 18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param connPoolProperties set the connPoolProperties.
    */
@@ -671,9 +675,9 @@ public class Pool extends AviRestResource {
    * Allowed values are 1-300.
    * Special values are 0 - immediate.
    * Unit is min.
-   * Allowed in enterprise edition with any value, essentials edition(allowed values- 0), basic edition(allowed values- 0), enterprise with cloud
-   * services edition.
-   * Special default for essentials edition is 0, basic edition is 0, enterprise is 10.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed in essentials (allowed values- 0), basic (allowed values- 0) edition.
+   * Special default for essentials edition is 0, basic edition is 0, enterprise edition is 10.
    * @return connectionRampDuration
    */
   @VsoMethod
@@ -688,9 +692,9 @@ public class Pool extends AviRestResource {
    * Allowed values are 1-300.
    * Special values are 0 - immediate.
    * Unit is min.
-   * Allowed in enterprise edition with any value, essentials edition(allowed values- 0), basic edition(allowed values- 0), enterprise with cloud
-   * services edition.
-   * Special default for essentials edition is 0, basic edition is 0, enterprise is 10.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed in essentials (allowed values- 0), basic (allowed values- 0) edition.
+   * Special default for essentials edition is 0, basic edition is 0, enterprise edition is 10.
    * @param connectionRampDuration set the connectionRampDuration.
    */
   @VsoMethod
@@ -701,7 +705,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Creator name.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return createdBy
    */
@@ -713,7 +717,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Creator name.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param createdBy set the createdBy.
    */
@@ -727,7 +731,7 @@ public class Pool extends AviRestResource {
    * Traffic sent to servers will use this destination server port unless overridden by the server's specific port attribute.
    * The ssl checkbox enables avi to server encryption.
    * Allowed values are 1-65535.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 80.
    * @return defaultServerPort
    */
@@ -741,7 +745,7 @@ public class Pool extends AviRestResource {
    * Traffic sent to servers will use this destination server port unless overridden by the server's specific port attribute.
    * The ssl checkbox enables avi to server encryption.
    * Allowed values are 1-65535.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 80.
    * @param defaultServerPort set the defaultServerPort.
    */
@@ -757,8 +761,8 @@ public class Pool extends AviRestResource {
    * These ips are deleted from the pool when this knob is set to true.
    * They are disabled, if the knob is set to false.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials edition(allowed values- true), basic edition(allowed values- true), enterprise with
-   * cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed in essentials (allowed values- true), basic (allowed values- true) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return deleteServerOnDnsRefresh
    */
@@ -774,8 +778,8 @@ public class Pool extends AviRestResource {
    * These ips are deleted from the pool when this knob is set to true.
    * They are disabled, if the knob is set to false.
    * Field introduced in 18.2.3.
-   * Allowed in enterprise edition with any value, essentials edition(allowed values- true), basic edition(allowed values- true), enterprise with
-   * cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed in essentials (allowed values- true), basic (allowed values- true) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param deleteServerOnDnsRefresh set the deleteServerOnDnsRefresh.
    */
@@ -787,7 +791,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * A description of the pool.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
@@ -799,7 +803,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * A description of the pool.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
@@ -812,7 +816,7 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Comma separated list of domain names which will be used to verify the common names or subject alternative names presented by server certificates.
    * It is performed only when common name check host_check_enabled is enabled.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return domainName
    */
@@ -825,7 +829,7 @@ public class Pool extends AviRestResource {
    * This is the setter method. this will set the domainName
    * Comma separated list of domain names which will be used to verify the common names or subject alternative names presented by server certificates.
    * It is performed only when common name check host_check_enabled is enabled.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return domainName
    */
@@ -838,7 +842,7 @@ public class Pool extends AviRestResource {
    * This is the setter method this will set the domainName
    * Comma separated list of domain names which will be used to verify the common names or subject alternative names presented by server certificates.
    * It is performed only when common name check host_check_enabled is enabled.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return domainName
    */
@@ -855,7 +859,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Inherited config from virtualservice.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return eastWest
    */
@@ -867,7 +871,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Inherited config from virtualservice.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param eastWest set the eastWest.
    */
@@ -880,8 +884,8 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable http/2 for traffic from virtualservice to all backend servers in this pool.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-   * cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enableHttp2
    */
@@ -894,8 +898,8 @@ public class Pool extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable http/2 for traffic from virtualservice to all backend servers in this pool.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-   * cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param enableHttp2 set the enableHttp2.
    */
@@ -908,7 +912,7 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable or disable the pool.
    * Disabling will terminate all open connections and pause health monitors.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enabled
    */
@@ -921,7 +925,7 @@ public class Pool extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable or disable the pool.
    * Disabling will terminate all open connections and pause health monitors.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enabled set the enabled.
    */
@@ -935,7 +939,7 @@ public class Pool extends AviRestResource {
    * Names of external auto-scale groups for pool servers.
    * Currently available only for aws and azure.
    * Field introduced in 17.1.2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return externalAutoscaleGroups
    */
@@ -949,7 +953,7 @@ public class Pool extends AviRestResource {
    * Names of external auto-scale groups for pool servers.
    * Currently available only for aws and azure.
    * Field introduced in 17.1.2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return externalAutoscaleGroups
    */
@@ -963,7 +967,7 @@ public class Pool extends AviRestResource {
    * Names of external auto-scale groups for pool servers.
    * Currently available only for aws and azure.
    * Field introduced in 17.1.2.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return externalAutoscaleGroups
    */
@@ -981,7 +985,7 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable an action - close connection, http redirect or local http response - when a pool failure happens.
    * By default, a connection will be closed, in case the pool experiences a failure.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return failAction
    */
@@ -994,7 +998,7 @@ public class Pool extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable an action - close connection, http redirect or local http response - when a pool failure happens.
    * By default, a connection will be closed, in case the pool experiences a failure.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param failAction set the failAction.
    */
@@ -1008,7 +1012,7 @@ public class Pool extends AviRestResource {
    * Periodicity of feedback for fewest tasks server selection algorithm.
    * Allowed values are 1-300.
    * Unit is sec.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return fewestTasksFeedbackDelay
    */
@@ -1022,7 +1026,7 @@ public class Pool extends AviRestResource {
    * Periodicity of feedback for fewest tasks server selection algorithm.
    * Allowed values are 1-300.
    * Unit is sec.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param fewestTasksFeedbackDelay set the fewestTasksFeedbackDelay.
    */
@@ -1034,12 +1038,13 @@ public class Pool extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Used to gracefully disable a server.
-   * Virtual service waits for the specified time before terminating the existing connections  to the servers that are disabled.
+   * Deprecated from version 31.2.1.
+   * Please use graceful_disable_timeout_sec instead.
    * Allowed values are 1-7200.
    * Special values are 0 - immediate, -1 - infinite.
+   * Field deprecated in 31.2.1.
    * Unit is min.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * @return gracefulDisableTimeout
    */
   @VsoMethod
@@ -1050,12 +1055,13 @@ public class Pool extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Used to gracefully disable a server.
-   * Virtual service waits for the specified time before terminating the existing connections  to the servers that are disabled.
+   * Deprecated from version 31.2.1.
+   * Please use graceful_disable_timeout_sec instead.
    * Allowed values are 1-7200.
    * Special values are 0 - immediate, -1 - infinite.
+   * Field deprecated in 31.2.1.
    * Unit is min.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * @param gracefulDisableTimeout set the gracefulDisableTimeout.
    */
   @VsoMethod
@@ -1065,12 +1071,46 @@ public class Pool extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Used to gracefully disable a server.
+   * Virtual service waits for the specified time before terminating the existing connections  to the servers that are disabled.
+   * Allowed values are 1-432000.
+   * Special values are 0 - immediate, -1 - infinite.
+   * Field introduced in 31.2.1.
+   * Unit is sec.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 60.
+   * @return gracefulDisableTimeoutSec
+   */
+  @VsoMethod
+  public Integer getGracefulDisableTimeoutSec() {
+    return gracefulDisableTimeoutSec;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Used to gracefully disable a server.
+   * Virtual service waits for the specified time before terminating the existing connections  to the servers that are disabled.
+   * Allowed values are 1-432000.
+   * Special values are 0 - immediate, -1 - infinite.
+   * Field introduced in 31.2.1.
+   * Unit is sec.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 60.
+   * @param gracefulDisableTimeoutSec set the gracefulDisableTimeoutSec.
+   */
+  @VsoMethod
+  public void setGracefulDisableTimeoutSec(Integer  gracefulDisableTimeoutSec) {
+    this.gracefulDisableTimeoutSec = gracefulDisableTimeoutSec;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Time interval for gracefully closing the connections on server, when health monitoring marks the server down.
    * Allowed values are 1-432000.
    * Special values are 0 - immediate, -1 - infinite.
    * Field introduced in 30.2.1.
    * Unit is sec.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as -1.
    * @return gracefulHmDownDisableTimeout
    */
@@ -1086,7 +1126,7 @@ public class Pool extends AviRestResource {
    * Special values are 0 - immediate, -1 - infinite.
    * Field introduced in 30.2.1.
    * Unit is sec.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as -1.
    * @param gracefulHmDownDisableTimeout set the gracefulHmDownDisableTimeout.
    */
@@ -1099,7 +1139,7 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Indicates if the pool is a site-persistence pool.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * @return gslbSpEnabled
    */
   @VsoMethod
@@ -1111,7 +1151,7 @@ public class Pool extends AviRestResource {
    * This is the setter method to the attribute.
    * Indicates if the pool is a site-persistence pool.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * @param gslbSpEnabled set the gslbSpEnabled.
    */
   @VsoMethod
@@ -1127,7 +1167,7 @@ public class Pool extends AviRestResource {
    * It raises or lowers the ratio of traffic destined to a server based on successful responses.
    * It is a reference to an object of type healthmonitor.
    * Maximum of 50 items allowed.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return healthMonitorRefs
    */
@@ -1144,7 +1184,7 @@ public class Pool extends AviRestResource {
    * It raises or lowers the ratio of traffic destined to a server based on successful responses.
    * It is a reference to an object of type healthmonitor.
    * Maximum of 50 items allowed.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return healthMonitorRefs
    */
@@ -1161,7 +1201,7 @@ public class Pool extends AviRestResource {
    * It raises or lowers the ratio of traffic destined to a server based on successful responses.
    * It is a reference to an object of type healthmonitor.
    * Maximum of 50 items allowed.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return healthMonitorRefs
    */
@@ -1179,7 +1219,7 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Horizon uag configuration.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return horizonProfile
    */
@@ -1192,7 +1232,7 @@ public class Pool extends AviRestResource {
    * This is the setter method to the attribute.
    * Horizon uag configuration.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param horizonProfile set the horizonProfile.
    */
@@ -1205,7 +1245,7 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable common name check for server certificate.
    * If enabled and no explicit domain name is specified, avi will use the incoming host header to do the match.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return hostCheckEnabled
    */
@@ -1218,7 +1258,7 @@ public class Pool extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable common name check for server certificate.
    * If enabled and no explicit domain name is specified, avi will use the incoming host header to do the match.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param hostCheckEnabled set the hostCheckEnabled.
    */
@@ -1231,8 +1271,7 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Http2 pool properties.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return http2Properties
    */
@@ -1245,8 +1284,7 @@ public class Pool extends AviRestResource {
    * This is the setter method to the attribute.
    * Http2 pool properties.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param http2Properties set the http2Properties.
    */
@@ -1260,7 +1298,7 @@ public class Pool extends AviRestResource {
    * Ignore the server port in building the load balancing state.applicable only for consistent hash load balancing algorithm or disable port
    * translation (use_service_port) use cases.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return ignoreServerPort
    */
@@ -1274,7 +1312,7 @@ public class Pool extends AviRestResource {
    * Ignore the server port in building the load balancing state.applicable only for consistent hash load balancing algorithm or disable port
    * translation (use_service_port) use cases.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param ignoreServerPort set the ignoreServerPort.
    */
@@ -1287,7 +1325,7 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The passive monitor will monitor client to server connections and requests and adjust traffic load to servers based on successful responses.
    * This may alter the expected behavior of the lb method, such as round robin.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return inlineHealthMonitor
    */
@@ -1300,7 +1338,7 @@ public class Pool extends AviRestResource {
    * This is the setter method to the attribute.
    * The passive monitor will monitor client to server connections and requests and adjust traffic load to servers based on successful responses.
    * This may alter the expected behavior of the lb method, such as round robin.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param inlineHealthMonitor set the inlineHealthMonitor.
    */
@@ -1313,7 +1351,7 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Use list of servers from ip address group.
    * It is a reference to an object of type ipaddrgroup.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipaddrgroupRef
    */
@@ -1326,7 +1364,7 @@ public class Pool extends AviRestResource {
    * This is the setter method to the attribute.
    * Use list of servers from ip address group.
    * It is a reference to an object of type ipaddrgroup.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipaddrgroupRef set the ipaddrgroupRef.
    */
@@ -1337,9 +1375,9 @@ public class Pool extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Do round robin load load balancing at se level instead of the default per core load balancing.
+   * Do load balancing at se level instead of the default per core load balancing.
    * Field introduced in 21.1.5, 22.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return lbAlgoRrPerSe
    */
@@ -1350,9 +1388,9 @@ public class Pool extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Do round robin load load balancing at se level instead of the default per core load balancing.
+   * Do load balancing at se level instead of the default per core load balancing.
    * Field introduced in 21.1.5, 22.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param lbAlgoRrPerSe set the lbAlgoRrPerSe.
    */
@@ -1368,9 +1406,9 @@ public class Pool extends AviRestResource {
    * Enum options - LB_ALGORITHM_LEAST_CONNECTIONS, LB_ALGORITHM_ROUND_ROBIN, LB_ALGORITHM_FASTEST_RESPONSE, LB_ALGORITHM_CONSISTENT_HASH,
    * LB_ALGORITHM_LEAST_LOAD, LB_ALGORITHM_FEWEST_SERVERS, LB_ALGORITHM_RANDOM, LB_ALGORITHM_FEWEST_TASKS, LB_ALGORITHM_NEAREST_SERVER,
    * LB_ALGORITHM_CORE_AFFINITY, LB_ALGORITHM_TOPOLOGY.
-   * Allowed in enterprise edition with any value, essentials edition(allowed values-
-   * lb_algorithm_least_connections,lb_algorithm_round_robin,lb_algorithm_consistent_hash), basic edition(allowed values-
-   * lb_algorithm_least_connections,lb_algorithm_round_robin,lb_algorithm_consistent_hash), enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed in essentials (allowed values- lb_algorithm_least_connections,lb_algorithm_round_robin,lb_algorithm_consistent_hash), basic (allowed
+   * values- lb_algorithm_least_connections,lb_algorithm_round_robin,lb_algorithm_consistent_hash) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "LB_ALGORITHM_LEAST_CONNECTIONS".
    * @return lbAlgorithm
    */
@@ -1386,9 +1424,9 @@ public class Pool extends AviRestResource {
    * Enum options - LB_ALGORITHM_LEAST_CONNECTIONS, LB_ALGORITHM_ROUND_ROBIN, LB_ALGORITHM_FASTEST_RESPONSE, LB_ALGORITHM_CONSISTENT_HASH,
    * LB_ALGORITHM_LEAST_LOAD, LB_ALGORITHM_FEWEST_SERVERS, LB_ALGORITHM_RANDOM, LB_ALGORITHM_FEWEST_TASKS, LB_ALGORITHM_NEAREST_SERVER,
    * LB_ALGORITHM_CORE_AFFINITY, LB_ALGORITHM_TOPOLOGY.
-   * Allowed in enterprise edition with any value, essentials edition(allowed values-
-   * lb_algorithm_least_connections,lb_algorithm_round_robin,lb_algorithm_consistent_hash), basic edition(allowed values-
-   * lb_algorithm_least_connections,lb_algorithm_round_robin,lb_algorithm_consistent_hash), enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed in essentials (allowed values- lb_algorithm_least_connections,lb_algorithm_round_robin,lb_algorithm_consistent_hash), basic (allowed
+   * values- lb_algorithm_least_connections,lb_algorithm_round_robin,lb_algorithm_consistent_hash) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "LB_ALGORITHM_LEAST_CONNECTIONS".
    * @param lbAlgorithm set the lbAlgorithm.
    */
@@ -1400,7 +1438,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Http header name to be used for the hash key.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lbAlgorithmConsistentHashHdr
    */
@@ -1412,7 +1450,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Http header name to be used for the hash key.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lbAlgorithmConsistentHashHdr set the lbAlgorithmConsistentHashHdr.
    */
@@ -1426,8 +1464,8 @@ public class Pool extends AviRestResource {
    * Degree of non-affinity for core affinity based server selection.
    * Allowed values are 1-65535.
    * Field introduced in 17.1.3.
-   * Allowed in enterprise edition with any value, essentials edition(allowed values- 2), basic edition(allowed values- 2), enterprise with cloud
-   * services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed in essentials (allowed values- 2), basic (allowed values- 2) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2.
    * @return lbAlgorithmCoreNonaffinity
    */
@@ -1441,8 +1479,8 @@ public class Pool extends AviRestResource {
    * Degree of non-affinity for core affinity based server selection.
    * Allowed values are 1-65535.
    * Field introduced in 17.1.3.
-   * Allowed in enterprise edition with any value, essentials edition(allowed values- 2), basic edition(allowed values- 2), enterprise with cloud
-   * services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed in essentials (allowed values- 2), basic (allowed values- 2) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2.
    * @param lbAlgorithmCoreNonaffinity set the lbAlgorithmCoreNonaffinity.
    */
@@ -1457,8 +1495,9 @@ public class Pool extends AviRestResource {
    * Enum options - LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS, LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS_AND_PORT,
    * LB_ALGORITHM_CONSISTENT_HASH_URI, LB_ALGORITHM_CONSISTENT_HASH_CUSTOM_HEADER, LB_ALGORITHM_CONSISTENT_HASH_CUSTOM_STRING,
    * LB_ALGORITHM_CONSISTENT_HASH_CALLID.
-   * Allowed in enterprise edition with any value, essentials edition(allowed values- lb_algorithm_consistent_hash_source_ip_address), basic
-   * edition(allowed values- lb_algorithm_consistent_hash_source_ip_address), enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed in essentials (allowed values- lb_algorithm_consistent_hash_source_ip_address), basic (allowed values-
+   * lb_algorithm_consistent_hash_source_ip_address) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS".
    * @return lbAlgorithmHash
    */
@@ -1473,8 +1512,9 @@ public class Pool extends AviRestResource {
    * Enum options - LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS, LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS_AND_PORT,
    * LB_ALGORITHM_CONSISTENT_HASH_URI, LB_ALGORITHM_CONSISTENT_HASH_CUSTOM_HEADER, LB_ALGORITHM_CONSISTENT_HASH_CUSTOM_STRING,
    * LB_ALGORITHM_CONSISTENT_HASH_CALLID.
-   * Allowed in enterprise edition with any value, essentials edition(allowed values- lb_algorithm_consistent_hash_source_ip_address), basic
-   * edition(allowed values- lb_algorithm_consistent_hash_source_ip_address), enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed in essentials (allowed values- lb_algorithm_consistent_hash_source_ip_address), basic (allowed values-
+   * lb_algorithm_consistent_hash_source_ip_address) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS".
    * @param lbAlgorithmHash set the lbAlgorithmHash.
    */
@@ -1487,8 +1527,8 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Allow server lookup by name.
    * Field introduced in 17.1.11,17.2.4.
-   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-   * cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return lookupServerByName
    */
@@ -1501,8 +1541,8 @@ public class Pool extends AviRestResource {
    * This is the setter method to the attribute.
    * Allow server lookup by name.
    * Field introduced in 17.1.11,17.2.4.
-   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-   * cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param lookupServerByName set the lookupServerByName.
    */
@@ -1515,8 +1555,7 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -1529,8 +1568,7 @@ public class Pool extends AviRestResource {
    * This is the setter method. this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -1543,8 +1581,7 @@ public class Pool extends AviRestResource {
    * This is the setter method this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
-   * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-   * edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -1563,7 +1600,7 @@ public class Pool extends AviRestResource {
    * The maximum number of concurrent connections allowed to each server within the pool.
    * Note  applied value will be no less than the number of service engines that the pool is placed on.
    * If set to 0, no limit is applied.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return maxConcurrentConnectionsPerServer
    */
@@ -1577,7 +1614,7 @@ public class Pool extends AviRestResource {
    * The maximum number of concurrent connections allowed to each server within the pool.
    * Note  applied value will be no less than the number of service engines that the pool is placed on.
    * If set to 0, no limit is applied.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param maxConcurrentConnectionsPerServer set the maxConcurrentConnectionsPerServer.
    */
@@ -1589,7 +1626,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate limit connections to each server.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxConnRatePerServer
    */
@@ -1601,7 +1638,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate limit connections to each server.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxConnRatePerServer set the maxConnRatePerServer.
    */
@@ -1614,7 +1651,7 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Minimum number of health monitors in up state to mark server up.
    * Field introduced in 18.2.1, 17.2.12.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return minHealthMonitorsUp
    */
@@ -1627,7 +1664,7 @@ public class Pool extends AviRestResource {
    * This is the setter method to the attribute.
    * Minimum number of health monitors in up state to mark server up.
    * Field introduced in 18.2.1, 17.2.12.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param minHealthMonitorsUp set the minHealthMonitorsUp.
    */
@@ -1640,7 +1677,7 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Minimum number of servers in up state for marking the pool up.
    * Field introduced in 18.2.1, 17.2.12.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return minServersUp
    */
@@ -1653,7 +1690,7 @@ public class Pool extends AviRestResource {
    * This is the setter method to the attribute.
    * Minimum number of servers in up state for marking the pool up.
    * Field introduced in 18.2.1, 17.2.12.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param minServersUp set the minServersUp.
    */
@@ -1665,7 +1702,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The name of the pool.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -1677,7 +1714,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The name of the pool.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -1691,7 +1728,7 @@ public class Pool extends AviRestResource {
    * (internal-use) networks designated as containing servers for this pool.
    * The servers may be further narrowed down by a filter.
    * This field is used internally by avi, not editable by the user.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networks
    */
@@ -1705,7 +1742,7 @@ public class Pool extends AviRestResource {
    * (internal-use) networks designated as containing servers for this pool.
    * The servers may be further narrowed down by a filter.
    * This field is used internally by avi, not editable by the user.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networks
    */
@@ -1719,7 +1756,7 @@ public class Pool extends AviRestResource {
    * (internal-use) networks designated as containing servers for this pool.
    * The servers may be further narrowed down by a filter.
    * This field is used internally by avi, not editable by the user.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networks
    */
@@ -1737,7 +1774,7 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * A list of nsx groups where the servers for the pool are created.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nsxSecuritygroup
    */
@@ -1750,7 +1787,7 @@ public class Pool extends AviRestResource {
    * This is the setter method. this will set the nsxSecuritygroup
    * A list of nsx groups where the servers for the pool are created.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nsxSecuritygroup
    */
@@ -1763,7 +1800,7 @@ public class Pool extends AviRestResource {
    * This is the setter method this will set the nsxSecuritygroup
    * A list of nsx groups where the servers for the pool are created.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nsxSecuritygroup
    */
@@ -1781,7 +1818,7 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Avi will validate the ssl certificate present by a server against the selected pki profile.
    * It is a reference to an object of type pkiprofile.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pkiProfileRef
    */
@@ -1794,7 +1831,7 @@ public class Pool extends AviRestResource {
    * This is the setter method to the attribute.
    * Avi will validate the ssl certificate present by a server against the selected pki profile.
    * It is a reference to an object of type pkiprofile.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pkiProfileRef set the pkiProfileRef.
    */
@@ -1808,7 +1845,7 @@ public class Pool extends AviRestResource {
    * Manually select the networks and subnets used to provide reachability to the pool's servers.
    * Specify the subnet using the following syntax  10-1-1-0/24.
    * Use static routes in vrf configuration when pool servers are not directly connected but routable from the service engine.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return placementNetworks
    */
@@ -1822,7 +1859,7 @@ public class Pool extends AviRestResource {
    * Manually select the networks and subnets used to provide reachability to the pool's servers.
    * Specify the subnet using the following syntax  10-1-1-0/24.
    * Use static routes in vrf configuration when pool servers are not directly connected but routable from the service engine.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return placementNetworks
    */
@@ -1836,7 +1873,7 @@ public class Pool extends AviRestResource {
    * Manually select the networks and subnets used to provide reachability to the pool's servers.
    * Specify the subnet using the following syntax  10-1-1-0/24.
    * Use static routes in vrf configuration when pool servers are not directly connected but routable from the service engine.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return placementNetworks
    */
@@ -1855,7 +1892,7 @@ public class Pool extends AviRestResource {
    * Type or purpose, the pool is to be used for.
    * Enum options - POOL_TYPE_GENERIC_APP, POOL_TYPE_OAUTH.
    * Field introduced in 22.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "POOL_TYPE_GENERIC_APP".
    * @return poolType
    */
@@ -1869,7 +1906,7 @@ public class Pool extends AviRestResource {
    * Type or purpose, the pool is to be used for.
    * Enum options - POOL_TYPE_GENERIC_APP, POOL_TYPE_OAUTH.
    * Field introduced in 22.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "POOL_TYPE_GENERIC_APP".
    * @param poolType set the poolType.
    */
@@ -1881,8 +1918,8 @@ public class Pool extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Minimum number of requests to be queued when pool is full.
-   * Allowed in enterprise edition with any value, essentials edition(allowed values- 128), basic edition(allowed values- 128), enterprise with cloud
-   * services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed in essentials (allowed values- 128), basic (allowed values- 128) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 128.
    * @return requestQueueDepth
    */
@@ -1894,8 +1931,8 @@ public class Pool extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Minimum number of requests to be queued when pool is full.
-   * Allowed in enterprise edition with any value, essentials edition(allowed values- 128), basic edition(allowed values- 128), enterprise with cloud
-   * services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed in essentials (allowed values- 128), basic (allowed values- 128) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 128.
    * @param requestQueueDepth set the requestQueueDepth.
    */
@@ -1907,8 +1944,8 @@ public class Pool extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enable request queue when pool is full.
-   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-   * cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return requestQueueEnabled
    */
@@ -1920,8 +1957,8 @@ public class Pool extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enable request queue when pool is full.
-   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-   * cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param requestQueueEnabled set the requestQueueEnabled.
    */
@@ -1934,7 +1971,7 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Rewrite incoming host header to server name of the server to which the request is proxied.
    * Enabling this feature rewrites host header for requests to all servers in the pool.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return rewriteHostHeaderToServerName
    */
@@ -1947,7 +1984,7 @@ public class Pool extends AviRestResource {
    * This is the setter method to the attribute.
    * Rewrite incoming host header to server name of the server to which the request is proxied.
    * Enabling this feature rewrites host header for requests to all servers in the pool.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param rewriteHostHeaderToServerName set the rewriteHostHeaderToServerName.
    */
@@ -1959,7 +1996,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * If sni server name is specified, rewrite incoming host header to the sni server name.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return rewriteHostHeaderToSni
    */
@@ -1971,7 +2008,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * If sni server name is specified, rewrite incoming host header to the sni server name.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param rewriteHostHeaderToSni set the rewriteHostHeaderToSni.
    */
@@ -1985,7 +2022,7 @@ public class Pool extends AviRestResource {
    * Enable to do routing when this pool is selected to send traffic.
    * No servers present in routing pool.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return routingPool
    */
@@ -1999,7 +2036,7 @@ public class Pool extends AviRestResource {
    * Enable to do routing when this pool is selected to send traffic.
    * No servers present in routing pool.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param routingPool set the routingPool.
    */
@@ -2013,7 +2050,7 @@ public class Pool extends AviRestResource {
    * Server graceful disable timeout behaviour.
    * Enum options - DISALLOW_NEW_CONNECTION, ALLOW_NEW_CONNECTION_IF_PERSISTENCE_PRESENT.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "DISALLOW_NEW_CONNECTION".
    * @return serverDisableType
    */
@@ -2027,7 +2064,7 @@ public class Pool extends AviRestResource {
    * Server graceful disable timeout behaviour.
    * Enum options - DISALLOW_NEW_CONNECTION, ALLOW_NEW_CONNECTION_IF_PERSISTENCE_PRESENT.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "DISALLOW_NEW_CONNECTION".
    * @param serverDisableType set the serverDisableType.
    */
@@ -2040,7 +2077,7 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Fully qualified dns hostname which will be used in the tls sni extension in server connections if sni is enabled.
    * If no value is specified, avi will use the incoming host header instead.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverName
    */
@@ -2053,7 +2090,7 @@ public class Pool extends AviRestResource {
    * This is the setter method to the attribute.
    * Fully qualified dns hostname which will be used in the tls sni extension in server connections if sni is enabled.
    * If no value is specified, avi will use the incoming host header instead.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverName set the serverName.
    */
@@ -2065,7 +2102,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Server reselect configuration for http requests.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverReselect
    */
@@ -2077,7 +2114,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Server reselect configuration for http requests.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverReselect set the serverReselect.
    */
@@ -2094,7 +2131,7 @@ public class Pool extends AviRestResource {
    * Allowed values are 0-21600000.
    * Field introduced in 18.1.5,18.2.1.
    * Unit is milliseconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return serverTimeout
    */
@@ -2111,7 +2148,7 @@ public class Pool extends AviRestResource {
    * Allowed values are 0-21600000.
    * Field introduced in 18.1.5,18.2.1.
    * Unit is milliseconds.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param serverTimeout set the serverTimeout.
    */
@@ -2125,7 +2162,7 @@ public class Pool extends AviRestResource {
    * The pool directs load balanced traffic to this list of destination servers.
    * The servers can be configured by ip address, name, network or via ip address group.
    * Maximum of 5000 items allowed.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return servers
    */
@@ -2139,7 +2176,7 @@ public class Pool extends AviRestResource {
    * The pool directs load balanced traffic to this list of destination servers.
    * The servers can be configured by ip address, name, network or via ip address group.
    * Maximum of 5000 items allowed.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return servers
    */
@@ -2153,7 +2190,7 @@ public class Pool extends AviRestResource {
    * The pool directs load balanced traffic to this list of destination servers.
    * The servers can be configured by ip address, name, network or via ip address group.
    * Maximum of 5000 items allowed.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return servers
    */
@@ -2173,7 +2210,7 @@ public class Pool extends AviRestResource {
    * In openshift/kubernetes environments, app metadata info is stored.
    * Any user input to this field will be overwritten by avi vantage.
    * Field introduced in 17.2.14,18.1.5,18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceMetadata
    */
@@ -2188,7 +2225,7 @@ public class Pool extends AviRestResource {
    * In openshift/kubernetes environments, app metadata info is stored.
    * Any user input to this field will be overwritten by avi vantage.
    * Field introduced in 17.2.14,18.1.5,18.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serviceMetadata set the serviceMetadata.
    */
@@ -2201,7 +2238,7 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable tls sni for server connections.
    * If disabled, avi will not send the sni extension as part of the handshake.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return sniEnabled
    */
@@ -2214,7 +2251,7 @@ public class Pool extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable tls sni for server connections.
    * If disabled, avi will not send the sni extension as part of the handshake.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param sniEnabled set the sniEnabled.
    */
@@ -2227,7 +2264,7 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Service engines will present a client ssl certificate to the server.
    * It is a reference to an object of type sslkeyandcertificate.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslKeyAndCertificateRef
    */
@@ -2240,7 +2277,7 @@ public class Pool extends AviRestResource {
    * This is the setter method to the attribute.
    * Service engines will present a client ssl certificate to the server.
    * It is a reference to an object of type sslkeyandcertificate.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sslKeyAndCertificateRef set the sslKeyAndCertificateRef.
    */
@@ -2254,7 +2291,7 @@ public class Pool extends AviRestResource {
    * When enabled, avi re-encrypts traffic to the backend servers.
    * The specific ssl profile defines which ciphers and ssl versions will be supported.
    * It is a reference to an object of type sslprofile.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslProfileRef
    */
@@ -2268,7 +2305,7 @@ public class Pool extends AviRestResource {
    * When enabled, avi re-encrypts traffic to the backend servers.
    * The specific ssl profile defines which ciphers and ssl versions will be supported.
    * It is a reference to an object of type sslprofile.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sslProfileRef set the sslProfileRef.
    */
@@ -2280,7 +2317,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -2292,7 +2329,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
@@ -2305,7 +2342,7 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This tier1_lr field should be set same as virtualservice associated for nsx-t.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tier1Lr
    */
@@ -2318,7 +2355,7 @@ public class Pool extends AviRestResource {
    * This is the setter method to the attribute.
    * This tier1_lr field should be set same as virtualservice associated for nsx-t.
    * Field introduced in 20.1.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tier1Lr set the tier1Lr.
    */
@@ -2350,7 +2387,8 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Do not translate the client's destination port when sending the connection to the server.
    * Monitor port needs to be specified for health monitors.
-   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, basic, enterprise with cloud services edition.
+   * Allowed in essentials (allowed values- false) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return useServicePort
    */
@@ -2363,7 +2401,8 @@ public class Pool extends AviRestResource {
    * This is the setter method to the attribute.
    * Do not translate the client's destination port when sending the connection to the server.
    * Monitor port needs to be specified for health monitors.
-   * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, basic, enterprise with cloud services edition.
+   * Allowed in essentials (allowed values- false) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param useServicePort set the useServicePort.
    */
@@ -2378,7 +2417,7 @@ public class Pool extends AviRestResource {
    * If enabled, ssl mode of the connection to the server is decided by the ssl mode on the virtualservice service port, on which the request was
    * received.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return useServiceSslMode
    */
@@ -2393,7 +2432,7 @@ public class Pool extends AviRestResource {
    * If enabled, ssl mode of the connection to the server is decided by the ssl mode on the virtualservice service port, on which the request was
    * received.
    * Field introduced in 21.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param useServiceSslMode set the useServiceSslMode.
    */
@@ -2405,7 +2444,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the pool.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -2417,7 +2456,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the pool.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
@@ -2432,7 +2471,7 @@ public class Pool extends AviRestResource {
    * This is used to provide the isolation of the set of networks the pool is attached to.
    * The pool inherits the virtual routing context of the virtual service, and this field is used only internally, and is set by pb-transform.
    * It is a reference to an object of type vrfcontext.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vrfRef
    */
@@ -2447,7 +2486,7 @@ public class Pool extends AviRestResource {
    * This is used to provide the isolation of the set of networks the pool is attached to.
    * The pool inherits the virtual routing context of the virtual service, and this field is used only internally, and is set by pb-transform.
    * It is a reference to an object of type vrfcontext.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vrfRef set the vrfRef.
    */
@@ -2478,6 +2517,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.maxConcurrentConnectionsPerServer, objPool.maxConcurrentConnectionsPerServer)&&
   Objects.equals(this.healthMonitorRefs, objPool.healthMonitorRefs)&&
   Objects.equals(this.servers, objPool.servers)&&
+  Objects.equals(this.gracefulDisableTimeoutSec, objPool.gracefulDisableTimeoutSec)&&
   Objects.equals(this.lbAlgorithm, objPool.lbAlgorithm)&&
   Objects.equals(this.lbAlgorithmHash, objPool.lbAlgorithmHash)&&
   Objects.equals(this.lbAlgorithmConsistentHashHdr, objPool.lbAlgorithmConsistentHashHdr)&&
@@ -2572,6 +2612,7 @@ public String toString() {
         sb.append("    failAction: ").append(toIndentedString(failAction)).append("\n");
         sb.append("    fewestTasksFeedbackDelay: ").append(toIndentedString(fewestTasksFeedbackDelay)).append("\n");
         sb.append("    gracefulDisableTimeout: ").append(toIndentedString(gracefulDisableTimeout)).append("\n");
+        sb.append("    gracefulDisableTimeoutSec: ").append(toIndentedString(gracefulDisableTimeoutSec)).append("\n");
         sb.append("    gracefulHmDownDisableTimeout: ").append(toIndentedString(gracefulHmDownDisableTimeout)).append("\n");
         sb.append("    gslbSpEnabled: ").append(toIndentedString(gslbSpEnabled)).append("\n");
         sb.append("    healthMonitorRefs: ").append(toIndentedString(healthMonitorRefs)).append("\n");

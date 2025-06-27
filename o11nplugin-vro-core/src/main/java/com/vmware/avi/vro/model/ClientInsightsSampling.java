@@ -44,7 +44,7 @@ public class ClientInsightsSampling extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Client ip addresses to check when inserting rum script.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientIp
    */
@@ -56,7 +56,7 @@ public class ClientInsightsSampling extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Client ip addresses to check when inserting rum script.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientIp set the clientIp.
    */
@@ -68,7 +68,7 @@ public class ClientInsightsSampling extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Url patterns to check when inserting rum script.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sampleUris
    */
@@ -80,7 +80,7 @@ public class ClientInsightsSampling extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Url patterns to check when inserting rum script.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sampleUris set the sampleUris.
    */
@@ -92,7 +92,7 @@ public class ClientInsightsSampling extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Url patterns to avoid when inserting rum script.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return skipUris
    */
@@ -104,7 +104,7 @@ public class ClientInsightsSampling extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Url patterns to avoid when inserting rum script.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param skipUris set the skipUris.
    */

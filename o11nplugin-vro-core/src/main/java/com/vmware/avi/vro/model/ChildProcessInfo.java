@@ -37,7 +37,7 @@ public class ChildProcessInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Amount of memory (in mb) used by the sub process.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return memory
    */
@@ -49,7 +49,7 @@ public class ChildProcessInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Amount of memory (in mb) used by the sub process.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param memory set the memory.
    */
@@ -61,7 +61,7 @@ public class ChildProcessInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Process id of the sub process.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pid
    */
@@ -73,7 +73,7 @@ public class ChildProcessInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Process id of the sub process.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pid set the pid.
    */

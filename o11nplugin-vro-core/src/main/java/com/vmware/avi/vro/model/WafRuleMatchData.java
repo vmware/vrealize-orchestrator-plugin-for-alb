@@ -47,7 +47,7 @@ public class WafRuleMatchData extends AviRestResource {
    * The match_element is an internal variable.
    * It is not possible to add exclusions for this element.
    * Field introduced in 17.2.4.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return isInternal
    */
@@ -61,7 +61,7 @@ public class WafRuleMatchData extends AviRestResource {
    * The match_element is an internal variable.
    * It is not possible to add exclusions for this element.
    * Field introduced in 17.2.4.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param isInternal set the isInternal.
    */
@@ -74,7 +74,7 @@ public class WafRuleMatchData extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Field from a transaction that matches the rule, for instance if the request parameter is password=foobar, then match_element is args password.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchElement
    */
@@ -87,7 +87,7 @@ public class WafRuleMatchData extends AviRestResource {
    * This is the setter method to the attribute.
    * Field from a transaction that matches the rule, for instance if the request parameter is password=foobar, then match_element is args password.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchElement set the matchElement.
    */
@@ -105,7 +105,7 @@ public class WafRuleMatchData extends AviRestResource {
    * match_value_offset.
    * This is done to ensure the relevant part is shown.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchValue
    */
@@ -123,7 +123,7 @@ public class WafRuleMatchData extends AviRestResource {
    * match_value_offset.
    * This is done to ensure the relevant part is shown.
    * Field introduced in 17.2.1.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchValue set the matchValue.
    */
@@ -136,7 +136,7 @@ public class WafRuleMatchData extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The starting index of the first character of match_value field with respect to original match value.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return matchValueOffset
    */
@@ -149,7 +149,7 @@ public class WafRuleMatchData extends AviRestResource {
    * This is the setter method to the attribute.
    * The starting index of the first character of match_value field with respect to original match value.
    * Field introduced in 30.2.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param matchValueOffset set the matchValueOffset.
    */

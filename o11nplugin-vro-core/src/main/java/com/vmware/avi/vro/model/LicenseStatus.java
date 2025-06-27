@@ -26,10 +26,6 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class LicenseStatus extends AviRestResource {
-    @JsonProperty("essentials_enforced_at")
-    @JsonInclude(Include.NON_NULL)
-    private String essentialsEnforcedAt;
-
     @JsonProperty("saas_status")
     @JsonInclude(Include.NON_NULL)
     private SaasLicensingStatus saasStatus;
@@ -54,35 +50,9 @@ public class LicenseStatus extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * License enforcement date when we upgrade controller to higher version and license tier is essential before upgrade.
-   * Field introduced in 30.2.2, 31.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return essentialsEnforcedAt
-   */
-  @VsoMethod
-  public String getEssentialsEnforcedAt() {
-    return essentialsEnforcedAt;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * License enforcement date when we upgrade controller to higher version and license tier is essential before upgrade.
-   * Field introduced in 30.2.2, 31.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param essentialsEnforcedAt set the essentialsEnforcedAt.
-   */
-  @VsoMethod
-  public void setEssentialsEnforcedAt(String  essentialsEnforcedAt) {
-    this.essentialsEnforcedAt = essentialsEnforcedAt;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Saas licensing status.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return saasStatus
    */
@@ -95,7 +65,7 @@ public class LicenseStatus extends AviRestResource {
    * This is the setter method to the attribute.
    * Saas licensing status.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param saasStatus set the saasStatus.
    */
@@ -108,7 +78,7 @@ public class LicenseStatus extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Pulse license service update.
    * Field introduced in 21.1.4.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceUpdate
    */
@@ -121,7 +91,7 @@ public class LicenseStatus extends AviRestResource {
    * This is the setter method to the attribute.
    * Pulse license service update.
    * Field introduced in 21.1.4.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serviceUpdate set the serviceUpdate.
    */
@@ -134,7 +104,7 @@ public class LicenseStatus extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tenant uuid.
    * Field introduced in 30.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantUuid
    */
@@ -147,7 +117,7 @@ public class LicenseStatus extends AviRestResource {
    * This is the setter method to the attribute.
    * Tenant uuid.
    * Field introduced in 30.1.1.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantUuid set the tenantUuid.
    */
@@ -179,7 +149,7 @@ public class LicenseStatus extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -192,7 +162,7 @@ public class LicenseStatus extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
@@ -218,16 +188,14 @@ public boolean equals(java.lang.Object o) {
   return   Objects.equals(this.uuid, objLicenseStatus.uuid)&&
   Objects.equals(this.saasStatus, objLicenseStatus.saasStatus)&&
   Objects.equals(this.serviceUpdate, objLicenseStatus.serviceUpdate)&&
-  Objects.equals(this.tenantUuid, objLicenseStatus.tenantUuid)&&
-  Objects.equals(this.essentialsEnforcedAt, objLicenseStatus.essentialsEnforcedAt);
+  Objects.equals(this.tenantUuid, objLicenseStatus.tenantUuid);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class LicenseStatus {\n");
-      sb.append("    essentialsEnforcedAt: ").append(toIndentedString(essentialsEnforcedAt)).append("\n");
-        sb.append("    saasStatus: ").append(toIndentedString(saasStatus)).append("\n");
+      sb.append("    saasStatus: ").append(toIndentedString(saasStatus)).append("\n");
         sb.append("    serviceUpdate: ").append(toIndentedString(serviceUpdate)).append("\n");
         sb.append("    tenantUuid: ").append(toIndentedString(tenantUuid)).append("\n");
             sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");

@@ -54,7 +54,7 @@ public class NsxtSIEndpointDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Virtualendpoint path.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return endpoint
    */
@@ -67,7 +67,7 @@ public class NsxtSIEndpointDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Virtualendpoint path.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param endpoint set the endpoint.
    */
@@ -80,7 +80,7 @@ public class NsxtSIEndpointDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Error message.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorString
    */
@@ -93,7 +93,7 @@ public class NsxtSIEndpointDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Error message.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param errorString set the errorString.
    */
@@ -106,7 +106,7 @@ public class NsxtSIEndpointDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Serviceenginegroup name.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return segroup
    */
@@ -119,7 +119,7 @@ public class NsxtSIEndpointDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Serviceenginegroup name.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param segroup set the segroup.
    */
@@ -132,7 +132,7 @@ public class NsxtSIEndpointDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Services where endpoint refers.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return services
    */
@@ -145,7 +145,7 @@ public class NsxtSIEndpointDetails extends AviRestResource {
    * This is the setter method. this will set the services
    * Services where endpoint refers.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return services
    */
@@ -158,7 +158,7 @@ public class NsxtSIEndpointDetails extends AviRestResource {
    * This is the setter method this will set the services
    * Services where endpoint refers.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return services
    */
@@ -176,7 +176,7 @@ public class NsxtSIEndpointDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Endpoint target ips.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return targetIps
    */
@@ -189,7 +189,7 @@ public class NsxtSIEndpointDetails extends AviRestResource {
    * This is the setter method. this will set the targetIps
    * Endpoint target ips.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return targetIps
    */
@@ -202,7 +202,7 @@ public class NsxtSIEndpointDetails extends AviRestResource {
    * This is the setter method this will set the targetIps
    * Endpoint target ips.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return targetIps
    */
@@ -220,7 +220,7 @@ public class NsxtSIEndpointDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tier1 path.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tier1
    */
@@ -233,7 +233,7 @@ public class NsxtSIEndpointDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Tier1 path.
    * Field introduced in 21.1.3.
-   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tier1 set the tier1.
    */

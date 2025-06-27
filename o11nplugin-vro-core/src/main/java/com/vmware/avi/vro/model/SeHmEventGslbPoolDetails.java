@@ -54,7 +54,7 @@ public class SeHmEventGslbPoolDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Gslbservice pool name.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gsgroup
    */
@@ -66,7 +66,7 @@ public class SeHmEventGslbPoolDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Gslbservice pool name.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gsgroup set the gsgroup.
    */
@@ -79,7 +79,7 @@ public class SeHmEventGslbPoolDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Gslb service name.
    * It is a reference to an object of type gslbservice.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbService
    */
@@ -92,7 +92,7 @@ public class SeHmEventGslbPoolDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Gslb service name.
    * It is a reference to an object of type gslbservice.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gslbService set the gslbService.
    */
@@ -104,7 +104,7 @@ public class SeHmEventGslbPoolDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Gslbservice member details.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gsmember
    */
@@ -116,7 +116,7 @@ public class SeHmEventGslbPoolDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Gslbservice member details.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gsmember set the gsmember.
    */
@@ -128,7 +128,7 @@ public class SeHmEventGslbPoolDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ha compromised reason.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return haReason
    */
@@ -140,7 +140,7 @@ public class SeHmEventGslbPoolDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ha compromised reason.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param haReason set the haReason.
    */
@@ -152,7 +152,7 @@ public class SeHmEventGslbPoolDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Service engine.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seName
    */
@@ -164,7 +164,7 @@ public class SeHmEventGslbPoolDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Service engine.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seName set the seName.
    */
@@ -176,7 +176,7 @@ public class SeHmEventGslbPoolDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the event generator.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return srcUuid
    */
@@ -188,7 +188,7 @@ public class SeHmEventGslbPoolDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the event generator.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param srcUuid set the srcUuid.
    */

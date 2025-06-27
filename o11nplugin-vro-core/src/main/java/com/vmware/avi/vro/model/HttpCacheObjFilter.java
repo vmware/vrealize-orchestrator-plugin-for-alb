@@ -49,7 +49,7 @@ public class HttpCacheObjFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Http cache object's exact key.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return key
    */
@@ -61,7 +61,7 @@ public class HttpCacheObjFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Http cache object's exact key.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param key set the key.
    */
@@ -73,7 +73,7 @@ public class HttpCacheObjFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Http cache object's exact raw key.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rawKey
    */
@@ -85,7 +85,7 @@ public class HttpCacheObjFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Http cache object's exact raw key.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rawKey set the rawKey.
    */
@@ -97,7 +97,7 @@ public class HttpCacheObjFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Http cache object's resource name.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return resourceName
    */
@@ -109,7 +109,7 @@ public class HttpCacheObjFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Http cache object's resource name.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param resourceName set the resourceName.
    */
@@ -121,7 +121,7 @@ public class HttpCacheObjFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Objects with resource type.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return resourceType
    */
@@ -133,7 +133,7 @@ public class HttpCacheObjFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Objects with resource type.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param resourceType set the resourceType.
    */
@@ -146,7 +146,7 @@ public class HttpCacheObjFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Http cache object type.
    * Enum options - CO_ALL, CO_IN, CO_OUT.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
@@ -159,7 +159,7 @@ public class HttpCacheObjFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Http cache object type.
    * Enum options - CO_ALL, CO_IN, CO_OUT.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */

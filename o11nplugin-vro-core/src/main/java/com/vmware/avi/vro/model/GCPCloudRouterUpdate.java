@@ -60,7 +60,7 @@ public class GCPCloudRouterUpdate extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Action performed  action can be either route added or route removed from router.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return action
    */
@@ -73,7 +73,7 @@ public class GCPCloudRouterUpdate extends AviRestResource {
    * This is the setter method to the attribute.
    * Action performed  action can be either route added or route removed from router.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param action set the action.
    */
@@ -86,7 +86,7 @@ public class GCPCloudRouterUpdate extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Cloud uuid.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccId
    */
@@ -99,7 +99,7 @@ public class GCPCloudRouterUpdate extends AviRestResource {
    * This is the setter method to the attribute.
    * Cloud uuid.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccId set the ccId.
    */
@@ -112,7 +112,7 @@ public class GCPCloudRouterUpdate extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Reason for the failure.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorString
    */
@@ -125,7 +125,7 @@ public class GCPCloudRouterUpdate extends AviRestResource {
    * This is the setter method to the attribute.
    * Reason for the failure.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param errorString set the errorString.
    */
@@ -138,7 +138,7 @@ public class GCPCloudRouterUpdate extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Virtual service floating ip.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fip
    */
@@ -151,7 +151,7 @@ public class GCPCloudRouterUpdate extends AviRestResource {
    * This is the setter method to the attribute.
    * Virtual service floating ip.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fip set the fip.
    */
@@ -164,7 +164,7 @@ public class GCPCloudRouterUpdate extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Gcp cloud router url.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return routerUrl
    */
@@ -177,7 +177,7 @@ public class GCPCloudRouterUpdate extends AviRestResource {
    * This is the setter method to the attribute.
    * Gcp cloud router url.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param routerUrl set the routerUrl.
    */
@@ -190,7 +190,7 @@ public class GCPCloudRouterUpdate extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Virtual service ip.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vip
    */
@@ -203,7 +203,7 @@ public class GCPCloudRouterUpdate extends AviRestResource {
    * This is the setter method to the attribute.
    * Virtual service ip.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vip set the vip.
    */
@@ -216,7 +216,7 @@ public class GCPCloudRouterUpdate extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Virtual service uuid.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUuid
    */
@@ -229,7 +229,7 @@ public class GCPCloudRouterUpdate extends AviRestResource {
    * This is the setter method to the attribute.
    * Virtual service uuid.
    * Field introduced in 18.2.5.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsUuid set the vsUuid.
    */

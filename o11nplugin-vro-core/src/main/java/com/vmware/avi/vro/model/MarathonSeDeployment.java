@@ -46,7 +46,7 @@ public class MarathonSeDeployment extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Docker image to be used for avi se installation e.g.
    * Fedora, ubuntu.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "fedora".
    * @return dockerImage
    */
@@ -59,7 +59,7 @@ public class MarathonSeDeployment extends AviRestResource {
    * This is the setter method to the attribute.
    * Docker image to be used for avi se installation e.g.
    * Fedora, ubuntu.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "fedora".
    * @param dockerImage set the dockerImage.
    */
@@ -72,7 +72,7 @@ public class MarathonSeDeployment extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Host os distribution e.g.
    * Coreos, ubuntu, redhat.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "COREOS".
    * @return hostOs
    */
@@ -85,7 +85,7 @@ public class MarathonSeDeployment extends AviRestResource {
    * This is the setter method to the attribute.
    * Host os distribution e.g.
    * Coreos, ubuntu, redhat.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "COREOS".
    * @param hostOs set the hostOs.
    */
@@ -97,7 +97,7 @@ public class MarathonSeDeployment extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Accepted resource roles for ses.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return resourceRoles
    */
@@ -109,7 +109,7 @@ public class MarathonSeDeployment extends AviRestResource {
   /**
    * This is the setter method. this will set the resourceRoles
    * Accepted resource roles for ses.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return resourceRoles
    */
@@ -121,7 +121,7 @@ public class MarathonSeDeployment extends AviRestResource {
   /**
    * This is the setter method this will set the resourceRoles
    * Accepted resource roles for ses.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return resourceRoles
    */
@@ -138,7 +138,7 @@ public class MarathonSeDeployment extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uris to be resolved for starting the application.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uris
    */
@@ -150,7 +150,7 @@ public class MarathonSeDeployment extends AviRestResource {
   /**
    * This is the setter method. this will set the uris
    * Uris to be resolved for starting the application.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uris
    */
@@ -162,7 +162,7 @@ public class MarathonSeDeployment extends AviRestResource {
   /**
    * This is the setter method this will set the uris
    * Uris to be resolved for starting the application.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uris
    */

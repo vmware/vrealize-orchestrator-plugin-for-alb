@@ -55,7 +55,7 @@ public class RateProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Action to perform upon rate limiting.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return action
    */
@@ -67,7 +67,7 @@ public class RateProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Action to perform upon rate limiting.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param action set the action.
    */
@@ -79,7 +79,8 @@ public class RateProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Explicitly tracks an attacker across rate periods.
-   * Allowed in enterprise edition with any value, basic edition(allowed values- false), essentials, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
+   * Allowed in basic (allowed values- false) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return explicitTracking
    */
@@ -91,7 +92,8 @@ public class RateProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Explicitly tracks an attacker across rate periods.
-   * Allowed in enterprise edition with any value, basic edition(allowed values- false), essentials, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
+   * Allowed in basic (allowed values- false) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param explicitTracking set the explicitTracking.
    */
@@ -103,7 +105,8 @@ public class RateProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enable fine granularity.
-   * Allowed in enterprise edition with any value, basic edition(allowed values- false), essentials, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
+   * Allowed in basic (allowed values- false) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return fineGrain
    */
@@ -115,7 +118,8 @@ public class RateProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enable fine granularity.
-   * Allowed in enterprise edition with any value, basic edition(allowed values- false), essentials, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
+   * Allowed in basic (allowed values- false) edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param fineGrain set the fineGrain.
    */
@@ -128,7 +132,7 @@ public class RateProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Http cookie name.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpCookie
    */
@@ -141,7 +145,7 @@ public class RateProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Http cookie name.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param httpCookie set the httpCookie.
    */
@@ -154,7 +158,7 @@ public class RateProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Http header name.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpHeader
    */
@@ -167,7 +171,7 @@ public class RateProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Http header name.
    * Field introduced in 17.1.1.
-   * Allowed in enterprise edition with any value, essentials, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param httpHeader set the httpHeader.
    */
@@ -180,7 +184,7 @@ public class RateProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The rate limiter configuration for this rate profile.
    * Field introduced in 18.2.9.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rateLimiter
    */
@@ -193,7 +197,7 @@ public class RateProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * The rate limiter configuration for this rate profile.
    * Field introduced in 18.2.9.
-   * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rateLimiter set the rateLimiter.
    */
