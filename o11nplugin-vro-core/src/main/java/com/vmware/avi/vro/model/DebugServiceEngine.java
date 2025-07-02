@@ -10,6 +10,7 @@ import com.vmware.avi.vro.model.DebugVirtualServiceCapture;
 import com.vmware.avi.vro.model.CapturePacketFilter;
 import com.vmware.avi.vro.model.DebugIpAddr;
 import com.vmware.avi.vro.model.DebugSeFault;
+import com.vmware.avi.vro.model.DebugServiceEngineSustainedCpuSpike;
 import com.vmware.avi.vro.model.DebugServiceEngineSeDataStoreMockDlFail;
 import com.vmware.avi.vro.model.DebugServiceEngineObjSync;
 import com.vmware.avi.vro.model.DebugSeAgent;
@@ -88,6 +89,10 @@ public class DebugServiceEngine extends AviRestResource {
     @JsonProperty("flags")
     @JsonInclude(Include.NON_NULL)
     private List<DebugSeDataplane> flags;
+
+    @JsonProperty("high_cpu_script_config")
+    @JsonInclude(Include.NON_NULL)
+    private DebugServiceEngineSustainedCpuSpike highCpuScriptConfig;
 
     @JsonProperty("mock_dl_fail_obj")
     @JsonInclude(Include.NON_NULL)
@@ -541,6 +546,32 @@ public class DebugServiceEngine extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Internal  sustained cpu data collection config.
+   * Field introduced in 31.1.2.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return highCpuScriptConfig
+   */
+  @VsoMethod
+  public DebugServiceEngineSustainedCpuSpike getHighCpuScriptConfig() {
+    return highCpuScriptConfig;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Internal  sustained cpu data collection config.
+   * Field introduced in 31.1.2.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param highCpuScriptConfig set the highCpuScriptConfig.
+   */
+  @VsoMethod
+  public void setHighCpuScriptConfig(DebugServiceEngineSustainedCpuSpike highCpuScriptConfig) {
+    this.highCpuScriptConfig = highCpuScriptConfig;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Internal  mark a specific incoming stream object to be failed.
    * Field introduced in 31.1.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
@@ -803,6 +834,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.capturePktFilter, objDebugServiceEngine.capturePktFilter)&&
   Objects.equals(this.objsync, objDebugServiceEngine.objsync)&&
   Objects.equals(this.mockDlFailObj, objDebugServiceEngine.mockDlFailObj)&&
+  Objects.equals(this.highCpuScriptConfig, objDebugServiceEngine.highCpuScriptConfig)&&
   Objects.equals(this.tenantRef, objDebugServiceEngine.tenantRef);
 }
 
@@ -824,6 +856,7 @@ public String toString() {
         sb.append("    enableRpcTimingProfiler: ").append(toIndentedString(enableRpcTimingProfiler)).append("\n");
         sb.append("    fault: ").append(toIndentedString(fault)).append("\n");
         sb.append("    flags: ").append(toIndentedString(flags)).append("\n");
+        sb.append("    highCpuScriptConfig: ").append(toIndentedString(highCpuScriptConfig)).append("\n");
         sb.append("    mockDlFailObj: ").append(toIndentedString(mockDlFailObj)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    objsync: ").append(toIndentedString(objsync)).append("\n");

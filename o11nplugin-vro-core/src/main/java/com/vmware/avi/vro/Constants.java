@@ -293,6 +293,7 @@ public class Constants {
     public static final String FINDER_VRO_DEBUGSERVICEENGINE = "DebugServiceEngine";
     public static final String FINDER_VRO_DEBUGSERVICEENGINEOBJSYNC = "DebugServiceEngineObjSync";
     public static final String FINDER_VRO_DEBUGSERVICEENGINESEDATASTOREMOCKDLFAIL = "DebugServiceEngineSeDataStoreMockDlFail";
+    public static final String FINDER_VRO_DEBUGSERVICEENGINESUSTAINEDCPUSPIKE = "DebugServiceEngineSustainedCpuSpike";
     public static final String FINDER_VRO_DEBUGTRACEMALLOCTYPES = "DebugTraceMallocTypes";
     public static final String FINDER_VRO_DEBUGTRACEMEMORY = "DebugTraceMemory";
     public static final String FINDER_VRO_DEBUGTRACESHMMALLOCTYPES = "DebugTraceShmMallocTypes";
