@@ -65,7 +65,7 @@ public class TokenRefillRate extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The rate per refill interval at which tokens are added to the bucket.
-   * Allowed values are 1-1000.
+   * Allowed values are 1-100000.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
@@ -79,7 +79,7 @@ public class TokenRefillRate extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The rate per refill interval at which tokens are added to the bucket.
-   * Allowed values are 1-1000.
+   * Allowed values are 1-100000.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
