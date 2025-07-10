@@ -531,6 +531,10 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer maxConcurrentExternalHm;
 
+    @JsonProperty("max_cpu_load_adaptive_sampling")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxCpuLoadAdaptiveSampling = 80;
+
     @JsonProperty("max_cpu_usage")
     @JsonInclude(Include.NON_NULL)
     private Integer maxCpuUsage = 80;
@@ -4794,6 +4798,38 @@ public class ServiceEngineGroup extends AviRestResource {
   @VsoMethod
   public void setMaxConcurrentExternalHm(Integer  maxConcurrentExternalHm) {
     this.maxConcurrentExternalHm = maxConcurrentExternalHm;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * When adaptive sampling is enabled, specifies the max cpu load allowed for adaptive sampling.
+   * If the cpu load exceeds this value, no requests will be sampled.
+   * Allowed values are 1-100.
+   * Field introduced in 31.2.1.
+   * Unit is percent.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 80.
+   * @return maxCpuLoadAdaptiveSampling
+   */
+  @VsoMethod
+  public Integer getMaxCpuLoadAdaptiveSampling() {
+    return maxCpuLoadAdaptiveSampling;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * When adaptive sampling is enabled, specifies the max cpu load allowed for adaptive sampling.
+   * If the cpu load exceeds this value, no requests will be sampled.
+   * Allowed values are 1-100.
+   * Field introduced in 31.2.1.
+   * Unit is percent.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 80.
+   * @param maxCpuLoadAdaptiveSampling set the maxCpuLoadAdaptiveSampling.
+   */
+  @VsoMethod
+  public void setMaxCpuLoadAdaptiveSampling(Integer  maxCpuLoadAdaptiveSampling) {
+    this.maxCpuLoadAdaptiveSampling = maxCpuLoadAdaptiveSampling;
   }
 
   /**
@@ -10166,7 +10202,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.reservedConfiguration, objServiceEngineGroup.reservedConfiguration)&&
   Objects.equals(this.vsphereStoragePolicies, objServiceEngineGroup.vsphereStoragePolicies)&&
   Objects.equals(this.sdbKeyTimeout, objServiceEngineGroup.sdbKeyTimeout)&&
-  Objects.equals(this.enableQuantumEntropy, objServiceEngineGroup.enableQuantumEntropy);
+  Objects.equals(this.enableQuantumEntropy, objServiceEngineGroup.enableQuantumEntropy)&&
+  Objects.equals(this.maxCpuLoadAdaptiveSampling, objServiceEngineGroup.maxCpuLoadAdaptiveSampling);
 }
 
 @Override
@@ -10296,6 +10333,7 @@ public String toString() {
         sb.append("    logMessageMaxFileListSize: ").append(toIndentedString(logMessageMaxFileListSize)).append("\n");
         sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
         sb.append("    maxConcurrentExternalHm: ").append(toIndentedString(maxConcurrentExternalHm)).append("\n");
+        sb.append("    maxCpuLoadAdaptiveSampling: ").append(toIndentedString(maxCpuLoadAdaptiveSampling)).append("\n");
         sb.append("    maxCpuUsage: ").append(toIndentedString(maxCpuUsage)).append("\n");
         sb.append("    maxMemoryPerMempool: ").append(toIndentedString(maxMemoryPerMempool)).append("\n");
         sb.append("    maxNumHttpSessionsToStore: ").append(toIndentedString(maxNumHttpSessionsToStore)).append("\n");
