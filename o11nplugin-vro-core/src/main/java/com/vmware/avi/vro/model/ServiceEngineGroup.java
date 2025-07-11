@@ -211,6 +211,10 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean disableGro;
 
+    @JsonProperty("disable_qat_bulk_crypto")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean disableQatBulkCrypto = false;
+
     @JsonProperty("disable_se_memory_check")
     @JsonInclude(Include.NON_NULL)
     private Boolean disableSeMemoryCheck = false;
@@ -2519,6 +2523,36 @@ public class ServiceEngineGroup extends AviRestResource {
   @VsoMethod
   public void setDisableGro(Boolean  disableGro) {
     this.disableGro = disableGro;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * This knob enables the qat offloads for tls application data.
+   * (if the host cpu is capable, and the qat device is exposed).
+   * Requires se reboot.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return disableQatBulkCrypto
+   */
+  @VsoMethod
+  public Boolean getDisableQatBulkCrypto() {
+    return disableQatBulkCrypto;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * This knob enables the qat offloads for tls application data.
+   * (if the host cpu is capable, and the qat device is exposed).
+   * Requires se reboot.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param disableQatBulkCrypto set the disableQatBulkCrypto.
+   */
+  @VsoMethod
+  public void setDisableQatBulkCrypto(Boolean  disableQatBulkCrypto) {
+    this.disableQatBulkCrypto = disableQatBulkCrypto;
   }
 
   /**
@@ -10203,7 +10237,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.vsphereStoragePolicies, objServiceEngineGroup.vsphereStoragePolicies)&&
   Objects.equals(this.sdbKeyTimeout, objServiceEngineGroup.sdbKeyTimeout)&&
   Objects.equals(this.enableQuantumEntropy, objServiceEngineGroup.enableQuantumEntropy)&&
-  Objects.equals(this.maxCpuLoadAdaptiveSampling, objServiceEngineGroup.maxCpuLoadAdaptiveSampling);
+  Objects.equals(this.maxCpuLoadAdaptiveSampling, objServiceEngineGroup.maxCpuLoadAdaptiveSampling)&&
+  Objects.equals(this.disableQatBulkCrypto, objServiceEngineGroup.disableQatBulkCrypto);
 }
 
 @Override
@@ -10253,6 +10288,7 @@ public String toString() {
         sb.append("    disableCsumOffloads: ").append(toIndentedString(disableCsumOffloads)).append("\n");
         sb.append("    disableFlowProbes: ").append(toIndentedString(disableFlowProbes)).append("\n");
         sb.append("    disableGro: ").append(toIndentedString(disableGro)).append("\n");
+        sb.append("    disableQatBulkCrypto: ").append(toIndentedString(disableQatBulkCrypto)).append("\n");
         sb.append("    disableSeMemoryCheck: ").append(toIndentedString(disableSeMemoryCheck)).append("\n");
         sb.append("    disableTso: ").append(toIndentedString(disableTso)).append("\n");
         sb.append("    diskPerSe: ").append(toIndentedString(diskPerSe)).append("\n");
