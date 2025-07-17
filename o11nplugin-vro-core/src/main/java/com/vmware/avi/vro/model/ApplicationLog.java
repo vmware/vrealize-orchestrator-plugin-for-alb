@@ -313,6 +313,10 @@ public class ApplicationLog extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer reportTimestamp;
 
+    @JsonProperty("request_body_updated")
+    @JsonInclude(Include.NON_NULL)
+    private String requestBodyUpdated = "REQ_BODY_NOT_UPDATED";
+
     @JsonProperty("request_content_type")
     @JsonInclude(Include.NON_NULL)
     private String requestContentType;
@@ -2249,6 +2253,34 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Request body modified.
+   * Enum options - REQ_BODY_NOT_UPDATED, REQ_BODY_UPDATED_BY_CONTENT_REWRITE_PROFILE, REQ_BODY_UPDATE_SKIPPED_COMPRESSION.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "REQ_BODY_NOT_UPDATED".
+   * @return requestBodyUpdated
+   */
+  @VsoMethod
+  public String getRequestBodyUpdated() {
+    return requestBodyUpdated;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Request body modified.
+   * Enum options - REQ_BODY_NOT_UPDATED, REQ_BODY_UPDATED_BY_CONTENT_REWRITE_PROFILE, REQ_BODY_UPDATE_SKIPPED_COMPRESSION.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "REQ_BODY_NOT_UPDATED".
+   * @param requestBodyUpdated set the requestBodyUpdated.
+   */
+  @VsoMethod
+  public void setRequestBodyUpdated(String  requestBodyUpdated) {
+    this.requestBodyUpdated = requestBodyUpdated;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return requestContentType
@@ -3961,7 +3993,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.clientFingerprints, objApplicationLog.clientFingerprints)&&
   Objects.equals(this.serverPushInitiated, objApplicationLog.serverPushInitiated)&&
   Objects.equals(this.serverPushedRequest, objApplicationLog.serverPushedRequest)&&
-  Objects.equals(this.vhMatchRule, objApplicationLog.vhMatchRule);
+  Objects.equals(this.vhMatchRule, objApplicationLog.vhMatchRule)&&
+  Objects.equals(this.requestBodyUpdated, objApplicationLog.requestBodyUpdated);
 }
 
 @Override
@@ -4037,6 +4070,7 @@ public String toString() {
         sb.append("    redirectedUri: ").append(toIndentedString(redirectedUri)).append("\n");
         sb.append("    referer: ").append(toIndentedString(referer)).append("\n");
         sb.append("    reportTimestamp: ").append(toIndentedString(reportTimestamp)).append("\n");
+        sb.append("    requestBodyUpdated: ").append(toIndentedString(requestBodyUpdated)).append("\n");
         sb.append("    requestContentType: ").append(toIndentedString(requestContentType)).append("\n");
         sb.append("    requestHeaders: ").append(toIndentedString(requestHeaders)).append("\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");

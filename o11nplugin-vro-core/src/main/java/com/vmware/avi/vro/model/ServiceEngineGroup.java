@@ -95,13 +95,25 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private List<Integer> autoRebalanceCapacityPerSe;
 
+    @JsonProperty("auto_rebalance_cool_down_time")
+    @JsonInclude(Include.NON_NULL)
+    private Integer autoRebalanceCoolDownTime = 15;
+
     @JsonProperty("auto_rebalance_criteria")
     @JsonInclude(Include.NON_NULL)
     private List<String> autoRebalanceCriteria;
 
+    @JsonProperty("auto_rebalance_dry_run_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean autoRebalanceDryRunEnabled = false;
+
     @JsonProperty("auto_rebalance_interval")
     @JsonInclude(Include.NON_NULL)
     private Integer autoRebalanceInterval = 300;
+
+    @JsonProperty("auto_rebalance_raise_events_for_actions")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean autoRebalanceRaiseEventsForActions = false;
 
     @JsonProperty("auto_redistribute_active_standby_load")
     @JsonInclude(Include.NON_NULL)
@@ -1665,6 +1677,34 @@ public class ServiceEngineGroup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * The time in minutes controller waits before rebalancing the vs again after a scalein/scaleout.
+   * Field introduced in 31.2.1.
+   * Unit is min.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 15.
+   * @return autoRebalanceCoolDownTime
+   */
+  @VsoMethod
+  public Integer getAutoRebalanceCoolDownTime() {
+    return autoRebalanceCoolDownTime;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * The time in minutes controller waits before rebalancing the vs again after a scalein/scaleout.
+   * Field introduced in 31.2.1.
+   * Unit is min.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 15.
+   * @param autoRebalanceCoolDownTime set the autoRebalanceCoolDownTime.
+   */
+  @VsoMethod
+  public void setAutoRebalanceCoolDownTime(Integer  autoRebalanceCoolDownTime) {
+    this.autoRebalanceCoolDownTime = autoRebalanceCoolDownTime;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Set of criteria for se auto rebalance.
    * Enum options - SE_AUTO_REBALANCE_CPU, SE_AUTO_REBALANCE_PPS, SE_AUTO_REBALANCE_MBPS, SE_AUTO_REBALANCE_OPEN_CONNS, SE_AUTO_REBALANCE_CPS.
    * Field introduced in 17.2.3.
@@ -1712,6 +1752,34 @@ public class ServiceEngineGroup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * If enabled, the controller will not perform the rebalance actions.it will only generate the actions and update that in the debug api.this is
+   * useful for testing the rebalance logic without actually performing the actions.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return autoRebalanceDryRunEnabled
+   */
+  @VsoMethod
+  public Boolean getAutoRebalanceDryRunEnabled() {
+    return autoRebalanceDryRunEnabled;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * If enabled, the controller will not perform the rebalance actions.it will only generate the actions and update that in the debug api.this is
+   * useful for testing the rebalance logic without actually performing the actions.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param autoRebalanceDryRunEnabled set the autoRebalanceDryRunEnabled.
+   */
+  @VsoMethod
+  public void setAutoRebalanceDryRunEnabled(Boolean  autoRebalanceDryRunEnabled) {
+    this.autoRebalanceDryRunEnabled = autoRebalanceDryRunEnabled;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Frequency of rebalance, if 'auto rebalance' is enabled.
    * Unit is sec.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -1734,6 +1802,32 @@ public class ServiceEngineGroup extends AviRestResource {
   @VsoMethod
   public void setAutoRebalanceInterval(Integer  autoRebalanceInterval) {
     this.autoRebalanceInterval = autoRebalanceInterval;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * If enabled, the controller will raise events for rebalance actions.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return autoRebalanceRaiseEventsForActions
+   */
+  @VsoMethod
+  public Boolean getAutoRebalanceRaiseEventsForActions() {
+    return autoRebalanceRaiseEventsForActions;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * If enabled, the controller will raise events for rebalance actions.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param autoRebalanceRaiseEventsForActions set the autoRebalanceRaiseEventsForActions.
+   */
+  @VsoMethod
+  public void setAutoRebalanceRaiseEventsForActions(Boolean  autoRebalanceRaiseEventsForActions) {
+    this.autoRebalanceRaiseEventsForActions = autoRebalanceRaiseEventsForActions;
   }
 
   /**
@@ -10238,7 +10332,10 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.sdbKeyTimeout, objServiceEngineGroup.sdbKeyTimeout)&&
   Objects.equals(this.enableQuantumEntropy, objServiceEngineGroup.enableQuantumEntropy)&&
   Objects.equals(this.maxCpuLoadAdaptiveSampling, objServiceEngineGroup.maxCpuLoadAdaptiveSampling)&&
-  Objects.equals(this.disableQatBulkCrypto, objServiceEngineGroup.disableQatBulkCrypto);
+  Objects.equals(this.disableQatBulkCrypto, objServiceEngineGroup.disableQatBulkCrypto)&&
+  Objects.equals(this.autoRebalanceCoolDownTime, objServiceEngineGroup.autoRebalanceCoolDownTime)&&
+  Objects.equals(this.autoRebalanceRaiseEventsForActions, objServiceEngineGroup.autoRebalanceRaiseEventsForActions)&&
+  Objects.equals(this.autoRebalanceDryRunEnabled, objServiceEngineGroup.autoRebalanceDryRunEnabled);
 }
 
 @Override
@@ -10259,8 +10356,11 @@ public String toString() {
         sb.append("    asyncSslThreads: ").append(toIndentedString(asyncSslThreads)).append("\n");
         sb.append("    autoRebalance: ").append(toIndentedString(autoRebalance)).append("\n");
         sb.append("    autoRebalanceCapacityPerSe: ").append(toIndentedString(autoRebalanceCapacityPerSe)).append("\n");
+        sb.append("    autoRebalanceCoolDownTime: ").append(toIndentedString(autoRebalanceCoolDownTime)).append("\n");
         sb.append("    autoRebalanceCriteria: ").append(toIndentedString(autoRebalanceCriteria)).append("\n");
+        sb.append("    autoRebalanceDryRunEnabled: ").append(toIndentedString(autoRebalanceDryRunEnabled)).append("\n");
         sb.append("    autoRebalanceInterval: ").append(toIndentedString(autoRebalanceInterval)).append("\n");
+        sb.append("    autoRebalanceRaiseEventsForActions: ").append(toIndentedString(autoRebalanceRaiseEventsForActions)).append("\n");
         sb.append("    autoRedistributeActiveStandbyLoad: ").append(toIndentedString(autoRedistributeActiveStandbyLoad)).append("\n");
         sb.append("    availabilityZoneRefs: ").append(toIndentedString(availabilityZoneRefs)).append("\n");
         sb.append("    baremetalDispatcherHandlesFlows: ").append(toIndentedString(baremetalDispatcherHandlesFlows)).append("\n");

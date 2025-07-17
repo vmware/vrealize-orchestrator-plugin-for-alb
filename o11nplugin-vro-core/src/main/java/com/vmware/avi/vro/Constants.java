@@ -71,6 +71,8 @@ public class Constants {
     public static final String FINDER_VRO_APPLICATIONLOG = "ApplicationLog";
     public static final String FINDER_VRO_APPLICATIONPERSISTENCEPROFILE = "ApplicationPersistenceProfile";
     public static final String FINDER_VRO_APPLICATIONPROFILE = "ApplicationProfile";
+    public static final String FINDER_VRO_ARCHIVEPOLICY = "ArchivePolicy";
+    public static final String FINDER_VRO_ARCHIVERULES = "ArchiveRules";
     public static final String FINDER_VRO_ARPTABLEFILTER = "ArpTableFilter";
     public static final String FINDER_VRO_ASYNCPATCHSTATE = "AsyncPatchState";
     public static final String FINDER_VRO_ATTACHIPSTATUSEVENTDETAILS = "AttachIpStatusEventDetails";
@@ -221,6 +223,7 @@ public class Constants {
     public static final String FINDER_VRO_CLUSTERSERVICEFAILEDEVENT = "ClusterServiceFailedEvent";
     public static final String FINDER_VRO_CLUSTERSERVICERESTOREDEVENT = "ClusterServiceRestoredEvent";
     public static final String FINDER_VRO_CLUSTIFYCHECKEVENT = "ClustifyCheckEvent";
+    public static final String FINDER_VRO_COLLECTCUSTOMERFILES = "CollectCustomerFiles";
     public static final String FINDER_VRO_COMPRESSIONFILTER = "CompressionFilter";
     public static final String FINDER_VRO_COMPRESSIONPROFILE = "CompressionProfile";
     public static final String FINDER_VRO_CONFIGACTIONDETAILS = "ConfigActionDetails";
@@ -817,6 +820,7 @@ public class Constants {
     public static final String FINDER_VRO_PORTALCONFIGURATION = "PortalConfiguration";
     public static final String FINDER_VRO_PORTALFEATUREOPTIN = "PortalFeatureOptIn";
     public static final String FINDER_VRO_POSTGRESEVENTINFO = "PostgresEventInfo";
+    public static final String FINDER_VRO_PRECHECKSINFO = "PreChecksInfo";
     public static final String FINDER_VRO_PRECHECKSPARAMS = "PreChecksParams";
     public static final String FINDER_VRO_PRIMARYPOOL = "PrimaryPool";
     public static final String FINDER_VRO_PRIORITYLABELS = "PriorityLabels";
@@ -838,6 +842,7 @@ public class Constants {
     public static final String FINDER_VRO_RATELIMITERPROFILE = "RateLimiterProfile";
     public static final String FINDER_VRO_RATELIMITERPROPERTIES = "RateLimiterProperties";
     public static final String FINDER_VRO_RATEPROFILE = "RateProfile";
+    public static final String FINDER_VRO_READINESSCHECKOBJ = "ReadinessCheckObj";
     public static final String FINDER_VRO_REBALANCEMIGRATEEVENTDETAILS = "RebalanceMigrateEventDetails";
     public static final String FINDER_VRO_REBALANCESCALEINEVENTDETAILS = "RebalanceScaleinEventDetails";
     public static final String FINDER_VRO_REBALANCESCALEOUTEVENTDETAILS = "RebalanceScaleoutEventDetails";
@@ -851,6 +856,7 @@ public class Constants {
     public static final String FINDER_VRO_REPORTOPSSTATE = "ReportOpsState";
     public static final String FINDER_VRO_REPORTSUMMARY = "ReportSummary";
     public static final String FINDER_VRO_REPORTTASK = "ReportTask";
+    public static final String FINDER_VRO_REQCONTENTREWRITERULE = "ReqContentRewriteRule";
     public static final String FINDER_VRO_REQUESTLIMITEREVENTINFO = "RequestLimiterEventInfo";
     public static final String FINDER_VRO_RESERVEDCONFIGURATION = "ReservedConfiguration";
     public static final String FINDER_VRO_RESPONSEMATCHTARGET = "ResponseMatchTarget";
@@ -934,6 +940,7 @@ public class Constants {
     public static final String FINDER_VRO_SCHEDULERACTIONDETAILS = "SchedulerActionDetails";
     public static final String FINDER_VRO_SEAGENTPROPERTIES = "SeAgentProperties";
     public static final String FINDER_VRO_SEAGENTSTATECACHEPROPERTIES = "SeAgentStateCacheProperties";
+    public static final String FINDER_VRO_SEAUTOSCALEREVENTDETAILS = "SeAutoScalerEventDetails";
     public static final String FINDER_VRO_SEBGPPEERDOWNDETAILS = "SeBgpPeerDownDetails";
     public static final String FINDER_VRO_SEBGPPEERSTATECHANGEDETAILS = "SeBgpPeerStateChangeDetails";
     public static final String FINDER_VRO_SEBOOTUPCOMPRESSIONPROPERTIES = "SeBootupCompressionProperties";
@@ -1096,8 +1103,14 @@ public class Constants {
     public static final String FINDER_VRO_TACACSPLUSAUTHSETTINGS = "TacacsPlusAuthSettings";
     public static final String FINDER_VRO_TAG = "Tag";
     public static final String FINDER_VRO_TASKJOURNAL = "TaskJournal";
+    public static final String FINDER_VRO_TECHSUPPORT = "TechSupport";
     public static final String FINDER_VRO_TECHSUPPORTEVENT = "TechSupportEvent";
-    public static final String FINDER_VRO_TECHSUPPORTSTATUS = "TechSupportStatus";
+    public static final String FINDER_VRO_TECHSUPPORTEVENTMAP = "TechSupportEventMap";
+    public static final String FINDER_VRO_TECHSUPPORTEVENTPARAMS = "TechSupportEventParams";
+    public static final String FINDER_VRO_TECHSUPPORTMESSAGE = "TechSupportMessage";
+    public static final String FINDER_VRO_TECHSUPPORTPARAMS = "TechSupportParams";
+    public static final String FINDER_VRO_TECHSUPPORTPROFILE = "TechSupportProfile";
+    public static final String FINDER_VRO_TECHSUPPORTSTATE = "TechSupportState";
     public static final String FINDER_VRO_TELEMETRYCONFIGURATION = "TelemetryConfiguration";
     public static final String FINDER_VRO_TENANT = "Tenant";
     public static final String FINDER_VRO_TENANTCONFIGURATION = "TenantConfiguration";
@@ -1182,6 +1195,7 @@ public class Constants {
     public static final String FINDER_VRO_VINFRAVCENTEROBJDELETEDETAILS = "VinfraVcenterObjDeleteDetails";
     public static final String FINDER_VRO_VINFRAVMDETAILS = "VinfraVmDetails";
     public static final String FINDER_VRO_VIP = "Vip";
+    public static final String FINDER_VRO_VIPACTION = "VipAction";
     public static final String FINDER_VRO_VIPAUTOSCALECONFIGURATION = "VipAutoscaleConfiguration";
     public static final String FINDER_VRO_VIPAUTOSCALEGROUP = "VipAutoscaleGroup";
     public static final String FINDER_VRO_VIPAUTOSCALEPOLICY = "VipAutoscalePolicy";

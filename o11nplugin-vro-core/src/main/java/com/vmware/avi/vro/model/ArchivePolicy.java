@@ -12,82 +12,80 @@ import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
 
 /**
- * The LogManagerDebugFilter is a POJO class extends AviRestResource that used for creating
- * LogManagerDebugFilter.
+ * The ArchivePolicy is a POJO class extends AviRestResource that used for creating
+ * ArchivePolicy.
  *
  * @version 1.0
  * @since 
  *
  */
-@VsoObject(create = false, name = "LogManagerDebugFilter")
-@VsoFinder(name = Constants.FINDER_VRO_LOGMANAGERDEBUGFILTER)
+@VsoObject(create = false, name = "ArchivePolicy")
+@VsoFinder(name = Constants.FINDER_VRO_ARCHIVEPOLICY)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class LogManagerDebugFilter extends AviRestResource {
-    @JsonProperty("entity_ref")
+public class ArchivePolicy extends AviRestResource {
+    @JsonProperty("source")
     @JsonInclude(Include.NON_NULL)
-    private String entityRef;
+    private String source;
 
-    @JsonProperty("telemetry_trace_log_level")
+    @JsonProperty("threshold")
     @JsonInclude(Include.NON_NULL)
-    private String telemetryTraceLogLevel;
+    private Integer threshold;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
-   * Uuid of the entity.
-   * It is a reference to an object of type virtualservice.
-   * Field introduced in 21.1.1.
+   * Specify a file path to add archive rule.
+   * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return entityRef
+   * @return source
    */
   @VsoMethod
-  public String getEntityRef() {
-    return entityRef;
+  public String getSource() {
+    return source;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Uuid of the entity.
-   * It is a reference to an object of type virtualservice.
-   * Field introduced in 21.1.1.
+   * Specify a file path to add archive rule.
+   * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param entityRef set the entityRef.
+   * @param source set the source.
    */
   @VsoMethod
-  public void setEntityRef(String  entityRef) {
-    this.entityRef = entityRef;
+  public void setSource(String  source) {
+    this.source = source;
   }
 
   /**
    * This is the getter method this will return the attribute value.
-   * Set the log level for telemetry trace logs.
-   * Enum options - LOG_LEVEL_DISABLED, LOG_LEVEL_INFO, LOG_LEVEL_WARNING, LOG_LEVEL_ERROR, LOG_LEVEL_DEBUG.
+   * Specify a threshold for file path in mb.
    * Field introduced in 31.2.1.
+   * Unit is mb.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return telemetryTraceLogLevel
+   * @return threshold
    */
   @VsoMethod
-  public String getTelemetryTraceLogLevel() {
-    return telemetryTraceLogLevel;
+  public Integer getThreshold() {
+    return threshold;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Set the log level for telemetry trace logs.
-   * Enum options - LOG_LEVEL_DISABLED, LOG_LEVEL_INFO, LOG_LEVEL_WARNING, LOG_LEVEL_ERROR, LOG_LEVEL_DEBUG.
+   * Specify a threshold for file path in mb.
    * Field introduced in 31.2.1.
+   * Unit is mb.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param telemetryTraceLogLevel set the telemetryTraceLogLevel.
+   * @param threshold set the threshold.
    */
   @VsoMethod
-  public void setTelemetryTraceLogLevel(String  telemetryTraceLogLevel) {
-    this.telemetryTraceLogLevel = telemetryTraceLogLevel;
+  public void setThreshold(Integer  threshold) {
+    this.threshold = threshold;
   }
 
 
@@ -100,17 +98,17 @@ public boolean equals(java.lang.Object o) {
   if (o == null || getClass() != o.getClass()) {
     return false;
   }
-  LogManagerDebugFilter objLogManagerDebugFilter = (LogManagerDebugFilter) o;
-  return   Objects.equals(this.entityRef, objLogManagerDebugFilter.entityRef)&&
-  Objects.equals(this.telemetryTraceLogLevel, objLogManagerDebugFilter.telemetryTraceLogLevel);
+  ArchivePolicy objArchivePolicy = (ArchivePolicy) o;
+  return   Objects.equals(this.source, objArchivePolicy.source)&&
+  Objects.equals(this.threshold, objArchivePolicy.threshold);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
-  sb.append("class LogManagerDebugFilter {\n");
-      sb.append("    entityRef: ").append(toIndentedString(entityRef)).append("\n");
-        sb.append("    telemetryTraceLogLevel: ").append(toIndentedString(telemetryTraceLogLevel)).append("\n");
+  sb.append("class ArchivePolicy {\n");
+      sb.append("    source: ").append(toIndentedString(source)).append("\n");
+        sb.append("    threshold: ").append(toIndentedString(threshold)).append("\n");
       sb.append("}");
   return sb.toString();
 }

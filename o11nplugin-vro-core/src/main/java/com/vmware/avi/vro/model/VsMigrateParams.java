@@ -2,6 +2,7 @@ package com.vmware.avi.vro.model;
 
 import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -31,6 +32,9 @@ public class VsMigrateParams extends AviRestResource {
     @JsonProperty("new_vcpus")
     @JsonInclude(Include.NON_NULL)
     private Integer newVcpus;
+
+    @JsonIgnore
+    private String source;
 
     @JsonProperty("to_host_ref")
     @JsonInclude(Include.NON_NULL)
@@ -98,6 +102,32 @@ public class VsMigrateParams extends AviRestResource {
   @VsoMethod
   public void setNewVcpus(Integer  newVcpus) {
     this.newVcpus = newVcpus;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Source from where this request has originated.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return source
+   */
+  @VsoMethod
+  public String getSource() {
+    return source;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Source from where this request has originated.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param source set the source.
+   */
+  @VsoMethod
+  public void setSource(String  source) {
+    this.source = source;
   }
 
   /**
@@ -233,7 +263,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.toNewSe, objVsMigrateParams.toNewSe)&&
   Objects.equals(this.toHostRef, objVsMigrateParams.toHostRef)&&
   Objects.equals(this.newVcpus, objVsMigrateParams.newVcpus)&&
-  Objects.equals(this.vipId, objVsMigrateParams.vipId);
+  Objects.equals(this.vipId, objVsMigrateParams.vipId)&&
+  Objects.equals(this.source, objVsMigrateParams.source);
 }
 
 @Override
@@ -242,6 +273,7 @@ public String toString() {
   sb.append("class VsMigrateParams {\n");
       sb.append("    fromSeRef: ").append(toIndentedString(fromSeRef)).append("\n");
         sb.append("    newVcpus: ").append(toIndentedString(newVcpus)).append("\n");
+        sb.append("    source: ").append(toIndentedString(source)).append("\n");
         sb.append("    toHostRef: ").append(toIndentedString(toHostRef)).append("\n");
         sb.append("    toNewSe: ").append(toIndentedString(toNewSe)).append("\n");
         sb.append("    toSeRef: ").append(toIndentedString(toSeRef)).append("\n");
