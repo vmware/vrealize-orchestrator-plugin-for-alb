@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ArchivePolicy extends AviRestResource {
-    @JsonProperty("source")
+    @JsonProperty("file_path")
     @JsonInclude(Include.NON_NULL)
-    private String source;
+    private String filePath;
 
     @JsonProperty("threshold")
     @JsonInclude(Include.NON_NULL)
-    private Integer threshold;
+    private Integer threshold = 128;
 
 
 
@@ -40,11 +40,11 @@ public class ArchivePolicy extends AviRestResource {
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return source
+   * @return filePath
    */
   @VsoMethod
-  public String getSource() {
-    return source;
+  public String getFilePath() {
+    return filePath;
   }
 
   /**
@@ -53,11 +53,11 @@ public class ArchivePolicy extends AviRestResource {
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param source set the source.
+   * @param filePath set the filePath.
    */
   @VsoMethod
-  public void setSource(String  source) {
-    this.source = source;
+  public void setFilePath(String  filePath) {
+    this.filePath = filePath;
   }
 
   /**
@@ -66,7 +66,7 @@ public class ArchivePolicy extends AviRestResource {
    * Field introduced in 31.2.1.
    * Unit is mb.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 128.
    * @return threshold
    */
   @VsoMethod
@@ -80,7 +80,7 @@ public class ArchivePolicy extends AviRestResource {
    * Field introduced in 31.2.1.
    * Unit is mb.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 128.
    * @param threshold set the threshold.
    */
   @VsoMethod
@@ -99,7 +99,7 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   ArchivePolicy objArchivePolicy = (ArchivePolicy) o;
-  return   Objects.equals(this.source, objArchivePolicy.source)&&
+  return   Objects.equals(this.filePath, objArchivePolicy.filePath)&&
   Objects.equals(this.threshold, objArchivePolicy.threshold);
 }
 
@@ -107,7 +107,7 @@ public boolean equals(java.lang.Object o) {
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class ArchivePolicy {\n");
-      sb.append("    source: ").append(toIndentedString(source)).append("\n");
+      sb.append("    filePath: ").append(toIndentedString(filePath)).append("\n");
         sb.append("    threshold: ").append(toIndentedString(threshold)).append("\n");
       sb.append("}");
   return sb.toString();

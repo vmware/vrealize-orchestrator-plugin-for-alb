@@ -53,7 +53,7 @@ public class TechSupportProfile extends AviRestResource {
 
     @JsonProperty("no_of_techsupport_retentions")
     @JsonInclude(Include.NON_NULL)
-    private Integer noOfTechsupportRetentions = 1;
+    private Integer noOfTechsupportRetentions = 4;
 
     @JsonProperty("simultaneous_invocations")
     @JsonInclude(Include.NON_NULL)
@@ -263,7 +263,7 @@ public class TechSupportProfile extends AviRestResource {
    * Allowed values are 1-5.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 4.
    * @return noOfTechsupportRetentions
    */
   @VsoMethod
@@ -277,7 +277,7 @@ public class TechSupportProfile extends AviRestResource {
    * Allowed values are 1-5.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 4.
    * @param noOfTechsupportRetentions set the noOfTechsupportRetentions.
    */
   @VsoMethod
