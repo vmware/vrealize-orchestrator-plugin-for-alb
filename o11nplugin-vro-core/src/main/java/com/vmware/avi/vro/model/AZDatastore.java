@@ -32,6 +32,10 @@ public class AZDatastore extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean include = false;
 
+    @JsonProperty("vcenter_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String vcenterRef;
+
 
 
   /**
@@ -104,6 +108,34 @@ public class AZDatastore extends AviRestResource {
     this.include = include;
   }
 
+  /**
+   * This is the getter method this will return the attribute value.
+   * Vcenter id of the datastores.
+   * It is a reference to an object of type vcenterserver.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return vcenterRef
+   */
+  @VsoMethod
+  public String getVcenterRef() {
+    return vcenterRef;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Vcenter id of the datastores.
+   * It is a reference to an object of type vcenterserver.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param vcenterRef set the vcenterRef.
+   */
+  @VsoMethod
+  public void setVcenterRef(String  vcenterRef) {
+    this.vcenterRef = vcenterRef;
+  }
+
 
 
 @Override
@@ -116,7 +148,8 @@ public boolean equals(java.lang.Object o) {
   }
   AZDatastore objAZDatastore = (AZDatastore) o;
   return   Objects.equals(this.dsIds, objAZDatastore.dsIds)&&
-  Objects.equals(this.include, objAZDatastore.include);
+  Objects.equals(this.include, objAZDatastore.include)&&
+  Objects.equals(this.vcenterRef, objAZDatastore.vcenterRef);
 }
 
 @Override
@@ -125,6 +158,7 @@ public String toString() {
   sb.append("class AZDatastore {\n");
       sb.append("    dsIds: ").append(toIndentedString(dsIds)).append("\n");
         sb.append("    include: ").append(toIndentedString(include)).append("\n");
+        sb.append("    vcenterRef: ").append(toIndentedString(vcenterRef)).append("\n");
       sb.append("}");
   return sb.toString();
 }

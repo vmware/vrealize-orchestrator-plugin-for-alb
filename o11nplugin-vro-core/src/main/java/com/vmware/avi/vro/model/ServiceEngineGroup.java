@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.GCPSeGroupConfig;
+import com.vmware.avi.vro.model.QuotaConfig;
 import com.vmware.avi.vro.model.IpAddrPrefix;
 import com.vmware.avi.vro.model.ObjSyncConfig;
 import com.vmware.avi.vro.model.MetricsRealTimeUpdate;
@@ -315,10 +316,6 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean enableQat = false;
 
-    @JsonProperty("enable_quantum_entropy")
-    @JsonInclude(Include.NON_NULL)
-    private Boolean enableQuantumEntropy = false;
-
     @JsonProperty("ephemeral_portrange_end")
     @JsonInclude(Include.NON_NULL)
     private Integer ephemeralPortrangeEnd;
@@ -462,6 +459,10 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonProperty("least_load_core_selection")
     @JsonInclude(Include.NON_NULL)
     private Boolean leastLoadCoreSelection = true;
+
+    @JsonProperty("license_quota")
+    @JsonInclude(Include.NON_NULL)
+    private QuotaConfig licenseQuota;
 
     @JsonProperty("license_tier")
     @JsonInclude(Include.NON_NULL)
@@ -3275,34 +3276,6 @@ public class ServiceEngineGroup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * This knob enables the service engine to use the quantinium library to locally generate quantum-hardened randomness for the linux kernel prng.
-   * Requires se reboot.
-   * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @return enableQuantumEntropy
-   */
-  @VsoMethod
-  public Boolean getEnableQuantumEntropy() {
-    return enableQuantumEntropy;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * This knob enables the service engine to use the quantinium library to locally generate quantum-hardened randomness for the linux kernel prng.
-   * Requires se reboot.
-   * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @param enableQuantumEntropy set the enableQuantumEntropy.
-   */
-  @VsoMethod
-  public void setEnableQuantumEntropy(Boolean  enableQuantumEntropy) {
-    this.enableQuantumEntropy = enableQuantumEntropy;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * End local ephemeral port number for outbound connections.
    * Field introduced in 17.2.13, 18.1.5, 18.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -4336,6 +4309,32 @@ public class ServiceEngineGroup extends AviRestResource {
   @VsoMethod
   public void setLeastLoadCoreSelection(Boolean  leastLoadCoreSelection) {
     this.leastLoadCoreSelection = leastLoadCoreSelection;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * License quota for the se group.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return licenseQuota
+   */
+  @VsoMethod
+  public QuotaConfig getLicenseQuota() {
+    return licenseQuota;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * License quota for the se group.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param licenseQuota set the licenseQuota.
+   */
+  @VsoMethod
+  public void setLicenseQuota(QuotaConfig licenseQuota) {
+    this.licenseQuota = licenseQuota;
   }
 
   /**
@@ -10330,12 +10329,12 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.reservedConfiguration, objServiceEngineGroup.reservedConfiguration)&&
   Objects.equals(this.vsphereStoragePolicies, objServiceEngineGroup.vsphereStoragePolicies)&&
   Objects.equals(this.sdbKeyTimeout, objServiceEngineGroup.sdbKeyTimeout)&&
-  Objects.equals(this.enableQuantumEntropy, objServiceEngineGroup.enableQuantumEntropy)&&
   Objects.equals(this.maxCpuLoadAdaptiveSampling, objServiceEngineGroup.maxCpuLoadAdaptiveSampling)&&
   Objects.equals(this.disableQatBulkCrypto, objServiceEngineGroup.disableQatBulkCrypto)&&
   Objects.equals(this.autoRebalanceCoolDownTime, objServiceEngineGroup.autoRebalanceCoolDownTime)&&
   Objects.equals(this.autoRebalanceRaiseEventsForActions, objServiceEngineGroup.autoRebalanceRaiseEventsForActions)&&
-  Objects.equals(this.autoRebalanceDryRunEnabled, objServiceEngineGroup.autoRebalanceDryRunEnabled);
+  Objects.equals(this.autoRebalanceDryRunEnabled, objServiceEngineGroup.autoRebalanceDryRunEnabled)&&
+  Objects.equals(this.licenseQuota, objServiceEngineGroup.licenseQuota);
 }
 
 @Override
@@ -10411,7 +10410,6 @@ public String toString() {
         sb.append("    enableMultiLb: ").append(toIndentedString(enableMultiLb)).append("\n");
         sb.append("    enablePcapTxRing: ").append(toIndentedString(enablePcapTxRing)).append("\n");
         sb.append("    enableQat: ").append(toIndentedString(enableQat)).append("\n");
-        sb.append("    enableQuantumEntropy: ").append(toIndentedString(enableQuantumEntropy)).append("\n");
         sb.append("    ephemeralPortrangeEnd: ").append(toIndentedString(ephemeralPortrangeEnd)).append("\n");
         sb.append("    ephemeralPortrangeStart: ").append(toIndentedString(ephemeralPortrangeStart)).append("\n");
         sb.append("    extraConfigMultiplier: ").append(toIndentedString(extraConfigMultiplier)).append("\n");
@@ -10448,6 +10446,7 @@ public String toString() {
         sb.append("    lbactionNumRequestsToDispatch: ").append(toIndentedString(lbactionNumRequestsToDispatch)).append("\n");
         sb.append("    lbactionRqPerRequestMaxRetries: ").append(toIndentedString(lbactionRqPerRequestMaxRetries)).append("\n");
         sb.append("    leastLoadCoreSelection: ").append(toIndentedString(leastLoadCoreSelection)).append("\n");
+        sb.append("    licenseQuota: ").append(toIndentedString(licenseQuota)).append("\n");
         sb.append("    licenseTier: ").append(toIndentedString(licenseTier)).append("\n");
         sb.append("    licenseType: ").append(toIndentedString(licenseType)).append("\n");
         sb.append("    logAgentCompressLogs: ").append(toIndentedString(logAgentCompressLogs)).append("\n");

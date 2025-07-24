@@ -11,6 +11,7 @@ import com.vmware.avi.vro.model.ControllerAnalyticsPolicy;
 import com.vmware.avi.vro.model.DNSConfiguration;
 import com.vmware.avi.vro.model.EmailConfiguration;
 import com.vmware.avi.vro.model.TenantConfiguration;
+import com.vmware.avi.vro.model.QuotaConfig;
 import com.vmware.avi.vro.model.LinuxConfiguration;
 import com.vmware.avi.vro.model.MgmtIpAccessControl;
 import com.vmware.avi.vro.model.NTPConfiguration;
@@ -81,6 +82,10 @@ public class SystemConfiguration extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean enableHostHeaderCheck = false;
 
+    @JsonProperty("enable_license_quota")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableLicenseQuota = true;
+
     @JsonProperty("fips_mode")
     @JsonInclude(Include.NON_NULL)
     private Boolean fipsMode = false;
@@ -100,6 +105,10 @@ public class SystemConfiguration extends AviRestResource {
     @JsonProperty("legacy_ssl_support")
     @JsonInclude(Include.NON_NULL)
     private Boolean legacySslSupport = false;
+
+    @JsonProperty("license_quota")
+    @JsonInclude(Include.NON_NULL)
+    private QuotaConfig licenseQuota;
 
     @JsonProperty("linux_configuration")
     @JsonInclude(Include.NON_NULL)
@@ -491,6 +500,32 @@ public class SystemConfiguration extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Enable license quota for the system.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @return enableLicenseQuota
+   */
+  @VsoMethod
+  public Boolean getEnableLicenseQuota() {
+    return enableLicenseQuota;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable license quota for the system.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param enableLicenseQuota set the enableLicenseQuota.
+   */
+  @VsoMethod
+  public void setEnableLicenseQuota(Boolean  enableLicenseQuota) {
+    this.enableLicenseQuota = enableLicenseQuota;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Fips mode current state.
    * Field introduced in 20.1.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -617,6 +652,32 @@ public class SystemConfiguration extends AviRestResource {
   @VsoMethod
   public void setLegacySslSupport(Boolean  legacySslSupport) {
     this.legacySslSupport = legacySslSupport;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * License quota for the system.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return licenseQuota
+   */
+  @VsoMethod
+  public QuotaConfig getLicenseQuota() {
+    return licenseQuota;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * License quota for the system.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param licenseQuota set the licenseQuota.
+   */
+  @VsoMethod
+  public void setLicenseQuota(QuotaConfig licenseQuota) {
+    this.licenseQuota = licenseQuota;
   }
 
   /**
@@ -1293,7 +1354,9 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.syslogServers, objSystemConfiguration.syslogServers)&&
   Objects.equals(this.syncKexHostToSe, objSystemConfiguration.syncKexHostToSe)&&
   Objects.equals(this.syncDnsToSe, objSystemConfiguration.syncDnsToSe)&&
-  Objects.equals(this.syncSyslogToSe, objSystemConfiguration.syncSyslogToSe);
+  Objects.equals(this.syncSyslogToSe, objSystemConfiguration.syncSyslogToSe)&&
+  Objects.equals(this.licenseQuota, objSystemConfiguration.licenseQuota)&&
+  Objects.equals(this.enableLicenseQuota, objSystemConfiguration.enableLicenseQuota);
 }
 
 @Override
@@ -1311,11 +1374,13 @@ public String toString() {
         sb.append("    emailConfiguration: ").append(toIndentedString(emailConfiguration)).append("\n");
         sb.append("    enableCors: ").append(toIndentedString(enableCors)).append("\n");
         sb.append("    enableHostHeaderCheck: ").append(toIndentedString(enableHostHeaderCheck)).append("\n");
+        sb.append("    enableLicenseQuota: ").append(toIndentedString(enableLicenseQuota)).append("\n");
         sb.append("    fipsMode: ").append(toIndentedString(fipsMode)).append("\n");
         sb.append("    globalTenantConfig: ").append(toIndentedString(globalTenantConfig)).append("\n");
         sb.append("    hostKeyAlgorithmExclude: ").append(toIndentedString(hostKeyAlgorithmExclude)).append("\n");
         sb.append("    kexAlgorithmExclude: ").append(toIndentedString(kexAlgorithmExclude)).append("\n");
         sb.append("    legacySslSupport: ").append(toIndentedString(legacySslSupport)).append("\n");
+        sb.append("    licenseQuota: ").append(toIndentedString(licenseQuota)).append("\n");
         sb.append("    linuxConfiguration: ").append(toIndentedString(linuxConfiguration)).append("\n");
         sb.append("    mgmtIpAccessControl: ").append(toIndentedString(mgmtIpAccessControl)).append("\n");
         sb.append("    ntpConfiguration: ").append(toIndentedString(ntpConfiguration)).append("\n");

@@ -33,6 +33,7 @@ public class Constants {
     public static final String FINDER_VRO_AWSSETUP = "AWSSetup";
     public static final String FINDER_VRO_AZCLUSTER = "AZCluster";
     public static final String FINDER_VRO_AZDATASTORE = "AZDatastore";
+    public static final String FINDER_VRO_AZHOST = "AZHost";
     public static final String FINDER_VRO_ABPOOL = "AbPool";
     public static final String FINDER_VRO_ACTIONARGS = "ActionArgs";
     public static final String FINDER_VRO_ACTIONGROUPCONFIG = "ActionGroupConfig";
@@ -633,6 +634,7 @@ public class Constants {
     public static final String FINDER_VRO_LICENSEEXPIRYDETAILS = "LicenseExpiryDetails";
     public static final String FINDER_VRO_LICENSEINFO = "LicenseInfo";
     public static final String FINDER_VRO_LICENSELEDGERDETAILS = "LicenseLedgerDetails";
+    public static final String FINDER_VRO_LICENSERESERVATIONINFO = "LicenseReservationInfo";
     public static final String FINDER_VRO_LICENSESERVICEUPDATE = "LicenseServiceUpdate";
     public static final String FINDER_VRO_LICENSESTATUS = "LicenseStatus";
     public static final String FINDER_VRO_LICENSETIERSWITCHDETIAILS = "LicenseTierSwitchDetiails";
@@ -834,6 +836,7 @@ public class Constants {
     public static final String FINDER_VRO_PULSESERVICESSESSIONCONFIG = "PulseServicesSessionConfig";
     public static final String FINDER_VRO_PULSESERVICESTENANTCONFIG = "PulseServicesTenantConfig";
     public static final String FINDER_VRO_QUERYMATCH = "QueryMatch";
+    public static final String FINDER_VRO_QUOTACONFIG = "QuotaConfig";
     public static final String FINDER_VRO_RANCHERCONFIGURATION = "RancherConfiguration";
     public static final String FINDER_VRO_RATELIMITCONFIGURATION = "RateLimitConfiguration";
     public static final String FINDER_VRO_RATELIMITER = "RateLimiter";
@@ -953,6 +956,7 @@ public class Constants {
     public static final String FINDER_VRO_SEGATEWAYHEARTBEATSUCCESSDETAILS = "SeGatewayHeartbeatSuccessDetails";
     public static final String FINDER_VRO_SEGEODBDETAILS = "SeGeoDbDetails";
     public static final String FINDER_VRO_SEGROUPANALYTICSPOLICY = "SeGroupAnalyticsPolicy";
+    public static final String FINDER_VRO_SEGROUPINFO = "SeGroupInfo";
     public static final String FINDER_VRO_SEGROUPOPTIONS = "SeGroupOptions";
     public static final String FINDER_VRO_SEGROUPRESUMEOPTIONS = "SeGroupResumeOptions";
     public static final String FINDER_VRO_SEGROUPSTATUS = "SeGroupStatus";
