@@ -9,7 +9,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -98,4 +98,3 @@ jobs:
           asset_path: o11nplugin-vro-${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}.dar
           asset_name: o11nplugin-vro-${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}.dar
           asset_content_type: application/octet-stream
-
