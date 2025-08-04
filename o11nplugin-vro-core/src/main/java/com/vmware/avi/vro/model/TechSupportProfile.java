@@ -1,0 +1,446 @@
+package com.vmware.avi.vro.model;
+
+import java.util.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.ArchiveRules;
+import com.vmware.avi.vro.model.CollectCustomerFiles;
+import com.vmware.avi.vro.model.TechSupportEventParams;
+import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
+import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
+import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
+import com.vmware.avi.vro.Constants;
+import org.springframework.stereotype.Service;
+
+/**
+ * The TechSupportProfile is a POJO class extends AviRestResource that used for creating
+ * TechSupportProfile.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
+@VsoObject(create = false, name = "TechSupportProfile")
+@VsoFinder(name = Constants.FINDER_VRO_TECHSUPPORTPROFILE, idAccessor = "getObjectID()")
+@JsonIgnoreProperties(ignoreUnknown = true)
+@Service
+public class TechSupportProfile extends AviRestResource {
+    @JsonProperty("archive_rules")
+    @JsonInclude(Include.NON_NULL)
+    private ArchiveRules archiveRules;
+
+    @JsonProperty("collect_customer_files")
+    @JsonInclude(Include.NON_NULL)
+    private CollectCustomerFiles collectCustomerFiles;
+
+    @JsonProperty("event_params")
+    @JsonInclude(Include.NON_NULL)
+    private TechSupportEventParams eventParams;
+
+    @JsonProperty("file_size_threshold")
+    @JsonInclude(Include.NON_NULL)
+    private Integer fileSizeThreshold = 128;
+
+    @JsonProperty("max_disk_size_percent")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxDiskSizePercent = 10;
+
+    @JsonProperty("min_free_disk_required")
+    @JsonInclude(Include.NON_NULL)
+    private Integer minFreeDiskRequired = 5;
+
+    @JsonProperty("no_of_techsupport_retentions")
+    @JsonInclude(Include.NON_NULL)
+    private Integer noOfTechsupportRetentions = 4;
+
+    @JsonProperty("simultaneous_invocations")
+    @JsonInclude(Include.NON_NULL)
+    private Integer simultaneousInvocations = 1;
+
+    @JsonProperty("task_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer taskTimeout = 180;
+
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
+
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid;
+
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Defined policy for tech-support archive rules.these are predefined files which are exception for default file size thresholduser can add file
+   * path with custom threshold in allowed limits to be collected in bundlee.g.
+   * A file /var/sample.log is with size 450mb needs to be collected for each invocationuser should configure and add path in techsupportprofile.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return archiveRules
+   */
+  @VsoMethod
+  public ArchiveRules getArchiveRules() {
+    return archiveRules;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Defined policy for tech-support archive rules.these are predefined files which are exception for default file size thresholduser can add file
+   * path with custom threshold in allowed limits to be collected in bundlee.g.
+   * A file /var/sample.log is with size 450mb needs to be collected for each invocationuser should configure and add path in techsupportprofile.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param archiveRules set the archiveRules.
+   */
+  @VsoMethod
+  public void setArchiveRules(ArchiveRules archiveRules) {
+    this.archiveRules = archiveRules;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * A list of user-specified file paths for collectionthat are not part of the predefined yaml configuration.
+   * This is useful forcollecting logs from third-party applications or other custom files.e.g.
+   * A file located at /var/sample.log which is not a part of pre-define yamluser should configure this path as source in collect_customer_files so
+   * that subsequent collectioncollect this file, once user no longer needed this file they can remove from techsupportprofile.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return collectCustomerFiles
+   */
+  @VsoMethod
+  public CollectCustomerFiles getCollectCustomerFiles() {
+    return collectCustomerFiles;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * A list of user-specified file paths for collectionthat are not part of the predefined yaml configuration.
+   * This is useful forcollecting logs from third-party applications or other custom files.e.g.
+   * A file located at /var/sample.log which is not a part of pre-define yamluser should configure this path as source in collect_customer_files so
+   * that subsequent collectioncollect this file, once user no longer needed this file they can remove from techsupportprofile.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param collectCustomerFiles set the collectCustomerFiles.
+   */
+  @VsoMethod
+  public void setCollectCustomerFiles(CollectCustomerFiles collectCustomerFiles) {
+    this.collectCustomerFiles = collectCustomerFiles;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Specify this params to set threshold for event files.user provided parameters will take precedence over the profile parameters.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return eventParams
+   */
+  @VsoMethod
+  public TechSupportEventParams getEventParams() {
+    return eventParams;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Specify this params to set threshold for event files.user provided parameters will take precedence over the profile parameters.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param eventParams set the eventParams.
+   */
+  @VsoMethod
+  public void setEventParams(TechSupportEventParams eventParams) {
+    this.eventParams = eventParams;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Max file size threshold to archive in tech-support collectionfiles above this threshold will not be collected and an warning will be flagged.
+   * Allowed values are 128-512.
+   * Field introduced in 31.2.1.
+   * Unit is mb.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 128.
+   * @return fileSizeThreshold
+   */
+  @VsoMethod
+  public Integer getFileSizeThreshold() {
+    return fileSizeThreshold;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Max file size threshold to archive in tech-support collectionfiles above this threshold will not be collected and an warning will be flagged.
+   * Allowed values are 128-512.
+   * Field introduced in 31.2.1.
+   * Unit is mb.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 128.
+   * @param fileSizeThreshold set the fileSizeThreshold.
+   */
+  @VsoMethod
+  public void setFileSizeThreshold(Integer  fileSizeThreshold) {
+    this.fileSizeThreshold = fileSizeThreshold;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Max disk size in percent of total disk size reserved for the tech-support.the value is in percentage to make it agnostic of controller
+   * flavors.e.g.
+   * Small [disk=5 gb, ts space available = 500mb]large [ disk= 100gb, ts space available= 10gb]xl [disk=1tb, ts space available=100gb].
+   * Allowed values are 10-25.
+   * Field introduced in 31.2.1.
+   * Unit is percent.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 10.
+   * @return maxDiskSizePercent
+   */
+  @VsoMethod
+  public Integer getMaxDiskSizePercent() {
+    return maxDiskSizePercent;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Max disk size in percent of total disk size reserved for the tech-support.the value is in percentage to make it agnostic of controller
+   * flavors.e.g.
+   * Small [disk=5 gb, ts space available = 500mb]large [ disk= 100gb, ts space available= 10gb]xl [disk=1tb, ts space available=100gb].
+   * Allowed values are 10-25.
+   * Field introduced in 31.2.1.
+   * Unit is percent.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 10.
+   * @param maxDiskSizePercent set the maxDiskSizePercent.
+   */
+  @VsoMethod
+  public void setMaxDiskSizePercent(Integer  maxDiskSizePercent) {
+    this.maxDiskSizePercent = maxDiskSizePercent;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Min free disk required for the tech-support invocation.the value is in percentage to make it agnostic of controller flavors.e.g.
+   * Small [disk=5 gb, ts space available = 250mb]large [ disk= 100gb, ts space available= 5gb]xl [disk=1tb, ts space available=50gb].
+   * Allowed values are 5-10.
+   * Field introduced in 31.2.1.
+   * Unit is percent.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 5.
+   * @return minFreeDiskRequired
+   */
+  @VsoMethod
+  public Integer getMinFreeDiskRequired() {
+    return minFreeDiskRequired;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Min free disk required for the tech-support invocation.the value is in percentage to make it agnostic of controller flavors.e.g.
+   * Small [disk=5 gb, ts space available = 250mb]large [ disk= 100gb, ts space available= 5gb]xl [disk=1tb, ts space available=50gb].
+   * Allowed values are 5-10.
+   * Field introduced in 31.2.1.
+   * Unit is percent.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 5.
+   * @param minFreeDiskRequired set the minFreeDiskRequired.
+   */
+  @VsoMethod
+  public void setMinFreeDiskRequired(Integer  minFreeDiskRequired) {
+    this.minFreeDiskRequired = minFreeDiskRequired;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Number of techsupport to retain from techsupport cleanup policy.
+   * Allowed values are 1-5.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 4.
+   * @return noOfTechsupportRetentions
+   */
+  @VsoMethod
+  public Integer getNoOfTechsupportRetentions() {
+    return noOfTechsupportRetentions;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Number of techsupport to retain from techsupport cleanup policy.
+   * Allowed values are 1-5.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 4.
+   * @param noOfTechsupportRetentions set the noOfTechsupportRetentions.
+   */
+  @VsoMethod
+  public void setNoOfTechsupportRetentions(Integer  noOfTechsupportRetentions) {
+    this.noOfTechsupportRetentions = noOfTechsupportRetentions;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Number of simultaneous tech-support invocation allowed.
+   * Allowed values are 1-2.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1.
+   * @return simultaneousInvocations
+   */
+  @VsoMethod
+  public Integer getSimultaneousInvocations() {
+    return simultaneousInvocations;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Number of simultaneous tech-support invocation allowed.
+   * Allowed values are 1-2.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1.
+   * @param simultaneousInvocations set the simultaneousInvocations.
+   */
+  @VsoMethod
+  public void setSimultaneousInvocations(Integer  simultaneousInvocations) {
+    this.simultaneousInvocations = simultaneousInvocations;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Generic timeout for tech-support task collection.this can be used for task, script executions etc.tweak the timeout value in cases of timeout
+   * observation in the logs.
+   * Field introduced in 31.2.1.
+   * Unit is sec.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 180.
+   * @return taskTimeout
+   */
+  @VsoMethod
+  public Integer getTaskTimeout() {
+    return taskTimeout;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Generic timeout for tech-support task collection.this can be used for task, script executions etc.tweak the timeout value in cases of timeout
+   * observation in the logs.
+   * Field introduced in 31.2.1.
+   * Unit is sec.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 180.
+   * @param taskTimeout set the taskTimeout.
+   */
+  @VsoMethod
+  public void setTaskTimeout(Integer  taskTimeout) {
+    this.taskTimeout = taskTimeout;
+  }
+/**
+   * This is the getter method this will return the attribute value.
+   * Avi controller URL of the object.
+   * @return url
+   */
+  @VsoMethod
+  public String getUrl() {
+    return url;
+  }
+
+  /**
+   * This is the setter method. this will set the url
+   * Avi controller URL of the object.
+   * @return url
+   */
+  @VsoMethod
+  public void setUrl(String  url) {
+    this.url = url;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Uuid identifier for the tech-support profile.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return uuid
+   */
+  @VsoMethod
+  public String getUuid() {
+    return uuid;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Uuid identifier for the tech-support profile.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param uuid set the uuid.
+   */
+  @VsoMethod
+  public void setUuid(String  uuid) {
+    this.uuid = uuid;
+  }
+
+
+  public String getObjectID() {
+    return "TechSupportProfile" + "(" + uuid + ")";
+  }
+
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
+  }
+  if (o == null || getClass() != o.getClass()) {
+    return false;
+  }
+  TechSupportProfile objTechSupportProfile = (TechSupportProfile) o;
+  return   Objects.equals(this.uuid, objTechSupportProfile.uuid)&&
+  Objects.equals(this.maxDiskSizePercent, objTechSupportProfile.maxDiskSizePercent)&&
+  Objects.equals(this.minFreeDiskRequired, objTechSupportProfile.minFreeDiskRequired)&&
+  Objects.equals(this.fileSizeThreshold, objTechSupportProfile.fileSizeThreshold)&&
+  Objects.equals(this.simultaneousInvocations, objTechSupportProfile.simultaneousInvocations)&&
+  Objects.equals(this.noOfTechsupportRetentions, objTechSupportProfile.noOfTechsupportRetentions)&&
+  Objects.equals(this.eventParams, objTechSupportProfile.eventParams)&&
+  Objects.equals(this.archiveRules, objTechSupportProfile.archiveRules)&&
+  Objects.equals(this.collectCustomerFiles, objTechSupportProfile.collectCustomerFiles)&&
+  Objects.equals(this.taskTimeout, objTechSupportProfile.taskTimeout);
+}
+
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class TechSupportProfile {\n");
+      sb.append("    archiveRules: ").append(toIndentedString(archiveRules)).append("\n");
+        sb.append("    collectCustomerFiles: ").append(toIndentedString(collectCustomerFiles)).append("\n");
+        sb.append("    eventParams: ").append(toIndentedString(eventParams)).append("\n");
+        sb.append("    fileSizeThreshold: ").append(toIndentedString(fileSizeThreshold)).append("\n");
+        sb.append("    maxDiskSizePercent: ").append(toIndentedString(maxDiskSizePercent)).append("\n");
+        sb.append("    minFreeDiskRequired: ").append(toIndentedString(minFreeDiskRequired)).append("\n");
+        sb.append("    noOfTechsupportRetentions: ").append(toIndentedString(noOfTechsupportRetentions)).append("\n");
+        sb.append("    simultaneousInvocations: ").append(toIndentedString(simultaneousInvocations)).append("\n");
+        sb.append("    taskTimeout: ").append(toIndentedString(taskTimeout)).append("\n");
+            sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}
+

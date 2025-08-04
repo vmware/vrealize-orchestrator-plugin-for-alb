@@ -100,6 +100,14 @@ public class ConnectionLog extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private List<Integer> dnsIps;
 
+    @JsonProperty("dns_policy")
+    @JsonInclude(Include.NON_NULL)
+    private String dnsPolicy;
+
+    @JsonProperty("dns_policy_rule_name")
+    @JsonInclude(Include.NON_NULL)
+    private String dnsPolicyRuleName;
+
     @JsonProperty("dns_qtype")
     @JsonInclude(Include.NON_NULL)
     private String dnsQtype;
@@ -335,6 +343,10 @@ public class ConnectionLog extends AviRestResource {
     @JsonProperty("timeouts")
     @JsonInclude(Include.NON_NULL)
     private Integer timeouts = 0;
+
+    @JsonProperty("topology_policy_rule_name")
+    @JsonInclude(Include.NON_NULL)
+    private String topologyPolicyRuleName;
 
     @JsonProperty("total_bytes")
     @JsonInclude(Include.NON_NULL)
@@ -827,6 +839,58 @@ public class ConnectionLog extends AviRestResource {
     return this;
   }
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Dns policy or topology policy name which resulted in a match.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return dnsPolicy
+   */
+  @VsoMethod
+  public String getDnsPolicy() {
+    return dnsPolicy;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Dns policy or topology policy name which resulted in a match.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param dnsPolicy set the dnsPolicy.
+   */
+  @VsoMethod
+  public void setDnsPolicy(String  dnsPolicy) {
+    this.dnsPolicy = dnsPolicy;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Dns policy rule name which resulted in a match.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return dnsPolicyRuleName
+   */
+  @VsoMethod
+  public String getDnsPolicyRuleName() {
+    return dnsPolicyRuleName;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Dns policy rule name which resulted in a match.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param dnsPolicyRuleName set the dnsPolicyRuleName.
+   */
+  @VsoMethod
+  public void setDnsPolicyRuleName(String  dnsPolicyRuleName) {
+    this.dnsPolicyRuleName = dnsPolicyRuleName;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -2233,6 +2297,32 @@ public class ConnectionLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Topology policy rule name which resulted in a match.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return topologyPolicyRuleName
+   */
+  @VsoMethod
+  public String getTopologyPolicyRuleName() {
+    return topologyPolicyRuleName;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Topology policy rule name which resulted in a match.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param topologyPolicyRuleName set the topologyPolicyRuleName.
+   */
+  @VsoMethod
+  public void setTopologyPolicyRuleName(String  topologyPolicyRuleName) {
+    this.topologyPolicyRuleName = topologyPolicyRuleName;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Unit is bytes.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
@@ -2583,7 +2673,10 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.avgIngressLatencyBe, objConnectionLog.avgIngressLatencyBe)&&
   Objects.equals(this.connEstTimeBe, objConnectionLog.connEstTimeBe)&&
   Objects.equals(this.dnsTcpConnCloseFromSe, objConnectionLog.dnsTcpConnCloseFromSe)&&
-  Objects.equals(this.diameterLog, objConnectionLog.diameterLog);
+  Objects.equals(this.diameterLog, objConnectionLog.diameterLog)&&
+  Objects.equals(this.dnsPolicyRuleName, objConnectionLog.dnsPolicyRuleName)&&
+  Objects.equals(this.topologyPolicyRuleName, objConnectionLog.topologyPolicyRuleName)&&
+  Objects.equals(this.dnsPolicy, objConnectionLog.dnsPolicy);
 }
 
 @Override
@@ -2608,6 +2701,8 @@ public String toString() {
         sb.append("    dnsEtype: ").append(toIndentedString(dnsEtype)).append("\n");
         sb.append("    dnsFqdn: ").append(toIndentedString(dnsFqdn)).append("\n");
         sb.append("    dnsIps: ").append(toIndentedString(dnsIps)).append("\n");
+        sb.append("    dnsPolicy: ").append(toIndentedString(dnsPolicy)).append("\n");
+        sb.append("    dnsPolicyRuleName: ").append(toIndentedString(dnsPolicyRuleName)).append("\n");
         sb.append("    dnsQtype: ").append(toIndentedString(dnsQtype)).append("\n");
         sb.append("    dnsRequest: ").append(toIndentedString(dnsRequest)).append("\n");
         sb.append("    dnsResponse: ").append(toIndentedString(dnsResponse)).append("\n");
@@ -2667,6 +2762,7 @@ public String toString() {
         sb.append("    sslVersion: ").append(toIndentedString(sslVersion)).append("\n");
         sb.append("    startTimestamp: ").append(toIndentedString(startTimestamp)).append("\n");
         sb.append("    timeouts: ").append(toIndentedString(timeouts)).append("\n");
+        sb.append("    topologyPolicyRuleName: ").append(toIndentedString(topologyPolicyRuleName)).append("\n");
         sb.append("    totalBytes: ").append(toIndentedString(totalBytes)).append("\n");
         sb.append("    totalPkts: ").append(toIndentedString(totalPkts)).append("\n");
         sb.append("    totalTime: ").append(toIndentedString(totalTime)).append("\n");

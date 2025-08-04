@@ -12,82 +12,108 @@ import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
 
 /**
- * The LogManagerDebugFilter is a POJO class extends AviRestResource that used for creating
- * LogManagerDebugFilter.
+ * The SeGroupInfo is a POJO class extends AviRestResource that used for creating
+ * SeGroupInfo.
  *
  * @version 1.0
  * @since 
  *
  */
-@VsoObject(create = false, name = "LogManagerDebugFilter")
-@VsoFinder(name = Constants.FINDER_VRO_LOGMANAGERDEBUGFILTER)
+@VsoObject(create = false, name = "SeGroupInfo")
+@VsoFinder(name = Constants.FINDER_VRO_SEGROUPINFO)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class LogManagerDebugFilter extends AviRestResource {
-    @JsonProperty("entity_ref")
+public class SeGroupInfo extends AviRestResource {
+    @JsonProperty("consumed")
     @JsonInclude(Include.NON_NULL)
-    private String entityRef;
+    private Float consumed;
 
-    @JsonProperty("telemetry_trace_log_level")
+    @JsonProperty("escrow")
     @JsonInclude(Include.NON_NULL)
-    private String telemetryTraceLogLevel;
+    private Float escrow;
+
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
-   * Uuid of the entity.
-   * It is a reference to an object of type virtualservice.
-   * Field introduced in 21.1.1.
+   * License cores consumed by se group.
+   * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return entityRef
+   * @return consumed
    */
   @VsoMethod
-  public String getEntityRef() {
-    return entityRef;
+  public Float getConsumed() {
+    return consumed;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Uuid of the entity.
-   * It is a reference to an object of type virtualservice.
-   * Field introduced in 21.1.1.
+   * License cores consumed by se group.
+   * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param entityRef set the entityRef.
+   * @param consumed set the consumed.
    */
   @VsoMethod
-  public void setEntityRef(String  entityRef) {
-    this.entityRef = entityRef;
+  public void setConsumed(Float  consumed) {
+    this.consumed = consumed;
   }
 
   /**
    * This is the getter method this will return the attribute value.
-   * Set the log level for telemetry trace logs.
-   * Enum options - LOG_LEVEL_DISABLED, LOG_LEVEL_INFO, LOG_LEVEL_WARNING, LOG_LEVEL_ERROR, LOG_LEVEL_DEBUG.
+   * License cores reserved by se group.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return telemetryTraceLogLevel
+   * @return escrow
    */
   @VsoMethod
-  public String getTelemetryTraceLogLevel() {
-    return telemetryTraceLogLevel;
+  public Float getEscrow() {
+    return escrow;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Set the log level for telemetry trace logs.
-   * Enum options - LOG_LEVEL_DISABLED, LOG_LEVEL_INFO, LOG_LEVEL_WARNING, LOG_LEVEL_ERROR, LOG_LEVEL_DEBUG.
+   * License cores reserved by se group.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param telemetryTraceLogLevel set the telemetryTraceLogLevel.
+   * @param escrow set the escrow.
    */
   @VsoMethod
-  public void setTelemetryTraceLogLevel(String  telemetryTraceLogLevel) {
-    this.telemetryTraceLogLevel = telemetryTraceLogLevel;
+  public void setEscrow(Float  escrow) {
+    this.escrow = escrow;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Se group uuid for reference.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return uuid
+   */
+  @VsoMethod
+  public String getUuid() {
+    return uuid;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Se group uuid for reference.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param uuid set the uuid.
+   */
+  @VsoMethod
+  public void setUuid(String  uuid) {
+    this.uuid = uuid;
   }
 
 
@@ -100,17 +126,19 @@ public boolean equals(java.lang.Object o) {
   if (o == null || getClass() != o.getClass()) {
     return false;
   }
-  LogManagerDebugFilter objLogManagerDebugFilter = (LogManagerDebugFilter) o;
-  return   Objects.equals(this.entityRef, objLogManagerDebugFilter.entityRef)&&
-  Objects.equals(this.telemetryTraceLogLevel, objLogManagerDebugFilter.telemetryTraceLogLevel);
+  SeGroupInfo objSeGroupInfo = (SeGroupInfo) o;
+  return   Objects.equals(this.uuid, objSeGroupInfo.uuid)&&
+  Objects.equals(this.consumed, objSeGroupInfo.consumed)&&
+  Objects.equals(this.escrow, objSeGroupInfo.escrow);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
-  sb.append("class LogManagerDebugFilter {\n");
-      sb.append("    entityRef: ").append(toIndentedString(entityRef)).append("\n");
-        sb.append("    telemetryTraceLogLevel: ").append(toIndentedString(telemetryTraceLogLevel)).append("\n");
+  sb.append("class SeGroupInfo {\n");
+      sb.append("    consumed: ").append(toIndentedString(consumed)).append("\n");
+        sb.append("    escrow: ").append(toIndentedString(escrow)).append("\n");
+        sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
       sb.append("}");
   return sb.toString();
 }

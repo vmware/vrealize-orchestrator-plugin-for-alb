@@ -12,18 +12,18 @@ import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
 
 /**
- * The RspContentRewriteRule is a POJO class extends AviRestResource that used for creating
- * RspContentRewriteRule.
+ * The ReqContentRewriteRule is a POJO class extends AviRestResource that used for creating
+ * ReqContentRewriteRule.
  *
  * @version 1.0
  * @since 
  *
  */
-@VsoObject(create = false, name = "RspContentRewriteRule")
-@VsoFinder(name = Constants.FINDER_VRO_RSPCONTENTREWRITERULE)
+@VsoObject(create = false, name = "ReqContentRewriteRule")
+@VsoFinder(name = Constants.FINDER_VRO_REQCONTENTREWRITERULE)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class RspContentRewriteRule extends AviRestResource {
+public class ReqContentRewriteRule extends AviRestResource {
     @JsonProperty("enable")
     @JsonInclude(Include.NON_NULL)
     private Boolean enable;
@@ -48,8 +48,8 @@ public class RspContentRewriteRule extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Enable rewrite rule on response body.
-   * Field introduced in 21.1.3.
+   * Enable rewrite rule on request body.
+   * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return enable
@@ -61,8 +61,8 @@ public class RspContentRewriteRule extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Enable rewrite rule on response body.
-   * Field introduced in 21.1.3.
+   * Enable rewrite rule on request body.
+   * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param enable set the enable.
@@ -74,8 +74,8 @@ public class RspContentRewriteRule extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Index of the response rewrite rule.
-   * Field introduced in 21.1.3.
+   * Index of the request rewrite rule.
+   * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return index
@@ -87,8 +87,8 @@ public class RspContentRewriteRule extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Index of the response rewrite rule.
-   * Field introduced in 21.1.3.
+   * Index of the request rewrite rule.
+   * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param index set the index.
@@ -100,8 +100,8 @@ public class RspContentRewriteRule extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Name of the response rewrite rule.
-   * Field introduced in 21.1.3.
+   * Name of the request rewrite rule.
+   * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
@@ -113,8 +113,8 @@ public class RspContentRewriteRule extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Name of the response rewrite rule.
-   * Field introduced in 21.1.3.
+   * Name of the request rewrite rule.
+   * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
@@ -126,10 +126,10 @@ public class RspContentRewriteRule extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * List of search-and-replace string pairs for the response body.
+   * List of search-and-replace string pairs for the request body.
    * For eg.
-   * Strings 'foo' and 'bar', where all searches of 'foo' in the response body will be replaced with 'bar'.
-   * Field introduced in 21.1.3.
+   * Strings 'foo' and 'bar', where all searches of 'foo' in the request body will be replaced with 'bar'.
+   * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pairs
@@ -141,10 +141,10 @@ public class RspContentRewriteRule extends AviRestResource {
 
   /**
    * This is the setter method. this will set the pairs
-   * List of search-and-replace string pairs for the response body.
+   * List of search-and-replace string pairs for the request body.
    * For eg.
-   * Strings 'foo' and 'bar', where all searches of 'foo' in the response body will be replaced with 'bar'.
-   * Field introduced in 21.1.3.
+   * Strings 'foo' and 'bar', where all searches of 'foo' in the request body will be replaced with 'bar'.
+   * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pairs
@@ -156,16 +156,16 @@ public class RspContentRewriteRule extends AviRestResource {
 
   /**
    * This is the setter method this will set the pairs
-   * List of search-and-replace string pairs for the response body.
+   * List of search-and-replace string pairs for the request body.
    * For eg.
-   * Strings 'foo' and 'bar', where all searches of 'foo' in the response body will be replaced with 'bar'.
-   * Field introduced in 21.1.3.
+   * Strings 'foo' and 'bar', where all searches of 'foo' in the request body will be replaced with 'bar'.
+   * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pairs
    */
   @VsoMethod
-  public RspContentRewriteRule addPairsItem(SearchReplacePair pairsItem) {
+  public ReqContentRewriteRule addPairsItem(SearchReplacePair pairsItem) {
     if (this.pairs == null) {
       this.pairs = new ArrayList<SearchReplacePair>();
     }
@@ -214,18 +214,18 @@ public boolean equals(java.lang.Object o) {
   if (o == null || getClass() != o.getClass()) {
     return false;
   }
-  RspContentRewriteRule objRspContentRewriteRule = (RspContentRewriteRule) o;
-  return   Objects.equals(this.name, objRspContentRewriteRule.name)&&
-  Objects.equals(this.enable, objRspContentRewriteRule.enable)&&
-  Objects.equals(this.index, objRspContentRewriteRule.index)&&
-  Objects.equals(this.pairs, objRspContentRewriteRule.pairs)&&
-  Objects.equals(this.rewritableContentRef, objRspContentRewriteRule.rewritableContentRef);
+  ReqContentRewriteRule objReqContentRewriteRule = (ReqContentRewriteRule) o;
+  return   Objects.equals(this.name, objReqContentRewriteRule.name)&&
+  Objects.equals(this.enable, objReqContentRewriteRule.enable)&&
+  Objects.equals(this.index, objReqContentRewriteRule.index)&&
+  Objects.equals(this.pairs, objReqContentRewriteRule.pairs)&&
+  Objects.equals(this.rewritableContentRef, objReqContentRewriteRule.rewritableContentRef);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
-  sb.append("class RspContentRewriteRule {\n");
+  sb.append("class ReqContentRewriteRule {\n");
       sb.append("    enable: ").append(toIndentedString(enable)).append("\n");
         sb.append("    index: ").append(toIndentedString(index)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");

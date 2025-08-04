@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.vmware.avi.vro.model.TechSupportStatus;
+import com.vmware.avi.vro.model.TechSupport;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -25,66 +25,36 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class TechSupportEvent extends AviRestResource {
-    @JsonProperty("tech_support_status")
+    @JsonProperty("tech_support")
     @JsonInclude(Include.NON_NULL)
-    private TechSupportStatus techSupportStatus;
-
-    @JsonProperty("tenant")
-    @JsonInclude(Include.NON_NULL)
-    private String tenant;
+    private TechSupport techSupport;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
-   * Techsupport status object.
+   * Techsupport object.
    * Field introduced in 31.1.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return techSupportStatus
+   * @return techSupport
    */
   @VsoMethod
-  public TechSupportStatus getTechSupportStatus() {
-    return techSupportStatus;
+  public TechSupport getTechSupport() {
+    return techSupport;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Techsupport status object.
+   * Techsupport object.
    * Field introduced in 31.1.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param techSupportStatus set the techSupportStatus.
+   * @param techSupport set the techSupport.
    */
   @VsoMethod
-  public void setTechSupportStatus(TechSupportStatus techSupportStatus) {
-    this.techSupportStatus = techSupportStatus;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Tenant under techsupport invoked.
-   * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return tenant
-   */
-  @VsoMethod
-  public String getTenant() {
-    return tenant;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Tenant under techsupport invoked.
-   * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param tenant set the tenant.
-   */
-  @VsoMethod
-  public void setTenant(String  tenant) {
-    this.tenant = tenant;
+  public void setTechSupport(TechSupport techSupport) {
+    this.techSupport = techSupport;
   }
 
 
@@ -98,16 +68,14 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   TechSupportEvent objTechSupportEvent = (TechSupportEvent) o;
-  return   Objects.equals(this.techSupportStatus, objTechSupportEvent.techSupportStatus)&&
-  Objects.equals(this.tenant, objTechSupportEvent.tenant);
+  return   Objects.equals(this.techSupport, objTechSupportEvent.techSupport);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class TechSupportEvent {\n");
-      sb.append("    techSupportStatus: ").append(toIndentedString(techSupportStatus)).append("\n");
-        sb.append("    tenant: ").append(toIndentedString(tenant)).append("\n");
+      sb.append("    techSupport: ").append(toIndentedString(techSupport)).append("\n");
       sb.append("}");
   return sb.toString();
 }

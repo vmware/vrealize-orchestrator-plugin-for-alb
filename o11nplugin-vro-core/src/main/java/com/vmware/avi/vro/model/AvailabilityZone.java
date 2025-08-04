@@ -33,6 +33,14 @@ public class AvailabilityZone extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private AZDatastore azDatastore;
 
+    @JsonProperty("az_datastores")
+    @JsonInclude(Include.NON_NULL)
+    private List<AZDatastore> azDatastores;
+
+    @JsonProperty("az_hosts")
+    @JsonInclude(Include.NON_NULL)
+    private List<AZHost> azHosts;
+
     @JsonProperty("cloud_ref")
     @JsonInclude(Include.NON_NULL)
     private String cloudRef;
@@ -105,10 +113,10 @@ public class AvailabilityZone extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Datastores associated with the az.
+   * Group of datastores associated with the az.
+   * Field deprecated in 31.2.1.
    * Field introduced in 31.1.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return azDatastore
    */
   @VsoMethod
@@ -118,16 +126,104 @@ public class AvailabilityZone extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Datastores associated with the az.
+   * Group of datastores associated with the az.
+   * Field deprecated in 31.2.1.
    * Field introduced in 31.1.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param azDatastore set the azDatastore.
    */
   @VsoMethod
   public void setAzDatastore(AZDatastore azDatastore) {
     this.azDatastore = azDatastore;
   }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Group of datastores associated with the az.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return azDatastores
+   */
+  @VsoMethod
+  public List<AZDatastore> getAzDatastores() {
+    return azDatastores;
+  }
+
+  /**
+   * This is the setter method. this will set the azDatastores
+   * Group of datastores associated with the az.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return azDatastores
+   */
+  @VsoMethod
+  public void setAzDatastores(List<AZDatastore>  azDatastores) {
+    this.azDatastores = azDatastores;
+  }
+
+  /**
+   * This is the setter method this will set the azDatastores
+   * Group of datastores associated with the az.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return azDatastores
+   */
+  @VsoMethod
+  public AvailabilityZone addAzDatastoresItem(AZDatastore azDatastoresItem) {
+    if (this.azDatastores == null) {
+      this.azDatastores = new ArrayList<AZDatastore>();
+    }
+    this.azDatastores.add(azDatastoresItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Group of hosts associated with the az.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return azHosts
+   */
+  @VsoMethod
+  public List<AZHost> getAzHosts() {
+    return azHosts;
+  }
+
+  /**
+   * This is the setter method. this will set the azHosts
+   * Group of hosts associated with the az.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return azHosts
+   */
+  @VsoMethod
+  public void setAzHosts(List<AZHost>  azHosts) {
+    this.azHosts = azHosts;
+  }
+
+  /**
+   * This is the setter method this will set the azHosts
+   * Group of hosts associated with the az.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return azHosts
+   */
+  @VsoMethod
+  public AvailabilityZone addAzHostsItem(AZHost azHostsItem) {
+    if (this.azHosts == null) {
+      this.azHosts = new ArrayList<AZHost>();
+    }
+    this.azHosts.add(azHostsItem);
+    return this;
+  }
+
 
   /**
    * This is the getter method this will return the attribute value.
@@ -326,7 +422,9 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.tenantRef, objAvailabilityZone.tenantRef)&&
   Objects.equals(this.cloudRef, objAvailabilityZone.cloudRef)&&
   Objects.equals(this.azClusters, objAvailabilityZone.azClusters)&&
-  Objects.equals(this.azDatastore, objAvailabilityZone.azDatastore);
+  Objects.equals(this.azDatastore, objAvailabilityZone.azDatastore)&&
+  Objects.equals(this.azHosts, objAvailabilityZone.azHosts)&&
+  Objects.equals(this.azDatastores, objAvailabilityZone.azDatastores);
 }
 
 @Override
@@ -335,6 +433,8 @@ public String toString() {
   sb.append("class AvailabilityZone {\n");
       sb.append("    azClusters: ").append(toIndentedString(azClusters)).append("\n");
         sb.append("    azDatastore: ").append(toIndentedString(azDatastore)).append("\n");
+        sb.append("    azDatastores: ").append(toIndentedString(azDatastores)).append("\n");
+        sb.append("    azHosts: ").append(toIndentedString(azHosts)).append("\n");
         sb.append("    cloudRef: ").append(toIndentedString(cloudRef)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");

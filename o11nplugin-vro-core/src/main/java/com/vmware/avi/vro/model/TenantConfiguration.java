@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.QuotaConfig;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -24,6 +25,10 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class TenantConfiguration extends AviRestResource {
+    @JsonProperty("license_quota")
+    @JsonInclude(Include.NON_NULL)
+    private QuotaConfig licenseQuota;
+
     @JsonProperty("se_in_provider_context")
     @JsonInclude(Include.NON_NULL)
     private Boolean seInProviderContext = true;
@@ -37,6 +42,32 @@ public class TenantConfiguration extends AviRestResource {
     private Boolean tenantVrf = false;
 
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * License quota for the tenant.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return licenseQuota
+   */
+  @VsoMethod
+  public QuotaConfig getLicenseQuota() {
+    return licenseQuota;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * License quota for the tenant.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param licenseQuota set the licenseQuota.
+   */
+  @VsoMethod
+  public void setLicenseQuota(QuotaConfig licenseQuota) {
+    this.licenseQuota = licenseQuota;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -127,14 +158,16 @@ public boolean equals(java.lang.Object o) {
   TenantConfiguration objTenantConfiguration = (TenantConfiguration) o;
   return   Objects.equals(this.tenantVrf, objTenantConfiguration.tenantVrf)&&
   Objects.equals(this.seInProviderContext, objTenantConfiguration.seInProviderContext)&&
-  Objects.equals(this.tenantAccessToProviderSe, objTenantConfiguration.tenantAccessToProviderSe);
+  Objects.equals(this.tenantAccessToProviderSe, objTenantConfiguration.tenantAccessToProviderSe)&&
+  Objects.equals(this.licenseQuota, objTenantConfiguration.licenseQuota);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class TenantConfiguration {\n");
-      sb.append("    seInProviderContext: ").append(toIndentedString(seInProviderContext)).append("\n");
+      sb.append("    licenseQuota: ").append(toIndentedString(licenseQuota)).append("\n");
+        sb.append("    seInProviderContext: ").append(toIndentedString(seInProviderContext)).append("\n");
         sb.append("    tenantAccessToProviderSe: ").append(toIndentedString(tenantAccessToProviderSe)).append("\n");
         sb.append("    tenantVrf: ").append(toIndentedString(tenantVrf)).append("\n");
       sb.append("}");
