@@ -72,7 +72,7 @@ public class TechSupportParams extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * 'customer case number for which this tech-support is generated.
+   * 'customer case number for which this techsupport is generated.
    * ''useful for connected portal and other use-cases.'.
    * Field introduced in 18.2.3.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -86,7 +86,7 @@ public class TechSupportParams extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * 'customer case number for which this tech-support is generated.
+   * 'customer case number for which this techsupport is generated.
    * ''useful for connected portal and other use-cases.'.
    * Field introduced in 18.2.3.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -100,7 +100,7 @@ public class TechSupportParams extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * User provided description to capture additional details and context regarding the tech-support invocation.
+   * User provided description to capture additional details and context regarding the techsupport invocation.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -113,7 +113,7 @@ public class TechSupportParams extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * User provided description to capture additional details and context regarding the tech-support invocation.
+   * User provided description to capture additional details and context regarding the techsupport invocation.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -126,11 +126,13 @@ public class TechSupportParams extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Collect events based on duration, specify one from choices [m, h, d, w].i.e.
+   * Collect events based on duration, specify one from choices [m, h, d, w].
+   * I.e.
    * Minutes, hours, days, weeks.
    * E.g.
-   * 10m, 5h, 2d, 1we.g.
-   * Show tech-support debuglogs duration 30m.
+   * 10m, 5h, 2d, 1w.
+   * E.g.
+   * Techsupport debuglogs duration 30m.
    * Field introduced in 18.2.3.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -143,11 +145,13 @@ public class TechSupportParams extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Collect events based on duration, specify one from choices [m, h, d, w].i.e.
+   * Collect events based on duration, specify one from choices [m, h, d, w].
+   * I.e.
    * Minutes, hours, days, weeks.
    * E.g.
-   * 10m, 5h, 2d, 1we.g.
-   * Show tech-support debuglogs duration 30m.
+   * 10m, 5h, 2d, 1w.
+   * E.g.
+   * Techsupport debuglogs duration 30m.
    * Field introduced in 18.2.3.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -160,7 +164,8 @@ public class TechSupportParams extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Specify this params to set threshold for all event files.user provided parameters will take precedence over the profile parameters.
+   * Specify this params to set threshold for all event files.
+   * User provided parameters will take precedence over the profile parameters.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -173,7 +178,8 @@ public class TechSupportParams extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Specify this params to set threshold for all event files.user provided parameters will take precedence over the profile parameters.
+   * Specify this params to set threshold for all event files.
+   * User provided parameters will take precedence over the profile parameters.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -186,7 +192,7 @@ public class TechSupportParams extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Tech-support collection level.
+   * Techsupport collection level.
    * Field introduced in 18.2.3.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -199,7 +205,7 @@ public class TechSupportParams extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Tech-support collection level.
+   * Techsupport collection level.
    * Field introduced in 18.2.3.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -238,7 +244,8 @@ public class TechSupportParams extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Specify pattern to collect specific info in tech-support.user can specify error patterns to filter files based on pattern only.
+   * Specify pattern to collect specific info in techsupport.
+   * User can specify error patterns to filter files based on pattern only.
    * This way will reduce unnecessary collection.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
@@ -252,7 +259,8 @@ public class TechSupportParams extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Specify pattern to collect specific info in tech-support.user can specify error patterns to filter files based on pattern only.
+   * Specify pattern to collect specific info in techsupport.
+   * User can specify error patterns to filter files based on pattern only.
    * This way will reduce unnecessary collection.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
@@ -292,7 +300,7 @@ public class TechSupportParams extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Tech-support collection slug; typically uuid of a vs, gslb etc.
+   * Techsupport collection slug; typically uuid of a vs, gslb etc.
    * Field introduced in 18.2.3.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -305,7 +313,7 @@ public class TechSupportParams extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Tech-support collection slug; typically uuid of a vs, gslb etc.
+   * Techsupport collection slug; typically uuid of a vs, gslb etc.
    * Field introduced in 18.2.3.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -318,7 +326,7 @@ public class TechSupportParams extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Start timestamp of tech-support collection.
+   * Start timestamp of techsupport collection.
    * Field introduced in 18.2.3.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -331,7 +339,7 @@ public class TechSupportParams extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Start timestamp of tech-support collection.
+   * Start timestamp of techsupport collection.
    * Field introduced in 18.2.3.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -344,7 +352,8 @@ public class TechSupportParams extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * X-avi-tenant of http post request for authentication.always admin for now, can be override in the future.
+   * X-avi-tenant of http post request for authentication.
+   * Always admin for now, can be override in the future.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -357,7 +366,8 @@ public class TechSupportParams extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * X-avi-tenant of http post request for authentication.always admin for now, can be override in the future.
+   * X-avi-tenant of http post request for authentication.
+   * Always admin for now, can be override in the future.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
