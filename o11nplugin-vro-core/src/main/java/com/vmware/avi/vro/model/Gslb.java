@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.AutoTuneSendInterval;
 import com.vmware.avi.vro.model.GslbClientIpAddrGroup;
 import com.vmware.avi.vro.model.ReplicationPolicy;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
@@ -29,6 +30,10 @@ public class Gslb extends AviRestResource {
     @JsonProperty("async_interval")
     @JsonInclude(Include.NON_NULL)
     private Integer asyncInterval = 0;
+
+    @JsonProperty("auto_tune_send_interval")
+    @JsonInclude(Include.NON_NULL)
+    private AutoTuneSendInterval autoTuneSendInterval;
 
     @JsonProperty("clear_on_max_retries")
     @JsonInclude(Include.NON_NULL)
@@ -150,6 +155,32 @@ public class Gslb extends AviRestResource {
   @VsoMethod
   public void setAsyncInterval(Integer  asyncInterval) {
     this.asyncInterval = asyncInterval;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Automatically set the send interval value based on the load.
+   * Field introduced in 30.2.5, 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return autoTuneSendInterval
+   */
+  @VsoMethod
+  public AutoTuneSendInterval getAutoTuneSendInterval() {
+    return autoTuneSendInterval;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Automatically set the send interval value based on the load.
+   * Field introduced in 30.2.5, 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param autoTuneSendInterval set the autoTuneSendInterval.
+   */
+  @VsoMethod
+  public void setAutoTuneSendInterval(AutoTuneSendInterval autoTuneSendInterval) {
+    this.autoTuneSendInterval = autoTuneSendInterval;
   }
 
   /**
@@ -834,7 +865,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.enableConfigByMembers, objGslb.enableConfigByMembers)&&
   Objects.equals(this.fileobjectMaxFileVersions, objGslb.fileobjectMaxFileVersions)&&
   Objects.equals(this.gsMemberFqdnResolutionOnSe, objGslb.gsMemberFqdnResolutionOnSe)&&
-  Objects.equals(this.shortProbeInterval, objGslb.shortProbeInterval);
+  Objects.equals(this.shortProbeInterval, objGslb.shortProbeInterval)&&
+  Objects.equals(this.autoTuneSendInterval, objGslb.autoTuneSendInterval);
 }
 
 @Override
@@ -842,6 +874,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class Gslb {\n");
       sb.append("    asyncInterval: ").append(toIndentedString(asyncInterval)).append("\n");
+        sb.append("    autoTuneSendInterval: ").append(toIndentedString(autoTuneSendInterval)).append("\n");
         sb.append("    clearOnMaxRetries: ").append(toIndentedString(clearOnMaxRetries)).append("\n");
         sb.append("    clientIpAddrGroup: ").append(toIndentedString(clientIpAddrGroup)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");

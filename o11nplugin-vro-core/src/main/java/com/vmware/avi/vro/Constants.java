@@ -103,6 +103,7 @@ public class Constants {
     public static final String FINDER_VRO_AUTOSCALEMESOSSETTINGS = "AutoScaleMesosSettings";
     public static final String FINDER_VRO_AUTOSCALEMGRDEBUGFILTER = "AutoScaleMgrDebugFilter";
     public static final String FINDER_VRO_AUTOSCALEOPENSTACKSETTINGS = "AutoScaleOpenStackSettings";
+    public static final String FINDER_VRO_AUTOTUNESENDINTERVAL = "AutoTuneSendInterval";
     public static final String FINDER_VRO_AVAILABILITYZONE = "AvailabilityZone";
     public static final String FINDER_VRO_AVGUPTIMECHANGEDETAILS = "AvgUptimeChangeDetails";
     public static final String FINDER_VRO_AWSCONFIGURATION = "AwsConfiguration";
@@ -224,7 +225,6 @@ public class Constants {
     public static final String FINDER_VRO_CLUSTERSERVICEFAILEDEVENT = "ClusterServiceFailedEvent";
     public static final String FINDER_VRO_CLUSTERSERVICERESTOREDEVENT = "ClusterServiceRestoredEvent";
     public static final String FINDER_VRO_CLUSTIFYCHECKEVENT = "ClustifyCheckEvent";
-    public static final String FINDER_VRO_COLLECTCUSTOMERFILES = "CollectCustomerFiles";
     public static final String FINDER_VRO_COMPRESSIONFILTER = "CompressionFilter";
     public static final String FINDER_VRO_COMPRESSIONPROFILE = "CompressionProfile";
     public static final String FINDER_VRO_CONFIGACTIONDETAILS = "ConfigActionDetails";

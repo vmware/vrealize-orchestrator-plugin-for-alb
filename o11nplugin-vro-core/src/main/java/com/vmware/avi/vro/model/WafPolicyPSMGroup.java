@@ -24,6 +24,10 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class WafPolicyPSMGroup extends AviRestResource {
+    @JsonProperty("completely_described_match_elements")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> completelyDescribedMatchElements;
+
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
     private String description;
@@ -72,6 +76,65 @@ public class WafPolicyPSMGroup extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String uuid;
 
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * A list of all match element collections which are completely described in the psm group.
+   * Every input value which matches one of the elements in this list but is not handled by a waf psm rule, will run the match_element miss_action.
+   * Allowed values are waf_variable_args.
+   * Enum options - WAF_VARIABLE_ARGS, WAF_VARIABLE_ARGS_GET, WAF_VARIABLE_ARGS_POST, WAF_VARIABLE_ARGS_NAMES, WAF_VARIABLE_REQUEST_COOKIES,
+   * WAF_VARIABLE_QUERY_STRING, WAF_VARIABLE_REQUEST_BASENAME, WAF_VARIABLE_REQUEST_URI, WAF_VARIABLE_PATH_INFO, WAF_VARIABLE_REQUEST_HEADERS.
+   * Field introduced in 31.2.1.
+   * Maximum of 1 items allowed.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return completelyDescribedMatchElements
+   */
+  @VsoMethod
+  public List<String> getCompletelyDescribedMatchElements() {
+    return completelyDescribedMatchElements;
+  }
+
+  /**
+   * This is the setter method. this will set the completelyDescribedMatchElements
+   * A list of all match element collections which are completely described in the psm group.
+   * Every input value which matches one of the elements in this list but is not handled by a waf psm rule, will run the match_element miss_action.
+   * Allowed values are waf_variable_args.
+   * Enum options - WAF_VARIABLE_ARGS, WAF_VARIABLE_ARGS_GET, WAF_VARIABLE_ARGS_POST, WAF_VARIABLE_ARGS_NAMES, WAF_VARIABLE_REQUEST_COOKIES,
+   * WAF_VARIABLE_QUERY_STRING, WAF_VARIABLE_REQUEST_BASENAME, WAF_VARIABLE_REQUEST_URI, WAF_VARIABLE_PATH_INFO, WAF_VARIABLE_REQUEST_HEADERS.
+   * Field introduced in 31.2.1.
+   * Maximum of 1 items allowed.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return completelyDescribedMatchElements
+   */
+  @VsoMethod
+  public void setCompletelyDescribedMatchElements(List<String>  completelyDescribedMatchElements) {
+    this.completelyDescribedMatchElements = completelyDescribedMatchElements;
+  }
+
+  /**
+   * This is the setter method this will set the completelyDescribedMatchElements
+   * A list of all match element collections which are completely described in the psm group.
+   * Every input value which matches one of the elements in this list but is not handled by a waf psm rule, will run the match_element miss_action.
+   * Allowed values are waf_variable_args.
+   * Enum options - WAF_VARIABLE_ARGS, WAF_VARIABLE_ARGS_GET, WAF_VARIABLE_ARGS_POST, WAF_VARIABLE_ARGS_NAMES, WAF_VARIABLE_REQUEST_COOKIES,
+   * WAF_VARIABLE_QUERY_STRING, WAF_VARIABLE_REQUEST_BASENAME, WAF_VARIABLE_REQUEST_URI, WAF_VARIABLE_PATH_INFO, WAF_VARIABLE_REQUEST_HEADERS.
+   * Field introduced in 31.2.1.
+   * Maximum of 1 items allowed.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return completelyDescribedMatchElements
+   */
+  @VsoMethod
+  public WafPolicyPSMGroup addCompletelyDescribedMatchElementsItem(String completelyDescribedMatchElementsItem) {
+    if (this.completelyDescribedMatchElements == null) {
+      this.completelyDescribedMatchElements = new ArrayList<String>();
+    }
+    this.completelyDescribedMatchElements.add(completelyDescribedMatchElementsItem);
+    return this;
+  }
 
 
   /**
@@ -456,14 +519,16 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.description, objWafPolicyPSMGroup.description)&&
   Objects.equals(this.isLearningGroup, objWafPolicyPSMGroup.isLearningGroup)&&
   Objects.equals(this.markers, objWafPolicyPSMGroup.markers)&&
-  Objects.equals(this.locationMatchMissAction, objWafPolicyPSMGroup.locationMatchMissAction);
+  Objects.equals(this.locationMatchMissAction, objWafPolicyPSMGroup.locationMatchMissAction)&&
+  Objects.equals(this.completelyDescribedMatchElements, objWafPolicyPSMGroup.completelyDescribedMatchElements);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class WafPolicyPSMGroup {\n");
-      sb.append("    description: ").append(toIndentedString(description)).append("\n");
+      sb.append("    completelyDescribedMatchElements: ").append(toIndentedString(completelyDescribedMatchElements)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    enable: ").append(toIndentedString(enable)).append("\n");
         sb.append("    hitAction: ").append(toIndentedString(hitAction)).append("\n");
         sb.append("    isLearningGroup: ").append(toIndentedString(isLearningGroup)).append("\n");
