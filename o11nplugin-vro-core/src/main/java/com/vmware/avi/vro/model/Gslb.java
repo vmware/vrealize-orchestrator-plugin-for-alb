@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.AutoTuneSendInterval;
 import com.vmware.avi.vro.model.GslbClientIpAddrGroup;
+import com.vmware.avi.vro.model.LeaderChangeInfo;
 import com.vmware.avi.vro.model.ReplicationPolicy;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
@@ -70,6 +71,10 @@ public class Gslb extends AviRestResource {
     @JsonProperty("is_federated")
     @JsonInclude(Include.NON_NULL)
     private Boolean isFederated = true;
+
+    @JsonProperty("leader_change_info")
+    @JsonInclude(Include.NON_NULL)
+    private LeaderChangeInfo leaderChangeInfo;
 
     @JsonProperty("leader_cluster_uuid")
     @JsonInclude(Include.NON_NULL)
@@ -451,6 +456,34 @@ public class Gslb extends AviRestResource {
   @VsoMethod
   public void setIsFederated(Boolean  isFederated) {
     this.isFederated = isFederated;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * This field has leader change configuration info including mode, leader designate sites and other configurations for auto leader change like max
+   * short probe failures.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return leaderChangeInfo
+   */
+  @VsoMethod
+  public LeaderChangeInfo getLeaderChangeInfo() {
+    return leaderChangeInfo;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * This field has leader change configuration info including mode, leader designate sites and other configurations for auto leader change like max
+   * short probe failures.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param leaderChangeInfo set the leaderChangeInfo.
+   */
+  @VsoMethod
+  public void setLeaderChangeInfo(LeaderChangeInfo leaderChangeInfo) {
+    this.leaderChangeInfo = leaderChangeInfo;
   }
 
   /**
@@ -866,7 +899,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.fileobjectMaxFileVersions, objGslb.fileobjectMaxFileVersions)&&
   Objects.equals(this.gsMemberFqdnResolutionOnSe, objGslb.gsMemberFqdnResolutionOnSe)&&
   Objects.equals(this.shortProbeInterval, objGslb.shortProbeInterval)&&
-  Objects.equals(this.autoTuneSendInterval, objGslb.autoTuneSendInterval);
+  Objects.equals(this.autoTuneSendInterval, objGslb.autoTuneSendInterval)&&
+  Objects.equals(this.leaderChangeInfo, objGslb.leaderChangeInfo);
 }
 
 @Override
@@ -884,6 +918,7 @@ public String toString() {
         sb.append("    fileobjectMaxFileVersions: ").append(toIndentedString(fileobjectMaxFileVersions)).append("\n");
         sb.append("    gsMemberFqdnResolutionOnSe: ").append(toIndentedString(gsMemberFqdnResolutionOnSe)).append("\n");
         sb.append("    isFederated: ").append(toIndentedString(isFederated)).append("\n");
+        sb.append("    leaderChangeInfo: ").append(toIndentedString(leaderChangeInfo)).append("\n");
         sb.append("    leaderClusterUuid: ").append(toIndentedString(leaderClusterUuid)).append("\n");
         sb.append("    maintenanceMode: ").append(toIndentedString(maintenanceMode)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");

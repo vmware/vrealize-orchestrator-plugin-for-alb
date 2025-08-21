@@ -25,6 +25,10 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HardwareSecurityModuleGroup extends AviRestResource {
+    @JsonProperty("ca_certs")
+    @JsonInclude(Include.NON_NULL)
+    private List<SSLCertificate> caCerts;
+
     @JsonProperty("hsm")
     @JsonInclude(Include.NON_NULL)
     private HardwareSecurityModule hsm;
@@ -49,6 +53,50 @@ public class HardwareSecurityModuleGroup extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String uuid;
 
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * List of certificates present in the ca chain that were used to sign custom client certificate.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return caCerts
+   */
+  @VsoMethod
+  public List<SSLCertificate> getCaCerts() {
+    return caCerts;
+  }
+
+  /**
+   * This is the setter method. this will set the caCerts
+   * List of certificates present in the ca chain that were used to sign custom client certificate.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return caCerts
+   */
+  @VsoMethod
+  public void setCaCerts(List<SSLCertificate>  caCerts) {
+    this.caCerts = caCerts;
+  }
+
+  /**
+   * This is the setter method this will set the caCerts
+   * List of certificates present in the ca chain that were used to sign custom client certificate.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return caCerts
+   */
+  @VsoMethod
+  public HardwareSecurityModuleGroup addCaCertsItem(SSLCertificate caCertsItem) {
+    if (this.caCerts == null) {
+      this.caCerts = new ArrayList<SSLCertificate>();
+    }
+    this.caCerts.add(caCertsItem);
+    return this;
+  }
 
 
   /**
@@ -228,14 +276,16 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.name, objHardwareSecurityModuleGroup.name)&&
   Objects.equals(this.hsm, objHardwareSecurityModuleGroup.hsm)&&
   Objects.equals(this.markers, objHardwareSecurityModuleGroup.markers)&&
-  Objects.equals(this.tenantRef, objHardwareSecurityModuleGroup.tenantRef);
+  Objects.equals(this.tenantRef, objHardwareSecurityModuleGroup.tenantRef)&&
+  Objects.equals(this.caCerts, objHardwareSecurityModuleGroup.caCerts);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class HardwareSecurityModuleGroup {\n");
-      sb.append("    hsm: ").append(toIndentedString(hsm)).append("\n");
+      sb.append("    caCerts: ").append(toIndentedString(caCerts)).append("\n");
+        sb.append("    hsm: ").append(toIndentedString(hsm)).append("\n");
         sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");

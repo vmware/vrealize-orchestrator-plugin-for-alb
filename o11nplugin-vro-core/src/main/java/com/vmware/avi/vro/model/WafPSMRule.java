@@ -32,6 +32,10 @@ public class WafPSMRule extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean enable = true;
 
+    @JsonProperty("ignore_hit_action")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean ignoreHitAction = false;
+
     @JsonProperty("index")
     @JsonInclude(Include.NON_NULL)
     private Integer index;
@@ -128,6 +132,32 @@ public class WafPSMRule extends AviRestResource {
   @VsoMethod
   public void setEnable(Boolean  enable) {
     this.enable = enable;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * If this is set, the hit action for this match will be waf_action_no_op.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return ignoreHitAction
+   */
+  @VsoMethod
+  public Boolean getIgnoreHitAction() {
+    return ignoreHitAction;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * If this is set, the hit action for this match will be waf_action_no_op.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param ignoreHitAction set the ignoreHitAction.
+   */
+  @VsoMethod
+  public void setIgnoreHitAction(Boolean  ignoreHitAction) {
+    this.ignoreHitAction = ignoreHitAction;
   }
 
   /**
@@ -477,7 +507,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.matchCase, objWafPSMRule.matchCase)&&
   Objects.equals(this.description, objWafPSMRule.description)&&
   Objects.equals(this.matchValueStringGroupRef, objWafPSMRule.matchValueStringGroupRef)&&
-  Objects.equals(this.matchValueStringGroupKey, objWafPSMRule.matchValueStringGroupKey);
+  Objects.equals(this.matchValueStringGroupKey, objWafPSMRule.matchValueStringGroupKey)&&
+  Objects.equals(this.ignoreHitAction, objWafPSMRule.ignoreHitAction);
 }
 
 @Override
@@ -486,6 +517,7 @@ public String toString() {
   sb.append("class WafPSMRule {\n");
       sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    enable: ").append(toIndentedString(enable)).append("\n");
+        sb.append("    ignoreHitAction: ").append(toIndentedString(ignoreHitAction)).append("\n");
         sb.append("    index: ").append(toIndentedString(index)).append("\n");
         sb.append("    matchCase: ").append(toIndentedString(matchCase)).append("\n");
         sb.append("    matchElements: ").append(toIndentedString(matchElements)).append("\n");

@@ -24,9 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class URIInfo extends AviRestResource {
+    @JsonProperty("method")
+    @JsonInclude(Include.NON_NULL)
+    private String method;
+
     @JsonProperty("param_info")
     @JsonInclude(Include.NON_NULL)
     private List<ParamInfo> paramInfo;
+
+    @JsonProperty("parser")
+    @JsonInclude(Include.NON_NULL)
+    private String parser;
 
     @JsonProperty("uri_hits")
     @JsonInclude(Include.NON_NULL)
@@ -37,6 +45,40 @@ public class URIInfo extends AviRestResource {
     private String uriKey;
 
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * The http method.
+   * Together with name and parser it describes the http endpoint.
+   * Enum options - HTTP_METHOD_GET, HTTP_METHOD_HEAD, HTTP_METHOD_PUT, HTTP_METHOD_DELETE, HTTP_METHOD_POST, HTTP_METHOD_OPTIONS, HTTP_METHOD_TRACE,
+   * HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE,
+   * HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return method
+   */
+  @VsoMethod
+  public String getMethod() {
+    return method;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * The http method.
+   * Together with name and parser it describes the http endpoint.
+   * Enum options - HTTP_METHOD_GET, HTTP_METHOD_HEAD, HTTP_METHOD_PUT, HTTP_METHOD_DELETE, HTTP_METHOD_POST, HTTP_METHOD_OPTIONS, HTTP_METHOD_TRACE,
+   * HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE,
+   * HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param method set the method.
+   */
+  @VsoMethod
+  public void setMethod(String  method) {
+    this.method = method;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -81,6 +123,40 @@ public class URIInfo extends AviRestResource {
     return this;
   }
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * The parser used to parse the request body.
+   * Together with name and method it describes the http endpoint.
+   * If there was no parser, for example on a get request, this is set to waf_request_parser_do_not_parse.
+   * Enum options - WAF_REQUEST_PARSER_URLENCODED, WAF_REQUEST_PARSER_MULTIPART, WAF_REQUEST_PARSER_JSON, WAF_REQUEST_PARSER_XML,
+   * WAF_REQUEST_PARSER_HANDLE_AS_STRING, WAF_REQUEST_PARSER_DO_NOT_PARSE, WAF_REQUEST_PARSER_AUTO_DETECT.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return parser
+   */
+  @VsoMethod
+  public String getParser() {
+    return parser;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * The parser used to parse the request body.
+   * Together with name and method it describes the http endpoint.
+   * If there was no parser, for example on a get request, this is set to waf_request_parser_do_not_parse.
+   * Enum options - WAF_REQUEST_PARSER_URLENCODED, WAF_REQUEST_PARSER_MULTIPART, WAF_REQUEST_PARSER_JSON, WAF_REQUEST_PARSER_XML,
+   * WAF_REQUEST_PARSER_HANDLE_AS_STRING, WAF_REQUEST_PARSER_DO_NOT_PARSE, WAF_REQUEST_PARSER_AUTO_DETECT.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param parser set the parser.
+   */
+  @VsoMethod
+  public void setParser(String  parser) {
+    this.parser = parser;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -147,14 +223,18 @@ public boolean equals(java.lang.Object o) {
   URIInfo objURIInfo = (URIInfo) o;
   return   Objects.equals(this.uriHits, objURIInfo.uriHits)&&
   Objects.equals(this.uriKey, objURIInfo.uriKey)&&
-  Objects.equals(this.paramInfo, objURIInfo.paramInfo);
+  Objects.equals(this.paramInfo, objURIInfo.paramInfo)&&
+  Objects.equals(this.method, objURIInfo.method)&&
+  Objects.equals(this.parser, objURIInfo.parser);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class URIInfo {\n");
-      sb.append("    paramInfo: ").append(toIndentedString(paramInfo)).append("\n");
+      sb.append("    method: ").append(toIndentedString(method)).append("\n");
+        sb.append("    paramInfo: ").append(toIndentedString(paramInfo)).append("\n");
+        sb.append("    parser: ").append(toIndentedString(parser)).append("\n");
         sb.append("    uriHits: ").append(toIndentedString(uriHits)).append("\n");
         sb.append("    uriKey: ").append(toIndentedString(uriKey)).append("\n");
       sb.append("}");
