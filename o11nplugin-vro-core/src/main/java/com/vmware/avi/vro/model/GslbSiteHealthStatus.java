@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.ControllerSize;
 import com.vmware.avi.vro.model.GslbDnsInfo;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
@@ -29,6 +30,10 @@ public class GslbSiteHealthStatus extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private List<GslbPoolMemberRuntimeInfo> controllerGsinfo;
 
+    @JsonProperty("controller_size")
+    @JsonInclude(Include.NON_NULL)
+    private ControllerSize controllerSize;
+
     @JsonProperty("datapath_gsinfo")
     @JsonInclude(Include.NON_NULL)
     private List<GslbPoolMemberRuntimeInfo> datapathGsinfo;
@@ -36,6 +41,10 @@ public class GslbSiteHealthStatus extends AviRestResource {
     @JsonProperty("dns_info")
     @JsonInclude(Include.NON_NULL)
     private GslbDnsInfo dnsInfo;
+
+    @JsonProperty("edges")
+    @JsonInclude(Include.NON_NULL)
+    private List<SiteLink> edges;
 
     @JsonProperty("gap_table")
     @JsonInclude(Include.NON_NULL)
@@ -110,6 +119,32 @@ public class GslbSiteHealthStatus extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Controller size of peer controller.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return controllerSize
+   */
+  @VsoMethod
+  public ControllerSize getControllerSize() {
+    return controllerSize;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Controller size of peer controller.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param controllerSize set the controllerSize.
+   */
+  @VsoMethod
+  public void setControllerSize(ControllerSize controllerSize) {
+    this.controllerSize = controllerSize;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Controller retrieved gslb service operational info based of dns datapath resolution.
    * This information is generated only on those sites that have dns-vs participating in gslb.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -175,6 +210,53 @@ public class GslbSiteHealthStatus extends AviRestResource {
   public void setDnsInfo(GslbDnsInfo dnsInfo) {
     this.dnsInfo = dnsInfo;
   }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * This is used to identify the connection between the sitesin a 3 site scenario a, b, c, if c is connected to a and bwhen c is responding to a
+   * hsresponse will contain (c, a), (c, b).
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return edges
+   */
+  @VsoMethod
+  public List<SiteLink> getEdges() {
+    return edges;
+  }
+
+  /**
+   * This is the setter method. this will set the edges
+   * This is used to identify the connection between the sitesin a 3 site scenario a, b, c, if c is connected to a and bwhen c is responding to a
+   * hsresponse will contain (c, a), (c, b).
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return edges
+   */
+  @VsoMethod
+  public void setEdges(List<SiteLink>  edges) {
+    this.edges = edges;
+  }
+
+  /**
+   * This is the setter method this will set the edges
+   * This is used to identify the connection between the sitesin a 3 site scenario a, b, c, if c is connected to a and bwhen c is responding to a
+   * hsresponse will contain (c, a), (c, b).
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return edges
+   */
+  @VsoMethod
+  public GslbSiteHealthStatus addEdgesItem(SiteLink edgesItem) {
+    if (this.edges == null) {
+      this.edges = new ArrayList<SiteLink>();
+    }
+    this.edges.add(edgesItem);
+    return this;
+  }
+
 
   /**
    * This is the getter method this will return the attribute value.
@@ -455,7 +537,9 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.ghmTable, objGslbSiteHealthStatus.ghmTable)&&
   Objects.equals(this.gsTable, objGslbSiteHealthStatus.gsTable)&&
   Objects.equals(this.geoTable, objGslbSiteHealthStatus.geoTable)&&
-  Objects.equals(this.gapTable, objGslbSiteHealthStatus.gapTable);
+  Objects.equals(this.gapTable, objGslbSiteHealthStatus.gapTable)&&
+  Objects.equals(this.edges, objGslbSiteHealthStatus.edges)&&
+  Objects.equals(this.controllerSize, objGslbSiteHealthStatus.controllerSize);
 }
 
 @Override
@@ -463,8 +547,10 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class GslbSiteHealthStatus {\n");
       sb.append("    controllerGsinfo: ").append(toIndentedString(controllerGsinfo)).append("\n");
+        sb.append("    controllerSize: ").append(toIndentedString(controllerSize)).append("\n");
         sb.append("    datapathGsinfo: ").append(toIndentedString(datapathGsinfo)).append("\n");
         sb.append("    dnsInfo: ").append(toIndentedString(dnsInfo)).append("\n");
+        sb.append("    edges: ").append(toIndentedString(edges)).append("\n");
         sb.append("    gapTable: ").append(toIndentedString(gapTable)).append("\n");
         sb.append("    geoTable: ").append(toIndentedString(geoTable)).append("\n");
         sb.append("    ghmTable: ").append(toIndentedString(ghmTable)).append("\n");

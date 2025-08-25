@@ -48,6 +48,10 @@ public class HSMSafenetLuna extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean useDedicatedNetwork = false;
 
+    @JsonProperty("use_legacy_engine")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useLegacyEngine = false;
+
 
 
   /**
@@ -228,6 +232,32 @@ public class HSMSafenetLuna extends AviRestResource {
     this.useDedicatedNetwork = useDedicatedNetwork;
   }
 
+  /**
+   * This is the getter method this will return the attribute value.
+   * If enabled, thales luna client will use legacy gem engine library, instead of a luna provider.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return useLegacyEngine
+   */
+  @VsoMethod
+  public Boolean getUseLegacyEngine() {
+    return useLegacyEngine;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * If enabled, thales luna client will use legacy gem engine library, instead of a luna provider.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param useLegacyEngine set the useLegacyEngine.
+   */
+  @VsoMethod
+  public void setUseLegacyEngine(Boolean  useLegacyEngine) {
+    this.useLegacyEngine = useLegacyEngine;
+  }
+
 
 
 @Override
@@ -244,7 +274,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.haGroupNum, objHSMSafenetLuna.haGroupNum)&&
   Objects.equals(this.nodeInfo, objHSMSafenetLuna.nodeInfo)&&
   Objects.equals(this.serverPem, objHSMSafenetLuna.serverPem)&&
-  Objects.equals(this.useDedicatedNetwork, objHSMSafenetLuna.useDedicatedNetwork);
+  Objects.equals(this.useDedicatedNetwork, objHSMSafenetLuna.useDedicatedNetwork)&&
+  Objects.equals(this.useLegacyEngine, objHSMSafenetLuna.useLegacyEngine);
 }
 
 @Override
@@ -257,6 +288,7 @@ public String toString() {
         sb.append("    server: ").append(toIndentedString(server)).append("\n");
         sb.append("    serverPem: ").append(toIndentedString(serverPem)).append("\n");
         sb.append("    useDedicatedNetwork: ").append(toIndentedString(useDedicatedNetwork)).append("\n");
+        sb.append("    useLegacyEngine: ").append(toIndentedString(useLegacyEngine)).append("\n");
       sb.append("}");
   return sb.toString();
 }

@@ -629,6 +629,7 @@ public class Constants {
     public static final String FINDER_VRO_LDAPAUTHSETTINGS = "LdapAuthSettings";
     public static final String FINDER_VRO_LDAPDIRECTORYSETTINGS = "LdapDirectorySettings";
     public static final String FINDER_VRO_LDAPUSERBINDSETTINGS = "LdapUserBindSettings";
+    public static final String FINDER_VRO_LEADERCHANGEINFO = "LeaderChangeInfo";
     public static final String FINDER_VRO_LEARNINGLOGPOLICY = "LearningLogPolicy";
     public static final String FINDER_VRO_LICENSEDETAILS = "LicenseDetails";
     public static final String FINDER_VRO_LICENSEEXPIRYDETAILS = "LicenseExpiryDetails";
@@ -916,6 +917,7 @@ public class Constants {
     public static final String FINDER_VRO_SSLIGNOREDDETAILS = "SSLIgnoredDetails";
     public static final String FINDER_VRO_SSLKEYANDCERTIFICATE = "SSLKeyAndCertificate";
     public static final String FINDER_VRO_SSLKEYECPARAMS = "SSLKeyECParams";
+    public static final String FINDER_VRO_SSLKEYMLDSAPARAMS = "SSLKeyMldsaParams";
     public static final String FINDER_VRO_SSLKEYPARAMS = "SSLKeyParams";
     public static final String FINDER_VRO_SSLKEYRSAPARAMS = "SSLKeyRSAParams";
     public static final String FINDER_VRO_SSLPROFILE = "SSLProfile";
@@ -1064,6 +1066,8 @@ public class Constants {
     public static final String FINDER_VRO_SIPLOG = "SipLog";
     public static final String FINDER_VRO_SIPMESSAGE = "SipMessage";
     public static final String FINDER_VRO_SIPSERVICEAPPLICATIONPROFILE = "SipServiceApplicationProfile";
+    public static final String FINDER_VRO_SITEINFO = "SiteInfo";
+    public static final String FINDER_VRO_SITELINK = "SiteLink";
     public static final String FINDER_VRO_SITEVERSION = "SiteVersion";
     public static final String FINDER_VRO_SNMPCONFIGURATION = "SnmpConfiguration";
     public static final String FINDER_VRO_SNMPTRAPPROFILE = "SnmpTrapProfile";

@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.SSLKeyECParams;
+import com.vmware.avi.vro.model.SSLKeyMldsaParams;
 import com.vmware.avi.vro.model.SSLKeyRSAParams;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
@@ -34,6 +35,10 @@ public class SSLKeyParams extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private SSLKeyECParams ecParams;
 
+    @JsonProperty("mldsa_params")
+    @JsonInclude(Include.NON_NULL)
+    private SSLKeyMldsaParams mldsaParams;
+
     @JsonProperty("rsa_params")
     @JsonInclude(Include.NON_NULL)
     private SSLKeyRSAParams rsaParams;
@@ -42,7 +47,7 @@ public class SSLKeyParams extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Enum options - SSL_KEY_ALGORITHM_RSA, SSL_KEY_ALGORITHM_EC.
+   * Enum options - SSL_KEY_ALGORITHM_RSA, SSL_KEY_ALGORITHM_EC, SSL_KEY_ALGORITHM_MLDSA.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "SSL_KEY_ALGORITHM_RSA".
    * @return algorithm
@@ -54,7 +59,7 @@ public class SSLKeyParams extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Enum options - SSL_KEY_ALGORITHM_RSA, SSL_KEY_ALGORITHM_EC.
+   * Enum options - SSL_KEY_ALGORITHM_RSA, SSL_KEY_ALGORITHM_EC, SSL_KEY_ALGORITHM_MLDSA.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "SSL_KEY_ALGORITHM_RSA".
    * @param algorithm set the algorithm.
@@ -84,6 +89,32 @@ public class SSLKeyParams extends AviRestResource {
   @VsoMethod
   public void setEcParams(SSLKeyECParams ecParams) {
     this.ecParams = ecParams;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Mldsa keys.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return mldsaParams
+   */
+  @VsoMethod
+  public SSLKeyMldsaParams getMldsaParams() {
+    return mldsaParams;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Mldsa keys.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param mldsaParams set the mldsaParams.
+   */
+  @VsoMethod
+  public void setMldsaParams(SSLKeyMldsaParams mldsaParams) {
+    this.mldsaParams = mldsaParams;
   }
 
   /**
@@ -121,7 +152,8 @@ public boolean equals(java.lang.Object o) {
   SSLKeyParams objSSLKeyParams = (SSLKeyParams) o;
   return   Objects.equals(this.algorithm, objSSLKeyParams.algorithm)&&
   Objects.equals(this.rsaParams, objSSLKeyParams.rsaParams)&&
-  Objects.equals(this.ecParams, objSSLKeyParams.ecParams);
+  Objects.equals(this.ecParams, objSSLKeyParams.ecParams)&&
+  Objects.equals(this.mldsaParams, objSSLKeyParams.mldsaParams);
 }
 
 @Override
@@ -130,6 +162,7 @@ public String toString() {
   sb.append("class SSLKeyParams {\n");
       sb.append("    algorithm: ").append(toIndentedString(algorithm)).append("\n");
         sb.append("    ecParams: ").append(toIndentedString(ecParams)).append("\n");
+        sb.append("    mldsaParams: ").append(toIndentedString(mldsaParams)).append("\n");
         sb.append("    rsaParams: ").append(toIndentedString(rsaParams)).append("\n");
       sb.append("}");
   return sb.toString();

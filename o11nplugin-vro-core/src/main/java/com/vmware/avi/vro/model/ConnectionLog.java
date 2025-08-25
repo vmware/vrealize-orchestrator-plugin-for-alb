@@ -164,6 +164,10 @@ public class ConnectionLog extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer mss = 1500;
 
+    @JsonProperty("named_group")
+    @JsonInclude(Include.NON_NULL)
+    private String namedGroup;
+
     @JsonProperty("network_security_policy_rule_name")
     @JsonInclude(Include.NON_NULL)
     private String networkSecurityPolicyRuleName;
@@ -303,6 +307,10 @@ public class ConnectionLog extends AviRestResource {
     @JsonProperty("service_engine")
     @JsonInclude(Include.NON_NULL)
     private String serviceEngine;
+
+    @JsonProperty("signature_algorithm")
+    @JsonInclude(Include.NON_NULL)
+    private String signatureAlgorithm;
 
     @JsonProperty("significance")
     @JsonInclude(Include.NON_NULL)
@@ -1228,6 +1236,32 @@ public class ConnectionLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Ssl group negotitaed during ssl handhshake.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return namedGroup
+   */
+  @VsoMethod
+  public String getNamedGroup() {
+    return namedGroup;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Ssl group negotitaed during ssl handhshake.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param namedGroup set the namedGroup.
+   */
+  @VsoMethod
+  public void setNamedGroup(String  namedGroup) {
+    this.namedGroup = namedGroup;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkSecurityPolicyRuleName
@@ -2034,6 +2068,32 @@ public class ConnectionLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Ssl signature algorithm negotitaed during ssl handhshake.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return signatureAlgorithm
+   */
+  @VsoMethod
+  public String getSignatureAlgorithm() {
+    return signatureAlgorithm;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Ssl signature algorithm negotitaed during ssl handhshake.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param signatureAlgorithm set the signatureAlgorithm.
+   */
+  @VsoMethod
+  public void setSignatureAlgorithm(String  signatureAlgorithm) {
+    this.signatureAlgorithm = signatureAlgorithm;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return significance
@@ -2082,9 +2142,9 @@ public class ConnectionLog extends AviRestResource {
    * Enum options - ADF_CLIENT_CONN_SETUP_REFUSED, ADF_SERVER_CONN_SETUP_REFUSED, ADF_CLIENT_CONN_SETUP_TIMEDOUT, ADF_SERVER_CONN_SETUP_TIMEDOUT,
    * ADF_CLIENT_CONN_SETUP_FAILED_INTERNAL, ADF_SERVER_CONN_SETUP_FAILED_INTERNAL, ADF_CLIENT_CONN_SETUP_FAILED_BAD_PACKET,
    * ADF_UDP_CONN_SETUP_FAILED_INTERNAL, ADF_UDP_SERVER_CONN_SETUP_FAILED_INTERNAL, ADF_SCTP_SERVER_CONN_SETUP_REFUSED,
-   * ADF_SCTP_SERVER_CONN_SETUP_TIMEDOUT, ADF_SCTP_SERVER_CONN_SETUP_FAILED_INTERNAL, ADF_CLIENT_SENT_RESET, ADF_SERVER_SENT_RESET,
-   * ADF_CLIENT_CONN_TIMEDOUT, ADF_SERVER_CONN_TIMEDOUT, ADF_USER_DELETE_OPERATION, ADF_CLIENT_REQUEST_TIMEOUT, ADF_CLIENT_CONN_ABORTED,
-   * ADF_CLIENT_SSL_HANDSHAKE_FAILURE...
+   * ADF_SCTP_SERVER_CONN_SETUP_TIMEDOUT, ADF_SCTP_SERVER_CONN_SETUP_FAILED_INTERNAL, ADF_TCP_CLIENT_CONN_SETUP_FAILED_SMALL_WINDOW,
+   * ADF_CLIENT_SENT_RESET, ADF_SERVER_SENT_RESET, ADF_CLIENT_CONN_TIMEDOUT, ADF_SERVER_CONN_TIMEDOUT, ADF_USER_DELETE_OPERATION,
+   * ADF_CLIENT_REQUEST_TIMEOUT, ADF_CLIENT_CONN_ABORTED...
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return significantLog
@@ -2100,9 +2160,9 @@ public class ConnectionLog extends AviRestResource {
    * Enum options - ADF_CLIENT_CONN_SETUP_REFUSED, ADF_SERVER_CONN_SETUP_REFUSED, ADF_CLIENT_CONN_SETUP_TIMEDOUT, ADF_SERVER_CONN_SETUP_TIMEDOUT,
    * ADF_CLIENT_CONN_SETUP_FAILED_INTERNAL, ADF_SERVER_CONN_SETUP_FAILED_INTERNAL, ADF_CLIENT_CONN_SETUP_FAILED_BAD_PACKET,
    * ADF_UDP_CONN_SETUP_FAILED_INTERNAL, ADF_UDP_SERVER_CONN_SETUP_FAILED_INTERNAL, ADF_SCTP_SERVER_CONN_SETUP_REFUSED,
-   * ADF_SCTP_SERVER_CONN_SETUP_TIMEDOUT, ADF_SCTP_SERVER_CONN_SETUP_FAILED_INTERNAL, ADF_CLIENT_SENT_RESET, ADF_SERVER_SENT_RESET,
-   * ADF_CLIENT_CONN_TIMEDOUT, ADF_SERVER_CONN_TIMEDOUT, ADF_USER_DELETE_OPERATION, ADF_CLIENT_REQUEST_TIMEOUT, ADF_CLIENT_CONN_ABORTED,
-   * ADF_CLIENT_SSL_HANDSHAKE_FAILURE...
+   * ADF_SCTP_SERVER_CONN_SETUP_TIMEDOUT, ADF_SCTP_SERVER_CONN_SETUP_FAILED_INTERNAL, ADF_TCP_CLIENT_CONN_SETUP_FAILED_SMALL_WINDOW,
+   * ADF_CLIENT_SENT_RESET, ADF_SERVER_SENT_RESET, ADF_CLIENT_CONN_TIMEDOUT, ADF_SERVER_CONN_TIMEDOUT, ADF_USER_DELETE_OPERATION,
+   * ADF_CLIENT_REQUEST_TIMEOUT, ADF_CLIENT_CONN_ABORTED...
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return significantLog
@@ -2118,9 +2178,9 @@ public class ConnectionLog extends AviRestResource {
    * Enum options - ADF_CLIENT_CONN_SETUP_REFUSED, ADF_SERVER_CONN_SETUP_REFUSED, ADF_CLIENT_CONN_SETUP_TIMEDOUT, ADF_SERVER_CONN_SETUP_TIMEDOUT,
    * ADF_CLIENT_CONN_SETUP_FAILED_INTERNAL, ADF_SERVER_CONN_SETUP_FAILED_INTERNAL, ADF_CLIENT_CONN_SETUP_FAILED_BAD_PACKET,
    * ADF_UDP_CONN_SETUP_FAILED_INTERNAL, ADF_UDP_SERVER_CONN_SETUP_FAILED_INTERNAL, ADF_SCTP_SERVER_CONN_SETUP_REFUSED,
-   * ADF_SCTP_SERVER_CONN_SETUP_TIMEDOUT, ADF_SCTP_SERVER_CONN_SETUP_FAILED_INTERNAL, ADF_CLIENT_SENT_RESET, ADF_SERVER_SENT_RESET,
-   * ADF_CLIENT_CONN_TIMEDOUT, ADF_SERVER_CONN_TIMEDOUT, ADF_USER_DELETE_OPERATION, ADF_CLIENT_REQUEST_TIMEOUT, ADF_CLIENT_CONN_ABORTED,
-   * ADF_CLIENT_SSL_HANDSHAKE_FAILURE...
+   * ADF_SCTP_SERVER_CONN_SETUP_TIMEDOUT, ADF_SCTP_SERVER_CONN_SETUP_FAILED_INTERNAL, ADF_TCP_CLIENT_CONN_SETUP_FAILED_SMALL_WINDOW,
+   * ADF_CLIENT_SENT_RESET, ADF_SERVER_SENT_RESET, ADF_CLIENT_CONN_TIMEDOUT, ADF_SERVER_CONN_TIMEDOUT, ADF_USER_DELETE_OPERATION,
+   * ADF_CLIENT_REQUEST_TIMEOUT, ADF_CLIENT_CONN_ABORTED...
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return significantLog
@@ -2676,7 +2736,9 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.diameterLog, objConnectionLog.diameterLog)&&
   Objects.equals(this.dnsPolicyRuleName, objConnectionLog.dnsPolicyRuleName)&&
   Objects.equals(this.topologyPolicyRuleName, objConnectionLog.topologyPolicyRuleName)&&
-  Objects.equals(this.dnsPolicy, objConnectionLog.dnsPolicy);
+  Objects.equals(this.dnsPolicy, objConnectionLog.dnsPolicy)&&
+  Objects.equals(this.namedGroup, objConnectionLog.namedGroup)&&
+  Objects.equals(this.signatureAlgorithm, objConnectionLog.signatureAlgorithm);
 }
 
 @Override
@@ -2717,6 +2779,7 @@ public String toString() {
         sb.append("    microservice: ").append(toIndentedString(microservice)).append("\n");
         sb.append("    microserviceName: ").append(toIndentedString(microserviceName)).append("\n");
         sb.append("    mss: ").append(toIndentedString(mss)).append("\n");
+        sb.append("    namedGroup: ").append(toIndentedString(namedGroup)).append("\n");
         sb.append("    networkSecurityPolicyRuleName: ").append(toIndentedString(networkSecurityPolicyRuleName)).append("\n");
         sb.append("    numSynRetransmit: ").append(toIndentedString(numSynRetransmit)).append("\n");
         sb.append("    numTransaction: ").append(toIndentedString(numTransaction)).append("\n");
@@ -2752,6 +2815,7 @@ public String toString() {
         sb.append("    serverTxPkts: ").append(toIndentedString(serverTxPkts)).append("\n");
         sb.append("    serverZeroWindowSizeEvents: ").append(toIndentedString(serverZeroWindowSizeEvents)).append("\n");
         sb.append("    serviceEngine: ").append(toIndentedString(serviceEngine)).append("\n");
+        sb.append("    signatureAlgorithm: ").append(toIndentedString(signatureAlgorithm)).append("\n");
         sb.append("    significance: ").append(toIndentedString(significance)).append("\n");
         sb.append("    significant: ").append(toIndentedString(significant)).append("\n");
         sb.append("    significantLog: ").append(toIndentedString(significantLog)).append("\n");
