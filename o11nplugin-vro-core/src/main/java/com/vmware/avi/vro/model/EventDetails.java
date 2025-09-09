@@ -237,6 +237,7 @@ import com.vmware.avi.vro.model.VinfraVcenterBadCredentials;
 import com.vmware.avi.vro.model.VinfraVcenterDiscoveryFailure;
 import com.vmware.avi.vro.model.VcenterImageDetails;
 import com.vmware.avi.vro.model.VinfraVcenterNetworkLimit;
+import com.vmware.avi.vro.model.VcenterNonDrsClusterDetails;
 import com.vmware.avi.vro.model.VinfraVcenterObjDeleteDetails;
 import com.vmware.avi.vro.model.VcenterTagEventDetails;
 import com.vmware.avi.vro.model.VipScaleDetails;
@@ -1201,6 +1202,10 @@ public class EventDetails extends AviRestResource {
     @JsonProperty("vcenter_network_limit")
     @JsonInclude(Include.NON_NULL)
     private VinfraVcenterNetworkLimit vcenterNetworkLimit;
+
+    @JsonProperty("vcenter_non_drs_cluster_details")
+    @JsonInclude(Include.NON_NULL)
+    private VcenterNonDrsClusterDetails vcenterNonDrsClusterDetails;
 
     @JsonProperty("vcenter_obj_delete_details")
     @JsonInclude(Include.NON_NULL)
@@ -6592,6 +6597,32 @@ public class EventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Details of non drs clusters in vcenter.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return vcenterNonDrsClusterDetails
+   */
+  @VsoMethod
+  public VcenterNonDrsClusterDetails getVcenterNonDrsClusterDetails() {
+    return vcenterNonDrsClusterDetails;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Details of non drs clusters in vcenter.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param vcenterNonDrsClusterDetails set the vcenterNonDrsClusterDetails.
+   */
+  @VsoMethod
+  public void setVcenterNonDrsClusterDetails(VcenterNonDrsClusterDetails vcenterNonDrsClusterDetails) {
+    this.vcenterNonDrsClusterDetails = vcenterNonDrsClusterDetails;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterObjDeleteDetails
@@ -7023,6 +7054,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.vcenterNetworkLimit, objEventDetails.vcenterNetworkLimit)&&
   Objects.equals(this.vcenterTagEventDetails, objEventDetails.vcenterTagEventDetails)&&
   Objects.equals(this.vcenterCloudDeleteDetails, objEventDetails.vcenterCloudDeleteDetails)&&
+  Objects.equals(this.vcenterNonDrsClusterDetails, objEventDetails.vcenterNonDrsClusterDetails)&&
   Objects.equals(this.seDetails, objEventDetails.seDetails)&&
   Objects.equals(this.spawnSeDetails, objEventDetails.spawnSeDetails)&&
   Objects.equals(this.modifyNetworksDetails, objEventDetails.modifyNetworksDetails)&&
@@ -7499,6 +7531,7 @@ public String toString() {
         sb.append("    vcenterDiscFailure: ").append(toIndentedString(vcenterDiscFailure)).append("\n");
         sb.append("    vcenterImgDetails: ").append(toIndentedString(vcenterImgDetails)).append("\n");
         sb.append("    vcenterNetworkLimit: ").append(toIndentedString(vcenterNetworkLimit)).append("\n");
+        sb.append("    vcenterNonDrsClusterDetails: ").append(toIndentedString(vcenterNonDrsClusterDetails)).append("\n");
         sb.append("    vcenterObjDeleteDetails: ").append(toIndentedString(vcenterObjDeleteDetails)).append("\n");
         sb.append("    vcenterTagEventDetails: ").append(toIndentedString(vcenterTagEventDetails)).append("\n");
         sb.append("    vipAutoscale: ").append(toIndentedString(vipAutoscale)).append("\n");

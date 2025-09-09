@@ -888,6 +888,10 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer seIpEncapIpc = 0;
 
+    @JsonProperty("se_kernel_rss")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean seKernelRss = false;
+
     @JsonProperty("se_kni_burst_factor")
     @JsonInclude(Include.NON_NULL)
     private Integer seKniBurstFactor = 0;
@@ -7371,6 +7375,38 @@ public class ServiceEngineGroup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * This knob enables kernel rss.
+   * When enabled flowtable entry is added to every disp cpu.
+   * Should be used under supervision.
+   * Requires se reboot.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return seKernelRss
+   */
+  @VsoMethod
+  public Boolean getSeKernelRss() {
+    return seKernelRss;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * This knob enables kernel rss.
+   * When enabled flowtable entry is added to every disp cpu.
+   * Should be used under supervision.
+   * Requires se reboot.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param seKernelRss set the seKernelRss.
+   */
+  @VsoMethod
+  public void setSeKernelRss(Boolean  seKernelRss) {
+    this.seKernelRss = seKernelRss;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * This knob controls the resource availability and burst size used between se datapath and kni.
    * This helps in minimising packet drops when there is higher kni traffic (non-vip traffic from and to linux).
    * The factor takes the following values      0-default.
@@ -10336,7 +10372,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.autoRebalanceCoolDownTime, objServiceEngineGroup.autoRebalanceCoolDownTime)&&
   Objects.equals(this.autoRebalanceRaiseEventsForActions, objServiceEngineGroup.autoRebalanceRaiseEventsForActions)&&
   Objects.equals(this.autoRebalanceDryRunEnabled, objServiceEngineGroup.autoRebalanceDryRunEnabled)&&
-  Objects.equals(this.licenseQuota, objServiceEngineGroup.licenseQuota);
+  Objects.equals(this.licenseQuota, objServiceEngineGroup.licenseQuota)&&
+  Objects.equals(this.seKernelRss, objServiceEngineGroup.seKernelRss);
 }
 
 @Override
@@ -10555,6 +10592,7 @@ public String toString() {
         sb.append("    seGroupAnalyticsPolicy: ").append(toIndentedString(seGroupAnalyticsPolicy)).append("\n");
         sb.append("    seHyperthreadedMode: ").append(toIndentedString(seHyperthreadedMode)).append("\n");
         sb.append("    seIpEncapIpc: ").append(toIndentedString(seIpEncapIpc)).append("\n");
+        sb.append("    seKernelRss: ").append(toIndentedString(seKernelRss)).append("\n");
         sb.append("    seKniBurstFactor: ").append(toIndentedString(seKniBurstFactor)).append("\n");
         sb.append("    seL3EncapIpc: ").append(toIndentedString(seL3EncapIpc)).append("\n");
         sb.append("    seLogBufferAppBlockingDequeue: ").append(toIndentedString(seLogBufferAppBlockingDequeue)).append("\n");

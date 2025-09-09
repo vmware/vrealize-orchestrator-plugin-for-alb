@@ -162,7 +162,7 @@ public class PreChecksInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Time taken to complete must check in seconds.
+   * Duration of the must check in seconds.
    * Field introduced in 31.2.1.
    * Unit is sec.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
@@ -176,7 +176,7 @@ public class PreChecksInfo extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Time taken to complete must check in seconds.
+   * Duration of the must check in seconds.
    * Field introduced in 31.2.1.
    * Unit is sec.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
@@ -190,7 +190,7 @@ public class PreChecksInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Time at which execution of must check was completed.
+   * End time of the must check.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -203,7 +203,7 @@ public class PreChecksInfo extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Time at which execution of must check was completed.
+   * End time of the must check.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -217,7 +217,7 @@ public class PreChecksInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Error/failure details of the must check.
-   * Field introduced in 22.1.6.
+   * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorDetails
@@ -230,7 +230,7 @@ public class PreChecksInfo extends AviRestResource {
   /**
    * This is the setter method. this will set the errorDetails
    * Error/failure details of the must check.
-   * Field introduced in 22.1.6.
+   * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorDetails
@@ -243,7 +243,7 @@ public class PreChecksInfo extends AviRestResource {
   /**
    * This is the setter method this will set the errorDetails
    * Error/failure details of the must check.
-   * Field introduced in 22.1.6.
+   * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorDetails
@@ -260,7 +260,7 @@ public class PreChecksInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Time at which execution of must check was started.
+   * Start time of the must check.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -273,7 +273,7 @@ public class PreChecksInfo extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Time at which execution of must check was started.
+   * Start time of the must check.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.

@@ -192,6 +192,18 @@ public class VserverL7MetricsObj extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Float avgSslAuthEcdsa;
 
+    @JsonProperty("avg_ssl_auth_mldsa44")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgSslAuthMldsa44;
+
+    @JsonProperty("avg_ssl_auth_mldsa65")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgSslAuthMldsa65;
+
+    @JsonProperty("avg_ssl_auth_mldsa87")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgSslAuthMldsa87;
+
     @JsonProperty("avg_ssl_auth_rsa")
     @JsonInclude(Include.NON_NULL)
     private Float avgSslAuthRsa;
@@ -1794,6 +1806,84 @@ public class VserverL7MetricsObj extends AviRestResource {
   @VsoMethod
   public void setAvgSslAuthEcdsa(Float  avgSslAuthEcdsa) {
     this.avgSslAuthEcdsa = avgSslAuthEcdsa;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Average ssl sessions using mldsa44 certificate.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return avgSslAuthMldsa44
+   */
+  @VsoMethod
+  public Float getAvgSslAuthMldsa44() {
+    return avgSslAuthMldsa44;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Average ssl sessions using mldsa44 certificate.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param avgSslAuthMldsa44 set the avgSslAuthMldsa44.
+   */
+  @VsoMethod
+  public void setAvgSslAuthMldsa44(Float  avgSslAuthMldsa44) {
+    this.avgSslAuthMldsa44 = avgSslAuthMldsa44;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Average ssl sessions using mldsa65 certificate.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return avgSslAuthMldsa65
+   */
+  @VsoMethod
+  public Float getAvgSslAuthMldsa65() {
+    return avgSslAuthMldsa65;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Average ssl sessions using mldsa65 certificate.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param avgSslAuthMldsa65 set the avgSslAuthMldsa65.
+   */
+  @VsoMethod
+  public void setAvgSslAuthMldsa65(Float  avgSslAuthMldsa65) {
+    this.avgSslAuthMldsa65 = avgSslAuthMldsa65;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Average ssl sessions using mldsa87 certificate.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return avgSslAuthMldsa87
+   */
+  @VsoMethod
+  public Float getAvgSslAuthMldsa87() {
+    return avgSslAuthMldsa87;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Average ssl sessions using mldsa87 certificate.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param avgSslAuthMldsa87 set the avgSslAuthMldsa87.
+   */
+  @VsoMethod
+  public void setAvgSslAuthMldsa87(Float  avgSslAuthMldsa87) {
+    this.avgSslAuthMldsa87 = avgSslAuthMldsa87;
   }
 
   /**
@@ -5497,6 +5587,9 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.avgSslAuthRsa, objVserverL7MetricsObj.avgSslAuthRsa)&&
   Objects.equals(this.avgSslAuthEcdsa, objVserverL7MetricsObj.avgSslAuthEcdsa)&&
   Objects.equals(this.avgSslAuthDsa, objVserverL7MetricsObj.avgSslAuthDsa)&&
+  Objects.equals(this.avgSslAuthMldsa44, objVserverL7MetricsObj.avgSslAuthMldsa44)&&
+  Objects.equals(this.avgSslAuthMldsa65, objVserverL7MetricsObj.avgSslAuthMldsa65)&&
+  Objects.equals(this.avgSslAuthMldsa87, objVserverL7MetricsObj.avgSslAuthMldsa87)&&
   Objects.equals(this.avgSslConnections, objVserverL7MetricsObj.avgSslConnections)&&
   Objects.equals(this.avgSslFailedConnections, objVserverL7MetricsObj.avgSslFailedConnections)&&
   Objects.equals(this.pctSslFailedConnections, objVserverL7MetricsObj.pctSslFailedConnections)&&
@@ -5637,6 +5730,9 @@ public String toString() {
         sb.append("    avgServiceTime: ").append(toIndentedString(avgServiceTime)).append("\n");
         sb.append("    avgSslAuthDsa: ").append(toIndentedString(avgSslAuthDsa)).append("\n");
         sb.append("    avgSslAuthEcdsa: ").append(toIndentedString(avgSslAuthEcdsa)).append("\n");
+        sb.append("    avgSslAuthMldsa44: ").append(toIndentedString(avgSslAuthMldsa44)).append("\n");
+        sb.append("    avgSslAuthMldsa65: ").append(toIndentedString(avgSslAuthMldsa65)).append("\n");
+        sb.append("    avgSslAuthMldsa87: ").append(toIndentedString(avgSslAuthMldsa87)).append("\n");
         sb.append("    avgSslAuthRsa: ").append(toIndentedString(avgSslAuthRsa)).append("\n");
         sb.append("    avgSslConnections: ").append(toIndentedString(avgSslConnections)).append("\n");
         sb.append("    avgSslEcdsaNonPfs: ").append(toIndentedString(avgSslEcdsaNonPfs)).append("\n");
