@@ -25,6 +25,10 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class EventInfo extends AviRestResource {
+    @JsonProperty("agent_id")
+    @JsonInclude(Include.NON_NULL)
+    private Integer agentId;
+
     @JsonProperty("msg")
     @JsonInclude(Include.NON_NULL)
     private List<String> msg;
@@ -42,6 +46,32 @@ public class EventInfo extends AviRestResource {
     private String uuid;
 
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Remote site watcher agent id.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return agentId
+   */
+  @VsoMethod
+  public Integer getAgentId() {
+    return agentId;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Remote site watcher agent id.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param agentId set the agentId.
+   */
+  @VsoMethod
+  public void setAgentId(Integer  agentId) {
+    this.agentId = agentId;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -165,14 +195,16 @@ public boolean equals(java.lang.Object o) {
   return   Objects.equals(this.uuid, objEventInfo.uuid)&&
   Objects.equals(this.name, objEventInfo.name)&&
   Objects.equals(this.msg, objEventInfo.msg)&&
-  Objects.equals(this.timestamp, objEventInfo.timestamp);
+  Objects.equals(this.timestamp, objEventInfo.timestamp)&&
+  Objects.equals(this.agentId, objEventInfo.agentId);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class EventInfo {\n");
-      sb.append("    msg: ").append(toIndentedString(msg)).append("\n");
+      sb.append("    agentId: ").append(toIndentedString(agentId)).append("\n");
+        sb.append("    msg: ").append(toIndentedString(msg)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
         sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");

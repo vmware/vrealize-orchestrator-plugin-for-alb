@@ -12,84 +12,78 @@ import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
 
 /**
- * The QuotaConfig is a POJO class extends AviRestResource that used for creating
- * QuotaConfig.
+ * The ReportParameter is a POJO class extends AviRestResource that used for creating
+ * ReportParameter.
  *
  * @version 1.0
  * @since 
  *
  */
-@VsoObject(create = false, name = "QuotaConfig")
-@VsoFinder(name = Constants.FINDER_VRO_QUOTACONFIG)
+@VsoObject(create = false, name = "ReportParameter")
+@VsoFinder(name = Constants.FINDER_VRO_REPORTPARAMETER)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class QuotaConfig extends AviRestResource {
-    @JsonProperty("limit")
+public class ReportParameter extends AviRestResource {
+    @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private Integer limit = -1;
+    private String name;
 
-    @JsonProperty("reservation")
+    @JsonProperty("value")
     @JsonInclude(Include.NON_NULL)
-    private Integer reservation = 0;
+    private String value;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
-   * Maximum license service units allowed for consumption.
-   * -1 as default is maximum value.
-   * Allowed values are -1-+65535.
+   * The name of the parameter.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as -1.
-   * @return limit
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return name
    */
   @VsoMethod
-  public Integer getLimit() {
-    return limit;
+  public String getName() {
+    return name;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Maximum license service units allowed for consumption.
-   * -1 as default is maximum value.
-   * Allowed values are -1-+65535.
+   * The name of the parameter.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as -1.
-   * @param limit set the limit.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param name set the name.
    */
   @VsoMethod
-  public void setLimit(Integer  limit) {
-    this.limit = limit;
+  public void setName(String  name) {
+    this.name = name;
   }
 
   /**
    * This is the getter method this will return the attribute value.
-   * Minimum license service units reserved for consumption.
-   * Allowed values are 0-65535.
+   * The value of the parameter.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
-   * @return reservation
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return value
    */
   @VsoMethod
-  public Integer getReservation() {
-    return reservation;
+  public String getValue() {
+    return value;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Minimum license service units reserved for consumption.
-   * Allowed values are 0-65535.
+   * The value of the parameter.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
-   * @param reservation set the reservation.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param value set the value.
    */
   @VsoMethod
-  public void setReservation(Integer  reservation) {
-    this.reservation = reservation;
+  public void setValue(String  value) {
+    this.value = value;
   }
 
 
@@ -102,17 +96,17 @@ public boolean equals(java.lang.Object o) {
   if (o == null || getClass() != o.getClass()) {
     return false;
   }
-  QuotaConfig objQuotaConfig = (QuotaConfig) o;
-  return   Objects.equals(this.reservation, objQuotaConfig.reservation)&&
-  Objects.equals(this.limit, objQuotaConfig.limit);
+  ReportParameter objReportParameter = (ReportParameter) o;
+  return   Objects.equals(this.name, objReportParameter.name)&&
+  Objects.equals(this.value, objReportParameter.value);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
-  sb.append("class QuotaConfig {\n");
-      sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-        sb.append("    reservation: ").append(toIndentedString(reservation)).append("\n");
+  sb.append("class ReportParameter {\n");
+      sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    value: ").append(toIndentedString(value)).append("\n");
       sb.append("}");
   return sb.toString();
 }
