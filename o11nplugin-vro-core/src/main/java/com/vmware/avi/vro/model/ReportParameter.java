@@ -12,76 +12,78 @@ import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
 
 /**
- * The SiteInfo is a POJO class extends AviRestResource that used for creating
- * SiteInfo.
+ * The ReportParameter is a POJO class extends AviRestResource that used for creating
+ * ReportParameter.
  *
  * @version 1.0
  * @since 
  *
  */
-@VsoObject(create = false, name = "SiteInfo")
-@VsoFinder(name = Constants.FINDER_VRO_SITEINFO)
+@VsoObject(create = false, name = "ReportParameter")
+@VsoFinder(name = Constants.FINDER_VRO_REPORTPARAMETER)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class SiteInfo extends AviRestResource {
-    @JsonProperty("cluster_id")
+public class ReportParameter extends AviRestResource {
+    @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String clusterId;
+    private String name;
 
-    @JsonProperty("site_name")
+    @JsonProperty("value")
     @JsonInclude(Include.NON_NULL)
-    private String siteName;
+    private String value;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
-   * Cluster_uuid of a member configured in gslb federation.
+   * The name of the parameter.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return clusterId
+   * @return name
    */
   @VsoMethod
-  public String getClusterId() {
-    return clusterId;
+  public String getName() {
+    return name;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Cluster_uuid of a member configured in gslb federation.
+   * The name of the parameter.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param clusterId set the clusterId.
+   * @param name set the name.
    */
   @VsoMethod
-  public void setClusterId(String  clusterId) {
-    this.clusterId = clusterId;
+  public void setName(String  name) {
+    this.name = name;
   }
 
   /**
    * This is the getter method this will return the attribute value.
-   * Site name of a member configured in gslb federation.
+   * The value of the parameter.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @return siteName
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return value
    */
   @VsoMethod
-  public String getSiteName() {
-    return siteName;
+  public String getValue() {
+    return value;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Site name of a member configured in gslb federation.
+   * The value of the parameter.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @param siteName set the siteName.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param value set the value.
    */
   @VsoMethod
-  public void setSiteName(String  siteName) {
-    this.siteName = siteName;
+  public void setValue(String  value) {
+    this.value = value;
   }
 
 
@@ -94,17 +96,17 @@ public boolean equals(java.lang.Object o) {
   if (o == null || getClass() != o.getClass()) {
     return false;
   }
-  SiteInfo objSiteInfo = (SiteInfo) o;
-  return   Objects.equals(this.clusterId, objSiteInfo.clusterId)&&
-  Objects.equals(this.siteName, objSiteInfo.siteName);
+  ReportParameter objReportParameter = (ReportParameter) o;
+  return   Objects.equals(this.name, objReportParameter.name)&&
+  Objects.equals(this.value, objReportParameter.value);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
-  sb.append("class SiteInfo {\n");
-      sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
-        sb.append("    siteName: ").append(toIndentedString(siteName)).append("\n");
+  sb.append("class ReportParameter {\n");
+      sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    value: ").append(toIndentedString(value)).append("\n");
       sb.append("}");
   return sb.toString();
 }

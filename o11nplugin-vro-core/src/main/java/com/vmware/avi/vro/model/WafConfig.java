@@ -596,6 +596,7 @@ public class WafConfig extends AviRestResource {
    * Irrespective of these settings, no subsequent waf rules of this or other phases will be executed once the maximum execution time has been
    * exceeded.
    * Allowed values are 0-5000.
+   * Special values are 0- do not apply this restriction.
    * Field introduced in 17.2.12, 18.1.2.
    * Unit is milliseconds.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -618,6 +619,7 @@ public class WafConfig extends AviRestResource {
    * Irrespective of these settings, no subsequent waf rules of this or other phases will be executed once the maximum execution time has been
    * exceeded.
    * Allowed values are 0-5000.
+   * Special values are 0- do not apply this restriction.
    * Field introduced in 17.2.12, 18.1.2.
    * Unit is milliseconds.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.

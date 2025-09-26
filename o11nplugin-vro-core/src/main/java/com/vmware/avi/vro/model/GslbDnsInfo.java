@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.SeResources;
 import com.vmware.avi.vro.model.GslbDnsGsStatus;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
@@ -28,6 +29,10 @@ public class GslbDnsInfo extends AviRestResource {
     @JsonProperty("dns_active")
     @JsonInclude(Include.NON_NULL)
     private Boolean dnsActive;
+
+    @JsonProperty("dns_se_resource")
+    @JsonInclude(Include.NON_NULL)
+    private SeResources dnsSeResource;
 
     @JsonProperty("dns_vs_states")
     @JsonInclude(Include.NON_NULL)
@@ -65,6 +70,32 @@ public class GslbDnsInfo extends AviRestResource {
   @VsoMethod
   public void setDnsActive(Boolean  dnsActive) {
     this.dnsActive = dnsActive;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * This field tracks the service engine resource hosting the dns virtual service.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return dnsSeResource
+   */
+  @VsoMethod
+  public SeResources getDnsSeResource() {
+    return dnsSeResource;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * This field tracks the service engine resource hosting the dns virtual service.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param dnsSeResource set the dnsSeResource.
+   */
+  @VsoMethod
+  public void setDnsSeResource(SeResources dnsSeResource) {
+    this.dnsSeResource = dnsSeResource;
   }
 
   /**
@@ -171,7 +202,8 @@ public boolean equals(java.lang.Object o) {
   return   Objects.equals(this.dnsActive, objGslbDnsInfo.dnsActive)&&
   Objects.equals(this.dnsVsStates, objGslbDnsInfo.dnsVsStates)&&
   Objects.equals(this.gsStatus, objGslbDnsInfo.gsStatus)&&
-  Objects.equals(this.retryCount, objGslbDnsInfo.retryCount);
+  Objects.equals(this.retryCount, objGslbDnsInfo.retryCount)&&
+  Objects.equals(this.dnsSeResource, objGslbDnsInfo.dnsSeResource);
 }
 
 @Override
@@ -179,6 +211,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class GslbDnsInfo {\n");
       sb.append("    dnsActive: ").append(toIndentedString(dnsActive)).append("\n");
+        sb.append("    dnsSeResource: ").append(toIndentedString(dnsSeResource)).append("\n");
         sb.append("    dnsVsStates: ").append(toIndentedString(dnsVsStates)).append("\n");
         sb.append("    gsStatus: ").append(toIndentedString(gsStatus)).append("\n");
         sb.append("    retryCount: ").append(toIndentedString(retryCount)).append("\n");

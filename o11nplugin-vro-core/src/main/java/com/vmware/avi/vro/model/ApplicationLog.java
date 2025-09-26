@@ -233,6 +233,10 @@ public class ApplicationLog extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private JwtLog jwtLog;
 
+    @JsonProperty("learning_status")
+    @JsonInclude(Include.NON_NULL)
+    private String learningStatus = "NOT_ACTIVE";
+
     @JsonProperty("log_id")
     @JsonInclude(Include.NON_NULL)
     private Integer logId;
@@ -256,10 +260,6 @@ public class ApplicationLog extends AviRestResource {
     @JsonProperty("microservice_name")
     @JsonInclude(Include.NON_NULL)
     private String microserviceName;
-
-    @JsonProperty("named_group")
-    @JsonInclude(Include.NON_NULL)
-    private String namedGroup;
 
     @JsonProperty("network_security_policy_rule_name")
     @JsonInclude(Include.NON_NULL)
@@ -485,10 +485,6 @@ public class ApplicationLog extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String sessionId;
 
-    @JsonProperty("signature_algorithm")
-    @JsonInclude(Include.NON_NULL)
-    private String signatureAlgorithm;
-
     @JsonProperty("significance")
     @JsonInclude(Include.NON_NULL)
     private String significance;
@@ -521,9 +517,17 @@ public class ApplicationLog extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String sslCipher;
 
+    @JsonProperty("ssl_named_group")
+    @JsonInclude(Include.NON_NULL)
+    private String sslNamedGroup;
+
     @JsonProperty("ssl_session_id")
     @JsonInclude(Include.NON_NULL)
     private String sslSessionId;
+
+    @JsonProperty("ssl_signature_algorithm")
+    @JsonInclude(Include.NON_NULL)
+    private String sslSignatureAlgorithm;
 
     @JsonProperty("ssl_version")
     @JsonInclude(Include.NON_NULL)
@@ -1787,6 +1791,38 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Indicate if this request is used for learning.
+   * If it is not used, this field contains the reason for this decision.
+   * Enum options - NOT_ACTIVE, LEARNED, NOTHING_TO_LEARN, SERVER_ERROR, FLAGGED_BY_WAF, SKIPPED_BY_SAMPLING, CLIENT_IS_NOT_AUTHENTICATED,
+   * CLIENT_IS_NOT_TRUSTED, CLIENT_IS_A_BOT, ERROR.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "NOT_ACTIVE".
+   * @return learningStatus
+   */
+  @VsoMethod
+  public String getLearningStatus() {
+    return learningStatus;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Indicate if this request is used for learning.
+   * If it is not used, this field contains the reason for this decision.
+   * Enum options - NOT_ACTIVE, LEARNED, NOTHING_TO_LEARN, SERVER_ERROR, FLAGGED_BY_WAF, SKIPPED_BY_SAMPLING, CLIENT_IS_NOT_AUTHENTICATED,
+   * CLIENT_IS_NOT_TRUSTED, CLIENT_IS_A_BOT, ERROR.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "NOT_ACTIVE".
+   * @param learningStatus set the learningStatus.
+   */
+  @VsoMethod
+  public void setLearningStatus(String  learningStatus) {
+    this.learningStatus = learningStatus;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return logId
@@ -1923,32 +1959,6 @@ public class ApplicationLog extends AviRestResource {
   @VsoMethod
   public void setMicroserviceName(String  microserviceName) {
     this.microserviceName = microserviceName;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Ssl group negotitaed during ssl handhshake.
-   * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return namedGroup
-   */
-  @VsoMethod
-  public String getNamedGroup() {
-    return namedGroup;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Ssl group negotitaed during ssl handhshake.
-   * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param namedGroup set the namedGroup.
-   */
-  @VsoMethod
-  public void setNamedGroup(String  namedGroup) {
-    this.namedGroup = namedGroup;
   }
 
   /**
@@ -3313,32 +3323,6 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Ssl signature algorithm negotitaed during ssl handhshake.
-   * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return signatureAlgorithm
-   */
-  @VsoMethod
-  public String getSignatureAlgorithm() {
-    return signatureAlgorithm;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Ssl signature algorithm negotitaed during ssl handhshake.
-   * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param signatureAlgorithm set the signatureAlgorithm.
-   */
-  @VsoMethod
-  public void setSignatureAlgorithm(String  signatureAlgorithm) {
-    this.signatureAlgorithm = signatureAlgorithm;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return significance
@@ -3566,6 +3550,32 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Ssl group negotitaed during ssl handhshake.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return sslNamedGroup
+   */
+  @VsoMethod
+  public String getSslNamedGroup() {
+    return sslNamedGroup;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Ssl group negotitaed during ssl handhshake.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param sslNamedGroup set the sslNamedGroup.
+   */
+  @VsoMethod
+  public void setSslNamedGroup(String  sslNamedGroup) {
+    this.sslNamedGroup = sslNamedGroup;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslSessionId
@@ -3584,6 +3594,32 @@ public class ApplicationLog extends AviRestResource {
   @VsoMethod
   public void setSslSessionId(String  sslSessionId) {
     this.sslSessionId = sslSessionId;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Ssl signature algorithm negotitaed during ssl handhshake.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return sslSignatureAlgorithm
+   */
+  @VsoMethod
+  public String getSslSignatureAlgorithm() {
+    return sslSignatureAlgorithm;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Ssl signature algorithm negotitaed during ssl handhshake.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param sslSignatureAlgorithm set the sslSignatureAlgorithm.
+   */
+  @VsoMethod
+  public void setSslSignatureAlgorithm(String  sslSignatureAlgorithm) {
+    this.sslSignatureAlgorithm = sslSignatureAlgorithm;
   }
 
   /**
@@ -4055,8 +4091,9 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.serverPushedRequest, objApplicationLog.serverPushedRequest)&&
   Objects.equals(this.vhMatchRule, objApplicationLog.vhMatchRule)&&
   Objects.equals(this.requestBodyUpdated, objApplicationLog.requestBodyUpdated)&&
-  Objects.equals(this.namedGroup, objApplicationLog.namedGroup)&&
-  Objects.equals(this.signatureAlgorithm, objApplicationLog.signatureAlgorithm);
+  Objects.equals(this.sslNamedGroup, objApplicationLog.sslNamedGroup)&&
+  Objects.equals(this.sslSignatureAlgorithm, objApplicationLog.sslSignatureAlgorithm)&&
+  Objects.equals(this.learningStatus, objApplicationLog.learningStatus);
 }
 
 @Override
@@ -4112,13 +4149,13 @@ public String toString() {
         sb.append("    httpVersion: ").append(toIndentedString(httpVersion)).append("\n");
         sb.append("    icapLog: ").append(toIndentedString(icapLog)).append("\n");
         sb.append("    jwtLog: ").append(toIndentedString(jwtLog)).append("\n");
+        sb.append("    learningStatus: ").append(toIndentedString(learningStatus)).append("\n");
         sb.append("    logId: ").append(toIndentedString(logId)).append("\n");
         sb.append("    maxIngressLatencyBe: ").append(toIndentedString(maxIngressLatencyBe)).append("\n");
         sb.append("    maxIngressLatencyFe: ").append(toIndentedString(maxIngressLatencyFe)).append("\n");
         sb.append("    method: ").append(toIndentedString(method)).append("\n");
         sb.append("    microservice: ").append(toIndentedString(microservice)).append("\n");
         sb.append("    microserviceName: ").append(toIndentedString(microserviceName)).append("\n");
-        sb.append("    namedGroup: ").append(toIndentedString(namedGroup)).append("\n");
         sb.append("    networkSecurityPolicyRuleName: ").append(toIndentedString(networkSecurityPolicyRuleName)).append("\n");
         sb.append("    ntlmLog: ").append(toIndentedString(ntlmLog)).append("\n");
         sb.append("    oauthLog: ").append(toIndentedString(oauthLog)).append("\n");
@@ -4175,7 +4212,6 @@ public String toString() {
         sb.append("    serversTried: ").append(toIndentedString(serversTried)).append("\n");
         sb.append("    serviceEngine: ").append(toIndentedString(serviceEngine)).append("\n");
         sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");
-        sb.append("    signatureAlgorithm: ").append(toIndentedString(signatureAlgorithm)).append("\n");
         sb.append("    significance: ").append(toIndentedString(significance)).append("\n");
         sb.append("    significant: ").append(toIndentedString(significant)).append("\n");
         sb.append("    significantLog: ").append(toIndentedString(significantLog)).append("\n");
@@ -4184,7 +4220,9 @@ public String toString() {
         sb.append("    sourceIp6: ").append(toIndentedString(sourceIp6)).append("\n");
         sb.append("    spdyVersion: ").append(toIndentedString(spdyVersion)).append("\n");
         sb.append("    sslCipher: ").append(toIndentedString(sslCipher)).append("\n");
+        sb.append("    sslNamedGroup: ").append(toIndentedString(sslNamedGroup)).append("\n");
         sb.append("    sslSessionId: ").append(toIndentedString(sslSessionId)).append("\n");
+        sb.append("    sslSignatureAlgorithm: ").append(toIndentedString(sslSignatureAlgorithm)).append("\n");
         sb.append("    sslVersion: ").append(toIndentedString(sslVersion)).append("\n");
         sb.append("    totalTime: ").append(toIndentedString(totalTime)).append("\n");
         sb.append("    udf: ").append(toIndentedString(udf)).append("\n");
