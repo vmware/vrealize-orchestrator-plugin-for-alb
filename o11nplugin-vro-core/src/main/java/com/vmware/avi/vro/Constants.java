@@ -64,8 +64,10 @@ public class Constants {
     public static final String FINDER_VRO_APPCOOKIEPERSISTENCEPROFILE = "AppCookiePersistenceProfile";
     public static final String FINDER_VRO_APPHDR = "AppHdr";
     public static final String FINDER_VRO_APPINFO = "AppInfo";
+    public static final String FINDER_VRO_APPINSIGHTSDETAILS = "AppInsightsDetails";
     public static final String FINDER_VRO_APPLEARNINGCONFIDENCEOVERRIDE = "AppLearningConfidenceOverride";
     public static final String FINDER_VRO_APPLEARNINGPARAMS = "AppLearningParams";
+    public static final String FINDER_VRO_APPQUOTACONFIG = "AppQuotaConfig";
     public static final String FINDER_VRO_APPSIGNATURECONFIG = "AppSignatureConfig";
     public static final String FINDER_VRO_APPSIGNATUREEVENTDATA = "AppSignatureEventData";
     public static final String FINDER_VRO_APPLICATION = "Application";
@@ -178,6 +180,7 @@ public class Constants {
     public static final String FINDER_VRO_CDPLLDPINFO = "CdpLldpInfo";
     public static final String FINDER_VRO_CENTRALLICENSEREFRESHDETAILS = "CentralLicenseRefreshDetails";
     public static final String FINDER_VRO_CENTRALLICENSESUBSCRIPTIONDETAILS = "CentralLicenseSubscriptionDetails";
+    public static final String FINDER_VRO_CERTJWTSTORE = "CertJwtStore";
     public static final String FINDER_VRO_CERTIFICATEAUTHORITY = "CertificateAuthority";
     public static final String FINDER_VRO_CERTIFICATEMANAGEMENTPROFILE = "CertificateManagementProfile";
     public static final String FINDER_VRO_CFGSTATE = "CfgState";
@@ -641,6 +644,8 @@ public class Constants {
     public static final String FINDER_VRO_LICENSEEXPIRYDETAILS = "LicenseExpiryDetails";
     public static final String FINDER_VRO_LICENSEINFO = "LicenseInfo";
     public static final String FINDER_VRO_LICENSELEDGERDETAILS = "LicenseLedgerDetails";
+    public static final String FINDER_VRO_LICENSEQUOTAUSAGEDETAILS = "LicenseQuotaUsageDetails";
+    public static final String FINDER_VRO_LICENSEQUOTAUSAGEINFO = "LicenseQuotaUsageInfo";
     public static final String FINDER_VRO_LICENSERESERVATIONINFO = "LicenseReservationInfo";
     public static final String FINDER_VRO_LICENSESERVICEUPDATE = "LicenseServiceUpdate";
     public static final String FINDER_VRO_LICENSESTATUS = "LicenseStatus";
@@ -800,6 +805,7 @@ public class Constants {
     public static final String FINDER_VRO_PARAMTYPECLASS = "ParamTypeClass";
     public static final String FINDER_VRO_PARAMSINURI = "ParamsInURI";
     public static final String FINDER_VRO_PARTITIONINFO = "PartitionInfo";
+    public static final String FINDER_VRO_PASSWORDPOLICY = "PasswordPolicy";
     public static final String FINDER_VRO_PATCHCONTROLLERPARAMS = "PatchControllerParams";
     public static final String FINDER_VRO_PATCHDATA = "PatchData";
     public static final String FINDER_VRO_PATCHINFO = "PatchInfo";
@@ -1140,8 +1146,10 @@ public class Constants {
     public static final String FINDER_VRO_TECHSUPPORTSTATE = "TechSupportState";
     public static final String FINDER_VRO_TELEMETRYCONFIGURATION = "TelemetryConfiguration";
     public static final String FINDER_VRO_TENANT = "Tenant";
+    public static final String FINDER_VRO_TENANTBINDING = "TenantBinding";
     public static final String FINDER_VRO_TENANTCONFIGURATION = "TenantConfiguration";
     public static final String FINDER_VRO_TENANTLABEL = "TenantLabel";
+    public static final String FINDER_VRO_TENANTQUOTAUSAGEINFO = "TenantQuotaUsageInfo";
     public static final String FINDER_VRO_TENANTSYSTEMCONFIGURATION = "TenantSystemConfiguration";
     public static final String FINDER_VRO_TENCENTCREDENTIALS = "TencentCredentials";
     public static final String FINDER_VRO_TENCENTSETUP = "TencentSetup";
@@ -1202,6 +1210,7 @@ public class Constants {
     public static final String FINDER_VRO_VSDATASCRIPT = "VSDataScript";
     public static final String FINDER_VRO_VSDATASCRIPTSET = "VSDataScriptSet";
     public static final String FINDER_VRO_VSDATASCRIPTS = "VSDataScripts";
+    public static final String FINDER_VRO_VSPHEREZONE = "VSphereZone";
     public static final String FINDER_VRO_VCENTERCLOUDDELETEDETAILS = "VcenterCloudDeleteDetails";
     public static final String FINDER_VRO_VCENTERCLUSTERDETAILS = "VcenterClusterDetails";
     public static final String FINDER_VRO_VCENTERCLUSTERS = "VcenterClusters";

@@ -45,6 +45,14 @@ public class ApplicationInsightsParams extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean learnFromUrlsWithoutArgs = false;
 
+    @JsonProperty("max_params")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxParams = 100;
+
+    @JsonProperty("max_uris")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxUris = 500;
+
     @JsonProperty("trusted_ipgroup_ref")
     @JsonInclude(Include.NON_NULL)
     private String trustedIpgroupRef;
@@ -187,6 +195,62 @@ public class ApplicationInsightsParams extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Maximum number of parameters per uri programmed for application insights.
+   * Allowed values are 10-1000.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 100.
+   * @return maxParams
+   */
+  @VsoMethod
+  public Integer getMaxParams() {
+    return maxParams;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum number of parameters per uri programmed for application insights.
+   * Allowed values are 10-1000.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 100.
+   * @param maxParams set the maxParams.
+   */
+  @VsoMethod
+  public void setMaxParams(Integer  maxParams) {
+    this.maxParams = maxParams;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Maximum number of uris for application insights.
+   * Allowed values are 10-10000.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 500.
+   * @return maxUris
+   */
+  @VsoMethod
+  public Integer getMaxUris() {
+    return maxUris;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum number of uris for application insights.
+   * Allowed values are 10-10000.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 500.
+   * @param maxUris set the maxUris.
+   */
+  @VsoMethod
+  public void setMaxUris(Integer  maxUris) {
+    this.maxUris = maxUris;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Limits application learning from client ips within the configured ip address group.
    * It is a reference to an object of type ipaddrgroup.
    * Field introduced in 31.2.1.
@@ -229,7 +293,9 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.trustedIpgroupRef, objApplicationInsightsParams.trustedIpgroupRef)&&
   Objects.equals(this.learnFromBots, objApplicationInsightsParams.learnFromBots)&&
   Objects.equals(this.enableLearnFromBots, objApplicationInsightsParams.enableLearnFromBots)&&
-  Objects.equals(this.learnFromUrlsWithoutArgs, objApplicationInsightsParams.learnFromUrlsWithoutArgs);
+  Objects.equals(this.learnFromUrlsWithoutArgs, objApplicationInsightsParams.learnFromUrlsWithoutArgs)&&
+  Objects.equals(this.maxUris, objApplicationInsightsParams.maxUris)&&
+  Objects.equals(this.maxParams, objApplicationInsightsParams.maxParams);
 }
 
 @Override
@@ -241,6 +307,8 @@ public String toString() {
         sb.append("    learnFromAuthenticatedClientsOnly: ").append(toIndentedString(learnFromAuthenticatedClientsOnly)).append("\n");
         sb.append("    learnFromBots: ").append(toIndentedString(learnFromBots)).append("\n");
         sb.append("    learnFromUrlsWithoutArgs: ").append(toIndentedString(learnFromUrlsWithoutArgs)).append("\n");
+        sb.append("    maxParams: ").append(toIndentedString(maxParams)).append("\n");
+        sb.append("    maxUris: ").append(toIndentedString(maxUris)).append("\n");
         sb.append("    trustedIpgroupRef: ").append(toIndentedString(trustedIpgroupRef)).append("\n");
       sb.append("}");
   return sb.toString();

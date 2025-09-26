@@ -42,10 +42,6 @@ public class ApplicationInsightsPolicy extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean enableApplicationInsights = false;
 
-    @JsonProperty("enable_application_sampling")
-    @JsonInclude(Include.NON_NULL)
-    private Boolean enableApplicationSampling = false;
-
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
     private String name;
@@ -172,32 +168,6 @@ public class ApplicationInsightsPolicy extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Enable application sampling.
-   * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @return enableApplicationSampling
-   */
-  @VsoMethod
-  public Boolean getEnableApplicationSampling() {
-    return enableApplicationSampling;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Enable application sampling.
-   * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @param enableApplicationSampling set the enableApplicationSampling.
-   */
-  @VsoMethod
-  public void setEnableApplicationSampling(Boolean  enableApplicationSampling) {
-    this.enableApplicationSampling = enableApplicationSampling;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * The name of the application insights configuration.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
@@ -315,7 +285,6 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.tenantRef, objApplicationInsightsPolicy.tenantRef)&&
   Objects.equals(this.enableApplicationInsights, objApplicationInsightsPolicy.enableApplicationInsights)&&
   Objects.equals(this.applicationInsightsParams, objApplicationInsightsPolicy.applicationInsightsParams)&&
-  Objects.equals(this.enableApplicationSampling, objApplicationInsightsPolicy.enableApplicationSampling)&&
   Objects.equals(this.applicationSamplingConfig, objApplicationInsightsPolicy.applicationSamplingConfig);
 }
 
@@ -327,7 +296,6 @@ public String toString() {
         sb.append("    applicationSamplingConfig: ").append(toIndentedString(applicationSamplingConfig)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    enableApplicationInsights: ").append(toIndentedString(enableApplicationInsights)).append("\n");
-        sb.append("    enableApplicationSampling: ").append(toIndentedString(enableApplicationSampling)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
             sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");

@@ -610,7 +610,7 @@ public class ServiceEngineGroup extends AviRestResource {
 
     @JsonProperty("metrics_collection_mode")
     @JsonInclude(Include.NON_NULL)
-    private Integer metricsCollectionMode = 1;
+    private Integer metricsCollectionMode = 0;
 
     @JsonProperty("mgmt_network_ref")
     @JsonInclude(Include.NON_NULL)
@@ -5377,7 +5377,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * Special values are 9- reset metrics collection state.
    * Field introduced in 30.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return metricsCollectionMode
    */
   @VsoMethod
@@ -5395,7 +5395,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * Special values are 9- reset metrics collection state.
    * Field introduced in 30.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param metricsCollectionMode set the metricsCollectionMode.
    */
   @VsoMethod
