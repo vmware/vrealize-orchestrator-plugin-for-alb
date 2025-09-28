@@ -12,76 +12,78 @@ import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
 
 /**
- * The SiteInfo is a POJO class extends AviRestResource that used for creating
- * SiteInfo.
+ * The AppInsightsDetails is a POJO class extends AviRestResource that used for creating
+ * AppInsightsDetails.
  *
  * @version 1.0
  * @since 
  *
  */
-@VsoObject(create = false, name = "SiteInfo")
-@VsoFinder(name = Constants.FINDER_VRO_SITEINFO)
+@VsoObject(create = false, name = "AppInsightsDetails")
+@VsoFinder(name = Constants.FINDER_VRO_APPINSIGHTSDETAILS)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class SiteInfo extends AviRestResource {
-    @JsonProperty("cluster_id")
+public class AppInsightsDetails extends AviRestResource {
+    @JsonProperty("error")
     @JsonInclude(Include.NON_NULL)
-    private String clusterId;
+    private String error;
 
-    @JsonProperty("site_name")
+    @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private String siteName;
+    private String name;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
-   * Cluster_uuid of a member configured in gslb federation.
+   * Error details for the application insights event.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return clusterId
+   * @return error
    */
   @VsoMethod
-  public String getClusterId() {
-    return clusterId;
+  public String getError() {
+    return error;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Cluster_uuid of a member configured in gslb federation.
+   * Error details for the application insights event.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param clusterId set the clusterId.
+   * @param error set the error.
    */
   @VsoMethod
-  public void setClusterId(String  clusterId) {
-    this.clusterId = clusterId;
+  public void setError(String  error) {
+    this.error = error;
   }
 
   /**
    * This is the getter method this will return the attribute value.
-   * Site name of a member configured in gslb federation.
+   * Name of the application insights policy.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @return siteName
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return name
    */
   @VsoMethod
-  public String getSiteName() {
-    return siteName;
+  public String getName() {
+    return name;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Site name of a member configured in gslb federation.
+   * Name of the application insights policy.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @param siteName set the siteName.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param name set the name.
    */
   @VsoMethod
-  public void setSiteName(String  siteName) {
-    this.siteName = siteName;
+  public void setName(String  name) {
+    this.name = name;
   }
 
 
@@ -94,17 +96,17 @@ public boolean equals(java.lang.Object o) {
   if (o == null || getClass() != o.getClass()) {
     return false;
   }
-  SiteInfo objSiteInfo = (SiteInfo) o;
-  return   Objects.equals(this.clusterId, objSiteInfo.clusterId)&&
-  Objects.equals(this.siteName, objSiteInfo.siteName);
+  AppInsightsDetails objAppInsightsDetails = (AppInsightsDetails) o;
+  return   Objects.equals(this.name, objAppInsightsDetails.name)&&
+  Objects.equals(this.error, objAppInsightsDetails.error);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
-  sb.append("class SiteInfo {\n");
-      sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
-        sb.append("    siteName: ").append(toIndentedString(siteName)).append("\n");
+  sb.append("class AppInsightsDetails {\n");
+      sb.append("    error: ").append(toIndentedString(error)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
       sb.append("}");
   return sb.toString();
 }

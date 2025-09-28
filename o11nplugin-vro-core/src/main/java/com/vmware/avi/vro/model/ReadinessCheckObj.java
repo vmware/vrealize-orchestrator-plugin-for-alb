@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.PreCheckOpsState;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -50,7 +51,7 @@ public class ReadinessCheckObj extends AviRestResource {
 
     @JsonProperty("state")
     @JsonInclude(Include.NON_NULL)
-    private String state;
+    private PreCheckOpsState state;
 
     @JsonProperty("total_checks")
     @JsonInclude(Include.NON_NULL)
@@ -60,7 +61,7 @@ public class ReadinessCheckObj extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * List of techsupport check exceptions.
+   * List of readiness checks information.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -73,7 +74,7 @@ public class ReadinessCheckObj extends AviRestResource {
 
   /**
    * This is the setter method. this will set the checks
-   * List of techsupport check exceptions.
+   * List of readiness checks information.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -86,7 +87,7 @@ public class ReadinessCheckObj extends AviRestResource {
 
   /**
    * This is the setter method this will set the checks
-   * List of techsupport check exceptions.
+   * List of readiness checks information.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -132,7 +133,7 @@ public class ReadinessCheckObj extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Time taken to complete techsupport readiness checks in seconds.
+   * Time taken to complete readiness checks in seconds.
    * Field introduced in 31.2.1.
    * Unit is sec.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
@@ -146,7 +147,7 @@ public class ReadinessCheckObj extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Time taken to complete techsupport readiness checks in seconds.
+   * Time taken to complete readiness checks in seconds.
    * Field introduced in 31.2.1.
    * Unit is sec.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
@@ -160,7 +161,7 @@ public class ReadinessCheckObj extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Time at which execution of techsupport readiness checks was completed.
+   * End time of the readiness check operations.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -173,7 +174,7 @@ public class ReadinessCheckObj extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Time at which execution of techsupport readiness checks was completed.
+   * End time of the readiness check operations.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -216,7 +217,7 @@ public class ReadinessCheckObj extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Time at which execution of techsupport readiness checks was started.
+   * Start time of the readiness check operations.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -229,7 +230,7 @@ public class ReadinessCheckObj extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Time at which execution of techsupport readiness checks was started.
+   * Start time of the readiness check operations.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -242,29 +243,27 @@ public class ReadinessCheckObj extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * The techsupport readiness check operations current fsm-state.
-   * Enum options - PRECHECK_FSM_STARTED, PRECHECK_FSM_IN_PROGRESS, PRECHECK_FSM_SUCCESS, PRECHECK_FSM_WARNING, PRECHECK_FSM_ERROR.
+   * The readiness check operations current fsm-state.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return state
    */
   @VsoMethod
-  public String getState() {
+  public PreCheckOpsState getState() {
     return state;
   }
 
   /**
    * This is the setter method to the attribute.
-   * The techsupport readiness check operations current fsm-state.
-   * Enum options - PRECHECK_FSM_STARTED, PRECHECK_FSM_IN_PROGRESS, PRECHECK_FSM_SUCCESS, PRECHECK_FSM_WARNING, PRECHECK_FSM_ERROR.
+   * The readiness check operations current fsm-state.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param state set the state.
    */
   @VsoMethod
-  public void setState(String  state) {
+  public void setState(PreCheckOpsState state) {
     this.state = state;
   }
 

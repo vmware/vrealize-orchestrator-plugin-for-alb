@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.vmware.avi.vro.model.ControllerSize;
 import com.vmware.avi.vro.model.GslbDnsInfo;
 import com.vmware.avi.vro.model.OperationalStatus;
 import com.vmware.avi.vro.model.RemoteInfo;
@@ -36,9 +35,9 @@ public class GslbSMRuntime extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String clusterUuid;
 
-    @JsonProperty("controller_size")
+    @JsonProperty("controller_flavor")
     @JsonInclude(Include.NON_NULL)
-    private ControllerSize controllerSize;
+    private String controllerFlavor;
 
     @JsonProperty("dns_configs")
     @JsonInclude(Include.NON_NULL)
@@ -184,28 +183,30 @@ public class GslbSMRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Possible controller size of peer controller.
+   * Controller flavor of the peer site controller.
+   * Enum options - CONTROLLER_ESSENTIALS, CONTROLLER_SMALL, CONTROLLER_MEDIUM, CONTROLLER_LARGE, CONTROLLER_EXTRA_LARGE.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return controllerSize
+   * @return controllerFlavor
    */
   @VsoMethod
-  public ControllerSize getControllerSize() {
-    return controllerSize;
+  public String getControllerFlavor() {
+    return controllerFlavor;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Possible controller size of peer controller.
+   * Controller flavor of the peer site controller.
+   * Enum options - CONTROLLER_ESSENTIALS, CONTROLLER_SMALL, CONTROLLER_MEDIUM, CONTROLLER_LARGE, CONTROLLER_EXTRA_LARGE.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param controllerSize set the controllerSize.
+   * @param controllerFlavor set the controllerFlavor.
    */
   @VsoMethod
-  public void setControllerSize(ControllerSize controllerSize) {
-    this.controllerSize = controllerSize;
+  public void setControllerFlavor(String  controllerFlavor) {
+    this.controllerFlavor = controllerFlavor;
   }
 
   /**
@@ -867,7 +868,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.numOfRetries, objGslbSMRuntime.numOfRetries)&&
   Objects.equals(this.healthMonitorInfo, objGslbSMRuntime.healthMonitorInfo)&&
   Objects.equals(this.tenantRef, objGslbSMRuntime.tenantRef)&&
-  Objects.equals(this.controllerSize, objGslbSMRuntime.controllerSize);
+  Objects.equals(this.controllerFlavor, objGslbSMRuntime.controllerFlavor);
 }
 
 @Override
@@ -876,7 +877,7 @@ public String toString() {
   sb.append("class GslbSMRuntime {\n");
       sb.append("    clusterLeader: ").append(toIndentedString(clusterLeader)).append("\n");
         sb.append("    clusterUuid: ").append(toIndentedString(clusterUuid)).append("\n");
-        sb.append("    controllerSize: ").append(toIndentedString(controllerSize)).append("\n");
+        sb.append("    controllerFlavor: ").append(toIndentedString(controllerFlavor)).append("\n");
         sb.append("    dnsConfigs: ").append(toIndentedString(dnsConfigs)).append("\n");
         sb.append("    dnsInfo: ").append(toIndentedString(dnsInfo)).append("\n");
         sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
