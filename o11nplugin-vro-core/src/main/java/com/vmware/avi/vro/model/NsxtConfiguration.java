@@ -26,6 +26,10 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class NsxtConfiguration extends AviRestResource {
+    @JsonProperty("auto_import_nsx_projects")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean autoImportNsxProjects = true;
+
     @JsonProperty("automate_dfw_objects")
     @JsonInclude(Include.NON_NULL)
     private Boolean automateDfwObjects = true;
@@ -58,6 +62,10 @@ public class NsxtConfiguration extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String nsxtUrl;
 
+    @JsonProperty("onboard_avi_into_nsx")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean onboardAviIntoNsx = false;
+
     @JsonProperty("site_id")
     @JsonInclude(Include.NON_NULL)
     private String siteId = "default";
@@ -75,6 +83,36 @@ public class NsxtConfiguration extends AviRestResource {
     private Boolean vpcMode;
 
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Set this flag to true to enable automatic import of nsx projects into avi.this flag is only applicable when vpc mode is enabled for this cloud;
+   * it is ignored when vpc mode is disabled.nsx projects under vcf-a management are excluded from this automatic import process, as vcf-a creates
+   * these projects in avi through its own integration workflow.
+   * Field introduced in 31.3.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @return autoImportNsxProjects
+   */
+  @VsoMethod
+  public Boolean getAutoImportNsxProjects() {
+    return autoImportNsxProjects;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Set this flag to true to enable automatic import of nsx projects into avi.this flag is only applicable when vpc mode is enabled for this cloud;
+   * it is ignored when vpc mode is disabled.nsx projects under vcf-a management are excluded from this automatic import process, as vcf-a creates
+   * these projects in avi through its own integration workflow.
+   * Field introduced in 31.3.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param autoImportNsxProjects set the autoImportNsxProjects.
+   */
+  @VsoMethod
+  public void setAutoImportNsxProjects(Boolean  autoImportNsxProjects) {
+    this.autoImportNsxProjects = autoImportNsxProjects;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -290,6 +328,36 @@ public class NsxtConfiguration extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Enable to automatically register the avi controller with nsx-t manager.
+   * This triggers the nsx onboarding workflow api to configure the alb cluster and create an enforcement point.
+   * Note  this flag must be enabled on exactly one nsx-t cloud to avoid conflicts.
+   * Field introduced in 31.3.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return onboardAviIntoNsx
+   */
+  @VsoMethod
+  public Boolean getOnboardAviIntoNsx() {
+    return onboardAviIntoNsx;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable to automatically register the avi controller with nsx-t manager.
+   * This triggers the nsx onboarding workflow api to configure the alb cluster and create an enforcement point.
+   * Note  this flag must be enabled on exactly one nsx-t cloud to avoid conflicts.
+   * Field introduced in 31.3.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param onboardAviIntoNsx set the onboardAviIntoNsx.
+   */
+  @VsoMethod
+  public void setOnboardAviIntoNsx(Boolean  onboardAviIntoNsx) {
+    this.onboardAviIntoNsx = onboardAviIntoNsx;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Site where transport zone belongs to.
    * Field introduced in 20.1.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -414,14 +482,17 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.vpcMode, objNsxtConfiguration.vpcMode)&&
   Objects.equals(this.vmcMode, objNsxtConfiguration.vmcMode)&&
   Objects.equals(this.automateDfwObjects, objNsxtConfiguration.automateDfwObjects)&&
-  Objects.equals(this.verifyCertificate, objNsxtConfiguration.verifyCertificate);
+  Objects.equals(this.verifyCertificate, objNsxtConfiguration.verifyCertificate)&&
+  Objects.equals(this.onboardAviIntoNsx, objNsxtConfiguration.onboardAviIntoNsx)&&
+  Objects.equals(this.autoImportNsxProjects, objNsxtConfiguration.autoImportNsxProjects);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class NsxtConfiguration {\n");
-      sb.append("    automateDfwObjects: ").append(toIndentedString(automateDfwObjects)).append("\n");
+      sb.append("    autoImportNsxProjects: ").append(toIndentedString(autoImportNsxProjects)).append("\n");
+        sb.append("    automateDfwObjects: ").append(toIndentedString(automateDfwObjects)).append("\n");
         sb.append("    automateDfwRules: ").append(toIndentedString(automateDfwRules)).append("\n");
         sb.append("    dataNetworkConfig: ").append(toIndentedString(dataNetworkConfig)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
@@ -429,6 +500,7 @@ public String toString() {
         sb.append("    managementNetworkConfig: ").append(toIndentedString(managementNetworkConfig)).append("\n");
         sb.append("    nsxtCredentialsRef: ").append(toIndentedString(nsxtCredentialsRef)).append("\n");
         sb.append("    nsxtUrl: ").append(toIndentedString(nsxtUrl)).append("\n");
+        sb.append("    onboardAviIntoNsx: ").append(toIndentedString(onboardAviIntoNsx)).append("\n");
         sb.append("    siteId: ").append(toIndentedString(siteId)).append("\n");
         sb.append("    verifyCertificate: ").append(toIndentedString(verifyCertificate)).append("\n");
         sb.append("    vmcMode: ").append(toIndentedString(vmcMode)).append("\n");

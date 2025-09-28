@@ -720,7 +720,7 @@ public class WafPolicy extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Waf policy mode.
-   * This can be detection or enforcement.
+   * This can be either detection, enforcement or evaluation.
    * It can be overwritten by rules if allow_mode_delegation is set.
    * Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT, WAF_MODE_EVALUATION.
    * Field introduced in 17.2.1.
@@ -736,7 +736,7 @@ public class WafPolicy extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Waf policy mode.
-   * This can be detection or enforcement.
+   * This can be either detection, enforcement or evaluation.
    * It can be overwritten by rules if allow_mode_delegation is set.
    * Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT, WAF_MODE_EVALUATION.
    * Field introduced in 17.2.1.

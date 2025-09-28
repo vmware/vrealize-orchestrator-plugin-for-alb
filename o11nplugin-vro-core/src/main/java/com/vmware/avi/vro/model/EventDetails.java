@@ -17,6 +17,7 @@ import com.vmware.avi.vro.model.ApiVersionDeprecated;
 import com.vmware.avi.vro.model.RequestLimiterEventInfo;
 import com.vmware.avi.vro.model.RequestLimiterEventInfo;
 import com.vmware.avi.vro.model.RequestLimiterEventInfo;
+import com.vmware.avi.vro.model.AppInsightsDetails;
 import com.vmware.avi.vro.model.AppSignatureEventData;
 import com.vmware.avi.vro.model.AsyncPatchState;
 import com.vmware.avi.vro.model.AttachIpStatusEventDetails;
@@ -322,6 +323,10 @@ public class EventDetails extends AviRestResource {
     @JsonProperty("apiserver_request_ratelimit_event_info")
     @JsonInclude(Include.NON_NULL)
     private RequestLimiterEventInfo apiserverRequestRatelimitEventInfo;
+
+    @JsonProperty("app_insights_details")
+    @JsonInclude(Include.NON_NULL)
+    private AppInsightsDetails appInsightsDetails;
 
     @JsonProperty("app_signature_event_data")
     @JsonInclude(Include.NON_NULL)
@@ -1553,6 +1558,32 @@ public class EventDetails extends AviRestResource {
   @VsoMethod
   public void setApiserverRequestRatelimitEventInfo(RequestLimiterEventInfo apiserverRequestRatelimitEventInfo) {
     this.apiserverRequestRatelimitEventInfo = apiserverRequestRatelimitEventInfo;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Application insights event details.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return appInsightsDetails
+   */
+  @VsoMethod
+  public AppInsightsDetails getAppInsightsDetails() {
+    return appInsightsDetails;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Application insights event details.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param appInsightsDetails set the appInsightsDetails.
+   */
+  @VsoMethod
+  public void setAppInsightsDetails(AppInsightsDetails appInsightsDetails) {
+    this.appInsightsDetails = appInsightsDetails;
   }
 
   /**
@@ -7262,6 +7293,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.secMgrDataEvent, objEventDetails.secMgrDataEvent)&&
   Objects.equals(this.falsePositiveDetails, objEventDetails.falsePositiveDetails)&&
   Objects.equals(this.secMgrUaEventDetails, objEventDetails.secMgrUaEventDetails)&&
+  Objects.equals(this.appInsightsDetails, objEventDetails.appInsightsDetails)&&
   Objects.equals(this.cloudAsgNotifDetails, objEventDetails.cloudAsgNotifDetails)&&
   Objects.equals(this.cloudAutoscalingConfigFailureDetails, objEventDetails.cloudAutoscalingConfigFailureDetails)&&
   Objects.equals(this.cloudRouteNotifDetails, objEventDetails.cloudRouteNotifDetails)&&
@@ -7311,6 +7343,7 @@ public String toString() {
         sb.append("    apiserverRequestQueueFullEventInfo: ").append(toIndentedString(apiserverRequestQueueFullEventInfo)).append("\n");
         sb.append("    apiserverRequestQueueRecoveryEventInfo: ").append(toIndentedString(apiserverRequestQueueRecoveryEventInfo)).append("\n");
         sb.append("    apiserverRequestRatelimitEventInfo: ").append(toIndentedString(apiserverRequestRatelimitEventInfo)).append("\n");
+        sb.append("    appInsightsDetails: ").append(toIndentedString(appInsightsDetails)).append("\n");
         sb.append("    appSignatureEventData: ").append(toIndentedString(appSignatureEventData)).append("\n");
         sb.append("    asyncPatchState: ").append(toIndentedString(asyncPatchState)).append("\n");
         sb.append("    attachIpStatusDetails: ").append(toIndentedString(attachIpStatusDetails)).append("\n");
