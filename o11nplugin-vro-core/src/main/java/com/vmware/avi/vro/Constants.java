@@ -642,6 +642,8 @@ public class Constants {
     public static final String FINDER_VRO_LICENSEEXPIRYDETAILS = "LicenseExpiryDetails";
     public static final String FINDER_VRO_LICENSEINFO = "LicenseInfo";
     public static final String FINDER_VRO_LICENSELEDGERDETAILS = "LicenseLedgerDetails";
+    public static final String FINDER_VRO_LICENSEQUOTAUSAGEDETAILS = "LicenseQuotaUsageDetails";
+    public static final String FINDER_VRO_LICENSEQUOTAUSAGEINFO = "LicenseQuotaUsageInfo";
     public static final String FINDER_VRO_LICENSERESERVATIONINFO = "LicenseReservationInfo";
     public static final String FINDER_VRO_LICENSESERVICEUPDATE = "LicenseServiceUpdate";
     public static final String FINDER_VRO_LICENSESTATUS = "LicenseStatus";
@@ -1143,6 +1145,7 @@ public class Constants {
     public static final String FINDER_VRO_TENANT = "Tenant";
     public static final String FINDER_VRO_TENANTCONFIGURATION = "TenantConfiguration";
     public static final String FINDER_VRO_TENANTLABEL = "TenantLabel";
+    public static final String FINDER_VRO_TENANTQUOTAUSAGEINFO = "TenantQuotaUsageInfo";
     public static final String FINDER_VRO_TENANTSYSTEMCONFIGURATION = "TenantSystemConfiguration";
     public static final String FINDER_VRO_TENCENTCREDENTIALS = "TencentCredentials";
     public static final String FINDER_VRO_TENCENTSETUP = "TencentSetup";
