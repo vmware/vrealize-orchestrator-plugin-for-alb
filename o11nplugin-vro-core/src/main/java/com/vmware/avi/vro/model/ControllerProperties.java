@@ -241,7 +241,7 @@ public class ControllerProperties extends AviRestResource {
 
     @JsonProperty("log_records_allocation_percentage_for_events")
     @JsonInclude(Include.NON_NULL)
-    private Integer logRecordsAllocationPercentageForEvents = 20;
+    private Integer logRecordsAllocationPercentageForEvents = 50;
 
     @JsonProperty("log_records_cleanup_target_percentage")
     @JsonInclude(Include.NON_NULL)
@@ -2006,10 +2006,10 @@ public class ControllerProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Percentage of allocation (log_records_allocated_size)  for events on controller node.
-   * Allowed values are 10-50.
+   * Allowed values are 10-70.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 20.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 50.
    * @return logRecordsAllocationPercentageForEvents
    */
   @VsoMethod
@@ -2020,10 +2020,10 @@ public class ControllerProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Percentage of allocation (log_records_allocated_size)  for events on controller node.
-   * Allowed values are 10-50.
+   * Allowed values are 10-70.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 20.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 50.
    * @param logRecordsAllocationPercentageForEvents set the logRecordsAllocationPercentageForEvents.
    */
   @VsoMethod
