@@ -432,6 +432,10 @@ public class VserverL7MetricsObj extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Float maxSslOpenSessions;
 
+    @JsonProperty("max_total_requests")
+    @JsonInclude(Include.NON_NULL)
+    private Float maxTotalRequests;
+
     @JsonProperty("node_obj_id")
     @JsonInclude(Include.NON_NULL)
     private String nodeObjId;
@@ -3316,6 +3320,30 @@ public class VserverL7MetricsObj extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Max rate of client http requests received by the virtual service per second.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return maxTotalRequests
+   */
+  @VsoMethod
+  public Float getMaxTotalRequests() {
+    return maxTotalRequests;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Max rate of client http requests received by the virtual service per second.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param maxTotalRequests set the maxTotalRequests.
+   */
+  @VsoMethod
+  public void setMaxTotalRequests(Float  maxTotalRequests) {
+    this.maxTotalRequests = maxTotalRequests;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nodeObjId
@@ -5525,6 +5553,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.sumOtherClientTxnLatencyBucket2, objVserverL7MetricsObj.sumOtherClientTxnLatencyBucket2)&&
   Objects.equals(this.avgTotalRequests, objVserverL7MetricsObj.avgTotalRequests)&&
   Objects.equals(this.sumTotalResponses, objVserverL7MetricsObj.sumTotalResponses)&&
+  Objects.equals(this.maxTotalRequests, objVserverL7MetricsObj.maxTotalRequests)&&
   Objects.equals(this.avgCompleteResponses, objVserverL7MetricsObj.avgCompleteResponses)&&
   Objects.equals(this.avgCacheHits, objVserverL7MetricsObj.avgCacheHits)&&
   Objects.equals(this.avgCacheBytes, objVserverL7MetricsObj.avgCacheBytes)&&
@@ -5790,6 +5819,7 @@ public String toString() {
         sb.append("    effectiveSamplingRate: ").append(toIndentedString(effectiveSamplingRate)).append("\n");
         sb.append("    maxConcurrentSessions: ").append(toIndentedString(maxConcurrentSessions)).append("\n");
         sb.append("    maxSslOpenSessions: ").append(toIndentedString(maxSslOpenSessions)).append("\n");
+        sb.append("    maxTotalRequests: ").append(toIndentedString(maxTotalRequests)).append("\n");
         sb.append("    nodeObjId: ").append(toIndentedString(nodeObjId)).append("\n");
         sb.append("    pctCacheHits: ").append(toIndentedString(pctCacheHits)).append("\n");
         sb.append("    pctCacheableHits: ").append(toIndentedString(pctCacheableHits)).append("\n");
