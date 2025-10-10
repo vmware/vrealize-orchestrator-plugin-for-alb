@@ -24,6 +24,10 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SecurityMgrDebugFilter extends AviRestResource {
+    @JsonProperty("accumulate_http_methods")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> accumulateHttpMethods;
+
     @JsonProperty("enable_adaptive_config")
     @JsonInclude(Include.NON_NULL)
     private Boolean enableAdaptiveConfig = true;
@@ -36,6 +40,53 @@ public class SecurityMgrDebugFilter extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer psmRuleIdMultiplier;
 
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Http methods to accumulate for consolidated learning (e.g., get, post, put).
+   * If empty, all methods are accumulated.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return accumulateHttpMethods
+   */
+  @VsoMethod
+  public List<String> getAccumulateHttpMethods() {
+    return accumulateHttpMethods;
+  }
+
+  /**
+   * This is the setter method. this will set the accumulateHttpMethods
+   * Http methods to accumulate for consolidated learning (e.g., get, post, put).
+   * If empty, all methods are accumulated.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return accumulateHttpMethods
+   */
+  @VsoMethod
+  public void setAccumulateHttpMethods(List<String>  accumulateHttpMethods) {
+    this.accumulateHttpMethods = accumulateHttpMethods;
+  }
+
+  /**
+   * This is the setter method this will set the accumulateHttpMethods
+   * Http methods to accumulate for consolidated learning (e.g., get, post, put).
+   * If empty, all methods are accumulated.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return accumulateHttpMethods
+   */
+  @VsoMethod
+  public SecurityMgrDebugFilter addAccumulateHttpMethodsItem(String accumulateHttpMethodsItem) {
+    if (this.accumulateHttpMethods == null) {
+      this.accumulateHttpMethods = new ArrayList<String>();
+    }
+    this.accumulateHttpMethods.add(accumulateHttpMethodsItem);
+    return this;
+  }
 
 
   /**
@@ -133,14 +184,16 @@ public boolean equals(java.lang.Object o) {
   SecurityMgrDebugFilter objSecurityMgrDebugFilter = (SecurityMgrDebugFilter) o;
   return   Objects.equals(this.entityRef, objSecurityMgrDebugFilter.entityRef)&&
   Objects.equals(this.enableAdaptiveConfig, objSecurityMgrDebugFilter.enableAdaptiveConfig)&&
-  Objects.equals(this.psmRuleIdMultiplier, objSecurityMgrDebugFilter.psmRuleIdMultiplier);
+  Objects.equals(this.psmRuleIdMultiplier, objSecurityMgrDebugFilter.psmRuleIdMultiplier)&&
+  Objects.equals(this.accumulateHttpMethods, objSecurityMgrDebugFilter.accumulateHttpMethods);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class SecurityMgrDebugFilter {\n");
-      sb.append("    enableAdaptiveConfig: ").append(toIndentedString(enableAdaptiveConfig)).append("\n");
+      sb.append("    accumulateHttpMethods: ").append(toIndentedString(accumulateHttpMethods)).append("\n");
+        sb.append("    enableAdaptiveConfig: ").append(toIndentedString(enableAdaptiveConfig)).append("\n");
         sb.append("    entityRef: ").append(toIndentedString(entityRef)).append("\n");
         sb.append("    psmRuleIdMultiplier: ").append(toIndentedString(psmRuleIdMultiplier)).append("\n");
       sb.append("}");
