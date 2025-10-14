@@ -24,6 +24,10 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SecurityMgrDebugFilter extends AviRestResource {
+    @JsonProperty("accumulate_http_methods")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> accumulateHttpMethods;
+
     @JsonProperty("enable_adaptive_config")
     @JsonInclude(Include.NON_NULL)
     private Boolean enableAdaptiveConfig = true;
@@ -32,10 +36,61 @@ public class SecurityMgrDebugFilter extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String entityRef;
 
+    @JsonProperty("psm_programming_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer psmProgrammingInterval = 5;
+
     @JsonProperty("psm_rule_id_multiplier")
     @JsonInclude(Include.NON_NULL)
     private Integer psmRuleIdMultiplier;
 
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Http methods to accumulate for consolidated learning (e.g., get, post, put).
+   * If empty, all methods are accumulated.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return accumulateHttpMethods
+   */
+  @VsoMethod
+  public List<String> getAccumulateHttpMethods() {
+    return accumulateHttpMethods;
+  }
+
+  /**
+   * This is the setter method. this will set the accumulateHttpMethods
+   * Http methods to accumulate for consolidated learning (e.g., get, post, put).
+   * If empty, all methods are accumulated.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return accumulateHttpMethods
+   */
+  @VsoMethod
+  public void setAccumulateHttpMethods(List<String>  accumulateHttpMethods) {
+    this.accumulateHttpMethods = accumulateHttpMethods;
+  }
+
+  /**
+   * This is the setter method this will set the accumulateHttpMethods
+   * Http methods to accumulate for consolidated learning (e.g., get, post, put).
+   * If empty, all methods are accumulated.
+   * Field introduced in 31.2.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return accumulateHttpMethods
+   */
+  @VsoMethod
+  public SecurityMgrDebugFilter addAccumulateHttpMethodsItem(String accumulateHttpMethodsItem) {
+    if (this.accumulateHttpMethods == null) {
+      this.accumulateHttpMethods = new ArrayList<String>();
+    }
+    this.accumulateHttpMethods.add(accumulateHttpMethodsItem);
+    return this;
+  }
 
 
   /**
@@ -94,6 +149,36 @@ public class SecurityMgrDebugFilter extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Dynamically update the interval for rule generation in psm programming.
+   * Allowed values are 1-60.
+   * Field introduced in 31.2.1.
+   * Unit is min.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 5.
+   * @return psmProgrammingInterval
+   */
+  @VsoMethod
+  public Integer getPsmProgrammingInterval() {
+    return psmProgrammingInterval;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Dynamically update the interval for rule generation in psm programming.
+   * Allowed values are 1-60.
+   * Field introduced in 31.2.1.
+   * Unit is min.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 5.
+   * @param psmProgrammingInterval set the psmProgrammingInterval.
+   */
+  @VsoMethod
+  public void setPsmProgrammingInterval(Integer  psmProgrammingInterval) {
+    this.psmProgrammingInterval = psmProgrammingInterval;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Dynamically update the multiplier for rule id generation in psm programming for learning feature.
    * Allowed values are 10-100000.
    * Field introduced in 30.2.1.
@@ -133,15 +218,19 @@ public boolean equals(java.lang.Object o) {
   SecurityMgrDebugFilter objSecurityMgrDebugFilter = (SecurityMgrDebugFilter) o;
   return   Objects.equals(this.entityRef, objSecurityMgrDebugFilter.entityRef)&&
   Objects.equals(this.enableAdaptiveConfig, objSecurityMgrDebugFilter.enableAdaptiveConfig)&&
-  Objects.equals(this.psmRuleIdMultiplier, objSecurityMgrDebugFilter.psmRuleIdMultiplier);
+  Objects.equals(this.psmRuleIdMultiplier, objSecurityMgrDebugFilter.psmRuleIdMultiplier)&&
+  Objects.equals(this.accumulateHttpMethods, objSecurityMgrDebugFilter.accumulateHttpMethods)&&
+  Objects.equals(this.psmProgrammingInterval, objSecurityMgrDebugFilter.psmProgrammingInterval);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class SecurityMgrDebugFilter {\n");
-      sb.append("    enableAdaptiveConfig: ").append(toIndentedString(enableAdaptiveConfig)).append("\n");
+      sb.append("    accumulateHttpMethods: ").append(toIndentedString(accumulateHttpMethods)).append("\n");
+        sb.append("    enableAdaptiveConfig: ").append(toIndentedString(enableAdaptiveConfig)).append("\n");
         sb.append("    entityRef: ").append(toIndentedString(entityRef)).append("\n");
+        sb.append("    psmProgrammingInterval: ").append(toIndentedString(psmProgrammingInterval)).append("\n");
         sb.append("    psmRuleIdMultiplier: ").append(toIndentedString(psmRuleIdMultiplier)).append("\n");
       sb.append("}");
   return sb.toString();

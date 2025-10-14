@@ -73,12 +73,10 @@ public class Constants {
     public static final String FINDER_VRO_APPLICATION = "Application";
     public static final String FINDER_VRO_APPLICATIONINSIGHTSPARAMS = "ApplicationInsightsParams";
     public static final String FINDER_VRO_APPLICATIONINSIGHTSPOLICY = "ApplicationInsightsPolicy";
-    public static final String FINDER_VRO_APPLICATIONINSIGHTSSTATE = "ApplicationInsightsState";
     public static final String FINDER_VRO_APPLICATIONLOG = "ApplicationLog";
     public static final String FINDER_VRO_APPLICATIONPERSISTENCEPROFILE = "ApplicationPersistenceProfile";
     public static final String FINDER_VRO_APPLICATIONPROFILE = "ApplicationProfile";
     public static final String FINDER_VRO_APPLICATIONSAMPLINGCONFIG = "ApplicationSamplingConfig";
-    public static final String FINDER_VRO_APPLICATIONSAMPLINGRUNTIME = "ApplicationSamplingRuntime";
     public static final String FINDER_VRO_ARCHIVEPOLICY = "ArchivePolicy";
     public static final String FINDER_VRO_ARCHIVERULES = "ArchiveRules";
     public static final String FINDER_VRO_ARPTABLEFILTER = "ArpTableFilter";
