@@ -550,7 +550,7 @@ public class ServiceEngineGroup extends AviRestResource {
 
     @JsonProperty("max_cpu_load_adaptive_sampling")
     @JsonInclude(Include.NON_NULL)
-    private Integer maxCpuLoadAdaptiveSampling = 80;
+    private Integer maxCpuLoadAdaptiveSampling = 95;
 
     @JsonProperty("max_cpu_usage")
     @JsonInclude(Include.NON_NULL)
@@ -4941,7 +4941,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * Field introduced in 31.2.1.
    * Unit is percent.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 80.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 95.
    * @return maxCpuLoadAdaptiveSampling
    */
   @VsoMethod
@@ -4957,7 +4957,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * Field introduced in 31.2.1.
    * Unit is percent.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 80.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 95.
    * @param maxCpuLoadAdaptiveSampling set the maxCpuLoadAdaptiveSampling.
    */
   @VsoMethod
