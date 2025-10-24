@@ -232,6 +232,7 @@ public class Constants {
     public static final String FINDER_VRO_CLUSTERSERVICERESTOREDEVENT = "ClusterServiceRestoredEvent";
     public static final String FINDER_VRO_CLUSTIFYCHECKEVENT = "ClustifyCheckEvent";
     public static final String FINDER_VRO_COLLECTIONRULES = "CollectionRules";
+    public static final String FINDER_VRO_COMPLEXITYCONSTRAINT = "ComplexityConstraint";
     public static final String FINDER_VRO_COMPRESSIONFILTER = "CompressionFilter";
     public static final String FINDER_VRO_COMPRESSIONPROFILE = "CompressionProfile";
     public static final String FINDER_VRO_CONFIGACTIONDETAILS = "ConfigActionDetails";
@@ -389,6 +390,7 @@ public class Constants {
     public static final String FINDER_VRO_EVENTINFO = "EventInfo";
     public static final String FINDER_VRO_EVENTLOG = "EventLog";
     public static final String FINDER_VRO_EVENTMAP = "EventMap";
+    public static final String FINDER_VRO_EXPIRATIONCONSTRAINT = "ExpirationConstraint";
     public static final String FINDER_VRO_FTPPROFILE = "FTPProfile";
     public static final String FINDER_VRO_FAILACTION = "FailAction";
     public static final String FINDER_VRO_FAILACTIONBACKUPPOOL = "FailActionBackupPool";
@@ -658,6 +660,7 @@ public class Constants {
     public static final String FINDER_VRO_LOCALINFO = "LocalInfo";
     public static final String FINDER_VRO_LOCALWORKERFDSVERSION = "LocalWorkerFdsVersion";
     public static final String FINDER_VRO_LOCATIONHDRMATCH = "LocationHdrMatch";
+    public static final String FINDER_VRO_LOCKOUTCONSTRAINT = "LockoutConstraint";
     public static final String FINDER_VRO_LOGAGENTEVENTDETAIL = "LogAgentEventDetail";
     public static final String FINDER_VRO_LOGAGENTTCPCLIENTEVENTDETAIL = "LogAgentTCPClientEventDetail";
     public static final String FINDER_VRO_LOGAGENTTCPCONNESTRATEEXCDEVENT = "LogAgentTCPConnEstRateExcdEvent";
