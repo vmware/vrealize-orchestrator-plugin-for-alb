@@ -10,7 +10,7 @@
 	<parent>
 		<artifactId>vro</artifactId>
 		<groupId>com.vmware.avi</groupId>
-		<version>30.2.1</version>
+		<version>31.2.1.RELEASE</version>
 	</parent>
 
 	<dependencies>
@@ -96,7 +96,7 @@
 							<goal>run</goal>
 						</goals>
 						<configuration>
-							<tasks>
+							<target>
 								<copy
 									tofile="${basedir}/target/${project.artifactId}.${project.packaging}"
 									flatten="true" overwrite="true" verbose="true"
@@ -115,7 +115,7 @@
 										<include name="VSO-INF/*" />
 									</fileset>
 								</jar>
-							</tasks>
+							</target>
 						</configuration>
 					</execution>
 				</executions>
