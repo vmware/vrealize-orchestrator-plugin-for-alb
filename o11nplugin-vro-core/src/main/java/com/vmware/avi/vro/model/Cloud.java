@@ -13,7 +13,6 @@ import com.vmware.avi.vro.model.GCPConfiguration;
 import com.vmware.avi.vro.model.LinuxServerConfiguration;
 import com.vmware.avi.vro.model.NsxtConfiguration;
 import com.vmware.avi.vro.model.NTPConfiguration;
-import com.vmware.avi.vro.model.OpenStackConfiguration;
 import com.vmware.avi.vro.model.ProxyConfiguration;
 import com.vmware.avi.vro.model.RancherConfiguration;
 import com.vmware.avi.vro.model.vCloudAirConfiguration;
@@ -156,10 +155,6 @@ public class Cloud extends AviRestResource {
     @JsonProperty("obj_name_prefix")
     @JsonInclude(Include.NON_NULL)
     private String objNamePrefix;
-
-    @JsonProperty("openstack_configuration")
-    @JsonInclude(Include.NON_NULL)
-    private OpenStackConfiguration openstackConfiguration;
 
     @JsonProperty("prefer_static_routes")
     @JsonInclude(Include.NON_NULL)
@@ -1056,28 +1051,6 @@ public class Cloud extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Field deprecated in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * @return openstackConfiguration
-   */
-  @VsoMethod
-  public OpenStackConfiguration getOpenstackConfiguration() {
-    return openstackConfiguration;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Field deprecated in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * @param openstackConfiguration set the openstackConfiguration.
-   */
-  @VsoMethod
-  public void setOpenstackConfiguration(OpenStackConfiguration openstackConfiguration) {
-    this.openstackConfiguration = openstackConfiguration;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Prefer static routes over interface routes during virtualservice placement.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
@@ -1409,7 +1382,6 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.name, objCloud.name)&&
   Objects.equals(this.vtype, objCloud.vtype)&&
   Objects.equals(this.vcenterConfiguration, objCloud.vcenterConfiguration)&&
-  Objects.equals(this.openstackConfiguration, objCloud.openstackConfiguration)&&
   Objects.equals(this.awsConfiguration, objCloud.awsConfiguration)&&
   Objects.equals(this.cloudstackConfiguration, objCloud.cloudstackConfiguration)&&
   Objects.equals(this.vcaConfiguration, objCloud.vcaConfiguration)&&
@@ -1484,7 +1456,6 @@ public String toString() {
         sb.append("    nsxtConfiguration: ").append(toIndentedString(nsxtConfiguration)).append("\n");
         sb.append("    ntpConfiguration: ").append(toIndentedString(ntpConfiguration)).append("\n");
         sb.append("    objNamePrefix: ").append(toIndentedString(objNamePrefix)).append("\n");
-        sb.append("    openstackConfiguration: ").append(toIndentedString(openstackConfiguration)).append("\n");
         sb.append("    preferStaticRoutes: ").append(toIndentedString(preferStaticRoutes)).append("\n");
         sb.append("    proxyConfiguration: ").append(toIndentedString(proxyConfiguration)).append("\n");
         sb.append("    rancherConfiguration: ").append(toIndentedString(rancherConfiguration)).append("\n");

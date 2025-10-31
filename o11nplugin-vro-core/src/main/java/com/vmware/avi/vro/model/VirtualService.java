@@ -226,10 +226,6 @@ public class VirtualService extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String networkSecurityPolicyRef;
 
-    @JsonProperty("nsx_securitygroup")
-    @JsonInclude(Include.NON_NULL)
-    private List<String> nsxSecuritygroup;
-
     @JsonProperty("oauth_vs_config")
     @JsonInclude(Include.NON_NULL)
     private OAuthVSConfig oauthVsConfig;
@@ -1829,50 +1825,6 @@ public class VirtualService extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * A list of nsx groups representing the clients which can access the virtual ip of the virtual service.
-   * Field deprecated in 31.2.1.
-   * Field introduced in 17.1.1.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @return nsxSecuritygroup
-   */
-  @VsoMethod
-  public List<String> getNsxSecuritygroup() {
-    return nsxSecuritygroup;
-  }
-
-  /**
-   * This is the setter method. this will set the nsxSecuritygroup
-   * A list of nsx groups representing the clients which can access the virtual ip of the virtual service.
-   * Field deprecated in 31.2.1.
-   * Field introduced in 17.1.1.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @return nsxSecuritygroup
-   */
-  @VsoMethod
-  public void setNsxSecuritygroup(List<String>  nsxSecuritygroup) {
-    this.nsxSecuritygroup = nsxSecuritygroup;
-  }
-
-  /**
-   * This is the setter method this will set the nsxSecuritygroup
-   * A list of nsx groups representing the clients which can access the virtual ip of the virtual service.
-   * Field deprecated in 31.2.1.
-   * Field introduced in 17.1.1.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @return nsxSecuritygroup
-   */
-  @VsoMethod
-  public VirtualService addNsxSecuritygroupItem(String nsxSecuritygroupItem) {
-    if (this.nsxSecuritygroup == null) {
-      this.nsxSecuritygroup = new ArrayList<String>();
-    }
-    this.nsxSecuritygroup.add(nsxSecuritygroupItem);
-    return this;
-  }
-
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Virtualservice specific oauth config.
    * Field introduced in 21.1.3.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
@@ -3416,7 +3368,6 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.contentRewrite, objVirtualService.contentRewrite)&&
   Objects.equals(this.sidebandProfile, objVirtualService.sidebandProfile)&&
   Objects.equals(this.vip, objVirtualService.vip)&&
-  Objects.equals(this.nsxSecuritygroup, objVirtualService.nsxSecuritygroup)&&
   Objects.equals(this.vsvipRef, objVirtualService.vsvipRef)&&
   Objects.equals(this.wafPolicyRef, objVirtualService.wafPolicyRef)&&
   Objects.equals(this.spPoolRefs, objVirtualService.spPoolRefs)&&
@@ -3499,7 +3450,6 @@ public String toString() {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    networkProfileRef: ").append(toIndentedString(networkProfileRef)).append("\n");
         sb.append("    networkSecurityPolicyRef: ").append(toIndentedString(networkSecurityPolicyRef)).append("\n");
-        sb.append("    nsxSecuritygroup: ").append(toIndentedString(nsxSecuritygroup)).append("\n");
         sb.append("    oauthVsConfig: ").append(toIndentedString(oauthVsConfig)).append("\n");
         sb.append("    performanceLimits: ").append(toIndentedString(performanceLimits)).append("\n");
         sb.append("    poolGroupRef: ").append(toIndentedString(poolGroupRef)).append("\n");

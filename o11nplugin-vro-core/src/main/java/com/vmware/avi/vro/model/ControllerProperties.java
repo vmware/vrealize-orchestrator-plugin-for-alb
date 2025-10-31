@@ -371,22 +371,6 @@ public class ControllerProperties extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer secureChannelSeTokenTimeout = 60;
 
-    @JsonProperty("seupgrade_copy_buffer_size")
-    @JsonInclude(Include.NON_NULL)
-    private Integer seupgradeCopyBufferSize;
-
-    @JsonProperty("seupgrade_copy_pool_size")
-    @JsonInclude(Include.NON_NULL)
-    private Integer seupgradeCopyPoolSize;
-
-    @JsonProperty("seupgrade_fabric_pool_size")
-    @JsonInclude(Include.NON_NULL)
-    private Integer seupgradeFabricPoolSize;
-
-    @JsonProperty("seupgrade_segroup_min_dead_timeout")
-    @JsonInclude(Include.NON_NULL)
-    private Integer seupgradeSegroupMinDeadTimeout;
-
     @JsonProperty("shared_ssl_certificates")
     @JsonInclude(Include.NON_NULL)
     private Boolean sharedSslCertificates = false;
@@ -394,14 +378,6 @@ public class ControllerProperties extends AviRestResource {
     @JsonProperty("skip_beego_perf_collection")
     @JsonInclude(Include.NON_NULL)
     private Boolean skipBeegoPerfCollection = false;
-
-    @JsonProperty("skopeo_retry_interval")
-    @JsonInclude(Include.NON_NULL)
-    private Integer skopeoRetryInterval;
-
-    @JsonProperty("skopeo_retry_limit")
-    @JsonInclude(Include.NON_NULL)
-    private Integer skopeoRetryLimit;
 
     @JsonProperty("soft_min_mem_per_se_limit")
     @JsonInclude(Include.NON_NULL)
@@ -414,14 +390,6 @@ public class ControllerProperties extends AviRestResource {
     @JsonProperty("statecache_properties")
     @JsonInclude(Include.NON_NULL)
     private SCProperties statecacheProperties;
-
-    @JsonProperty("system_report_cleanup_interval")
-    @JsonInclude(Include.NON_NULL)
-    private Integer systemReportCleanupInterval;
-
-    @JsonProperty("system_report_limit")
-    @JsonInclude(Include.NON_NULL)
-    private Integer systemReportLimit;
 
     @JsonProperty("telemetry_interval")
     @JsonInclude(Include.NON_NULL)
@@ -442,14 +410,6 @@ public class ControllerProperties extends AviRestResource {
     @JsonProperty("upgrade_dns_ttl")
     @JsonInclude(Include.NON_NULL)
     private Integer upgradeDnsTtl = 5;
-
-    @JsonProperty("upgrade_fat_se_lease_time")
-    @JsonInclude(Include.NON_NULL)
-    private Integer upgradeFatSeLeaseTime;
-
-    @JsonProperty("upgrade_lease_time")
-    @JsonInclude(Include.NON_NULL)
-    private Integer upgradeLeaseTime;
 
     @JsonProperty("upgrade_se_per_vs_scale_ops_txn_time")
     @JsonInclude(Include.NON_NULL)
@@ -2897,124 +2857,6 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * This parameter defines the buffer size during se image downloads in a segroup.
-   * It is used to pace the se downloads so that controller network/cpu bandwidth is a bounded operation.
-   * Please refer to upgradeprofile for equivalent fields.
-   * Field deprecated in 31.1.1.
-   * Field introduced in 22.1.4.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * @return seupgradeCopyBufferSize
-   */
-  @VsoMethod
-  public Integer getSeupgradeCopyBufferSize() {
-    return seupgradeCopyBufferSize;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * This parameter defines the buffer size during se image downloads in a segroup.
-   * It is used to pace the se downloads so that controller network/cpu bandwidth is a bounded operation.
-   * Please refer to upgradeprofile for equivalent fields.
-   * Field deprecated in 31.1.1.
-   * Field introduced in 22.1.4.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * @param seupgradeCopyBufferSize set the seupgradeCopyBufferSize.
-   */
-  @VsoMethod
-  public void setSeupgradeCopyBufferSize(Integer  seupgradeCopyBufferSize) {
-    this.seupgradeCopyBufferSize = seupgradeCopyBufferSize;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * This parameter defines the number of simultaneous se image downloads in a segroup.
-   * It is used to pace the se downloads so that controller network/cpu bandwidth is a bounded operation.
-   * A value of 0 will disable the pacing scheme and all the se(s) in the segroup will attempt to download the image.
-   * Please refer to upgradeprofile for equivalent fields.
-   * Field deprecated in 31.1.1.
-   * Field introduced in 18.2.6.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @return seupgradeCopyPoolSize
-   */
-  @VsoMethod
-  public Integer getSeupgradeCopyPoolSize() {
-    return seupgradeCopyPoolSize;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * This parameter defines the number of simultaneous se image downloads in a segroup.
-   * It is used to pace the se downloads so that controller network/cpu bandwidth is a bounded operation.
-   * A value of 0 will disable the pacing scheme and all the se(s) in the segroup will attempt to download the image.
-   * Please refer to upgradeprofile for equivalent fields.
-   * Field deprecated in 31.1.1.
-   * Field introduced in 18.2.6.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @param seupgradeCopyPoolSize set the seupgradeCopyPoolSize.
-   */
-  @VsoMethod
-  public void setSeupgradeCopyPoolSize(Integer  seupgradeCopyPoolSize) {
-    this.seupgradeCopyPoolSize = seupgradeCopyPoolSize;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * The pool size is used to control the number of concurrent segroup upgrades.
-   * This field value takes affect upon controller warm reboot.
-   * Please refer to upgradeprofile for equivalent fields.
-   * Allowed values are 2-20.
-   * Field deprecated in 31.1.1.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @return seupgradeFabricPoolSize
-   */
-  @VsoMethod
-  public Integer getSeupgradeFabricPoolSize() {
-    return seupgradeFabricPoolSize;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * The pool size is used to control the number of concurrent segroup upgrades.
-   * This field value takes affect upon controller warm reboot.
-   * Please refer to upgradeprofile for equivalent fields.
-   * Allowed values are 2-20.
-   * Field deprecated in 31.1.1.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @param seupgradeFabricPoolSize set the seupgradeFabricPoolSize.
-   */
-  @VsoMethod
-  public void setSeupgradeFabricPoolSize(Integer  seupgradeFabricPoolSize) {
-    this.seupgradeFabricPoolSize = seupgradeFabricPoolSize;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Time to wait before marking segroup upgrade as stuck.
-   * Field deprecated in 31.1.1.
-   * Unit is sec.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @return seupgradeSegroupMinDeadTimeout
-   */
-  @VsoMethod
-  public Integer getSeupgradeSegroupMinDeadTimeout() {
-    return seupgradeSegroupMinDeadTimeout;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Time to wait before marking segroup upgrade as stuck.
-   * Field deprecated in 31.1.1.
-   * Unit is sec.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @param seupgradeSegroupMinDeadTimeout set the seupgradeSegroupMinDeadTimeout.
-   */
-  @VsoMethod
-  public void setSeupgradeSegroupMinDeadTimeout(Integer  seupgradeSegroupMinDeadTimeout) {
-    this.seupgradeSegroupMinDeadTimeout = seupgradeSegroupMinDeadTimeout;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Ssl certificates in the admin tenant can be used in non-admin tenants.
    * Field introduced in 18.2.5.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -3063,60 +2905,6 @@ public class ControllerProperties extends AviRestResource {
   @VsoMethod
   public void setSkipBeegoPerfCollection(Boolean  skipBeegoPerfCollection) {
     this.skipBeegoPerfCollection = skipBeegoPerfCollection;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Time interval (in seconds) between retires for skopeo commands.
-   * Field deprecated in 31.1.1.
-   * Field introduced in 30.1.1.
-   * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * @return skopeoRetryInterval
-   */
-  @VsoMethod
-  public Integer getSkopeoRetryInterval() {
-    return skopeoRetryInterval;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Time interval (in seconds) between retires for skopeo commands.
-   * Field deprecated in 31.1.1.
-   * Field introduced in 30.1.1.
-   * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * @param skopeoRetryInterval set the skopeoRetryInterval.
-   */
-  @VsoMethod
-  public void setSkopeoRetryInterval(Integer  skopeoRetryInterval) {
-    this.skopeoRetryInterval = skopeoRetryInterval;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Number of times to try skopeo commands for remote image registries.
-   * Field deprecated in 31.1.1.
-   * Field introduced in 30.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * @return skopeoRetryLimit
-   */
-  @VsoMethod
-  public Integer getSkopeoRetryLimit() {
-    return skopeoRetryLimit;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Number of times to try skopeo commands for remote image registries.
-   * Field deprecated in 31.1.1.
-   * Field introduced in 30.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * @param skopeoRetryLimit set the skopeoRetryLimit.
-   */
-  @VsoMethod
-  public void setSkopeoRetryLimit(Integer  skopeoRetryLimit) {
-    this.skopeoRetryLimit = skopeoRetryLimit;
   }
 
   /**
@@ -3215,70 +3003,6 @@ public class ControllerProperties extends AviRestResource {
   @VsoMethod
   public void setStatecacheProperties(SCProperties statecacheProperties) {
     this.statecacheProperties = statecacheProperties;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Time in minutes to wait between cleanup of systemreports.
-   * Allowed values are 15-300.
-   * Field deprecated in 31.1.1.
-   * Field introduced in 22.1.6, 30.2.1.
-   * Unit is min.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @return systemReportCleanupInterval
-   */
-  @VsoMethod
-  public Integer getSystemReportCleanupInterval() {
-    return systemReportCleanupInterval;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Time in minutes to wait between cleanup of systemreports.
-   * Allowed values are 15-300.
-   * Field deprecated in 31.1.1.
-   * Field introduced in 22.1.6, 30.2.1.
-   * Unit is min.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @param systemReportCleanupInterval set the systemReportCleanupInterval.
-   */
-  @VsoMethod
-  public void setSystemReportCleanupInterval(Integer  systemReportCleanupInterval) {
-    this.systemReportCleanupInterval = systemReportCleanupInterval;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Number of systemreports retained in the system.
-   * Once the number of system reports exceed this threshold, the oldest systemreport will be removed and the latest one retained.
-   * I.e.
-   * The systemreport will be rotated and the reports don't exceed the threshold.
-   * Allowed values are 5-50.
-   * Field deprecated in 31.1.1.
-   * Field introduced in 22.1.6, 30.2.1.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @return systemReportLimit
-   */
-  @VsoMethod
-  public Integer getSystemReportLimit() {
-    return systemReportLimit;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Number of systemreports retained in the system.
-   * Once the number of system reports exceed this threshold, the oldest systemreport will be removed and the latest one retained.
-   * I.e.
-   * The systemreport will be rotated and the reports don't exceed the threshold.
-   * Allowed values are 5-50.
-   * Field deprecated in 31.1.1.
-   * Field introduced in 22.1.6, 30.2.1.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @param systemReportLimit set the systemReportLimit.
-   */
-  @VsoMethod
-  public void setSystemReportLimit(Integer  systemReportLimit) {
-    this.systemReportLimit = systemReportLimit;
   }
 
   /**
@@ -3419,66 +3143,6 @@ public class ControllerProperties extends AviRestResource {
   @VsoMethod
   public void setUpgradeDnsTtl(Integer  upgradeDnsTtl) {
     this.upgradeDnsTtl = upgradeDnsTtl;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Amount of time controller waits for a large-sized se (>=128gb memory) to reconnect after it is rebooted during upgrade.
-   * Please refer to upgradeprofile for equivalent fields.
-   * Field deprecated in 31.1.1.
-   * Field introduced in 18.2.10, 20.1.1.
-   * Unit is sec.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @return upgradeFatSeLeaseTime
-   */
-  @VsoMethod
-  public Integer getUpgradeFatSeLeaseTime() {
-    return upgradeFatSeLeaseTime;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Amount of time controller waits for a large-sized se (>=128gb memory) to reconnect after it is rebooted during upgrade.
-   * Please refer to upgradeprofile for equivalent fields.
-   * Field deprecated in 31.1.1.
-   * Field introduced in 18.2.10, 20.1.1.
-   * Unit is sec.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @param upgradeFatSeLeaseTime set the upgradeFatSeLeaseTime.
-   */
-  @VsoMethod
-  public void setUpgradeFatSeLeaseTime(Integer  upgradeFatSeLeaseTime) {
-    this.upgradeFatSeLeaseTime = upgradeFatSeLeaseTime;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Amount of time controller waits for a regular-sized se (<128gb memory) to reconnect after it is rebooted during upgrade.
-   * Starting 18.2.10/20.1.1, the default time has increased from 360 seconds to 600 seconds.
-   * Please refer to upgradeprofile for equivalent fields.
-   * Field deprecated in 31.1.1.
-   * Unit is sec.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @return upgradeLeaseTime
-   */
-  @VsoMethod
-  public Integer getUpgradeLeaseTime() {
-    return upgradeLeaseTime;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Amount of time controller waits for a regular-sized se (<128gb memory) to reconnect after it is rebooted during upgrade.
-   * Starting 18.2.10/20.1.1, the default time has increased from 360 seconds to 600 seconds.
-   * Please refer to upgradeprofile for equivalent fields.
-   * Field deprecated in 31.1.1.
-   * Unit is sec.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @param upgradeLeaseTime set the upgradeLeaseTime.
-   */
-  @VsoMethod
-  public void setUpgradeLeaseTime(Integer  upgradeLeaseTime) {
-    this.upgradeLeaseTime = upgradeLeaseTime;
   }
 
   /**
@@ -4031,7 +3695,6 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.seVnicCooldown, objControllerProperties.seVnicCooldown)&&
   Objects.equals(this.vsSeVnicIpFail, objControllerProperties.vsSeVnicIpFail)&&
   Objects.equals(this.fatalErrorLeaseTime, objControllerProperties.fatalErrorLeaseTime)&&
-  Objects.equals(this.upgradeLeaseTime, objControllerProperties.upgradeLeaseTime)&&
   Objects.equals(this.queryHostFail, objControllerProperties.queryHostFail)&&
   Objects.equals(this.vnicOpFailTime, objControllerProperties.vnicOpFailTime)&&
   Objects.equals(this.dnsRefreshPeriod, objControllerProperties.dnsRefreshPeriod)&&
@@ -4056,8 +3719,6 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.seFailoverAttemptInterval, objControllerProperties.seFailoverAttemptInterval)&&
   Objects.equals(this.maxPcapPerTenant, objControllerProperties.maxPcapPerTenant)&&
   Objects.equals(this.sslCertificateExpiryWarningDays, objControllerProperties.sslCertificateExpiryWarningDays)&&
-  Objects.equals(this.seupgradeFabricPoolSize, objControllerProperties.seupgradeFabricPoolSize)&&
-  Objects.equals(this.seupgradeSegroupMinDeadTimeout, objControllerProperties.seupgradeSegroupMinDeadTimeout)&&
   Objects.equals(this.allowIpForwarding, objControllerProperties.allowIpForwarding)&&
   Objects.equals(this.appviewxCompatMode, objControllerProperties.appviewxCompatMode)&&
   Objects.equals(this.upgradeDnsTtl, objControllerProperties.upgradeDnsTtl)&&
@@ -4080,7 +3741,6 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.vsScaleoutReadyCheckInterval, objControllerProperties.vsScaleoutReadyCheckInterval)&&
   Objects.equals(this.sharedSslCertificates, objControllerProperties.sharedSslCertificates)&&
   Objects.equals(this.defaultMinimumApiTimeout, objControllerProperties.defaultMinimumApiTimeout)&&
-  Objects.equals(this.seupgradeCopyPoolSize, objControllerProperties.seupgradeCopyPoolSize)&&
   Objects.equals(this.permissionScopedSharedAdminNetworks, objControllerProperties.permissionScopedSharedAdminNetworks)&&
   Objects.equals(this.allowAdminNetworkUpdates, objControllerProperties.allowAdminNetworkUpdates)&&
   Objects.equals(this.seSpawnRetryInterval, objControllerProperties.seSpawnRetryInterval)&&
@@ -4090,7 +3750,6 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.federatedDatastoreCleanupDuration, objControllerProperties.federatedDatastoreCleanupDuration)&&
   Objects.equals(this.editSystemLimits, objControllerProperties.editSystemLimits)&&
   Objects.equals(this.fileObjectCleanupPeriod, objControllerProperties.fileObjectCleanupPeriod)&&
-  Objects.equals(this.upgradeFatSeLeaseTime, objControllerProperties.upgradeFatSeLeaseTime)&&
   Objects.equals(this.upgradeSePerVsScaleOpsTxnTime, objControllerProperties.upgradeSePerVsScaleOpsTxnTime)&&
   Objects.equals(this.maxThreadsCcVipBgWorker, objControllerProperties.maxThreadsCcVipBgWorker)&&
   Objects.equals(this.asyncPatchMergePeriod, objControllerProperties.asyncPatchMergePeriod)&&
@@ -4118,15 +3777,10 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.gslbPurgeSleepTimeMs, objControllerProperties.gslbPurgeSleepTimeMs)&&
   Objects.equals(this.postgresVacuumPeriod, objControllerProperties.postgresVacuumPeriod)&&
   Objects.equals(this.ignoreVrfInNetworksubnetlist, objControllerProperties.ignoreVrfInNetworksubnetlist)&&
-  Objects.equals(this.seupgradeCopyBufferSize, objControllerProperties.seupgradeCopyBufferSize)&&
   Objects.equals(this.vsSeBootupFailPatch, objControllerProperties.vsSeBootupFailPatch)&&
-  Objects.equals(this.skopeoRetryLimit, objControllerProperties.skopeoRetryLimit)&&
-  Objects.equals(this.skopeoRetryInterval, objControllerProperties.skopeoRetryInterval)&&
   Objects.equals(this.softMinMemPerSeLimit, objControllerProperties.softMinMemPerSeLimit)&&
   Objects.equals(this.cloudReconcileInterval, objControllerProperties.cloudReconcileInterval)&&
   Objects.equals(this.cloudDiscoveryInterval, objControllerProperties.cloudDiscoveryInterval)&&
-  Objects.equals(this.systemReportLimit, objControllerProperties.systemReportLimit)&&
-  Objects.equals(this.systemReportCleanupInterval, objControllerProperties.systemReportCleanupInterval)&&
   Objects.equals(this.fileobjectMaxFileVersions, objControllerProperties.fileobjectMaxFileVersions)&&
   Objects.equals(this.eventManagerProcessingTimeThreshold, objControllerProperties.eventManagerProcessingTimeThreshold)&&
   Objects.equals(this.eventManagerMaxSubscribers, objControllerProperties.eventManagerMaxSubscribers)&&
@@ -4237,26 +3891,16 @@ public String toString() {
         sb.append("    secureChannelCleanupTimeout: ").append(toIndentedString(secureChannelCleanupTimeout)).append("\n");
         sb.append("    secureChannelControllerTokenTimeout: ").append(toIndentedString(secureChannelControllerTokenTimeout)).append("\n");
         sb.append("    secureChannelSeTokenTimeout: ").append(toIndentedString(secureChannelSeTokenTimeout)).append("\n");
-        sb.append("    seupgradeCopyBufferSize: ").append(toIndentedString(seupgradeCopyBufferSize)).append("\n");
-        sb.append("    seupgradeCopyPoolSize: ").append(toIndentedString(seupgradeCopyPoolSize)).append("\n");
-        sb.append("    seupgradeFabricPoolSize: ").append(toIndentedString(seupgradeFabricPoolSize)).append("\n");
-        sb.append("    seupgradeSegroupMinDeadTimeout: ").append(toIndentedString(seupgradeSegroupMinDeadTimeout)).append("\n");
         sb.append("    sharedSslCertificates: ").append(toIndentedString(sharedSslCertificates)).append("\n");
         sb.append("    skipBeegoPerfCollection: ").append(toIndentedString(skipBeegoPerfCollection)).append("\n");
-        sb.append("    skopeoRetryInterval: ").append(toIndentedString(skopeoRetryInterval)).append("\n");
-        sb.append("    skopeoRetryLimit: ").append(toIndentedString(skopeoRetryLimit)).append("\n");
         sb.append("    softMinMemPerSeLimit: ").append(toIndentedString(softMinMemPerSeLimit)).append("\n");
         sb.append("    sslCertificateExpiryWarningDays: ").append(toIndentedString(sslCertificateExpiryWarningDays)).append("\n");
         sb.append("    statecacheProperties: ").append(toIndentedString(statecacheProperties)).append("\n");
-        sb.append("    systemReportCleanupInterval: ").append(toIndentedString(systemReportCleanupInterval)).append("\n");
-        sb.append("    systemReportLimit: ").append(toIndentedString(systemReportLimit)).append("\n");
         sb.append("    telemetryInterval: ").append(toIndentedString(telemetryInterval)).append("\n");
         sb.append("    unresponsiveSeReboot: ").append(toIndentedString(unresponsiveSeReboot)).append("\n");
         sb.append("    updateDnsEntryRetryLimit: ").append(toIndentedString(updateDnsEntryRetryLimit)).append("\n");
         sb.append("    updateDnsEntryTimeout: ").append(toIndentedString(updateDnsEntryTimeout)).append("\n");
         sb.append("    upgradeDnsTtl: ").append(toIndentedString(upgradeDnsTtl)).append("\n");
-        sb.append("    upgradeFatSeLeaseTime: ").append(toIndentedString(upgradeFatSeLeaseTime)).append("\n");
-        sb.append("    upgradeLeaseTime: ").append(toIndentedString(upgradeLeaseTime)).append("\n");
         sb.append("    upgradeSePerVsScaleOpsTxnTime: ").append(toIndentedString(upgradeSePerVsScaleOpsTxnTime)).append("\n");
             sb.append("    userAgentCacheConfig: ").append(toIndentedString(userAgentCacheConfig)).append("\n");
         sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");

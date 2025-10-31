@@ -66,7 +66,6 @@ public class Constants {
     public static final String FINDER_VRO_APPINFO = "AppInfo";
     public static final String FINDER_VRO_APPINSIGHTSDETAILS = "AppInsightsDetails";
     public static final String FINDER_VRO_APPLEARNINGCONFIDENCEOVERRIDE = "AppLearningConfidenceOverride";
-    public static final String FINDER_VRO_APPLEARNINGPARAMS = "AppLearningParams";
     public static final String FINDER_VRO_APPQUOTACONFIG = "AppQuotaConfig";
     public static final String FINDER_VRO_APPSIGNATURECONFIG = "AppSignatureConfig";
     public static final String FINDER_VRO_APPSIGNATUREEVENTDATA = "AppSignatureEventData";

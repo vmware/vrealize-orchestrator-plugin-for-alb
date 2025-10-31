@@ -40,10 +40,6 @@ public class TechSupportMessage extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String url = "url";
 
-    @JsonProperty("uuid")
-    @JsonInclude(Include.NON_NULL)
-    private String uuid;
-
 
 
   /**
@@ -151,32 +147,6 @@ public class TechSupportMessage extends AviRestResource {
     this.url = url;
   }
 
-  /**
-   * This is the getter method this will return the attribute value.
-   * Uuid for techsupport message.
-   * Field deprecated in 31.2.1.
-   * Field introduced in 18.2.3.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @return uuid
-   */
-  @VsoMethod
-  public String getUuid() {
-    return uuid;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Uuid for techsupport message.
-   * Field deprecated in 31.2.1.
-   * Field introduced in 18.2.3.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @param uuid set the uuid.
-   */
-  @VsoMethod
-  public void setUuid(String  uuid) {
-    this.uuid = uuid;
-  }
-
 
   public String getObjectID() {
     return "TechSupportMessage" + "(" + uuid + ")";
@@ -191,8 +161,7 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   TechSupportMessage objTechSupportMessage = (TechSupportMessage) o;
-  return   Objects.equals(this.uuid, objTechSupportMessage.uuid)&&
-  Objects.equals(this.status, objTechSupportMessage.status)&&
+  return   Objects.equals(this.status, objTechSupportMessage.status)&&
   Objects.equals(this.statusCode, objTechSupportMessage.statusCode)&&
   Objects.equals(this.techSupportRef, objTechSupportMessage.techSupportRef);
 }
@@ -204,8 +173,7 @@ public String toString() {
       sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    statusCode: ").append(toIndentedString(statusCode)).append("\n");
         sb.append("    techSupportRef: ").append(toIndentedString(techSupportRef)).append("\n");
-            sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-      sb.append("}");
+          sb.append("}");
   return sb.toString();
 }
 
