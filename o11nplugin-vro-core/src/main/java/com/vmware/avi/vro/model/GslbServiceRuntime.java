@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.vmware.avi.vro.model.CfgState;
 import com.vmware.avi.vro.model.OperationalStatus;
 import com.vmware.avi.vro.model.CfgState;
 import com.vmware.avi.vro.model.OperationalStatus;
@@ -28,10 +27,6 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GslbServiceRuntime extends AviRestResource {
-    @JsonProperty("checksum")
-    @JsonInclude(Include.NON_NULL)
-    private String checksum;
-
     @JsonProperty("cluster_uuid")
     @JsonInclude(Include.NON_NULL)
     private String clusterUuid;
@@ -40,17 +35,9 @@ public class GslbServiceRuntime extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private List<String> domainNames;
 
-    @JsonProperty("flr_state")
-    @JsonInclude(Include.NON_NULL)
-    private List<CfgState> flrState;
-
     @JsonProperty("groups")
     @JsonInclude(Include.NON_NULL)
     private List<GslbPoolRuntime> groups;
-
-    @JsonProperty("ldr_state")
-    @JsonInclude(Include.NON_NULL)
-    private CfgState ldrState;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
@@ -97,30 +84,6 @@ public class GslbServiceRuntime extends AviRestResource {
     private String uuid;
 
 
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Field deprecated in 31.1.1.
-   * Field introduced in 17.1.3.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @return checksum
-   */
-  @VsoMethod
-  public String getChecksum() {
-    return checksum;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Field deprecated in 31.1.1.
-   * Field introduced in 17.1.3.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @param checksum set the checksum.
-   */
-  @VsoMethod
-  public void setChecksum(String  checksum) {
-    this.checksum = checksum;
-  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -194,44 +157,6 @@ public class GslbServiceRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Field deprecated in 31.1.1.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @return flrState
-   */
-  @VsoMethod
-  public List<CfgState> getFlrState() {
-    return flrState;
-  }
-
-  /**
-   * This is the setter method. this will set the flrState
-   * Field deprecated in 31.1.1.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @return flrState
-   */
-  @VsoMethod
-  public void setFlrState(List<CfgState>  flrState) {
-    this.flrState = flrState;
-  }
-
-  /**
-   * This is the setter method this will set the flrState
-   * Field deprecated in 31.1.1.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @return flrState
-   */
-  @VsoMethod
-  public GslbServiceRuntime addFlrStateItem(CfgState flrStateItem) {
-    if (this.flrState == null) {
-      this.flrState = new ArrayList<CfgState>();
-    }
-    this.flrState.add(flrStateItem);
-    return this;
-  }
-
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return groups
@@ -267,28 +192,6 @@ public class GslbServiceRuntime extends AviRestResource {
     return this;
   }
 
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Field deprecated in 31.1.1.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @return ldrState
-   */
-  @VsoMethod
-  public CfgState getLdrState() {
-    return ldrState;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Field deprecated in 31.1.1.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @param ldrState set the ldrState.
-   */
-  @VsoMethod
-  public void setLdrState(CfgState ldrState) {
-    this.ldrState = ldrState;
-  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -569,13 +472,10 @@ public boolean equals(java.lang.Object o) {
   GslbServiceRuntime objGslbServiceRuntime = (GslbServiceRuntime) o;
   return   Objects.equals(this.uuid, objGslbServiceRuntime.uuid)&&
   Objects.equals(this.name, objGslbServiceRuntime.name)&&
-  Objects.equals(this.ldrState, objGslbServiceRuntime.ldrState)&&
-  Objects.equals(this.flrState, objGslbServiceRuntime.flrState)&&
   Objects.equals(this.operStatus, objGslbServiceRuntime.operStatus)&&
   Objects.equals(this.groups, objGslbServiceRuntime.groups)&&
   Objects.equals(this.servicesState, objGslbServiceRuntime.servicesState)&&
   Objects.equals(this.tenantName, objGslbServiceRuntime.tenantName)&&
-  Objects.equals(this.checksum, objGslbServiceRuntime.checksum)&&
   Objects.equals(this.spOperStatus, objGslbServiceRuntime.spOperStatus)&&
   Objects.equals(this.domainNames, objGslbServiceRuntime.domainNames)&&
   Objects.equals(this.clusterUuid, objGslbServiceRuntime.clusterUuid)&&
@@ -590,12 +490,9 @@ public boolean equals(java.lang.Object o) {
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class GslbServiceRuntime {\n");
-      sb.append("    checksum: ").append(toIndentedString(checksum)).append("\n");
-        sb.append("    clusterUuid: ").append(toIndentedString(clusterUuid)).append("\n");
+      sb.append("    clusterUuid: ").append(toIndentedString(clusterUuid)).append("\n");
         sb.append("    domainNames: ").append(toIndentedString(domainNames)).append("\n");
-        sb.append("    flrState: ").append(toIndentedString(flrState)).append("\n");
         sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
-        sb.append("    ldrState: ").append(toIndentedString(ldrState)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    objUuid: ").append(toIndentedString(objUuid)).append("\n");
         sb.append("    operStatus: ").append(toIndentedString(operStatus)).append("\n");

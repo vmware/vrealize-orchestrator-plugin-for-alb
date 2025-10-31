@@ -54,7 +54,7 @@ public class CertJwtStore extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Jwt containing current portal certificate along with the full certificate bundle chain, signed by the private key of previous portal certificate.
-   * Field introduced in 31.3.1.
+   * Field introduced in 32.1.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return jwt
@@ -67,7 +67,7 @@ public class CertJwtStore extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Jwt containing current portal certificate along with the full certificate bundle chain, signed by the private key of previous portal certificate.
-   * Field introduced in 31.3.1.
+   * Field introduced in 32.1.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param jwt set the jwt.
@@ -80,7 +80,7 @@ public class CertJwtStore extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Sha256 thumbprint of the previous old portal certificate.
-   * Field introduced in 31.3.1.
+   * Field introduced in 32.1.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return kid
@@ -93,7 +93,7 @@ public class CertJwtStore extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Sha256 thumbprint of the previous old portal certificate.
-   * Field introduced in 31.3.1.
+   * Field introduced in 32.1.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param kid set the kid.
@@ -106,7 +106,7 @@ public class CertJwtStore extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Timestamp of certificate rotation.
-   * Field introduced in 31.3.1.
+   * Field introduced in 32.1.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lastRotatedAt
@@ -119,7 +119,7 @@ public class CertJwtStore extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Timestamp of certificate rotation.
-   * Field introduced in 31.3.1.
+   * Field introduced in 32.1.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lastRotatedAt set the lastRotatedAt.
@@ -132,7 +132,7 @@ public class CertJwtStore extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Public key algorithm.
-   * Field introduced in 31.3.1.
+   * Field introduced in 32.1.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return publicKeyAlgorithm
@@ -145,7 +145,7 @@ public class CertJwtStore extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Public key algorithm.
-   * Field introduced in 31.3.1.
+   * Field introduced in 32.1.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param publicKeyAlgorithm set the publicKeyAlgorithm.
@@ -177,7 +177,7 @@ public class CertJwtStore extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of jwt.
-   * Field introduced in 31.3.1.
+   * Field introduced in 32.1.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
@@ -190,7 +190,7 @@ public class CertJwtStore extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of jwt.
-   * Field introduced in 31.3.1.
+   * Field introduced in 32.1.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.

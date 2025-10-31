@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.vmware.avi.vro.model.AZDatastore;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -28,10 +27,6 @@ public class AvailabilityZone extends AviRestResource {
     @JsonProperty("az_clusters")
     @JsonInclude(Include.NON_NULL)
     private List<AZCluster> azClusters;
-
-    @JsonProperty("az_datastore")
-    @JsonInclude(Include.NON_NULL)
-    private AZDatastore azDatastore;
 
     @JsonProperty("az_datastores")
     @JsonInclude(Include.NON_NULL)
@@ -60,10 +55,6 @@ public class AvailabilityZone extends AviRestResource {
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
     private String uuid;
-
-    @JsonProperty("vcenter_refs")
-    @JsonInclude(Include.NON_NULL)
-    private List<String> vcenterRefs;
 
     @JsonProperty("vsphere_zones")
     @JsonInclude(Include.NON_NULL)
@@ -114,32 +105,6 @@ public class AvailabilityZone extends AviRestResource {
     return this;
   }
 
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Group of datastores associated with the az.
-   * Field deprecated in 31.2.1.
-   * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * @return azDatastore
-   */
-  @VsoMethod
-  public AZDatastore getAzDatastore() {
-    return azDatastore;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Group of datastores associated with the az.
-   * Field deprecated in 31.2.1.
-   * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * @param azDatastore set the azDatastore.
-   */
-  @VsoMethod
-  public void setAzDatastore(AZDatastore azDatastore) {
-    this.azDatastore = azDatastore;
-  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -358,58 +323,8 @@ public class AvailabilityZone extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Group of vcenter list belong to availabilty zone.
-   * It is a reference to an object of type vcenterserver.
-   * Field deprecated in 31.1.1.
-   * Field introduced in 20.1.1.
-   * Minimum of 1 items required.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @return vcenterRefs
-   */
-  @VsoMethod
-  public List<String> getVcenterRefs() {
-    return vcenterRefs;
-  }
-
-  /**
-   * This is the setter method. this will set the vcenterRefs
-   * Group of vcenter list belong to availabilty zone.
-   * It is a reference to an object of type vcenterserver.
-   * Field deprecated in 31.1.1.
-   * Field introduced in 20.1.1.
-   * Minimum of 1 items required.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @return vcenterRefs
-   */
-  @VsoMethod
-  public void setVcenterRefs(List<String>  vcenterRefs) {
-    this.vcenterRefs = vcenterRefs;
-  }
-
-  /**
-   * This is the setter method this will set the vcenterRefs
-   * Group of vcenter list belong to availabilty zone.
-   * It is a reference to an object of type vcenterserver.
-   * Field deprecated in 31.1.1.
-   * Field introduced in 20.1.1.
-   * Minimum of 1 items required.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @return vcenterRefs
-   */
-  @VsoMethod
-  public AvailabilityZone addVcenterRefsItem(String vcenterRefsItem) {
-    if (this.vcenterRefs == null) {
-      this.vcenterRefs = new ArrayList<String>();
-    }
-    this.vcenterRefs.add(vcenterRefsItem);
-    return this;
-  }
-
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Vsphere zone associated with the az.
-   * Field introduced in 31.3.1.
+   * Field introduced in 32.1.1.
    * Maximum of 1 items allowed.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -423,7 +338,7 @@ public class AvailabilityZone extends AviRestResource {
   /**
    * This is the setter method. this will set the vsphereZones
    * Vsphere zone associated with the az.
-   * Field introduced in 31.3.1.
+   * Field introduced in 32.1.1.
    * Maximum of 1 items allowed.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -437,7 +352,7 @@ public class AvailabilityZone extends AviRestResource {
   /**
    * This is the setter method this will set the vsphereZones
    * Vsphere zone associated with the az.
-   * Field introduced in 31.3.1.
+   * Field introduced in 32.1.1.
    * Maximum of 1 items allowed.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -469,11 +384,9 @@ public boolean equals(java.lang.Object o) {
   AvailabilityZone objAvailabilityZone = (AvailabilityZone) o;
   return   Objects.equals(this.uuid, objAvailabilityZone.uuid)&&
   Objects.equals(this.name, objAvailabilityZone.name)&&
-  Objects.equals(this.vcenterRefs, objAvailabilityZone.vcenterRefs)&&
   Objects.equals(this.tenantRef, objAvailabilityZone.tenantRef)&&
   Objects.equals(this.cloudRef, objAvailabilityZone.cloudRef)&&
   Objects.equals(this.azClusters, objAvailabilityZone.azClusters)&&
-  Objects.equals(this.azDatastore, objAvailabilityZone.azDatastore)&&
   Objects.equals(this.azHosts, objAvailabilityZone.azHosts)&&
   Objects.equals(this.azDatastores, objAvailabilityZone.azDatastores)&&
   Objects.equals(this.vsphereZones, objAvailabilityZone.vsphereZones);
@@ -484,14 +397,12 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class AvailabilityZone {\n");
       sb.append("    azClusters: ").append(toIndentedString(azClusters)).append("\n");
-        sb.append("    azDatastore: ").append(toIndentedString(azDatastore)).append("\n");
         sb.append("    azDatastores: ").append(toIndentedString(azDatastores)).append("\n");
         sb.append("    azHosts: ").append(toIndentedString(azHosts)).append("\n");
         sb.append("    cloudRef: ").append(toIndentedString(cloudRef)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
             sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-        sb.append("    vcenterRefs: ").append(toIndentedString(vcenterRefs)).append("\n");
         sb.append("    vsphereZones: ").append(toIndentedString(vsphereZones)).append("\n");
       sb.append("}");
   return sb.toString();

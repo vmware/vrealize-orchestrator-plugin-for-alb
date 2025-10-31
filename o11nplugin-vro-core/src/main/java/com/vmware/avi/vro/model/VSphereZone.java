@@ -38,7 +38,7 @@ public class VSphereZone extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The uuid of the vcenter server where the vsphere zone belongs.
    * It is a reference to an object of type vcenterserver.
-   * Field introduced in 31.3.1.
+   * Field introduced in 32.1.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterRef
@@ -52,7 +52,7 @@ public class VSphereZone extends AviRestResource {
    * This is the setter method to the attribute.
    * The uuid of the vcenter server where the vsphere zone belongs.
    * It is a reference to an object of type vcenterserver.
-   * Field introduced in 31.3.1.
+   * Field introduced in 32.1.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcenterRef set the vcenterRef.
@@ -65,7 +65,7 @@ public class VSphereZone extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the vsphere zone in vcenter.
-   * Field introduced in 31.3.1.
+   * Field introduced in 32.1.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return zoneName
@@ -78,7 +78,7 @@ public class VSphereZone extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the vsphere zone in vcenter.
-   * Field introduced in 31.3.1.
+   * Field introduced in 32.1.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param zoneName set the zoneName.

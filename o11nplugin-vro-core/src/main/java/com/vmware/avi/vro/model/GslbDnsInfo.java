@@ -6,7 +6,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.SeResources;
-import com.vmware.avi.vro.model.GslbDnsGsStatus;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -37,14 +36,6 @@ public class GslbDnsInfo extends AviRestResource {
     @JsonProperty("dns_vs_states")
     @JsonInclude(Include.NON_NULL)
     private List<GslbPerDnsState> dnsVsStates;
-
-    @JsonProperty("gs_status")
-    @JsonInclude(Include.NON_NULL)
-    private GslbDnsGsStatus gsStatus;
-
-    @JsonProperty("retry_count")
-    @JsonInclude(Include.NON_NULL)
-    private Integer retryCount;
 
 
 
@@ -136,58 +127,6 @@ public class GslbDnsInfo extends AviRestResource {
   }
 
 
-  /**
-   * This is the getter method this will return the attribute value.
-   * This field encapsulates the gs-status edge-triggered framework.
-   * Field deprecated in 31.1.1.
-   * Field introduced in 17.1.1.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @return gsStatus
-   */
-  @VsoMethod
-  public GslbDnsGsStatus getGsStatus() {
-    return gsStatus;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * This field encapsulates the gs-status edge-triggered framework.
-   * Field deprecated in 31.1.1.
-   * Field introduced in 17.1.1.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @param gsStatus set the gsStatus.
-   */
-  @VsoMethod
-  public void setGsStatus(GslbDnsGsStatus gsStatus) {
-    this.gsStatus = gsStatus;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * This field is used to track the retry attempts for se download errors.
-   * Field deprecated in 31.1.1.
-   * Field introduced in 17.1.1.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @return retryCount
-   */
-  @VsoMethod
-  public Integer getRetryCount() {
-    return retryCount;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * This field is used to track the retry attempts for se download errors.
-   * Field deprecated in 31.1.1.
-   * Field introduced in 17.1.1.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @param retryCount set the retryCount.
-   */
-  @VsoMethod
-  public void setRetryCount(Integer  retryCount) {
-    this.retryCount = retryCount;
-  }
-
 
 
 @Override
@@ -201,8 +140,6 @@ public boolean equals(java.lang.Object o) {
   GslbDnsInfo objGslbDnsInfo = (GslbDnsInfo) o;
   return   Objects.equals(this.dnsActive, objGslbDnsInfo.dnsActive)&&
   Objects.equals(this.dnsVsStates, objGslbDnsInfo.dnsVsStates)&&
-  Objects.equals(this.gsStatus, objGslbDnsInfo.gsStatus)&&
-  Objects.equals(this.retryCount, objGslbDnsInfo.retryCount)&&
   Objects.equals(this.dnsSeResource, objGslbDnsInfo.dnsSeResource);
 }
 
@@ -213,8 +150,6 @@ public String toString() {
       sb.append("    dnsActive: ").append(toIndentedString(dnsActive)).append("\n");
         sb.append("    dnsSeResource: ").append(toIndentedString(dnsSeResource)).append("\n");
         sb.append("    dnsVsStates: ").append(toIndentedString(dnsVsStates)).append("\n");
-        sb.append("    gsStatus: ").append(toIndentedString(gsStatus)).append("\n");
-        sb.append("    retryCount: ").append(toIndentedString(retryCount)).append("\n");
       sb.append("}");
   return sb.toString();
 }

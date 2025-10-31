@@ -53,7 +53,7 @@ public class TenantBinding extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the tenant binding.
-   * Field introduced in 31.3.1.
+   * Field introduced in 32.1.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
@@ -66,7 +66,7 @@ public class TenantBinding extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the tenant binding.
-   * Field introduced in 31.3.1.
+   * Field introduced in 32.1.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
@@ -80,7 +80,7 @@ public class TenantBinding extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the service engine group being shared.
    * It is a reference to an object of type serviceenginegroup.
-   * Field introduced in 31.3.1.
+   * Field introduced in 32.1.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGroupRef
@@ -94,7 +94,7 @@ public class TenantBinding extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the service engine group being shared.
    * It is a reference to an object of type serviceenginegroup.
-   * Field introduced in 31.3.1.
+   * Field introduced in 32.1.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seGroupRef set the seGroupRef.
@@ -108,7 +108,7 @@ public class TenantBinding extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the tenant to which the object is being shared.
    * It is a reference to an object of type tenant.
-   * Field introduced in 31.3.1.
+   * Field introduced in 32.1.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sharedTenantRef
@@ -122,7 +122,7 @@ public class TenantBinding extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the tenant to which the object is being shared.
    * It is a reference to an object of type tenant.
-   * Field introduced in 31.3.1.
+   * Field introduced in 32.1.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sharedTenantRef set the sharedTenantRef.
@@ -137,7 +137,7 @@ public class TenantBinding extends AviRestResource {
    * Tenant uuid.
    * This field is used for admin tenant context.
    * It is a reference to an object of type tenant.
-   * Field introduced in 31.3.1.
+   * Field introduced in 32.1.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
@@ -152,7 +152,7 @@ public class TenantBinding extends AviRestResource {
    * Tenant uuid.
    * This field is used for admin tenant context.
    * It is a reference to an object of type tenant.
-   * Field introduced in 31.3.1.
+   * Field introduced in 32.1.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
@@ -184,7 +184,7 @@ public class TenantBinding extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the tenant binding.
-   * Field introduced in 31.3.1.
+   * Field introduced in 32.1.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
@@ -197,7 +197,7 @@ public class TenantBinding extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the tenant binding.
-   * Field introduced in 31.3.1.
+   * Field introduced in 32.1.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.

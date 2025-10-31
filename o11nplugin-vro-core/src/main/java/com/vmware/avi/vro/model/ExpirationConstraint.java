@@ -36,7 +36,7 @@ public class ExpirationConstraint extends AviRestResource {
    * Defaults to 365 days.
    * Allowed values are 30-730.
    * Special values are 0- no password expiry.
-   * Field introduced in 31.3.1.
+   * Field introduced in 32.1.1.
    * Unit is days.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 365.
@@ -53,7 +53,7 @@ public class ExpirationConstraint extends AviRestResource {
    * Defaults to 365 days.
    * Allowed values are 30-730.
    * Special values are 0- no password expiry.
-   * Field introduced in 31.3.1.
+   * Field introduced in 32.1.1.
    * Unit is days.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 365.

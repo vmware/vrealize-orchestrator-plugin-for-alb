@@ -24,43 +24,11 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ReplicationPolicy extends AviRestResource {
-    @JsonProperty("checkpoint_uuid")
-    @JsonInclude(Include.NON_NULL)
-    private String checkpointUuid;
-
     @JsonProperty("replication_mode")
     @JsonInclude(Include.NON_NULL)
     private String replicationMode = "REPLICATION_MODE_CONTINUOUS";
 
 
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Leader's checkpoint.
-   * Follower attempt to replicate configuration till this checkpoint.
-   * Field deprecated in 31.2.1.
-   * Field introduced in 20.1.1.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @return checkpointUuid
-   */
-  @VsoMethod
-  public String getCheckpointUuid() {
-    return checkpointUuid;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Leader's checkpoint.
-   * Follower attempt to replicate configuration till this checkpoint.
-   * Field deprecated in 31.2.1.
-   * Field introduced in 20.1.1.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @param checkpointUuid set the checkpointUuid.
-   */
-  @VsoMethod
-  public void setCheckpointUuid(String  checkpointUuid) {
-    this.checkpointUuid = checkpointUuid;
-  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -101,16 +69,14 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   ReplicationPolicy objReplicationPolicy = (ReplicationPolicy) o;
-  return   Objects.equals(this.replicationMode, objReplicationPolicy.replicationMode)&&
-  Objects.equals(this.checkpointUuid, objReplicationPolicy.checkpointUuid);
+  return   Objects.equals(this.replicationMode, objReplicationPolicy.replicationMode);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class ReplicationPolicy {\n");
-      sb.append("    checkpointUuid: ").append(toIndentedString(checkpointUuid)).append("\n");
-        sb.append("    replicationMode: ").append(toIndentedString(replicationMode)).append("\n");
+      sb.append("    replicationMode: ").append(toIndentedString(replicationMode)).append("\n");
       sb.append("}");
   return sb.toString();
 }

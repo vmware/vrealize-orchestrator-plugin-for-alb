@@ -25,43 +25,11 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class PoolAnalyticsPolicy extends AviRestResource {
-    @JsonProperty("enable_realtime_metrics")
-    @JsonInclude(Include.NON_NULL)
-    private Boolean enableRealtimeMetrics;
-
     @JsonProperty("metrics_realtime_update")
     @JsonInclude(Include.NON_NULL)
     private MetricsRealTimeUpdate metricsRealtimeUpdate;
 
 
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Enable real time metrics for server and pool metrics eg.
-   * L4_server.xxx, l7_server.xxx.
-   * Field deprecated in 31.1.1.
-   * Field introduced in 18.1.5, 18.2.1.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @return enableRealtimeMetrics
-   */
-  @VsoMethod
-  public Boolean getEnableRealtimeMetrics() {
-    return enableRealtimeMetrics;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Enable real time metrics for server and pool metrics eg.
-   * L4_server.xxx, l7_server.xxx.
-   * Field deprecated in 31.1.1.
-   * Field introduced in 18.1.5, 18.2.1.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @param enableRealtimeMetrics set the enableRealtimeMetrics.
-   */
-  @VsoMethod
-  public void setEnableRealtimeMetrics(Boolean  enableRealtimeMetrics) {
-    this.enableRealtimeMetrics = enableRealtimeMetrics;
-  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -100,16 +68,14 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   PoolAnalyticsPolicy objPoolAnalyticsPolicy = (PoolAnalyticsPolicy) o;
-  return   Objects.equals(this.enableRealtimeMetrics, objPoolAnalyticsPolicy.enableRealtimeMetrics)&&
-  Objects.equals(this.metricsRealtimeUpdate, objPoolAnalyticsPolicy.metricsRealtimeUpdate);
+  return   Objects.equals(this.metricsRealtimeUpdate, objPoolAnalyticsPolicy.metricsRealtimeUpdate);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class PoolAnalyticsPolicy {\n");
-      sb.append("    enableRealtimeMetrics: ").append(toIndentedString(enableRealtimeMetrics)).append("\n");
-        sb.append("    metricsRealtimeUpdate: ").append(toIndentedString(metricsRealtimeUpdate)).append("\n");
+      sb.append("    metricsRealtimeUpdate: ").append(toIndentedString(metricsRealtimeUpdate)).append("\n");
       sb.append("}");
   return sb.toString();
 }

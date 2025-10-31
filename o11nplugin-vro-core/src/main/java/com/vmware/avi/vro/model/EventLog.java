@@ -77,10 +77,6 @@ public class EventLog extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String objUuid;
 
-    @JsonProperty("reason_code")
-    @JsonInclude(Include.NON_NULL)
-    private String reasonCode;
-
     @JsonProperty("related_uuids")
     @JsonInclude(Include.NON_NULL)
     private List<String> relatedUuids;
@@ -430,38 +426,6 @@ public class EventLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Reason code for generating the event.
-   * This would be added to the alert where it would say alert generated  on event with reason <reason code>.
-   * Enum options - SYSERR_SUCCESS, SYSERR_FAILURE, SYSERR_OUT_OF_MEMORY, SYSERR_NO_ENT, SYSERR_INVAL, SYSERR_ACCESS, SYSERR_FAULT, SYSERR_IO,
-   * SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN,
-   * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_FAILED...
-   * Field deprecated in 31.1.1.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @return reasonCode
-   */
-  @VsoMethod
-  public String getReasonCode() {
-    return reasonCode;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Reason code for generating the event.
-   * This would be added to the alert where it would say alert generated  on event with reason <reason code>.
-   * Enum options - SYSERR_SUCCESS, SYSERR_FAILURE, SYSERR_OUT_OF_MEMORY, SYSERR_NO_ENT, SYSERR_INVAL, SYSERR_ACCESS, SYSERR_FAULT, SYSERR_IO,
-   * SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN,
-   * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_FAILED...
-   * Field deprecated in 31.1.1.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @param reasonCode set the reasonCode.
-   */
-  @VsoMethod
-  public void setReasonCode(String  reasonCode) {
-    this.reasonCode = reasonCode;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Related objects corresponding to the events.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -588,7 +552,6 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.context, objEventLog.context)&&
   Objects.equals(this.objUuid, objEventLog.objUuid)&&
   Objects.equals(this.objName, objEventLog.objName)&&
-  Objects.equals(this.reasonCode, objEventLog.reasonCode)&&
   Objects.equals(this.eventDetails, objEventLog.eventDetails)&&
   Objects.equals(this.detailsSummary, objEventLog.detailsSummary)&&
   Objects.equals(this.relatedUuids, objEventLog.relatedUuids)&&
@@ -617,7 +580,6 @@ public String toString() {
         sb.append("    objName: ").append(toIndentedString(objName)).append("\n");
         sb.append("    objType: ").append(toIndentedString(objType)).append("\n");
         sb.append("    objUuid: ").append(toIndentedString(objUuid)).append("\n");
-        sb.append("    reasonCode: ").append(toIndentedString(reasonCode)).append("\n");
         sb.append("    relatedUuids: ").append(toIndentedString(relatedUuids)).append("\n");
         sb.append("    reportTimestamp: ").append(toIndentedString(reportTimestamp)).append("\n");
         sb.append("    tenant: ").append(toIndentedString(tenant)).append("\n");

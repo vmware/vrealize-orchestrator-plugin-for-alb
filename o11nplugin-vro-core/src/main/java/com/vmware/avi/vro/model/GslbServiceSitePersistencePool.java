@@ -44,10 +44,6 @@ public class GslbServiceSitePersistencePool extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private List<ServerRuntimeSummary> serverInfo;
 
-    @JsonProperty("servers")
-    @JsonInclude(Include.NON_NULL)
-    private List<ServerConfig> servers;
-
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
     private String uuid;
@@ -204,50 +200,6 @@ public class GslbServiceSitePersistencePool extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Detailed information of the servers in the pool.
-   * Field deprecated in 31.1.1.
-   * Field introduced in 17.2.8.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @return servers
-   */
-  @VsoMethod
-  public List<ServerConfig> getServers() {
-    return servers;
-  }
-
-  /**
-   * This is the setter method. this will set the servers
-   * Detailed information of the servers in the pool.
-   * Field deprecated in 31.1.1.
-   * Field introduced in 17.2.8.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @return servers
-   */
-  @VsoMethod
-  public void setServers(List<ServerConfig>  servers) {
-    this.servers = servers;
-  }
-
-  /**
-   * This is the setter method this will set the servers
-   * Detailed information of the servers in the pool.
-   * Field deprecated in 31.1.1.
-   * Field introduced in 17.2.8.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @return servers
-   */
-  @VsoMethod
-  public GslbServiceSitePersistencePool addServersItem(ServerConfig serversItem) {
-    if (this.servers == null) {
-      this.servers = new ArrayList<ServerConfig>();
-    }
-    this.servers.add(serversItem);
-    return this;
-  }
-
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Site persistence pool's uuid.
    * Field introduced in 17.2.2.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -287,7 +239,6 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.name, objGslbServiceSitePersistencePool.name)&&
   Objects.equals(this.numServers, objGslbServiceSitePersistencePool.numServers)&&
   Objects.equals(this.numServersUp, objGslbServiceSitePersistencePool.numServersUp)&&
-  Objects.equals(this.servers, objGslbServiceSitePersistencePool.servers)&&
   Objects.equals(this.enableHttp2, objGslbServiceSitePersistencePool.enableHttp2)&&
   Objects.equals(this.serverInfo, objGslbServiceSitePersistencePool.serverInfo);
 }
@@ -301,7 +252,6 @@ public String toString() {
         sb.append("    numServers: ").append(toIndentedString(numServers)).append("\n");
         sb.append("    numServersUp: ").append(toIndentedString(numServersUp)).append("\n");
         sb.append("    serverInfo: ").append(toIndentedString(serverInfo)).append("\n");
-        sb.append("    servers: ").append(toIndentedString(servers)).append("\n");
         sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
       sb.append("}");
   return sb.toString();

@@ -108,7 +108,7 @@ public class UserAccountProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Password complexity constraints for the user account profile.
-   * Field introduced in 31.3.1.
+   * Field introduced in 32.1.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return complexityConstraint
@@ -121,7 +121,7 @@ public class UserAccountProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Password complexity constraints for the user account profile.
-   * Field introduced in 31.3.1.
+   * Field introduced in 32.1.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param complexityConstraint set the complexityConstraint.
@@ -162,7 +162,7 @@ public class UserAccountProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Password expiration settings for the user account profile.
-   * Field introduced in 31.3.1.
+   * Field introduced in 32.1.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return expirationConstraint
@@ -175,7 +175,7 @@ public class UserAccountProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Password expiration settings for the user account profile.
-   * Field introduced in 31.3.1.
+   * Field introduced in 32.1.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param expirationConstraint set the expirationConstraint.
@@ -188,7 +188,7 @@ public class UserAccountProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Account lockout settings for the user account profile.
-   * Field introduced in 31.3.1.
+   * Field introduced in 32.1.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lockoutConstraint
@@ -201,7 +201,7 @@ public class UserAccountProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Account lockout settings for the user account profile.
-   * Field introduced in 31.3.1.
+   * Field introduced in 32.1.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lockoutConstraint set the lockoutConstraint.

@@ -9,7 +9,6 @@ import com.vmware.avi.vro.model.AzureServicePrincipalCredentials;
 import com.vmware.avi.vro.model.AzureUserPassCredentials;
 import com.vmware.avi.vro.model.GCPCredentials;
 import com.vmware.avi.vro.model.NsxtCredentials;
-import com.vmware.avi.vro.model.OCICredentials;
 import com.vmware.avi.vro.model.TencentCredentials;
 import com.vmware.avi.vro.model.VCenterCredentials;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
@@ -50,10 +49,6 @@ public class CloudConnectorUser extends AviRestResource {
     @JsonProperty("nsxt_credentials")
     @JsonInclude(Include.NON_NULL)
     private NsxtCredentials nsxtCredentials;
-
-    @JsonProperty("oci_credentials")
-    @JsonInclude(Include.NON_NULL)
-    private OCICredentials ociCredentials;
 
     @JsonProperty("password")
     @JsonInclude(Include.NON_NULL)
@@ -209,32 +204,6 @@ public class CloudConnectorUser extends AviRestResource {
   @VsoMethod
   public void setNsxtCredentials(NsxtCredentials nsxtCredentials) {
     this.nsxtCredentials = nsxtCredentials;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Credentials for oracle cloud infrastructure.
-   * Field deprecated in 31.1.1.
-   * Field introduced in 18.2.1,18.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * @return ociCredentials
-   */
-  @VsoMethod
-  public OCICredentials getOciCredentials() {
-    return ociCredentials;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Credentials for oracle cloud infrastructure.
-   * Field deprecated in 31.1.1.
-   * Field introduced in 18.2.1,18.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * @param ociCredentials set the ociCredentials.
-   */
-  @VsoMethod
-  public void setOciCredentials(OCICredentials ociCredentials) {
-    this.ociCredentials = ociCredentials;
   }
 
   /**
@@ -441,7 +410,6 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.password, objCloudConnectorUser.password)&&
   Objects.equals(this.azureUserpass, objCloudConnectorUser.azureUserpass)&&
   Objects.equals(this.azureServiceprincipal, objCloudConnectorUser.azureServiceprincipal)&&
-  Objects.equals(this.ociCredentials, objCloudConnectorUser.ociCredentials)&&
   Objects.equals(this.gcpCredentials, objCloudConnectorUser.gcpCredentials)&&
   Objects.equals(this.tencentCredentials, objCloudConnectorUser.tencentCredentials)&&
   Objects.equals(this.nsxtCredentials, objCloudConnectorUser.nsxtCredentials)&&
@@ -458,7 +426,6 @@ public String toString() {
         sb.append("    gcpCredentials: ").append(toIndentedString(gcpCredentials)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    nsxtCredentials: ").append(toIndentedString(nsxtCredentials)).append("\n");
-        sb.append("    ociCredentials: ").append(toIndentedString(ociCredentials)).append("\n");
         sb.append("    password: ").append(toIndentedString(password)).append("\n");
         sb.append("    privateKey: ").append(toIndentedString(privateKey)).append("\n");
         sb.append("    publicKey: ").append(toIndentedString(publicKey)).append("\n");
