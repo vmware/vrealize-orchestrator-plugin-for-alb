@@ -868,6 +868,7 @@ public class Constants {
     public static final String FINDER_VRO_REBALANCESCALEOUTEVENTDETAILS = "RebalanceScaleoutEventDetails";
     public static final String FINDER_VRO_REBOOTDATA = "RebootData";
     public static final String FINDER_VRO_REMOTEAUTHCONFIGURATION = "RemoteAuthConfiguration";
+    public static final String FINDER_VRO_REMOTECONTROLLER = "RemoteController";
     public static final String FINDER_VRO_REMOTEINFO = "RemoteInfo";
     public static final String FINDER_VRO_REPLACESTRINGVAR = "ReplaceStringVar";
     public static final String FINDER_VRO_REPLICATIONPOLICY = "ReplicationPolicy";

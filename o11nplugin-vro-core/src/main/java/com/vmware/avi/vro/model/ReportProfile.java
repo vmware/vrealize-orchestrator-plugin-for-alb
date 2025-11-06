@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.CollectionRules;
+import com.vmware.avi.vro.model.RemoteController;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -32,6 +33,10 @@ public class ReportProfile extends AviRestResource {
 
     @JsonIgnore
     private Integer maxConcurrentReports = 1;
+
+    @JsonProperty("remote_controller")
+    @JsonInclude(Include.NON_NULL)
+    private RemoteController remoteController;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -96,6 +101,34 @@ public class ReportProfile extends AviRestResource {
   public void setMaxConcurrentReports(Integer  maxConcurrentReports) {
     this.maxConcurrentReports = maxConcurrentReports;
   }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Remote controller request to enable report generation for remote controller.
+   * If enabled, the report generation will be done for the remote controller.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return remoteController
+   */
+  @VsoMethod
+  public RemoteController getRemoteController() {
+    return remoteController;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Remote controller request to enable report generation for remote controller.
+   * If enabled, the report generation will be done for the remote controller.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param remoteController set the remoteController.
+   */
+  @VsoMethod
+  public void setRemoteController(RemoteController remoteController) {
+    this.remoteController = remoteController;
+  }
 /**
    * This is the getter method this will return the attribute value.
    * Avi controller URL of the object.
@@ -158,7 +191,8 @@ public boolean equals(java.lang.Object o) {
   ReportProfile objReportProfile = (ReportProfile) o;
   return   Objects.equals(this.uuid, objReportProfile.uuid)&&
   Objects.equals(this.maxConcurrentReports, objReportProfile.maxConcurrentReports)&&
-  Objects.equals(this.collectionRules, objReportProfile.collectionRules);
+  Objects.equals(this.collectionRules, objReportProfile.collectionRules)&&
+  Objects.equals(this.remoteController, objReportProfile.remoteController);
 }
 
 @Override
@@ -167,6 +201,7 @@ public String toString() {
   sb.append("class ReportProfile {\n");
       sb.append("    collectionRules: ").append(toIndentedString(collectionRules)).append("\n");
         sb.append("    maxConcurrentReports: ").append(toIndentedString(maxConcurrentReports)).append("\n");
+        sb.append("    remoteController: ").append(toIndentedString(remoteController)).append("\n");
             sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
       sb.append("}");
   return sb.toString();
