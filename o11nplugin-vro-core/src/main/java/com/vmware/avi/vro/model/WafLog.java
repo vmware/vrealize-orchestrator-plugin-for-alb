@@ -446,7 +446,7 @@ public class WafLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * The total memory (in bytes) consumed by waf to process this request.
+   * The total memory consumed by waf to process this request.
    * Field introduced in 22.1.1.
    * Unit is bytes.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
@@ -460,7 +460,7 @@ public class WafLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * The total memory (in bytes) consumed by waf to process this request.
+   * The total memory consumed by waf to process this request.
    * Field introduced in 22.1.1.
    * Unit is bytes.
    * Allowed with any value in enterprise, enterprise with cloud services edition.

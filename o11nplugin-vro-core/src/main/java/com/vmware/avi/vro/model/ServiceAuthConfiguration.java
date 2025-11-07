@@ -24,19 +24,75 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ServiceAuthConfiguration extends AviRestResource {
+    @JsonProperty("auth_mapping_profile_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String authMappingProfileRef;
+
+    @JsonProperty("auth_profile_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String authProfileRef;
+
     @JsonProperty("index")
     @JsonInclude(Include.NON_NULL)
     private Integer index;
 
-    @JsonProperty("service_auth_mapping_profile_ref")
-    @JsonInclude(Include.NON_NULL)
-    private String serviceAuthMappingProfileRef;
-
-    @JsonProperty("service_auth_profile_ref")
-    @JsonInclude(Include.NON_NULL)
-    private String serviceAuthProfileRef;
 
 
+  /**
+   * This is the getter method this will return the attribute value.
+   * Uuid of the authmappingprofile(set of auth mapping rules) to be assigned to a user on successful match.
+   * It is a reference to an object of type authmappingprofile.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return authMappingProfileRef
+   */
+  @VsoMethod
+  public String getAuthMappingProfileRef() {
+    return authMappingProfileRef;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Uuid of the authmappingprofile(set of auth mapping rules) to be assigned to a user on successful match.
+   * It is a reference to an object of type authmappingprofile.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param authMappingProfileRef set the authMappingProfileRef.
+   */
+  @VsoMethod
+  public void setAuthMappingProfileRef(String  authMappingProfileRef) {
+    this.authMappingProfileRef = authMappingProfileRef;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Uuid of the authprofile.
+   * It is a reference to an object of type authprofile.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return authProfileRef
+   */
+  @VsoMethod
+  public String getAuthProfileRef() {
+    return authProfileRef;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Uuid of the authprofile.
+   * It is a reference to an object of type authprofile.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param authProfileRef set the authProfileRef.
+   */
+  @VsoMethod
+  public void setAuthProfileRef(String  authProfileRef) {
+    this.authProfileRef = authProfileRef;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -64,62 +120,6 @@ public class ServiceAuthConfiguration extends AviRestResource {
     this.index = index;
   }
 
-  /**
-   * This is the getter method this will return the attribute value.
-   * Uuid of the authmappingprofile(set of auth mapping rules) to be assigned to a user on successful match.
-   * It is a reference to an object of type authmappingprofile.
-   * Field introduced in 30.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return serviceAuthMappingProfileRef
-   */
-  @VsoMethod
-  public String getServiceAuthMappingProfileRef() {
-    return serviceAuthMappingProfileRef;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Uuid of the authmappingprofile(set of auth mapping rules) to be assigned to a user on successful match.
-   * It is a reference to an object of type authmappingprofile.
-   * Field introduced in 30.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param serviceAuthMappingProfileRef set the serviceAuthMappingProfileRef.
-   */
-  @VsoMethod
-  public void setServiceAuthMappingProfileRef(String  serviceAuthMappingProfileRef) {
-    this.serviceAuthMappingProfileRef = serviceAuthMappingProfileRef;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Uuid of the service auth profile.
-   * It is a reference to an object of type serviceauthprofile.
-   * Field introduced in 30.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return serviceAuthProfileRef
-   */
-  @VsoMethod
-  public String getServiceAuthProfileRef() {
-    return serviceAuthProfileRef;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Uuid of the service auth profile.
-   * It is a reference to an object of type serviceauthprofile.
-   * Field introduced in 30.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param serviceAuthProfileRef set the serviceAuthProfileRef.
-   */
-  @VsoMethod
-  public void setServiceAuthProfileRef(String  serviceAuthProfileRef) {
-    this.serviceAuthProfileRef = serviceAuthProfileRef;
-  }
-
 
 
 @Override
@@ -132,17 +132,17 @@ public boolean equals(java.lang.Object o) {
   }
   ServiceAuthConfiguration objServiceAuthConfiguration = (ServiceAuthConfiguration) o;
   return   Objects.equals(this.index, objServiceAuthConfiguration.index)&&
-  Objects.equals(this.serviceAuthProfileRef, objServiceAuthConfiguration.serviceAuthProfileRef)&&
-  Objects.equals(this.serviceAuthMappingProfileRef, objServiceAuthConfiguration.serviceAuthMappingProfileRef);
+  Objects.equals(this.authProfileRef, objServiceAuthConfiguration.authProfileRef)&&
+  Objects.equals(this.authMappingProfileRef, objServiceAuthConfiguration.authMappingProfileRef);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class ServiceAuthConfiguration {\n");
-      sb.append("    index: ").append(toIndentedString(index)).append("\n");
-        sb.append("    serviceAuthMappingProfileRef: ").append(toIndentedString(serviceAuthMappingProfileRef)).append("\n");
-        sb.append("    serviceAuthProfileRef: ").append(toIndentedString(serviceAuthProfileRef)).append("\n");
+      sb.append("    authMappingProfileRef: ").append(toIndentedString(authMappingProfileRef)).append("\n");
+        sb.append("    authProfileRef: ").append(toIndentedString(authProfileRef)).append("\n");
+        sb.append("    index: ").append(toIndentedString(index)).append("\n");
       sb.append("}");
   return sb.toString();
 }

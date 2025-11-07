@@ -182,6 +182,7 @@ public class Constants {
     public static final String FINDER_VRO_CERTIFICATEMANAGEMENTPROFILE = "CertificateManagementProfile";
     public static final String FINDER_VRO_CFGSTATE = "CfgState";
     public static final String FINDER_VRO_CHILDPROCESSINFO = "ChildProcessInfo";
+    public static final String FINDER_VRO_CLIENTCERTAUTHSETTINGS = "ClientCertAuthSettings";
     public static final String FINDER_VRO_CLIENTFINGERPRINTS = "ClientFingerprints";
     public static final String FINDER_VRO_CLIENTINSIGHTSSAMPLING = "ClientInsightsSampling";
     public static final String FINDER_VRO_CLIENTLOGCONFIGURATION = "ClientLogConfiguration";
@@ -867,6 +868,7 @@ public class Constants {
     public static final String FINDER_VRO_REBALANCESCALEOUTEVENTDETAILS = "RebalanceScaleoutEventDetails";
     public static final String FINDER_VRO_REBOOTDATA = "RebootData";
     public static final String FINDER_VRO_REMOTEAUTHCONFIGURATION = "RemoteAuthConfiguration";
+    public static final String FINDER_VRO_REMOTECONTROLLER = "RemoteController";
     public static final String FINDER_VRO_REMOTEINFO = "RemoteInfo";
     public static final String FINDER_VRO_REPLACESTRINGVAR = "ReplaceStringVar";
     public static final String FINDER_VRO_REPLICATIONPOLICY = "ReplicationPolicy";
