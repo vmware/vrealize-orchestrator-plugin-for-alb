@@ -68,10 +68,6 @@ public class PortalConfiguration extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean legacySslSupport = false;
 
-    @JsonProperty("minimum_password_length")
-    @JsonInclude(Include.NON_NULL)
-    private Integer minimumPasswordLength = 8;
-
     @JsonProperty("password_strength_check")
     @JsonInclude(Include.NON_NULL)
     private Boolean passwordStrengthCheck = false;
@@ -376,34 +372,6 @@ public class PortalConfiguration extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Minimum password length for user accounts.
-   * Allowed values are 6-32.
-   * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 8.
-   * @return minimumPasswordLength
-   */
-  @VsoMethod
-  public Integer getMinimumPasswordLength() {
-    return minimumPasswordLength;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Minimum password length for user accounts.
-   * Allowed values are 6-32.
-   * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 8.
-   * @param minimumPasswordLength set the minimumPasswordLength.
-   */
-  @VsoMethod
-  public void setMinimumPasswordLength(Integer  minimumPasswordLength) {
-    this.minimumPasswordLength = minimumPasswordLength;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Strict checking of password strength for user accounts.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
@@ -602,7 +570,6 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.disableRemoteCliShell, objPortalConfiguration.disableRemoteCliShell)&&
   Objects.equals(this.disableSwagger, objPortalConfiguration.disableSwagger)&&
   Objects.equals(this.apiForceTimeout, objPortalConfiguration.apiForceTimeout)&&
-  Objects.equals(this.minimumPasswordLength, objPortalConfiguration.minimumPasswordLength)&&
   Objects.equals(this.pkiprofileRef, objPortalConfiguration.pkiprofileRef)&&
   Objects.equals(this.legacySslSupport, objPortalConfiguration.legacySslSupport)&&
   Objects.equals(this.enableRateLimiter, objPortalConfiguration.enableRateLimiter);
@@ -623,7 +590,6 @@ public String toString() {
         sb.append("    httpPort: ").append(toIndentedString(httpPort)).append("\n");
         sb.append("    httpsPort: ").append(toIndentedString(httpsPort)).append("\n");
         sb.append("    legacySslSupport: ").append(toIndentedString(legacySslSupport)).append("\n");
-        sb.append("    minimumPasswordLength: ").append(toIndentedString(minimumPasswordLength)).append("\n");
         sb.append("    passwordStrengthCheck: ").append(toIndentedString(passwordStrengthCheck)).append("\n");
         sb.append("    pkiprofileRef: ").append(toIndentedString(pkiprofileRef)).append("\n");
         sb.append("    redirectToHttps: ").append(toIndentedString(redirectToHttps)).append("\n");

@@ -806,7 +806,6 @@ public class Constants {
     public static final String FINDER_VRO_PARAMTYPECLASS = "ParamTypeClass";
     public static final String FINDER_VRO_PARAMSINURI = "ParamsInURI";
     public static final String FINDER_VRO_PARTITIONINFO = "PartitionInfo";
-    public static final String FINDER_VRO_PASSWORDPOLICY = "PasswordPolicy";
     public static final String FINDER_VRO_PATCHCONTROLLERPARAMS = "PatchControllerParams";
     public static final String FINDER_VRO_PATCHDATA = "PatchData";
     public static final String FINDER_VRO_PATCHINFO = "PatchInfo";
