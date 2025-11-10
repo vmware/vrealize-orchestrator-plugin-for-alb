@@ -27,17 +27,9 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class UserAccountProfile extends AviRestResource {
-    @JsonProperty("account_lock_timeout")
-    @JsonInclude(Include.NON_NULL)
-    private Integer accountLockTimeout = 30;
-
     @JsonProperty("complexity_constraint")
     @JsonInclude(Include.NON_NULL)
     private ComplexityConstraint complexityConstraint;
-
-    @JsonProperty("credentials_timeout_threshold")
-    @JsonInclude(Include.NON_NULL)
-    private Integer credentialsTimeoutThreshold = 180;
 
     @JsonProperty("expiration_constraint")
     @JsonInclude(Include.NON_NULL)
@@ -47,21 +39,9 @@ public class UserAccountProfile extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private LockoutConstraint lockoutConstraint;
 
-    @JsonProperty("login_failure_count_expiry_window")
-    @JsonInclude(Include.NON_NULL)
-    private Integer loginFailureCountExpiryWindow = 0;
-
     @JsonProperty("max_concurrent_sessions")
     @JsonInclude(Include.NON_NULL)
     private Integer maxConcurrentSessions = 0;
-
-    @JsonProperty("max_login_failure_count")
-    @JsonInclude(Include.NON_NULL)
-    private Integer maxLoginFailureCount = 3;
-
-    @JsonProperty("max_password_history_count")
-    @JsonInclude(Include.NON_NULL)
-    private Integer maxPasswordHistoryCount = 4;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
@@ -76,34 +56,6 @@ public class UserAccountProfile extends AviRestResource {
     private String uuid;
 
 
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Lock timeout period (in minutes).
-   * Default is 30 minutes.
-   * Unit is min.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 30.
-   * @return accountLockTimeout
-   */
-  @VsoMethod
-  public Integer getAccountLockTimeout() {
-    return accountLockTimeout;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Lock timeout period (in minutes).
-   * Default is 30 minutes.
-   * Unit is min.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 30.
-   * @param accountLockTimeout set the accountLockTimeout.
-   */
-  @VsoMethod
-  public void setAccountLockTimeout(Integer  accountLockTimeout) {
-    this.accountLockTimeout = accountLockTimeout;
-  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -129,34 +81,6 @@ public class UserAccountProfile extends AviRestResource {
   @VsoMethod
   public void setComplexityConstraint(ComplexityConstraint complexityConstraint) {
     this.complexityConstraint = complexityConstraint;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * The time period after which credentials expire.
-   * Default is 180 days.
-   * Unit is days.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 180.
-   * @return credentialsTimeoutThreshold
-   */
-  @VsoMethod
-  public Integer getCredentialsTimeoutThreshold() {
-    return credentialsTimeoutThreshold;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * The time period after which credentials expire.
-   * Default is 180 days.
-   * Unit is days.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 180.
-   * @param credentialsTimeoutThreshold set the credentialsTimeoutThreshold.
-   */
-  @VsoMethod
-  public void setCredentialsTimeoutThreshold(Integer  credentialsTimeoutThreshold) {
-    this.credentialsTimeoutThreshold = credentialsTimeoutThreshold;
   }
 
   /**
@@ -213,36 +137,6 @@ public class UserAccountProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * The configurable time window beyond which we need to pop all the login failure timestamps from the login_failure_timestamps.
-   * Special values are 0 - do not reset login_failure_counts on the basis of time.
-   * Field introduced in 22.1.1.
-   * Unit is min.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
-   * @return loginFailureCountExpiryWindow
-   */
-  @VsoMethod
-  public Integer getLoginFailureCountExpiryWindow() {
-    return loginFailureCountExpiryWindow;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * The configurable time window beyond which we need to pop all the login failure timestamps from the login_failure_timestamps.
-   * Special values are 0 - do not reset login_failure_counts on the basis of time.
-   * Field introduced in 22.1.1.
-   * Unit is min.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
-   * @param loginFailureCountExpiryWindow set the loginFailureCountExpiryWindow.
-   */
-  @VsoMethod
-  public void setLoginFailureCountExpiryWindow(Integer  loginFailureCountExpiryWindow) {
-    this.loginFailureCountExpiryWindow = loginFailureCountExpiryWindow;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Maximum number of concurrent sessions allowed.
    * There are unlimited sessions by default.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -265,62 +159,6 @@ public class UserAccountProfile extends AviRestResource {
   @VsoMethod
   public void setMaxConcurrentSessions(Integer  maxConcurrentSessions) {
     this.maxConcurrentSessions = maxConcurrentSessions;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Number of login attempts before lockout.
-   * Default is 3 attempts.
-   * Allowed values are 3-20.
-   * Special values are 0- unlimited login attempts allowed.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 3.
-   * @return maxLoginFailureCount
-   */
-  @VsoMethod
-  public Integer getMaxLoginFailureCount() {
-    return maxLoginFailureCount;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Number of login attempts before lockout.
-   * Default is 3 attempts.
-   * Allowed values are 3-20.
-   * Special values are 0- unlimited login attempts allowed.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 3.
-   * @param maxLoginFailureCount set the maxLoginFailureCount.
-   */
-  @VsoMethod
-  public void setMaxLoginFailureCount(Integer  maxLoginFailureCount) {
-    this.maxLoginFailureCount = maxLoginFailureCount;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Maximum number of passwords to be maintained in the password history.
-   * Default is 4 passwords.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 4.
-   * @return maxPasswordHistoryCount
-   */
-  @VsoMethod
-  public Integer getMaxPasswordHistoryCount() {
-    return maxPasswordHistoryCount;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Maximum number of passwords to be maintained in the password history.
-   * Default is 4 passwords.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 4.
-   * @param maxPasswordHistoryCount set the maxPasswordHistoryCount.
-   */
-  @VsoMethod
-  public void setMaxPasswordHistoryCount(Integer  maxPasswordHistoryCount) {
-    this.maxPasswordHistoryCount = maxPasswordHistoryCount;
   }
 
   /**
@@ -402,12 +240,7 @@ public boolean equals(java.lang.Object o) {
   UserAccountProfile objUserAccountProfile = (UserAccountProfile) o;
   return   Objects.equals(this.uuid, objUserAccountProfile.uuid)&&
   Objects.equals(this.name, objUserAccountProfile.name)&&
-  Objects.equals(this.maxPasswordHistoryCount, objUserAccountProfile.maxPasswordHistoryCount)&&
-  Objects.equals(this.maxLoginFailureCount, objUserAccountProfile.maxLoginFailureCount)&&
-  Objects.equals(this.accountLockTimeout, objUserAccountProfile.accountLockTimeout)&&
   Objects.equals(this.maxConcurrentSessions, objUserAccountProfile.maxConcurrentSessions)&&
-  Objects.equals(this.credentialsTimeoutThreshold, objUserAccountProfile.credentialsTimeoutThreshold)&&
-  Objects.equals(this.loginFailureCountExpiryWindow, objUserAccountProfile.loginFailureCountExpiryWindow)&&
   Objects.equals(this.complexityConstraint, objUserAccountProfile.complexityConstraint)&&
   Objects.equals(this.expirationConstraint, objUserAccountProfile.expirationConstraint)&&
   Objects.equals(this.lockoutConstraint, objUserAccountProfile.lockoutConstraint);
@@ -417,15 +250,10 @@ public boolean equals(java.lang.Object o) {
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class UserAccountProfile {\n");
-      sb.append("    accountLockTimeout: ").append(toIndentedString(accountLockTimeout)).append("\n");
-        sb.append("    complexityConstraint: ").append(toIndentedString(complexityConstraint)).append("\n");
-        sb.append("    credentialsTimeoutThreshold: ").append(toIndentedString(credentialsTimeoutThreshold)).append("\n");
+      sb.append("    complexityConstraint: ").append(toIndentedString(complexityConstraint)).append("\n");
         sb.append("    expirationConstraint: ").append(toIndentedString(expirationConstraint)).append("\n");
         sb.append("    lockoutConstraint: ").append(toIndentedString(lockoutConstraint)).append("\n");
-        sb.append("    loginFailureCountExpiryWindow: ").append(toIndentedString(loginFailureCountExpiryWindow)).append("\n");
         sb.append("    maxConcurrentSessions: ").append(toIndentedString(maxConcurrentSessions)).append("\n");
-        sb.append("    maxLoginFailureCount: ").append(toIndentedString(maxLoginFailureCount)).append("\n");
-        sb.append("    maxPasswordHistoryCount: ").append(toIndentedString(maxPasswordHistoryCount)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
             sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
       sb.append("}");
