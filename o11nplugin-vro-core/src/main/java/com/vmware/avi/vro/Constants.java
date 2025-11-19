@@ -1100,6 +1100,8 @@ public class Constants {
     public static final String FINDER_VRO_SNMPV3USERPARAMS = "SnmpV3UserParams";
     public static final String FINDER_VRO_SOURCEPORTADDR = "SourcePortAddr";
     public static final String FINDER_VRO_SPGSLBSERVICEINFO = "SpGslbServiceInfo";
+    public static final String FINDER_VRO_SSPINSTANCE = "SspInstance";
+    public static final String FINDER_VRO_SSPRESOURCES = "SspResources";
     public static final String FINDER_VRO_STATECACHEMGRDEBUGFILTER = "StateCacheMgrDebugFilter";
     public static final String FINDER_VRO_STATEDIFFEVENT = "StatediffEvent";
     public static final String FINDER_VRO_STATEDIFFOPERATION = "StatediffOperation";
