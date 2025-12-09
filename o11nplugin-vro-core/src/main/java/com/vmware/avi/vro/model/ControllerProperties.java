@@ -170,6 +170,10 @@ public class ControllerProperties extends AviRestResource {
     @JsonIgnore
     private Boolean enableResmgrLogCachePrint = false;
 
+    @JsonProperty("event_manager_file_modified_ts_filter")
+    @JsonInclude(Include.NON_NULL)
+    private Integer eventManagerFileModifiedTsFilter = 180;
+
     @JsonProperty("event_manager_max_goroutines")
     @JsonInclude(Include.NON_NULL)
     private Integer eventManagerMaxGoroutines = 8;
@@ -1458,6 +1462,36 @@ public class ControllerProperties extends AviRestResource {
   @VsoMethod
   public void setEnableResmgrLogCachePrint(Boolean  enableResmgrLogCachePrint) {
     this.enableResmgrLogCachePrint = enableResmgrLogCachePrint;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Stated time duration beyond which event manager disregards files whose modified timestamp from current time is later.
+   * Allowed values are 1-1800.
+   * Field introduced in 30.2.6.
+   * Unit is sec.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 180.
+   * @return eventManagerFileModifiedTsFilter
+   */
+  @VsoMethod
+  public Integer getEventManagerFileModifiedTsFilter() {
+    return eventManagerFileModifiedTsFilter;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Stated time duration beyond which event manager disregards files whose modified timestamp from current time is later.
+   * Allowed values are 1-1800.
+   * Field introduced in 30.2.6.
+   * Unit is sec.
+   * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 180.
+   * @param eventManagerFileModifiedTsFilter set the eventManagerFileModifiedTsFilter.
+   */
+  @VsoMethod
+  public void setEventManagerFileModifiedTsFilter(Integer  eventManagerFileModifiedTsFilter) {
+    this.eventManagerFileModifiedTsFilter = eventManagerFileModifiedTsFilter;
   }
 
   /**
@@ -3743,7 +3777,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.eventManagerProcessingTimeThreshold, objControllerProperties.eventManagerProcessingTimeThreshold)&&
   Objects.equals(this.eventManagerMaxSubscribers, objControllerProperties.eventManagerMaxSubscribers)&&
   Objects.equals(this.eventManagerMaxGoroutines, objControllerProperties.eventManagerMaxGoroutines)&&
-  Objects.equals(this.alertManagerUseEvms, objControllerProperties.alertManagerUseEvms);
+  Objects.equals(this.alertManagerUseEvms, objControllerProperties.alertManagerUseEvms)&&
+  Objects.equals(this.eventManagerFileModifiedTsFilter, objControllerProperties.eventManagerFileModifiedTsFilter);
 }
 
 @Override
@@ -3786,6 +3821,7 @@ public String toString() {
         sb.append("    enableMemoryBalancer: ").append(toIndentedString(enableMemoryBalancer)).append("\n");
         sb.append("    enablePerProcessStop: ").append(toIndentedString(enablePerProcessStop)).append("\n");
         sb.append("    enableResmgrLogCachePrint: ").append(toIndentedString(enableResmgrLogCachePrint)).append("\n");
+        sb.append("    eventManagerFileModifiedTsFilter: ").append(toIndentedString(eventManagerFileModifiedTsFilter)).append("\n");
         sb.append("    eventManagerMaxGoroutines: ").append(toIndentedString(eventManagerMaxGoroutines)).append("\n");
         sb.append("    eventManagerMaxSubscribers: ").append(toIndentedString(eventManagerMaxSubscribers)).append("\n");
         sb.append("    eventManagerProcessingTimeThreshold: ").append(toIndentedString(eventManagerProcessingTimeThreshold)).append("\n");
