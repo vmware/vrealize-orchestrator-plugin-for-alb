@@ -158,11 +158,11 @@ public class LogManagerDebugFilter extends AviRestResource {
 
     @JsonProperty("opensearch_num_shards")
     @JsonInclude(Include.NON_NULL)
-    private Integer opensearchNumShards = 1;
+    private Integer opensearchNumShards = 9;
 
     @JsonProperty("opensearch_port")
     @JsonInclude(Include.NON_NULL)
-    private String opensearchPort = "9200";
+    private String opensearchPort = "5010";
 
     @JsonProperty("query_queue_buffer_size")
     @JsonInclude(Include.NON_NULL)
@@ -1085,7 +1085,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * Number of shards for opensearch.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 9.
    * @return opensearchNumShards
    */
   @VsoMethod
@@ -1098,7 +1098,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * Number of shards for opensearch.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 9.
    * @param opensearchNumShards set the opensearchNumShards.
    */
   @VsoMethod
@@ -1111,7 +1111,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * Opensearch port.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as "9200".
+   * Default value when not specified in API or module is interpreted by Avi Controller as "5010".
    * @return opensearchPort
    */
   @VsoMethod
@@ -1124,7 +1124,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * Opensearch port.
    * Field introduced in 31.2.1.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as "9200".
+   * Default value when not specified in API or module is interpreted by Avi Controller as "5010".
    * @param opensearchPort set the opensearchPort.
    */
   @VsoMethod
