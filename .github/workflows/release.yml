@@ -29,13 +29,6 @@ jobs:
           echo "Check maven version"
           mvn -version
 
-      - name: Validate AviSDK version availability
-        run: |
-          echo "Validating if avisdk version ${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }} is available on maven central."
-          mvn dependency:get -Dartifact=com.vmware.avi.sdk:avisdk:${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }} \
-            -Dtransitive=false \
-            -DremoteRepositories=central::default::https://repo.maven.apache.org/maven2
-
       - name: Verify whether the symlink has been created.
         run: |
           echo "Verify whether the symlink has been created."
@@ -59,6 +52,13 @@ jobs:
           fi
           echo "VRO version ${VRO_VERSION}"
           echo "VRO_RELEASE_VERSION=${VRO_VERSION}" >> $GITHUB_OUTPUT
+
+      - name: Validate AviSDK version availability
+        run: |
+          echo "Validating if avisdk version ${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }} is available on maven central."
+          mvn dependency:get -Dartifact=com.vmware.avi.sdk:avisdk:${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }} \
+            -Dtransitive=false \
+            -DremoteRepositories=central::default::https://repo.maven.apache.org/maven2
 
       - name: Build VRO Plugin
         run: |
