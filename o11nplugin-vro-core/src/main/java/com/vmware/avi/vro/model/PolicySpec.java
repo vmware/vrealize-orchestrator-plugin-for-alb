@@ -45,7 +45,7 @@ public class PolicySpec extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Disk usage policy.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return disk
    */
@@ -58,7 +58,7 @@ public class PolicySpec extends AviRestResource {
    * This is the setter method to the attribute.
    * Disk usage policy.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param disk set the disk.
    */
@@ -71,7 +71,7 @@ public class PolicySpec extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Objects policy.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return object
    */
@@ -84,7 +84,7 @@ public class PolicySpec extends AviRestResource {
    * This is the setter method to the attribute.
    * Objects policy.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param object set the object.
    */
@@ -97,7 +97,7 @@ public class PolicySpec extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Periodic policy.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return periodic
    */
@@ -110,7 +110,7 @@ public class PolicySpec extends AviRestResource {
    * This is the setter method to the attribute.
    * Periodic policy.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param periodic set the periodic.
    */

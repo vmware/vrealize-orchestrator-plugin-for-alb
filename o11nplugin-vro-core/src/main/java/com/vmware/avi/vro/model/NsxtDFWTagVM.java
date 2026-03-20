@@ -38,7 +38,7 @@ public class NsxtDFWTagVM extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Error message.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorString
    */
@@ -51,7 +51,7 @@ public class NsxtDFWTagVM extends AviRestResource {
    * This is the setter method to the attribute.
    * Error message.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param errorString set the errorString.
    */
@@ -64,7 +64,7 @@ public class NsxtDFWTagVM extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Nsx-t dfw vm name.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -77,7 +77,7 @@ public class NsxtDFWTagVM extends AviRestResource {
    * This is the setter method to the attribute.
    * Nsx-t dfw vm name.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */

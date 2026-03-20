@@ -46,7 +46,7 @@ public class BotConfigIPLocation extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * If this is enabled, ip location information is used to determine if a client is a known search engine bot, comes from the cloud, etc.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enabled
    */
@@ -59,7 +59,7 @@ public class BotConfigIPLocation extends AviRestResource {
    * This is the setter method to the attribute.
    * If this is enabled, ip location information is used to determine if a client is a known search engine bot, comes from the cloud, etc.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enabled set the enabled.
    */
@@ -73,7 +73,7 @@ public class BotConfigIPLocation extends AviRestResource {
    * The uuid of the geo-ip database to use.
    * It is a reference to an object of type geodb.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipLocationDbRef
    */
@@ -87,7 +87,7 @@ public class BotConfigIPLocation extends AviRestResource {
    * The uuid of the geo-ip database to use.
    * It is a reference to an object of type geodb.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipLocationDbRef set the ipLocationDbRef.
    */
@@ -101,7 +101,7 @@ public class BotConfigIPLocation extends AviRestResource {
    * The system-defined cloud providers.
    * It is a reference to an object of type stringgroup.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return systemCloudProvidersRef
    */
@@ -115,7 +115,7 @@ public class BotConfigIPLocation extends AviRestResource {
    * The system-defined cloud providers.
    * It is a reference to an object of type stringgroup.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param systemCloudProvidersRef set the systemCloudProvidersRef.
    */
@@ -129,7 +129,7 @@ public class BotConfigIPLocation extends AviRestResource {
    * The system-defined search engines.
    * It is a reference to an object of type stringgroup.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return systemSearchEnginesRef
    */
@@ -143,7 +143,7 @@ public class BotConfigIPLocation extends AviRestResource {
    * The system-defined search engines.
    * It is a reference to an object of type stringgroup.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param systemSearchEnginesRef set the systemSearchEnginesRef.
    */

@@ -132,7 +132,7 @@ public class WafRuleLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The count of omitted match element logs in the current rule.
    * Field introduced in 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return omittedMatchElements
    */
@@ -145,7 +145,7 @@ public class WafRuleLog extends AviRestResource {
    * This is the setter method to the attribute.
    * The count of omitted match element logs in the current rule.
    * Field introduced in 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param omittedMatchElements set the omittedMatchElements.
    */

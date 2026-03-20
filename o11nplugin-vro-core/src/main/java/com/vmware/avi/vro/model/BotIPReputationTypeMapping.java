@@ -50,7 +50,7 @@ public class BotIPReputationTypeMapping extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Map every ipreputationtype to a bot type (can be unknown).
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipReputationMappings
    */
@@ -63,7 +63,7 @@ public class BotIPReputationTypeMapping extends AviRestResource {
    * This is the setter method. this will set the ipReputationMappings
    * Map every ipreputationtype to a bot type (can be unknown).
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipReputationMappings
    */
@@ -76,7 +76,7 @@ public class BotIPReputationTypeMapping extends AviRestResource {
    * This is the setter method this will set the ipReputationMappings
    * Map every ipreputationtype to a bot type (can be unknown).
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipReputationMappings
    */
@@ -94,7 +94,7 @@ public class BotIPReputationTypeMapping extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The name of this mapping.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -107,7 +107,7 @@ public class BotIPReputationTypeMapping extends AviRestResource {
    * This is the setter method to the attribute.
    * The name of this mapping.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -121,7 +121,7 @@ public class BotIPReputationTypeMapping extends AviRestResource {
    * The unique identifier of the tenant to which this mapping belongs.
    * It is a reference to an object of type tenant.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -135,7 +135,7 @@ public class BotIPReputationTypeMapping extends AviRestResource {
    * The unique identifier of the tenant to which this mapping belongs.
    * It is a reference to an object of type tenant.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
@@ -167,7 +167,7 @@ public class BotIPReputationTypeMapping extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * A unique identifier of this mapping.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -180,7 +180,7 @@ public class BotIPReputationTypeMapping extends AviRestResource {
    * This is the setter method to the attribute.
    * A unique identifier of this mapping.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */

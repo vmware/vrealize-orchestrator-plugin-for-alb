@@ -65,7 +65,7 @@ public class Periodicity extends AviRestResource {
    * Allowed values are 1-43200.
    * Field introduced in 31.1.1.
    * Unit is min.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return interval
    */
@@ -80,7 +80,7 @@ public class Periodicity extends AviRestResource {
    * Allowed values are 1-43200.
    * Field introduced in 31.1.1.
    * Unit is min.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param interval set the interval.
    */

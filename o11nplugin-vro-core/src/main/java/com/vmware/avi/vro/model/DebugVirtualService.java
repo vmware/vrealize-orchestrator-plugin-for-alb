@@ -179,7 +179,7 @@ public class DebugVirtualService extends AviRestResource {
    * Per packet capture filters for debug virtual service.
    * Applies to both frontend and backend packets.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return capturePktFilter
    */
@@ -193,7 +193,7 @@ public class DebugVirtualService extends AviRestResource {
    * Per packet capture filters for debug virtual service.
    * Applies to both frontend and backend packets.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param capturePktFilter set the capturePktFilter.
    */
@@ -344,7 +344,7 @@ public class DebugVirtualService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Deprecated in 22.1.1.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return latencyAuditFilters
    */
@@ -357,7 +357,7 @@ public class DebugVirtualService extends AviRestResource {
    * This is the setter method to the attribute.
    * Deprecated in 22.1.1.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param latencyAuditFilters set the latencyAuditFilters.
    */
@@ -392,7 +392,7 @@ public class DebugVirtualService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Object sync debug options.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return objsync
    */
@@ -405,7 +405,7 @@ public class DebugVirtualService extends AviRestResource {
    * This is the setter method to the attribute.
    * Object sync debug options.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param objsync set the objsync.
    */

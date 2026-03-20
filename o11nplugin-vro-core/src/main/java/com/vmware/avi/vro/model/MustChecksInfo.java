@@ -65,7 +65,7 @@ public class MustChecksInfo extends AviRestResource {
    * SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN,
    * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_FAILED...
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return checkCode
    */
@@ -81,7 +81,7 @@ public class MustChecksInfo extends AviRestResource {
    * SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN,
    * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_FAILED...
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param checkCode set the checkCode.
    */
@@ -94,7 +94,7 @@ public class MustChecksInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Reason for must check failure.
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
@@ -107,7 +107,7 @@ public class MustChecksInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Reason for must check failure.
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
@@ -120,7 +120,7 @@ public class MustChecksInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Additional details of the must check.
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return details
    */
@@ -133,7 +133,7 @@ public class MustChecksInfo extends AviRestResource {
    * This is the setter method. this will set the details
    * Additional details of the must check.
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return details
    */
@@ -146,7 +146,7 @@ public class MustChecksInfo extends AviRestResource {
    * This is the setter method this will set the details
    * Additional details of the must check.
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return details
    */
@@ -165,7 +165,7 @@ public class MustChecksInfo extends AviRestResource {
    * Time taken to complete must check in seconds.
    * Field introduced in 22.1.3.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return duration
    */
@@ -179,7 +179,7 @@ public class MustChecksInfo extends AviRestResource {
    * Time taken to complete must check in seconds.
    * Field introduced in 22.1.3.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param duration set the duration.
    */
@@ -192,7 +192,7 @@ public class MustChecksInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Time at which execution of must check was completed.
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return endTime
    */
@@ -205,7 +205,7 @@ public class MustChecksInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Time at which execution of must check was completed.
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param endTime set the endTime.
    */
@@ -218,7 +218,7 @@ public class MustChecksInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Error/failure details of the must check.
    * Field introduced in 22.1.6.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorDetails
    */
@@ -231,7 +231,7 @@ public class MustChecksInfo extends AviRestResource {
    * This is the setter method. this will set the errorDetails
    * Error/failure details of the must check.
    * Field introduced in 22.1.6.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorDetails
    */
@@ -244,7 +244,7 @@ public class MustChecksInfo extends AviRestResource {
    * This is the setter method this will set the errorDetails
    * Error/failure details of the must check.
    * Field introduced in 22.1.6.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorDetails
    */
@@ -262,7 +262,7 @@ public class MustChecksInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Time at which execution of must check was started.
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return startTime
    */
@@ -275,7 +275,7 @@ public class MustChecksInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Time at which execution of must check was started.
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param startTime set the startTime.
    */
@@ -292,7 +292,7 @@ public class MustChecksInfo extends AviRestResource {
    * UPGRADE_FSM_SE_UPGRADE_IN_PROGRESS, UPGRADE_FSM_CONTROLLER_COMPLETED, UPGRADE_FSM_DUMMY_3, UPGRADE_FSM_DUMMY_4, UPGRADE_FSM_DUMMY_5,
    * UPGRADE_PRE_CHECK_STARTED, UPGRADE_PRE_CHECK_IN_PROGRESS, UPGRADE_PRE_CHECK_SUCCESS...
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return state
    */
@@ -309,7 +309,7 @@ public class MustChecksInfo extends AviRestResource {
    * UPGRADE_FSM_SE_UPGRADE_IN_PROGRESS, UPGRADE_FSM_CONTROLLER_COMPLETED, UPGRADE_FSM_DUMMY_3, UPGRADE_FSM_DUMMY_4, UPGRADE_FSM_DUMMY_5,
    * UPGRADE_PRE_CHECK_STARTED, UPGRADE_PRE_CHECK_IN_PROGRESS, UPGRADE_PRE_CHECK_SUCCESS...
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param state set the state.
    */

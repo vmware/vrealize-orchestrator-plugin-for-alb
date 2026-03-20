@@ -45,7 +45,7 @@ public class ObjSyncConfig extends AviRestResource {
    * Special values are 0- no restriction.
    * Field introduced in 20.1.3.
    * Unit is percent.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return objsyncCpuLimit
    */
@@ -61,7 +61,7 @@ public class ObjSyncConfig extends AviRestResource {
    * Special values are 0- no restriction.
    * Field introduced in 20.1.3.
    * Unit is percent.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param objsyncCpuLimit set the objsyncCpuLimit.
    */
@@ -76,7 +76,7 @@ public class ObjSyncConfig extends AviRestResource {
    * Allowed values are 30-300.
    * Field introduced in 20.1.3.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return objsyncHubElectInterval
    */
@@ -91,7 +91,7 @@ public class ObjSyncConfig extends AviRestResource {
    * Allowed values are 30-300.
    * Field introduced in 20.1.3.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @param objsyncHubElectInterval set the objsyncHubElectInterval.
    */
@@ -106,7 +106,7 @@ public class ObjSyncConfig extends AviRestResource {
    * Allowed values are 1-120.
    * Field introduced in 20.1.3.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return objsyncReconcileInterval
    */
@@ -121,7 +121,7 @@ public class ObjSyncConfig extends AviRestResource {
    * Allowed values are 1-120.
    * Field introduced in 20.1.3.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param objsyncReconcileInterval set the objsyncReconcileInterval.
    */

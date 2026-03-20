@@ -39,7 +39,7 @@ public class AZHost extends AviRestResource {
    * A list of managed object ids (moids) of vcenter hosts that are part of this availability zone.
    * Field introduced in 31.2.1.
    * Minimum of 1 items required.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostIds
    */
@@ -53,7 +53,7 @@ public class AZHost extends AviRestResource {
    * A list of managed object ids (moids) of vcenter hosts that are part of this availability zone.
    * Field introduced in 31.2.1.
    * Minimum of 1 items required.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostIds
    */
@@ -67,7 +67,7 @@ public class AZHost extends AviRestResource {
    * A list of managed object ids (moids) of vcenter hosts that are part of this availability zone.
    * Field introduced in 31.2.1.
    * Minimum of 1 items required.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostIds
    */
@@ -86,7 +86,7 @@ public class AZHost extends AviRestResource {
    * The uuid of the vcenter server that manages the hosts associated with this availabilityzone.
    * It is a reference to an object of type vcenterserver.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterRef
    */
@@ -100,7 +100,7 @@ public class AZHost extends AviRestResource {
    * The uuid of the vcenter server that manages the hosts associated with this availabilityzone.
    * It is a reference to an object of type vcenterserver.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcenterRef set the vcenterRef.
    */

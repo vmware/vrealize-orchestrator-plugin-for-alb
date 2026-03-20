@@ -58,7 +58,7 @@ public class DiameterServiceApplicationProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Origin-host avp towards client.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientOriginHost
    */
@@ -71,7 +71,7 @@ public class DiameterServiceApplicationProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Origin-host avp towards client.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientOriginHost set the clientOriginHost.
    */
@@ -84,7 +84,7 @@ public class DiameterServiceApplicationProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Origin-realm avp towards client.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientOriginRealm
    */
@@ -97,7 +97,7 @@ public class DiameterServiceApplicationProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Origin-realm avp towards client.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientOriginRealm set the clientOriginRealm.
    */
@@ -110,7 +110,7 @@ public class DiameterServiceApplicationProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Rwrite host-ip-address avp.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return hostIpAddrRewrite
    */
@@ -123,7 +123,7 @@ public class DiameterServiceApplicationProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Rwrite host-ip-address avp.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param hostIpAddrRewrite set the hostIpAddrRewrite.
    */
@@ -137,7 +137,7 @@ public class DiameterServiceApplicationProfile extends AviRestResource {
    * Max number of outstanding request waiting for response.
    * Allowed values are 1-1048576.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4096.
    * @return maxOutstandingReq
    */
@@ -151,7 +151,7 @@ public class DiameterServiceApplicationProfile extends AviRestResource {
    * Max number of outstanding request waiting for response.
    * Allowed values are 1-1048576.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4096.
    * @param maxOutstandingReq set the maxOutstandingReq.
    */
@@ -166,7 +166,7 @@ public class DiameterServiceApplicationProfile extends AviRestResource {
    * Allowed values are 1-1800.
    * Field introduced in 31.1.1.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return reqTimeout
    */
@@ -181,7 +181,7 @@ public class DiameterServiceApplicationProfile extends AviRestResource {
    * Allowed values are 1-1800.
    * Field introduced in 31.1.1.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @param reqTimeout set the reqTimeout.
    */
@@ -194,7 +194,7 @@ public class DiameterServiceApplicationProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Origin-host avp towards server.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverOriginHost
    */
@@ -207,7 +207,7 @@ public class DiameterServiceApplicationProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Origin-host avp towards server.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverOriginHost set the serverOriginHost.
    */
@@ -220,7 +220,7 @@ public class DiameterServiceApplicationProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Origin-realm avp towards server.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverOriginRealm
    */
@@ -233,7 +233,7 @@ public class DiameterServiceApplicationProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Origin-realm avp towards server.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverOriginRealm set the serverOriginRealm.
    */

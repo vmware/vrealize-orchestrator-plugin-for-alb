@@ -43,7 +43,7 @@ public class SeVsDelFlowsDisrupted extends AviRestResource {
    * Name of the vs which was deleted from the se.
    * It is a reference to an object of type virtualservice.
    * Field introduced in 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return deletedVsName
    */
@@ -57,7 +57,7 @@ public class SeVsDelFlowsDisrupted extends AviRestResource {
    * Name of the vs which was deleted from the se.
    * It is a reference to an object of type virtualservice.
    * Field introduced in 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param deletedVsName set the deletedVsName.
    */
@@ -70,7 +70,7 @@ public class SeVsDelFlowsDisrupted extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of vs flows disrupted when vs was deleted from the se.
    * Field introduced in 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numVsFlowsDisrupted
    */
@@ -83,7 +83,7 @@ public class SeVsDelFlowsDisrupted extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of vs flows disrupted when vs was deleted from the se.
    * Field introduced in 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numVsFlowsDisrupted set the numVsFlowsDisrupted.
    */
@@ -97,7 +97,7 @@ public class SeVsDelFlowsDisrupted extends AviRestResource {
    * Name of the se reporting this event.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reportingSeName
    */
@@ -111,7 +111,7 @@ public class SeVsDelFlowsDisrupted extends AviRestResource {
    * Name of the se reporting this event.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reportingSeName set the reportingSeName.
    */

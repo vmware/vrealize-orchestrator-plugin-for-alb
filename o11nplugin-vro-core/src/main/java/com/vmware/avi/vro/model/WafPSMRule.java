@@ -138,7 +138,7 @@ public class WafPSMRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * If this is set, the hit action for this match will be waf_action_no_op.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return ignoreHitAction
    */
@@ -151,7 +151,7 @@ public class WafPSMRule extends AviRestResource {
    * This is the setter method to the attribute.
    * If this is set, the hit action for this match will be waf_action_no_op.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param ignoreHitAction set the ignoreHitAction.
    */
@@ -316,7 +316,7 @@ public class WafPSMRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * If match_value_string_group_uuid and match_value_string_group_key are set, the referenced regular expression is used as match_value_pattern.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchValueStringGroupKey
    */
@@ -329,7 +329,7 @@ public class WafPSMRule extends AviRestResource {
    * This is the setter method to the attribute.
    * If match_value_string_group_uuid and match_value_string_group_key are set, the referenced regular expression is used as match_value_pattern.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchValueStringGroupKey set the matchValueStringGroupKey.
    */
@@ -343,7 +343,7 @@ public class WafPSMRule extends AviRestResource {
    * The uuid of a string group containing key used in match_value_string_group_key.
    * It is a reference to an object of type stringgroup.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchValueStringGroupRef
    */
@@ -357,7 +357,7 @@ public class WafPSMRule extends AviRestResource {
    * The uuid of a string group containing key used in match_value_string_group_key.
    * It is a reference to an object of type stringgroup.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchValueStringGroupRef set the matchValueStringGroupRef.
    */

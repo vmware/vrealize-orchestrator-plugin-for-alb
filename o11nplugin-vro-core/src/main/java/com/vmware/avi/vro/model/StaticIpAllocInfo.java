@@ -43,7 +43,7 @@ public class StaticIpAllocInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ip address.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip
    */
@@ -56,7 +56,7 @@ public class StaticIpAllocInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Ip address.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip set the ip.
    */
@@ -69,7 +69,7 @@ public class StaticIpAllocInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Object metadata.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return objInfo
    */
@@ -82,7 +82,7 @@ public class StaticIpAllocInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Object metadata.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param objInfo set the objInfo.
    */
@@ -95,7 +95,7 @@ public class StaticIpAllocInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Object which this ip address is allocated to.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return objUuid
    */
@@ -108,7 +108,7 @@ public class StaticIpAllocInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Object which this ip address is allocated to.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param objUuid set the objUuid.
    */

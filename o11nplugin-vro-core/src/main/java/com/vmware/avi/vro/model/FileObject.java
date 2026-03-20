@@ -142,7 +142,7 @@ public class FileObject extends AviRestResource {
    * Avi internal formatted/converted files.
    * It is a reference to an object of type fileobject.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return childRefs
    */
@@ -156,7 +156,7 @@ public class FileObject extends AviRestResource {
    * Avi internal formatted/converted files.
    * It is a reference to an object of type fileobject.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return childRefs
    */
@@ -170,7 +170,7 @@ public class FileObject extends AviRestResource {
    * Avi internal formatted/converted files.
    * It is a reference to an object of type fileobject.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return childRefs
    */
@@ -240,7 +240,7 @@ public class FileObject extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This field contains crl metadata.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return crlInfo
    */
@@ -253,7 +253,7 @@ public class FileObject extends AviRestResource {
    * This is the setter method to the attribute.
    * This field contains crl metadata.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param crlInfo set the crlInfo.
    */
@@ -292,7 +292,7 @@ public class FileObject extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of all fileobject events.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return events
    */
@@ -305,7 +305,7 @@ public class FileObject extends AviRestResource {
    * This is the setter method. this will set the events
    * List of all fileobject events.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return events
    */
@@ -318,7 +318,7 @@ public class FileObject extends AviRestResource {
    * This is the setter method this will set the events
    * List of all fileobject events.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return events
    */
@@ -368,7 +368,7 @@ public class FileObject extends AviRestResource {
    * Enum options - GSLB_GEODB_FILE_FORMAT_AVI, GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY, GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY_V6,
    * GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY_V4_AND_V6, GSLB_GEODB_FILE_FORMAT_AVI_V6, GSLB_GEODB_FILE_FORMAT_AVI_V4_AND_V6.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbGeodbFormat
    */
@@ -383,7 +383,7 @@ public class FileObject extends AviRestResource {
    * Enum options - GSLB_GEODB_FILE_FORMAT_AVI, GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY, GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY_V6,
    * GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY_V4_AND_V6, GSLB_GEODB_FILE_FORMAT_AVI_V6, GSLB_GEODB_FILE_FORMAT_AVI_V4_AND_V6.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gslbGeodbFormat set the gslbGeodbFormat.
    */
@@ -396,7 +396,7 @@ public class FileObject extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This field indicates if the the given fileobjecthas a parent fileobject or not.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return hasParent
    */
@@ -409,7 +409,7 @@ public class FileObject extends AviRestResource {
    * This is the setter method to the attribute.
    * This field indicates if the the given fileobjecthas a parent fileobject or not.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param hasParent set the hasParent.
    */
@@ -612,8 +612,7 @@ public class FileObject extends AviRestResource {
    * Enum options - OTHER_FILE_TYPES, IP_REPUTATION, GEO_DB, TECH_SUPPORT, HSMPACKAGES, IPAMDNSSCRIPTS, CONTROLLER_IMAGE, CRL_DATA,
    * IP_REPUTATION_IPV6, GSLB_GEO_DB, CSRF_JS.
    * Field introduced in 20.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- other_file_types), basic (allowed values- other_file_types) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
@@ -628,8 +627,7 @@ public class FileObject extends AviRestResource {
    * Enum options - OTHER_FILE_TYPES, IP_REPUTATION, GEO_DB, TECH_SUPPORT, HSMPACKAGES, IPAMDNSSCRIPTS, CONTROLLER_IMAGE, CRL_DATA,
    * IP_REPUTATION_IPV6, GSLB_GEO_DB, CSRF_JS.
    * Field introduced in 20.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- other_file_types), basic (allowed values- other_file_types) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */

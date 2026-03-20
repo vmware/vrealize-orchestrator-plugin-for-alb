@@ -40,7 +40,7 @@ public class FileReferenceMapping extends AviRestResource {
    * Supported parameters in file_path are {image_path}, {current_version} and {prev_version}.
    * For example, {image_path}/{prev_version}/se_nsxt.ova would resolve to /vol/pkgs/30.1.1-9000-20230714.075215/se_nsxt.ova.
    * Field introduced in 30.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return filePath
    */
@@ -55,7 +55,7 @@ public class FileReferenceMapping extends AviRestResource {
    * Supported parameters in file_path are {image_path}, {current_version} and {prev_version}.
    * For example, {image_path}/{prev_version}/se_nsxt.ova would resolve to /vol/pkgs/30.1.1-9000-20230714.075215/se_nsxt.ova.
    * Field introduced in 30.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param filePath set the filePath.
    */
@@ -69,7 +69,7 @@ public class FileReferenceMapping extends AviRestResource {
    * Short named reference for file path.
    * For example, se_img.
    * Field introduced in 30.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reference
    */
@@ -83,7 +83,7 @@ public class FileReferenceMapping extends AviRestResource {
    * Short named reference for file path.
    * For example, se_img.
    * Field introduced in 30.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reference set the reference.
    */

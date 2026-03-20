@@ -68,9 +68,7 @@ public class MethodMatch extends AviRestResource {
    * HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK.
    * Minimum of 1 items required.
    * Maximum of 16 items allowed.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- http_method_get,http_method_put,http_method_post,http_method_head,http_method_options), basic (allowed
-   * values- http_method_get,http_method_put,http_method_post,http_method_head,http_method_options) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return methods
    */
@@ -87,9 +85,7 @@ public class MethodMatch extends AviRestResource {
    * HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK.
    * Minimum of 1 items required.
    * Maximum of 16 items allowed.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- http_method_get,http_method_put,http_method_post,http_method_head,http_method_options), basic (allowed
-   * values- http_method_get,http_method_put,http_method_post,http_method_head,http_method_options) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return methods
    */
@@ -106,9 +102,7 @@ public class MethodMatch extends AviRestResource {
    * HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK.
    * Minimum of 1 items required.
    * Maximum of 16 items allowed.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- http_method_get,http_method_put,http_method_post,http_method_head,http_method_options), basic (allowed
-   * values- http_method_get,http_method_put,http_method_post,http_method_head,http_method_options) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return methods
    */

@@ -60,7 +60,7 @@ public class ScheduledScaling extends AviRestResource {
    * Allowed values are 1-24.
    * Field introduced in 21.1.1.
    * Unit is hours.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @return autoscalingDuration
    */
@@ -75,7 +75,7 @@ public class ScheduledScaling extends AviRestResource {
    * Allowed values are 1-24.
    * Field introduced in 21.1.1.
    * Unit is hours.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @param autoscalingDuration set the autoscalingDuration.
    */
@@ -88,7 +88,7 @@ public class ScheduledScaling extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The cron expression describing desired time for the scheduled autoscale.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cronExpression
    */
@@ -101,7 +101,7 @@ public class ScheduledScaling extends AviRestResource {
    * This is the setter method to the attribute.
    * The cron expression describing desired time for the scheduled autoscale.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cronExpression set the cronExpression.
    */
@@ -114,7 +114,7 @@ public class ScheduledScaling extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Desired number of servers during scheduled intervals, it may cause scale-in or scale-out based on the value.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return desiredCapacity
    */
@@ -127,7 +127,7 @@ public class ScheduledScaling extends AviRestResource {
    * This is the setter method to the attribute.
    * Desired number of servers during scheduled intervals, it may cause scale-in or scale-out based on the value.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param desiredCapacity set the desiredCapacity.
    */
@@ -140,7 +140,7 @@ public class ScheduledScaling extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enables the scheduled autoscale.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enable
    */
@@ -153,7 +153,7 @@ public class ScheduledScaling extends AviRestResource {
    * This is the setter method to the attribute.
    * Enables the scheduled autoscale.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enable set the enable.
    */
@@ -166,7 +166,7 @@ public class ScheduledScaling extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Scheduled autoscale end date in iso8601 format, said day will be included in scheduled and have to be in future and greater than start date.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return endDate
    */
@@ -179,7 +179,7 @@ public class ScheduledScaling extends AviRestResource {
    * This is the setter method to the attribute.
    * Scheduled autoscale end date in iso8601 format, said day will be included in scheduled and have to be in future and greater than start date.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param endDate set the endDate.
    */
@@ -193,7 +193,7 @@ public class ScheduledScaling extends AviRestResource {
    * Maximum number of simultaneous scale-in/out servers for scheduled autoscale.
    * If this value is 0, regular autoscale policy dictates this.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @return scheduleMaxStep
    */
@@ -207,7 +207,7 @@ public class ScheduledScaling extends AviRestResource {
    * Maximum number of simultaneous scale-in/out servers for scheduled autoscale.
    * If this value is 0, regular autoscale policy dictates this.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @param scheduleMaxStep set the scheduleMaxStep.
    */
@@ -220,7 +220,7 @@ public class ScheduledScaling extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Scheduled autoscale start date in iso8601 format, said day will be included in scheduled and have to be in future.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return startDate
    */
@@ -233,7 +233,7 @@ public class ScheduledScaling extends AviRestResource {
    * This is the setter method to the attribute.
    * Scheduled autoscale start date in iso8601 format, said day will be included in scheduled and have to be in future.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param startDate set the startDate.
    */

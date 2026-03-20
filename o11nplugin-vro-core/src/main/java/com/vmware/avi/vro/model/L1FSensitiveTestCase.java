@@ -43,7 +43,7 @@ public class L1FSensitiveTestCase extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * F_sensitive message for nested f_sensitive test cases-level2.
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sensitiveMessage
    */
@@ -56,7 +56,7 @@ public class L1FSensitiveTestCase extends AviRestResource {
    * This is the setter method to the attribute.
    * F_sensitive message for nested f_sensitive test cases-level2.
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sensitiveMessage set the sensitiveMessage.
    */
@@ -69,7 +69,7 @@ public class L1FSensitiveTestCase extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Repeated f_sensitive_message for nested f_sensitive test cases-level2.
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sensitiveMessages
    */
@@ -82,7 +82,7 @@ public class L1FSensitiveTestCase extends AviRestResource {
    * This is the setter method. this will set the sensitiveMessages
    * Repeated f_sensitive_message for nested f_sensitive test cases-level2.
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sensitiveMessages
    */
@@ -95,7 +95,7 @@ public class L1FSensitiveTestCase extends AviRestResource {
    * This is the setter method this will set the sensitiveMessages
    * Repeated f_sensitive_message for nested f_sensitive test cases-level2.
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sensitiveMessages
    */
@@ -113,7 +113,7 @@ public class L1FSensitiveTestCase extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * F_sensitive string field for nested f_sensitive test cases-level1.
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sensitiveString
    */
@@ -126,7 +126,7 @@ public class L1FSensitiveTestCase extends AviRestResource {
    * This is the setter method to the attribute.
    * F_sensitive string field for nested f_sensitive test cases-level1.
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sensitiveString set the sensitiveString.
    */

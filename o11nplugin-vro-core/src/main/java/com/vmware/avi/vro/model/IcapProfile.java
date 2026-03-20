@@ -106,7 +106,7 @@ public class IcapProfile extends AviRestResource {
    * If disabled, preview_size request body will be buffered if enable_preview is set to true, and rest of the request body will be streamed to the
    * icap server.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return allow204
    */
@@ -122,7 +122,7 @@ public class IcapProfile extends AviRestResource {
    * If disabled, preview_size request body will be buffered if enable_preview is set to true, and rest of the request body will be streamed to the
    * icap server.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param allow204 set the allow204.
    */
@@ -343,7 +343,7 @@ public class IcapProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Nsxdefender specific icap configurations.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nsxDefenderConfig
    */
@@ -356,7 +356,7 @@ public class IcapProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Nsxdefender specific icap configurations.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nsxDefenderConfig set the nsxDefenderConfig.
    */

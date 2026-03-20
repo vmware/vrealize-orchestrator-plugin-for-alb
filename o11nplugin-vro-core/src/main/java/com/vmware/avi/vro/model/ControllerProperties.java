@@ -88,6 +88,18 @@ public class ControllerProperties extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean bmUseAnsible = true;
 
+    @JsonProperty("cc_user_password_expiry_days")
+    @JsonInclude(Include.NON_NULL)
+    private Integer ccUserPasswordExpiryDays = 30;
+
+    @JsonProperty("cc_user_password_rotation_job_period")
+    @JsonInclude(Include.NON_NULL)
+    private Integer ccUserPasswordRotationJobPeriod = 24;
+
+    @JsonProperty("cert_rotation_jwt_retention_days")
+    @JsonInclude(Include.NON_NULL)
+    private Integer certRotationJwtRetentionDays = 180;
+
     @JsonProperty("check_vsvip_fqdn_syntax")
     @JsonInclude(Include.NON_NULL)
     private Boolean checkVsvipFqdnSyntax = true;
@@ -182,6 +194,10 @@ public class ControllerProperties extends AviRestResource {
 
     @JsonIgnore
     private Boolean enableResmgrLogCachePrint = false;
+
+    @JsonProperty("enable_streaming_based_nsx_ip_group_sync")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableStreamingBasedNsxIpGroupSync = true;
 
     @JsonProperty("event_manager_file_modified_ts_filter")
     @JsonInclude(Include.NON_NULL)
@@ -497,7 +513,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable to use event manager as source of eventsdisable to use log manager as source of events.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return alertManagerUseEvms
    */
@@ -510,7 +526,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable to use event manager as source of eventsdisable to use log manager as source of events.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param alertManagerUseEvms set the alertManagerUseEvms.
    */
@@ -675,8 +691,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Export configuration in appviewx compatibility mode.
    * Field introduced in 17.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return appviewxCompatMode
    */
@@ -689,8 +704,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Export configuration in appviewx compatibility mode.
    * Field introduced in 17.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param appviewxCompatMode set the appviewxCompatMode.
    */
@@ -735,7 +749,7 @@ public class ControllerProperties extends AviRestResource {
    * Allowed values are 0-120.
    * Field introduced in 31.2.1.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2.
    * @return asyncCertChainingInterval
    */
@@ -750,7 +764,7 @@ public class ControllerProperties extends AviRestResource {
    * Allowed values are 0-120.
    * Field introduced in 31.2.1.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2.
    * @param asyncCertChainingInterval set the asyncCertChainingInterval.
    */
@@ -766,7 +780,7 @@ public class ControllerProperties extends AviRestResource {
    * Special values are 0 - deactivated.
    * Field introduced in 18.2.11, 20.1.3.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return asyncPatchMergePeriod
    */
@@ -782,7 +796,7 @@ public class ControllerProperties extends AviRestResource {
    * Special values are 0 - deactivated.
    * Field introduced in 18.2.11, 20.1.3.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param asyncPatchMergePeriod set the asyncPatchMergePeriod.
    */
@@ -797,7 +811,7 @@ public class ControllerProperties extends AviRestResource {
    * Allowed values are 5-120.
    * Field introduced in 18.2.11, 20.1.3.
    * Unit is min.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return asyncPatchRequestCleanupDuration
    */
@@ -812,7 +826,7 @@ public class ControllerProperties extends AviRestResource {
    * Allowed values are 5-120.
    * Field introduced in 18.2.11, 20.1.3.
    * Unit is min.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @param asyncPatchRequestCleanupDuration set the asyncPatchRequestCleanupDuration.
    */
@@ -891,6 +905,108 @@ public class ControllerProperties extends AviRestResource {
   @VsoMethod
   public void setBmUseAnsible(Boolean  bmUseAnsible) {
     this.bmUseAnsible = bmUseAnsible;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Number of days after which cloudconnectoruser (service account) password expires.
+   * Rotation is triggered 5 days before expiry.
+   * Set to 0 to disable automatic rotation.
+   * Allowed values are 1-730.
+   * Special values are 0 - disabled.
+   * Field introduced in 32.1.1.
+   * Unit is days.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 30.
+   * @return ccUserPasswordExpiryDays
+   */
+  @VsoMethod
+  public Integer getCcUserPasswordExpiryDays() {
+    return ccUserPasswordExpiryDays;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Number of days after which cloudconnectoruser (service account) password expires.
+   * Rotation is triggered 5 days before expiry.
+   * Set to 0 to disable automatic rotation.
+   * Allowed values are 1-730.
+   * Special values are 0 - disabled.
+   * Field introduced in 32.1.1.
+   * Unit is days.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 30.
+   * @param ccUserPasswordExpiryDays set the ccUserPasswordExpiryDays.
+   */
+  @VsoMethod
+  public void setCcUserPasswordExpiryDays(Integer  ccUserPasswordExpiryDays) {
+    this.ccUserPasswordExpiryDays = ccUserPasswordExpiryDays;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Period in hours for cloudconnectoruser (service account) password rotation check job.
+   * Default is 24 hours (1 day).
+   * Range is 1-168 hours (1 hour to 7 days).
+   * Allowed values are 1-168.
+   * Field introduced in 32.1.1.
+   * Unit is hours.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 24.
+   * @return ccUserPasswordRotationJobPeriod
+   */
+  @VsoMethod
+  public Integer getCcUserPasswordRotationJobPeriod() {
+    return ccUserPasswordRotationJobPeriod;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Period in hours for cloudconnectoruser (service account) password rotation check job.
+   * Default is 24 hours (1 day).
+   * Range is 1-168 hours (1 hour to 7 days).
+   * Allowed values are 1-168.
+   * Field introduced in 32.1.1.
+   * Unit is hours.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 24.
+   * @param ccUserPasswordRotationJobPeriod set the ccUserPasswordRotationJobPeriod.
+   */
+  @VsoMethod
+  public void setCcUserPasswordRotationJobPeriod(Integer  ccUserPasswordRotationJobPeriod) {
+    this.ccUserPasswordRotationJobPeriod = ccUserPasswordRotationJobPeriod;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Number of days to retain jwt tokens generated during certificate rotation.
+   * Use multiples of 30 for months (e.g., 30 = 1 month, 60 = 2 months, 180 = 6 months).
+   * Allowed values are 1-3650.
+   * Field introduced in 32.1.1.
+   * Unit is days.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 180.
+   * @return certRotationJwtRetentionDays
+   */
+  @VsoMethod
+  public Integer getCertRotationJwtRetentionDays() {
+    return certRotationJwtRetentionDays;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Number of days to retain jwt tokens generated during certificate rotation.
+   * Use multiples of 30 for months (e.g., 30 = 1 month, 60 = 2 months, 180 = 6 months).
+   * Allowed values are 1-3650.
+   * Field introduced in 32.1.1.
+   * Unit is days.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 180.
+   * @param certRotationJwtRetentionDays set the certRotationJwtRetentionDays.
+   */
+  @VsoMethod
+  public void setCertRotationJwtRetentionDays(Integer  certRotationJwtRetentionDays) {
+    this.certRotationJwtRetentionDays = certRotationJwtRetentionDays;
   }
 
   /**
@@ -981,7 +1097,7 @@ public class ControllerProperties extends AviRestResource {
    * Allowed values are 1-1440.
    * Field introduced in 22.1.5, 30.2.1.
    * Unit is min.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @return cloudDiscoveryInterval
    */
@@ -996,7 +1112,7 @@ public class ControllerProperties extends AviRestResource {
    * Allowed values are 1-1440.
    * Field introduced in 22.1.5, 30.2.1.
    * Unit is min.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @param cloudDiscoveryInterval set the cloudDiscoveryInterval.
    */
@@ -1037,7 +1153,7 @@ public class ControllerProperties extends AviRestResource {
    * Allowed values are 1-1440.
    * Field introduced in 22.1.5, 30.2.1.
    * Unit is min.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @return cloudReconcileInterval
    */
@@ -1052,7 +1168,7 @@ public class ControllerProperties extends AviRestResource {
    * Allowed values are 1-1440.
    * Field introduced in 22.1.5, 30.2.1.
    * Unit is min.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @param cloudReconcileInterval set the cloudReconcileInterval.
    */
@@ -1122,7 +1238,7 @@ public class ControllerProperties extends AviRestResource {
    * Periodically collect stats.
    * Field introduced in 20.1.3.
    * Unit is min.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 525600.
    * @return controllerResourceInfoCollectionPeriod
    */
@@ -1136,7 +1252,7 @@ public class ControllerProperties extends AviRestResource {
    * Periodically collect stats.
    * Field introduced in 20.1.3.
    * Unit is min.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 525600.
    * @param controllerResourceInfoCollectionPeriod set the controllerResourceInfoCollectionPeriod.
    */
@@ -1232,7 +1348,7 @@ public class ControllerProperties extends AviRestResource {
    * For crashed ses, the total time will be crashed_se_reboot + del_offline_se_after_reboot_delay.
    * Field introduced in 20.1.5.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @return delOfflineSeAfterRebootDelay
    */
@@ -1248,7 +1364,7 @@ public class ControllerProperties extends AviRestResource {
    * For crashed ses, the total time will be crashed_se_reboot + del_offline_se_after_reboot_delay.
    * Field introduced in 20.1.5.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @param delOfflineSeAfterRebootDelay set the delOfflineSeAfterRebootDelay.
    */
@@ -1262,7 +1378,7 @@ public class ControllerProperties extends AviRestResource {
    * Amount of time to wait after last detach ip failure before attempting next detach ip retry.
    * Field introduced in 21.1.3.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return detachIpRetryInterval
    */
@@ -1276,7 +1392,7 @@ public class ControllerProperties extends AviRestResource {
    * Amount of time to wait after last detach ip failure before attempting next detach ip retry.
    * Field introduced in 21.1.3.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @param detachIpRetryInterval set the detachIpRetryInterval.
    */
@@ -1289,7 +1405,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of detach ip retries.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4.
    * @return detachIpRetryLimit
    */
@@ -1302,7 +1418,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of detach ip retries.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4.
    * @param detachIpRetryLimit set the detachIpRetryLimit.
    */
@@ -1316,7 +1432,7 @@ public class ControllerProperties extends AviRestResource {
    * Time to wait before marking detach ip as failed.
    * Field introduced in 21.1.3.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @return detachIpTimeout
    */
@@ -1330,7 +1446,7 @@ public class ControllerProperties extends AviRestResource {
    * Time to wait before marking detach ip as failed.
    * Field introduced in 21.1.3.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @param detachIpTimeout set the detachIpTimeout.
    */
@@ -1343,8 +1459,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Period for refresh pool and gslb dns job.
    * Unit is min.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- 60), basic (allowed values- 60) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return dnsRefreshPeriod
    */
@@ -1357,8 +1472,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Period for refresh pool and gslb dns job.
    * Unit is min.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- 60), basic (allowed values- 60) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @param dnsRefreshPeriod set the dnsRefreshPeriod.
    */
@@ -1479,7 +1593,7 @@ public class ControllerProperties extends AviRestResource {
    * If it cannot connect, it will fallback to using rest apis based periodic polling.
    * Dynamic streaming is supported from nsx version 4.2.1 onwards.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enableNsxStreamingAgent
    */
@@ -1494,7 +1608,7 @@ public class ControllerProperties extends AviRestResource {
    * If it cannot connect, it will fallback to using rest apis based periodic polling.
    * Dynamic streaming is supported from nsx version 4.2.1 onwards.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enableNsxStreamingAgent set the enableNsxStreamingAgent.
    */
@@ -1508,7 +1622,7 @@ public class ControllerProperties extends AviRestResource {
    * Enable stopping of individual processes if process cross the given threshold limit, even when the total controller memory usage is belowits
    * threshold limit.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enablePerProcessStop
    */
@@ -1522,7 +1636,7 @@ public class ControllerProperties extends AviRestResource {
    * Enable stopping of individual processes if process cross the given threshold limit, even when the total controller memory usage is belowits
    * threshold limit.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param enablePerProcessStop set the enablePerProcessStop.
    */
@@ -1536,7 +1650,7 @@ public class ControllerProperties extends AviRestResource {
    * Enable printing of cached logs inside resource manager.
    * Used for debugging purposes only.
    * Field introduced in 20.1.6.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enableResmgrLogCachePrint
    */
@@ -1550,7 +1664,7 @@ public class ControllerProperties extends AviRestResource {
    * Enable printing of cached logs inside resource manager.
    * Used for debugging purposes only.
    * Field introduced in 20.1.6.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param enableResmgrLogCachePrint set the enableResmgrLogCachePrint.
    */
@@ -1561,11 +1675,39 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * When set to true, avi controller will attempt to automatically sync nsx groups with avi ip groups provided the ip group is configured with an nsx
+   * group path and nsx dynamic streaming is enabled and active.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @return enableStreamingBasedNsxIpGroupSync
+   */
+  @VsoMethod
+  public Boolean getEnableStreamingBasedNsxIpGroupSync() {
+    return enableStreamingBasedNsxIpGroupSync;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * When set to true, avi controller will attempt to automatically sync nsx groups with avi ip groups provided the ip group is configured with an nsx
+   * group path and nsx dynamic streaming is enabled and active.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param enableStreamingBasedNsxIpGroupSync set the enableStreamingBasedNsxIpGroupSync.
+   */
+  @VsoMethod
+  public void setEnableStreamingBasedNsxIpGroupSync(Boolean  enableStreamingBasedNsxIpGroupSync) {
+    this.enableStreamingBasedNsxIpGroupSync = enableStreamingBasedNsxIpGroupSync;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Stated time duration beyond which event manager disregards files whose modified timestamp from current time is later.
    * Allowed values are 1-1800.
    * Field introduced in 31.2.1.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 180.
    * @return eventManagerFileModifiedTsFilter
    */
@@ -1580,7 +1722,7 @@ public class ControllerProperties extends AviRestResource {
    * Allowed values are 1-1800.
    * Field introduced in 31.2.1.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 180.
    * @param eventManagerFileModifiedTsFilter set the eventManagerFileModifiedTsFilter.
    */
@@ -1594,7 +1736,7 @@ public class ControllerProperties extends AviRestResource {
    * Maximum number of goroutines for event manager process.
    * Allowed values are 1-64.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 8.
    * @return eventManagerMaxGoroutines
    */
@@ -1608,7 +1750,7 @@ public class ControllerProperties extends AviRestResource {
    * Maximum number of goroutines for event manager process.
    * Allowed values are 1-64.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 8.
    * @param eventManagerMaxGoroutines set the eventManagerMaxGoroutines.
    */
@@ -1623,7 +1765,7 @@ public class ControllerProperties extends AviRestResource {
    * Allowed values are 1-6.
    * Special values are 0 - disabled.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @return eventManagerMaxSubscribers
    */
@@ -1638,7 +1780,7 @@ public class ControllerProperties extends AviRestResource {
    * Allowed values are 1-6.
    * Special values are 0 - disabled.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @param eventManagerMaxSubscribers set the eventManagerMaxSubscribers.
    */
@@ -1654,7 +1796,7 @@ public class ControllerProperties extends AviRestResource {
    * Special values are 0 - disabled.
    * Field introduced in 30.2.1.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4.
    * @return eventManagerProcessingTimeThreshold
    */
@@ -1670,7 +1812,7 @@ public class ControllerProperties extends AviRestResource {
    * Special values are 0 - disabled.
    * Field introduced in 30.2.1.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4.
    * @param eventManagerProcessingTimeThreshold set the eventManagerProcessingTimeThreshold.
    */
@@ -1683,7 +1825,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * False positive learning configuration.
    * Field introduced in 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return falsePositiveLearningConfig
    */
@@ -1696,7 +1838,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * False positive learning configuration.
    * Field introduced in 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param falsePositiveLearningConfig set the falsePositiveLearningConfig.
    */
@@ -1794,7 +1936,7 @@ public class ControllerProperties extends AviRestResource {
    * On the fourth upload of the file, the v1 will be file rotated and v2, v3 and v4 will be retained.
    * Allowed values are 1-5.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3.
    * @return fileobjectMaxFileVersions
    */
@@ -1812,7 +1954,7 @@ public class ControllerProperties extends AviRestResource {
    * On the fourth upload of the file, the v1 will be file rotated and v2, v3 and v4 will be retained.
    * Allowed values are 1-5.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3.
    * @param fileobjectMaxFileVersions set the fileobjectMaxFileVersions.
    */
@@ -1826,7 +1968,7 @@ public class ControllerProperties extends AviRestResource {
    * Number of version copies for a givenfile object of gslb_geo_db type.
    * Allowed values are 2-50000.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3.
    * @return gslbFileobjectMaxVersionCount
    */
@@ -1840,7 +1982,7 @@ public class ControllerProperties extends AviRestResource {
    * Number of version copies for a givenfile object of gslb_geo_db type.
    * Allowed values are 2-50000.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3.
    * @param gslbFileobjectMaxVersionCount set the gslbFileobjectMaxVersionCount.
    */
@@ -1854,7 +1996,7 @@ public class ControllerProperties extends AviRestResource {
    * Batch size for the vs_mgr to perform datastrorecleanup during a gslb purge.
    * Allowed values are 50-1200.
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @return gslbPurgeBatchSize
    */
@@ -1868,7 +2010,7 @@ public class ControllerProperties extends AviRestResource {
    * Batch size for the vs_mgr to perform datastrorecleanup during a gslb purge.
    * Allowed values are 50-1200.
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @param gslbPurgeBatchSize set the gslbPurgeBatchSize.
    */
@@ -1883,7 +2025,7 @@ public class ControllerProperties extends AviRestResource {
    * Allowed values are 50-100.
    * Field introduced in 22.1.3.
    * Unit is milliseconds.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 50.
    * @return gslbPurgeSleepTimeMs
    */
@@ -1898,7 +2040,7 @@ public class ControllerProperties extends AviRestResource {
    * Allowed values are 50-100.
    * Field introduced in 22.1.3.
    * Unit is milliseconds.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 50.
    * @param gslbPurgeSleepTimeMs set the gslbPurgeSleepTimeMs.
    */
@@ -1911,7 +2053,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ignore the vrf_context filter for /networksubnetlist api.
    * Field introduced in 22.1.4.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return ignoreVrfInNetworksubnetlist
    */
@@ -1924,7 +2066,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Ignore the vrf_context filter for /networksubnetlist api.
    * Field introduced in 22.1.4.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param ignoreVrfInNetworksubnetlist set the ignoreVrfInNetworksubnetlist.
    */
@@ -1939,7 +2081,7 @@ public class ControllerProperties extends AviRestResource {
    * Allowed values are 1000-500000000.
    * Field introduced in 31.2.1.
    * Unit is kb.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return logRecordsAllocatedSize
    */
@@ -1954,7 +2096,7 @@ public class ControllerProperties extends AviRestResource {
    * Allowed values are 1000-500000000.
    * Field introduced in 31.2.1.
    * Unit is kb.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param logRecordsAllocatedSize set the logRecordsAllocatedSize.
    */
@@ -1968,7 +2110,7 @@ public class ControllerProperties extends AviRestResource {
    * Percentage of allocation (log_records_allocated_size)  for events on controller node.
    * Allowed values are 10-70.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 50.
    * @return logRecordsAllocationPercentageForEvents
    */
@@ -1982,7 +2124,7 @@ public class ControllerProperties extends AviRestResource {
    * Percentage of allocation (log_records_allocated_size)  for events on controller node.
    * Allowed values are 10-70.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 50.
    * @param logRecordsAllocationPercentageForEvents set the logRecordsAllocationPercentageForEvents.
    */
@@ -1997,7 +2139,7 @@ public class ControllerProperties extends AviRestResource {
    * When disk usage exceeds 100% of the allocated quota, cleanup will reduce consumption to this percentage of the allocation.
    * Allowed values are 30-90.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 90.
    * @return logRecordsCleanupTargetPercentage
    */
@@ -2012,7 +2154,7 @@ public class ControllerProperties extends AviRestResource {
    * When disk usage exceeds 100% of the allocated quota, cleanup will reduce consumption to this percentage of the allocation.
    * Allowed values are 30-90.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 90.
    * @param logRecordsCleanupTargetPercentage set the logRecordsCleanupTargetPercentage.
    */
@@ -2027,7 +2169,7 @@ public class ControllerProperties extends AviRestResource {
    * By default if two consecutive purger/ clean up runs find logs beyond allocated size then an event in raised.
    * Allowed values are 2-100.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2.
    * @return logRecordsFrequentCleanupEventGenerationThreshold
    */
@@ -2042,7 +2184,7 @@ public class ControllerProperties extends AviRestResource {
    * By default if two consecutive purger/ clean up runs find logs beyond allocated size then an event in raised.
    * Allowed values are 2-100.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2.
    * @param logRecordsFrequentCleanupEventGenerationThreshold set the logRecordsFrequentCleanupEventGenerationThreshold.
    */
@@ -2057,7 +2199,7 @@ public class ControllerProperties extends AviRestResource {
    * Allowed values are 10-100000.
    * Field introduced in 31.2.1.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @return logRecordsPurgeInterval
    */
@@ -2072,7 +2214,7 @@ public class ControllerProperties extends AviRestResource {
    * Allowed values are 10-100000.
    * Field introduced in 31.2.1.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @param logRecordsPurgeInterval set the logRecordsPurgeInterval.
    */
@@ -2208,7 +2350,7 @@ public class ControllerProperties extends AviRestResource {
    * Maximum number of threads in threadpool used by cloud connector ccvipbgworker.
    * Allowed values are 1-100.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20.
    * @return maxThreadsCcVipBgWorker
    */
@@ -2222,7 +2364,7 @@ public class ControllerProperties extends AviRestResource {
    * Maximum number of threads in threadpool used by cloud connector ccvipbgworker.
    * Allowed values are 1-100.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20.
    * @param maxThreadsCcVipBgWorker set the maxThreadsCcVipBgWorker.
    */
@@ -2263,8 +2405,7 @@ public class ControllerProperties extends AviRestResource {
    * Allowed values are 1-1051200.
    * Special values are 0 - disabled.
    * Unit is min.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- 0), basic (allowed values- 0) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return persistenceKeyRotatePeriod
    */
@@ -2279,8 +2420,7 @@ public class ControllerProperties extends AviRestResource {
    * Allowed values are 1-1051200.
    * Special values are 0 - disabled.
    * Unit is min.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- 0), basic (allowed values- 0) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param persistenceKeyRotatePeriod set the persistenceKeyRotatePeriod.
    */
@@ -2380,7 +2520,7 @@ public class ControllerProperties extends AviRestResource {
    * Special values are 0 - deactivated.
    * Field introduced in 22.1.3.
    * Unit is min.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20160.
    * @return postgresVacuumPeriod
    */
@@ -2396,7 +2536,7 @@ public class ControllerProperties extends AviRestResource {
    * Special values are 0 - deactivated.
    * Field introduced in 22.1.3.
    * Unit is min.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20160.
    * @param postgresVacuumPeriod set the postgresVacuumPeriod.
    */
@@ -2491,7 +2631,7 @@ public class ControllerProperties extends AviRestResource {
    * At the end of each cycle, the in memory cached log history will be cleared.
    * Field introduced in 20.1.5.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 21600.
    * @return resmgrLogCachingPeriod
    */
@@ -2506,7 +2646,7 @@ public class ControllerProperties extends AviRestResource {
    * At the end of each cycle, the in memory cached log history will be cleared.
    * Field introduced in 20.1.5.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 21600.
    * @param resmgrLogCachingPeriod set the resmgrLogCachingPeriod.
    */
@@ -2519,7 +2659,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Restrict read access to cloud.
    * Field introduced in 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return restrictCloudReadAccess
    */
@@ -2532,7 +2672,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Restrict read access to cloud.
    * Field introduced in 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param restrictCloudReadAccess set the restrictCloudReadAccess.
    */
@@ -2704,7 +2844,7 @@ public class ControllerProperties extends AviRestResource {
    * Timeout for flows cleanup by serviceengine during upgrade.internal knob  to be exercised under the surveillance of vmware avi support team.
    * Field introduced in 22.1.1.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 90.
    * @return seUpgradeFlowCleanupTimeout
    */
@@ -2718,7 +2858,7 @@ public class ControllerProperties extends AviRestResource {
    * Timeout for flows cleanup by serviceengine during upgrade.internal knob  to be exercised under the surveillance of vmware avi support team.
    * Field introduced in 22.1.1.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 90.
    * @param seUpgradeFlowCleanupTimeout set the seUpgradeFlowCleanupTimeout.
    */
@@ -2757,7 +2897,7 @@ public class ControllerProperties extends AviRestResource {
    * Used for testing purposes.
    * Field introduced in 20.1.4.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @return seVnicGcWaitTime
    */
@@ -2772,7 +2912,7 @@ public class ControllerProperties extends AviRestResource {
    * Used for testing purposes.
    * Field introduced in 20.1.4.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @param seVnicGcWaitTime set the seVnicGcWaitTime.
    */
@@ -2885,7 +3025,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Skip api performance collection for requests going through the apiserver.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return skipBeegoPerfCollection
    */
@@ -2898,7 +3038,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Skip api performance collection for requests going through the apiserver.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param skipBeegoPerfCollection set the skipBeegoPerfCollection.
    */
@@ -2912,7 +3052,7 @@ public class ControllerProperties extends AviRestResource {
    * Soft limit on the minimum se memory that an se needs to have on se register.
    * Field introduced in 30.1.1.
    * Unit is mb.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1900.
    * @return softMinMemPerSeLimit
    */
@@ -2926,7 +3066,7 @@ public class ControllerProperties extends AviRestResource {
    * Soft limit on the minimum se memory that an se needs to have on se register.
    * Field introduced in 30.1.1.
    * Unit is mb.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1900.
    * @param softMinMemPerSeLimit set the softMinMemPerSeLimit.
    */
@@ -2983,7 +3123,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Configure statecache behavior for config, se, resmgr.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return statecacheProperties
    */
@@ -2996,7 +3136,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Configure statecache behavior for config, se, resmgr.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param statecacheProperties set the statecacheProperties.
    */
@@ -3063,7 +3203,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of times to retry a dns entry update/delete operation.
    * Field introduced in 21.1.4.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3.
    * @return updateDnsEntryRetryLimit
    */
@@ -3076,7 +3216,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of times to retry a dns entry update/delete operation.
    * Field introduced in 21.1.4.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3.
    * @param updateDnsEntryRetryLimit set the updateDnsEntryRetryLimit.
    */
@@ -3090,7 +3230,7 @@ public class ControllerProperties extends AviRestResource {
    * Timeout period for a dns entry update/delete operation.
    * Field introduced in 21.1.4.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 120.
    * @return updateDnsEntryTimeout
    */
@@ -3104,7 +3244,7 @@ public class ControllerProperties extends AviRestResource {
    * Timeout period for a dns entry update/delete operation.
    * Field introduced in 21.1.4.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 120.
    * @param updateDnsEntryTimeout set the updateDnsEntryTimeout.
    */
@@ -3119,8 +3259,7 @@ public class ControllerProperties extends AviRestResource {
    * This is in addition to vs_scalein_timeout_for_upgrade in se_group.
    * Field introduced in 17.1.1.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- 5), basic (allowed values- 5) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @return upgradeDnsTtl
    */
@@ -3135,8 +3274,7 @@ public class ControllerProperties extends AviRestResource {
    * This is in addition to vs_scalein_timeout_for_upgrade in se_group.
    * Field introduced in 17.1.1.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- 5), basic (allowed values- 5) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @param upgradeDnsTtl set the upgradeDnsTtl.
    */
@@ -3200,7 +3338,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Configuration for user-agent cache used in bot management.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return userAgentCacheConfig
    */
@@ -3213,7 +3351,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Configuration for user-agent cache used in bot management.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param userAgentCacheConfig set the userAgentCacheConfig.
    */
@@ -3407,7 +3545,7 @@ public class ControllerProperties extends AviRestResource {
    * Wait for longer for patch ses to boot up.
    * Field introduced in 30.2.1.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 600.
    * @return vsSeBootupFailPatch
    */
@@ -3421,7 +3559,7 @@ public class ControllerProperties extends AviRestResource {
    * Wait for longer for patch ses to boot up.
    * Field introduced in 30.2.1.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 600.
    * @param vsSeBootupFailPatch set the vsSeBootupFailPatch.
    */
@@ -3533,7 +3671,7 @@ public class ControllerProperties extends AviRestResource {
    * be marked true before taking corrective action.
    * Field introduced in 20.1.7, 21.1.3.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 120.
    * @return vsphereHaDetectionTimeout
    */
@@ -3549,7 +3687,7 @@ public class ControllerProperties extends AviRestResource {
    * be marked true before taking corrective action.
    * Field introduced in 20.1.7, 21.1.3.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 120.
    * @param vsphereHaDetectionTimeout set the vsphereHaDetectionTimeout.
    */
@@ -3565,7 +3703,7 @@ public class ControllerProperties extends AviRestResource {
    * at least this duration for the se to reconnect to the controller before taking corrective action.
    * Field introduced in 20.1.7, 21.1.3.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 480.
    * @return vsphereHaRecoveryTimeout
    */
@@ -3581,7 +3719,7 @@ public class ControllerProperties extends AviRestResource {
    * at least this duration for the se to reconnect to the controller before taking corrective action.
    * Field introduced in 20.1.7, 21.1.3.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 480.
    * @param vsphereHaRecoveryTimeout set the vsphereHaRecoveryTimeout.
    */
@@ -3595,7 +3733,7 @@ public class ControllerProperties extends AviRestResource {
    * Vsphere ha monitor timer interval for sending cc_check_se_status to cloud connector.
    * Field introduced in 20.1.7, 21.1.3.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20.
    * @return vsphereHaTimerInterval
    */
@@ -3609,7 +3747,7 @@ public class ControllerProperties extends AviRestResource {
    * Vsphere ha monitor timer interval for sending cc_check_se_status to cloud connector.
    * Field introduced in 20.1.7, 21.1.3.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20.
    * @param vsphereHaTimerInterval set the vsphereHaTimerInterval.
    */
@@ -3798,7 +3936,11 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.logRecordsFrequentCleanupEventGenerationThreshold, objControllerProperties.logRecordsFrequentCleanupEventGenerationThreshold)&&
   Objects.equals(this.logRecordsCleanupTargetPercentage, objControllerProperties.logRecordsCleanupTargetPercentage)&&
   Objects.equals(this.logRecordsAllocationPercentageForEvents, objControllerProperties.logRecordsAllocationPercentageForEvents)&&
-  Objects.equals(this.eventManagerFileModifiedTsFilter, objControllerProperties.eventManagerFileModifiedTsFilter);
+  Objects.equals(this.eventManagerFileModifiedTsFilter, objControllerProperties.eventManagerFileModifiedTsFilter)&&
+  Objects.equals(this.certRotationJwtRetentionDays, objControllerProperties.certRotationJwtRetentionDays)&&
+  Objects.equals(this.ccUserPasswordRotationJobPeriod, objControllerProperties.ccUserPasswordRotationJobPeriod)&&
+  Objects.equals(this.ccUserPasswordExpiryDays, objControllerProperties.ccUserPasswordExpiryDays)&&
+  Objects.equals(this.enableStreamingBasedNsxIpGroupSync, objControllerProperties.enableStreamingBasedNsxIpGroupSync);
 }
 
 @Override
@@ -3820,6 +3962,9 @@ public String toString() {
         sb.append("    attachIpRetryInterval: ").append(toIndentedString(attachIpRetryInterval)).append("\n");
         sb.append("    attachIpRetryLimit: ").append(toIndentedString(attachIpRetryLimit)).append("\n");
         sb.append("    bmUseAnsible: ").append(toIndentedString(bmUseAnsible)).append("\n");
+        sb.append("    ccUserPasswordExpiryDays: ").append(toIndentedString(ccUserPasswordExpiryDays)).append("\n");
+        sb.append("    ccUserPasswordRotationJobPeriod: ").append(toIndentedString(ccUserPasswordRotationJobPeriod)).append("\n");
+        sb.append("    certRotationJwtRetentionDays: ").append(toIndentedString(certRotationJwtRetentionDays)).append("\n");
         sb.append("    checkVsvipFqdnSyntax: ").append(toIndentedString(checkVsvipFqdnSyntax)).append("\n");
         sb.append("    cleanupExpiredAuthtokenTimeoutPeriod: ").append(toIndentedString(cleanupExpiredAuthtokenTimeoutPeriod)).append("\n");
         sb.append("    cleanupSessionsTimeoutPeriod: ").append(toIndentedString(cleanupSessionsTimeoutPeriod)).append("\n");
@@ -3844,6 +3989,7 @@ public String toString() {
         sb.append("    enableNsxStreamingAgent: ").append(toIndentedString(enableNsxStreamingAgent)).append("\n");
         sb.append("    enablePerProcessStop: ").append(toIndentedString(enablePerProcessStop)).append("\n");
         sb.append("    enableResmgrLogCachePrint: ").append(toIndentedString(enableResmgrLogCachePrint)).append("\n");
+        sb.append("    enableStreamingBasedNsxIpGroupSync: ").append(toIndentedString(enableStreamingBasedNsxIpGroupSync)).append("\n");
         sb.append("    eventManagerFileModifiedTsFilter: ").append(toIndentedString(eventManagerFileModifiedTsFilter)).append("\n");
         sb.append("    eventManagerMaxGoroutines: ").append(toIndentedString(eventManagerMaxGoroutines)).append("\n");
         sb.append("    eventManagerMaxSubscribers: ").append(toIndentedString(eventManagerMaxSubscribers)).append("\n");

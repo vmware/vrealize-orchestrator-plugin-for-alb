@@ -49,7 +49,7 @@ public class JsonParsingLimits extends AviRestResource {
    * Allowed values are 0-256.
    * Special values are 0- do not apply this restriction.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return maxNestingLevel
    */
@@ -65,7 +65,7 @@ public class JsonParsingLimits extends AviRestResource {
    * Allowed values are 0-256.
    * Special values are 0- do not apply this restriction.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param maxNestingLevel set the maxNestingLevel.
    */
@@ -81,7 +81,7 @@ public class JsonParsingLimits extends AviRestResource {
    * Allowed values are 0-1048576.
    * Special values are 0- do not apply this restriction.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return maxSubelements
    */
@@ -97,7 +97,7 @@ public class JsonParsingLimits extends AviRestResource {
    * Allowed values are 0-1048576.
    * Special values are 0- do not apply this restriction.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param maxSubelements set the maxSubelements.
    */
@@ -113,7 +113,7 @@ public class JsonParsingLimits extends AviRestResource {
    * Allowed values are 0-1048576.
    * Special values are 0- do not apply this restriction.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return maxTotalElements
    */
@@ -129,7 +129,7 @@ public class JsonParsingLimits extends AviRestResource {
    * Allowed values are 0-1048576.
    * Special values are 0- do not apply this restriction.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param maxTotalElements set the maxTotalElements.
    */
@@ -145,7 +145,7 @@ public class JsonParsingLimits extends AviRestResource {
    * Allowed values are 0-1048576.
    * Special values are 0- do not apply this restriction.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return maxValueLength
    */
@@ -161,7 +161,7 @@ public class JsonParsingLimits extends AviRestResource {
    * Allowed values are 0-1048576.
    * Special values are 0- do not apply this restriction.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param maxValueLength set the maxValueLength.
    */

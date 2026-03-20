@@ -45,7 +45,7 @@ public class MetricsEventThreshold extends AviRestResource {
    * Enum options - THRESHOLD_TYPE_STATIC, SE_CPU_THRESHOLD, SE_MEM_THRESHOLD, SE_DISK_THRESHOLD, CONTROLLER_CPU_THRESHOLD, CONTROLLER_MEM_THRESHOLD,
    * CONTROLLER_DISK_THRESHOLD.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricsEventThresholdType
    */
@@ -61,7 +61,7 @@ public class MetricsEventThreshold extends AviRestResource {
    * Enum options - THRESHOLD_TYPE_STATIC, SE_CPU_THRESHOLD, SE_MEM_THRESHOLD, SE_DISK_THRESHOLD, CONTROLLER_CPU_THRESHOLD, CONTROLLER_MEM_THRESHOLD,
    * CONTROLLER_DISK_THRESHOLD.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricsEventThresholdType set the metricsEventThresholdType.
    */
@@ -75,7 +75,7 @@ public class MetricsEventThreshold extends AviRestResource {
    * This value is used to reset the event state machine.
    * Allowed values are 1-100.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return resetThreshold
    */
@@ -89,7 +89,7 @@ public class MetricsEventThreshold extends AviRestResource {
    * This value is used to reset the event state machine.
    * Allowed values are 1-100.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param resetThreshold set the resetThreshold.
    */
@@ -104,7 +104,7 @@ public class MetricsEventThreshold extends AviRestResource {
    * There can be multiple thresholds defined.health score degrades when the the target is higher than this threshold.
    * Allowed values are 1-100.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return watermarkThresholds
    */
@@ -119,7 +119,7 @@ public class MetricsEventThreshold extends AviRestResource {
    * There can be multiple thresholds defined.health score degrades when the the target is higher than this threshold.
    * Allowed values are 1-100.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return watermarkThresholds
    */
@@ -134,7 +134,7 @@ public class MetricsEventThreshold extends AviRestResource {
    * There can be multiple thresholds defined.health score degrades when the the target is higher than this threshold.
    * Allowed values are 1-100.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return watermarkThresholds
    */

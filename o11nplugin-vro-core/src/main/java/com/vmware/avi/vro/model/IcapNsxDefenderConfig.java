@@ -34,7 +34,7 @@ public class IcapNsxDefenderConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Url to get details from nsxdefender using task_uuid for a particular request.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as
    * "https://user.lastline.com/portal#/analyst/task/$uuid/overview".
    * @return statusUrl
@@ -48,7 +48,7 @@ public class IcapNsxDefenderConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Url to get details from nsxdefender using task_uuid for a particular request.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as
    * "https://user.lastline.com/portal#/analyst/task/$uuid/overview".
    * @param statusUrl set the statusUrl.

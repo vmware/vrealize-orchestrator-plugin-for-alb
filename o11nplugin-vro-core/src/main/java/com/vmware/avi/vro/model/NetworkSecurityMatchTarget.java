@@ -81,7 +81,7 @@ public class NetworkSecurityMatchTarget extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Matches the source port of incoming packets in the client side traffic.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientPort
    */
@@ -94,7 +94,7 @@ public class NetworkSecurityMatchTarget extends AviRestResource {
    * This is the setter method to the attribute.
    * Matches the source port of incoming packets in the client side traffic.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientPort set the clientPort.
    */
@@ -108,7 +108,7 @@ public class NetworkSecurityMatchTarget extends AviRestResource {
    * Matches the geo information of incoming packets in the client side traffic.
    * Field introduced in 21.1.1.
    * Maximum of 1 items allowed.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return geoMatches
    */
@@ -122,7 +122,7 @@ public class NetworkSecurityMatchTarget extends AviRestResource {
    * Matches the geo information of incoming packets in the client side traffic.
    * Field introduced in 21.1.1.
    * Maximum of 1 items allowed.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return geoMatches
    */
@@ -136,7 +136,7 @@ public class NetworkSecurityMatchTarget extends AviRestResource {
    * Matches the geo information of incoming packets in the client side traffic.
    * Field introduced in 21.1.1.
    * Maximum of 1 items allowed.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return geoMatches
    */
@@ -153,7 +153,7 @@ public class NetworkSecurityMatchTarget extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 20.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipReputationType
    */
@@ -165,7 +165,7 @@ public class NetworkSecurityMatchTarget extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 20.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipReputationType set the ipReputationType.
    */
@@ -176,7 +176,7 @@ public class NetworkSecurityMatchTarget extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return microservice
    */
@@ -187,7 +187,7 @@ public class NetworkSecurityMatchTarget extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param microservice set the microservice.
    */

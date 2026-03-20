@@ -68,7 +68,7 @@ public class DebugServiceEngineSustainedCpuSpike extends AviRestResource {
    * Should be comma seperated with no space ( eg  0,1,4 ).
    * Ranges can be given ( eg  2,4-6 ).
    * Field introduced in 31.1.2.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cpuFilter
    */
@@ -83,7 +83,7 @@ public class DebugServiceEngineSustainedCpuSpike extends AviRestResource {
    * Should be comma seperated with no space ( eg  0,1,4 ).
    * Ranges can be given ( eg  2,4-6 ).
    * Field introduced in 31.1.2.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cpuFilter set the cpuFilter.
    */
@@ -97,7 +97,7 @@ public class DebugServiceEngineSustainedCpuSpike extends AviRestResource {
    * Average percent usage of cpu ( either total and/or percpu ) to be considered for cpu to be under high load.
    * Allowed values are 0-100.
    * Field introduced in 31.1.2.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cpuSpikePercent
    */
@@ -111,7 +111,7 @@ public class DebugServiceEngineSustainedCpuSpike extends AviRestResource {
    * Average percent usage of cpu ( either total and/or percpu ) to be considered for cpu to be under high load.
    * Allowed values are 0-100.
    * Field introduced in 31.1.2.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cpuSpikePercent set the cpuSpikePercent.
    */
@@ -125,7 +125,7 @@ public class DebugServiceEngineSustainedCpuSpike extends AviRestResource {
    * Toggle high cpu trigger action.
    * Set to true, to dis-enable high cpu data collection script invocation.
    * Field introduced in 31.1.2.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return disEnable
    */
@@ -139,7 +139,7 @@ public class DebugServiceEngineSustainedCpuSpike extends AviRestResource {
    * Toggle high cpu trigger action.
    * Set to true, to dis-enable high cpu data collection script invocation.
    * Field introduced in 31.1.2.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param disEnable set the disEnable.
    */
@@ -153,7 +153,7 @@ public class DebugServiceEngineSustainedCpuSpike extends AviRestResource {
    * Invokes high cpu data collection on se for duration of an hour.
    * Alert  operator will have to manually dis-enable this and manage se disk-space!.
    * Field introduced in 31.1.2.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return manualStart
    */
@@ -167,7 +167,7 @@ public class DebugServiceEngineSustainedCpuSpike extends AviRestResource {
    * Invokes high cpu data collection on se for duration of an hour.
    * Alert  operator will have to manually dis-enable this and manage se disk-space!.
    * Field introduced in 31.1.2.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param manualStart set the manualStart.
    */
@@ -180,7 +180,7 @@ public class DebugServiceEngineSustainedCpuSpike extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of process' pid(s) for which debug data should be recorded.
    * Field introduced in 31.1.2.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pids
    */
@@ -193,7 +193,7 @@ public class DebugServiceEngineSustainedCpuSpike extends AviRestResource {
    * This is the setter method. this will set the pids
    * List of process' pid(s) for which debug data should be recorded.
    * Field introduced in 31.1.2.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pids
    */
@@ -206,7 +206,7 @@ public class DebugServiceEngineSustainedCpuSpike extends AviRestResource {
    * This is the setter method this will set the pids
    * List of process' pid(s) for which debug data should be recorded.
    * Field introduced in 31.1.2.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pids
    */
@@ -224,7 +224,7 @@ public class DebugServiceEngineSustainedCpuSpike extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of process' name(s) for which debug data should be recorded.
    * Field introduced in 31.1.2.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return processNames
    */
@@ -237,7 +237,7 @@ public class DebugServiceEngineSustainedCpuSpike extends AviRestResource {
    * This is the setter method. this will set the processNames
    * List of process' name(s) for which debug data should be recorded.
    * Field introduced in 31.1.2.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return processNames
    */
@@ -250,7 +250,7 @@ public class DebugServiceEngineSustainedCpuSpike extends AviRestResource {
    * This is the setter method this will set the processNames
    * List of process' name(s) for which debug data should be recorded.
    * Field introduced in 31.1.2.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return processNames
    */
@@ -271,7 +271,7 @@ public class DebugServiceEngineSustainedCpuSpike extends AviRestResource {
    * Allowed values are 60-864000.
    * Field introduced in 31.1.2.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sampleCooldown
    */
@@ -287,7 +287,7 @@ public class DebugServiceEngineSustainedCpuSpike extends AviRestResource {
    * Allowed values are 60-864000.
    * Field introduced in 31.1.2.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sampleCooldown set the sampleCooldown.
    */
@@ -303,7 +303,7 @@ public class DebugServiceEngineSustainedCpuSpike extends AviRestResource {
    * Allowed values are 11-864000.
    * Field introduced in 31.1.2.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sampleDuration
    */
@@ -319,7 +319,7 @@ public class DebugServiceEngineSustainedCpuSpike extends AviRestResource {
    * Allowed values are 11-864000.
    * Field introduced in 31.1.2.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sampleDuration set the sampleDuration.
    */
@@ -336,7 +336,7 @@ public class DebugServiceEngineSustainedCpuSpike extends AviRestResource {
    * Allowed values are 60-864000.
    * Field introduced in 31.1.2.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return spikeDuration
    */
@@ -353,7 +353,7 @@ public class DebugServiceEngineSustainedCpuSpike extends AviRestResource {
    * Allowed values are 60-864000.
    * Field introduced in 31.1.2.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param spikeDuration set the spikeDuration.
    */

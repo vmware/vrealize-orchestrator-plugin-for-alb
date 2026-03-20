@@ -161,7 +161,7 @@ public class Gslb extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Automatically set the send interval value based on the load.
    * Field introduced in 30.2.5, 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return autoTuneSendInterval
    */
@@ -174,7 +174,7 @@ public class Gslb extends AviRestResource {
    * This is the setter method to the attribute.
    * Automatically set the send interval value based on the load.
    * Field introduced in 30.2.5, 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param autoTuneSendInterval set the autoTuneSendInterval.
    */
@@ -307,7 +307,7 @@ public class Gslb extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Allows enable/disable of gslbservice pool groups and pool members from the gslb follower members.
    * Field introduced in 20.1.5.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enableConfigByMembers
    */
@@ -320,7 +320,7 @@ public class Gslb extends AviRestResource {
    * This is the setter method to the attribute.
    * Allows enable/disable of gslbservice pool groups and pool members from the gslb follower members.
    * Field introduced in 20.1.5.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param enableConfigByMembers set the enableConfigByMembers.
    */
@@ -372,7 +372,7 @@ public class Gslb extends AviRestResource {
    * On the fourth upload of the file, the v1 will be file rotated and v2, v3 and v4 will be retained.
    * Allowed values are 1-5.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3.
    * @return fileobjectMaxFileVersions
    */
@@ -390,7 +390,7 @@ public class Gslb extends AviRestResource {
    * On the fourth upload of the file, the v1 will be file rotated and v2, v3 and v4 will be retained.
    * Allowed values are 1-5.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3.
    * @param fileobjectMaxFileVersions set the fileobjectMaxFileVersions.
    */
@@ -404,7 +404,7 @@ public class Gslb extends AviRestResource {
    * If this knob is enabled, gslb service member fqdn will be resolved by the service engines hosting the gslb service.
    * Each service engine will resolve and consume the resolved ip addresses locally.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return gsMemberFqdnResolutionOnSe
    */
@@ -418,7 +418,7 @@ public class Gslb extends AviRestResource {
    * If this knob is enabled, gslb service member fqdn will be resolved by the service engines hosting the gslb service.
    * Each service engine will resolve and consume the resolved ip addresses locally.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param gsMemberFqdnResolutionOnSe set the gsMemberFqdnResolutionOnSe.
    */
@@ -458,7 +458,7 @@ public class Gslb extends AviRestResource {
    * This field has leader change configuration info including mode, leader designate sites and other configurations for auto leader change like max
    * short probe failures.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return leaderChangeInfo
    */
@@ -472,7 +472,7 @@ public class Gslb extends AviRestResource {
    * This field has leader change configuration info including mode, leader designate sites and other configurations for auto leader change like max
    * short probe failures.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param leaderChangeInfo set the leaderChangeInfo.
    */
@@ -599,7 +599,7 @@ public class Gslb extends AviRestResource {
    * Allowed values are 1-3600.
    * Field introduced in 31.1.1.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @return shortProbeInterval
    */
@@ -614,7 +614,7 @@ public class Gslb extends AviRestResource {
    * Allowed values are 1-3600.
    * Field introduced in 31.1.1.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @param shortProbeInterval set the shortProbeInterval.
    */
@@ -696,7 +696,7 @@ public class Gslb extends AviRestResource {
    * This field indicates tenant visibility for gs pool member selection across the gslb federated objects.tenant scope can be set only during the
    * gslb create and cannot be changed once it is set.
    * Field introduced in 18.2.12,20.1.4.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return tenantScoped
    */
@@ -710,7 +710,7 @@ public class Gslb extends AviRestResource {
    * This field indicates tenant visibility for gs pool member selection across the gslb federated objects.tenant scope can be set only during the
    * gslb create and cannot be changed once it is set.
    * Field introduced in 18.2.12,20.1.4.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param tenantScoped set the tenantScoped.
    */

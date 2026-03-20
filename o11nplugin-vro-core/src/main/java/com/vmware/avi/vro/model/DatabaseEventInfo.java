@@ -39,7 +39,7 @@ public class DatabaseEventInfo extends AviRestResource {
    * Component of the database(e.g.
    * Metrics).
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return component
    */
@@ -53,7 +53,7 @@ public class DatabaseEventInfo extends AviRestResource {
    * Component of the database(e.g.
    * Metrics).
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param component set the component.
    */
@@ -66,7 +66,7 @@ public class DatabaseEventInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Reported message of the event.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return message
    */
@@ -79,7 +79,7 @@ public class DatabaseEventInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Reported message of the event.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param message set the message.
    */

@@ -76,7 +76,7 @@ public class NetworkRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Objects using static ips in this network.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return objUuids
    */
@@ -89,7 +89,7 @@ public class NetworkRuntime extends AviRestResource {
    * This is the setter method. this will set the objUuids
    * Objects using static ips in this network.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return objUuids
    */
@@ -102,7 +102,7 @@ public class NetworkRuntime extends AviRestResource {
    * This is the setter method this will set the objUuids
    * Objects using static ips in this network.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return objUuids
    */

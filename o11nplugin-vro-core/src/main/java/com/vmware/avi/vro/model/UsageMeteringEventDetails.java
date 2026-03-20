@@ -42,7 +42,7 @@ public class UsageMeteringEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Details of the clouds involved in the task.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clouds
    */
@@ -55,7 +55,7 @@ public class UsageMeteringEventDetails extends AviRestResource {
    * This is the setter method. this will set the clouds
    * Details of the clouds involved in the task.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clouds
    */
@@ -68,7 +68,7 @@ public class UsageMeteringEventDetails extends AviRestResource {
    * This is the setter method this will set the clouds
    * Details of the clouds involved in the task.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clouds
    */
@@ -86,7 +86,7 @@ public class UsageMeteringEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Additional info about the task.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return message
    */
@@ -99,7 +99,7 @@ public class UsageMeteringEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Additional info about the task.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param message set the message.
    */
@@ -112,7 +112,7 @@ public class UsageMeteringEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Trigger for the task.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return trigger
    */
@@ -125,7 +125,7 @@ public class UsageMeteringEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Trigger for the task.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param trigger set the trigger.
    */

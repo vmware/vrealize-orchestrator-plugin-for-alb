@@ -119,7 +119,7 @@ public class Server extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of autoscaling group this server belongs to.
    * Field introduced in 17.1.2.
-   * Allowed with any value in enterprise, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return autoscalingGroupName
    */
@@ -132,7 +132,7 @@ public class Server extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of autoscaling group this server belongs to.
    * Field introduced in 17.1.2.
-   * Allowed with any value in enterprise, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param autoscalingGroupName set the autoscalingGroupName.
    */
@@ -312,7 +312,7 @@ public class Server extends AviRestResource {
    * It is a reference to an object of type healthmonitor.
    * Field introduced in 31.1.1.
    * Maximum of 10 items allowed.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return healthMonitorRefs
    */
@@ -328,7 +328,7 @@ public class Server extends AviRestResource {
    * It is a reference to an object of type healthmonitor.
    * Field introduced in 31.1.1.
    * Maximum of 10 items allowed.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return healthMonitorRefs
    */
@@ -344,7 +344,7 @@ public class Server extends AviRestResource {
    * It is a reference to an object of type healthmonitor.
    * Field introduced in 31.1.1.
    * Maximum of 10 items allowed.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return healthMonitorRefs
    */
@@ -438,7 +438,7 @@ public class Server extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * (internal-use) geographic location of the server.currently only for internal usage.
    * Field introduced in 17.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return location
    */
@@ -451,7 +451,7 @@ public class Server extends AviRestResource {
    * This is the setter method to the attribute.
    * (internal-use) geographic location of the server.currently only for internal usage.
    * Field introduced in 17.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param location set the location.
    */
@@ -543,7 +543,7 @@ public class Server extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Header value for custom header persistence.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return prstHdrVal
    */
@@ -555,7 +555,7 @@ public class Server extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Header value for custom header persistence.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param prstHdrVal set the prstHdrVal.
    */
@@ -593,8 +593,7 @@ public class Server extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Auto resolve server's ip using dns name.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return resolveServerByDns
    */
@@ -606,8 +605,7 @@ public class Server extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Auto resolve server's ip using dns name.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param resolveServerByDns set the resolveServerByDns.
    */

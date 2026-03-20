@@ -290,7 +290,7 @@ public class ServerRuntimeSummary extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Flag used to indicate if server or gs member hostname is resolved by dns.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return resolveServerByDns
    */
@@ -303,7 +303,7 @@ public class ServerRuntimeSummary extends AviRestResource {
    * This is the setter method to the attribute.
    * Flag used to indicate if server or gs member hostname is resolved by dns.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param resolveServerByDns set the resolveServerByDns.
    */

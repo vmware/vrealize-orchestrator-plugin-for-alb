@@ -39,7 +39,7 @@ public class ContentRewriteProfile extends AviRestResource {
    * Content rewrite rules to be enabled on therequest body.
    * Field introduced in 31.2.1.
    * Maximum of 1 items allowed.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reqRewriteRules
    */
@@ -53,7 +53,7 @@ public class ContentRewriteProfile extends AviRestResource {
    * Content rewrite rules to be enabled on therequest body.
    * Field introduced in 31.2.1.
    * Maximum of 1 items allowed.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reqRewriteRules
    */
@@ -67,7 +67,7 @@ public class ContentRewriteProfile extends AviRestResource {
    * Content rewrite rules to be enabled on therequest body.
    * Field introduced in 31.2.1.
    * Maximum of 1 items allowed.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reqRewriteRules
    */
@@ -86,7 +86,7 @@ public class ContentRewriteProfile extends AviRestResource {
    * Content rewrite rules to be enabled on theresponse body.
    * Field introduced in 21.1.3.
    * Maximum of 1 items allowed.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rspRewriteRules
    */
@@ -100,7 +100,7 @@ public class ContentRewriteProfile extends AviRestResource {
    * Content rewrite rules to be enabled on theresponse body.
    * Field introduced in 21.1.3.
    * Maximum of 1 items allowed.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rspRewriteRules
    */
@@ -114,7 +114,7 @@ public class ContentRewriteProfile extends AviRestResource {
    * Content rewrite rules to be enabled on theresponse body.
    * Field introduced in 21.1.3.
    * Maximum of 1 items allowed.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rspRewriteRules
    */

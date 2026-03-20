@@ -35,7 +35,7 @@ public class SSLKeyMldsaParams extends AviRestResource {
    * Mldsa signature algorithm.
    * Enum options - SSL_KEY_MLDSA44, SSL_KEY_MLDSA65, SSL_KEY_MLDSA87.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "SSL_KEY_MLDSA44".
    * @return algorithm
    */
@@ -49,7 +49,7 @@ public class SSLKeyMldsaParams extends AviRestResource {
    * Mldsa signature algorithm.
    * Enum options - SSL_KEY_MLDSA44, SSL_KEY_MLDSA65, SSL_KEY_MLDSA87.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "SSL_KEY_MLDSA44".
    * @param algorithm set the algorithm.
    */

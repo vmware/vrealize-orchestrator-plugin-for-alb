@@ -220,7 +220,7 @@ public class GslbRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Contains the replication details.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbCrmRuntime
    */
@@ -233,7 +233,7 @@ public class GslbRuntime extends AviRestResource {
    * This is the setter method. this will set the gslbCrmRuntime
    * Contains the replication details.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbCrmRuntime
    */
@@ -246,7 +246,7 @@ public class GslbRuntime extends AviRestResource {
    * This is the setter method this will set the gslbCrmRuntime
    * Contains the replication details.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbCrmRuntime
    */
@@ -264,7 +264,7 @@ public class GslbRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Contains the health status details.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbHsmRuntime
    */
@@ -277,7 +277,7 @@ public class GslbRuntime extends AviRestResource {
    * This is the setter method. this will set the gslbHsmRuntime
    * Contains the health status details.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbHsmRuntime
    */
@@ -290,7 +290,7 @@ public class GslbRuntime extends AviRestResource {
    * This is the setter method this will set the gslbHsmRuntime
    * Contains the health status details.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbHsmRuntime
    */
@@ -308,7 +308,7 @@ public class GslbRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Contains the site details.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbSmRuntime
    */
@@ -321,7 +321,7 @@ public class GslbRuntime extends AviRestResource {
    * This is the setter method. this will set the gslbSmRuntime
    * Contains the site details.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbSmRuntime
    */
@@ -334,7 +334,7 @@ public class GslbRuntime extends AviRestResource {
    * This is the setter method this will set the gslbSmRuntime
    * Contains the site details.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbSmRuntime
    */

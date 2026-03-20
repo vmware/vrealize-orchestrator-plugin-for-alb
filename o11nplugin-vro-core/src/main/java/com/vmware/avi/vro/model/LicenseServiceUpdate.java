@@ -39,7 +39,7 @@ public class LicenseServiceUpdate extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name.
    * Field introduced in 21.1.4.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -52,7 +52,7 @@ public class LicenseServiceUpdate extends AviRestResource {
    * This is the setter method to the attribute.
    * Name.
    * Field introduced in 21.1.4.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -65,7 +65,7 @@ public class LicenseServiceUpdate extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Organization id.
    * Field introduced in 21.1.4.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceUnits
    */
@@ -78,7 +78,7 @@ public class LicenseServiceUpdate extends AviRestResource {
    * This is the setter method to the attribute.
    * Organization id.
    * Field introduced in 21.1.4.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serviceUnits set the serviceUnits.
    */

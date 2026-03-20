@@ -43,7 +43,7 @@ public class RemoteAuthConfiguration extends AviRestResource {
    * Uuid of the authmappingprofile(set of auth mapping rules) to be assigned to a user on successful match.
    * It is a reference to an object of type authmappingprofile.
    * Field introduced in 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authMappingProfileRef
    */
@@ -57,7 +57,7 @@ public class RemoteAuthConfiguration extends AviRestResource {
    * Uuid of the authmappingprofile(set of auth mapping rules) to be assigned to a user on successful match.
    * It is a reference to an object of type authmappingprofile.
    * Field introduced in 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param authMappingProfileRef set the authMappingProfileRef.
    */
@@ -71,7 +71,7 @@ public class RemoteAuthConfiguration extends AviRestResource {
    * Uuid of the auth profile.
    * It is a reference to an object of type authprofile.
    * Field introduced in 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authProfileRef
    */
@@ -85,7 +85,7 @@ public class RemoteAuthConfiguration extends AviRestResource {
    * Uuid of the auth profile.
    * It is a reference to an object of type authprofile.
    * Field introduced in 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param authProfileRef set the authProfileRef.
    */
@@ -98,7 +98,7 @@ public class RemoteAuthConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Index used for maintaining order of remoteauthconfiguration.
    * Field introduced in 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return index
    */
@@ -111,7 +111,7 @@ public class RemoteAuthConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Index used for maintaining order of remoteauthconfiguration.
    * Field introduced in 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param index set the index.
    */

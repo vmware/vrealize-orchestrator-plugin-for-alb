@@ -283,7 +283,7 @@ public class CaptureFilters extends AviRestResource {
    * The filter range will be between src_port and src_port_range_end.
    * Allowed values are 1-65535.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return srcPortRangeEnd
    */
@@ -299,7 +299,7 @@ public class CaptureFilters extends AviRestResource {
    * The filter range will be between src_port and src_port_range_end.
    * Allowed values are 1-65535.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param srcPortRangeEnd set the srcPortRangeEnd.
    */

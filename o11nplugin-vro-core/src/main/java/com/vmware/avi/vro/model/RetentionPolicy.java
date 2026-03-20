@@ -64,7 +64,7 @@ public class RetentionPolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enables the policy.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enabled
    */
@@ -77,7 +77,7 @@ public class RetentionPolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * Enables the policy.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enabled set the enabled.
    */
@@ -134,7 +134,7 @@ public class RetentionPolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the policy.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -147,7 +147,7 @@ public class RetentionPolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the policy.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -160,7 +160,7 @@ public class RetentionPolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Policy specification.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return policy
    */
@@ -173,7 +173,7 @@ public class RetentionPolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * Policy specification.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param policy set the policy.
    */
@@ -211,7 +211,7 @@ public class RetentionPolicy extends AviRestResource {
    * Tenant uuid associated with the object.
    * It is a reference to an object of type tenant.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -225,7 +225,7 @@ public class RetentionPolicy extends AviRestResource {
    * Tenant uuid associated with the object.
    * It is a reference to an object of type tenant.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
@@ -257,7 +257,7 @@ public class RetentionPolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid identifier for the policy.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -270,7 +270,7 @@ public class RetentionPolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid identifier for the policy.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */

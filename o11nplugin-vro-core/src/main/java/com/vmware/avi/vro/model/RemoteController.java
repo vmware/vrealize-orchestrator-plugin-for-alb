@@ -50,7 +50,7 @@ public class RemoteController extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Remote controller address.
    * Field introduced in 32.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return address
    */
@@ -63,7 +63,7 @@ public class RemoteController extends AviRestResource {
    * This is the setter method to the attribute.
    * Remote controller address.
    * Field introduced in 32.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param address set the address.
    */
@@ -76,7 +76,7 @@ public class RemoteController extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable remote controller request.
    * Field introduced in 32.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enabled
    */
@@ -89,7 +89,7 @@ public class RemoteController extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable remote controller request.
    * Field introduced in 32.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param enabled set the enabled.
    */
@@ -102,7 +102,7 @@ public class RemoteController extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Remote controller password.
    * Field introduced in 32.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return password
    */
@@ -115,7 +115,7 @@ public class RemoteController extends AviRestResource {
    * This is the setter method to the attribute.
    * Remote controller password.
    * Field introduced in 32.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param password set the password.
    */
@@ -128,7 +128,7 @@ public class RemoteController extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Remote controller tenant name.
    * Field introduced in 32.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenant
    */
@@ -141,7 +141,7 @@ public class RemoteController extends AviRestResource {
    * This is the setter method to the attribute.
    * Remote controller tenant name.
    * Field introduced in 32.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenant set the tenant.
    */
@@ -154,7 +154,7 @@ public class RemoteController extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Remote controller username.
    * Field introduced in 32.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return username
    */
@@ -167,7 +167,7 @@ public class RemoteController extends AviRestResource {
    * This is the setter method to the attribute.
    * Remote controller username.
    * Field introduced in 32.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param username set the username.
    */

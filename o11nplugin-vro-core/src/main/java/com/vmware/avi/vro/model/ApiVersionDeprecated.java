@@ -50,7 +50,7 @@ public class ApiVersionDeprecated extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Api version used.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return apiVersionUsed
    */
@@ -63,7 +63,7 @@ public class ApiVersionDeprecated extends AviRestResource {
    * This is the setter method to the attribute.
    * Api version used.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param apiVersionUsed set the apiVersionUsed.
    */
@@ -76,7 +76,7 @@ public class ApiVersionDeprecated extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ip address of client who sent the request.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientIp
    */
@@ -89,7 +89,7 @@ public class ApiVersionDeprecated extends AviRestResource {
    * This is the setter method to the attribute.
    * Ip address of client who sent the request.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientIp set the clientIp.
    */
@@ -102,7 +102,7 @@ public class ApiVersionDeprecated extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Minimum supported api version.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return minSupportedApiVersion
    */
@@ -115,7 +115,7 @@ public class ApiVersionDeprecated extends AviRestResource {
    * This is the setter method to the attribute.
    * Minimum supported api version.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param minSupportedApiVersion set the minSupportedApiVersion.
    */
@@ -128,7 +128,7 @@ public class ApiVersionDeprecated extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uri of the request.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return path
    */
@@ -141,7 +141,7 @@ public class ApiVersionDeprecated extends AviRestResource {
    * This is the setter method to the attribute.
    * Uri of the request.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param path set the path.
    */
@@ -154,7 +154,7 @@ public class ApiVersionDeprecated extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * User who sent the request.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return user
    */
@@ -167,7 +167,7 @@ public class ApiVersionDeprecated extends AviRestResource {
    * This is the setter method to the attribute.
    * User who sent the request.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param user set the user.
    */

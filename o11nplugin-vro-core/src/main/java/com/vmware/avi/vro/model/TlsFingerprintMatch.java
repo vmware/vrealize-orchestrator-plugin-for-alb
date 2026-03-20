@@ -42,7 +42,7 @@ public class TlsFingerprintMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The list of fingerprints.
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fingerprints
    */
@@ -55,7 +55,7 @@ public class TlsFingerprintMatch extends AviRestResource {
    * This is the setter method. this will set the fingerprints
    * The list of fingerprints.
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fingerprints
    */
@@ -68,7 +68,7 @@ public class TlsFingerprintMatch extends AviRestResource {
    * This is the setter method this will set the fingerprints
    * The list of fingerprints.
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fingerprints
    */
@@ -87,7 +87,7 @@ public class TlsFingerprintMatch extends AviRestResource {
    * Match criteria.
    * Enum options - IS_IN, IS_NOT_IN.
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchOperation
    */
@@ -101,7 +101,7 @@ public class TlsFingerprintMatch extends AviRestResource {
    * Match criteria.
    * Enum options - IS_IN, IS_NOT_IN.
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchOperation set the matchOperation.
    */
@@ -115,7 +115,7 @@ public class TlsFingerprintMatch extends AviRestResource {
    * Uuids of the string groups.
    * It is a reference to an object of type stringgroup.
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stringGroupRefs
    */
@@ -129,7 +129,7 @@ public class TlsFingerprintMatch extends AviRestResource {
    * Uuids of the string groups.
    * It is a reference to an object of type stringgroup.
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stringGroupRefs
    */
@@ -143,7 +143,7 @@ public class TlsFingerprintMatch extends AviRestResource {
    * Uuids of the string groups.
    * It is a reference to an object of type stringgroup.
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stringGroupRefs
    */

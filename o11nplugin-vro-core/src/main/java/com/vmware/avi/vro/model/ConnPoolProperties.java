@@ -49,8 +49,7 @@ public class ConnPoolProperties extends AviRestResource {
    * Special values are 0- infinite idle time.
    * Field introduced in 18.2.1.
    * Unit is milliseconds.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- 60000), basic (allowed values- 60000) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60000.
    * @return upstreamConnpoolConnIdleTmo
    */
@@ -66,8 +65,7 @@ public class ConnPoolProperties extends AviRestResource {
    * Special values are 0- infinite idle time.
    * Field introduced in 18.2.1.
    * Unit is milliseconds.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- 60000), basic (allowed values- 60000) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60000.
    * @param upstreamConnpoolConnIdleTmo set the upstreamConnpoolConnIdleTmo.
    */
@@ -83,8 +81,7 @@ public class ConnPoolProperties extends AviRestResource {
    * Special values are 0- infinite life time.
    * Field introduced in 18.2.1.
    * Unit is milliseconds.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- 600000), basic (allowed values- 600000) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 600000.
    * @return upstreamConnpoolConnLifeTmo
    */
@@ -100,8 +97,7 @@ public class ConnPoolProperties extends AviRestResource {
    * Special values are 0- infinite life time.
    * Field introduced in 18.2.1.
    * Unit is milliseconds.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- 600000), basic (allowed values- 600000) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 600000.
    * @param upstreamConnpoolConnLifeTmo set the upstreamConnpoolConnLifeTmo.
    */
@@ -115,8 +111,7 @@ public class ConnPoolProperties extends AviRestResource {
    * Maximum number of times a connection can be reused.
    * Special values are 0- unlimited.
    * Field introduced in 18.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- 0), basic (allowed values- 0) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return upstreamConnpoolConnMaxReuse
    */
@@ -130,8 +125,7 @@ public class ConnPoolProperties extends AviRestResource {
    * Maximum number of times a connection can be reused.
    * Special values are 0- unlimited.
    * Field introduced in 18.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- 0), basic (allowed values- 0) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param upstreamConnpoolConnMaxReuse set the upstreamConnpoolConnMaxReuse.
    */

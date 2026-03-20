@@ -465,7 +465,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * Suitable for openstack environments where neutron resources are not frequently created, updated, or deleted.the cache is refreshed when cloud gc
    * api is issued.
    * Field introduced in 21.1.5, 22.1.2.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enableOsObjectCaching
    */
@@ -481,7 +481,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * Suitable for openstack environments where neutron resources are not frequently created, updated, or deleted.the cache is refreshed when cloud gc
    * api is issued.
    * Field introduced in 21.1.5, 22.1.2.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param enableOsObjectCaching set the enableOsObjectCaching.
    */
@@ -494,7 +494,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * When set to true, openstack resources created by avi are tagged with avi cloud uuid.
    * Field introduced in 21.1.5, 22.1.2.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enableTagging
    */
@@ -507,7 +507,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * When set to true, openstack resources created by avi are tagged with avi cloud uuid.
    * Field introduced in 21.1.5, 22.1.2.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param enableTagging set the enableTagging.
    */
@@ -1219,7 +1219,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * When set to true, vip ports are created in openstack tenant configured as admin_tenant in cloud.
    * Otherwise, default behavior is to create vip ports in user tenant.
    * Field introduced in 21.1.5, 22.1.2.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return vipPortInAdminTenant
    */
@@ -1233,7 +1233,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * When set to true, vip ports are created in openstack tenant configured as admin_tenant in cloud.
    * Otherwise, default behavior is to create vip ports in user tenant.
    * Field introduced in 21.1.5, 22.1.2.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param vipPortInAdminTenant set the vipPortInAdminTenant.
    */

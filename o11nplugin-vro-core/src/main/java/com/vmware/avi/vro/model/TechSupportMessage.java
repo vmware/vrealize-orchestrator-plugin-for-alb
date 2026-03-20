@@ -105,7 +105,7 @@ public class TechSupportMessage extends AviRestResource {
    * 'techsupport object ref.'.
    * It is a reference to an object of type techsupport.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return techSupportRef
    */
@@ -119,7 +119,7 @@ public class TechSupportMessage extends AviRestResource {
    * 'techsupport object ref.'.
    * It is a reference to an object of type techsupport.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param techSupportRef set the techSupportRef.
    */

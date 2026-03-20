@@ -42,7 +42,7 @@ public class ReportSummary extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Detailed description of the report.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
@@ -55,7 +55,7 @@ public class ReportSummary extends AviRestResource {
    * This is the setter method to the attribute.
    * Detailed description of the report.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
@@ -69,7 +69,7 @@ public class ReportSummary extends AviRestResource {
    * Preview of the operations performed in the report.
    * Ex  upgrade pre-check previews.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return previews
    */
@@ -83,7 +83,7 @@ public class ReportSummary extends AviRestResource {
    * Preview of the operations performed in the report.
    * Ex  upgrade pre-check previews.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return previews
    */
@@ -97,7 +97,7 @@ public class ReportSummary extends AviRestResource {
    * Preview of the operations performed in the report.
    * Ex  upgrade pre-check previews.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return previews
    */
@@ -115,7 +115,7 @@ public class ReportSummary extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * User friendly title for the report.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return title
    */
@@ -128,7 +128,7 @@ public class ReportSummary extends AviRestResource {
    * This is the setter method to the attribute.
    * User friendly title for the report.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param title set the title.
    */

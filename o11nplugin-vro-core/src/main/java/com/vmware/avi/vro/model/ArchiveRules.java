@@ -35,7 +35,7 @@ public class ArchiveRules extends AviRestResource {
    * Archive policy for file path to have specific threshold.
    * Techsupport will skip collection of file if file size is greater than threshold.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */
@@ -49,7 +49,7 @@ public class ArchiveRules extends AviRestResource {
    * Archive policy for file path to have specific threshold.
    * Techsupport will skip collection of file if file size is greater than threshold.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */
@@ -63,7 +63,7 @@ public class ArchiveRules extends AviRestResource {
    * Archive policy for file path to have specific threshold.
    * Techsupport will skip collection of file if file size is greater than threshold.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */

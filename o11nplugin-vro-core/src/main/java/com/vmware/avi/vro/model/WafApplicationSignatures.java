@@ -74,7 +74,7 @@ public class WafApplicationSignatures extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Override attributes of application signature rules.
    * Field introduced in 20.1.6.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ruleOverrides
    */
@@ -87,7 +87,7 @@ public class WafApplicationSignatures extends AviRestResource {
    * This is the setter method. this will set the ruleOverrides
    * Override attributes of application signature rules.
    * Field introduced in 20.1.6.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ruleOverrides
    */
@@ -100,7 +100,7 @@ public class WafApplicationSignatures extends AviRestResource {
    * This is the setter method this will set the ruleOverrides
    * Override attributes of application signature rules.
    * Field introduced in 20.1.6.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ruleOverrides
    */

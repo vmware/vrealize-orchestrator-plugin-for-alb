@@ -38,7 +38,7 @@ public class NsxtT1Seg extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Nsx-t segment.
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return segment
    */
@@ -51,7 +51,7 @@ public class NsxtT1Seg extends AviRestResource {
    * This is the setter method to the attribute.
    * Nsx-t segment.
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param segment set the segment.
    */
@@ -64,7 +64,7 @@ public class NsxtT1Seg extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Nsx-t tier1.
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tier1
    */
@@ -77,7 +77,7 @@ public class NsxtT1Seg extends AviRestResource {
    * This is the setter method to the attribute.
    * Nsx-t tier1.
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tier1 set the tier1.
    */

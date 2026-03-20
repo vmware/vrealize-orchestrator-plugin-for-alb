@@ -126,7 +126,7 @@ public class VersionInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Describes the reason for the object in this state.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
@@ -139,7 +139,7 @@ public class VersionInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Describes the reason for the object in this state.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
@@ -152,7 +152,7 @@ public class VersionInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Represents the state of the object.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return status
    */
@@ -165,7 +165,7 @@ public class VersionInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Represents the state of the object.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param status set the status.
    */

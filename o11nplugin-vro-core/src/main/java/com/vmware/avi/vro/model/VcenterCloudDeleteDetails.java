@@ -38,7 +38,7 @@ public class VcenterCloudDeleteDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Cloud id.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccId
    */
@@ -51,7 +51,7 @@ public class VcenterCloudDeleteDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Cloud id.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccId set the ccId.
    */
@@ -64,7 +64,7 @@ public class VcenterCloudDeleteDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Objects having reference to the cloud.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return objects
    */
@@ -77,7 +77,7 @@ public class VcenterCloudDeleteDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Objects having reference to the cloud.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param objects set the objects.
    */

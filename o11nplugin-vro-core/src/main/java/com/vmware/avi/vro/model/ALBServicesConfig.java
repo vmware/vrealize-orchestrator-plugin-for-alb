@@ -204,6 +204,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Features opt-in for pulse cloud services.
    * Field introduced in 20.1.1.
+   * Allowed with any value in essentials, basic, enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return featureOptInStatus
    */
@@ -216,6 +217,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Features opt-in for pulse cloud services.
    * Field introduced in 20.1.1.
+   * Allowed with any value in essentials, basic, enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param featureOptInStatus set the featureOptInStatus.
    */
@@ -281,8 +283,7 @@ public class ALBServicesConfig extends AviRestResource {
    * Mode helps log collection and upload.
    * Enum options - MODE_UNKNOWN, SALESFORCE, SYSTEST, MYVMWARE, BROADCOM.
    * Field introduced in 20.1.2.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- salesforce,myvmware,systest), basic (allowed values- salesforce,myvmware,systest) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "MYVMWARE".
    * @return mode
    */
@@ -296,8 +297,7 @@ public class ALBServicesConfig extends AviRestResource {
    * Mode helps log collection and upload.
    * Enum options - MODE_UNKNOWN, SALESFORCE, SYSTEST, MYVMWARE, BROADCOM.
    * Field introduced in 20.1.2.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- salesforce,myvmware,systest), basic (allowed values- salesforce,myvmware,systest) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "MYVMWARE".
    * @param mode set the mode.
    */
@@ -569,7 +569,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Secure the controller to pulse cloud services communication over tls.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return useTls
    */
@@ -582,7 +582,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Secure the controller to pulse cloud services communication over tls.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param useTls set the useTls.
    */

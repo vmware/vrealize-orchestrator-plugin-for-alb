@@ -84,7 +84,7 @@ public class HealthMonitorHttp extends AviRestResource {
    * Type of the authentication method.
    * Enum options - AUTH_BASIC, AUTH_NTLM.
    * Field introduced in 20.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authType
    */
@@ -98,7 +98,7 @@ public class HealthMonitorHttp extends AviRestResource {
    * Type of the authentication method.
    * Enum options - AUTH_BASIC, AUTH_NTLM.
    * Field introduced in 20.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param authType set the authType.
    */
@@ -139,7 +139,7 @@ public class HealthMonitorHttp extends AviRestResource {
    * Extended with additional headers or information when exact request is marked false.
    * For instance host  www.site.com connection  close.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpHeaders
    */
@@ -154,7 +154,7 @@ public class HealthMonitorHttp extends AviRestResource {
    * Extended with additional headers or information when exact request is marked false.
    * For instance host  www.site.com connection  close.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpHeaders
    */
@@ -169,7 +169,7 @@ public class HealthMonitorHttp extends AviRestResource {
    * Extended with additional headers or information when exact request is marked false.
    * For instance host  www.site.com connection  close.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpHeaders
    */
@@ -190,9 +190,7 @@ public class HealthMonitorHttp extends AviRestResource {
    * HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE,
    * HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- http_method_get,http_method_post,http_method_head), basic (allowed values-
-   * http_method_get,http_method_post,http_method_head) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpMethod
    */
@@ -208,9 +206,7 @@ public class HealthMonitorHttp extends AviRestResource {
    * HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE,
    * HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- http_method_get,http_method_post,http_method_head), basic (allowed values-
-   * http_method_get,http_method_post,http_method_head) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param httpMethod set the httpMethod.
    */
@@ -277,7 +273,7 @@ public class HealthMonitorHttp extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Http client request header path for http2 and http2s health monitor.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpRequestHeaderPath
    */
@@ -290,7 +286,7 @@ public class HealthMonitorHttp extends AviRestResource {
    * This is the setter method to the attribute.
    * Http client request header path for http2 and http2s health monitor.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param httpRequestHeaderPath set the httpRequestHeaderPath.
    */
@@ -379,7 +375,7 @@ public class HealthMonitorHttp extends AviRestResource {
    * A successful match results in the server being marked down.
    * Allowed values are 101-599.
    * Maximum of 4 items allowed.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maintenanceCode
    */
@@ -394,7 +390,7 @@ public class HealthMonitorHttp extends AviRestResource {
    * A successful match results in the server being marked down.
    * Allowed values are 101-599.
    * Maximum of 4 items allowed.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maintenanceCode
    */
@@ -409,7 +405,7 @@ public class HealthMonitorHttp extends AviRestResource {
    * A successful match results in the server being marked down.
    * Allowed values are 101-599.
    * Maximum of 4 items allowed.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maintenanceCode
    */
@@ -427,7 +423,7 @@ public class HealthMonitorHttp extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Match or look for this keyword in the first 2kb of server header and body response indicating server maintenance.
    * A successful match results in the server being marked down.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maintenanceResponse
    */
@@ -440,7 +436,7 @@ public class HealthMonitorHttp extends AviRestResource {
    * This is the setter method to the attribute.
    * Match or look for this keyword in the first 2kb of server header and body response indicating server maintenance.
    * A successful match results in the server being marked down.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maintenanceResponse set the maintenanceResponse.
    */

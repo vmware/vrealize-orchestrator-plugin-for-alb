@@ -171,7 +171,7 @@ public class RmSpawnSeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 20.1.2.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return flavorName
    */
@@ -183,7 +183,7 @@ public class RmSpawnSeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 20.1.2.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param flavorName set the flavorName.
    */

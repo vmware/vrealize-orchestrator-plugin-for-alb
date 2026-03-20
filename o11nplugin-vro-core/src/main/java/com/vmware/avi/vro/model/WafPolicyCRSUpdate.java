@@ -39,7 +39,7 @@ public class WafPolicyCRSUpdate extends AviRestResource {
    * Set this to true if you want to update the policy.
    * The default value of false will only analyse what would be changed if this flag would be set to true.
    * Field introduced in 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return commit
    */
@@ -53,7 +53,7 @@ public class WafPolicyCRSUpdate extends AviRestResource {
    * Set this to true if you want to update the policy.
    * The default value of false will only analyse what would be changed if this flag would be set to true.
    * Field introduced in 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param commit set the commit.
    */
@@ -68,7 +68,7 @@ public class WafPolicyCRSUpdate extends AviRestResource {
    * To disable crs for this policy, the special crs object crs-version-not-applicable can be used.
    * It is a reference to an object of type wafcrs.
    * Field introduced in 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return wafCrsRef
    */
@@ -83,7 +83,7 @@ public class WafPolicyCRSUpdate extends AviRestResource {
    * To disable crs for this policy, the special crs object crs-version-not-applicable can be used.
    * It is a reference to an object of type wafcrs.
    * Field introduced in 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param wafCrsRef set the wafCrsRef.
    */

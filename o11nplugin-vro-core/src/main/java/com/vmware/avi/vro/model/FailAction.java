@@ -43,7 +43,7 @@ public class FailAction extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Local response to http requests when pool experiences a failure.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return localRsp
    */
@@ -55,7 +55,7 @@ public class FailAction extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Local response to http requests when pool experiences a failure.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param localRsp set the localRsp.
    */
@@ -67,7 +67,7 @@ public class FailAction extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Url to redirect http requests to when pool experiences a failure.
-   * Allowed with any value in enterprise, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return redirect
    */
@@ -79,7 +79,7 @@ public class FailAction extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Url to redirect http requests to when pool experiences a failure.
-   * Allowed with any value in enterprise, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param redirect set the redirect.
    */
@@ -93,8 +93,7 @@ public class FailAction extends AviRestResource {
    * Enables a response to client when pool experiences a failure.
    * By default tcp connection is closed.
    * Enum options - FAIL_ACTION_HTTP_REDIRECT, FAIL_ACTION_HTTP_LOCAL_RSP, FAIL_ACTION_CLOSE_CONN, FAIL_ACTION_BACKUP_POOL.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- fail_action_close_conn), basic (allowed values- fail_action_close_conn,fail_action_http_redirect) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "FAIL_ACTION_CLOSE_CONN".
    * @return type
    */
@@ -108,8 +107,7 @@ public class FailAction extends AviRestResource {
    * Enables a response to client when pool experiences a failure.
    * By default tcp connection is closed.
    * Enum options - FAIL_ACTION_HTTP_REDIRECT, FAIL_ACTION_HTTP_LOCAL_RSP, FAIL_ACTION_CLOSE_CONN, FAIL_ACTION_BACKUP_POOL.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- fail_action_close_conn), basic (allowed values- fail_action_close_conn,fail_action_http_redirect) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "FAIL_ACTION_CLOSE_CONN".
    * @param type set the type.
    */

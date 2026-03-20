@@ -58,7 +58,7 @@ public class ControllerFaults extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable backup scheduler faults.
    * Field introduced in 20.1.6.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return backupSchedulerFaults
    */
@@ -71,7 +71,7 @@ public class ControllerFaults extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable backup scheduler faults.
    * Field introduced in 20.1.6.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param backupSchedulerFaults set the backupSchedulerFaults.
    */
@@ -84,7 +84,7 @@ public class ControllerFaults extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable cluster faults.
    * Field introduced in 20.1.6.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return clusterFaults
    */
@@ -97,7 +97,7 @@ public class ControllerFaults extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable cluster faults.
    * Field introduced in 20.1.6.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param clusterFaults set the clusterFaults.
    */
@@ -110,7 +110,7 @@ public class ControllerFaults extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable deprecated api version faults.
    * Field introduced in 20.1.6.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return deprecatedApiVersionFaults
    */
@@ -123,7 +123,7 @@ public class ControllerFaults extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable deprecated api version faults.
    * Field introduced in 20.1.6.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param deprecatedApiVersionFaults set the deprecatedApiVersionFaults.
    */
@@ -136,7 +136,7 @@ public class ControllerFaults extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable license faults.
    * Field introduced in 20.1.6.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return licenseFaults
    */
@@ -149,7 +149,7 @@ public class ControllerFaults extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable license faults.
    * Field introduced in 20.1.6.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param licenseFaults set the licenseFaults.
    */
@@ -162,7 +162,7 @@ public class ControllerFaults extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable db migration faults.
    * Field introduced in 20.1.6.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return migrationFaults
    */
@@ -175,7 +175,7 @@ public class ControllerFaults extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable db migration faults.
    * Field introduced in 20.1.6.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param migrationFaults set the migrationFaults.
    */
@@ -188,7 +188,7 @@ public class ControllerFaults extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable ssl profile faults.
    * Field introduced in 20.1.6.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return sslprofileFaults
    */
@@ -201,7 +201,7 @@ public class ControllerFaults extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable ssl profile faults.
    * Field introduced in 20.1.6.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param sslprofileFaults set the sslprofileFaults.
    */
@@ -214,7 +214,7 @@ public class ControllerFaults extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable system limits faults.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return systemLimitsFaults
    */
@@ -227,7 +227,7 @@ public class ControllerFaults extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable system limits faults.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param systemLimitsFaults set the systemLimitsFaults.
    */

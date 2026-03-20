@@ -72,7 +72,7 @@ public class SAMLSPConfig extends AviRestResource {
    * assertionconsumerserviceindex.
    * Allowed values are 0-64.
    * Field introduced in 21.1.6, 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return acsIndex
    */
@@ -87,7 +87,7 @@ public class SAMLSPConfig extends AviRestResource {
    * assertionconsumerserviceindex.
    * Allowed values are 0-64.
    * Field introduced in 21.1.6, 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param acsIndex set the acsIndex.
    */
@@ -101,7 +101,7 @@ public class SAMLSPConfig extends AviRestResource {
    * Option to set the acs attributes in the authnrequest.
    * Enum options - SAML_AUTHN_REQ_ACS_TYPE_URL, SAML_AUTHN_REQ_ACS_TYPE_INDEX, SAML_AUTHN_REQ_ACS_TYPE_NONE.
    * Field introduced in 21.1.6, 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "SAML_AUTHN_REQ_ACS_TYPE_NONE".
    * @return authnReqAcsType
    */
@@ -115,7 +115,7 @@ public class SAMLSPConfig extends AviRestResource {
    * Option to set the acs attributes in the authnrequest.
    * Enum options - SAML_AUTHN_REQ_ACS_TYPE_URL, SAML_AUTHN_REQ_ACS_TYPE_INDEX, SAML_AUTHN_REQ_ACS_TYPE_NONE.
    * Field introduced in 21.1.6, 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "SAML_AUTHN_REQ_ACS_TYPE_NONE".
    * @param authnReqAcsType set the authnReqAcsType.
    */

@@ -38,7 +38,7 @@ public class FdsInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Captures the federated objects the site supports as per the controller version.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return objects
    */
@@ -51,7 +51,7 @@ public class FdsInfo extends AviRestResource {
    * This is the setter method. this will set the objects
    * Captures the federated objects the site supports as per the controller version.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return objects
    */
@@ -64,7 +64,7 @@ public class FdsInfo extends AviRestResource {
    * This is the setter method this will set the objects
    * Captures the federated objects the site supports as per the controller version.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return objects
    */
@@ -82,7 +82,7 @@ public class FdsInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Capture fds timeline the client is using.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return timeline
    */
@@ -95,7 +95,7 @@ public class FdsInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Capture fds timeline the client is using.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param timeline set the timeline.
    */

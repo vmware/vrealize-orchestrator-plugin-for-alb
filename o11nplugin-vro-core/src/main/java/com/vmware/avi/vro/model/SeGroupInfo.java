@@ -42,7 +42,7 @@ public class SeGroupInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * License cores consumed by se group.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return consumed
    */
@@ -55,7 +55,7 @@ public class SeGroupInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * License cores consumed by se group.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param consumed set the consumed.
    */
@@ -68,7 +68,7 @@ public class SeGroupInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * License cores reserved by se group.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return escrow
    */
@@ -81,7 +81,7 @@ public class SeGroupInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * License cores reserved by se group.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param escrow set the escrow.
    */
@@ -94,7 +94,7 @@ public class SeGroupInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Se group uuid for reference.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -107,7 +107,7 @@ public class SeGroupInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Se group uuid for reference.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */

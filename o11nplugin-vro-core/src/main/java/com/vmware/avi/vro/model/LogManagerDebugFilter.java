@@ -222,7 +222,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Delete protection time for adf indices in minutes.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1380.
    * @return adfProtectionTimeMinutes
    */
@@ -235,7 +235,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Delete protection time for adf indices in minutes.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1380.
    * @param adfProtectionTimeMinutes set the adfProtectionTimeMinutes.
    */
@@ -248,7 +248,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Buffer size for batch queues.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @return batchQueueBufferSize
    */
@@ -261,7 +261,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Buffer size for batch queues.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @param batchQueueBufferSize set the batchQueueBufferSize.
    */
@@ -274,7 +274,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of workers for batch processing.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 8.
    * @return batchWorkerCount
    */
@@ -287,7 +287,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of workers for batch processing.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 8.
    * @param batchWorkerCount set the batchWorkerCount.
    */
@@ -301,7 +301,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * Size of bulk payload buffer.
    * This is the max bulk payload size.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 11000000.
    * @return bulkPayloadStringSize
    */
@@ -315,7 +315,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * Size of bulk payload buffer.
    * This is the max bulk payload size.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 11000000.
    * @param bulkPayloadStringSize set the bulkPayloadStringSize.
    */
@@ -328,7 +328,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Cache cleanup delay in milliseconds.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300000.
    * @return cacheCleanupDelayMs
    */
@@ -341,7 +341,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Cache cleanup delay in milliseconds.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300000.
    * @param cacheCleanupDelayMs set the cacheCleanupDelayMs.
    */
@@ -354,7 +354,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Timeout for the client to create an index in seconds.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @return clientIndexOpTimeoutSeconds
    */
@@ -367,7 +367,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Timeout for the client to create an index in seconds.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @param clientIndexOpTimeoutSeconds set the clientIndexOpTimeoutSeconds.
    */
@@ -380,7 +380,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Database notification channel capacity.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @return dbNotifnChanCapacity
    */
@@ -393,7 +393,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Database notification channel capacity.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @param dbNotifnChanCapacity set the dbNotifnChanCapacity.
    */
@@ -407,7 +407,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * Uuid of the entity.
    * It is a reference to an object of type virtualservice.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return entityRef
    */
@@ -421,7 +421,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * Uuid of the entity.
    * It is a reference to an object of type virtualservice.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param entityRef set the entityRef.
    */
@@ -434,7 +434,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Go garbage collection percentage.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 50.
    * @return goGcPercent
    */
@@ -447,7 +447,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Go garbage collection percentage.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 50.
    * @param goGcPercent set the goGcPercent.
    */
@@ -460,7 +460,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Incremental timeout buffer in milliseconds.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @return incrementalTimeoutBufferMs
    */
@@ -473,7 +473,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Incremental timeout buffer in milliseconds.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @param incrementalTimeoutBufferMs set the incrementalTimeoutBufferMs.
    */
@@ -486,7 +486,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Index cleaner interval in minutes.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @return indexCleanerIntervalMinutes
    */
@@ -499,7 +499,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Index cleaner interval in minutes.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @param indexCleanerIntervalMinutes set the indexCleanerIntervalMinutes.
    */
@@ -512,7 +512,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Base path for search engine mappings and settings.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "/var/lib/avi/indexer_configs".
    * @return indexConfigPath
    */
@@ -525,7 +525,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Base path for search engine mappings and settings.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "/var/lib/avi/indexer_configs".
    * @param indexConfigPath set the indexConfigPath.
    */
@@ -538,7 +538,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Index retention period in minutes.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1440.
    * @return indexRetentionPeriodMinutes
    */
@@ -551,7 +551,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Index retention period in minutes.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1440.
    * @param indexRetentionPeriodMinutes set the indexRetentionPeriodMinutes.
    */
@@ -564,7 +564,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Buffer size for index status queue.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @return indexStatusQueueBufferSize
    */
@@ -577,7 +577,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Buffer size for index status queue.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @param indexStatusQueueBufferSize set the indexStatusQueueBufferSize.
    */
@@ -590,7 +590,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Renderer configuration - json all string builder size.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2048.
    * @return jsonAllStrBuilderSize
    */
@@ -603,7 +603,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Renderer configuration - json all string builder size.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2048.
    * @param jsonAllStrBuilderSize set the jsonAllStrBuilderSize.
    */
@@ -616,7 +616,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Renderer configuration - json everything string builder size.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 512.
    * @return jsonEverythingStrBuilderSize
    */
@@ -629,7 +629,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Renderer configuration - json everything string builder size.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 512.
    * @param jsonEverythingStrBuilderSize set the jsonEverythingStrBuilderSize.
    */
@@ -642,7 +642,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Renderer configuration - json string builder size.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 16384.
    * @return jsonStrBuilderSize
    */
@@ -655,7 +655,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Renderer configuration - json string builder size.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 16384.
    * @param jsonStrBuilderSize set the jsonStrBuilderSize.
    */
@@ -668,7 +668,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Log indexer task timeout in milliseconds.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60000.
    * @return logIndexerTaskTimeoutMs
    */
@@ -681,7 +681,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Log indexer task timeout in milliseconds.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60000.
    * @param logIndexerTaskTimeoutMs set the logIndexerTaskTimeoutMs.
    */
@@ -694,7 +694,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Log records incremental timeout in milliseconds.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
    * @return logRecordsIncrementalTimeoutMs
    */
@@ -707,7 +707,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Log records incremental timeout in milliseconds.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
    * @param logRecordsIncrementalTimeoutMs set the logRecordsIncrementalTimeoutMs.
    */
@@ -720,7 +720,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Log records task timeout in milliseconds.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @return logRecordsTaskTimeoutMs
    */
@@ -733,7 +733,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Log records task timeout in milliseconds.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @param logRecordsTaskTimeoutMs set the logRecordsTaskTimeoutMs.
    */
@@ -746,7 +746,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum duration to wait for batching files to indexer.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 500.
    * @return maxBatchDurationMs
    */
@@ -759,7 +759,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum duration to wait for batching files to indexer.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 500.
    * @param maxBatchDurationMs set the maxBatchDurationMs.
    */
@@ -772,7 +772,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of files in a batch to indexer.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return maxBatchSize
    */
@@ -785,7 +785,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of files in a batch to indexer.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param maxBatchSize set the maxBatchSize.
    */
@@ -798,7 +798,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of files per index.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
    * @return maxFilesPerIndex
    */
@@ -811,7 +811,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of files per index.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
    * @param maxFilesPerIndex set the maxFilesPerIndex.
    */
@@ -824,7 +824,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of indices for events.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 8.
    * @return maxIndicesEvents
    */
@@ -837,7 +837,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of indices for events.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 8.
    * @param maxIndicesEvents set the maxIndicesEvents.
    */
@@ -850,7 +850,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of indices per vs.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @return maxIndicesPerVs
    */
@@ -863,7 +863,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of indices per vs.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @param maxIndicesPerVs set the maxIndicesPerVs.
    */
@@ -876,7 +876,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of indices for system.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20.
    * @return maxIndicesSystem
    */
@@ -889,7 +889,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of indices for system.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20.
    * @param maxIndicesSystem set the maxIndicesSystem.
    */
@@ -902,7 +902,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of logs per index.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2000000.
    * @return maxLogsPerIndex
    */
@@ -915,7 +915,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of logs per index.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2000000.
    * @param maxLogsPerIndex set the maxLogsPerIndex.
    */
@@ -928,7 +928,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of goroutines for indexer_worker.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return maxNumWorkers
    */
@@ -941,7 +941,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of goroutines for indexer_worker.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param maxNumWorkers set the maxNumWorkers.
    */
@@ -954,7 +954,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Max number of index task requests taken by indexer.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20.
    * @return maxQueueSize
    */
@@ -967,7 +967,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Max number of index task requests taken by indexer.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20.
    * @param maxQueueSize set the maxQueueSize.
    */
@@ -980,7 +980,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum size per index in mb.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 400.
    * @return maxSizePerIndexMb
    */
@@ -993,7 +993,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum size per index in mb.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 400.
    * @param maxSizePerIndexMb set the maxSizePerIndexMb.
    */
@@ -1006,7 +1006,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Delete protection time for nf indices in minutes.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @return nfProtectionTimeMinutes
    */
@@ -1019,7 +1019,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Delete protection time for nf indices in minutes.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @param nfProtectionTimeMinutes set the nfProtectionTimeMinutes.
    */
@@ -1032,7 +1032,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Opensearch host.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "localhost".
    * @return opensearchHost
    */
@@ -1045,7 +1045,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Opensearch host.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "localhost".
    * @param opensearchHost set the opensearchHost.
    */
@@ -1058,7 +1058,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of replicas for opensearch.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return opensearchNumReplicas
    */
@@ -1071,7 +1071,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of replicas for opensearch.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param opensearchNumReplicas set the opensearchNumReplicas.
    */
@@ -1084,7 +1084,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of shards for opensearch.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 9.
    * @return opensearchNumShards
    */
@@ -1097,7 +1097,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of shards for opensearch.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 9.
    * @param opensearchNumShards set the opensearchNumShards.
    */
@@ -1110,7 +1110,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Opensearch port.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "5010".
    * @return opensearchPort
    */
@@ -1123,7 +1123,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Opensearch port.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "5010".
    * @param opensearchPort set the opensearchPort.
    */
@@ -1136,7 +1136,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Buffer size for query queues.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @return queryQueueBufferSize
    */
@@ -1149,7 +1149,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Buffer size for query queues.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @param queryQueueBufferSize set the queryQueueBufferSize.
    */
@@ -1162,7 +1162,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of workers for query processing.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 8.
    * @return queryWorkerCount
    */
@@ -1175,7 +1175,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of workers for query processing.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 8.
    * @param queryWorkerCount set the queryWorkerCount.
    */
@@ -1188,7 +1188,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Buffer size for records status queue.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @return recordsStatusQueueBufferSize
    */
@@ -1201,7 +1201,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Buffer size for records status queue.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @param recordsStatusQueueBufferSize set the recordsStatusQueueBufferSize.
    */
@@ -1214,7 +1214,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of workers for records status processing.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 8.
    * @return recordsStatusWorkerCount
    */
@@ -1227,7 +1227,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of workers for records status processing.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 8.
    * @param recordsStatusWorkerCount set the recordsStatusWorkerCount.
    */
@@ -1240,7 +1240,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Reserved field for future use.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reserved1
    */
@@ -1253,7 +1253,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Reserved field for future use.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reserved1 set the reserved1.
    */
@@ -1266,7 +1266,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Reserved field for future use.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reserved2
    */
@@ -1279,7 +1279,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Reserved field for future use.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reserved2 set the reserved2.
    */
@@ -1292,7 +1292,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Reserved field for future use.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reserved3
    */
@@ -1305,7 +1305,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Reserved field for future use.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reserved3 set the reserved3.
    */
@@ -1318,7 +1318,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Reserved field for future use.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reserved4
    */
@@ -1331,7 +1331,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Reserved field for future use.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reserved4 set the reserved4.
    */
@@ -1344,7 +1344,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Search query timeout in milliseconds.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 15000.
    * @return searchQueryTimeoutMs
    */
@@ -1357,7 +1357,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Search query timeout in milliseconds.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 15000.
    * @param searchQueryTimeoutMs set the searchQueryTimeoutMs.
    */
@@ -1370,7 +1370,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Wait time before re-enqueueing failed tasks in seconds.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @return taskReEnqueueWaitTimeSeconds
    */
@@ -1383,7 +1383,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Wait time before re-enqueueing failed tasks in seconds.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @param taskReEnqueueWaitTimeSeconds set the taskReEnqueueWaitTimeSeconds.
    */
@@ -1397,7 +1397,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * Set the log level for telemetry trace logs.
    * Enum options - LOG_LEVEL_DISABLED, LOG_LEVEL_INFO, LOG_LEVEL_WARNING, LOG_LEVEL_ERROR, LOG_LEVEL_DEBUG.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return telemetryTraceLogLevel
    */
@@ -1411,7 +1411,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * Set the log level for telemetry trace logs.
    * Enum options - LOG_LEVEL_DISABLED, LOG_LEVEL_INFO, LOG_LEVEL_WARNING, LOG_LEVEL_ERROR, LOG_LEVEL_DEBUG.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param telemetryTraceLogLevel set the telemetryTraceLogLevel.
    */
@@ -1424,7 +1424,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Telemetry trace percentage.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @return telemetryTracePercentage
    */
@@ -1437,7 +1437,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Telemetry trace percentage.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @param telemetryTracePercentage set the telemetryTracePercentage.
    */
@@ -1450,7 +1450,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Delete protection time for udf indices in minutes.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return udfProtectionTimeMinutes
    */
@@ -1463,7 +1463,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Delete protection time for udf indices in minutes.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @param udfProtectionTimeMinutes set the udfProtectionTimeMinutes.
    */

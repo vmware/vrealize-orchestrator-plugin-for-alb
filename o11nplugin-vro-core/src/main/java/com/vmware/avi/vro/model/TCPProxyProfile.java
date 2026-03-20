@@ -126,7 +126,7 @@ public class TCPProxyProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Controls whether we immediately send ack when incoming packet has push flag marked.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return ackOnPush
    */
@@ -139,7 +139,7 @@ public class TCPProxyProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Controls whether we immediately send ack when incoming packet has push flag marked.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param ackOnPush set the ackOnPush.
    */
@@ -203,8 +203,7 @@ public class TCPProxyProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dynamically pick the relevant parameters for connections.
-   * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
-   * Allowed in basic (allowed values- true) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return automatic
    */
@@ -216,8 +215,7 @@ public class TCPProxyProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dynamically pick the relevant parameters for connections.
-   * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
-   * Allowed in basic (allowed values- true) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param automatic set the automatic.
    */
@@ -284,7 +282,7 @@ public class TCPProxyProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Determines if delayed ack mode is enabledtrue  unconditionally use delayed ackfalse  don't use delayed ack.
    * Field introduced in 30.2.3, 31.1.2, 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return delayedAckMode
    */
@@ -297,7 +295,7 @@ public class TCPProxyProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Determines if delayed ack mode is enabledtrue  unconditionally use delayed ackfalse  don't use delayed ack.
    * Field introduced in 30.2.3, 31.1.2, 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param delayedAckMode set the delayedAckMode.
    */
@@ -313,7 +311,7 @@ public class TCPProxyProfile extends AviRestResource {
    * Special values are 0 - disable delayed ack.
    * Field introduced in 31.1.1.
    * Unit is milliseconds.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @return delayedAckTimerDelay
    */
@@ -329,7 +327,7 @@ public class TCPProxyProfile extends AviRestResource {
    * Special values are 0 - disable delayed ack.
    * Field introduced in 31.1.1.
    * Unit is milliseconds.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @param delayedAckTimerDelay set the delayedAckTimerDelay.
    */

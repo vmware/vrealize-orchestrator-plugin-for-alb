@@ -202,7 +202,7 @@ public class SupportedMigrations extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Minimum supported docker version required for controller.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "1.6.1".
    * @return controllerMinDockerVersion
    */
@@ -215,7 +215,7 @@ public class SupportedMigrations extends AviRestResource {
    * This is the setter method to the attribute.
    * Minimum supported docker version required for controller.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "1.6.1".
    * @param controllerMinDockerVersion set the controllerMinDockerVersion.
    */
@@ -312,7 +312,7 @@ public class SupportedMigrations extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Minimum cpu cores required to perform dryrun operation for this image.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @return dryrunMinCores
    */
@@ -325,7 +325,7 @@ public class SupportedMigrations extends AviRestResource {
    * This is the setter method to the attribute.
    * Minimum cpu cores required to perform dryrun operation for this image.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @param dryrunMinCores set the dryrunMinCores.
    */
@@ -339,7 +339,7 @@ public class SupportedMigrations extends AviRestResource {
    * Minimum free disk space required (in gb) to perform dryrun operation for this image.
    * Field introduced in 31.1.1.
    * Unit is gb.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 18.
    * @return dryrunMinFreeDiskSize
    */
@@ -353,7 +353,7 @@ public class SupportedMigrations extends AviRestResource {
    * Minimum free disk space required (in gb) to perform dryrun operation for this image.
    * Field introduced in 31.1.1.
    * Unit is gb.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 18.
    * @param dryrunMinFreeDiskSize set the dryrunMinFreeDiskSize.
    */
@@ -367,7 +367,7 @@ public class SupportedMigrations extends AviRestResource {
    * Minimum memory required to perform dryrun operation for this image.
    * Field introduced in 31.1.1.
    * Unit is gb.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.0f.
    * @return dryrunMinMemory
    */
@@ -381,7 +381,7 @@ public class SupportedMigrations extends AviRestResource {
    * Minimum memory required to perform dryrun operation for this image.
    * Field introduced in 31.1.1.
    * Unit is gb.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.0f.
    * @param dryrunMinMemory set the dryrunMinMemory.
    */
@@ -395,7 +395,7 @@ public class SupportedMigrations extends AviRestResource {
    * Total memory required to perform full upgrade dryrun operation for this image.
    * Field introduced in 31.2.1.
    * Unit is gb.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 12.0f.
    * @return dryrunTotalMemoryRequired
    */
@@ -409,7 +409,7 @@ public class SupportedMigrations extends AviRestResource {
    * Total memory required to perform full upgrade dryrun operation for this image.
    * Field introduced in 31.2.1.
    * Unit is gb.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 12.0f.
    * @param dryrunTotalMemoryRequired set the dryrunTotalMemoryRequired.
    */
@@ -448,7 +448,7 @@ public class SupportedMigrations extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Minimum supported api version.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return minSupportedApiVersion
    */
@@ -461,7 +461,7 @@ public class SupportedMigrations extends AviRestResource {
    * This is the setter method to the attribute.
    * Minimum supported api version.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param minSupportedApiVersion set the minSupportedApiVersion.
    */
@@ -475,7 +475,7 @@ public class SupportedMigrations extends AviRestResource {
    * Minimum space required(in gb) on podman controller host for this image installation.
    * Field introduced in 21.1.4.
    * Unit is gb.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 24.
    * @return podmanControllerHostMinFreeDiskSize
    */
@@ -489,7 +489,7 @@ public class SupportedMigrations extends AviRestResource {
    * Minimum space required(in gb) on podman controller host for this image installation.
    * Field introduced in 21.1.4.
    * Unit is gb.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 24.
    * @param podmanControllerHostMinFreeDiskSize set the podmanControllerHostMinFreeDiskSize.
    */
@@ -503,7 +503,7 @@ public class SupportedMigrations extends AviRestResource {
    * Minimum space required(in gb) on podman se host for this image installation.
    * Field introduced in 21.1.4.
    * Unit is gb.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 12.
    * @return podmanSeHostMinFreeDiskSize
    */
@@ -517,7 +517,7 @@ public class SupportedMigrations extends AviRestResource {
    * Minimum space required(in gb) on podman se host for this image installation.
    * Field introduced in 21.1.4.
    * Unit is gb.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 12.
    * @param podmanSeHostMinFreeDiskSize set the podmanSeHostMinFreeDiskSize.
    */

@@ -452,7 +452,7 @@ public class ConnectionLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Average packet processing latency for the backend flow.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgIngressLatencyBe
    */
@@ -465,7 +465,7 @@ public class ConnectionLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Average packet processing latency for the backend flow.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgIngressLatencyBe set the avgIngressLatencyBe.
    */
@@ -478,7 +478,7 @@ public class ConnectionLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Average packet processing latency for the frontend flow.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgIngressLatencyFe
    */
@@ -491,7 +491,7 @@ public class ConnectionLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Average packet processing latency for the frontend flow.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgIngressLatencyFe set the avgIngressLatencyFe.
    */
@@ -668,7 +668,7 @@ public class ConnectionLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tcp connection establishment time for the backend flow.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return connEstTimeBe
    */
@@ -681,7 +681,7 @@ public class ConnectionLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Tcp connection establishment time for the backend flow.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param connEstTimeBe set the connEstTimeBe.
    */
@@ -694,7 +694,7 @@ public class ConnectionLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tcp connection establishment time for the frontend flow.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return connEstTimeFe
    */
@@ -707,7 +707,7 @@ public class ConnectionLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Tcp connection establishment time for the frontend flow.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param connEstTimeFe set the connEstTimeFe.
    */
@@ -742,7 +742,7 @@ public class ConnectionLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Diameter related logging information.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return diameterLog
    */
@@ -755,7 +755,7 @@ public class ConnectionLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Diameter related logging information.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param diameterLog set the diameterLog.
    */
@@ -852,7 +852,7 @@ public class ConnectionLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Dns policy or topology policy name which resulted in a match.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsPolicy
    */
@@ -865,7 +865,7 @@ public class ConnectionLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Dns policy or topology policy name which resulted in a match.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dnsPolicy set the dnsPolicy.
    */
@@ -878,7 +878,7 @@ public class ConnectionLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Dns policy rule name which resulted in a match.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsPolicyRuleName
    */
@@ -891,7 +891,7 @@ public class ConnectionLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Dns policy rule name which resulted in a match.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dnsPolicyRuleName set the dnsPolicyRuleName.
    */
@@ -978,7 +978,7 @@ public class ConnectionLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Service engine closed the tcp connection after the first dns response.
    * Field introduced in 21.1.7, 22.1.4, 30.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsTcpConnCloseFromSe
    */
@@ -991,7 +991,7 @@ public class ConnectionLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Service engine closed the tcp connection after the first dns response.
    * Field introduced in 21.1.7, 22.1.4, 30.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dnsTcpConnCloseFromSe set the dnsTcpConnCloseFromSe.
    */
@@ -1118,7 +1118,7 @@ public class ConnectionLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum packet processing latency for the backend flow.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxIngressLatencyBe
    */
@@ -1131,7 +1131,7 @@ public class ConnectionLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum packet processing latency for the backend flow.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxIngressLatencyBe set the maxIngressLatencyBe.
    */
@@ -1144,7 +1144,7 @@ public class ConnectionLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum packet processing latency for the frontend flow.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxIngressLatencyFe
    */
@@ -1157,7 +1157,7 @@ public class ConnectionLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum packet processing latency for the frontend flow.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxIngressLatencyFe set the maxIngressLatencyFe.
    */
@@ -2219,7 +2219,7 @@ public class ConnectionLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ssl group negotitaed during ssl handhshake.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslNamedGroup
    */
@@ -2232,7 +2232,7 @@ public class ConnectionLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Ssl group negotitaed during ssl handhshake.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sslNamedGroup set the sslNamedGroup.
    */
@@ -2267,7 +2267,7 @@ public class ConnectionLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ssl signature algorithm negotitaed during ssl handhshake.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslSignatureAlgorithm
    */
@@ -2280,7 +2280,7 @@ public class ConnectionLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Ssl signature algorithm negotitaed during ssl handhshake.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sslSignatureAlgorithm set the sslSignatureAlgorithm.
    */
@@ -2359,7 +2359,7 @@ public class ConnectionLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Topology policy rule name which resulted in a match.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return topologyPolicyRuleName
    */
@@ -2372,7 +2372,7 @@ public class ConnectionLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Topology policy rule name which resulted in a match.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param topologyPolicyRuleName set the topologyPolicyRuleName.
    */

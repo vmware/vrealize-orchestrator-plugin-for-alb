@@ -56,7 +56,7 @@ public class SystemConfiguration extends AviRestResource {
 
     @JsonProperty("default_license_tier")
     @JsonInclude(Include.NON_NULL)
-    private String defaultLicenseTier;
+    private String defaultLicenseTier = "ENTERPRISE_WITH_CLOUD_SERVICES";
 
     @JsonProperty("dns_configuration")
     @JsonInclude(Include.NON_NULL)
@@ -98,6 +98,10 @@ public class SystemConfiguration extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String hostKeyAlgorithmExclude;
 
+    @JsonProperty("intelligent_assist_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean intelligentAssistEnabled = false;
+
     @JsonProperty("kex_algorithm_exclude")
     @JsonInclude(Include.NON_NULL)
     private String kexAlgorithmExclude;
@@ -121,6 +125,10 @@ public class SystemConfiguration extends AviRestResource {
     @JsonProperty("ntp_configuration")
     @JsonInclude(Include.NON_NULL)
     private NTPConfiguration ntpConfiguration;
+
+    @JsonProperty("password_policy_managed_at_ops")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean passwordPolicyManagedAtOps = false;
 
     @JsonProperty("portal_configuration")
     @JsonInclude(Include.NON_NULL)
@@ -226,7 +234,7 @@ public class SystemConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Password for avi_email_login user.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return aviEmailLoginPassword
    */
@@ -239,7 +247,7 @@ public class SystemConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Password for avi_email_login user.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param aviEmailLoginPassword set the aviEmailLoginPassword.
    */
@@ -252,7 +260,7 @@ public class SystemConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Common criteria mode's current state.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return commonCriteriaMode
    */
@@ -265,7 +273,7 @@ public class SystemConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Common criteria mode's current state.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param commonCriteriaMode set the commonCriteriaMode.
    */
@@ -279,7 +287,7 @@ public class SystemConfiguration extends AviRestResource {
    * Controller metrics event dynamic thresholds can be set here.
    * Controller_cpu_high and controller_mem_high evets can take configured dynamic thresholds.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerAnalyticsPolicy
    */
@@ -293,7 +301,7 @@ public class SystemConfiguration extends AviRestResource {
    * Controller metrics event dynamic thresholds can be set here.
    * Controller_cpu_high and controller_mem_high evets can take configured dynamic thresholds.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param controllerAnalyticsPolicy set the controllerAnalyticsPolicy.
    */
@@ -308,7 +316,7 @@ public class SystemConfiguration extends AviRestResource {
    * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, ENTERPRISE_WITH_CLOUD_SERVICES.
    * Field introduced in 17.2.5.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Special default for essentials edition is essentials, basic edition is basic, enterprise edition is enterprise_with_cloud_services.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "ENTERPRISE_WITH_CLOUD_SERVICES".
    * @return defaultLicenseTier
    */
   @VsoMethod
@@ -322,7 +330,7 @@ public class SystemConfiguration extends AviRestResource {
    * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, ENTERPRISE_WITH_CLOUD_SERVICES.
    * Field introduced in 17.2.5.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Special default for essentials edition is essentials, basic edition is basic, enterprise edition is enterprise_with_cloud_services.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "ENTERPRISE_WITH_CLOUD_SERVICES".
    * @param defaultLicenseTier set the defaultLicenseTier.
    */
   @VsoMethod
@@ -358,7 +366,7 @@ public class SystemConfiguration extends AviRestResource {
    * If no virtualservices are provided, avi vantage will provide dns services for configured applications.
    * Switching back to avi vantage from dns virtualservices is not allowed.
    * It is a reference to an object of type virtualservice.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsVirtualserviceRefs
    */
@@ -373,7 +381,7 @@ public class SystemConfiguration extends AviRestResource {
    * If no virtualservices are provided, avi vantage will provide dns services for configured applications.
    * Switching back to avi vantage from dns virtualservices is not allowed.
    * It is a reference to an object of type virtualservice.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsVirtualserviceRefs
    */
@@ -388,7 +396,7 @@ public class SystemConfiguration extends AviRestResource {
    * If no virtualservices are provided, avi vantage will provide dns services for configured applications.
    * Switching back to avi vantage from dns virtualservices is not allowed.
    * It is a reference to an object of type virtualservice.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsVirtualserviceRefs
    */
@@ -476,7 +484,7 @@ public class SystemConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Validates the host header against a list of trusted domains.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enableHostHeaderCheck
    */
@@ -489,7 +497,7 @@ public class SystemConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Validates the host header against a list of trusted domains.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param enableHostHeaderCheck set the enableHostHeaderCheck.
    */
@@ -502,7 +510,7 @@ public class SystemConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable license quota for the system.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enableLicenseQuota
    */
@@ -515,7 +523,7 @@ public class SystemConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable license quota for the system.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enableLicenseQuota set the enableLicenseQuota.
    */
@@ -602,6 +610,32 @@ public class SystemConfiguration extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Enable or disable intelligent assist feature on the controller.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return intelligentAssistEnabled
+   */
+  @VsoMethod
+  public Boolean getIntelligentAssistEnabled() {
+    return intelligentAssistEnabled;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable or disable intelligent assist feature on the controller.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param intelligentAssistEnabled set the intelligentAssistEnabled.
+   */
+  @VsoMethod
+  public void setIntelligentAssistEnabled(Boolean  intelligentAssistEnabled) {
+    this.intelligentAssistEnabled = intelligentAssistEnabled;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Users can specify comma separated list of deprecated key exchange algorithm.if nothing is specified, all known algorithms provided by openssh
    * will be supported.this change could only apply on the controller node.
    * Field introduced in 22.1.3.
@@ -632,7 +666,7 @@ public class SystemConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Allow outgoing connections from controller to servers using tls 1.0/1.1.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return legacySslSupport
    */
@@ -645,7 +679,7 @@ public class SystemConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Allow outgoing connections from controller to servers using tls 1.0/1.1.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param legacySslSupport set the legacySslSupport.
    */
@@ -658,7 +692,7 @@ public class SystemConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * License quota for the system.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return licenseQuota
    */
@@ -671,7 +705,7 @@ public class SystemConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * License quota for the system.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param licenseQuota set the licenseQuota.
    */
@@ -750,6 +784,32 @@ public class SystemConfiguration extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Indicates whether password policy fields are managed by vcf-ops.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return passwordPolicyManagedAtOps
+   */
+  @VsoMethod
+  public Boolean getPasswordPolicyManagedAtOps() {
+    return passwordPolicyManagedAtOps;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Indicates whether password policy fields are managed by vcf-ops.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param passwordPolicyManagedAtOps set the passwordPolicyManagedAtOps.
+   */
+  @VsoMethod
+  public void setPasswordPolicyManagedAtOps(Boolean  passwordPolicyManagedAtOps) {
+    this.passwordPolicyManagedAtOps = passwordPolicyManagedAtOps;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return portalConfiguration
@@ -796,7 +856,7 @@ public class SystemConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Users can specify and update the time limit of rekeylimit in sshd_config.if nothing is specified, the default setting will be none.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "none".
    * @return rekeyTimeLimit
    */
@@ -809,7 +869,7 @@ public class SystemConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Users can specify and update the time limit of rekeylimit in sshd_config.if nothing is specified, the default setting will be none.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "none".
    * @param rekeyTimeLimit set the rekeyTimeLimit.
    */
@@ -822,7 +882,7 @@ public class SystemConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Users can specify and update the size/volume limit of rekeylimit in sshd_config.if nothing is specified, the default setting will be default.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "default".
    * @return rekeyVolumeLimit
    */
@@ -835,7 +895,7 @@ public class SystemConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Users can specify and update the size/volume limit of rekeylimit in sshd_config.if nothing is specified, the default setting will be default.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "default".
    * @param rekeyVolumeLimit set the rekeyVolumeLimit.
    */
@@ -900,7 +960,7 @@ public class SystemConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Service auth configurations.
    * Field introduced in 32.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceAuthConfigurations
    */
@@ -913,7 +973,7 @@ public class SystemConfiguration extends AviRestResource {
    * This is the setter method. this will set the serviceAuthConfigurations
    * Service auth configurations.
    * Field introduced in 32.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceAuthConfigurations
    */
@@ -926,7 +986,7 @@ public class SystemConfiguration extends AviRestResource {
    * This is the setter method this will set the serviceAuthConfigurations
    * Service auth configurations.
    * Field introduced in 32.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceAuthConfigurations
    */
@@ -1054,7 +1114,7 @@ public class SystemConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ability to sync the kexalgorithms & hostkeyalgorithms to ses.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return syncKexHostToSe
    */
@@ -1067,7 +1127,7 @@ public class SystemConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Ability to sync the kexalgorithms & hostkeyalgorithms to ses.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param syncKexHostToSe set the syncKexHostToSe.
    */
@@ -1080,7 +1140,7 @@ public class SystemConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ability to sync the syslog server config to ses.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return syncSyslogToSe
    */
@@ -1093,7 +1153,7 @@ public class SystemConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Ability to sync the syslog server config to ses.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param syncSyslogToSe set the syncSyslogToSe.
    */
@@ -1106,7 +1166,7 @@ public class SystemConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The destination syslog server ip(v4/v6) address or fqdn.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return syslogServers
    */
@@ -1119,7 +1179,7 @@ public class SystemConfiguration extends AviRestResource {
    * This is the setter method. this will set the syslogServers
    * The destination syslog server ip(v4/v6) address or fqdn.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return syslogServers
    */
@@ -1132,7 +1192,7 @@ public class SystemConfiguration extends AviRestResource {
    * This is the setter method this will set the syslogServers
    * The destination syslog server ip(v4/v6) address or fqdn.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return syslogServers
    */
@@ -1179,7 +1239,7 @@ public class SystemConfiguration extends AviRestResource {
    * It is a reference to an object of type trustedhostprofile.
    * Field introduced in 31.1.1.
    * Maximum of 20 items allowed.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return trustedHostProfilesRefs
    */
@@ -1195,7 +1255,7 @@ public class SystemConfiguration extends AviRestResource {
    * It is a reference to an object of type trustedhostprofile.
    * Field introduced in 31.1.1.
    * Maximum of 20 items allowed.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return trustedHostProfilesRefs
    */
@@ -1211,7 +1271,7 @@ public class SystemConfiguration extends AviRestResource {
    * It is a reference to an object of type trustedhostprofile.
    * Field introduced in 31.1.1.
    * Maximum of 20 items allowed.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return trustedHostProfilesRefs
    */
@@ -1231,7 +1291,7 @@ public class SystemConfiguration extends AviRestResource {
    * store for avi load balancer controller.
    * It is a reference to an object of type pkiprofile.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return truststorePkiprofileRef
    */
@@ -1246,7 +1306,7 @@ public class SystemConfiguration extends AviRestResource {
    * store for avi load balancer controller.
    * It is a reference to an object of type pkiprofile.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param truststorePkiprofileRef set the truststorePkiprofileRef.
    */
@@ -1374,7 +1434,9 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.syncSyslogToSe, objSystemConfiguration.syncSyslogToSe)&&
   Objects.equals(this.licenseQuota, objSystemConfiguration.licenseQuota)&&
   Objects.equals(this.enableLicenseQuota, objSystemConfiguration.enableLicenseQuota)&&
-  Objects.equals(this.serviceAuthConfigurations, objSystemConfiguration.serviceAuthConfigurations);
+  Objects.equals(this.serviceAuthConfigurations, objSystemConfiguration.serviceAuthConfigurations)&&
+  Objects.equals(this.passwordPolicyManagedAtOps, objSystemConfiguration.passwordPolicyManagedAtOps)&&
+  Objects.equals(this.intelligentAssistEnabled, objSystemConfiguration.intelligentAssistEnabled);
 }
 
 @Override
@@ -1396,12 +1458,14 @@ public String toString() {
         sb.append("    fipsMode: ").append(toIndentedString(fipsMode)).append("\n");
         sb.append("    globalTenantConfig: ").append(toIndentedString(globalTenantConfig)).append("\n");
         sb.append("    hostKeyAlgorithmExclude: ").append(toIndentedString(hostKeyAlgorithmExclude)).append("\n");
+        sb.append("    intelligentAssistEnabled: ").append(toIndentedString(intelligentAssistEnabled)).append("\n");
         sb.append("    kexAlgorithmExclude: ").append(toIndentedString(kexAlgorithmExclude)).append("\n");
         sb.append("    legacySslSupport: ").append(toIndentedString(legacySslSupport)).append("\n");
         sb.append("    licenseQuota: ").append(toIndentedString(licenseQuota)).append("\n");
         sb.append("    linuxConfiguration: ").append(toIndentedString(linuxConfiguration)).append("\n");
         sb.append("    mgmtIpAccessControl: ").append(toIndentedString(mgmtIpAccessControl)).append("\n");
         sb.append("    ntpConfiguration: ").append(toIndentedString(ntpConfiguration)).append("\n");
+        sb.append("    passwordPolicyManagedAtOps: ").append(toIndentedString(passwordPolicyManagedAtOps)).append("\n");
         sb.append("    portalConfiguration: ").append(toIndentedString(portalConfiguration)).append("\n");
         sb.append("    proxyConfiguration: ").append(toIndentedString(proxyConfiguration)).append("\n");
         sb.append("    rekeyTimeLimit: ").append(toIndentedString(rekeyTimeLimit)).append("\n");

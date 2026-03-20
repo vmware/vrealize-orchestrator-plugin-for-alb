@@ -42,7 +42,7 @@ public class ControlscriptDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Exitcode from control script execution.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return exitcode
    */
@@ -55,7 +55,7 @@ public class ControlscriptDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Exitcode from control script execution.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param exitcode set the exitcode.
    */
@@ -68,7 +68,7 @@ public class ControlscriptDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Stderr from control script execution.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stderr
    */
@@ -81,7 +81,7 @@ public class ControlscriptDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Stderr from control script execution.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param stderr set the stderr.
    */
@@ -94,7 +94,7 @@ public class ControlscriptDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Stdout from control script execution.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stdout
    */
@@ -107,7 +107,7 @@ public class ControlscriptDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Stdout from control script execution.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param stdout set the stdout.
    */

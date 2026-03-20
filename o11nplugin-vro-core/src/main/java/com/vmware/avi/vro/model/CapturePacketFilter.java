@@ -36,7 +36,7 @@ public class CapturePacketFilter extends AviRestResource {
    * And'ed internally and or'ed amongst each other.
    * Field introduced in 30.2.1.
    * Maximum of 20 items allowed.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return captureTcpFilters
    */
@@ -51,7 +51,7 @@ public class CapturePacketFilter extends AviRestResource {
    * And'ed internally and or'ed amongst each other.
    * Field introduced in 30.2.1.
    * Maximum of 20 items allowed.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return captureTcpFilters
    */
@@ -66,7 +66,7 @@ public class CapturePacketFilter extends AviRestResource {
    * And'ed internally and or'ed amongst each other.
    * Field introduced in 30.2.1.
    * Maximum of 20 items allowed.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return captureTcpFilters
    */
