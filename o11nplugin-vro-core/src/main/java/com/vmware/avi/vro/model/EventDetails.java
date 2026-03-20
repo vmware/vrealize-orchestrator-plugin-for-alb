@@ -108,6 +108,8 @@ import com.vmware.avi.vro.model.LicenseExpiryDetails;
 import com.vmware.avi.vro.model.LicenseTierSwitchDetiails;
 import com.vmware.avi.vro.model.LicenseTransactionDetails;
 import com.vmware.avi.vro.model.LogAgentEventDetail;
+import com.vmware.avi.vro.model.ManagementServiceAccessGrantEventDetails;
+import com.vmware.avi.vro.model.ManagementServiceEventDetails;
 import com.vmware.avi.vro.model.MarathonServicePortConflict;
 import com.vmware.avi.vro.model.MemoryBalancerInfo;
 import com.vmware.avi.vro.model.MesosSetup;
@@ -125,8 +127,10 @@ import com.vmware.avi.vro.model.NsxtDFWServiceDetails;
 import com.vmware.avi.vro.model.NsxtDFWTagSegmentPort;
 import com.vmware.avi.vro.model.NsxtDFWTagVM;
 import com.vmware.avi.vro.model.NsxtSIEndpointDetails;
+import com.vmware.avi.vro.model.NsxtGroupFetch;
 import com.vmware.avi.vro.model.NsxtImageDetails;
 import com.vmware.avi.vro.model.NsxtSetup;
+import com.vmware.avi.vro.model.NsxtIPGroup;
 import com.vmware.avi.vro.model.NsxtSIPolicyDetails;
 import com.vmware.avi.vro.model.NsxtSIRuleDetails;
 import com.vmware.avi.vro.model.NsxtSIServiceDetails;
@@ -142,6 +146,7 @@ import com.vmware.avi.vro.model.OpenStackLbPluginOp;
 import com.vmware.avi.vro.model.OpenStackSeVmChange;
 import com.vmware.avi.vro.model.OpenStackSyncServices;
 import com.vmware.avi.vro.model.OpenStackVnicChange;
+import com.vmware.avi.vro.model.PasswordRotationDetails;
 import com.vmware.avi.vro.model.PKIProfileDetails;
 import com.vmware.avi.vro.model.PoolDeploymentFailureInfo;
 import com.vmware.avi.vro.model.PoolDeploymentSuccessInfo;
@@ -186,6 +191,7 @@ import com.vmware.avi.vro.model.SeObjsyncPeerDownDetails;
 import com.vmware.avi.vro.model.SePersistenceEventDetails;
 import com.vmware.avi.vro.model.SePoolLbEventDetails;
 import com.vmware.avi.vro.model.SeProcessCrashedDetails;
+import com.vmware.avi.vro.model.SeQatModeEventDetail;
 import com.vmware.avi.vro.model.SeRateLimiterDropDetails;
 import com.vmware.avi.vro.model.SeReconcileDetails;
 import com.vmware.avi.vro.model.SeThreshEventDetails;
@@ -688,6 +694,14 @@ public class EventDetails extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private LogAgentEventDetail logAgentEventDetails;
 
+    @JsonProperty("management_svc_access_grant_details")
+    @JsonInclude(Include.NON_NULL)
+    private ManagementServiceAccessGrantEventDetails managementSvcAccessGrantDetails;
+
+    @JsonProperty("management_svc_details")
+    @JsonInclude(Include.NON_NULL)
+    private ManagementServiceEventDetails managementSvcDetails;
+
     @JsonProperty("marathon_service_port_conflict_details")
     @JsonInclude(Include.NON_NULL)
     private MarathonServicePortConflict marathonServicePortConflictDetails;
@@ -756,6 +770,10 @@ public class EventDetails extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private NsxtSIEndpointDetails nsxtEndpointDetails;
 
+    @JsonProperty("nsxt_group_fetch")
+    @JsonInclude(Include.NON_NULL)
+    private NsxtGroupFetch nsxtGroupFetch;
+
     @JsonProperty("nsxt_img_details")
     @JsonInclude(Include.NON_NULL)
     private NsxtImageDetails nsxtImgDetails;
@@ -763,6 +781,10 @@ public class EventDetails extends AviRestResource {
     @JsonProperty("nsxt_info")
     @JsonInclude(Include.NON_NULL)
     private NsxtSetup nsxtInfo;
+
+    @JsonProperty("nsxt_ip_group")
+    @JsonInclude(Include.NON_NULL)
+    private NsxtIPGroup nsxtIpGroup;
 
     @JsonProperty("nsxt_policy_details")
     @JsonInclude(Include.NON_NULL)
@@ -823,6 +845,10 @@ public class EventDetails extends AviRestResource {
     @JsonProperty("os_vnic_details")
     @JsonInclude(Include.NON_NULL)
     private OpenStackVnicChange osVnicDetails;
+
+    @JsonProperty("password_rotation_details")
+    @JsonInclude(Include.NON_NULL)
+    private PasswordRotationDetails passwordRotationDetails;
 
     @JsonProperty("pkiprofile_details")
     @JsonInclude(Include.NON_NULL)
@@ -999,6 +1025,10 @@ public class EventDetails extends AviRestResource {
     @JsonProperty("se_process_crashed_details")
     @JsonInclude(Include.NON_NULL)
     private SeProcessCrashedDetails seProcessCrashedDetails;
+
+    @JsonProperty("se_qat_mode_event_detail")
+    @JsonInclude(Include.NON_NULL)
+    private SeQatModeEventDetail seQatModeEventDetail;
 
     @JsonProperty("se_rate_limiter_drop_details")
     @JsonInclude(Include.NON_NULL)
@@ -3624,6 +3654,58 @@ public class EventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Details for access grant events that authorize namespace-scoped access to avi controller.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return managementSvcAccessGrantDetails
+   */
+  @VsoMethod
+  public ManagementServiceAccessGrantEventDetails getManagementSvcAccessGrantDetails() {
+    return managementSvcAccessGrantDetails;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Details for access grant events that authorize namespace-scoped access to avi controller.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param managementSvcAccessGrantDetails set the managementSvcAccessGrantDetails.
+   */
+  @VsoMethod
+  public void setManagementSvcAccessGrantDetails(ManagementServiceAccessGrantEventDetails managementSvcAccessGrantDetails) {
+    this.managementSvcAccessGrantDetails = managementSvcAccessGrantDetails;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Details for management service events that expose avi controller endpoint for vks clusters.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return managementSvcDetails
+   */
+  @VsoMethod
+  public ManagementServiceEventDetails getManagementSvcDetails() {
+    return managementSvcDetails;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Details for management service events that expose avi controller endpoint for vks clusters.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param managementSvcDetails set the managementSvcDetails.
+   */
+  @VsoMethod
+  public void setManagementSvcDetails(ManagementServiceEventDetails managementSvcDetails) {
+    this.managementSvcDetails = managementSvcDetails;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return marathonServicePortConflictDetails
@@ -4018,6 +4100,32 @@ public class EventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Nsx-t ip group sync event.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return nsxtGroupFetch
+   */
+  @VsoMethod
+  public NsxtGroupFetch getNsxtGroupFetch() {
+    return nsxtGroupFetch;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Nsx-t ip group sync event.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param nsxtGroupFetch set the nsxtGroupFetch.
+   */
+  @VsoMethod
+  public void setNsxtGroupFetch(NsxtGroupFetch nsxtGroupFetch) {
+    this.nsxtGroupFetch = nsxtGroupFetch;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Nsxt image event.
    * Field introduced in 20.1.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -4066,6 +4174,32 @@ public class EventDetails extends AviRestResource {
   @VsoMethod
   public void setNsxtInfo(NsxtSetup nsxtInfo) {
     this.nsxtInfo = nsxtInfo;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Nsx-t ip group sync event.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return nsxtIpGroup
+   */
+  @VsoMethod
+  public NsxtIPGroup getNsxtIpGroup() {
+    return nsxtIpGroup;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Nsx-t ip group sync event.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param nsxtIpGroup set the nsxtIpGroup.
+   */
+  @VsoMethod
+  public void setNsxtIpGroup(NsxtIPGroup nsxtIpGroup) {
+    this.nsxtIpGroup = nsxtIpGroup;
   }
 
   /**
@@ -4414,6 +4548,32 @@ public class EventDetails extends AviRestResource {
   @VsoMethod
   public void setOsVnicDetails(OpenStackVnicChange osVnicDetails) {
     this.osVnicDetails = osVnicDetails;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Details about cloudconnectoruser password rotation.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return passwordRotationDetails
+   */
+  @VsoMethod
+  public PasswordRotationDetails getPasswordRotationDetails() {
+    return passwordRotationDetails;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Details about cloudconnectoruser password rotation.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param passwordRotationDetails set the passwordRotationDetails.
+   */
+  @VsoMethod
+  public void setPasswordRotationDetails(PasswordRotationDetails passwordRotationDetails) {
+    this.passwordRotationDetails = passwordRotationDetails;
   }
 
   /**
@@ -5422,6 +5582,30 @@ public class EventDetails extends AviRestResource {
   @VsoMethod
   public void setSeProcessCrashedDetails(SeProcessCrashedDetails seProcessCrashedDetails) {
     this.seProcessCrashedDetails = seProcessCrashedDetails;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return seQatModeEventDetail
+   */
+  @VsoMethod
+  public SeQatModeEventDetail getSeQatModeEventDetail() {
+    return seQatModeEventDetail;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param seQatModeEventDetail set the seQatModeEventDetail.
+   */
+  @VsoMethod
+  public void setSeQatModeEventDetail(SeQatModeEventDetail seQatModeEventDetail) {
+    this.seQatModeEventDetail = seQatModeEventDetail;
   }
 
   /**
@@ -7153,6 +7337,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.seDebugModeEventDetail, objEventDetails.seDebugModeEventDetail)&&
   Objects.equals(this.seObjsyncPeerDownDetails, objEventDetails.seObjsyncPeerDownDetails)&&
   Objects.equals(this.seRateLimiterDropDetails, objEventDetails.seRateLimiterDropDetails)&&
+  Objects.equals(this.seQatModeEventDetail, objEventDetails.seQatModeEventDetail)&&
   Objects.equals(this.seHmPoolDetails, objEventDetails.seHmPoolDetails)&&
   Objects.equals(this.seHmVsDetails, objEventDetails.seHmVsDetails)&&
   Objects.equals(this.sePersistenceDetails, objEventDetails.sePersistenceDetails)&&
@@ -7289,6 +7474,10 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.nsxtDfwGroupDetails, objEventDetails.nsxtDfwGroupDetails)&&
   Objects.equals(this.nsxtDfwTagSegmentPort, objEventDetails.nsxtDfwTagSegmentPort)&&
   Objects.equals(this.nsxtDfwTagVmDetails, objEventDetails.nsxtDfwTagVmDetails)&&
+  Objects.equals(this.managementSvcDetails, objEventDetails.managementSvcDetails)&&
+  Objects.equals(this.managementSvcAccessGrantDetails, objEventDetails.managementSvcAccessGrantDetails)&&
+  Objects.equals(this.nsxtIpGroup, objEventDetails.nsxtIpGroup)&&
+  Objects.equals(this.nsxtGroupFetch, objEventDetails.nsxtGroupFetch)&&
   Objects.equals(this.psmProgramDetails, objEventDetails.psmProgramDetails)&&
   Objects.equals(this.secMgrDataEvent, objEventDetails.secMgrDataEvent)&&
   Objects.equals(this.falsePositiveDetails, objEventDetails.falsePositiveDetails)&&
@@ -7324,7 +7513,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.systemLimitObjectCounts, objEventDetails.systemLimitObjectCounts)&&
   Objects.equals(this.usageMeteringEventDetails, objEventDetails.usageMeteringEventDetails)&&
   Objects.equals(this.controlscriptDetails, objEventDetails.controlscriptDetails)&&
-  Objects.equals(this.seAutoscalerEventDetails, objEventDetails.seAutoscalerEventDetails);
+  Objects.equals(this.seAutoscalerEventDetails, objEventDetails.seAutoscalerEventDetails)&&
+  Objects.equals(this.passwordRotationDetails, objEventDetails.passwordRotationDetails);
 }
 
 @Override
@@ -7434,6 +7624,8 @@ public String toString() {
         sb.append("    licenseTierSwitchDetails: ").append(toIndentedString(licenseTierSwitchDetails)).append("\n");
         sb.append("    licenseTransactionDetails: ").append(toIndentedString(licenseTransactionDetails)).append("\n");
         sb.append("    logAgentEventDetails: ").append(toIndentedString(logAgentEventDetails)).append("\n");
+        sb.append("    managementSvcAccessGrantDetails: ").append(toIndentedString(managementSvcAccessGrantDetails)).append("\n");
+        sb.append("    managementSvcDetails: ").append(toIndentedString(managementSvcDetails)).append("\n");
         sb.append("    marathonServicePortConflictDetails: ").append(toIndentedString(marathonServicePortConflictDetails)).append("\n");
         sb.append("    memoryBalancerInfo: ").append(toIndentedString(memoryBalancerInfo)).append("\n");
         sb.append("    mesosInfraDetails: ").append(toIndentedString(mesosInfraDetails)).append("\n");
@@ -7451,8 +7643,10 @@ public String toString() {
         sb.append("    nsxtDfwTagSegmentPort: ").append(toIndentedString(nsxtDfwTagSegmentPort)).append("\n");
         sb.append("    nsxtDfwTagVmDetails: ").append(toIndentedString(nsxtDfwTagVmDetails)).append("\n");
         sb.append("    nsxtEndpointDetails: ").append(toIndentedString(nsxtEndpointDetails)).append("\n");
+        sb.append("    nsxtGroupFetch: ").append(toIndentedString(nsxtGroupFetch)).append("\n");
         sb.append("    nsxtImgDetails: ").append(toIndentedString(nsxtImgDetails)).append("\n");
         sb.append("    nsxtInfo: ").append(toIndentedString(nsxtInfo)).append("\n");
+        sb.append("    nsxtIpGroup: ").append(toIndentedString(nsxtIpGroup)).append("\n");
         sb.append("    nsxtPolicyDetails: ").append(toIndentedString(nsxtPolicyDetails)).append("\n");
         sb.append("    nsxtRuleDetails: ").append(toIndentedString(nsxtRuleDetails)).append("\n");
         sb.append("    nsxtServiceDetails: ").append(toIndentedString(nsxtServiceDetails)).append("\n");
@@ -7468,6 +7662,7 @@ public String toString() {
         sb.append("    osSeVmDetails: ").append(toIndentedString(osSeVmDetails)).append("\n");
         sb.append("    osSyncServicesDetails: ").append(toIndentedString(osSyncServicesDetails)).append("\n");
         sb.append("    osVnicDetails: ").append(toIndentedString(osVnicDetails)).append("\n");
+        sb.append("    passwordRotationDetails: ").append(toIndentedString(passwordRotationDetails)).append("\n");
         sb.append("    pkiprofileDetails: ").append(toIndentedString(pkiprofileDetails)).append("\n");
         sb.append("    poolDeploymentFailureInfo: ").append(toIndentedString(poolDeploymentFailureInfo)).append("\n");
         sb.append("    poolDeploymentSuccessInfo: ").append(toIndentedString(poolDeploymentSuccessInfo)).append("\n");
@@ -7512,6 +7707,7 @@ public String toString() {
         sb.append("    sePersistenceDetails: ").append(toIndentedString(sePersistenceDetails)).append("\n");
         sb.append("    sePoolLbDetails: ").append(toIndentedString(sePoolLbDetails)).append("\n");
         sb.append("    seProcessCrashedDetails: ").append(toIndentedString(seProcessCrashedDetails)).append("\n");
+        sb.append("    seQatModeEventDetail: ").append(toIndentedString(seQatModeEventDetail)).append("\n");
         sb.append("    seRateLimiterDropDetails: ").append(toIndentedString(seRateLimiterDropDetails)).append("\n");
         sb.append("    seReconcileDetails: ").append(toIndentedString(seReconcileDetails)).append("\n");
         sb.append("    seThreshEventDetails: ").append(toIndentedString(seThreshEventDetails)).append("\n");

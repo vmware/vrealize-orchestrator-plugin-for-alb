@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.LicensePool;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -47,6 +48,10 @@ public class SaasLicensingStatus extends AviRestResource {
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
     private String name;
+
+    @JsonProperty("pool")
+    @JsonInclude(Include.NON_NULL)
+    private LicensePool pool;
 
     @JsonIgnore
     private String publicKey;
@@ -227,6 +232,32 @@ public class SaasLicensingStatus extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * License pool information.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return pool
+   */
+  @VsoMethod
+  public LicensePool getPool() {
+    return pool;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * License pool information.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param pool set the pool.
+   */
+  @VsoMethod
+  public void setPool(LicensePool pool) {
+    this.pool = pool;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Public key.
    * Field introduced in 21.1.3.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
@@ -378,7 +409,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.state, objSaasLicensingStatus.state)&&
   Objects.equals(this.refreshStatus, objSaasLicensingStatus.refreshStatus)&&
   Objects.equals(this.lastRefreshedAt, objSaasLicensingStatus.lastRefreshedAt)&&
-  Objects.equals(this.refreshedAt, objSaasLicensingStatus.refreshedAt);
+  Objects.equals(this.refreshedAt, objSaasLicensingStatus.refreshedAt)&&
+  Objects.equals(this.pool, objSaasLicensingStatus.pool);
 }
 
 @Override
@@ -391,6 +423,7 @@ public String toString() {
         sb.append("    lastRefreshedAt: ").append(toIndentedString(lastRefreshedAt)).append("\n");
         sb.append("    message: ").append(toIndentedString(message)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    pool: ").append(toIndentedString(pool)).append("\n");
         sb.append("    publicKey: ").append(toIndentedString(publicKey)).append("\n");
         sb.append("    refreshStatus: ").append(toIndentedString(refreshStatus)).append("\n");
         sb.append("    refreshedAt: ").append(toIndentedString(refreshedAt)).append("\n");

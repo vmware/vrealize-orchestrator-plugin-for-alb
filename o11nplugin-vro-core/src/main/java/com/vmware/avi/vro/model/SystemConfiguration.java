@@ -122,6 +122,10 @@ public class SystemConfiguration extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private NTPConfiguration ntpConfiguration;
 
+    @JsonProperty("password_policy_managed_at_ops")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean passwordPolicyManagedAtOps = false;
+
     @JsonProperty("portal_configuration")
     @JsonInclude(Include.NON_NULL)
     private PortalConfiguration portalConfiguration;
@@ -750,6 +754,32 @@ public class SystemConfiguration extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Indicates whether password policy fields are managed by vcf-ops.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return passwordPolicyManagedAtOps
+   */
+  @VsoMethod
+  public Boolean getPasswordPolicyManagedAtOps() {
+    return passwordPolicyManagedAtOps;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Indicates whether password policy fields are managed by vcf-ops.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param passwordPolicyManagedAtOps set the passwordPolicyManagedAtOps.
+   */
+  @VsoMethod
+  public void setPasswordPolicyManagedAtOps(Boolean  passwordPolicyManagedAtOps) {
+    this.passwordPolicyManagedAtOps = passwordPolicyManagedAtOps;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return portalConfiguration
@@ -1374,7 +1404,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.syncSyslogToSe, objSystemConfiguration.syncSyslogToSe)&&
   Objects.equals(this.licenseQuota, objSystemConfiguration.licenseQuota)&&
   Objects.equals(this.enableLicenseQuota, objSystemConfiguration.enableLicenseQuota)&&
-  Objects.equals(this.serviceAuthConfigurations, objSystemConfiguration.serviceAuthConfigurations);
+  Objects.equals(this.serviceAuthConfigurations, objSystemConfiguration.serviceAuthConfigurations)&&
+  Objects.equals(this.passwordPolicyManagedAtOps, objSystemConfiguration.passwordPolicyManagedAtOps);
 }
 
 @Override
@@ -1402,6 +1433,7 @@ public String toString() {
         sb.append("    linuxConfiguration: ").append(toIndentedString(linuxConfiguration)).append("\n");
         sb.append("    mgmtIpAccessControl: ").append(toIndentedString(mgmtIpAccessControl)).append("\n");
         sb.append("    ntpConfiguration: ").append(toIndentedString(ntpConfiguration)).append("\n");
+        sb.append("    passwordPolicyManagedAtOps: ").append(toIndentedString(passwordPolicyManagedAtOps)).append("\n");
         sb.append("    portalConfiguration: ").append(toIndentedString(portalConfiguration)).append("\n");
         sb.append("    proxyConfiguration: ").append(toIndentedString(proxyConfiguration)).append("\n");
         sb.append("    rekeyTimeLimit: ").append(toIndentedString(rekeyTimeLimit)).append("\n");

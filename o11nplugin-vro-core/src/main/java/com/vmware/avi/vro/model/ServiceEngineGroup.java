@@ -88,6 +88,10 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer asyncSslThreads = 1;
 
+    @JsonProperty("audit_qat_huge_pages")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean auditQatHugePages = true;
+
     @JsonProperty("auto_rebalance")
     @JsonInclude(Include.NON_NULL)
     private Boolean autoRebalance = false;
@@ -155,6 +159,10 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonProperty("connection_memory_percentage")
     @JsonInclude(Include.NON_NULL)
     private Integer connectionMemoryPercentage = 50;
+
+    @JsonProperty("control_qat_huge_pages")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean controlQatHugePages = true;
 
     @JsonProperty("core_shm_app_cache")
     @JsonInclude(Include.NON_NULL)
@@ -716,6 +724,10 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String openstackMgmtNetworkUuid;
 
+    @JsonProperty("optimistic_placement")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean optimisticPlacement = false;
+
     @JsonProperty("os_reserved_memory")
     @JsonInclude(Include.NON_NULL)
     private Integer osReservedMemory = 0;
@@ -751,6 +763,10 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonProperty("pre_upgrade_se_available_mem_threshold")
     @JsonInclude(Include.NON_NULL)
     private Integer preUpgradeSeAvailableMemThreshold = 0;
+
+    @JsonProperty("qat_hpage_mem_per_process")
+    @JsonInclude(Include.NON_NULL)
+    private String qatHpageMemPerProcess = "QAT_HPAGE_MEM_16MB";
 
     @JsonProperty("realtime_se_metrics")
     @JsonInclude(Include.NON_NULL)
@@ -1606,6 +1622,32 @@ public class ServiceEngineGroup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * This knob enables audit of qat hugepages.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @return auditQatHugePages
+   */
+  @VsoMethod
+  public Boolean getAuditQatHugePages() {
+    return auditQatHugePages;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * This knob enables audit of qat hugepages.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param auditQatHugePages set the auditQatHugePages.
+   */
+  @VsoMethod
+  public void setAuditQatHugePages(Boolean  auditQatHugePages) {
+    this.auditQatHugePages = auditQatHugePages;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * If set, virtual services will be automatically migrated when load on an se is less than minimum or more than maximum thresholds.
    * Only alerts are generated when the auto_rebalance is not set.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
@@ -2116,6 +2158,32 @@ public class ServiceEngineGroup extends AviRestResource {
   @VsoMethod
   public void setConnectionMemoryPercentage(Integer  connectionMemoryPercentage) {
     this.connectionMemoryPercentage = connectionMemoryPercentage;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * This knob enables control of qat hugepages.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @return controlQatHugePages
+   */
+  @VsoMethod
+  public Boolean getControlQatHugePages() {
+    return controlQatHugePages;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * This knob enables control of qat hugepages.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param controlQatHugePages set the controlQatHugePages.
+   */
+  @VsoMethod
+  public void setControlQatHugePages(Boolean  controlQatHugePages) {
+    this.controlQatHugePages = controlQatHugePages;
   }
 
   /**
@@ -6147,6 +6215,34 @@ public class ServiceEngineGroup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Allows packed placement on existing ses with asynchronous spinning up of buffer ses.
+   * Used in packed placement with buffer ses.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return optimisticPlacement
+   */
+  @VsoMethod
+  public Boolean getOptimisticPlacement() {
+    return optimisticPlacement;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Allows packed placement on existing ses with asynchronous spinning up of buffer ses.
+   * Used in packed placement with buffer ses.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param optimisticPlacement set the optimisticPlacement.
+   */
+  @VsoMethod
+  public void setOptimisticPlacement(Boolean  optimisticPlacement) {
+    this.optimisticPlacement = optimisticPlacement;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Amount of extra memory to be reserved for use by the operating system on a service engine.
    * Unit is mb.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -6399,6 +6495,34 @@ public class ServiceEngineGroup extends AviRestResource {
   @VsoMethod
   public void setPreUpgradeSeAvailableMemThreshold(Integer  preUpgradeSeAvailableMemThreshold) {
     this.preUpgradeSeAvailableMemThreshold = preUpgradeSeAvailableMemThreshold;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * This knob is used to set the number of qat hugepages.
+   * Enum options - QAT_HPAGE_MEM_8MB, QAT_HPAGE_MEM_16MB, QAT_HPAGE_MEM_32MB.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "QAT_HPAGE_MEM_16MB".
+   * @return qatHpageMemPerProcess
+   */
+  @VsoMethod
+  public String getQatHpageMemPerProcess() {
+    return qatHpageMemPerProcess;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * This knob is used to set the number of qat hugepages.
+   * Enum options - QAT_HPAGE_MEM_8MB, QAT_HPAGE_MEM_16MB, QAT_HPAGE_MEM_32MB.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "QAT_HPAGE_MEM_16MB".
+   * @param qatHpageMemPerProcess set the qatHpageMemPerProcess.
+   */
+  @VsoMethod
+  public void setQatHpageMemPerProcess(String  qatHpageMemPerProcess) {
+    this.qatHpageMemPerProcess = qatHpageMemPerProcess;
   }
 
   /**
@@ -10338,7 +10462,11 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.autoRebalanceRaiseEventsForActions, objServiceEngineGroup.autoRebalanceRaiseEventsForActions)&&
   Objects.equals(this.autoRebalanceDryRunEnabled, objServiceEngineGroup.autoRebalanceDryRunEnabled)&&
   Objects.equals(this.licenseQuota, objServiceEngineGroup.licenseQuota)&&
-  Objects.equals(this.seKernelRss, objServiceEngineGroup.seKernelRss);
+  Objects.equals(this.seKernelRss, objServiceEngineGroup.seKernelRss)&&
+  Objects.equals(this.auditQatHugePages, objServiceEngineGroup.auditQatHugePages)&&
+  Objects.equals(this.controlQatHugePages, objServiceEngineGroup.controlQatHugePages)&&
+  Objects.equals(this.qatHpageMemPerProcess, objServiceEngineGroup.qatHpageMemPerProcess)&&
+  Objects.equals(this.optimisticPlacement, objServiceEngineGroup.optimisticPlacement);
 }
 
 @Override
@@ -10357,6 +10485,7 @@ public String toString() {
         sb.append("    arpCacheTimeout: ").append(toIndentedString(arpCacheTimeout)).append("\n");
         sb.append("    asyncSsl: ").append(toIndentedString(asyncSsl)).append("\n");
         sb.append("    asyncSslThreads: ").append(toIndentedString(asyncSslThreads)).append("\n");
+        sb.append("    auditQatHugePages: ").append(toIndentedString(auditQatHugePages)).append("\n");
         sb.append("    autoRebalance: ").append(toIndentedString(autoRebalance)).append("\n");
         sb.append("    autoRebalanceCapacityPerSe: ").append(toIndentedString(autoRebalanceCapacityPerSe)).append("\n");
         sb.append("    autoRebalanceCoolDownTime: ").append(toIndentedString(autoRebalanceCoolDownTime)).append("\n");
@@ -10374,6 +10503,7 @@ public String toString() {
         sb.append("    compressIpRulesForEachNsSubnet: ").append(toIndentedString(compressIpRulesForEachNsSubnet)).append("\n");
         sb.append("    configDebugsOnAllCores: ").append(toIndentedString(configDebugsOnAllCores)).append("\n");
         sb.append("    connectionMemoryPercentage: ").append(toIndentedString(connectionMemoryPercentage)).append("\n");
+        sb.append("    controlQatHugePages: ").append(toIndentedString(controlQatHugePages)).append("\n");
         sb.append("    coreShmAppCache: ").append(toIndentedString(coreShmAppCache)).append("\n");
         sb.append("    coreShmAppLearning: ").append(toIndentedString(coreShmAppLearning)).append("\n");
         sb.append("    cpuReserve: ").append(toIndentedString(cpuReserve)).append("\n");
@@ -10514,6 +10644,7 @@ public String toString() {
         sb.append("    openstackAvailabilityZones: ").append(toIndentedString(openstackAvailabilityZones)).append("\n");
         sb.append("    openstackMgmtNetworkName: ").append(toIndentedString(openstackMgmtNetworkName)).append("\n");
         sb.append("    openstackMgmtNetworkUuid: ").append(toIndentedString(openstackMgmtNetworkUuid)).append("\n");
+        sb.append("    optimisticPlacement: ").append(toIndentedString(optimisticPlacement)).append("\n");
         sb.append("    osReservedMemory: ").append(toIndentedString(osReservedMemory)).append("\n");
         sb.append("    pathMtuDiscoveryV4: ").append(toIndentedString(pathMtuDiscoveryV4)).append("\n");
         sb.append("    pathMtuDiscoveryV6: ").append(toIndentedString(pathMtuDiscoveryV6)).append("\n");
@@ -10523,6 +10654,7 @@ public String toString() {
         sb.append("    perVsAdmissionControl: ").append(toIndentedString(perVsAdmissionControl)).append("\n");
         sb.append("    placementMode: ").append(toIndentedString(placementMode)).append("\n");
         sb.append("    preUpgradeSeAvailableMemThreshold: ").append(toIndentedString(preUpgradeSeAvailableMemThreshold)).append("\n");
+        sb.append("    qatHpageMemPerProcess: ").append(toIndentedString(qatHpageMemPerProcess)).append("\n");
         sb.append("    realtimeSeMetrics: ").append(toIndentedString(realtimeSeMetrics)).append("\n");
         sb.append("    rebootOnPanic: ").append(toIndentedString(rebootOnPanic)).append("\n");
         sb.append("    replayVrfRoutesInterval: ").append(toIndentedString(replayVrfRoutesInterval)).append("\n");
