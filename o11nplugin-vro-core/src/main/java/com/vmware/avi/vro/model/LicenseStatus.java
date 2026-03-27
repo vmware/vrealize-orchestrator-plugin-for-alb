@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.CLSStatus;
 import com.vmware.avi.vro.model.SaasLicensingStatus;
 import com.vmware.avi.vro.model.LicenseServiceUpdate;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
@@ -26,6 +27,14 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class LicenseStatus extends AviRestResource {
+    @JsonProperty("cls_status")
+    @JsonInclude(Include.NON_NULL)
+    private CLSStatus clsStatus;
+
+    @JsonProperty("legacy_license_grace_period")
+    @JsonInclude(Include.NON_NULL)
+    private String legacyLicenseGracePeriod;
+
     @JsonProperty("saas_status")
     @JsonInclude(Include.NON_NULL)
     private SaasLicensingStatus saasStatus;
@@ -33,6 +42,10 @@ public class LicenseStatus extends AviRestResource {
     @JsonProperty("service_update")
     @JsonInclude(Include.NON_NULL)
     private LicenseServiceUpdate serviceUpdate;
+
+    @JsonProperty("support_legacy_license")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean supportLegacyLicense;
 
     @JsonProperty("tenant_uuid")
     @JsonInclude(Include.NON_NULL)
@@ -47,6 +60,58 @@ public class LicenseStatus extends AviRestResource {
     private String uuid;
 
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Cls licensing status.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return clsStatus
+   */
+  @VsoMethod
+  public CLSStatus getClsStatus() {
+    return clsStatus;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Cls licensing status.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param clsStatus set the clsStatus.
+   */
+  @VsoMethod
+  public void setClsStatus(CLSStatus clsStatus) {
+    this.clsStatus = clsStatus;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Legacy license grace period, when controller upgrades with existing legacy licenses.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return legacyLicenseGracePeriod
+   */
+  @VsoMethod
+  public String getLegacyLicenseGracePeriod() {
+    return legacyLicenseGracePeriod;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Legacy license grace period, when controller upgrades with existing legacy licenses.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param legacyLicenseGracePeriod set the legacyLicenseGracePeriod.
+   */
+  @VsoMethod
+  public void setLegacyLicenseGracePeriod(String  legacyLicenseGracePeriod) {
+    this.legacyLicenseGracePeriod = legacyLicenseGracePeriod;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -98,6 +163,34 @@ public class LicenseStatus extends AviRestResource {
   @VsoMethod
   public void setServiceUpdate(LicenseServiceUpdate serviceUpdate) {
     this.serviceUpdate = serviceUpdate;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Indicates if legacy licenses are supported.
+   * When false, legacy licenses have been cleaned up after grace period expiry.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return supportLegacyLicense
+   */
+  @VsoMethod
+  public Boolean getSupportLegacyLicense() {
+    return supportLegacyLicense;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Indicates if legacy licenses are supported.
+   * When false, legacy licenses have been cleaned up after grace period expiry.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param supportLegacyLicense set the supportLegacyLicense.
+   */
+  @VsoMethod
+  public void setSupportLegacyLicense(Boolean  supportLegacyLicense) {
+    this.supportLegacyLicense = supportLegacyLicense;
   }
 
   /**
@@ -188,6 +281,9 @@ public boolean equals(java.lang.Object o) {
   return   Objects.equals(this.uuid, objLicenseStatus.uuid)&&
   Objects.equals(this.saasStatus, objLicenseStatus.saasStatus)&&
   Objects.equals(this.serviceUpdate, objLicenseStatus.serviceUpdate)&&
+  Objects.equals(this.clsStatus, objLicenseStatus.clsStatus)&&
+  Objects.equals(this.legacyLicenseGracePeriod, objLicenseStatus.legacyLicenseGracePeriod)&&
+  Objects.equals(this.supportLegacyLicense, objLicenseStatus.supportLegacyLicense)&&
   Objects.equals(this.tenantUuid, objLicenseStatus.tenantUuid);
 }
 
@@ -195,8 +291,11 @@ public boolean equals(java.lang.Object o) {
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class LicenseStatus {\n");
-      sb.append("    saasStatus: ").append(toIndentedString(saasStatus)).append("\n");
+      sb.append("    clsStatus: ").append(toIndentedString(clsStatus)).append("\n");
+        sb.append("    legacyLicenseGracePeriod: ").append(toIndentedString(legacyLicenseGracePeriod)).append("\n");
+        sb.append("    saasStatus: ").append(toIndentedString(saasStatus)).append("\n");
         sb.append("    serviceUpdate: ").append(toIndentedString(serviceUpdate)).append("\n");
+        sb.append("    supportLegacyLicense: ").append(toIndentedString(supportLegacyLicense)).append("\n");
         sb.append("    tenantUuid: ").append(toIndentedString(tenantUuid)).append("\n");
             sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
       sb.append("}");

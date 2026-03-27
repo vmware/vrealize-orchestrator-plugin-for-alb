@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.LicensePolicy;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -39,6 +40,10 @@ public class SingleLicense extends AviRestResource {
     @JsonProperty("ccu")
     @JsonInclude(Include.NON_NULL)
     private Integer ccu = 0;
+
+    @JsonProperty("cls_id")
+    @JsonInclude(Include.NON_NULL)
+    private String clsId;
 
     @JsonProperty("cores")
     @JsonInclude(Include.NON_NULL)
@@ -91,6 +96,10 @@ public class SingleLicense extends AviRestResource {
     @JsonProperty("max_ses")
     @JsonInclude(Include.NON_NULL)
     private Integer maxSes;
+
+    @JsonProperty("policy")
+    @JsonInclude(Include.NON_NULL)
+    private LicensePolicy policy;
 
     @JsonProperty("se_bandwidth_limits")
     @JsonInclude(Include.NON_NULL)
@@ -257,6 +266,32 @@ public class SingleLicense extends AviRestResource {
   @VsoMethod
   public void setCcu(Integer  ccu) {
     this.ccu = ccu;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Central license service id.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return clsId
+   */
+  @VsoMethod
+  public String getClsId() {
+    return clsId;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Central license service id.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param clsId set the clsId.
+   */
+  @VsoMethod
+  public void setClsId(String  clsId) {
+    this.clsId = clsId;
   }
 
   /**
@@ -591,6 +626,32 @@ public class SingleLicense extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * License policy details.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return policy
+   */
+  @VsoMethod
+  public LicensePolicy getPolicy() {
+    return policy;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * License policy details.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param policy set the policy.
+   */
+  @VsoMethod
+  public void setPolicy(LicensePolicy policy) {
+    this.policy = policy;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Service engine bandwidth limits for bandwidth based licenses.
    * Field introduced in 17.2.5.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -894,7 +955,9 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.addons, objSingleLicense.addons)&&
   Objects.equals(this.capacity, objSingleLicense.capacity)&&
   Objects.equals(this.unit, objSingleLicense.unit)&&
-  Objects.equals(this.tenantUuid, objSingleLicense.tenantUuid);
+  Objects.equals(this.tenantUuid, objSingleLicense.tenantUuid)&&
+  Objects.equals(this.clsId, objSingleLicense.clsId)&&
+  Objects.equals(this.policy, objSingleLicense.policy);
 }
 
 @Override
@@ -905,6 +968,7 @@ public String toString() {
         sb.append("    burstCores: ").append(toIndentedString(burstCores)).append("\n");
         sb.append("    capacity: ").append(toIndentedString(capacity)).append("\n");
         sb.append("    ccu: ").append(toIndentedString(ccu)).append("\n");
+        sb.append("    clsId: ").append(toIndentedString(clsId)).append("\n");
         sb.append("    cores: ").append(toIndentedString(cores)).append("\n");
         sb.append("    cpuCores: ").append(toIndentedString(cpuCores)).append("\n");
         sb.append("    createdOn: ").append(toIndentedString(createdOn)).append("\n");
@@ -918,6 +982,7 @@ public String toString() {
         sb.append("    licenseTier: ").append(toIndentedString(licenseTier)).append("\n");
         sb.append("    licenseType: ").append(toIndentedString(licenseType)).append("\n");
         sb.append("    maxSes: ").append(toIndentedString(maxSes)).append("\n");
+        sb.append("    policy: ").append(toIndentedString(policy)).append("\n");
         sb.append("    seBandwidthLimits: ").append(toIndentedString(seBandwidthLimits)).append("\n");
         sb.append("    serialKey: ").append(toIndentedString(serialKey)).append("\n");
         sb.append("    serviceCores: ").append(toIndentedString(serviceCores)).append("\n");

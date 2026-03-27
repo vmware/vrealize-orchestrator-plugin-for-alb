@@ -1,0 +1,125 @@
+package com.vmware.avi.vro.model;
+
+import java.util.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
+import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
+import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
+import com.vmware.avi.vro.Constants;
+import org.springframework.stereotype.Service;
+
+/**
+ * The NsxtGroupFetch is a POJO class extends AviRestResource that used for creating
+ * NsxtGroupFetch.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
+@VsoObject(create = false, name = "NsxtGroupFetch")
+@VsoFinder(name = Constants.FINDER_VRO_NSXTGROUPFETCH)
+@JsonIgnoreProperties(ignoreUnknown = true)
+@Service
+public class NsxtGroupFetch extends AviRestResource {
+    @JsonProperty("error_string")
+    @JsonInclude(Include.NON_NULL)
+    private String errorString;
+
+    @JsonProperty("path")
+    @JsonInclude(Include.NON_NULL)
+    private String path;
+
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Error message.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return errorString
+   */
+  @VsoMethod
+  public String getErrorString() {
+    return errorString;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Error message.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param errorString set the errorString.
+   */
+  @VsoMethod
+  public void setErrorString(String  errorString) {
+    this.errorString = errorString;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Nsx group.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return path
+   */
+  @VsoMethod
+  public String getPath() {
+    return path;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Nsx group.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param path set the path.
+   */
+  @VsoMethod
+  public void setPath(String  path) {
+    this.path = path;
+  }
+
+
+
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
+  }
+  if (o == null || getClass() != o.getClass()) {
+    return false;
+  }
+  NsxtGroupFetch objNsxtGroupFetch = (NsxtGroupFetch) o;
+  return   Objects.equals(this.path, objNsxtGroupFetch.path)&&
+  Objects.equals(this.errorString, objNsxtGroupFetch.errorString);
+}
+
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class NsxtGroupFetch {\n");
+      sb.append("    errorString: ").append(toIndentedString(errorString)).append("\n");
+        sb.append("    path: ").append(toIndentedString(path)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}
+

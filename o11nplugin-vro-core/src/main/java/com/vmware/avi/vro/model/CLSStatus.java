@@ -1,0 +1,287 @@
+package com.vmware.avi.vro.model;
+
+import java.util.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
+import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
+import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
+import com.vmware.avi.vro.Constants;
+import org.springframework.stereotype.Service;
+
+/**
+ * The CLSStatus is a POJO class extends AviRestResource that used for creating
+ * CLSStatus.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
+@VsoObject(create = false, name = "CLSStatus")
+@VsoFinder(name = Constants.FINDER_VRO_CLSSTATUS)
+@JsonIgnoreProperties(ignoreUnknown = true)
+@Service
+public class CLSStatus extends AviRestResource {
+    @JsonProperty("cls_id")
+    @JsonInclude(Include.NON_NULL)
+    private String clsId;
+
+    @JsonProperty("cls_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String clsRef;
+
+    @JsonProperty("connected")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean connected;
+
+    @JsonProperty("enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enabled;
+
+    @JsonProperty("message")
+    @JsonInclude(Include.NON_NULL)
+    private String message;
+
+    @JsonProperty("refreshed_at")
+    @JsonInclude(Include.NON_NULL)
+    private String refreshedAt;
+
+    @JsonProperty("usage_uploaded_at")
+    @JsonInclude(Include.NON_NULL)
+    private String usageUploadedAt;
+
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Cls id.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return clsId
+   */
+  @VsoMethod
+  public String getClsId() {
+    return clsId;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Cls id.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param clsId set the clsId.
+   */
+  @VsoMethod
+  public void setClsId(String  clsId) {
+    this.clsId = clsId;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Uuid of the ssp instance for cls licensing.
+   * It is a reference to an object of type sspinstance.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return clsRef
+   */
+  @VsoMethod
+  public String getClsRef() {
+    return clsRef;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Uuid of the ssp instance for cls licensing.
+   * It is a reference to an object of type sspinstance.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param clsRef set the clsRef.
+   */
+  @VsoMethod
+  public void setClsRef(String  clsRef) {
+    this.clsRef = clsRef;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Cls connectivity status.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return connected
+   */
+  @VsoMethod
+  public Boolean getConnected() {
+    return connected;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Cls connectivity status.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param connected set the connected.
+   */
+  @VsoMethod
+  public void setConnected(Boolean  connected) {
+    this.connected = connected;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Whether cls is enabled.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return enabled
+   */
+  @VsoMethod
+  public Boolean getEnabled() {
+    return enabled;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Whether cls is enabled.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param enabled set the enabled.
+   */
+  @VsoMethod
+  public void setEnabled(Boolean  enabled) {
+    this.enabled = enabled;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Message.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return message
+   */
+  @VsoMethod
+  public String getMessage() {
+    return message;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Message.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param message set the message.
+   */
+  @VsoMethod
+  public void setMessage(String  message) {
+    this.message = message;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Timestamp of last attempted license refresh from cls.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return refreshedAt
+   */
+  @VsoMethod
+  public String getRefreshedAt() {
+    return refreshedAt;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Timestamp of last attempted license refresh from cls.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param refreshedAt set the refreshedAt.
+   */
+  @VsoMethod
+  public void setRefreshedAt(String  refreshedAt) {
+    this.refreshedAt = refreshedAt;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Timestamp of last successful license usage upload to cls.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return usageUploadedAt
+   */
+  @VsoMethod
+  public String getUsageUploadedAt() {
+    return usageUploadedAt;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Timestamp of last successful license usage upload to cls.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param usageUploadedAt set the usageUploadedAt.
+   */
+  @VsoMethod
+  public void setUsageUploadedAt(String  usageUploadedAt) {
+    this.usageUploadedAt = usageUploadedAt;
+  }
+
+
+
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
+  }
+  if (o == null || getClass() != o.getClass()) {
+    return false;
+  }
+  CLSStatus objCLSStatus = (CLSStatus) o;
+  return   Objects.equals(this.clsRef, objCLSStatus.clsRef)&&
+  Objects.equals(this.connected, objCLSStatus.connected)&&
+  Objects.equals(this.clsId, objCLSStatus.clsId)&&
+  Objects.equals(this.refreshedAt, objCLSStatus.refreshedAt)&&
+  Objects.equals(this.usageUploadedAt, objCLSStatus.usageUploadedAt)&&
+  Objects.equals(this.enabled, objCLSStatus.enabled)&&
+  Objects.equals(this.message, objCLSStatus.message);
+}
+
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class CLSStatus {\n");
+      sb.append("    clsId: ").append(toIndentedString(clsId)).append("\n");
+        sb.append("    clsRef: ").append(toIndentedString(clsRef)).append("\n");
+        sb.append("    connected: ").append(toIndentedString(connected)).append("\n");
+        sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+        sb.append("    message: ").append(toIndentedString(message)).append("\n");
+        sb.append("    refreshedAt: ").append(toIndentedString(refreshedAt)).append("\n");
+        sb.append("    usageUploadedAt: ").append(toIndentedString(usageUploadedAt)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}
+

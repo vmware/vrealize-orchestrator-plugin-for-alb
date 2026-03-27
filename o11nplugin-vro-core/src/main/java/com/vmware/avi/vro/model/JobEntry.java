@@ -28,6 +28,10 @@ public class JobEntry extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String expiresAt;
 
+    @JsonProperty("is_federated")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean isFederated = false;
+
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
     private String name;
@@ -74,6 +78,32 @@ public class JobEntry extends AviRestResource {
   @VsoMethod
   public void setExpiresAt(String  expiresAt) {
     this.expiresAt = expiresAt;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Populate the is_federated field based object config.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return isFederated
+   */
+  @VsoMethod
+  public Boolean getIsFederated() {
+    return isFederated;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Populate the is_federated field based object config.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param isFederated set the isFederated.
+   */
+  @VsoMethod
+  public void setIsFederated(Boolean  isFederated) {
+    this.isFederated = isFederated;
   }
 
   /**
@@ -247,7 +277,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.objKey, objJobEntry.objKey)&&
   Objects.equals(this.subjobs, objJobEntry.subjobs)&&
   Objects.equals(this.expiresAt, objJobEntry.expiresAt)&&
-  Objects.equals(this.tenantRef, objJobEntry.tenantRef);
+  Objects.equals(this.tenantRef, objJobEntry.tenantRef)&&
+  Objects.equals(this.isFederated, objJobEntry.isFederated);
 }
 
 @Override
@@ -255,6 +286,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class JobEntry {\n");
       sb.append("    expiresAt: ").append(toIndentedString(expiresAt)).append("\n");
+        sb.append("    isFederated: ").append(toIndentedString(isFederated)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    objKey: ").append(toIndentedString(objKey)).append("\n");
         sb.append("    subjobs: ").append(toIndentedString(subjobs)).append("\n");

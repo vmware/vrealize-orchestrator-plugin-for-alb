@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.IpAddr;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -131,6 +132,10 @@ public class vNIC extends AviRestResource {
     @JsonProperty("port_uuid")
     @JsonInclude(Include.NON_NULL)
     private String portUuid;
+
+    @JsonProperty("tepless_ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr teplessIp;
 
     @JsonProperty("vlan_id")
     @JsonInclude(Include.NON_NULL)
@@ -804,6 +809,34 @@ public class vNIC extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Tepless ip address for tep-less vpc deployment.
+   * This ip is used as the source ip for all traffic originated by the se in this vrf.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return teplessIp
+   */
+  @VsoMethod
+  public IpAddr getTeplessIp() {
+    return teplessIp;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Tepless ip address for tep-less vpc deployment.
+   * This ip is used as the source ip for all traffic originated by the se in this vrf.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param teplessIp set the teplessIp.
+   */
+  @VsoMethod
+  public void setTeplessIp(IpAddr teplessIp) {
+    this.teplessIp = teplessIp;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return vlanId
@@ -988,7 +1021,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.deleteVnic, objvNIC.deleteVnic)&&
   Objects.equals(this.linkUp, objvNIC.linkUp)&&
   Objects.equals(this.numRxDescriptors, objvNIC.numRxDescriptors)&&
-  Objects.equals(this.numTxDescriptors, objvNIC.numTxDescriptors);
+  Objects.equals(this.numTxDescriptors, objvNIC.numTxDescriptors)&&
+  Objects.equals(this.teplessIp, objvNIC.teplessIp);
 }
 
 @Override
@@ -1022,6 +1056,7 @@ public String toString() {
         sb.append("    numTxDescriptors: ").append(toIndentedString(numTxDescriptors)).append("\n");
         sb.append("    pciId: ").append(toIndentedString(pciId)).append("\n");
         sb.append("    portUuid: ").append(toIndentedString(portUuid)).append("\n");
+        sb.append("    teplessIp: ").append(toIndentedString(teplessIp)).append("\n");
         sb.append("    vlanId: ").append(toIndentedString(vlanId)).append("\n");
         sb.append("    vlanInterfaces: ").append(toIndentedString(vlanInterfaces)).append("\n");
         sb.append("    vnicNetworks: ").append(toIndentedString(vnicNetworks)).append("\n");

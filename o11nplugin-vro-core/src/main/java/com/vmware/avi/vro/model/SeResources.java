@@ -56,6 +56,10 @@ public class SeResources extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String qatMode = "QAT_OFF";
 
+    @JsonProperty("qat_oper_mode")
+    @JsonInclude(Include.NON_NULL)
+    private String qatOperMode = "QAT_OPER_MODE_UNKNOWN";
+
     @JsonProperty("sockets")
     @JsonInclude(Include.NON_NULL)
     private Integer sockets;
@@ -254,6 +258,34 @@ public class SeResources extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Usage of intel qat for performance mode.
+   * Enum options - QAT_OPER_MODE_LEGACY, QAT_OPER_MODE_PERF, QAT_OPER_MODE_UNKNOWN.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "QAT_OPER_MODE_UNKNOWN".
+   * @return qatOperMode
+   */
+  @VsoMethod
+  public String getQatOperMode() {
+    return qatOperMode;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Usage of intel qat for performance mode.
+   * Enum options - QAT_OPER_MODE_LEGACY, QAT_OPER_MODE_PERF, QAT_OPER_MODE_UNKNOWN.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "QAT_OPER_MODE_UNKNOWN".
+   * @param qatOperMode set the qatOperMode.
+   */
+  @VsoMethod
+  public void setQatOperMode(String  qatOperMode) {
+    this.qatOperMode = qatOperMode;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sockets
@@ -293,7 +325,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.coresPerSocket, objSeResources.coresPerSocket)&&
   Objects.equals(this.hypervisorMode, objSeResources.hypervisorMode)&&
   Objects.equals(this.numDatapathProcesses, objSeResources.numDatapathProcesses)&&
-  Objects.equals(this.qatMode, objSeResources.qatMode);
+  Objects.equals(this.qatMode, objSeResources.qatMode)&&
+  Objects.equals(this.qatOperMode, objSeResources.qatOperMode);
 }
 
 @Override
@@ -308,6 +341,7 @@ public String toString() {
         sb.append("    numDatapathProcesses: ").append(toIndentedString(numDatapathProcesses)).append("\n");
         sb.append("    numVcpus: ").append(toIndentedString(numVcpus)).append("\n");
         sb.append("    qatMode: ").append(toIndentedString(qatMode)).append("\n");
+        sb.append("    qatOperMode: ").append(toIndentedString(qatOperMode)).append("\n");
         sb.append("    sockets: ").append(toIndentedString(sockets)).append("\n");
       sb.append("}");
   return sb.toString();

@@ -88,6 +88,18 @@ public class ControllerProperties extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean bmUseAnsible = true;
 
+    @JsonProperty("cc_user_password_expiry_days")
+    @JsonInclude(Include.NON_NULL)
+    private Integer ccUserPasswordExpiryDays = 30;
+
+    @JsonProperty("cc_user_password_rotation_job_period")
+    @JsonInclude(Include.NON_NULL)
+    private Integer ccUserPasswordRotationJobPeriod = 24;
+
+    @JsonProperty("cert_rotation_jwt_retention_days")
+    @JsonInclude(Include.NON_NULL)
+    private Integer certRotationJwtRetentionDays = 180;
+
     @JsonProperty("check_vsvip_fqdn_syntax")
     @JsonInclude(Include.NON_NULL)
     private Boolean checkVsvipFqdnSyntax = true;
@@ -182,6 +194,10 @@ public class ControllerProperties extends AviRestResource {
 
     @JsonIgnore
     private Boolean enableResmgrLogCachePrint = false;
+
+    @JsonProperty("enable_streaming_based_nsx_ip_group_sync")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableStreamingBasedNsxIpGroupSync = true;
 
     @JsonProperty("event_manager_file_modified_ts_filter")
     @JsonInclude(Include.NON_NULL)
@@ -895,6 +911,108 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Number of days after which cloudconnectoruser (service account) password expires.
+   * Rotation is triggered 5 days before expiry.
+   * Set to 0 to disable automatic rotation.
+   * Allowed values are 1-730.
+   * Special values are 0 - disabled.
+   * Field introduced in 32.1.1.
+   * Unit is days.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 30.
+   * @return ccUserPasswordExpiryDays
+   */
+  @VsoMethod
+  public Integer getCcUserPasswordExpiryDays() {
+    return ccUserPasswordExpiryDays;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Number of days after which cloudconnectoruser (service account) password expires.
+   * Rotation is triggered 5 days before expiry.
+   * Set to 0 to disable automatic rotation.
+   * Allowed values are 1-730.
+   * Special values are 0 - disabled.
+   * Field introduced in 32.1.1.
+   * Unit is days.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 30.
+   * @param ccUserPasswordExpiryDays set the ccUserPasswordExpiryDays.
+   */
+  @VsoMethod
+  public void setCcUserPasswordExpiryDays(Integer  ccUserPasswordExpiryDays) {
+    this.ccUserPasswordExpiryDays = ccUserPasswordExpiryDays;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Period in hours for cloudconnectoruser (service account) password rotation check job.
+   * Default is 24 hours (1 day).
+   * Range is 1-168 hours (1 hour to 7 days).
+   * Allowed values are 1-168.
+   * Field introduced in 32.1.1.
+   * Unit is hours.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 24.
+   * @return ccUserPasswordRotationJobPeriod
+   */
+  @VsoMethod
+  public Integer getCcUserPasswordRotationJobPeriod() {
+    return ccUserPasswordRotationJobPeriod;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Period in hours for cloudconnectoruser (service account) password rotation check job.
+   * Default is 24 hours (1 day).
+   * Range is 1-168 hours (1 hour to 7 days).
+   * Allowed values are 1-168.
+   * Field introduced in 32.1.1.
+   * Unit is hours.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 24.
+   * @param ccUserPasswordRotationJobPeriod set the ccUserPasswordRotationJobPeriod.
+   */
+  @VsoMethod
+  public void setCcUserPasswordRotationJobPeriod(Integer  ccUserPasswordRotationJobPeriod) {
+    this.ccUserPasswordRotationJobPeriod = ccUserPasswordRotationJobPeriod;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Number of days to retain jwt tokens generated during certificate rotation.
+   * Use multiples of 30 for months (e.g., 30 = 1 month, 60 = 2 months, 180 = 6 months).
+   * Allowed values are 1-3650.
+   * Field introduced in 32.1.1.
+   * Unit is days.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 180.
+   * @return certRotationJwtRetentionDays
+   */
+  @VsoMethod
+  public Integer getCertRotationJwtRetentionDays() {
+    return certRotationJwtRetentionDays;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Number of days to retain jwt tokens generated during certificate rotation.
+   * Use multiples of 30 for months (e.g., 30 = 1 month, 60 = 2 months, 180 = 6 months).
+   * Allowed values are 1-3650.
+   * Field introduced in 32.1.1.
+   * Unit is days.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 180.
+   * @param certRotationJwtRetentionDays set the certRotationJwtRetentionDays.
+   */
+  @VsoMethod
+  public void setCertRotationJwtRetentionDays(Integer  certRotationJwtRetentionDays) {
+    this.certRotationJwtRetentionDays = certRotationJwtRetentionDays;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Enforce vsvip fqdn syntax checks.
    * Field introduced in 20.1.6.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -1557,6 +1675,34 @@ public class ControllerProperties extends AviRestResource {
   @VsoMethod
   public void setEnableResmgrLogCachePrint(Boolean  enableResmgrLogCachePrint) {
     this.enableResmgrLogCachePrint = enableResmgrLogCachePrint;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * When set to true, avi controller will attempt to automatically sync nsx groups with avi ip groups provided the ip group is configured with an nsx
+   * group path and nsx dynamic streaming is enabled and active.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @return enableStreamingBasedNsxIpGroupSync
+   */
+  @VsoMethod
+  public Boolean getEnableStreamingBasedNsxIpGroupSync() {
+    return enableStreamingBasedNsxIpGroupSync;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * When set to true, avi controller will attempt to automatically sync nsx groups with avi ip groups provided the ip group is configured with an nsx
+   * group path and nsx dynamic streaming is enabled and active.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param enableStreamingBasedNsxIpGroupSync set the enableStreamingBasedNsxIpGroupSync.
+   */
+  @VsoMethod
+  public void setEnableStreamingBasedNsxIpGroupSync(Boolean  enableStreamingBasedNsxIpGroupSync) {
+    this.enableStreamingBasedNsxIpGroupSync = enableStreamingBasedNsxIpGroupSync;
   }
 
   /**
@@ -3798,7 +3944,11 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.logRecordsFrequentCleanupEventGenerationThreshold, objControllerProperties.logRecordsFrequentCleanupEventGenerationThreshold)&&
   Objects.equals(this.logRecordsCleanupTargetPercentage, objControllerProperties.logRecordsCleanupTargetPercentage)&&
   Objects.equals(this.logRecordsAllocationPercentageForEvents, objControllerProperties.logRecordsAllocationPercentageForEvents)&&
-  Objects.equals(this.eventManagerFileModifiedTsFilter, objControllerProperties.eventManagerFileModifiedTsFilter);
+  Objects.equals(this.eventManagerFileModifiedTsFilter, objControllerProperties.eventManagerFileModifiedTsFilter)&&
+  Objects.equals(this.certRotationJwtRetentionDays, objControllerProperties.certRotationJwtRetentionDays)&&
+  Objects.equals(this.ccUserPasswordRotationJobPeriod, objControllerProperties.ccUserPasswordRotationJobPeriod)&&
+  Objects.equals(this.ccUserPasswordExpiryDays, objControllerProperties.ccUserPasswordExpiryDays)&&
+  Objects.equals(this.enableStreamingBasedNsxIpGroupSync, objControllerProperties.enableStreamingBasedNsxIpGroupSync);
 }
 
 @Override
@@ -3820,6 +3970,9 @@ public String toString() {
         sb.append("    attachIpRetryInterval: ").append(toIndentedString(attachIpRetryInterval)).append("\n");
         sb.append("    attachIpRetryLimit: ").append(toIndentedString(attachIpRetryLimit)).append("\n");
         sb.append("    bmUseAnsible: ").append(toIndentedString(bmUseAnsible)).append("\n");
+        sb.append("    ccUserPasswordExpiryDays: ").append(toIndentedString(ccUserPasswordExpiryDays)).append("\n");
+        sb.append("    ccUserPasswordRotationJobPeriod: ").append(toIndentedString(ccUserPasswordRotationJobPeriod)).append("\n");
+        sb.append("    certRotationJwtRetentionDays: ").append(toIndentedString(certRotationJwtRetentionDays)).append("\n");
         sb.append("    checkVsvipFqdnSyntax: ").append(toIndentedString(checkVsvipFqdnSyntax)).append("\n");
         sb.append("    cleanupExpiredAuthtokenTimeoutPeriod: ").append(toIndentedString(cleanupExpiredAuthtokenTimeoutPeriod)).append("\n");
         sb.append("    cleanupSessionsTimeoutPeriod: ").append(toIndentedString(cleanupSessionsTimeoutPeriod)).append("\n");
@@ -3844,6 +3997,7 @@ public String toString() {
         sb.append("    enableNsxStreamingAgent: ").append(toIndentedString(enableNsxStreamingAgent)).append("\n");
         sb.append("    enablePerProcessStop: ").append(toIndentedString(enablePerProcessStop)).append("\n");
         sb.append("    enableResmgrLogCachePrint: ").append(toIndentedString(enableResmgrLogCachePrint)).append("\n");
+        sb.append("    enableStreamingBasedNsxIpGroupSync: ").append(toIndentedString(enableStreamingBasedNsxIpGroupSync)).append("\n");
         sb.append("    eventManagerFileModifiedTsFilter: ").append(toIndentedString(eventManagerFileModifiedTsFilter)).append("\n");
         sb.append("    eventManagerMaxGoroutines: ").append(toIndentedString(eventManagerMaxGoroutines)).append("\n");
         sb.append("    eventManagerMaxSubscribers: ").append(toIndentedString(eventManagerMaxSubscribers)).append("\n");
