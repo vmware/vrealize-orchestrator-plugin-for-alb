@@ -10,37 +10,8 @@ Avi VMware Aria Automation Orchestrator​ Plugin
 ## Clone the repo to your local
 > https://github.com/vmware/vrealize-orchestrator-plugin-for-alb.git
 
-## Installing plugin to VMware Aria Automation Orchestrator 8.18.1 or newer​
 
-    * Download the dar file from https://github.com/vmware/vrealize-orchestrator-plugin-for-alb/releases/download/22.1.3.post3/o11nplugin-vro-22.1.3.3.RELEASE.dar
-    * Enter the IP or FQDN of vRO instance in browser (https://vro-fqdn/vco) and Start the Automation Orchestrator Client
-   ![alt text](https://github.com/user-attachments/assets/55a0c7a3-18cd-4682-adcc-c7108ab5099e)
-    
-    * Go to System Settings and Click Open on Plug-ins card
-   ![alt text](https://github.com/user-attachments/assets/662ffaa8-dc72-4d26-b08c-642cf4216bde)
-    
-    * Click Add Plug-in and A wizard will open up
-   ![alt text](https://github.com/user-attachments/assets/d07e7692-2927-4c89-a64c-9d049af84997)
-    
-    * Upload the plug-in from Git repo and Click Next
-   ![alt text](https://github.com/user-attachments/assets/a9cc49be-a653-4e9d-9b68-7d5c6b3a941a)
-
-    * Accept EULA (if available) and Click Accept and Install (after installation VRO will restart this may take some time)
-   ![alt text](https://github.com/user-attachments/assets/ea053213-c26e-40bb-81c3-7647fe29ae7e)
-
-    * Wait for Services to come back.
-
-   ![alt text](https://github.com/user-attachments/assets/61967944-0d96-4c44-ae27-0571bf08182e)
-
-    * Refresh the VRO and Check Inventory for Avi Plug-in.
-   
-   ![alt text](https://github.com/user-attachments/assets/4a5237e6-5f00-472a-af1e-596d92ba9ab9)
-
-    * Afrer refresh, you can see the workflow under Workflows tab inside Library > Avi folder and actions under Actions tab inside com.vmware.avi folder.
-   ![alt text](images/library.png)
-
-
-## Installing plugin to VMware Aria Automation Orchestrator 8.18 or older​
+## Installing plugin to VMware Aria Automation Orchestrator​
 
     * Download the dar file from https://github.com/vmware/vrealize-orchestrator-plugin-for-alb/releases/download/22.1.3.post3/o11nplugin-vro-22.1.3.3.RELEASE.dar
     * Enter the Ip of Vro instance in browser and click on Orchestrator Control Center.
