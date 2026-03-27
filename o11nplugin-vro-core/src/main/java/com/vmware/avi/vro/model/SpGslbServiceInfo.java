@@ -38,7 +38,7 @@ public class SpGslbServiceInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Fqdns associated with the gslb service.
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fqdns
    */
@@ -51,7 +51,7 @@ public class SpGslbServiceInfo extends AviRestResource {
    * This is the setter method. this will set the fqdns
    * Fqdns associated with the gslb service.
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fqdns
    */
@@ -64,7 +64,7 @@ public class SpGslbServiceInfo extends AviRestResource {
    * This is the setter method this will set the fqdns
    * Fqdns associated with the gslb service.
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fqdns
    */
@@ -83,7 +83,7 @@ public class SpGslbServiceInfo extends AviRestResource {
    * Gslb service uuid associated with the site persistence pool.
    * It is a reference to an object of type gslbservice.
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gsRef
    */
@@ -97,7 +97,7 @@ public class SpGslbServiceInfo extends AviRestResource {
    * Gslb service uuid associated with the site persistence pool.
    * It is a reference to an object of type gslbservice.
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gsRef set the gsRef.
    */

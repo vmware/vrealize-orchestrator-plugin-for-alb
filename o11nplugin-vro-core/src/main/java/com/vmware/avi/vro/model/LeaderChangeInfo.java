@@ -48,7 +48,7 @@ public class LeaderChangeInfo extends AviRestResource {
    * This would effectively disable gslb disaster recovery possibilities.
    * The best practice is to change the mode (auto to manual or vice-versa) rather than disabling the leader change mechanism.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enabled
    */
@@ -63,7 +63,7 @@ public class LeaderChangeInfo extends AviRestResource {
    * This would effectively disable gslb disaster recovery possibilities.
    * The best practice is to change the mode (auto to manual or vice-versa) rather than disabling the leader change mechanism.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enabled set the enabled.
    */
@@ -78,7 +78,7 @@ public class LeaderChangeInfo extends AviRestResource {
    * These sites should be enabled active follower sites.a site that is deactivated or passive or a third-party site cannot be a leader candidate.
    * Field introduced in 31.2.1.
    * Maximum of 1 items allowed.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return leaderCandidates
    */
@@ -93,7 +93,7 @@ public class LeaderChangeInfo extends AviRestResource {
    * These sites should be enabled active follower sites.a site that is deactivated or passive or a third-party site cannot be a leader candidate.
    * Field introduced in 31.2.1.
    * Maximum of 1 items allowed.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return leaderCandidates
    */
@@ -108,7 +108,7 @@ public class LeaderChangeInfo extends AviRestResource {
    * These sites should be enabled active follower sites.a site that is deactivated or passive or a third-party site cannot be a leader candidate.
    * Field introduced in 31.2.1.
    * Maximum of 1 items allowed.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return leaderCandidates
    */
@@ -127,7 +127,7 @@ public class LeaderChangeInfo extends AviRestResource {
    * Leader change mode, can be auto or manual.
    * Enum options - GSLB_LC_MODE_MANUAL, GSLB_LC_MODE_AUTO.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_LC_MODE_MANUAL".
    * @return leaderChangeMode
    */
@@ -141,7 +141,7 @@ public class LeaderChangeInfo extends AviRestResource {
    * Leader change mode, can be auto or manual.
    * Enum options - GSLB_LC_MODE_MANUAL, GSLB_LC_MODE_AUTO.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_LC_MODE_MANUAL".
    * @param leaderChangeMode set the leaderChangeMode.
    */
@@ -155,7 +155,7 @@ public class LeaderChangeInfo extends AviRestResource {
    * Maximum number of probe failures before considering other site as down for auto leader change.
    * Allowed values are 1-3600.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 15.
    * @return maxUnsuccessfulProbes
    */
@@ -169,7 +169,7 @@ public class LeaderChangeInfo extends AviRestResource {
    * Maximum number of probe failures before considering other site as down for auto leader change.
    * Allowed values are 1-3600.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 15.
    * @param maxUnsuccessfulProbes set the maxUnsuccessfulProbes.
    */

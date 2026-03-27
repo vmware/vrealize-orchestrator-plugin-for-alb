@@ -59,7 +59,7 @@ public class VsSwitchoverEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Error messages associated with this event.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorMessage
    */
@@ -72,7 +72,7 @@ public class VsSwitchoverEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Error messages associated with this event.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param errorMessage set the errorMessage.
    */
@@ -85,7 +85,7 @@ public class VsSwitchoverEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Vip ipv4 address.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip
    */
@@ -98,7 +98,7 @@ public class VsSwitchoverEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Vip ipv4 address.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip set the ip.
    */
@@ -111,7 +111,7 @@ public class VsSwitchoverEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Vip ipv6 address.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip6
    */
@@ -124,7 +124,7 @@ public class VsSwitchoverEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Vip ipv6 address.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip6 set the ip6.
    */
@@ -137,7 +137,7 @@ public class VsSwitchoverEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Status of event.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rpcStatus
    */
@@ -150,7 +150,7 @@ public class VsSwitchoverEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Status of event.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rpcStatus set the rpcStatus.
    */
@@ -163,7 +163,7 @@ public class VsSwitchoverEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of serviceengine assigned to this virtual service.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seAssigned
    */
@@ -176,7 +176,7 @@ public class VsSwitchoverEventDetails extends AviRestResource {
    * This is the setter method. this will set the seAssigned
    * List of serviceengine assigned to this virtual service.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seAssigned
    */
@@ -189,7 +189,7 @@ public class VsSwitchoverEventDetails extends AviRestResource {
    * This is the setter method this will set the seAssigned
    * List of serviceengine assigned to this virtual service.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seAssigned
    */
@@ -207,7 +207,7 @@ public class VsSwitchoverEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Resources requested/assigned to this virtual service.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seRequested
    */
@@ -220,7 +220,7 @@ public class VsSwitchoverEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Resources requested/assigned to this virtual service.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seRequested set the seRequested.
    */
@@ -233,7 +233,7 @@ public class VsSwitchoverEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Virtual service uuid.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUuid
    */
@@ -246,7 +246,7 @@ public class VsSwitchoverEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Virtual service uuid.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsUuid set the vsUuid.
    */

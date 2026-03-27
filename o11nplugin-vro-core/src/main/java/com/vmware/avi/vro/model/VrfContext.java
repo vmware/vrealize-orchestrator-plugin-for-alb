@@ -142,7 +142,7 @@ public class VrfContext extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Bfd configuration profile.
    * Field introduced in 20.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return bfdProfile
    */
@@ -155,7 +155,7 @@ public class VrfContext extends AviRestResource {
    * This is the setter method to the attribute.
    * Bfd configuration profile.
    * Field introduced in 20.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param bfdProfile set the bfdProfile.
    */
@@ -167,7 +167,7 @@ public class VrfContext extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Bgp local and peer info.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return bgpProfile
    */
@@ -179,7 +179,7 @@ public class VrfContext extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Bgp local and peer info.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param bgpProfile set the bgpProfile.
    */
@@ -263,7 +263,7 @@ public class VrfContext extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configure ping based heartbeat check for gateway in service engines of vrf.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gatewayMon
    */
@@ -275,7 +275,7 @@ public class VrfContext extends AviRestResource {
   /**
    * This is the setter method. this will set the gatewayMon
    * Configure ping based heartbeat check for gateway in service engines of vrf.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gatewayMon
    */
@@ -287,7 +287,7 @@ public class VrfContext extends AviRestResource {
   /**
    * This is the setter method this will set the gatewayMon
    * Configure ping based heartbeat check for gateway in service engines of vrf.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gatewayMon
    */
@@ -331,8 +331,7 @@ public class VrfContext extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable lldp.
    * Field introduced in 18.2.10, 20.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- true), basic (allowed values- true) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return lldpEnable
    */
@@ -345,8 +344,7 @@ public class VrfContext extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable lldp.
    * Field introduced in 18.2.10, 20.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- true), basic (allowed values- true) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param lldpEnable set the lldpEnable.
    */

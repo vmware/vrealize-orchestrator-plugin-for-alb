@@ -59,7 +59,7 @@ public class SEFaultInjectSeParam extends AviRestResource {
    * Internal  duration in seconds to wait before terminating hung se_agent process.
    * Field introduced in 32.1.1.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return agentTerminateOnHungDuration
    */
@@ -73,7 +73,7 @@ public class SEFaultInjectSeParam extends AviRestResource {
    * Internal  duration in seconds to wait before terminating hung se_agent process.
    * Field introduced in 32.1.1.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param agentTerminateOnHungDuration set the agentTerminateOnHungDuration.
    */
@@ -114,7 +114,7 @@ public class SEFaultInjectSeParam extends AviRestResource {
    * Set 0 to dis-able, 1 to enable.
    * Allowed values are 0-1.
    * Field introduced in 32.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return enableAgentTerminateOnHung
    */
@@ -129,7 +129,7 @@ public class SEFaultInjectSeParam extends AviRestResource {
    * Set 0 to dis-able, 1 to enable.
    * Allowed values are 0-1.
    * Field introduced in 32.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param enableAgentTerminateOnHung set the enableAgentTerminateOnHung.
    */
@@ -142,7 +142,7 @@ public class SEFaultInjectSeParam extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Inject fault on objects.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return objNames
    */
@@ -155,7 +155,7 @@ public class SEFaultInjectSeParam extends AviRestResource {
    * This is the setter method. this will set the objNames
    * Inject fault on objects.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return objNames
    */
@@ -168,7 +168,7 @@ public class SEFaultInjectSeParam extends AviRestResource {
    * This is the setter method this will set the objNames
    * Inject fault on objects.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return objNames
    */

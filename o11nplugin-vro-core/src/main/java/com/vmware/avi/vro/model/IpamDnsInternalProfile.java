@@ -45,7 +45,7 @@ public class IpamDnsInternalProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * List of service domains.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsServiceDomain
    */
@@ -57,7 +57,7 @@ public class IpamDnsInternalProfile extends AviRestResource {
   /**
    * This is the setter method. this will set the dnsServiceDomain
    * List of service domains.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsServiceDomain
    */
@@ -69,7 +69,7 @@ public class IpamDnsInternalProfile extends AviRestResource {
   /**
    * This is the setter method this will set the dnsServiceDomain
    * List of service domains.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsServiceDomain
    */
@@ -87,7 +87,7 @@ public class IpamDnsInternalProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Avi virtualservice to be used for serving dns records.
    * It is a reference to an object of type virtualservice.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsVirtualserviceRef
    */
@@ -100,7 +100,7 @@ public class IpamDnsInternalProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Avi virtualservice to be used for serving dns records.
    * It is a reference to an object of type virtualservice.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dnsVirtualserviceRef set the dnsVirtualserviceRef.
    */
@@ -114,8 +114,7 @@ public class IpamDnsInternalProfile extends AviRestResource {
    * Default ttl for all records, overridden by ttl value for each service domain configured in dnsservicedomain.
    * Allowed values are 1-604800.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- 30), basic (allowed values- 30) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @return ttl
    */
@@ -129,8 +128,7 @@ public class IpamDnsInternalProfile extends AviRestResource {
    * Default ttl for all records, overridden by ttl value for each service domain configured in dnsservicedomain.
    * Allowed values are 1-604800.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- 30), basic (allowed values- 30) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @param ttl set the ttl.
    */

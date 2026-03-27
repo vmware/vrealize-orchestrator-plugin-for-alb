@@ -39,7 +39,7 @@ public class AuthzRuleMatch extends AviRestResource {
    * Name of the executed authorization rule action.
    * Enum options - ALLOW_ACCESS, CLOSE_CONNECTION, HTTP_LOCAL_RESPONSE.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ruleAction
    */
@@ -53,7 +53,7 @@ public class AuthzRuleMatch extends AviRestResource {
    * Name of the executed authorization rule action.
    * Enum options - ALLOW_ACCESS, CLOSE_CONNECTION, HTTP_LOCAL_RESPONSE.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ruleAction set the ruleAction.
    */
@@ -66,7 +66,7 @@ public class AuthzRuleMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the matched authorization rule.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ruleName
    */
@@ -79,7 +79,7 @@ public class AuthzRuleMatch extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the matched authorization rule.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ruleName set the ruleName.
    */

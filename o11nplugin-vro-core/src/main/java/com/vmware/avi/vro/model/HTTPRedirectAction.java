@@ -61,7 +61,7 @@ public class HTTPRedirectAction extends AviRestResource {
    * Add a query string to the redirect uri.
    * If keep_query is set, concatenates the add_string to the query of the incoming request.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return addString
    */
@@ -75,7 +75,7 @@ public class HTTPRedirectAction extends AviRestResource {
    * Add a query string to the redirect uri.
    * If keep_query is set, concatenates the add_string to the query of the incoming request.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param addString set the addString.
    */

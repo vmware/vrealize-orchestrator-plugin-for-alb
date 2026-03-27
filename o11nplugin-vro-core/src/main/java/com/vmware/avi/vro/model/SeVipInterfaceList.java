@@ -78,7 +78,7 @@ public class SeVipInterfaceList extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of placement_networks reachable from this interface.
    * Field introduced in 20.1.5.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networks
    */
@@ -91,7 +91,7 @@ public class SeVipInterfaceList extends AviRestResource {
    * This is the setter method. this will set the networks
    * List of placement_networks reachable from this interface.
    * Field introduced in 20.1.5.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networks
    */
@@ -104,7 +104,7 @@ public class SeVipInterfaceList extends AviRestResource {
    * This is the setter method this will set the networks
    * List of placement_networks reachable from this interface.
    * Field introduced in 20.1.5.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networks
    */

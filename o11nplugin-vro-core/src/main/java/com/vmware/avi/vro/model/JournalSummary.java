@@ -70,7 +70,7 @@ public class JournalSummary extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Description of the process.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
@@ -83,7 +83,7 @@ public class JournalSummary extends AviRestResource {
    * This is the setter method to the attribute.
    * Description of the process.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
@@ -97,7 +97,7 @@ public class JournalSummary extends AviRestResource {
    * Duration of the process in seconds.
    * Field introduced in 30.2.1.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return duration
    */
@@ -111,7 +111,7 @@ public class JournalSummary extends AviRestResource {
    * Duration of the process in seconds.
    * Field introduced in 30.2.1.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param duration set the duration.
    */
@@ -124,7 +124,7 @@ public class JournalSummary extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * End time of the process.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return endTime
    */
@@ -137,7 +137,7 @@ public class JournalSummary extends AviRestResource {
    * This is the setter method to the attribute.
    * End time of the process.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param endTime set the endTime.
    */
@@ -150,7 +150,7 @@ public class JournalSummary extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of errors in the process.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorCount
    */
@@ -163,7 +163,7 @@ public class JournalSummary extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of errors in the process.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param errorCount set the errorCount.
    */
@@ -176,7 +176,7 @@ public class JournalSummary extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Summary reason for process.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
@@ -189,7 +189,7 @@ public class JournalSummary extends AviRestResource {
    * This is the setter method to the attribute.
    * Summary reason for process.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
@@ -202,7 +202,7 @@ public class JournalSummary extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Start time of the process.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return startTime
    */
@@ -215,7 +215,7 @@ public class JournalSummary extends AviRestResource {
    * This is the setter method to the attribute.
    * Start time of the process.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param startTime set the startTime.
    */
@@ -229,7 +229,7 @@ public class JournalSummary extends AviRestResource {
    * State of the journal summary.
    * Enum options - TASK_STATE_SUCCESS, TASK_STATE_WARNING, TASK_STATE_ERROR.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return state
    */
@@ -243,7 +243,7 @@ public class JournalSummary extends AviRestResource {
    * State of the journal summary.
    * Enum options - TASK_STATE_SUCCESS, TASK_STATE_WARNING, TASK_STATE_ERROR.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param state set the state.
    */
@@ -256,7 +256,7 @@ public class JournalSummary extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Status of the process.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return status
    */
@@ -269,7 +269,7 @@ public class JournalSummary extends AviRestResource {
    * This is the setter method to the attribute.
    * Status of the process.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param status set the status.
    */
@@ -282,7 +282,7 @@ public class JournalSummary extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Process type.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
@@ -295,7 +295,7 @@ public class JournalSummary extends AviRestResource {
    * This is the setter method to the attribute.
    * Process type.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */
@@ -308,7 +308,7 @@ public class JournalSummary extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of warnings in the process.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return warningCount
    */
@@ -321,7 +321,7 @@ public class JournalSummary extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of warnings in the process.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param warningCount set the warningCount.
    */

@@ -92,7 +92,7 @@ public class AuthProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Client cert settings.
    * Field introduced in 32.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientCert
    */
@@ -105,7 +105,7 @@ public class AuthProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Client cert settings.
    * Field introduced in 32.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientCert set the clientCert.
    */
@@ -165,7 +165,7 @@ public class AuthProfile extends AviRestResource {
    * Jwtserverprofile to be used for authentication.
    * It is a reference to an object of type jwtserverprofile.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return jwtProfileRef
    */
@@ -179,7 +179,7 @@ public class AuthProfile extends AviRestResource {
    * Jwtserverprofile to be used for authentication.
    * It is a reference to an object of type jwtserverprofile.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param jwtProfileRef set the jwtProfileRef.
    */
@@ -284,7 +284,7 @@ public class AuthProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Oauth profile - common endpoint information.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return oauthProfile
    */
@@ -297,7 +297,7 @@ public class AuthProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Oauth profile - common endpoint information.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param oauthProfile set the oauthProfile.
    */
@@ -335,7 +335,7 @@ public class AuthProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Tacacs+ settings.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tacacsPlus
    */
@@ -347,7 +347,7 @@ public class AuthProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Tacacs+ settings.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tacacsPlus set the tacacsPlus.
    */
@@ -385,10 +385,7 @@ public class AuthProfile extends AviRestResource {
    * Type of the auth profile.
    * Enum options - AUTH_PROFILE_LDAP, AUTH_PROFILE_TACACS_PLUS, AUTH_PROFILE_SAML, AUTH_PROFILE_PINGACCESS, AUTH_PROFILE_JWT, AUTH_PROFILE_OAUTH,
    * AUTH_PROFILE_CLIENT_CERT.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values-
-   * auth_profile_ldap,auth_profile_tacacs_plus,auth_profile_saml,auth_profile_jwt,auth_profile_oauth,auth_profile_client_cert), basic (allowed values-
-   * auth_profile_ldap,auth_profile_tacacs_plus,auth_profile_saml,auth_profile_jwt,auth_profile_oauth,auth_profile_client_cert) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
@@ -402,10 +399,7 @@ public class AuthProfile extends AviRestResource {
    * Type of the auth profile.
    * Enum options - AUTH_PROFILE_LDAP, AUTH_PROFILE_TACACS_PLUS, AUTH_PROFILE_SAML, AUTH_PROFILE_PINGACCESS, AUTH_PROFILE_JWT, AUTH_PROFILE_OAUTH,
    * AUTH_PROFILE_CLIENT_CERT.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values-
-   * auth_profile_ldap,auth_profile_tacacs_plus,auth_profile_saml,auth_profile_jwt,auth_profile_oauth,auth_profile_client_cert), basic (allowed values-
-   * auth_profile_ldap,auth_profile_tacacs_plus,auth_profile_saml,auth_profile_jwt,auth_profile_oauth,auth_profile_client_cert) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */

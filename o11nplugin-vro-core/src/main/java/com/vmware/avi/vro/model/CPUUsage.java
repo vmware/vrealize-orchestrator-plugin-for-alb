@@ -39,7 +39,7 @@ public class CPUUsage extends AviRestResource {
    * Cpu usage in percentage.
    * Field introduced in 21.1.1.
    * Unit is percent.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cpuPercent
    */
@@ -53,7 +53,7 @@ public class CPUUsage extends AviRestResource {
    * Cpu usage in percentage.
    * Field introduced in 21.1.1.
    * Unit is percent.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cpuPercent set the cpuPercent.
    */

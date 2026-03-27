@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.ControllerPortalAsset;
 import com.vmware.avi.vro.model.ControllerPortalAuth;
+import com.vmware.avi.vro.model.ControllerPortalSiteInfo;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -37,6 +38,10 @@ public class ControllerPortalRegistration extends AviRestResource {
     @JsonProperty("portal_auth")
     @JsonInclude(Include.NON_NULL)
     private ControllerPortalAuth portalAuth;
+
+    @JsonProperty("site_info")
+    @JsonInclude(Include.NON_NULL)
+    private ControllerPortalSiteInfo siteInfo;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
@@ -126,6 +131,32 @@ public class ControllerPortalRegistration extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Site information for the controller registration.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return siteInfo
+   */
+  @VsoMethod
+  public ControllerPortalSiteInfo getSiteInfo() {
+    return siteInfo;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Site information for the controller registration.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param siteInfo set the siteInfo.
+   */
+  @VsoMethod
+  public void setSiteInfo(ControllerPortalSiteInfo siteInfo) {
+    this.siteInfo = siteInfo;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
    * Field introduced in 18.2.6.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -211,7 +242,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.name, objControllerPortalRegistration.name)&&
   Objects.equals(this.tenantRef, objControllerPortalRegistration.tenantRef)&&
   Objects.equals(this.portalAuth, objControllerPortalRegistration.portalAuth)&&
-  Objects.equals(this.asset, objControllerPortalRegistration.asset);
+  Objects.equals(this.asset, objControllerPortalRegistration.asset)&&
+  Objects.equals(this.siteInfo, objControllerPortalRegistration.siteInfo);
 }
 
 @Override
@@ -221,6 +253,7 @@ public String toString() {
       sb.append("    asset: ").append(toIndentedString(asset)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    portalAuth: ").append(toIndentedString(portalAuth)).append("\n");
+        sb.append("    siteInfo: ").append(toIndentedString(siteInfo)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
             sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
       sb.append("}");

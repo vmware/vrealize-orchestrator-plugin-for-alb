@@ -51,7 +51,7 @@ public class ReportGenerationRequest extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The duration of the report.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return duration
    */
@@ -64,7 +64,7 @@ public class ReportGenerationRequest extends AviRestResource {
    * This is the setter method to the attribute.
    * The duration of the report.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param duration set the duration.
    */
@@ -77,7 +77,7 @@ public class ReportGenerationRequest extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Custom name for the report.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -90,7 +90,7 @@ public class ReportGenerationRequest extends AviRestResource {
    * This is the setter method to the attribute.
    * Custom name for the report.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -103,7 +103,7 @@ public class ReportGenerationRequest extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The parameters of the report.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return parameters
    */
@@ -116,7 +116,7 @@ public class ReportGenerationRequest extends AviRestResource {
    * This is the setter method. this will set the parameters
    * The parameters of the report.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return parameters
    */
@@ -129,7 +129,7 @@ public class ReportGenerationRequest extends AviRestResource {
    * This is the setter method this will set the parameters
    * The parameters of the report.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return parameters
    */
@@ -147,7 +147,7 @@ public class ReportGenerationRequest extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The report to be generated.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return report
    */
@@ -160,7 +160,7 @@ public class ReportGenerationRequest extends AviRestResource {
    * This is the setter method to the attribute.
    * The report to be generated.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param report set the report.
    */
@@ -173,7 +173,7 @@ public class ReportGenerationRequest extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ids of specified sections are collected as part of the report.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sections
    */
@@ -186,7 +186,7 @@ public class ReportGenerationRequest extends AviRestResource {
    * This is the setter method. this will set the sections
    * Ids of specified sections are collected as part of the report.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sections
    */
@@ -199,7 +199,7 @@ public class ReportGenerationRequest extends AviRestResource {
    * This is the setter method this will set the sections
    * Ids of specified sections are collected as part of the report.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sections
    */

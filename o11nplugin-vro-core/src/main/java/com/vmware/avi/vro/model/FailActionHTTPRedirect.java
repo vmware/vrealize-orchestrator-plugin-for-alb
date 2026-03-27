@@ -34,7 +34,7 @@ public class FailActionHTTPRedirect extends AviRestResource {
 
     @JsonProperty("protocol")
     @JsonInclude(Include.NON_NULL)
-    private String protocol;
+    private String protocol = "HTTPS";
 
     @JsonProperty("query")
     @JsonInclude(Include.NON_NULL)
@@ -99,9 +99,8 @@ public class FailActionHTTPRedirect extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - HTTP, HTTPS.
-   * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
-   * Allowed in basic (allowed values- http) edition.
-   * Special default for basic edition is http, enterprise edition is https.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "HTTPS".
    * @return protocol
    */
   @VsoMethod
@@ -112,9 +111,8 @@ public class FailActionHTTPRedirect extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - HTTP, HTTPS.
-   * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
-   * Allowed in basic (allowed values- http) edition.
-   * Special default for basic edition is http, enterprise edition is https.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "HTTPS".
    * @param protocol set the protocol.
    */
   @VsoMethod
@@ -151,8 +149,7 @@ public class FailActionHTTPRedirect extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - HTTP_REDIRECT_STATUS_CODE_301, HTTP_REDIRECT_STATUS_CODE_302, HTTP_REDIRECT_STATUS_CODE_307.
-   * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
-   * Allowed in basic (allowed values- http_redirect_status_code_302) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "HTTP_REDIRECT_STATUS_CODE_302".
    * @return statusCode
    */
@@ -164,8 +161,7 @@ public class FailActionHTTPRedirect extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - HTTP_REDIRECT_STATUS_CODE_301, HTTP_REDIRECT_STATUS_CODE_302, HTTP_REDIRECT_STATUS_CODE_307.
-   * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
-   * Allowed in basic (allowed values- http_redirect_status_code_302) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "HTTP_REDIRECT_STATUS_CODE_302".
    * @param statusCode set the statusCode.
    */

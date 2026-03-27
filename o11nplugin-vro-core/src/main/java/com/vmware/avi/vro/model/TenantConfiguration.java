@@ -56,7 +56,7 @@ public class TenantConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Application quota for the tenant.
    * Field introduced in 32.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return appQuota
    */
@@ -69,7 +69,7 @@ public class TenantConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Application quota for the tenant.
    * Field introduced in 32.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param appQuota set the appQuota.
    */
@@ -83,7 +83,7 @@ public class TenantConfiguration extends AviRestResource {
    * Enable tenant binding mode for this tenant.
    * When enabled, only explicitly shared objects from admin tenant will be visible.
    * Field introduced in 32.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enableTenantBinding
    */
@@ -97,7 +97,7 @@ public class TenantConfiguration extends AviRestResource {
    * Enable tenant binding mode for this tenant.
    * When enabled, only explicitly shared objects from admin tenant will be visible.
    * Field introduced in 32.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param enableTenantBinding set the enableTenantBinding.
    */
@@ -110,7 +110,7 @@ public class TenantConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * License quota for the tenant.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return licenseQuota
    */
@@ -123,7 +123,7 @@ public class TenantConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * License quota for the tenant.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param licenseQuota set the licenseQuota.
    */

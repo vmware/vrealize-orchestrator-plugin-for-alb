@@ -39,7 +39,7 @@ public class DebugServiceEngineObjSync extends AviRestResource {
    * Objsync logging verbosity.
    * Enum options - LOG_LVL_ERROR, LOG_LVL_WARNING, LOG_LVL_INFO, LOG_LVL_DEBUG.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "LOG_LVL_INFO".
    * @return logLevel
    */
@@ -53,7 +53,7 @@ public class DebugServiceEngineObjSync extends AviRestResource {
    * Objsync logging verbosity.
    * Enum options - LOG_LVL_ERROR, LOG_LVL_WARNING, LOG_LVL_INFO, LOG_LVL_DEBUG.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "LOG_LVL_INFO".
    * @param logLevel set the logLevel.
    */
@@ -66,7 +66,7 @@ public class DebugServiceEngineObjSync extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Drop 1 packet in every n packets.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return publishPacketDrops
    */
@@ -79,7 +79,7 @@ public class DebugServiceEngineObjSync extends AviRestResource {
    * This is the setter method to the attribute.
    * Drop 1 packet in every n packets.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param publishPacketDrops set the publishPacketDrops.
    */

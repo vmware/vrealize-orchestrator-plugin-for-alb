@@ -683,7 +683,7 @@ public class ApplicationLog extends AviRestResource {
    * Enum options - AUTH_STATUS_NO_AUTHENTICATION, AUTH_STATUS_AUTHENTICATION_SUCCESS, AUTH_STATUS_AUTHENTICATION_FAILURE, AUTH_STATUS_UNAUTHORIZED,
    * AUTH_STATUS_AUTHENTICATED_REQUEST, AUTH_STATUS_AUTHZ_FAILED.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "AUTH_STATUS_NO_AUTHENTICATION".
    * @return authStatus
    */
@@ -698,7 +698,7 @@ public class ApplicationLog extends AviRestResource {
    * Enum options - AUTH_STATUS_NO_AUTHENTICATION, AUTH_STATUS_AUTHENTICATION_SUCCESS, AUTH_STATUS_AUTHENTICATION_FAILURE, AUTH_STATUS_UNAUTHORIZED,
    * AUTH_STATUS_AUTHENTICATED_REQUEST, AUTH_STATUS_AUTHZ_FAILED.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "AUTH_STATUS_NO_AUTHENTICATION".
    * @param authStatus set the authStatus.
    */
@@ -711,7 +711,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Average packet processing latency for the backend flow.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgIngressLatencyBe
    */
@@ -724,7 +724,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Average packet processing latency for the backend flow.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgIngressLatencyBe set the avgIngressLatencyBe.
    */
@@ -737,7 +737,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Average packet processing latency for the frontend flow.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgIngressLatencyFe
    */
@@ -750,7 +750,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Average packet processing latency for the frontend flow.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgIngressLatencyFe set the avgIngressLatencyFe.
    */
@@ -789,7 +789,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Logs related to bot detection.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return botManagementLog
    */
@@ -802,7 +802,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Logs related to bot detection.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param botManagementLog set the botManagementLog.
    */
@@ -979,7 +979,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The fingerprints for this client.
    * Field introduced in 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientFingerprints
    */
@@ -992,7 +992,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * The fingerprints for this client.
    * Field introduced in 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientFingerprints set the clientFingerprints.
    */
@@ -1249,7 +1249,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tcp connection establishment time for the backend flow.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return connEstTimeBe
    */
@@ -1262,7 +1262,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Tcp connection establishment time for the backend flow.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param connEstTimeBe set the connEstTimeBe.
    */
@@ -1275,7 +1275,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tcp connection establishment time for the frontend flow.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return connEstTimeFe
    */
@@ -1288,7 +1288,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Tcp connection establishment time for the frontend flow.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param connEstTimeFe set the connEstTimeFe.
    */
@@ -1323,7 +1323,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Critical error encountered during request processing.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return criticalErrorEncountered
    */
@@ -1336,7 +1336,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Critical error encountered during request processing.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param criticalErrorEncountered set the criticalErrorEncountered.
    */
@@ -1767,7 +1767,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Logs for the jwt validation process.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return jwtLog
    */
@@ -1780,7 +1780,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Logs for the jwt validation process.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param jwtLog set the jwtLog.
    */
@@ -1796,7 +1796,7 @@ public class ApplicationLog extends AviRestResource {
    * Enum options - NOT_ACTIVE, LEARNED, NOTHING_TO_LEARN, SERVER_ERROR, FLAGGED_BY_WAF, SKIPPED_BY_SAMPLING, CLIENT_IS_NOT_AUTHENTICATED,
    * CLIENT_IS_NOT_TRUSTED, CLIENT_IS_A_BOT, ERROR.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "NOT_ACTIVE".
    * @return learningStatus
    */
@@ -1812,7 +1812,7 @@ public class ApplicationLog extends AviRestResource {
    * Enum options - NOT_ACTIVE, LEARNED, NOTHING_TO_LEARN, SERVER_ERROR, FLAGGED_BY_WAF, SKIPPED_BY_SAMPLING, CLIENT_IS_NOT_AUTHENTICATED,
    * CLIENT_IS_NOT_TRUSTED, CLIENT_IS_A_BOT, ERROR.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "NOT_ACTIVE".
    * @param learningStatus set the learningStatus.
    */
@@ -1847,7 +1847,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum packet processing latency for the backend flow.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxIngressLatencyBe
    */
@@ -1860,7 +1860,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum packet processing latency for the backend flow.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxIngressLatencyBe set the maxIngressLatencyBe.
    */
@@ -1873,7 +1873,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum packet processing latency for the frontend flow.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxIngressLatencyFe
    */
@@ -1886,7 +1886,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum packet processing latency for the frontend flow.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxIngressLatencyFe set the maxIngressLatencyFe.
    */
@@ -1987,7 +1987,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ntlm auto-detection logs.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ntlmLog
    */
@@ -2000,7 +2000,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Ntlm auto-detection logs.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ntlmLog set the ntlmLog.
    */
@@ -2013,7 +2013,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Logs related to oauth requests.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return oauthLog
    */
@@ -2026,7 +2026,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Logs related to oauth requests.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param oauthLog set the oauthLog.
    */
@@ -2065,7 +2065,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Logs for http out-of-band requests.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return oobLog
    */
@@ -2078,7 +2078,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Logs for http out-of-band requests.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param oobLog set the oobLog.
    */
@@ -2092,7 +2092,7 @@ public class ApplicationLog extends AviRestResource {
    * The actual client request uri sent before normalization.
    * Only included if it differs from the normalized uri.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return origUri
    */
@@ -2106,7 +2106,7 @@ public class ApplicationLog extends AviRestResource {
    * The actual client request uri sent before normalization.
    * Only included if it differs from the normalized uri.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param origUri set the origUri.
    */
@@ -2300,7 +2300,7 @@ public class ApplicationLog extends AviRestResource {
    * Request body modified.
    * Enum options - REQ_BODY_NOT_UPDATED, REQ_BODY_UPDATED_BY_CONTENT_REWRITE_PROFILE, REQ_BODY_UPDATE_SKIPPED_COMPRESSION.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "REQ_BODY_NOT_UPDATED".
    * @return requestBodyUpdated
    */
@@ -2314,7 +2314,7 @@ public class ApplicationLog extends AviRestResource {
    * Request body modified.
    * Enum options - REQ_BODY_NOT_UPDATED, REQ_BODY_UPDATED_BY_CONTENT_REWRITE_PROFILE, REQ_BODY_UPDATE_SKIPPED_COMPRESSION.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "REQ_BODY_NOT_UPDATED".
    * @param requestBodyUpdated set the requestBodyUpdated.
    */
@@ -2987,7 +2987,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Request which initiates server push.
    * Field introduced in 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverPushInitiated
    */
@@ -3000,7 +3000,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Request which initiates server push.
    * Field introduced in 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverPushInitiated set the serverPushInitiated.
    */
@@ -3013,7 +3013,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Requests served via server push.
    * Field introduced in 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverPushedRequest
    */
@@ -3026,7 +3026,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Requests served via server push.
    * Field introduced in 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverPushedRequest set the serverPushedRequest.
    */
@@ -3298,7 +3298,7 @@ public class ApplicationLog extends AviRestResource {
    * If the http session module is enabled for the virtual service, this field will contain the session id created by the module.
    * Later calls to the datascript function avi.vs.set_session_id() overwrite the value of this field with the value supplied in the function call.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sessionId
    */
@@ -3312,7 +3312,7 @@ public class ApplicationLog extends AviRestResource {
    * If the http session module is enabled for the virtual service, this field will contain the session id created by the module.
    * Later calls to the datascript function avi.vs.set_session_id() overwrite the value of this field with the value supplied in the function call.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sessionId set the sessionId.
    */
@@ -3453,7 +3453,7 @@ public class ApplicationLog extends AviRestResource {
    * Source ip of the client connection to the vs.
    * This can be different from client ip when true client ip feature is enabled.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sourceIp
    */
@@ -3467,7 +3467,7 @@ public class ApplicationLog extends AviRestResource {
    * Source ip of the client connection to the vs.
    * This can be different from client ip when true client ip feature is enabled.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sourceIp set the sourceIp.
    */
@@ -3481,7 +3481,7 @@ public class ApplicationLog extends AviRestResource {
    * Ipv6 address of the source of the client connection to the vs.
    * This can be different from client ipv6 address when true client ip feature is enabled.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sourceIp6
    */
@@ -3495,7 +3495,7 @@ public class ApplicationLog extends AviRestResource {
    * Ipv6 address of the source of the client connection to the vs.
    * This can be different from client ipv6 address when true client ip feature is enabled.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sourceIp6 set the sourceIp6.
    */
@@ -3552,7 +3552,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ssl group negotitaed during ssl handhshake.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslNamedGroup
    */
@@ -3565,7 +3565,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Ssl group negotitaed during ssl handhshake.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sslNamedGroup set the sslNamedGroup.
    */
@@ -3600,7 +3600,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ssl signature algorithm negotitaed during ssl handhshake.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslSignatureAlgorithm
    */
@@ -3613,7 +3613,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Ssl signature algorithm negotitaed during ssl handhshake.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sslSignatureAlgorithm set the sslSignatureAlgorithm.
    */
@@ -3804,7 +3804,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Evh rule matching the request.
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vhMatchRule
    */
@@ -3817,7 +3817,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Evh rule matching the request.
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vhMatchRule set the vhMatchRule.
    */

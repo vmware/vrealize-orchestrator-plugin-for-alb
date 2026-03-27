@@ -38,7 +38,7 @@ public class JWTMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Claims whose values need to be matched.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matches
    */
@@ -51,7 +51,7 @@ public class JWTMatch extends AviRestResource {
    * This is the setter method. this will set the matches
    * Claims whose values need to be matched.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matches
    */
@@ -64,7 +64,7 @@ public class JWTMatch extends AviRestResource {
    * This is the setter method this will set the matches
    * Claims whose values need to be matched.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matches
    */
@@ -82,7 +82,7 @@ public class JWTMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Token for which the claims need to be validated.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tokenName
    */
@@ -95,7 +95,7 @@ public class JWTMatch extends AviRestResource {
    * This is the setter method to the attribute.
    * Token for which the claims need to be validated.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tokenName set the tokenName.
    */

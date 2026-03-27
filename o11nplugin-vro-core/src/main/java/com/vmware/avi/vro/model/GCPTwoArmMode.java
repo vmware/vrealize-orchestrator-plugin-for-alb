@@ -93,7 +93,7 @@ public class GCPTwoArmMode extends AviRestResource {
    * Project id of the service engine backend data network.
    * By default, service engine project id will be used.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return backendDataVpcProjectId
    */
@@ -107,7 +107,7 @@ public class GCPTwoArmMode extends AviRestResource {
    * Project id of the service engine backend data network.
    * By default, service engine project id will be used.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param backendDataVpcProjectId set the backendDataVpcProjectId.
    */
@@ -253,7 +253,7 @@ public class GCPTwoArmMode extends AviRestResource {
    * Project id of the service engine management network.
    * By default, service engine project id will be used.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return managementVpcProjectId
    */
@@ -267,7 +267,7 @@ public class GCPTwoArmMode extends AviRestResource {
    * Project id of the service engine management network.
    * By default, service engine project id will be used.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param managementVpcProjectId set the managementVpcProjectId.
    */

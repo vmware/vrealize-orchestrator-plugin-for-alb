@@ -56,7 +56,7 @@ public class ComplexityConstraint extends AviRestResource {
    * Defaults to 15 characters.
    * Allowed values are 8-64.
    * Field introduced in 32.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 15.
    * @return minLength
    */
@@ -71,7 +71,7 @@ public class ComplexityConstraint extends AviRestResource {
    * Defaults to 15 characters.
    * Allowed values are 8-64.
    * Field introduced in 32.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 15.
    * @param minLength set the minLength.
    */
@@ -85,7 +85,7 @@ public class ComplexityConstraint extends AviRestResource {
    * Minimum number of lowercase characters required.
    * Allowed values are 0-10.
    * Field introduced in 32.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @return minLowercase
    */
@@ -99,7 +99,7 @@ public class ComplexityConstraint extends AviRestResource {
    * Minimum number of lowercase characters required.
    * Allowed values are 0-10.
    * Field introduced in 32.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @param minLowercase set the minLowercase.
    */
@@ -113,7 +113,7 @@ public class ComplexityConstraint extends AviRestResource {
    * Minimum number of numeric characters required.
    * Allowed values are 0-10.
    * Field introduced in 32.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @return minNumeric
    */
@@ -127,7 +127,7 @@ public class ComplexityConstraint extends AviRestResource {
    * Minimum number of numeric characters required.
    * Allowed values are 0-10.
    * Field introduced in 32.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @param minNumeric set the minNumeric.
    */
@@ -141,7 +141,7 @@ public class ComplexityConstraint extends AviRestResource {
    * Minimum number of special characters required.
    * Allowed values are 0-10.
    * Field introduced in 32.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @return minSpecial
    */
@@ -155,7 +155,7 @@ public class ComplexityConstraint extends AviRestResource {
    * Minimum number of special characters required.
    * Allowed values are 0-10.
    * Field introduced in 32.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @param minSpecial set the minSpecial.
    */
@@ -169,7 +169,7 @@ public class ComplexityConstraint extends AviRestResource {
    * Minimum number of uppercase characters required.
    * Allowed values are 0-10.
    * Field introduced in 32.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @return minUppercase
    */
@@ -183,7 +183,7 @@ public class ComplexityConstraint extends AviRestResource {
    * Minimum number of uppercase characters required.
    * Allowed values are 0-10.
    * Field introduced in 32.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @param minUppercase set the minUppercase.
    */
@@ -198,7 +198,7 @@ public class ComplexityConstraint extends AviRestResource {
    * Defaults to 5.
    * Allowed values are 1-10.
    * Field introduced in 32.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @return passwordHistory
    */
@@ -213,7 +213,7 @@ public class ComplexityConstraint extends AviRestResource {
    * Defaults to 5.
    * Allowed values are 1-10.
    * Field introduced in 32.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @param passwordHistory set the passwordHistory.
    */

@@ -73,7 +73,7 @@ public class BotMappingRuleMatchTarget extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * How to match the botclientclass.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return classMatcher
    */
@@ -86,7 +86,7 @@ public class BotMappingRuleMatchTarget extends AviRestResource {
    * This is the setter method to the attribute.
    * How to match the botclientclass.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param classMatcher set the classMatcher.
    */
@@ -99,7 +99,7 @@ public class BotMappingRuleMatchTarget extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Configure client ip addresses.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientIp
    */
@@ -112,7 +112,7 @@ public class BotMappingRuleMatchTarget extends AviRestResource {
    * This is the setter method to the attribute.
    * Configure client ip addresses.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientIp set the clientIp.
    */
@@ -127,7 +127,7 @@ public class BotMappingRuleMatchTarget extends AviRestResource {
    * Enum options - BOT_DECIDER_CONSOLIDATION, BOT_DECIDER_USER_AGENT, BOT_DECIDER_IP_REPUTATION, BOT_DECIDER_IP_NETWORK_LOCATION,
    * BOT_DECIDER_CLIENT_BEHAVIOR.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return componentMatcher
    */
@@ -142,7 +142,7 @@ public class BotMappingRuleMatchTarget extends AviRestResource {
    * Enum options - BOT_DECIDER_CONSOLIDATION, BOT_DECIDER_USER_AGENT, BOT_DECIDER_IP_REPUTATION, BOT_DECIDER_IP_NETWORK_LOCATION,
    * BOT_DECIDER_CLIENT_BEHAVIOR.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param componentMatcher set the componentMatcher.
    */
@@ -156,7 +156,7 @@ public class BotMappingRuleMatchTarget extends AviRestResource {
    * Configure http header(s).
    * All configured headers must match.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hdrs
    */
@@ -170,7 +170,7 @@ public class BotMappingRuleMatchTarget extends AviRestResource {
    * Configure http header(s).
    * All configured headers must match.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hdrs
    */
@@ -184,7 +184,7 @@ public class BotMappingRuleMatchTarget extends AviRestResource {
    * Configure http header(s).
    * All configured headers must match.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hdrs
    */
@@ -202,7 +202,7 @@ public class BotMappingRuleMatchTarget extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Configure the host header.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostHdr
    */
@@ -215,7 +215,7 @@ public class BotMappingRuleMatchTarget extends AviRestResource {
    * This is the setter method to the attribute.
    * Configure the host header.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hostHdr set the hostHdr.
    */
@@ -228,7 +228,7 @@ public class BotMappingRuleMatchTarget extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The list of bot identifier names and how they're matched.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return identifierMatcher
    */
@@ -241,7 +241,7 @@ public class BotMappingRuleMatchTarget extends AviRestResource {
    * This is the setter method to the attribute.
    * The list of bot identifier names and how they're matched.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param identifierMatcher set the identifierMatcher.
    */
@@ -254,7 +254,7 @@ public class BotMappingRuleMatchTarget extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Configure http methods.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return method
    */
@@ -267,7 +267,7 @@ public class BotMappingRuleMatchTarget extends AviRestResource {
    * This is the setter method to the attribute.
    * Configure http methods.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param method set the method.
    */
@@ -280,7 +280,7 @@ public class BotMappingRuleMatchTarget extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Configure request paths.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return path
    */
@@ -293,7 +293,7 @@ public class BotMappingRuleMatchTarget extends AviRestResource {
    * This is the setter method to the attribute.
    * Configure request paths.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param path set the path.
    */
@@ -306,7 +306,7 @@ public class BotMappingRuleMatchTarget extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * How to match the botclienttype.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return typeMatcher
    */
@@ -319,7 +319,7 @@ public class BotMappingRuleMatchTarget extends AviRestResource {
    * This is the setter method to the attribute.
    * How to match the botclienttype.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param typeMatcher set the typeMatcher.
    */

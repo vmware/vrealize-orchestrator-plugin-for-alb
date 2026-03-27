@@ -89,7 +89,7 @@ public class GslbServiceRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Represents the local/remote site uuid; every gs will have n entriesif there are n active sites in federation.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clusterUuid
    */
@@ -102,7 +102,7 @@ public class GslbServiceRuntime extends AviRestResource {
    * This is the setter method to the attribute.
    * Represents the local/remote site uuid; every gs will have n entriesif there are n active sites in federation.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clusterUuid set the clusterUuid.
    */
@@ -115,7 +115,7 @@ public class GslbServiceRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Fully qualified domain name of the gslbservice.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return domainNames
    */
@@ -128,7 +128,7 @@ public class GslbServiceRuntime extends AviRestResource {
    * This is the setter method. this will set the domainNames
    * Fully qualified domain name of the gslbservice.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return domainNames
    */
@@ -141,7 +141,7 @@ public class GslbServiceRuntime extends AviRestResource {
    * This is the setter method this will set the domainNames
    * Fully qualified domain name of the gslbservice.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return domainNames
    */
@@ -219,7 +219,7 @@ public class GslbServiceRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Gslbservice object uuid.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return objUuid
    */
@@ -232,7 +232,7 @@ public class GslbServiceRuntime extends AviRestResource {
    * This is the setter method to the attribute.
    * Gslbservice object uuid.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param objUuid set the objUuid.
    */
@@ -267,7 +267,7 @@ public class GslbServiceRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The config replication info to se(s) or peer sites.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return replState
    */
@@ -280,7 +280,7 @@ public class GslbServiceRuntime extends AviRestResource {
    * This is the setter method to the attribute.
    * The config replication info to se(s) or peer sites.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param replState set the replState.
    */
@@ -414,7 +414,7 @@ public class GslbServiceRuntime extends AviRestResource {
    * The unique identifier of the tenant to which the gslbservice belongs.
    * It is a reference to an object of type tenant.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -428,7 +428,7 @@ public class GslbServiceRuntime extends AviRestResource {
    * The unique identifier of the tenant to which the gslbservice belongs.
    * It is a reference to an object of type tenant.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */

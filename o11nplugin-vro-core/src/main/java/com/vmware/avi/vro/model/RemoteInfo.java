@@ -50,7 +50,7 @@ public class RemoteInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Gslb object related information in the site.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbInfo
    */
@@ -63,7 +63,7 @@ public class RemoteInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Gslb object related information in the site.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gslbInfo set the gslbInfo.
    */
@@ -76,7 +76,7 @@ public class RemoteInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Operational information of the site.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return opsInfo
    */
@@ -89,7 +89,7 @@ public class RemoteInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Operational information of the site.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param opsInfo set the opsInfo.
    */
@@ -102,7 +102,7 @@ public class RemoteInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Configuration sync-info of the site.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return syncInfo
    */
@@ -115,7 +115,7 @@ public class RemoteInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Configuration sync-info of the site.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param syncInfo set the syncInfo.
    */
@@ -128,7 +128,7 @@ public class RemoteInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Site replication specific statistic.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return syncStats
    */
@@ -141,7 +141,7 @@ public class RemoteInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Site replication specific statistic.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param syncStats set the syncStats.
    */

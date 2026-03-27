@@ -60,8 +60,7 @@ public class HTTPSwitchingAction extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Content switching action type.
    * Enum options - HTTP_SWITCHING_SELECT_POOL, HTTP_SWITCHING_SELECT_LOCAL, HTTP_SWITCHING_SELECT_POOLGROUP.
-   * Allowed with any value in enterprise, basic, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- http_switching_select_pool,http_switching_select_local) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return action
    */
@@ -74,8 +73,7 @@ public class HTTPSwitchingAction extends AviRestResource {
    * This is the setter method to the attribute.
    * Content switching action type.
    * Enum options - HTTP_SWITCHING_SELECT_POOL, HTTP_SWITCHING_SELECT_LOCAL, HTTP_SWITCHING_SELECT_POOLGROUP.
-   * Allowed with any value in enterprise, basic, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- http_switching_select_pool,http_switching_select_local) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param action set the action.
    */
@@ -114,7 +112,7 @@ public class HTTPSwitchingAction extends AviRestResource {
    * Use this to provide codes not available in the list within status_code.
    * Allowed values are 200-599.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return otherStatusCode
    */
@@ -129,7 +127,7 @@ public class HTTPSwitchingAction extends AviRestResource {
    * Use this to provide codes not available in the list within status_code.
    * Allowed values are 200-599.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param otherStatusCode set the otherStatusCode.
    */
@@ -142,7 +140,7 @@ public class HTTPSwitchingAction extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the pool group to serve the request.
    * It is a reference to an object of type poolgroup.
-   * Allowed with any value in enterprise, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolGroupRef
    */
@@ -155,7 +153,7 @@ public class HTTPSwitchingAction extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the pool group to serve the request.
    * It is a reference to an object of type poolgroup.
-   * Allowed with any value in enterprise, basic, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolGroupRef set the poolGroupRef.
    */
@@ -193,7 +191,7 @@ public class HTTPSwitchingAction extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Specific pool server to select.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return server
    */
@@ -205,7 +203,7 @@ public class HTTPSwitchingAction extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Specific pool server to select.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param server set the server.
    */

@@ -44,7 +44,7 @@ public class CustomIpamSubnet extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Network to use for custom ipam ip allocation.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkId
    */
@@ -57,7 +57,7 @@ public class CustomIpamSubnet extends AviRestResource {
    * This is the setter method to the attribute.
    * Network to use for custom ipam ip allocation.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param networkId set the networkId.
    */
@@ -70,7 +70,7 @@ public class CustomIpamSubnet extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ipv4 subnet to use for custom ipam ip allocation.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnet
    */
@@ -83,7 +83,7 @@ public class CustomIpamSubnet extends AviRestResource {
    * This is the setter method to the attribute.
    * Ipv4 subnet to use for custom ipam ip allocation.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnet set the subnet.
    */
@@ -96,7 +96,7 @@ public class CustomIpamSubnet extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ipv6 subnet to use for custom ipam ip allocation.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnet6
    */
@@ -109,7 +109,7 @@ public class CustomIpamSubnet extends AviRestResource {
    * This is the setter method to the attribute.
    * Ipv6 subnet to use for custom ipam ip allocation.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnet6 set the subnet6.
    */

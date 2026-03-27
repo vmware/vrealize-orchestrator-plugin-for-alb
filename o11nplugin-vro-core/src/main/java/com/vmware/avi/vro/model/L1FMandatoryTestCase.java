@@ -47,7 +47,7 @@ public class L1FMandatoryTestCase extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * F_mandatory message for nested f_mandatory test cases-level2.
    * Field introduced in 21.1.5, 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mandatoryMessage
    */
@@ -60,7 +60,7 @@ public class L1FMandatoryTestCase extends AviRestResource {
    * This is the setter method to the attribute.
    * F_mandatory message for nested f_mandatory test cases-level2.
    * Field introduced in 21.1.5, 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mandatoryMessage set the mandatoryMessage.
    */
@@ -73,7 +73,7 @@ public class L1FMandatoryTestCase extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Repeated f_mandatory_message for nested f_mandatory test cases-level2.
    * Field introduced in 21.1.5, 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mandatoryMessages
    */
@@ -86,7 +86,7 @@ public class L1FMandatoryTestCase extends AviRestResource {
    * This is the setter method. this will set the mandatoryMessages
    * Repeated f_mandatory_message for nested f_mandatory test cases-level2.
    * Field introduced in 21.1.5, 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mandatoryMessages
    */
@@ -99,7 +99,7 @@ public class L1FMandatoryTestCase extends AviRestResource {
    * This is the setter method this will set the mandatoryMessages
    * Repeated f_mandatory_message for nested f_mandatory test cases-level2.
    * Field introduced in 21.1.5, 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mandatoryMessages
    */
@@ -117,7 +117,7 @@ public class L1FMandatoryTestCase extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * F_mandatory string field for nested f_mandatory test cases-level1.
    * Field introduced in 21.1.5, 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mandatoryString
    */
@@ -130,7 +130,7 @@ public class L1FMandatoryTestCase extends AviRestResource {
    * This is the setter method to the attribute.
    * F_mandatory string field for nested f_mandatory test cases-level1.
    * Field introduced in 21.1.5, 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mandatoryString set the mandatoryString.
    */
@@ -143,7 +143,7 @@ public class L1FMandatoryTestCase extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Repeated f_mandatory string field for nested f_mandatory test cases-level1.
    * Field introduced in 21.1.5, 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mandatoryStrings
    */
@@ -156,7 +156,7 @@ public class L1FMandatoryTestCase extends AviRestResource {
    * This is the setter method. this will set the mandatoryStrings
    * Repeated f_mandatory string field for nested f_mandatory test cases-level1.
    * Field introduced in 21.1.5, 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mandatoryStrings
    */
@@ -169,7 +169,7 @@ public class L1FMandatoryTestCase extends AviRestResource {
    * This is the setter method this will set the mandatoryStrings
    * Repeated f_mandatory string field for nested f_mandatory test cases-level1.
    * Field introduced in 21.1.5, 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mandatoryStrings
    */

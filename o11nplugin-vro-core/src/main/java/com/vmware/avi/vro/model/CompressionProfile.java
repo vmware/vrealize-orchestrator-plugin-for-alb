@@ -90,7 +90,7 @@ public class CompressionProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of buffers to use for compression output.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 128.
    * @return bufNum
    */
@@ -103,7 +103,7 @@ public class CompressionProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of buffers to use for compression output.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 128.
    * @param bufNum set the bufNum.
    */
@@ -116,7 +116,7 @@ public class CompressionProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Size of each buffer used for compression output, this should ideally be a multiple of pagesize.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4096.
    * @return bufSize
    */
@@ -129,7 +129,7 @@ public class CompressionProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Size of each buffer used for compression output, this should ideally be a multiple of pagesize.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4096.
    * @param bufSize set the bufSize.
    */
@@ -235,7 +235,7 @@ public class CompressionProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Hash size used by compression, rounded to the last power of 2.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 16384.
    * @return hashSize
    */
@@ -248,7 +248,7 @@ public class CompressionProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Hash size used by compression, rounded to the last power of 2.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 16384.
    * @param hashSize set the hashSize.
    */
@@ -261,7 +261,7 @@ public class CompressionProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Level of compression to apply on content selected for aggressive compression.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @return levelAggressive
    */
@@ -274,7 +274,7 @@ public class CompressionProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Level of compression to apply on content selected for aggressive compression.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @param levelAggressive set the levelAggressive.
    */
@@ -287,7 +287,7 @@ public class CompressionProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Level of compression to apply on content selected for normal compression.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @return levelNormal
    */
@@ -300,7 +300,7 @@ public class CompressionProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Level of compression to apply on content selected for normal compression.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @param levelNormal set the levelNormal.
    */
@@ -314,7 +314,7 @@ public class CompressionProfile extends AviRestResource {
    * If client rtt is higher than this threshold, enable normal compression on the response.
    * Field introduced in 21.1.1.
    * Unit is milliseconds.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return maxLowRtt
    */
@@ -328,7 +328,7 @@ public class CompressionProfile extends AviRestResource {
    * If client rtt is higher than this threshold, enable normal compression on the response.
    * Field introduced in 21.1.1.
    * Unit is milliseconds.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param maxLowRtt set the maxLowRtt.
    */
@@ -342,7 +342,7 @@ public class CompressionProfile extends AviRestResource {
    * If client rtt is higher than this threshold, enable aggressive compression on the response.
    * Field introduced in 21.1.1.
    * Unit is milliseconds.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 200.
    * @return minHighRtt
    */
@@ -356,7 +356,7 @@ public class CompressionProfile extends AviRestResource {
    * If client rtt is higher than this threshold, enable aggressive compression on the response.
    * Field introduced in 21.1.1.
    * Unit is milliseconds.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 200.
    * @param minHighRtt set the minHighRtt.
    */
@@ -369,7 +369,7 @@ public class CompressionProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Minimum response content length to enable compression.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 128.
    * @return minLength
    */
@@ -382,7 +382,7 @@ public class CompressionProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Minimum response content length to enable compression.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 128.
    * @param minLength set the minLength.
    */
@@ -396,7 +396,7 @@ public class CompressionProfile extends AviRestResource {
    * Values that identify mobile browsers in order to enable aggressive compression.
    * It is a reference to an object of type stringgroup.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mobileStrRef
    */
@@ -410,7 +410,7 @@ public class CompressionProfile extends AviRestResource {
    * Values that identify mobile browsers in order to enable aggressive compression.
    * It is a reference to an object of type stringgroup.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mobileStrRef set the mobileStrRef.
    */
@@ -475,7 +475,7 @@ public class CompressionProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Window size used by compression, rounded to the last power of 2.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4096.
    * @return windowSize
    */
@@ -488,7 +488,7 @@ public class CompressionProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Window size used by compression, rounded to the last power of 2.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4096.
    * @param windowSize set the windowSize.
    */

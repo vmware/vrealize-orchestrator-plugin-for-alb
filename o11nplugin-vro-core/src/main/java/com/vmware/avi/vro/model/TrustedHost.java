@@ -39,7 +39,7 @@ public class TrustedHost extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Any valid ipv4, ipv6, or domain address.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return host
    */
@@ -52,7 +52,7 @@ public class TrustedHost extends AviRestResource {
    * This is the setter method to the attribute.
    * Any valid ipv4, ipv6, or domain address.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param host set the host.
    */
@@ -66,7 +66,7 @@ public class TrustedHost extends AviRestResource {
    * Optionally specify the port number.
    * Allowed values are 1-65535.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return port
    */
@@ -80,7 +80,7 @@ public class TrustedHost extends AviRestResource {
    * Optionally specify the port number.
    * Allowed values are 1-65535.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param port set the port.
    */

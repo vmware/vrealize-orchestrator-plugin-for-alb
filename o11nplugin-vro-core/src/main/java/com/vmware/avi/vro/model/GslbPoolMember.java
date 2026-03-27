@@ -314,7 +314,7 @@ public class GslbPoolMember extends AviRestResource {
    * The dns service chooses the member with the lowest preference that is operationally up.
    * Allowed values are 1-128.
    * Field introduced in 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @return preferenceOrder
    */
@@ -329,7 +329,7 @@ public class GslbPoolMember extends AviRestResource {
    * The dns service chooses the member with the lowest preference that is operationally up.
    * Allowed values are 1-128.
    * Field introduced in 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @param preferenceOrder set the preferenceOrder.
    */
@@ -434,7 +434,7 @@ public class GslbPoolMember extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Srv resource record data for the gslb service member member.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return srvRdata
    */
@@ -447,7 +447,7 @@ public class GslbPoolMember extends AviRestResource {
    * This is the setter method to the attribute.
    * Srv resource record data for the gslb service member member.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param srvRdata set the srvRdata.
    */

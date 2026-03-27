@@ -215,8 +215,7 @@ public class SSOPolicy extends AviRestResource {
    * Sso policy type.
    * Enum options - SSO_TYPE_SAML, SSO_TYPE_PINGACCESS, SSO_TYPE_JWT, SSO_TYPE_LDAP, SSO_TYPE_OAUTH.
    * Field introduced in 18.2.5.
-   * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
-   * Allowed in basic (allowed values- sso_type_saml, sso_type_jwt, sso_type_ldap, sso_type_oauth) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "SSO_TYPE_SAML".
    * @return type
    */
@@ -230,8 +229,7 @@ public class SSOPolicy extends AviRestResource {
    * Sso policy type.
    * Enum options - SSO_TYPE_SAML, SSO_TYPE_PINGACCESS, SSO_TYPE_JWT, SSO_TYPE_LDAP, SSO_TYPE_OAUTH.
    * Field introduced in 18.2.5.
-   * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
-   * Allowed in basic (allowed values- sso_type_saml, sso_type_jwt, sso_type_ldap, sso_type_oauth) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "SSO_TYPE_SAML".
    * @param type set the type.
    */

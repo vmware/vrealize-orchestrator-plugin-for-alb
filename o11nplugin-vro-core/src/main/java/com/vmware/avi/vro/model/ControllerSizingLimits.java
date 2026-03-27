@@ -218,7 +218,7 @@ public class ControllerSizingLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of pools with realtime metrics enabled.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numPoolRtMetrics
    */
@@ -231,7 +231,7 @@ public class ControllerSizingLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of pools with realtime metrics enabled.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numPoolRtMetrics set the numPoolRtMetrics.
    */
@@ -244,7 +244,7 @@ public class ControllerSizingLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of serviceengine with realtime metrics enabled.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numSeRtMetrics
    */
@@ -257,7 +257,7 @@ public class ControllerSizingLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of serviceengine with realtime metrics enabled.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numSeRtMetrics set the numSeRtMetrics.
    */
@@ -374,7 +374,7 @@ public class ControllerSizingLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of virtualservices configured with application insights.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numVirtualservicesApplicationInsights
    */
@@ -387,7 +387,7 @@ public class ControllerSizingLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of virtualservices configured with application insights.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numVirtualservicesApplicationInsights set the numVirtualservicesApplicationInsights.
    */
@@ -400,7 +400,7 @@ public class ControllerSizingLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of virtualservices configured with positive security policy.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numVirtualservicesPositiveSecurity
    */
@@ -413,7 +413,7 @@ public class ControllerSizingLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of virtualservices configured with positive security policy.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numVirtualservicesPositiveSecurity set the numVirtualservicesPositiveSecurity.
    */
@@ -452,7 +452,7 @@ public class ControllerSizingLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of virtualservices with both real-time metrics and waf enabled together.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numVirtualservicesRtmetricsWaf
    */
@@ -465,7 +465,7 @@ public class ControllerSizingLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of virtualservices with both real-time metrics and waf enabled together.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numVirtualservicesRtmetricsWaf set the numVirtualservicesRtmetricsWaf.
    */
@@ -504,7 +504,7 @@ public class ControllerSizingLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of virtualservices configured with waf.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numWafVirtualservices
    */
@@ -517,7 +517,7 @@ public class ControllerSizingLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of virtualservices configured with waf.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numWafVirtualservices set the numWafVirtualservices.
    */

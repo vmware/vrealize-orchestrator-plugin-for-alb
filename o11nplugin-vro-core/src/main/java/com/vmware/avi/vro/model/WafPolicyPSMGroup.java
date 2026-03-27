@@ -87,7 +87,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * WAF_VARIABLE_QUERY_STRING, WAF_VARIABLE_REQUEST_BASENAME, WAF_VARIABLE_REQUEST_URI, WAF_VARIABLE_PATH_INFO, WAF_VARIABLE_REQUEST_HEADERS.
    * Field introduced in 31.2.1.
    * Maximum of 1 items allowed.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return completelyDescribedMatchElements
    */
@@ -105,7 +105,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * WAF_VARIABLE_QUERY_STRING, WAF_VARIABLE_REQUEST_BASENAME, WAF_VARIABLE_REQUEST_URI, WAF_VARIABLE_PATH_INFO, WAF_VARIABLE_REQUEST_HEADERS.
    * Field introduced in 31.2.1.
    * Maximum of 1 items allowed.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return completelyDescribedMatchElements
    */
@@ -123,7 +123,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * WAF_VARIABLE_QUERY_STRING, WAF_VARIABLE_REQUEST_BASENAME, WAF_VARIABLE_REQUEST_URI, WAF_VARIABLE_PATH_INFO, WAF_VARIABLE_REQUEST_HEADERS.
    * Field introduced in 31.2.1.
    * Maximum of 1 items allowed.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return completelyDescribedMatchElements
    */
@@ -251,7 +251,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * Allowed actions are waf_action_no_op and waf_action_block.
    * Enum options - WAF_ACTION_NO_OP, WAF_ACTION_BLOCK, WAF_ACTION_ALLOW_PARAMETER.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "WAF_ACTION_NO_OP".
    * @return locationMatchMissAction
    */
@@ -266,7 +266,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * Allowed actions are waf_action_no_op and waf_action_block.
    * Enum options - WAF_ACTION_NO_OP, WAF_ACTION_BLOCK, WAF_ACTION_ALLOW_PARAMETER.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "WAF_ACTION_NO_OP".
    * @param locationMatchMissAction set the locationMatchMissAction.
    */

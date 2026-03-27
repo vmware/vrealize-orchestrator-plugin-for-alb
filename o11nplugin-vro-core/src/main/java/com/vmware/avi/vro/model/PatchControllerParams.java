@@ -74,7 +74,7 @@ public class PatchControllerParams extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This flag is set to perform the upgrade dry-run operations.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return dryrun
    */
@@ -87,7 +87,7 @@ public class PatchControllerParams extends AviRestResource {
    * This is the setter method to the attribute.
    * This flag is set to perform the upgrade dry-run operations.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param dryrun set the dryrun.
    */
@@ -100,7 +100,7 @@ public class PatchControllerParams extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This flag is set to run the pre-checks without the subsequent upgrade operations.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return prechecksOnly
    */
@@ -113,7 +113,7 @@ public class PatchControllerParams extends AviRestResource {
    * This is the setter method to the attribute.
    * This flag is set to run the pre-checks without the subsequent upgrade operations.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param prechecksOnly set the prechecksOnly.
    */

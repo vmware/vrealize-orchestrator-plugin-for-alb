@@ -131,7 +131,7 @@ public class GslbSiteCfgSyncInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Last object having replication issue.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lastFailObj
    */
@@ -144,7 +144,7 @@ public class GslbSiteCfgSyncInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Last object having replication issue.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lastFailObj set the lastFailObj.
    */
@@ -157,7 +157,7 @@ public class GslbSiteCfgSyncInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Previous targer version for a site.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return prevTargetVersion
    */
@@ -170,7 +170,7 @@ public class GslbSiteCfgSyncInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Previous targer version for a site.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param prevTargetVersion set the prevTargetVersion.
    */
@@ -183,7 +183,7 @@ public class GslbSiteCfgSyncInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Reason for the replication issues.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
@@ -196,7 +196,7 @@ public class GslbSiteCfgSyncInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Reason for the replication issues.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
@@ -209,7 +209,7 @@ public class GslbSiteCfgSyncInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Recommended way to resolve replication issue.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return recommendation
    */
@@ -222,7 +222,7 @@ public class GslbSiteCfgSyncInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Recommended way to resolve replication issue.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param recommendation set the recommendation.
    */
@@ -235,7 +235,7 @@ public class GslbSiteCfgSyncInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Version of the site.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return siteVersion
    */
@@ -248,7 +248,7 @@ public class GslbSiteCfgSyncInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Version of the site.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param siteVersion set the siteVersion.
    */
@@ -289,7 +289,7 @@ public class GslbSiteCfgSyncInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Target version of the site.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return targetVersion
    */
@@ -302,7 +302,7 @@ public class GslbSiteCfgSyncInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Target version of the site.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param targetVersion set the targetVersion.
    */

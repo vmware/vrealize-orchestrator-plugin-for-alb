@@ -40,7 +40,7 @@ public class ApplicationSamplingConfig extends AviRestResource {
    * Allowed values are 1-100.
    * Field introduced in 31.2.1.
    * Unit is percent.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @return maxSamplingPercent
    */
@@ -55,7 +55,7 @@ public class ApplicationSamplingConfig extends AviRestResource {
    * Allowed values are 1-100.
    * Field introduced in 31.2.1.
    * Unit is percent.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @param maxSamplingPercent set the maxSamplingPercent.
    */
@@ -70,7 +70,7 @@ public class ApplicationSamplingConfig extends AviRestResource {
    * Allowed values are 1-60.
    * Field introduced in 31.2.1.
    * Unit is min.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @return minUpdateInterval
    */
@@ -85,7 +85,7 @@ public class ApplicationSamplingConfig extends AviRestResource {
    * Allowed values are 1-60.
    * Field introduced in 31.2.1.
    * Unit is min.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @param minUpdateInterval set the minUpdateInterval.
    */

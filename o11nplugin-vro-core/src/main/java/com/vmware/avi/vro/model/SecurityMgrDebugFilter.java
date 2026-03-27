@@ -51,7 +51,7 @@ public class SecurityMgrDebugFilter extends AviRestResource {
    * Http methods to accumulate for consolidated learning (e.g., get, post, put).
    * If empty, all methods are accumulated.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return accumulateHttpMethods
    */
@@ -65,7 +65,7 @@ public class SecurityMgrDebugFilter extends AviRestResource {
    * Http methods to accumulate for consolidated learning (e.g., get, post, put).
    * If empty, all methods are accumulated.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return accumulateHttpMethods
    */
@@ -79,7 +79,7 @@ public class SecurityMgrDebugFilter extends AviRestResource {
    * Http methods to accumulate for consolidated learning (e.g., get, post, put).
    * If empty, all methods are accumulated.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return accumulateHttpMethods
    */
@@ -153,7 +153,7 @@ public class SecurityMgrDebugFilter extends AviRestResource {
    * Allowed values are 1-60.
    * Field introduced in 31.2.1.
    * Unit is min.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @return psmProgrammingInterval
    */
@@ -168,7 +168,7 @@ public class SecurityMgrDebugFilter extends AviRestResource {
    * Allowed values are 1-60.
    * Field introduced in 31.2.1.
    * Unit is min.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @param psmProgrammingInterval set the psmProgrammingInterval.
    */
@@ -182,7 +182,7 @@ public class SecurityMgrDebugFilter extends AviRestResource {
    * Dynamically update the multiplier for rule id generation in psm programming for learning feature.
    * Allowed values are 10-100000.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return psmRuleIdMultiplier
    */
@@ -196,7 +196,7 @@ public class SecurityMgrDebugFilter extends AviRestResource {
    * Dynamically update the multiplier for rule id generation in psm programming for learning feature.
    * Allowed values are 10-100000.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param psmRuleIdMultiplier set the psmRuleIdMultiplier.
    */

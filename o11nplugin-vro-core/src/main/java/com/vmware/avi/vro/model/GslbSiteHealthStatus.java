@@ -80,7 +80,7 @@ public class GslbSiteHealthStatus extends AviRestResource {
    * Controller size of peer controller.
    * Enum options - CONTROLLER_ESSENTIALS, CONTROLLER_SMALL, CONTROLLER_MEDIUM, CONTROLLER_LARGE, CONTROLLER_EXTRA_LARGE.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerFlavor
    */
@@ -94,7 +94,7 @@ public class GslbSiteHealthStatus extends AviRestResource {
    * Controller size of peer controller.
    * Enum options - CONTROLLER_ESSENTIALS, CONTROLLER_SMALL, CONTROLLER_MEDIUM, CONTROLLER_LARGE, CONTROLLER_EXTRA_LARGE.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param controllerFlavor set the controllerFlavor.
    */
@@ -217,7 +217,7 @@ public class GslbSiteHealthStatus extends AviRestResource {
    * This is used to identify the connection between the sitesin a 3 site scenario a, b, c, if c is connected to a and bwhen c is responding to a
    * hsresponse will contain (c, a), (c, b).
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return edges
    */
@@ -231,7 +231,7 @@ public class GslbSiteHealthStatus extends AviRestResource {
    * This is used to identify the connection between the sitesin a 3 site scenario a, b, c, if c is connected to a and bwhen c is responding to a
    * hsresponse will contain (c, a), (c, b).
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return edges
    */
@@ -245,7 +245,7 @@ public class GslbSiteHealthStatus extends AviRestResource {
    * This is used to identify the connection between the sitesin a 3 site scenario a, b, c, if c is connected to a and bwhen c is responding to a
    * hsresponse will contain (c, a), (c, b).
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return edges
    */

@@ -50,7 +50,7 @@ public class FalsePositiveResultHeader extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Time that analytics engine ends to analytics for this false positive result.
    * Field introduced in 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return endAnalysisTime
    */
@@ -63,7 +63,7 @@ public class FalsePositiveResultHeader extends AviRestResource {
    * This is the setter method to the attribute.
    * Time that analytics engine ends to analytics for this false positive result.
    * Field introduced in 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param endAnalysisTime set the endAnalysisTime.
    */
@@ -76,7 +76,7 @@ public class FalsePositiveResultHeader extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * First received data time that analytics engine uses to analysis for this false positive result.
    * Field introduced in 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return firstDataReceivedTime
    */
@@ -89,7 +89,7 @@ public class FalsePositiveResultHeader extends AviRestResource {
    * This is the setter method to the attribute.
    * First received data time that analytics engine uses to analysis for this false positive result.
    * Field introduced in 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param firstDataReceivedTime set the firstDataReceivedTime.
    */
@@ -102,7 +102,7 @@ public class FalsePositiveResultHeader extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Last received data time that analytics engine uses to analysis for this false positive result.
    * Field introduced in 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lastDataReceivedTime
    */
@@ -115,7 +115,7 @@ public class FalsePositiveResultHeader extends AviRestResource {
    * This is the setter method to the attribute.
    * Last received data time that analytics engine uses to analysis for this false positive result.
    * Field introduced in 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lastDataReceivedTime set the lastDataReceivedTime.
    */
@@ -128,7 +128,7 @@ public class FalsePositiveResultHeader extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Time that analytics engine starts to analytics for this false positive result.
    * Field introduced in 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return startAnalysisTime
    */
@@ -141,7 +141,7 @@ public class FalsePositiveResultHeader extends AviRestResource {
    * This is the setter method to the attribute.
    * Time that analytics engine starts to analytics for this false positive result.
    * Field introduced in 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param startAnalysisTime set the startAnalysisTime.
    */
@@ -154,7 +154,7 @@ public class FalsePositiveResultHeader extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total data amount analytics engine uses to analytics for this false positive result.
    * Field introduced in 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return transactionsCount
    */
@@ -167,7 +167,7 @@ public class FalsePositiveResultHeader extends AviRestResource {
    * This is the setter method to the attribute.
    * Total data amount analytics engine uses to analytics for this false positive result.
    * Field introduced in 22.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param transactionsCount set the transactionsCount.
    */

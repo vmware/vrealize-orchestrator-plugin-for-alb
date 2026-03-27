@@ -39,6 +39,10 @@ public class Constants {
     public static final String FINDER_VRO_ACTIONGROUPCONFIG = "ActionGroupConfig";
     public static final String FINDER_VRO_ADAPTREPLEVENTINFO = "AdaptReplEventInfo";
     public static final String FINDER_VRO_ADMINAUTHCONFIGURATION = "AdminAuthConfiguration";
+    public static final String FINDER_VRO_AKOAMKOCLUSTER = "AkoAmkoCluster";
+    public static final String FINDER_VRO_AKOAMKOCLUSTERDEPLOYMENTINFO = "AkoAmkoClusterDeploymentInfo";
+    public static final String FINDER_VRO_AKOAMKOCLUSTERMETADATA = "AkoAmkoClusterMetadata";
+    public static final String FINDER_VRO_AKOAMKOCLUSTERVERSIONINFO = "AkoAmkoClusterVersionInfo";
     public static final String FINDER_VRO_ALERT = "Alert";
     public static final String FINDER_VRO_ALERTCONFIG = "AlertConfig";
     public static final String FINDER_VRO_ALERTEMAILCONFIG = "AlertEmailConfig";
@@ -157,6 +161,7 @@ public class Constants {
     public static final String FINDER_VRO_CC_AGENTPROPERTIES = "CC_AgentProperties";
     public static final String FINDER_VRO_CC_PROPERTIES = "CC_Properties";
     public static final String FINDER_VRO_CC_VNICINFO = "CC_VnicInfo";
+    public static final String FINDER_VRO_CLSSTATUS = "CLSStatus";
     public static final String FINDER_VRO_CPUUSAGE = "CPUUsage";
     public static final String FINDER_VRO_CPUUSAGEINFO = "CPUUsageInfo";
     public static final String FINDER_VRO_CPUUSAGEPERNODE = "CPUUsagePerNode";
@@ -271,6 +276,7 @@ public class Constants {
     public static final String FINDER_VRO_CONTROLLERPORTALASSET = "ControllerPortalAsset";
     public static final String FINDER_VRO_CONTROLLERPORTALAUTH = "ControllerPortalAuth";
     public static final String FINDER_VRO_CONTROLLERPORTALREGISTRATION = "ControllerPortalRegistration";
+    public static final String FINDER_VRO_CONTROLLERPORTALSITEINFO = "ControllerPortalSiteInfo";
     public static final String FINDER_VRO_CONTROLLERPROPERTIES = "ControllerProperties";
     public static final String FINDER_VRO_CONTROLLERSITE = "ControllerSite";
     public static final String FINDER_VRO_CONTROLLERSIZE = "ControllerSize";
@@ -576,6 +582,7 @@ public class Constants {
     public static final String FINDER_VRO_INVENTORYFAULTCONFIG = "InventoryFaultConfig";
     public static final String FINDER_VRO_IPADDR = "IpAddr";
     public static final String FINDER_VRO_IPADDRGROUP = "IpAddrGroup";
+    public static final String FINDER_VRO_IPADDRGROUPSYNCPARAMS = "IpAddrGroupSyncParams";
     public static final String FINDER_VRO_IPADDRMATCH = "IpAddrMatch";
     public static final String FINDER_VRO_IPADDRPORT = "IpAddrPort";
     public static final String FINDER_VRO_IPADDRPREFIX = "IpAddrPrefix";
@@ -599,6 +606,7 @@ public class Constants {
     public static final String FINDER_VRO_JWSKEY = "JWSKey";
     public static final String FINDER_VRO_JWTCLAIMMATCH = "JWTClaimMatch";
     public static final String FINDER_VRO_JWTMATCH = "JWTMatch";
+    public static final String FINDER_VRO_JWTPROTECTEDRESOURCECONFIG = "JWTProtectedResourceConfig";
     public static final String FINDER_VRO_JWTSERVERPROFILE = "JWTServerProfile";
     public static final String FINDER_VRO_JWTVALIDATIONPARAMS = "JWTValidationParams";
     public static final String FINDER_VRO_JWTVALIDATIONVSCONFIG = "JWTValidationVsConfig";
@@ -644,6 +652,8 @@ public class Constants {
     public static final String FINDER_VRO_LICENSEEXPIRYDETAILS = "LicenseExpiryDetails";
     public static final String FINDER_VRO_LICENSEINFO = "LicenseInfo";
     public static final String FINDER_VRO_LICENSELEDGERDETAILS = "LicenseLedgerDetails";
+    public static final String FINDER_VRO_LICENSEPOLICY = "LicensePolicy";
+    public static final String FINDER_VRO_LICENSEPOOL = "LicensePool";
     public static final String FINDER_VRO_LICENSEQUOTAUSAGEDETAILS = "LicenseQuotaUsageDetails";
     public static final String FINDER_VRO_LICENSEQUOTAUSAGEINFO = "LicenseQuotaUsageInfo";
     public static final String FINDER_VRO_LICENSERESERVATIONINFO = "LicenseReservationInfo";
@@ -653,6 +663,7 @@ public class Constants {
     public static final String FINDER_VRO_LICENSETIERUSAGE = "LicenseTierUsage";
     public static final String FINDER_VRO_LICENSETRANSACTIONDETAILS = "LicenseTransactionDetails";
     public static final String FINDER_VRO_LICENSEUSAGE = "LicenseUsage";
+    public static final String FINDER_VRO_LICENSEWARNING = "LicenseWarning";
     public static final String FINDER_VRO_LINUXCONFIGURATION = "LinuxConfiguration";
     public static final String FINDER_VRO_LINUXSERVERCONFIGURATION = "LinuxServerConfiguration";
     public static final String FINDER_VRO_LINUXSERVERHOST = "LinuxServerHost";
@@ -669,6 +680,8 @@ public class Constants {
     public static final String FINDER_VRO_LOGMGRCLEANUPEVENTDETAILS = "LogMgrCleanupEventDetails";
     public static final String FINDER_VRO_LOGMGRUBEREVENTDETAILS = "LogMgrUberEventDetails";
     public static final String FINDER_VRO_MANAGEMENTNETWORKCONFIG = "ManagementNetworkConfig";
+    public static final String FINDER_VRO_MANAGEMENTSERVICEACCESSGRANTEVENTDETAILS = "ManagementServiceAccessGrantEventDetails";
+    public static final String FINDER_VRO_MANAGEMENTSERVICEEVENTDETAILS = "ManagementServiceEventDetails";
     public static final String FINDER_VRO_MARATHONCONFIGURATION = "MarathonConfiguration";
     public static final String FINDER_VRO_MARATHONSEDEPLOYMENT = "MarathonSeDeployment";
     public static final String FINDER_VRO_MARATHONSERVICEPORTCONFLICT = "MarathonServicePortConflict";
@@ -740,7 +753,10 @@ public class Constants {
     public static final String FINDER_VRO_NSXTDFWTAGSEGMENTPORT = "NsxtDFWTagSegmentPort";
     public static final String FINDER_VRO_NSXTDFWTAGVM = "NsxtDFWTagVM";
     public static final String FINDER_VRO_NSXTDATASTORES = "NsxtDatastores";
+    public static final String FINDER_VRO_NSXTGROUPFETCH = "NsxtGroupFetch";
     public static final String FINDER_VRO_NSXTHOSTS = "NsxtHosts";
+    public static final String FINDER_VRO_NSXTIPGROUP = "NsxtIPGroup";
+    public static final String FINDER_VRO_NSXTIPGROUPMEMBERSLIMITEXCEEDED = "NsxtIPGroupMembersLimitExceeded";
     public static final String FINDER_VRO_NSXTIMAGEDETAILS = "NsxtImageDetails";
     public static final String FINDER_VRO_NSXTSIENDPOINTDETAILS = "NsxtSIEndpointDetails";
     public static final String FINDER_VRO_NSXTSIPOLICYDETAILS = "NsxtSIPolicyDetails";
@@ -806,6 +822,7 @@ public class Constants {
     public static final String FINDER_VRO_PARAMTYPECLASS = "ParamTypeClass";
     public static final String FINDER_VRO_PARAMSINURI = "ParamsInURI";
     public static final String FINDER_VRO_PARTITIONINFO = "PartitionInfo";
+    public static final String FINDER_VRO_PASSWORDROTATIONDETAILS = "PasswordRotationDetails";
     public static final String FINDER_VRO_PATCHCONTROLLERPARAMS = "PatchControllerParams";
     public static final String FINDER_VRO_PATCHDATA = "PatchData";
     public static final String FINDER_VRO_PATCHINFO = "PatchInfo";
@@ -1010,10 +1027,12 @@ public class Constants {
     public static final String FINDER_VRO_SEMIGRATEEVENTDETAILS = "SeMigrateEventDetails";
     public static final String FINDER_VRO_SENTPSYNCHRONIZATIONFAILED = "SeNtpSynchronizationFailed";
     public static final String FINDER_VRO_SEOBJSYNCPEERDOWNDETAILS = "SeObjsyncPeerDownDetails";
+    public static final String FINDER_VRO_SEPCAPMODEEVENTDETAILS = "SePcapModeEventDetails";
     public static final String FINDER_VRO_SEPERSISTENCEEVENTDETAILS = "SePersistenceEventDetails";
     public static final String FINDER_VRO_SEPOOLLBEVENTDETAILS = "SePoolLbEventDetails";
     public static final String FINDER_VRO_SEPROCESSCRASHEDDETAILS = "SeProcessCrashedDetails";
     public static final String FINDER_VRO_SEPROPERTIES = "SeProperties";
+    public static final String FINDER_VRO_SEQATMODEEVENTDETAIL = "SeQatModeEventDetail";
     public static final String FINDER_VRO_SERATELIMITERDROPDETAILS = "SeRateLimiterDropDetails";
     public static final String FINDER_VRO_SERATELIMITERS = "SeRateLimiters";
     public static final String FINDER_VRO_SERECONCILEDETAILS = "SeReconcileDetails";

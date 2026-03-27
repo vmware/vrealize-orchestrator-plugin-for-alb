@@ -130,7 +130,7 @@ public class TechSupport extends AviRestResource {
    * 'customer case number for which this techsupport is generated.
    * ''useful for connected portal and other use-cases.'.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return caseNumber
    */
@@ -144,7 +144,7 @@ public class TechSupport extends AviRestResource {
    * 'customer case number for which this techsupport is generated.
    * ''useful for connected portal and other use-cases.'.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param caseNumber set the caseNumber.
    */
@@ -157,7 +157,7 @@ public class TechSupport extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * User provided description to capture additional details and context regarding the techsupport invocation.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
@@ -170,7 +170,7 @@ public class TechSupport extends AviRestResource {
    * This is the setter method to the attribute.
    * User provided description to capture additional details and context regarding the techsupport invocation.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
@@ -184,7 +184,7 @@ public class TechSupport extends AviRestResource {
    * Total time taken for techsupport collection.
    * Field introduced in 31.2.1.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return duration
    */
@@ -198,7 +198,7 @@ public class TechSupport extends AviRestResource {
    * Total time taken for techsupport collection.
    * Field introduced in 31.2.1.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param duration set the duration.
    */
@@ -211,7 +211,7 @@ public class TechSupport extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * End timestamp of techsupport collection.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return endTime
    */
@@ -224,7 +224,7 @@ public class TechSupport extends AviRestResource {
    * This is the setter method to the attribute.
    * End timestamp of techsupport collection.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param endTime set the endTime.
    */
@@ -237,7 +237,7 @@ public class TechSupport extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Error logged during techsupport collection.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errors
    */
@@ -250,7 +250,7 @@ public class TechSupport extends AviRestResource {
    * This is the setter method. this will set the errors
    * Error logged during techsupport collection.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errors
    */
@@ -263,7 +263,7 @@ public class TechSupport extends AviRestResource {
    * This is the setter method this will set the errors
    * Error logged during techsupport collection.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errors
    */
@@ -281,7 +281,7 @@ public class TechSupport extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the techsupport level.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return level
    */
@@ -294,7 +294,7 @@ public class TechSupport extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the techsupport level.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param level set the level.
    */
@@ -307,7 +307,7 @@ public class TechSupport extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of techsupport invocation.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -320,7 +320,7 @@ public class TechSupport extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of techsupport invocation.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -333,7 +333,7 @@ public class TechSupport extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Cluster member node on which the techsupport tarball bundle is saved.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return node
    */
@@ -346,7 +346,7 @@ public class TechSupport extends AviRestResource {
    * This is the setter method to the attribute.
    * Cluster member node on which the techsupport tarball bundle is saved.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param node set the node.
    */
@@ -359,7 +359,7 @@ public class TechSupport extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Object name if one exists.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return objName
    */
@@ -372,7 +372,7 @@ public class TechSupport extends AviRestResource {
    * This is the setter method to the attribute.
    * Object name if one exists.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param objName set the objName.
    */
@@ -385,7 +385,7 @@ public class TechSupport extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Techsupport collection object uuid specified for different objects such as se/vs/pool etc.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return objUuid
    */
@@ -398,7 +398,7 @@ public class TechSupport extends AviRestResource {
    * This is the setter method to the attribute.
    * Techsupport collection object uuid specified for different objects such as se/vs/pool etc.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param objUuid set the objUuid.
    */
@@ -411,7 +411,7 @@ public class TechSupport extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Techsupport collection output file path.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return output
    */
@@ -424,7 +424,7 @@ public class TechSupport extends AviRestResource {
    * This is the setter method to the attribute.
    * Techsupport collection output file path.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param output set the output.
    */
@@ -438,7 +438,7 @@ public class TechSupport extends AviRestResource {
    * Techsupport params associated with latest techsupport collection.
    * User passed params will have more preference.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return params
    */
@@ -452,7 +452,7 @@ public class TechSupport extends AviRestResource {
    * Techsupport params associated with latest techsupport collection.
    * User passed params will have more preference.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param params set the params.
    */
@@ -467,7 +467,7 @@ public class TechSupport extends AviRestResource {
    * Allowed values are 0-100.
    * Field introduced in 31.2.1.
    * Unit is percent.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return progress
    */
@@ -482,7 +482,7 @@ public class TechSupport extends AviRestResource {
    * Allowed values are 0-100.
    * Field introduced in 31.2.1.
    * Unit is percent.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param progress set the progress.
    */
@@ -496,7 +496,7 @@ public class TechSupport extends AviRestResource {
    * Size of collected techsupport tarball.
    * Field introduced in 31.2.1.
    * Unit is mb.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return size
    */
@@ -510,7 +510,7 @@ public class TechSupport extends AviRestResource {
    * Size of collected techsupport tarball.
    * Field introduced in 31.2.1.
    * Unit is mb.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param size set the size.
    */
@@ -523,7 +523,7 @@ public class TechSupport extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Start timestamp of techsupport collection.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return startTime
    */
@@ -536,7 +536,7 @@ public class TechSupport extends AviRestResource {
    * This is the setter method to the attribute.
    * Start timestamp of techsupport collection.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param startTime set the startTime.
    */
@@ -549,7 +549,7 @@ public class TechSupport extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * State of current/last techsupport invocation.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return state
    */
@@ -562,7 +562,7 @@ public class TechSupport extends AviRestResource {
    * This is the setter method to the attribute.
    * State of current/last techsupport invocation.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param state set the state.
    */
@@ -575,7 +575,7 @@ public class TechSupport extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Events performed for techsupport collection.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tasks
    */
@@ -588,7 +588,7 @@ public class TechSupport extends AviRestResource {
    * This is the setter method. this will set the tasks
    * Events performed for techsupport collection.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tasks
    */
@@ -601,7 +601,7 @@ public class TechSupport extends AviRestResource {
    * This is the setter method this will set the tasks
    * Events performed for techsupport collection.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tasks
    */
@@ -619,7 +619,7 @@ public class TechSupport extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Completed set of tasks in the techsupport collection.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tasksCompleted
    */
@@ -632,7 +632,7 @@ public class TechSupport extends AviRestResource {
    * This is the setter method to the attribute.
    * Completed set of tasks in the techsupport collection.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tasksCompleted set the tasksCompleted.
    */
@@ -645,7 +645,7 @@ public class TechSupport extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Techsupport readiness checks execution details.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return techsupportReadiness
    */
@@ -658,7 +658,7 @@ public class TechSupport extends AviRestResource {
    * This is the setter method to the attribute.
    * Techsupport readiness checks execution details.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param techsupportReadiness set the techsupportReadiness.
    */
@@ -672,7 +672,7 @@ public class TechSupport extends AviRestResource {
    * Tenant uuid associated with the techsupport.
    * It is a reference to an object of type tenant.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -686,7 +686,7 @@ public class TechSupport extends AviRestResource {
    * Tenant uuid associated with the techsupport.
    * It is a reference to an object of type tenant.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
@@ -699,7 +699,7 @@ public class TechSupport extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total number of tasks in the techsupport collection.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return totalTasks
    */
@@ -712,7 +712,7 @@ public class TechSupport extends AviRestResource {
    * This is the setter method to the attribute.
    * Total number of tasks in the techsupport collection.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param totalTasks set the totalTasks.
    */
@@ -744,7 +744,7 @@ public class TechSupport extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid identifier for the techsupport invocation.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -757,7 +757,7 @@ public class TechSupport extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid identifier for the techsupport invocation.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
@@ -770,7 +770,7 @@ public class TechSupport extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Warning logged during techsupport collection.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return warnings
    */
@@ -783,7 +783,7 @@ public class TechSupport extends AviRestResource {
    * This is the setter method. this will set the warnings
    * Warning logged during techsupport collection.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return warnings
    */
@@ -796,7 +796,7 @@ public class TechSupport extends AviRestResource {
    * This is the setter method this will set the warnings
    * Warning logged during techsupport collection.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return warnings
    */

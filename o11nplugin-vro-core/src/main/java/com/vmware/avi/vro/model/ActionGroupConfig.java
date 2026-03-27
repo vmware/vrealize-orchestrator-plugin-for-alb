@@ -103,8 +103,7 @@ public class ActionGroupConfig extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Trigger notification to autoscale manager.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return autoscaleTriggerNotification
    */
@@ -116,8 +115,7 @@ public class ActionGroupConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Trigger notification to autoscale manager.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param autoscaleTriggerNotification set the autoscaleTriggerNotification.
    */
@@ -152,7 +150,7 @@ public class ActionGroupConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Select the email notification configuration to use when sending alerts via email.
    * It is a reference to an object of type alertemailconfig.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return emailConfigRef
    */
@@ -165,7 +163,7 @@ public class ActionGroupConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Select the email notification configuration to use when sending alerts via email.
    * It is a reference to an object of type alertemailconfig.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param emailConfigRef set the emailConfigRef.
    */
@@ -177,8 +175,7 @@ public class ActionGroupConfig extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Generate alert only to external destinations.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return externalOnly
    */
@@ -190,8 +187,7 @@ public class ActionGroupConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Generate alert only to external destinations.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param externalOnly set the externalOnly.
    */
@@ -252,7 +248,7 @@ public class ActionGroupConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Select the snmp trap notification to use when sending alerts via snmp trap.
    * It is a reference to an object of type snmptrapprofile.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return snmpTrapProfileRef
    */
@@ -265,7 +261,7 @@ public class ActionGroupConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Select the snmp trap notification to use when sending alerts via snmp trap.
    * It is a reference to an object of type snmptrapprofile.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param snmpTrapProfileRef set the snmpTrapProfileRef.
    */

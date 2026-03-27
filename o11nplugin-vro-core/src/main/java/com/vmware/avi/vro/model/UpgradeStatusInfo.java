@@ -322,7 +322,7 @@ public class UpgradeStatusInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Upgrade dry-run operation details.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dryrunInfo
    */
@@ -335,7 +335,7 @@ public class UpgradeStatusInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Upgrade dry-run operation details.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dryrunInfo set the dryrunInfo.
    */
@@ -478,7 +478,7 @@ public class UpgradeStatusInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Fips mode for the entire system.
    * Field introduced in 20.1.5.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fipsMode
    */
@@ -491,7 +491,7 @@ public class UpgradeStatusInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Fips mode for the entire system.
    * Field introduced in 20.1.5.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fipsMode set the fipsMode.
    */
@@ -504,7 +504,7 @@ public class UpgradeStatusInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Record of past operations on this node.
    * Field introduced in 20.1.4.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return history
    */
@@ -517,7 +517,7 @@ public class UpgradeStatusInfo extends AviRestResource {
    * This is the setter method. this will set the history
    * Record of past operations on this node.
    * Field introduced in 20.1.4.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return history
    */
@@ -530,7 +530,7 @@ public class UpgradeStatusInfo extends AviRestResource {
    * This is the setter method this will set the history
    * Record of past operations on this node.
    * Field introduced in 20.1.4.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return history
    */
@@ -922,7 +922,7 @@ public class UpgradeStatusInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Remote image reference of previous base image.
    * Field introduced in 30.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return prevRemoteImageRef
    */
@@ -935,7 +935,7 @@ public class UpgradeStatusInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Remote image reference of previous base image.
    * Field introduced in 30.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param prevRemoteImageRef set the prevRemoteImageRef.
    */
@@ -1142,7 +1142,7 @@ public class UpgradeStatusInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Descriptive reason for the upgrade state.
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
@@ -1155,7 +1155,7 @@ public class UpgradeStatusInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Descriptive reason for the upgrade state.
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
@@ -1168,7 +1168,7 @@ public class UpgradeStatusInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Remote image reference of current base image.
    * Field introduced in 30.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return remoteImageRef
    */
@@ -1181,7 +1181,7 @@ public class UpgradeStatusInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Remote image reference of current base image.
    * Field introduced in 30.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param remoteImageRef set the remoteImageRef.
    */
@@ -1401,7 +1401,7 @@ public class UpgradeStatusInfo extends AviRestResource {
    * Record of pre/post snapshot captured for current upgrade operation.
    * It is a reference to an object of type statediffoperation.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return statediffRef
    */
@@ -1415,7 +1415,7 @@ public class UpgradeStatusInfo extends AviRestResource {
    * Record of pre/post snapshot captured for current upgrade operation.
    * It is a reference to an object of type statediffoperation.
    * Field introduced in 21.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param statediffRef set the statediffRef.
    */
@@ -1455,7 +1455,7 @@ public class UpgradeStatusInfo extends AviRestResource {
    * Tracks the list of reports created for node.
    * It is a reference to an object of type systemreport.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return systemReportRefs
    */
@@ -1469,7 +1469,7 @@ public class UpgradeStatusInfo extends AviRestResource {
    * Tracks the list of reports created for node.
    * It is a reference to an object of type systemreport.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return systemReportRefs
    */
@@ -1483,7 +1483,7 @@ public class UpgradeStatusInfo extends AviRestResource {
    * Tracks the list of reports created for node.
    * It is a reference to an object of type systemreport.
    * Field introduced in 22.1.6, 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return systemReportRefs
    */
@@ -1655,7 +1655,7 @@ public class UpgradeStatusInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Upgrade readiness check execution detail.
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return upgradeReadiness
    */
@@ -1668,7 +1668,7 @@ public class UpgradeStatusInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Upgrade readiness check execution detail.
    * Field introduced in 22.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param upgradeReadiness set the upgradeReadiness.
    */

@@ -141,7 +141,7 @@ public class ApplicationPersistenceProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Specifies the diameter persistence profile parameters.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return diameterAppPersistenceProfile
    */
@@ -154,7 +154,7 @@ public class ApplicationPersistenceProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Specifies the diameter persistence profile parameters.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param diameterAppPersistenceProfile set the diameterAppPersistenceProfile.
    */
@@ -166,7 +166,7 @@ public class ApplicationPersistenceProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Specifies the custom http header persistence profile parameters.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hdrPersistenceProfile
    */
@@ -178,7 +178,7 @@ public class ApplicationPersistenceProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Specifies the custom http header persistence profile parameters.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hdrPersistenceProfile set the hdrPersistenceProfile.
    */
@@ -338,9 +338,7 @@ public class ApplicationPersistenceProfile extends AviRestResource {
    * Method used to persist clients to the same server for a duration of time or a session.
    * Enum options - PERSISTENCE_TYPE_CLIENT_IP_ADDRESS, PERSISTENCE_TYPE_HTTP_COOKIE, PERSISTENCE_TYPE_TLS, PERSISTENCE_TYPE_CLIENT_IPV6_ADDRESS,
    * PERSISTENCE_TYPE_CUSTOM_HTTP_HEADER, PERSISTENCE_TYPE_APP_COOKIE, PERSISTENCE_TYPE_GSLB_SITE, PERSISTENCE_TYPE_APP_DIAMETER.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- persistence_type_client_ip_address,persistence_type_http_cookie), basic (allowed values-
-   * persistence_type_client_ip_address,persistence_type_http_cookie) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "PERSISTENCE_TYPE_CLIENT_IP_ADDRESS".
    * @return persistenceType
    */
@@ -354,9 +352,7 @@ public class ApplicationPersistenceProfile extends AviRestResource {
    * Method used to persist clients to the same server for a duration of time or a session.
    * Enum options - PERSISTENCE_TYPE_CLIENT_IP_ADDRESS, PERSISTENCE_TYPE_HTTP_COOKIE, PERSISTENCE_TYPE_TLS, PERSISTENCE_TYPE_CLIENT_IPV6_ADDRESS,
    * PERSISTENCE_TYPE_CUSTOM_HTTP_HEADER, PERSISTENCE_TYPE_APP_COOKIE, PERSISTENCE_TYPE_GSLB_SITE, PERSISTENCE_TYPE_APP_DIAMETER.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- persistence_type_client_ip_address,persistence_type_http_cookie), basic (allowed values-
-   * persistence_type_client_ip_address,persistence_type_http_cookie) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "PERSISTENCE_TYPE_CLIENT_IP_ADDRESS".
    * @param persistenceType set the persistenceType.
    */
@@ -372,7 +368,7 @@ public class ApplicationPersistenceProfile extends AviRestResource {
    * Allowed values are 1-30.
    * Field introduced in 30.2.4.
    * Unit is min.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return persistenceUpdateInterval
    */
@@ -388,7 +384,7 @@ public class ApplicationPersistenceProfile extends AviRestResource {
    * Allowed values are 1-30.
    * Field introduced in 30.2.4.
    * Unit is min.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param persistenceUpdateInterval set the persistenceUpdateInterval.
    */
@@ -401,8 +397,7 @@ public class ApplicationPersistenceProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Specifies behavior when a persistent server has been marked down by a health monitor.
    * Enum options - HM_DOWN_PICK_NEW_SERVER, HM_DOWN_ABORT_CONNECTION, HM_DOWN_CONTINUE_PERSISTENT_SERVER.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- hm_down_pick_new_server), basic (allowed values- hm_down_pick_new_server) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "HM_DOWN_PICK_NEW_SERVER".
    * @return serverHmDownRecovery
    */
@@ -415,8 +410,7 @@ public class ApplicationPersistenceProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Specifies behavior when a persistent server has been marked down by a health monitor.
    * Enum options - HM_DOWN_PICK_NEW_SERVER, HM_DOWN_ABORT_CONNECTION, HM_DOWN_CONTINUE_PERSISTENT_SERVER.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- hm_down_pick_new_server), basic (allowed values- hm_down_pick_new_server) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "HM_DOWN_PICK_NEW_SERVER".
    * @param serverHmDownRecovery set the serverHmDownRecovery.
    */

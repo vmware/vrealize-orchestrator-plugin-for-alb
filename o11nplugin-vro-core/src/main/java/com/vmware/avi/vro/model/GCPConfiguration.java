@@ -105,7 +105,7 @@ public class GCPConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Encryption keys for google cloud services.
    * Field introduced in 18.2.10, 20.1.2.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return encryptionKeys
    */
@@ -118,7 +118,7 @@ public class GCPConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Encryption keys for google cloud services.
    * Field introduced in 18.2.10, 20.1.2.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param encryptionKeys set the encryptionKeys.
    */
@@ -175,7 +175,7 @@ public class GCPConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Email of gcp service account to be associated to the service engines.
    * Field introduced in 20.1.7, 21.1.2.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gcpServiceAccountEmail
    */
@@ -188,7 +188,7 @@ public class GCPConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Email of gcp service account to be associated to the service engines.
    * Field introduced in 20.1.7, 21.1.2.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gcpServiceAccountEmail set the gcpServiceAccountEmail.
    */

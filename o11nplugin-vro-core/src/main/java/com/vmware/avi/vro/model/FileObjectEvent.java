@@ -51,7 +51,7 @@ public class FileObjectEvent extends AviRestResource {
    * Time taken to complete the event in seconds.
    * Field introduced in 31.1.1.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return duration
    */
@@ -65,7 +65,7 @@ public class FileObjectEvent extends AviRestResource {
    * Time taken to complete the event in seconds.
    * Field introduced in 31.1.1.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param duration set the duration.
    */
@@ -78,7 +78,7 @@ public class FileObjectEvent extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * End time of the event.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return endTime
    */
@@ -91,7 +91,7 @@ public class FileObjectEvent extends AviRestResource {
    * This is the setter method to the attribute.
    * End time of the event.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param endTime set the endTime.
    */
@@ -104,7 +104,7 @@ public class FileObjectEvent extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Event message if any.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return message
    */
@@ -117,7 +117,7 @@ public class FileObjectEvent extends AviRestResource {
    * This is the setter method to the attribute.
    * Event message if any.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param message set the message.
    */
@@ -130,7 +130,7 @@ public class FileObjectEvent extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Start time of the event.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return startTime
    */
@@ -143,7 +143,7 @@ public class FileObjectEvent extends AviRestResource {
    * This is the setter method to the attribute.
    * Start time of the event.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param startTime set the startTime.
    */
@@ -156,7 +156,7 @@ public class FileObjectEvent extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Event status.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return status
    */
@@ -169,7 +169,7 @@ public class FileObjectEvent extends AviRestResource {
    * This is the setter method to the attribute.
    * Event status.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param status set the status.
    */

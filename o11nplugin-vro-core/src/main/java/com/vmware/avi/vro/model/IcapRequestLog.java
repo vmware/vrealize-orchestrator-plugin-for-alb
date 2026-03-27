@@ -354,7 +354,7 @@ public class IcapRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Icap server ip for this connection.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return icapServerIp
    */
@@ -367,7 +367,7 @@ public class IcapRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Icap server ip for this connection.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param icapServerIp set the icapServerIp.
    */
@@ -380,7 +380,7 @@ public class IcapRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Icap server port for this connection.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return icapServerPort
    */
@@ -393,7 +393,7 @@ public class IcapRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Icap server port for this connection.
    * Field introduced in 20.1.3.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param icapServerPort set the icapServerPort.
    */
@@ -462,7 +462,7 @@ public class IcapRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Icap log specific to nsx defender.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nsxDefenderLog
    */
@@ -475,7 +475,7 @@ public class IcapRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Icap log specific to nsx defender.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nsxDefenderLog set the nsxDefenderLog.
    */
@@ -488,7 +488,7 @@ public class IcapRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Icap log specific to opswat.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return opswatLog
    */
@@ -501,7 +501,7 @@ public class IcapRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Icap log specific to opswat.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param opswatLog set the opswatLog.
    */
@@ -593,7 +593,7 @@ public class IcapRequestLog extends AviRestResource {
    * Selected icap vendor for the request.
    * Enum options - ICAP_VENDOR_GENERIC, ICAP_VENDOR_OPSWAT, ICAP_VENDOR_LASTLINE.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vendor
    */
@@ -607,7 +607,7 @@ public class IcapRequestLog extends AviRestResource {
    * Selected icap vendor for the request.
    * Enum options - ICAP_VENDOR_GENERIC, ICAP_VENDOR_OPSWAT, ICAP_VENDOR_LASTLINE.
    * Field introduced in 21.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vendor set the vendor.
    */

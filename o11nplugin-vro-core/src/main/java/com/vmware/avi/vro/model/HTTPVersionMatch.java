@@ -66,8 +66,7 @@ public class HTTPVersionMatch extends AviRestResource {
    * Enum options - ZERO_NINE, ONE_ZERO, ONE_ONE, TWO_ZERO.
    * Minimum of 1 items required.
    * Maximum of 8 items allowed.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- one_zero,one_one), basic (allowed values- one_zero,one_one) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return versions
    */
@@ -82,8 +81,7 @@ public class HTTPVersionMatch extends AviRestResource {
    * Enum options - ZERO_NINE, ONE_ZERO, ONE_ONE, TWO_ZERO.
    * Minimum of 1 items required.
    * Maximum of 8 items allowed.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- one_zero,one_one), basic (allowed values- one_zero,one_one) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return versions
    */
@@ -98,8 +96,7 @@ public class HTTPVersionMatch extends AviRestResource {
    * Enum options - ZERO_NINE, ONE_ZERO, ONE_ONE, TWO_ZERO.
    * Minimum of 1 items required.
    * Maximum of 8 items allowed.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
-   * Allowed in essentials (allowed values- one_zero,one_one), basic (allowed values- one_zero,one_one) edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return versions
    */

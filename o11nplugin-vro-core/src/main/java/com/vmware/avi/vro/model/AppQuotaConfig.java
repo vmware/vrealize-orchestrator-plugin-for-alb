@@ -36,7 +36,7 @@ public class AppQuotaConfig extends AviRestResource {
    * -1 as default is maximum value, set to 0 to disallow any vs creation.
    * Allowed values are -1-+65535.
    * Field introduced in 32.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as -1.
    * @return vsLimit
    */
@@ -51,7 +51,7 @@ public class AppQuotaConfig extends AviRestResource {
    * -1 as default is maximum value, set to 0 to disallow any vs creation.
    * Allowed values are -1-+65535.
    * Field introduced in 32.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as -1.
    * @param vsLimit set the vsLimit.
    */

@@ -63,7 +63,7 @@ public class ReadinessCheckObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of readiness checks information.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return checks
    */
@@ -76,7 +76,7 @@ public class ReadinessCheckObj extends AviRestResource {
    * This is the setter method. this will set the checks
    * List of readiness checks information.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return checks
    */
@@ -89,7 +89,7 @@ public class ReadinessCheckObj extends AviRestResource {
    * This is the setter method this will set the checks
    * List of readiness checks information.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return checks
    */
@@ -108,7 +108,7 @@ public class ReadinessCheckObj extends AviRestResource {
    * No.
    * Of checks completed.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return checksCompleted
    */
@@ -122,7 +122,7 @@ public class ReadinessCheckObj extends AviRestResource {
    * No.
    * Of checks completed.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param checksCompleted set the checksCompleted.
    */
@@ -136,7 +136,7 @@ public class ReadinessCheckObj extends AviRestResource {
    * Time taken to complete readiness checks in seconds.
    * Field introduced in 31.2.1.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return duration
    */
@@ -150,7 +150,7 @@ public class ReadinessCheckObj extends AviRestResource {
    * Time taken to complete readiness checks in seconds.
    * Field introduced in 31.2.1.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param duration set the duration.
    */
@@ -163,7 +163,7 @@ public class ReadinessCheckObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * End time of the readiness check operations.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return endTime
    */
@@ -176,7 +176,7 @@ public class ReadinessCheckObj extends AviRestResource {
    * This is the setter method to the attribute.
    * End time of the readiness check operations.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param endTime set the endTime.
    */
@@ -191,7 +191,7 @@ public class ReadinessCheckObj extends AviRestResource {
    * Allowed values are 0-100.
    * Field introduced in 31.2.1.
    * Unit is percent.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return progress
    */
@@ -206,7 +206,7 @@ public class ReadinessCheckObj extends AviRestResource {
    * Allowed values are 0-100.
    * Field introduced in 31.2.1.
    * Unit is percent.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param progress set the progress.
    */
@@ -219,7 +219,7 @@ public class ReadinessCheckObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Start time of the readiness check operations.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return startTime
    */
@@ -232,7 +232,7 @@ public class ReadinessCheckObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Start time of the readiness check operations.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param startTime set the startTime.
    */
@@ -245,7 +245,7 @@ public class ReadinessCheckObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The readiness check operations current fsm-state.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return state
    */
@@ -258,7 +258,7 @@ public class ReadinessCheckObj extends AviRestResource {
    * This is the setter method to the attribute.
    * The readiness check operations current fsm-state.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param state set the state.
    */
@@ -272,7 +272,7 @@ public class ReadinessCheckObj extends AviRestResource {
    * Total no.
    * Of checks.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return totalChecks
    */
@@ -286,7 +286,7 @@ public class ReadinessCheckObj extends AviRestResource {
    * Total no.
    * Of checks.
    * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param totalChecks set the totalChecks.
    */

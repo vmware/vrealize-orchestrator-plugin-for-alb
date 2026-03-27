@@ -67,7 +67,7 @@ public class MetricsDbRuntime extends AviRestResource {
    * Db client name.
    * Can be of db_client_rt/db_client_batch/db_client_rt_arr.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dbClientName
    */
@@ -81,7 +81,7 @@ public class MetricsDbRuntime extends AviRestResource {
    * Db client name.
    * Can be of db_client_rt/db_client_batch/db_client_rt_arr.
    * Field introduced in 30.2.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dbClientName set the dbClientName.
    */

@@ -40,7 +40,7 @@ public class ImageParams extends AviRestResource {
    * Allowed values are 600-3600.
    * Field introduced in 31.1.1.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 600.
    * @return imageReplicationTimeout
    */
@@ -55,7 +55,7 @@ public class ImageParams extends AviRestResource {
    * Allowed values are 600-3600.
    * Field introduced in 31.1.1.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 600.
    * @param imageReplicationTimeout set the imageReplicationTimeout.
    */
@@ -70,7 +70,7 @@ public class ImageParams extends AviRestResource {
    * Allowed values are 10-15.
    * Field introduced in 31.1.1.
    * Unit is gb.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return maxImageSize
    */
@@ -85,7 +85,7 @@ public class ImageParams extends AviRestResource {
    * Allowed values are 10-15.
    * Field introduced in 31.1.1.
    * Unit is gb.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param maxImageSize set the maxImageSize.
    */

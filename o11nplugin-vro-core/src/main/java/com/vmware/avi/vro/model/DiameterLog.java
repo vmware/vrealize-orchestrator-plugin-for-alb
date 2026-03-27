@@ -66,7 +66,7 @@ public class DiameterLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Field to identify which application the message is applicable for.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return applicationId
    */
@@ -79,7 +79,7 @@ public class DiameterLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Field to identify which application the message is applicable for.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param applicationId set the applicationId.
    */
@@ -93,7 +93,7 @@ public class DiameterLog extends AviRestResource {
    * Avpkey type.
    * Enum options - SESSION_ID, ORIGIN_HOST, ORIGIN_REALM, DESTINATION_HOST, DESTINATION_REALM, APPLICATION_ID.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avpKeyType
    */
@@ -107,7 +107,7 @@ public class DiameterLog extends AviRestResource {
    * Avpkey type.
    * Enum options - SESSION_ID, ORIGIN_HOST, ORIGIN_REALM, DESTINATION_HOST, DESTINATION_REALM, APPLICATION_ID.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avpKeyType set the avpKeyType.
    */
@@ -120,7 +120,7 @@ public class DiameterLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Field to indicate command associated with message.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return commandCode
    */
@@ -133,7 +133,7 @@ public class DiameterLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Field to indicate command associated with message.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param commandCode set the commandCode.
    */
@@ -146,7 +146,7 @@ public class DiameterLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Field to identify the target server for the message.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return destinationHost
    */
@@ -159,7 +159,7 @@ public class DiameterLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Field to identify the target server for the message.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param destinationHost set the destinationHost.
    */
@@ -172,7 +172,7 @@ public class DiameterLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Field to identify the realm where receiving server resides.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return destinationRealm
    */
@@ -185,7 +185,7 @@ public class DiameterLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Field to identify the realm where receiving server resides.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param destinationRealm set the destinationRealm.
    */
@@ -198,7 +198,7 @@ public class DiameterLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Field to detect duplicate messages.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return endToEndIdentifier
    */
@@ -211,7 +211,7 @@ public class DiameterLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Field to detect duplicate messages.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param endToEndIdentifier set the endToEndIdentifier.
    */
@@ -224,7 +224,7 @@ public class DiameterLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Field to match requests and responses.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hopByHopIdentifier
    */
@@ -237,7 +237,7 @@ public class DiameterLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Field to match requests and responses.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hopByHopIdentifier set the hopByHopIdentifier.
    */
@@ -250,7 +250,7 @@ public class DiameterLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Field to identify endpoint that originated the message.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return originHost
    */
@@ -263,7 +263,7 @@ public class DiameterLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Field to identify endpoint that originated the message.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param originHost set the originHost.
    */
@@ -276,7 +276,7 @@ public class DiameterLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Field to identify realm that originated the message.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return originRealm
    */
@@ -289,7 +289,7 @@ public class DiameterLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Field to identify realm that originated the message.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param originRealm set the originRealm.
    */

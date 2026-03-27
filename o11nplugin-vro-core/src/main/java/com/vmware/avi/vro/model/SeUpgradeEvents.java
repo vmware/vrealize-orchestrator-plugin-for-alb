@@ -282,7 +282,7 @@ public class SeUpgradeEvents extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of sub_tasks executed.
    * Field introduced in 20.1.4.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subTasks
    */
@@ -295,7 +295,7 @@ public class SeUpgradeEvents extends AviRestResource {
    * This is the setter method. this will set the subTasks
    * List of sub_tasks executed.
    * Field introduced in 20.1.4.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subTasks
    */
@@ -308,7 +308,7 @@ public class SeUpgradeEvents extends AviRestResource {
    * This is the setter method this will set the subTasks
    * List of sub_tasks executed.
    * Field introduced in 20.1.4.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subTasks
    */

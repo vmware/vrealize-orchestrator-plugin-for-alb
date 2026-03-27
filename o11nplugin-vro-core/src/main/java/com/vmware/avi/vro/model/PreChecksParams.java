@@ -42,7 +42,7 @@ public class PreChecksParams extends AviRestResource {
    * (the multiplier varies by operation.).
    * Field introduced in 32.1.1.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return checksBaseTimeout
    */
@@ -59,7 +59,7 @@ public class PreChecksParams extends AviRestResource {
    * (the multiplier varies by operation.).
    * Field introduced in 32.1.1.
    * Unit is sec.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @param checksBaseTimeout set the checksBaseTimeout.
    */
@@ -73,7 +73,7 @@ public class PreChecksParams extends AviRestResource {
    * Maximum number of alerts allowed for configuration export.
    * Allowed values are 200-500.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 200.
    * @return maxAlerts
    */
@@ -87,7 +87,7 @@ public class PreChecksParams extends AviRestResource {
    * Maximum number of alerts allowed for configuration export.
    * Allowed values are 200-500.
    * Field introduced in 31.1.1.
-   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 200.
    * @param maxAlerts set the maxAlerts.
    */
