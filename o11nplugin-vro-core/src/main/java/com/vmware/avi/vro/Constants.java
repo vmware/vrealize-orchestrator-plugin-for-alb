@@ -587,6 +587,8 @@ public class Constants {
     public static final String FINDER_VRO_IPADDRPORT = "IpAddrPort";
     public static final String FINDER_VRO_IPADDRPREFIX = "IpAddrPrefix";
     public static final String FINDER_VRO_IPADDRRANGE = "IpAddrRange";
+    public static final String FINDER_VRO_IPADDRTYPECONFIG = "IpAddrTypeConfig";
+    public static final String FINDER_VRO_IPADVERTISEMENTPROFILE = "IpAdvertisementProfile";
     public static final String FINDER_VRO_IPALLOCINFO = "IpAllocInfo";
     public static final String FINDER_VRO_IPCOMMUNITY = "IpCommunity";
     public static final String FINDER_VRO_IPREPUTATIONCONFIG = "IpReputationConfig";
