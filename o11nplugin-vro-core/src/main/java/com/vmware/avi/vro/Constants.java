@@ -1103,6 +1103,7 @@ public class Constants {
     public static final String FINDER_VRO_SERVICEPOOLSELECTOR = "ServicePoolSelector";
     public static final String FINDER_VRO_SERVICEENGINEFAULTS = "ServiceengineFaults";
     public static final String FINDER_VRO_SESSIONHEADERS = "SessionHeaders";
+    public static final String FINDER_VRO_SESSIONKEYFORWARDER = "SessionKeyForwarder";
     public static final String FINDER_VRO_SIDEBANDPROFILE = "SidebandProfile";
     public static final String FINDER_VRO_SINGLELICENSE = "SingleLicense";
     public static final String FINDER_VRO_SINGLEOPTIONALFIELDMESSAGE = "SingleOptionalFieldMessage";
