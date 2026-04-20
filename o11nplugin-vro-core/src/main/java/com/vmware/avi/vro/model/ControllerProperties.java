@@ -475,6 +475,10 @@ public class ControllerProperties extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer vsSeCreateFail = 1500;
 
+    @JsonProperty("vs_se_license_reservation_fail")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vsSeLicenseReservationFail = 30;
+
     @JsonProperty("vs_se_ping_fail")
     @JsonInclude(Include.NON_NULL)
     private Integer vsSePingFail = 60;
@@ -3594,6 +3598,34 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Time to wait before marking license reservation operation for an se as failed.
+   * Field introduced in 32.1.1.
+   * Unit is sec.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 30.
+   * @return vsSeLicenseReservationFail
+   */
+  @VsoMethod
+  public Integer getVsSeLicenseReservationFail() {
+    return vsSeLicenseReservationFail;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Time to wait before marking license reservation operation for an se as failed.
+   * Field introduced in 32.1.1.
+   * Unit is sec.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 30.
+   * @param vsSeLicenseReservationFail set the vsSeLicenseReservationFail.
+   */
+  @VsoMethod
+  public void setVsSeLicenseReservationFail(Integer  vsSeLicenseReservationFail) {
+    this.vsSeLicenseReservationFail = vsSeLicenseReservationFail;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Unit is sec.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
@@ -3940,7 +3972,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.certRotationJwtRetentionDays, objControllerProperties.certRotationJwtRetentionDays)&&
   Objects.equals(this.ccUserPasswordRotationJobPeriod, objControllerProperties.ccUserPasswordRotationJobPeriod)&&
   Objects.equals(this.ccUserPasswordExpiryDays, objControllerProperties.ccUserPasswordExpiryDays)&&
-  Objects.equals(this.enableStreamingBasedNsxIpGroupSync, objControllerProperties.enableStreamingBasedNsxIpGroupSync);
+  Objects.equals(this.enableStreamingBasedNsxIpGroupSync, objControllerProperties.enableStreamingBasedNsxIpGroupSync)&&
+  Objects.equals(this.vsSeLicenseReservationFail, objControllerProperties.vsSeLicenseReservationFail);
 }
 
 @Override
@@ -4058,6 +4091,7 @@ public String toString() {
         sb.append("    vsSeBootupFail: ").append(toIndentedString(vsSeBootupFail)).append("\n");
         sb.append("    vsSeBootupFailPatch: ").append(toIndentedString(vsSeBootupFailPatch)).append("\n");
         sb.append("    vsSeCreateFail: ").append(toIndentedString(vsSeCreateFail)).append("\n");
+        sb.append("    vsSeLicenseReservationFail: ").append(toIndentedString(vsSeLicenseReservationFail)).append("\n");
         sb.append("    vsSePingFail: ").append(toIndentedString(vsSePingFail)).append("\n");
         sb.append("    vsSeVnicFail: ").append(toIndentedString(vsSeVnicFail)).append("\n");
         sb.append("    vsSeVnicIpFail: ").append(toIndentedString(vsSeVnicIpFail)).append("\n");
