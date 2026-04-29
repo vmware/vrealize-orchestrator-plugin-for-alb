@@ -46,7 +46,7 @@ public class RestoreParams extends AviRestResource {
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = "JSON";
+    private String type = "BUNDLE";
 
 
 
@@ -186,7 +186,7 @@ public class RestoreParams extends AviRestResource {
    * Enum options - JSON, BUNDLE.
    * Field introduced in 30.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as "JSON".
+   * Default value when not specified in API or module is interpreted by Avi Controller as "BUNDLE".
    * @return type
    */
   @VsoMethod
@@ -200,7 +200,7 @@ public class RestoreParams extends AviRestResource {
    * Enum options - JSON, BUNDLE.
    * Field introduced in 30.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as "JSON".
+   * Default value when not specified in API or module is interpreted by Avi Controller as "BUNDLE".
    * @param type set the type.
    */
   @VsoMethod
