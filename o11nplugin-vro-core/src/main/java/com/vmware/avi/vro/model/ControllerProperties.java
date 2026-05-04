@@ -44,10 +44,6 @@ public class ControllerProperties extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean allowUnauthenticatedApis = false;
 
-    @JsonProperty("allow_unauthenticated_nodes")
-    @JsonInclude(Include.NON_NULL)
-    private Boolean allowUnauthenticatedNodes = false;
-
     @JsonProperty("api_idle_timeout")
     @JsonInclude(Include.NON_NULL)
     private Integer apiIdleTimeout = 15;
@@ -611,28 +607,6 @@ public class ControllerProperties extends AviRestResource {
   @VsoMethod
   public void setAllowUnauthenticatedApis(Boolean  allowUnauthenticatedApis) {
     this.allowUnauthenticatedApis = allowUnauthenticatedApis;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @return allowUnauthenticatedNodes
-   */
-  @VsoMethod
-  public Boolean getAllowUnauthenticatedNodes() {
-    return allowUnauthenticatedNodes;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @param allowUnauthenticatedNodes set the allowUnauthenticatedNodes.
-   */
-  @VsoMethod
-  public void setAllowUnauthenticatedNodes(Boolean  allowUnauthenticatedNodes) {
-    this.allowUnauthenticatedNodes = allowUnauthenticatedNodes;
   }
 
   /**
@@ -3872,7 +3846,6 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.maxDeadSeInGrp, objControllerProperties.maxDeadSeInGrp)&&
   Objects.equals(this.deadSeDetectionTimer, objControllerProperties.deadSeDetectionTimer)&&
   Objects.equals(this.apiIdleTimeout, objControllerProperties.apiIdleTimeout)&&
-  Objects.equals(this.allowUnauthenticatedNodes, objControllerProperties.allowUnauthenticatedNodes)&&
   Objects.equals(this.clusterIpGratuitousArpPeriod, objControllerProperties.clusterIpGratuitousArpPeriod)&&
   Objects.equals(this.vsKeyRotatePeriod, objControllerProperties.vsKeyRotatePeriod)&&
   Objects.equals(this.secureChannelControllerTokenTimeout, objControllerProperties.secureChannelControllerTokenTimeout)&&
@@ -3984,7 +3957,6 @@ public String toString() {
         sb.append("    allowAdminNetworkUpdates: ").append(toIndentedString(allowAdminNetworkUpdates)).append("\n");
         sb.append("    allowIpForwarding: ").append(toIndentedString(allowIpForwarding)).append("\n");
         sb.append("    allowUnauthenticatedApis: ").append(toIndentedString(allowUnauthenticatedApis)).append("\n");
-        sb.append("    allowUnauthenticatedNodes: ").append(toIndentedString(allowUnauthenticatedNodes)).append("\n");
         sb.append("    apiIdleTimeout: ").append(toIndentedString(apiIdleTimeout)).append("\n");
         sb.append("    apiPerfLoggingThreshold: ").append(toIndentedString(apiPerfLoggingThreshold)).append("\n");
         sb.append("    appviewxCompatMode: ").append(toIndentedString(appviewxCompatMode)).append("\n");
