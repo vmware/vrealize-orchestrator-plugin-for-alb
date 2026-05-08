@@ -863,6 +863,7 @@ public class Constants {
     public static final String FINDER_VRO_PRIORITYLABELS = "PriorityLabels";
     public static final String FINDER_VRO_PROACTIVESUPPORTDEFAULTS = "ProactiveSupportDefaults";
     public static final String FINDER_VRO_PROCESSINFO = "ProcessInfo";
+    public static final String FINDER_VRO_PROMOTEDLOGFIELDS = "PromotedLogFields";
     public static final String FINDER_VRO_PROPERTY = "Property";
     public static final String FINDER_VRO_PROTOCOLMATCH = "ProtocolMatch";
     public static final String FINDER_VRO_PROTOCOLPARSER = "ProtocolParser";
