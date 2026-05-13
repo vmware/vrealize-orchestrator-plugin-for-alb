@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.FalsePositiveLearningConfig;
+import com.vmware.avi.vro.model.PromotedLogFields;
 import com.vmware.avi.vro.model.SCProperties;
 import com.vmware.avi.vro.model.UserAgentCacheConfig;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
@@ -43,10 +44,6 @@ public class ControllerProperties extends AviRestResource {
     @JsonProperty("allow_unauthenticated_apis")
     @JsonInclude(Include.NON_NULL)
     private Boolean allowUnauthenticatedApis = false;
-
-    @JsonProperty("allow_unauthenticated_nodes")
-    @JsonInclude(Include.NON_NULL)
-    private Boolean allowUnauthenticatedNodes = false;
 
     @JsonProperty("api_idle_timeout")
     @JsonInclude(Include.NON_NULL)
@@ -326,6 +323,10 @@ public class ControllerProperties extends AviRestResource {
     @JsonProperty("process_pki_profile_timeout_period")
     @JsonInclude(Include.NON_NULL)
     private Integer processPkiProfileTimeoutPeriod = 1440;
+
+    @JsonProperty("promoted_log_fields")
+    @JsonInclude(Include.NON_NULL)
+    private PromotedLogFields promotedLogFields;
 
     @JsonProperty("query_host_fail")
     @JsonInclude(Include.NON_NULL)
@@ -611,28 +612,6 @@ public class ControllerProperties extends AviRestResource {
   @VsoMethod
   public void setAllowUnauthenticatedApis(Boolean  allowUnauthenticatedApis) {
     this.allowUnauthenticatedApis = allowUnauthenticatedApis;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @return allowUnauthenticatedNodes
-   */
-  @VsoMethod
-  public Boolean getAllowUnauthenticatedNodes() {
-    return allowUnauthenticatedNodes;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @param allowUnauthenticatedNodes set the allowUnauthenticatedNodes.
-   */
-  @VsoMethod
-  public void setAllowUnauthenticatedNodes(Boolean  allowUnauthenticatedNodes) {
-    this.allowUnauthenticatedNodes = allowUnauthenticatedNodes;
   }
 
   /**
@@ -2607,6 +2586,38 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Fields to promote from extended to necessary tier for log indexing.
+   * Promoted fields are indexed in opensearch and included in default api responses.
+   * Supports dot-notation for nested fields (e.g., 'waf_log.status').
+   * Changes require log subsystem restart to take effect.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return promotedLogFields
+   */
+  @VsoMethod
+  public PromotedLogFields getPromotedLogFields() {
+    return promotedLogFields;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Fields to promote from extended to necessary tier for log indexing.
+   * Promoted fields are indexed in opensearch and included in default api responses.
+   * Supports dot-notation for nested fields (e.g., 'waf_log.status').
+   * Changes require log subsystem restart to take effect.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param promotedLogFields set the promotedLogFields.
+   */
+  @VsoMethod
+  public void setPromotedLogFields(PromotedLogFields promotedLogFields) {
+    this.promotedLogFields = promotedLogFields;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Unit is sec.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 180.
@@ -3872,7 +3883,6 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.maxDeadSeInGrp, objControllerProperties.maxDeadSeInGrp)&&
   Objects.equals(this.deadSeDetectionTimer, objControllerProperties.deadSeDetectionTimer)&&
   Objects.equals(this.apiIdleTimeout, objControllerProperties.apiIdleTimeout)&&
-  Objects.equals(this.allowUnauthenticatedNodes, objControllerProperties.allowUnauthenticatedNodes)&&
   Objects.equals(this.clusterIpGratuitousArpPeriod, objControllerProperties.clusterIpGratuitousArpPeriod)&&
   Objects.equals(this.vsKeyRotatePeriod, objControllerProperties.vsKeyRotatePeriod)&&
   Objects.equals(this.secureChannelControllerTokenTimeout, objControllerProperties.secureChannelControllerTokenTimeout)&&
@@ -3973,7 +3983,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.ccUserPasswordRotationJobPeriod, objControllerProperties.ccUserPasswordRotationJobPeriod)&&
   Objects.equals(this.ccUserPasswordExpiryDays, objControllerProperties.ccUserPasswordExpiryDays)&&
   Objects.equals(this.enableStreamingBasedNsxIpGroupSync, objControllerProperties.enableStreamingBasedNsxIpGroupSync)&&
-  Objects.equals(this.vsSeLicenseReservationFail, objControllerProperties.vsSeLicenseReservationFail);
+  Objects.equals(this.vsSeLicenseReservationFail, objControllerProperties.vsSeLicenseReservationFail)&&
+  Objects.equals(this.promotedLogFields, objControllerProperties.promotedLogFields);
 }
 
 @Override
@@ -3984,7 +3995,6 @@ public String toString() {
         sb.append("    allowAdminNetworkUpdates: ").append(toIndentedString(allowAdminNetworkUpdates)).append("\n");
         sb.append("    allowIpForwarding: ").append(toIndentedString(allowIpForwarding)).append("\n");
         sb.append("    allowUnauthenticatedApis: ").append(toIndentedString(allowUnauthenticatedApis)).append("\n");
-        sb.append("    allowUnauthenticatedNodes: ").append(toIndentedString(allowUnauthenticatedNodes)).append("\n");
         sb.append("    apiIdleTimeout: ").append(toIndentedString(apiIdleTimeout)).append("\n");
         sb.append("    apiPerfLoggingThreshold: ").append(toIndentedString(apiPerfLoggingThreshold)).append("\n");
         sb.append("    appviewxCompatMode: ").append(toIndentedString(appviewxCompatMode)).append("\n");
@@ -4055,6 +4065,7 @@ public String toString() {
         sb.append("    postgresVacuumPeriod: ").append(toIndentedString(postgresVacuumPeriod)).append("\n");
         sb.append("    processLockedUseraccountsTimeoutPeriod: ").append(toIndentedString(processLockedUseraccountsTimeoutPeriod)).append("\n");
         sb.append("    processPkiProfileTimeoutPeriod: ").append(toIndentedString(processPkiProfileTimeoutPeriod)).append("\n");
+        sb.append("    promotedLogFields: ").append(toIndentedString(promotedLogFields)).append("\n");
         sb.append("    queryHostFail: ").append(toIndentedString(queryHostFail)).append("\n");
         sb.append("    resmgrLogCachingPeriod: ").append(toIndentedString(resmgrLogCachingPeriod)).append("\n");
         sb.append("    restrictCloudReadAccess: ").append(toIndentedString(restrictCloudReadAccess)).append("\n");

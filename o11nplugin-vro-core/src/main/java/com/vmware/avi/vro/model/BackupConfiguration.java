@@ -52,6 +52,10 @@ public class BackupConfiguration extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean bundleMode = true;
 
+    @JsonProperty("known_hosts_file_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String knownHostsFileRef;
+
     @JsonProperty("maximum_backups_stored")
     @JsonInclude(Include.NON_NULL)
     private Integer maximumBackupsStored = 4;
@@ -288,6 +292,36 @@ public class BackupConfiguration extends AviRestResource {
   @VsoMethod
   public void setBundleMode(Boolean  bundleMode) {
     this.bundleMode = bundleMode;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Reference to a fileobject of type known_hosts whose file body is openssh known_hosts file used for host key verification when uploading backups
+   * over sftp or scp.
+   * It is a reference to an object of type fileobject.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return knownHostsFileRef
+   */
+  @VsoMethod
+  public String getKnownHostsFileRef() {
+    return knownHostsFileRef;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Reference to a fileobject of type known_hosts whose file body is openssh known_hosts file used for host key verification when uploading backups
+   * over sftp or scp.
+   * It is a reference to an object of type fileobject.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param knownHostsFileRef set the knownHostsFileRef.
+   */
+  @VsoMethod
+  public void setKnownHostsFileRef(String  knownHostsFileRef) {
+    this.knownHostsFileRef = knownHostsFileRef;
   }
 
   /**
@@ -639,6 +673,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.awsBucketRegion, objBackupConfiguration.awsBucketRegion)&&
   Objects.equals(this.s3BucketFolder, objBackupConfiguration.s3BucketFolder)&&
   Objects.equals(this.bundleMode, objBackupConfiguration.bundleMode)&&
+  Objects.equals(this.knownHostsFileRef, objBackupConfiguration.knownHostsFileRef)&&
   Objects.equals(this.tenantRef, objBackupConfiguration.tenantRef);
 }
 
@@ -653,6 +688,7 @@ public String toString() {
         sb.append("    backupFilePrefix: ").append(toIndentedString(backupFilePrefix)).append("\n");
         sb.append("    backupPassphrase: ").append(toIndentedString(backupPassphrase)).append("\n");
         sb.append("    bundleMode: ").append(toIndentedString(bundleMode)).append("\n");
+        sb.append("    knownHostsFileRef: ").append(toIndentedString(knownHostsFileRef)).append("\n");
         sb.append("    maximumBackupsStored: ").append(toIndentedString(maximumBackupsStored)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    remoteDirectory: ").append(toIndentedString(remoteDirectory)).append("\n");
