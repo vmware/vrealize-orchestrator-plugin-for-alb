@@ -9,7 +9,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -28,15 +28,6 @@ jobs:
         run: |
           echo "Check maven version"
           mvn -version
-
-      - name: Create Symlinks for external jars directory
-        run: |
-          echo "Create symlinks for external jars to build VRO plugin."
-          ln -s $GITHUB_WORKSPACE/lib/ $GITHUB_WORKSPACE/o11nplugin-vro/
-          echo "Created symlinks to build the core module."
-          ln -s $GITHUB_WORKSPACE/lib/ $GITHUB_WORKSPACE/o11nplugin-vro-core/
-          echo "Created symlinks to build the package module."
-          ln -s $GITHUB_WORKSPACE/lib/ $GITHUB_WORKSPACE/o11nplugin-vro-package/
 
       - name: Verify whether the symlink has been created.
         run: |
@@ -61,6 +52,13 @@ jobs:
           fi
           echo "VRO version ${VRO_VERSION}"
           echo "VRO_RELEASE_VERSION=${VRO_VERSION}" >> $GITHUB_OUTPUT
+
+      - name: Validate AviSDK version availability
+        run: |
+          echo "Validating if avisdk version ${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }} is available on maven central."
+          mvn dependency:get -Dartifact=com.vmware.avi.sdk:avisdk:${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }} \
+            -Dtransitive=false \
+            -DremoteRepositories=central::default::https://repo.maven.apache.org/maven2
 
       - name: Build VRO Plugin
         run: |

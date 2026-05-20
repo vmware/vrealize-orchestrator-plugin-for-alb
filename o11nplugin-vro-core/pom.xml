@@ -23,7 +23,7 @@
 		<dependency>
 			<groupId>com.vmware.avi.sdk</groupId>
 			<artifactId>avisdk</artifactId>
-			<version>31.2.2.RELEASE</version>
+			<version>${project.parent.version}</version>
 		</dependency>
 
 		<dependency>
