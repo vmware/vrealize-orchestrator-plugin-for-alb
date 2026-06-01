@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.IpAddrMatch;
 import com.vmware.avi.vro.model.CookieMatch;
 import com.vmware.avi.vro.model.HostHdrMatch;
+import com.vmware.avi.vro.model.LabelMatch;
 import com.vmware.avi.vro.model.LocationHdrMatch;
 import com.vmware.avi.vro.model.MethodMatch;
 import com.vmware.avi.vro.model.PathMatch;
@@ -51,6 +52,10 @@ public class ResponseMatchTarget extends AviRestResource {
     @JsonProperty("host_hdr")
     @JsonInclude(Include.NON_NULL)
     private HostHdrMatch hostHdr;
+
+    @JsonProperty("label")
+    @JsonInclude(Include.NON_NULL)
+    private LabelMatch label;
 
     @JsonProperty("loc_hdr")
     @JsonInclude(Include.NON_NULL)
@@ -205,6 +210,32 @@ public class ResponseMatchTarget extends AviRestResource {
   @VsoMethod
   public void setHostHdr(HostHdrMatch hostHdr) {
     this.hostHdr = hostHdr;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Configure the label.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return label
+   */
+  @VsoMethod
+  public LabelMatch getLabel() {
+    return label;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Configure the label.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param label set the label.
+   */
+  @VsoMethod
+  public void setLabel(LabelMatch label) {
+    this.label = label;
   }
 
   /**
@@ -490,7 +521,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.locHdr, objResponseMatchTarget.locHdr)&&
   Objects.equals(this.status, objResponseMatchTarget.status)&&
   Objects.equals(this.rspHdrs, objResponseMatchTarget.rspHdrs)&&
-  Objects.equals(this.sourceIp, objResponseMatchTarget.sourceIp);
+  Objects.equals(this.sourceIp, objResponseMatchTarget.sourceIp)&&
+  Objects.equals(this.label, objResponseMatchTarget.label);
 }
 
 @Override
@@ -501,6 +533,7 @@ public String toString() {
         sb.append("    cookie: ").append(toIndentedString(cookie)).append("\n");
         sb.append("    hdrs: ").append(toIndentedString(hdrs)).append("\n");
         sb.append("    hostHdr: ").append(toIndentedString(hostHdr)).append("\n");
+        sb.append("    label: ").append(toIndentedString(label)).append("\n");
         sb.append("    locHdr: ").append(toIndentedString(locHdr)).append("\n");
         sb.append("    method: ").append(toIndentedString(method)).append("\n");
         sb.append("    path: ").append(toIndentedString(path)).append("\n");

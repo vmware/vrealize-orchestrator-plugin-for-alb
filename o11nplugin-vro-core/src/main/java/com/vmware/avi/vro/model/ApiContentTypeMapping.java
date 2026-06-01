@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.ApiSimpleSchemaDescription;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -12,88 +13,88 @@ import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
 
 /**
- * The IpAddrTypeConfig is a POJO class extends AviRestResource that used for creating
- * IpAddrTypeConfig.
+ * The ApiContentTypeMapping is a POJO class extends AviRestResource that used for creating
+ * ApiContentTypeMapping.
  *
  * @version 1.0
  * @since 
  *
  */
-@VsoObject(create = false, name = "IpAddrTypeConfig")
-@VsoFinder(name = Constants.FINDER_VRO_IPADDRTYPECONFIG)
+@VsoObject(create = false, name = "ApiContentTypeMapping")
+@VsoFinder(name = Constants.FINDER_VRO_APICONTENTTYPEMAPPING)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class IpAddrTypeConfig extends AviRestResource {
-    @JsonProperty("ip_type")
+public class ApiContentTypeMapping extends AviRestResource {
+    @JsonProperty("content_type")
     @JsonInclude(Include.NON_NULL)
-    private String ipType;
+    private String contentType;
 
-    @JsonProperty("periodicity")
+    @JsonProperty("schema")
     @JsonInclude(Include.NON_NULL)
-    private Integer periodicity;
+    private ApiSimpleSchemaDescription schema;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
-   * Ip address type for which periodic ip advertisement (gratarp/na) is enabled.
-   * Supported values are vip_ip, snat_ip, floating_intf_ip, and primary_intf_ip.
-   * Enum options - NAT_IP, VIP_IP, SNAT_IP, FLOATING_INTF_IP, PRIMARY_INTF_IP.
+   * The content type of the request/response.
+   * This can be a pattern like application/json* for request.
+   * For response, it is the content type of the response.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return ipType
+   * @return contentType
    */
   @VsoMethod
-  public String getIpType() {
-    return ipType;
+  public String getContentType() {
+    return contentType;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Ip address type for which periodic ip advertisement (gratarp/na) is enabled.
-   * Supported values are vip_ip, snat_ip, floating_intf_ip, and primary_intf_ip.
-   * Enum options - NAT_IP, VIP_IP, SNAT_IP, FLOATING_INTF_IP, PRIMARY_INTF_IP.
+   * The content type of the request/response.
+   * This can be a pattern like application/json* for request.
+   * For response, it is the content type of the response.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param ipType set the ipType.
+   * @param contentType set the contentType.
    */
   @VsoMethod
-  public void setIpType(String  ipType) {
-    this.ipType = ipType;
+  public void setContentType(String  contentType) {
+    this.contentType = contentType;
   }
 
   /**
    * This is the getter method this will return the attribute value.
-   * Periodicity override for this ip type in minutes.
-   * If not set, uses ip_advertisement_profile.default_periodicity.
-   * Allowed values are 1-30.
+   * The schema for the request/response body.
+   * Type must be schema_type_undefined (no validation) or schema_type_reference pointing to an apischema (object and array bodies are modeled as
+   * references).
+   * Other apischemadatatype values are not allowed for content type mappings.
    * Field introduced in 32.2.1.
-   * Unit is min.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return periodicity
+   * @return schema
    */
   @VsoMethod
-  public Integer getPeriodicity() {
-    return periodicity;
+  public ApiSimpleSchemaDescription getSchema() {
+    return schema;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Periodicity override for this ip type in minutes.
-   * If not set, uses ip_advertisement_profile.default_periodicity.
-   * Allowed values are 1-30.
+   * The schema for the request/response body.
+   * Type must be schema_type_undefined (no validation) or schema_type_reference pointing to an apischema (object and array bodies are modeled as
+   * references).
+   * Other apischemadatatype values are not allowed for content type mappings.
    * Field introduced in 32.2.1.
-   * Unit is min.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param periodicity set the periodicity.
+   * @param schema set the schema.
    */
   @VsoMethod
-  public void setPeriodicity(Integer  periodicity) {
-    this.periodicity = periodicity;
+  public void setSchema(ApiSimpleSchemaDescription schema) {
+    this.schema = schema;
   }
 
 
@@ -106,17 +107,17 @@ public boolean equals(java.lang.Object o) {
   if (o == null || getClass() != o.getClass()) {
     return false;
   }
-  IpAddrTypeConfig objIpAddrTypeConfig = (IpAddrTypeConfig) o;
-  return   Objects.equals(this.ipType, objIpAddrTypeConfig.ipType)&&
-  Objects.equals(this.periodicity, objIpAddrTypeConfig.periodicity);
+  ApiContentTypeMapping objApiContentTypeMapping = (ApiContentTypeMapping) o;
+  return   Objects.equals(this.contentType, objApiContentTypeMapping.contentType)&&
+  Objects.equals(this.schema, objApiContentTypeMapping.schema);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
-  sb.append("class IpAddrTypeConfig {\n");
-      sb.append("    ipType: ").append(toIndentedString(ipType)).append("\n");
-        sb.append("    periodicity: ").append(toIndentedString(periodicity)).append("\n");
+  sb.append("class ApiContentTypeMapping {\n");
+      sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
+        sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
       sb.append("}");
   return sb.toString();
 }

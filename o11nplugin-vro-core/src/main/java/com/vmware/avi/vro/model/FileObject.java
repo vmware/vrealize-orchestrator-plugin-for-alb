@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.ApiSpecDetail;
 import com.vmware.avi.vro.model.CRL;
+import com.vmware.avi.vro.model.FileObjectState;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -25,6 +27,10 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class FileObject extends AviRestResource {
+    @JsonProperty("api_spec_detail")
+    @JsonInclude(Include.NON_NULL)
+    private ApiSpecDetail apiSpecDetail;
+
     @JsonProperty("checksum")
     @JsonInclude(Include.NON_NULL)
     private String checksum;
@@ -32,6 +38,10 @@ public class FileObject extends AviRestResource {
     @JsonProperty("child_refs")
     @JsonInclude(Include.NON_NULL)
     private List<String> childRefs;
+
+    @JsonProperty("completed_events")
+    @JsonInclude(Include.NON_NULL)
+    private Integer completedEvents;
 
     @JsonProperty("compressed")
     @JsonInclude(Include.NON_NULL)
@@ -49,6 +59,14 @@ public class FileObject extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String description;
 
+    @JsonProperty("duration")
+    @JsonInclude(Include.NON_NULL)
+    private Integer duration;
+
+    @JsonProperty("end_time")
+    @JsonInclude(Include.NON_NULL)
+    private String endTime;
+
     @JsonProperty("events")
     @JsonInclude(Include.NON_NULL)
     private List<FileObjectEventMap> events;
@@ -65,6 +83,10 @@ public class FileObject extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean hasParent = false;
 
+    @JsonProperty("history")
+    @JsonInclude(Include.NON_NULL)
+    private List<TaskEventHistory> history;
+
     @JsonProperty("is_federated")
     @JsonInclude(Include.NON_NULL)
     private Boolean isFederated = false;
@@ -76,6 +98,10 @@ public class FileObject extends AviRestResource {
     @JsonProperty("path")
     @JsonInclude(Include.NON_NULL)
     private String path;
+
+    @JsonProperty("progress")
+    @JsonInclude(Include.NON_NULL)
+    private Integer progress;
 
     @JsonProperty("read_only")
     @JsonInclude(Include.NON_NULL)
@@ -89,9 +115,25 @@ public class FileObject extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer size;
 
+    @JsonProperty("start_time")
+    @JsonInclude(Include.NON_NULL)
+    private String startTime;
+
+    @JsonProperty("state")
+    @JsonInclude(Include.NON_NULL)
+    private FileObjectState state;
+
+    @JsonProperty("task_events")
+    @JsonInclude(Include.NON_NULL)
+    private List<TaskEventMap> taskEvents;
+
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
     private String tenantRef;
+
+    @JsonProperty("total_events")
+    @JsonInclude(Include.NON_NULL)
+    private Integer totalEvents;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
@@ -110,6 +152,30 @@ public class FileObject extends AviRestResource {
     private String version;
 
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Further details about the file object.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * @return apiSpecDetail
+   */
+  @VsoMethod
+  public ApiSpecDetail getApiSpecDetail() {
+    return apiSpecDetail;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Further details about the file object.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * @param apiSpecDetail set the apiSpecDetail.
+   */
+  @VsoMethod
+  public void setApiSpecDetail(ApiSpecDetail apiSpecDetail) {
+    this.apiSpecDetail = apiSpecDetail;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -183,6 +249,32 @@ public class FileObject extends AviRestResource {
     return this;
   }
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Number of completed events.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return completedEvents
+   */
+  @VsoMethod
+  public Integer getCompletedEvents() {
+    return completedEvents;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Number of completed events.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param completedEvents set the completedEvents.
+   */
+  @VsoMethod
+  public void setCompletedEvents(Integer  completedEvents) {
+    this.completedEvents = completedEvents;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -286,6 +378,60 @@ public class FileObject extends AviRestResource {
   @VsoMethod
   public void setDescription(String  description) {
     this.description = description;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Time taken to complete the operation in seconds.
+   * Field introduced in 32.2.1.
+   * Unit is sec.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return duration
+   */
+  @VsoMethod
+  public Integer getDuration() {
+    return duration;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Time taken to complete the operation in seconds.
+   * Field introduced in 32.2.1.
+   * Unit is sec.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param duration set the duration.
+   */
+  @VsoMethod
+  public void setDuration(Integer  duration) {
+    this.duration = duration;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * End time.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return endTime
+   */
+  @VsoMethod
+  public String getEndTime() {
+    return endTime;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * End time.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param endTime set the endTime.
+   */
+  @VsoMethod
+  public void setEndTime(String  endTime) {
+    this.endTime = endTime;
   }
 
   /**
@@ -420,6 +566,50 @@ public class FileObject extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * File object processing events history for the version specified.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return history
+   */
+  @VsoMethod
+  public List<TaskEventHistory> getHistory() {
+    return history;
+  }
+
+  /**
+   * This is the setter method. this will set the history
+   * File object processing events history for the version specified.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return history
+   */
+  @VsoMethod
+  public void setHistory(List<TaskEventHistory>  history) {
+    this.history = history;
+  }
+
+  /**
+   * This is the setter method this will set the history
+   * File object processing events history for the version specified.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return history
+   */
+  @VsoMethod
+  public FileObject addHistoryItem(TaskEventHistory historyItem) {
+    if (this.history == null) {
+      this.history = new ArrayList<TaskEventHistory>();
+    }
+    this.history.add(historyItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
    * This field describes the object's replication scope.
    * If the field is set to false, then the object is visible within the controller-cluster and its associated service-engines.
    * If the field is set to true, then the object is replicated across the gslb federation.
@@ -502,6 +692,36 @@ public class FileObject extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Percentage of completed events.
+   * Allowed values are 0-100.
+   * Field introduced in 32.2.1.
+   * Unit is percent.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return progress
+   */
+  @VsoMethod
+  public Integer getProgress() {
+    return progress;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Percentage of completed events.
+   * Allowed values are 0-100.
+   * Field introduced in 32.2.1.
+   * Unit is percent.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param progress set the progress.
+   */
+  @VsoMethod
+  public void setProgress(Integer  progress) {
+    this.progress = progress;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Enforce read-only on the file.
    * Field introduced in 20.1.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -580,6 +800,102 @@ public class FileObject extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Start time.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return startTime
+   */
+  @VsoMethod
+  public String getStartTime() {
+    return startTime;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Start time.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param startTime set the startTime.
+   */
+  @VsoMethod
+  public void setStartTime(String  startTime) {
+    this.startTime = startTime;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * State of the file object.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return state
+   */
+  @VsoMethod
+  public FileObjectState getState() {
+    return state;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * State of the file object.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param state set the state.
+   */
+  @VsoMethod
+  public void setState(FileObjectState state) {
+    this.state = state;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * File object processing events for the version specified.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return taskEvents
+   */
+  @VsoMethod
+  public List<TaskEventMap> getTaskEvents() {
+    return taskEvents;
+  }
+
+  /**
+   * This is the setter method. this will set the taskEvents
+   * File object processing events for the version specified.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return taskEvents
+   */
+  @VsoMethod
+  public void setTaskEvents(List<TaskEventMap>  taskEvents) {
+    this.taskEvents = taskEvents;
+  }
+
+  /**
+   * This is the setter method this will set the taskEvents
+   * File object processing events for the version specified.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return taskEvents
+   */
+  @VsoMethod
+  public FileObject addTaskEventsItem(TaskEventMap taskEventsItem) {
+    if (this.taskEvents == null) {
+      this.taskEvents = new ArrayList<TaskEventMap>();
+    }
+    this.taskEvents.add(taskEventsItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Tenant that this object belongs to.
    * It is a reference to an object of type tenant.
    * Field introduced in 20.1.1.
@@ -608,9 +924,35 @@ public class FileObject extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Total number of events.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return totalEvents
+   */
+  @VsoMethod
+  public Integer getTotalEvents() {
+    return totalEvents;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Total number of events.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param totalEvents set the totalEvents.
+   */
+  @VsoMethod
+  public void setTotalEvents(Integer  totalEvents) {
+    this.totalEvents = totalEvents;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Type of the file.
    * Enum options - OTHER_FILE_TYPES, IP_REPUTATION, GEO_DB, TECH_SUPPORT, HSMPACKAGES, IPAMDNSSCRIPTS, CONTROLLER_IMAGE, CRL_DATA,
-   * IP_REPUTATION_IPV6, GSLB_GEO_DB, CSRF_JS, KNOWN_HOSTS.
+   * IP_REPUTATION_IPV6, GSLB_GEO_DB, CSRF_JS, KNOWN_HOSTS, OPEN_API_SPEC.
    * Field introduced in 20.1.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -625,7 +967,7 @@ public class FileObject extends AviRestResource {
    * This is the setter method to the attribute.
    * Type of the file.
    * Enum options - OTHER_FILE_TYPES, IP_REPUTATION, GEO_DB, TECH_SUPPORT, HSMPACKAGES, IPAMDNSSCRIPTS, CONTROLLER_IMAGE, CRL_DATA,
-   * IP_REPUTATION_IPV6, GSLB_GEO_DB, CSRF_JS, KNOWN_HOSTS.
+   * IP_REPUTATION_IPV6, GSLB_GEO_DB, CSRF_JS, KNOWN_HOSTS, OPEN_API_SPEC.
    * Field introduced in 20.1.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -740,30 +1082,50 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.childRefs, objFileObject.childRefs)&&
   Objects.equals(this.events, objFileObject.events)&&
   Objects.equals(this.hasParent, objFileObject.hasParent)&&
-  Objects.equals(this.gslbGeodbFormat, objFileObject.gslbGeodbFormat);
+  Objects.equals(this.gslbGeodbFormat, objFileObject.gslbGeodbFormat)&&
+  Objects.equals(this.state, objFileObject.state)&&
+  Objects.equals(this.taskEvents, objFileObject.taskEvents)&&
+  Objects.equals(this.totalEvents, objFileObject.totalEvents)&&
+  Objects.equals(this.completedEvents, objFileObject.completedEvents)&&
+  Objects.equals(this.progress, objFileObject.progress)&&
+  Objects.equals(this.startTime, objFileObject.startTime)&&
+  Objects.equals(this.endTime, objFileObject.endTime)&&
+  Objects.equals(this.duration, objFileObject.duration)&&
+  Objects.equals(this.history, objFileObject.history)&&
+  Objects.equals(this.apiSpecDetail, objFileObject.apiSpecDetail);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class FileObject {\n");
-      sb.append("    checksum: ").append(toIndentedString(checksum)).append("\n");
+      sb.append("    apiSpecDetail: ").append(toIndentedString(apiSpecDetail)).append("\n");
+        sb.append("    checksum: ").append(toIndentedString(checksum)).append("\n");
         sb.append("    childRefs: ").append(toIndentedString(childRefs)).append("\n");
+        sb.append("    completedEvents: ").append(toIndentedString(completedEvents)).append("\n");
         sb.append("    compressed: ").append(toIndentedString(compressed)).append("\n");
         sb.append("    created: ").append(toIndentedString(created)).append("\n");
         sb.append("    crlInfo: ").append(toIndentedString(crlInfo)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
+        sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    events: ").append(toIndentedString(events)).append("\n");
         sb.append("    expiresAt: ").append(toIndentedString(expiresAt)).append("\n");
         sb.append("    gslbGeodbFormat: ").append(toIndentedString(gslbGeodbFormat)).append("\n");
         sb.append("    hasParent: ").append(toIndentedString(hasParent)).append("\n");
+        sb.append("    history: ").append(toIndentedString(history)).append("\n");
         sb.append("    isFederated: ").append(toIndentedString(isFederated)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    path: ").append(toIndentedString(path)).append("\n");
+        sb.append("    progress: ").append(toIndentedString(progress)).append("\n");
         sb.append("    readOnly: ").append(toIndentedString(readOnly)).append("\n");
         sb.append("    restrictDownload: ").append(toIndentedString(restrictDownload)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+        sb.append("    state: ").append(toIndentedString(state)).append("\n");
+        sb.append("    taskEvents: ").append(toIndentedString(taskEvents)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
+        sb.append("    totalEvents: ").append(toIndentedString(totalEvents)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
             sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");

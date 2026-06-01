@@ -13,6 +13,7 @@ import com.vmware.avi.vro.model.ALBServicesFileUpload;
 import com.vmware.avi.vro.model.ALBServicesStatusDetails;
 import com.vmware.avi.vro.model.AllSeUpgradeEventDetails;
 import com.vmware.avi.vro.model.AnomalyEventDetails;
+import com.vmware.avi.vro.model.ApiPolicyClassificationDetails;
 import com.vmware.avi.vro.model.ApiVersionDeprecated;
 import com.vmware.avi.vro.model.RequestLimiterEventInfo;
 import com.vmware.avi.vro.model.RequestLimiterEventInfo;
@@ -103,6 +104,7 @@ import com.vmware.avi.vro.model.HostUnavailEventDetails;
 import com.vmware.avi.vro.model.HealthScoreDetails;
 import com.vmware.avi.vro.model.RmSeIpFailEventDetails;
 import com.vmware.avi.vro.model.IPThreatDBEventData;
+import com.vmware.avi.vro.model.LearningDbCleanupEventDetails;
 import com.vmware.avi.vro.model.LicenseDetails;
 import com.vmware.avi.vro.model.LicenseExpiryDetails;
 import com.vmware.avi.vro.model.LicenseTierSwitchDetiails;
@@ -315,6 +317,10 @@ public class EventDetails extends AviRestResource {
     @JsonProperty("anomaly_details")
     @JsonInclude(Include.NON_NULL)
     private AnomalyEventDetails anomalyDetails;
+
+    @JsonProperty("api_policy_classification_details")
+    @JsonInclude(Include.NON_NULL)
+    private ApiPolicyClassificationDetails apiPolicyClassificationDetails;
 
     @JsonProperty("api_version_deprecated")
     @JsonInclude(Include.NON_NULL)
@@ -675,6 +681,10 @@ public class EventDetails extends AviRestResource {
     @JsonProperty("ip_threat_db_event_data")
     @JsonInclude(Include.NON_NULL)
     private IPThreatDBEventData ipThreatDbEventData;
+
+    @JsonProperty("learning_db_cleanup_event_details")
+    @JsonInclude(Include.NON_NULL)
+    private LearningDbCleanupEventDetails learningDbCleanupEventDetails;
 
     @JsonProperty("license_details")
     @JsonInclude(Include.NON_NULL)
@@ -1510,6 +1520,32 @@ public class EventDetails extends AviRestResource {
   @VsoMethod
   public void setAnomalyDetails(AnomalyEventDetails anomalyDetails) {
     this.anomalyDetails = anomalyDetails;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Api policy classification change event details.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return apiPolicyClassificationDetails
+   */
+  @VsoMethod
+  public ApiPolicyClassificationDetails getApiPolicyClassificationDetails() {
+    return apiPolicyClassificationDetails;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Api policy classification change event details.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param apiPolicyClassificationDetails set the apiPolicyClassificationDetails.
+   */
+  @VsoMethod
+  public void setApiPolicyClassificationDetails(ApiPolicyClassificationDetails apiPolicyClassificationDetails) {
+    this.apiPolicyClassificationDetails = apiPolicyClassificationDetails;
   }
 
   /**
@@ -3550,6 +3586,32 @@ public class EventDetails extends AviRestResource {
   @VsoMethod
   public void setIpThreatDbEventData(IPThreatDBEventData ipThreatDbEventData) {
     this.ipThreatDbEventData = ipThreatDbEventData;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Learning database cleanup event details.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return learningDbCleanupEventDetails
+   */
+  @VsoMethod
+  public LearningDbCleanupEventDetails getLearningDbCleanupEventDetails() {
+    return learningDbCleanupEventDetails;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Learning database cleanup event details.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param learningDbCleanupEventDetails set the learningDbCleanupEventDetails.
+   */
+  @VsoMethod
+  public void setLearningDbCleanupEventDetails(LearningDbCleanupEventDetails learningDbCleanupEventDetails) {
+    this.learningDbCleanupEventDetails = learningDbCleanupEventDetails;
   }
 
   /**
@@ -7545,6 +7607,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.falsePositiveDetails, objEventDetails.falsePositiveDetails)&&
   Objects.equals(this.secMgrUaEventDetails, objEventDetails.secMgrUaEventDetails)&&
   Objects.equals(this.appInsightsDetails, objEventDetails.appInsightsDetails)&&
+  Objects.equals(this.apiPolicyClassificationDetails, objEventDetails.apiPolicyClassificationDetails)&&
+  Objects.equals(this.learningDbCleanupEventDetails, objEventDetails.learningDbCleanupEventDetails)&&
   Objects.equals(this.cloudAsgNotifDetails, objEventDetails.cloudAsgNotifDetails)&&
   Objects.equals(this.cloudAutoscalingConfigFailureDetails, objEventDetails.cloudAutoscalingConfigFailureDetails)&&
   Objects.equals(this.cloudRouteNotifDetails, objEventDetails.cloudRouteNotifDetails)&&
@@ -7591,6 +7655,7 @@ public String toString() {
         sb.append("    albservicesStatusDetails: ").append(toIndentedString(albservicesStatusDetails)).append("\n");
         sb.append("    allSeupgradeEventDetails: ").append(toIndentedString(allSeupgradeEventDetails)).append("\n");
         sb.append("    anomalyDetails: ").append(toIndentedString(anomalyDetails)).append("\n");
+        sb.append("    apiPolicyClassificationDetails: ").append(toIndentedString(apiPolicyClassificationDetails)).append("\n");
         sb.append("    apiVersionDeprecated: ").append(toIndentedString(apiVersionDeprecated)).append("\n");
         sb.append("    apiserverRequestQueueFullEventInfo: ").append(toIndentedString(apiserverRequestQueueFullEventInfo)).append("\n");
         sb.append("    apiserverRequestQueueRecoveryEventInfo: ").append(toIndentedString(apiserverRequestQueueRecoveryEventInfo)).append("\n");
@@ -7681,6 +7746,7 @@ public String toString() {
         sb.append("    hsDetails: ").append(toIndentedString(hsDetails)).append("\n");
         sb.append("    ipFailDetails: ").append(toIndentedString(ipFailDetails)).append("\n");
         sb.append("    ipThreatDbEventData: ").append(toIndentedString(ipThreatDbEventData)).append("\n");
+        sb.append("    learningDbCleanupEventDetails: ").append(toIndentedString(learningDbCleanupEventDetails)).append("\n");
         sb.append("    licenseDetails: ").append(toIndentedString(licenseDetails)).append("\n");
         sb.append("    licenseExpiryDetails: ").append(toIndentedString(licenseExpiryDetails)).append("\n");
         sb.append("    licenseTierSwitchDetails: ").append(toIndentedString(licenseTierSwitchDetails)).append("\n");

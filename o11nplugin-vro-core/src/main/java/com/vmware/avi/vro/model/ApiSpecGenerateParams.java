@@ -5,10 +5,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.vmware.avi.vro.model.IpAddrMatch;
-import com.vmware.avi.vro.model.HostHdrMatch;
-import com.vmware.avi.vro.model.LabelMatch;
-import com.vmware.avi.vro.model.PathMatch;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -16,140 +12,144 @@ import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
 
 /**
- * The AuthenticationMatch is a POJO class extends AviRestResource that used for creating
- * AuthenticationMatch.
+ * The ApiSpecGenerateParams is a POJO class extends AviRestResource that used for creating
+ * ApiSpecGenerateParams.
  *
  * @version 1.0
  * @since 
  *
  */
-@VsoObject(create = false, name = "AuthenticationMatch")
-@VsoFinder(name = Constants.FINDER_VRO_AUTHENTICATIONMATCH)
+@VsoObject(create = false, name = "ApiSpecGenerateParams")
+@VsoFinder(name = Constants.FINDER_VRO_APISPECGENERATEPARAMS)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class AuthenticationMatch extends AviRestResource {
-    @JsonProperty("client_ip")
+public class ApiSpecGenerateParams extends AviRestResource {
+    @JsonProperty("api_policy_ref")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrMatch clientIp;
+    private String apiPolicyRef;
 
-    @JsonProperty("host_hdr")
+    @JsonProperty("file_object_ref")
     @JsonInclude(Include.NON_NULL)
-    private HostHdrMatch hostHdr;
+    private String fileObjectRef;
 
-    @JsonProperty("label")
+    @JsonProperty("format")
     @JsonInclude(Include.NON_NULL)
-    private LabelMatch label;
+    private String format = "API_SPEC_GENERATE_FORMAT_JSON";
 
-    @JsonProperty("path")
+    @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
-    private PathMatch path;
+    private String name;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
-   * Configure client ip addresses.
-   * Field introduced in 18.2.5.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return clientIp
-   */
-  @VsoMethod
-  public IpAddrMatch getClientIp() {
-    return clientIp;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Configure client ip addresses.
-   * Field introduced in 18.2.5.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param clientIp set the clientIp.
-   */
-  @VsoMethod
-  public void setClientIp(IpAddrMatch clientIp) {
-    this.clientIp = clientIp;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Configure the host header.
-   * Field introduced in 18.2.5.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return hostHdr
-   */
-  @VsoMethod
-  public HostHdrMatch getHostHdr() {
-    return hostHdr;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Configure the host header.
-   * Field introduced in 18.2.5.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param hostHdr set the hostHdr.
-   */
-  @VsoMethod
-  public void setHostHdr(HostHdrMatch hostHdr) {
-    this.hostHdr = hostHdr;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Configure label match for api endpoint labels.
-   * Uses auth scope to match labels attached by the waap module.
+   * Api policy to generate api spec from.
+   * It is a reference to an object of type apipolicy.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return label
+   * @return apiPolicyRef
    */
   @VsoMethod
-  public LabelMatch getLabel() {
-    return label;
+  public String getApiPolicyRef() {
+    return apiPolicyRef;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Configure label match for api endpoint labels.
-   * Uses auth scope to match labels attached by the waap module.
+   * Api policy to generate api spec from.
+   * It is a reference to an object of type apipolicy.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param label set the label.
+   * @param apiPolicyRef set the apiPolicyRef.
    */
   @VsoMethod
-  public void setLabel(LabelMatch label) {
-    this.label = label;
+  public void setApiPolicyRef(String  apiPolicyRef) {
+    this.apiPolicyRef = apiPolicyRef;
   }
 
   /**
    * This is the getter method this will return the attribute value.
-   * Configure request paths.
-   * Field introduced in 18.2.5.
+   * File object to generate api spec from.
+   * It is a reference to an object of type fileobject.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return path
+   * @return fileObjectRef
    */
   @VsoMethod
-  public PathMatch getPath() {
-    return path;
+  public String getFileObjectRef() {
+    return fileObjectRef;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Configure request paths.
-   * Field introduced in 18.2.5.
+   * File object to generate api spec from.
+   * It is a reference to an object of type fileobject.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param path set the path.
+   * @param fileObjectRef set the fileObjectRef.
    */
   @VsoMethod
-  public void setPath(PathMatch path) {
-    this.path = path;
+  public void setFileObjectRef(String  fileObjectRef) {
+    this.fileObjectRef = fileObjectRef;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Output format  json (default) or yaml.
+   * Enum options - API_SPEC_GENERATE_FORMAT_JSON, API_SPEC_GENERATE_FORMAT_YAML.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "API_SPEC_GENERATE_FORMAT_JSON".
+   * @return format
+   */
+  @VsoMethod
+  public String getFormat() {
+    return format;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Output format  json (default) or yaml.
+   * Enum options - API_SPEC_GENERATE_FORMAT_JSON, API_SPEC_GENERATE_FORMAT_YAML.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "API_SPEC_GENERATE_FORMAT_JSON".
+   * @param format set the format.
+   */
+  @VsoMethod
+  public void setFormat(String  format) {
+    this.format = format;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Name for the spec generation object.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return name
+   */
+  @VsoMethod
+  public String getName() {
+    return name;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Name for the spec generation object.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param name set the name.
+   */
+  @VsoMethod
+  public void setName(String  name) {
+    this.name = name;
   }
 
 
@@ -162,21 +162,21 @@ public boolean equals(java.lang.Object o) {
   if (o == null || getClass() != o.getClass()) {
     return false;
   }
-  AuthenticationMatch objAuthenticationMatch = (AuthenticationMatch) o;
-  return   Objects.equals(this.clientIp, objAuthenticationMatch.clientIp)&&
-  Objects.equals(this.path, objAuthenticationMatch.path)&&
-  Objects.equals(this.hostHdr, objAuthenticationMatch.hostHdr)&&
-  Objects.equals(this.label, objAuthenticationMatch.label);
+  ApiSpecGenerateParams objApiSpecGenerateParams = (ApiSpecGenerateParams) o;
+  return   Objects.equals(this.name, objApiSpecGenerateParams.name)&&
+  Objects.equals(this.apiPolicyRef, objApiSpecGenerateParams.apiPolicyRef)&&
+  Objects.equals(this.fileObjectRef, objApiSpecGenerateParams.fileObjectRef)&&
+  Objects.equals(this.format, objApiSpecGenerateParams.format);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
-  sb.append("class AuthenticationMatch {\n");
-      sb.append("    clientIp: ").append(toIndentedString(clientIp)).append("\n");
-        sb.append("    hostHdr: ").append(toIndentedString(hostHdr)).append("\n");
-        sb.append("    label: ").append(toIndentedString(label)).append("\n");
-        sb.append("    path: ").append(toIndentedString(path)).append("\n");
+  sb.append("class ApiSpecGenerateParams {\n");
+      sb.append("    apiPolicyRef: ").append(toIndentedString(apiPolicyRef)).append("\n");
+        sb.append("    fileObjectRef: ").append(toIndentedString(fileObjectRef)).append("\n");
+        sb.append("    format: ").append(toIndentedString(format)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
       sb.append("}");
   return sb.toString();
 }

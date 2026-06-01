@@ -10,6 +10,7 @@ import com.vmware.avi.vro.model.IpAddrMatch;
 import com.vmware.avi.vro.model.CookieMatch;
 import com.vmware.avi.vro.model.HostHdrMatch;
 import com.vmware.avi.vro.model.IPReputationTypeMatch;
+import com.vmware.avi.vro.model.LabelMatch;
 import com.vmware.avi.vro.model.MethodMatch;
 import com.vmware.avi.vro.model.PathMatch;
 import com.vmware.avi.vro.model.ProtocolMatch;
@@ -64,6 +65,10 @@ public class MatchTarget extends AviRestResource {
     @JsonProperty("ip_reputation_type")
     @JsonInclude(Include.NON_NULL)
     private IPReputationTypeMatch ipReputationType;
+
+    @JsonProperty("label")
+    @JsonInclude(Include.NON_NULL)
+    private LabelMatch label;
 
     @JsonProperty("method")
     @JsonInclude(Include.NON_NULL)
@@ -316,6 +321,32 @@ public class MatchTarget extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Configure the label.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return label
+   */
+  @VsoMethod
+  public LabelMatch getLabel() {
+    return label;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Configure the label.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param label set the label.
+   */
+  @VsoMethod
+  public void setLabel(LabelMatch label) {
+    this.label = label;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Configure http methods.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -535,7 +566,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.geoMatches, objMatchTarget.geoMatches)&&
   Objects.equals(this.botDetectionResult, objMatchTarget.botDetectionResult)&&
   Objects.equals(this.sourceIp, objMatchTarget.sourceIp)&&
-  Objects.equals(this.tlsFingerprintMatch, objMatchTarget.tlsFingerprintMatch);
+  Objects.equals(this.tlsFingerprintMatch, objMatchTarget.tlsFingerprintMatch)&&
+  Objects.equals(this.label, objMatchTarget.label);
 }
 
 @Override
@@ -549,6 +581,7 @@ public String toString() {
         sb.append("    hdrs: ").append(toIndentedString(hdrs)).append("\n");
         sb.append("    hostHdr: ").append(toIndentedString(hostHdr)).append("\n");
         sb.append("    ipReputationType: ").append(toIndentedString(ipReputationType)).append("\n");
+        sb.append("    label: ").append(toIndentedString(label)).append("\n");
         sb.append("    method: ").append(toIndentedString(method)).append("\n");
         sb.append("    path: ").append(toIndentedString(path)).append("\n");
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");

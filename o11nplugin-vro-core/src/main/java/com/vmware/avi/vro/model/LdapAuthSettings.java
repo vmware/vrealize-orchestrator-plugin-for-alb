@@ -58,6 +58,10 @@ public class LdapAuthSettings extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private LdapDirectorySettings settings;
 
+    @JsonProperty("tls_mode")
+    @JsonInclude(Include.NON_NULL)
+    private String tlsMode = "TLS_MODE_DISABLED";
+
     @JsonProperty("user_bind")
     @JsonInclude(Include.NON_NULL)
     private LdapUserBindSettings userBind;
@@ -285,6 +289,40 @@ public class LdapAuthSettings extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Tls authentication mode for outbound ldap connections.
+   * Options  tls_mode_disabled (no verification, default), tls_mode_tls (server certificate verification), tls_mode_mtls (mtls with a client
+   * certificate), or tls_mode_verify_only (certificate chain verification only).
+   * Tls_mode_tls, tls_mode_mtls, and tls_mode_verify_only are effective only when security_mode is auth_ldap_secure_use_ldaps.
+   * Enum options - TLS_MODE_DISABLED, TLS_MODE_TLS, TLS_MODE_MTLS, TLS_MODE_VERIFY_ONLY.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "TLS_MODE_DISABLED".
+   * @return tlsMode
+   */
+  @VsoMethod
+  public String getTlsMode() {
+    return tlsMode;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Tls authentication mode for outbound ldap connections.
+   * Options  tls_mode_disabled (no verification, default), tls_mode_tls (server certificate verification), tls_mode_mtls (mtls with a client
+   * certificate), or tls_mode_verify_only (certificate chain verification only).
+   * Tls_mode_tls, tls_mode_mtls, and tls_mode_verify_only are effective only when security_mode is auth_ldap_secure_use_ldaps.
+   * Enum options - TLS_MODE_DISABLED, TLS_MODE_TLS, TLS_MODE_MTLS, TLS_MODE_VERIFY_ONLY.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "TLS_MODE_DISABLED".
+   * @param tlsMode set the tlsMode.
+   */
+  @VsoMethod
+  public void setTlsMode(String  tlsMode) {
+    this.tlsMode = tlsMode;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Ldap anonymous bind configuration.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -326,7 +364,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.settings, objLdapAuthSettings.settings)&&
   Objects.equals(this.userBind, objLdapAuthSettings.userBind)&&
   Objects.equals(this.emailAttribute, objLdapAuthSettings.emailAttribute)&&
-  Objects.equals(this.fullNameAttribute, objLdapAuthSettings.fullNameAttribute);
+  Objects.equals(this.fullNameAttribute, objLdapAuthSettings.fullNameAttribute)&&
+  Objects.equals(this.tlsMode, objLdapAuthSettings.tlsMode);
 }
 
 @Override
@@ -341,6 +380,7 @@ public String toString() {
         sb.append("    securityMode: ").append(toIndentedString(securityMode)).append("\n");
         sb.append("    server: ").append(toIndentedString(server)).append("\n");
         sb.append("    settings: ").append(toIndentedString(settings)).append("\n");
+        sb.append("    tlsMode: ").append(toIndentedString(tlsMode)).append("\n");
         sb.append("    userBind: ").append(toIndentedString(userBind)).append("\n");
       sb.append("}");
   return sb.toString();

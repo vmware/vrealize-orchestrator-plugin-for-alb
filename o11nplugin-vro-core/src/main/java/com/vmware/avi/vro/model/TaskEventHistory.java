@@ -5,10 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.vmware.avi.vro.model.IpAddrMatch;
-import com.vmware.avi.vro.model.HostHdrMatch;
-import com.vmware.avi.vro.model.LabelMatch;
-import com.vmware.avi.vro.model.PathMatch;
+import com.vmware.avi.vro.model.FileObjectState;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -16,140 +13,158 @@ import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
 
 /**
- * The AuthenticationMatch is a POJO class extends AviRestResource that used for creating
- * AuthenticationMatch.
+ * The TaskEventHistory is a POJO class extends AviRestResource that used for creating
+ * TaskEventHistory.
  *
  * @version 1.0
  * @since 
  *
  */
-@VsoObject(create = false, name = "AuthenticationMatch")
-@VsoFinder(name = Constants.FINDER_VRO_AUTHENTICATIONMATCH)
+@VsoObject(create = false, name = "TaskEventHistory")
+@VsoFinder(name = Constants.FINDER_VRO_TASKEVENTHISTORY)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class AuthenticationMatch extends AviRestResource {
-    @JsonProperty("client_ip")
+public class TaskEventHistory extends AviRestResource {
+    @JsonProperty("spec_info")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrMatch clientIp;
+    private String specInfo;
 
-    @JsonProperty("host_hdr")
+    @JsonProperty("state")
     @JsonInclude(Include.NON_NULL)
-    private HostHdrMatch hostHdr;
+    private FileObjectState state;
 
-    @JsonProperty("label")
+    @JsonProperty("task_events")
     @JsonInclude(Include.NON_NULL)
-    private LabelMatch label;
+    private List<TaskEventMap> taskEvents;
 
-    @JsonProperty("path")
+    @JsonProperty("version")
     @JsonInclude(Include.NON_NULL)
-    private PathMatch path;
+    private String version;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
-   * Configure client ip addresses.
-   * Field introduced in 18.2.5.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return clientIp
-   */
-  @VsoMethod
-  public IpAddrMatch getClientIp() {
-    return clientIp;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Configure client ip addresses.
-   * Field introduced in 18.2.5.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param clientIp set the clientIp.
-   */
-  @VsoMethod
-  public void setClientIp(IpAddrMatch clientIp) {
-    this.clientIp = clientIp;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Configure the host header.
-   * Field introduced in 18.2.5.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return hostHdr
-   */
-  @VsoMethod
-  public HostHdrMatch getHostHdr() {
-    return hostHdr;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Configure the host header.
-   * Field introduced in 18.2.5.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param hostHdr set the hostHdr.
-   */
-  @VsoMethod
-  public void setHostHdr(HostHdrMatch hostHdr) {
-    this.hostHdr = hostHdr;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Configure label match for api endpoint labels.
-   * Uses auth scope to match labels attached by the waap module.
+   * Api specification information captured at the time of processing.
+   * Populated for open api specification file objects only.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return label
+   * @return specInfo
    */
   @VsoMethod
-  public LabelMatch getLabel() {
-    return label;
+  public String getSpecInfo() {
+    return specInfo;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Configure label match for api endpoint labels.
-   * Uses auth scope to match labels attached by the waap module.
+   * Api specification information captured at the time of processing.
+   * Populated for open api specification file objects only.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param label set the label.
+   * @param specInfo set the specInfo.
    */
   @VsoMethod
-  public void setLabel(LabelMatch label) {
-    this.label = label;
+  public void setSpecInfo(String  specInfo) {
+    this.specInfo = specInfo;
   }
 
   /**
    * This is the getter method this will return the attribute value.
-   * Configure request paths.
-   * Field introduced in 18.2.5.
+   * State of the file object for the version specified.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return path
+   * @return state
    */
   @VsoMethod
-  public PathMatch getPath() {
-    return path;
+  public FileObjectState getState() {
+    return state;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Configure request paths.
-   * Field introduced in 18.2.5.
+   * State of the file object for the version specified.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param path set the path.
+   * @param state set the state.
    */
   @VsoMethod
-  public void setPath(PathMatch path) {
-    this.path = path;
+  public void setState(FileObjectState state) {
+    this.state = state;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * File object processing events for the version specified.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return taskEvents
+   */
+  @VsoMethod
+  public List<TaskEventMap> getTaskEvents() {
+    return taskEvents;
+  }
+
+  /**
+   * This is the setter method. this will set the taskEvents
+   * File object processing events for the version specified.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return taskEvents
+   */
+  @VsoMethod
+  public void setTaskEvents(List<TaskEventMap>  taskEvents) {
+    this.taskEvents = taskEvents;
+  }
+
+  /**
+   * This is the setter method this will set the taskEvents
+   * File object processing events for the version specified.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return taskEvents
+   */
+  @VsoMethod
+  public TaskEventHistory addTaskEventsItem(TaskEventMap taskEventsItem) {
+    if (this.taskEvents == null) {
+      this.taskEvents = new ArrayList<TaskEventMap>();
+    }
+    this.taskEvents.add(taskEventsItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Version of the file object.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return version
+   */
+  @VsoMethod
+  public String getVersion() {
+    return version;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Version of the file object.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param version set the version.
+   */
+  @VsoMethod
+  public void setVersion(String  version) {
+    this.version = version;
   }
 
 
@@ -162,21 +177,21 @@ public boolean equals(java.lang.Object o) {
   if (o == null || getClass() != o.getClass()) {
     return false;
   }
-  AuthenticationMatch objAuthenticationMatch = (AuthenticationMatch) o;
-  return   Objects.equals(this.clientIp, objAuthenticationMatch.clientIp)&&
-  Objects.equals(this.path, objAuthenticationMatch.path)&&
-  Objects.equals(this.hostHdr, objAuthenticationMatch.hostHdr)&&
-  Objects.equals(this.label, objAuthenticationMatch.label);
+  TaskEventHistory objTaskEventHistory = (TaskEventHistory) o;
+  return   Objects.equals(this.version, objTaskEventHistory.version)&&
+  Objects.equals(this.state, objTaskEventHistory.state)&&
+  Objects.equals(this.taskEvents, objTaskEventHistory.taskEvents)&&
+  Objects.equals(this.specInfo, objTaskEventHistory.specInfo);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
-  sb.append("class AuthenticationMatch {\n");
-      sb.append("    clientIp: ").append(toIndentedString(clientIp)).append("\n");
-        sb.append("    hostHdr: ").append(toIndentedString(hostHdr)).append("\n");
-        sb.append("    label: ").append(toIndentedString(label)).append("\n");
-        sb.append("    path: ").append(toIndentedString(path)).append("\n");
+  sb.append("class TaskEventHistory {\n");
+      sb.append("    specInfo: ").append(toIndentedString(specInfo)).append("\n");
+        sb.append("    state: ").append(toIndentedString(state)).append("\n");
+        sb.append("    taskEvents: ").append(toIndentedString(taskEvents)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
       sb.append("}");
   return sb.toString();
 }
