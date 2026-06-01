@@ -54,6 +54,10 @@ public class VirtualService extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String analyticsProfileRef;
 
+    @JsonProperty("api_policy_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String apiPolicyRef;
+
     @JsonProperty("application_insights_ref")
     @JsonInclude(Include.NON_NULL)
     private String applicationInsightsRef;
@@ -189,6 +193,10 @@ public class VirtualService extends AviRestResource {
     @JsonProperty("l4_policies")
     @JsonInclude(Include.NON_NULL)
     private List<L4Policies> l4Policies;
+
+    @JsonProperty("label_profile_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String labelProfileRef;
 
     @JsonProperty("ldap_vs_config")
     @JsonInclude(Include.NON_NULL)
@@ -558,6 +566,34 @@ public class VirtualService extends AviRestResource {
   @VsoMethod
   public void setAnalyticsProfileRef(String  analyticsProfileRef) {
     this.analyticsProfileRef = analyticsProfileRef;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Api policy configuration for the virtual service to apply api protection.
+   * It is a reference to an object of type apipolicy.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return apiPolicyRef
+   */
+  @VsoMethod
+  public String getApiPolicyRef() {
+    return apiPolicyRef;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Api policy configuration for the virtual service to apply api protection.
+   * It is a reference to an object of type apipolicy.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param apiPolicyRef set the apiPolicyRef.
+   */
+  @VsoMethod
+  public void setApiPolicyRef(String  apiPolicyRef) {
+    this.apiPolicyRef = apiPolicyRef;
   }
 
   /**
@@ -1554,6 +1590,34 @@ public class VirtualService extends AviRestResource {
     return this;
   }
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Label profile configuration for the virtual service to categorize api endpoints.
+   * It is a reference to an object of type labelprofile.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labelProfileRef
+   */
+  @VsoMethod
+  public String getLabelProfileRef() {
+    return labelProfileRef;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Label profile configuration for the virtual service to categorize api endpoints.
+   * It is a reference to an object of type labelprofile.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param labelProfileRef set the labelProfileRef.
+   */
+  @VsoMethod
+  public void setLabelProfileRef(String  labelProfileRef) {
+    this.labelProfileRef = labelProfileRef;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -3396,7 +3460,9 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.snatIp6Addresses, objVirtualService.snatIp6Addresses)&&
   Objects.equals(this.applicationInsightsRef, objVirtualService.applicationInsightsRef)&&
   Objects.equals(this.positiveSecurityRef, objVirtualService.positiveSecurityRef)&&
-  Objects.equals(this.sessionKeyForwarderRef, objVirtualService.sessionKeyForwarderRef);
+  Objects.equals(this.sessionKeyForwarderRef, objVirtualService.sessionKeyForwarderRef)&&
+  Objects.equals(this.labelProfileRef, objVirtualService.labelProfileRef)&&
+  Objects.equals(this.apiPolicyRef, objVirtualService.apiPolicyRef);
 }
 
 @Override
@@ -3408,6 +3474,7 @@ public String toString() {
         sb.append("    allowInvalidClientCert: ").append(toIndentedString(allowInvalidClientCert)).append("\n");
         sb.append("    analyticsPolicy: ").append(toIndentedString(analyticsPolicy)).append("\n");
         sb.append("    analyticsProfileRef: ").append(toIndentedString(analyticsProfileRef)).append("\n");
+        sb.append("    apiPolicyRef: ").append(toIndentedString(apiPolicyRef)).append("\n");
         sb.append("    applicationInsightsRef: ").append(toIndentedString(applicationInsightsRef)).append("\n");
         sb.append("    applicationProfileRef: ").append(toIndentedString(applicationProfileRef)).append("\n");
         sb.append("    azureAvailabilitySet: ").append(toIndentedString(azureAvailabilitySet)).append("\n");
@@ -3442,6 +3509,7 @@ public String toString() {
         sb.append("    ignPoolNetReach: ").append(toIndentedString(ignPoolNetReach)).append("\n");
         sb.append("    jwtConfig: ").append(toIndentedString(jwtConfig)).append("\n");
         sb.append("    l4Policies: ").append(toIndentedString(l4Policies)).append("\n");
+        sb.append("    labelProfileRef: ").append(toIndentedString(labelProfileRef)).append("\n");
         sb.append("    ldapVsConfig: ").append(toIndentedString(ldapVsConfig)).append("\n");
         sb.append("    limitDoser: ").append(toIndentedString(limitDoser)).append("\n");
         sb.append("    markers: ").append(toIndentedString(markers)).append("\n");

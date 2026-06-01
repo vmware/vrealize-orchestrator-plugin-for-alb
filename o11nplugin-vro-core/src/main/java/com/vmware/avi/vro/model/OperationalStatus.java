@@ -29,18 +29,6 @@ public class OperationalStatus extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private TimeStamp lastChangedTime;
 
-    @JsonProperty("num_vs_completed")
-    @JsonInclude(Include.NON_NULL)
-    private Integer numVsCompleted;
-
-    @JsonProperty("num_vs_failed")
-    @JsonInclude(Include.NON_NULL)
-    private Integer numVsFailed;
-
-    @JsonProperty("num_vs_total")
-    @JsonInclude(Include.NON_NULL)
-    private Integer numVsTotal;
-
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
     private List<String> reason;
@@ -79,72 +67,6 @@ public class OperationalStatus extends AviRestResource {
   @VsoMethod
   public void setLastChangedTime(TimeStamp lastChangedTime) {
     this.lastChangedTime = lastChangedTime;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return numVsCompleted
-   */
-  @VsoMethod
-  public Integer getNumVsCompleted() {
-    return numVsCompleted;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param numVsCompleted set the numVsCompleted.
-   */
-  @VsoMethod
-  public void setNumVsCompleted(Integer  numVsCompleted) {
-    this.numVsCompleted = numVsCompleted;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return numVsFailed
-   */
-  @VsoMethod
-  public Integer getNumVsFailed() {
-    return numVsFailed;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param numVsFailed set the numVsFailed.
-   */
-  @VsoMethod
-  public void setNumVsFailed(Integer  numVsFailed) {
-    this.numVsFailed = numVsFailed;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return numVsTotal
-   */
-  @VsoMethod
-  public Integer getNumVsTotal() {
-    return numVsTotal;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param numVsTotal set the numVsTotal.
-   */
-  @VsoMethod
-  public void setNumVsTotal(Integer  numVsTotal) {
-    this.numVsTotal = numVsTotal;
   }
 
   /**
@@ -272,10 +194,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.reason, objOperationalStatus.reason)&&
   Objects.equals(this.reasonCode, objOperationalStatus.reasonCode)&&
   Objects.equals(this.lastChangedTime, objOperationalStatus.lastChangedTime)&&
-  Objects.equals(this.reasonCodeString, objOperationalStatus.reasonCodeString)&&
-  Objects.equals(this.numVsCompleted, objOperationalStatus.numVsCompleted)&&
-  Objects.equals(this.numVsFailed, objOperationalStatus.numVsFailed)&&
-  Objects.equals(this.numVsTotal, objOperationalStatus.numVsTotal);
+  Objects.equals(this.reasonCodeString, objOperationalStatus.reasonCodeString);
 }
 
 @Override
@@ -283,9 +202,6 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class OperationalStatus {\n");
       sb.append("    lastChangedTime: ").append(toIndentedString(lastChangedTime)).append("\n");
-        sb.append("    numVsCompleted: ").append(toIndentedString(numVsCompleted)).append("\n");
-        sb.append("    numVsFailed: ").append(toIndentedString(numVsFailed)).append("\n");
-        sb.append("    numVsTotal: ").append(toIndentedString(numVsTotal)).append("\n");
         sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
         sb.append("    reasonCode: ").append(toIndentedString(reasonCode)).append("\n");
         sb.append("    reasonCodeString: ").append(toIndentedString(reasonCodeString)).append("\n");

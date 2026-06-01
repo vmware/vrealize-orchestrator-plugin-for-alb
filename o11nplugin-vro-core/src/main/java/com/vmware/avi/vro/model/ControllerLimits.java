@@ -28,6 +28,18 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ControllerLimits extends AviRestResource {
+    @JsonProperty("api_policy_num_paths")
+    @JsonInclude(Include.NON_NULL)
+    private Integer apiPolicyNumPaths;
+
+    @JsonProperty("api_policy_num_schemas")
+    @JsonInclude(Include.NON_NULL)
+    private Integer apiPolicyNumSchemas;
+
+    @JsonProperty("api_policy_num_vs")
+    @JsonInclude(Include.NON_NULL)
+    private Integer apiPolicyNumVs;
+
     @JsonProperty("bot_limits")
     @JsonInclude(Include.NON_NULL)
     private BOTLimits botLimits;
@@ -121,6 +133,84 @@ public class ControllerLimits extends AviRestResource {
     private Integer wafRuleMetricsEnabledVs;
 
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Maximum number of api paths per api policy.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return apiPolicyNumPaths
+   */
+  @VsoMethod
+  public Integer getApiPolicyNumPaths() {
+    return apiPolicyNumPaths;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum number of api paths per api policy.
+   * Field introduced in 32.1.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param apiPolicyNumPaths set the apiPolicyNumPaths.
+   */
+  @VsoMethod
+  public void setApiPolicyNumPaths(Integer  apiPolicyNumPaths) {
+    this.apiPolicyNumPaths = apiPolicyNumPaths;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Maximum number of api schema objects per api policy.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return apiPolicyNumSchemas
+   */
+  @VsoMethod
+  public Integer getApiPolicyNumSchemas() {
+    return apiPolicyNumSchemas;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum number of api schema objects per api policy.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param apiPolicyNumSchemas set the apiPolicyNumSchemas.
+   */
+  @VsoMethod
+  public void setApiPolicyNumSchemas(Integer  apiPolicyNumSchemas) {
+    this.apiPolicyNumSchemas = apiPolicyNumSchemas;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Maximum number of api policy enabled virtual services.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return apiPolicyNumVs
+   */
+  @VsoMethod
+  public Integer getApiPolicyNumVs() {
+    return apiPolicyNumVs;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum number of api policy enabled virtual services.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param apiPolicyNumVs set the apiPolicyNumVs.
+   */
+  @VsoMethod
+  public void setApiPolicyNumVs(Integer  apiPolicyNumVs) {
+    this.apiPolicyNumVs = apiPolicyNumVs;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -790,6 +880,9 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.botLimits, objControllerLimits.botLimits)&&
   Objects.equals(this.wafRuleMetricsEnabledVs, objControllerLimits.wafRuleMetricsEnabledVs)&&
   Objects.equals(this.numTenantBindings, objControllerLimits.numTenantBindings)&&
+  Objects.equals(this.apiPolicyNumPaths, objControllerLimits.apiPolicyNumPaths)&&
+  Objects.equals(this.apiPolicyNumVs, objControllerLimits.apiPolicyNumVs)&&
+  Objects.equals(this.apiPolicyNumSchemas, objControllerLimits.apiPolicyNumSchemas)&&
   Objects.equals(this.l7Limits, objControllerLimits.l7Limits)&&
   Objects.equals(this.controllerSizingLimits, objControllerLimits.controllerSizingLimits)&&
   Objects.equals(this.controllerCloudLimits, objControllerLimits.controllerCloudLimits);
@@ -799,7 +892,10 @@ public boolean equals(java.lang.Object o) {
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class ControllerLimits {\n");
-      sb.append("    botLimits: ").append(toIndentedString(botLimits)).append("\n");
+      sb.append("    apiPolicyNumPaths: ").append(toIndentedString(apiPolicyNumPaths)).append("\n");
+        sb.append("    apiPolicyNumSchemas: ").append(toIndentedString(apiPolicyNumSchemas)).append("\n");
+        sb.append("    apiPolicyNumVs: ").append(toIndentedString(apiPolicyNumVs)).append("\n");
+        sb.append("    botLimits: ").append(toIndentedString(botLimits)).append("\n");
         sb.append("    certificatesPerVirtualservice: ").append(toIndentedString(certificatesPerVirtualservice)).append("\n");
         sb.append("    controllerCloudLimits: ").append(toIndentedString(controllerCloudLimits)).append("\n");
         sb.append("    controllerSizingLimits: ").append(toIndentedString(controllerSizingLimits)).append("\n");

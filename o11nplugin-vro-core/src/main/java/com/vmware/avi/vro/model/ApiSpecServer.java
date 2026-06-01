@@ -12,88 +12,85 @@ import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
 
 /**
- * The IpAddrTypeConfig is a POJO class extends AviRestResource that used for creating
- * IpAddrTypeConfig.
+ * The ApiSpecServer is a POJO class extends AviRestResource that used for creating
+ * ApiSpecServer.
  *
  * @version 1.0
  * @since 
  *
  */
-@VsoObject(create = false, name = "IpAddrTypeConfig")
-@VsoFinder(name = Constants.FINDER_VRO_IPADDRTYPECONFIG)
+@VsoObject(create = false, name = "ApiSpecServer")
+@VsoFinder(name = Constants.FINDER_VRO_APISPECSERVER, idAccessor = "getObjectID()")
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class IpAddrTypeConfig extends AviRestResource {
-    @JsonProperty("ip_type")
+public class ApiSpecServer extends AviRestResource {
+    @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
-    private String ipType;
+    private String description;
 
-    @JsonProperty("periodicity")
+    @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
-    private Integer periodicity;
+    private String url = "url";
 
 
 
   /**
    * This is the getter method this will return the attribute value.
-   * Ip address type for which periodic ip advertisement (gratarp/na) is enabled.
-   * Supported values are vip_ip, snat_ip, floating_intf_ip, and primary_intf_ip.
-   * Enum options - NAT_IP, VIP_IP, SNAT_IP, FLOATING_INTF_IP, PRIMARY_INTF_IP.
+   * Description of the server.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return ipType
+   * @return description
    */
   @VsoMethod
-  public String getIpType() {
-    return ipType;
+  public String getDescription() {
+    return description;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Ip address type for which periodic ip advertisement (gratarp/na) is enabled.
-   * Supported values are vip_ip, snat_ip, floating_intf_ip, and primary_intf_ip.
-   * Enum options - NAT_IP, VIP_IP, SNAT_IP, FLOATING_INTF_IP, PRIMARY_INTF_IP.
+   * Description of the server.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param ipType set the ipType.
+   * @param description set the description.
    */
   @VsoMethod
-  public void setIpType(String  ipType) {
-    this.ipType = ipType;
+  public void setDescription(String  description) {
+    this.description = description;
   }
-
-  /**
+/**
    * This is the getter method this will return the attribute value.
-   * Periodicity override for this ip type in minutes.
-   * If not set, uses ip_advertisement_profile.default_periodicity.
-   * Allowed values are 1-30.
+   * Server url or relative path.
+   * May be an absolute url (e.g.
+   * 'https //api.example.com/v1', 'https //api.example.com 8443/v1') or a relative path (e.g.
+   * '/v1', '/').
+   * When populated from an openapi spec, server url template variables are resolved to concrete urls at import time before being stored here.
    * Field introduced in 32.2.1.
-   * Unit is min.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return periodicity
+   * @return url
    */
   @VsoMethod
-  public Integer getPeriodicity() {
-    return periodicity;
+  public String getUrl() {
+    return url;
   }
 
   /**
-   * This is the setter method to the attribute.
-   * Periodicity override for this ip type in minutes.
-   * If not set, uses ip_advertisement_profile.default_periodicity.
-   * Allowed values are 1-30.
+   * This is the setter method. this will set the url
+   * Server url or relative path.
+   * May be an absolute url (e.g.
+   * 'https //api.example.com/v1', 'https //api.example.com 8443/v1') or a relative path (e.g.
+   * '/v1', '/').
+   * When populated from an openapi spec, server url template variables are resolved to concrete urls at import time before being stored here.
    * Field introduced in 32.2.1.
-   * Unit is min.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param periodicity set the periodicity.
+   * @return url
    */
   @VsoMethod
-  public void setPeriodicity(Integer  periodicity) {
-    this.periodicity = periodicity;
+  public void setUrl(String  url) {
+    this.url = url;
   }
 
 
@@ -106,18 +103,16 @@ public boolean equals(java.lang.Object o) {
   if (o == null || getClass() != o.getClass()) {
     return false;
   }
-  IpAddrTypeConfig objIpAddrTypeConfig = (IpAddrTypeConfig) o;
-  return   Objects.equals(this.ipType, objIpAddrTypeConfig.ipType)&&
-  Objects.equals(this.periodicity, objIpAddrTypeConfig.periodicity);
+  ApiSpecServer objApiSpecServer = (ApiSpecServer) o;
+  return   Objects.equals(this.description, objApiSpecServer.description);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
-  sb.append("class IpAddrTypeConfig {\n");
-      sb.append("    ipType: ").append(toIndentedString(ipType)).append("\n");
-        sb.append("    periodicity: ").append(toIndentedString(periodicity)).append("\n");
-      sb.append("}");
+  sb.append("class ApiSpecServer {\n");
+      sb.append("    description: ").append(toIndentedString(description)).append("\n");
+          sb.append("}");
   return sb.toString();
 }
 

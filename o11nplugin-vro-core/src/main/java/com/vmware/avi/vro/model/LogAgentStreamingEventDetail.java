@@ -5,10 +5,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.vmware.avi.vro.model.IpAddrMatch;
-import com.vmware.avi.vro.model.HostHdrMatch;
-import com.vmware.avi.vro.model.LabelMatch;
-import com.vmware.avi.vro.model.PathMatch;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -16,140 +12,130 @@ import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
 
 /**
- * The AuthenticationMatch is a POJO class extends AviRestResource that used for creating
- * AuthenticationMatch.
+ * The LogAgentStreamingEventDetail is a POJO class extends AviRestResource that used for creating
+ * LogAgentStreamingEventDetail.
  *
  * @version 1.0
  * @since 
  *
  */
-@VsoObject(create = false, name = "AuthenticationMatch")
-@VsoFinder(name = Constants.FINDER_VRO_AUTHENTICATIONMATCH)
+@VsoObject(create = false, name = "LogAgentStreamingEventDetail")
+@VsoFinder(name = Constants.FINDER_VRO_LOGAGENTSTREAMINGEVENTDETAIL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class AuthenticationMatch extends AviRestResource {
-    @JsonProperty("client_ip")
+public class LogAgentStreamingEventDetail extends AviRestResource {
+    @JsonProperty("error_code")
     @JsonInclude(Include.NON_NULL)
-    private IpAddrMatch clientIp;
+    private Integer errorCode;
 
-    @JsonProperty("host_hdr")
+    @JsonProperty("error_reason")
     @JsonInclude(Include.NON_NULL)
-    private HostHdrMatch hostHdr;
+    private String errorReason;
 
-    @JsonProperty("label")
+    @JsonProperty("host")
     @JsonInclude(Include.NON_NULL)
-    private LabelMatch label;
+    private String host;
 
-    @JsonProperty("path")
+    @JsonProperty("port")
     @JsonInclude(Include.NON_NULL)
-    private PathMatch path;
+    private Integer port;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
-   * Configure client ip addresses.
-   * Field introduced in 18.2.5.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return clientIp
-   */
-  @VsoMethod
-  public IpAddrMatch getClientIp() {
-    return clientIp;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Configure client ip addresses.
-   * Field introduced in 18.2.5.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param clientIp set the clientIp.
-   */
-  @VsoMethod
-  public void setClientIp(IpAddrMatch clientIp) {
-    this.clientIp = clientIp;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Configure the host header.
-   * Field introduced in 18.2.5.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return hostHdr
-   */
-  @VsoMethod
-  public HostHdrMatch getHostHdr() {
-    return hostHdr;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Configure the host header.
-   * Field introduced in 18.2.5.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param hostHdr set the hostHdr.
-   */
-  @VsoMethod
-  public void setHostHdr(HostHdrMatch hostHdr) {
-    this.hostHdr = hostHdr;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Configure label match for api endpoint labels.
-   * Uses auth scope to match labels attached by the waap module.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return label
+   * @return errorCode
    */
   @VsoMethod
-  public LabelMatch getLabel() {
-    return label;
+  public Integer getErrorCode() {
+    return errorCode;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Configure label match for api endpoint labels.
-   * Uses auth scope to match labels attached by the waap module.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param label set the label.
+   * @param errorCode set the errorCode.
    */
   @VsoMethod
-  public void setLabel(LabelMatch label) {
-    this.label = label;
+  public void setErrorCode(Integer  errorCode) {
+    this.errorCode = errorCode;
   }
 
   /**
    * This is the getter method this will return the attribute value.
-   * Configure request paths.
-   * Field introduced in 18.2.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return path
+   * @return errorReason
    */
   @VsoMethod
-  public PathMatch getPath() {
-    return path;
+  public String getErrorReason() {
+    return errorReason;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Configure request paths.
-   * Field introduced in 18.2.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param path set the path.
+   * @param errorReason set the errorReason.
    */
   @VsoMethod
-  public void setPath(PathMatch path) {
-    this.path = path;
+  public void setErrorReason(String  errorReason) {
+    this.errorReason = errorReason;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return host
+   */
+  @VsoMethod
+  public String getHost() {
+    return host;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param host set the host.
+   */
+  @VsoMethod
+  public void setHost(String  host) {
+    this.host = host;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return port
+   */
+  @VsoMethod
+  public Integer getPort() {
+    return port;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param port set the port.
+   */
+  @VsoMethod
+  public void setPort(Integer  port) {
+    this.port = port;
   }
 
 
@@ -162,21 +148,21 @@ public boolean equals(java.lang.Object o) {
   if (o == null || getClass() != o.getClass()) {
     return false;
   }
-  AuthenticationMatch objAuthenticationMatch = (AuthenticationMatch) o;
-  return   Objects.equals(this.clientIp, objAuthenticationMatch.clientIp)&&
-  Objects.equals(this.path, objAuthenticationMatch.path)&&
-  Objects.equals(this.hostHdr, objAuthenticationMatch.hostHdr)&&
-  Objects.equals(this.label, objAuthenticationMatch.label);
+  LogAgentStreamingEventDetail objLogAgentStreamingEventDetail = (LogAgentStreamingEventDetail) o;
+  return   Objects.equals(this.host, objLogAgentStreamingEventDetail.host)&&
+  Objects.equals(this.port, objLogAgentStreamingEventDetail.port)&&
+  Objects.equals(this.errorCode, objLogAgentStreamingEventDetail.errorCode)&&
+  Objects.equals(this.errorReason, objLogAgentStreamingEventDetail.errorReason);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
-  sb.append("class AuthenticationMatch {\n");
-      sb.append("    clientIp: ").append(toIndentedString(clientIp)).append("\n");
-        sb.append("    hostHdr: ").append(toIndentedString(hostHdr)).append("\n");
-        sb.append("    label: ").append(toIndentedString(label)).append("\n");
-        sb.append("    path: ").append(toIndentedString(path)).append("\n");
+  sb.append("class LogAgentStreamingEventDetail {\n");
+      sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
+        sb.append("    errorReason: ").append(toIndentedString(errorReason)).append("\n");
+        sb.append("    host: ").append(toIndentedString(host)).append("\n");
+        sb.append("    port: ").append(toIndentedString(port)).append("\n");
       sb.append("}");
   return sb.toString();
 }

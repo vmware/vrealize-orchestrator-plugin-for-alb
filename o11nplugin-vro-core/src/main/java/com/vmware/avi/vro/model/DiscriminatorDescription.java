@@ -12,88 +12,99 @@ import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
 
 /**
- * The IpAddrTypeConfig is a POJO class extends AviRestResource that used for creating
- * IpAddrTypeConfig.
+ * The DiscriminatorDescription is a POJO class extends AviRestResource that used for creating
+ * DiscriminatorDescription.
  *
  * @version 1.0
  * @since 
  *
  */
-@VsoObject(create = false, name = "IpAddrTypeConfig")
-@VsoFinder(name = Constants.FINDER_VRO_IPADDRTYPECONFIG)
+@VsoObject(create = false, name = "DiscriminatorDescription")
+@VsoFinder(name = Constants.FINDER_VRO_DISCRIMINATORDESCRIPTION)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class IpAddrTypeConfig extends AviRestResource {
-    @JsonProperty("ip_type")
+public class DiscriminatorDescription extends AviRestResource {
+    @JsonProperty("mapping")
     @JsonInclude(Include.NON_NULL)
-    private String ipType;
+    private List<DiscriminatorMapping> mapping;
 
-    @JsonProperty("periodicity")
+    @JsonProperty("property_name")
     @JsonInclude(Include.NON_NULL)
-    private Integer periodicity;
+    private String propertyName;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
-   * Ip address type for which periodic ip advertisement (gratarp/na) is enabled.
-   * Supported values are vip_ip, snat_ip, floating_intf_ip, and primary_intf_ip.
-   * Enum options - NAT_IP, VIP_IP, SNAT_IP, FLOATING_INTF_IP, PRIMARY_INTF_IP.
+   * Mapping of discriminator values to their corresponding schema descriptions.
    * Field introduced in 32.2.1.
+   * Maximum of 32 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return ipType
+   * @return mapping
    */
   @VsoMethod
-  public String getIpType() {
-    return ipType;
+  public List<DiscriminatorMapping> getMapping() {
+    return mapping;
   }
 
   /**
-   * This is the setter method to the attribute.
-   * Ip address type for which periodic ip advertisement (gratarp/na) is enabled.
-   * Supported values are vip_ip, snat_ip, floating_intf_ip, and primary_intf_ip.
-   * Enum options - NAT_IP, VIP_IP, SNAT_IP, FLOATING_INTF_IP, PRIMARY_INTF_IP.
+   * This is the setter method. this will set the mapping
+   * Mapping of discriminator values to their corresponding schema descriptions.
    * Field introduced in 32.2.1.
+   * Maximum of 32 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param ipType set the ipType.
+   * @return mapping
    */
   @VsoMethod
-  public void setIpType(String  ipType) {
-    this.ipType = ipType;
+  public void setMapping(List<DiscriminatorMapping>  mapping) {
+    this.mapping = mapping;
   }
+
+  /**
+   * This is the setter method this will set the mapping
+   * Mapping of discriminator values to their corresponding schema descriptions.
+   * Field introduced in 32.2.1.
+   * Maximum of 32 items allowed.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return mapping
+   */
+  @VsoMethod
+  public DiscriminatorDescription addMappingItem(DiscriminatorMapping mappingItem) {
+    if (this.mapping == null) {
+      this.mapping = new ArrayList<DiscriminatorMapping>();
+    }
+    this.mapping.add(mappingItem);
+    return this;
+  }
+
 
   /**
    * This is the getter method this will return the attribute value.
-   * Periodicity override for this ip type in minutes.
-   * If not set, uses ip_advertisement_profile.default_periodicity.
-   * Allowed values are 1-30.
+   * Property name of the discriminator.
    * Field introduced in 32.2.1.
-   * Unit is min.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return periodicity
+   * @return propertyName
    */
   @VsoMethod
-  public Integer getPeriodicity() {
-    return periodicity;
+  public String getPropertyName() {
+    return propertyName;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Periodicity override for this ip type in minutes.
-   * If not set, uses ip_advertisement_profile.default_periodicity.
-   * Allowed values are 1-30.
+   * Property name of the discriminator.
    * Field introduced in 32.2.1.
-   * Unit is min.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param periodicity set the periodicity.
+   * @param propertyName set the propertyName.
    */
   @VsoMethod
-  public void setPeriodicity(Integer  periodicity) {
-    this.periodicity = periodicity;
+  public void setPropertyName(String  propertyName) {
+    this.propertyName = propertyName;
   }
 
 
@@ -106,17 +117,17 @@ public boolean equals(java.lang.Object o) {
   if (o == null || getClass() != o.getClass()) {
     return false;
   }
-  IpAddrTypeConfig objIpAddrTypeConfig = (IpAddrTypeConfig) o;
-  return   Objects.equals(this.ipType, objIpAddrTypeConfig.ipType)&&
-  Objects.equals(this.periodicity, objIpAddrTypeConfig.periodicity);
+  DiscriminatorDescription objDiscriminatorDescription = (DiscriminatorDescription) o;
+  return   Objects.equals(this.propertyName, objDiscriminatorDescription.propertyName)&&
+  Objects.equals(this.mapping, objDiscriminatorDescription.mapping);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
-  sb.append("class IpAddrTypeConfig {\n");
-      sb.append("    ipType: ").append(toIndentedString(ipType)).append("\n");
-        sb.append("    periodicity: ").append(toIndentedString(periodicity)).append("\n");
+  sb.append("class DiscriminatorDescription {\n");
+      sb.append("    mapping: ").append(toIndentedString(mapping)).append("\n");
+        sb.append("    propertyName: ").append(toIndentedString(propertyName)).append("\n");
       sb.append("}");
   return sb.toString();
 }

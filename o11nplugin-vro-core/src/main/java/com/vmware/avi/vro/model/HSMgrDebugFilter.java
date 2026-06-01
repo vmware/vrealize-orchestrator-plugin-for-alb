@@ -48,6 +48,42 @@ public class HSMgrDebugFilter extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean skipHsDbWrites;
 
+    @JsonProperty("vs_security_metrics_batch_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vsSecurityMetricsBatchSize;
+
+    @JsonProperty("waap_app_comp_threshold")
+    @JsonInclude(Include.NON_NULL)
+    private Float waapAppCompThreshold;
+
+    @JsonProperty("waap_app_comp_weight")
+    @JsonInclude(Include.NON_NULL)
+    private Float waapAppCompWeight;
+
+    @JsonProperty("waap_config_weight")
+    @JsonInclude(Include.NON_NULL)
+    private Float waapConfigWeight;
+
+    @JsonProperty("waap_orphan_api_weight")
+    @JsonInclude(Include.NON_NULL)
+    private Float waapOrphanApiWeight;
+
+    @JsonProperty("waap_shadow_api_weight")
+    @JsonInclude(Include.NON_NULL)
+    private Float waapShadowApiWeight;
+
+    @JsonProperty("waap_violation_ratio_threshold")
+    @JsonInclude(Include.NON_NULL)
+    private Float waapViolationRatioThreshold;
+
+    @JsonProperty("waap_violation_ratio_weight")
+    @JsonInclude(Include.NON_NULL)
+    private Float waapViolationRatioWeight;
+
+    @JsonProperty("waap_zombie_api_weight")
+    @JsonInclude(Include.NON_NULL)
+    private Float waapZombieApiWeight;
+
 
 
   /**
@@ -186,6 +222,272 @@ public class HSMgrDebugFilter extends AviRestResource {
     this.skipHsDbWrites = skipHsDbWrites;
   }
 
+  /**
+   * This is the getter method this will return the attribute value.
+   * Batch size for vs security metrics query.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return vsSecurityMetricsBatchSize
+   */
+  @VsoMethod
+  public Integer getVsSecurityMetricsBatchSize() {
+    return vsSecurityMetricsBatchSize;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Batch size for vs security metrics query.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param vsSecurityMetricsBatchSize set the vsSecurityMetricsBatchSize.
+   */
+  @VsoMethod
+  public void setVsSecurityMetricsBatchSize(Integer  vsSecurityMetricsBatchSize) {
+    this.vsSecurityMetricsBatchSize = vsSecurityMetricsBatchSize;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Sigmoid midpoint for weighted ungoverned ratio.
+   * Allowed values are 0.01-1.0.
+   * Field introduced in 32.2.1.
+   * Unit is ratio.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return waapAppCompThreshold
+   */
+  @VsoMethod
+  public Float getWaapAppCompThreshold() {
+    return waapAppCompThreshold;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Sigmoid midpoint for weighted ungoverned ratio.
+   * Allowed values are 0.01-1.0.
+   * Field introduced in 32.2.1.
+   * Unit is ratio.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param waapAppCompThreshold set the waapAppCompThreshold.
+   */
+  @VsoMethod
+  public void setWaapAppCompThreshold(Float  waapAppCompThreshold) {
+    this.waapAppCompThreshold = waapAppCompThreshold;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Relative weight for app composition sub-score.
+   * Allowed values are 0-10.0.
+   * Field introduced in 32.2.1.
+   * Unit is ratio.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return waapAppCompWeight
+   */
+  @VsoMethod
+  public Float getWaapAppCompWeight() {
+    return waapAppCompWeight;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Relative weight for app composition sub-score.
+   * Allowed values are 0-10.0.
+   * Field introduced in 32.2.1.
+   * Unit is ratio.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param waapAppCompWeight set the waapAppCompWeight.
+   */
+  @VsoMethod
+  public void setWaapAppCompWeight(Float  waapAppCompWeight) {
+    this.waapAppCompWeight = waapAppCompWeight;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Relative weight for waap config sub-score.
+   * Allowed values are 0-10.0.
+   * Field introduced in 32.2.1.
+   * Unit is ratio.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return waapConfigWeight
+   */
+  @VsoMethod
+  public Float getWaapConfigWeight() {
+    return waapConfigWeight;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Relative weight for waap config sub-score.
+   * Allowed values are 0-10.0.
+   * Field introduced in 32.2.1.
+   * Unit is ratio.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param waapConfigWeight set the waapConfigWeight.
+   */
+  @VsoMethod
+  public void setWaapConfigWeight(Float  waapConfigWeight) {
+    this.waapConfigWeight = waapConfigWeight;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Relative risk weight for orphan api traffic in app composition.
+   * Allowed values are 0-5.0.
+   * Field introduced in 32.2.1.
+   * Unit is ratio.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return waapOrphanApiWeight
+   */
+  @VsoMethod
+  public Float getWaapOrphanApiWeight() {
+    return waapOrphanApiWeight;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Relative risk weight for orphan api traffic in app composition.
+   * Allowed values are 0-5.0.
+   * Field introduced in 32.2.1.
+   * Unit is ratio.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param waapOrphanApiWeight set the waapOrphanApiWeight.
+   */
+  @VsoMethod
+  public void setWaapOrphanApiWeight(Float  waapOrphanApiWeight) {
+    this.waapOrphanApiWeight = waapOrphanApiWeight;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Relative risk weight for shadow api traffic in app composition.
+   * Allowed values are 0-5.0.
+   * Field introduced in 32.2.1.
+   * Unit is ratio.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return waapShadowApiWeight
+   */
+  @VsoMethod
+  public Float getWaapShadowApiWeight() {
+    return waapShadowApiWeight;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Relative risk weight for shadow api traffic in app composition.
+   * Allowed values are 0-5.0.
+   * Field introduced in 32.2.1.
+   * Unit is ratio.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param waapShadowApiWeight set the waapShadowApiWeight.
+   */
+  @VsoMethod
+  public void setWaapShadowApiWeight(Float  waapShadowApiWeight) {
+    this.waapShadowApiWeight = waapShadowApiWeight;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Sigmoid midpoint for waap violation ratio (violation_count/total_hits at which sub-score is ~50).
+   * Allowed values are 0.001-1.0.
+   * Field introduced in 32.2.1.
+   * Unit is ratio.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return waapViolationRatioThreshold
+   */
+  @VsoMethod
+  public Float getWaapViolationRatioThreshold() {
+    return waapViolationRatioThreshold;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Sigmoid midpoint for waap violation ratio (violation_count/total_hits at which sub-score is ~50).
+   * Allowed values are 0.001-1.0.
+   * Field introduced in 32.2.1.
+   * Unit is ratio.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param waapViolationRatioThreshold set the waapViolationRatioThreshold.
+   */
+  @VsoMethod
+  public void setWaapViolationRatioThreshold(Float  waapViolationRatioThreshold) {
+    this.waapViolationRatioThreshold = waapViolationRatioThreshold;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Relative weight for violation ratio in combined waap penalty.
+   * Allowed values are 0-10.0.
+   * Field introduced in 32.2.1.
+   * Unit is ratio.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return waapViolationRatioWeight
+   */
+  @VsoMethod
+  public Float getWaapViolationRatioWeight() {
+    return waapViolationRatioWeight;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Relative weight for violation ratio in combined waap penalty.
+   * Allowed values are 0-10.0.
+   * Field introduced in 32.2.1.
+   * Unit is ratio.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param waapViolationRatioWeight set the waapViolationRatioWeight.
+   */
+  @VsoMethod
+  public void setWaapViolationRatioWeight(Float  waapViolationRatioWeight) {
+    this.waapViolationRatioWeight = waapViolationRatioWeight;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Relative risk weight for zombie api traffic in app composition.
+   * Allowed values are 0-5.0.
+   * Field introduced in 32.2.1.
+   * Unit is ratio.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return waapZombieApiWeight
+   */
+  @VsoMethod
+  public Float getWaapZombieApiWeight() {
+    return waapZombieApiWeight;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Relative risk weight for zombie api traffic in app composition.
+   * Allowed values are 0-5.0.
+   * Field introduced in 32.2.1.
+   * Unit is ratio.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param waapZombieApiWeight set the waapZombieApiWeight.
+   */
+  @VsoMethod
+  public void setWaapZombieApiWeight(Float  waapZombieApiWeight) {
+    this.waapZombieApiWeight = waapZombieApiWeight;
+  }
+
 
 
 @Override
@@ -202,7 +504,16 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.pool, objHSMgrDebugFilter.pool)&&
   Objects.equals(this.server, objHSMgrDebugFilter.server)&&
   Objects.equals(this.period, objHSMgrDebugFilter.period)&&
-  Objects.equals(this.skipHsDbWrites, objHSMgrDebugFilter.skipHsDbWrites);
+  Objects.equals(this.skipHsDbWrites, objHSMgrDebugFilter.skipHsDbWrites)&&
+  Objects.equals(this.waapViolationRatioThreshold, objHSMgrDebugFilter.waapViolationRatioThreshold)&&
+  Objects.equals(this.waapShadowApiWeight, objHSMgrDebugFilter.waapShadowApiWeight)&&
+  Objects.equals(this.waapOrphanApiWeight, objHSMgrDebugFilter.waapOrphanApiWeight)&&
+  Objects.equals(this.waapZombieApiWeight, objHSMgrDebugFilter.waapZombieApiWeight)&&
+  Objects.equals(this.waapAppCompThreshold, objHSMgrDebugFilter.waapAppCompThreshold)&&
+  Objects.equals(this.waapViolationRatioWeight, objHSMgrDebugFilter.waapViolationRatioWeight)&&
+  Objects.equals(this.waapAppCompWeight, objHSMgrDebugFilter.waapAppCompWeight)&&
+  Objects.equals(this.waapConfigWeight, objHSMgrDebugFilter.waapConfigWeight)&&
+  Objects.equals(this.vsSecurityMetricsBatchSize, objHSMgrDebugFilter.vsSecurityMetricsBatchSize);
 }
 
 @Override
@@ -215,6 +526,15 @@ public String toString() {
         sb.append("    pool: ").append(toIndentedString(pool)).append("\n");
         sb.append("    server: ").append(toIndentedString(server)).append("\n");
         sb.append("    skipHsDbWrites: ").append(toIndentedString(skipHsDbWrites)).append("\n");
+        sb.append("    vsSecurityMetricsBatchSize: ").append(toIndentedString(vsSecurityMetricsBatchSize)).append("\n");
+        sb.append("    waapAppCompThreshold: ").append(toIndentedString(waapAppCompThreshold)).append("\n");
+        sb.append("    waapAppCompWeight: ").append(toIndentedString(waapAppCompWeight)).append("\n");
+        sb.append("    waapConfigWeight: ").append(toIndentedString(waapConfigWeight)).append("\n");
+        sb.append("    waapOrphanApiWeight: ").append(toIndentedString(waapOrphanApiWeight)).append("\n");
+        sb.append("    waapShadowApiWeight: ").append(toIndentedString(waapShadowApiWeight)).append("\n");
+        sb.append("    waapViolationRatioThreshold: ").append(toIndentedString(waapViolationRatioThreshold)).append("\n");
+        sb.append("    waapViolationRatioWeight: ").append(toIndentedString(waapViolationRatioWeight)).append("\n");
+        sb.append("    waapZombieApiWeight: ").append(toIndentedString(waapZombieApiWeight)).append("\n");
       sb.append("}");
   return sb.toString();
 }

@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.JWTMatch;
 import com.vmware.avi.vro.model.HostHdrMatch;
+import com.vmware.avi.vro.model.LabelMatch;
 import com.vmware.avi.vro.model.MethodMatch;
 import com.vmware.avi.vro.model.PathMatch;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
@@ -39,6 +40,10 @@ public class AuthorizationMatch extends AviRestResource {
     @JsonProperty("host_hdr")
     @JsonInclude(Include.NON_NULL)
     private HostHdrMatch hostHdr;
+
+    @JsonProperty("label")
+    @JsonInclude(Include.NON_NULL)
+    private LabelMatch label;
 
     @JsonProperty("method")
     @JsonInclude(Include.NON_NULL)
@@ -148,6 +153,34 @@ public class AuthorizationMatch extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Configure label match for api endpoint labels.
+   * Uses auth scope to match labels attached by the waap module.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return label
+   */
+  @VsoMethod
+  public LabelMatch getLabel() {
+    return label;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Configure label match for api endpoint labels.
+   * Uses auth scope to match labels attached by the waap module.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param label set the label.
+   */
+  @VsoMethod
+  public void setLabel(LabelMatch label) {
+    this.label = label;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Http methods to be matched.
    * Field introduced in 18.2.5.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -213,7 +246,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.path, objAuthorizationMatch.path)&&
   Objects.equals(this.hostHdr, objAuthorizationMatch.hostHdr)&&
   Objects.equals(this.method, objAuthorizationMatch.method)&&
-  Objects.equals(this.accessToken, objAuthorizationMatch.accessToken);
+  Objects.equals(this.accessToken, objAuthorizationMatch.accessToken)&&
+  Objects.equals(this.label, objAuthorizationMatch.label);
 }
 
 @Override
@@ -223,6 +257,7 @@ public String toString() {
       sb.append("    accessToken: ").append(toIndentedString(accessToken)).append("\n");
         sb.append("    attrMatches: ").append(toIndentedString(attrMatches)).append("\n");
         sb.append("    hostHdr: ").append(toIndentedString(hostHdr)).append("\n");
+        sb.append("    label: ").append(toIndentedString(label)).append("\n");
         sb.append("    method: ").append(toIndentedString(method)).append("\n");
         sb.append("    path: ").append(toIndentedString(path)).append("\n");
       sb.append("}");
