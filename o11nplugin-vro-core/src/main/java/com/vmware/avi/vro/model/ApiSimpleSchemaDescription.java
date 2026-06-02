@@ -58,7 +58,7 @@ public class ApiSimpleSchemaDescription extends AviRestResource {
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type = "SCHEMA_TYPE_UNDEFINED";
+    private String type;
 
 
 
@@ -312,7 +312,7 @@ public class ApiSimpleSchemaDescription extends AviRestResource {
    * SCHEMA_TYPE_ARRAY, SCHEMA_TYPE_OBJECT, SCHEMA_TYPE_REFERENCE, SCHEMA_TYPE_ONE_OF, SCHEMA_TYPE_ALL_OF, SCHEMA_TYPE_ANY_OF.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as "SCHEMA_TYPE_UNDEFINED".
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
   @VsoMethod
@@ -327,7 +327,7 @@ public class ApiSimpleSchemaDescription extends AviRestResource {
    * SCHEMA_TYPE_ARRAY, SCHEMA_TYPE_OBJECT, SCHEMA_TYPE_REFERENCE, SCHEMA_TYPE_ONE_OF, SCHEMA_TYPE_ALL_OF, SCHEMA_TYPE_ANY_OF.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as "SCHEMA_TYPE_UNDEFINED".
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */
   @VsoMethod
