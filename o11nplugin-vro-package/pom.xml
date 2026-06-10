@@ -9,7 +9,7 @@
     <parent>
         <artifactId>vro</artifactId>
         <groupId>com.vmware.avi</groupId>
-        <version>32.1.1.RELEASE</version>
+        <version>32.1.1-Post1</version>
     </parent>
 
     <properties>
