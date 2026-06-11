@@ -6,7 +6,7 @@
 	<parent>
 		<artifactId>vro</artifactId>
 		<groupId>com.vmware.avi</groupId>
-		<version>32.1.1-Post1</version>
+		<version>32.1.1</version>
 	</parent>
 
 	<modelVersion>4.0.0</modelVersion>
@@ -14,16 +14,11 @@
 	<packaging>jar</packaging>
 
 	<dependencies>
-		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpclient</artifactId>
-			<version>4.5.13</version>
-		</dependency>
-
+	
 		<dependency>
 			<groupId>com.vmware.avi.sdk</groupId>
 			<artifactId>avisdk</artifactId>
-			<version>${project.parent.version}</version>
+			<version>32.1.1.1</version>
 		</dependency>
 
 		<dependency>
