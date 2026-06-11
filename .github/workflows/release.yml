@@ -63,6 +63,7 @@ jobs:
       - name: Build VRO Plugin
         run: |
           echo "Build VRO Version ${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}"
+          export MAVEN_OPTS="--add-exports=java.base/sun.security.x509=ALL-UNNAMED"
           mvn versions:set -DnewVersion=${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}
           mvn clean install -Dmaven.wagon.http.ssl.insecure:true -Dmaven.wagon.http.ssl.allowall:true -Dbuild.number=50 -DskipTests
           ls o11nplugin-vro/target/
