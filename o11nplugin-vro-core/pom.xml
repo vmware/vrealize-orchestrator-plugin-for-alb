@@ -6,7 +6,7 @@
 	<parent>
 		<artifactId>vro</artifactId>
 		<groupId>com.vmware.avi</groupId>
-		<version>30.2.7-POST1</version>
+		<version>30.2.7</version>
 	</parent>
 
 	<modelVersion>4.0.0</modelVersion>
@@ -18,7 +18,7 @@
 		<dependency>
 			<groupId>com.vmware.avi.sdk</groupId>
 			<artifactId>avisdk</artifactId>
-			<version>${project.parent.version}</version>
+			<version>30.2.7.1</version>
 		</dependency>
 
 		<dependency>
