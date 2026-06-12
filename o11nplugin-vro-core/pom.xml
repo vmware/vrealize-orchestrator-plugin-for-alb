@@ -13,19 +13,13 @@
 	<artifactId>o11nplugin-vro-core</artifactId>
 	<packaging>jar</packaging>
 
-	<dependencies>
-	
+	<dependencies>	
+
 		<dependency>
 			<groupId>com.vmware.avi.sdk</groupId>
 			<artifactId>avisdk</artifactId>
-			<version>32.1.1.1</version>
-		</dependency>
-
-		<!-- <dependency>
-			<groupId>com.vmware.avi.sdk</groupId>
-			<artifactId>avisdk</artifactId>
 			<version>${project.parent.version}</version>
-		</dependency> -->
+		</dependency>
 
 		<dependency>
 			<groupId>com.vmware.o11n</groupId>
