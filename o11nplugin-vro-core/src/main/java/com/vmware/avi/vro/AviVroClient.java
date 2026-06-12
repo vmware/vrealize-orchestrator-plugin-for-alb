@@ -1,26 +1,7 @@
 package com.vmware.avi.vro;
 
-import java.io.IOException;
-import java.security.NoSuchAlgorithmException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Queue;
-import java.util.Set;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
-
+import ch.dunes.vso.sdk.IServiceRegistry;
+import ch.dunes.vso.sdk.ssl.ISslService;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -30,18 +11,37 @@ import com.vmware.avi.sdk.AviCredentials;
 import com.vmware.avi.sdk.AviRestUtils;
 import com.vmware.avi.vro.model.AviRestResource;
 import com.vmware.o11n.plugin.sdk.annotation.VsoConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
-import ch.dunes.vso.sdk.IServiceRegistry;
-import ch.dunes.vso.sdk.ssl.ISslService;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestClient;
+
 import javax.net.ssl.SSLContext;
+import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Queue;
+import java.util.Set;
 
 /***
  * This class acts as a service in Plugin. It performs the actions from the
  * workflow and perform rollback if needed.
- * 
+ *
  * @author tushar
  *
  */
@@ -50,28 +50,21 @@ import javax.net.ssl.SSLContext;
 @Service
 public class AviVroClient {
 	private static final Logger logger = LoggerFactory.getLogger(AviVroClient.class);
-
-	public String getObjectID() {
-		return cred.getController() + "-" + cred.getTenant();
-	}
-
+	private final Map<String, Queue<AviObjectMetadata>> workflowDataMap = new HashMap<>();
+	private final ObjectMapper mapper = new ObjectMapper();
 	@Autowired
 	private IServiceRegistry serviceRegistry;
+	private AviCredentials cred = null;
+	private Queue<AviObjectMetadata> workflowDataQueue = new LinkedList<>();
+	private AviApi AVI_API = null;
+	private RestClient restClient = null;
 
 	@VsoConstructor
 	public AviVroClient() {
 	}
 
-	private AviCredentials cred = null;
-	private Map<String, Queue<AviObjectMetadata>> workflowDataMap = new HashMap<>();
-	private Queue<AviObjectMetadata> workflowDataQueue = new LinkedList<>();
-	private AviApi AVI_API = null;
-	private ObjectMapper mapper = new ObjectMapper();
-	private RestTemplate restTemplate = null;
-
-	public enum OPERATION {
-
-		ADD, UPDATE, DELETE;
+	public String getObjectID() {
+		return cred.getController() + "-" + cred.getTenant();
 	}
 
 	public AviCredentials getCred() {
@@ -84,7 +77,7 @@ public class AviVroClient {
 
 	/**
 	 * This method will instantiate the AviApi if the current instance is null
-	 * 
+	 *
 	 * @return instance of AviApi
 	 */
 	public AviApi getSession() {
@@ -102,8 +95,8 @@ public class AviVroClient {
 		return (ISslService) serviceRegistry.getService(IServiceRegistry.SSL_SERVICE);
 	}
 
-	public RestTemplate getRestTemplate() {
-		if (restTemplate == null) {
+	public RestClient getRestClient() {
+		if (restClient == null) {
 			SSLContext context = null;
 			try {
 				context = getSslService().newSslContext("TLS");
@@ -111,19 +104,19 @@ public class AviVroClient {
 				e.printStackTrace();
 			}
 			synchronized (AviRestUtils.class) {
-				if (restTemplate == null) {
+				if (restClient == null) {
 					cred.setSslContext(context);
-					restTemplate = AviRestUtils.getRestTemplate(cred);
+					restClient = AviRestUtils.getRestClient(cred);
 				}
 			}
 		}
-		return restTemplate;
+		return restClient;
 	}
 
 	/***
 	 * his method add the data into the queue with add operation and if the data is
 	 * already exist it add operation ad update
-	 * 
+	 *
 	 * @param objectData contains the actual data which is used of creating object
 	 *                   on the controller
 	 * @param workflowId id of the Workflow Run
@@ -162,7 +155,7 @@ public class AviVroClient {
 	/***
 	 * This method add the data into the queue with add operation and if the data is
 	 * already exist it add operation ad update
-	 * 
+	 *
 	 * @param objectTypeis the type of object.
 	 * @param objectData   contains the actual data which is used of creating object
 	 *                     on the controller
@@ -176,7 +169,7 @@ public class AviVroClient {
 	/**
 	 * This method add the data into the queue with add operation and if the data is
 	 * already exist it add operation ad update
-	 * 
+	 *
 	 * @param objectType is the type of object.a
 	 * @param objectData contains the actual data which is used of creating object
 	 * @param tenant     name of Tenant. on the controller
@@ -190,7 +183,7 @@ public class AviVroClient {
 	/**
 	 * This method add the data into the queue with add operation and if the data is
 	 * already exist it add operation ad update
-	 * 
+	 *
 	 * @param objectType is the type of object.a
 	 * @param objectData contains the actual data which is used of creating object
 	 * @param tenant     name of Tenant. on the controller
@@ -222,7 +215,7 @@ public class AviVroClient {
 
 	/**
 	 * this method add the data into the queue with delete operation.
-	 * 
+	 *
 	 * @param objectType is the type of object.
 	 * @param objectData contains the actual data which is used of creating object
 	 *                   on the controller
@@ -235,7 +228,7 @@ public class AviVroClient {
 
 	/**
 	 * this method add the data into the queue with delete operation.
-	 * 
+	 *
 	 * @param objectType is the type of object.
 	 * @param objectData contains the actual data which is used of creating object
 	 *                   on the controller
@@ -274,10 +267,10 @@ public class AviVroClient {
 
 	/**
 	 * This method add the data into the queue with delete operation.
-	 * 
+	 *
 	 * @param objectData contains the actual data which is used of creating object
 	 *                   on the controller
-	 * @param tenant  Name of the tenant
+	 * @param tenant     Name of the tenant
 	 * @throws JsonProcessingException
 	 * @throws AviApiException
 	 */
@@ -288,7 +281,7 @@ public class AviVroClient {
 
 	/***
 	 * this method add the data into the queue with delete operation
-	 * 
+	 *
 	 * @param objectData contains the actual data which is used of creating object
 	 *                   on the controller
 	 * @param tenant     name of Tenant.
@@ -305,7 +298,7 @@ public class AviVroClient {
 			String jsonStr = mapper.writeValueAsString(objectData);
 			JSONObject jsonObj = new JSONObject(jsonStr);
 			if ((jsonObj != null) && ((jsonObj.has("uuid")) || (jsonObj.has("name")))) {
-				String uuid = jsonObj.getString("uuid").toString();
+				String uuid = jsonObj.getString("uuid");
 				AviObjectMetadata aviObjectMetadata = new AviObjectMetadata(objectType, jsonObj,
 						OPERATION.DELETE.toString(), tenant);
 				logger.info("Adding " + objectType + " with uuid " + uuid + "into queue :" + workflowDataQueue
@@ -332,7 +325,7 @@ public class AviVroClient {
 
 	/***
 	 * This method add the data into the queue with delete operation
-	 * 
+	 *
 	 * @param objectType type of the Object.
 	 * @param name       name of the object.
 	 * @param tenant     name of Tenant.
@@ -344,7 +337,7 @@ public class AviVroClient {
 		if ((null != objectType) && (!objectType.isEmpty())) {
 			HashMap<String, String> userHeader = this.getTenantHeader(tenant);
 			JSONObject jsonObject = this.getObjectDataByName(objectType, name, userHeader);
-			String uuid = jsonObject.getString("uuid").toString();
+			String uuid = jsonObject.getString("uuid");
 			AviObjectMetadata aviObjectMetadata = new AviObjectMetadata(objectType, jsonObject,
 					OPERATION.DELETE.toString(), tenant);
 			logger.info("Adding " + objectType + " with uuid " + uuid + "into queue :" + workflowDataQueue
@@ -366,7 +359,7 @@ public class AviVroClient {
 
 	/***
 	 * This method add the data into the queue with delete operation
-	 * 
+	 *
 	 * @param objectType type of the Object.
 	 * @param uuid       uuid of the object.
 	 * @param tenant     name of Tenant on the controller
@@ -379,7 +372,7 @@ public class AviVroClient {
 
 	/***
 	 * This method add the data into the queue with delete operation
-	 * 
+	 *
 	 * @param objectType type of the Object.
 	 * @param uuid       uuid of the object.
 	 * @param workflowId id of the workflow Run
@@ -411,11 +404,11 @@ public class AviVroClient {
 	}
 
 	/**
-	 * 
+	 *
 	 * This method upload the file into the controller.
-	 * 
-	 * @param uri           is the URL for file upload e.g fileservice or image
-	 * @param filePath      is the file path which needs to be uploaded from local
+	 *
+	 * @param uri      is the URL for file upload e.g fileservice or image
+	 * @param filePath is the file path which needs to be uploaded from local
 	 * @throws Exception
 	 */
 	@VsoMethod
@@ -427,12 +420,12 @@ public class AviVroClient {
 		if (uri != null && filePath != null) {
 			session.fileUpload(uri, filePath);
 		}
-	}	
+	}
 
 	/***
-	 * 
+	 *
 	 * This method download the file from the controller.
-	 * 
+	 *
 	 * @param path          is the the path from which file gets download.
 	 * @param localFilePath is a path where file needs to be download.
 	 * @param params        A map which can contains the additional values.
@@ -457,7 +450,7 @@ public class AviVroClient {
 	/****
 	 * This method will handle all HTTP methods. if its POST it will call the POST,
 	 * if its PUT it will call the PUT...and so on
-	 * 
+	 *
 	 * @param AviRunTimeInfo AviRunTimeInfo object which contains url, http_method ,
 	 *                       request body, request response and status code
 	 * @return AviRunTimeInfo
@@ -465,7 +458,7 @@ public class AviVroClient {
 	 */
 	@VsoMethod
 	public AviRunTimeInfo callAviAPI(AviRunTimeInfo aviObject) throws Exception {
-		RestTemplate restTemplate = getRestTemplate();
+		RestClient restClient = getRestClient();
 		if (aviObject != null) {
 			String url = aviObject.getUrl();
 			String httpMethod = aviObject.getHttpMethod();
@@ -476,42 +469,70 @@ public class AviVroClient {
 				requestEntity = new HttpEntity<String>(aviObject.getRequestBody(), null);
 			}
 			logger.info("Executing callAviAPI...");
+			final var body = Optional.ofNullable(requestEntity)
+					.map(HttpEntity::getBody)
+					.orElse("");
+			final HttpHeaders localHeaders = (requestEntity != null) ? requestEntity.getHeaders() : null;
 			switch (httpMethod) {
-			case "GET":
-				logger.debug("Executing GET Method");
-				aviResponseEntity = restTemplate.getForEntity(url, String.class, null, null);
-				this.updateHttpResponse(aviObject, aviResponseEntity);
-				logger.info("GET Response : " + aviResponseEntity);
-				break;
-			case "POST":
-				logger.debug("Executing POST Method");
-				aviResponseEntity = restTemplate.exchange(url, HttpMethod.POST, requestEntity, String.class, null,
-						null);
-				this.updateHttpResponse(aviObject, aviResponseEntity);
-				logger.info("POST Response : " + aviResponseEntity);
-				break;
-			case "PUT":
-				logger.debug("Executing PUT Method");
-				aviResponseEntity = restTemplate.exchange(url, HttpMethod.PUT, requestEntity, String.class, null, null);
-				this.updateHttpResponse(aviObject, aviResponseEntity);
-				logger.info("PUT Response : " + aviResponseEntity);
-				break;
-			case "DELETE":
-				logger.debug("Executing DELETE Method");
-				aviResponseEntity = restTemplate.exchange(url, HttpMethod.DELETE, null, String.class, null, null);
-				this.updateHttpResponse(aviObject, aviResponseEntity);
-				logger.info("DELETE Response : " + aviResponseEntity);
-				break;
-			default:
-				logger.debug("Please pass the correct http Method..");
-				break;
+				case "GET":
+					logger.debug("Executing GET Method");
+					aviResponseEntity = restClient.get()
+							.uri(url)
+							.retrieve()
+							.toEntity(String.class);
+					this.updateHttpResponse(aviObject, aviResponseEntity);
+					logger.info("GET Response : " + aviResponseEntity);
+					break;
+				case "POST":
+					logger.debug("Executing POST Method");
+					aviResponseEntity = restClient.post()
+							.uri(url)
+							.body(body)
+							.headers(httpHeaders -> {
+								if (localHeaders != null) {
+									httpHeaders.addAll(localHeaders);
+								}
+							})
+							.retrieve()
+							.toEntity(String.class);
+					this.updateHttpResponse(aviObject, aviResponseEntity);
+					logger.info("POST Response : " + aviResponseEntity);
+					break;
+				case "PUT":
+					logger.debug("Executing PUT Method");
+					aviResponseEntity = restClient.put()
+							.uri(url)
+							.body(body)
+							.headers(httpHeaders -> {
+								if (localHeaders != null) {
+									httpHeaders.addAll(localHeaders);
+								}
+							})
+							.retrieve()
+							.toEntity(String.class);
+					this.updateHttpResponse(aviObject, aviResponseEntity);
+					logger.info("PUT Response : " + aviResponseEntity);
+					break;
+				case "DELETE":
+					logger.debug("Executing DELETE Method");
+					aviResponseEntity = restClient.delete()
+							.uri(url)
+							.retrieve()
+							.toEntity(String.class);
+					//aviResponseEntity = restClient.exchange(url, HttpMethod.DELETE, null, String.class, null, null);
+					this.updateHttpResponse(aviObject, aviResponseEntity);
+					logger.info("DELETE Response : " + aviResponseEntity);
+					break;
+				default:
+					logger.debug("Please pass the correct http Method..");
+					break;
 			}
 		}
 		return aviObject;
 	}
 
 	private void updateHttpResponse(AviRunTimeInfo runtimeInfoDto,
-			ResponseEntity<String> albRuntimeInfoResponseEntity) {
+	                                ResponseEntity<String> albRuntimeInfoResponseEntity) {
 		if (albRuntimeInfoResponseEntity != null) {
 			if (albRuntimeInfoResponseEntity.getBody() != null) {
 				runtimeInfoDto.setResponseBody(new JSONObject(albRuntimeInfoResponseEntity.getBody()));
@@ -523,7 +544,7 @@ public class AviVroClient {
 	/****
 	 * This method will handle all HTTP methods. if its POST it will call the POST,
 	 * if its PUT it will call the PUT...and so on
-	 * 
+	 *
 	 * @param path   Request path
 	 * @param method type of the method.
 	 * @param data   contains the actual data which is used for the operation.
@@ -537,23 +558,23 @@ public class AviVroClient {
 			try {
 				JSONObject jsonObj = null;
 				switch (httpMethod) {
-				case "POST":
-					jsonObj = new JSONObject(data);
-					session.post(path, jsonObj);
-					response = true;
-					break;
-				case "PUT":
-					jsonObj = new JSONObject(data);
-					session.put(path, jsonObj);
-					response = true;
-					break;
-				case "DELETE":
-					session.delete(path, data);
-					response = true;
-					break;
-				default:
-					logger.debug("Please pass the correct http Method..");
-					break;
+					case "POST":
+						jsonObj = new JSONObject(data);
+						session.post(path, jsonObj);
+						response = true;
+						break;
+					case "PUT":
+						jsonObj = new JSONObject(data);
+						session.put(path, jsonObj);
+						response = true;
+						break;
+					case "DELETE":
+						session.delete(path, data);
+						response = true;
+						break;
+					default:
+						logger.debug("Please pass the correct http Method..");
+						break;
 				}
 			} catch (AviApiException e) {
 				response = false;
@@ -568,7 +589,7 @@ public class AviVroClient {
 	/**
 	 * This method fetch data from the Queue and perform the actions based on its
 	 * operation.
-	 * 
+	 *
 	 * @return ArrayList of AviRestResource.
 	 * @throws Exception
 	 */
@@ -580,9 +601,8 @@ public class AviVroClient {
 	/**
 	 * This method fetch data from the Queue and perform the actions based on its
 	 * operation.
-	 * 
+	 *
 	 * @param workflowId Id of Workflow Run
-	 * 
 	 * @return ArrayList of AviRestResource.
 	 * @throws Exception
 	 */
@@ -658,7 +678,7 @@ public class AviVroClient {
 
 	/***
 	 * this method generate the user header
-	 * 
+	 *
 	 * @param tenant name of tenant.
 	 * @return TenantHeader
 	 */
@@ -673,7 +693,7 @@ public class AviVroClient {
 
 	/***
 	 * This method returns AviRestResource
-	 * 
+	 *
 	 * @param objectType name of the object.
 	 * @return AviRestResource
 	 */
@@ -698,7 +718,7 @@ public class AviVroClient {
 	}
 
 	/**
-	 * 
+	 *
 	 * method for clearing the queue
 	 */
 	private void clearQueue() {
@@ -710,7 +730,7 @@ public class AviVroClient {
 
 	/***
 	 * Method for getting object data.
-	 * 
+	 *
 	 * @param objectType is the type of object.
 	 * @param params     is a map containing the key and values.
 	 * @param tenant     name of the Tenant
@@ -767,7 +787,7 @@ public class AviVroClient {
 
 	/***
 	 * Method for getting object data.
-	 * 
+	 *
 	 * @param objectType is the type of object.
 	 * @param objectName name of the object.
 	 * @param userHeader user header with additional properties.
@@ -796,12 +816,12 @@ public class AviVroClient {
 		if ((data.has("count")) && (Integer.parseInt(data.get("count").toString()) > 0)) {
 			JSONArray objectArray = (JSONArray) data.get("results");
 			result = (JSONObject) objectArray.get(0);
-		}  
-		if(!(data.has("count"))) {
+		}
+		if (!(data.has("count"))) {
 			logger.info("Returning Data from getObjectDataByName");
 			logger.info("Existing data of " + objectType + " : " + data);
 			if (data != null) {
-				result = (JSONObject) data;
+				result = data;
 			}
 		}
 
@@ -810,7 +830,7 @@ public class AviVroClient {
 
 	/***
 	 * Method for getting object data.
-	 * 
+	 *
 	 * @param objectType is the type of object.
 	 * @param uuid       uuid of the object.
 	 * @param userHeader user header with additional properties.
@@ -838,7 +858,7 @@ public class AviVroClient {
 
 	/***
 	 * Method for getting object data.
-	 * 
+	 *
 	 * @param objectType is the type of object.
 	 * @param params     is a map containing the key and values.
 	 * @return List of AviRestResource
@@ -852,11 +872,10 @@ public class AviVroClient {
 
 	/**
 	 * Method for getting object data based on its name.
-	 * 
+	 *
 	 * @param objectType is the type of object.
 	 * @param objectName name of the object.
 	 * @return AviRestResource
-	 * 
 	 * @throws Exception
 	 */
 
@@ -868,7 +887,7 @@ public class AviVroClient {
 
 	/***
 	 * Method for getting object data.
-	 * 
+	 *
 	 * @param objectType is the type of object.
 	 * @param params     is a map containing the key and values.
 	 * @param tenant     name of the Tenant
@@ -894,7 +913,7 @@ public class AviVroClient {
 
 	/**
 	 * Method for getting object data based on its name.
-	 * 
+	 *
 	 * @param objectType is the type of object.
 	 * @param objectName name of the object.
 	 * @param tenant     name of the tenant
@@ -919,12 +938,11 @@ public class AviVroClient {
 
 	/**
 	 * Method for getting object data based on its uuid.
-	 * 
+	 *
 	 * @param objectType is the type of object.
 	 * @param uuid       uuid of the object.
 	 * @param tenant     name of the tenant
 	 * @return the AviRestResource .
-	 * 
 	 * @throws Exception
 	 */
 
@@ -945,7 +963,7 @@ public class AviVroClient {
 	/***
 	 * This method is perform roll back task i.e. if something wents wrong during
 	 * the workflow execution all the previous actions will be rool back.
-	 * 
+	 *
 	 * @param count    indicating how many objects needs to rollback.
 	 * @param metadata contains the AviObjectMetadata which used for the rollback.
 	 * @throws Exception
@@ -1023,7 +1041,7 @@ public class AviVroClient {
 
 	/***
 	 * This method merge the two JSON Objects.
-	 * 
+	 *
 	 * @param json1 JSON object.
 	 * @param json2 JSON object.
 	 * @return the merged JSON object.
@@ -1048,9 +1066,9 @@ public class AviVroClient {
 	}
 
 	/***
-	 * 
+	 *
 	 * This method makes the REST delete call..
-	 * 
+	 *
 	 * @param resource          is a response containing uuid needed for delete
 	 *                          operation.
 	 * @param aviObjectMetadata contains the AviObjectMetadata which used for the
@@ -1094,7 +1112,7 @@ public class AviVroClient {
 	/***
 	 * This method will check keys of the json object if it found object reference
 	 * or references it will replace the uuid with the name in condition.
-	 * 
+	 *
 	 * @param jsonObject is the object which needs to be modified (references).
 	 * @return JSONObject with updated references.
 	 */
@@ -1126,7 +1144,7 @@ public class AviVroClient {
 
 	/***
 	 * this method modified the string and appending name condition.
-	 * 
+	 *
 	 * @param str
 	 * @return the String which replace uuid with name in condition.
 	 */
@@ -1135,5 +1153,10 @@ public class AviVroClient {
 			return str.substring(0, str.lastIndexOf("/")) + "/?name=" + str.substring(str.indexOf("#") + 1);
 		}
 		return null;
+	}
+
+	public enum OPERATION {
+
+		ADD, UPDATE, DELETE
 	}
 }
