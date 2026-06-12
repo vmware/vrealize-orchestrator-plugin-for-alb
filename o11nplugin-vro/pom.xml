@@ -10,7 +10,7 @@
 	<parent>
 		<artifactId>vro</artifactId>
 		<groupId>com.vmware.avi</groupId>
-		<version>32.1.1.RELEASE</version>
+		<version>32.1.3.RELEASE</version>
 	</parent>
 
 	<dependencies>
@@ -81,6 +81,41 @@
 						<version>${project.version}</version>
 						<scope>runtime</scope>
 					</dependency>
+					<dependency>
+						<groupId>javax.xml.bind</groupId>
+						<artifactId>jaxb-api</artifactId>
+						<version>2.3.1</version>
+					</dependency>
+					<dependency>
+						<groupId>org.glassfish.jaxb</groupId>
+						<artifactId>jaxb-runtime</artifactId>
+						<version>2.3.1</version>
+					</dependency>
+					<dependency>
+						<groupId>com.vmware.o11n</groupId>
+						<artifactId>o11n-spring-tools</artifactId>
+						<version>${vco.version}</version>
+						<scope>runtime</scope>
+					</dependency>
+					<dependency>
+						<groupId>org.json</groupId>
+						<artifactId>json</artifactId>
+						<version>20231013</version>
+					</dependency>
+					<dependency>
+						<groupId>com.fasterxml.jackson.core</groupId>
+						<artifactId>jackson-databind</artifactId>
+						<version>2.18.2</version> </dependency>
+					<dependency>
+						<groupId>com.fasterxml.jackson.core</groupId>
+						<artifactId>jackson-core</artifactId>
+						<version>2.18.2</version>
+					</dependency>
+					<dependency>
+						<groupId>org.springframework</groupId>
+						<artifactId>spring-web</artifactId>
+						<version>6.2.0</version>
+					</dependency>
 				</dependencies>
 			</plugin>
 
@@ -98,20 +133,20 @@
 						<configuration>
 							<target>
 								<copy
-									tofile="${basedir}/target/${project.artifactId}.${project.packaging}"
-									flatten="true" overwrite="true" verbose="true"
-									failonerror="true"
-									file="${basedir}/target/${project.build.finalName}.${project.packaging}" />
+										tofile="${basedir}/target/${project.artifactId}.${project.packaging}"
+										flatten="true" overwrite="true" verbose="true"
+										failonerror="true"
+										file="${basedir}/target/${project.build.finalName}.${project.packaging}" />
 								<mkdir dir="${basedir}/target/VSO-INF" />
 								<copy todir="${basedir}/target/VSO-INF" overwrite="true"
-									verbose="true" failonerror="true">
+								      verbose="true" failonerror="true">
 									<fileset dir="${basedir}/src/main/vmoapp/VSO-INF" />
 								</copy>
 								<jar
-									destfile="${basedir}/target/${project.build.finalName}.vmoapp">
+										destfile="${basedir}/target/${project.build.finalName}.vmoapp">
 									<fileset dir="${basedir}/target/">
 										<include
-											name="${project.artifactId}.${project.packaging}" />
+												name="${project.artifactId}.${project.packaging}" />
 										<include name="VSO-INF/*" />
 									</fileset>
 								</jar>
@@ -123,7 +158,7 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>build-helper-maven-plugin</artifactId>
-				<version>1.5</version>
+				<version>3.6.0</version>
 				<executions>
 					<execution>
 						<id>attach-artifacts</id>
