@@ -40,6 +40,10 @@ public class TechSupportMessage extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String url = "url";
 
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid;
+
 
 
   /**

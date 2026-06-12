@@ -1,14 +1,17 @@
 package com.vmware.avi.vro;
 
-import java.security.NoSuchAlgorithmException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
-import javax.net.ssl.SSLContext;
-
+import ch.dunes.vso.sdk.IServiceRegistry;
+import ch.dunes.vso.sdk.api.QueryResult;
+import ch.dunes.vso.sdk.context.IContext;
+import ch.dunes.vso.sdk.ssl.ISslService;
+import com.vmware.avi.sdk.AviCredentials;
+import com.vmware.avi.vro.configuration.ConfigurationService;
+import com.vmware.avi.vro.model.AviConnectionInfo;
+import com.vmware.avi.vro.model.AviRestResource;
+import com.vmware.avi.vro.model.Pool;
+import com.vmware.avi.vro.model.VirtualService;
+import com.vmware.o11n.plugin.sdk.spring.AbstractSpringPluginFactory;
+import com.vmware.o11n.plugin.sdk.spring.InventoryRef;
 import org.reflections.Reflections;
 import org.reflections.scanners.ResourcesScanner;
 import org.reflections.scanners.SubTypesScanner;
@@ -19,24 +22,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.vmware.avi.sdk.AviCredentials;
-import com.vmware.avi.vro.configuration.ConfigurationService;
-import com.vmware.avi.vro.model.AviConnectionInfo;
-import com.vmware.avi.vro.model.AviRestResource;
-import com.vmware.avi.vro.model.HealthMonitor;
-import com.vmware.avi.vro.model.Pool;
-import com.vmware.avi.vro.model.VirtualService;
-import com.vmware.avi.vro.model.VsVip;
-import com.vmware.o11n.plugin.sdk.spring.AbstractSpringPluginFactory;
-import com.vmware.o11n.plugin.sdk.spring.InventoryRef;
-
-import ch.dunes.vso.sdk.IServiceRegistry;
-import ch.dunes.vso.sdk.api.QueryResult;
-import ch.dunes.vso.sdk.context.IContext;
-import ch.dunes.vso.sdk.ssl.ISslService;
+import javax.net.ssl.SSLContext;
+import java.security.NoSuchAlgorithmException;
+import java.util.*;
 
 /**
- * 
+ *
  * @author tushar
  *
  */
@@ -56,7 +47,7 @@ public class VroPluginFactory extends AbstractSpringPluginFactory {
 
 	/***
 	 * This method initialize modelMap.
-	 * 
+	 *
 	 * @throws ClassNotFoundException
 	 */
 	public static void initializeModelMap() {
@@ -64,6 +55,33 @@ public class VroPluginFactory extends AbstractSpringPluginFactory {
 		VroPluginFactory.modelMap.put("PLUGIN", "Vro");
 		VroPluginFactory.modelMap.put("CLIENT", "AviVroClient");
 		VroPluginFactory.modelMap.put("PLUGIN_NAME", "Avi");
+	}
+
+	/**
+	 * This method return modelMap.
+	 *
+	 * @return modelMap
+	 */
+	public static Map<String, String> getModelMap() {
+		return modelMap;
+	}
+
+	/**
+	 * This method will add Class names from the package into the modelMap.
+	 *
+	 * @param packageName fully qualified package name
+	 * @throws ClassNotFoundException
+	 */
+	public static void fetchClassNames(String packageName) {
+		ConfigurationBuilder configurationBuilder = new ConfigurationBuilder().setScanners(new SubTypesScanner(false),
+				new ResourcesScanner());
+		configurationBuilder.setUrls(ClasspathHelper.forPackage(packageName))
+				.filterInputsBy(new FilterBuilder().includePackage(packageName));
+		Reflections reflection = new Reflections(configurationBuilder);
+		Set<Class<?>> classes = reflection.getSubTypesOf(Object.class);
+		for (Class c : classes) {
+			VroPluginFactory.modelMap.put(c.getSimpleName().toUpperCase(), c.getSimpleName());
+		}
 	}
 
 	@Override
@@ -88,7 +106,7 @@ public class VroPluginFactory extends AbstractSpringPluginFactory {
 				reloadAviEndpoints();
 			}
 			logger.debug("__DEBUG__:: Inside find virtualService aviVroClientMap -> " + aviVroClientMap.values());
-			for (AviVroClient aviVroClient: aviVroClientMap.values()) {
+			for (AviVroClient aviVroClient : aviVroClientMap.values()) {
 				try {
 					String tenant = aviVroClient.getCred().getTenant();
 					virtualService = (VirtualService) aviVroClient.getObjectByUUID(ref.getType().toLowerCase(), uuid, tenant);
@@ -108,7 +126,7 @@ public class VroPluginFactory extends AbstractSpringPluginFactory {
 			if (aviVroClientMap.isEmpty()) {
 				reloadAviEndpoints();
 			}
-			for (AviVroClient aviVroClient: aviVroClientMap.values()) {
+			for (AviVroClient aviVroClient : aviVroClientMap.values()) {
 				try {
 					String tenant = aviVroClient.getCred().getTenant();
 					pool = (Pool) aviVroClient.getObjectByUUID(ref.getType().toLowerCase(), uuid, tenant);
@@ -154,7 +172,7 @@ public class VroPluginFactory extends AbstractSpringPluginFactory {
 	 * @return
 	 * @throws Exception
 	 */
-	private AviVroClient getAviVroClient(AviConnectionInfo connectionInfo){
+	private AviVroClient getAviVroClient(AviConnectionInfo connectionInfo) {
 		try {
 			logger.debug("__INIT__:: Inside getAviVroClient: ");
 			SSLContext context = null;
@@ -185,7 +203,7 @@ public class VroPluginFactory extends AbstractSpringPluginFactory {
 
 	/***
 	 * This method will return UUID of the Object from the Inventory ID.
-	 * 
+	 *
 	 * @param objectID
 	 * @return uuid
 	 */
@@ -208,7 +226,7 @@ public class VroPluginFactory extends AbstractSpringPluginFactory {
 		logger.info("__INIT__:: Inside reload endpoints to the map");
 		aviVroClientMap.clear();
 		List<AviConnectionInfo> infos = configurationService.getAll();
-		for (AviConnectionInfo info: infos) {
+		for (AviConnectionInfo info : infos) {
 			getAviVroClient(info);
 		}
 		logger.info("__DONE__:: Reload endpoint execution done.");
@@ -248,7 +266,7 @@ public class VroPluginFactory extends AbstractSpringPluginFactory {
 					if (aviVroClientMap.isEmpty()) {
 						reloadAviEndpoints();
 					}
-					for (AviVroClient aviVroClient: aviVroClientMap.values()) {
+					for (AviVroClient aviVroClient : aviVroClientMap.values()) {
 						String tenant = aviVroClient.getCred().getTenant();
 						String referred_by = "virtualservice:" + parentUuid;
 						param.put("referred_by", referred_by);
@@ -268,7 +286,7 @@ public class VroPluginFactory extends AbstractSpringPluginFactory {
 					if (aviVroClientMap.isEmpty()) {
 						reloadAviEndpoints();
 					}
-					for (AviVroClient aviVroClient: aviVroClientMap.values()) {
+					for (AviVroClient aviVroClient : aviVroClientMap.values()) {
 						String tenant = aviVroClient.getCred().getTenant();
 						String referred_by = "pool:" + parentUuid;
 						param.put("referred_by", referred_by);
@@ -287,33 +305,6 @@ public class VroPluginFactory extends AbstractSpringPluginFactory {
 	public List<AviVroClient> getListOfAviVroClientList() {
 		List<AviVroClient> listOfAviVroClient = new ArrayList<AviVroClient>(aviVroClientMap.values());
 		return listOfAviVroClient;
-	}
-
-	/**
-	 * This method return modelMap.
-	 * 
-	 * @return modelMap
-	 */
-	public static Map<String, String> getModelMap() {
-		return modelMap;
-	}
-
-	/**
-	 * This method will add Class names from the package into the modelMap.
-	 * 
-	 * @param packageName fully qualified package name
-	 * @throws ClassNotFoundException
-	 */
-	public static void fetchClassNames(String packageName) {
-		ConfigurationBuilder configurationBuilder = new ConfigurationBuilder().setScanners(new SubTypesScanner(false),
-				new ResourcesScanner());
-		configurationBuilder.setUrls(ClasspathHelper.forPackage(packageName))
-				.filterInputsBy(new FilterBuilder().include(FilterBuilder.prefix(packageName)));
-		Reflections reflection = new Reflections(configurationBuilder);
-		Set<Class<?>> classes = reflection.getSubTypesOf(Object.class);
-		for (Class c : classes) {
-			VroPluginFactory.modelMap.put(c.getSimpleName().toUpperCase(), c.getSimpleName());
-		}
 	}
 
 	public ISslService getSslService() {
