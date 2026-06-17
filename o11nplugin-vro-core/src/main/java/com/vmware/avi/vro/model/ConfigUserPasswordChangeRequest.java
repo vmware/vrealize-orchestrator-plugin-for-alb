@@ -40,6 +40,10 @@ public class ConfigUserPasswordChangeRequest extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String requestPath;
 
+    @JsonProperty("request_user")
+    @JsonInclude(Include.NON_NULL)
+    private String requestUser;
+
     @JsonProperty("status")
     @JsonInclude(Include.NON_NULL)
     private String status;
@@ -160,6 +164,32 @@ public class ConfigUserPasswordChangeRequest extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Authenticated principal (actor) that performed the operation, when different from the target user.
+   * Field introduced in 32.2.1,32.1.3.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return requestUser
+   */
+  @VsoMethod
+  public String getRequestUser() {
+    return requestUser;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Authenticated principal (actor) that performed the operation, when different from the target user.
+   * Field introduced in 32.2.1,32.1.3.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param requestUser set the requestUser.
+   */
+  @VsoMethod
+  public void setRequestUser(String  requestUser) {
+    this.requestUser = requestUser;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Operation status.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -247,7 +277,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.status, objConfigUserPasswordChangeRequest.status)&&
   Objects.equals(this.errorMessage, objConfigUserPasswordChangeRequest.errorMessage)&&
   Objects.equals(this.clientType, objConfigUserPasswordChangeRequest.clientType)&&
-  Objects.equals(this.requestPath, objConfigUserPasswordChangeRequest.requestPath);
+  Objects.equals(this.requestPath, objConfigUserPasswordChangeRequest.requestPath)&&
+  Objects.equals(this.requestUser, objConfigUserPasswordChangeRequest.requestUser);
 }
 
 @Override
@@ -258,6 +289,7 @@ public String toString() {
         sb.append("    clientType: ").append(toIndentedString(clientType)).append("\n");
         sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
         sb.append("    requestPath: ").append(toIndentedString(requestPath)).append("\n");
+        sb.append("    requestUser: ").append(toIndentedString(requestUser)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    user: ").append(toIndentedString(user)).append("\n");
         sb.append("    userEmail: ").append(toIndentedString(userEmail)).append("\n");
