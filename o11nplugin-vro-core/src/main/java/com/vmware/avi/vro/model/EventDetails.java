@@ -135,6 +135,7 @@ import com.vmware.avi.vro.model.NsxtSIPolicyDetails;
 import com.vmware.avi.vro.model.NsxtSIRuleDetails;
 import com.vmware.avi.vro.model.NsxtSIServiceDetails;
 import com.vmware.avi.vro.model.NsxtT1SegDetails;
+import com.vmware.avi.vro.model.NtpWeakAuthAlgorithmEventDetails;
 import com.vmware.avi.vro.model.NetworkSubnetClash;
 import com.vmware.avi.vro.model.SummarizedInfo;
 import com.vmware.avi.vro.model.OCISetup;
@@ -801,6 +802,10 @@ public class EventDetails extends AviRestResource {
     @JsonProperty("nsxt_t1_seg_details")
     @JsonInclude(Include.NON_NULL)
     private NsxtT1SegDetails nsxtT1SegDetails;
+
+    @JsonProperty("ntp_weak_auth_algorithm_event_details")
+    @JsonInclude(Include.NON_NULL)
+    private NtpWeakAuthAlgorithmEventDetails ntpWeakAuthAlgorithmEventDetails;
 
     @JsonProperty("nw_subnet_clash_details")
     @JsonInclude(Include.NON_NULL)
@@ -4308,6 +4313,32 @@ public class EventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Details about ntp authentication keys configured with weak algorithms (md5/sha1).
+   * Field introduced in 32.1.3.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return ntpWeakAuthAlgorithmEventDetails
+   */
+  @VsoMethod
+  public NtpWeakAuthAlgorithmEventDetails getNtpWeakAuthAlgorithmEventDetails() {
+    return ntpWeakAuthAlgorithmEventDetails;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Details about ntp authentication keys configured with weak algorithms (md5/sha1).
+   * Field introduced in 32.1.3.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param ntpWeakAuthAlgorithmEventDetails set the ntpWeakAuthAlgorithmEventDetails.
+   */
+  @VsoMethod
+  public void setNtpWeakAuthAlgorithmEventDetails(NtpWeakAuthAlgorithmEventDetails ntpWeakAuthAlgorithmEventDetails) {
+    this.ntpWeakAuthAlgorithmEventDetails = ntpWeakAuthAlgorithmEventDetails;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nwSubnetClashDetails
@@ -7514,7 +7545,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.usageMeteringEventDetails, objEventDetails.usageMeteringEventDetails)&&
   Objects.equals(this.controlscriptDetails, objEventDetails.controlscriptDetails)&&
   Objects.equals(this.seAutoscalerEventDetails, objEventDetails.seAutoscalerEventDetails)&&
-  Objects.equals(this.passwordRotationDetails, objEventDetails.passwordRotationDetails);
+  Objects.equals(this.passwordRotationDetails, objEventDetails.passwordRotationDetails)&&
+  Objects.equals(this.ntpWeakAuthAlgorithmEventDetails, objEventDetails.ntpWeakAuthAlgorithmEventDetails);
 }
 
 @Override
@@ -7651,6 +7683,7 @@ public String toString() {
         sb.append("    nsxtRuleDetails: ").append(toIndentedString(nsxtRuleDetails)).append("\n");
         sb.append("    nsxtServiceDetails: ").append(toIndentedString(nsxtServiceDetails)).append("\n");
         sb.append("    nsxtT1SegDetails: ").append(toIndentedString(nsxtT1SegDetails)).append("\n");
+        sb.append("    ntpWeakAuthAlgorithmEventDetails: ").append(toIndentedString(ntpWeakAuthAlgorithmEventDetails)).append("\n");
         sb.append("    nwSubnetClashDetails: ").append(toIndentedString(nwSubnetClashDetails)).append("\n");
         sb.append("    nwSummarizedDetails: ").append(toIndentedString(nwSummarizedDetails)).append("\n");
         sb.append("    ociInfo: ").append(toIndentedString(ociInfo)).append("\n");
