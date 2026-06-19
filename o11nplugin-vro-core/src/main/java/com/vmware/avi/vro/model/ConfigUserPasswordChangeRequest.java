@@ -28,6 +28,22 @@ public class ConfigUserPasswordChangeRequest extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String clientIp;
 
+    @JsonProperty("client_type")
+    @JsonInclude(Include.NON_NULL)
+    private String clientType;
+
+    @JsonProperty("error_message")
+    @JsonInclude(Include.NON_NULL)
+    private String errorMessage;
+
+    @JsonProperty("request_path")
+    @JsonInclude(Include.NON_NULL)
+    private String requestPath;
+
+    @JsonProperty("request_user")
+    @JsonInclude(Include.NON_NULL)
+    private String requestUser;
+
     @JsonProperty("status")
     @JsonInclude(Include.NON_NULL)
     private String status;
@@ -44,7 +60,7 @@ public class ConfigUserPasswordChangeRequest extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Client ip.
+   * Client ip address.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientIp
@@ -56,7 +72,7 @@ public class ConfigUserPasswordChangeRequest extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Client ip.
+   * Client ip address.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientIp set the clientIp.
@@ -68,7 +84,113 @@ public class ConfigUserPasswordChangeRequest extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Password link is sent or rejected.
+   * Type of client used to initiate the operation, e.g.
+   * Ui, cli, api.
+   * Field introduced in 32.2.1,32.1.3.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return clientType
+   */
+  @VsoMethod
+  public String getClientType() {
+    return clientType;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Type of client used to initiate the operation, e.g.
+   * Ui, cli, api.
+   * Field introduced in 32.2.1,32.1.3.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param clientType set the clientType.
+   */
+  @VsoMethod
+  public void setClientType(String  clientType) {
+    this.clientType = clientType;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Error message if the operation failed.
+   * Field introduced in 32.2.1,32.1.3.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return errorMessage
+   */
+  @VsoMethod
+  public String getErrorMessage() {
+    return errorMessage;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Error message if the operation failed.
+   * Field introduced in 32.2.1,32.1.3.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param errorMessage set the errorMessage.
+   */
+  @VsoMethod
+  public void setErrorMessage(String  errorMessage) {
+    this.errorMessage = errorMessage;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Api request path that triggered the operation.
+   * Field introduced in 32.2.1,32.1.3.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return requestPath
+   */
+  @VsoMethod
+  public String getRequestPath() {
+    return requestPath;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Api request path that triggered the operation.
+   * Field introduced in 32.2.1,32.1.3.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param requestPath set the requestPath.
+   */
+  @VsoMethod
+  public void setRequestPath(String  requestPath) {
+    this.requestPath = requestPath;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Authenticated principal (actor) that performed the operation, when different from the target user.
+   * Field introduced in 32.2.1,32.1.3.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return requestUser
+   */
+  @VsoMethod
+  public String getRequestUser() {
+    return requestUser;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Authenticated principal (actor) that performed the operation, when different from the target user.
+   * Field introduced in 32.2.1,32.1.3.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param requestUser set the requestUser.
+   */
+  @VsoMethod
+  public void setRequestUser(String  requestUser) {
+    this.requestUser = requestUser;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Operation status.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return status
@@ -80,7 +202,7 @@ public class ConfigUserPasswordChangeRequest extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Password link is sent or rejected.
+   * Operation status.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param status set the status.
@@ -92,7 +214,7 @@ public class ConfigUserPasswordChangeRequest extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Matched username of email address.
+   * Username.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return user
@@ -104,7 +226,7 @@ public class ConfigUserPasswordChangeRequest extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Matched username of email address.
+   * Username.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param user set the user.
@@ -116,7 +238,7 @@ public class ConfigUserPasswordChangeRequest extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Email address of user.
+   * Email address of user for password reset request flow.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return userEmail
@@ -128,7 +250,7 @@ public class ConfigUserPasswordChangeRequest extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Email address of user.
+   * Email address of user for password reset request flow.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param userEmail set the userEmail.
@@ -152,7 +274,11 @@ public boolean equals(java.lang.Object o) {
   return   Objects.equals(this.userEmail, objConfigUserPasswordChangeRequest.userEmail)&&
   Objects.equals(this.user, objConfigUserPasswordChangeRequest.user)&&
   Objects.equals(this.clientIp, objConfigUserPasswordChangeRequest.clientIp)&&
-  Objects.equals(this.status, objConfigUserPasswordChangeRequest.status);
+  Objects.equals(this.status, objConfigUserPasswordChangeRequest.status)&&
+  Objects.equals(this.errorMessage, objConfigUserPasswordChangeRequest.errorMessage)&&
+  Objects.equals(this.clientType, objConfigUserPasswordChangeRequest.clientType)&&
+  Objects.equals(this.requestPath, objConfigUserPasswordChangeRequest.requestPath)&&
+  Objects.equals(this.requestUser, objConfigUserPasswordChangeRequest.requestUser);
 }
 
 @Override
@@ -160,6 +286,10 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class ConfigUserPasswordChangeRequest {\n");
       sb.append("    clientIp: ").append(toIndentedString(clientIp)).append("\n");
+        sb.append("    clientType: ").append(toIndentedString(clientType)).append("\n");
+        sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
+        sb.append("    requestPath: ").append(toIndentedString(requestPath)).append("\n");
+        sb.append("    requestUser: ").append(toIndentedString(requestUser)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    user: ").append(toIndentedString(user)).append("\n");
         sb.append("    userEmail: ").append(toIndentedString(userEmail)).append("\n");
