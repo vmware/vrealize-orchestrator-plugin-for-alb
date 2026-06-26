@@ -137,7 +137,7 @@ public class ControllerLimits extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Maximum number of api paths per api policy.
-   * Field introduced in 32.1.1.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return apiPolicyNumPaths
@@ -150,7 +150,7 @@ public class ControllerLimits extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Maximum number of api paths per api policy.
-   * Field introduced in 32.1.1.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param apiPolicyNumPaths set the apiPolicyNumPaths.

@@ -22,7 +22,6 @@ public class Constants {
     public static final String FINDER_VRO_ALBSERVICESCASEATTACHMENT = "ALBServicesCaseAttachment";
     public static final String FINDER_VRO_ALBSERVICESCONFIG = "ALBServicesConfig";
     public static final String FINDER_VRO_ALBSERVICESFILEDOWNLOAD = "ALBServicesFileDownload";
-    public static final String FINDER_VRO_ALBSERVICESFILEDOWNLOADMETADATA = "ALBServicesFileDownloadMetadata";
     public static final String FINDER_VRO_ALBSERVICESFILEUPLOAD = "ALBServicesFileUpload";
     public static final String FINDER_VRO_ALBSERVICESJOB = "ALBServicesJob";
     public static final String FINDER_VRO_ALBSERVICESJOBPARAM = "ALBServicesJobParam";
