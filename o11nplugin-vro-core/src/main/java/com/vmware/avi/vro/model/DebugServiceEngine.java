@@ -106,6 +106,10 @@ public class DebugServiceEngine extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private DebugServiceEngineObjSync objsync;
 
+    @JsonProperty("pcap_ng")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean pcapNg = true;
+
     @JsonProperty("seagent_debug")
     @JsonInclude(Include.NON_NULL)
     private List<DebugSeAgent> seagentDebug;
@@ -646,6 +650,32 @@ public class DebugServiceEngine extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Enable pcapng for packet capture.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @return pcapNg
+   */
+  @VsoMethod
+  public Boolean getPcapNg() {
+    return pcapNg;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable pcapng for packet capture.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param pcapNg set the pcapNg.
+   */
+  @VsoMethod
+  public void setPcapNg(Boolean  pcapNg) {
+    this.pcapNg = pcapNg;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seagentDebug
@@ -835,6 +865,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.objsync, objDebugServiceEngine.objsync)&&
   Objects.equals(this.mockDlFailObj, objDebugServiceEngine.mockDlFailObj)&&
   Objects.equals(this.highCpuScriptConfig, objDebugServiceEngine.highCpuScriptConfig)&&
+  Objects.equals(this.pcapNg, objDebugServiceEngine.pcapNg)&&
   Objects.equals(this.tenantRef, objDebugServiceEngine.tenantRef);
 }
 
@@ -860,6 +891,7 @@ public String toString() {
         sb.append("    mockDlFailObj: ").append(toIndentedString(mockDlFailObj)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    objsync: ").append(toIndentedString(objsync)).append("\n");
+        sb.append("    pcapNg: ").append(toIndentedString(pcapNg)).append("\n");
         sb.append("    seagentDebug: ").append(toIndentedString(seagentDebug)).append("\n");
         sb.append("    selogagentDebug: ").append(toIndentedString(selogagentDebug)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");

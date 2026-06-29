@@ -40,11 +40,10 @@ public class ApiPolicyLabelActionMapping extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * List of api policy actions to run on this label.
-   * Enum options - API_POLICY_DEACTIVATE_PATH_PARAM_CHECK, API_POLICY_DEACTIVATE_QUERY_PARAM_CHECK, API_POLICY_ACTION_DEACTIVATE_HEADER_CHECK,
-   * API_POLICY_ACTION_DEACTIVATE_REQUEST_BODY_CHECK, API_POLICY_ACTION_UNKNOWN_QUERY_PARAM_PASS, API_POLICY_ACTION_UNKNOWN_QUERY_PARAM_LEARN,
-   * API_POLICY_ACTION_UNKNOWN_QUERY_PARAM_FLAG, API_POLICY_ACTION_UNKNOWN_QUERY_PARAM_REJECT, API_POLICY_ACTION_UNKNOWN_REQUEST_CONTENT_TYPE_PASS,
-   * API_POLICY_ACTION_UNKNOWN_REQUEST_CONTENT_TYPE_FLAG, API_POLICY_ACTION_UNKNOWN_REQUEST_CONTENT_TYPE_REJECT.
+   * Check-disable toggle actions for this label.
+   * Each entry turns off an entire validation check category for requests carrying this label.
+   * Enum options - API_POLICY_LABEL_ACTION_DEACTIVATE_PATH_PARAM_CHECK, API_POLICY_LABEL_ACTION_DEACTIVATE_QUERY_PARAM_CHECK,
+   * API_POLICY_LABEL_ACTION_DEACTIVATE_HEADER_CHECK, API_POLICY_LABEL_ACTION_DEACTIVATE_REQUEST_BODY_CHECK.
    * Field introduced in 32.2.1.
    * Maximum of 16 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -58,11 +57,10 @@ public class ApiPolicyLabelActionMapping extends AviRestResource {
 
   /**
    * This is the setter method. this will set the apiPolicyActions
-   * List of api policy actions to run on this label.
-   * Enum options - API_POLICY_DEACTIVATE_PATH_PARAM_CHECK, API_POLICY_DEACTIVATE_QUERY_PARAM_CHECK, API_POLICY_ACTION_DEACTIVATE_HEADER_CHECK,
-   * API_POLICY_ACTION_DEACTIVATE_REQUEST_BODY_CHECK, API_POLICY_ACTION_UNKNOWN_QUERY_PARAM_PASS, API_POLICY_ACTION_UNKNOWN_QUERY_PARAM_LEARN,
-   * API_POLICY_ACTION_UNKNOWN_QUERY_PARAM_FLAG, API_POLICY_ACTION_UNKNOWN_QUERY_PARAM_REJECT, API_POLICY_ACTION_UNKNOWN_REQUEST_CONTENT_TYPE_PASS,
-   * API_POLICY_ACTION_UNKNOWN_REQUEST_CONTENT_TYPE_FLAG, API_POLICY_ACTION_UNKNOWN_REQUEST_CONTENT_TYPE_REJECT.
+   * Check-disable toggle actions for this label.
+   * Each entry turns off an entire validation check category for requests carrying this label.
+   * Enum options - API_POLICY_LABEL_ACTION_DEACTIVATE_PATH_PARAM_CHECK, API_POLICY_LABEL_ACTION_DEACTIVATE_QUERY_PARAM_CHECK,
+   * API_POLICY_LABEL_ACTION_DEACTIVATE_HEADER_CHECK, API_POLICY_LABEL_ACTION_DEACTIVATE_REQUEST_BODY_CHECK.
    * Field introduced in 32.2.1.
    * Maximum of 16 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -76,11 +74,10 @@ public class ApiPolicyLabelActionMapping extends AviRestResource {
 
   /**
    * This is the setter method this will set the apiPolicyActions
-   * List of api policy actions to run on this label.
-   * Enum options - API_POLICY_DEACTIVATE_PATH_PARAM_CHECK, API_POLICY_DEACTIVATE_QUERY_PARAM_CHECK, API_POLICY_ACTION_DEACTIVATE_HEADER_CHECK,
-   * API_POLICY_ACTION_DEACTIVATE_REQUEST_BODY_CHECK, API_POLICY_ACTION_UNKNOWN_QUERY_PARAM_PASS, API_POLICY_ACTION_UNKNOWN_QUERY_PARAM_LEARN,
-   * API_POLICY_ACTION_UNKNOWN_QUERY_PARAM_FLAG, API_POLICY_ACTION_UNKNOWN_QUERY_PARAM_REJECT, API_POLICY_ACTION_UNKNOWN_REQUEST_CONTENT_TYPE_PASS,
-   * API_POLICY_ACTION_UNKNOWN_REQUEST_CONTENT_TYPE_FLAG, API_POLICY_ACTION_UNKNOWN_REQUEST_CONTENT_TYPE_REJECT.
+   * Check-disable toggle actions for this label.
+   * Each entry turns off an entire validation check category for requests carrying this label.
+   * Enum options - API_POLICY_LABEL_ACTION_DEACTIVATE_PATH_PARAM_CHECK, API_POLICY_LABEL_ACTION_DEACTIVATE_QUERY_PARAM_CHECK,
+   * API_POLICY_LABEL_ACTION_DEACTIVATE_HEADER_CHECK, API_POLICY_LABEL_ACTION_DEACTIVATE_REQUEST_BODY_CHECK.
    * Field introduced in 32.2.1.
    * Maximum of 16 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.

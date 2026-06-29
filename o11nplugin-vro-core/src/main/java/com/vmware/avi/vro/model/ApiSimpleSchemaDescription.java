@@ -58,7 +58,7 @@ public class ApiSimpleSchemaDescription extends AviRestResource {
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
-    private String type;
+    private String type = "SCHEMA_TYPE_UNDEFINED";
 
 
 
@@ -148,7 +148,7 @@ public class ApiSimpleSchemaDescription extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * If set, this is a list of all possible values for this string.
    * Field introduced in 32.2.1.
-   * Maximum of 256 items allowed.
+   * Maximum of 1024 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stringEnumValues
@@ -162,7 +162,7 @@ public class ApiSimpleSchemaDescription extends AviRestResource {
    * This is the setter method. this will set the stringEnumValues
    * If set, this is a list of all possible values for this string.
    * Field introduced in 32.2.1.
-   * Maximum of 256 items allowed.
+   * Maximum of 1024 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stringEnumValues
@@ -176,7 +176,7 @@ public class ApiSimpleSchemaDescription extends AviRestResource {
    * This is the setter method this will set the stringEnumValues
    * If set, this is a list of all possible values for this string.
    * Field introduced in 32.2.1.
-   * Maximum of 256 items allowed.
+   * Maximum of 1024 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stringEnumValues
@@ -312,7 +312,7 @@ public class ApiSimpleSchemaDescription extends AviRestResource {
    * SCHEMA_TYPE_ARRAY, SCHEMA_TYPE_OBJECT, SCHEMA_TYPE_REFERENCE, SCHEMA_TYPE_ONE_OF, SCHEMA_TYPE_ALL_OF, SCHEMA_TYPE_ANY_OF.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SCHEMA_TYPE_UNDEFINED".
    * @return type
    */
   @VsoMethod
@@ -327,7 +327,7 @@ public class ApiSimpleSchemaDescription extends AviRestResource {
    * SCHEMA_TYPE_ARRAY, SCHEMA_TYPE_OBJECT, SCHEMA_TYPE_REFERENCE, SCHEMA_TYPE_ONE_OF, SCHEMA_TYPE_ALL_OF, SCHEMA_TYPE_ANY_OF.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SCHEMA_TYPE_UNDEFINED".
    * @param type set the type.
    */
   @VsoMethod
