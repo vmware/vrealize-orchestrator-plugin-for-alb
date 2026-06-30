@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.OAuthAppSettings;
+import com.vmware.avi.vro.model.TlsConfig;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -77,9 +78,9 @@ public class OAuthProfile extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String redirectUri;
 
-    @JsonProperty("tls_mode")
+    @JsonProperty("tls_config")
     @JsonInclude(Include.NON_NULL)
-    private String tlsMode = "TLS_MODE_DISABLED";
+    private TlsConfig tlsConfig;
 
     @JsonProperty("token_endpoint")
     @JsonInclude(Include.NON_NULL)
@@ -445,34 +446,28 @@ public class OAuthProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Tls authentication mode for outbound jwks connections during token validation.
-   * Options  tls_mode_disabled (no verification, default), tls_mode_tls (server verification), tls_mode_mtls (enforces mtls with a client
-   * certificate), or tls_mode_verify_only (certificate chain verification only).
-   * Enum options - TLS_MODE_DISABLED, TLS_MODE_TLS, TLS_MODE_MTLS, TLS_MODE_VERIFY_ONLY.
+   * Tls configuration for outbound jwks connections during oauth token validation.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as "TLS_MODE_DISABLED".
-   * @return tlsMode
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return tlsConfig
    */
   @VsoMethod
-  public String getTlsMode() {
-    return tlsMode;
+  public TlsConfig getTlsConfig() {
+    return tlsConfig;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Tls authentication mode for outbound jwks connections during token validation.
-   * Options  tls_mode_disabled (no verification, default), tls_mode_tls (server verification), tls_mode_mtls (enforces mtls with a client
-   * certificate), or tls_mode_verify_only (certificate chain verification only).
-   * Enum options - TLS_MODE_DISABLED, TLS_MODE_TLS, TLS_MODE_MTLS, TLS_MODE_VERIFY_ONLY.
+   * Tls configuration for outbound jwks connections during oauth token validation.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as "TLS_MODE_DISABLED".
-   * @param tlsMode set the tlsMode.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param tlsConfig set the tlsConfig.
    */
   @VsoMethod
-  public void setTlsMode(String  tlsMode) {
-    this.tlsMode = tlsMode;
+  public void setTlsConfig(TlsConfig tlsConfig) {
+    this.tlsConfig = tlsConfig;
   }
 
   /**
@@ -553,7 +548,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.oauthControllerSettings, objOAuthProfile.oauthControllerSettings)&&
   Objects.equals(this.oauthProvider, objOAuthProfile.oauthProvider)&&
   Objects.equals(this.audience, objOAuthProfile.audience)&&
-  Objects.equals(this.tlsMode, objOAuthProfile.tlsMode);
+  Objects.equals(this.tlsConfig, objOAuthProfile.tlsConfig);
 }
 
 @Override
@@ -573,7 +568,7 @@ public String toString() {
         sb.append("    oauthRespBufferSz: ").append(toIndentedString(oauthRespBufferSz)).append("\n");
         sb.append("    poolRef: ").append(toIndentedString(poolRef)).append("\n");
         sb.append("    redirectUri: ").append(toIndentedString(redirectUri)).append("\n");
-        sb.append("    tlsMode: ").append(toIndentedString(tlsMode)).append("\n");
+        sb.append("    tlsConfig: ").append(toIndentedString(tlsConfig)).append("\n");
         sb.append("    tokenEndpoint: ").append(toIndentedString(tokenEndpoint)).append("\n");
         sb.append("    userinfoEndpoint: ").append(toIndentedString(userinfoEndpoint)).append("\n");
       sb.append("}");

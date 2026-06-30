@@ -429,7 +429,7 @@ public class ApiEndpoint extends AviRestResource {
    * Query string parameter definitions for this endpoint, used to validate query arguments.
    * Example  for get /pets?limit=10, a query parameter named 'limit' would be listed here.
    * Field introduced in 32.2.1.
-   * Maximum of 64 items allowed.
+   * Maximum of 128 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return queryParameters
@@ -444,7 +444,7 @@ public class ApiEndpoint extends AviRestResource {
    * Query string parameter definitions for this endpoint, used to validate query arguments.
    * Example  for get /pets?limit=10, a query parameter named 'limit' would be listed here.
    * Field introduced in 32.2.1.
-   * Maximum of 64 items allowed.
+   * Maximum of 128 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return queryParameters
@@ -459,7 +459,7 @@ public class ApiEndpoint extends AviRestResource {
    * Query string parameter definitions for this endpoint, used to validate query arguments.
    * Example  for get /pets?limit=10, a query parameter named 'limit' would be listed here.
    * Field introduced in 32.2.1.
-   * Maximum of 64 items allowed.
+   * Maximum of 128 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return queryParameters

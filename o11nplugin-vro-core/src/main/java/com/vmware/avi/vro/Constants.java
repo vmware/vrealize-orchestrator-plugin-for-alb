@@ -18,6 +18,7 @@ public class Constants {
     public static final String FINDER_VRO_ACUSERIDENTITY = "ACUserIdentity";
     public static final String FINDER_VRO_ALBSERVICESACCOUNT = "ALBServicesAccount";
     public static final String FINDER_VRO_ALBSERVICESACCOUNTUSER = "ALBServicesAccountUser";
+    public static final String FINDER_VRO_ALBSERVICESASSETDETAILS = "ALBServicesAssetDetails";
     public static final String FINDER_VRO_ALBSERVICESCASE = "ALBServicesCase";
     public static final String FINDER_VRO_ALBSERVICESCASEATTACHMENT = "ALBServicesCaseAttachment";
     public static final String FINDER_VRO_ALBSERVICESCONFIG = "ALBServicesConfig";
@@ -25,6 +26,8 @@ public class Constants {
     public static final String FINDER_VRO_ALBSERVICESFILEUPLOAD = "ALBServicesFileUpload";
     public static final String FINDER_VRO_ALBSERVICESJOB = "ALBServicesJob";
     public static final String FINDER_VRO_ALBSERVICESJOBPARAM = "ALBServicesJobParam";
+    public static final String FINDER_VRO_ALBSERVICESSITEINFO = "ALBServicesSiteInfo";
+    public static final String FINDER_VRO_ALBSERVICESSTATUS = "ALBServicesStatus";
     public static final String FINDER_VRO_ALBSERVICESSTATUSDETAILS = "ALBServicesStatusDetails";
     public static final String FINDER_VRO_ALBSERVICESUSER = "ALBServicesUser";
     public static final String FINDER_VRO_AWSASGDELETE = "AWSASGDelete";
@@ -210,6 +213,7 @@ public class Constants {
     public static final String FINDER_VRO_CERTJWTSTORE = "CertJwtStore";
     public static final String FINDER_VRO_CERTIFICATEAUTHORITY = "CertificateAuthority";
     public static final String FINDER_VRO_CERTIFICATEMANAGEMENTPROFILE = "CertificateManagementProfile";
+    public static final String FINDER_VRO_CERTIFICATESECURITYPOLICY = "CertificateSecurityPolicy";
     public static final String FINDER_VRO_CFGSTATE = "CfgState";
     public static final String FINDER_VRO_CHILDPROCESSINFO = "ChildProcessInfo";
     public static final String FINDER_VRO_CLIENTCERTAUTHSETTINGS = "ClientCertAuthSettings";
@@ -652,6 +656,7 @@ public class Constants {
     public static final String FINDER_VRO_KEYVALUE = "KeyValue";
     public static final String FINDER_VRO_KEYVALUECONFIGURATION = "KeyValueConfiguration";
     public static final String FINDER_VRO_KEYVALUETUPLE = "KeyValueTuple";
+    public static final String FINDER_VRO_KEYLESSLICENSE = "KeylessLicense";
     public static final String FINDER_VRO_KNIPORTRANGE = "KniPortRange";
     public static final String FINDER_VRO_L1FMANDATORYTESTCASE = "L1FMandatoryTestCase";
     public static final String FINDER_VRO_L1FSENSITIVETESTCASE = "L1FSensitiveTestCase";
@@ -806,6 +811,7 @@ public class Constants {
     public static final String FINDER_VRO_NSXTTIER1SEGMENTCONFIG = "NsxtTier1SegmentConfig";
     public static final String FINDER_VRO_NSXTTIER1SEGMENTMANUALMODE = "NsxtTier1SegmentManualMode";
     public static final String FINDER_VRO_NTLMLOG = "NtlmLog";
+    public static final String FINDER_VRO_NTPWEAKAUTHALGORITHMEVENTDETAILS = "NtpWeakAuthAlgorithmEventDetails";
     public static final String FINDER_VRO_NUAGESDNCONTROLLER = "NuageSDNController";
     public static final String FINDER_VRO_OAUTHAPPSETTINGS = "OAuthAppSettings";
     public static final String FINDER_VRO_OAUTHPROFILE = "OAuthProfile";
@@ -907,6 +913,7 @@ public class Constants {
     public static final String FINDER_VRO_PSMPROGRAMDETAILS = "PsmProgramDetails";
     public static final String FINDER_VRO_PULSESERVICESSESSIONCONFIG = "PulseServicesSessionConfig";
     public static final String FINDER_VRO_PULSESERVICESTENANTCONFIG = "PulseServicesTenantConfig";
+    public static final String FINDER_VRO_PULSESERVICESTENANTSTATUS = "PulseServicesTenantStatus";
     public static final String FINDER_VRO_QUERYMATCH = "QueryMatch";
     public static final String FINDER_VRO_QUOTACONFIG = "QuotaConfig";
     public static final String FINDER_VRO_RANCHERCONFIGURATION = "RancherConfiguration";
@@ -1135,6 +1142,7 @@ public class Constants {
     public static final String FINDER_VRO_SERVICEENGINEGROUP = "ServiceEngineGroup";
     public static final String FINDER_VRO_SERVICEENGINELIMITS = "ServiceEngineLimits";
     public static final String FINDER_VRO_SERVICEENGINEPARAMS = "ServiceEngineParams";
+    public static final String FINDER_VRO_SERVICEHEALTH = "ServiceHealth";
     public static final String FINDER_VRO_SERVICEMATCH = "ServiceMatch";
     public static final String FINDER_VRO_SERVICEOAUTH = "ServiceOAuth";
     public static final String FINDER_VRO_SERVICEPOOLSELECTOR = "ServicePoolSelector";
@@ -1192,7 +1200,6 @@ public class Constants {
     public static final String FINDER_VRO_TCPFASTPATHPROFILE = "TCPFastPathProfile";
     public static final String FINDER_VRO_TCPOPTIONS = "TCPOptions";
     public static final String FINDER_VRO_TCPPROXYPROFILE = "TCPProxyProfile";
-    public static final String FINDER_VRO_TLSPROFILE = "TLSProfile";
     public static final String FINDER_VRO_TLSTICKET = "TLSTicket";
     public static final String FINDER_VRO_TACACSPLUSAUTHSETTINGS = "TacacsPlusAuthSettings";
     public static final String FINDER_VRO_TAG = "Tag";
@@ -1225,6 +1232,7 @@ public class Constants {
     public static final String FINDER_VRO_TIMESTAMP = "TimeStamp";
     public static final String FINDER_VRO_TIMETRACKERPROPERTIES = "TimeTrackerProperties";
     public static final String FINDER_VRO_TLSCLIENTINFO = "TlsClientInfo";
+    public static final String FINDER_VRO_TLSCONFIG = "TlsConfig";
     public static final String FINDER_VRO_TLSFINGERPRINTMATCH = "TlsFingerprintMatch";
     public static final String FINDER_VRO_TOKENREFILLRATE = "TokenRefillRate";
     public static final String FINDER_VRO_TRAFFICCLONEPROFILE = "TrafficCloneProfile";
