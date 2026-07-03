@@ -83,7 +83,8 @@ public class ApiObjectProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Whether this property is deprecated.
+   * Marks this property as deprecated.
+   * Requests containing this property are treated as a schema violation.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -96,7 +97,8 @@ public class ApiObjectProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Whether this property is deprecated.
+   * Marks this property as deprecated.
+   * Requests containing this property are treated as a schema violation.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -135,7 +137,7 @@ public class ApiObjectProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Whether this property is nullable.
+   * When true, this property accepts a null value in addition to its declared type.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -148,7 +150,7 @@ public class ApiObjectProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Whether this property is nullable.
+   * When true, this property accepts a null value in addition to its declared type.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -161,7 +163,8 @@ public class ApiObjectProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Whether this property is required.
+   * Marks this property as required within its parent object schema.
+   * A request body object missing this property is treated as a violation.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -174,7 +177,8 @@ public class ApiObjectProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Whether this property is required.
+   * Marks this property as required within its parent object schema.
+   * A request body object missing this property is treated as a violation.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.

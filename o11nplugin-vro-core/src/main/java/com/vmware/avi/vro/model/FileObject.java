@@ -155,7 +155,7 @@ public class FileObject extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Further details about the file object.
+   * Api specification details extracted from the file, populated for open_api_spec type only.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * @return apiSpecDetail
@@ -167,7 +167,7 @@ public class FileObject extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Further details about the file object.
+   * Api specification details extracted from the file, populated for open_api_spec type only.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * @param apiSpecDetail set the apiSpecDetail.
@@ -252,7 +252,7 @@ public class FileObject extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Number of completed events.
+   * Number of processing events that have completed.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -265,7 +265,7 @@ public class FileObject extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Number of completed events.
+   * Number of processing events that have completed.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -410,7 +410,7 @@ public class FileObject extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * End time.
+   * End time of the file object processing operation.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -423,7 +423,7 @@ public class FileObject extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * End time.
+   * End time of the file object processing operation.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -800,7 +800,7 @@ public class FileObject extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Start time.
+   * Start time of the file object processing operation.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -813,7 +813,7 @@ public class FileObject extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Start time.
+   * Start time of the file object processing operation.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -924,7 +924,7 @@ public class FileObject extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Total number of events.
+   * Total number of processing events for this file object.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -937,7 +937,7 @@ public class FileObject extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Total number of events.
+   * Total number of processing events for this file object.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
