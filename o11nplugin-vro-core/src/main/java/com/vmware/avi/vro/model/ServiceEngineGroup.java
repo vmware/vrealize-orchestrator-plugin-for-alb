@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.GCPSeGroupConfig;
 import com.vmware.avi.vro.model.IpAdvertisementProfile;
 import com.vmware.avi.vro.model.QuotaConfig;
+import com.vmware.avi.vro.model.TlsConfig;
 import com.vmware.avi.vro.model.IpAddrPrefix;
 import com.vmware.avi.vro.model.ObjSyncConfig;
 import com.vmware.avi.vro.model.MetricsRealTimeUpdate;
@@ -560,6 +561,10 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonProperty("log_message_max_file_list_size")
     @JsonInclude(Include.NON_NULL)
     private Integer logMessageMaxFileListSize = 64;
+
+    @JsonProperty("log_streaming_tls_config")
+    @JsonInclude(Include.NON_NULL)
+    private TlsConfig logStreamingTlsConfig;
 
     @JsonProperty("markers")
     @JsonInclude(Include.NON_NULL)
@@ -5008,6 +5013,34 @@ public class ServiceEngineGroup extends AviRestResource {
   @VsoMethod
   public void setLogMessageMaxFileListSize(Integer  logMessageMaxFileListSize) {
     this.logMessageMaxFileListSize = logMessageMaxFileListSize;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Tls configuration for log streaming connections from this service engine group.
+   * Effective only for log_streaming_protocol_tls and log_streaming_protocol_syslog_over_tls.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return logStreamingTlsConfig
+   */
+  @VsoMethod
+  public TlsConfig getLogStreamingTlsConfig() {
+    return logStreamingTlsConfig;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Tls configuration for log streaming connections from this service engine group.
+   * Effective only for log_streaming_protocol_tls and log_streaming_protocol_syslog_over_tls.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param logStreamingTlsConfig set the logStreamingTlsConfig.
+   */
+  @VsoMethod
+  public void setLogStreamingTlsConfig(TlsConfig logStreamingTlsConfig) {
+    this.logStreamingTlsConfig = logStreamingTlsConfig;
   }
 
   /**
@@ -10557,7 +10590,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.vmotionNotificationPollInterval, objServiceEngineGroup.vmotionNotificationPollInterval)&&
   Objects.equals(this.ipAdvertisementProfile, objServiceEngineGroup.ipAdvertisementProfile)&&
   Objects.equals(this.logAgentUdpFqdnResolveInterval, objServiceEngineGroup.logAgentUdpFqdnResolveInterval)&&
-  Objects.equals(this.logAgentUdpFqdnResolveLogCount, objServiceEngineGroup.logAgentUdpFqdnResolveLogCount);
+  Objects.equals(this.logAgentUdpFqdnResolveLogCount, objServiceEngineGroup.logAgentUdpFqdnResolveLogCount)&&
+  Objects.equals(this.logStreamingTlsConfig, objServiceEngineGroup.logStreamingTlsConfig);
 }
 
 @Override
@@ -10694,6 +10728,7 @@ public String toString() {
         sb.append("    logDisksz: ").append(toIndentedString(logDisksz)).append("\n");
         sb.append("    logMallocFailure: ").append(toIndentedString(logMallocFailure)).append("\n");
         sb.append("    logMessageMaxFileListSize: ").append(toIndentedString(logMessageMaxFileListSize)).append("\n");
+        sb.append("    logStreamingTlsConfig: ").append(toIndentedString(logStreamingTlsConfig)).append("\n");
         sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
         sb.append("    maxConcurrentExternalHm: ").append(toIndentedString(maxConcurrentExternalHm)).append("\n");
         sb.append("    maxCpuLoadAdaptiveSampling: ").append(toIndentedString(maxCpuLoadAdaptiveSampling)).append("\n");

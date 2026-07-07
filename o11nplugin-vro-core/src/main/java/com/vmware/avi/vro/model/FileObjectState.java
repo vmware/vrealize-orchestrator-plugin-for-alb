@@ -67,7 +67,7 @@ public class FileObjectState extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Reason for the state.
+   * Human-readable explanation of why the file object is in its current state.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -80,7 +80,7 @@ public class FileObjectState extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Reason for the state.
+   * Human-readable explanation of why the file object is in its current state.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -93,7 +93,7 @@ public class FileObjectState extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * State of the file object.
+   * Current processing state of the file object.
    * Enum options - FILE_OBJECT_FSM_STARTED, FILE_OBJECT_FSM_IN_PROGRESS, FILE_OBJECT_FSM_COMPLETED, FILE_OBJECT_FSM_WARNING, FILE_OBJECT_FSM_FAILED.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -107,7 +107,7 @@ public class FileObjectState extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * State of the file object.
+   * Current processing state of the file object.
    * Enum options - FILE_OBJECT_FSM_STARTED, FILE_OBJECT_FSM_IN_PROGRESS, FILE_OBJECT_FSM_COMPLETED, FILE_OBJECT_FSM_WARNING, FILE_OBJECT_FSM_FAILED.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.

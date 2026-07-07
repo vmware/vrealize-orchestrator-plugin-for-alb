@@ -99,7 +99,7 @@ public class TaskEventHistory extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * File object processing events for the version specified.
+   * Processing events for this version.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -112,7 +112,7 @@ public class TaskEventHistory extends AviRestResource {
 
   /**
    * This is the setter method. this will set the taskEvents
-   * File object processing events for the version specified.
+   * Processing events for this version.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -125,7 +125,7 @@ public class TaskEventHistory extends AviRestResource {
 
   /**
    * This is the setter method this will set the taskEvents
-   * File object processing events for the version specified.
+   * Processing events for this version.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.

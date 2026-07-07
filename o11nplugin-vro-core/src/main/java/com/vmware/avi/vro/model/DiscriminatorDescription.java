@@ -83,7 +83,7 @@ public class DiscriminatorDescription extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Property name of the discriminator.
+   * Name of the json property whose value determines which sub-schema applies.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -96,7 +96,7 @@ public class DiscriminatorDescription extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Property name of the discriminator.
+   * Name of the json property whose value determines which sub-schema applies.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.

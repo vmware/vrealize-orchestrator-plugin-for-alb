@@ -49,7 +49,8 @@ public class ParameterDescription extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Whether this parameter allows an empty value.
+   * When false, a parameter present with an empty value (e.g.
+   * ?foo=) is treated as a schema violation.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
@@ -62,7 +63,8 @@ public class ParameterDescription extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Whether this parameter allows an empty value.
+   * When false, a parameter present with an empty value (e.g.
+   * ?foo=) is treated as a schema violation.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
@@ -129,7 +131,8 @@ public class ParameterDescription extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Whether this parameter is required.
+   * Marks this parameter as mandatory.
+   * A missing parameter is treated as a violation; enforcement depends on the missing-mandatory action configured for its location (query or header).
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
@@ -142,7 +145,8 @@ public class ParameterDescription extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Whether this parameter is required.
+   * Marks this parameter as mandatory.
+   * A missing parameter is treated as a violation; enforcement depends on the missing-mandatory action configured for its location (query or header).
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.

@@ -197,7 +197,7 @@ public class ApiPolicy extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Uuid of the uploaded openapi specification file associated with this policy.
+   * Reference to the uploaded openapi specification file associated with this policy.
    * Only one file is supported at a time.
    * It is a reference to an object of type fileobject.
    * Field introduced in 32.2.1.
@@ -213,7 +213,7 @@ public class ApiPolicy extends AviRestResource {
 
   /**
    * This is the setter method. this will set the fileObjectRefs
-   * Uuid of the uploaded openapi specification file associated with this policy.
+   * Reference to the uploaded openapi specification file associated with this policy.
    * Only one file is supported at a time.
    * It is a reference to an object of type fileobject.
    * Field introduced in 32.2.1.
@@ -229,7 +229,7 @@ public class ApiPolicy extends AviRestResource {
 
   /**
    * This is the setter method this will set the fileObjectRefs
-   * Uuid of the uploaded openapi specification file associated with this policy.
+   * Reference to the uploaded openapi specification file associated with this policy.
    * Only one file is supported at a time.
    * It is a reference to an object of type fileobject.
    * Field introduced in 32.2.1.
