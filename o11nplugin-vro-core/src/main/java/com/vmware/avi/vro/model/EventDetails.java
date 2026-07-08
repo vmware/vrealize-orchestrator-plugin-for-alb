@@ -221,6 +221,7 @@ import com.vmware.avi.vro.model.SeUpgradeScaleinEventDetails;
 import com.vmware.avi.vro.model.SeUpgradeScaleoutEventDetails;
 import com.vmware.avi.vro.model.RmSpawnSeEventDetails;
 import com.vmware.avi.vro.model.SSLExpireDetails;
+import com.vmware.avi.vro.model.SSLExpiredDetails;
 import com.vmware.avi.vro.model.SSLExportDetails;
 import com.vmware.avi.vro.model.SSLIgnoredDetails;
 import com.vmware.avi.vro.model.SSLRenewDetails;
@@ -1149,6 +1150,10 @@ public class EventDetails extends AviRestResource {
     @JsonProperty("ssl_expire_details")
     @JsonInclude(Include.NON_NULL)
     private SSLExpireDetails sslExpireDetails;
+
+    @JsonProperty("ssl_expired_details")
+    @JsonInclude(Include.NON_NULL)
+    private SSLExpiredDetails sslExpiredDetails;
 
     @JsonProperty("ssl_export_details")
     @JsonInclude(Include.NON_NULL)
@@ -6296,6 +6301,28 @@ public class EventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return sslExpiredDetails
+   */
+  @VsoMethod
+  public SSLExpiredDetails getSslExpiredDetails() {
+    return sslExpiredDetails;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param sslExpiredDetails set the sslExpiredDetails.
+   */
+  @VsoMethod
+  public void setSslExpiredDetails(SSLExpiredDetails sslExpiredDetails) {
+    this.sslExpiredDetails = sslExpiredDetails;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslExportDetails
    */
   @VsoMethod
@@ -7491,6 +7518,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.sslRenewFailedDetails, objEventDetails.sslRenewFailedDetails)&&
   Objects.equals(this.sslIgnoredDetails, objEventDetails.sslIgnoredDetails)&&
   Objects.equals(this.sslRevokedDetails, objEventDetails.sslRevokedDetails)&&
+  Objects.equals(this.sslExpiredDetails, objEventDetails.sslExpiredDetails)&&
   Objects.equals(this.samlMetadataFailedEvents, objEventDetails.samlMetadataFailedEvents)&&
   Objects.equals(this.clusterNodeAddDetails, objEventDetails.clusterNodeAddDetails)&&
   Objects.equals(this.clusterNodeRemoveDetails, objEventDetails.clusterNodeRemoveDetails)&&
@@ -7863,6 +7891,7 @@ public String toString() {
         sb.append("    seupgradeScaleoutDetails: ").append(toIndentedString(seupgradeScaleoutDetails)).append("\n");
         sb.append("    spawnSeDetails: ").append(toIndentedString(spawnSeDetails)).append("\n");
         sb.append("    sslExpireDetails: ").append(toIndentedString(sslExpireDetails)).append("\n");
+        sb.append("    sslExpiredDetails: ").append(toIndentedString(sslExpiredDetails)).append("\n");
         sb.append("    sslExportDetails: ").append(toIndentedString(sslExportDetails)).append("\n");
         sb.append("    sslIgnoredDetails: ").append(toIndentedString(sslIgnoredDetails)).append("\n");
         sb.append("    sslRenewDetails: ").append(toIndentedString(sslRenewDetails)).append("\n");

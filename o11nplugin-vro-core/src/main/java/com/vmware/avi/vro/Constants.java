@@ -1000,6 +1000,7 @@ public class Constants {
     public static final String FINDER_VRO_SSLCLIENTCERTIFICATEACTION = "SSLClientCertificateAction";
     public static final String FINDER_VRO_SSLCLIENTREQUESTHEADER = "SSLClientRequestHeader";
     public static final String FINDER_VRO_SSLEXPIREDETAILS = "SSLExpireDetails";
+    public static final String FINDER_VRO_SSLEXPIREDDETAILS = "SSLExpiredDetails";
     public static final String FINDER_VRO_SSLEXPORTDETAILS = "SSLExportDetails";
     public static final String FINDER_VRO_SSLIGNOREDDETAILS = "SSLIgnoredDetails";
     public static final String FINDER_VRO_SSLKEYANDCERTIFICATE = "SSLKeyAndCertificate";

@@ -62,11 +62,11 @@ public class ApiValidationSettings extends AviRestResource {
 
     @JsonProperty("unexpected_query_argument_action")
     @JsonInclude(Include.NON_NULL)
-    private String unexpectedQueryArgumentAction = "API_ACTION_LEARN";
+    private String unexpectedQueryArgumentAction = "API_ACTION_FLAG";
 
     @JsonProperty("unexpected_request_body_parameter_action")
     @JsonInclude(Include.NON_NULL)
-    private String unexpectedRequestBodyParameterAction = "API_ACTION_LEARN";
+    private String unexpectedRequestBodyParameterAction = "API_ACTION_FLAG";
 
     @JsonProperty("unknown_content_type_action")
     @JsonInclude(Include.NON_NULL)
@@ -93,7 +93,7 @@ public class ApiValidationSettings extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Action to take when a header parameter fails schema validation.
-   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT.
+   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_FLAG".
@@ -107,7 +107,7 @@ public class ApiValidationSettings extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Action to take when a header parameter fails schema validation.
-   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT.
+   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_FLAG".
@@ -121,7 +121,7 @@ public class ApiValidationSettings extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Action to take when a path parameter fails schema validation.
-   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT.
+   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_FLAG".
@@ -135,7 +135,7 @@ public class ApiValidationSettings extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Action to take when a path parameter fails schema validation.
-   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT.
+   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_FLAG".
@@ -149,7 +149,7 @@ public class ApiValidationSettings extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Action to take when a query argument fails schema validation.
-   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT.
+   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_FLAG".
@@ -163,7 +163,7 @@ public class ApiValidationSettings extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Action to take when a query argument fails schema validation.
-   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT.
+   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_FLAG".
@@ -177,7 +177,7 @@ public class ApiValidationSettings extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Action to take when the request body fails schema validation.
-   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT.
+   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_FLAG".
@@ -191,7 +191,7 @@ public class ApiValidationSettings extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Action to take when the request body fails schema validation.
-   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT.
+   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_FLAG".
@@ -205,7 +205,7 @@ public class ApiValidationSettings extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Action to take when a mandatory header parameter is missing.
-   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT.
+   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_FLAG".
@@ -219,7 +219,7 @@ public class ApiValidationSettings extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Action to take when a mandatory header parameter is missing.
-   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT.
+   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_FLAG".
@@ -233,7 +233,7 @@ public class ApiValidationSettings extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Action to take when a mandatory query argument is missing.
-   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT.
+   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_FLAG".
@@ -247,7 +247,7 @@ public class ApiValidationSettings extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Action to take when a mandatory query argument is missing.
-   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT.
+   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_FLAG".
@@ -261,7 +261,7 @@ public class ApiValidationSettings extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Action to take when a mandatory request body parameter is missing.
-   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT.
+   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_FLAG".
@@ -275,7 +275,7 @@ public class ApiValidationSettings extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Action to take when a mandatory request body parameter is missing.
-   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT.
+   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_FLAG".
@@ -289,7 +289,7 @@ public class ApiValidationSettings extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Action to take when a request does not match any server url defined in this policy.
-   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT.
+   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_PASS".
@@ -303,7 +303,7 @@ public class ApiValidationSettings extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Action to take when a request does not match any server url defined in this policy.
-   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT.
+   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_PASS".
@@ -317,7 +317,7 @@ public class ApiValidationSettings extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Action to take when a header parameter is present but not defined in the schema.
-   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT.
+   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_PASS".
@@ -331,7 +331,7 @@ public class ApiValidationSettings extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Action to take when a header parameter is present but not defined in the schema.
-   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT.
+   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_PASS".
@@ -345,10 +345,10 @@ public class ApiValidationSettings extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Action to take when a query argument is present but not defined in the schema.
-   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT.
+   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_LEARN".
+   * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_FLAG".
    * @return unexpectedQueryArgumentAction
    */
   @VsoMethod
@@ -359,10 +359,10 @@ public class ApiValidationSettings extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Action to take when a query argument is present but not defined in the schema.
-   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT.
+   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_LEARN".
+   * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_FLAG".
    * @param unexpectedQueryArgumentAction set the unexpectedQueryArgumentAction.
    */
   @VsoMethod
@@ -373,10 +373,10 @@ public class ApiValidationSettings extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Action to take when a request body parameter is present but not defined in the schema.
-   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT.
+   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_LEARN".
+   * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_FLAG".
    * @return unexpectedRequestBodyParameterAction
    */
   @VsoMethod
@@ -387,10 +387,10 @@ public class ApiValidationSettings extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Action to take when a request body parameter is present but not defined in the schema.
-   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT.
+   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_LEARN".
+   * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_FLAG".
    * @param unexpectedRequestBodyParameterAction set the unexpectedRequestBodyParameterAction.
    */
   @VsoMethod
@@ -401,7 +401,7 @@ public class ApiValidationSettings extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Action to take on an unknown request content type, can be overridden per path.
-   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT.
+   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_PASS".
@@ -415,7 +415,7 @@ public class ApiValidationSettings extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Action to take on an unknown request content type, can be overridden per path.
-   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT.
+   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_PASS".
@@ -430,7 +430,7 @@ public class ApiValidationSettings extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Action to take when a request matches a defined path but uses an http method not defined for that path.
    * Can be overridden per path.
-   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT.
+   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_FLAG".
@@ -445,7 +445,7 @@ public class ApiValidationSettings extends AviRestResource {
    * This is the setter method to the attribute.
    * Action to take when a request matches a defined path but uses an http method not defined for that path.
    * Can be overridden per path.
-   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT.
+   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_FLAG".
@@ -459,7 +459,7 @@ public class ApiValidationSettings extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Action to take when a request matches a server url but does not match any defined api path.
-   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT.
+   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_FLAG".
@@ -473,7 +473,7 @@ public class ApiValidationSettings extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Action to take when a request matches a server url but does not match any defined api path.
-   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT.
+   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_FLAG".
@@ -487,7 +487,7 @@ public class ApiValidationSettings extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Action to take on unknown response content type, can be overridden per path.
-   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT.
+   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_FLAG".
@@ -501,7 +501,7 @@ public class ApiValidationSettings extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Action to take on unknown response content type, can be overridden per path.
-   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT.
+   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_FLAG".
@@ -515,7 +515,7 @@ public class ApiValidationSettings extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Action to take on unknown response status code, can be overridden per path.
-   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT.
+   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_FLAG".
@@ -529,7 +529,7 @@ public class ApiValidationSettings extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Action to take on unknown response status code, can be overridden per path.
-   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT.
+   * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_FLAG".
