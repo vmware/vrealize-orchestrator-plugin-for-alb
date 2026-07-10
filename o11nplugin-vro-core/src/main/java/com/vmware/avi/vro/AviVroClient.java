@@ -804,7 +804,8 @@ public class AviVroClient {
 		HashMap<String, String> map = new HashMap<String, String>();
 		map.put("include_name", "true");
 		if ((null != objectName) && (!objectName.isEmpty())) {
-			path = objectType + "?name=" + objectName;
+			path = objectType;
+			map.put("name", objectName);
 			data = session.get(path, map, userHeader);
 		} else {
 			logger.debug("Incorrect " + objectType + " name ");
