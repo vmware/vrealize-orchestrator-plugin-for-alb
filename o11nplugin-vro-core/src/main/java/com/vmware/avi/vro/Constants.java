@@ -1192,6 +1192,7 @@ public class Constants {
     public static final String FINDER_VRO_SWITCHOVEREVENTDETAILS = "SwitchoverEventDetails";
     public static final String FINDER_VRO_SWITCHOVERFAILEVENTDETAILS = "SwitchoverFailEventDetails";
     public static final String FINDER_VRO_SYSTESTEMAILPARAMS = "SysTestEmailParams";
+    public static final String FINDER_VRO_SYSLOGSERVERCONFIG = "SyslogServerConfig";
     public static final String FINDER_VRO_SYSTEMCONFIGURATION = "SystemConfiguration";
     public static final String FINDER_VRO_SYSTEMLIMITOBJECTCOUNT = "SystemLimitObjectCount";
     public static final String FINDER_VRO_SYSTEMLIMITOBJECTCOUNTS = "SystemLimitObjectCounts";
