@@ -81,10 +81,6 @@ public class ControllerProperties extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer attachIpRetryLimit = 4;
 
-    @JsonProperty("bm_use_ansible")
-    @JsonInclude(Include.NON_NULL)
-    private Boolean bmUseAnsible = true;
-
     @JsonProperty("cc_user_password_expiry_days")
     @JsonInclude(Include.NON_NULL)
     private Integer ccUserPasswordExpiryDays = 30;
@@ -870,32 +866,6 @@ public class ControllerProperties extends AviRestResource {
   @VsoMethod
   public void setAttachIpRetryLimit(Integer  attachIpRetryLimit) {
     this.attachIpRetryLimit = attachIpRetryLimit;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Use ansible for se creation in baremetal.
-   * Field introduced in 17.2.2.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
-   * @return bmUseAnsible
-   */
-  @VsoMethod
-  public Boolean getBmUseAnsible() {
-    return bmUseAnsible;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Use ansible for se creation in baremetal.
-   * Field introduced in 17.2.2.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
-   * @param bmUseAnsible set the bmUseAnsible.
-   */
-  @VsoMethod
-  public void setBmUseAnsible(Boolean  bmUseAnsible) {
-    this.bmUseAnsible = bmUseAnsible;
   }
 
   /**
@@ -3979,7 +3949,6 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.appviewxCompatMode, objControllerProperties.appviewxCompatMode)&&
   Objects.equals(this.upgradeDnsTtl, objControllerProperties.upgradeDnsTtl)&&
   Objects.equals(this.portalToken, objControllerProperties.portalToken)&&
-  Objects.equals(this.bmUseAnsible, objControllerProperties.bmUseAnsible)&&
   Objects.equals(this.vsSeAttachIpFail, objControllerProperties.vsSeAttachIpFail)&&
   Objects.equals(this.maxSeqAttachIpFailures, objControllerProperties.maxSeqAttachIpFailures)&&
   Objects.equals(this.safenetHsmVersion, objControllerProperties.safenetHsmVersion)&&
@@ -4082,7 +4051,6 @@ public String toString() {
         sb.append("    asyncPatchRequestCleanupDuration: ").append(toIndentedString(asyncPatchRequestCleanupDuration)).append("\n");
         sb.append("    attachIpRetryInterval: ").append(toIndentedString(attachIpRetryInterval)).append("\n");
         sb.append("    attachIpRetryLimit: ").append(toIndentedString(attachIpRetryLimit)).append("\n");
-        sb.append("    bmUseAnsible: ").append(toIndentedString(bmUseAnsible)).append("\n");
         sb.append("    ccUserPasswordExpiryDays: ").append(toIndentedString(ccUserPasswordExpiryDays)).append("\n");
         sb.append("    ccUserPasswordRotationJobPeriod: ").append(toIndentedString(ccUserPasswordRotationJobPeriod)).append("\n");
         sb.append("    certRotationJwtRetentionDays: ").append(toIndentedString(certRotationJwtRetentionDays)).append("\n");

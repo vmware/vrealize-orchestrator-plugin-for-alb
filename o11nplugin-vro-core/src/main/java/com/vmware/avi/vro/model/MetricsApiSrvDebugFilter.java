@@ -64,6 +64,26 @@ public class MetricsApiSrvDebugFilter extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer mapiStatsLogPeriodHours;
 
+    @JsonProperty("metrics_db_rd_boundary_window_min")
+    @JsonInclude(Include.NON_NULL)
+    private Integer metricsDbRdBoundaryWindowMin;
+
+    @JsonProperty("metrics_db_rd_check_interval_sec")
+    @JsonInclude(Include.NON_NULL)
+    private Integer metricsDbRdCheckIntervalSec;
+
+    @JsonProperty("metrics_db_rd_lag_stale_after_sec")
+    @JsonInclude(Include.NON_NULL)
+    private Integer metricsDbRdLagStaleAfterSec;
+
+    @JsonProperty("metrics_db_rd_lag_threshold_sec")
+    @JsonInclude(Include.NON_NULL)
+    private Integer metricsDbRdLagThresholdSec;
+
+    @JsonProperty("metrics_db_rd_routing_mode")
+    @JsonInclude(Include.NON_NULL)
+    private String metricsDbRdRoutingMode;
+
 
 
   /**
@@ -418,6 +438,160 @@ public class MetricsApiSrvDebugFilter extends AviRestResource {
     this.mapiStatsLogPeriodHours = mapiStatsLogPeriodHours;
   }
 
+  /**
+   * This is the getter method this will return the attribute value.
+   * First n minutes of each hour treated as the rollup window (balanced mode bypasses the freshness gate here).
+   * 0 disables the bypass.
+   * Allowed values are 0-30.
+   * Field introduced in 32.2.1.
+   * Unit is min.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return metricsDbRdBoundaryWindowMin
+   */
+  @VsoMethod
+  public Integer getMetricsDbRdBoundaryWindowMin() {
+    return metricsDbRdBoundaryWindowMin;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * First n minutes of each hour treated as the rollup window (balanced mode bypasses the freshness gate here).
+   * 0 disables the bypass.
+   * Allowed values are 0-30.
+   * Field introduced in 32.2.1.
+   * Unit is min.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param metricsDbRdBoundaryWindowMin set the metricsDbRdBoundaryWindowMin.
+   */
+  @VsoMethod
+  public void setMetricsDbRdBoundaryWindowMin(Integer  metricsDbRdBoundaryWindowMin) {
+    this.metricsDbRdBoundaryWindowMin = metricsDbRdBoundaryWindowMin;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Follower health-probe cadence.
+   * Allowed values are 10-600.
+   * Field introduced in 32.2.1.
+   * Unit is sec.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return metricsDbRdCheckIntervalSec
+   */
+  @VsoMethod
+  public Integer getMetricsDbRdCheckIntervalSec() {
+    return metricsDbRdCheckIntervalSec;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Follower health-probe cadence.
+   * Allowed values are 10-600.
+   * Field introduced in 32.2.1.
+   * Unit is sec.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param metricsDbRdCheckIntervalSec set the metricsDbRdCheckIntervalSec.
+   */
+  @VsoMethod
+  public void setMetricsDbRdCheckIntervalSec(Integer  metricsDbRdCheckIntervalSec) {
+    this.metricsDbRdCheckIntervalSec = metricsDbRdCheckIntervalSec;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Probe-recency gate  distrust the cached follower probe if older than this.
+   * Must be >= metrics_db_rd_check_interval_sec.
+   * Allowed values are 30-1800.
+   * Field introduced in 32.2.1.
+   * Unit is sec.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return metricsDbRdLagStaleAfterSec
+   */
+  @VsoMethod
+  public Integer getMetricsDbRdLagStaleAfterSec() {
+    return metricsDbRdLagStaleAfterSec;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Probe-recency gate  distrust the cached follower probe if older than this.
+   * Must be >= metrics_db_rd_check_interval_sec.
+   * Allowed values are 30-1800.
+   * Field introduced in 32.2.1.
+   * Unit is sec.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param metricsDbRdLagStaleAfterSec set the metricsDbRdLagStaleAfterSec.
+   */
+  @VsoMethod
+  public void setMetricsDbRdLagStaleAfterSec(Integer  metricsDbRdLagStaleAfterSec) {
+    this.metricsDbRdLagStaleAfterSec = metricsDbRdLagStaleAfterSec;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Max now - last_replay_ts (worst-case follower staleness) for the freshness gate.
+   * Allowed values are 5-3600.
+   * Field introduced in 32.2.1.
+   * Unit is sec.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return metricsDbRdLagThresholdSec
+   */
+  @VsoMethod
+  public Integer getMetricsDbRdLagThresholdSec() {
+    return metricsDbRdLagThresholdSec;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Max now - last_replay_ts (worst-case follower staleness) for the freshness gate.
+   * Allowed values are 5-3600.
+   * Field introduced in 32.2.1.
+   * Unit is sec.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param metricsDbRdLagThresholdSec set the metricsDbRdLagThresholdSec.
+   */
+  @VsoMethod
+  public void setMetricsDbRdLagThresholdSec(Integer  metricsDbRdLagThresholdSec) {
+    this.metricsDbRdLagThresholdSec = metricsDbRdLagThresholdSec;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Follower-routing mode for metrics reads  balanced (default), disabled (always leader), freshness_only, or force_follower_non_rt.
+   * Enum options - METRICS_DB_ROUTING_BALANCED, METRICS_DB_ROUTING_DISABLED, METRICS_DB_ROUTING_FRESHNESS_ONLY,
+   * METRICS_DB_ROUTING_FORCE_FOLLOWER_NON_RT.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return metricsDbRdRoutingMode
+   */
+  @VsoMethod
+  public String getMetricsDbRdRoutingMode() {
+    return metricsDbRdRoutingMode;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Follower-routing mode for metrics reads  balanced (default), disabled (always leader), freshness_only, or force_follower_non_rt.
+   * Enum options - METRICS_DB_ROUTING_BALANCED, METRICS_DB_ROUTING_DISABLED, METRICS_DB_ROUTING_FRESHNESS_ONLY,
+   * METRICS_DB_ROUTING_FORCE_FOLLOWER_NON_RT.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param metricsDbRdRoutingMode set the metricsDbRdRoutingMode.
+   */
+  @VsoMethod
+  public void setMetricsDbRdRoutingMode(String  metricsDbRdRoutingMode) {
+    this.metricsDbRdRoutingMode = metricsDbRdRoutingMode;
+  }
+
 
 
 @Override
@@ -438,7 +612,12 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.mapiReqHistoryEntityTypeFilters, objMetricsApiSrvDebugFilter.mapiReqHistoryEntityTypeFilters)&&
   Objects.equals(this.mapiReqHistoryEntityUuidFilters, objMetricsApiSrvDebugFilter.mapiReqHistoryEntityUuidFilters)&&
   Objects.equals(this.mapiReqHistorySeUuidFilters, objMetricsApiSrvDebugFilter.mapiReqHistorySeUuidFilters)&&
-  Objects.equals(this.mapiReqHistoryMetricIdFilters, objMetricsApiSrvDebugFilter.mapiReqHistoryMetricIdFilters);
+  Objects.equals(this.mapiReqHistoryMetricIdFilters, objMetricsApiSrvDebugFilter.mapiReqHistoryMetricIdFilters)&&
+  Objects.equals(this.metricsDbRdRoutingMode, objMetricsApiSrvDebugFilter.metricsDbRdRoutingMode)&&
+  Objects.equals(this.metricsDbRdLagThresholdSec, objMetricsApiSrvDebugFilter.metricsDbRdLagThresholdSec)&&
+  Objects.equals(this.metricsDbRdLagStaleAfterSec, objMetricsApiSrvDebugFilter.metricsDbRdLagStaleAfterSec)&&
+  Objects.equals(this.metricsDbRdCheckIntervalSec, objMetricsApiSrvDebugFilter.metricsDbRdCheckIntervalSec)&&
+  Objects.equals(this.metricsDbRdBoundaryWindowMin, objMetricsApiSrvDebugFilter.metricsDbRdBoundaryWindowMin);
 }
 
 @Override
@@ -455,6 +634,11 @@ public String toString() {
         sb.append("    mapiReqHistoryNumRecords: ").append(toIndentedString(mapiReqHistoryNumRecords)).append("\n");
         sb.append("    mapiReqHistorySeUuidFilters: ").append(toIndentedString(mapiReqHistorySeUuidFilters)).append("\n");
         sb.append("    mapiStatsLogPeriodHours: ").append(toIndentedString(mapiStatsLogPeriodHours)).append("\n");
+        sb.append("    metricsDbRdBoundaryWindowMin: ").append(toIndentedString(metricsDbRdBoundaryWindowMin)).append("\n");
+        sb.append("    metricsDbRdCheckIntervalSec: ").append(toIndentedString(metricsDbRdCheckIntervalSec)).append("\n");
+        sb.append("    metricsDbRdLagStaleAfterSec: ").append(toIndentedString(metricsDbRdLagStaleAfterSec)).append("\n");
+        sb.append("    metricsDbRdLagThresholdSec: ").append(toIndentedString(metricsDbRdLagThresholdSec)).append("\n");
+        sb.append("    metricsDbRdRoutingMode: ").append(toIndentedString(metricsDbRdRoutingMode)).append("\n");
       sb.append("}");
   return sb.toString();
 }

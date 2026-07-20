@@ -50,10 +50,6 @@ public class ApplicationLog extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String allResponseHeaders;
 
-    @JsonProperty("api_label_ids")
-    @JsonInclude(Include.NON_NULL)
-    private List<Integer> apiLabelIds;
-
     @JsonProperty("api_log")
     @JsonInclude(Include.NON_NULL)
     private ApiLog apiLog;
@@ -661,50 +657,6 @@ public class ApplicationLog extends AviRestResource {
   public void setAllResponseHeaders(String  allResponseHeaders) {
     this.allResponseHeaders = allResponseHeaders;
   }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * List of label id's acciciated with this requests.
-   * Field introduced in 32.2.1.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return apiLabelIds
-   */
-  @VsoMethod
-  public List<Integer> getApiLabelIds() {
-    return apiLabelIds;
-  }
-
-  /**
-   * This is the setter method. this will set the apiLabelIds
-   * List of label id's acciciated with this requests.
-   * Field introduced in 32.2.1.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return apiLabelIds
-   */
-  @VsoMethod
-  public void setApiLabelIds(List<Integer>  apiLabelIds) {
-    this.apiLabelIds = apiLabelIds;
-  }
-
-  /**
-   * This is the setter method this will set the apiLabelIds
-   * List of label id's acciciated with this requests.
-   * Field introduced in 32.2.1.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return apiLabelIds
-   */
-  @VsoMethod
-  public ApplicationLog addApiLabelIdsItem(Integer apiLabelIdsItem) {
-    if (this.apiLabelIds == null) {
-      this.apiLabelIds = new ArrayList<Integer>();
-    }
-    this.apiLabelIds.add(apiLabelIdsItem);
-    return this;
-  }
-
 
   /**
    * This is the getter method this will return the attribute value.
@@ -4173,7 +4125,6 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.sslNamedGroup, objApplicationLog.sslNamedGroup)&&
   Objects.equals(this.sslSignatureAlgorithm, objApplicationLog.sslSignatureAlgorithm)&&
   Objects.equals(this.learningStatus, objApplicationLog.learningStatus)&&
-  Objects.equals(this.apiLabelIds, objApplicationLog.apiLabelIds)&&
   Objects.equals(this.apiLog, objApplicationLog.apiLog);
 }
 
@@ -4184,7 +4135,6 @@ public String toString() {
       sb.append("    adf: ").append(toIndentedString(adf)).append("\n");
         sb.append("    allRequestHeaders: ").append(toIndentedString(allRequestHeaders)).append("\n");
         sb.append("    allResponseHeaders: ").append(toIndentedString(allResponseHeaders)).append("\n");
-        sb.append("    apiLabelIds: ").append(toIndentedString(apiLabelIds)).append("\n");
         sb.append("    apiLog: ").append(toIndentedString(apiLog)).append("\n");
         sb.append("    appResponseTime: ").append(toIndentedString(appResponseTime)).append("\n");
         sb.append("    authStatus: ").append(toIndentedString(authStatus)).append("\n");
