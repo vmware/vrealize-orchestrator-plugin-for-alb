@@ -44,6 +44,10 @@ public class SystemConfiguration extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private AdminAuthConfiguration adminAuthConfiguration;
 
+    @JsonProperty("ai_assistant_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean aiAssistantEnabled = false;
+
     @JsonProperty("allow_legacy_sha1_ntp_auth")
     @JsonInclude(Include.NON_NULL)
     private Boolean allowLegacySha1NtpAuth = false;
@@ -110,10 +114,6 @@ public class SystemConfiguration extends AviRestResource {
     @JsonProperty("host_key_algorithm_exclude")
     @JsonInclude(Include.NON_NULL)
     private String hostKeyAlgorithmExclude;
-
-    @JsonProperty("intelligent_assist_enabled")
-    @JsonInclude(Include.NON_NULL)
-    private Boolean intelligentAssistEnabled = false;
 
     @JsonProperty("kex_algorithm_exclude")
     @JsonInclude(Include.NON_NULL)
@@ -241,6 +241,32 @@ public class SystemConfiguration extends AviRestResource {
   @VsoMethod
   public void setAdminAuthConfiguration(AdminAuthConfiguration adminAuthConfiguration) {
     this.adminAuthConfiguration = adminAuthConfiguration;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Enable or disable ai assistant feature on the controller.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return aiAssistantEnabled
+   */
+  @VsoMethod
+  public Boolean getAiAssistantEnabled() {
+    return aiAssistantEnabled;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable or disable ai assistant feature on the controller.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param aiAssistantEnabled set the aiAssistantEnabled.
+   */
+  @VsoMethod
+  public void setAiAssistantEnabled(Boolean  aiAssistantEnabled) {
+    this.aiAssistantEnabled = aiAssistantEnabled;
   }
 
   /**
@@ -701,32 +727,6 @@ public class SystemConfiguration extends AviRestResource {
   @VsoMethod
   public void setHostKeyAlgorithmExclude(String  hostKeyAlgorithmExclude) {
     this.hostKeyAlgorithmExclude = hostKeyAlgorithmExclude;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Enable or disable intelligent assist feature on the controller.
-   * Field introduced in 32.2.1.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @return intelligentAssistEnabled
-   */
-  @VsoMethod
-  public Boolean getIntelligentAssistEnabled() {
-    return intelligentAssistEnabled;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Enable or disable intelligent assist feature on the controller.
-   * Field introduced in 32.2.1.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @param intelligentAssistEnabled set the intelligentAssistEnabled.
-   */
-  @VsoMethod
-  public void setIntelligentAssistEnabled(Boolean  intelligentAssistEnabled) {
-    this.intelligentAssistEnabled = intelligentAssistEnabled;
   }
 
   /**
@@ -1530,7 +1530,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.enableLicenseQuota, objSystemConfiguration.enableLicenseQuota)&&
   Objects.equals(this.serviceAuthConfigurations, objSystemConfiguration.serviceAuthConfigurations)&&
   Objects.equals(this.passwordPolicyManagedAtOps, objSystemConfiguration.passwordPolicyManagedAtOps)&&
-  Objects.equals(this.intelligentAssistEnabled, objSystemConfiguration.intelligentAssistEnabled)&&
+  Objects.equals(this.aiAssistantEnabled, objSystemConfiguration.aiAssistantEnabled)&&
   Objects.equals(this.allowLegacySha1NtpAuth, objSystemConfiguration.allowLegacySha1NtpAuth)&&
   Objects.equals(this.certificateSecurityPolicy, objSystemConfiguration.certificateSecurityPolicy)&&
   Objects.equals(this.allowPrivateIps, objSystemConfiguration.allowPrivateIps)&&
@@ -1542,6 +1542,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class SystemConfiguration {\n");
       sb.append("    adminAuthConfiguration: ").append(toIndentedString(adminAuthConfiguration)).append("\n");
+        sb.append("    aiAssistantEnabled: ").append(toIndentedString(aiAssistantEnabled)).append("\n");
         sb.append("    allowLegacySha1NtpAuth: ").append(toIndentedString(allowLegacySha1NtpAuth)).append("\n");
         sb.append("    allowPrivateIps: ").append(toIndentedString(allowPrivateIps)).append("\n");
         sb.append("    aviEmailLoginPassword: ").append(toIndentedString(aviEmailLoginPassword)).append("\n");
@@ -1559,7 +1560,6 @@ public String toString() {
         sb.append("    fipsMode: ").append(toIndentedString(fipsMode)).append("\n");
         sb.append("    globalTenantConfig: ").append(toIndentedString(globalTenantConfig)).append("\n");
         sb.append("    hostKeyAlgorithmExclude: ").append(toIndentedString(hostKeyAlgorithmExclude)).append("\n");
-        sb.append("    intelligentAssistEnabled: ").append(toIndentedString(intelligentAssistEnabled)).append("\n");
         sb.append("    kexAlgorithmExclude: ").append(toIndentedString(kexAlgorithmExclude)).append("\n");
         sb.append("    legacySslSupport: ").append(toIndentedString(legacySslSupport)).append("\n");
         sb.append("    licenseQuota: ").append(toIndentedString(licenseQuota)).append("\n");
