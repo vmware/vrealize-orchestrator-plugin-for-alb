@@ -192,6 +192,10 @@ public class ControllerProperties extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean enableStreamingBasedNsxIpGroupSync = true;
 
+    @JsonProperty("event_manager_api_rate_limit_per_min")
+    @JsonInclude(Include.NON_NULL)
+    private Integer eventManagerApiRateLimitPerMin = 60;
+
     @JsonProperty("event_manager_file_modified_ts_filter")
     @JsonInclude(Include.NON_NULL)
     private Integer eventManagerFileModifiedTsFilter = 180;
@@ -1660,6 +1664,34 @@ public class ControllerProperties extends AviRestResource {
   @VsoMethod
   public void setEnableStreamingBasedNsxIpGroupSync(Boolean  enableStreamingBasedNsxIpGroupSync) {
     this.enableStreamingBasedNsxIpGroupSync = enableStreamingBasedNsxIpGroupSync;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Maximum number of post /api/eventmanager/generateevent requests allowed per minute, across all event_id values.
+   * Allowed values are 1-10000.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 60.
+   * @return eventManagerApiRateLimitPerMin
+   */
+  @VsoMethod
+  public Integer getEventManagerApiRateLimitPerMin() {
+    return eventManagerApiRateLimitPerMin;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum number of post /api/eventmanager/generateevent requests allowed per minute, across all event_id values.
+   * Allowed values are 1-10000.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 60.
+   * @param eventManagerApiRateLimitPerMin set the eventManagerApiRateLimitPerMin.
+   */
+  @VsoMethod
+  public void setEventManagerApiRateLimitPerMin(Integer  eventManagerApiRateLimitPerMin) {
+    this.eventManagerApiRateLimitPerMin = eventManagerApiRateLimitPerMin;
   }
 
   /**
@@ -4031,7 +4063,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.vsSeLicenseReservationFail, objControllerProperties.vsSeLicenseReservationFail)&&
   Objects.equals(this.promotedLogFields, objControllerProperties.promotedLogFields)&&
   Objects.equals(this.ipglsClientCacheSize, objControllerProperties.ipglsClientCacheSize)&&
-  Objects.equals(this.ipglsClientCacheTtlMinutes, objControllerProperties.ipglsClientCacheTtlMinutes);
+  Objects.equals(this.ipglsClientCacheTtlMinutes, objControllerProperties.ipglsClientCacheTtlMinutes)&&
+  Objects.equals(this.eventManagerApiRateLimitPerMin, objControllerProperties.eventManagerApiRateLimitPerMin);
 }
 
 @Override
@@ -4079,6 +4112,7 @@ public String toString() {
         sb.append("    enablePerProcessStop: ").append(toIndentedString(enablePerProcessStop)).append("\n");
         sb.append("    enableResmgrLogCachePrint: ").append(toIndentedString(enableResmgrLogCachePrint)).append("\n");
         sb.append("    enableStreamingBasedNsxIpGroupSync: ").append(toIndentedString(enableStreamingBasedNsxIpGroupSync)).append("\n");
+        sb.append("    eventManagerApiRateLimitPerMin: ").append(toIndentedString(eventManagerApiRateLimitPerMin)).append("\n");
         sb.append("    eventManagerFileModifiedTsFilter: ").append(toIndentedString(eventManagerFileModifiedTsFilter)).append("\n");
         sb.append("    eventManagerMaxGoroutines: ").append(toIndentedString(eventManagerMaxGoroutines)).append("\n");
         sb.append("    eventManagerMaxSubscribers: ").append(toIndentedString(eventManagerMaxSubscribers)).append("\n");
