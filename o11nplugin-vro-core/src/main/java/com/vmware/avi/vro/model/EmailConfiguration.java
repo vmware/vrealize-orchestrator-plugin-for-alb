@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.TlsConfig;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -59,6 +60,10 @@ public class EmailConfiguration extends AviRestResource {
     @JsonProperty("smtp_type")
     @JsonInclude(Include.NON_NULL)
     private String smtpType = "SMTP_LOCAL_HOST";
+
+    @JsonProperty("tls_config")
+    @JsonInclude(Include.NON_NULL)
+    private TlsConfig tlsConfig;
 
 
 
@@ -294,6 +299,36 @@ public class EmailConfiguration extends AviRestResource {
     this.smtpType = smtpType;
   }
 
+  /**
+   * This is the getter method this will return the attribute value.
+   * Tls mode and optional client certificate for outbound smtp connections.
+   * Ca trust is always sourced from systemconfiguration.truststore_pkiprofile_uuid.
+   * When unset, no starttls is attempted regardless of disable_tls.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return tlsConfig
+   */
+  @VsoMethod
+  public TlsConfig getTlsConfig() {
+    return tlsConfig;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Tls mode and optional client certificate for outbound smtp connections.
+   * Ca trust is always sourced from systemconfiguration.truststore_pkiprofile_uuid.
+   * When unset, no starttls is attempted regardless of disable_tls.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param tlsConfig set the tlsConfig.
+   */
+  @VsoMethod
+  public void setTlsConfig(TlsConfig tlsConfig) {
+    this.tlsConfig = tlsConfig;
+  }
+
 
 
 @Override
@@ -312,6 +347,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.authUsername, objEmailConfiguration.authUsername)&&
   Objects.equals(this.authPassword, objEmailConfiguration.authPassword)&&
   Objects.equals(this.disableTls, objEmailConfiguration.disableTls)&&
+  Objects.equals(this.tlsConfig, objEmailConfiguration.tlsConfig)&&
   Objects.equals(this.emailTimezone, objEmailConfiguration.emailTimezone)&&
   Objects.equals(this.fromName, objEmailConfiguration.fromName);
 }
@@ -329,6 +365,7 @@ public String toString() {
         sb.append("    mailServerName: ").append(toIndentedString(mailServerName)).append("\n");
         sb.append("    mailServerPort: ").append(toIndentedString(mailServerPort)).append("\n");
         sb.append("    smtpType: ").append(toIndentedString(smtpType)).append("\n");
+        sb.append("    tlsConfig: ").append(toIndentedString(tlsConfig)).append("\n");
       sb.append("}");
   return sb.toString();
 }
