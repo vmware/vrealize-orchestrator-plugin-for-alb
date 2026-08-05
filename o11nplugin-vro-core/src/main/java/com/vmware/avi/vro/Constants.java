@@ -672,6 +672,7 @@ public class Constants {
     public static final String FINDER_VRO_LOCATIONHDRMATCH = "LocationHdrMatch";
     public static final String FINDER_VRO_LOCKOUTCONSTRAINT = "LockoutConstraint";
     public static final String FINDER_VRO_LOGAGENTEVENTDETAIL = "LogAgentEventDetail";
+    public static final String FINDER_VRO_LOGAGENTSTREAMINGEVENTDETAIL = "LogAgentStreamingEventDetail";
     public static final String FINDER_VRO_LOGAGENTTCPCLIENTEVENTDETAIL = "LogAgentTCPClientEventDetail";
     public static final String FINDER_VRO_LOGAGENTTCPCONNESTRATEEXCDEVENT = "LogAgentTCPConnEstRateExcdEvent";
     public static final String FINDER_VRO_LOGCONTROLLERMAPPING = "LogControllerMapping";

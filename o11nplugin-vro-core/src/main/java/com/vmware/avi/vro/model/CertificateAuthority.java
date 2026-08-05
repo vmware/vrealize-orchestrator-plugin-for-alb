@@ -28,9 +28,21 @@ public class CertificateAuthority extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String caRef;
 
+    @JsonProperty("issuer")
+    @JsonInclude(Include.NON_NULL)
+    private String issuer;
+
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
     private String name;
+
+    @JsonProperty("not_after")
+    @JsonInclude(Include.NON_NULL)
+    private String notAfter;
+
+    @JsonProperty("subject")
+    @JsonInclude(Include.NON_NULL)
+    private String subject;
 
 
 
@@ -60,6 +72,30 @@ public class CertificateAuthority extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Common name of the ca certificate issuer.
+   * Field introduced in 32.1.3.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * @return issuer
+   */
+  @VsoMethod
+  public String getIssuer() {
+    return issuer;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Common name of the ca certificate issuer.
+   * Field introduced in 32.1.3.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * @param issuer set the issuer.
+   */
+  @VsoMethod
+  public void setIssuer(String  issuer) {
+    this.issuer = issuer;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
@@ -80,6 +116,54 @@ public class CertificateAuthority extends AviRestResource {
     this.name = name;
   }
 
+  /**
+   * This is the getter method this will return the attribute value.
+   * Expiry date of the ca certificate in utc string form.
+   * Field introduced in 32.1.3.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * @return notAfter
+   */
+  @VsoMethod
+  public String getNotAfter() {
+    return notAfter;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Expiry date of the ca certificate in utc string form.
+   * Field introduced in 32.1.3.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * @param notAfter set the notAfter.
+   */
+  @VsoMethod
+  public void setNotAfter(String  notAfter) {
+    this.notAfter = notAfter;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Common name of the ca certificate subject.
+   * Field introduced in 32.1.3.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * @return subject
+   */
+  @VsoMethod
+  public String getSubject() {
+    return subject;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Common name of the ca certificate subject.
+   * Field introduced in 32.1.3.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * @param subject set the subject.
+   */
+  @VsoMethod
+  public void setSubject(String  subject) {
+    this.subject = subject;
+  }
+
 
 
 @Override
@@ -92,7 +176,10 @@ public boolean equals(java.lang.Object o) {
   }
   CertificateAuthority objCertificateAuthority = (CertificateAuthority) o;
   return   Objects.equals(this.name, objCertificateAuthority.name)&&
-  Objects.equals(this.caRef, objCertificateAuthority.caRef);
+  Objects.equals(this.caRef, objCertificateAuthority.caRef)&&
+  Objects.equals(this.subject, objCertificateAuthority.subject)&&
+  Objects.equals(this.issuer, objCertificateAuthority.issuer)&&
+  Objects.equals(this.notAfter, objCertificateAuthority.notAfter);
 }
 
 @Override
@@ -100,7 +187,10 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class CertificateAuthority {\n");
       sb.append("    caRef: ").append(toIndentedString(caRef)).append("\n");
+        sb.append("    issuer: ").append(toIndentedString(issuer)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    notAfter: ").append(toIndentedString(notAfter)).append("\n");
+        sb.append("    subject: ").append(toIndentedString(subject)).append("\n");
       sb.append("}");
   return sb.toString();
 }

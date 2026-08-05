@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.LogAgentTCPConnEstRateExcdEvent;
+import com.vmware.avi.vro.model.LogAgentStreamingEventDetail;
 import com.vmware.avi.vro.model.LogAgentTCPClientEventDetail;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
@@ -34,6 +35,10 @@ public class LogAgentEventDetail extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private LogAgentTCPConnEstRateExcdEvent rapidConnection;
 
+    @JsonProperty("streaming_event_detail")
+    @JsonInclude(Include.NON_NULL)
+    private LogAgentStreamingEventDetail streamingEventDetail;
+
     @JsonProperty("tcp_detail")
     @JsonInclude(Include.NON_NULL)
     private LogAgentTCPClientEventDetail tcpDetail;
@@ -47,7 +52,7 @@ public class LogAgentEventDetail extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Protocol used for communication to the external entity.
-   * Enum options - TCP_CONN.
+   * Enum options - TCP_CONN, UDP_CONN.
    * Field introduced in 20.1.3.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -61,7 +66,7 @@ public class LogAgentEventDetail extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Protocol used for communication to the external entity.
-   * Enum options - TCP_CONN.
+   * Enum options - TCP_CONN, UDP_CONN.
    * Field introduced in 20.1.3.
    * Allowed with any value in enterprise, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -96,6 +101,32 @@ public class LogAgentEventDetail extends AviRestResource {
   @VsoMethod
   public void setRapidConnection(LogAgentTCPConnEstRateExcdEvent rapidConnection) {
     this.rapidConnection = rapidConnection;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Event details for any streaming event.
+   * Field introduced in 32.1.3.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return streamingEventDetail
+   */
+  @VsoMethod
+  public LogAgentStreamingEventDetail getStreamingEventDetail() {
+    return streamingEventDetail;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Event details for any streaming event.
+   * Field introduced in 32.1.3.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param streamingEventDetail set the streamingEventDetail.
+   */
+  @VsoMethod
+  public void setStreamingEventDetail(LogAgentStreamingEventDetail streamingEventDetail) {
+    this.streamingEventDetail = streamingEventDetail;
   }
 
   /**
@@ -166,7 +197,8 @@ public boolean equals(java.lang.Object o) {
   return   Objects.equals(this.type, objLogAgentEventDetail.type)&&
   Objects.equals(this.protocol, objLogAgentEventDetail.protocol)&&
   Objects.equals(this.tcpDetail, objLogAgentEventDetail.tcpDetail)&&
-  Objects.equals(this.rapidConnection, objLogAgentEventDetail.rapidConnection);
+  Objects.equals(this.rapidConnection, objLogAgentEventDetail.rapidConnection)&&
+  Objects.equals(this.streamingEventDetail, objLogAgentEventDetail.streamingEventDetail);
 }
 
 @Override
@@ -175,6 +207,7 @@ public String toString() {
   sb.append("class LogAgentEventDetail {\n");
       sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("    rapidConnection: ").append(toIndentedString(rapidConnection)).append("\n");
+        sb.append("    streamingEventDetail: ").append(toIndentedString(streamingEventDetail)).append("\n");
         sb.append("    tcpDetail: ").append(toIndentedString(tcpDetail)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
       sb.append("}");
