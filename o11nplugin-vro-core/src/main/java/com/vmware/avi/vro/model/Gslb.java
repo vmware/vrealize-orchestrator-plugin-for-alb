@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.AutoTuneSendInterval;
 import com.vmware.avi.vro.model.GslbClientIpAddrGroup;
 import com.vmware.avi.vro.model.LeaderChangeInfo;
+import com.vmware.avi.vro.model.TlsConfig;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -110,6 +111,10 @@ public class Gslb extends AviRestResource {
     @JsonProperty("third_party_sites")
     @JsonInclude(Include.NON_NULL)
     private List<GslbThirdPartySite> thirdPartySites;
+
+    @JsonProperty("tls_config")
+    @JsonInclude(Include.NON_NULL)
+    private TlsConfig tlsConfig;
 
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
@@ -762,6 +767,34 @@ public class Gslb extends AviRestResource {
     return this;
   }
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Tls configuration for the site-to-site gslb federation channel (peer site login and remotesitewatcherrpc replication stream).
+   * Tls_mode_no_verify (default) preserves legacy behavior of not verifying the peer site's certificate.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return tlsConfig
+   */
+  @VsoMethod
+  public TlsConfig getTlsConfig() {
+    return tlsConfig;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Tls configuration for the site-to-site gslb federation channel (peer site login and remotesitewatcherrpc replication stream).
+   * Tls_mode_no_verify (default) preserves legacy behavior of not verifying the peer site's certificate.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param tlsConfig set the tlsConfig.
+   */
+  @VsoMethod
+  public void setTlsConfig(TlsConfig tlsConfig) {
+    this.tlsConfig = tlsConfig;
+  }
 /**
    * This is the getter method this will return the attribute value.
    * Avi controller URL of the object.
@@ -868,7 +901,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.gsMemberFqdnResolutionOnSe, objGslb.gsMemberFqdnResolutionOnSe)&&
   Objects.equals(this.shortProbeInterval, objGslb.shortProbeInterval)&&
   Objects.equals(this.autoTuneSendInterval, objGslb.autoTuneSendInterval)&&
-  Objects.equals(this.leaderChangeInfo, objGslb.leaderChangeInfo);
+  Objects.equals(this.leaderChangeInfo, objGslb.leaderChangeInfo)&&
+  Objects.equals(this.tlsConfig, objGslb.tlsConfig);
 }
 
 @Override
@@ -896,6 +930,7 @@ public String toString() {
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
         sb.append("    tenantScoped: ").append(toIndentedString(tenantScoped)).append("\n");
         sb.append("    thirdPartySites: ").append(toIndentedString(thirdPartySites)).append("\n");
+        sb.append("    tlsConfig: ").append(toIndentedString(tlsConfig)).append("\n");
             sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
         sb.append("    viewId: ").append(toIndentedString(viewId)).append("\n");
       sb.append("}");

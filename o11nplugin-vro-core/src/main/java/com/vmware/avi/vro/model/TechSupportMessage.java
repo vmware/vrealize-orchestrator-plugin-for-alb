@@ -148,8 +148,8 @@ public class TechSupportMessage extends AviRestResource {
   }
 
 
-  public String getObjectID() {
-    return "TechSupportMessage" + "(" + uuid + ")";
+ public String getObjectID() {
+    return "TechSupportMessage";
   }
 
 @Override
