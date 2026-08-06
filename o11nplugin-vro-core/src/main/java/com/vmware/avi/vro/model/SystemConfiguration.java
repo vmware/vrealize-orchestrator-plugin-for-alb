@@ -111,6 +111,10 @@ public class SystemConfiguration extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private TenantConfiguration globalTenantConfig;
 
+    @JsonProperty("gslb_client_cert_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String gslbClientCertRef;
+
     @JsonProperty("host_key_algorithm_exclude")
     @JsonInclude(Include.NON_NULL)
     private String hostKeyAlgorithmExclude;
@@ -699,6 +703,36 @@ public class SystemConfiguration extends AviRestResource {
   @VsoMethod
   public void setGlobalTenantConfig(TenantConfiguration globalTenantConfig) {
     this.globalTenantConfig = globalTenantConfig;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Client certificate for mutual tls authentication.
+   * Required when tls_mode is tls_mode_mtls.
+   * It is a reference to an object of type sslkeyandcertificate.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return gslbClientCertRef
+   */
+  @VsoMethod
+  public String getGslbClientCertRef() {
+    return gslbClientCertRef;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Client certificate for mutual tls authentication.
+   * Required when tls_mode is tls_mode_mtls.
+   * It is a reference to an object of type sslkeyandcertificate.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param gslbClientCertRef set the gslbClientCertRef.
+   */
+  @VsoMethod
+  public void setGslbClientCertRef(String  gslbClientCertRef) {
+    this.gslbClientCertRef = gslbClientCertRef;
   }
 
   /**
@@ -1534,7 +1568,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.allowLegacySha1NtpAuth, objSystemConfiguration.allowLegacySha1NtpAuth)&&
   Objects.equals(this.certificateSecurityPolicy, objSystemConfiguration.certificateSecurityPolicy)&&
   Objects.equals(this.allowPrivateIps, objSystemConfiguration.allowPrivateIps)&&
-  Objects.equals(this.syslogServerSettings, objSystemConfiguration.syslogServerSettings);
+  Objects.equals(this.syslogServerSettings, objSystemConfiguration.syslogServerSettings)&&
+  Objects.equals(this.gslbClientCertRef, objSystemConfiguration.gslbClientCertRef);
 }
 
 @Override
@@ -1559,6 +1594,7 @@ public String toString() {
         sb.append("    enableLicenseQuota: ").append(toIndentedString(enableLicenseQuota)).append("\n");
         sb.append("    fipsMode: ").append(toIndentedString(fipsMode)).append("\n");
         sb.append("    globalTenantConfig: ").append(toIndentedString(globalTenantConfig)).append("\n");
+        sb.append("    gslbClientCertRef: ").append(toIndentedString(gslbClientCertRef)).append("\n");
         sb.append("    hostKeyAlgorithmExclude: ").append(toIndentedString(hostKeyAlgorithmExclude)).append("\n");
         sb.append("    kexAlgorithmExclude: ").append(toIndentedString(kexAlgorithmExclude)).append("\n");
         sb.append("    legacySslSupport: ").append(toIndentedString(legacySslSupport)).append("\n");

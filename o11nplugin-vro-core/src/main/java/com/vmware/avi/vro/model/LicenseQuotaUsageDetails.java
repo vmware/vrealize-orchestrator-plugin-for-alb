@@ -20,13 +20,17 @@ import org.springframework.stereotype.Service;
  *
  */
 @VsoObject(create = false, name = "LicenseQuotaUsageDetails")
-@VsoFinder(name = Constants.FINDER_VRO_LICENSEQUOTAUSAGEDETAILS)
+@VsoFinder(name = Constants.FINDER_VRO_LICENSEQUOTAUSAGEDETAILS, idAccessor = "getObjectID()")
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class LicenseQuotaUsageDetails extends AviRestResource {
     @JsonProperty("tenant_quota_usage_infos")
     @JsonInclude(Include.NON_NULL)
     private List<TenantQuotaUsageInfo> tenantQuotaUsageInfos;
+
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
 
 
@@ -73,8 +77,30 @@ public class LicenseQuotaUsageDetails extends AviRestResource {
     return this;
   }
 
+/**
+   * This is the getter method this will return the attribute value.
+   * Avi controller URL of the object.
+   * @return url
+   */
+  @VsoMethod
+  public String getUrl() {
+    return url;
+  }
+
+  /**
+   * This is the setter method. this will set the url
+   * Avi controller URL of the object.
+   * @return url
+   */
+  @VsoMethod
+  public void setUrl(String  url) {
+    this.url = url;
+  }
 
 
+ public String getObjectID() {
+    return "LicenseQuotaUsageDetails";
+  }
 
 @Override
 public boolean equals(java.lang.Object o) {
@@ -93,7 +119,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class LicenseQuotaUsageDetails {\n");
       sb.append("    tenantQuotaUsageInfos: ").append(toIndentedString(tenantQuotaUsageInfos)).append("\n");
-      sb.append("}");
+          sb.append("}");
   return sb.toString();
 }
 

@@ -20,13 +20,17 @@ import org.springframework.stereotype.Service;
  *
  */
 @VsoObject(create = false, name = "SystemLimitObjectCounts")
-@VsoFinder(name = Constants.FINDER_VRO_SYSTEMLIMITOBJECTCOUNTS)
+@VsoFinder(name = Constants.FINDER_VRO_SYSTEMLIMITOBJECTCOUNTS, idAccessor = "getObjectID()")
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SystemLimitObjectCounts extends AviRestResource {
     @JsonProperty("object_counts")
     @JsonInclude(Include.NON_NULL)
     private List<SystemLimitObjectCount> objectCounts;
+
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
 
 
@@ -73,8 +77,30 @@ public class SystemLimitObjectCounts extends AviRestResource {
     return this;
   }
 
+/**
+   * This is the getter method this will return the attribute value.
+   * Avi controller URL of the object.
+   * @return url
+   */
+  @VsoMethod
+  public String getUrl() {
+    return url;
+  }
+
+  /**
+   * This is the setter method. this will set the url
+   * Avi controller URL of the object.
+   * @return url
+   */
+  @VsoMethod
+  public void setUrl(String  url) {
+    this.url = url;
+  }
 
 
+ public String getObjectID() {
+    return "SystemLimitObjectCounts";
+  }
 
 @Override
 public boolean equals(java.lang.Object o) {
@@ -93,7 +119,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class SystemLimitObjectCounts {\n");
       sb.append("    objectCounts: ").append(toIndentedString(objectCounts)).append("\n");
-      sb.append("}");
+          sb.append("}");
   return sb.toString();
 }
 

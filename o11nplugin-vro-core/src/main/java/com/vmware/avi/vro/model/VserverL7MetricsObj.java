@@ -800,6 +800,10 @@ public class VserverL7MetricsObj extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Float sumWaapActiveApiLatency;
 
+    @JsonProperty("sum_waap_flag_count")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumWaapFlagCount;
+
     @JsonProperty("sum_waap_hits")
     @JsonInclude(Include.NON_NULL)
     private Float sumWaapHits;
@@ -807,6 +811,10 @@ public class VserverL7MetricsObj extends AviRestResource {
     @JsonProperty("sum_waap_orphan_api_count")
     @JsonInclude(Include.NON_NULL)
     private Float sumWaapOrphanApiCount;
+
+    @JsonProperty("sum_waap_reject_count")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumWaapRejectCount;
 
     @JsonProperty("sum_waap_responses_400")
     @JsonInclude(Include.NON_NULL)
@@ -2811,7 +2819,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate of authentication errors (401 unauthorized, 403 forbidden, and 407 proxy authentication required responses) for api requests per second.
-   * Field introduced in 32.3.1.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgWaapAuthenticationErrors
@@ -2824,7 +2832,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate of authentication errors (401 unauthorized, 403 forbidden, and 407 proxy authentication required responses) for api requests per second.
-   * Field introduced in 32.3.1.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgWaapAuthenticationErrors set the avgWaapAuthenticationErrors.
@@ -2889,7 +2897,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate of rate limiting errors (429 too many requests responses) for api requests per second.
-   * Field introduced in 32.3.1.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgWaapRateLimitingErrors
@@ -2902,7 +2910,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate of rate limiting errors (429 too many requests responses) for api requests per second.
-   * Field introduced in 32.3.1.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgWaapRateLimitingErrors set the avgWaapRateLimitingErrors.
@@ -2915,7 +2923,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate of http redirect responses (301, 302, 303, 307, 308) for api requests per second.
-   * Field introduced in 32.3.1.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgWaapRedirects
@@ -2928,7 +2936,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate of http redirect responses (301, 302, 303, 307, 308) for api requests per second.
-   * Field introduced in 32.3.1.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgWaapRedirects set the avgWaapRedirects.
@@ -2941,7 +2949,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate of 301 moved permanently responses for api requests per second.
-   * Field introduced in 32.3.1.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgWaapResponses301
@@ -2954,7 +2962,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate of 301 moved permanently responses for api requests per second.
-   * Field introduced in 32.3.1.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgWaapResponses301 set the avgWaapResponses301.
@@ -2967,7 +2975,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate of 302 found responses for api requests per second.
-   * Field introduced in 32.3.1.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgWaapResponses302
@@ -2980,7 +2988,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate of 302 found responses for api requests per second.
-   * Field introduced in 32.3.1.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgWaapResponses302 set the avgWaapResponses302.
@@ -2993,7 +3001,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate of 303 see other responses for api requests per second.
-   * Field introduced in 32.3.1.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgWaapResponses303
@@ -3006,7 +3014,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate of 303 see other responses for api requests per second.
-   * Field introduced in 32.3.1.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgWaapResponses303 set the avgWaapResponses303.
@@ -3019,7 +3027,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate of 307 temporary redirect responses for api requests per second.
-   * Field introduced in 32.3.1.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgWaapResponses307
@@ -3032,7 +3040,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate of 307 temporary redirect responses for api requests per second.
-   * Field introduced in 32.3.1.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgWaapResponses307 set the avgWaapResponses307.
@@ -3045,7 +3053,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate of 308 permanent redirect responses for api requests per second.
-   * Field introduced in 32.3.1.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgWaapResponses308
@@ -3058,7 +3066,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate of 308 permanent redirect responses for api requests per second.
-   * Field introduced in 32.3.1.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgWaapResponses308 set the avgWaapResponses308.
@@ -3071,7 +3079,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate of 400 bad request responses for api requests per second.
-   * Field introduced in 32.3.1.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgWaapResponses400
@@ -3084,7 +3092,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate of 400 bad request responses for api requests per second.
-   * Field introduced in 32.3.1.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgWaapResponses400 set the avgWaapResponses400.
@@ -3097,7 +3105,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate of 401 unauthorized responses for api requests per second.
-   * Field introduced in 32.3.1.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgWaapResponses401
@@ -3110,7 +3118,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate of 401 unauthorized responses for api requests per second.
-   * Field introduced in 32.3.1.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgWaapResponses401 set the avgWaapResponses401.
@@ -3123,7 +3131,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate of 403 forbidden responses for api requests per second.
-   * Field introduced in 32.3.1.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgWaapResponses403
@@ -3136,7 +3144,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate of 403 forbidden responses for api requests per second.
-   * Field introduced in 32.3.1.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgWaapResponses403 set the avgWaapResponses403.
@@ -3149,7 +3157,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate of 407 proxy authentication required responses for api requests per second.
-   * Field introduced in 32.3.1.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgWaapResponses407
@@ -3162,7 +3170,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate of 407 proxy authentication required responses for api requests per second.
-   * Field introduced in 32.3.1.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgWaapResponses407 set the avgWaapResponses407.
@@ -3175,7 +3183,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate of 429 too many requests responses for api requests per second.
-   * Field introduced in 32.3.1.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgWaapResponses429
@@ -3188,7 +3196,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate of 429 too many requests responses for api requests per second.
-   * Field introduced in 32.3.1.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgWaapResponses429 set the avgWaapResponses429.
@@ -3331,7 +3339,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate of zombie api requests per second.
-   * Field introduced in 32.3.1.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgWaapZombieApiCount
@@ -3344,7 +3352,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate of zombie api requests per second.
-   * Field introduced in 32.3.1.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgWaapZombieApiCount set the avgWaapZombieApiCount.
@@ -5778,6 +5786,32 @@ public class VserverL7MetricsObj extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Total number of requests flagged (but not rejected) by api policy validation for this virtualservice.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return sumWaapFlagCount
+   */
+  @VsoMethod
+  public Float getSumWaapFlagCount() {
+    return sumWaapFlagCount;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Total number of requests flagged (but not rejected) by api policy validation for this virtualservice.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param sumWaapFlagCount set the sumWaapFlagCount.
+   */
+  @VsoMethod
+  public void setSumWaapFlagCount(Float  sumWaapFlagCount) {
+    this.sumWaapFlagCount = sumWaapFlagCount;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Total number of waap hits for this virtualservice.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -5830,8 +5864,34 @@ public class VserverL7MetricsObj extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Total number of requests rejected by api policy validation for this virtualservice.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return sumWaapRejectCount
+   */
+  @VsoMethod
+  public Float getSumWaapRejectCount() {
+    return sumWaapRejectCount;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Total number of requests rejected by api policy validation for this virtualservice.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param sumWaapRejectCount set the sumWaapRejectCount.
+   */
+  @VsoMethod
+  public void setSumWaapRejectCount(Float  sumWaapRejectCount) {
+    this.sumWaapRejectCount = sumWaapRejectCount;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Total 400 bad request responses for api requests.
-   * Field introduced in 32.3.1.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumWaapResponses400
@@ -5844,7 +5904,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total 400 bad request responses for api requests.
-   * Field introduced in 32.3.1.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumWaapResponses400 set the sumWaapResponses400.
@@ -5857,7 +5917,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total 401 unauthorized responses for api requests.
-   * Field introduced in 32.3.1.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumWaapResponses401
@@ -5870,7 +5930,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total 401 unauthorized responses for api requests.
-   * Field introduced in 32.3.1.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumWaapResponses401 set the sumWaapResponses401.
@@ -5883,7 +5943,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total 403 forbidden responses for api requests.
-   * Field introduced in 32.3.1.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumWaapResponses403
@@ -5896,7 +5956,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total 403 forbidden responses for api requests.
-   * Field introduced in 32.3.1.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumWaapResponses403 set the sumWaapResponses403.
@@ -6039,7 +6099,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number of requests matching zombie api endpoints.
-   * Field introduced in 32.3.1.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumWaapZombieApiCount
@@ -6052,7 +6112,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number of requests matching zombie api endpoints.
-   * Field introduced in 32.3.1.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumWaapZombieApiCount set the sumWaapZombieApiCount.
@@ -6948,6 +7008,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.avgWaapResponses303, objVserverL7MetricsObj.avgWaapResponses303)&&
   Objects.equals(this.avgWaapResponses307, objVserverL7MetricsObj.avgWaapResponses307)&&
   Objects.equals(this.avgWaapResponses308, objVserverL7MetricsObj.avgWaapResponses308)&&
+  Objects.equals(this.sumWaapFlagCount, objVserverL7MetricsObj.sumWaapFlagCount)&&
+  Objects.equals(this.sumWaapRejectCount, objVserverL7MetricsObj.sumWaapRejectCount)&&
   Objects.equals(this.avgWaapAuthenticationErrors, objVserverL7MetricsObj.avgWaapAuthenticationErrors)&&
   Objects.equals(this.avgWaapRateLimitingErrors, objVserverL7MetricsObj.avgWaapRateLimitingErrors)&&
   Objects.equals(this.avgWaapRedirects, objVserverL7MetricsObj.avgWaapRedirects);
@@ -7151,8 +7213,10 @@ public String toString() {
         sb.append("    sumUriLength: ").append(toIndentedString(sumUriLength)).append("\n");
         sb.append("    sumWaapActiveApiCount: ").append(toIndentedString(sumWaapActiveApiCount)).append("\n");
         sb.append("    sumWaapActiveApiLatency: ").append(toIndentedString(sumWaapActiveApiLatency)).append("\n");
+        sb.append("    sumWaapFlagCount: ").append(toIndentedString(sumWaapFlagCount)).append("\n");
         sb.append("    sumWaapHits: ").append(toIndentedString(sumWaapHits)).append("\n");
         sb.append("    sumWaapOrphanApiCount: ").append(toIndentedString(sumWaapOrphanApiCount)).append("\n");
+        sb.append("    sumWaapRejectCount: ").append(toIndentedString(sumWaapRejectCount)).append("\n");
         sb.append("    sumWaapResponses400: ").append(toIndentedString(sumWaapResponses400)).append("\n");
         sb.append("    sumWaapResponses401: ").append(toIndentedString(sumWaapResponses401)).append("\n");
         sb.append("    sumWaapResponses403: ").append(toIndentedString(sumWaapResponses403)).append("\n");

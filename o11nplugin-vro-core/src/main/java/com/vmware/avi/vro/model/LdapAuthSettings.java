@@ -6,7 +6,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.LdapDirectorySettings;
-import com.vmware.avi.vro.model.TlsConfig;
 import com.vmware.avi.vro.model.LdapUserBindSettings;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
@@ -34,6 +33,10 @@ public class LdapAuthSettings extends AviRestResource {
     @JsonProperty("bind_as_administrator")
     @JsonInclude(Include.NON_NULL)
     private Boolean bindAsAdministrator = true;
+
+    @JsonProperty("client_cert_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String clientCertRef;
 
     @JsonProperty("email_attribute")
     @JsonInclude(Include.NON_NULL)
@@ -63,9 +66,9 @@ public class LdapAuthSettings extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private LdapDirectorySettings settings;
 
-    @JsonProperty("tls_config")
+    @JsonProperty("skip_hostname_verification")
     @JsonInclude(Include.NON_NULL)
-    private TlsConfig tlsConfig;
+    private Boolean skipHostnameVerification = false;
 
     @JsonProperty("user_bind")
     @JsonInclude(Include.NON_NULL)
@@ -121,6 +124,36 @@ public class LdapAuthSettings extends AviRestResource {
   @VsoMethod
   public void setBindAsAdministrator(Boolean  bindAsAdministrator) {
     this.bindAsAdministrator = bindAsAdministrator;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Client certificate for mutual tls connection.
+   * Effective only when security_mode is auth_ldap_secure_use_ldaps.
+   * It is a reference to an object of type sslkeyandcertificate.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return clientCertRef
+   */
+  @VsoMethod
+  public String getClientCertRef() {
+    return clientCertRef;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Client certificate for mutual tls connection.
+   * Effective only when security_mode is auth_ldap_secure_use_ldaps.
+   * It is a reference to an object of type sslkeyandcertificate.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param clientCertRef set the clientCertRef.
+   */
+  @VsoMethod
+  public void setClientCertRef(String  clientCertRef) {
+    this.clientCertRef = clientCertRef;
   }
 
   /**
@@ -324,30 +357,32 @@ public class LdapAuthSettings extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Tls configuration for outbound ldap connections.
+   * Skip hostname verification against the ldap server certificate.
+   * The certificate chain is still validated using pki_profile_uuid.
    * Effective only when security_mode is auth_ldap_secure_use_ldaps.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return tlsConfig
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return skipHostnameVerification
    */
   @VsoMethod
-  public TlsConfig getTlsConfig() {
-    return tlsConfig;
+  public Boolean getSkipHostnameVerification() {
+    return skipHostnameVerification;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Tls configuration for outbound ldap connections.
+   * Skip hostname verification against the ldap server certificate.
+   * The certificate chain is still validated using pki_profile_uuid.
    * Effective only when security_mode is auth_ldap_secure_use_ldaps.
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param tlsConfig set the tlsConfig.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param skipHostnameVerification set the skipHostnameVerification.
    */
   @VsoMethod
-  public void setTlsConfig(TlsConfig tlsConfig) {
-    this.tlsConfig = tlsConfig;
+  public void setSkipHostnameVerification(Boolean  skipHostnameVerification) {
+    this.skipHostnameVerification = skipHostnameVerification;
   }
 
   /**
@@ -394,8 +429,9 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.userBind, objLdapAuthSettings.userBind)&&
   Objects.equals(this.emailAttribute, objLdapAuthSettings.emailAttribute)&&
   Objects.equals(this.fullNameAttribute, objLdapAuthSettings.fullNameAttribute)&&
-  Objects.equals(this.tlsConfig, objLdapAuthSettings.tlsConfig)&&
-  Objects.equals(this.pkiProfileRef, objLdapAuthSettings.pkiProfileRef);
+  Objects.equals(this.pkiProfileRef, objLdapAuthSettings.pkiProfileRef)&&
+  Objects.equals(this.clientCertRef, objLdapAuthSettings.clientCertRef)&&
+  Objects.equals(this.skipHostnameVerification, objLdapAuthSettings.skipHostnameVerification);
 }
 
 @Override
@@ -404,6 +440,7 @@ public String toString() {
   sb.append("class LdapAuthSettings {\n");
       sb.append("    baseDn: ").append(toIndentedString(baseDn)).append("\n");
         sb.append("    bindAsAdministrator: ").append(toIndentedString(bindAsAdministrator)).append("\n");
+        sb.append("    clientCertRef: ").append(toIndentedString(clientCertRef)).append("\n");
         sb.append("    emailAttribute: ").append(toIndentedString(emailAttribute)).append("\n");
         sb.append("    fullNameAttribute: ").append(toIndentedString(fullNameAttribute)).append("\n");
         sb.append("    pkiProfileRef: ").append(toIndentedString(pkiProfileRef)).append("\n");
@@ -411,7 +448,7 @@ public String toString() {
         sb.append("    securityMode: ").append(toIndentedString(securityMode)).append("\n");
         sb.append("    server: ").append(toIndentedString(server)).append("\n");
         sb.append("    settings: ").append(toIndentedString(settings)).append("\n");
-        sb.append("    tlsConfig: ").append(toIndentedString(tlsConfig)).append("\n");
+        sb.append("    skipHostnameVerification: ").append(toIndentedString(skipHostnameVerification)).append("\n");
         sb.append("    userBind: ").append(toIndentedString(userBind)).append("\n");
       sb.append("}");
   return sb.toString();

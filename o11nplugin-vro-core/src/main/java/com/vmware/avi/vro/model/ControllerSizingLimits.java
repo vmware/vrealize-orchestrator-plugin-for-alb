@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.ControllerSizingApiLimits;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -24,6 +25,10 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ControllerSizingLimits extends AviRestResource {
+    @JsonProperty("api_limits")
+    @JsonInclude(Include.NON_NULL)
+    private ControllerSizingApiLimits apiLimits;
+
     @JsonProperty("controller_sizing_cloud_limits")
     @JsonInclude(Include.NON_NULL)
     private List<ControllerSizingCloudLimits> controllerSizingCloudLimits;
@@ -64,14 +69,6 @@ public class ControllerSizingLimits extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer numVirtualservices;
 
-    @JsonProperty("num_virtualservices_application_insights")
-    @JsonInclude(Include.NON_NULL)
-    private Integer numVirtualservicesApplicationInsights;
-
-    @JsonProperty("num_virtualservices_positive_security")
-    @JsonInclude(Include.NON_NULL)
-    private Integer numVirtualservicesPositiveSecurity;
-
     @JsonProperty("num_virtualservices_rt_metrics")
     @JsonInclude(Include.NON_NULL)
     private Integer numVirtualservicesRtMetrics;
@@ -89,6 +86,32 @@ public class ControllerSizingLimits extends AviRestResource {
     private Integer numWafVirtualservices;
 
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Api protection, learning, and metrics limits for this controller sizing.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return apiLimits
+   */
+  @VsoMethod
+  public ControllerSizingApiLimits getApiLimits() {
+    return apiLimits;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Api protection, learning, and metrics limits for this controller sizing.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param apiLimits set the apiLimits.
+   */
+  @VsoMethod
+  public void setApiLimits(ControllerSizingApiLimits apiLimits) {
+    this.apiLimits = apiLimits;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -372,58 +395,6 @@ public class ControllerSizingLimits extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Maximum number of virtualservices configured with application insights.
-   * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return numVirtualservicesApplicationInsights
-   */
-  @VsoMethod
-  public Integer getNumVirtualservicesApplicationInsights() {
-    return numVirtualservicesApplicationInsights;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Maximum number of virtualservices configured with application insights.
-   * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param numVirtualservicesApplicationInsights set the numVirtualservicesApplicationInsights.
-   */
-  @VsoMethod
-  public void setNumVirtualservicesApplicationInsights(Integer  numVirtualservicesApplicationInsights) {
-    this.numVirtualservicesApplicationInsights = numVirtualservicesApplicationInsights;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Maximum number of virtualservices configured with positive security policy.
-   * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return numVirtualservicesPositiveSecurity
-   */
-  @VsoMethod
-  public Integer getNumVirtualservicesPositiveSecurity() {
-    return numVirtualservicesPositiveSecurity;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Maximum number of virtualservices configured with positive security policy.
-   * Field introduced in 31.2.1.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param numVirtualservicesPositiveSecurity set the numVirtualservicesPositiveSecurity.
-   */
-  @VsoMethod
-  public void setNumVirtualservicesPositiveSecurity(Integer  numVirtualservicesPositiveSecurity) {
-    this.numVirtualservicesPositiveSecurity = numVirtualservicesPositiveSecurity;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Maximum number of virtualservices with realtime metrics enabled.
    * Field introduced in 20.1.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -550,8 +521,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.numPoolRtMetrics, objControllerSizingLimits.numPoolRtMetrics)&&
   Objects.equals(this.numSeRtMetrics, objControllerSizingLimits.numSeRtMetrics)&&
   Objects.equals(this.numVirtualservicesRtmetricsWaf, objControllerSizingLimits.numVirtualservicesRtmetricsWaf)&&
-  Objects.equals(this.numVirtualservicesApplicationInsights, objControllerSizingLimits.numVirtualservicesApplicationInsights)&&
-  Objects.equals(this.numVirtualservicesPositiveSecurity, objControllerSizingLimits.numVirtualservicesPositiveSecurity)&&
+  Objects.equals(this.apiLimits, objControllerSizingLimits.apiLimits)&&
   Objects.equals(this.controllerSizingCloudLimits, objControllerSizingLimits.controllerSizingCloudLimits);
 }
 
@@ -559,7 +529,8 @@ public boolean equals(java.lang.Object o) {
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class ControllerSizingLimits {\n");
-      sb.append("    controllerSizingCloudLimits: ").append(toIndentedString(controllerSizingCloudLimits)).append("\n");
+      sb.append("    apiLimits: ").append(toIndentedString(apiLimits)).append("\n");
+        sb.append("    controllerSizingCloudLimits: ").append(toIndentedString(controllerSizingCloudLimits)).append("\n");
         sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
         sb.append("    numClouds: ").append(toIndentedString(numClouds)).append("\n");
         sb.append("    numEastWestVirtualservices: ").append(toIndentedString(numEastWestVirtualservices)).append("\n");
@@ -569,8 +540,6 @@ public String toString() {
         sb.append("    numServiceengines: ").append(toIndentedString(numServiceengines)).append("\n");
         sb.append("    numTenants: ").append(toIndentedString(numTenants)).append("\n");
         sb.append("    numVirtualservices: ").append(toIndentedString(numVirtualservices)).append("\n");
-        sb.append("    numVirtualservicesApplicationInsights: ").append(toIndentedString(numVirtualservicesApplicationInsights)).append("\n");
-        sb.append("    numVirtualservicesPositiveSecurity: ").append(toIndentedString(numVirtualservicesPositiveSecurity)).append("\n");
         sb.append("    numVirtualservicesRtMetrics: ").append(toIndentedString(numVirtualservicesRtMetrics)).append("\n");
         sb.append("    numVirtualservicesRtmetricsWaf: ").append(toIndentedString(numVirtualservicesRtmetricsWaf)).append("\n");
         sb.append("    numVrfs: ").append(toIndentedString(numVrfs)).append("\n");

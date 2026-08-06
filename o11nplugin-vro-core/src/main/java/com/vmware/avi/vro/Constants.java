@@ -22,7 +22,6 @@ public class Constants {
     public static final String FINDER_VRO_ALBSERVICESCASE = "ALBServicesCase";
     public static final String FINDER_VRO_ALBSERVICESCASEATTACHMENT = "ALBServicesCaseAttachment";
     public static final String FINDER_VRO_ALBSERVICESCONFIG = "ALBServicesConfig";
-    public static final String FINDER_VRO_ALBSERVICESFILEDOWNLOAD = "ALBServicesFileDownload";
     public static final String FINDER_VRO_ALBSERVICESFILEUPLOAD = "ALBServicesFileUpload";
     public static final String FINDER_VRO_ALBSERVICESJOB = "ALBServicesJob";
     public static final String FINDER_VRO_ALBSERVICESJOBPARAM = "ALBServicesJobParam";
@@ -65,11 +64,14 @@ public class Constants {
     public static final String FINDER_VRO_ANALYTICSPOLICY = "AnalyticsPolicy";
     public static final String FINDER_VRO_ANALYTICSPROFILE = "AnalyticsProfile";
     public static final String FINDER_VRO_ANOMALYEVENTDETAILS = "AnomalyEventDetails";
+    public static final String FINDER_VRO_APICONFIGLIMITS = "ApiConfigLimits";
     public static final String FINDER_VRO_APICONTENTTYPEMAPPING = "ApiContentTypeMapping";
     public static final String FINDER_VRO_APIENDPOINT = "ApiEndpoint";
     public static final String FINDER_VRO_APIENDPOINTCLASSIFICATIONDETAILS = "ApiEndpointClassificationDetails";
     public static final String FINDER_VRO_APILABELS = "ApiLabels";
+    public static final String FINDER_VRO_APILEARNINGLIMITS = "ApiLearningLimits";
     public static final String FINDER_VRO_APILOG = "ApiLog";
+    public static final String FINDER_VRO_APIMETRICSLIMITS = "ApiMetricsLimits";
     public static final String FINDER_VRO_APIOBJECTPROPERTIES = "ApiObjectProperties";
     public static final String FINDER_VRO_APIPATH = "ApiPath";
     public static final String FINDER_VRO_APIPOLICY = "ApiPolicy";
@@ -309,6 +311,7 @@ public class Constants {
     public static final String FINDER_VRO_CONTROLLERPROPERTIES = "ControllerProperties";
     public static final String FINDER_VRO_CONTROLLERSITE = "ControllerSite";
     public static final String FINDER_VRO_CONTROLLERSIZE = "ControllerSize";
+    public static final String FINDER_VRO_CONTROLLERSIZINGAPILIMITS = "ControllerSizingApiLimits";
     public static final String FINDER_VRO_CONTROLLERSIZINGCLOUDLIMITS = "ControllerSizingCloudLimits";
     public static final String FINDER_VRO_CONTROLLERSIZINGLIMITS = "ControllerSizingLimits";
     public static final String FINDER_VRO_CONTROLLERVERSION = "ControllerVersion";

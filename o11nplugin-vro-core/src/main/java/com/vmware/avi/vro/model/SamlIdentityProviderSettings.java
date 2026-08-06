@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.TlsConfig;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -39,6 +40,10 @@ public class SamlIdentityProviderSettings extends AviRestResource {
     @JsonProperty("periodic_download")
     @JsonInclude(Include.NON_NULL)
     private Boolean periodicDownload = false;
+
+    @JsonProperty("tls_config")
+    @JsonInclude(Include.NON_NULL)
+    private TlsConfig tlsConfig;
 
 
 
@@ -150,6 +155,32 @@ public class SamlIdentityProviderSettings extends AviRestResource {
     this.periodicDownload = periodicDownload;
   }
 
+  /**
+   * This is the getter method this will return the attribute value.
+   * Tls configuration for outbound saml idp connections.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return tlsConfig
+   */
+  @VsoMethod
+  public TlsConfig getTlsConfig() {
+    return tlsConfig;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Tls configuration for outbound saml idp connections.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param tlsConfig set the tlsConfig.
+   */
+  @VsoMethod
+  public void setTlsConfig(TlsConfig tlsConfig) {
+    this.tlsConfig = tlsConfig;
+  }
+
 
 
 @Override
@@ -164,7 +195,8 @@ public boolean equals(java.lang.Object o) {
   return   Objects.equals(this.metadata, objSamlIdentityProviderSettings.metadata)&&
   Objects.equals(this.metadataUrl, objSamlIdentityProviderSettings.metadataUrl)&&
   Objects.equals(this.metaDataDownloadInterval, objSamlIdentityProviderSettings.metaDataDownloadInterval)&&
-  Objects.equals(this.periodicDownload, objSamlIdentityProviderSettings.periodicDownload);
+  Objects.equals(this.periodicDownload, objSamlIdentityProviderSettings.periodicDownload)&&
+  Objects.equals(this.tlsConfig, objSamlIdentityProviderSettings.tlsConfig);
 }
 
 @Override
@@ -175,6 +207,7 @@ public String toString() {
         sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
         sb.append("    metadataUrl: ").append(toIndentedString(metadataUrl)).append("\n");
         sb.append("    periodicDownload: ").append(toIndentedString(periodicDownload)).append("\n");
+        sb.append("    tlsConfig: ").append(toIndentedString(tlsConfig)).append("\n");
       sb.append("}");
   return sb.toString();
 }

@@ -21,7 +21,7 @@ import org.springframework.stereotype.Service;
  *
  */
 @VsoObject(create = false, name = "RollbackSystemParams")
-@VsoFinder(name = Constants.FINDER_VRO_ROLLBACKSYSTEMPARAMS)
+@VsoFinder(name = Constants.FINDER_VRO_ROLLBACKSYSTEMPARAMS, idAccessor = "getObjectID()")
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class RollbackSystemParams extends AviRestResource {
@@ -36,6 +36,10 @@ public class RollbackSystemParams extends AviRestResource {
     @JsonProperty("skip_warnings")
     @JsonInclude(Include.NON_NULL)
     private Boolean skipWarnings = false;
+
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
 
 
@@ -116,8 +120,30 @@ public class RollbackSystemParams extends AviRestResource {
   public void setSkipWarnings(Boolean  skipWarnings) {
     this.skipWarnings = skipWarnings;
   }
+/**
+   * This is the getter method this will return the attribute value.
+   * Avi controller URL of the object.
+   * @return url
+   */
+  @VsoMethod
+  public String getUrl() {
+    return url;
+  }
+
+  /**
+   * This is the setter method. this will set the url
+   * Avi controller URL of the object.
+   * @return url
+   */
+  @VsoMethod
+  public void setUrl(String  url) {
+    this.url = url;
+  }
 
 
+ public String getObjectID() {
+    return "RollbackSystemParams";
+  }
 
 @Override
 public boolean equals(java.lang.Object o) {
@@ -140,7 +166,7 @@ public String toString() {
       sb.append("    prechecksOnly: ").append(toIndentedString(prechecksOnly)).append("\n");
         sb.append("    seGroupOptions: ").append(toIndentedString(seGroupOptions)).append("\n");
         sb.append("    skipWarnings: ").append(toIndentedString(skipWarnings)).append("\n");
-      sb.append("}");
+          sb.append("}");
   return sb.toString();
 }
 

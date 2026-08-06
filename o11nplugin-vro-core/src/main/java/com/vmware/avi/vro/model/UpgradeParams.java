@@ -21,7 +21,7 @@ import org.springframework.stereotype.Service;
  *
  */
 @VsoObject(create = false, name = "UpgradeParams")
-@VsoFinder(name = Constants.FINDER_VRO_UPGRADEPARAMS)
+@VsoFinder(name = Constants.FINDER_VRO_UPGRADEPARAMS, idAccessor = "getObjectID()")
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class UpgradeParams extends AviRestResource {
@@ -60,6 +60,10 @@ public class UpgradeParams extends AviRestResource {
     @JsonProperty("system")
     @JsonInclude(Include.NON_NULL)
     private Boolean system;
+
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
 
 
@@ -326,8 +330,30 @@ public class UpgradeParams extends AviRestResource {
   public void setSystem(Boolean  system) {
     this.system = system;
   }
+/**
+   * This is the getter method this will return the attribute value.
+   * Avi controller URL of the object.
+   * @return url
+   */
+  @VsoMethod
+  public String getUrl() {
+    return url;
+  }
+
+  /**
+   * This is the setter method. this will set the url
+   * Avi controller URL of the object.
+   * @return url
+   */
+  @VsoMethod
+  public void setUrl(String  url) {
+    this.url = url;
+  }
 
 
+ public String getObjectID() {
+    return "UpgradeParams";
+  }
 
 @Override
 public boolean equals(java.lang.Object o) {
@@ -362,7 +388,7 @@ public String toString() {
         sb.append("    sePatchRef: ").append(toIndentedString(sePatchRef)).append("\n");
         sb.append("    skipWarnings: ").append(toIndentedString(skipWarnings)).append("\n");
         sb.append("    system: ").append(toIndentedString(system)).append("\n");
-      sb.append("}");
+          sb.append("}");
   return sb.toString();
 }
 

@@ -20,7 +20,7 @@ import org.springframework.stereotype.Service;
  *
  */
 @VsoObject(create = false, name = "ControllerVersion")
-@VsoFinder(name = Constants.FINDER_VRO_CONTROLLERVERSION)
+@VsoFinder(name = Constants.FINDER_VRO_CONTROLLERVERSION, idAccessor = "getObjectID()")
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ControllerVersion extends AviRestResource {
@@ -35,6 +35,10 @@ public class ControllerVersion extends AviRestResource {
     @JsonProperty("patch")
     @JsonInclude(Include.NON_NULL)
     private String patch;
+
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
     @JsonProperty("version")
     @JsonInclude(Include.NON_NULL)
@@ -115,6 +119,25 @@ public class ControllerVersion extends AviRestResource {
   public void setPatch(String  patch) {
     this.patch = patch;
   }
+/**
+   * This is the getter method this will return the attribute value.
+   * Avi controller URL of the object.
+   * @return url
+   */
+  @VsoMethod
+  public String getUrl() {
+    return url;
+  }
+
+  /**
+   * This is the setter method. this will set the url
+   * Avi controller URL of the object.
+   * @return url
+   */
+  @VsoMethod
+  public void setUrl(String  url) {
+    this.url = url;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -139,6 +162,9 @@ public class ControllerVersion extends AviRestResource {
   }
 
 
+  public String getObjectID() {
+    return name + "(" + uuid  + ")";
+  }
 
 @Override
 public boolean equals(java.lang.Object o) {
@@ -162,7 +188,7 @@ public String toString() {
       sb.append("    fipsMode: ").append(toIndentedString(fipsMode)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    patch: ").append(toIndentedString(patch)).append("\n");
-        sb.append("    version: ").append(toIndentedString(version)).append("\n");
+            sb.append("    version: ").append(toIndentedString(version)).append("\n");
       sb.append("}");
   return sb.toString();
 }
