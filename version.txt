@@ -1,2 +1,2 @@
-release_version=31.2.2
+release_version=31.2.3
 eng_version=32.2.1
