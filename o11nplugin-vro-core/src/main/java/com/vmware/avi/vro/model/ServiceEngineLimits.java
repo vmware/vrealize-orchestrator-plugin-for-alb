@@ -48,6 +48,10 @@ public class ServiceEngineLimits extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private List<ServiceEngineCloudLimits> serviceengineCloudLimits;
 
+    @JsonProperty("serviceengine_waap_limits")
+    @JsonInclude(Include.NON_NULL)
+    private List<ServiceEngineSizingWaapLimits> serviceengineWaapLimits;
+
 
 
   /**
@@ -224,6 +228,53 @@ public class ServiceEngineLimits extends AviRestResource {
   }
 
 
+  /**
+   * This is the getter method this will return the attribute value.
+   * Per-tier waap se sizing limits (small, medium, large).
+   * Defines the min_vcpus, min_memory, and max_vs_per_se for each tier.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return serviceengineWaapLimits
+   */
+  @VsoMethod
+  public List<ServiceEngineSizingWaapLimits> getServiceengineWaapLimits() {
+    return serviceengineWaapLimits;
+  }
+
+  /**
+   * This is the setter method. this will set the serviceengineWaapLimits
+   * Per-tier waap se sizing limits (small, medium, large).
+   * Defines the min_vcpus, min_memory, and max_vs_per_se for each tier.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return serviceengineWaapLimits
+   */
+  @VsoMethod
+  public void setServiceengineWaapLimits(List<ServiceEngineSizingWaapLimits>  serviceengineWaapLimits) {
+    this.serviceengineWaapLimits = serviceengineWaapLimits;
+  }
+
+  /**
+   * This is the setter method this will set the serviceengineWaapLimits
+   * Per-tier waap se sizing limits (small, medium, large).
+   * Defines the min_vcpus, min_memory, and max_vs_per_se for each tier.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return serviceengineWaapLimits
+   */
+  @VsoMethod
+  public ServiceEngineLimits addServiceengineWaapLimitsItem(ServiceEngineSizingWaapLimits serviceengineWaapLimitsItem) {
+    if (this.serviceengineWaapLimits == null) {
+      this.serviceengineWaapLimits = new ArrayList<ServiceEngineSizingWaapLimits>();
+    }
+    this.serviceengineWaapLimits.add(serviceengineWaapLimitsItem);
+    return this;
+  }
+
+
 
 
 @Override
@@ -240,6 +291,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.numVlanIntfPerSe, objServiceEngineLimits.numVlanIntfPerSe)&&
   Objects.equals(this.numPhyIntfPerSe, objServiceEngineLimits.numPhyIntfPerSe)&&
   Objects.equals(this.numLogicalIntfPerSe, objServiceEngineLimits.numLogicalIntfPerSe)&&
+  Objects.equals(this.serviceengineWaapLimits, objServiceEngineLimits.serviceengineWaapLimits)&&
   Objects.equals(this.serviceengineCloudLimits, objServiceEngineLimits.serviceengineCloudLimits);
 }
 
@@ -253,6 +305,7 @@ public String toString() {
         sb.append("    numVlanIntfPerPhyIntf: ").append(toIndentedString(numVlanIntfPerPhyIntf)).append("\n");
         sb.append("    numVlanIntfPerSe: ").append(toIndentedString(numVlanIntfPerSe)).append("\n");
         sb.append("    serviceengineCloudLimits: ").append(toIndentedString(serviceengineCloudLimits)).append("\n");
+        sb.append("    serviceengineWaapLimits: ").append(toIndentedString(serviceengineWaapLimits)).append("\n");
       sb.append("}");
   return sb.toString();
 }

@@ -12,130 +12,146 @@ import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
 
 /**
- * The MemoryUsage is a POJO class extends AviRestResource that used for creating
- * MemoryUsage.
+ * The ServiceEngineSizingWaapLimits is a POJO class extends AviRestResource that used for creating
+ * ServiceEngineSizingWaapLimits.
  *
  * @version 1.0
  * @since 
  *
  */
-@VsoObject(create = false, name = "MemoryUsage")
-@VsoFinder(name = Constants.FINDER_VRO_MEMORYUSAGE)
+@VsoObject(create = false, name = "ServiceEngineSizingWaapLimits")
+@VsoFinder(name = Constants.FINDER_VRO_SERVICEENGINESIZINGWAAPLIMITS)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class MemoryUsage extends AviRestResource {
-    @JsonProperty("available")
+public class ServiceEngineSizingWaapLimits extends AviRestResource {
+    @JsonProperty("max_vs_per_se")
     @JsonInclude(Include.NON_NULL)
-    private Integer available;
+    private Integer maxVsPerSe;
 
-    @JsonProperty("effective_ctlr_mem_used_percent")
+    @JsonProperty("min_memory")
     @JsonInclude(Include.NON_NULL)
-    private Integer effectiveCtlrMemUsedPercent;
+    private Integer minMemory;
 
-    @JsonProperty("free")
+    @JsonProperty("min_vcpus")
     @JsonInclude(Include.NON_NULL)
-    private Integer free;
+    private Integer minVcpus;
 
-    @JsonProperty("total")
+    @JsonProperty("waap_se_size")
     @JsonInclude(Include.NON_NULL)
-    private Integer total;
+    private String waapSeSize;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
-   * Available memory of the node.
-   * Field introduced in 31.1.1.
+   * Maximum number of virtualservices allowed per se for this tier.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return available
+   * @return maxVsPerSe
    */
   @VsoMethod
-  public Integer getAvailable() {
-    return available;
+  public Integer getMaxVsPerSe() {
+    return maxVsPerSe;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Available memory of the node.
-   * Field introduced in 31.1.1.
+   * Maximum number of virtualservices allowed per se for this tier.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param available set the available.
+   * @param maxVsPerSe set the maxVsPerSe.
    */
   @VsoMethod
-  public void setAvailable(Integer  available) {
-    this.available = available;
+  public void setMaxVsPerSe(Integer  maxVsPerSe) {
+    this.maxVsPerSe = maxVsPerSe;
   }
 
   /**
    * This is the getter method this will return the attribute value.
-   * Effective total memory used by memory balancer to make decisions for stopping processes.
-   * Field introduced in 30.2.6, 31.2.1.
+   * Minimum memory per se (mib) for this tier.
+   * Ses in a waap-mode se group of this size must have at least this much memory.
+   * Field introduced in 32.2.1.
+   * Unit is mb.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return effectiveCtlrMemUsedPercent
+   * @return minMemory
    */
   @VsoMethod
-  public Integer getEffectiveCtlrMemUsedPercent() {
-    return effectiveCtlrMemUsedPercent;
+  public Integer getMinMemory() {
+    return minMemory;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Effective total memory used by memory balancer to make decisions for stopping processes.
-   * Field introduced in 30.2.6, 31.2.1.
+   * Minimum memory per se (mib) for this tier.
+   * Ses in a waap-mode se group of this size must have at least this much memory.
+   * Field introduced in 32.2.1.
+   * Unit is mb.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param effectiveCtlrMemUsedPercent set the effectiveCtlrMemUsedPercent.
+   * @param minMemory set the minMemory.
    */
   @VsoMethod
-  public void setEffectiveCtlrMemUsedPercent(Integer  effectiveCtlrMemUsedPercent) {
-    this.effectiveCtlrMemUsedPercent = effectiveCtlrMemUsedPercent;
+  public void setMinMemory(Integer  minMemory) {
+    this.minMemory = minMemory;
   }
 
   /**
    * This is the getter method this will return the attribute value.
+   * Minimum vcpus per se for this tier.
+   * Ses in a waap-mode se group of this size must have at least this many vcpus.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return free
+   * @return minVcpus
    */
   @VsoMethod
-  public Integer getFree() {
-    return free;
+  public Integer getMinVcpus() {
+    return minVcpus;
   }
 
   /**
    * This is the setter method to the attribute.
+   * Minimum vcpus per se for this tier.
+   * Ses in a waap-mode se group of this size must have at least this many vcpus.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param free set the free.
+   * @param minVcpus set the minVcpus.
    */
   @VsoMethod
-  public void setFree(Integer  free) {
-    this.free = free;
+  public void setMinVcpus(Integer  minVcpus) {
+    this.minVcpus = minVcpus;
   }
 
   /**
    * This is the getter method this will return the attribute value.
+   * Size tier this entry describes (small, medium, or large).
+   * Enum options - SE_SIZE_SMALL, SE_SIZE_MEDIUM, SE_SIZE_LARGE.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return total
+   * @return waapSeSize
    */
   @VsoMethod
-  public Integer getTotal() {
-    return total;
+  public String getWaapSeSize() {
+    return waapSeSize;
   }
 
   /**
    * This is the setter method to the attribute.
+   * Size tier this entry describes (small, medium, or large).
+   * Enum options - SE_SIZE_SMALL, SE_SIZE_MEDIUM, SE_SIZE_LARGE.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param total set the total.
+   * @param waapSeSize set the waapSeSize.
    */
   @VsoMethod
-  public void setTotal(Integer  total) {
-    this.total = total;
+  public void setWaapSeSize(String  waapSeSize) {
+    this.waapSeSize = waapSeSize;
   }
 
 
@@ -148,21 +164,21 @@ public boolean equals(java.lang.Object o) {
   if (o == null || getClass() != o.getClass()) {
     return false;
   }
-  MemoryUsage objMemoryUsage = (MemoryUsage) o;
-  return   Objects.equals(this.total, objMemoryUsage.total)&&
-  Objects.equals(this.free, objMemoryUsage.free)&&
-  Objects.equals(this.available, objMemoryUsage.available)&&
-  Objects.equals(this.effectiveCtlrMemUsedPercent, objMemoryUsage.effectiveCtlrMemUsedPercent);
+  ServiceEngineSizingWaapLimits objServiceEngineSizingWaapLimits = (ServiceEngineSizingWaapLimits) o;
+  return   Objects.equals(this.waapSeSize, objServiceEngineSizingWaapLimits.waapSeSize)&&
+  Objects.equals(this.minVcpus, objServiceEngineSizingWaapLimits.minVcpus)&&
+  Objects.equals(this.minMemory, objServiceEngineSizingWaapLimits.minMemory)&&
+  Objects.equals(this.maxVsPerSe, objServiceEngineSizingWaapLimits.maxVsPerSe);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
-  sb.append("class MemoryUsage {\n");
-      sb.append("    available: ").append(toIndentedString(available)).append("\n");
-        sb.append("    effectiveCtlrMemUsedPercent: ").append(toIndentedString(effectiveCtlrMemUsedPercent)).append("\n");
-        sb.append("    free: ").append(toIndentedString(free)).append("\n");
-        sb.append("    total: ").append(toIndentedString(total)).append("\n");
+  sb.append("class ServiceEngineSizingWaapLimits {\n");
+      sb.append("    maxVsPerSe: ").append(toIndentedString(maxVsPerSe)).append("\n");
+        sb.append("    minMemory: ").append(toIndentedString(minMemory)).append("\n");
+        sb.append("    minVcpus: ").append(toIndentedString(minVcpus)).append("\n");
+        sb.append("    waapSeSize: ").append(toIndentedString(waapSeSize)).append("\n");
       sb.append("}");
   return sb.toString();
 }

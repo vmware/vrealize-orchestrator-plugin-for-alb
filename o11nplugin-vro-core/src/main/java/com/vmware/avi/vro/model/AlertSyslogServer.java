@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.TlsConfig;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -24,10 +25,6 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AlertSyslogServer extends AviRestResource {
-    @JsonProperty("anon_auth")
-    @JsonInclude(Include.NON_NULL)
-    private Boolean anonAuth = false;
-
     @JsonProperty("format")
     @JsonInclude(Include.NON_NULL)
     private String format = "SYSLOG_LEGACY";
@@ -36,14 +33,6 @@ public class AlertSyslogServer extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String pkiprofileRef;
 
-    @JsonProperty("ssl_key_and_certificate_ref")
-    @JsonInclude(Include.NON_NULL)
-    private String sslKeyAndCertificateRef;
-
-    @JsonProperty("strict_cert_verify")
-    @JsonInclude(Include.NON_NULL)
-    private Boolean strictCertVerify = false;
-
     @JsonProperty("syslog_server")
     @JsonInclude(Include.NON_NULL)
     private String syslogServer;
@@ -51,6 +40,10 @@ public class AlertSyslogServer extends AviRestResource {
     @JsonProperty("syslog_server_port")
     @JsonInclude(Include.NON_NULL)
     private Integer syslogServerPort = 514;
+
+    @JsonProperty("tls_config")
+    @JsonInclude(Include.NON_NULL)
+    private TlsConfig tlsConfig;
 
     @JsonProperty("tls_enable")
     @JsonInclude(Include.NON_NULL)
@@ -61,32 +54,6 @@ public class AlertSyslogServer extends AviRestResource {
     private Boolean udp = true;
 
 
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Enable anonymous authentication of syslog serverwhich will disable server certificate authentication.
-   * Field introduced in 17.2.17, 18.2.5.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @return anonAuth
-   */
-  @VsoMethod
-  public Boolean getAnonAuth() {
-    return anonAuth;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Enable anonymous authentication of syslog serverwhich will disable server certificate authentication.
-   * Field introduced in 17.2.17, 18.2.5.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @param anonAuth set the anonAuth.
-   */
-  @VsoMethod
-  public void setAnonAuth(Boolean  anonAuth) {
-    this.anonAuth = anonAuth;
-  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -119,6 +86,7 @@ public class AlertSyslogServer extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Select the pkiprofile containing a ca or list of ca chainswhich will validate the certificate of the syslog server.
+   * When unset, systemconfiguration.truststore_pkiprofile_uuid is used instead.
    * It is a reference to an object of type pkiprofile.
    * Field introduced in 17.2.17, 18.2.5.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -133,6 +101,7 @@ public class AlertSyslogServer extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Select the pkiprofile containing a ca or list of ca chainswhich will validate the certificate of the syslog server.
+   * When unset, systemconfiguration.truststore_pkiprofile_uuid is used instead.
    * It is a reference to an object of type pkiprofile.
    * Field introduced in 17.2.17, 18.2.5.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -142,60 +111,6 @@ public class AlertSyslogServer extends AviRestResource {
   @VsoMethod
   public void setPkiprofileRef(String  pkiprofileRef) {
     this.pkiprofileRef = pkiprofileRef;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Select a certificate and key which will be used to authenticate to the syslog server.
-   * It is a reference to an object of type sslkeyandcertificate.
-   * Field introduced in 17.2.17, 18.2.5.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return sslKeyAndCertificateRef
-   */
-  @VsoMethod
-  public String getSslKeyAndCertificateRef() {
-    return sslKeyAndCertificateRef;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Select a certificate and key which will be used to authenticate to the syslog server.
-   * It is a reference to an object of type sslkeyandcertificate.
-   * Field introduced in 17.2.17, 18.2.5.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param sslKeyAndCertificateRef set the sslKeyAndCertificateRef.
-   */
-  @VsoMethod
-  public void setSslKeyAndCertificateRef(String  sslKeyAndCertificateRef) {
-    this.sslKeyAndCertificateRef = sslKeyAndCertificateRef;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Strict verificiation of certificate given by the server.
-   * Field introduced in 30.1.1.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @return strictCertVerify
-   */
-  @VsoMethod
-  public Boolean getStrictCertVerify() {
-    return strictCertVerify;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Strict verificiation of certificate given by the server.
-   * Field introduced in 30.1.1.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @param strictCertVerify set the strictCertVerify.
-   */
-  @VsoMethod
-  public void setStrictCertVerify(Boolean  strictCertVerify) {
-    this.strictCertVerify = strictCertVerify;
   }
 
   /**
@@ -248,7 +163,36 @@ public class AlertSyslogServer extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Tls mode and client certificate for the connection to this syslog server, effective only when tls_enable is set.
+   * Supersedes ssl_key_and_certificate_uuid, anon_auth, and strict_cert_verify, which are deprecated in favor of this field.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return tlsConfig
+   */
+  @VsoMethod
+  public TlsConfig getTlsConfig() {
+    return tlsConfig;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Tls mode and client certificate for the connection to this syslog server, effective only when tls_enable is set.
+   * Supersedes ssl_key_and_certificate_uuid, anon_auth, and strict_cert_verify, which are deprecated in favor of this field.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param tlsConfig set the tlsConfig.
+   */
+  @VsoMethod
+  public void setTlsConfig(TlsConfig tlsConfig) {
+    this.tlsConfig = tlsConfig;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Enable tls to the syslog server.
+   * Use tls_config to select the tls mode and client certificate.
    * Field introduced in 17.2.16, 18.2.3.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
@@ -262,6 +206,7 @@ public class AlertSyslogServer extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enable tls to the syslog server.
+   * Use tls_config to select the tls mode and client certificate.
    * Field introduced in 17.2.16, 18.2.3.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
@@ -312,23 +257,19 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.udp, objAlertSyslogServer.udp)&&
   Objects.equals(this.format, objAlertSyslogServer.format)&&
   Objects.equals(this.tlsEnable, objAlertSyslogServer.tlsEnable)&&
-  Objects.equals(this.sslKeyAndCertificateRef, objAlertSyslogServer.sslKeyAndCertificateRef)&&
   Objects.equals(this.pkiprofileRef, objAlertSyslogServer.pkiprofileRef)&&
-  Objects.equals(this.anonAuth, objAlertSyslogServer.anonAuth)&&
-  Objects.equals(this.strictCertVerify, objAlertSyslogServer.strictCertVerify);
+  Objects.equals(this.tlsConfig, objAlertSyslogServer.tlsConfig);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class AlertSyslogServer {\n");
-      sb.append("    anonAuth: ").append(toIndentedString(anonAuth)).append("\n");
-        sb.append("    format: ").append(toIndentedString(format)).append("\n");
+      sb.append("    format: ").append(toIndentedString(format)).append("\n");
         sb.append("    pkiprofileRef: ").append(toIndentedString(pkiprofileRef)).append("\n");
-        sb.append("    sslKeyAndCertificateRef: ").append(toIndentedString(sslKeyAndCertificateRef)).append("\n");
-        sb.append("    strictCertVerify: ").append(toIndentedString(strictCertVerify)).append("\n");
         sb.append("    syslogServer: ").append(toIndentedString(syslogServer)).append("\n");
         sb.append("    syslogServerPort: ").append(toIndentedString(syslogServerPort)).append("\n");
+        sb.append("    tlsConfig: ").append(toIndentedString(tlsConfig)).append("\n");
         sb.append("    tlsEnable: ").append(toIndentedString(tlsEnable)).append("\n");
         sb.append("    udp: ").append(toIndentedString(udp)).append("\n");
       sb.append("}");

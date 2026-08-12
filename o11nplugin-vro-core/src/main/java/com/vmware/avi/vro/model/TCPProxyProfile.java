@@ -36,6 +36,10 @@ public class TCPProxyProfile extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean autoWindowGrowth = true;
 
+    @JsonProperty("auto_window_growth_without_timestamp")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean autoWindowGrowthWithoutTimestamp = true;
+
     @JsonProperty("automatic")
     @JsonInclude(Include.NON_NULL)
     private Boolean automatic = true;
@@ -198,6 +202,36 @@ public class TCPProxyProfile extends AviRestResource {
   @VsoMethod
   public void setAutoWindowGrowth(Boolean  autoWindowGrowth) {
     this.autoWindowGrowth = autoWindowGrowth;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Controls whether receive window auto growth is allowed to fall back to an rtt-based estimate when the tcp timestamp option is not negotiated on
+   * the connection.
+   * Only takes effect when auto_window_growth is also enabled.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @return autoWindowGrowthWithoutTimestamp
+   */
+  @VsoMethod
+  public Boolean getAutoWindowGrowthWithoutTimestamp() {
+    return autoWindowGrowthWithoutTimestamp;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Controls whether receive window auto growth is allowed to fall back to an rtt-based estimate when the tcp timestamp option is not negotiated on
+   * the connection.
+   * Only takes effect when auto_window_growth is also enabled.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param autoWindowGrowthWithoutTimestamp set the autoWindowGrowthWithoutTimestamp.
+   */
+  @VsoMethod
+  public void setAutoWindowGrowthWithoutTimestamp(Boolean  autoWindowGrowthWithoutTimestamp) {
+    this.autoWindowGrowthWithoutTimestamp = autoWindowGrowthWithoutTimestamp;
   }
 
   /**
@@ -826,7 +860,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.autoWindowGrowth, objTCPProxyProfile.autoWindowGrowth)&&
   Objects.equals(this.ackOnPush, objTCPProxyProfile.ackOnPush)&&
   Objects.equals(this.delayedAckTimerDelay, objTCPProxyProfile.delayedAckTimerDelay)&&
-  Objects.equals(this.delayedAckMode, objTCPProxyProfile.delayedAckMode);
+  Objects.equals(this.delayedAckMode, objTCPProxyProfile.delayedAckMode)&&
+  Objects.equals(this.autoWindowGrowthWithoutTimestamp, objTCPProxyProfile.autoWindowGrowthWithoutTimestamp);
 }
 
 @Override
@@ -836,6 +871,7 @@ public String toString() {
       sb.append("    ackOnPush: ").append(toIndentedString(ackOnPush)).append("\n");
         sb.append("    aggressiveCongestionAvoidance: ").append(toIndentedString(aggressiveCongestionAvoidance)).append("\n");
         sb.append("    autoWindowGrowth: ").append(toIndentedString(autoWindowGrowth)).append("\n");
+        sb.append("    autoWindowGrowthWithoutTimestamp: ").append(toIndentedString(autoWindowGrowthWithoutTimestamp)).append("\n");
         sb.append("    automatic: ").append(toIndentedString(automatic)).append("\n");
         sb.append("    ccAlgo: ").append(toIndentedString(ccAlgo)).append("\n");
         sb.append("    congestionRecoveryScalingFactor: ").append(toIndentedString(congestionRecoveryScalingFactor)).append("\n");
