@@ -1146,6 +1146,7 @@ public class Constants {
     public static final String FINDER_VRO_SERVICEENGINEGROUP = "ServiceEngineGroup";
     public static final String FINDER_VRO_SERVICEENGINELIMITS = "ServiceEngineLimits";
     public static final String FINDER_VRO_SERVICEENGINEPARAMS = "ServiceEngineParams";
+    public static final String FINDER_VRO_SERVICEENGINESIZINGWAAPLIMITS = "ServiceEngineSizingWaapLimits";
     public static final String FINDER_VRO_SERVICEHEALTH = "ServiceHealth";
     public static final String FINDER_VRO_SERVICEMATCH = "ServiceMatch";
     public static final String FINDER_VRO_SERVICEOAUTH = "ServiceOAuth";
@@ -1352,6 +1353,7 @@ public class Constants {
     public static final String FINDER_VRO_VSPHERESTORAGEPOLICY = "VsphereStoragePolicy";
     public static final String FINDER_VRO_VSSPLACEMENT = "VssPlacement";
     public static final String FINDER_VRO_WAFLIMITS = "WAFLimits";
+    public static final String FINDER_VRO_WAAPMODECONFIG = "WaapModeConfig";
     public static final String FINDER_VRO_WAFALLOWLISTLOG = "WafAllowlistLog";
     public static final String FINDER_VRO_WAFAPPLICATIONSIGNATUREAPPVERSION = "WafApplicationSignatureAppVersion";
     public static final String FINDER_VRO_WAFAPPLICATIONSIGNATUREPROVIDER = "WafApplicationSignatureProvider";
