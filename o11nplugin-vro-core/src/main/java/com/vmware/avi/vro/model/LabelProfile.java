@@ -32,6 +32,10 @@ public class LabelProfile extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private List<Label> labelDefinitions;
 
+    @JsonProperty("log_labels")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean logLabels = true;
+
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
     private String name;
@@ -125,6 +129,32 @@ public class LabelProfile extends AviRestResource {
     return this;
   }
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Enables logging of waap labels effective for a request into apilog.effective_labels in the application log.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @return logLabels
+   */
+  @VsoMethod
+  public Boolean getLogLabels() {
+    return logLabels;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Enables logging of waap labels effective for a request into apilog.effective_labels in the application log.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param logLabels set the logLabels.
+   */
+  @VsoMethod
+  public void setLogLabels(Boolean  logLabels) {
+    this.logLabels = logLabels;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -241,6 +271,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.name, objLabelProfile.name)&&
   Objects.equals(this.description, objLabelProfile.description)&&
   Objects.equals(this.labelDefinitions, objLabelProfile.labelDefinitions)&&
+  Objects.equals(this.logLabels, objLabelProfile.logLabels)&&
   Objects.equals(this.tenantRef, objLabelProfile.tenantRef);
 }
 
@@ -250,6 +281,7 @@ public String toString() {
   sb.append("class LabelProfile {\n");
       sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    labelDefinitions: ").append(toIndentedString(labelDefinitions)).append("\n");
+        sb.append("    logLabels: ").append(toIndentedString(logLabels)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
             sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");

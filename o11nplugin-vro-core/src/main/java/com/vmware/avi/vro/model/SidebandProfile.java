@@ -28,6 +28,10 @@ public class SidebandProfile extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private List<IpAddr> ip;
 
+    @JsonProperty("pki_profile_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String pkiProfileRef;
+
     @JsonProperty("sideband_max_request_body_size")
     @JsonInclude(Include.NON_NULL)
     private Integer sidebandMaxRequestBodySize = 1024;
@@ -77,6 +81,36 @@ public class SidebandProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Pki profile used to verify the tls certificate of the sideband server.
+   * Required when the sideband server presents a certificate signed by a private ca.
+   * It is a reference to an object of type pkiprofile.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return pkiProfileRef
+   */
+  @VsoMethod
+  public String getPkiProfileRef() {
+    return pkiProfileRef;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Pki profile used to verify the tls certificate of the sideband server.
+   * Required when the sideband server presents a certificate signed by a private ca.
+   * It is a reference to an object of type pkiprofile.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param pkiProfileRef set the pkiProfileRef.
+   */
+  @VsoMethod
+  public void setPkiProfileRef(String  pkiProfileRef) {
+    this.pkiProfileRef = pkiProfileRef;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Maximum size of the request body that will be sent on the sideband.
    * Allowed values are 0-16384.
    * Unit is bytes.
@@ -115,7 +149,8 @@ public boolean equals(java.lang.Object o) {
   }
   SidebandProfile objSidebandProfile = (SidebandProfile) o;
   return   Objects.equals(this.ip, objSidebandProfile.ip)&&
-  Objects.equals(this.sidebandMaxRequestBodySize, objSidebandProfile.sidebandMaxRequestBodySize);
+  Objects.equals(this.sidebandMaxRequestBodySize, objSidebandProfile.sidebandMaxRequestBodySize)&&
+  Objects.equals(this.pkiProfileRef, objSidebandProfile.pkiProfileRef);
 }
 
 @Override
@@ -123,6 +158,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class SidebandProfile {\n");
       sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
+        sb.append("    pkiProfileRef: ").append(toIndentedString(pkiProfileRef)).append("\n");
         sb.append("    sidebandMaxRequestBodySize: ").append(toIndentedString(sidebandMaxRequestBodySize)).append("\n");
       sb.append("}");
   return sb.toString();

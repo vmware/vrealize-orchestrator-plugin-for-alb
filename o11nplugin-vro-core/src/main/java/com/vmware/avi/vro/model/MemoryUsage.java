@@ -45,7 +45,7 @@ public class MemoryUsage extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Available memory of the node.
-   * Field introduced in 31.1.1.
+   * Field introduced in 30.2.6, 31.1.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return available
@@ -58,7 +58,7 @@ public class MemoryUsage extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Available memory of the node.
-   * Field introduced in 31.1.1.
+   * Field introduced in 30.2.6, 31.1.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param available set the available.

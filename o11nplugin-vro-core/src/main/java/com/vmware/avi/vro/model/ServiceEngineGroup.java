@@ -3603,7 +3603,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Deploys google virtual ethernet (gve) - gvnic for all supported intances types in gcp.
    * Applies only to newly created se's.
-   * Field introduced in 31.1.1.
+   * Field introduced in 30.2.3, 31.1.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return gveEnabled
@@ -3617,7 +3617,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * This is the setter method to the attribute.
    * Deploys google virtual ethernet (gve) - gvnic for all supported intances types in gcp.
    * Applies only to newly created se's.
-   * Field introduced in 31.1.1.
+   * Field introduced in 30.2.3, 31.1.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param gveEnabled set the gveEnabled.
@@ -4098,7 +4098,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * Configuration for periodic ip advertisement (gratarp for ipv4, neighbor advertisement for ipv6).
    * When configured, the specified ip types will send periodic advertisements to maintain arp/ndp cache entries on network devices.
    * Enable_gratarp_permanent independently controls vip_ip.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.3.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAdvertisementProfile
@@ -4113,7 +4113,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * Configuration for periodic ip advertisement (gratarp for ipv4, neighbor advertisement for ipv6).
    * When configured, the specified ip types will send periodic advertisements to maintain arp/ndp cache entries on network devices.
    * Enable_gratarp_permanent independently controls vip_ip.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.3.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipAdvertisementProfile set the ipAdvertisementProfile.
@@ -6818,7 +6818,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The time in seconds controller redis server persists the key.
    * Allowed values are 60-600.
-   * Field introduced in 30.2.4.
+   * Field introduced in 30.2.4, 31.1.2, 31.2.1.
    * Unit is seconds.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
@@ -6833,7 +6833,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * This is the setter method to the attribute.
    * The time in seconds controller redis server persists the key.
    * Allowed values are 60-600.
-   * Field introduced in 30.2.4.
+   * Field introduced in 30.2.4, 31.1.2, 31.2.1.
    * Unit is seconds.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.

@@ -33,7 +33,7 @@ public class NtpWeakAuthAlgorithmEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Comma-separated list of key numbers using weak ntp auth algorithms (md5 or sha1).
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.3.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
@@ -46,7 +46,7 @@ public class NtpWeakAuthAlgorithmEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Comma-separated list of key numbers using weak ntp auth algorithms (md5 or sha1).
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.3.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
