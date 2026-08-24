@@ -54,7 +54,7 @@ public class ApiViolation extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Action performed based on this violation, such as flag or reject.
    * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return action
@@ -68,7 +68,7 @@ public class ApiViolation extends AviRestResource {
    * This is the setter method to the attribute.
    * Action performed based on this violation, such as flag or reject.
    * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param action set the action.
@@ -85,7 +85,7 @@ public class ApiViolation extends AviRestResource {
    * API_LOG_VIOLATION_LOCATION_QUERY_ARGS, API_LOG_VIOLATION_LOCATION_REQUEST_HEADER, API_LOG_VIOLATION_LOCATION_REQUEST_CONTENT_TYPE,
    * API_LOG_VIOLATION_LOCATION_REQUEST_BODY, API_LOG_VIOLATION_LOCATION_RESPONSE_STATUS_CODE, API_LOG_VIOLATION_LOCATION_REPONSE_HEADER,
    * API_LOG_VIOLATION_LOCATION_RESPONSE_CONTENT_TYPE, API_LOG_VIOLATION_LOCATION_RESPONSE_BODY.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchElementLocation
@@ -102,7 +102,7 @@ public class ApiViolation extends AviRestResource {
    * API_LOG_VIOLATION_LOCATION_QUERY_ARGS, API_LOG_VIOLATION_LOCATION_REQUEST_HEADER, API_LOG_VIOLATION_LOCATION_REQUEST_CONTENT_TYPE,
    * API_LOG_VIOLATION_LOCATION_REQUEST_BODY, API_LOG_VIOLATION_LOCATION_RESPONSE_STATUS_CODE, API_LOG_VIOLATION_LOCATION_REPONSE_HEADER,
    * API_LOG_VIOLATION_LOCATION_RESPONSE_CONTENT_TYPE, API_LOG_VIOLATION_LOCATION_RESPONSE_BODY.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchElementLocation set the matchElementLocation.
@@ -115,7 +115,7 @@ public class ApiViolation extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the element that caused the violation, for example 'id'.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchElementName
@@ -128,7 +128,7 @@ public class ApiViolation extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the element that caused the violation, for example 'id'.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchElementName set the matchElementName.
@@ -141,7 +141,7 @@ public class ApiViolation extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Value of the element that caused the violation, for example '42'.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchElementValue
@@ -154,7 +154,7 @@ public class ApiViolation extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Value of the element that caused the violation, for example '42'.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchElementValue set the matchElementValue.
@@ -167,7 +167,7 @@ public class ApiViolation extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * List of parameters to be substituted into the message format string.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return messageParameters
@@ -180,7 +180,7 @@ public class ApiViolation extends AviRestResource {
   /**
    * This is the setter method. this will set the messageParameters
    * List of parameters to be substituted into the message format string.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return messageParameters
@@ -193,7 +193,7 @@ public class ApiViolation extends AviRestResource {
   /**
    * This is the setter method this will set the messageParameters
    * List of parameters to be substituted into the message format string.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return messageParameters
@@ -215,7 +215,7 @@ public class ApiViolation extends AviRestResource {
    * Enum options - API_VIOLATION_TYPE_NONE, API_VIOLATION_TYPE_INVALID_TYPE, API_VIOLATION_TYPE_VALUE_OUT_OF_RANGE,
    * API_VIOLATION_TYPE_FORMAT_MISMATCH, API_VIOLATION_TYPE_UNEXPECTED_ADDITIONAL_PROPERTY, API_VIOLATION_TYPE_MISSING_REQUIRED_PROPERTY,
    * API_VIOLATION_TYPE_NON_API_REQUEST, API_VIOLATION_TYPE_SHADOW_ENDPOINT.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return violationType
@@ -232,7 +232,7 @@ public class ApiViolation extends AviRestResource {
    * Enum options - API_VIOLATION_TYPE_NONE, API_VIOLATION_TYPE_INVALID_TYPE, API_VIOLATION_TYPE_VALUE_OUT_OF_RANGE,
    * API_VIOLATION_TYPE_FORMAT_MISMATCH, API_VIOLATION_TYPE_UNEXPECTED_ADDITIONAL_PROPERTY, API_VIOLATION_TYPE_MISSING_REQUIRED_PROPERTY,
    * API_VIOLATION_TYPE_NON_API_REQUEST, API_VIOLATION_TYPE_SHADOW_ENDPOINT.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param violationType set the violationType.

@@ -1504,7 +1504,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Api policy classification change event details.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return apiPolicyClassificationDetails
@@ -1517,7 +1517,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Api policy classification change event details.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param apiPolicyClassificationDetails set the apiPolicyClassificationDetails.
@@ -3570,7 +3570,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Learning database cleanup event details.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return learningDbCleanupEventDetails
@@ -3583,7 +3583,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Learning database cleanup event details.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param learningDbCleanupEventDetails set the learningDbCleanupEventDetails.
@@ -4256,7 +4256,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Nsx-t ip group members limit exceeded event.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nsxtIpGroupMembersLimitExceeded
@@ -4269,7 +4269,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Nsx-t ip group members limit exceeded event.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nsxtIpGroupMembersLimitExceeded set the nsxtIpGroupMembersLimitExceeded.
@@ -5619,7 +5619,7 @@ public class EventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sePcapModeEventDetails
@@ -5631,7 +5631,7 @@ public class EventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sePcapModeEventDetails set the sePcapModeEventDetails.

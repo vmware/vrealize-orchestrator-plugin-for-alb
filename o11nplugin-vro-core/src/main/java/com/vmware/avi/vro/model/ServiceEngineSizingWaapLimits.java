@@ -45,7 +45,7 @@ public class ServiceEngineSizingWaapLimits extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Maximum number of virtualservices allowed per se for this tier.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxVsPerSe
@@ -58,7 +58,7 @@ public class ServiceEngineSizingWaapLimits extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Maximum number of virtualservices allowed per se for this tier.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxVsPerSe set the maxVsPerSe.
@@ -72,7 +72,7 @@ public class ServiceEngineSizingWaapLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Minimum memory per se (mib) for this tier.
    * Ses in a waap-mode se group of this size must have at least this much memory.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is mb.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -87,7 +87,7 @@ public class ServiceEngineSizingWaapLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Minimum memory per se (mib) for this tier.
    * Ses in a waap-mode se group of this size must have at least this much memory.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is mb.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -102,7 +102,7 @@ public class ServiceEngineSizingWaapLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Minimum vcpus per se for this tier.
    * Ses in a waap-mode se group of this size must have at least this many vcpus.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return minVcpus
@@ -116,7 +116,7 @@ public class ServiceEngineSizingWaapLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Minimum vcpus per se for this tier.
    * Ses in a waap-mode se group of this size must have at least this many vcpus.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param minVcpus set the minVcpus.
@@ -130,7 +130,7 @@ public class ServiceEngineSizingWaapLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Size tier this entry describes (small, medium, or large).
    * Enum options - SE_SIZE_SMALL, SE_SIZE_MEDIUM, SE_SIZE_LARGE.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return waapSeSize
@@ -144,7 +144,7 @@ public class ServiceEngineSizingWaapLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Size tier this entry describes (small, medium, or large).
    * Enum options - SE_SIZE_SMALL, SE_SIZE_MEDIUM, SE_SIZE_LARGE.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param waapSeSize set the waapSeSize.

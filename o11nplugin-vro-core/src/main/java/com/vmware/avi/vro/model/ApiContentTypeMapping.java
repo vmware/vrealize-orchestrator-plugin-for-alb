@@ -40,7 +40,7 @@ public class ApiContentTypeMapping extends AviRestResource {
    * The content type of the request/response.
    * This can be a pattern like application/json* for request.
    * For response, it is the content type of the response.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return contentType
@@ -55,7 +55,7 @@ public class ApiContentTypeMapping extends AviRestResource {
    * The content type of the request/response.
    * This can be a pattern like application/json* for request.
    * For response, it is the content type of the response.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param contentType set the contentType.
@@ -71,7 +71,7 @@ public class ApiContentTypeMapping extends AviRestResource {
    * Type must be schema_type_undefined (no validation) or schema_type_reference pointing to an apischema (object and array bodies are modeled as
    * references).
    * Other apischemadatatype values are not allowed for content type mappings.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return schema
@@ -87,7 +87,7 @@ public class ApiContentTypeMapping extends AviRestResource {
    * Type must be schema_type_undefined (no validation) or schema_type_reference pointing to an apischema (object and array bodies are modeled as
    * references).
    * Other apischemadatatype values are not allowed for content type mappings.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param schema set the schema.

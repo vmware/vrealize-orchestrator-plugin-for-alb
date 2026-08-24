@@ -45,7 +45,7 @@ public class Label extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Description of this label.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
@@ -58,7 +58,7 @@ public class Label extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Description of this label.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
@@ -76,7 +76,7 @@ public class Label extends AviRestResource {
    * Enum options - MATCH_ACTION_SCOPE_GENERIC, MATCH_ACTION_SCOPE_APIPOLICY, MATCH_ACTION_SCOPE_WAFPOLICY, MATCH_ACTION_SCOPE_HTTPSECURITYPOLICY,
    * MATCH_ACTION_SCOPE_HTTPREQUESTPOLICY, MATCH_ACTION_SCOPE_HTTPRESPONSEPOLICY, MATCH_ACTION_SCOPE_CSRFPOLICY, MATCH_ACTION_SCOPE_AUTHPROFILE,
    * MATCH_ACTION_SCOPE_VSDATASCRIPTSET, MATCH_ACTION_SCOPE_BOTDETECTIONPOLICY.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Minimum of 1 items required.
    * Maximum of 1 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -96,7 +96,7 @@ public class Label extends AviRestResource {
    * Enum options - MATCH_ACTION_SCOPE_GENERIC, MATCH_ACTION_SCOPE_APIPOLICY, MATCH_ACTION_SCOPE_WAFPOLICY, MATCH_ACTION_SCOPE_HTTPSECURITYPOLICY,
    * MATCH_ACTION_SCOPE_HTTPREQUESTPOLICY, MATCH_ACTION_SCOPE_HTTPRESPONSEPOLICY, MATCH_ACTION_SCOPE_CSRFPOLICY, MATCH_ACTION_SCOPE_AUTHPROFILE,
    * MATCH_ACTION_SCOPE_VSDATASCRIPTSET, MATCH_ACTION_SCOPE_BOTDETECTIONPOLICY.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Minimum of 1 items required.
    * Maximum of 1 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -116,7 +116,7 @@ public class Label extends AviRestResource {
    * Enum options - MATCH_ACTION_SCOPE_GENERIC, MATCH_ACTION_SCOPE_APIPOLICY, MATCH_ACTION_SCOPE_WAFPOLICY, MATCH_ACTION_SCOPE_HTTPSECURITYPOLICY,
    * MATCH_ACTION_SCOPE_HTTPREQUESTPOLICY, MATCH_ACTION_SCOPE_HTTPRESPONSEPOLICY, MATCH_ACTION_SCOPE_CSRFPOLICY, MATCH_ACTION_SCOPE_AUTHPROFILE,
    * MATCH_ACTION_SCOPE_VSDATASCRIPTSET, MATCH_ACTION_SCOPE_BOTDETECTIONPOLICY.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Minimum of 1 items required.
    * Maximum of 1 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -136,7 +136,7 @@ public class Label extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Label name used as a match condition in policies.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
@@ -149,7 +149,7 @@ public class Label extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Label name used as a match condition in policies.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
@@ -163,7 +163,7 @@ public class Label extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The type of this label (system-defined or user-defined).
    * Enum options - LABEL_SYSTEM_DEFINED, LABEL_USER_DEFINED.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "LABEL_USER_DEFINED".
    * @return type
@@ -177,7 +177,7 @@ public class Label extends AviRestResource {
    * This is the setter method to the attribute.
    * The type of this label (system-defined or user-defined).
    * Enum options - LABEL_SYSTEM_DEFINED, LABEL_USER_DEFINED.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "LABEL_USER_DEFINED".
    * @param type set the type.

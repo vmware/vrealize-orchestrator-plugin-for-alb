@@ -42,7 +42,7 @@ public class ApiSpecGenerateState extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Timestamp of the last state transition.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lastChangedTime
@@ -55,7 +55,7 @@ public class ApiSpecGenerateState extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Timestamp of the last state transition.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lastChangedTime set the lastChangedTime.
@@ -68,7 +68,7 @@ public class ApiSpecGenerateState extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Human-readable reason for the current state.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
@@ -81,7 +81,7 @@ public class ApiSpecGenerateState extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Human-readable reason for the current state.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
@@ -95,7 +95,7 @@ public class ApiSpecGenerateState extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Current fsm state of the spec generation.
    * Enum options - API_SPEC_GENERATE_FSM_IN_PROGRESS, API_SPEC_GENERATE_FSM_COMPLETED, API_SPEC_GENERATE_FSM_WARNING, API_SPEC_GENERATE_FSM_ERROR.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return state
@@ -109,7 +109,7 @@ public class ApiSpecGenerateState extends AviRestResource {
    * This is the setter method to the attribute.
    * Current fsm state of the spec generation.
    * Enum options - API_SPEC_GENERATE_FSM_IN_PROGRESS, API_SPEC_GENERATE_FSM_COMPLETED, API_SPEC_GENERATE_FSM_WARNING, API_SPEC_GENERATE_FSM_ERROR.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param state set the state.
