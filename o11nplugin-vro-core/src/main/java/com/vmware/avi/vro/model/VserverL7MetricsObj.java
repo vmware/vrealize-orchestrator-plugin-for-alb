@@ -328,10 +328,6 @@ public class VserverL7MetricsObj extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Float avgWaapActiveApiLatency;
 
-    @JsonProperty("avg_waap_authentication_errors")
-    @JsonInclude(Include.NON_NULL)
-    private Float avgWaapAuthenticationErrors;
-
     @JsonProperty("avg_waap_hits")
     @JsonInclude(Include.NON_NULL)
     private Float avgWaapHits;
@@ -339,34 +335,6 @@ public class VserverL7MetricsObj extends AviRestResource {
     @JsonProperty("avg_waap_orphan_api_count")
     @JsonInclude(Include.NON_NULL)
     private Float avgWaapOrphanApiCount;
-
-    @JsonProperty("avg_waap_rate_limiting_errors")
-    @JsonInclude(Include.NON_NULL)
-    private Float avgWaapRateLimitingErrors;
-
-    @JsonProperty("avg_waap_redirects")
-    @JsonInclude(Include.NON_NULL)
-    private Float avgWaapRedirects;
-
-    @JsonProperty("avg_waap_responses_301")
-    @JsonInclude(Include.NON_NULL)
-    private Float avgWaapResponses301;
-
-    @JsonProperty("avg_waap_responses_302")
-    @JsonInclude(Include.NON_NULL)
-    private Float avgWaapResponses302;
-
-    @JsonProperty("avg_waap_responses_303")
-    @JsonInclude(Include.NON_NULL)
-    private Float avgWaapResponses303;
-
-    @JsonProperty("avg_waap_responses_307")
-    @JsonInclude(Include.NON_NULL)
-    private Float avgWaapResponses307;
-
-    @JsonProperty("avg_waap_responses_308")
-    @JsonInclude(Include.NON_NULL)
-    private Float avgWaapResponses308;
 
     @JsonProperty("avg_waap_responses_400")
     @JsonInclude(Include.NON_NULL)
@@ -379,14 +347,6 @@ public class VserverL7MetricsObj extends AviRestResource {
     @JsonProperty("avg_waap_responses_403")
     @JsonInclude(Include.NON_NULL)
     private Float avgWaapResponses403;
-
-    @JsonProperty("avg_waap_responses_407")
-    @JsonInclude(Include.NON_NULL)
-    private Float avgWaapResponses407;
-
-    @JsonProperty("avg_waap_responses_429")
-    @JsonInclude(Include.NON_NULL)
-    private Float avgWaapResponses429;
 
     @JsonProperty("avg_waap_responses_4xx")
     @JsonInclude(Include.NON_NULL)
@@ -800,6 +760,10 @@ public class VserverL7MetricsObj extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Float sumWaapActiveApiLatency;
 
+    @JsonProperty("sum_waap_authentication_errors")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumWaapAuthenticationErrors;
+
     @JsonProperty("sum_waap_flag_count")
     @JsonInclude(Include.NON_NULL)
     private Float sumWaapFlagCount;
@@ -812,9 +776,37 @@ public class VserverL7MetricsObj extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Float sumWaapOrphanApiCount;
 
+    @JsonProperty("sum_waap_rate_limiting_errors")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumWaapRateLimitingErrors;
+
+    @JsonProperty("sum_waap_redirects")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumWaapRedirects;
+
     @JsonProperty("sum_waap_reject_count")
     @JsonInclude(Include.NON_NULL)
     private Float sumWaapRejectCount;
+
+    @JsonProperty("sum_waap_responses_301")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumWaapResponses301;
+
+    @JsonProperty("sum_waap_responses_302")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumWaapResponses302;
+
+    @JsonProperty("sum_waap_responses_303")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumWaapResponses303;
+
+    @JsonProperty("sum_waap_responses_307")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumWaapResponses307;
+
+    @JsonProperty("sum_waap_responses_308")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumWaapResponses308;
 
     @JsonProperty("sum_waap_responses_400")
     @JsonInclude(Include.NON_NULL)
@@ -827,6 +819,14 @@ public class VserverL7MetricsObj extends AviRestResource {
     @JsonProperty("sum_waap_responses_403")
     @JsonInclude(Include.NON_NULL)
     private Float sumWaapResponses403;
+
+    @JsonProperty("sum_waap_responses_407")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumWaapResponses407;
+
+    @JsonProperty("sum_waap_responses_429")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumWaapResponses429;
 
     @JsonProperty("sum_waap_responses_4xx")
     @JsonInclude(Include.NON_NULL)
@@ -2818,32 +2818,6 @@ public class VserverL7MetricsObj extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Rate of authentication errors (401 unauthorized, 403 forbidden, and 407 proxy authentication required responses) for api requests per second.
-   * Field introduced in 32.1.4.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return avgWaapAuthenticationErrors
-   */
-  @VsoMethod
-  public Float getAvgWaapAuthenticationErrors() {
-    return avgWaapAuthenticationErrors;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Rate of authentication errors (401 unauthorized, 403 forbidden, and 407 proxy authentication required responses) for api requests per second.
-   * Field introduced in 32.1.4.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param avgWaapAuthenticationErrors set the avgWaapAuthenticationErrors.
-   */
-  @VsoMethod
-  public void setAvgWaapAuthenticationErrors(Float  avgWaapAuthenticationErrors) {
-    this.avgWaapAuthenticationErrors = avgWaapAuthenticationErrors;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Average waap hits for this virtualservice.
    * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -2892,188 +2866,6 @@ public class VserverL7MetricsObj extends AviRestResource {
   @VsoMethod
   public void setAvgWaapOrphanApiCount(Float  avgWaapOrphanApiCount) {
     this.avgWaapOrphanApiCount = avgWaapOrphanApiCount;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Rate of rate limiting errors (429 too many requests responses) for api requests per second.
-   * Field introduced in 32.1.4.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return avgWaapRateLimitingErrors
-   */
-  @VsoMethod
-  public Float getAvgWaapRateLimitingErrors() {
-    return avgWaapRateLimitingErrors;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Rate of rate limiting errors (429 too many requests responses) for api requests per second.
-   * Field introduced in 32.1.4.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param avgWaapRateLimitingErrors set the avgWaapRateLimitingErrors.
-   */
-  @VsoMethod
-  public void setAvgWaapRateLimitingErrors(Float  avgWaapRateLimitingErrors) {
-    this.avgWaapRateLimitingErrors = avgWaapRateLimitingErrors;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Rate of http redirect responses (301, 302, 303, 307, 308) for api requests per second.
-   * Field introduced in 32.1.4.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return avgWaapRedirects
-   */
-  @VsoMethod
-  public Float getAvgWaapRedirects() {
-    return avgWaapRedirects;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Rate of http redirect responses (301, 302, 303, 307, 308) for api requests per second.
-   * Field introduced in 32.1.4.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param avgWaapRedirects set the avgWaapRedirects.
-   */
-  @VsoMethod
-  public void setAvgWaapRedirects(Float  avgWaapRedirects) {
-    this.avgWaapRedirects = avgWaapRedirects;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Rate of 301 moved permanently responses for api requests per second.
-   * Field introduced in 32.1.4.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return avgWaapResponses301
-   */
-  @VsoMethod
-  public Float getAvgWaapResponses301() {
-    return avgWaapResponses301;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Rate of 301 moved permanently responses for api requests per second.
-   * Field introduced in 32.1.4.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param avgWaapResponses301 set the avgWaapResponses301.
-   */
-  @VsoMethod
-  public void setAvgWaapResponses301(Float  avgWaapResponses301) {
-    this.avgWaapResponses301 = avgWaapResponses301;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Rate of 302 found responses for api requests per second.
-   * Field introduced in 32.1.4.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return avgWaapResponses302
-   */
-  @VsoMethod
-  public Float getAvgWaapResponses302() {
-    return avgWaapResponses302;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Rate of 302 found responses for api requests per second.
-   * Field introduced in 32.1.4.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param avgWaapResponses302 set the avgWaapResponses302.
-   */
-  @VsoMethod
-  public void setAvgWaapResponses302(Float  avgWaapResponses302) {
-    this.avgWaapResponses302 = avgWaapResponses302;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Rate of 303 see other responses for api requests per second.
-   * Field introduced in 32.1.4.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return avgWaapResponses303
-   */
-  @VsoMethod
-  public Float getAvgWaapResponses303() {
-    return avgWaapResponses303;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Rate of 303 see other responses for api requests per second.
-   * Field introduced in 32.1.4.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param avgWaapResponses303 set the avgWaapResponses303.
-   */
-  @VsoMethod
-  public void setAvgWaapResponses303(Float  avgWaapResponses303) {
-    this.avgWaapResponses303 = avgWaapResponses303;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Rate of 307 temporary redirect responses for api requests per second.
-   * Field introduced in 32.1.4.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return avgWaapResponses307
-   */
-  @VsoMethod
-  public Float getAvgWaapResponses307() {
-    return avgWaapResponses307;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Rate of 307 temporary redirect responses for api requests per second.
-   * Field introduced in 32.1.4.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param avgWaapResponses307 set the avgWaapResponses307.
-   */
-  @VsoMethod
-  public void setAvgWaapResponses307(Float  avgWaapResponses307) {
-    this.avgWaapResponses307 = avgWaapResponses307;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Rate of 308 permanent redirect responses for api requests per second.
-   * Field introduced in 32.1.4.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return avgWaapResponses308
-   */
-  @VsoMethod
-  public Float getAvgWaapResponses308() {
-    return avgWaapResponses308;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Rate of 308 permanent redirect responses for api requests per second.
-   * Field introduced in 32.1.4.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param avgWaapResponses308 set the avgWaapResponses308.
-   */
-  @VsoMethod
-  public void setAvgWaapResponses308(Float  avgWaapResponses308) {
-    this.avgWaapResponses308 = avgWaapResponses308;
   }
 
   /**
@@ -3152,58 +2944,6 @@ public class VserverL7MetricsObj extends AviRestResource {
   @VsoMethod
   public void setAvgWaapResponses403(Float  avgWaapResponses403) {
     this.avgWaapResponses403 = avgWaapResponses403;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Rate of 407 proxy authentication required responses for api requests per second.
-   * Field introduced in 32.1.4.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return avgWaapResponses407
-   */
-  @VsoMethod
-  public Float getAvgWaapResponses407() {
-    return avgWaapResponses407;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Rate of 407 proxy authentication required responses for api requests per second.
-   * Field introduced in 32.1.4.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param avgWaapResponses407 set the avgWaapResponses407.
-   */
-  @VsoMethod
-  public void setAvgWaapResponses407(Float  avgWaapResponses407) {
-    this.avgWaapResponses407 = avgWaapResponses407;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Rate of 429 too many requests responses for api requests per second.
-   * Field introduced in 32.1.4.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return avgWaapResponses429
-   */
-  @VsoMethod
-  public Float getAvgWaapResponses429() {
-    return avgWaapResponses429;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Rate of 429 too many requests responses for api requests per second.
-   * Field introduced in 32.1.4.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param avgWaapResponses429 set the avgWaapResponses429.
-   */
-  @VsoMethod
-  public void setAvgWaapResponses429(Float  avgWaapResponses429) {
-    this.avgWaapResponses429 = avgWaapResponses429;
   }
 
   /**
@@ -5786,6 +5526,32 @@ public class VserverL7MetricsObj extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Total number of authentication errors (401 unauthorized, 403 forbidden, and 407 proxy authentication required responses) for api requests.
+   * Field introduced in 32.1.4.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return sumWaapAuthenticationErrors
+   */
+  @VsoMethod
+  public Float getSumWaapAuthenticationErrors() {
+    return sumWaapAuthenticationErrors;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Total number of authentication errors (401 unauthorized, 403 forbidden, and 407 proxy authentication required responses) for api requests.
+   * Field introduced in 32.1.4.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param sumWaapAuthenticationErrors set the sumWaapAuthenticationErrors.
+   */
+  @VsoMethod
+  public void setSumWaapAuthenticationErrors(Float  sumWaapAuthenticationErrors) {
+    this.sumWaapAuthenticationErrors = sumWaapAuthenticationErrors;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Total number of requests flagged (but not rejected) by api policy validation for this virtualservice.
    * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -5864,6 +5630,58 @@ public class VserverL7MetricsObj extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Total number of rate limiting errors (429 too many requests responses) for api requests.
+   * Field introduced in 32.1.4.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return sumWaapRateLimitingErrors
+   */
+  @VsoMethod
+  public Float getSumWaapRateLimitingErrors() {
+    return sumWaapRateLimitingErrors;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Total number of rate limiting errors (429 too many requests responses) for api requests.
+   * Field introduced in 32.1.4.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param sumWaapRateLimitingErrors set the sumWaapRateLimitingErrors.
+   */
+  @VsoMethod
+  public void setSumWaapRateLimitingErrors(Float  sumWaapRateLimitingErrors) {
+    this.sumWaapRateLimitingErrors = sumWaapRateLimitingErrors;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Total number of http redirect responses (301, 302, 303, 307, 308) for api requests.
+   * Field introduced in 32.1.4.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return sumWaapRedirects
+   */
+  @VsoMethod
+  public Float getSumWaapRedirects() {
+    return sumWaapRedirects;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Total number of http redirect responses (301, 302, 303, 307, 308) for api requests.
+   * Field introduced in 32.1.4.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param sumWaapRedirects set the sumWaapRedirects.
+   */
+  @VsoMethod
+  public void setSumWaapRedirects(Float  sumWaapRedirects) {
+    this.sumWaapRedirects = sumWaapRedirects;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Total number of requests rejected by api policy validation for this virtualservice.
    * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -5886,6 +5704,136 @@ public class VserverL7MetricsObj extends AviRestResource {
   @VsoMethod
   public void setSumWaapRejectCount(Float  sumWaapRejectCount) {
     this.sumWaapRejectCount = sumWaapRejectCount;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Total 301 moved permanently responses for api requests.
+   * Field introduced in 32.1.4.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return sumWaapResponses301
+   */
+  @VsoMethod
+  public Float getSumWaapResponses301() {
+    return sumWaapResponses301;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Total 301 moved permanently responses for api requests.
+   * Field introduced in 32.1.4.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param sumWaapResponses301 set the sumWaapResponses301.
+   */
+  @VsoMethod
+  public void setSumWaapResponses301(Float  sumWaapResponses301) {
+    this.sumWaapResponses301 = sumWaapResponses301;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Total 302 found responses for api requests.
+   * Field introduced in 32.1.4.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return sumWaapResponses302
+   */
+  @VsoMethod
+  public Float getSumWaapResponses302() {
+    return sumWaapResponses302;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Total 302 found responses for api requests.
+   * Field introduced in 32.1.4.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param sumWaapResponses302 set the sumWaapResponses302.
+   */
+  @VsoMethod
+  public void setSumWaapResponses302(Float  sumWaapResponses302) {
+    this.sumWaapResponses302 = sumWaapResponses302;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Total 303 see other responses for api requests.
+   * Field introduced in 32.1.4.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return sumWaapResponses303
+   */
+  @VsoMethod
+  public Float getSumWaapResponses303() {
+    return sumWaapResponses303;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Total 303 see other responses for api requests.
+   * Field introduced in 32.1.4.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param sumWaapResponses303 set the sumWaapResponses303.
+   */
+  @VsoMethod
+  public void setSumWaapResponses303(Float  sumWaapResponses303) {
+    this.sumWaapResponses303 = sumWaapResponses303;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Total 307 temporary redirect responses for api requests.
+   * Field introduced in 32.1.4.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return sumWaapResponses307
+   */
+  @VsoMethod
+  public Float getSumWaapResponses307() {
+    return sumWaapResponses307;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Total 307 temporary redirect responses for api requests.
+   * Field introduced in 32.1.4.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param sumWaapResponses307 set the sumWaapResponses307.
+   */
+  @VsoMethod
+  public void setSumWaapResponses307(Float  sumWaapResponses307) {
+    this.sumWaapResponses307 = sumWaapResponses307;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Total 308 permanent redirect responses for api requests.
+   * Field introduced in 32.1.4.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return sumWaapResponses308
+   */
+  @VsoMethod
+  public Float getSumWaapResponses308() {
+    return sumWaapResponses308;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Total 308 permanent redirect responses for api requests.
+   * Field introduced in 32.1.4.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param sumWaapResponses308 set the sumWaapResponses308.
+   */
+  @VsoMethod
+  public void setSumWaapResponses308(Float  sumWaapResponses308) {
+    this.sumWaapResponses308 = sumWaapResponses308;
   }
 
   /**
@@ -5964,6 +5912,58 @@ public class VserverL7MetricsObj extends AviRestResource {
   @VsoMethod
   public void setSumWaapResponses403(Float  sumWaapResponses403) {
     this.sumWaapResponses403 = sumWaapResponses403;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Total 407 proxy authentication required responses for api requests.
+   * Field introduced in 32.1.4.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return sumWaapResponses407
+   */
+  @VsoMethod
+  public Float getSumWaapResponses407() {
+    return sumWaapResponses407;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Total 407 proxy authentication required responses for api requests.
+   * Field introduced in 32.1.4.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param sumWaapResponses407 set the sumWaapResponses407.
+   */
+  @VsoMethod
+  public void setSumWaapResponses407(Float  sumWaapResponses407) {
+    this.sumWaapResponses407 = sumWaapResponses407;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Total 429 too many requests responses for api requests.
+   * Field introduced in 32.1.4.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return sumWaapResponses429
+   */
+  @VsoMethod
+  public Float getSumWaapResponses429() {
+    return sumWaapResponses429;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Total 429 too many requests responses for api requests.
+   * Field introduced in 32.1.4.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param sumWaapResponses429 set the sumWaapResponses429.
+   */
+  @VsoMethod
+  public void setSumWaapResponses429(Float  sumWaapResponses429) {
+    this.sumWaapResponses429 = sumWaapResponses429;
   }
 
   /**
@@ -7001,18 +7001,18 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.avgWaapResponses403, objVserverL7MetricsObj.avgWaapResponses403)&&
   Objects.equals(this.sumWaapZombieApiCount, objVserverL7MetricsObj.sumWaapZombieApiCount)&&
   Objects.equals(this.avgWaapZombieApiCount, objVserverL7MetricsObj.avgWaapZombieApiCount)&&
-  Objects.equals(this.avgWaapResponses407, objVserverL7MetricsObj.avgWaapResponses407)&&
-  Objects.equals(this.avgWaapResponses429, objVserverL7MetricsObj.avgWaapResponses429)&&
-  Objects.equals(this.avgWaapResponses301, objVserverL7MetricsObj.avgWaapResponses301)&&
-  Objects.equals(this.avgWaapResponses302, objVserverL7MetricsObj.avgWaapResponses302)&&
-  Objects.equals(this.avgWaapResponses303, objVserverL7MetricsObj.avgWaapResponses303)&&
-  Objects.equals(this.avgWaapResponses307, objVserverL7MetricsObj.avgWaapResponses307)&&
-  Objects.equals(this.avgWaapResponses308, objVserverL7MetricsObj.avgWaapResponses308)&&
+  Objects.equals(this.sumWaapResponses407, objVserverL7MetricsObj.sumWaapResponses407)&&
+  Objects.equals(this.sumWaapResponses429, objVserverL7MetricsObj.sumWaapResponses429)&&
+  Objects.equals(this.sumWaapResponses301, objVserverL7MetricsObj.sumWaapResponses301)&&
+  Objects.equals(this.sumWaapResponses302, objVserverL7MetricsObj.sumWaapResponses302)&&
+  Objects.equals(this.sumWaapResponses303, objVserverL7MetricsObj.sumWaapResponses303)&&
+  Objects.equals(this.sumWaapResponses307, objVserverL7MetricsObj.sumWaapResponses307)&&
+  Objects.equals(this.sumWaapResponses308, objVserverL7MetricsObj.sumWaapResponses308)&&
   Objects.equals(this.sumWaapFlagCount, objVserverL7MetricsObj.sumWaapFlagCount)&&
   Objects.equals(this.sumWaapRejectCount, objVserverL7MetricsObj.sumWaapRejectCount)&&
-  Objects.equals(this.avgWaapAuthenticationErrors, objVserverL7MetricsObj.avgWaapAuthenticationErrors)&&
-  Objects.equals(this.avgWaapRateLimitingErrors, objVserverL7MetricsObj.avgWaapRateLimitingErrors)&&
-  Objects.equals(this.avgWaapRedirects, objVserverL7MetricsObj.avgWaapRedirects);
+  Objects.equals(this.sumWaapAuthenticationErrors, objVserverL7MetricsObj.sumWaapAuthenticationErrors)&&
+  Objects.equals(this.sumWaapRateLimitingErrors, objVserverL7MetricsObj.sumWaapRateLimitingErrors)&&
+  Objects.equals(this.sumWaapRedirects, objVserverL7MetricsObj.sumWaapRedirects);
 }
 
 @Override
@@ -7095,21 +7095,11 @@ public String toString() {
         sb.append("    avgUriLength: ").append(toIndentedString(avgUriLength)).append("\n");
         sb.append("    avgWaapActiveApiCount: ").append(toIndentedString(avgWaapActiveApiCount)).append("\n");
         sb.append("    avgWaapActiveApiLatency: ").append(toIndentedString(avgWaapActiveApiLatency)).append("\n");
-        sb.append("    avgWaapAuthenticationErrors: ").append(toIndentedString(avgWaapAuthenticationErrors)).append("\n");
         sb.append("    avgWaapHits: ").append(toIndentedString(avgWaapHits)).append("\n");
         sb.append("    avgWaapOrphanApiCount: ").append(toIndentedString(avgWaapOrphanApiCount)).append("\n");
-        sb.append("    avgWaapRateLimitingErrors: ").append(toIndentedString(avgWaapRateLimitingErrors)).append("\n");
-        sb.append("    avgWaapRedirects: ").append(toIndentedString(avgWaapRedirects)).append("\n");
-        sb.append("    avgWaapResponses301: ").append(toIndentedString(avgWaapResponses301)).append("\n");
-        sb.append("    avgWaapResponses302: ").append(toIndentedString(avgWaapResponses302)).append("\n");
-        sb.append("    avgWaapResponses303: ").append(toIndentedString(avgWaapResponses303)).append("\n");
-        sb.append("    avgWaapResponses307: ").append(toIndentedString(avgWaapResponses307)).append("\n");
-        sb.append("    avgWaapResponses308: ").append(toIndentedString(avgWaapResponses308)).append("\n");
         sb.append("    avgWaapResponses400: ").append(toIndentedString(avgWaapResponses400)).append("\n");
         sb.append("    avgWaapResponses401: ").append(toIndentedString(avgWaapResponses401)).append("\n");
         sb.append("    avgWaapResponses403: ").append(toIndentedString(avgWaapResponses403)).append("\n");
-        sb.append("    avgWaapResponses407: ").append(toIndentedString(avgWaapResponses407)).append("\n");
-        sb.append("    avgWaapResponses429: ").append(toIndentedString(avgWaapResponses429)).append("\n");
         sb.append("    avgWaapResponses4Xx: ").append(toIndentedString(avgWaapResponses4Xx)).append("\n");
         sb.append("    avgWaapResponses5Xx: ").append(toIndentedString(avgWaapResponses5Xx)).append("\n");
         sb.append("    avgWaapShadowApiCount: ").append(toIndentedString(avgWaapShadowApiCount)).append("\n");
@@ -7213,13 +7203,23 @@ public String toString() {
         sb.append("    sumUriLength: ").append(toIndentedString(sumUriLength)).append("\n");
         sb.append("    sumWaapActiveApiCount: ").append(toIndentedString(sumWaapActiveApiCount)).append("\n");
         sb.append("    sumWaapActiveApiLatency: ").append(toIndentedString(sumWaapActiveApiLatency)).append("\n");
+        sb.append("    sumWaapAuthenticationErrors: ").append(toIndentedString(sumWaapAuthenticationErrors)).append("\n");
         sb.append("    sumWaapFlagCount: ").append(toIndentedString(sumWaapFlagCount)).append("\n");
         sb.append("    sumWaapHits: ").append(toIndentedString(sumWaapHits)).append("\n");
         sb.append("    sumWaapOrphanApiCount: ").append(toIndentedString(sumWaapOrphanApiCount)).append("\n");
+        sb.append("    sumWaapRateLimitingErrors: ").append(toIndentedString(sumWaapRateLimitingErrors)).append("\n");
+        sb.append("    sumWaapRedirects: ").append(toIndentedString(sumWaapRedirects)).append("\n");
         sb.append("    sumWaapRejectCount: ").append(toIndentedString(sumWaapRejectCount)).append("\n");
+        sb.append("    sumWaapResponses301: ").append(toIndentedString(sumWaapResponses301)).append("\n");
+        sb.append("    sumWaapResponses302: ").append(toIndentedString(sumWaapResponses302)).append("\n");
+        sb.append("    sumWaapResponses303: ").append(toIndentedString(sumWaapResponses303)).append("\n");
+        sb.append("    sumWaapResponses307: ").append(toIndentedString(sumWaapResponses307)).append("\n");
+        sb.append("    sumWaapResponses308: ").append(toIndentedString(sumWaapResponses308)).append("\n");
         sb.append("    sumWaapResponses400: ").append(toIndentedString(sumWaapResponses400)).append("\n");
         sb.append("    sumWaapResponses401: ").append(toIndentedString(sumWaapResponses401)).append("\n");
         sb.append("    sumWaapResponses403: ").append(toIndentedString(sumWaapResponses403)).append("\n");
+        sb.append("    sumWaapResponses407: ").append(toIndentedString(sumWaapResponses407)).append("\n");
+        sb.append("    sumWaapResponses429: ").append(toIndentedString(sumWaapResponses429)).append("\n");
         sb.append("    sumWaapResponses4Xx: ").append(toIndentedString(sumWaapResponses4Xx)).append("\n");
         sb.append("    sumWaapResponses5Xx: ").append(toIndentedString(sumWaapResponses5Xx)).append("\n");
         sb.append("    sumWaapShadowApiCount: ").append(toIndentedString(sumWaapShadowApiCount)).append("\n");
