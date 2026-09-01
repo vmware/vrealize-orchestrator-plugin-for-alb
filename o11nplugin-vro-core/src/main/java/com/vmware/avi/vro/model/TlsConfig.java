@@ -39,7 +39,7 @@ public class TlsConfig extends AviRestResource {
    * Client certificate for mutual tls connection.
    * Required when tls mode is mutual tls.
    * It is a reference to an object of type sslkeyandcertificate.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientCertRef
@@ -54,7 +54,7 @@ public class TlsConfig extends AviRestResource {
    * Client certificate for mutual tls connection.
    * Required when tls mode is mutual tls.
    * It is a reference to an object of type sslkeyandcertificate.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientCertRef set the clientCertRef.
@@ -69,7 +69,7 @@ public class TlsConfig extends AviRestResource {
    * Select how tls is used to establish a secure outbound connection.
    * Certificate validation uses the trust store configured in system configuration (truststore pki profile).
    * Enum options - TLS_MODE_NO_VERIFY, TLS_MODE_TLS, TLS_MODE_MTLS, TLS_MODE_SKIP_HOSTNAME_VERIFY.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tlsMode
@@ -84,7 +84,7 @@ public class TlsConfig extends AviRestResource {
    * Select how tls is used to establish a secure outbound connection.
    * Certificate validation uses the trust store configured in system configuration (truststore pki profile).
    * Enum options - TLS_MODE_NO_VERIFY, TLS_MODE_TLS, TLS_MODE_MTLS, TLS_MODE_SKIP_HOSTNAME_VERIFY.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tlsMode set the tlsMode.

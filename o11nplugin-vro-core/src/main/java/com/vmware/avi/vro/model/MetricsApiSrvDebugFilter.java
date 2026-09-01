@@ -443,7 +443,7 @@ public class MetricsApiSrvDebugFilter extends AviRestResource {
    * First n minutes of each hour treated as the rollup window (balanced mode bypasses the freshness gate here).
    * 0 disables the bypass.
    * Allowed values are 0-30.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is min.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -459,7 +459,7 @@ public class MetricsApiSrvDebugFilter extends AviRestResource {
    * First n minutes of each hour treated as the rollup window (balanced mode bypasses the freshness gate here).
    * 0 disables the bypass.
    * Allowed values are 0-30.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is min.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -474,7 +474,7 @@ public class MetricsApiSrvDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Follower health-probe cadence.
    * Allowed values are 10-600.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is sec.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -489,7 +489,7 @@ public class MetricsApiSrvDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Follower health-probe cadence.
    * Allowed values are 10-600.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is sec.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -505,7 +505,7 @@ public class MetricsApiSrvDebugFilter extends AviRestResource {
    * Probe-recency gate  distrust the cached follower probe if older than this.
    * Must be >= metrics_db_rd_check_interval_sec.
    * Allowed values are 30-1800.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is sec.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -521,7 +521,7 @@ public class MetricsApiSrvDebugFilter extends AviRestResource {
    * Probe-recency gate  distrust the cached follower probe if older than this.
    * Must be >= metrics_db_rd_check_interval_sec.
    * Allowed values are 30-1800.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is sec.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -536,7 +536,7 @@ public class MetricsApiSrvDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Max now - last_replay_ts (worst-case follower staleness) for the freshness gate.
    * Allowed values are 5-3600.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is sec.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -551,7 +551,7 @@ public class MetricsApiSrvDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Max now - last_replay_ts (worst-case follower staleness) for the freshness gate.
    * Allowed values are 5-3600.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is sec.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -567,7 +567,7 @@ public class MetricsApiSrvDebugFilter extends AviRestResource {
    * Follower-routing mode for metrics reads  balanced (default), disabled (always leader), freshness_only, or force_follower_non_rt.
    * Enum options - METRICS_DB_ROUTING_BALANCED, METRICS_DB_ROUTING_DISABLED, METRICS_DB_ROUTING_FRESHNESS_ONLY,
    * METRICS_DB_ROUTING_FORCE_FOLLOWER_NON_RT.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricsDbRdRoutingMode
@@ -582,7 +582,7 @@ public class MetricsApiSrvDebugFilter extends AviRestResource {
    * Follower-routing mode for metrics reads  balanced (default), disabled (always leader), freshness_only, or force_follower_non_rt.
    * Enum options - METRICS_DB_ROUTING_BALANCED, METRICS_DB_ROUTING_DISABLED, METRICS_DB_ROUTING_FRESHNESS_ONLY,
    * METRICS_DB_ROUTING_FORCE_FOLLOWER_NON_RT.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricsDbRdRoutingMode set the metricsDbRdRoutingMode.

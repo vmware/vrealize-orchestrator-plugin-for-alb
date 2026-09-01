@@ -42,7 +42,7 @@ public class PromotedLogFields extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Dot-notation field paths to promote for applicationlog.
    * Example  'waf_log' promotes the entire submessage; 'waf_log.status' promotes only the status sub-field.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return appLogFields
@@ -56,7 +56,7 @@ public class PromotedLogFields extends AviRestResource {
    * This is the setter method. this will set the appLogFields
    * Dot-notation field paths to promote for applicationlog.
    * Example  'waf_log' promotes the entire submessage; 'waf_log.status' promotes only the status sub-field.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return appLogFields
@@ -70,7 +70,7 @@ public class PromotedLogFields extends AviRestResource {
    * This is the setter method this will set the appLogFields
    * Dot-notation field paths to promote for applicationlog.
    * Example  'waf_log' promotes the entire submessage; 'waf_log.status' promotes only the status sub-field.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return appLogFields
@@ -88,7 +88,7 @@ public class PromotedLogFields extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dot-notation field paths to promote for connectionlog.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return connLogFields
@@ -101,7 +101,7 @@ public class PromotedLogFields extends AviRestResource {
   /**
    * This is the setter method. this will set the connLogFields
    * Dot-notation field paths to promote for connectionlog.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return connLogFields
@@ -114,7 +114,7 @@ public class PromotedLogFields extends AviRestResource {
   /**
    * This is the setter method this will set the connLogFields
    * Dot-notation field paths to promote for connectionlog.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return connLogFields
@@ -132,7 +132,7 @@ public class PromotedLogFields extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dot-notation field paths to promote for eventlog.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return eventLogFields
@@ -145,7 +145,7 @@ public class PromotedLogFields extends AviRestResource {
   /**
    * This is the setter method. this will set the eventLogFields
    * Dot-notation field paths to promote for eventlog.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return eventLogFields
@@ -158,7 +158,7 @@ public class PromotedLogFields extends AviRestResource {
   /**
    * This is the setter method this will set the eventLogFields
    * Dot-notation field paths to promote for eventlog.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return eventLogFields

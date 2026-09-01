@@ -73,7 +73,7 @@ public class CertificateAuthority extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Common name of the ca certificate issuer.
-   * Field introduced in 32.1.3, 32.2.1.
+   * Field introduced in 32.1.3.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * @return issuer
    */
@@ -85,7 +85,7 @@ public class CertificateAuthority extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Common name of the ca certificate issuer.
-   * Field introduced in 32.1.3, 32.2.1.
+   * Field introduced in 32.1.3.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * @param issuer set the issuer.
    */
@@ -119,7 +119,7 @@ public class CertificateAuthority extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Expiry date of the ca certificate in utc string form.
-   * Field introduced in 32.1.3, 32.2.1.
+   * Field introduced in 32.1.3.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * @return notAfter
    */
@@ -131,7 +131,7 @@ public class CertificateAuthority extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Expiry date of the ca certificate in utc string form.
-   * Field introduced in 32.1.3, 32.2.1.
+   * Field introduced in 32.1.3.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * @param notAfter set the notAfter.
    */
@@ -143,7 +143,7 @@ public class CertificateAuthority extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Common name of the ca certificate subject.
-   * Field introduced in 32.1.3, 32.2.1.
+   * Field introduced in 32.1.3.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * @return subject
    */
@@ -155,7 +155,7 @@ public class CertificateAuthority extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Common name of the ca certificate subject.
-   * Field introduced in 32.1.3, 32.2.1.
+   * Field introduced in 32.1.3.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * @param subject set the subject.
    */

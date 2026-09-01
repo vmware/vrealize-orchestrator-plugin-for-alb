@@ -572,7 +572,7 @@ public class VirtualService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Api policy configuration for the virtual service to apply api protection.
    * It is a reference to an object of type apipolicy.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return apiPolicyRef
@@ -586,7 +586,7 @@ public class VirtualService extends AviRestResource {
    * This is the setter method to the attribute.
    * Api policy configuration for the virtual service to apply api protection.
    * It is a reference to an object of type apipolicy.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param apiPolicyRef set the apiPolicyRef.
@@ -1595,7 +1595,7 @@ public class VirtualService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Label profile configuration for the virtual service to categorize api endpoints.
    * It is a reference to an object of type labelprofile.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labelProfileRef
@@ -1609,7 +1609,7 @@ public class VirtualService extends AviRestResource {
    * This is the setter method to the attribute.
    * Label profile configuration for the virtual service to categorize api endpoints.
    * It is a reference to an object of type labelprofile.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param labelProfileRef set the labelProfileRef.
@@ -2332,7 +2332,7 @@ public class VirtualService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Session key forwarder profile for the virtual service for the session key forwarding.
    * It is a reference to an object of type sessionkeyforwarder.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sessionKeyForwarderRef
@@ -2346,7 +2346,7 @@ public class VirtualService extends AviRestResource {
    * This is the setter method to the attribute.
    * Session key forwarder profile for the virtual service for the session key forwarding.
    * It is a reference to an object of type sessionkeyforwarder.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sessionKeyForwarderRef set the sessionKeyForwarderRef.

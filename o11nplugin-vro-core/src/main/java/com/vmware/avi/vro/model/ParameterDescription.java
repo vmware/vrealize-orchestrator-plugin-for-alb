@@ -51,7 +51,7 @@ public class ParameterDescription extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * When false, a parameter present with an empty value (e.g.
    * ?foo=) is treated as a schema violation.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return allowEmptyValue
@@ -65,7 +65,7 @@ public class ParameterDescription extends AviRestResource {
    * This is the setter method to the attribute.
    * When false, a parameter present with an empty value (e.g.
    * ?foo=) is treated as a schema violation.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param allowEmptyValue set the allowEmptyValue.
@@ -79,7 +79,7 @@ public class ParameterDescription extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Marks this parameter as deprecated.
    * When a deprecated parameter is received in a request, it is treated as a schema violation and will be learned but not logged.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return deprecated
@@ -93,7 +93,7 @@ public class ParameterDescription extends AviRestResource {
    * This is the setter method to the attribute.
    * Marks this parameter as deprecated.
    * When a deprecated parameter is received in a request, it is treated as a schema violation and will be learned but not logged.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param deprecated set the deprecated.
@@ -106,7 +106,7 @@ public class ParameterDescription extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the parameter.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
@@ -119,7 +119,7 @@ public class ParameterDescription extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the parameter.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
@@ -133,7 +133,7 @@ public class ParameterDescription extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Marks this parameter as mandatory.
    * A missing parameter is treated as a violation; enforcement depends on the missing-mandatory action configured for its location (query or header).
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return required
@@ -147,7 +147,7 @@ public class ParameterDescription extends AviRestResource {
    * This is the setter method to the attribute.
    * Marks this parameter as mandatory.
    * A missing parameter is treated as a violation; enforcement depends on the missing-mandatory action configured for its location (query or header).
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param required set the required.
@@ -161,7 +161,7 @@ public class ParameterDescription extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Schema description for this parameter.
    * If the schema is not known, use schema_type_undefined.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return schema
@@ -175,7 +175,7 @@ public class ParameterDescription extends AviRestResource {
    * This is the setter method to the attribute.
    * Schema description for this parameter.
    * If the schema is not known, use schema_type_undefined.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param schema set the schema.

@@ -76,7 +76,7 @@ public class AkoAmkoCluster extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Checksum of the cloud configuration for akoamkocluster object.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudConfigCksum
@@ -89,7 +89,7 @@ public class AkoAmkoCluster extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Checksum of the cloud configuration for akoamkocluster object.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudConfigCksum set the cloudConfigCksum.
@@ -103,7 +103,7 @@ public class AkoAmkoCluster extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Cloud reference uuid in avi controller.
    * It is a reference to an object of type cloud.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudRef
@@ -117,7 +117,7 @@ public class AkoAmkoCluster extends AviRestResource {
    * This is the setter method to the attribute.
    * Cloud reference uuid in avi controller.
    * It is a reference to an object of type cloud.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudRef set the cloudRef.
@@ -131,7 +131,7 @@ public class AkoAmkoCluster extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Type of operator - ako or amko.
    * Enum options - CLUSTER_TYPE_AKO, CLUSTER_TYPE_AMKO.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clusterType
@@ -145,7 +145,7 @@ public class AkoAmkoCluster extends AviRestResource {
    * This is the setter method to the attribute.
    * Type of operator - ako or amko.
    * Enum options - CLUSTER_TYPE_AKO, CLUSTER_TYPE_AMKO.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clusterType set the clusterType.
@@ -158,7 +158,7 @@ public class AkoAmkoCluster extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ako/amko user identifier.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return createdBy
@@ -171,7 +171,7 @@ public class AkoAmkoCluster extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ako/amko user identifier.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param createdBy set the createdBy.
@@ -184,7 +184,7 @@ public class AkoAmkoCluster extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Deployment configuration information.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return deploymentInfo
@@ -197,7 +197,7 @@ public class AkoAmkoCluster extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Deployment configuration information.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param deploymentInfo set the deploymentInfo.
@@ -210,7 +210,7 @@ public class AkoAmkoCluster extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Additional cluster metadata.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metadata
@@ -223,7 +223,7 @@ public class AkoAmkoCluster extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Additional cluster metadata.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metadata set the metadata.
@@ -236,7 +236,7 @@ public class AkoAmkoCluster extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the ako/amko cluster.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
@@ -249,7 +249,7 @@ public class AkoAmkoCluster extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the ako/amko cluster.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
@@ -263,7 +263,7 @@ public class AkoAmkoCluster extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tenant that ako/amko cluster belongs to.
    * It is a reference to an object of type tenant.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
@@ -277,7 +277,7 @@ public class AkoAmkoCluster extends AviRestResource {
    * This is the setter method to the attribute.
    * Tenant that ako/amko cluster belongs to.
    * It is a reference to an object of type tenant.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
@@ -309,7 +309,7 @@ public class AkoAmkoCluster extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the ako/amko cluster.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
@@ -322,7 +322,7 @@ public class AkoAmkoCluster extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the ako/amko cluster.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
@@ -335,7 +335,7 @@ public class AkoAmkoCluster extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Version information including kubernetes and ako/amko versions.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return versionInfo
@@ -348,7 +348,7 @@ public class AkoAmkoCluster extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Version information including kubernetes and ako/amko versions.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param versionInfo set the versionInfo.
