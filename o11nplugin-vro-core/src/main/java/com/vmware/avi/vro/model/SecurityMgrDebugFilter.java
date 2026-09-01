@@ -48,9 +48,17 @@ public class SecurityMgrDebugFilter extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean enableSecmgrApiEndpointConsolidation = true;
 
+    @JsonProperty("endpoint_consolidation_min_samples")
+    @JsonInclude(Include.NON_NULL)
+    private Integer endpointConsolidationMinSamples = 20;
+
     @JsonProperty("entity_ref")
     @JsonInclude(Include.NON_NULL)
     private String entityRef;
+
+    @JsonProperty("focus_entries")
+    @JsonInclude(Include.NON_NULL)
+    private List<SecMgrDebugFocusEntry> focusEntries;
 
     @JsonProperty("learning_db_cleanup_lookback_period")
     @JsonInclude(Include.NON_NULL)
@@ -294,6 +302,36 @@ public class SecurityMgrDebugFilter extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * [internal] minimum number of conforming sibling uri segments required before api endpoint consolidation learns a path-parameter pattern from
+   * them, and before an existing consolidated template's pattern may be widened to absorb a new shape of traffic.
+   * Allowed values are 2-1000.
+   * Field introduced in 32.1.4.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 20.
+   * @return endpointConsolidationMinSamples
+   */
+  @VsoMethod
+  public Integer getEndpointConsolidationMinSamples() {
+    return endpointConsolidationMinSamples;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * [internal] minimum number of conforming sibling uri segments required before api endpoint consolidation learns a path-parameter pattern from
+   * them, and before an existing consolidated template's pattern may be widened to absorb a new shape of traffic.
+   * Allowed values are 2-1000.
+   * Field introduced in 32.1.4.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 20.
+   * @param endpointConsolidationMinSamples set the endpointConsolidationMinSamples.
+   */
+  @VsoMethod
+  public void setEndpointConsolidationMinSamples(Integer  endpointConsolidationMinSamples) {
+    this.endpointConsolidationMinSamples = endpointConsolidationMinSamples;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Uuid of the entity.
    * It is a reference to an object of type virtualservice.
    * Field introduced in 18.2.6.
@@ -319,6 +357,56 @@ public class SecurityMgrDebugFilter extends AviRestResource {
   public void setEntityRef(String  entityRef) {
     this.entityRef = entityRef;
   }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * On-demand debug event tracing  focus on up to 2 vs/se/uri/stage combinations and capture their matching pipeline events into a per-entry ring
+   * buffer, dumpable via 'show securitymgr stats filter stage stage_debug_focus'.
+   * Edited via 'focus_entries name <name>' / 'no focus_entries name <name>'.
+   * Field introduced in 32.1.4.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return focusEntries
+   */
+  @VsoMethod
+  public List<SecMgrDebugFocusEntry> getFocusEntries() {
+    return focusEntries;
+  }
+
+  /**
+   * This is the setter method. this will set the focusEntries
+   * On-demand debug event tracing  focus on up to 2 vs/se/uri/stage combinations and capture their matching pipeline events into a per-entry ring
+   * buffer, dumpable via 'show securitymgr stats filter stage stage_debug_focus'.
+   * Edited via 'focus_entries name <name>' / 'no focus_entries name <name>'.
+   * Field introduced in 32.1.4.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return focusEntries
+   */
+  @VsoMethod
+  public void setFocusEntries(List<SecMgrDebugFocusEntry>  focusEntries) {
+    this.focusEntries = focusEntries;
+  }
+
+  /**
+   * This is the setter method this will set the focusEntries
+   * On-demand debug event tracing  focus on up to 2 vs/se/uri/stage combinations and capture their matching pipeline events into a per-entry ring
+   * buffer, dumpable via 'show securitymgr stats filter stage stage_debug_focus'.
+   * Edited via 'focus_entries name <name>' / 'no focus_entries name <name>'.
+   * Field introduced in 32.1.4.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return focusEntries
+   */
+  @VsoMethod
+  public SecurityMgrDebugFilter addFocusEntriesItem(SecMgrDebugFocusEntry focusEntriesItem) {
+    if (this.focusEntries == null) {
+      this.focusEntries = new ArrayList<SecMgrDebugFocusEntry>();
+    }
+    this.focusEntries.add(focusEntriesItem);
+    return this;
+  }
+
 
   /**
    * This is the getter method this will return the attribute value.
@@ -594,7 +682,9 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.apiPathMarkers, objSecurityMgrDebugFilter.apiPathMarkers)&&
   Objects.equals(this.staticFileExtensions, objSecurityMgrDebugFilter.staticFileExtensions)&&
   Objects.equals(this.learningDbCleanupLookbackPeriod, objSecurityMgrDebugFilter.learningDbCleanupLookbackPeriod)&&
-  Objects.equals(this.secmgrApiHitsPopulationInterval, objSecurityMgrDebugFilter.secmgrApiHitsPopulationInterval);
+  Objects.equals(this.secmgrApiHitsPopulationInterval, objSecurityMgrDebugFilter.secmgrApiHitsPopulationInterval)&&
+  Objects.equals(this.endpointConsolidationMinSamples, objSecurityMgrDebugFilter.endpointConsolidationMinSamples)&&
+  Objects.equals(this.focusEntries, objSecurityMgrDebugFilter.focusEntries);
 }
 
 @Override
@@ -607,7 +697,9 @@ public String toString() {
         sb.append("    apiPathMarkers: ").append(toIndentedString(apiPathMarkers)).append("\n");
         sb.append("    enableAdaptiveConfig: ").append(toIndentedString(enableAdaptiveConfig)).append("\n");
         sb.append("    enableSecmgrApiEndpointConsolidation: ").append(toIndentedString(enableSecmgrApiEndpointConsolidation)).append("\n");
+        sb.append("    endpointConsolidationMinSamples: ").append(toIndentedString(endpointConsolidationMinSamples)).append("\n");
         sb.append("    entityRef: ").append(toIndentedString(entityRef)).append("\n");
+        sb.append("    focusEntries: ").append(toIndentedString(focusEntries)).append("\n");
         sb.append("    learningDbCleanupLookbackPeriod: ").append(toIndentedString(learningDbCleanupLookbackPeriod)).append("\n");
         sb.append("    psmProgrammingInterval: ").append(toIndentedString(psmProgrammingInterval)).append("\n");
         sb.append("    psmRuleIdMultiplier: ").append(toIndentedString(psmRuleIdMultiplier)).append("\n");

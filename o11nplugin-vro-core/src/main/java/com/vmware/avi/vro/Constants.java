@@ -1110,6 +1110,7 @@ public class Constants {
     public static final String FINDER_VRO_SEARCHREPLACEPAIR = "SearchReplacePair";
     public static final String FINDER_VRO_SEARCHSTRINGVAR = "SearchStringVar";
     public static final String FINDER_VRO_SECMGRDATAEVENT = "SecMgrDataEvent";
+    public static final String FINDER_VRO_SECMGRDEBUGFOCUSENTRY = "SecMgrDebugFocusEntry";
     public static final String FINDER_VRO_SECMGRTHRESHOLD = "SecMgrThreshold";
     public static final String FINDER_VRO_SECMGRUAEVENTDETAILS = "SecMgrUAEventDetails";
     public static final String FINDER_VRO_SECURECHANNELAVAILABLELOCALIPS = "SecureChannelAvailableLocalIPs";
