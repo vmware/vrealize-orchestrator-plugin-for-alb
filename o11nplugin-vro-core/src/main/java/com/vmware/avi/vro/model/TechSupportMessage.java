@@ -41,7 +41,10 @@ public class TechSupportMessage extends AviRestResource {
     private String url = "url";
 
 
-
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid;
+    
   /**
    * This is the getter method this will return the attribute value.
    * 'techsupport status for the current invocation.'.
