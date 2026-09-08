@@ -44,10 +44,6 @@ public class ControllerProperties extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean allowUnauthenticatedApis = false;
 
-    @JsonProperty("allow_unauthenticated_nodes")
-    @JsonInclude(Include.NON_NULL)
-    private Boolean allowUnauthenticatedNodes = false;
-
     @JsonProperty("api_idle_timeout")
     @JsonInclude(Include.NON_NULL)
     private Integer apiIdleTimeout = 15;
@@ -198,6 +194,10 @@ public class ControllerProperties extends AviRestResource {
     @JsonProperty("enable_streaming_based_nsx_ip_group_sync")
     @JsonInclude(Include.NON_NULL)
     private Boolean enableStreamingBasedNsxIpGroupSync = true;
+
+    @JsonProperty("event_manager_api_rate_limit_per_min")
+    @JsonInclude(Include.NON_NULL)
+    private Integer eventManagerApiRateLimitPerMin = 60;
 
     @JsonProperty("event_manager_file_modified_ts_filter")
     @JsonInclude(Include.NON_NULL)
@@ -607,28 +607,6 @@ public class ControllerProperties extends AviRestResource {
   @VsoMethod
   public void setAllowUnauthenticatedApis(Boolean  allowUnauthenticatedApis) {
     this.allowUnauthenticatedApis = allowUnauthenticatedApis;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @return allowUnauthenticatedNodes
-   */
-  @VsoMethod
-  public Boolean getAllowUnauthenticatedNodes() {
-    return allowUnauthenticatedNodes;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @param allowUnauthenticatedNodes set the allowUnauthenticatedNodes.
-   */
-  @VsoMethod
-  public void setAllowUnauthenticatedNodes(Boolean  allowUnauthenticatedNodes) {
-    this.allowUnauthenticatedNodes = allowUnauthenticatedNodes;
   }
 
   /**
@@ -1703,6 +1681,34 @@ public class ControllerProperties extends AviRestResource {
   @VsoMethod
   public void setEnableStreamingBasedNsxIpGroupSync(Boolean  enableStreamingBasedNsxIpGroupSync) {
     this.enableStreamingBasedNsxIpGroupSync = enableStreamingBasedNsxIpGroupSync;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Maximum number of post /api/eventmanager/generateevent requests allowed per minute, across all event_id values.
+   * Allowed values are 1-10000.
+   * Field introduced in 32.1.3.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 60.
+   * @return eventManagerApiRateLimitPerMin
+   */
+  @VsoMethod
+  public Integer getEventManagerApiRateLimitPerMin() {
+    return eventManagerApiRateLimitPerMin;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum number of post /api/eventmanager/generateevent requests allowed per minute, across all event_id values.
+   * Allowed values are 1-10000.
+   * Field introduced in 32.1.3.
+   * Allowed with any value in enterprise, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 60.
+   * @param eventManagerApiRateLimitPerMin set the eventManagerApiRateLimitPerMin.
+   */
+  @VsoMethod
+  public void setEventManagerApiRateLimitPerMin(Integer  eventManagerApiRateLimitPerMin) {
+    this.eventManagerApiRateLimitPerMin = eventManagerApiRateLimitPerMin;
   }
 
   /**
@@ -3848,7 +3854,6 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.maxDeadSeInGrp, objControllerProperties.maxDeadSeInGrp)&&
   Objects.equals(this.deadSeDetectionTimer, objControllerProperties.deadSeDetectionTimer)&&
   Objects.equals(this.apiIdleTimeout, objControllerProperties.apiIdleTimeout)&&
-  Objects.equals(this.allowUnauthenticatedNodes, objControllerProperties.allowUnauthenticatedNodes)&&
   Objects.equals(this.clusterIpGratuitousArpPeriod, objControllerProperties.clusterIpGratuitousArpPeriod)&&
   Objects.equals(this.vsKeyRotatePeriod, objControllerProperties.vsKeyRotatePeriod)&&
   Objects.equals(this.secureChannelControllerTokenTimeout, objControllerProperties.secureChannelControllerTokenTimeout)&&
@@ -3948,7 +3953,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.certRotationJwtRetentionDays, objControllerProperties.certRotationJwtRetentionDays)&&
   Objects.equals(this.ccUserPasswordRotationJobPeriod, objControllerProperties.ccUserPasswordRotationJobPeriod)&&
   Objects.equals(this.ccUserPasswordExpiryDays, objControllerProperties.ccUserPasswordExpiryDays)&&
-  Objects.equals(this.enableStreamingBasedNsxIpGroupSync, objControllerProperties.enableStreamingBasedNsxIpGroupSync);
+  Objects.equals(this.enableStreamingBasedNsxIpGroupSync, objControllerProperties.enableStreamingBasedNsxIpGroupSync)&&
+  Objects.equals(this.eventManagerApiRateLimitPerMin, objControllerProperties.eventManagerApiRateLimitPerMin);
 }
 
 @Override
@@ -3959,7 +3965,6 @@ public String toString() {
         sb.append("    allowAdminNetworkUpdates: ").append(toIndentedString(allowAdminNetworkUpdates)).append("\n");
         sb.append("    allowIpForwarding: ").append(toIndentedString(allowIpForwarding)).append("\n");
         sb.append("    allowUnauthenticatedApis: ").append(toIndentedString(allowUnauthenticatedApis)).append("\n");
-        sb.append("    allowUnauthenticatedNodes: ").append(toIndentedString(allowUnauthenticatedNodes)).append("\n");
         sb.append("    apiIdleTimeout: ").append(toIndentedString(apiIdleTimeout)).append("\n");
         sb.append("    apiPerfLoggingThreshold: ").append(toIndentedString(apiPerfLoggingThreshold)).append("\n");
         sb.append("    appviewxCompatMode: ").append(toIndentedString(appviewxCompatMode)).append("\n");
@@ -3998,6 +4003,7 @@ public String toString() {
         sb.append("    enablePerProcessStop: ").append(toIndentedString(enablePerProcessStop)).append("\n");
         sb.append("    enableResmgrLogCachePrint: ").append(toIndentedString(enableResmgrLogCachePrint)).append("\n");
         sb.append("    enableStreamingBasedNsxIpGroupSync: ").append(toIndentedString(enableStreamingBasedNsxIpGroupSync)).append("\n");
+        sb.append("    eventManagerApiRateLimitPerMin: ").append(toIndentedString(eventManagerApiRateLimitPerMin)).append("\n");
         sb.append("    eventManagerFileModifiedTsFilter: ").append(toIndentedString(eventManagerFileModifiedTsFilter)).append("\n");
         sb.append("    eventManagerMaxGoroutines: ").append(toIndentedString(eventManagerMaxGoroutines)).append("\n");
         sb.append("    eventManagerMaxSubscribers: ").append(toIndentedString(eventManagerMaxSubscribers)).append("\n");

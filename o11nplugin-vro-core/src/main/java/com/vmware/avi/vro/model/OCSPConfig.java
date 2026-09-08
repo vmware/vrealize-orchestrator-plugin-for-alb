@@ -36,6 +36,10 @@ public class OCSPConfig extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer ocspReqInterval = 86400;
 
+    @JsonProperty("ocsp_request_hash_algorithms")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> ocspRequestHashAlgorithms;
+
     @JsonProperty("ocsp_resp_timeout")
     @JsonInclude(Include.NON_NULL)
     private Integer ocspRespTimeout;
@@ -135,6 +139,53 @@ public class OCSPConfig extends AviRestResource {
   public void setOcspReqInterval(Integer  ocspReqInterval) {
     this.ocspReqInterval = ocspReqInterval;
   }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Hash algorithm used to construct the ocsp certid in requests.
+   * Enum options - OCSP_HASH_SHA1, OCSP_HASH_SHA256, OCSP_HASH_SHA384, OCSP_HASH_SHA512.
+   * Field introduced in 32.1.3.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return ocspRequestHashAlgorithms
+   */
+  @VsoMethod
+  public List<String> getOcspRequestHashAlgorithms() {
+    return ocspRequestHashAlgorithms;
+  }
+
+  /**
+   * This is the setter method. this will set the ocspRequestHashAlgorithms
+   * Hash algorithm used to construct the ocsp certid in requests.
+   * Enum options - OCSP_HASH_SHA1, OCSP_HASH_SHA256, OCSP_HASH_SHA384, OCSP_HASH_SHA512.
+   * Field introduced in 32.1.3.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return ocspRequestHashAlgorithms
+   */
+  @VsoMethod
+  public void setOcspRequestHashAlgorithms(List<String>  ocspRequestHashAlgorithms) {
+    this.ocspRequestHashAlgorithms = ocspRequestHashAlgorithms;
+  }
+
+  /**
+   * This is the setter method this will set the ocspRequestHashAlgorithms
+   * Hash algorithm used to construct the ocsp certid in requests.
+   * Enum options - OCSP_HASH_SHA1, OCSP_HASH_SHA256, OCSP_HASH_SHA384, OCSP_HASH_SHA512.
+   * Field introduced in 32.1.3.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return ocspRequestHashAlgorithms
+   */
+  @VsoMethod
+  public OCSPConfig addOcspRequestHashAlgorithmsItem(String ocspRequestHashAlgorithmsItem) {
+    if (this.ocspRequestHashAlgorithms == null) {
+      this.ocspRequestHashAlgorithms = new ArrayList<String>();
+    }
+    this.ocspRequestHashAlgorithms.add(ocspRequestHashAlgorithmsItem);
+    return this;
+  }
+
 
   /**
    * This is the getter method this will return the attribute value.
@@ -252,7 +303,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.responderUrlLists, objOCSPConfig.responderUrlLists)&&
   Objects.equals(this.urlAction, objOCSPConfig.urlAction)&&
   Objects.equals(this.failedOcspJobsRetryInterval, objOCSPConfig.failedOcspJobsRetryInterval)&&
-  Objects.equals(this.maxTries, objOCSPConfig.maxTries);
+  Objects.equals(this.maxTries, objOCSPConfig.maxTries)&&
+  Objects.equals(this.ocspRequestHashAlgorithms, objOCSPConfig.ocspRequestHashAlgorithms);
 }
 
 @Override
@@ -262,6 +314,7 @@ public String toString() {
       sb.append("    failedOcspJobsRetryInterval: ").append(toIndentedString(failedOcspJobsRetryInterval)).append("\n");
         sb.append("    maxTries: ").append(toIndentedString(maxTries)).append("\n");
         sb.append("    ocspReqInterval: ").append(toIndentedString(ocspReqInterval)).append("\n");
+        sb.append("    ocspRequestHashAlgorithms: ").append(toIndentedString(ocspRequestHashAlgorithms)).append("\n");
         sb.append("    ocspRespTimeout: ").append(toIndentedString(ocspRespTimeout)).append("\n");
         sb.append("    responderUrlLists: ").append(toIndentedString(responderUrlLists)).append("\n");
         sb.append("    urlAction: ").append(toIndentedString(urlAction)).append("\n");

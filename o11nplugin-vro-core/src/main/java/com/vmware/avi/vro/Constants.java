@@ -181,6 +181,7 @@ public class Constants {
     public static final String FINDER_VRO_CERTJWTSTORE = "CertJwtStore";
     public static final String FINDER_VRO_CERTIFICATEAUTHORITY = "CertificateAuthority";
     public static final String FINDER_VRO_CERTIFICATEMANAGEMENTPROFILE = "CertificateManagementProfile";
+    public static final String FINDER_VRO_CERTIFICATESECURITYPOLICY = "CertificateSecurityPolicy";
     public static final String FINDER_VRO_CFGSTATE = "CfgState";
     public static final String FINDER_VRO_CHILDPROCESSINFO = "ChildProcessInfo";
     public static final String FINDER_VRO_CLIENTCERTAUTHSETTINGS = "ClientCertAuthSettings";
@@ -671,6 +672,7 @@ public class Constants {
     public static final String FINDER_VRO_LOCATIONHDRMATCH = "LocationHdrMatch";
     public static final String FINDER_VRO_LOCKOUTCONSTRAINT = "LockoutConstraint";
     public static final String FINDER_VRO_LOGAGENTEVENTDETAIL = "LogAgentEventDetail";
+    public static final String FINDER_VRO_LOGAGENTSTREAMINGEVENTDETAIL = "LogAgentStreamingEventDetail";
     public static final String FINDER_VRO_LOGAGENTTCPCLIENTEVENTDETAIL = "LogAgentTCPClientEventDetail";
     public static final String FINDER_VRO_LOGAGENTTCPCONNESTRATEEXCDEVENT = "LogAgentTCPConnEstRateExcdEvent";
     public static final String FINDER_VRO_LOGCONTROLLERMAPPING = "LogControllerMapping";
@@ -767,6 +769,7 @@ public class Constants {
     public static final String FINDER_VRO_NSXTTIER1SEGMENTCONFIG = "NsxtTier1SegmentConfig";
     public static final String FINDER_VRO_NSXTTIER1SEGMENTMANUALMODE = "NsxtTier1SegmentManualMode";
     public static final String FINDER_VRO_NTLMLOG = "NtlmLog";
+    public static final String FINDER_VRO_NTPWEAKAUTHALGORITHMEVENTDETAILS = "NtpWeakAuthAlgorithmEventDetails";
     public static final String FINDER_VRO_NUAGESDNCONTROLLER = "NuageSDNController";
     public static final String FINDER_VRO_OAUTHAPPSETTINGS = "OAuthAppSettings";
     public static final String FINDER_VRO_OAUTHPROFILE = "OAuthProfile";
