@@ -1,11 +1,13 @@
 package com.vmware.avi.vro;
 
 import java.io.IOException;
+import java.lang.Runtime.Version;
 import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Scope;
 
 import com.vmware.avi.sdk.AviApiException;
@@ -24,6 +26,13 @@ import ch.dunes.vso.sdk.api.IPluginFactory;
 @Scope(value = "prototype")
 public class VroPlugin {
 	public static final String TYPE = "Vro";
+	private final String minVersion;
+	private final String maxVersion;
+
+	public VroPlugin(@Value("${vRO.min_version}") String minVersion,@Value("${vRO.max_version}") String maxVersion){
+		this.minVersion = minVersion;
+		this.maxVersion = maxVersion;
+	}
 
 	private static final Logger log = LoggerFactory.getLogger(VroPlugin.class);
 
@@ -55,11 +64,13 @@ public class VroPlugin {
 		try {
 			log.debug("__INIT__:: Inside addVroClient ");
 			AviConnectionInfo aviConnectionInfo = new AviConnectionInfo();
+			String resolvedVersion = resolveVersion(version);
+			log.info("__INFO__:: Provided version {} and fallback version {}",version,resolvedVersion);
 			aviConnectionInfo.setController(controller);
 			aviConnectionInfo.setUsername(username);
 			aviConnectionInfo.setPassword(password);
 			aviConnectionInfo.setTenant(tenant);
-			aviConnectionInfo.setVersion(version);
+			aviConnectionInfo.setVersion(resolvedVersion);
 			aviConnectionInfo.setToken(token);
 			String addedController = controller + "-" + tenant;
 			aviConnectionInfo.setId(addedController);
@@ -73,6 +84,25 @@ public class VroPlugin {
 		return ctl;
 	}
 
+	private String resolveVersion(String version) {
+		if (compareVersions(version, this.minVersion) < 0) {
+			log.debug("__DEBUG__:: Provided version {} is below min version {}, falling back to min version", version,minVersion);
+			return minVersion;
+		}
+		if (compareVersions(version, this.maxVersion) > 0) {
+			log.debug("__DEBUG__:: Provided version {} is above max version {}, falling back to max version", version,maxVersion);
+			return maxVersion;
+		}
+		return version;
+	}
+
+	private int compareVersions(String v1, String v2) {
+		//it requires a numeric dot-separated sequence otherwise it will reject
+		if (v1 == null || v2 == null) {
+			throw new IllegalArgumentException("Version strings to compare cannot be null");
+		}
+		return Version.parse(v1).compareTo(Version.parse(v2));
+	}
 	/**
 	 * Method to store the all AVI endpoint
 	 *
