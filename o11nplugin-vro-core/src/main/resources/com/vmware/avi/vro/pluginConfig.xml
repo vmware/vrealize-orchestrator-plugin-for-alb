@@ -10,7 +10,7 @@
             <context:include-filter type="annotation" expression="com.vmware.o11n.plugin.sdk.annotation.VsoFinder"/>
         <context:include-filter type="annotation" expression="com.vmware.o11n.plugin.sdk.annotation.VsoObject"/>
     </context:component-scan>
-
+    <context:property-placeholder location="classpath:application.properties" ignore-unresolvable="true"/>
     <import resource="classpath:com/vmware/o11n/plugin/sdk/spring/pluginEnv.xml"/>
     
     <bean class="com.vmware.avi.vro.VroPluginFactory" id="pluginFactory" autowire-candidate="false" scope="prototype">

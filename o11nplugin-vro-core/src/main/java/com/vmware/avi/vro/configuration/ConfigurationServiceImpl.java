@@ -75,7 +75,7 @@ public class ConfigurationServiceImpl implements ConfigurationService {
 			for (IEndpointConfiguration config : configs) {
 				AviConnectionInfo connectionInfo = getConnectionInfo(config);
 				if (connectionInfo != null) {
-					log.debug("Adding connection info to result map: " + connectionInfo);
+					log.debug("Adding connection info to result map: " + connectionInfo.getController());
 					result.add(connectionInfo);
 				}
 			}
@@ -130,7 +130,7 @@ public class ConfigurationServiceImpl implements ConfigurationService {
 			log.debug("__DONE__:: Save Config method.");
 			return connectionInfo;
 		} catch (IOException e) {
-			log.error("Error saving connection " + connectionInfo, e);
+			log.error("Error saving connection for ip " + connectionInfo.getController(), e);
 			throw new RuntimeException(e);
 		}
 	}
@@ -145,7 +145,7 @@ public class ConfigurationServiceImpl implements ConfigurationService {
 			endpointConfigurationService.deleteEndpointConfiguration(connectionInfo.getId().toString());
 			fireConnectionRemoved(connectionInfo);
 		} catch (IOException e) {
-			log.error("Error deleting endpoint configuration: " + connectionInfo, e);
+			log.error("Error deleting endpoint configuration for ip: " + connectionInfo.getController()	, e);
 			throw new RuntimeException(e);
 		}
 	}
