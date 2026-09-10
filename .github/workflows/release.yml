@@ -60,6 +60,13 @@ jobs:
             -Dtransitive=false \
             -DremoteRepositories=central::default::https://repo.maven.apache.org/maven2
 
+      - name: Update plugin version in application.properties
+        run: |
+          RELEASE_VERSION="$(grep -r "release_version=" version.txt | awk -F= '{print $2}')"
+          echo "Updating vRO.plugin_version to ${RELEASE_VERSION} in application.properties"
+          sed -i "s/^vRO.plugin_version=.*/vRO.plugin_version=${RELEASE_VERSION}/" o11nplugin-vro-core/src/main/resources/application.properties
+          cat o11nplugin-vro-core/src/main/resources/application.properties
+
       - name: Build VRO Plugin
         run: |
           echo "Build VRO Version ${{ steps.get_vro_version.outputs.VRO_RELEASE_VERSION }}"

@@ -1,7 +1,6 @@
 package com.vmware.avi.vro;
 
 import java.io.IOException;
-import java.lang.Runtime.Version;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -26,12 +25,10 @@ import ch.dunes.vso.sdk.api.IPluginFactory;
 @Scope(value = "prototype")
 public class VroPlugin {
 	public static final String TYPE = "Vro";
-	private final String minVersion;
-	private final String maxVersion;
+	private final String pluginVersion;
 
-	public VroPlugin(@Value("${vRO.min_version}") String minVersion,@Value("${vRO.max_version}") String maxVersion){
-		this.minVersion = minVersion;
-		this.maxVersion = maxVersion;
+	public VroPlugin(@Value("${vRO.plugin_version}") String pluginVersion){
+		this.pluginVersion = pluginVersion;
 	}
 
 	private static final Logger log = LoggerFactory.getLogger(VroPlugin.class);
@@ -85,23 +82,8 @@ public class VroPlugin {
 	}
 
 	private String resolveVersion(String version) {
-		if (compareVersions(version, this.minVersion) < 0) {
-			log.debug("__DEBUG__:: Provided version {} is below min version {}, falling back to min version", version,minVersion);
-			return minVersion;
-		}
-		if (compareVersions(version, this.maxVersion) > 0) {
-			log.debug("__DEBUG__:: Provided version {} is above max version {}, falling back to max version", version,maxVersion);
-			return maxVersion;
-		}
-		return version;
-	}
-
-	private int compareVersions(String v1, String v2) {
-		//it requires a numeric dot-separated sequence otherwise it will reject
-		if (v1 == null || v2 == null) {
-			throw new IllegalArgumentException("Version strings to compare cannot be null");
-		}
-		return Version.parse(v1).compareTo(Version.parse(v2));
+		log.debug("__DEBUG__:: Provided version {} is not used for compatibility checks; plugin is pinned to version {}", version, pluginVersion);
+		return pluginVersion;
 	}
 	/**
 	 * Method to store the all AVI endpoint

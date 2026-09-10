@@ -9,6 +9,7 @@ import java.lang.reflect.Field;
 import java.util.Properties;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import com.vmware.avi.vro.configuration.ConfigurationService;
@@ -30,6 +31,7 @@ public class AviVroPluginMockTest {
     private GlobalPluginNotificationHandler notificationHandler;
 
     private VroPlugin vroPlugin;
+    private String pluginVersion;
 
     @Before
     public void setUp() throws Exception {
@@ -38,9 +40,8 @@ public class AviVroPluginMockTest {
         try (InputStream input = getClass().getClassLoader().getResourceAsStream("application.properties")) {
             prop.load(input);
         }
-        String minVersion = prop.getProperty("vRO.min_version");
-        String maxVersion = prop.getProperty("vRO.max_version");
-        vroPlugin = new VroPlugin(minVersion, maxVersion);
+        pluginVersion = prop.getProperty("vRO.plugin_version");
+        vroPlugin = new VroPlugin(pluginVersion);
         Field configField = VroPlugin.class.getDeclaredField("configurationService");
         configField.setAccessible(true);
         configField.set(vroPlugin, configurationService);
@@ -64,6 +65,21 @@ public class AviVroPluginMockTest {
         verify(configurationService).findById(expectedId);
         verify(configurationService).save(any(AviConnectionInfo.class));
         verify(notificationHandler).notifyElementsInvalidate();
+    }
+
+    @Test
+    public void testAddVroClient_PinsToConfiguredPluginVersion() throws Exception {
+        String token = null;
+        String requestedVersion = "32.1.9";
+        String expectedId = CONTROLLER + "-" + TENANT;
+        when(configurationService.findById(expectedId)).thenReturn(null);
+        when(configurationService.save(any(AviConnectionInfo.class))).thenAnswer(invocation -> invocation.getArgument(0));
+
+        vroPlugin.addVroClient(CONTROLLER, USERNAME, PASSWORD, TENANT, requestedVersion, token);
+
+        ArgumentCaptor<AviConnectionInfo> captor = ArgumentCaptor.forClass(AviConnectionInfo.class);
+        verify(configurationService).save(captor.capture());
+        assertEquals(pluginVersion, captor.getValue().getVersion());
     }
 
     @Test(expected = Exception.class)
