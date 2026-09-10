@@ -65,7 +65,7 @@ public class ApiPath extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Description of this api path.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
@@ -78,7 +78,7 @@ public class ApiPath extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Description of this api path.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
@@ -91,7 +91,7 @@ public class ApiPath extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * List of api endpoints for this path.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Maximum of 10 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -105,7 +105,7 @@ public class ApiPath extends AviRestResource {
   /**
    * This is the setter method. this will set the endpoints
    * List of api endpoints for this path.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Maximum of 10 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -119,7 +119,7 @@ public class ApiPath extends AviRestResource {
   /**
    * This is the setter method this will set the endpoints
    * List of api endpoints for this path.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Maximum of 10 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -138,7 +138,7 @@ public class ApiPath extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of this object, unique per tenant.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
@@ -151,7 +151,7 @@ public class ApiPath extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of this object, unique per tenant.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
@@ -165,7 +165,7 @@ public class ApiPath extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The uri path template for the object.
    * Parameters can be defined in curly braces, for example /pet/{pet_id}.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pathTemplate
@@ -179,7 +179,7 @@ public class ApiPath extends AviRestResource {
    * This is the setter method to the attribute.
    * The uri path template for the object.
    * Parameters can be defined in curly braces, for example /pet/{pet_id}.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pathTemplate set the pathTemplate.
@@ -193,7 +193,7 @@ public class ApiPath extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Indicates whether this path was user-defined or imported from an openapi specification file.
    * Enum options - SOURCE_USER_DEFINED, SOURCE_API_SPEC, SOURCE_DISCOVERED.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * @return source
    */
@@ -206,7 +206,7 @@ public class ApiPath extends AviRestResource {
    * This is the setter method to the attribute.
    * Indicates whether this path was user-defined or imported from an openapi specification file.
    * Enum options - SOURCE_USER_DEFINED, SOURCE_API_SPEC, SOURCE_DISCOVERED.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * @param source set the source.
    */
@@ -218,7 +218,7 @@ public class ApiPath extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
@@ -231,7 +231,7 @@ public class ApiPath extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
@@ -246,7 +246,7 @@ public class ApiPath extends AviRestResource {
    * Action to take when a request matches this path but uses an http method not defined for this path.
    * Overrides the policy-level unknown_http_method_action when not inherit.
    * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_INHERIT_FROM_API_POLICY".
    * @return unknownHttpMethodAction
@@ -261,7 +261,7 @@ public class ApiPath extends AviRestResource {
    * Action to take when a request matches this path but uses an http method not defined for this path.
    * Overrides the policy-level unknown_http_method_action when not inherit.
    * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_INHERIT_FROM_API_POLICY".
    * @param unknownHttpMethodAction set the unknownHttpMethodAction.
@@ -293,7 +293,7 @@ public class ApiPath extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The object uuid.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
@@ -306,7 +306,7 @@ public class ApiPath extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The object uuid.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.

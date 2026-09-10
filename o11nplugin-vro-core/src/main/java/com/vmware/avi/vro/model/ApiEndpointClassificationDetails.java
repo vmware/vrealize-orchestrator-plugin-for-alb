@@ -40,7 +40,7 @@ public class ApiEndpointClassificationDetails extends AviRestResource {
    * Enum options - API_CLASSIFICATION_TRANSITION_TYPE_ACTIVE_TO_ORPHAN, API_CLASSIFICATION_TRANSITION_TYPE_ACTIVE_TO_ZOMBIE,
    * API_CLASSIFICATION_TRANSITION_TYPE_ORPHAN_TO_ACTIVE, API_CLASSIFICATION_TRANSITION_TYPE_ORPHAN_TO_ZOMBIE,
    * API_CLASSIFICATION_TRANSITION_TYPE_ZOMBIE_TO_ACTIVE, API_CLASSIFICATION_TRANSITION_TYPE_ZOMBIE_TO_ORPHAN.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return apiClassificationTransitionType
@@ -56,7 +56,7 @@ public class ApiEndpointClassificationDetails extends AviRestResource {
    * Enum options - API_CLASSIFICATION_TRANSITION_TYPE_ACTIVE_TO_ORPHAN, API_CLASSIFICATION_TRANSITION_TYPE_ACTIVE_TO_ZOMBIE,
    * API_CLASSIFICATION_TRANSITION_TYPE_ORPHAN_TO_ACTIVE, API_CLASSIFICATION_TRANSITION_TYPE_ORPHAN_TO_ZOMBIE,
    * API_CLASSIFICATION_TRANSITION_TYPE_ZOMBIE_TO_ACTIVE, API_CLASSIFICATION_TRANSITION_TYPE_ZOMBIE_TO_ORPHAN.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param apiClassificationTransitionType set the apiClassificationTransitionType.
@@ -69,7 +69,7 @@ public class ApiEndpointClassificationDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Api endpoint classification details.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return apiEndpoint
@@ -82,7 +82,7 @@ public class ApiEndpointClassificationDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Api endpoint classification details.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param apiEndpoint set the apiEndpoint.

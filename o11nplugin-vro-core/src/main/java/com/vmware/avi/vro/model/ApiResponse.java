@@ -50,7 +50,7 @@ public class ApiResponse extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Mapping of response content types to their corresponding schemas.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Maximum of 128 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -64,7 +64,7 @@ public class ApiResponse extends AviRestResource {
   /**
    * This is the setter method. this will set the contentTypeMappings
    * Mapping of response content types to their corresponding schemas.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Maximum of 128 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -78,7 +78,7 @@ public class ApiResponse extends AviRestResource {
   /**
    * This is the setter method this will set the contentTypeMappings
    * Mapping of response content types to their corresponding schemas.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Maximum of 128 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -97,7 +97,7 @@ public class ApiResponse extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Description of the response from the openapi specification.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
@@ -110,7 +110,7 @@ public class ApiResponse extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Description of the response from the openapi specification.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
@@ -123,7 +123,7 @@ public class ApiResponse extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Response header parameter definitions for this status code.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Maximum of 64 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -137,7 +137,7 @@ public class ApiResponse extends AviRestResource {
   /**
    * This is the setter method. this will set the responseHeaderParameters
    * Response header parameter definitions for this status code.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Maximum of 64 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -151,7 +151,7 @@ public class ApiResponse extends AviRestResource {
   /**
    * This is the setter method this will set the responseHeaderParameters
    * Response header parameter definitions for this status code.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Maximum of 64 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -170,7 +170,7 @@ public class ApiResponse extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Http status code or status code range.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return statusCode
@@ -183,7 +183,7 @@ public class ApiResponse extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Http status code or status code range.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param statusCode set the statusCode.
@@ -197,7 +197,7 @@ public class ApiResponse extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Action to take when the response body's content type is not defined for this status code.
    * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_INHERIT_FROM_API_POLICY".
    * @return unknownContentTypeAction
@@ -211,7 +211,7 @@ public class ApiResponse extends AviRestResource {
    * This is the setter method to the attribute.
    * Action to take when the response body's content type is not defined for this status code.
    * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_INHERIT_FROM_API_POLICY".
    * @param unknownContentTypeAction set the unknownContentTypeAction.

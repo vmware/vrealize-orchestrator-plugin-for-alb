@@ -183,6 +183,8 @@ import com.vmware.avi.vro.model.SeHmEventGSDetails;
 import com.vmware.avi.vro.model.SeHmEventGslbPoolDetails;
 import com.vmware.avi.vro.model.SeHmEventPoolDetails;
 import com.vmware.avi.vro.model.SeHmEventVsDetails;
+import com.vmware.avi.vro.model.SeGatewayHeartbeatFailedDetails;
+import com.vmware.avi.vro.model.SeGatewayHeartbeatSuccessDetails;
 import com.vmware.avi.vro.model.SeIP6DadFailedEventDetails;
 import com.vmware.avi.vro.model.SeIpAddedEventDetails;
 import com.vmware.avi.vro.model.SeIpRemovedEventDetails;
@@ -999,6 +1001,14 @@ public class EventDetails extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private SeHmEventVsDetails seHmVsDetails;
 
+    @JsonProperty("se_internal_gateway_heartbeat_failed_details")
+    @JsonInclude(Include.NON_NULL)
+    private SeGatewayHeartbeatFailedDetails seInternalGatewayHeartbeatFailedDetails;
+
+    @JsonProperty("se_internal_gateway_heartbeat_success_details")
+    @JsonInclude(Include.NON_NULL)
+    private SeGatewayHeartbeatSuccessDetails seInternalGatewayHeartbeatSuccessDetails;
+
     @JsonProperty("se_ip6_dad_failed_event_details")
     @JsonInclude(Include.NON_NULL)
     private SeIP6DadFailedEventDetails seIp6DadFailedEventDetails;
@@ -1504,7 +1514,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Api policy classification change event details.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return apiPolicyClassificationDetails
@@ -1517,7 +1527,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Api policy classification change event details.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param apiPolicyClassificationDetails set the apiPolicyClassificationDetails.
@@ -3570,7 +3580,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Learning database cleanup event details.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return learningDbCleanupEventDetails
@@ -3583,7 +3593,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Learning database cleanup event details.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param learningDbCleanupEventDetails set the learningDbCleanupEventDetails.
@@ -4256,7 +4266,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Nsx-t ip group members limit exceeded event.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nsxtIpGroupMembersLimitExceeded
@@ -4269,7 +4279,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Nsx-t ip group members limit exceeded event.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nsxtIpGroupMembersLimitExceeded set the nsxtIpGroupMembersLimitExceeded.
@@ -5435,6 +5445,54 @@ public class EventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Field introduced in 32.1.5.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return seInternalGatewayHeartbeatFailedDetails
+   */
+  @VsoMethod
+  public SeGatewayHeartbeatFailedDetails getSeInternalGatewayHeartbeatFailedDetails() {
+    return seInternalGatewayHeartbeatFailedDetails;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 32.1.5.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param seInternalGatewayHeartbeatFailedDetails set the seInternalGatewayHeartbeatFailedDetails.
+   */
+  @VsoMethod
+  public void setSeInternalGatewayHeartbeatFailedDetails(SeGatewayHeartbeatFailedDetails seInternalGatewayHeartbeatFailedDetails) {
+    this.seInternalGatewayHeartbeatFailedDetails = seInternalGatewayHeartbeatFailedDetails;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Field introduced in 32.1.5.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return seInternalGatewayHeartbeatSuccessDetails
+   */
+  @VsoMethod
+  public SeGatewayHeartbeatSuccessDetails getSeInternalGatewayHeartbeatSuccessDetails() {
+    return seInternalGatewayHeartbeatSuccessDetails;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 32.1.5.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param seInternalGatewayHeartbeatSuccessDetails set the seInternalGatewayHeartbeatSuccessDetails.
+   */
+  @VsoMethod
+  public void setSeInternalGatewayHeartbeatSuccessDetails(SeGatewayHeartbeatSuccessDetails seInternalGatewayHeartbeatSuccessDetails) {
+    this.seInternalGatewayHeartbeatSuccessDetails = seInternalGatewayHeartbeatSuccessDetails;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seIp6DadFailedEventDetails
@@ -5619,7 +5677,7 @@ public class EventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sePcapModeEventDetails
@@ -5631,7 +5689,7 @@ public class EventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sePcapModeEventDetails set the sePcapModeEventDetails.
@@ -7488,6 +7546,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.seRateLimiterDropDetails, objEventDetails.seRateLimiterDropDetails)&&
   Objects.equals(this.seQatModeEventDetail, objEventDetails.seQatModeEventDetail)&&
   Objects.equals(this.sePcapModeEventDetails, objEventDetails.sePcapModeEventDetails)&&
+  Objects.equals(this.seInternalGatewayHeartbeatFailedDetails, objEventDetails.seInternalGatewayHeartbeatFailedDetails)&&
+  Objects.equals(this.seInternalGatewayHeartbeatSuccessDetails, objEventDetails.seInternalGatewayHeartbeatSuccessDetails)&&
   Objects.equals(this.seHmPoolDetails, objEventDetails.seHmPoolDetails)&&
   Objects.equals(this.seHmVsDetails, objEventDetails.seHmVsDetails)&&
   Objects.equals(this.sePersistenceDetails, objEventDetails.sePersistenceDetails)&&
@@ -7853,6 +7913,8 @@ public String toString() {
         sb.append("    seHmGsgroupDetails: ").append(toIndentedString(seHmGsgroupDetails)).append("\n");
         sb.append("    seHmPoolDetails: ").append(toIndentedString(seHmPoolDetails)).append("\n");
         sb.append("    seHmVsDetails: ").append(toIndentedString(seHmVsDetails)).append("\n");
+        sb.append("    seInternalGatewayHeartbeatFailedDetails: ").append(toIndentedString(seInternalGatewayHeartbeatFailedDetails)).append("\n");
+        sb.append("    seInternalGatewayHeartbeatSuccessDetails: ").append(toIndentedString(seInternalGatewayHeartbeatSuccessDetails)).append("\n");
         sb.append("    seIp6DadFailedEventDetails: ").append(toIndentedString(seIp6DadFailedEventDetails)).append("\n");
         sb.append("    seIpAddedEventDetails: ").append(toIndentedString(seIpAddedEventDetails)).append("\n");
         sb.append("    seIpRemovedEventDetails: ").append(toIndentedString(seIpRemovedEventDetails)).append("\n");

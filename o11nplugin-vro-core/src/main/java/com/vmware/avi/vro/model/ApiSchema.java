@@ -101,7 +101,7 @@ public class ApiSchema extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Action to take on unspecified keys in an object.
    * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_INHERIT_FROM_API_POLICY".
    * @return additionalObjectKeyAction
@@ -115,7 +115,7 @@ public class ApiSchema extends AviRestResource {
    * This is the setter method to the attribute.
    * Action to take on unspecified keys in an object.
    * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_INHERIT_FROM_API_POLICY".
    * @param additionalObjectKeyAction set the additionalObjectKeyAction.
@@ -129,7 +129,7 @@ public class ApiSchema extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Type constraint for additional properties not defined in object_properties.
    * When set, unknown keys must conform to this schema.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return additionalPropertiesSchema
@@ -143,7 +143,7 @@ public class ApiSchema extends AviRestResource {
    * This is the setter method to the attribute.
    * Type constraint for additional properties not defined in object_properties.
    * When set, unknown keys must conform to this schema.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param additionalPropertiesSchema set the additionalPropertiesSchema.
@@ -157,7 +157,7 @@ public class ApiSchema extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * When true, object keys not defined in object_properties are permitted.
    * Corresponds to openapi additionalproperties  true.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return allowAdditionalProperties
@@ -171,7 +171,7 @@ public class ApiSchema extends AviRestResource {
    * This is the setter method to the attribute.
    * When true, object keys not defined in object_properties are permitted.
    * Corresponds to openapi additionalproperties  true.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param allowAdditionalProperties set the allowAdditionalProperties.
@@ -184,7 +184,7 @@ public class ApiSchema extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * If the type is array, this is the type of the array items.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return arrayItemType
@@ -197,7 +197,7 @@ public class ApiSchema extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * If the type is array, this is the type of the array items.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param arrayItemType set the arrayItemType.
@@ -211,7 +211,7 @@ public class ApiSchema extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Sub-schemas for this composite type (oneof, anyof, or allof).
    * Each entry must be a schema_type_reference pointing to an apischema.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Maximum of 64 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -226,7 +226,7 @@ public class ApiSchema extends AviRestResource {
    * This is the setter method. this will set the compositeTypes
    * Sub-schemas for this composite type (oneof, anyof, or allof).
    * Each entry must be a schema_type_reference pointing to an apischema.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Maximum of 64 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -241,7 +241,7 @@ public class ApiSchema extends AviRestResource {
    * This is the setter method this will set the compositeTypes
    * Sub-schemas for this composite type (oneof, anyof, or allof).
    * Each entry must be a schema_type_reference pointing to an apischema.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Maximum of 64 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -260,7 +260,7 @@ public class ApiSchema extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Description of this api schema.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
@@ -273,7 +273,7 @@ public class ApiSchema extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Description of this api schema.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
@@ -287,7 +287,7 @@ public class ApiSchema extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Property used to distinguish between sub-schemas in oneof/anyof composite types.
    * Maps a discriminator property value to the matching schema.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return discriminator
@@ -301,7 +301,7 @@ public class ApiSchema extends AviRestResource {
    * This is the setter method to the attribute.
    * Property used to distinguish between sub-schemas in oneof/anyof composite types.
    * Maps a discriminator property value to the matching schema.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param discriminator set the discriminator.
@@ -314,7 +314,7 @@ public class ApiSchema extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Maximum number of items allowed in an array.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxItems
@@ -327,7 +327,7 @@ public class ApiSchema extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Maximum number of items allowed in an array.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxItems set the maxItems.
@@ -340,7 +340,7 @@ public class ApiSchema extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Minimum number of items allowed in an array.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return minItems
@@ -353,7 +353,7 @@ public class ApiSchema extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Minimum number of items allowed in an array.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param minItems set the minItems.
@@ -366,7 +366,7 @@ public class ApiSchema extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of this object, unique per tenant.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
@@ -379,7 +379,7 @@ public class ApiSchema extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of this object, unique per tenant.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
@@ -392,7 +392,7 @@ public class ApiSchema extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * List of properties for this object schema.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Maximum of 512 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -406,7 +406,7 @@ public class ApiSchema extends AviRestResource {
   /**
    * This is the setter method. this will set the objectProperties
    * List of properties for this object schema.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Maximum of 512 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -420,7 +420,7 @@ public class ApiSchema extends AviRestResource {
   /**
    * This is the setter method this will set the objectProperties
    * List of properties for this object schema.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Maximum of 512 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -440,7 +440,7 @@ public class ApiSchema extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Indicates whether this schema was user-defined or imported from an openapi specification file.
    * Enum options - SOURCE_USER_DEFINED, SOURCE_API_SPEC, SOURCE_DISCOVERED.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * @return source
    */
@@ -453,7 +453,7 @@ public class ApiSchema extends AviRestResource {
    * This is the setter method to the attribute.
    * Indicates whether this schema was user-defined or imported from an openapi specification file.
    * Enum options - SOURCE_USER_DEFINED, SOURCE_API_SPEC, SOURCE_DISCOVERED.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * @param source set the source.
    */
@@ -465,7 +465,7 @@ public class ApiSchema extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
@@ -478,7 +478,7 @@ public class ApiSchema extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
@@ -494,7 +494,7 @@ public class ApiSchema extends AviRestResource {
    * Can be object, array, or a composite type (oneof, anyof, allof).
    * Enum options - SCHEMA_TYPE_UNDEFINED, SCHEMA_TYPE_STRING, SCHEMA_TYPE_INTEGER, SCHEMA_TYPE_NUMBER, SCHEMA_TYPE_BOOLEAN, SCHEMA_TYPE_NULL,
    * SCHEMA_TYPE_ARRAY, SCHEMA_TYPE_OBJECT, SCHEMA_TYPE_REFERENCE, SCHEMA_TYPE_ONE_OF, SCHEMA_TYPE_ALL_OF, SCHEMA_TYPE_ANY_OF.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
@@ -510,7 +510,7 @@ public class ApiSchema extends AviRestResource {
    * Can be object, array, or a composite type (oneof, anyof, allof).
    * Enum options - SCHEMA_TYPE_UNDEFINED, SCHEMA_TYPE_STRING, SCHEMA_TYPE_INTEGER, SCHEMA_TYPE_NUMBER, SCHEMA_TYPE_BOOLEAN, SCHEMA_TYPE_NULL,
    * SCHEMA_TYPE_ARRAY, SCHEMA_TYPE_OBJECT, SCHEMA_TYPE_REFERENCE, SCHEMA_TYPE_ONE_OF, SCHEMA_TYPE_ALL_OF, SCHEMA_TYPE_ANY_OF.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
@@ -523,7 +523,7 @@ public class ApiSchema extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * If true, all items in the array must be unique.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uniqueItems
@@ -536,7 +536,7 @@ public class ApiSchema extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * If true, all items in the array must be unique.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uniqueItems set the uniqueItems.
@@ -568,7 +568,7 @@ public class ApiSchema extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The object uuid.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
@@ -581,7 +581,7 @@ public class ApiSchema extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The object uuid.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.

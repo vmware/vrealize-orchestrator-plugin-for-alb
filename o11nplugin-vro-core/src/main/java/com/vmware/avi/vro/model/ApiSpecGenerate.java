@@ -87,7 +87,7 @@ public class ApiSpecGenerate extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Number of tasks completed.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return completedEvents
@@ -100,7 +100,7 @@ public class ApiSpecGenerate extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Number of tasks completed.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param completedEvents set the completedEvents.
@@ -113,7 +113,7 @@ public class ApiSpecGenerate extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Spec generation duration in seconds.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is sec.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -127,7 +127,7 @@ public class ApiSpecGenerate extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Spec generation duration in seconds.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is sec.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -141,7 +141,7 @@ public class ApiSpecGenerate extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Time the spec generation completed or failed.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return endTime
@@ -154,7 +154,7 @@ public class ApiSpecGenerate extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Time the spec generation completed or failed.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param endTime set the endTime.
@@ -167,7 +167,7 @@ public class ApiSpecGenerate extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the spec generation object.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
@@ -180,7 +180,7 @@ public class ApiSpecGenerate extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the spec generation object.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
@@ -193,7 +193,7 @@ public class ApiSpecGenerate extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Parameters for the spec generation.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return params
@@ -206,7 +206,7 @@ public class ApiSpecGenerate extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Parameters for the spec generation.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param params set the params.
@@ -219,7 +219,7 @@ public class ApiSpecGenerate extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Path to the generated spec file.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return path
@@ -232,7 +232,7 @@ public class ApiSpecGenerate extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Path to the generated spec file.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param path set the path.
@@ -246,7 +246,7 @@ public class ApiSpecGenerate extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Overall spec generation progress percentage.
    * Allowed values are 0-100.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is percent.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -261,7 +261,7 @@ public class ApiSpecGenerate extends AviRestResource {
    * This is the setter method to the attribute.
    * Overall spec generation progress percentage.
    * Allowed values are 0-100.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is percent.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -275,7 +275,7 @@ public class ApiSpecGenerate extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Time the spec generation started.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return startTime
@@ -288,7 +288,7 @@ public class ApiSpecGenerate extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Time the spec generation started.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param startTime set the startTime.
@@ -301,7 +301,7 @@ public class ApiSpecGenerate extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Current lifecycle state of the spec generation.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return state
@@ -314,7 +314,7 @@ public class ApiSpecGenerate extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Current lifecycle state of the spec generation.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param state set the state.
@@ -327,7 +327,7 @@ public class ApiSpecGenerate extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Per-task status and event details.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return taskEvents
@@ -340,7 +340,7 @@ public class ApiSpecGenerate extends AviRestResource {
   /**
    * This is the setter method. this will set the taskEvents
    * Per-task status and event details.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return taskEvents
@@ -353,7 +353,7 @@ public class ApiSpecGenerate extends AviRestResource {
   /**
    * This is the setter method this will set the taskEvents
    * Per-task status and event details.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return taskEvents
@@ -371,7 +371,7 @@ public class ApiSpecGenerate extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
@@ -384,7 +384,7 @@ public class ApiSpecGenerate extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
@@ -397,7 +397,7 @@ public class ApiSpecGenerate extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number of tasks.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return totalEvents
@@ -410,7 +410,7 @@ public class ApiSpecGenerate extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number of tasks.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param totalEvents set the totalEvents.
@@ -442,7 +442,7 @@ public class ApiSpecGenerate extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the spec generation object.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
@@ -455,7 +455,7 @@ public class ApiSpecGenerate extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the spec generation object.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.

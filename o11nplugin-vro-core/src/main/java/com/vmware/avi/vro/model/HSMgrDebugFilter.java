@@ -225,7 +225,7 @@ public class HSMgrDebugFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Batch size for vs security metrics query.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsSecurityMetricsBatchSize
@@ -238,7 +238,7 @@ public class HSMgrDebugFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Batch size for vs security metrics query.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsSecurityMetricsBatchSize set the vsSecurityMetricsBatchSize.
@@ -252,7 +252,7 @@ public class HSMgrDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Sigmoid midpoint for weighted ungoverned ratio.
    * Allowed values are 0.01-1.0.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is ratio.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -267,7 +267,7 @@ public class HSMgrDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Sigmoid midpoint for weighted ungoverned ratio.
    * Allowed values are 0.01-1.0.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is ratio.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -282,7 +282,7 @@ public class HSMgrDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Relative weight for app composition sub-score.
    * Allowed values are 0-10.0.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is ratio.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -297,7 +297,7 @@ public class HSMgrDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Relative weight for app composition sub-score.
    * Allowed values are 0-10.0.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is ratio.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -312,7 +312,7 @@ public class HSMgrDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Relative weight for waap config sub-score.
    * Allowed values are 0-10.0.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is ratio.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -327,7 +327,7 @@ public class HSMgrDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Relative weight for waap config sub-score.
    * Allowed values are 0-10.0.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is ratio.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -342,7 +342,7 @@ public class HSMgrDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Relative risk weight for orphan api traffic in app composition.
    * Allowed values are 0-5.0.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is ratio.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -357,7 +357,7 @@ public class HSMgrDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Relative risk weight for orphan api traffic in app composition.
    * Allowed values are 0-5.0.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is ratio.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -372,7 +372,7 @@ public class HSMgrDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Relative risk weight for shadow api traffic in app composition.
    * Allowed values are 0-5.0.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is ratio.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -387,7 +387,7 @@ public class HSMgrDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Relative risk weight for shadow api traffic in app composition.
    * Allowed values are 0-5.0.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is ratio.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -402,7 +402,7 @@ public class HSMgrDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Sigmoid midpoint for waap violation ratio (violation_count/total_hits at which sub-score is ~50).
    * Allowed values are 0.001-1.0.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is ratio.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -417,7 +417,7 @@ public class HSMgrDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Sigmoid midpoint for waap violation ratio (violation_count/total_hits at which sub-score is ~50).
    * Allowed values are 0.001-1.0.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is ratio.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -432,7 +432,7 @@ public class HSMgrDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Relative weight for violation ratio in combined waap penalty.
    * Allowed values are 0-10.0.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is ratio.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -447,7 +447,7 @@ public class HSMgrDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Relative weight for violation ratio in combined waap penalty.
    * Allowed values are 0-10.0.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is ratio.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -462,7 +462,7 @@ public class HSMgrDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Relative risk weight for zombie api traffic in app composition.
    * Allowed values are 0-5.0.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is ratio.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -477,7 +477,7 @@ public class HSMgrDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Relative risk weight for zombie api traffic in app composition.
    * Allowed values are 0-5.0.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is ratio.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.

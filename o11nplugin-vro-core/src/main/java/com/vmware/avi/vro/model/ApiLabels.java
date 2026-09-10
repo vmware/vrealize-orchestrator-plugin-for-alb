@@ -37,7 +37,7 @@ public class ApiLabels extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enables the labels configuration.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return enabled
@@ -50,7 +50,7 @@ public class ApiLabels extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enables the labels configuration.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param enabled set the enabled.
@@ -63,7 +63,7 @@ public class ApiLabels extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The list of labels to be applied to the api.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Maximum of 256 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -77,7 +77,7 @@ public class ApiLabels extends AviRestResource {
   /**
    * This is the setter method. this will set the labels
    * The list of labels to be applied to the api.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Maximum of 256 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -91,7 +91,7 @@ public class ApiLabels extends AviRestResource {
   /**
    * This is the setter method this will set the labels
    * The list of labels to be applied to the api.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Maximum of 256 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
