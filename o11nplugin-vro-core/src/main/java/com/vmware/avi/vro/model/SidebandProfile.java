@@ -84,7 +84,7 @@ public class SidebandProfile extends AviRestResource {
    * Pki profile used to verify the tls certificate of the sideband server.
    * Required when the sideband server presents a certificate signed by a private ca.
    * It is a reference to an object of type pkiprofile.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pkiProfileRef
@@ -99,7 +99,7 @@ public class SidebandProfile extends AviRestResource {
    * Pki profile used to verify the tls certificate of the sideband server.
    * Required when the sideband server presents a certificate signed by a private ca.
    * It is a reference to an object of type pkiprofile.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pkiProfileRef set the pkiProfileRef.

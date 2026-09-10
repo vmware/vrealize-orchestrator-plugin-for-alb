@@ -289,7 +289,7 @@ public class UserActivity extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Timestamp when the user password expire(s/d).
-   * Field introduced in 32.1.3, 32.2.1.
+   * Field introduced in 32.1.3.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return passwordExpiryTime
@@ -302,7 +302,7 @@ public class UserActivity extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Timestamp when the user password expire(s/d).
-   * Field introduced in 32.1.3, 32.2.1.
+   * Field introduced in 32.1.3.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param passwordExpiryTime set the passwordExpiryTime.

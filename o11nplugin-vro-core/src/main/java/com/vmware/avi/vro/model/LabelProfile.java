@@ -57,7 +57,7 @@ public class LabelProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Description of this label profile.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
@@ -70,7 +70,7 @@ public class LabelProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Description of this label profile.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
@@ -84,7 +84,7 @@ public class LabelProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Labels available in this profile.
    * Label names must be unique (case-insensitive).
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Maximum of 256 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -99,7 +99,7 @@ public class LabelProfile extends AviRestResource {
    * This is the setter method. this will set the labelDefinitions
    * Labels available in this profile.
    * Label names must be unique (case-insensitive).
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Maximum of 256 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -114,7 +114,7 @@ public class LabelProfile extends AviRestResource {
    * This is the setter method this will set the labelDefinitions
    * Labels available in this profile.
    * Label names must be unique (case-insensitive).
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Maximum of 256 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -133,7 +133,7 @@ public class LabelProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enables logging of waap labels effective for a request into apilog.effective_labels in the application log.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return logLabels
@@ -146,7 +146,7 @@ public class LabelProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enables logging of waap labels effective for a request into apilog.effective_labels in the application log.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param logLabels set the logLabels.
@@ -159,7 +159,7 @@ public class LabelProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of this object, unique per tenant.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
@@ -172,7 +172,7 @@ public class LabelProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of this object, unique per tenant.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
@@ -185,7 +185,7 @@ public class LabelProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
@@ -198,7 +198,7 @@ public class LabelProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
@@ -230,7 +230,7 @@ public class LabelProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The object uuid.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
@@ -243,7 +243,7 @@ public class LabelProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The object uuid.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.

@@ -69,7 +69,7 @@ public class SessionKeyForwarder extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enable or disable session key forwarder.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enable
@@ -82,7 +82,7 @@ public class SessionKeyForwarder extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enable or disable session key forwarder.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enable set the enable.
@@ -96,7 +96,7 @@ public class SessionKeyForwarder extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ip addresses and ports to be used for connection with session key forwarder.
    * At least one entry required; maximum 16 (matches the per-core stats slot limit).
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Minimum of 1 items required.
    * Maximum of 16 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -112,7 +112,7 @@ public class SessionKeyForwarder extends AviRestResource {
    * This is the setter method. this will set the ipPorts
    * Ip addresses and ports to be used for connection with session key forwarder.
    * At least one entry required; maximum 16 (matches the per-core stats slot limit).
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Minimum of 1 items required.
    * Maximum of 16 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -128,7 +128,7 @@ public class SessionKeyForwarder extends AviRestResource {
    * This is the setter method this will set the ipPorts
    * Ip addresses and ports to be used for connection with session key forwarder.
    * At least one entry required; maximum 16 (matches the per-core stats slot limit).
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Minimum of 1 items required.
    * Maximum of 16 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -148,7 +148,7 @@ public class SessionKeyForwarder extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the session key forwarder profile.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
@@ -161,7 +161,7 @@ public class SessionKeyForwarder extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the session key forwarder profile.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
@@ -175,7 +175,7 @@ public class SessionKeyForwarder extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Pki profile used to validate the ssl certificate presented by a server.
    * It is a reference to an object of type pkiprofile.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pkiProfileRef
@@ -189,7 +189,7 @@ public class SessionKeyForwarder extends AviRestResource {
    * This is the setter method to the attribute.
    * Pki profile used to validate the ssl certificate presented by a server.
    * It is a reference to an object of type pkiprofile.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pkiProfileRef set the pkiProfileRef.
@@ -203,7 +203,7 @@ public class SessionKeyForwarder extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Service engines will present this ssl certificate to the server.
    * It is a reference to an object of type sslkeyandcertificate.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslKeyAndCertificateRef
@@ -217,7 +217,7 @@ public class SessionKeyForwarder extends AviRestResource {
    * This is the setter method to the attribute.
    * Service engines will present this ssl certificate to the server.
    * It is a reference to an object of type sslkeyandcertificate.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sslKeyAndCertificateRef set the sslKeyAndCertificateRef.
@@ -231,7 +231,7 @@ public class SessionKeyForwarder extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ssl profile defines ciphers and ssl versions to be used for session key forwarder.
    * It is a reference to an object of type sslprofile.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslProfileRef
@@ -245,7 +245,7 @@ public class SessionKeyForwarder extends AviRestResource {
    * This is the setter method to the attribute.
    * Ssl profile defines ciphers and ssl versions to be used for session key forwarder.
    * It is a reference to an object of type sslprofile.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sslProfileRef set the sslProfileRef.
@@ -259,7 +259,7 @@ public class SessionKeyForwarder extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tenant reference for the session key forwarder object.
    * It is a reference to an object of type tenant.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
@@ -273,7 +273,7 @@ public class SessionKeyForwarder extends AviRestResource {
    * This is the setter method to the attribute.
    * Tenant reference for the session key forwarder object.
    * It is a reference to an object of type tenant.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
@@ -305,7 +305,7 @@ public class SessionKeyForwarder extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * If enabled, connection with session key forwarder will use the management network.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return useMgmt
@@ -318,7 +318,7 @@ public class SessionKeyForwarder extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * If enabled, connection with session key forwarder will use the management network.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param useMgmt set the useMgmt.
@@ -331,7 +331,7 @@ public class SessionKeyForwarder extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the session key forwarder profile.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
@@ -344,7 +344,7 @@ public class SessionKeyForwarder extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the session key forwarder profile.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.

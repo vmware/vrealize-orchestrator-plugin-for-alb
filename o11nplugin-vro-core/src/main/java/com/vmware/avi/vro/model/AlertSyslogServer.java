@@ -29,10 +29,6 @@ public class AlertSyslogServer extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String format = "SYSLOG_LEGACY";
 
-    @JsonProperty("pkiprofile_ref")
-    @JsonInclude(Include.NON_NULL)
-    private String pkiprofileRef;
-
     @JsonProperty("syslog_server")
     @JsonInclude(Include.NON_NULL)
     private String syslogServer;
@@ -81,36 +77,6 @@ public class AlertSyslogServer extends AviRestResource {
   @VsoMethod
   public void setFormat(String  format) {
     this.format = format;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Select the pkiprofile containing a ca or list of ca chainswhich will validate the certificate of the syslog server.
-   * When unset, systemconfiguration.truststore_pkiprofile_uuid is used instead.
-   * It is a reference to an object of type pkiprofile.
-   * Field introduced in 17.2.17, 18.2.5.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return pkiprofileRef
-   */
-  @VsoMethod
-  public String getPkiprofileRef() {
-    return pkiprofileRef;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Select the pkiprofile containing a ca or list of ca chainswhich will validate the certificate of the syslog server.
-   * When unset, systemconfiguration.truststore_pkiprofile_uuid is used instead.
-   * It is a reference to an object of type pkiprofile.
-   * Field introduced in 17.2.17, 18.2.5.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param pkiprofileRef set the pkiprofileRef.
-   */
-  @VsoMethod
-  public void setPkiprofileRef(String  pkiprofileRef) {
-    this.pkiprofileRef = pkiprofileRef;
   }
 
   /**
@@ -165,7 +131,7 @@ public class AlertSyslogServer extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tls mode and client certificate for the connection to this syslog server, effective only when tls_enable is set.
    * Supersedes ssl_key_and_certificate_uuid, anon_auth, and strict_cert_verify, which are deprecated in favor of this field.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tlsConfig
@@ -179,7 +145,7 @@ public class AlertSyslogServer extends AviRestResource {
    * This is the setter method to the attribute.
    * Tls mode and client certificate for the connection to this syslog server, effective only when tls_enable is set.
    * Supersedes ssl_key_and_certificate_uuid, anon_auth, and strict_cert_verify, which are deprecated in favor of this field.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tlsConfig set the tlsConfig.
@@ -257,7 +223,6 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.udp, objAlertSyslogServer.udp)&&
   Objects.equals(this.format, objAlertSyslogServer.format)&&
   Objects.equals(this.tlsEnable, objAlertSyslogServer.tlsEnable)&&
-  Objects.equals(this.pkiprofileRef, objAlertSyslogServer.pkiprofileRef)&&
   Objects.equals(this.tlsConfig, objAlertSyslogServer.tlsConfig);
 }
 
@@ -266,7 +231,6 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class AlertSyslogServer {\n");
       sb.append("    format: ").append(toIndentedString(format)).append("\n");
-        sb.append("    pkiprofileRef: ").append(toIndentedString(pkiprofileRef)).append("\n");
         sb.append("    syslogServer: ").append(toIndentedString(syslogServer)).append("\n");
         sb.append("    syslogServerPort: ").append(toIndentedString(syslogServerPort)).append("\n");
         sb.append("    tlsConfig: ").append(toIndentedString(tlsConfig)).append("\n");

@@ -302,9 +302,9 @@ public class EmailConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Tls mode and optional client certificate for outbound smtp connections.
-   * Ca trust is always sourced from systemconfiguration.truststore_pkiprofile_uuid.
+   * Ca trust is always sourced from the trust store configured in system configuration.
    * When unset, no starttls is attempted regardless of disable_tls.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tlsConfig
@@ -317,9 +317,9 @@ public class EmailConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Tls mode and optional client certificate for outbound smtp connections.
-   * Ca trust is always sourced from systemconfiguration.truststore_pkiprofile_uuid.
+   * Ca trust is always sourced from the trust store configured in system configuration.
    * When unset, no starttls is attempted regardless of disable_tls.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tlsConfig set the tlsConfig.

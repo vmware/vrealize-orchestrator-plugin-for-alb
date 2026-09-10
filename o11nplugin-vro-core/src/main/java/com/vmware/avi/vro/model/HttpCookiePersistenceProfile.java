@@ -233,7 +233,7 @@ public class HttpCookiePersistenceProfile extends AviRestResource {
    * Samesite attribute for the persistence cookie.
    * Allowed values  none (default, emitted only on ssl connections), lax, strict.
    * Enum options - SAMESITE_NONE, SAMESITE_LAX, SAMESITE_STRICT.
-   * Field introduced in 32.1.3, 32.2.1.
+   * Field introduced in 32.1.3.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "SAMESITE_NONE".
    * @return samesite
@@ -248,7 +248,7 @@ public class HttpCookiePersistenceProfile extends AviRestResource {
    * Samesite attribute for the persistence cookie.
    * Allowed values  none (default, emitted only on ssl connections), lax, strict.
    * Enum options - SAMESITE_NONE, SAMESITE_LAX, SAMESITE_STRICT.
-   * Field introduced in 32.1.3, 32.2.1.
+   * Field introduced in 32.1.3.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "SAMESITE_NONE".
    * @param samesite set the samesite.
