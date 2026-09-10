@@ -91,6 +91,7 @@ if [ -z $REL ]; then
 fi
 
 REL_TAG=tag-$REL
+REL_TITLE=v$REL
 echo "Release tag is $REL_TAG"
 
 if git rev-parse -q --verify "refs/tags/$REL_TAG" >/dev/null || git ls-remote --exit-code --tags origin "$REL_TAG" >/dev/null 2>&1; then
@@ -107,7 +108,7 @@ git checkout -B $BRANCH
 # dar/javadoc assets automatically.
 RELEASE_CREATED_AT=$(date -u +%Y-%m-%dT%H:%M:%SZ)
 echo "Creating release $REL_TAG."
-CREATE_ARGS=("$REL_TAG" --title "$REL_TAG" --generate-notes)
+CREATE_ARGS=("$REL_TAG" --title "$REL_TITLE" --generate-notes)
 if [ -n "$PREVIOUS_TAG" ]; then
     CREATE_ARGS+=(--notes-start-tag "$PREVIOUS_TAG")
 fi
