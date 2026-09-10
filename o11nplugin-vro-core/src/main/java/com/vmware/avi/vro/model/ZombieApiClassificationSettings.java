@@ -45,7 +45,7 @@ public class ZombieApiClassificationSettings extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enables zombie api classification.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enabled
@@ -58,7 +58,7 @@ public class ZombieApiClassificationSettings extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enables zombie api classification.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enabled set the enabled.
@@ -72,7 +72,7 @@ public class ZombieApiClassificationSettings extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Time unit for the zombie inspection interval.
    * Enum options - INTERVAL_MINUTES, INTERVAL_HOURS, INTERVAL_DAYS.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "INTERVAL_DAYS".
    * @return inspectionIntervalUnit
@@ -86,7 +86,7 @@ public class ZombieApiClassificationSettings extends AviRestResource {
    * This is the setter method to the attribute.
    * Time unit for the zombie inspection interval.
    * Enum options - INTERVAL_MINUTES, INTERVAL_HOURS, INTERVAL_DAYS.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "INTERVAL_DAYS".
    * @param inspectionIntervalUnit set the inspectionIntervalUnit.
@@ -101,7 +101,7 @@ public class ZombieApiClassificationSettings extends AviRestResource {
    * Duration of the zombie inspection interval in the specified time unit.
    * An endpoint whose traffic falls below the zombie threshold for this duration is classified as zombie.
    * Allowed values are 1-365.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @return inspectionIntervalValue
@@ -116,7 +116,7 @@ public class ZombieApiClassificationSettings extends AviRestResource {
    * Duration of the zombie inspection interval in the specified time unit.
    * An endpoint whose traffic falls below the zombie threshold for this duration is classified as zombie.
    * Allowed values are 1-365.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @param inspectionIntervalValue set the inspectionIntervalValue.
@@ -130,7 +130,7 @@ public class ZombieApiClassificationSettings extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Per-api throughput percentage threshold relative to the aggregated throughput below which apis are designated as zombie.
    * Allowed values are 0-100.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is percent.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.0f.
@@ -145,7 +145,7 @@ public class ZombieApiClassificationSettings extends AviRestResource {
    * This is the setter method to the attribute.
    * Per-api throughput percentage threshold relative to the aggregated throughput below which apis are designated as zombie.
    * Allowed values are 0-100.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is percent.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.0f.

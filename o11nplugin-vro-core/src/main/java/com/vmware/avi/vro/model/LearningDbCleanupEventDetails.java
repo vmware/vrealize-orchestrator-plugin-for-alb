@@ -45,7 +45,7 @@ public class LearningDbCleanupEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Error message if the cleanup failed for this database.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorMessage
@@ -58,7 +58,7 @@ public class LearningDbCleanupEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Error message if the cleanup failed for this database.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param errorMessage set the errorMessage.
@@ -71,7 +71,7 @@ public class LearningDbCleanupEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Number of endpoint rows deleted for all vses.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return totalNumEndpointRowsDeleted
@@ -84,7 +84,7 @@ public class LearningDbCleanupEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Number of endpoint rows deleted for all vses.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param totalNumEndpointRowsDeleted set the totalNumEndpointRowsDeleted.
@@ -97,7 +97,7 @@ public class LearningDbCleanupEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Size freed from the learning database.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is bytes.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -111,7 +111,7 @@ public class LearningDbCleanupEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Size freed from the learning database.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is bytes.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -125,7 +125,7 @@ public class LearningDbCleanupEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Details for each vs for which learning database cleanup was performed.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsCleanupDetails
@@ -138,7 +138,7 @@ public class LearningDbCleanupEventDetails extends AviRestResource {
   /**
    * This is the setter method. this will set the vsCleanupDetails
    * Details for each vs for which learning database cleanup was performed.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsCleanupDetails
@@ -151,7 +151,7 @@ public class LearningDbCleanupEventDetails extends AviRestResource {
   /**
    * This is the setter method this will set the vsCleanupDetails
    * Details for each vs for which learning database cleanup was performed.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsCleanupDetails
