@@ -58,7 +58,7 @@ public class ApiLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Overall action taken based on the api violations.
    * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return action
@@ -72,7 +72,7 @@ public class ApiLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Overall action taken based on the api violations.
    * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param action set the action.
@@ -86,7 +86,7 @@ public class ApiLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Comma-separated waap label names effective for this request.
    * Populated only when the request's labelprofile has log_labels enabled.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return effectiveLabels
@@ -100,7 +100,7 @@ public class ApiLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Comma-separated waap label names effective for this request.
    * Populated only when the request's labelprofile has log_labels enabled.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param effectiveLabels set the effectiveLabels.
@@ -115,7 +115,7 @@ public class ApiLog extends AviRestResource {
    * List of api validation checks that were performed on this request.
    * Enum options - API_LOG_CHECK_UNSPECIFIED, API_LOG_CHECK_PATH_PARAMETER, API_LOG_CHECK_QUERY_PARAMETER, API_LOG_CHECK_REQUEST_CONTENT_TYPE,
    * API_LOG_CHECK_REQUEST_BODY, API_LOG_CHECK_RESPONSE_STATUS_CODE, API_LOG_CHECK_RESPONSE_CONTENT_TYPE, API_LOG_CHECK_REQUEST_HEADER.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return enabledApiChecks
@@ -130,7 +130,7 @@ public class ApiLog extends AviRestResource {
    * List of api validation checks that were performed on this request.
    * Enum options - API_LOG_CHECK_UNSPECIFIED, API_LOG_CHECK_PATH_PARAMETER, API_LOG_CHECK_QUERY_PARAMETER, API_LOG_CHECK_REQUEST_CONTENT_TYPE,
    * API_LOG_CHECK_REQUEST_BODY, API_LOG_CHECK_RESPONSE_STATUS_CODE, API_LOG_CHECK_RESPONSE_CONTENT_TYPE, API_LOG_CHECK_REQUEST_HEADER.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return enabledApiChecks
@@ -145,7 +145,7 @@ public class ApiLog extends AviRestResource {
    * List of api validation checks that were performed on this request.
    * Enum options - API_LOG_CHECK_UNSPECIFIED, API_LOG_CHECK_PATH_PARAMETER, API_LOG_CHECK_QUERY_PARAMETER, API_LOG_CHECK_REQUEST_CONTENT_TYPE,
    * API_LOG_CHECK_REQUEST_BODY, API_LOG_CHECK_RESPONSE_STATUS_CODE, API_LOG_CHECK_RESPONSE_CONTENT_TYPE, API_LOG_CHECK_REQUEST_HEADER.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return enabledApiChecks
@@ -163,7 +163,7 @@ public class ApiLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Comma-separated list of api policy labels that were executed for this request.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return executedApiLabelsStr
@@ -176,7 +176,7 @@ public class ApiLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Comma-separated list of api policy labels that were executed for this request.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param executedApiLabelsStr set the executedApiLabelsStr.
@@ -189,7 +189,7 @@ public class ApiLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Number of api violations that were not logged due to space constraints.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return omittedApiViolations
@@ -202,7 +202,7 @@ public class ApiLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Number of api violations that were not logged due to space constraints.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param omittedApiViolations set the omittedApiViolations.
@@ -216,7 +216,7 @@ public class ApiLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The type of the api request.
    * Enum options - API_LOG_TYPE_OTHER, API_LOG_TYPE_ACTIVE, API_LOG_TYPE_SHADOW, API_LOG_TYPE_ZOMBIE, API_LOG_TYPE_ORPHAN.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_LOG_TYPE_OTHER".
    * @return requestType
@@ -230,7 +230,7 @@ public class ApiLog extends AviRestResource {
    * This is the setter method to the attribute.
    * The type of the api request.
    * Enum options - API_LOG_TYPE_OTHER, API_LOG_TYPE_ACTIVE, API_LOG_TYPE_SHADOW, API_LOG_TYPE_ZOMBIE, API_LOG_TYPE_ORPHAN.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_LOG_TYPE_OTHER".
    * @param requestType set the requestType.
@@ -243,7 +243,7 @@ public class ApiLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * List of api violations detected during validation.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return violations
@@ -256,7 +256,7 @@ public class ApiLog extends AviRestResource {
   /**
    * This is the setter method. this will set the violations
    * List of api violations detected during validation.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return violations
@@ -269,7 +269,7 @@ public class ApiLog extends AviRestResource {
   /**
    * This is the setter method this will set the violations
    * List of api violations detected during validation.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return violations

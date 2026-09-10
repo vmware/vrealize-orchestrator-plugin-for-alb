@@ -130,9 +130,9 @@ public class LdapAuthSettings extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Client certificate for mutual tls connection.
    * Effective only when security_mode is auth_ldap_secure_use_ldaps.
-   * Not supported on the service engine data path; has no effect when this auth profile is used for virtual service client authentication.
+   * Not supported on the service engine data path, has no effect when this auth profile is used for virtual service client authentication.
    * It is a reference to an object of type sslkeyandcertificate.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientCertRef
@@ -146,9 +146,9 @@ public class LdapAuthSettings extends AviRestResource {
    * This is the setter method to the attribute.
    * Client certificate for mutual tls connection.
    * Effective only when security_mode is auth_ldap_secure_use_ldaps.
-   * Not supported on the service engine data path; has no effect when this auth profile is used for virtual service client authentication.
+   * Not supported on the service engine data path, has no effect when this auth profile is used for virtual service client authentication.
    * It is a reference to an object of type sslkeyandcertificate.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientCertRef set the clientCertRef.
@@ -211,7 +211,7 @@ public class LdapAuthSettings extends AviRestResource {
    * Pki profile used to validate the ldap server certificate.
    * Effective only when security_mode is auth_ldap_secure_use_ldaps.
    * It is a reference to an object of type pkiprofile.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pkiProfileRef
@@ -226,7 +226,7 @@ public class LdapAuthSettings extends AviRestResource {
    * Pki profile used to validate the ldap server certificate.
    * Effective only when security_mode is auth_ldap_secure_use_ldaps.
    * It is a reference to an object of type pkiprofile.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pkiProfileRef set the pkiProfileRef.
@@ -362,8 +362,8 @@ public class LdapAuthSettings extends AviRestResource {
    * Skip hostname verification against the ldap server certificate.
    * The certificate chain is still validated using pki_profile_uuid.
    * Effective only when security_mode is auth_ldap_secure_use_ldaps.
-   * Not honored on the service engine data path; has no effect when this auth profile is used for virtual service client authentication.
-   * Field introduced in 32.2.1.
+   * Not honored on the service engine data path, has no effect when this auth profile is used for virtual service client authentication.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return skipHostnameVerification
@@ -378,8 +378,8 @@ public class LdapAuthSettings extends AviRestResource {
    * Skip hostname verification against the ldap server certificate.
    * The certificate chain is still validated using pki_profile_uuid.
    * Effective only when security_mode is auth_ldap_secure_use_ldaps.
-   * Not honored on the service engine data path; has no effect when this auth profile is used for virtual service client authentication.
-   * Field introduced in 32.2.1.
+   * Not honored on the service engine data path, has no effect when this auth profile is used for virtual service client authentication.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param skipHostnameVerification set the skipHostnameVerification.

@@ -39,7 +39,7 @@ public class ApiServerInfo extends AviRestResource {
    * Common url path prefix derived from server urls.
    * Automatically populated by pbresolve from the path sections of servers[].url.
    * All server urls must share the same path section.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * @return pathPrefix
    */
@@ -53,7 +53,7 @@ public class ApiServerInfo extends AviRestResource {
    * Common url path prefix derived from server urls.
    * Automatically populated by pbresolve from the path sections of servers[].url.
    * All server urls must share the same path section.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * @param pathPrefix set the pathPrefix.
    */
@@ -68,7 +68,7 @@ public class ApiServerInfo extends AviRestResource {
    * A request that does not match any server url is considered outside this policy's scope and is treated as non-api traffic.
    * In evh deployments, each server url is used to generate a vhmatch entry that selects the correct child vs by matching the request hostname and
    * path prefix.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Maximum of 100 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -85,7 +85,7 @@ public class ApiServerInfo extends AviRestResource {
    * A request that does not match any server url is considered outside this policy's scope and is treated as non-api traffic.
    * In evh deployments, each server url is used to generate a vhmatch entry that selects the correct child vs by matching the request hostname and
    * path prefix.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Maximum of 100 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -102,7 +102,7 @@ public class ApiServerInfo extends AviRestResource {
    * A request that does not match any server url is considered outside this policy's scope and is treated as non-api traffic.
    * In evh deployments, each server url is used to generate a vhmatch entry that selects the correct child vs by matching the request hostname and
    * path prefix.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Maximum of 100 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.

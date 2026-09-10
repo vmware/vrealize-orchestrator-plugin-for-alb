@@ -250,7 +250,7 @@ public class SystemConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enable or disable ai assistant feature on the controller.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return aiAssistantEnabled
@@ -263,7 +263,7 @@ public class SystemConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enable or disable ai assistant feature on the controller.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param aiAssistantEnabled set the aiAssistantEnabled.
@@ -306,7 +306,7 @@ public class SystemConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Allow usage of private ips in crl server, saml metadata url.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return allowPrivateIps
@@ -319,7 +319,7 @@ public class SystemConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Allow usage of private ips in crl server, saml metadata url.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param allowPrivateIps set the allowPrivateIps.
@@ -358,7 +358,7 @@ public class SystemConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Certificate security policy for the system.
-   * Field introduced in 32.1.3, 32.2.1.
+   * Field introduced in 32.1.3.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return certificateSecurityPolicy
@@ -371,7 +371,7 @@ public class SystemConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Certificate security policy for the system.
-   * Field introduced in 32.1.3, 32.2.1.
+   * Field introduced in 32.1.3.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param certificateSecurityPolicy set the certificateSecurityPolicy.
@@ -707,10 +707,10 @@ public class SystemConfiguration extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Client certificate for mutual tls authentication.
-   * Required when tls_mode is tls_mode_mtls.
+   * Sslkeyandcertificate used as the client certificate for gslb site-to-site mutual tls (mtls) authentication between controllers.
+   * Required when tls_mode is set to mutual tls in gslb site-to-site configuration.
    * It is a reference to an object of type sslkeyandcertificate.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbClientCertRef
@@ -722,10 +722,10 @@ public class SystemConfiguration extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Client certificate for mutual tls authentication.
-   * Required when tls_mode is tls_mode_mtls.
+   * Sslkeyandcertificate used as the client certificate for gslb site-to-site mutual tls (mtls) authentication between controllers.
+   * Required when tls_mode is set to mutual tls in gslb site-to-site configuration.
    * It is a reference to an object of type sslkeyandcertificate.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gslbClientCertRef set the gslbClientCertRef.
@@ -1294,7 +1294,7 @@ public class SystemConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Syslog server destinations including address, port, transport protocol, and output format.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return syslogServerSettings
@@ -1307,7 +1307,7 @@ public class SystemConfiguration extends AviRestResource {
   /**
    * This is the setter method. this will set the syslogServerSettings
    * Syslog server destinations including address, port, transport protocol, and output format.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return syslogServerSettings
@@ -1320,7 +1320,7 @@ public class SystemConfiguration extends AviRestResource {
   /**
    * This is the setter method this will set the syslogServerSettings
    * Syslog server destinations including address, port, transport protocol, and output format.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return syslogServerSettings

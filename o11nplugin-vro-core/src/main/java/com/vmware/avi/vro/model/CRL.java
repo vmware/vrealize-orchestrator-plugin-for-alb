@@ -32,10 +32,6 @@ public class CRL extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String distinguishedName;
 
-    @JsonProperty("entries")
-    @JsonInclude(Include.NON_NULL)
-    private List<CRLEntry> entries;
-
     @JsonProperty("etag")
     @JsonInclude(Include.NON_NULL)
     private String etag;
@@ -117,56 +113,6 @@ public class CRL extends AviRestResource {
   public void setDistinguishedName(String  distinguishedName) {
     this.distinguishedName = distinguishedName;
   }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Per-block crl metadata populated automatically when a crl file is uploaded or refreshed.
-   * Each element corresponds to one pem crl block in the file in order.
-   * A file concatenating crls from multiple cas has one entry per ca.
-   * Not settable by api clients.
-   * Field introduced in 32.2.1.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @return entries
-   */
-  @VsoMethod
-  public List<CRLEntry> getEntries() {
-    return entries;
-  }
-
-  /**
-   * This is the setter method. this will set the entries
-   * Per-block crl metadata populated automatically when a crl file is uploaded or refreshed.
-   * Each element corresponds to one pem crl block in the file in order.
-   * A file concatenating crls from multiple cas has one entry per ca.
-   * Not settable by api clients.
-   * Field introduced in 32.2.1.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @return entries
-   */
-  @VsoMethod
-  public void setEntries(List<CRLEntry>  entries) {
-    this.entries = entries;
-  }
-
-  /**
-   * This is the setter method this will set the entries
-   * Per-block crl metadata populated automatically when a crl file is uploaded or refreshed.
-   * Each element corresponds to one pem crl block in the file in order.
-   * A file concatenating crls from multiple cas has one entry per ca.
-   * Not settable by api clients.
-   * Field introduced in 32.2.1.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * @return entries
-   */
-  @VsoMethod
-  public CRL addEntriesItem(CRLEntry entriesItem) {
-    if (this.entries == null) {
-      this.entries = new ArrayList<CRLEntry>();
-    }
-    this.entries.add(entriesItem);
-    return this;
-  }
-
 
   /**
    * This is the getter method this will return the attribute value.
@@ -396,8 +342,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.commonName, objCRL.commonName)&&
   Objects.equals(this.fingerprint, objCRL.fingerprint)&&
   Objects.equals(this.distinguishedName, objCRL.distinguishedName)&&
-  Objects.equals(this.lastRefreshed, objCRL.lastRefreshed)&&
-  Objects.equals(this.entries, objCRL.entries);
+  Objects.equals(this.lastRefreshed, objCRL.lastRefreshed);
 }
 
 @Override
@@ -406,7 +351,6 @@ public String toString() {
   sb.append("class CRL {\n");
       sb.append("    commonName: ").append(toIndentedString(commonName)).append("\n");
         sb.append("    distinguishedName: ").append(toIndentedString(distinguishedName)).append("\n");
-        sb.append("    entries: ").append(toIndentedString(entries)).append("\n");
         sb.append("    etag: ").append(toIndentedString(etag)).append("\n");
         sb.append("    fingerprint: ").append(toIndentedString(fingerprint)).append("\n");
         sb.append("    lastRefreshed: ").append(toIndentedString(lastRefreshed)).append("\n");

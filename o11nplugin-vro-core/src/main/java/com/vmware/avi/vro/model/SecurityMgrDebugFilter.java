@@ -48,9 +48,17 @@ public class SecurityMgrDebugFilter extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean enableSecmgrApiEndpointConsolidation = true;
 
+    @JsonProperty("endpoint_consolidation_min_samples")
+    @JsonInclude(Include.NON_NULL)
+    private Integer endpointConsolidationMinSamples = 20;
+
     @JsonProperty("entity_ref")
     @JsonInclude(Include.NON_NULL)
     private String entityRef;
+
+    @JsonProperty("focus_entries")
+    @JsonInclude(Include.NON_NULL)
+    private List<SecMgrDebugFocusEntry> focusEntries;
 
     @JsonProperty("learning_db_cleanup_lookback_period")
     @JsonInclude(Include.NON_NULL)
@@ -137,7 +145,7 @@ public class SecurityMgrDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Cooldown period between adaptive sampling configuration sends to prevent excessive updates.
    * Allowed values are 1-600.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is sec.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 180.
@@ -152,7 +160,7 @@ public class SecurityMgrDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Cooldown period between adaptive sampling configuration sends to prevent excessive updates.
    * Allowed values are 1-600.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is sec.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 180.
@@ -167,7 +175,7 @@ public class SecurityMgrDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Adaptive sampler tick interval for periodic sampling adjustments.
    * Allowed values are 1-3600.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is sec.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
@@ -182,7 +190,7 @@ public class SecurityMgrDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Adaptive sampler tick interval for periodic sampling adjustments.
    * Allowed values are 1-3600.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is sec.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
@@ -197,7 +205,7 @@ public class SecurityMgrDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Custom api path markers for endpoint classification (e.g., /api/, /v1/, /graphql).
    * If not configured, uses default markers.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return apiPathMarkers
@@ -211,7 +219,7 @@ public class SecurityMgrDebugFilter extends AviRestResource {
    * This is the setter method. this will set the apiPathMarkers
    * Custom api path markers for endpoint classification (e.g., /api/, /v1/, /graphql).
    * If not configured, uses default markers.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return apiPathMarkers
@@ -225,7 +233,7 @@ public class SecurityMgrDebugFilter extends AviRestResource {
    * This is the setter method this will set the apiPathMarkers
    * Custom api path markers for endpoint classification (e.g., /api/, /v1/, /graphql).
    * If not configured, uses default markers.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return apiPathMarkers
@@ -269,7 +277,7 @@ public class SecurityMgrDebugFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * [internal] toggle api endpoint consolidation - applies to application insights, api protection, positive security.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enableSecmgrApiEndpointConsolidation
@@ -282,7 +290,7 @@ public class SecurityMgrDebugFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * [internal] toggle api endpoint consolidation - applies to application insights, api protection, positive security.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enableSecmgrApiEndpointConsolidation set the enableSecmgrApiEndpointConsolidation.
@@ -290,6 +298,36 @@ public class SecurityMgrDebugFilter extends AviRestResource {
   @VsoMethod
   public void setEnableSecmgrApiEndpointConsolidation(Boolean  enableSecmgrApiEndpointConsolidation) {
     this.enableSecmgrApiEndpointConsolidation = enableSecmgrApiEndpointConsolidation;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * [internal] minimum number of conforming sibling uri segments required before api endpoint consolidation learns a path-parameter pattern from
+   * them, and before an existing consolidated template's pattern may be widened to absorb a new shape of traffic.
+   * Allowed values are 2-1000.
+   * Field introduced in 32.1.4.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 20.
+   * @return endpointConsolidationMinSamples
+   */
+  @VsoMethod
+  public Integer getEndpointConsolidationMinSamples() {
+    return endpointConsolidationMinSamples;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * [internal] minimum number of conforming sibling uri segments required before api endpoint consolidation learns a path-parameter pattern from
+   * them, and before an existing consolidated template's pattern may be widened to absorb a new shape of traffic.
+   * Allowed values are 2-1000.
+   * Field introduced in 32.1.4.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 20.
+   * @param endpointConsolidationMinSamples set the endpointConsolidationMinSamples.
+   */
+  @VsoMethod
+  public void setEndpointConsolidationMinSamples(Integer  endpointConsolidationMinSamples) {
+    this.endpointConsolidationMinSamples = endpointConsolidationMinSamples;
   }
 
   /**
@@ -322,9 +360,59 @@ public class SecurityMgrDebugFilter extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * On-demand debug event tracing  focus on up to 2 vs/se/uri/stage combinations and capture their matching pipeline events into a per-entry ring
+   * buffer, dumpable via 'show securitymgr stats filter stage stage_debug_focus'.
+   * Edited via 'focus_entries name <name>' / 'no focus_entries name <name>'.
+   * Field introduced in 32.1.4.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return focusEntries
+   */
+  @VsoMethod
+  public List<SecMgrDebugFocusEntry> getFocusEntries() {
+    return focusEntries;
+  }
+
+  /**
+   * This is the setter method. this will set the focusEntries
+   * On-demand debug event tracing  focus on up to 2 vs/se/uri/stage combinations and capture their matching pipeline events into a per-entry ring
+   * buffer, dumpable via 'show securitymgr stats filter stage stage_debug_focus'.
+   * Edited via 'focus_entries name <name>' / 'no focus_entries name <name>'.
+   * Field introduced in 32.1.4.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return focusEntries
+   */
+  @VsoMethod
+  public void setFocusEntries(List<SecMgrDebugFocusEntry>  focusEntries) {
+    this.focusEntries = focusEntries;
+  }
+
+  /**
+   * This is the setter method this will set the focusEntries
+   * On-demand debug event tracing  focus on up to 2 vs/se/uri/stage combinations and capture their matching pipeline events into a per-entry ring
+   * buffer, dumpable via 'show securitymgr stats filter stage stage_debug_focus'.
+   * Edited via 'focus_entries name <name>' / 'no focus_entries name <name>'.
+   * Field introduced in 32.1.4.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return focusEntries
+   */
+  @VsoMethod
+  public SecurityMgrDebugFilter addFocusEntriesItem(SecMgrDebugFocusEntry focusEntriesItem) {
+    if (this.focusEntries == null) {
+      this.focusEntries = new ArrayList<SecMgrDebugFocusEntry>();
+    }
+    this.focusEntries.add(focusEntriesItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Lookback period for learning database cleanup.
    * Allowed values are 1-365.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is days.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
@@ -339,7 +427,7 @@ public class SecurityMgrDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Lookback period for learning database cleanup.
    * Allowed values are 1-365.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is days.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
@@ -412,7 +500,7 @@ public class SecurityMgrDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * [internal] periodicity at which orphan/zombie/active api determination routine runs.
    * Allowed values are 1-10080.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is min.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 360.
@@ -427,7 +515,7 @@ public class SecurityMgrDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * [internal] periodicity at which orphan/zombie/active api determination routine runs.
    * Allowed values are 1-10080.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is min.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 360.
@@ -442,7 +530,7 @@ public class SecurityMgrDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * [internal] periodicity at which orphan/zombie/active api hits population routine runs.
    * Allowed values are 5-1440.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is min.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 15.
@@ -457,7 +545,7 @@ public class SecurityMgrDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * [internal] periodicity at which orphan/zombie/active api hits population routine runs.
    * Allowed values are 5-1440.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Unit is min.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 15.
@@ -471,7 +559,7 @@ public class SecurityMgrDebugFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Trigger full sync of api specification changes to learning database for all eligible vses.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return secmgrWaapFullSync
@@ -484,7 +572,7 @@ public class SecurityMgrDebugFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Trigger full sync of api specification changes to learning database for all eligible vses.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param secmgrWaapFullSync set the secmgrWaapFullSync.
@@ -498,7 +586,7 @@ public class SecurityMgrDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Trigger full sync for a specific vs uuid.
    * If set, only this vs will be processed.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return secmgrWaapFullSyncVsUuid
@@ -512,7 +600,7 @@ public class SecurityMgrDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Trigger full sync for a specific vs uuid.
    * If set, only this vs will be processed.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param secmgrWaapFullSyncVsUuid set the secmgrWaapFullSyncVsUuid.
@@ -526,7 +614,7 @@ public class SecurityMgrDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * File extensions considered as static non-api content (e.g., .html, .css, .js, .png).
    * If not configured, uses default extensions.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return staticFileExtensions
@@ -540,7 +628,7 @@ public class SecurityMgrDebugFilter extends AviRestResource {
    * This is the setter method. this will set the staticFileExtensions
    * File extensions considered as static non-api content (e.g., .html, .css, .js, .png).
    * If not configured, uses default extensions.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return staticFileExtensions
@@ -554,7 +642,7 @@ public class SecurityMgrDebugFilter extends AviRestResource {
    * This is the setter method this will set the staticFileExtensions
    * File extensions considered as static non-api content (e.g., .html, .css, .js, .png).
    * If not configured, uses default extensions.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return staticFileExtensions
@@ -594,7 +682,9 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.apiPathMarkers, objSecurityMgrDebugFilter.apiPathMarkers)&&
   Objects.equals(this.staticFileExtensions, objSecurityMgrDebugFilter.staticFileExtensions)&&
   Objects.equals(this.learningDbCleanupLookbackPeriod, objSecurityMgrDebugFilter.learningDbCleanupLookbackPeriod)&&
-  Objects.equals(this.secmgrApiHitsPopulationInterval, objSecurityMgrDebugFilter.secmgrApiHitsPopulationInterval);
+  Objects.equals(this.secmgrApiHitsPopulationInterval, objSecurityMgrDebugFilter.secmgrApiHitsPopulationInterval)&&
+  Objects.equals(this.endpointConsolidationMinSamples, objSecurityMgrDebugFilter.endpointConsolidationMinSamples)&&
+  Objects.equals(this.focusEntries, objSecurityMgrDebugFilter.focusEntries);
 }
 
 @Override
@@ -607,7 +697,9 @@ public String toString() {
         sb.append("    apiPathMarkers: ").append(toIndentedString(apiPathMarkers)).append("\n");
         sb.append("    enableAdaptiveConfig: ").append(toIndentedString(enableAdaptiveConfig)).append("\n");
         sb.append("    enableSecmgrApiEndpointConsolidation: ").append(toIndentedString(enableSecmgrApiEndpointConsolidation)).append("\n");
+        sb.append("    endpointConsolidationMinSamples: ").append(toIndentedString(endpointConsolidationMinSamples)).append("\n");
         sb.append("    entityRef: ").append(toIndentedString(entityRef)).append("\n");
+        sb.append("    focusEntries: ").append(toIndentedString(focusEntries)).append("\n");
         sb.append("    learningDbCleanupLookbackPeriod: ").append(toIndentedString(learningDbCleanupLookbackPeriod)).append("\n");
         sb.append("    psmProgrammingInterval: ").append(toIndentedString(psmProgrammingInterval)).append("\n");
         sb.append("    psmRuleIdMultiplier: ").append(toIndentedString(psmRuleIdMultiplier)).append("\n");

@@ -93,7 +93,7 @@ public class ApiEndpoint extends AviRestResource {
    * Additional labels for this endpoint, applicable when the endpoint is an active api.
    * By default, this is applied in conjunction with the global active_api_labels defined in apipolicy.
    * Set override_global_active_api_labels to true to use only the endpoint-level labels.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return activeApiLabels
@@ -108,7 +108,7 @@ public class ApiEndpoint extends AviRestResource {
    * Additional labels for this endpoint, applicable when the endpoint is an active api.
    * By default, this is applied in conjunction with the global active_api_labels defined in apipolicy.
    * Set override_global_active_api_labels to true to use only the endpoint-level labels.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param activeApiLabels set the activeApiLabels.
@@ -122,7 +122,7 @@ public class ApiEndpoint extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Endpoint definition is deactivated.
    * When true, this endpoint will not be validated, learned, or labeled.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return deactivated
@@ -136,7 +136,7 @@ public class ApiEndpoint extends AviRestResource {
    * This is the setter method to the attribute.
    * Endpoint definition is deactivated.
    * When true, this endpoint will not be validated, learned, or labeled.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param deactivated set the deactivated.
@@ -149,7 +149,7 @@ public class ApiEndpoint extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Describes the functionality of the api endpoint.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
@@ -162,7 +162,7 @@ public class ApiEndpoint extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Describes the functionality of the api endpoint.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
@@ -177,7 +177,7 @@ public class ApiEndpoint extends AviRestResource {
    * Action on header parameter schema validation failures.
    * Overrides the policy-level failed_validation_header_parameter_action when not inherit.
    * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_INHERIT_FROM_API_POLICY".
    * @return failedValidationHeaderParameterAction
@@ -192,7 +192,7 @@ public class ApiEndpoint extends AviRestResource {
    * Action on header parameter schema validation failures.
    * Overrides the policy-level failed_validation_header_parameter_action when not inherit.
    * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_INHERIT_FROM_API_POLICY".
    * @param failedValidationHeaderParameterAction set the failedValidationHeaderParameterAction.
@@ -208,7 +208,7 @@ public class ApiEndpoint extends AviRestResource {
    * Path parameters are value-only (key is defined by the path template), so this covers schema violations, not unknown keys.
    * Overrides the policy-level failed_validation_path_parameter_action when not inherit.
    * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_INHERIT_FROM_API_POLICY".
    * @return failedValidationPathParameterAction
@@ -224,7 +224,7 @@ public class ApiEndpoint extends AviRestResource {
    * Path parameters are value-only (key is defined by the path template), so this covers schema violations, not unknown keys.
    * Overrides the policy-level failed_validation_path_parameter_action when not inherit.
    * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_INHERIT_FROM_API_POLICY".
    * @param failedValidationPathParameterAction set the failedValidationPathParameterAction.
@@ -239,7 +239,7 @@ public class ApiEndpoint extends AviRestResource {
    * Action on query parameter schema validation failures.
    * Overrides the policy-level failed_validation_query_argument_action when not inherit.
    * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_INHERIT_FROM_API_POLICY".
    * @return failedValidationQueryParameterAction
@@ -254,7 +254,7 @@ public class ApiEndpoint extends AviRestResource {
    * Action on query parameter schema validation failures.
    * Overrides the policy-level failed_validation_query_argument_action when not inherit.
    * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_INHERIT_FROM_API_POLICY".
    * @param failedValidationQueryParameterAction set the failedValidationQueryParameterAction.
@@ -267,7 +267,7 @@ public class ApiEndpoint extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Request header parameter definitions for this endpoint, used to validate incoming request headers.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Maximum of 64 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -281,7 +281,7 @@ public class ApiEndpoint extends AviRestResource {
   /**
    * This is the setter method. this will set the headerParameters
    * Request header parameter definitions for this endpoint, used to validate incoming request headers.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Maximum of 64 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -295,7 +295,7 @@ public class ApiEndpoint extends AviRestResource {
   /**
    * This is the setter method this will set the headerParameters
    * Request header parameter definitions for this endpoint, used to validate incoming request headers.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Maximum of 64 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -317,7 +317,7 @@ public class ApiEndpoint extends AviRestResource {
    * Enum options - HTTP_METHOD_GET, HTTP_METHOD_HEAD, HTTP_METHOD_PUT, HTTP_METHOD_DELETE, HTTP_METHOD_POST, HTTP_METHOD_OPTIONS, HTTP_METHOD_TRACE,
    * HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE,
    * HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpMethod
@@ -333,7 +333,7 @@ public class ApiEndpoint extends AviRestResource {
    * Enum options - HTTP_METHOD_GET, HTTP_METHOD_HEAD, HTTP_METHOD_PUT, HTTP_METHOD_DELETE, HTTP_METHOD_POST, HTTP_METHOD_OPTIONS, HTTP_METHOD_TRACE,
    * HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE,
    * HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param httpMethod set the httpMethod.
@@ -347,7 +347,7 @@ public class ApiEndpoint extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * When true, only the endpoint-level active_api_labels are applied to this endpoint, ignoring the global active_api_labels defined in apipolicy.
    * When false (default), endpoint-level and global active_api_labels are applied in conjunction.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return overrideGlobalActiveApiLabels
@@ -361,7 +361,7 @@ public class ApiEndpoint extends AviRestResource {
    * This is the setter method to the attribute.
    * When true, only the endpoint-level active_api_labels are applied to this endpoint, ignoring the global active_api_labels defined in apipolicy.
    * When false (default), endpoint-level and global active_api_labels are applied in conjunction.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param overrideGlobalActiveApiLabels set the overrideGlobalActiveApiLabels.
@@ -376,7 +376,7 @@ public class ApiEndpoint extends AviRestResource {
    * Path parameter definitions for this endpoint, used for schema validation.
    * Names must match the placeholders in the path template.
    * Example  for path /pets/{petid}, a path parameter named 'petid' would be listed here.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Maximum of 32 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -392,7 +392,7 @@ public class ApiEndpoint extends AviRestResource {
    * Path parameter definitions for this endpoint, used for schema validation.
    * Names must match the placeholders in the path template.
    * Example  for path /pets/{petid}, a path parameter named 'petid' would be listed here.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Maximum of 32 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -408,7 +408,7 @@ public class ApiEndpoint extends AviRestResource {
    * Path parameter definitions for this endpoint, used for schema validation.
    * Names must match the placeholders in the path template.
    * Example  for path /pets/{petid}, a path parameter named 'petid' would be listed here.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Maximum of 32 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -428,7 +428,7 @@ public class ApiEndpoint extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Query string parameter definitions for this endpoint, used to validate query arguments.
    * Example  for get /pets?limit=10, a query parameter named 'limit' would be listed here.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Maximum of 128 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -443,7 +443,7 @@ public class ApiEndpoint extends AviRestResource {
    * This is the setter method. this will set the queryParameters
    * Query string parameter definitions for this endpoint, used to validate query arguments.
    * Example  for get /pets?limit=10, a query parameter named 'limit' would be listed here.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Maximum of 128 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -458,7 +458,7 @@ public class ApiEndpoint extends AviRestResource {
    * This is the setter method this will set the queryParameters
    * Query string parameter definitions for this endpoint, used to validate query arguments.
    * Example  for get /pets?limit=10, a query parameter named 'limit' would be listed here.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Maximum of 128 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -477,7 +477,7 @@ public class ApiEndpoint extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Expected format and schema of the request body, including content-type to schema mappings.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return requestBody
@@ -490,7 +490,7 @@ public class ApiEndpoint extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Expected format and schema of the request body, including content-type to schema mappings.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param requestBody set the requestBody.
@@ -503,7 +503,7 @@ public class ApiEndpoint extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Expected response definitions for this endpoint, each associated with an http status code or status code range.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Maximum of 32 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -517,7 +517,7 @@ public class ApiEndpoint extends AviRestResource {
   /**
    * This is the setter method. this will set the responses
    * Expected response definitions for this endpoint, each associated with an http status code or status code range.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Maximum of 32 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -531,7 +531,7 @@ public class ApiEndpoint extends AviRestResource {
   /**
    * This is the setter method this will set the responses
    * Expected response definitions for this endpoint, each associated with an http status code or status code range.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Maximum of 32 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -554,7 +554,7 @@ public class ApiEndpoint extends AviRestResource {
    * drip-traffic from legacy clients.
    * Defaults to active.
    * Enum options - API_TYPE_ACTIVE, API_TYPE_ORPHAN, API_TYPE_ZOMBIE.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_TYPE_ACTIVE".
    * @return type
@@ -571,7 +571,7 @@ public class ApiEndpoint extends AviRestResource {
    * drip-traffic from legacy clients.
    * Defaults to active.
    * Enum options - API_TYPE_ACTIVE, API_TYPE_ORPHAN, API_TYPE_ZOMBIE.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_TYPE_ACTIVE".
    * @param type set the type.
@@ -585,7 +585,7 @@ public class ApiEndpoint extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Action to take on an unknown status code.
    * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_INHERIT_FROM_API_POLICY".
    * @return unknownStatusCodeAction
@@ -599,7 +599,7 @@ public class ApiEndpoint extends AviRestResource {
    * This is the setter method to the attribute.
    * Action to take on an unknown status code.
    * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_INHERIT_FROM_API_POLICY".
    * @param unknownStatusCodeAction set the unknownStatusCodeAction.

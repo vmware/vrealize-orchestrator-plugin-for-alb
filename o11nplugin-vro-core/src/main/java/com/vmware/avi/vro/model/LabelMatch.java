@@ -38,7 +38,7 @@ public class LabelMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Criterion to use for matching the labels.
    * Enum options - IS_IN, IS_NOT_IN.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "IS_IN".
    * @return matchCriteria
@@ -52,7 +52,7 @@ public class LabelMatch extends AviRestResource {
    * This is the setter method to the attribute.
    * Criterion to use for matching the labels.
    * Enum options - IS_IN, IS_NOT_IN.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "IS_IN".
    * @param matchCriteria set the matchCriteria.
@@ -65,7 +65,7 @@ public class LabelMatch extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Labels to be matched against the api endpoint labels.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Minimum of 1 items required.
    * Maximum of 10 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -80,7 +80,7 @@ public class LabelMatch extends AviRestResource {
   /**
    * This is the setter method. this will set the values
    * Labels to be matched against the api endpoint labels.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Minimum of 1 items required.
    * Maximum of 10 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -95,7 +95,7 @@ public class LabelMatch extends AviRestResource {
   /**
    * This is the setter method this will set the values
    * Labels to be matched against the api endpoint labels.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.4.
    * Minimum of 1 items required.
    * Maximum of 10 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
