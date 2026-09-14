@@ -768,6 +768,12 @@ public class Constants {
     public static final String FINDER_VRO_MICROSERVICECONTAINER = "MicroServiceContainer";
     public static final String FINDER_VRO_MICROSERVICEGROUP = "MicroServiceGroup";
     public static final String FINDER_VRO_MICROSERVICEMATCH = "MicroServiceMatch";
+    public static final String FINDER_VRO_MSGLBAPPLICATIONSERVICEPROFILE = "MsgLbApplicationServiceProfile";
+    public static final String FINDER_VRO_MSGLBAPPLICATIONSERVICESTICKYBINDINGPROFILE = "MsgLbApplicationServiceStickyBindingProfile";
+    public static final String FINDER_VRO_MSGLBAPPLICATIONSERVICETRANSACTIONBINDINGPROFILE = "MsgLbApplicationServiceTransactionBindingProfile";
+    public static final String FINDER_VRO_MSGLBCONNPOOLCONFIG = "MsgLbConnPoolConfig";
+    public static final String FINDER_VRO_MSGLBSTATS = "MsgLbStats";
+    public static final String FINDER_VRO_MSGLBTRANSACTIONLOG = "MsgLbTransactionLog";
     public static final String FINDER_VRO_MUSTCHECKSINFO = "MustChecksInfo";
     public static final String FINDER_VRO_NTPAUTHENTICATIONKEY = "NTPAuthenticationKey";
     public static final String FINDER_VRO_NTPCONFIGURATION = "NTPConfiguration";
@@ -1136,6 +1142,7 @@ public class Constants {
     public static final String FINDER_VRO_SERVERCONFIG = "ServerConfig";
     public static final String FINDER_VRO_SERVERHEALTHMONITOR = "ServerHealthMonitor";
     public static final String FINDER_VRO_SERVERID = "ServerId";
+    public static final String FINDER_VRO_SERVERMSGSTATS = "ServerMsgStats";
     public static final String FINDER_VRO_SERVERRUNTIMESUMMARY = "ServerRuntimeSummary";
     public static final String FINDER_VRO_SERVERSCALEINPARAMS = "ServerScaleInParams";
     public static final String FINDER_VRO_SERVERSCALEOUTPARAMS = "ServerScaleOutParams";
