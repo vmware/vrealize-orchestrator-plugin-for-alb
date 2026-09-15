@@ -1111,6 +1111,10 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer sslSessCachePerVs = 4096;
 
+    @JsonProperty("supervisor_group")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean supervisorGroup;
+
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
     private String tenantRef;
@@ -8998,6 +9002,32 @@ public class ServiceEngineGroup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Indicates that this service engine group is reserved for exclusive use by the supervisor in vcf environment.
+   * This is read only and cannot be modified.
+   * Field introduced in 32.1.5.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * @return supervisorGroup
+   */
+  @VsoMethod
+  public Boolean getSupervisorGroup() {
+    return supervisorGroup;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Indicates that this service engine group is reserved for exclusive use by the supervisor in vcf environment.
+   * This is read only and cannot be modified.
+   * Field introduced in 32.1.5.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * @param supervisorGroup set the supervisorGroup.
+   */
+  @VsoMethod
+  public void setSupervisorGroup(Boolean  supervisorGroup) {
+    this.supervisorGroup = supervisorGroup;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -10666,7 +10696,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.logAgentUdpFqdnResolveLogCount, objServiceEngineGroup.logAgentUdpFqdnResolveLogCount)&&
   Objects.equals(this.logStreamingTlsConfig, objServiceEngineGroup.logStreamingTlsConfig)&&
   Objects.equals(this.waapModeConfig, objServiceEngineGroup.waapModeConfig)&&
-  Objects.equals(this.segMode, objServiceEngineGroup.segMode);
+  Objects.equals(this.segMode, objServiceEngineGroup.segMode)&&
+  Objects.equals(this.supervisorGroup, objServiceEngineGroup.supervisorGroup);
 }
 
 @Override
@@ -10940,6 +10971,7 @@ public String toString() {
         sb.append("    significantLogThrottle: ").append(toIndentedString(significantLogThrottle)).append("\n");
         sb.append("    sslPreprocessSniHostname: ").append(toIndentedString(sslPreprocessSniHostname)).append("\n");
         sb.append("    sslSessCachePerVs: ").append(toIndentedString(sslSessCachePerVs)).append("\n");
+        sb.append("    supervisorGroup: ").append(toIndentedString(supervisorGroup)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
         sb.append("    transientSharedMemoryMax: ").append(toIndentedString(transientSharedMemoryMax)).append("\n");
         sb.append("    udfLogThrottle: ").append(toIndentedString(udfLogThrottle)).append("\n");

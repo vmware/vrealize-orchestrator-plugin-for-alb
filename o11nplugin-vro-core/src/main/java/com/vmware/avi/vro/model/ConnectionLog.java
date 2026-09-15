@@ -8,6 +8,8 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.DiameterLog;
 import com.vmware.avi.vro.model.DnsRequest;
 import com.vmware.avi.vro.model.DnsResponse;
+import com.vmware.avi.vro.model.MsgLbStats;
+import com.vmware.avi.vro.model.MsgLbTransactionLog;
 import com.vmware.avi.vro.model.SipLog;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
@@ -159,6 +161,14 @@ public class ConnectionLog extends AviRestResource {
     @JsonProperty("microservice_name")
     @JsonInclude(Include.NON_NULL)
     private String microserviceName;
+
+    @JsonProperty("msg_lb_stats")
+    @JsonInclude(Include.NON_NULL)
+    private MsgLbStats msgLbStats;
+
+    @JsonProperty("msg_lb_txn")
+    @JsonInclude(Include.NON_NULL)
+    private MsgLbTransactionLog msgLbTxn;
 
     @JsonProperty("mss")
     @JsonInclude(Include.NON_NULL)
@@ -1208,6 +1218,64 @@ public class ConnectionLog extends AviRestResource {
   @VsoMethod
   public void setMicroserviceName(String  microserviceName) {
     this.microserviceName = microserviceName;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Iso 8583 msglb per-connection statistics.
+   * Present only when the vs is configured as an l4 msglb virtual service.
+   * Field introduced in 32.1.5.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return msgLbStats
+   */
+  @VsoMethod
+  public MsgLbStats getMsgLbStats() {
+    return msgLbStats;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Iso 8583 msglb per-connection statistics.
+   * Present only when the vs is configured as an l4 msglb virtual service.
+   * Field introduced in 32.1.5.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param msgLbStats set the msgLbStats.
+   */
+  @VsoMethod
+  public void setMsgLbStats(MsgLbStats msgLbStats) {
+    this.msgLbStats = msgLbStats;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Iso 8583 msglb per-transaction log.
+   * Present only on the per-transaction connectionlog pushed by ipstk_msg_lb_push_txn_log() — mutually exclusive with msg_lb_stats, which appears
+   * only on the once-per-connection summary log.
+   * Field introduced in 32.1.5.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return msgLbTxn
+   */
+  @VsoMethod
+  public MsgLbTransactionLog getMsgLbTxn() {
+    return msgLbTxn;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Iso 8583 msglb per-transaction log.
+   * Present only on the per-transaction connectionlog pushed by ipstk_msg_lb_push_txn_log() — mutually exclusive with msg_lb_stats, which appears
+   * only on the once-per-connection summary log.
+   * Field introduced in 32.1.5.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param msgLbTxn set the msgLbTxn.
+   */
+  @VsoMethod
+  public void setMsgLbTxn(MsgLbTransactionLog msgLbTxn) {
+    this.msgLbTxn = msgLbTxn;
   }
 
   /**
@@ -2738,7 +2806,9 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.topologyPolicyRuleName, objConnectionLog.topologyPolicyRuleName)&&
   Objects.equals(this.dnsPolicy, objConnectionLog.dnsPolicy)&&
   Objects.equals(this.sslNamedGroup, objConnectionLog.sslNamedGroup)&&
-  Objects.equals(this.sslSignatureAlgorithm, objConnectionLog.sslSignatureAlgorithm);
+  Objects.equals(this.sslSignatureAlgorithm, objConnectionLog.sslSignatureAlgorithm)&&
+  Objects.equals(this.msgLbStats, objConnectionLog.msgLbStats)&&
+  Objects.equals(this.msgLbTxn, objConnectionLog.msgLbTxn);
 }
 
 @Override
@@ -2778,6 +2848,8 @@ public String toString() {
         sb.append("    maxIngressLatencyFe: ").append(toIndentedString(maxIngressLatencyFe)).append("\n");
         sb.append("    microservice: ").append(toIndentedString(microservice)).append("\n");
         sb.append("    microserviceName: ").append(toIndentedString(microserviceName)).append("\n");
+        sb.append("    msgLbStats: ").append(toIndentedString(msgLbStats)).append("\n");
+        sb.append("    msgLbTxn: ").append(toIndentedString(msgLbTxn)).append("\n");
         sb.append("    mss: ").append(toIndentedString(mss)).append("\n");
         sb.append("    networkSecurityPolicyRuleName: ").append(toIndentedString(networkSecurityPolicyRuleName)).append("\n");
         sb.append("    numSynRetransmit: ").append(toIndentedString(numSynRetransmit)).append("\n");
