@@ -28,6 +28,14 @@ public class TlsConfig extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String clientCertRef;
 
+    @JsonProperty("pki_profile_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String pkiProfileRef;
+
+    @JsonProperty("skip_hostname_verification")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean skipHostnameVerification = false;
+
     @JsonProperty("tls_mode")
     @JsonInclude(Include.NON_NULL)
     private String tlsMode;
@@ -66,9 +74,69 @@ public class TlsConfig extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Select how tls is used to establish a secure outbound connection.
-   * Certificate validation uses the trust store configured in system configuration (truststore pki profile).
-   * Enum options - TLS_MODE_NO_VERIFY, TLS_MODE_TLS, TLS_MODE_MTLS, TLS_MODE_SKIP_HOSTNAME_VERIFY.
+   * Pki profile used to validate the server certificate validation in one-way tls and mutual tls.
+   * If this field is not set, the pki profile from system configuration will be used.
+   * Effective when tls mode is one-way tls or mutual tls.
+   * It is a reference to an object of type pkiprofile.
+   * Field introduced in 32.1.4.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return pkiProfileRef
+   */
+  @VsoMethod
+  public String getPkiProfileRef() {
+    return pkiProfileRef;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Pki profile used to validate the server certificate validation in one-way tls and mutual tls.
+   * If this field is not set, the pki profile from system configuration will be used.
+   * Effective when tls mode is one-way tls or mutual tls.
+   * It is a reference to an object of type pkiprofile.
+   * Field introduced in 32.1.4.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param pkiProfileRef set the pkiProfileRef.
+   */
+  @VsoMethod
+  public void setPkiProfileRef(String  pkiProfileRef) {
+    this.pkiProfileRef = pkiProfileRef;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Skip hostname verification on the server certificate, chain validation still applies.
+   * Effective when tls mode is one-way tls or mutual tls.
+   * Field introduced in 32.1.4.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return skipHostnameVerification
+   */
+  @VsoMethod
+  public Boolean getSkipHostnameVerification() {
+    return skipHostnameVerification;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Skip hostname verification on the server certificate, chain validation still applies.
+   * Effective when tls mode is one-way tls or mutual tls.
+   * Field introduced in 32.1.4.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param skipHostnameVerification set the skipHostnameVerification.
+   */
+  @VsoMethod
+  public void setSkipHostnameVerification(Boolean  skipHostnameVerification) {
+    this.skipHostnameVerification = skipHostnameVerification;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * How tls is used for this outbound connection.
+   * Certificate validation uses the truststore pki profile (default  truststore pki profile from system configuration).
+   * Enum options - TLS_MODE_NO_VERIFY, TLS_MODE_TLS, TLS_MODE_MTLS.
    * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -81,9 +149,9 @@ public class TlsConfig extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Select how tls is used to establish a secure outbound connection.
-   * Certificate validation uses the trust store configured in system configuration (truststore pki profile).
-   * Enum options - TLS_MODE_NO_VERIFY, TLS_MODE_TLS, TLS_MODE_MTLS, TLS_MODE_SKIP_HOSTNAME_VERIFY.
+   * How tls is used for this outbound connection.
+   * Certificate validation uses the truststore pki profile (default  truststore pki profile from system configuration).
+   * Enum options - TLS_MODE_NO_VERIFY, TLS_MODE_TLS, TLS_MODE_MTLS.
    * Field introduced in 32.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -106,7 +174,9 @@ public boolean equals(java.lang.Object o) {
   }
   TlsConfig objTlsConfig = (TlsConfig) o;
   return   Objects.equals(this.tlsMode, objTlsConfig.tlsMode)&&
-  Objects.equals(this.clientCertRef, objTlsConfig.clientCertRef);
+  Objects.equals(this.clientCertRef, objTlsConfig.clientCertRef)&&
+  Objects.equals(this.skipHostnameVerification, objTlsConfig.skipHostnameVerification)&&
+  Objects.equals(this.pkiProfileRef, objTlsConfig.pkiProfileRef);
 }
 
 @Override
@@ -114,6 +184,8 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class TlsConfig {\n");
       sb.append("    clientCertRef: ").append(toIndentedString(clientCertRef)).append("\n");
+        sb.append("    pkiProfileRef: ").append(toIndentedString(pkiProfileRef)).append("\n");
+        sb.append("    skipHostnameVerification: ").append(toIndentedString(skipHostnameVerification)).append("\n");
         sb.append("    tlsMode: ").append(toIndentedString(tlsMode)).append("\n");
       sb.append("}");
   return sb.toString();
