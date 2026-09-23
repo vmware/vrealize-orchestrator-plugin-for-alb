@@ -67,6 +67,10 @@ public class OpsHistory extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String statediffRef;
 
+    @JsonProperty("system")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean system;
+
     @JsonProperty("upgrade_events")
     @JsonInclude(Include.NON_NULL)
     private List<EventMap> upgradeEvents;
@@ -365,6 +369,32 @@ public class OpsHistory extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Flag indicating whether the upgrade operation was initiated as a system-upgrade (applying to controller and all service engine groups).
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return system
+   */
+  @VsoMethod
+  public Boolean getSystem() {
+    return system;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Flag indicating whether the upgrade operation was initiated as a system-upgrade (applying to controller and all service engine groups).
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param system set the system.
+   */
+  @VsoMethod
+  public void setSystem(Boolean  system) {
+    this.system = system;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Controller events for upgrade operation.
    * Field introduced in 20.1.4.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -455,7 +485,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.endTime, objOpsHistory.endTime)&&
   Objects.equals(this.duration, objOpsHistory.duration)&&
   Objects.equals(this.statediffRef, objOpsHistory.statediffRef)&&
-  Objects.equals(this.params, objOpsHistory.params);
+  Objects.equals(this.params, objOpsHistory.params)&&
+  Objects.equals(this.system, objOpsHistory.system);
 }
 
 @Override
@@ -472,6 +503,7 @@ public String toString() {
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    statediffRef: ").append(toIndentedString(statediffRef)).append("\n");
+        sb.append("    system: ").append(toIndentedString(system)).append("\n");
         sb.append("    upgradeEvents: ").append(toIndentedString(upgradeEvents)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
       sb.append("}");
