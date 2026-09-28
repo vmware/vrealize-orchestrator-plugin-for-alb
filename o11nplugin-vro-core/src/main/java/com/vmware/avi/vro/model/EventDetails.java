@@ -229,6 +229,7 @@ import com.vmware.avi.vro.model.SSLIgnoredDetails;
 import com.vmware.avi.vro.model.SSLRenewDetails;
 import com.vmware.avi.vro.model.SSLRenewFailedDetails;
 import com.vmware.avi.vro.model.SSLRevokedDetails;
+import com.vmware.avi.vro.model.SupervisorSeGroupFreeLicenseDetails;
 import com.vmware.avi.vro.model.SwitchoverEventDetails;
 import com.vmware.avi.vro.model.SwitchoverFailEventDetails;
 import com.vmware.avi.vro.model.CloudSyncServices;
@@ -1184,6 +1185,10 @@ public class EventDetails extends AviRestResource {
     @JsonProperty("ssl_revoked_details")
     @JsonInclude(Include.NON_NULL)
     private SSLRevokedDetails sslRevokedDetails;
+
+    @JsonProperty("supervisor_se_group_free_license_details")
+    @JsonInclude(Include.NON_NULL)
+    private SupervisorSeGroupFreeLicenseDetails supervisorSeGroupFreeLicenseDetails;
 
     @JsonProperty("switchover_details")
     @JsonInclude(Include.NON_NULL)
@@ -6489,6 +6494,32 @@ public class EventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Supervisor se group free license capacity exhausted/available details.
+   * Field introduced in 32.1.5.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return supervisorSeGroupFreeLicenseDetails
+   */
+  @VsoMethod
+  public SupervisorSeGroupFreeLicenseDetails getSupervisorSeGroupFreeLicenseDetails() {
+    return supervisorSeGroupFreeLicenseDetails;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Supervisor se group free license capacity exhausted/available details.
+   * Field introduced in 32.1.5.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param supervisorSeGroupFreeLicenseDetails set the supervisorSeGroupFreeLicenseDetails.
+   */
+  @VsoMethod
+  public void setSupervisorSeGroupFreeLicenseDetails(SupervisorSeGroupFreeLicenseDetails supervisorSeGroupFreeLicenseDetails) {
+    this.supervisorSeGroupFreeLicenseDetails = supervisorSeGroupFreeLicenseDetails;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return switchoverDetails
@@ -7705,6 +7736,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.licenseTierSwitchDetails, objEventDetails.licenseTierSwitchDetails)&&
   Objects.equals(this.centralLicenseSubscriptionDetails, objEventDetails.centralLicenseSubscriptionDetails)&&
   Objects.equals(this.centralLicenseRefreshDetails, objEventDetails.centralLicenseRefreshDetails)&&
+  Objects.equals(this.supervisorSeGroupFreeLicenseDetails, objEventDetails.supervisorSeGroupFreeLicenseDetails)&&
   Objects.equals(this.genericAuditComplianceEventInfo, objEventDetails.genericAuditComplianceEventInfo)&&
   Objects.equals(this.apiserverRequestQueueFullEventInfo, objEventDetails.apiserverRequestQueueFullEventInfo)&&
   Objects.equals(this.apiserverRequestQueueRecoveryEventInfo, objEventDetails.apiserverRequestQueueRecoveryEventInfo)&&
@@ -7959,6 +7991,7 @@ public String toString() {
         sb.append("    sslRenewDetails: ").append(toIndentedString(sslRenewDetails)).append("\n");
         sb.append("    sslRenewFailedDetails: ").append(toIndentedString(sslRenewFailedDetails)).append("\n");
         sb.append("    sslRevokedDetails: ").append(toIndentedString(sslRevokedDetails)).append("\n");
+        sb.append("    supervisorSeGroupFreeLicenseDetails: ").append(toIndentedString(supervisorSeGroupFreeLicenseDetails)).append("\n");
         sb.append("    switchoverDetails: ").append(toIndentedString(switchoverDetails)).append("\n");
         sb.append("    switchoverFailDetails: ").append(toIndentedString(switchoverFailDetails)).append("\n");
         sb.append("    syncServicesInfo: ").append(toIndentedString(syncServicesInfo)).append("\n");
