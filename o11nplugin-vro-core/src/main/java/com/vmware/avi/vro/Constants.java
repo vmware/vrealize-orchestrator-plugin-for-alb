@@ -1273,6 +1273,7 @@ public class Constants {
     public static final String FINDER_VRO_UPGRADESTATUSINFO = "UpgradeStatusInfo";
     public static final String FINDER_VRO_UPGRADESTATUSSUMMARY = "UpgradeStatusSummary";
     public static final String FINDER_VRO_UPGRADESYSTEMPARAMS = "UpgradeSystemParams";
+    public static final String FINDER_VRO_UPLOADPARAMS = "UploadParams";
     public static final String FINDER_VRO_USAGEMETERINGCLOUD = "UsageMeteringCloud";
     public static final String FINDER_VRO_USAGEMETERINGEVENTDETAILS = "UsageMeteringEventDetails";
     public static final String FINDER_VRO_USERACCOUNTPROFILE = "UserAccountProfile";
