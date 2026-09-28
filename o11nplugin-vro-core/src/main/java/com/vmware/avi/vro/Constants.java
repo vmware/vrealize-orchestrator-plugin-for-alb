@@ -218,6 +218,9 @@ public class Constants {
     public static final String FINDER_VRO_CERTIFICATESECURITYPOLICY = "CertificateSecurityPolicy";
     public static final String FINDER_VRO_CFGSTATE = "CfgState";
     public static final String FINDER_VRO_CHILDPROCESSINFO = "ChildProcessInfo";
+    public static final String FINDER_VRO_CLFPOOL = "ClfPool";
+    public static final String FINDER_VRO_CLFPROFILE = "ClfProfile";
+    public static final String FINDER_VRO_CLFSERVER = "ClfServer";
     public static final String FINDER_VRO_CLIENTCERTAUTHSETTINGS = "ClientCertAuthSettings";
     public static final String FINDER_VRO_CLIENTFINGERPRINTS = "ClientFingerprints";
     public static final String FINDER_VRO_CLIENTINSIGHTSSAMPLING = "ClientInsightsSampling";
@@ -1200,6 +1203,7 @@ public class Constants {
     public static final String FINDER_VRO_SUBNETRUNTIME = "SubnetRuntime";
     public static final String FINDER_VRO_SUMMARIZEDINFO = "SummarizedInfo";
     public static final String FINDER_VRO_SUMMARIZEDSUBNETINFO = "SummarizedSubnetInfo";
+    public static final String FINDER_VRO_SUPERVISORSEGROUPFREELICENSEDETAILS = "SupervisorSeGroupFreeLicenseDetails";
     public static final String FINDER_VRO_SUPPORTEDMIGRATIONS = "SupportedMigrations";
     public static final String FINDER_VRO_SWITCHOVEREVENTDETAILS = "SwitchoverEventDetails";
     public static final String FINDER_VRO_SWITCHOVERFAILEVENTDETAILS = "SwitchoverFailEventDetails";
