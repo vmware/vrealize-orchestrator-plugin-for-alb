@@ -1193,6 +1193,7 @@ public class Constants {
     public static final String FINDER_VRO_SUBNETRUNTIME = "SubnetRuntime";
     public static final String FINDER_VRO_SUMMARIZEDINFO = "SummarizedInfo";
     public static final String FINDER_VRO_SUMMARIZEDSUBNETINFO = "SummarizedSubnetInfo";
+    public static final String FINDER_VRO_SUPERVISORSEGROUPFREELICENSEDETAILS = "SupervisorSeGroupFreeLicenseDetails";
     public static final String FINDER_VRO_SUPPORTEDMIGRATIONS = "SupportedMigrations";
     public static final String FINDER_VRO_SWITCHOVEREVENTDETAILS = "SwitchoverEventDetails";
     public static final String FINDER_VRO_SWITCHOVERFAILEVENTDETAILS = "SwitchoverFailEventDetails";
