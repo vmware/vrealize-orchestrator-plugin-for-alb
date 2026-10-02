@@ -24,9 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ApiConfigLimits extends AviRestResource {
+    @JsonProperty("num_api_paths")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numApiPaths;
+
     @JsonProperty("num_api_paths_per_policy")
     @JsonInclude(Include.NON_NULL)
     private Integer numApiPathsPerPolicy;
+
+    @JsonProperty("num_api_schemas")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numApiSchemas;
 
     @JsonProperty("num_api_schemas_per_policy")
     @JsonInclude(Include.NON_NULL)
@@ -41,6 +49,32 @@ public class ApiConfigLimits extends AviRestResource {
     private Integer numSchemaNesting;
 
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Maximum total number of api path objects allowed across the system.
+   * Field introduced in 32.1.4.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return numApiPaths
+   */
+  @VsoMethod
+  public Integer getNumApiPaths() {
+    return numApiPaths;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum total number of api path objects allowed across the system.
+   * Field introduced in 32.1.4.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param numApiPaths set the numApiPaths.
+   */
+  @VsoMethod
+  public void setNumApiPaths(Integer  numApiPaths) {
+    this.numApiPaths = numApiPaths;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -66,6 +100,32 @@ public class ApiConfigLimits extends AviRestResource {
   @VsoMethod
   public void setNumApiPathsPerPolicy(Integer  numApiPathsPerPolicy) {
     this.numApiPathsPerPolicy = numApiPathsPerPolicy;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Maximum total number of api schema objects allowed across the system.
+   * Field introduced in 32.1.4.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return numApiSchemas
+   */
+  @VsoMethod
+  public Integer getNumApiSchemas() {
+    return numApiSchemas;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum total number of api schema objects allowed across the system.
+   * Field introduced in 32.1.4.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param numApiSchemas set the numApiSchemas.
+   */
+  @VsoMethod
+  public void setNumApiSchemas(Integer  numApiSchemas) {
+    this.numApiSchemas = numApiSchemas;
   }
 
   /**
@@ -166,14 +226,18 @@ public boolean equals(java.lang.Object o) {
   return   Objects.equals(this.numApis, objApiConfigLimits.numApis)&&
   Objects.equals(this.numApiPathsPerPolicy, objApiConfigLimits.numApiPathsPerPolicy)&&
   Objects.equals(this.numApiSchemasPerPolicy, objApiConfigLimits.numApiSchemasPerPolicy)&&
-  Objects.equals(this.numSchemaNesting, objApiConfigLimits.numSchemaNesting);
+  Objects.equals(this.numSchemaNesting, objApiConfigLimits.numSchemaNesting)&&
+  Objects.equals(this.numApiPaths, objApiConfigLimits.numApiPaths)&&
+  Objects.equals(this.numApiSchemas, objApiConfigLimits.numApiSchemas);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class ApiConfigLimits {\n");
-      sb.append("    numApiPathsPerPolicy: ").append(toIndentedString(numApiPathsPerPolicy)).append("\n");
+      sb.append("    numApiPaths: ").append(toIndentedString(numApiPaths)).append("\n");
+        sb.append("    numApiPathsPerPolicy: ").append(toIndentedString(numApiPathsPerPolicy)).append("\n");
+        sb.append("    numApiSchemas: ").append(toIndentedString(numApiSchemas)).append("\n");
         sb.append("    numApiSchemasPerPolicy: ").append(toIndentedString(numApiSchemasPerPolicy)).append("\n");
         sb.append("    numApis: ").append(toIndentedString(numApis)).append("\n");
         sb.append("    numSchemaNesting: ").append(toIndentedString(numSchemaNesting)).append("\n");
