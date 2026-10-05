@@ -384,7 +384,7 @@ public class vCenterConfiguration extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Flag is used to indicate whether tls certificate verificationbe done when establishing a connection to a vcenter server.
+   * Flag is used to indicate whether tls certificate verification be done when establishing a connection to a vcenter server.
    * Field introduced in 31.1.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
@@ -397,7 +397,7 @@ public class vCenterConfiguration extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Flag is used to indicate whether tls certificate verificationbe done when establishing a connection to a vcenter server.
+   * Flag is used to indicate whether tls certificate verification be done when establishing a connection to a vcenter server.
    * Field introduced in 31.1.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
