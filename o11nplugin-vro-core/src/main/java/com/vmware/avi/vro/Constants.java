@@ -228,6 +228,7 @@ public class Constants {
     public static final String FINDER_VRO_CLIENTLOGFILTER = "ClientLogFilter";
     public static final String FINDER_VRO_CLIENTLOGSTREAMINGCONFIG = "ClientLogStreamingConfig";
     public static final String FINDER_VRO_CLIENTLOGSTREAMINGFORMAT = "ClientLogStreamingFormat";
+    public static final String FINDER_VRO_CLOCKSKEWTOLERANCECONFIG = "ClockSkewToleranceConfig";
     public static final String FINDER_VRO_CLONESERVER = "CloneServer";
     public static final String FINDER_VRO_CLOUD = "Cloud";
     public static final String FINDER_VRO_CLOUDASGNOTIFDETAILS = "CloudASGNotifDetails";
