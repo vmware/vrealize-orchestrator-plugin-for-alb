@@ -466,7 +466,7 @@ public class AviVroClient {
 
 			HttpEntity<String> requestEntity = null;
 			if (aviObject.getRequestBody() != null) {
-				requestEntity = new HttpEntity<String>(aviObject.getRequestBody(), null);
+				requestEntity = new HttpEntity<String>(aviObject.getRequestBody(),(HttpHeaders) null);
 			}
 			logger.info("Executing callAviAPI...");
 			final var body = Optional.ofNullable(requestEntity)
@@ -805,7 +805,8 @@ public class AviVroClient {
 		HashMap<String, String> map = new HashMap<String, String>();
 		map.put("include_name", "true");
 		if ((null != objectName) && (!objectName.isEmpty())) {
-			path = objectType + "?name=" + objectName;
+			path = objectType;
+			map.put("name", objectName);
 			data = session.get(path, map, userHeader);
 		} else {
 			logger.debug("Incorrect " + objectType + " name ");
