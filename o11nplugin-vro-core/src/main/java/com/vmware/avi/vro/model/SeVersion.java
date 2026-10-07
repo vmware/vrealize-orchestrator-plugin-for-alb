@@ -44,9 +44,7 @@ public class SeVersion extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String version;
 
-    @JsonProperty("uuid")
-    @JsonInclude(Include.NON_NULL)
-    private String uuid;
+
 
   /**
    * This is the getter method this will return the attribute value.
