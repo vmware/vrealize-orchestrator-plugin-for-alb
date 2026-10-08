@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.ClockSkewToleranceConfig;
 import com.vmware.avi.vro.model.ControllerInternalAuth;
 import com.vmware.avi.vro.model.JWTProtectedResourceConfig;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
@@ -29,6 +30,10 @@ public class JWTServerProfile extends AviRestResource {
     @JsonProperty("allowed_algorithms")
     @JsonInclude(Include.NON_NULL)
     private List<String> allowedAlgorithms;
+
+    @JsonProperty("clock_skew_config")
+    @JsonInclude(Include.NON_NULL)
+    private ClockSkewToleranceConfig clockSkewConfig;
 
     @JsonProperty("controller_internal_auth")
     @JsonInclude(Include.NON_NULL)
@@ -57,6 +62,10 @@ public class JWTServerProfile extends AviRestResource {
     @JsonProperty("protected_resource_config")
     @JsonInclude(Include.NON_NULL)
     private JWTProtectedResourceConfig protectedResourceConfig;
+
+    @JsonProperty("reject_non_expiring_tokens")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean rejectNonExpiringTokens = true;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
@@ -133,6 +142,36 @@ public class JWTServerProfile extends AviRestResource {
     return this;
   }
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Clock-skew tolerance applied to the 'nbf' and 'exp' claims when validating jwts.
+   * If not configured, no clock-skew tolerance is applied.
+   * Only applicable when jwt profile type is client_auth.
+   * Field introduced in 32.1.4.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return clockSkewConfig
+   */
+  @VsoMethod
+  public ClockSkewToleranceConfig getClockSkewConfig() {
+    return clockSkewConfig;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Clock-skew tolerance applied to the 'nbf' and 'exp' claims when validating jwts.
+   * If not configured, no clock-skew tolerance is applied.
+   * Only applicable when jwt profile type is client_auth.
+   * Field introduced in 32.1.4.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param clockSkewConfig set the clockSkewConfig.
+   */
+  @VsoMethod
+  public void setClockSkewConfig(ClockSkewToleranceConfig clockSkewConfig) {
+    this.clockSkewConfig = clockSkewConfig;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -326,6 +365,34 @@ public class JWTServerProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Reject jwts whose 'exp' claim is missing or non-numeric.
+   * This configuration knob is applicable only when the jwt profile type is client_auth.
+   * Field introduced in 32.1.4.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @return rejectNonExpiringTokens
+   */
+  @VsoMethod
+  public Boolean getRejectNonExpiringTokens() {
+    return rejectNonExpiringTokens;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Reject jwts whose 'exp' claim is missing or non-numeric.
+   * This configuration knob is applicable only when the jwt profile type is client_auth.
+   * Field introduced in 32.1.4.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param rejectNonExpiringTokens set the rejectNonExpiringTokens.
+   */
+  @VsoMethod
+  public void setRejectNonExpiringTokens(Boolean  rejectNonExpiringTokens) {
+    this.rejectNonExpiringTokens = rejectNonExpiringTokens;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Uuid of the tenant.
    * It is a reference to an object of type tenant.
    * Field introduced in 20.1.3.
@@ -420,7 +487,9 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.jwtProfileType, objJWTServerProfile.jwtProfileType)&&
   Objects.equals(this.controllerInternalAuth, objJWTServerProfile.controllerInternalAuth)&&
   Objects.equals(this.protectedResourceConfig, objJWTServerProfile.protectedResourceConfig)&&
-  Objects.equals(this.allowedAlgorithms, objJWTServerProfile.allowedAlgorithms);
+  Objects.equals(this.allowedAlgorithms, objJWTServerProfile.allowedAlgorithms)&&
+  Objects.equals(this.rejectNonExpiringTokens, objJWTServerProfile.rejectNonExpiringTokens)&&
+  Objects.equals(this.clockSkewConfig, objJWTServerProfile.clockSkewConfig);
 }
 
 @Override
@@ -428,6 +497,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class JWTServerProfile {\n");
       sb.append("    allowedAlgorithms: ").append(toIndentedString(allowedAlgorithms)).append("\n");
+        sb.append("    clockSkewConfig: ").append(toIndentedString(clockSkewConfig)).append("\n");
         sb.append("    controllerInternalAuth: ").append(toIndentedString(controllerInternalAuth)).append("\n");
         sb.append("    isFederated: ").append(toIndentedString(isFederated)).append("\n");
         sb.append("    issuer: ").append(toIndentedString(issuer)).append("\n");
@@ -435,6 +505,7 @@ public String toString() {
         sb.append("    jwtProfileType: ").append(toIndentedString(jwtProfileType)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    protectedResourceConfig: ").append(toIndentedString(protectedResourceConfig)).append("\n");
+        sb.append("    rejectNonExpiringTokens: ").append(toIndentedString(rejectNonExpiringTokens)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
             sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
       sb.append("}");
