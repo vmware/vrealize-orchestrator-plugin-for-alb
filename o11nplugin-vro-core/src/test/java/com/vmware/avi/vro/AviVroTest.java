@@ -10,8 +10,19 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.security.KeyStore;
+import java.security.cert.CertificateException;
+import java.security.cert.X509Certificate;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLParameters;
+import javax.net.ssl.SSLSocket;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.TrustManagerFactory;
+import javax.net.ssl.X509TrustManager;
 
 import org.json.JSONObject;
 import org.junit.Before;
@@ -41,6 +52,45 @@ public class AviVroTest {
 			AviVroTest.creds = new AviCredentials(AviVroTest.CONTROLLER, AviVroTest.USERNAME, AviVroTest.PASSWORD);
 			creds.setVersion(AviVroTest.VERSION);
 			creds.setTenant(AviVroTest.TENANT);
+			try {
+				String host = AviVroTest.CONTROLLER.replaceFirst("^https://", "").replaceFirst("/$", "");
+				SSLContext fetchContext = SSLContext.getInstance("TLS");
+				fetchContext.init(null, new TrustManager[] { new X509TrustManager() {
+					public X509Certificate[] getAcceptedIssuers() { return new X509Certificate[0]; }
+					public void checkClientTrusted(X509Certificate[] c, String a) { }
+					public void checkServerTrusted(X509Certificate[] c, String a) { }
+				} }, null);
+
+				KeyStore keyStore = KeyStore.getInstance(KeyStore.getDefaultType());
+				keyStore.load(null, null);
+				try (SSLSocket socket = (SSLSocket) fetchContext.getSocketFactory().createSocket(host, 443)) {
+					SSLParameters params = socket.getSSLParameters();
+					params.setEndpointIdentificationAlgorithm("HTTPS"); // JDK hostname check
+					socket.setSSLParameters(params);
+					socket.startHandshake();
+					X509Certificate cert = (X509Certificate) socket.getSession().getPeerCertificates()[0];
+					boolean sanMatch = false;
+					Collection<List<?>> sans = cert.getSubjectAlternativeNames();
+					if (sans != null) {
+						for (List<?> san : sans) { // type 2 = DNS, 7 = IP
+							sanMatch |= host.equalsIgnoreCase(String.valueOf(san.get(1)));
+						}
+					}
+					if (!sanMatch) {
+						throw new CertificateException("Controller certificate SANs do not include " + host);
+					}
+					keyStore.setCertificateEntry("avi-controller-cert", cert);
+				}
+
+				TrustManagerFactory tmf = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
+				tmf.init(keyStore);
+				SSLContext sslContext = SSLContext.getInstance("TLS");
+				sslContext.init(null, tmf.getTrustManagers(), null);
+				creds.setSslContext(sslContext);
+				SSLContext.setDefault(sslContext);
+			} catch (Exception e) {
+				System.err.println("Failed to import controller certificate: " + e.getMessage());
+			}
 			return creds;
 		} else {
 			return AviVroTest.creds;
