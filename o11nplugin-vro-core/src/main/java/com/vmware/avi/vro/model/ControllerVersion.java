@@ -44,10 +44,6 @@ public class ControllerVersion extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String version;
 
-    @JsonProperty("uuid")
-    @JsonInclude(Include.NON_NULL)
-    private String uuid;
-
 
 
   /**
