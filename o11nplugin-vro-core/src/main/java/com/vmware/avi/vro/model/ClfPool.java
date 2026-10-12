@@ -70,7 +70,7 @@ public class ClfPool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Reference to at most one health monitor for collectors in this pool.
    * It is a reference to an object of type healthmonitor.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Maximum of 1 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -85,7 +85,7 @@ public class ClfPool extends AviRestResource {
    * This is the setter method. this will set the healthMonitorRefs
    * Reference to at most one health monitor for collectors in this pool.
    * It is a reference to an object of type healthmonitor.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Maximum of 1 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -100,7 +100,7 @@ public class ClfPool extends AviRestResource {
    * This is the setter method this will set the healthMonitorRefs
    * Reference to at most one health monitor for collectors in this pool.
    * It is a reference to an object of type healthmonitor.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Maximum of 1 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -124,7 +124,7 @@ public class ClfPool extends AviRestResource {
    * Enum options - LB_ALGORITHM_LEAST_CONNECTIONS, LB_ALGORITHM_ROUND_ROBIN, LB_ALGORITHM_FASTEST_RESPONSE, LB_ALGORITHM_CONSISTENT_HASH,
    * LB_ALGORITHM_LEAST_LOAD, LB_ALGORITHM_FEWEST_SERVERS, LB_ALGORITHM_RANDOM, LB_ALGORITHM_FEWEST_TASKS, LB_ALGORITHM_NEAREST_SERVER,
    * LB_ALGORITHM_CORE_AFFINITY, LB_ALGORITHM_TOPOLOGY.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "LB_ALGORITHM_ROUND_ROBIN".
    * @return lbAlgorithm
@@ -142,7 +142,7 @@ public class ClfPool extends AviRestResource {
    * Enum options - LB_ALGORITHM_LEAST_CONNECTIONS, LB_ALGORITHM_ROUND_ROBIN, LB_ALGORITHM_FASTEST_RESPONSE, LB_ALGORITHM_CONSISTENT_HASH,
    * LB_ALGORITHM_LEAST_LOAD, LB_ALGORITHM_FEWEST_SERVERS, LB_ALGORITHM_RANDOM, LB_ALGORITHM_FEWEST_TASKS, LB_ALGORITHM_NEAREST_SERVER,
    * LB_ALGORITHM_CORE_AFFINITY, LB_ALGORITHM_TOPOLOGY.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "LB_ALGORITHM_ROUND_ROBIN".
    * @param lbAlgorithm set the lbAlgorithm.
@@ -157,7 +157,7 @@ public class ClfPool extends AviRestResource {
    * Wire format for log records delivered to this pool's collectors.
    * Each pool independently configures its format.
    * Enum options - CLF_LOG_FORMAT_SYSLOG_LEGACY, CLF_LOG_FORMAT_SYSLOG_OCTET, CLF_LOG_FORMAT_CUSTOM.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "CLF_LOG_FORMAT_SYSLOG_OCTET".
    * @return logFormat
@@ -172,7 +172,7 @@ public class ClfPool extends AviRestResource {
    * Wire format for log records delivered to this pool's collectors.
    * Each pool independently configures its format.
    * Enum options - CLF_LOG_FORMAT_SYSLOG_LEGACY, CLF_LOG_FORMAT_SYSLOG_OCTET, CLF_LOG_FORMAT_CUSTOM.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "CLF_LOG_FORMAT_SYSLOG_OCTET".
    * @param logFormat set the logFormat.
@@ -187,7 +187,7 @@ public class ClfPool extends AviRestResource {
    * Unique name for this pool within the clfprofile.
    * Used as part of the composite key for the backing se_pool_t on the se.
    * The controller rejects profiles where two pools share the same name.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
@@ -202,7 +202,7 @@ public class ClfPool extends AviRestResource {
    * Unique name for this pool within the clfprofile.
    * Used as part of the composite key for the backing se_pool_t on the se.
    * The controller rejects profiles where two pools share the same name.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
@@ -217,7 +217,7 @@ public class ClfPool extends AviRestResource {
    * Pki profile whose ca certificates validate the collector's server certificate.
    * Required when transport is clf_transport_tcp_tls.
    * It is a reference to an object of type pkiprofile.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pkiProfileRef
@@ -232,7 +232,7 @@ public class ClfPool extends AviRestResource {
    * Pki profile whose ca certificates validate the collector's server certificate.
    * Required when transport is clf_transport_tcp_tls.
    * It is a reference to an object of type pkiprofile.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pkiProfileRef set the pkiProfileRef.
@@ -249,7 +249,7 @@ public class ClfPool extends AviRestResource {
    * Must be unique across all pools in the same profile.
    * When replicate=false, the highest-priority pool with an up member receives all log records; lower-priority pools act as fallback.
    * Allowed values are 1-255.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return priority
@@ -266,7 +266,7 @@ public class ClfPool extends AviRestResource {
    * Must be unique across all pools in the same profile.
    * When replicate=false, the highest-priority pool with an up member receives all log records; lower-priority pools act as fallback.
    * Allowed values are 1-255.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param priority set the priority.
@@ -279,7 +279,7 @@ public class ClfPool extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * List of log collector endpoints for this pool.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Maximum of 32 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -293,7 +293,7 @@ public class ClfPool extends AviRestResource {
   /**
    * This is the setter method. this will set the servers
    * List of log collector endpoints for this pool.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Maximum of 32 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -307,7 +307,7 @@ public class ClfPool extends AviRestResource {
   /**
    * This is the setter method this will set the servers
    * List of log collector endpoints for this pool.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Maximum of 32 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -328,7 +328,7 @@ public class ClfPool extends AviRestResource {
    * Client certificate and key the se presents to the collector for mutual tls.
    * Optional even when transport is clf_transport_tcp_tls; server-authentication-only tls is used when this is not set.
    * It is a reference to an object of type sslkeyandcertificate.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslKeyAndCertificateRef
@@ -343,7 +343,7 @@ public class ClfPool extends AviRestResource {
    * Client certificate and key the se presents to the collector for mutual tls.
    * Optional even when transport is clf_transport_tcp_tls; server-authentication-only tls is used when this is not set.
    * It is a reference to an object of type sslkeyandcertificate.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sslKeyAndCertificateRef set the sslKeyAndCertificateRef.
@@ -358,7 +358,7 @@ public class ClfPool extends AviRestResource {
    * Ssl profile controlling the tls version and cipher policy used for this pool's collector connections.
    * Required when transport is clf_transport_tcp_tls.
    * It is a reference to an object of type sslprofile.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslProfileRef
@@ -373,7 +373,7 @@ public class ClfPool extends AviRestResource {
    * Ssl profile controlling the tls version and cipher policy used for this pool's collector connections.
    * Required when transport is clf_transport_tcp_tls.
    * It is a reference to an object of type sslprofile.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sslProfileRef set the sslProfileRef.
@@ -387,7 +387,7 @@ public class ClfPool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Transport protocol for log delivery.
    * Enum options - CLF_TRANSPORT_TCP, CLF_TRANSPORT_UDP, CLF_TRANSPORT_TCP_TLS.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "CLF_TRANSPORT_TCP".
    * @return transport
@@ -401,7 +401,7 @@ public class ClfPool extends AviRestResource {
    * This is the setter method to the attribute.
    * Transport protocol for log delivery.
    * Enum options - CLF_TRANSPORT_TCP, CLF_TRANSPORT_UDP, CLF_TRANSPORT_TCP_TLS.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "CLF_TRANSPORT_TCP".
    * @param transport set the transport.

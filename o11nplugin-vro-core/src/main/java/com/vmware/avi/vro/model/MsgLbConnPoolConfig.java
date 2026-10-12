@@ -39,7 +39,7 @@ public class MsgLbConnPoolConfig extends AviRestResource {
    * Idle timeout for pooled server sockets used by l4 message-level lb.
    * Allowed values are 1000-86400000.
    * Special values are 0 - disable.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Unit is milliseconds.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
@@ -55,7 +55,7 @@ public class MsgLbConnPoolConfig extends AviRestResource {
    * Idle timeout for pooled server sockets used by l4 message-level lb.
    * Allowed values are 1000-86400000.
    * Special values are 0 - disable.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Unit is milliseconds.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
@@ -71,7 +71,7 @@ public class MsgLbConnPoolConfig extends AviRestResource {
    * Cap on concurrent server tcp connections per core for l4 message-level lb.
    * 0 = unlimited; valid limit range is 1-65535.
    * Allowed values are 0-65535.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return maxTcpConnPerServer
@@ -86,7 +86,7 @@ public class MsgLbConnPoolConfig extends AviRestResource {
    * Cap on concurrent server tcp connections per core for l4 message-level lb.
    * 0 = unlimited; valid limit range is 1-65535.
    * Allowed values are 0-65535.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param maxTcpConnPerServer set the maxTcpConnPerServer.

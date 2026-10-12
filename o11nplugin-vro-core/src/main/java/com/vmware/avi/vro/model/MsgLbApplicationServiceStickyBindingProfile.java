@@ -43,7 +43,7 @@ public class MsgLbApplicationServiceStickyBindingProfile extends AviRestResource
    * When true (default), a sticky-mode per-request/session binding is freed as soon as its matching response is received.
    * When false, the binding persists as a route-cache entry and is cleaned up after session_unbind_timeout milliseconds of inactivity.
    * Anchor bindings are unaffected regardless of this flag.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return sessionUnbindOnResponse
@@ -58,7 +58,7 @@ public class MsgLbApplicationServiceStickyBindingProfile extends AviRestResource
    * When true (default), a sticky-mode per-request/session binding is freed as soon as its matching response is received.
    * When false, the binding persists as a route-cache entry and is cleaned up after session_unbind_timeout milliseconds of inactivity.
    * Anchor bindings are unaffected regardless of this flag.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param sessionUnbindOnResponse set the sessionUnbindOnResponse.
@@ -77,7 +77,7 @@ public class MsgLbApplicationServiceStickyBindingProfile extends AviRestResource
    * many milliseconds of inactivity.
    * Default 30000 ms.
    * Allowed values are 1-3600000.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Unit is milliseconds.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30000.
@@ -97,7 +97,7 @@ public class MsgLbApplicationServiceStickyBindingProfile extends AviRestResource
    * many milliseconds of inactivity.
    * Default 30000 ms.
    * Allowed values are 1-3600000.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Unit is milliseconds.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30000.
@@ -115,7 +115,7 @@ public class MsgLbApplicationServiceStickyBindingProfile extends AviRestResource
    * Non-zero  anchor is torn down after this many milliseconds with no message forwarded in either direction; the idle timer resets on every request
    * or response.
    * Allowed values are 0-3600000.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Unit is milliseconds.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
@@ -133,7 +133,7 @@ public class MsgLbApplicationServiceStickyBindingProfile extends AviRestResource
    * Non-zero  anchor is torn down after this many milliseconds with no message forwarded in either direction; the idle timer resets on every request
    * or response.
    * Allowed values are 0-3600000.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Unit is milliseconds.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.

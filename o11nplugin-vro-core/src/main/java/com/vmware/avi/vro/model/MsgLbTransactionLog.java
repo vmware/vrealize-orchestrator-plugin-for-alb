@@ -57,7 +57,7 @@ public class MsgLbTransactionLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Server-connection pool acquisition outcome for this request  0=new, 1=idle-reuse, 2=busy-round-robin.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return connpoolDisposition
@@ -70,7 +70,7 @@ public class MsgLbTransactionLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Server-connection pool acquisition outcome for this request  0=new, 1=idle-reuse, 2=busy-round-robin.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param connpoolDisposition set the connpoolDisposition.
@@ -83,7 +83,7 @@ public class MsgLbTransactionLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Request-to-response latency in microseconds.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return latencyUs
@@ -96,7 +96,7 @@ public class MsgLbTransactionLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Request-to-response latency in microseconds.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param latencyUs set the latencyUs.
@@ -109,7 +109,7 @@ public class MsgLbTransactionLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Byte length of the request forwarded to the server.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Unit is bytes.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -123,7 +123,7 @@ public class MsgLbTransactionLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Byte length of the request forwarded to the server.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Unit is bytes.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -137,7 +137,7 @@ public class MsgLbTransactionLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Byte length of the response received from the server.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Unit is bytes.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -151,7 +151,7 @@ public class MsgLbTransactionLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Byte length of the response received from the server.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Unit is bytes.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -165,7 +165,7 @@ public class MsgLbTransactionLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Backend server address in 'a.b.c.d port' format.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverIp
@@ -178,7 +178,7 @@ public class MsgLbTransactionLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Backend server address in 'a.b.c.d port' format.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverIp set the serverIp.
@@ -191,7 +191,7 @@ public class MsgLbTransactionLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Transaction hash lookup outcome for this request  0=none, 1=hit, 2=miss.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return transactionDisposition
@@ -204,7 +204,7 @@ public class MsgLbTransactionLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Transaction hash lookup outcome for this request  0=none, 1=hit, 2=miss.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param transactionDisposition set the transactionDisposition.
@@ -217,7 +217,7 @@ public class MsgLbTransactionLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Hex-encoded transaction/session key for this message, or 'none' if no key was supplied.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return transactionKey
@@ -230,7 +230,7 @@ public class MsgLbTransactionLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Hex-encoded transaction/session key for this message, or 'none' if no key was supplied.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param transactionKey set the transactionKey.
