@@ -71,7 +71,7 @@ public class ClfProfile extends AviRestResource {
    * List of pools associated with this profile.
    * Each pool must have a unique priority value.
    * The controller rejects profiles where two pools share the same priority (http 400).
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Maximum of 8 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -87,7 +87,7 @@ public class ClfProfile extends AviRestResource {
    * List of pools associated with this profile.
    * Each pool must have a unique priority value.
    * The controller rejects profiles where two pools share the same priority (http 400).
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Maximum of 8 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -103,7 +103,7 @@ public class ClfProfile extends AviRestResource {
    * List of pools associated with this profile.
    * Each pool must have a unique priority value.
    * The controller rejects profiles where two pools share the same priority (http 400).
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Maximum of 8 items allowed.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -122,7 +122,7 @@ public class ClfProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Human-readable description for this clf profile.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
@@ -135,7 +135,7 @@ public class ClfProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Human-readable description for this clf profile.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
@@ -150,7 +150,7 @@ public class ClfProfile extends AviRestResource {
    * Enable or disable log delivery for this profile without disturbing pool state, health monitors, or virtualservice/datascriptset bindings.
    * When false, datascript log forwarding is a silent no-op for every vs attached via this profile; delivery resumes immediately when set back to
    * true.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enabled
@@ -165,7 +165,7 @@ public class ClfProfile extends AviRestResource {
    * Enable or disable log delivery for this profile without disturbing pool state, health monitors, or virtualservice/datascriptset bindings.
    * When false, datascript log forwarding is a silent no-op for every vs attached via this profile; delivery resumes immediately when set back to
    * true.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enabled set the enabled.
@@ -178,7 +178,7 @@ public class ClfProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * List of labels to be used for granular rbac.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
@@ -191,7 +191,7 @@ public class ClfProfile extends AviRestResource {
   /**
    * This is the setter method. this will set the markers
    * List of labels to be used for granular rbac.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
@@ -204,7 +204,7 @@ public class ClfProfile extends AviRestResource {
   /**
    * This is the setter method this will set the markers
    * List of labels to be used for granular rbac.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
@@ -222,7 +222,7 @@ public class ClfProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The name of the clf profile.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
@@ -235,7 +235,7 @@ public class ClfProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The name of the clf profile.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
@@ -249,7 +249,7 @@ public class ClfProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * When false (default), log records are routed to the highest-priority pool that has at least one up member (priority-based failover).
    * When true, log records are replicated to all pools regardless of priority.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return replicate
@@ -263,7 +263,7 @@ public class ClfProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * When false (default), log records are routed to the highest-priority pool that has at least one up member (priority-based failover).
    * When true, log records are replicated to all pools regardless of priority.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param replicate set the replicate.
@@ -277,7 +277,7 @@ public class ClfProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Reference to the tenant that owns this clf profile.
    * It is a reference to an object of type tenant.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
@@ -291,7 +291,7 @@ public class ClfProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Reference to the tenant that owns this clf profile.
    * It is a reference to an object of type tenant.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
@@ -323,7 +323,7 @@ public class ClfProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the clf profile.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
@@ -336,7 +336,7 @@ public class ClfProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the clf profile.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
@@ -352,7 +352,7 @@ public class ClfProfile extends AviRestResource {
    * Only virtual services in the same virtual routing context can use this profile.
    * Cannot be changed once set.
    * It is a reference to an object of type vrfcontext.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vrfContextRef
@@ -368,7 +368,7 @@ public class ClfProfile extends AviRestResource {
    * Only virtual services in the same virtual routing context can use this profile.
    * Cannot be changed once set.
    * It is a reference to an object of type vrfcontext.
-   * Field introduced in 32.1.5.
+   * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vrfContextRef set the vrfContextRef.
