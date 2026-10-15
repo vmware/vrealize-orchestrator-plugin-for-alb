@@ -14,26 +14,25 @@ Avi VMware Aria Automation Orchestrator​ Plugin
 ## Installing plugin to VMware Aria Automation Orchestrator​
 
     * Download the dar file from https://github.com/vmware/vrealize-orchestrator-plugin-for-alb/releases/download/22.1.3.post3/o11nplugin-vro-22.1.3.3.RELEASE.dar
-    * Enter the Ip of Vro instance in browser and click on Orchestrator Control Center.
-   ![alt text](images/control_center.png)
+    * Once vRO Orchestrator is setup Go to System Settings and Cick on Plug-ins & ADD PLUG-IN 
+   ![alt text](images/manage_plugin.png)
     
-    * Cick on Manage Plug-ins & Browse Plugin
-   ![alt text](images/manage_plugins.png)
+    * Upload the downloaded dar/vmoapp file from the git repo.
+   ![alt text](images/upload_plugin.png)
     
-    * Upload the downloaded dar file from the git repo.
-   ![alt text](images/upload_dar.png)
-    
-    * Click on install.(after installation VRO will restart this may take some time)
-   ![alt text](images/install_plugin.png)
+    * Click on ACCEPT AND INSTALL(after installation vRO will automatically restart, this may take some time)
+   ![alt text](images/accept_install_plugin.png)
+
+    * Plugin is installed.
+   ![alt text](images/install_plugin.png) 
    
-    * After installation, Open Orchestrator.
+    * After installation, Wait to Automatically Refresh the vRO Instance.
+    * Open Orchestrator and Inventory Tab. AVI vRO plugin is installed.
     
-    * Refresh the VRO.
-   
-   ![alt text](images/refresh_vro.png)
+   ![alt text](images/inventory.png)
 
     * Afrer refresh, you can see the workflow under Workflows tab inside Library > Avi folder and actions under Actions tab inside com.vmware.avi folder.
-   ![alt text](images/library.png)
+   ![alt text](images/workflows_library.png)
 
 
 ## Below are the steps to create custom workflows and actions using AVI vRO plugin.
