@@ -40,9 +40,9 @@ public class MsgLbTransactionLog extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer respMsgLen;
 
-    @JsonProperty("server_ip")
+    @JsonProperty("server_ip_port")
     @JsonInclude(Include.NON_NULL)
-    private String serverIp;
+    private String serverIpPort;
 
     @JsonProperty("transaction_disposition")
     @JsonInclude(Include.NON_NULL)
@@ -168,11 +168,11 @@ public class MsgLbTransactionLog extends AviRestResource {
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return serverIp
+   * @return serverIpPort
    */
   @VsoMethod
-  public String getServerIp() {
-    return serverIp;
+  public String getServerIpPort() {
+    return serverIpPort;
   }
 
   /**
@@ -181,11 +181,11 @@ public class MsgLbTransactionLog extends AviRestResource {
    * Field introduced in 32.2.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param serverIp set the serverIp.
+   * @param serverIpPort set the serverIpPort.
    */
   @VsoMethod
-  public void setServerIp(String  serverIp) {
-    this.serverIp = serverIp;
+  public void setServerIpPort(String  serverIpPort) {
+    this.serverIpPort = serverIpPort;
   }
 
   /**
@@ -251,7 +251,7 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   MsgLbTransactionLog objMsgLbTransactionLog = (MsgLbTransactionLog) o;
-  return   Objects.equals(this.serverIp, objMsgLbTransactionLog.serverIp)&&
+  return   Objects.equals(this.serverIpPort, objMsgLbTransactionLog.serverIpPort)&&
   Objects.equals(this.transactionKey, objMsgLbTransactionLog.transactionKey)&&
   Objects.equals(this.reqMsgLen, objMsgLbTransactionLog.reqMsgLen)&&
   Objects.equals(this.respMsgLen, objMsgLbTransactionLog.respMsgLen)&&
@@ -268,7 +268,7 @@ public String toString() {
         sb.append("    latencyUs: ").append(toIndentedString(latencyUs)).append("\n");
         sb.append("    reqMsgLen: ").append(toIndentedString(reqMsgLen)).append("\n");
         sb.append("    respMsgLen: ").append(toIndentedString(respMsgLen)).append("\n");
-        sb.append("    serverIp: ").append(toIndentedString(serverIp)).append("\n");
+        sb.append("    serverIpPort: ").append(toIndentedString(serverIpPort)).append("\n");
         sb.append("    transactionDisposition: ").append(toIndentedString(transactionDisposition)).append("\n");
         sb.append("    transactionKey: ").append(toIndentedString(transactionKey)).append("\n");
       sb.append("}");
