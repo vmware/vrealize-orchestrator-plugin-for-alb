@@ -163,7 +163,7 @@ public class ControllerVersion extends AviRestResource {
 
 
   public String getObjectID() {
-    return name + "(" + uuid  + ")";
+    return name;
   }
 
 @Override
