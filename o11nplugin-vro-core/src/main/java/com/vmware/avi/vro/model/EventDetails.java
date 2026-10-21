@@ -167,6 +167,7 @@ import com.vmware.avi.vro.model.SchedulerActionDetails;
 import com.vmware.avi.vro.model.SeAutoScalerEventDetails;
 import com.vmware.avi.vro.model.SeBgpPeerDownDetails;
 import com.vmware.avi.vro.model.SeBgpPeerStateChangeDetails;
+import com.vmware.avi.vro.model.SeClfEventDetails;
 import com.vmware.avi.vro.model.SeVsConfigSeDatastoreDownloadFailed;
 import com.vmware.avi.vro.model.SeDebugModeEventDetail;
 import com.vmware.avi.vro.model.SeMgrEventDetails;
@@ -937,6 +938,10 @@ public class EventDetails extends AviRestResource {
     @JsonProperty("se_bgp_peer_state_change_details")
     @JsonInclude(Include.NON_NULL)
     private SeBgpPeerStateChangeDetails seBgpPeerStateChangeDetails;
+
+    @JsonProperty("se_clf_details")
+    @JsonInclude(Include.NON_NULL)
+    private SeClfEventDetails seClfDetails;
 
     @JsonProperty("se_config_sedatastore_dl_fail")
     @JsonInclude(Include.NON_NULL)
@@ -5084,6 +5089,28 @@ public class EventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return seClfDetails
+   */
+  @VsoMethod
+  public SeClfEventDetails getSeClfDetails() {
+    return seClfDetails;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param seClfDetails set the seClfDetails.
+   */
+  @VsoMethod
+  public void setSeClfDetails(SeClfEventDetails seClfDetails) {
+    this.seClfDetails = seClfDetails;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seConfigSedatastoreDlFail
    */
   @VsoMethod
@@ -7588,6 +7615,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.seGeoDbDetails, objEventDetails.seGeoDbDetails)&&
   Objects.equals(this.vsConfigSedatastoreDlFail, objEventDetails.vsConfigSedatastoreDlFail)&&
   Objects.equals(this.seConfigSedatastoreDlFail, objEventDetails.seConfigSedatastoreDlFail)&&
+  Objects.equals(this.seClfDetails, objEventDetails.seClfDetails)&&
   Objects.equals(this.configCreateDetails, objEventDetails.configCreateDetails)&&
   Objects.equals(this.configUpdateDetails, objEventDetails.configUpdateDetails)&&
   Objects.equals(this.configDeleteDetails, objEventDetails.configDeleteDetails)&&
@@ -7929,6 +7957,7 @@ public String toString() {
         sb.append("    seAutoscalerEventDetails: ").append(toIndentedString(seAutoscalerEventDetails)).append("\n");
         sb.append("    seBgpPeerDownDetails: ").append(toIndentedString(seBgpPeerDownDetails)).append("\n");
         sb.append("    seBgpPeerStateChangeDetails: ").append(toIndentedString(seBgpPeerStateChangeDetails)).append("\n");
+        sb.append("    seClfDetails: ").append(toIndentedString(seClfDetails)).append("\n");
         sb.append("    seConfigSedatastoreDlFail: ").append(toIndentedString(seConfigSedatastoreDlFail)).append("\n");
         sb.append("    seDebugModeEventDetail: ").append(toIndentedString(seDebugModeEventDetail)).append("\n");
         sb.append("    seDetails: ").append(toIndentedString(seDetails)).append("\n");
