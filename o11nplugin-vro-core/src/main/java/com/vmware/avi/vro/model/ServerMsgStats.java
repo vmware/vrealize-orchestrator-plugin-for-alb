@@ -61,7 +61,7 @@ public class ServerMsgStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average request-to-response latency in microseconds (total_latency_us / msg_count_rx; 0 if no responses).
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.5.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgLatencyUs
@@ -74,7 +74,7 @@ public class ServerMsgStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average request-to-response latency in microseconds (total_latency_us / msg_count_rx; 0 if no responses).
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.5.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgLatencyUs set the avgLatencyUs.
@@ -87,7 +87,7 @@ public class ServerMsgStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total response bytes received from this server.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.5.
    * Unit is bytes.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -101,7 +101,7 @@ public class ServerMsgStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total response bytes received from this server.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.5.
    * Unit is bytes.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -115,7 +115,7 @@ public class ServerMsgStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total request bytes forwarded to this server.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.5.
    * Unit is bytes.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -129,7 +129,7 @@ public class ServerMsgStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total request bytes forwarded to this server.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.5.
    * Unit is bytes.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -143,7 +143,7 @@ public class ServerMsgStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Number of responses received from this server.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.5.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return msgCountRx
@@ -156,7 +156,7 @@ public class ServerMsgStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Number of responses received from this server.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.5.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param msgCountRx set the msgCountRx.
@@ -169,7 +169,7 @@ public class ServerMsgStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Number of requests forwarded to this server.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.5.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return msgCountTx
@@ -182,7 +182,7 @@ public class ServerMsgStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Number of requests forwarded to this server.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.5.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param msgCountTx set the msgCountTx.
@@ -195,7 +195,7 @@ public class ServerMsgStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Number of in-flight requests outstanding when the client connection was force-closed.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.5.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return orphanCount
@@ -208,7 +208,7 @@ public class ServerMsgStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Number of in-flight requests outstanding when the client connection was force-closed.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.5.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param orphanCount set the orphanCount.
@@ -221,7 +221,7 @@ public class ServerMsgStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Backend server address in 'a.b.c.d port' format.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.5.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverIpPort
@@ -234,7 +234,7 @@ public class ServerMsgStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Backend server address in 'a.b.c.d port' format.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.5.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverIpPort set the serverIpPort.
@@ -247,7 +247,7 @@ public class ServerMsgStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Number of requests to this server that expired waiting for a response.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.5.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return timeoutCount
@@ -260,7 +260,7 @@ public class ServerMsgStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Number of requests to this server that expired waiting for a response.
-   * Field introduced in 32.2.1.
+   * Field introduced in 32.1.5.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param timeoutCount set the timeoutCount.
