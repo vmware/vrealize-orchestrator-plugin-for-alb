@@ -48,6 +48,10 @@ public class ClfPool extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer priority;
 
+    @JsonProperty("replicate")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean replicate = false;
+
     @JsonProperty("servers")
     @JsonInclude(Include.NON_NULL)
     private List<ClfServer> servers;
@@ -276,6 +280,32 @@ public class ClfPool extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * When true, each log record is sent to all servers in this pool that are currently up.
+   * Field introduced in 32.1.5.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return replicate
+   */
+  @VsoMethod
+  public Boolean getReplicate() {
+    return replicate;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * When true, each log record is sent to all servers in this pool that are currently up.
+   * Field introduced in 32.1.5.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param replicate set the replicate.
+   */
+  @VsoMethod
+  public void setReplicate(Boolean  replicate) {
+    this.replicate = replicate;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * List of log collector endpoints for this pool.
    * Field introduced in 32.1.5.
    * Minimum of 1 items required.
@@ -432,7 +462,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.name, objClfPool.name)&&
   Objects.equals(this.sslProfileRef, objClfPool.sslProfileRef)&&
   Objects.equals(this.pkiProfileRef, objClfPool.pkiProfileRef)&&
-  Objects.equals(this.sslKeyAndCertificateRef, objClfPool.sslKeyAndCertificateRef);
+  Objects.equals(this.sslKeyAndCertificateRef, objClfPool.sslKeyAndCertificateRef)&&
+  Objects.equals(this.replicate, objClfPool.replicate);
 }
 
 @Override
@@ -445,6 +476,7 @@ public String toString() {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    pkiProfileRef: ").append(toIndentedString(pkiProfileRef)).append("\n");
         sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
+        sb.append("    replicate: ").append(toIndentedString(replicate)).append("\n");
         sb.append("    servers: ").append(toIndentedString(servers)).append("\n");
         sb.append("    sslKeyAndCertificateRef: ").append(toIndentedString(sslKeyAndCertificateRef)).append("\n");
         sb.append("    sslProfileRef: ").append(toIndentedString(sslProfileRef)).append("\n");
