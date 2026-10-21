@@ -163,7 +163,7 @@ public class SeVersion extends AviRestResource {
 
 
   public String getObjectID() {
-    return name + "(" + uuid  + ")";
+    return name;
   }
 
 @Override
