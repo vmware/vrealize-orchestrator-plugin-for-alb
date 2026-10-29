@@ -204,7 +204,7 @@ public class UpgradeControllerParams extends AviRestResource {
   }
 
 
- public String getObjectID() {
+  public String getObjectID() {
     return "UpgradeControllerParams";
   }
 

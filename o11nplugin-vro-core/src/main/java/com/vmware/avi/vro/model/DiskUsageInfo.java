@@ -98,7 +98,7 @@ public class DiskUsageInfo extends AviRestResource {
   }
 
 
- public String getObjectID() {
+  public String getObjectID() {
     return "DiskUsageInfo";
   }
 

@@ -232,7 +232,7 @@ public class RestoreParams extends AviRestResource {
   }
 
 
- public String getObjectID() {
+  public String getObjectID() {
     return "RestoreParams";
   }
 

@@ -770,7 +770,7 @@ public class SSLProfile extends AviRestResource {
 
 
   public String getObjectID() {
-    return name + "(" + uuid  + ")";
+    return name + "(" + uuid + ")";
   }
 
 @Override

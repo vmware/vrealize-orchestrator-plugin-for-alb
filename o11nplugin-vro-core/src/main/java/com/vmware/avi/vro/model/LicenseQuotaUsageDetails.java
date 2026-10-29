@@ -98,7 +98,7 @@ public class LicenseQuotaUsageDetails extends AviRestResource {
   }
 
 
- public String getObjectID() {
+  public String getObjectID() {
     return "LicenseQuotaUsageDetails";
   }
 

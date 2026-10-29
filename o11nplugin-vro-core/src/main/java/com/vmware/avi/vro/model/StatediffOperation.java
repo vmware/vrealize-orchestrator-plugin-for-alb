@@ -317,7 +317,7 @@ public class StatediffOperation extends AviRestResource {
 
 
   public String getObjectID() {
-    return name + "(" + uuid  + ")";
+    return name + "(" + uuid + ")";
   }
 
 @Override
