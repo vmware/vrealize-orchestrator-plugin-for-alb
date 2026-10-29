@@ -163,7 +163,7 @@ public class TestSeDatastoreLevel1 extends AviRestResource {
 
 
   public String getObjectID() {
-    return name + "(" + uuid  + ")";
+    return name + "(" + uuid + ")";
   }
 
 @Override

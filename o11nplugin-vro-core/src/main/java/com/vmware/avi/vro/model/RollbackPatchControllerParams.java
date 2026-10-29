@@ -110,7 +110,7 @@ public class RollbackPatchControllerParams extends AviRestResource {
   }
 
 
- public String getObjectID() {
+  public String getObjectID() {
     return "RollbackPatchControllerParams";
   }
 

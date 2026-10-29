@@ -195,7 +195,7 @@ public class RollbackPatchSeGroupParams extends AviRestResource {
   }
 
 
- public String getObjectID() {
+  public String getObjectID() {
     return "RollbackPatchSeGroupParams";
   }
 

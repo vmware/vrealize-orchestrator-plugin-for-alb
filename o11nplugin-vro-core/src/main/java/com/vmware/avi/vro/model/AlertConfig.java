@@ -584,7 +584,7 @@ public class AlertConfig extends AviRestResource {
 
 
   public String getObjectID() {
-    return name + "(" + uuid  + ")";
+    return name + "(" + uuid + ")";
   }
 
 @Override

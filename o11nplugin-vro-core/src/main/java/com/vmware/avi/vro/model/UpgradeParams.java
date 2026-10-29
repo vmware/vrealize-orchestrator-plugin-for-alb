@@ -351,7 +351,7 @@ public class UpgradeParams extends AviRestResource {
   }
 
 
- public String getObjectID() {
+  public String getObjectID() {
     return "UpgradeParams";
   }
 

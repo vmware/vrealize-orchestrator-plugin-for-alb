@@ -172,7 +172,7 @@ public class PatchControllerParams extends AviRestResource {
   }
 
 
- public String getObjectID() {
+  public String getObjectID() {
     return "PatchControllerParams";
   }
 
