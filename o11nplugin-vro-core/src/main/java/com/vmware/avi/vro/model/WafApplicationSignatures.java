@@ -24,6 +24,10 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class WafApplicationSignatures extends AviRestResource {
+    @JsonProperty("mode")
+    @JsonInclude(Include.NON_NULL)
+    private String mode;
+
     @JsonProperty("provider_ref")
     @JsonInclude(Include.NON_NULL)
     private String providerRef;
@@ -41,6 +45,40 @@ public class WafApplicationSignatures extends AviRestResource {
     private List<String> selectedApplications;
 
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Waf mode for the application specific rules.
+   * This can be either detection, enforcement or evaluation.
+   * If this is not set, the waf policy mode is used.
+   * This only takes effect if the policy allows mode delegation.
+   * Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT, WAF_MODE_EVALUATION.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return mode
+   */
+  @VsoMethod
+  public String getMode() {
+    return mode;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Waf mode for the application specific rules.
+   * This can be either detection, enforcement or evaluation.
+   * If this is not set, the waf policy mode is used.
+   * This only takes effect if the policy allows mode delegation.
+   * Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT, WAF_MODE_EVALUATION.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param mode set the mode.
+   */
+  @VsoMethod
+  public void setMode(String  mode) {
+    this.mode = mode;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -196,14 +234,16 @@ public boolean equals(java.lang.Object o) {
   return   Objects.equals(this.providerRef, objWafApplicationSignatures.providerRef)&&
   Objects.equals(this.rulesetVersion, objWafApplicationSignatures.rulesetVersion)&&
   Objects.equals(this.selectedApplications, objWafApplicationSignatures.selectedApplications)&&
-  Objects.equals(this.ruleOverrides, objWafApplicationSignatures.ruleOverrides);
+  Objects.equals(this.ruleOverrides, objWafApplicationSignatures.ruleOverrides)&&
+  Objects.equals(this.mode, objWafApplicationSignatures.mode);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class WafApplicationSignatures {\n");
-      sb.append("    providerRef: ").append(toIndentedString(providerRef)).append("\n");
+      sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+        sb.append("    providerRef: ").append(toIndentedString(providerRef)).append("\n");
         sb.append("    ruleOverrides: ").append(toIndentedString(ruleOverrides)).append("\n");
         sb.append("    rulesetVersion: ").append(toIndentedString(rulesetVersion)).append("\n");
         sb.append("    selectedApplications: ").append(toIndentedString(selectedApplications)).append("\n");
