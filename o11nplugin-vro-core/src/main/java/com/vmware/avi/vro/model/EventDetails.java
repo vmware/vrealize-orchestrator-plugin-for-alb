@@ -167,6 +167,7 @@ import com.vmware.avi.vro.model.SchedulerActionDetails;
 import com.vmware.avi.vro.model.SeAutoScalerEventDetails;
 import com.vmware.avi.vro.model.SeBgpPeerDownDetails;
 import com.vmware.avi.vro.model.SeBgpPeerStateChangeDetails;
+import com.vmware.avi.vro.model.SeClfEventDetails;
 import com.vmware.avi.vro.model.SeVsConfigSeDatastoreDownloadFailed;
 import com.vmware.avi.vro.model.SeDebugModeEventDetail;
 import com.vmware.avi.vro.model.SeMgrEventDetails;
@@ -183,8 +184,6 @@ import com.vmware.avi.vro.model.SeHmEventGSDetails;
 import com.vmware.avi.vro.model.SeHmEventGslbPoolDetails;
 import com.vmware.avi.vro.model.SeHmEventPoolDetails;
 import com.vmware.avi.vro.model.SeHmEventVsDetails;
-import com.vmware.avi.vro.model.SeGatewayHeartbeatFailedDetails;
-import com.vmware.avi.vro.model.SeGatewayHeartbeatSuccessDetails;
 import com.vmware.avi.vro.model.SeIP6DadFailedEventDetails;
 import com.vmware.avi.vro.model.SeIpAddedEventDetails;
 import com.vmware.avi.vro.model.SeIpRemovedEventDetails;
@@ -229,7 +228,6 @@ import com.vmware.avi.vro.model.SSLIgnoredDetails;
 import com.vmware.avi.vro.model.SSLRenewDetails;
 import com.vmware.avi.vro.model.SSLRenewFailedDetails;
 import com.vmware.avi.vro.model.SSLRevokedDetails;
-import com.vmware.avi.vro.model.SupervisorSeGroupFreeLicenseDetails;
 import com.vmware.avi.vro.model.SwitchoverEventDetails;
 import com.vmware.avi.vro.model.SwitchoverFailEventDetails;
 import com.vmware.avi.vro.model.CloudSyncServices;
@@ -938,6 +936,10 @@ public class EventDetails extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private SeBgpPeerStateChangeDetails seBgpPeerStateChangeDetails;
 
+    @JsonProperty("se_clf_details")
+    @JsonInclude(Include.NON_NULL)
+    private SeClfEventDetails seClfDetails;
+
     @JsonProperty("se_config_sedatastore_dl_fail")
     @JsonInclude(Include.NON_NULL)
     private SeVsConfigSeDatastoreDownloadFailed seConfigSedatastoreDlFail;
@@ -1001,14 +1003,6 @@ public class EventDetails extends AviRestResource {
     @JsonProperty("se_hm_vs_details")
     @JsonInclude(Include.NON_NULL)
     private SeHmEventVsDetails seHmVsDetails;
-
-    @JsonProperty("se_internal_gateway_heartbeat_failed_details")
-    @JsonInclude(Include.NON_NULL)
-    private SeGatewayHeartbeatFailedDetails seInternalGatewayHeartbeatFailedDetails;
-
-    @JsonProperty("se_internal_gateway_heartbeat_success_details")
-    @JsonInclude(Include.NON_NULL)
-    private SeGatewayHeartbeatSuccessDetails seInternalGatewayHeartbeatSuccessDetails;
 
     @JsonProperty("se_ip6_dad_failed_event_details")
     @JsonInclude(Include.NON_NULL)
@@ -1185,10 +1179,6 @@ public class EventDetails extends AviRestResource {
     @JsonProperty("ssl_revoked_details")
     @JsonInclude(Include.NON_NULL)
     private SSLRevokedDetails sslRevokedDetails;
-
-    @JsonProperty("supervisor_se_group_free_license_details")
-    @JsonInclude(Include.NON_NULL)
-    private SupervisorSeGroupFreeLicenseDetails supervisorSeGroupFreeLicenseDetails;
 
     @JsonProperty("switchover_details")
     @JsonInclude(Include.NON_NULL)
@@ -5084,6 +5074,28 @@ public class EventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return seClfDetails
+   */
+  @VsoMethod
+  public SeClfEventDetails getSeClfDetails() {
+    return seClfDetails;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param seClfDetails set the seClfDetails.
+   */
+  @VsoMethod
+  public void setSeClfDetails(SeClfEventDetails seClfDetails) {
+    this.seClfDetails = seClfDetails;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seConfigSedatastoreDlFail
    */
   @VsoMethod
@@ -5446,54 +5458,6 @@ public class EventDetails extends AviRestResource {
   @VsoMethod
   public void setSeHmVsDetails(SeHmEventVsDetails seHmVsDetails) {
     this.seHmVsDetails = seHmVsDetails;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Field introduced in 32.1.5.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return seInternalGatewayHeartbeatFailedDetails
-   */
-  @VsoMethod
-  public SeGatewayHeartbeatFailedDetails getSeInternalGatewayHeartbeatFailedDetails() {
-    return seInternalGatewayHeartbeatFailedDetails;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Field introduced in 32.1.5.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param seInternalGatewayHeartbeatFailedDetails set the seInternalGatewayHeartbeatFailedDetails.
-   */
-  @VsoMethod
-  public void setSeInternalGatewayHeartbeatFailedDetails(SeGatewayHeartbeatFailedDetails seInternalGatewayHeartbeatFailedDetails) {
-    this.seInternalGatewayHeartbeatFailedDetails = seInternalGatewayHeartbeatFailedDetails;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Field introduced in 32.1.5.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return seInternalGatewayHeartbeatSuccessDetails
-   */
-  @VsoMethod
-  public SeGatewayHeartbeatSuccessDetails getSeInternalGatewayHeartbeatSuccessDetails() {
-    return seInternalGatewayHeartbeatSuccessDetails;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Field introduced in 32.1.5.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param seInternalGatewayHeartbeatSuccessDetails set the seInternalGatewayHeartbeatSuccessDetails.
-   */
-  @VsoMethod
-  public void setSeInternalGatewayHeartbeatSuccessDetails(SeGatewayHeartbeatSuccessDetails seInternalGatewayHeartbeatSuccessDetails) {
-    this.seInternalGatewayHeartbeatSuccessDetails = seInternalGatewayHeartbeatSuccessDetails;
   }
 
   /**
@@ -6490,32 +6454,6 @@ public class EventDetails extends AviRestResource {
   @VsoMethod
   public void setSslRevokedDetails(SSLRevokedDetails sslRevokedDetails) {
     this.sslRevokedDetails = sslRevokedDetails;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Supervisor se group free license capacity exhausted/available details.
-   * Field introduced in 32.1.5.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return supervisorSeGroupFreeLicenseDetails
-   */
-  @VsoMethod
-  public SupervisorSeGroupFreeLicenseDetails getSupervisorSeGroupFreeLicenseDetails() {
-    return supervisorSeGroupFreeLicenseDetails;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Supervisor se group free license capacity exhausted/available details.
-   * Field introduced in 32.1.5.
-   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param supervisorSeGroupFreeLicenseDetails set the supervisorSeGroupFreeLicenseDetails.
-   */
-  @VsoMethod
-  public void setSupervisorSeGroupFreeLicenseDetails(SupervisorSeGroupFreeLicenseDetails supervisorSeGroupFreeLicenseDetails) {
-    this.supervisorSeGroupFreeLicenseDetails = supervisorSeGroupFreeLicenseDetails;
   }
 
   /**
@@ -7577,8 +7515,6 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.seRateLimiterDropDetails, objEventDetails.seRateLimiterDropDetails)&&
   Objects.equals(this.seQatModeEventDetail, objEventDetails.seQatModeEventDetail)&&
   Objects.equals(this.sePcapModeEventDetails, objEventDetails.sePcapModeEventDetails)&&
-  Objects.equals(this.seInternalGatewayHeartbeatFailedDetails, objEventDetails.seInternalGatewayHeartbeatFailedDetails)&&
-  Objects.equals(this.seInternalGatewayHeartbeatSuccessDetails, objEventDetails.seInternalGatewayHeartbeatSuccessDetails)&&
   Objects.equals(this.seHmPoolDetails, objEventDetails.seHmPoolDetails)&&
   Objects.equals(this.seHmVsDetails, objEventDetails.seHmVsDetails)&&
   Objects.equals(this.sePersistenceDetails, objEventDetails.sePersistenceDetails)&&
@@ -7588,6 +7524,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.seGeoDbDetails, objEventDetails.seGeoDbDetails)&&
   Objects.equals(this.vsConfigSedatastoreDlFail, objEventDetails.vsConfigSedatastoreDlFail)&&
   Objects.equals(this.seConfigSedatastoreDlFail, objEventDetails.seConfigSedatastoreDlFail)&&
+  Objects.equals(this.seClfDetails, objEventDetails.seClfDetails)&&
   Objects.equals(this.configCreateDetails, objEventDetails.configCreateDetails)&&
   Objects.equals(this.configUpdateDetails, objEventDetails.configUpdateDetails)&&
   Objects.equals(this.configDeleteDetails, objEventDetails.configDeleteDetails)&&
@@ -7736,7 +7673,6 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.licenseTierSwitchDetails, objEventDetails.licenseTierSwitchDetails)&&
   Objects.equals(this.centralLicenseSubscriptionDetails, objEventDetails.centralLicenseSubscriptionDetails)&&
   Objects.equals(this.centralLicenseRefreshDetails, objEventDetails.centralLicenseRefreshDetails)&&
-  Objects.equals(this.supervisorSeGroupFreeLicenseDetails, objEventDetails.supervisorSeGroupFreeLicenseDetails)&&
   Objects.equals(this.genericAuditComplianceEventInfo, objEventDetails.genericAuditComplianceEventInfo)&&
   Objects.equals(this.apiserverRequestQueueFullEventInfo, objEventDetails.apiserverRequestQueueFullEventInfo)&&
   Objects.equals(this.apiserverRequestQueueRecoveryEventInfo, objEventDetails.apiserverRequestQueueRecoveryEventInfo)&&
@@ -7929,6 +7865,7 @@ public String toString() {
         sb.append("    seAutoscalerEventDetails: ").append(toIndentedString(seAutoscalerEventDetails)).append("\n");
         sb.append("    seBgpPeerDownDetails: ").append(toIndentedString(seBgpPeerDownDetails)).append("\n");
         sb.append("    seBgpPeerStateChangeDetails: ").append(toIndentedString(seBgpPeerStateChangeDetails)).append("\n");
+        sb.append("    seClfDetails: ").append(toIndentedString(seClfDetails)).append("\n");
         sb.append("    seConfigSedatastoreDlFail: ").append(toIndentedString(seConfigSedatastoreDlFail)).append("\n");
         sb.append("    seDebugModeEventDetail: ").append(toIndentedString(seDebugModeEventDetail)).append("\n");
         sb.append("    seDetails: ").append(toIndentedString(seDetails)).append("\n");
@@ -7945,8 +7882,6 @@ public String toString() {
         sb.append("    seHmGsgroupDetails: ").append(toIndentedString(seHmGsgroupDetails)).append("\n");
         sb.append("    seHmPoolDetails: ").append(toIndentedString(seHmPoolDetails)).append("\n");
         sb.append("    seHmVsDetails: ").append(toIndentedString(seHmVsDetails)).append("\n");
-        sb.append("    seInternalGatewayHeartbeatFailedDetails: ").append(toIndentedString(seInternalGatewayHeartbeatFailedDetails)).append("\n");
-        sb.append("    seInternalGatewayHeartbeatSuccessDetails: ").append(toIndentedString(seInternalGatewayHeartbeatSuccessDetails)).append("\n");
         sb.append("    seIp6DadFailedEventDetails: ").append(toIndentedString(seIp6DadFailedEventDetails)).append("\n");
         sb.append("    seIpAddedEventDetails: ").append(toIndentedString(seIpAddedEventDetails)).append("\n");
         sb.append("    seIpRemovedEventDetails: ").append(toIndentedString(seIpRemovedEventDetails)).append("\n");
@@ -7991,7 +7926,6 @@ public String toString() {
         sb.append("    sslRenewDetails: ").append(toIndentedString(sslRenewDetails)).append("\n");
         sb.append("    sslRenewFailedDetails: ").append(toIndentedString(sslRenewFailedDetails)).append("\n");
         sb.append("    sslRevokedDetails: ").append(toIndentedString(sslRevokedDetails)).append("\n");
-        sb.append("    supervisorSeGroupFreeLicenseDetails: ").append(toIndentedString(supervisorSeGroupFreeLicenseDetails)).append("\n");
         sb.append("    switchoverDetails: ").append(toIndentedString(switchoverDetails)).append("\n");
         sb.append("    switchoverFailDetails: ").append(toIndentedString(switchoverFailDetails)).append("\n");
         sb.append("    syncServicesInfo: ").append(toIndentedString(syncServicesInfo)).append("\n");

@@ -171,7 +171,7 @@ public class SeGroupVersion extends AviRestResource {
 
 
   public String getObjectID() {
-    return name;
+    return name + "(" + uuid  + ")";
   }
 
 @Override
