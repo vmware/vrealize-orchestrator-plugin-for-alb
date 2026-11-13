@@ -11,6 +11,7 @@ import com.vmware.avi.vro.model.FailAction;
 import com.vmware.avi.vro.model.HorizonProfile;
 import com.vmware.avi.vro.model.HTTP2PoolProperties;
 import com.vmware.avi.vro.model.RateProfile;
+import com.vmware.avi.vro.model.MsgLbConnPoolConfig;
 import com.vmware.avi.vro.model.HTTPServerReselect;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
@@ -210,6 +211,10 @@ public class Pool extends AviRestResource {
     @JsonProperty("min_servers_up")
     @JsonInclude(Include.NON_NULL)
     private Integer minServersUp;
+
+    @JsonProperty("msg_lb_conn_pool_config")
+    @JsonInclude(Include.NON_NULL)
+    private MsgLbConnPoolConfig msgLbConnPoolConfig;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
@@ -1639,6 +1644,34 @@ public class Pool extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Tcp connection pool limits for l4 message-level load balancing vses that use this pool.
+   * Distinct from l7 conn_pool_properties.
+   * Field introduced in 32.1.5.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return msgLbConnPoolConfig
+   */
+  @VsoMethod
+  public MsgLbConnPoolConfig getMsgLbConnPoolConfig() {
+    return msgLbConnPoolConfig;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Tcp connection pool limits for l4 message-level load balancing vses that use this pool.
+   * Distinct from l7 conn_pool_properties.
+   * Field introduced in 32.1.5.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param msgLbConnPoolConfig set the msgLbConnPoolConfig.
+   */
+  @VsoMethod
+  public void setMsgLbConnPoolConfig(MsgLbConnPoolConfig msgLbConnPoolConfig) {
+    this.msgLbConnPoolConfig = msgLbConnPoolConfig;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * The name of the pool.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -2517,7 +2550,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.horizonProfile, objPool.horizonProfile)&&
   Objects.equals(this.poolType, objPool.poolType)&&
   Objects.equals(this.lbAlgoRrPerSe, objPool.lbAlgoRrPerSe)&&
-  Objects.equals(this.gracefulHmDownDisableTimeout, objPool.gracefulHmDownDisableTimeout);
+  Objects.equals(this.gracefulHmDownDisableTimeout, objPool.gracefulHmDownDisableTimeout)&&
+  Objects.equals(this.msgLbConnPoolConfig, objPool.msgLbConnPoolConfig);
 }
 
 @Override
@@ -2569,6 +2603,7 @@ public String toString() {
         sb.append("    maxConnRatePerServer: ").append(toIndentedString(maxConnRatePerServer)).append("\n");
         sb.append("    minHealthMonitorsUp: ").append(toIndentedString(minHealthMonitorsUp)).append("\n");
         sb.append("    minServersUp: ").append(toIndentedString(minServersUp)).append("\n");
+        sb.append("    msgLbConnPoolConfig: ").append(toIndentedString(msgLbConnPoolConfig)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    networks: ").append(toIndentedString(networks)).append("\n");
         sb.append("    nsxSecuritygroup: ").append(toIndentedString(nsxSecuritygroup)).append("\n");
