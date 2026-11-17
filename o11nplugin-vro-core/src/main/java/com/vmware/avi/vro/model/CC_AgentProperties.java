@@ -289,7 +289,7 @@ public class CC_AgentProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Reconcile interval for vcenter inventory.
-   * Allowed values are 60-3600.
+   * Allowed values are 60-86400.
    * Field introduced in 22.1.3.
    * Unit is sec.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -304,7 +304,7 @@ public class CC_AgentProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Reconcile interval for vcenter inventory.
-   * Allowed values are 60-3600.
+   * Allowed values are 60-86400.
    * Field introduced in 22.1.3.
    * Unit is sec.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.

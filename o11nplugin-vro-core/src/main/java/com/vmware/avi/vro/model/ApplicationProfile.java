@@ -10,6 +10,7 @@ import com.vmware.avi.vro.model.DnsServiceApplicationProfile;
 import com.vmware.avi.vro.model.DosRateLimitProfile;
 import com.vmware.avi.vro.model.HTTPApplicationProfile;
 import com.vmware.avi.vro.model.L4SSLApplicationProfile;
+import com.vmware.avi.vro.model.MsgLbApplicationServiceProfile;
 import com.vmware.avi.vro.model.SipServiceApplicationProfile;
 import com.vmware.avi.vro.model.TCPApplicationProfile;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
@@ -71,6 +72,10 @@ public class ApplicationProfile extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private List<RoleFilterMatchLabel> markers;
 
+    @JsonProperty("msg_lb_app_service_profile")
+    @JsonInclude(Include.NON_NULL)
+    private MsgLbApplicationServiceProfile msgLbAppServiceProfile;
+
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
     private String name;
@@ -115,9 +120,9 @@ public class ApplicationProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Specifies app service type for an application.
+   * Specifies app service type for an application, including l4 message-level load balancing (app_service_type_l4_msg_lb) for iso 8583-style traffic.
    * Enum options - APP_SERVICE_TYPE_L7_HORIZON, APP_SERVICE_TYPE_L4_BLAST, APP_SERVICE_TYPE_L4_PCOIP, APP_SERVICE_TYPE_L4_FTP,
-   * APP_SERVICE_TYPE_HTTP_MCP.
+   * APP_SERVICE_TYPE_HTTP_MCP, APP_SERVICE_TYPE_L4_MSG_LB.
    * Field introduced in 21.1.3.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -130,9 +135,9 @@ public class ApplicationProfile extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Specifies app service type for an application.
+   * Specifies app service type for an application, including l4 message-level load balancing (app_service_type_l4_msg_lb) for iso 8583-style traffic.
    * Enum options - APP_SERVICE_TYPE_L7_HORIZON, APP_SERVICE_TYPE_L4_BLAST, APP_SERVICE_TYPE_L4_PCOIP, APP_SERVICE_TYPE_L4_FTP,
-   * APP_SERVICE_TYPE_HTTP_MCP.
+   * APP_SERVICE_TYPE_HTTP_MCP, APP_SERVICE_TYPE_L4_MSG_LB.
    * Field introduced in 21.1.3.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -386,6 +391,34 @@ public class ApplicationProfile extends AviRestResource {
     return this;
   }
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Per-client connection cap settings for l4 message-level load balancing (app_service_type_l4_msg_lb).
+   * Ignored for other application profile types.
+   * Field introduced in 32.1.5.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return msgLbAppServiceProfile
+   */
+  @VsoMethod
+  public MsgLbApplicationServiceProfile getMsgLbAppServiceProfile() {
+    return msgLbAppServiceProfile;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Per-client connection cap settings for l4 message-level load balancing (app_service_type_l4_msg_lb).
+   * Ignored for other application profile types.
+   * Field introduced in 32.1.5.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param msgLbAppServiceProfile set the msgLbAppServiceProfile.
+   */
+  @VsoMethod
+  public void setMsgLbAppServiceProfile(MsgLbApplicationServiceProfile msgLbAppServiceProfile) {
+    this.msgLbAppServiceProfile = msgLbAppServiceProfile;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -666,7 +699,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.diameterServiceProfile, objApplicationProfile.diameterServiceProfile)&&
   Objects.equals(this.description, objApplicationProfile.description)&&
   Objects.equals(this.tenantRef, objApplicationProfile.tenantRef)&&
-  Objects.equals(this.appServiceType, objApplicationProfile.appServiceType);
+  Objects.equals(this.appServiceType, objApplicationProfile.appServiceType)&&
+  Objects.equals(this.msgLbAppServiceProfile, objApplicationProfile.msgLbAppServiceProfile);
 }
 
 @Override
@@ -683,6 +717,7 @@ public String toString() {
         sb.append("    httpProfile: ").append(toIndentedString(httpProfile)).append("\n");
         sb.append("    l4SslProfile: ").append(toIndentedString(l4SslProfile)).append("\n");
         sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
+        sb.append("    msgLbAppServiceProfile: ").append(toIndentedString(msgLbAppServiceProfile)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    preserveClientIp: ").append(toIndentedString(preserveClientIp)).append("\n");
         sb.append("    preserveClientPort: ").append(toIndentedString(preserveClientPort)).append("\n");
