@@ -40,6 +40,10 @@ public class InternalGatewayMonitor extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer gatewayMonitorSuccessThreshold = 15;
 
+    @JsonProperty("monitor_protocol")
+    @JsonInclude(Include.NON_NULL)
+    private String monitorProtocol = "GATEWAY_MONITOR_ICMP";
+
 
 
   /**
@@ -158,6 +162,34 @@ public class InternalGatewayMonitor extends AviRestResource {
     this.gatewayMonitorSuccessThreshold = gatewayMonitorSuccessThreshold;
   }
 
+  /**
+   * This is the getter method this will return the attribute value.
+   * Protocol used by the gateway monitor to check gateway reachability.
+   * Enum options - GATEWAY_MONITOR_ICMP, GATEWAY_MONITOR_ARP.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "GATEWAY_MONITOR_ICMP".
+   * @return monitorProtocol
+   */
+  @VsoMethod
+  public String getMonitorProtocol() {
+    return monitorProtocol;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Protocol used by the gateway monitor to check gateway reachability.
+   * Enum options - GATEWAY_MONITOR_ICMP, GATEWAY_MONITOR_ARP.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "GATEWAY_MONITOR_ICMP".
+   * @param monitorProtocol set the monitorProtocol.
+   */
+  @VsoMethod
+  public void setMonitorProtocol(String  monitorProtocol) {
+    this.monitorProtocol = monitorProtocol;
+  }
+
 
 
 @Override
@@ -172,7 +204,8 @@ public boolean equals(java.lang.Object o) {
   return   Objects.equals(this.gatewayMonitorInterval, objInternalGatewayMonitor.gatewayMonitorInterval)&&
   Objects.equals(this.gatewayMonitorFailureThreshold, objInternalGatewayMonitor.gatewayMonitorFailureThreshold)&&
   Objects.equals(this.gatewayMonitorSuccessThreshold, objInternalGatewayMonitor.gatewayMonitorSuccessThreshold)&&
-  Objects.equals(this.disableGatewayMonitor, objInternalGatewayMonitor.disableGatewayMonitor);
+  Objects.equals(this.disableGatewayMonitor, objInternalGatewayMonitor.disableGatewayMonitor)&&
+  Objects.equals(this.monitorProtocol, objInternalGatewayMonitor.monitorProtocol);
 }
 
 @Override
@@ -183,6 +216,7 @@ public String toString() {
         sb.append("    gatewayMonitorFailureThreshold: ").append(toIndentedString(gatewayMonitorFailureThreshold)).append("\n");
         sb.append("    gatewayMonitorInterval: ").append(toIndentedString(gatewayMonitorInterval)).append("\n");
         sb.append("    gatewayMonitorSuccessThreshold: ").append(toIndentedString(gatewayMonitorSuccessThreshold)).append("\n");
+        sb.append("    monitorProtocol: ").append(toIndentedString(monitorProtocol)).append("\n");
       sb.append("}");
   return sb.toString();
 }
