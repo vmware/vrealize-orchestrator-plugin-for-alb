@@ -24,6 +24,10 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class Tier1LogicalRouterInfo extends AviRestResource {
+    @JsonProperty("attrs")
+    @JsonInclude(Include.NON_NULL)
+    private List<KeyValue> attrs;
+
     @JsonProperty("locale_service")
     @JsonInclude(Include.NON_NULL)
     private String localeService;
@@ -36,6 +40,50 @@ public class Tier1LogicalRouterInfo extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String tier1LrId;
 
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Generic key/value attributes for storing extra information about the tier1 segment configuration.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return attrs
+   */
+  @VsoMethod
+  public List<KeyValue> getAttrs() {
+    return attrs;
+  }
+
+  /**
+   * This is the setter method. this will set the attrs
+   * Generic key/value attributes for storing extra information about the tier1 segment configuration.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return attrs
+   */
+  @VsoMethod
+  public void setAttrs(List<KeyValue>  attrs) {
+    this.attrs = attrs;
+  }
+
+  /**
+   * This is the setter method this will set the attrs
+   * Generic key/value attributes for storing extra information about the tier1 segment configuration.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return attrs
+   */
+  @VsoMethod
+  public Tier1LogicalRouterInfo addAttrsItem(KeyValue attrsItem) {
+    if (this.attrs == null) {
+      this.attrs = new ArrayList<KeyValue>();
+    }
+    this.attrs.add(attrsItem);
+    return this;
+  }
 
 
   /**
@@ -141,14 +189,16 @@ public boolean equals(java.lang.Object o) {
   Tier1LogicalRouterInfo objTier1LogicalRouterInfo = (Tier1LogicalRouterInfo) o;
   return   Objects.equals(this.tier1LrId, objTier1LogicalRouterInfo.tier1LrId)&&
   Objects.equals(this.segmentId, objTier1LogicalRouterInfo.segmentId)&&
-  Objects.equals(this.localeService, objTier1LogicalRouterInfo.localeService);
+  Objects.equals(this.localeService, objTier1LogicalRouterInfo.localeService)&&
+  Objects.equals(this.attrs, objTier1LogicalRouterInfo.attrs);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class Tier1LogicalRouterInfo {\n");
-      sb.append("    localeService: ").append(toIndentedString(localeService)).append("\n");
+      sb.append("    attrs: ").append(toIndentedString(attrs)).append("\n");
+        sb.append("    localeService: ").append(toIndentedString(localeService)).append("\n");
         sb.append("    segmentId: ").append(toIndentedString(segmentId)).append("\n");
         sb.append("    tier1LrId: ").append(toIndentedString(tier1LrId)).append("\n");
       sb.append("}");
