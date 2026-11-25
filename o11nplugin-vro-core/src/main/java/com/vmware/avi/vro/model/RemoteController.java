@@ -30,7 +30,7 @@ public class RemoteController extends AviRestResource {
 
     @JsonProperty("enabled")
     @JsonInclude(Include.NON_NULL)
-    private Boolean enabled = false;
+    private Boolean enabled;
 
     @JsonProperty("password")
     @JsonInclude(Include.NON_NULL)
@@ -77,7 +77,7 @@ public class RemoteController extends AviRestResource {
    * Enable remote controller request.
    * Field introduced in 32.1.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return enabled
    */
   @VsoMethod
@@ -90,7 +90,7 @@ public class RemoteController extends AviRestResource {
    * Enable remote controller request.
    * Field introduced in 32.1.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param enabled set the enabled.
    */
   @VsoMethod
