@@ -42,6 +42,10 @@ public class GatewayMonitor extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer gatewayMonitorSuccessThreshold = 15;
 
+    @JsonProperty("monitor_protocol")
+    @JsonInclude(Include.NON_NULL)
+    private String monitorProtocol = "GATEWAY_MONITOR_ICMP";
+
     @JsonProperty("subnet")
     @JsonInclude(Include.NON_NULL)
     private IpAddrPrefix subnet;
@@ -156,6 +160,34 @@ public class GatewayMonitor extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Protocol used by the gateway monitor to check gateway reachability.
+   * Enum options - GATEWAY_MONITOR_ICMP, GATEWAY_MONITOR_ARP.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "GATEWAY_MONITOR_ICMP".
+   * @return monitorProtocol
+   */
+  @VsoMethod
+  public String getMonitorProtocol() {
+    return monitorProtocol;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Protocol used by the gateway monitor to check gateway reachability.
+   * Enum options - GATEWAY_MONITOR_ICMP, GATEWAY_MONITOR_ARP.
+   * Field introduced in 32.2.1.
+   * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "GATEWAY_MONITOR_ICMP".
+   * @param monitorProtocol set the monitorProtocol.
+   */
+  @VsoMethod
+  public void setMonitorProtocol(String  monitorProtocol) {
+    this.monitorProtocol = monitorProtocol;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Subnet providing reachability for multi-hop gateway.
    * Field introduced in 18.1.1.
    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -195,7 +227,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.gatewayMonitorInterval, objGatewayMonitor.gatewayMonitorInterval)&&
   Objects.equals(this.gatewayMonitorFailThreshold, objGatewayMonitor.gatewayMonitorFailThreshold)&&
   Objects.equals(this.gatewayMonitorSuccessThreshold, objGatewayMonitor.gatewayMonitorSuccessThreshold)&&
-  Objects.equals(this.subnet, objGatewayMonitor.subnet);
+  Objects.equals(this.subnet, objGatewayMonitor.subnet)&&
+  Objects.equals(this.monitorProtocol, objGatewayMonitor.monitorProtocol);
 }
 
 @Override
@@ -206,6 +239,7 @@ public String toString() {
         sb.append("    gatewayMonitorFailThreshold: ").append(toIndentedString(gatewayMonitorFailThreshold)).append("\n");
         sb.append("    gatewayMonitorInterval: ").append(toIndentedString(gatewayMonitorInterval)).append("\n");
         sb.append("    gatewayMonitorSuccessThreshold: ").append(toIndentedString(gatewayMonitorSuccessThreshold)).append("\n");
+        sb.append("    monitorProtocol: ").append(toIndentedString(monitorProtocol)).append("\n");
         sb.append("    subnet: ").append(toIndentedString(subnet)).append("\n");
       sb.append("}");
   return sb.toString();
